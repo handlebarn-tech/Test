@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "BASH_MAX_OUTPUT_LENGTH": "20000",
+    "MAX_MCP_OUTPUT_TOKENS": "15000"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(find:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)"
+    ],
+    "deny": [
+      "Read(./node_modules/**)",
+      "Read(./**/node_modules/**)",
+      "Read(./dist/**)",
+      "Read(./build/**)",
+      "Read(./.next/**)",
+      "Read(./coverage/**)",
+      "Read(./**/*.min.js)",
+      "Read(./**/*.map)",
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  }
+}
