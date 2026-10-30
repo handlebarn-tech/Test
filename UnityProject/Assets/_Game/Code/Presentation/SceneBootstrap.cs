@@ -26,6 +26,9 @@ namespace Dispo.Presentation
                     yield return SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
             }
             Debug.Log($"{ReadyMarker} scenes={SceneManager.sceneCount}");
+
+            var perfOut = Perf.PerfCapture.Arg();  // PERF-001: `-perf <json>` plays the bot shift, writes metrics, quits
+            if (perfOut != null) gameObject.AddComponent<Perf.PerfCapture>().Begin(perfOut, Time.realtimeSinceStartup);
         }
     }
 }

@@ -12,10 +12,12 @@
   studio.ps1 blender deli_jar Tools/Blender/params/deli_jar.json   # forwards to Tools/Blender/blender.ps1
 .EXAMPLE
   studio.ps1 assets-fetch --verify                                  # forwards to Tools/Assets/fetch_assets.py
+.EXAMPLE
+  studio.ps1 perf                                                   # PERF-001: bot shift in the existing dev build -> Artifacts/Perf/
 #>
 param(
     [Parameter(Mandatory = $true, Position = 0)]
-    [ValidateSet('doctor', 'unity-compile', 'unity-test-edit', 'unity-test-play', 'unity-graybox', 'unity-capture', 'unity-build', 'status', 'blender', 'assets-fetch')]
+    [ValidateSet('doctor', 'unity-compile', 'unity-test-edit', 'unity-test-play', 'unity-graybox', 'unity-capture', 'unity-build', 'perf', 'status', 'blender', 'assets-fetch')]
     [string]$Command,
     [int]$SmokeSeconds = 90,
     # Arguments forwarded by 'blender' and 'assets-fetch'.
@@ -301,6 +303,37 @@ switch ($Command) {
         [IO.File]::WriteAllText($manifestPath, ($manifest | ConvertTo-Json))
         [void]$Outputs.AddRange(@($exe, $manifestPath, $playerLog))
         Complete $ok $code "exe=$(Get-RelPath $exe); smoke: $smoke, playerLog=$(Get-RelPath $playerLog); manifest=$(Get-RelPath $manifestPath)"
+    }
+
+    'perf' {
+        # PERF-001: run the last `unity-build` player with -perf (no editor, so no DEC-013 slot) at the 1080p target.
+        $exe = Join-Path $BuildDir 'Windows64-Dev\DispoGame.exe'
+        if (-not (Test-Path $exe)) { Complete $false -1 "blocked: no dev build at $(Get-RelPath $exe); run unity-build first" 2 }
+        $built = (Get-Content (Join-Path (Split-Path $exe) 'BUILD_MANIFEST.json') -Raw | ConvertFrom-Json).commit
+        $perfDir = Join-Path $Root 'Artifacts\Perf'
+        New-Item -ItemType Directory -Force $perfDir | Out-Null
+        $json = Join-Path $perfDir "$($built.Substring(0, 7))-$Stamp.json"
+        $playerLog = Join-Path $LogDir "$Stamp-player-perf.log"
+        $p = Start-Process -FilePath $exe -ArgumentList "-screen-fullscreen 0 -screen-width 1920 -screen-height 1080 -perf `"$json`" -logFile `"$playerLog`"" -PassThru
+        $null = $p.Handle
+        # Peak whole-GPU VRAM use while the player runs (WDDM hides per-process use); includes other apps, so it's an upper bound.
+        $vramPeak = -1
+        $smi = Get-Command nvidia-smi -ErrorAction SilentlyContinue
+        while (-not $p.WaitForExit(2000)) {
+            if ($smi) {
+                $used = & nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits 2>$null | Select-Object -First 1
+                if ($used -match '^\s*\d+\s*$' -and [int]$used -gt $vramPeak) { $vramPeak = [int]$used }
+            }
+            if (((Get-Date) - $Started).TotalMinutes -gt 15) { Stop-Process -Id $p.Id -Force; break }
+        }
+        if (-not (Test-Path $json)) { [void]$Outputs.Add($playerLog); Complete $false $p.ExitCode "no perf JSON written; see $(Get-RelPath $playerLog)" }
+        $r = Get-Content $json -Raw | ConvertFrom-Json
+        $r | Add-Member buildCommit $built
+        $r | Add-Member vramPeakMBNvidiaSmi $vramPeak
+        [IO.File]::WriteAllText($json, ($r | ConvertTo-Json))
+        [void]$Outputs.AddRange(@($json, $playerLog))
+        Complete ([bool]$r.completed) $p.ExitCode ("build {0}: avg {1} ms, p95 {2}, p99 {3}, 1%low {4} fps, gpu {5} ms, batches {6}, tris {7}, gfxMem {8} MB, vramPeak {9} MB, load {10} s -> {11}" -f `
+            $built.Substring(0, 7), $r.frameMsAvg, $r.frameMsP95, $r.frameMsP99, $r.fps1PctLow, $r.gpuFrameMsAvg, $r.batchesCountAvg, $r.trianglesCountAvg, $r.gfxUsedMemoryMBMax, $vramPeak, $r.loadSec, (Get-RelPath $json))
     }
 
     { $_ -in 'blender', 'assets-fetch' } {
