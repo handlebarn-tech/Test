@@ -1,7 +1,7 @@
 # DATA-002 handoff — packaged-goods catalog
 
 **Status:** done. `Tools/Data/import_packaged.js` (Node, no dependencies, same style as `import_catalog.js`) → `UnityProject/Assets/_Game/Data/Catalog/packaged_catalog.json` (+ `.meta`).
-**Input:** Dutchie "Current Inventory" export, 10/18–10/25/2026, read in place from `Downloads/Dispo Game Imports/` (default path; or pass a path). It was never copied into the repo; its source md5 is recorded in the JSON.
+**Input:** Dutchie "Current Inventory" export, 10/18–10/25/2026, read in place from `Downloads/Dispo Game Imports/` (archived 2026-10-30 to `C:/Users/handl/Downloads/Dispo Game Imports Archive/2026-10-30_dutchie-inventory/`, DEC-070) (default path; or pass a path). It was never copied into the repo; its source md5 is recorded in the JSON.
 
 ## What the importer does
 - **Whitelist** (fails if any column is missing): Product Name, Category, Brand Name, Inventory Price, Strain Name, Inventory Room. Room is used only to drop non-sellable rows (Quarantine, POS RETURN, SAMPLES/PROMOS) and to set `medicalOnly`; the room string itself isn't output. Every other column is dropped: cost, vendor, quantity, weight, pricing tier, package/batch/external IDs, location, dates, UPC/SKU.
