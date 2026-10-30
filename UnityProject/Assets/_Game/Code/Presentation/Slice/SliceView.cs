@@ -92,11 +92,21 @@ namespace Dispo.Presentation.Slice
                                && Vector3.Distance(cam.transform.position, kv.Value) < 9f;
                 label.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
                 if (!visible) continue;
-                var p = RuntimePanelUtils.CameraTransformWorldToPanel(_root.panel, kv.Value, cam);
+                // Viewport → panel layout: independent of Screen size, so it holds when camera or panel render to a texture (REVIEW-W3D N1).
+                var p = JarLabelPanelPos(kv.Value, cam);
                 label.style.left = p.x - 30;
                 label.style.top = p.y - 12;
             }
         }
+
+        /// <summary>Panel position (px) of a world point seen by a full-panel camera.</summary>
+        public Vector2 JarLabelPanelPos(Vector3 world, Camera cam)
+        {
+            var vp = cam.WorldToViewportPoint(world);
+            return new Vector2(vp.x * _root.layout.width, (1 - vp.y) * _root.layout.height);
+        }
+
+        public Label JarLabel(string batchId) => _jarLabels.TryGetValue(batchId, out var l) ? l : null;
 
         void DebugOverlay()
         {
@@ -114,6 +124,7 @@ namespace Dispo.Presentation.Slice
 
         public void Toast(string line1, string line2, bool warn)
         {
+            if (_g.Screen == SliceScreen.Report) return;
             var t = Add(_toasts, "toast");
             t.EnableInClassList("st-warn", warn);
             AddLabel(t, line1, "toast-1");
@@ -126,6 +137,7 @@ namespace Dispo.Presentation.Slice
         public void Render()
         {
             _screen.Clear();
+            if (_g.Screen == SliceScreen.Report) { _toasts.Clear(); _toastList.Clear(); }   // nothing on top of the report
             _confirm = null;
             var s = _g.Screen;
             _screen.pickingMode = s == SliceScreen.World ? PickingMode.Ignore : PickingMode.Position;
@@ -188,7 +200,7 @@ namespace Dispo.Presentation.Slice
             cards.AddToClassList("cards");
             body.Add(cards);
             for (int i = 0; i < r.Cards.Count; i++) CardView(cards, r.Cards[i], i == 0, r.Outcome);
-            if (r.MoreAvailable) AddButton(body, "More options (M)", _g.More);
+            if (r.MoreAvailable) AddButton(body, "More options (M)", _g.More, "more");
         }
 
         void CardView(VisualElement parent, Card k, bool top, Outcome outcome)
