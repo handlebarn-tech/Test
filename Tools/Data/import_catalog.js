@@ -5,8 +5,9 @@
 // Usage: node Tools/Data/import_catalog.js [--check]   (--check: re-validate existing output against the allow-list only)
 'use strict';
 const fs = require('fs'), path = require('path'), vm = require('vm'), crypto = require('crypto');
+const { aliasBrand, guardCatalog } = require('./brands'); // BRAND-001 (DEC-071)
 
-const IMPORTER_VERSION = '1.1.0'; // 1.1.0 (GAME-003): terpene aliases + parser_tables.json
+const IMPORTER_VERSION = '1.2.0'; // 1.1.0 (GAME-003): terpene aliases + parser_tables.json; 1.2.0 (BRAND-001): brand aliases
 const TFS_ROOT = process.env.TFS_BUDTENDER_ROOT || 'C:/Users/handl/Downloads/tfs-budtender';
 const HTML = path.join(TFS_ROOT, 'deploy/2026-10-30-v7114/site/index.html');
 const INV = path.join(TFS_ROOT, 'inventory/tfs-inventory-master.json');
@@ -164,7 +165,7 @@ function main() {
     const batchCode = cleanText(typeof s.batch === 'string' || typeof s.batch === 'number' ? s.batch : '');
     let testDate = s.date || null, dateInferred = false;
     if (!testDate) { testDate = parseBatchDate(batchCode); dateInferred = !!testDate; if (dateInferred) inferred++; }
-    batches.push({ id, strainName: cleanText(s.name), batchCode, brand: s.brand != null ? cleanText(s.brand) : '', tier,
+    batches.push({ id, strainName: cleanText(s.name), batchCode, brand: s.brand != null ? aliasBrand(cleanText(s.brand)) : '', tier,
       inStock: s.status !== 'oos', testDate, dateInferred, total, terpenes: Object.fromEntries(p) });
   }
 

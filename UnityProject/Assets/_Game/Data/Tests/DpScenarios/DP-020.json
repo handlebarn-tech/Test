@@ -3,7 +3,7 @@
   "id": "DP-020",
   "title": "True sold out (SPEC_DECISION_PRESSURE DP-020): a 0 g batch is excluded per canonical TFS inventory behavior",
   "seed": 1,
-  "catalogMd5": "6fdc553558ea651ac793ccb43af53167",
+  "catalogMd5": "8a358a0b241e663c3b4560c557d8ce2e",
   "stock": [ { "batch": "custom_web_0439_kake081026", "grams": 0 } ],
   "customer": { "archetype": "regular", "openerIndex": 0, "trueFamily": "sleep", "grams": 3.5, "budget": 0 },
   "actions": [ { "do": "search", "chip": "sleep" }, { "do": "present", "card": 0 }, { "do": "confirm" } ],
