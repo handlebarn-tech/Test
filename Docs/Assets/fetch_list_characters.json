@@ -138,6 +138,106 @@
    ]
   },
   {
+   "ledger_id": "CHR-QUA-AM",
+   "source": "url",
+   "source_dir": "quaternius",
+   "source_url": "https://quaternius.com/packs/animatedmen.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1xYqAAF2Mo_PvgJsHq-0To8AlZkiq_o7Y",
+     "name": "License.txt"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1ochqNbQ9uGbczEhTJmkReJa8mlSpZDwe",
+     "name": "Preview.jpg"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1nZiaTmwgBm9Aa-kikftzMW-2x3E7tPYm",
+     "name": "FBX/Male_Casual.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=18Rozxw_36TGCzUSbMcTTUZfns3ECetGU",
+     "name": "FBX/Male_LongSleeve.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=19ngmZDTZpNnmlkQ1HkSg2bXGAcY0WmSk",
+     "name": "FBX/Male_Shirt.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1wd0dj453AbrNsi6Aq0QvOYOkXrZkbtTw",
+     "name": "FBX/Male_Suit.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1m46QkeqCFktuL5Vl3FR6_PtTKSN3WszF",
+     "name": "FBX/Smooth_Male_Casual.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1-cESvRzJbzaAn-YTNjFh0746ZbZnc_Xx",
+     "name": "FBX/Smooth_Male_LongSleeve.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1aYn6xDBXZL-8n6bDqhtzjiBkVvjchLqD",
+     "name": "FBX/Smooth_Male_Shirt.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1fooYrXMABwPK2il3xV54d0gdxX1mqD_4",
+     "name": "FBX/Smooth_Male_Suit.fbx"
+    }
+   ]
+  },
+  {
+   "ledger_id": "CHR-QUA-AW",
+   "source": "url",
+   "source_dir": "quaternius",
+   "source_url": "https://quaternius.com/packs/animatedwomen.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1sUdm3LyKF5KL6DtnOsK0q0A9KAfjVG_3",
+     "name": "License.txt"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1MhbGBYah0Ax2UGwnQaRxo-j5o-Bo58MI",
+     "name": "Preview.png"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1FYhHn6SzQIJ2KlRuk8VL6wzAyL3PWdT7",
+     "name": "FBX/Female_Alternative.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1ud1WgZZTLwfbGS9SxzbGKGaC7FJHKeC6",
+     "name": "FBX/Female_Casual.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1gRJ6-3Jcm1aQdWlwaz-hhjrfcycdQsBu",
+     "name": "FBX/Female_Dress.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=16Fu9JHM-d5KiU4nucjuWxuiGzwiOskdp",
+     "name": "FBX/Female_TankTop.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1y_sBf76d5THtRYUIWn4EwDF1oD0Fnont",
+     "name": "FBX/Smooth_Female_Alternative.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1YHzjdOVvHnP4PefqqGwOq3vyiwty_2I9",
+     "name": "FBX/Smooth_Female_Casual.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1XnKswX9iKE24CRStG3ASnHlxjMYaOJZu",
+     "name": "FBX/Smooth_Female_Dress.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1S8Q_-YwqjTUvAJegVwMYe6tjw5LlrtiX",
+     "name": "FBX/Smooth_Female_TankTop.fbx"
+    }
+   ]
+  },
+  {
    "ledger_id": "ANM-QUA-UAL1",
    "source": "local",
    "source_dir": "quaternius",
