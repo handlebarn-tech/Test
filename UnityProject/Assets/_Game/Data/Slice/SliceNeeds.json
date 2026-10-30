@@ -1,0 +1,90 @@
+{
+  "_doc": "DATA-003 customer needs (DES-006 audit Â§3, Â§5; schema in Docs/Reconstruction/GOLDEN_CASES.md 'Needs goldens'). family = a SliceIntents id. trueQuery = the correct term of every component joined with 'join', in order. Each component: kind, 2-3 terms (tool wording, exactly one 'true'), say = spoken lines per style. A picker query = any non-empty ordered subset of components, each giving one term or one said line verbatim, joined with 'join'. '{strain}' is filled at runtime from the game catalog. Lines are written [GDD] dialogue. Every parse is in golden_cases_needs.json (Tools/Data/golden_game003.js), never hand-written.",
+  "join": ", ",
+  "styles": [ "direct", "vague", "wrongTerm", "story", "productRef", "lastTime", "contradictory" ],
+  "needs": [
+    { "id": "sleep_budget", "family": "sleep", "trueQuery": "sleep, under $40", "components": [
+      { "kind": "effect", "terms": [ { "text": "sleep", "true": true }, { "text": "insomnia" }, { "text": "relax" } ],
+        "say": { "direct": [ "Something to help me sleep." ], "vague": [ "Just something to wind down with." ], "wrongTerm": [ "What's your heaviest indica?" ],
+          "story": [ "I keep staring at the ceiling until two in the morning." ] } },
+      { "kind": "budget", "terms": [ { "text": "under $40", "true": true }, { "text": "cheap" } ],
+        "say": { "direct": [ "Keep it under forty, please." ], "vague": [ "Nothing too pricey." ], "story": [ "Payday's not till Friday, so forty is about all I've got." ] } } ] },
+
+    { "id": "sleep_first_time", "family": "sleep", "trueQuery": "sleep, first time", "components": [
+      { "kind": "effect", "terms": [ { "text": "sleep", "true": true }, { "text": "knock me out" }, { "text": "chill" } ],
+        "say": { "direct": [ "Something for sleep." ], "vague": [ "Something to help me crash." ], "wrongTerm": [ "Give me an indica." ],
+          "story": [ "When I finally get the chance to sleep, I just can't." ] } },
+      { "kind": "experience", "terms": [ { "text": "first time", "true": true }, { "text": "low tolerance" } ],
+        "say": { "direct": [ "It's my first time buying." ], "vague": [ "I'm not really a smoker." ], "story": [ "I tried some at a party years ago and it was way too much." ] } } ] },
+
+    { "id": "insomnia_racing", "family": "insomnia", "trueQuery": "insomnia, racing thoughts", "components": [
+      { "kind": "effect", "terms": [ { "text": "insomnia", "true": true }, { "text": "sleep" }, { "text": "wind down" } ],
+        "say": { "direct": [ "Something for my insomnia." ], "vague": [ "I just need to be out cold tonight." ], "wrongTerm": [ "Strongest indica you've got." ],
+          "story": [ "I haven't slept more than a few hours a night all week." ] } },
+      { "kind": "modifier", "terms": [ { "text": "racing thoughts", "true": true }, { "text": "stress" } ],
+        "say": { "direct": [ "My mind races when I lie down." ], "vague": [ "My head won't shut off." ], "story": [ "I lie there replaying everything I said at work." ] } } ] },
+
+    { "id": "insomnia_work", "family": "insomnia", "trueQuery": "insomnia, gotta work", "components": [
+      { "kind": "effect", "terms": [ { "text": "insomnia", "true": true }, { "text": "sleep" } ],
+        "say": { "direct": [ "Something for insomnia." ], "vague": [ "I need real sleep for once." ], "wrongTerm": [ "A heavy indica, the knockout kind." ],
+          "story": [ "Double shift tomorrow and I need to crash tonight." ] } },
+      { "kind": "modifier", "terms": [ { "text": "gotta work", "true": true }, { "text": "stay functional" }, { "text": "no couch lock" } ],
+        "say": { "direct": [ "I've got work in the morning." ], "contradictory": [ "Knock me out, but I can't be dragging at six." ], "story": [ "My alarm goes off at five-thirty." ] } } ] },
+
+    { "id": "stress_functional", "family": "stress", "trueQuery": "stress, stay functional", "components": [
+      { "kind": "effect", "terms": [ { "text": "stress", "true": true }, { "text": "chill" }, { "text": "like {strain} but for stress" } ],
+        "say": { "direct": [ "Something for stress." ], "vague": [ "Something chill." ], "wrongTerm": [ "Just an indica, I guess?" ],
+          "productRef": [ "Got anything like {strain}? That one was nice." ], "story": [ "Work has been brutal this month." ] } },
+      { "kind": "modifier", "terms": [ { "text": "stay functional", "true": true }, { "text": "not too heavy" } ],
+        "say": { "direct": [ "I still need to get stuff done." ], "vague": [ "Nothing that wipes me out." ], "story": [ "I've got a pile of emails waiting at home." ] } } ] },
+
+    { "id": "stress_budget", "family": "stress", "trueQuery": "stress, under $30", "components": [
+      { "kind": "effect", "terms": [ { "text": "stress", "true": true }, { "text": "take the edge off" }, { "text": "relax" } ],
+        "say": { "direct": [ "Something for stress relief." ], "vague": [ "I need to take it down a notch." ], "wrongTerm": [ "What's a good hybrid?" ],
+          "story": [ "Long week. Really long week." ] } },
+      { "kind": "budget", "terms": [ { "text": "under $30", "true": true }, { "text": "cheap" } ],
+        "say": { "direct": [ "Thirty dollars, tops." ], "vague": [ "Whatever's cheapest, honestly." ], "story": [ "I've only got thirty on me." ] } } ] },
+
+    { "id": "anxiety_first_time", "family": "anxiety", "trueQuery": "anxiety, first time", "components": [
+      { "kind": "effect", "terms": [ { "text": "anxiety", "true": true }, { "text": "wind down" }, { "text": "sleep" } ],
+        "say": { "direct": [ "Something for anxiety." ], "vague": [ "Something to calm my nerves." ], "wrongTerm": [ "Something with low THC?" ],
+          "story": [ "My heart's been pounding before every meeting." ] } },
+      { "kind": "experience", "terms": [ { "text": "first time", "true": true }, { "text": "wont make me paranoid" } ],
+        "say": { "direct": [ "I've never tried this before." ], "vague": [ "I'm kind of nervous about all this." ], "story": [ "My friend got really paranoid once and that scared me off." ] } } ] },
+
+    { "id": "anxiety_daytime", "family": "anxiety", "trueQuery": "anxiety, daytime", "components": [
+      { "kind": "effect", "terms": [ { "text": "anxiety", "true": true }, { "text": "calming" }, { "text": "mellow" } ],
+        "say": { "direct": [ "Something that helps with anxiety." ], "vague": [ "Something to settle me down." ], "wrongTerm": [ "A CBD one, maybe?" ],
+          "story": [ "Crowds make me really on edge." ] } },
+      { "kind": "time", "terms": [ { "text": "daytime", "true": true }, { "text": "not too heavy" }, { "text": "no couch lock" } ],
+        "say": { "direct": [ "For during the day." ], "vague": [ "I have to be around people later." ], "story": [ "I'll be taking it before my afternoon errands." ] } } ] },
+
+    { "id": "pain_functional", "family": "pain", "trueQuery": "pain, stay functional", "components": [
+      { "kind": "effect", "terms": [ { "text": "pain", "true": true }, { "text": "back pain" }, { "text": "like {strain} but for pain" } ],
+        "say": { "direct": [ "Something for pain." ], "vague": [ "Everything just aches." ], "wrongTerm": [ "Highest THC you've got." ],
+          "productRef": [ "Do you have {strain}? A friend swears by it." ], "story": [ "I threw my back out moving a couch." ] } },
+      { "kind": "modifier", "terms": [ { "text": "stay functional", "true": true }, { "text": "no couch lock" } ],
+        "say": { "direct": [ "I need to stay functional." ], "vague": [ "I can't be zonked." ], "story": [ "I'm on my feet all day at work." ] } } ] },
+
+    { "id": "pain_budget", "family": "pain", "trueQuery": "pain, under $40", "components": [
+      { "kind": "effect", "terms": [ { "text": "pain", "true": true }, { "text": "inflammation" }, { "text": "headache" } ],
+        "say": { "direct": [ "Something that helps with pain." ], "vague": [ "My knees are killing me." ], "wrongTerm": [ "What's the strongest stuff you have?" ],
+          "lastTime": [ "Whatever I got last time. It worked for my knees." ], "story": [ "Old sports injury, it flares up when it rains." ] } },
+      { "kind": "budget", "terms": [ { "text": "under $40", "true": true }, { "text": "cheap" } ],
+        "say": { "direct": [ "I've got about forty to spend." ], "vague": [ "Something that won't break the bank." ], "story": [ "Money's tight this month." ] } } ] },
+
+    { "id": "energy_no_paranoia", "family": "energy", "trueQuery": "energy, wont make me paranoid", "components": [
+      { "kind": "effect", "terms": [ { "text": "energy", "true": true }, { "text": "uplifting" }, { "text": "pick me up" } ],
+        "say": { "direct": [ "Something for energy." ], "vague": [ "Something to get me going." ], "wrongTerm": [ "Got a good sativa?" ],
+          "story": [ "I've been dragging all week." ] } },
+      { "kind": "avoid", "terms": [ { "text": "wont make me paranoid", "true": true }, { "text": "not too racy" } ],
+        "say": { "direct": [ "Nothing that makes me paranoid." ], "vague": [ "I get jittery easy." ], "story": [ "Coffee alone already makes me shaky." ] } } ] },
+
+    { "id": "energy_focus", "family": "energy", "trueQuery": "energy, focus", "components": [
+      { "kind": "effect", "terms": [ { "text": "energy", "true": true }, { "text": "morning pick me up" }, { "text": "uplifting" } ],
+        "say": { "direct": [ "Something that gives me energy." ], "vague": [ "I need a boost." ], "wrongTerm": [ "Something with a lot of THC to wake me up." ],
+          "story": [ "I've got a big project due and I'm running on fumes." ] } },
+      { "kind": "modifier", "terms": [ { "text": "focus", "true": true }, { "text": "creative" } ],
+        "say": { "direct": [ "Something I can focus on." ], "vague": [ "I need to get my head in the game." ], "story": [ "I'm studying all night for an exam." ] } } ] }
+  ]
+}
