@@ -106,7 +106,7 @@ namespace Dispo.Editor.Graybox
 
                 var anchorParent = Child(root, "Anchors");
                 foreach (var a in layout.anchors.Where(a => a.zone == zone)) Anchor(anchorParent, a.id, a.x, a.y, a.h, a.yaw);
-                if (layout.stations?.zone == zone) SliceStationAnchors(layout.stations, layout.H("counter").ft, anchorParent);
+                if (layout.stations?.zone == zone) StationAnchors(layout.stations, layout.H("counter").ft, anchorParent);
                 if (layout.jarSlots?.zone == zone) JarSlotAnchors(layout.jarSlots, anchorParent);
                 anchors += anchorParent.childCount;
 
@@ -140,55 +140,81 @@ namespace Dispo.Editor.Graybox
             return $"walls={walls} fixtures={fixtures} cameras={cams} anchors={anchors} unchangedScenes={skipped}";
         }
 
-        /// <summary>A POS monitor on the counter and a chrome wire scale stand (posts, black top, wire shelves, scale, clear acrylic panel) per station.</summary>
+        /// <summary>Per DEC-039 station: a POS monitor on the counter and a chrome wire scale stand (posts, black top, wire shelves, scale, clear acrylic panel), grouped under POS_&lt;reg&gt;.</summary>
         static int BuildStations(L.Stations st, float counterFt, Transform parent, Dictionary<string, Material> mats)
         {
             var s = st.stand;
             var standMat = s.conf == "Low" ? mats["fixtureLow"] : mats["fixture"];
             var monMat = st.conf == "Low" ? mats["fixtureLow"] : mats["fixture"];
-            for (var i = 0; i < st.xs.Length; i++)
+            foreach (var p in st.list)
             {
-                var x = st.xs[i];
-                var tag = $"R{i + 1}";
-                Box(parent, $"FX_POSMonitor_{tag} [conf {st.conf}] [pos {st.gap}]", MonitorRect(st, x), counterFt, st.monitorH, monMat, true);
+                var group = Child(parent, $"POS_{p.reg} [conf {st.conf}] [pos {st.gap}]");
+                Box(group, $"POS_{p.reg}_Monitor", MonitorRect(st, p), counterFt, st.monitorH, monMat, true);
 
-                var name = $"FX_ScaleStand_{tag} [conf {s.conf}] [size {s.gap}]";
-                var r = StandRect(st, x);
+                var name = $"FX_ScaleStand_POS_{p.reg} [conf {s.conf}] [size {s.gap}]";
+                var r = StandRect(st, p);
                 // the stand blocks movement as one invisible volume; the visible parts carry no collider
-                Box(parent, $"{name} collider", r, 0, s.topFt, null, true);
-                var p = s.post;
-                foreach (var (px, py) in new[] { (r.x0, r.y0), (r.x1 - p, r.y0), (r.x0, r.y1 - p), (r.x1 - p, r.y1 - p) })
-                    Box(parent, $"{name} post", new L.Rect { x0 = px, x1 = px + p, y0 = py, y1 = py + p }, 0, s.topFt, standMat, false);
-                Box(parent, $"{name} top", r, s.topFt - s.board, s.board, standMat, false);
-                for (var k = 0; k < s.shelvesFt.Length; k++) Box(parent, $"{name} shelf{k}", r, s.shelvesFt[k], s.board, standMat, false);
-                Box(parent, $"{name} scale", ScaleRect(st, x), s.topFt, s.scaleH, standMat, false);
-                // panel on the counter (customer) edge of the stand, next to the scale (DEC-026)
-                Box(parent, $"{name} acrylic panel", new L.Rect { x0 = r.x0, x1 = r.x0 + s.panelW, y0 = r.y1 - s.panelT, y1 = r.y1 }, s.topFt, s.panelH, mats["acrylic"], false);
+                Box(group, $"{name} collider", r, 0, s.topFt, null, true);
+                var q = s.post;
+                foreach (var (px, py) in new[] { (r.x0, r.y0), (r.x1 - q, r.y0), (r.x0, r.y1 - q), (r.x1 - q, r.y1 - q) })
+                    Box(group, $"{name} post", new L.Rect { x0 = px, x1 = px + q, y0 = py, y1 = py + q }, 0, s.topFt, standMat, false);
+                Box(group, $"{name} top", r, s.topFt - s.board, s.board, standMat, false);
+                for (var k = 0; k < s.shelvesFt.Length; k++) Box(group, $"{name} shelf{k}", r, s.shelvesFt[k], s.board, standMat, false);
+                Box(group, $"{name} scale", ScaleRect(st, p), s.topFt, s.scaleH, standMat, false);
+                // panel on the counter (customer) edge of the stand, at its far end from the monitor, next to the scale (DEC-026)
+                Box(group, $"{name} acrylic panel", Local(p, s.offsetT + s.w - s.panelW, s.offsetT + s.w, 0, s.panelT), s.topFt, s.panelH, mats["acrylic"], false);
             }
-            return st.xs.Length * 2;
+            return st.list.Length * 2;
         }
 
-        static L.Rect MonitorRect(L.Stations st, float x) =>
-            new L.Rect { x0 = x - st.monitorW / 2, x1 = x + st.monitorW / 2, y0 = st.staffEdgeY + 0.1f, y1 = st.staffEdgeY + 0.1f + st.monitorD };
-        static L.Rect StandRect(L.Stations st, float x) =>
-            new L.Rect { x0 = x + st.stand.offsetX, x1 = x + st.stand.offsetX + st.stand.w, y0 = st.staffEdgeY - st.stand.d, y1 = st.staffEdgeY };
-        static L.Rect ScaleRect(L.Stations st, float x)
+        /// <summary>Unit vector (plan feet) from the counter edge toward the staff side.</summary>
+        static Vector2 StaffDir(L.Station p) => p.staff switch
         {
-            var r = StandRect(st, x);
+            "N" => new Vector2(0, -1), "S" => new Vector2(0, 1), "E" => new Vector2(1, 0), "W" => new Vector2(-1, 0),
+            _ => throw new InvalidDataException($"station {p.reg}: staff side '{p.staff}' must be N/E/S/W"),
+        };
+
+        /// <summary>The staff's right while facing the counter (plan +y is south): right of facing f is (-f.y, f.x).</summary>
+        static Vector2 StaffRight(L.Station p) { var f = -StaffDir(p); return new Vector2(-f.y, f.x); }
+
+        /// <summary>Axis-aligned rect from station-local coordinates: t along the staff's right, n toward the staff side.</summary>
+        static L.Rect Local(L.Station p, float t0, float t1, float n0, float n1)
+        {
+            Vector2 o = new Vector2(p.x, p.y), t = StaffRight(p), n = StaffDir(p);
+            var a = o + t * t0 + n * n0;
+            var b = o + t * t1 + n * n1;
+            return new L.Rect { x0 = Mathf.Min(a.x, b.x), x1 = Mathf.Max(a.x, b.x), y0 = Mathf.Min(a.y, b.y), y1 = Mathf.Max(a.y, b.y) };
+        }
+
+        static Vector2 Point(L.Station p, float n) => new Vector2(p.x, p.y) + StaffDir(p) * n;
+        static float Yaw(Vector2 facing) => Mathf.Repeat(Mathf.Atan2(facing.x, -facing.y) * Mathf.Rad2Deg, 360f); // yaw 0 = plan north
+
+        static L.Rect MonitorRect(L.Stations st, L.Station p) => Local(p, -st.monitorW / 2, st.monitorW / 2, -0.1f - st.monitorD, -0.1f);
+        static L.Rect StandRect(L.Stations st, L.Station p) => Local(p, st.stand.offsetT, st.stand.offsetT + st.stand.w, 0, st.stand.d);
+        static L.Rect ScaleRect(L.Stations st, L.Station p)
+        {
+            var r = StandRect(st, p);
             float cx = (r.x0 + r.x1) / 2, cy = (r.y0 + r.y1) / 2;
             return new L.Rect { x0 = cx - st.stand.scaleW / 2, x1 = cx + st.stand.scaleW / 2, y0 = cy - st.stand.scaleD / 2, y1 = cy + st.stand.scaleD / 2 };
         }
 
-        /// <summary>SLICE_DESIGN §7 station anchors, at the slice station only (names must be unique).</summary>
-        static void SliceStationAnchors(L.Stations st, float counterFt, Transform parent)
+        /// <summary>Anchor_POS_&lt;reg&gt; (budtender spot, facing the counter) for every station; SLICE_DESIGN §7 anchors at the slice station only (names must be unique).</summary>
+        static void StationAnchors(L.Stations st, float counterFt, Transform parent)
         {
-            var x = st.xs[st.sliceStation];
-            Anchor(parent, "Anchor_ServiceCustomer", x, st.customerY, 0, 0);
-            Anchor(parent, "Anchor_ServicePlayer", x, st.playerY, 0, 180);
-            var m = MonitorRect(st, x);
-            Anchor(parent, "Interact_Terminal", x, (m.y0 + m.y1) / 2, counterFt + st.monitorH / 2, 0);
-            var sc = ScaleRect(st, x);
-            Anchor(parent, "Interact_Scale", (sc.x0 + sc.x1) / 2, (sc.y0 + sc.y1) / 2, st.stand.topFt + st.stand.scaleH, 0);
+            foreach (var p in st.list)
+            {
+                var player = Point(p, st.playerOff);
+                Anchor(parent, $"Anchor_POS_{p.reg}", player.x, player.y, 0, Yaw(-StaffDir(p)));
+                if (p.reg != st.slice) continue;
+                var customer = Point(p, -st.customerOff);
+                Anchor(parent, "Anchor_ServiceCustomer", customer.x, customer.y, 0, Yaw(StaffDir(p)));
+                Anchor(parent, "Anchor_ServicePlayer", player.x, player.y, 0, Yaw(-StaffDir(p)));
+                var m = MonitorRect(st, p);
+                Anchor(parent, "Interact_Terminal", (m.x0 + m.x1) / 2, (m.y0 + m.y1) / 2, counterFt + st.monitorH / 2, Yaw(StaffDir(p)));
+                var sc = ScaleRect(st, p);
+                Anchor(parent, "Interact_Scale", (sc.x0 + sc.x1) / 2, (sc.y0 + sc.y1) / 2, st.stand.topFt + st.stand.scaleH, Yaw(StaffDir(p)));
+            }
+            if (st.list.All(p => p.reg != st.slice)) throw new InvalidDataException($"stations.slice '{st.slice}' is not in stations.list");
         }
 
         static IEnumerable<(float x, float y, float h, float yaw)> JarSlotPoints(L.JarSlots js)

@@ -40,6 +40,8 @@ namespace Dispo.Editor.Lookdev
             public Neon neon;
             public Downlights downlights;
             public Pendants pendants;
+            public JarWalls jarWalls;
+            public WallWash wallWash;
         }
         [Serializable] sealed class Ceiling { public string key, conf; public float t; }
         [Serializable] sealed class Soffit { public string key, conf, gap; public float depth; public string[] walls; }
@@ -49,6 +51,9 @@ namespace Dispo.Editor.Lookdev
         [Serializable] sealed class Neon { public string text, wall, conf, gap; public float faceX, y0, y1, bottomFt, heightFt, nits; }
         [Serializable] sealed class Downlights { public float x0, x1, y0, y1, pitch, lumens, angle, kelvin; public string conf, gap; }
         [Serializable] sealed class Pendants { public string[] fixtures; public float lumens, kelvin, range; public string conf; }
+        [Serializable] sealed class JarWalls { public string[] backs; public string conf; }
+        [Serializable] sealed class WallWash { public float lumens, angle, tilt, kelvin, pitch; public WashRun[] runs; public string conf, gap; }
+        [Serializable] sealed class WashRun { public string id, key; public float x0, y0, x1, y1, yaw; }
 
         [MenuItem("Dispo/Lookdev/Rebuild Retail Lookdev")]
         public static void BuildMenu() => Debug.Log($"[Lookdev] {BuildAll(force: true)}");
@@ -106,7 +111,7 @@ namespace Dispo.Editor.Lookdev
             const float skin = 0.01f; // just outside the graybox counter box so the two never z-fight
             foreach (var id in mw.fixtures)
             {
-                var fx = layout.fixtures.FirstOrDefault(f => f.id == id) ?? throw new InvalidDataException($"{DataPath}: graybox fixture {id} not found");
+                var fx = Fx(layout, id);
                 for (var i = 0; i < fx.rects.Length; i++)
                 {
                     var r = Grow(fx.rects[i], skin);
@@ -116,6 +121,25 @@ namespace Dispo.Editor.Lookdev
                     G.Box(mill, $"{name} top QZ-2", Grow(fx.rects[i], mw.overhang), topFt - mw.top + skin, mw.top, m.quartz, false);
                 }
             }
+
+            // Jar walls (DEC-043): teal leaf back, dark-gray metal shelves, the lowest row as a black top over a walnut cabinet
+            var jw = d.jarWalls;
+            var jarWalls = G.Child(root, "JarWalls");
+            foreach (var id in jw.backs)
+            {
+                var fx = Fx(layout, id);
+                foreach (var r in fx.rects) G.Box(jarWalls, $"JW_{id.Replace("FX_", "")} teal leaf [conf {jw.conf}]", Grow(r, skin), 0, layout.H(fx.h).ft + skin, m.teal, false);
+            }
+            var js = layout.jarSlots;
+            foreach (var run in js.runs)
+                for (var row = 0; row < js.rowsFt.Length; row++)
+                {
+                    var name = $"JW_Shelf_{run.id}_row{row} [conf {jw.conf}]";
+                    G.Box(jarWalls, name, Grow(run.r, skin), js.rowsFt[row] - js.shelfT - skin, js.shelfT + 2 * skin, row == 0 ? m.counterTop : m.darkMetal, false);
+                    if (row > 0) continue;
+                    G.Box(jarWalls, $"{name} toe", Grow(run.r, skin), 0, mw.toe, m.black, false);
+                    G.Box(jarWalls, $"{name} cabinet walnut", Grow(run.r, skin), mw.toe, js.rowsFt[0] - js.shelfT - skin - mw.toe, m.walnut, false);
+                }
 
             // Neon (W wall faces east)
             var n = d.neon;
@@ -143,12 +167,24 @@ namespace Dispo.Editor.Lookdev
             var pd = d.pendants;
             foreach (var id in pd.fixtures)
             {
-                var fx = layout.fixtures.FirstOrDefault(f => f.id == id) ?? throw new InvalidDataException($"{DataPath}: graybox fixture {id} not found");
+                var fx = Fx(layout, id);
                 var h = layout.H(fx.h).ft - (fx.rects[0].x1 - fx.rects[0].x0) / 2 - 0.05f; // just under the globe
                 for (var i = 0; i < fx.rects.Length; i++)
                 {
                     var r = fx.rects[i];
                     Lamp(lights, $"Pendant_{id.Replace("FX_Pendants_", "")}_{i} [conf {pd.conf}]", LightType.Point, L.ToWorld((r.x0 + r.x1) / 2, (r.y0 + r.y1) / 2, h), pd.lumens, pd.kelvin, 0, pd.range);
+                }
+            }
+            var ww = d.wallWash;
+            foreach (var run in ww.runs)
+            {
+                var count = Mathf.FloorToInt(Mathf.Max(Mathf.Abs(run.x1 - run.x0), Mathf.Abs(run.y1 - run.y0)) / ww.pitch + 0.001f) + 1;
+                var h = layout.H(run.key).ft - 0.05f;
+                for (var i = 0; i < count; i++)
+                {
+                    var f = count == 1 ? 0.5f : i / (count - 1f);
+                    var pos = L.ToWorld(Mathf.Lerp(run.x0, run.x1, f), Mathf.Lerp(run.y0, run.y1, f), h);
+                    Lamp(lights, $"WallWash_{run.id}_{i:00} [aim jar wall] [pos {ww.gap}, conf {ww.conf}]", LightType.Spot, pos, ww.lumens, ww.kelvin, ww.angle, 0, Quaternion.Euler(ww.tilt, run.yaw, 0));
                 }
             }
 
@@ -192,15 +228,18 @@ namespace Dispo.Editor.Lookdev
             }
         }
 
+        static L.Fixture Fx(L layout, string id) =>
+            layout.fixtures.FirstOrDefault(f => f.id == id) ?? throw new InvalidDataException($"{DataPath}: graybox fixture {id} not found");
+
         static bool Inside(L.Rect r, float x, float y) => x >= r.x0 && x <= r.x1 && y >= r.y0 && y <= r.y1;
         static L.Rect Grow(L.Rect r, float e) => new L.Rect { x0 = r.x0 - e, x1 = r.x1 + e, y0 = r.y0 - e, y1 = r.y1 + e };
         static L.Rect Square(float cx, float cy, float s) => new L.Rect { x0 = cx - s / 2, x1 = cx + s / 2, y0 = cy - s / 2, y1 = cy + s / 2 };
 
-        static void Lamp(Transform parent, string name, LightType type, Vector3 pos, float lumens, float kelvin, float angle, float rangeM)
+        static void Lamp(Transform parent, string name, LightType type, Vector3 pos, float lumens, float kelvin, float angle, float rangeM, Quaternion? rotation = null)
         {
             var go = new GameObject(name);
             go.transform.SetParent(parent, false);
-            go.transform.SetPositionAndRotation(pos, Quaternion.Euler(90, 0, 0));
+            go.transform.SetPositionAndRotation(pos, rotation ?? Quaternion.Euler(90, 0, 0)); // default straight down
             var light = go.AddComponent<Light>();
             go.AddComponent<HDAdditionalLightData>();
             light.type = type;
@@ -219,7 +258,7 @@ namespace Dispo.Editor.Lookdev
             else light.range = rangeM;
         }
 
-        sealed class Mats { public Material pt1, walnut, black, steel, quartz, tl1, tl2, neon; }
+        sealed class Mats { public Material pt1, walnut, black, steel, quartz, tl1, tl2, neon, teal, darkMetal, counterTop; }
 
         static Mats Materials(Data d) => new Mats
         {
@@ -231,6 +270,9 @@ namespace Dispo.Editor.Lookdev
             tl1 = Mat("LD_TL1_Marble12x24", Color.white, Tex($"{TexDir}/TL1_marble_12x24.png"), null, 1f / (2 * L.Ft), 0.7f), // texture = 24"x24"
             tl2 = Mat("LD_TL2_Pattern8x8", Color.white, Tex($"{TexDir}/TL2_pattern_8x8.png"), null, 1f / (16f / 12f * L.Ft), 0.3f), // texture = 16"x16"
             neon = NeonMat(d.neon.nits),
+            teal = Mat("LD_JarWall_TealLeaf", Color.white, Tex($"{TexDir}/JarWall_teal_leaf.png"), null, 1f / (2 * L.Ft), 0.25f), // texture = 2 ft
+            darkMetal = Mat("LD_JarShelf_DarkGrayMetal", new Color(0.16f, 0.16f, 0.17f), smooth: 0.45f, metal: 0.8f),
+            counterTop = Mat("LD_JarWall_BlackTop", new Color(0.03f, 0.03f, 0.03f), smooth: 0.6f),
         };
 
         static Texture2D Tex(string path, bool normal = false)

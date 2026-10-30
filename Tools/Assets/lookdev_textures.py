@@ -146,9 +146,23 @@ def neon(text="Fine Cannabis", w=2048, h=512):
     print("generated _Game/Art/Lookdev/Textures/Neon_FineCannabis.png")
 
 
+def teal_leaf(n=1024):
+    """Jar-wall back panel (DEC-043 photo): teal with a darker curved-leaf line pattern. Original motif, 2 ft square."""
+    rng = np.random.default_rng(404)
+    y, x = np.mgrid[0:n, 0:n] / n * 2 * np.pi
+    w = periodic_noise(n, rng, octaves=3, base=1)
+    # long sweeping arcs: level lines of a tileable warped field, thin dark strokes
+    f = np.sin(3 * x + 2 * np.sin(2 * y + 3 * w)) + 0.6 * np.sin(2 * y - x)
+    line = np.exp(-(np.abs(np.sin(f * 2.2)) / 0.06) ** 2)
+    base = np.array((0.16, 0.46, 0.43))
+    rgb = base * (1 - 0.45 * line[..., None]) * (0.96 + 0.04 * w[..., None])
+    save("JarWall_teal_leaf.png", rgb)
+
+
 if __name__ == "__main__":
     import_cache()
     tl1()
     tl2()
     qz2()
     neon()
+    teal_leaf()

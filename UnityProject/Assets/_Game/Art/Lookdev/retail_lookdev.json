@@ -19,9 +19,24 @@
   ],
   "millwork": {
     "fixtures": ["FX_RegisterCounter_L", "FX_DeliCounter_L"],
-    "key": "counter", "toe": 0.333, "top": 0.167, "overhang": 0.083,
+    "key": "counter", "toe": 0.333, "top": 0.125, "overhang": 0.083,
     "conf": "Med",
-    "note": "A940 base cabinets: top 2'-10\" (34\") max AFF, 4\" toe, 2\" QZ-2 white quartz top, WD-1/PL-1 walnut fronts, black toe (TI Â§6.4). Footprints are the graybox fixtures (current plan). The deli counter is not in the TI set (GAP-113); it gets the same build as a labelled convention."
+    "note": "A940 base cabinets: top 2'-10\" (34\") max AFF, 4\" toe, 1-1/2\" QZ-2 white quartz top (REF-005 render: 34\" High, 1-1/2\" top; the A940 text said 2\"), WD-1/PL-1 walnut fronts, black toe (TI Â§6.4). Footprints are the graybox fixtures (current plan). The deli counter is not in the TI set (GAP-113); it gets the same build as a labelled convention."
+  },
+  "jarWalls": {
+    "backs": ["FX_DeliJarWall_N_Back", "FX_JarWall_E_Back", "FX_DeliJarWall_S"],
+    "conf": "Med",
+    "note": "DEC-043 photo: teal curved-leaf wall behind dark-gray metal shelves; the lowest jar row is a black counter top over walnut drawer fronts. Shelf rows/rects come from graybox jarSlots (positions unchanged); every jar stays on a shelf anchor. Stainless tong cups are not modelled (Nolan)"
+  },
+  "wallWash": {
+    "lumens": 800, "angle": 80, "tilt": 72, "kelvin": 3500, "pitch": 3.0,
+    "runs": [
+      { "id": "N", "x0": 20.0, "y0": 2.0, "x1": 44.0, "y1": 2.0, "key": "soffit", "yaw": 0 },
+      { "id": "E", "x0": 45.0, "y0": 2.0, "x1": 45.0, "y1": 14.0, "key": "soffit", "yaw": 90 },
+      { "id": "S", "x0": 14.5, "y0": 26.2, "x1": 33.5, "y1": 26.2, "key": "ceiling", "yaw": 180 }
+    ],
+    "conf": "Low", "gap": "GAP-113",
+    "note": "REVIEW-W3D: the jar walls read too dark. Adjustable LED accents aimed at the jar walls (TI L4 type family, 3500 K); positions and aim are layout choices"
   },
   "neon": {
     "text": "Fine Cannabis", "wall": "W", "faceX": 0.22, "y0": 8.2, "y1": 12.2, "bottomFt": 6.0, "heightFt": 1.0, "nits": 300,
