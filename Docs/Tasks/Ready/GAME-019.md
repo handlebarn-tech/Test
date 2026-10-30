@@ -32,5 +32,13 @@ V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). 
 - **Acceptance (A3, DEC-052):** the report may name the question that would have mattered; it never shows TFS scores, ranks or a re-run result list.
 - Exploits: EX-002, 003, 004, 008, 009, 010, 066 (V2 `10_EXPLOIT_FAILURE_ANALYSIS.md`; row 45).
 
+## DES-006 amendments (recommendation depth, DEC-096)
+Source: `Docs/Design/RECOMMENDATION_DEPTH_AUDIT.md` (**RDA**) §3.4–3.5.
+- **Oracle input:** "true intent" (D1, DEC-052) = the parse of the need's `trueQuery` (GAME-017 / 017a), not only `TrueFamily`. Same Ms/Ms_top method as `ShiftSim.Fit`; evaluation only.
+- **ASK_\* lines invite a tool step and add a said card:** ASK_LESS_SEDATING → refine "keep it functional / something lighter" or a re-read; ASK_CHEAPER → budget card; ASK_STRONGER → "more sedating / more body"; ASK_SIMILAR → Similar / like-X; ASK_WHY → the card's role tag and why line; COMPARE → Compare. The lines are spoken in a style (they can be vague) and pass H1.
+- **Misread vs didn't ask:** `DecisionRegret` separates two cases. A known phrase read with a term whose parse differs from the component counts as `MisreadPhrases`; a critical fact that was never revealed is the existing missed-question case. Evaluation only; never on a card.
+- **BestAvailableResolution actions** also include: re-read a card, refine (once B1 lands), strain lookup / Near, like-X search.
+- Extra test: an ambiguous customer served only through tiles gets a lower DQ than one served by a question plus the correct reading, with identical TFS outputs for identical inputs.
+
 ## Handoff
 `Docs/Handoffs/GAME-019.md` (≤40 lines), including the tuning table of new [GDD] keys. Questions go to your department lead (DEC-033, DEC-094).
