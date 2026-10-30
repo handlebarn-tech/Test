@@ -1,0 +1,2693 @@
+{
+ "clusterBonus": {
+  "1": {
+   "sedation": 0.1,
+   "pain_inflammation": 0.06
+  },
+  "2": {
+   "pain_inflammation": 0.12,
+   "anxiety_relief": 0.06
+  },
+  "4": {
+   "focus_cognitive": 0.15,
+   "uplift": 0.08
+  },
+  "5": {
+   "uplift": 0.35,
+   "focus_cognitive": 0.2
+  },
+  "6": {
+   "anxiety_relief": 0.12,
+   "sedation": 0.08
+  }
+ },
+ "tierNudge": {
+  "smalls": 0.18,
+  "house": 0.18,
+  "premium": 0.18,
+  "fttp": 0.16,
+  "t1": 0.08,
+  "t2": 0.04,
+  "t3": 0.01,
+  "t4": 0
+ },
+ "intents": {
+  "sleep": {
+   "d": {
+    "sedation": 38
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "insomnia": {
+   "d": {
+    "sedation": 45,
+    "anxiety_relief": 35
+   },
+   "neg": {},
+   "lbl": "insomnia",
+   "pri": "sedation"
+  },
+  "bedtime": {
+   "d": {
+    "sedation": 45
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "nighttime": {
+   "d": {
+    "sedation": 40
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "knock me out": {
+   "d": {
+    "sedation": 48
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "couch lock": {
+   "d": {
+    "sedation": 42,
+    "pain_inflammation": 25
+   },
+   "neg": {},
+   "lbl": "couch lock",
+   "pri": "sedation"
+  },
+  "racing thoughts": {
+   "d": {
+    "anxiety_relief": 48,
+    "sedation": 32
+   },
+   "neg": {},
+   "lbl": "racing thoughts",
+   "pri": "anxiety_relief"
+  },
+  "racing mind": {
+   "d": {
+    "anxiety_relief": 48,
+    "sedation": 32
+   },
+   "neg": {},
+   "lbl": "racing thoughts",
+   "pri": "anxiety_relief"
+  },
+  "melted": {
+   "d": {
+    "sedation": 45
+   },
+   "neg": {},
+   "lbl": "couch lock",
+   "pri": "sedation"
+  },
+  "sedating": {
+   "d": {
+    "sedation": 35
+   },
+   "neg": {},
+   "lbl": "sedating",
+   "pri": "sedation"
+  },
+  "relaxing": {
+   "d": {
+    "sedation": 28,
+    "anxiety_relief": 30
+   },
+   "neg": {},
+   "lbl": "relaxing",
+   "pri": "anxiety_relief"
+  },
+  "relaxation": {
+   "d": {
+    "sedation": 28,
+    "anxiety_relief": 30
+   },
+   "neg": {},
+   "lbl": "relaxation",
+   "pri": "anxiety_relief"
+  },
+  "unwind": {
+   "d": {
+    "sedation": 28,
+    "anxiety_relief": 30
+   },
+   "neg": {},
+   "lbl": "unwind",
+   "pri": "anxiety_relief"
+  },
+  "chill": {
+   "d": {
+    "sedation": 25,
+    "anxiety_relief": 30
+   },
+   "neg": {},
+   "lbl": "chill",
+   "pri": "anxiety_relief"
+  },
+  "wind down": {
+   "d": {
+    "sedation": 28,
+    "anxiety_relief": 30
+   },
+   "neg": {},
+   "lbl": "winding down",
+   "pri": "anxiety_relief"
+  },
+  "heavy": {
+   "d": {
+    "sedation": 40
+   },
+   "neg": {},
+   "lbl": "heavy body",
+   "pri": "sedation"
+  },
+  "body high": {
+   "d": {
+    "sedation": 35,
+    "pain_inflammation": 30
+   },
+   "neg": {},
+   "lbl": "body high",
+   "pri": "sedation"
+  },
+  "body buzz": {
+   "d": {
+    "sedation": 28,
+    "pain_inflammation": 38
+   },
+   "neg": {},
+   "lbl": "body buzz",
+   "pri": "pain_inflammation"
+  },
+  "sinking": {
+   "d": {
+    "sedation": 55
+   },
+   "neg": {},
+   "lbl": "deep sedation",
+   "pri": "sedation"
+  },
+  "anxiety": {
+   "d": {
+    "anxiety_relief": 35
+   },
+   "neg": {},
+   "lbl": "anxiety relief",
+   "pri": "anxiety_relief"
+  },
+  "anxious": {
+   "d": {
+    "anxiety_relief": 35
+   },
+   "neg": {},
+   "lbl": "anxiety",
+   "pri": "anxiety_relief"
+  },
+  "stress": {
+   "d": {
+    "anxiety_relief": 32
+   },
+   "neg": {},
+   "lbl": "stress relief",
+   "pri": "anxiety_relief"
+  },
+  "stressed": {
+   "d": {
+    "anxiety_relief": 32
+   },
+   "neg": {},
+   "lbl": "stress",
+   "pri": "anxiety_relief"
+  },
+  "panic": {
+   "d": {
+    "anxiety_relief": 42
+   },
+   "neg": {},
+   "lbl": "panic/anxiety",
+   "pri": "anxiety_relief"
+  },
+  "paranoia": {
+   "d": {
+    "anxiety_relief": 42
+   },
+   "neg": {},
+   "lbl": "paranoia",
+   "pri": "anxiety_relief"
+  },
+  "paranoid": {
+   "d": {
+    "anxiety_relief": 42
+   },
+   "neg": {},
+   "lbl": "paranoia",
+   "pri": "anxiety_relief"
+  },
+  "no paranoia": {
+   "d": {
+    "anxiety_relief": 45
+   },
+   "neg": {},
+   "lbl": "no paranoia",
+   "pri": "anxiety_relief"
+  },
+  "wont make me paranoid": {
+   "d": {
+    "anxiety_relief": 45
+   },
+   "neg": {},
+   "lbl": "no paranoia",
+   "pri": "anxiety_relief"
+  },
+  "ptsd": {
+   "d": {
+    "anxiety_relief": 40,
+    "sedation": 25
+   },
+   "neg": {},
+   "lbl": "PTSD",
+   "pri": "anxiety_relief"
+  },
+  "calm": {
+   "d": {
+    "anxiety_relief": 30
+   },
+   "neg": {},
+   "lbl": "calm",
+   "pri": "anxiety_relief"
+  },
+  "calming": {
+   "d": {
+    "anxiety_relief": 30
+   },
+   "neg": {},
+   "lbl": "calming",
+   "pri": "anxiety_relief"
+  },
+  "social anxiety": {
+   "d": {
+    "uplift": 20,
+    "anxiety_relief": 42
+   },
+   "neg": {},
+   "lbl": "social anxiety",
+   "pri": "anxiety_relief"
+  },
+  "depression": {
+   "d": {
+    "uplift": 25,
+    "anxiety_relief": 24
+   },
+   "neg": {},
+   "lbl": "depression",
+   "pri": "uplift"
+  },
+  "low mood": {
+   "d": {
+    "uplift": 25,
+    "anxiety_relief": 22
+   },
+   "neg": {},
+   "lbl": "mood lift",
+   "pri": "uplift"
+  },
+  "sad": {
+   "d": {
+    "uplift": 24,
+    "anxiety_relief": 22
+   },
+   "neg": {},
+   "lbl": "mood lift",
+   "pri": "uplift"
+  },
+  "pain": {
+   "d": {
+    "pain_inflammation": 38
+   },
+   "neg": {},
+   "lbl": "pain relief",
+   "pri": "pain_inflammation"
+  },
+  "chronic": {
+   "d": {
+    "pain_inflammation": 42
+   },
+   "neg": {},
+   "lbl": "chronic pain",
+   "pri": "pain_inflammation"
+  },
+  "inflammation": {
+   "d": {
+    "pain_inflammation": 42
+   },
+   "neg": {},
+   "lbl": "inflammation",
+   "pri": "pain_inflammation"
+  },
+  "arthritis": {
+   "d": {
+    "pain_inflammation": 45
+   },
+   "neg": {},
+   "lbl": "arthritis",
+   "pri": "pain_inflammation"
+  },
+  "headache": {
+   "d": {
+    "pain_inflammation": 38,
+    "anxiety_relief": 28
+   },
+   "neg": {},
+   "lbl": "headache",
+   "pri": "pain_inflammation"
+  },
+  "migraine": {
+   "d": {
+    "pain_inflammation": 42,
+    "anxiety_relief": 32
+   },
+   "neg": {},
+   "lbl": "migraine",
+   "pri": "pain_inflammation"
+  },
+  "neuropathy": {
+   "d": {
+    "pain_inflammation": 45
+   },
+   "neg": {},
+   "lbl": "nerve pain",
+   "pri": "pain_inflammation"
+  },
+  "nerve pain": {
+   "d": {
+    "pain_inflammation": 45
+   },
+   "neg": {},
+   "lbl": "nerve pain",
+   "pri": "pain_inflammation"
+  },
+  "back pain": {
+   "d": {
+    "pain_inflammation": 42,
+    "sedation": 25
+   },
+   "neg": {},
+   "lbl": "back pain",
+   "pri": "pain_inflammation"
+  },
+  "fibromyalgia": {
+   "d": {
+    "pain_inflammation": 45,
+    "sedation": 28
+   },
+   "neg": {},
+   "lbl": "fibromyalgia",
+   "pri": "pain_inflammation"
+  },
+  "sore muscle": {
+   "d": {
+    "pain_inflammation": 38,
+    "sedation": 25
+   },
+   "neg": {},
+   "lbl": "sore muscles",
+   "pri": "pain_inflammation"
+  },
+  "muscle tension": {
+   "d": {
+    "pain_inflammation": 38,
+    "sedation": 28
+   },
+   "neg": {},
+   "lbl": "muscle tension",
+   "pri": "pain_inflammation"
+  },
+  "muscle spasm": {
+   "d": {
+    "pain_inflammation": 50,
+    "sedation": 35
+   },
+   "neg": {},
+   "lbl": "muscle spasms",
+   "pri": "pain_inflammation"
+  },
+  "cramps": {
+   "d": {
+    "pain_inflammation": 50,
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "cramps",
+   "pri": "pain_inflammation"
+  },
+  "nausea": {
+   "d": {
+    "pain_inflammation": 35,
+    "anxiety_relief": 28
+   },
+   "neg": {},
+   "lbl": "nausea",
+   "pri": "anxiety_relief"
+  },
+  "nauseous": {
+   "d": {
+    "pain_inflammation": 35,
+    "anxiety_relief": 28
+   },
+   "neg": {},
+   "lbl": "nausea",
+   "pri": "anxiety_relief"
+  },
+  "anti-inflammatory": {
+   "d": {
+    "pain_inflammation": 45
+   },
+   "neg": {},
+   "lbl": "anti-inflammatory",
+   "pri": "pain_inflammation"
+  },
+  "energy": {
+   "d": {
+    "uplift": 28
+   },
+   "neg": {
+    "sedation": 36
+   },
+   "lbl": "energy",
+   "pri": "uplift"
+  },
+  "energizing": {
+   "d": {
+    "uplift": 24
+   },
+   "neg": {
+    "sedation": 36
+   },
+   "lbl": "energizing",
+   "pri": "uplift"
+  },
+  "uplifting": {
+   "d": {
+    "uplift": 24
+   },
+   "neg": {},
+   "lbl": "uplifting",
+   "pri": "uplift"
+  },
+  "mood": {
+   "d": {
+    "uplift": 24,
+    "anxiety_relief": 24
+   },
+   "neg": {},
+   "lbl": "mood boost",
+   "pri": "uplift"
+  },
+  "happy": {
+   "d": {
+    "uplift": 24
+   },
+   "neg": {},
+   "lbl": "mood elevation",
+   "pri": "uplift"
+  },
+  "euphoric": {
+   "d": {
+    "uplift": 28
+   },
+   "neg": {},
+   "lbl": "euphoric",
+   "pri": "uplift"
+  },
+  "euphoria": {
+   "d": {
+    "uplift": 28
+   },
+   "neg": {},
+   "lbl": "euphoria",
+   "pri": "uplift"
+  },
+  "giggly": {
+   "d": {
+    "uplift": 28,
+    "anxiety_relief": 24
+   },
+   "neg": {},
+   "lbl": "giggly / euphoric",
+   "pri": "uplift"
+  },
+  "laughy": {
+   "d": {
+    "uplift": 28
+   },
+   "neg": {},
+   "lbl": "giggly",
+   "pri": "uplift"
+  },
+  "good vibes": {
+   "d": {
+    "uplift": 24,
+    "anxiety_relief": 24
+   },
+   "neg": {},
+   "lbl": "good vibes",
+   "pri": "uplift"
+  },
+  "floaty": {
+   "d": {
+    "uplift": 25
+   },
+   "neg": {
+    "sedation": 36
+   },
+   "lbl": "floaty",
+   "pri": "uplift"
+  },
+  "head high": {
+   "d": {
+    "uplift": 25,
+    "focus_cognitive": 14
+   },
+   "neg": {
+    "sedation": 36
+   },
+   "lbl": "head high",
+   "pri": "uplift"
+  },
+  "heady": {
+   "d": {
+    "uplift": 25,
+    "focus_cognitive": 14
+   },
+   "neg": {},
+   "lbl": "heady",
+   "pri": "uplift"
+  },
+  "daytime": {
+   "d": {
+    "uplift": 22,
+    "focus_cognitive": 14
+   },
+   "neg": {
+    "sedation": 32
+   },
+   "lbl": "daytime",
+   "pri": "uplift"
+  },
+  "morning": {
+   "d": {
+    "uplift": 24,
+    "focus_cognitive": 14
+   },
+   "neg": {
+    "sedation": 32
+   },
+   "lbl": "morning",
+   "pri": "uplift"
+  },
+  "wake and bake": {
+   "d": {
+    "uplift": 30,
+    "focus_cognitive": 18
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "morning",
+   "pri": "uplift"
+  },
+  "social": {
+   "d": {
+    "uplift": 28,
+    "anxiety_relief": 30
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "social",
+   "pri": "uplift"
+  },
+  "party": {
+   "d": {
+    "uplift": 32,
+    "anxiety_relief": 28
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "social",
+   "pri": "uplift"
+  },
+  "concert": {
+   "d": {
+    "uplift": 32,
+    "anxiety_relief": 28
+   },
+   "neg": {},
+   "lbl": "concert",
+   "pri": "uplift"
+  },
+  "date night": {
+   "d": {
+    "uplift": 28,
+    "anxiety_relief": 30
+   },
+   "neg": {
+    "sedation": 50
+   },
+   "lbl": "date night",
+   "pri": "uplift"
+  },
+  "focus": {
+   "d": {
+    "focus_cognitive": 22
+   },
+   "neg": {},
+   "lbl": "focus",
+   "pri": "focus_cognitive"
+  },
+  "focused": {
+   "d": {
+    "focus_cognitive": 22
+   },
+   "neg": {},
+   "lbl": "focus",
+   "pri": "focus_cognitive"
+  },
+  "memory": {
+   "d": {
+    "focus_cognitive": 20
+   },
+   "neg": {},
+   "lbl": "memory",
+   "pri": "focus_cognitive"
+  },
+  "creative": {
+   "d": {
+    "focus_cognitive": 5,
+    "uplift": 18
+   },
+   "neg": {},
+   "lbl": "creative",
+   "pri": "uplift"
+  },
+  "creativity": {
+   "d": {
+    "focus_cognitive": 5,
+    "uplift": 18
+   },
+   "neg": {},
+   "lbl": "creative",
+   "pri": "uplift"
+  },
+  "productivity": {
+   "d": {
+    "focus_cognitive": 18,
+    "uplift": 16
+   },
+   "neg": {
+    "sedation": 52
+   },
+   "lbl": "productivity",
+   "pri": "focus_cognitive"
+  },
+  "functional": {
+   "d": {
+    "focus_cognitive": 14
+   },
+   "neg": {
+    "sedation": 32
+   },
+   "lbl": "functional",
+   "pri": "focus_cognitive"
+  },
+  "clear headed": {
+   "d": {
+    "focus_cognitive": 22
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "clear-headed",
+   "pri": "focus_cognitive"
+  },
+  "clear-headed": {
+   "d": {
+    "focus_cognitive": 22
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "clear-headed",
+   "pri": "focus_cognitive"
+  },
+  "sharp": {
+   "d": {
+    "focus_cognitive": 20
+   },
+   "neg": {
+    "sedation": 50
+   },
+   "lbl": "alert",
+   "pri": "focus_cognitive"
+  },
+  "alert": {
+   "d": {
+    "focus_cognitive": 18,
+    "uplift": 20
+   },
+   "neg": {
+    "sedation": 50
+   },
+   "lbl": "alert",
+   "pri": "focus_cognitive"
+  },
+  "awake": {
+   "d": {
+    "uplift": 30,
+    "focus_cognitive": 20
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "awake",
+   "pri": "uplift"
+  },
+  "gaming": {
+   "d": {
+    "focus_cognitive": 20,
+    "uplift": 22
+   },
+   "neg": {
+    "sedation": 35
+   },
+   "lbl": "gaming",
+   "pri": "focus_cognitive"
+  },
+  "art": {
+   "d": {
+    "focus_cognitive": 5,
+    "uplift": 22
+   },
+   "neg": {},
+   "lbl": "creative",
+   "pri": "uplift"
+  },
+  "music": {
+   "d": {
+    "uplift": 22,
+    "anxiety_relief": 22
+   },
+   "neg": {},
+   "lbl": "creative",
+   "pri": "uplift"
+  },
+  "writing": {
+   "d": {
+    "focus_cognitive": 12,
+    "uplift": 18
+   },
+   "neg": {
+    "sedation": 35
+   },
+   "lbl": "creative",
+   "pri": "focus_cognitive"
+  },
+  "meditate": {
+   "d": {
+    "anxiety_relief": 45,
+    "sedation": 30
+   },
+   "neg": {
+    "sedation": 60
+   },
+   "lbl": "meditation",
+   "pri": "anxiety_relief"
+  },
+  "meditation": {
+   "d": {
+    "anxiety_relief": 45,
+    "sedation": 30
+   },
+   "neg": {
+    "sedation": 60
+   },
+   "lbl": "meditation",
+   "pri": "anxiety_relief"
+  },
+  "yoga": {
+   "d": {
+    "anxiety_relief": 35,
+    "pain_inflammation": 30
+   },
+   "neg": {
+    "sedation": 50
+   },
+   "lbl": "yoga",
+   "pri": "anxiety_relief"
+  },
+  "workout": {
+   "d": {
+    "uplift": 35,
+    "pain_inflammation": 35
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "gym / workout",
+   "pri": "uplift"
+  },
+  "gym": {
+   "d": {
+    "uplift": 35,
+    "pain_inflammation": 35
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "gym",
+   "pri": "uplift"
+  },
+  "hike": {
+   "d": {
+    "uplift": 35,
+    "focus_cognitive": 25
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "outdoors",
+   "pri": "uplift"
+  },
+  "movie": {
+   "d": {
+    "sedation": 35,
+    "anxiety_relief": 30
+   },
+   "neg": {},
+   "lbl": "movie night",
+   "pri": "sedation"
+  },
+  "munchies": {
+   "d": {
+    "sedation": 35
+   },
+   "neg": {},
+   "lbl": "appetite / munchies",
+   "pri": "sedation"
+  },
+  "hungry": {
+   "d": {
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "appetite",
+   "pri": "sedation"
+  },
+  "appetite": {
+   "d": {
+    "sedation": 25
+   },
+   "neg": {},
+   "lbl": "appetite",
+   "pri": "sedation"
+  },
+  "no munchies": {
+   "d": {
+    "pain_inflammation": 38
+   },
+   "neg": {
+    "sedation": 32
+   },
+   "lbl": "appetite suppression",
+   "pri": "pain_inflammation"
+  },
+  "suppress appetite": {
+   "d": {
+    "pain_inflammation": 50
+   },
+   "neg": {
+    "sedation": 35
+   },
+   "lbl": "appetite suppression",
+   "pri": "pain_inflammation"
+  },
+  "beginner": {
+   "d": {
+    "anxiety_relief": 55,
+    "sedation": 25
+   },
+   "neg": {
+    "uplift": 55
+   },
+   "lbl": "beginner-friendly",
+   "pri": "anxiety_relief"
+  },
+  "first time": {
+   "d": {
+    "anxiety_relief": 60,
+    "sedation": 20
+   },
+   "neg": {
+    "uplift": 55
+   },
+   "lbl": "first-time",
+   "pri": "anxiety_relief"
+  },
+  "first timer": {
+   "d": {
+    "anxiety_relief": 60,
+    "sedation": 20
+   },
+   "neg": {
+    "uplift": 55
+   },
+   "lbl": "first-time",
+   "pri": "anxiety_relief"
+  },
+  "low tolerance": {
+   "d": {
+    "anxiety_relief": 55
+   },
+   "neg": {
+    "uplift": 50
+   },
+   "lbl": "low tolerance",
+   "pri": "anxiety_relief"
+  },
+  "sensitive": {
+   "d": {
+    "anxiety_relief": 55
+   },
+   "neg": {
+    "uplift": 45
+   },
+   "lbl": "sensitive",
+   "pri": "anxiety_relief"
+  },
+  "anxiety prone": {
+   "d": {
+    "anxiety_relief": 60
+   },
+   "neg": {
+    "uplift": 45
+   },
+   "lbl": "anxiety-prone",
+   "pri": "anxiety_relief"
+  },
+  "without couch lock": {
+   "d": {},
+   "neg": {
+    "sedation": 55
+   },
+   "lbl": "no couch lock"
+  },
+  "no couch lock": {
+   "d": {},
+   "neg": {
+    "sedation": 55
+   },
+   "lbl": "no couch lock"
+  },
+  "not too heavy": {
+   "d": {},
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": ""
+  },
+  "can still function": {
+   "d": {
+    "focus_cognitive": 20
+   },
+   "neg": {
+    "sedation": 35
+   },
+   "lbl": "functional",
+   "pri": "focus_cognitive"
+  },
+  "no anxiety": {
+   "d": {
+    "anxiety_relief": 55
+   },
+   "neg": {},
+   "lbl": "no anxiety",
+   "pri": "anxiety_relief"
+  },
+  "wont make me anxious": {
+   "d": {
+    "anxiety_relief": 55
+   },
+   "neg": {},
+   "lbl": "no anxiety",
+   "pri": "anxiety_relief"
+  },
+  "without sedation": {
+   "d": {},
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": ""
+  },
+  "not sedating": {
+   "d": {},
+   "neg": {
+    "sedation": 42
+   },
+   "lbl": ""
+  },
+  "without getting high": {
+   "d": {
+    "anxiety_relief": 40
+   },
+   "neg": {
+    "uplift": 40,
+    "sedation": 40
+   },
+   "lbl": "low-key"
+  },
+  "stay clear": {
+   "d": {
+    "focus_cognitive": 18
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "clear-headed",
+   "pri": "focus_cognitive"
+  },
+  "not too strong": {
+   "d": {
+    "anxiety_relief": 35
+   },
+   "neg": {
+    "uplift": 45,
+    "sedation": 50
+   },
+   "lbl": "mild"
+  },
+  "mild": {
+   "d": {
+    "anxiety_relief": 35
+   },
+   "neg": {
+    "uplift": 40
+   },
+   "lbl": "mild",
+   "pri": "anxiety_relief"
+  },
+  "gentle": {
+   "d": {
+    "anxiety_relief": 35
+   },
+   "neg": {
+    "uplift": 45,
+    "sedation": 50
+   },
+   "lbl": "gentle",
+   "pri": "anxiety_relief"
+  },
+  "pain without sedation": {
+   "d": {
+    "pain_inflammation": 42
+   },
+   "neg": {
+    "sedation": 32
+   },
+   "lbl": "functional pain relief",
+   "pri": "pain_inflammation"
+  },
+  "pain without sleep": {
+   "d": {
+    "pain_inflammation": 42
+   },
+   "neg": {
+    "sedation": 32
+   },
+   "lbl": "functional pain relief",
+   "pri": "pain_inflammation"
+  },
+  "pain and functional": {
+   "d": {
+    "pain_inflammation": 42,
+    "focus_cognitive": 14
+   },
+   "neg": {
+    "sedation": 32
+   },
+   "lbl": "functional pain relief",
+   "pri": "pain_inflammation"
+  },
+  "daytime pain": {
+   "d": {
+    "pain_inflammation": 50
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "daytime pain relief",
+   "pri": "pain_inflammation"
+  },
+  "pain during the day": {
+   "d": {
+    "pain_inflammation": 50
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "daytime pain",
+   "pri": "pain_inflammation"
+  },
+  "trouble sleeping": {
+   "d": {
+    "sedation": 50,
+    "anxiety_relief": 35
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "fall asleep": {
+   "d": {
+    "sedation": 50
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "wake up at night": {
+   "d": {
+    "sedation": 55,
+    "anxiety_relief": 40
+   },
+   "neg": {},
+   "lbl": "sleep maintenance",
+   "pri": "sedation"
+  },
+  "stay asleep": {
+   "d": {
+    "sedation": 55
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "heart racing": {
+   "d": {
+    "anxiety_relief": 50,
+    "sedation": 35
+   },
+   "neg": {},
+   "lbl": "anxiety",
+   "pri": "anxiety_relief"
+  },
+  "on edge": {
+   "d": {
+    "anxiety_relief": 45
+   },
+   "neg": {},
+   "lbl": "edge",
+   "pri": "anxiety_relief"
+  },
+  "overthinking": {
+   "d": {
+    "anxiety_relief": 50,
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "overthinking",
+   "pri": "anxiety_relief"
+  },
+  "nervous": {
+   "d": {
+    "anxiety_relief": 42
+   },
+   "neg": {},
+   "lbl": "nerves",
+   "pri": "anxiety_relief"
+  },
+  "sluggish": {
+   "d": {
+    "uplift": 30
+   },
+   "neg": {
+    "sedation": 42
+   },
+   "lbl": "energy",
+   "pri": "uplift"
+  },
+  "tired but need to stay up": {
+   "d": {
+    "uplift": 32
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "energy",
+   "pri": "uplift"
+  },
+  "low energy": {
+   "d": {
+    "uplift": 30
+   },
+   "neg": {
+    "sedation": 42
+   },
+   "lbl": "energy",
+   "pri": "uplift"
+  },
+  "drag": {
+   "d": {
+    "uplift": 28
+   },
+   "neg": {
+    "sedation": 42
+   },
+   "lbl": "energy",
+   "pri": "uplift"
+  },
+  "trippy": {
+   "d": {
+    "uplift": 25,
+    "focus_cognitive": 15
+   },
+   "neg": {
+    "sedation": 20
+   },
+   "lbl": "cerebral"
+  },
+  "visual": {
+   "d": {
+    "uplift": 25,
+    "focus_cognitive": 15
+   },
+   "neg": {
+    "sedation": 20
+   },
+   "lbl": "cerebral"
+  },
+  "introspective": {
+   "d": {
+    "focus_cognitive": 15,
+    "anxiety_relief": 20
+   },
+   "neg": {},
+   "lbl": "introspective"
+  },
+  "tingly": {
+   "d": {
+    "pain_inflammation": 25,
+    "sedation": 10
+   },
+   "neg": {},
+   "lbl": "tingly"
+  },
+  "numb": {
+   "d": {
+    "pain_inflammation": 35,
+    "sedation": 15
+   },
+   "neg": {},
+   "lbl": "numbing effect"
+  },
+  "anxious and in pain": {
+   "d": {
+    "anxiety_relief": 38,
+    "pain_inflammation": 38
+   },
+   "neg": {},
+   "lbl": "anxiety + pain",
+   "pri": "anxiety_relief"
+  },
+  "pain and anxiety": {
+   "d": {
+    "pain_inflammation": 38,
+    "anxiety_relief": 38
+   },
+   "neg": {},
+   "lbl": "pain + anxiety",
+   "pri": "pain_inflammation"
+  },
+  "stress and pain": {
+   "d": {
+    "anxiety_relief": 32,
+    "pain_inflammation": 38
+   },
+   "neg": {},
+   "lbl": "stress + pain",
+   "pri": "pain_inflammation"
+  },
+  "sleep and pain": {
+   "d": {
+    "sedation": 38,
+    "pain_inflammation": 38
+   },
+   "neg": {},
+   "lbl": "sleep + pain",
+   "pri": "pain_inflammation"
+  },
+  "energy and focus": {
+   "d": {
+    "uplift": 30,
+    "focus_cognitive": 22
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "energy + focus",
+   "pri": "uplift"
+  },
+  "focus and energy": {
+   "d": {
+    "uplift": 30,
+    "focus_cognitive": 22
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "focus + energy",
+   "pri": "focus_cognitive"
+  },
+  "in my head": {
+   "d": {
+    "anxiety_relief": 50
+   },
+   "neg": {},
+   "lbl": "anxiety",
+   "pri": "anxiety_relief"
+  },
+  "too much in my head": {
+   "d": {
+    "anxiety_relief": 55
+   },
+   "neg": {},
+   "lbl": "anxiety",
+   "pri": "anxiety_relief"
+  },
+  "too cerebral": {
+   "d": {
+    "anxiety_relief": 50
+   },
+   "neg": {
+    "uplift": 45
+   },
+   "lbl": "anxiety-friendly",
+   "pri": "anxiety_relief"
+  },
+  "heady in a bad way": {
+   "d": {
+    "anxiety_relief": 50
+   },
+   "neg": {
+    "uplift": 45
+   },
+   "lbl": "anxiety-friendly",
+   "pri": "anxiety_relief"
+  },
+  "existential": {
+   "d": {
+    "anxiety_relief": 50,
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "anxiety",
+   "pri": "anxiety_relief"
+  },
+  "spiral": {
+   "d": {
+    "anxiety_relief": 50,
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "racing thoughts",
+   "pri": "anxiety_relief"
+  },
+  "spiraling": {
+   "d": {
+    "anxiety_relief": 50,
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "racing thoughts",
+   "pri": "anxiety_relief"
+  },
+  "can't shut my brain off": {
+   "d": {
+    "anxiety_relief": 50,
+    "sedation": 35
+   },
+   "neg": {},
+   "lbl": "racing thoughts",
+   "pri": "anxiety_relief"
+  },
+  "mind won't stop": {
+   "d": {
+    "anxiety_relief": 50,
+    "sedation": 35
+   },
+   "neg": {},
+   "lbl": "racing thoughts",
+   "pri": "anxiety_relief"
+  },
+  "wound up": {
+   "d": {
+    "anxiety_relief": 45,
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "wound up",
+   "pri": "anxiety_relief"
+  },
+  "wound-up": {
+   "d": {
+    "anxiety_relief": 45,
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "wound up",
+   "pri": "anxiety_relief"
+  },
+  "can't wind down": {
+   "d": {
+    "anxiety_relief": 45,
+    "sedation": 35
+   },
+   "neg": {},
+   "lbl": "wind down",
+   "pri": "anxiety_relief"
+  },
+  "mind racing at night": {
+   "d": {
+    "anxiety_relief": 50,
+    "sedation": 45
+   },
+   "neg": {},
+   "lbl": "sleep + anxiety",
+   "pri": "anxiety_relief"
+  },
+  "overthink": {
+   "d": {
+    "anxiety_relief": 50,
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "overthinking",
+   "pri": "anxiety_relief"
+  },
+  "edgy": {
+   "d": {
+    "anxiety_relief": 42
+   },
+   "neg": {},
+   "lbl": "edge",
+   "pri": "anxiety_relief"
+  },
+  "tense": {
+   "d": {
+    "anxiety_relief": 42
+   },
+   "neg": {},
+   "lbl": "tension",
+   "pri": "anxiety_relief"
+  },
+  "tension": {
+   "d": {
+    "anxiety_relief": 38,
+    "pain_inflammation": 38
+   },
+   "neg": {},
+   "lbl": "tension",
+   "pri": "anxiety_relief"
+  },
+  "tight": {
+   "d": {
+    "pain_inflammation": 40,
+    "anxiety_relief": 30
+   },
+   "neg": {},
+   "lbl": "tension",
+   "pri": "pain_inflammation"
+  },
+  "wired": {
+   "d": {
+    "anxiety_relief": 42,
+    "sedation": 30
+   },
+   "neg": {
+    "uplift": 50
+   },
+   "lbl": "wired / anxious",
+   "pri": "anxiety_relief"
+  },
+  "disconnected": {
+   "d": {
+    "anxiety_relief": 38,
+    "uplift": 28
+   },
+   "neg": {},
+   "lbl": "mood + anxiety",
+   "pri": "anxiety_relief"
+  },
+  "dread": {
+   "d": {
+    "anxiety_relief": 50,
+    "sedation": 28
+   },
+   "neg": {},
+   "lbl": "anxiety",
+   "pri": "anxiety_relief"
+  },
+  "brain fog": {
+   "d": {
+    "focus_cognitive": 25
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "brain fog",
+   "pri": "focus_cognitive"
+  },
+  "scatter brained": {
+   "d": {
+    "focus_cognitive": 20
+   },
+   "neg": {
+    "sedation": 52
+   },
+   "lbl": "focus",
+   "pri": "focus_cognitive"
+  },
+  "scattered": {
+   "d": {
+    "focus_cognitive": 20
+   },
+   "neg": {
+    "sedation": 52
+   },
+   "lbl": "focus",
+   "pri": "focus_cognitive"
+  },
+  "scatterbrained": {
+   "d": {
+    "focus_cognitive": 20
+   },
+   "neg": {
+    "sedation": 52
+   },
+   "lbl": "focus",
+   "pri": "focus_cognitive"
+  },
+  "locked in": {
+   "d": {
+    "focus_cognitive": 22,
+    "uplift": 18
+   },
+   "neg": {
+    "sedation": 52
+   },
+   "lbl": "locked in",
+   "pri": "focus_cognitive"
+  },
+  "in the zone": {
+   "d": {
+    "focus_cognitive": 22,
+    "uplift": 18
+   },
+   "neg": {
+    "sedation": 52
+   },
+   "lbl": "in the zone",
+   "pri": "focus_cognitive"
+  },
+  "get stuff done": {
+   "d": {
+    "focus_cognitive": 20,
+    "uplift": 18
+   },
+   "neg": {
+    "sedation": 52
+   },
+   "lbl": "productivity",
+   "pri": "focus_cognitive"
+  },
+  "get things done": {
+   "d": {
+    "focus_cognitive": 25,
+    "uplift": 22
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "productivity",
+   "pri": "focus_cognitive"
+  },
+  "clean high": {
+   "d": {
+    "focus_cognitive": 22,
+    "anxiety_relief": 35
+   },
+   "neg": {
+    "sedation": 42
+   },
+   "lbl": "clean / clear",
+   "pri": "focus_cognitive"
+  },
+  "clear high": {
+   "d": {
+    "focus_cognitive": 22,
+    "anxiety_relief": 35
+   },
+   "neg": {
+    "sedation": 42
+   },
+   "lbl": "clear-headed",
+   "pri": "focus_cognitive"
+  },
+  "spaced out": {
+   "d": {
+    "focus_cognitive": 25
+   },
+   "neg": {
+    "sedation": 45
+   },
+   "lbl": "clear",
+   "pri": "focus_cognitive"
+  },
+  "zoned out": {
+   "d": {
+    "focus_cognitive": 22
+   },
+   "neg": {
+    "sedation": 42
+   },
+   "lbl": "clear",
+   "pri": "focus_cognitive"
+  },
+  "unmotivated": {
+   "d": {
+    "uplift": 30,
+    "focus_cognitive": 22
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "motivation",
+   "pri": "uplift"
+  },
+  "not motivated": {
+   "d": {
+    "uplift": 30,
+    "focus_cognitive": 22
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "motivation",
+   "pri": "uplift"
+  },
+  "motivated": {
+   "d": {
+    "uplift": 30,
+    "focus_cognitive": 22
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "motivation",
+   "pri": "uplift"
+  },
+  "motivation": {
+   "d": {
+    "uplift": 30,
+    "focus_cognitive": 22
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "motivation",
+   "pri": "uplift"
+  },
+  "procrastinating": {
+   "d": {
+    "focus_cognitive": 25,
+    "uplift": 22
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "focus",
+   "pri": "focus_cognitive"
+  },
+  "procrastination": {
+   "d": {
+    "focus_cognitive": 25,
+    "uplift": 22
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "focus",
+   "pri": "focus_cognitive"
+  },
+  "adhd": {
+   "d": {
+    "focus_cognitive": 28
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "focus / ADHD",
+   "pri": "focus_cognitive"
+  },
+  "calm down": {
+   "d": {
+    "anxiety_relief": 40
+   },
+   "neg": {},
+   "lbl": "calm",
+   "pri": "anxiety_relief"
+  },
+  "low anxiety": {
+   "d": {
+    "anxiety_relief": 45
+   },
+   "neg": {},
+   "lbl": "low anxiety",
+   "pri": "anxiety_relief"
+  },
+  "less anxiety": {
+   "d": {
+    "anxiety_relief": 45
+   },
+   "neg": {},
+   "lbl": "low anxiety",
+   "pri": "anxiety_relief"
+  },
+  "less sedating": {
+   "d": {},
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "lighter"
+  },
+  "less sedation": {
+   "d": {},
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "lighter"
+  },
+  "less heavy": {
+   "d": {},
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "lighter"
+  },
+  "not as heavy": {
+   "d": {},
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "lighter"
+  },
+  "lighter": {
+   "d": {},
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "lighter"
+  },
+  "settle down": {
+   "d": {
+    "anxiety_relief": 40
+   },
+   "neg": {},
+   "lbl": "calm",
+   "pri": "anxiety_relief"
+  },
+  "achy": {
+   "d": {
+    "pain_inflammation": 45
+   },
+   "neg": {},
+   "lbl": "pain relief",
+   "pri": "pain_inflammation"
+  },
+  "aches": {
+   "d": {
+    "pain_inflammation": 42
+   },
+   "neg": {},
+   "lbl": "pain relief",
+   "pri": "pain_inflammation"
+  },
+  "throbbing": {
+   "d": {
+    "pain_inflammation": 50,
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "pain relief",
+   "pri": "pain_inflammation"
+  },
+  "stiff": {
+   "d": {
+    "pain_inflammation": 45,
+    "sedation": 25
+   },
+   "neg": {},
+   "lbl": "stiffness",
+   "pri": "pain_inflammation"
+  },
+  "stiffness": {
+   "d": {
+    "pain_inflammation": 45,
+    "sedation": 25
+   },
+   "neg": {},
+   "lbl": "stiffness",
+   "pri": "pain_inflammation"
+  },
+  "knots": {
+   "d": {
+    "pain_inflammation": 45,
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "muscle knots",
+   "pri": "pain_inflammation"
+  },
+  "tension headache": {
+   "d": {
+    "pain_inflammation": 45,
+    "anxiety_relief": 40
+   },
+   "neg": {
+    "sedation": 55
+   },
+   "lbl": "tension headache",
+   "pri": "pain_inflammation"
+  },
+  "tension headaches": {
+   "d": {
+    "pain_inflammation": 45,
+    "anxiety_relief": 40
+   },
+   "neg": {
+    "sedation": 55
+   },
+   "lbl": "tension headache",
+   "pri": "pain_inflammation"
+  },
+  "can't get comfortable": {
+   "d": {
+    "pain_inflammation": 45,
+    "sedation": 35
+   },
+   "neg": {},
+   "lbl": "pain + comfort",
+   "pri": "pain_inflammation"
+  },
+  "soreness": {
+   "d": {
+    "pain_inflammation": 42
+   },
+   "neg": {},
+   "lbl": "soreness",
+   "pri": "pain_inflammation"
+  },
+  "sore": {
+   "d": {
+    "pain_inflammation": 42
+   },
+   "neg": {},
+   "lbl": "soreness",
+   "pri": "pain_inflammation"
+  },
+  "achy joints": {
+   "d": {
+    "pain_inflammation": 50
+   },
+   "neg": {},
+   "lbl": "joint pain",
+   "pri": "pain_inflammation"
+  },
+  "joint": {
+   "d": {
+    "pain_inflammation": 48
+   },
+   "neg": {},
+   "lbl": "joint pain",
+   "pri": "pain_inflammation"
+  },
+  "joints": {
+   "d": {
+    "pain_inflammation": 48
+   },
+   "neg": {},
+   "lbl": "joint pain",
+   "pri": "pain_inflammation"
+  },
+  "swollen": {
+   "d": {
+    "pain_inflammation": 50
+   },
+   "neg": {},
+   "lbl": "inflammation",
+   "pri": "pain_inflammation"
+  },
+  "swelling": {
+   "d": {
+    "pain_inflammation": 50
+   },
+   "neg": {},
+   "lbl": "inflammation",
+   "pri": "pain_inflammation"
+  },
+  "bruised": {
+   "d": {
+    "pain_inflammation": 42,
+    "sedation": 25
+   },
+   "neg": {},
+   "lbl": "pain relief",
+   "pri": "pain_inflammation"
+  },
+  "hurt": {
+   "d": {
+    "pain_inflammation": 42
+   },
+   "neg": {},
+   "lbl": "pain relief",
+   "pri": "pain_inflammation"
+  },
+  "hurts": {
+   "d": {
+    "pain_inflammation": 42
+   },
+   "neg": {},
+   "lbl": "pain relief",
+   "pri": "pain_inflammation"
+  },
+  "aching": {
+   "d": {
+    "pain_inflammation": 42
+   },
+   "neg": {},
+   "lbl": "pain relief",
+   "pri": "pain_inflammation"
+  },
+  "sciatica": {
+   "d": {
+    "pain_inflammation": 55,
+    "sedation": 35
+   },
+   "neg": {},
+   "lbl": "nerve pain",
+   "pri": "pain_inflammation"
+  },
+  "pinched nerve": {
+   "d": {
+    "pain_inflammation": 55
+   },
+   "neg": {},
+   "lbl": "nerve pain",
+   "pri": "pain_inflammation"
+  },
+  "ibs": {
+   "d": {
+    "pain_inflammation": 50,
+    "anxiety_relief": 35,
+    "sedation": 25
+   },
+   "neg": {},
+   "lbl": "IBS",
+   "pri": "pain_inflammation"
+  },
+  "stomach pain": {
+   "d": {
+    "pain_inflammation": 45,
+    "sedation": 25
+   },
+   "neg": {},
+   "lbl": "stomach",
+   "pri": "pain_inflammation"
+  },
+  "stomach": {
+   "d": {
+    "pain_inflammation": 40,
+    "sedation": 22
+   },
+   "neg": {},
+   "lbl": "stomach",
+   "pri": "pain_inflammation"
+  },
+  "toss and turn": {
+   "d": {
+    "sedation": 50,
+    "anxiety_relief": 40
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "tossing and turning": {
+   "d": {
+    "sedation": 50,
+    "anxiety_relief": 40
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "jet lag": {
+   "d": {
+    "sedation": 45
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "jet lagged": {
+   "d": {
+    "sedation": 45
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "wired but tired": {
+   "d": {
+    "sedation": 45,
+    "anxiety_relief": 40
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "tired but wired": {
+   "d": {
+    "sedation": 45,
+    "anxiety_relief": 40
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "rest": {
+   "d": {
+    "sedation": 35,
+    "anxiety_relief": 28
+   },
+   "neg": {},
+   "lbl": "rest",
+   "pri": "sedation"
+  },
+  "recovery": {
+   "d": {
+    "sedation": 35,
+    "pain_inflammation": 35
+   },
+   "neg": {},
+   "lbl": "recovery",
+   "pri": "pain_inflammation"
+  },
+  "recover": {
+   "d": {
+    "sedation": 35,
+    "pain_inflammation": 35
+   },
+   "neg": {},
+   "lbl": "recovery",
+   "pri": "pain_inflammation"
+  },
+  "deep sleep": {
+   "d": {
+    "sedation": 60,
+    "anxiety_relief": 35
+   },
+   "neg": {},
+   "lbl": "deep sleep",
+   "pri": "sedation"
+  },
+  "power nap": {
+   "d": {
+    "sedation": 40
+   },
+   "neg": {
+    "sedation": 65
+   },
+   "lbl": "nap",
+   "pri": "sedation"
+  },
+  "nap": {
+   "d": {
+    "sedation": 38
+   },
+   "neg": {
+    "sedation": 62
+   },
+   "lbl": "nap",
+   "pri": "sedation"
+  },
+  "shut eye": {
+   "d": {
+    "sedation": 48
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "shut down": {
+   "d": {
+    "sedation": 48
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  "restless": {
+   "d": {
+    "sedation": 45,
+    "anxiety_relief": 40
+   },
+   "neg": {},
+   "lbl": "restless",
+   "pri": "sedation"
+  },
+  "restlessness": {
+   "d": {
+    "sedation": 45,
+    "anxiety_relief": 40
+   },
+   "neg": {},
+   "lbl": "restless",
+   "pri": "sedation"
+  },
+  "bummed out": {
+   "d": {
+    "uplift": 32,
+    "anxiety_relief": 28
+   },
+   "neg": {},
+   "lbl": "mood lift",
+   "pri": "uplift"
+  },
+  "bummed": {
+   "d": {
+    "uplift": 30,
+    "anxiety_relief": 28
+   },
+   "neg": {},
+   "lbl": "mood lift",
+   "pri": "uplift"
+  },
+  "blah": {
+   "d": {
+    "uplift": 28,
+    "anxiety_relief": 25
+   },
+   "neg": {},
+   "lbl": "mood lift",
+   "pri": "uplift"
+  },
+  "flat": {
+   "d": {
+    "uplift": 28,
+    "anxiety_relief": 25
+   },
+   "neg": {},
+   "lbl": "mood lift",
+   "pri": "uplift"
+  },
+  "low": {
+   "d": {
+    "uplift": 28,
+    "anxiety_relief": 25
+   },
+   "neg": {},
+   "lbl": "mood",
+   "pri": "uplift"
+  },
+  "down": {
+   "d": {
+    "uplift": 30,
+    "anxiety_relief": 28
+   },
+   "neg": {},
+   "lbl": "mood lift",
+   "pri": "uplift"
+  },
+  "feeling down": {
+   "d": {
+    "uplift": 30,
+    "anxiety_relief": 28
+   },
+   "neg": {},
+   "lbl": "mood lift",
+   "pri": "uplift"
+  },
+  "in a funk": {
+   "d": {
+    "uplift": 30,
+    "anxiety_relief": 25
+   },
+   "neg": {},
+   "lbl": "mood",
+   "pri": "uplift"
+  },
+  "funk": {
+   "d": {
+    "uplift": 28,
+    "anxiety_relief": 25
+   },
+   "neg": {},
+   "lbl": "mood lift",
+   "pri": "uplift"
+  },
+  "meh": {
+   "d": {
+    "uplift": 28,
+    "anxiety_relief": 22
+   },
+   "neg": {},
+   "lbl": "mood",
+   "pri": "uplift"
+  },
+  "dragging": {
+   "d": {
+    "uplift": 30
+   },
+   "neg": {
+    "sedation": 42
+   },
+   "lbl": "energy",
+   "pri": "uplift"
+  },
+  "wiped out": {
+   "d": {
+    "sedation": 38,
+    "pain_inflammation": 30
+   },
+   "neg": {},
+   "lbl": "rest / recovery",
+   "pri": "sedation"
+  },
+  "exhausted": {
+   "d": {
+    "sedation": 38,
+    "pain_inflammation": 28
+   },
+   "neg": {},
+   "lbl": "rest",
+   "pri": "sedation"
+  },
+  "burn out": {
+   "d": {
+    "sedation": 35,
+    "anxiety_relief": 35
+   },
+   "neg": {},
+   "lbl": "burnout",
+   "pri": "anxiety_relief"
+  },
+  "burnout": {
+   "d": {
+    "sedation": 35,
+    "anxiety_relief": 35
+   },
+   "neg": {},
+   "lbl": "burnout",
+   "pri": "anxiety_relief"
+  },
+  "drained": {
+   "d": {
+    "sedation": 35,
+    "anxiety_relief": 30
+   },
+   "neg": {},
+   "lbl": "recovery",
+   "pri": "anxiety_relief"
+  },
+  "chatty": {
+   "d": {
+    "uplift": 32,
+    "anxiety_relief": 28
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "social",
+   "pri": "uplift"
+  },
+  "talkative": {
+   "d": {
+    "uplift": 32,
+    "anxiety_relief": 28
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "social",
+   "pri": "uplift"
+  },
+  "conversational": {
+   "d": {
+    "uplift": 28,
+    "anxiety_relief": 30
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "social",
+   "pri": "uplift"
+  },
+  "sociable": {
+   "d": {
+    "uplift": 28,
+    "anxiety_relief": 30
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "social",
+   "pri": "uplift"
+  },
+  "outgoing": {
+   "d": {
+    "uplift": 30,
+    "anxiety_relief": 28
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "social",
+   "pri": "uplift"
+  },
+  "bubbly": {
+   "d": {
+    "uplift": 32,
+    "anxiety_relief": 28
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "social",
+   "pri": "uplift"
+  },
+  "funny": {
+   "d": {
+    "uplift": 35,
+    "anxiety_relief": 25
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "giggly",
+   "pri": "uplift"
+  },
+  "humor": {
+   "d": {
+    "uplift": 32,
+    "anxiety_relief": 25
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "giggly",
+   "pri": "uplift"
+  },
+  "giggles": {
+   "d": {
+    "uplift": 35,
+    "anxiety_relief": 28
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "giggly",
+   "pri": "uplift"
+  },
+  "laugh": {
+   "d": {
+    "uplift": 35,
+    "anxiety_relief": 25
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "giggly",
+   "pri": "uplift"
+  },
+  "laughing": {
+   "d": {
+    "uplift": 35,
+    "anxiety_relief": 25
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "giggly",
+   "pri": "uplift"
+  },
+  "inspired": {
+   "d": {
+    "focus_cognitive": 5,
+    "uplift": 18
+   },
+   "neg": {},
+   "lbl": "creative",
+   "pri": "uplift"
+  },
+  "inspiration": {
+   "d": {
+    "focus_cognitive": 5,
+    "uplift": 18
+   },
+   "neg": {},
+   "lbl": "creative",
+   "pri": "uplift"
+  },
+  "ideas": {
+   "d": {
+    "focus_cognitive": 8,
+    "uplift": 18
+   },
+   "neg": {},
+   "lbl": "creative",
+   "pri": "focus_cognitive"
+  },
+  "flow state": {
+   "d": {
+    "focus_cognitive": 28,
+    "uplift": 22
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "flow state",
+   "pri": "focus_cognitive"
+  },
+  "introspect": {
+   "d": {
+    "focus_cognitive": 18,
+    "anxiety_relief": 22
+   },
+   "neg": {},
+   "lbl": "introspective"
+  },
+  "philosophical": {
+   "d": {
+    "focus_cognitive": 20,
+    "uplift": 22
+   },
+   "neg": {},
+   "lbl": "introspective",
+   "pri": "focus_cognitive"
+  },
+  "micro": {
+   "d": {
+    "anxiety_relief": 38
+   },
+   "neg": {
+    "uplift": 45,
+    "sedation": 48
+   },
+   "lbl": "micro-dose",
+   "pri": "anxiety_relief"
+  },
+  "microdose": {
+   "d": {
+    "anxiety_relief": 38
+   },
+   "neg": {
+    "uplift": 45,
+    "sedation": 48
+   },
+   "lbl": "micro-dose",
+   "pri": "anxiety_relief"
+  },
+  "micro dose": {
+   "d": {
+    "anxiety_relief": 38
+   },
+   "neg": {
+    "uplift": 45,
+    "sedation": 48
+   },
+   "lbl": "micro-dose",
+   "pri": "anxiety_relief"
+  },
+  "light": {
+   "d": {
+    "anxiety_relief": 32
+   },
+   "neg": {
+    "uplift": 45,
+    "sedation": 48
+   },
+   "lbl": "light / mild",
+   "pri": "anxiety_relief"
+  },
+  "lightweight": {
+   "d": {
+    "anxiety_relief": 35
+   },
+   "neg": {
+    "uplift": 48,
+    "sedation": 48
+   },
+   "lbl": "lightweight",
+   "pri": "anxiety_relief"
+  },
+  "easy": {
+   "d": {
+    "anxiety_relief": 35
+   },
+   "neg": {
+    "uplift": 45,
+    "sedation": 48
+   },
+   "lbl": "easy / mild",
+   "pri": "anxiety_relief"
+  },
+  "easy going": {
+   "d": {
+    "anxiety_relief": 35
+   },
+   "neg": {
+    "uplift": 45,
+    "sedation": 45
+   },
+   "lbl": "easygoing",
+   "pri": "anxiety_relief"
+  },
+  "mellow": {
+   "d": {
+    "anxiety_relief": 35,
+    "sedation": 30
+   },
+   "neg": {
+    "uplift": 45
+   },
+   "lbl": "mellow",
+   "pri": "anxiety_relief"
+  },
+  "subtle": {
+   "d": {
+    "anxiety_relief": 32
+   },
+   "neg": {
+    "uplift": 42,
+    "sedation": 45
+   },
+   "lbl": "subtle",
+   "pri": "anxiety_relief"
+  },
+  "manageable": {
+   "d": {
+    "anxiety_relief": 38
+   },
+   "neg": {
+    "uplift": 48,
+    "sedation": 48
+   },
+   "lbl": "manageable",
+   "pri": "anxiety_relief"
+  },
+  "eat": {
+   "d": {
+    "sedation": 28
+   },
+   "neg": {},
+   "lbl": "appetite",
+   "pri": "sedation"
+  },
+  "eating": {
+   "d": {
+    "sedation": 28
+   },
+   "neg": {},
+   "lbl": "appetite",
+   "pri": "sedation"
+  },
+  "not eating": {
+   "d": {
+    "sedation": 30,
+    "pain_inflammation": 28
+   },
+   "neg": {},
+   "lbl": "appetite",
+   "pri": "sedation"
+  },
+  "chemo": {
+   "d": {
+    "sedation": 35,
+    "pain_inflammation": 40,
+    "anxiety_relief": 35
+   },
+   "neg": {},
+   "lbl": "chemo support",
+   "pri": "pain_inflammation"
+  },
+  "chemotherapy": {
+   "d": {
+    "sedation": 35,
+    "pain_inflammation": 40,
+    "anxiety_relief": 35
+   },
+   "neg": {},
+   "lbl": "chemo support",
+   "pri": "pain_inflammation"
+  },
+  "weight loss": {
+   "d": {
+    "pain_inflammation": 45
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "appetite suppression",
+   "pri": "pain_inflammation"
+  },
+  "gaining weight": {
+   "d": {
+    "pain_inflammation": 45
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "appetite suppression",
+   "pri": "pain_inflammation"
+  }
+ }
+}

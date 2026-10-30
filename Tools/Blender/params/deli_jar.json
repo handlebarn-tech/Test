@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_DeliJar",
+  "generator": "deli_jar",
+  "_note": "Shape from REFERENCES_INDEX photos 01/07/11 (square clear acrylic, lidded, front label card). No measurement exists: every number is a conventional placeholder, flagged by GAP id.",
+  "gaps": {
+    "GAP-PROC-01": "deli jar width/depth/height/corner radius: placeholder for a ~6 in square x 11 in acrylic canister; photo 07 (jar held in arms) is the only size cue, Low",
+    "GAP-PROC-02": "deli jar lid height/overhang/colour: shelf photos show lids, no measurement",
+    "GAP-PROC-03": "deli jar label card size/position: photo 07 shows a white card on the front, placeholder rectangle"
+  },
+  "body": {"width_m": 0.15, "depth_m": 0.15, "height_m": 0.28, "corner_radius_m": 0.018,
+           "wall_m": 0.004, "floor_m": 0.008, "base_chamfer_m": 0.003},
+  "lid": {"enabled": true, "height_m": 0.03, "overhang_m": 0.004, "top_bevel_m": 0.004},
+  "label": {"width_m": 0.10, "height_m": 0.12, "bottom_m": 0.03, "offset_m": 0.0008},
+  "lods": {"LOD0": {"corner_segments": 6}, "LOD1": {"corner_segments": 1}},
+  "tri_budget": {"LOD0": 800, "LOD1": 200}
+}

@@ -35,3 +35,11 @@ Seeded from MASTER_PLAN §20–21; REF-001 and MIG-001 extend this file.
 - GAP-208 | ui | domain display scores saturate at 99 (anxiety/pain on most in-stock strains), so bars do not separate strains; ranking uses unclamped raw | High (observed) | parity first; a later design task may choose relative bars
 - GAP-209 | engine | the About page claims "281 search patterns" (L2066); code has 287 INTENTS keys + 54 phrases + 10 negations + 8 fuzzy | High (code wins) | none needed
 - GAP-210 | engine | v7.11.5 (unreleased, `dev/v7115`) changes MC-7, V73-NT5 and Tier 2 14 g $77; not live, so not in the goldens | Med | re-run goldens on v7.11.5 once it is deployed
+
+## PROC-001 (see `Docs/Assets/Specs/PROC_PIPELINE.md`; values live in `Tools/Blender/params/*.json`)
+- GAP-PROC-01 | asset | deli jar 0.15 × 0.15 × 0.28 m, 18 mm radius, 4 mm wall | Low (shape from REFERENCES_INDEX photos 01/07/11; photo 07 is the only size cue) | measure a jar on site, edit params, rerun
+- GAP-PROC-02 | asset | jar lid 30 mm tall, 4 mm overhang, black | Low (lids visible, unmeasured) | site measure / photo
+- GAP-PROC-03 | asset | jar label card 100 × 120 mm, 30 mm up | Low (white card in photo 07) | site measure / photo
+- GAP-PROC-04 | asset | package box 65 × 25 × 100 mm, 20 mm lid | none (conventional carton) | real SKU dimensions
+- GAP-PROC-05 | asset | pouch 100 × 150 mm, 40 mm gusset, 15 mm seal | none (conventional stand-up pouch) | real SKU dimensions
+- GAP-PROC-06 | asset | package label rectangles | none | real packaging references
