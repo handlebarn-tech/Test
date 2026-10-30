@@ -8,16 +8,15 @@
 **Hub:** `Docs/HUB_RESUME.md` (HARD RULES first, then its reading list) + the newest DECs. **Workers:** `CLAUDE.md` → this file → your packet only.
 
 ## In flight (as of main 38b9e5c, 2026-10-30 ~04:40 MST; verify with `list_sessions {"linked": true}`)
-Merged in Hub session 4 (latest): W5K RES-002 (squashed), W5N GAME-008, W5M GAME-010, W5F IMP-003 audit (drops 1–4 + PROC checklist). DECs through 086.
+Merged in Hub session 4 (latest): W5K RES-002 (squashed), W5N GAME-008, W5M GAME-010, W5F IMP-003 audit (drops 1–4 + PROC checklist), W5O OPS-003, W5P ASSET-003, W5Q BUILD-006, W5R IMP-003 deltas, W5S GAME-010b. DECs through 092.
 
 | Work | Session | State | Next Hub step |
 |---|---|---|---|
 | GAME-009 medical (+ W5N m2 queue strip at scale) | `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | running | B2 reviews → PS1 done → REVIEW-PS1 + playtest |
 | Playtest: Nolan to play `Downloads/Dispo Game Builds/slice-38b9e5c/DispoGame.exe` (script in `Docs/Handoffs/BUILD-006.md`) | Nolan | waiting | his notes → tasks |
-| GAME-010b (eae2aeb) → Unity B2 reviewing | `local_041172fa…`; worker `local_0d166a8e…` idle | review | merge on GO |
 | REVIEW-W5L DES-004b+c | Docs reviewer `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7` | running/queued | merge on GO |
 | **PROC-005**: integrate approved toolkit + fix every checklist item (DEC-092/084) | `local_6c216f80-4744-4711-9081-d99ed58eba4f` | running | Unity A reviews slices; after integration archive the drops (DEC-070) |
-| IMP-003 idle until rounds 3–7 drop | `local_13653ae5…` | idle | message it when Nolan adds drops |
+| IMP-003 auditing **round 3** (dropped) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | running | Docs review → Nolan approval → PROC checklist |
 | ASSET-003 merged (W5P); next: MPFB2 high-quality customer path + GAME-CHR packets (DEC-087) | worker `local_d31ad4c5…` idle | waiting | dispatch ASSET-004 (MPFB2) after the toolkit approval |
 | Standing reviewers: Unity A `local_0dd63bac…` (idle), Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs `local_b073ffa0…`. DES worker `local_82d327a2…` idle. | | | |
 
