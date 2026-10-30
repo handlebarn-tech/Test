@@ -77,9 +77,9 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | REF-010 | P1 | Restroom storage cabinet placement (DEC-068) into `ROOM_FIXTURES` | ART-006 | Done (W5C) |
 | REF-011 | P0 | Sales-floor layout audit: registers + operator access, HUB, deli walls, shelf fill (DEC-096) | — | Done (115292c) |
 | REF-012 | P0 | Office walkability + door geometry audit; DOORS.json contract for Gameplay (DEC-096) | — | Done (115292c) |
-| REF-013 | P0 | Settle GAP-129/130/132/134 from TI/floor-plan vectors; apply DEC-110 to DOORS | REF-011, REF-012 | Active (REVIEW-REF13 FAIL; fix 3890936 awaits a fresh review) |
+| REF-013 | P0 | Settle GAP-129/130/132/134 from TI/floor-plan vectors; apply DEC-110 to DOORS | REF-011, REF-012 | Done (REVIEW-REF013b PASS; minors m1 schema note, m2 stale bulletin-board note → REF-015) |
 | ART-007 | P0 | Graybox/lookdev rebuild from REF-011/012 (registers, HUB, deli walls, office, doors) | REF-011, REF-012 | Done (741bb43) |
-| ART-008 | P0 | Graybox final pass on the REF-013 fix (rev8, DEC-115 hinges, clearance failures) | REF-013 fix | Active |
+| ART-008 | P0 | Graybox final pass on the REF-013 fix (rev8, DEC-115 hinges, clearance failures) | REF-013 fix (Done) | Active (unblocked, resumed) |
 | GAME-007 | P1 | Purchase-limit meter + over-limit asks + strike ledger (COMP-002 §2) | GAME-006 | Done |
 | GAME-008 | P1 | ID-check events (COMP-002 §3) | GAME-007 | Done (W5N) |
 | GAME-009 | P2 | Medical customers (COMP-002 §4) + W5N m2 queue strip | GAME-007, GAME-008 | Done (REVIEW-PS1, 054e159) |
@@ -138,7 +138,7 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | UX-004 | P2 | Packaged UX: category tabs, format/dose filter, packaged cards, cart lines (SPEC_GAME004) | DATA-004 | Later (PS3) |
 | PROC-010 | P1 | Toolkit families phase 2 = PROC-005 handoff "Left, in order": architecture kit, exterior, ladder, display cases, clutter (incl. playtest-1 register details: spray bottle, rag, bins), stocking arranger with uneven fill, labels, materials, ID stand/bags/signs | PROC-005 PASS, PROC-007 | Later (split into packets at PROC-005 review) |
 | PROC-012 | P2 | Bud/nug look pass (playtest 1: "nugs still look off"): PROC-003 follow-up at DEC-084 | PROC-007 | Later (M-F) |
-| REF-015 | P2 | Exterior envelope, parking, fence and approach evidence from A011/A012, CCTV R1C1–C5/R3C1 and BAND photos → REFERENCES_INDEX §9 + ROOM_FIXTURES exterior rows; GAPs for what no source shows | — | Later (M-F) |
+| REF-015 | P2 | Exterior envelope, parking, fence and approach evidence from A011/A012, CCTV R1C1–C5/R3C1 and BAND photos → REFERENCES_INDEX §9 + ROOM_FIXTURES exterior rows; GAPs for what no source shows; also fix the stale bulletin-board note (REVIEW-REF013b m2) | — | Later (M-F) |
 | ART-012 | P2 | Exterior and parking lot from REF-015: façade, lot striping, fence/gate, HVAC, vegetation, night wall packs (M-9) | REF-015, PROC-009, PROC-010 | Later (M-F) |
 | ART-010 | P1 | Lived-in pass (DEC-096/104, playtest 1): placement variation, partly used supplies, uneven stocking, cleaning and personal items in believable places, restroom-cabinet supplies | PROC-010, ART-008 | Later (M-F) |
 | LIGHT-001 | P1 | Final lighting/lookdev: day and night looks, BOH look, glass/reflections/decals, material consistency (M-7) | ART-010, ART-012 | Later (M-F) |
