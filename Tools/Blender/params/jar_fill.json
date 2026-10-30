@@ -1,0 +1,30 @@
+{
+  "asset_id": "PROC_JarFill",
+  "generator": "jar_fill",
+  "_note": "Bud fill for the 454 g deli jar (DEC-019/027). Fill = InventoryService grams / 454. Cavity read from jar_params. Bud sizes, colours and the six looks (ASSET_PRODUCTION_PLAN §8 Flower workflow) are [GDD] art placeholders, not store or strain facts.",
+  "gaps": {
+    "GAP-PROC-01": "jar cavity inherits the placeholder deli jar body (see deli_jar.json)",
+    "GAP-PROC-07": "bud size/shape/colour per look: procedural placeholders until scan-based buds (§22) exist; no per-strain look data in the catalog",
+    "GAP-PROC-08": "fill height vs grams is linear (full jar = 7 layers to ~0.25 m); no measured fill height of a real 1 lb jar"
+  },
+  "jar_params": "Tools/Blender/params/deli_jar.json",
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/JarFill",
+  "seed": 2026,
+  "fill_steps_pct": [0, 10, 20, 40, 70, 100],
+  "buds": {"grid": 3, "layers": 7, "radius_m": 0.022, "layer_pitch_m": 0.033, "jitter_m": 0.010},
+  "shake": {"count": 10, "radius_m": [0.002, 0.004]},
+  "families": [
+    {"id": "GreenDense",   "body": [0.16, 0.30, 0.09], "accent": [0.60, 0.30, 0.08], "accent_frac": 0.12, "scale": 0.95, "elong": 1.15, "bump": 0.16},
+    {"id": "GreenAiry",    "body": [0.28, 0.42, 0.14], "accent": [0.66, 0.38, 0.10], "accent_frac": 0.15, "scale": 1.05, "elong": 1.30, "bump": 0.30},
+    {"id": "PurpleHeavy",  "body": [0.20, 0.25, 0.11], "accent": [0.30, 0.10, 0.34], "accent_frac": 0.45, "scale": 1.00, "elong": 1.20, "bump": 0.20},
+    {"id": "OrangePistil", "body": [0.22, 0.36, 0.12], "accent": [0.85, 0.40, 0.08], "accent_frac": 0.35, "scale": 1.00, "elong": 1.25, "bump": 0.22},
+    {"id": "Frosty",       "body": [0.42, 0.54, 0.36], "accent": [0.90, 0.92, 0.88], "accent_frac": 0.40, "scale": 1.00, "elong": 1.20, "bump": 0.18},
+    {"id": "DarkCompact",  "body": [0.08, 0.15, 0.06], "accent": [0.42, 0.22, 0.07], "accent_frac": 0.10, "scale": 0.90, "elong": 1.00, "bump": 0.12}
+  ],
+  "lods": {
+    "LOD0": {"kind": "buds", "subdiv": 2, "shake": true, "step_tri_budget": 5000},
+    "LOD1": {"kind": "buds", "subdiv": 1, "step_tri_budget": 1400},
+    "LOD2": {"kind": "block", "step_tri_budget": 40}
+  },
+  "tri_budget": {"LOD0": 12000, "LOD1": 3400, "LOD2": 200}
+}

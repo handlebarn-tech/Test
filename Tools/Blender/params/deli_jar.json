@@ -1,16 +1,22 @@
 {
   "asset_id": "PROC_DeliJar",
   "generator": "deli_jar",
-  "_note": "Shape from REFERENCES_INDEX photos 01/07/11 (square clear acrylic, lidded, front label card). No measurement exists: every number is a conventional placeholder, flagged by GAP id.",
+  "_note": "Main deli canister (DEC-042b/043): tall square clear acrylic, white pop-top lid, coloured base band per brand, front label card + THC % tag. Shape from Nolan's 2026-10-29 photos (References/Incoming: deli jar wall (retail), deli jars + scale (office)). No measurement exists: sizes are estimated from the photos (height about 2x width, band about 1/5 of the body) and the 454 g capacity (DEC-019), each flagged by GAP id until REF-007. Band and label colours are per-brand runtime material params; these are neutral defaults.",
   "gaps": {
-    "GAP-PROC-01": "deli jar width/depth/height/corner radius: placeholder for a ~6 in square x 11 in acrylic canister; photo 07 (jar held in arms) is the only size cue, Low",
-    "GAP-PROC-02": "deli jar lid height/overhang/colour: shelf photos show lids, no measurement",
-    "GAP-PROC-03": "deli jar label card size/position: photo 07 shows a white card on the front, placeholder rectangle"
+    "GAP-PROC-01": "deli canister width/depth/height/corner radius: photo estimate (~6 in square x 11 in body, ~5 L cavity for 454 g at ~0.09 g/cm3), awaiting REF-007",
+    "GAP-PROC-02": "pop-top lid height/overhang/button size: photo estimate (white, flush, round-cornered square button)",
+    "GAP-PROC-03": "label card + THC % tag size/position: photo estimate (white card centred on the front above the band, % tag on it)",
+    "GAP-PROC-09": "base band height/offset: photo estimate (~1/5 of the body height); colour is per brand (DEC-043), default green from the retail photo"
   },
   "body": {"width_m": 0.15, "depth_m": 0.15, "height_m": 0.28, "corner_radius_m": 0.018,
            "wall_m": 0.004, "floor_m": 0.008, "base_chamfer_m": 0.003},
-  "lid": {"enabled": true, "height_m": 0.03, "overhang_m": 0.004, "top_bevel_m": 0.004},
-  "label": {"width_m": 0.10, "height_m": 0.12, "bottom_m": 0.03, "offset_m": 0.0008},
+  "lid": {"enabled": true, "height_m": 0.035, "overhang_m": 0.002, "top_bevel_m": 0.006,
+          "button_inset_m": 0.03, "button_depth_m": 0.003, "button_corner_m": 0.012, "rgba": [0.92, 0.92, 0.9]},
+  "band": {"enabled": true, "height_m": 0.055, "offset_m": 0.0025, "rgba": [0.12, 0.45, 0.2]},
+  "label": {"enabled": true, "center_x_m": 0.0, "width_m": 0.10, "height_m": 0.08, "bottom_m": 0.065, "offset_m": 0.0008,
+            "rgba": [0.95, 0.95, 0.95]},
+  "thc_tag": {"enabled": true, "center_x_m": 0.025, "width_m": 0.045, "height_m": 0.028, "bottom_m": 0.12, "offset_m": 0.0016,
+              "rgba": [0.98, 0.98, 0.98]},
   "lods": {"LOD0": {"corner_segments": 6}, "LOD1": {"corner_segments": 1}},
-  "tri_budget": {"LOD0": 800, "LOD1": 200}
+  "tri_budget": {"LOD0": 1000, "LOD1": 250}
 }

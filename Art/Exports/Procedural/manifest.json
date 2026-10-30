@@ -2,11 +2,12 @@
   "assets": {
     "PROC_DeliJar": {
       "export": "Art/Exports/Procedural/PROC_DeliJar.fbx",
-      "export_sha256": "f988f442d887525f",
+      "export_sha256": "b3dd10433c3c6606",
       "gaps": [
         "GAP-PROC-01",
         "GAP-PROC-02",
-        "GAP-PROC-03"
+        "GAP-PROC-03",
+        "GAP-PROC-09"
       ],
       "generator": "deli_jar",
       "interior": {
@@ -18,6 +19,20 @@
       "lods": {
         "LOD0": {
           "objects": {
+            "PROC_DeliJar_Band_LOD0": {
+              "geometry_sha256": "7fce5f438ca27951",
+              "size_m_unity_xyz": [
+                0.155,
+                0.055,
+                0.155
+              ],
+              "tris": 220,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 112
+            },
             "PROC_DeliJar_Glass_LOD0": {
               "geometry_sha256": "608ed963f5bfca0c",
               "size_m_unity_xyz": [
@@ -33,10 +48,10 @@
               "verts": 140
             },
             "PROC_DeliJar_Label_LOD0": {
-              "geometry_sha256": "738622e74bd9e5cc",
+              "geometry_sha256": "eb9e16b1a326c00d",
               "size_m_unity_xyz": [
                 0.1,
-                0.12,
+                0.08,
                 0.0
               ],
               "tris": 2,
@@ -47,29 +62,57 @@
               "verts": 4
             },
             "PROC_DeliJar_Lid_LOD0": {
-              "geometry_sha256": "dc3e4a484df19bb1",
+              "geometry_sha256": "0d486d62ef3cb136",
               "size_m_unity_xyz": [
-                0.158,
-                0.03,
-                0.158
+                0.154,
+                0.035,
+                0.154
               ],
-              "tris": 164,
+              "tris": 276,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 84
+              "verts": 140
+            },
+            "PROC_DeliJar_ThcTag_LOD0": {
+              "geometry_sha256": "cf19392b6f7e4a01",
+              "size_m_unity_xyz": [
+                0.045,
+                0.028,
+                0.0
+              ],
+              "tris": 2,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 4
             }
           },
           "size_m_unity_xyz": [
-            0.158,
-            0.31,
-            0.158
+            0.155,
+            0.315,
+            0.155
           ],
-          "tris": 442
+          "tris": 776
         },
         "LOD1": {
           "objects": {
+            "PROC_DeliJar_Band_LOD1": {
+              "geometry_sha256": "e969d7a449d004ff",
+              "size_m_unity_xyz": [
+                0.155,
+                0.055,
+                0.155
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
             "PROC_DeliJar_Glass_LOD1": {
               "geometry_sha256": "46d5baf41792f739",
               "size_m_unity_xyz": [
@@ -85,10 +128,10 @@
               "verts": 40
             },
             "PROC_DeliJar_Label_LOD1": {
-              "geometry_sha256": "738622e74bd9e5cc",
+              "geometry_sha256": "eb9e16b1a326c00d",
               "size_m_unity_xyz": [
                 0.1,
-                0.12,
+                0.08,
                 0.0
               ],
               "tris": 2,
@@ -99,34 +142,1836 @@
               "verts": 4
             },
             "PROC_DeliJar_Lid_LOD1": {
-              "geometry_sha256": "c3abbe5ef7308290",
+              "geometry_sha256": "a054ff76e7571d90",
               "size_m_unity_xyz": [
-                0.158,
-                0.03,
-                0.158
+                0.154,
+                0.035,
+                0.154
               ],
-              "tris": 44,
+              "tris": 76,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 24
+              "verts": 40
+            },
+            "PROC_DeliJar_ThcTag_LOD1": {
+              "geometry_sha256": "cf19392b6f7e4a01",
+              "size_m_unity_xyz": [
+                0.045,
+                0.028,
+                0.0
+              ],
+              "tris": 2,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 4
             }
           },
           "size_m_unity_xyz": [
-            0.158,
-            0.31,
-            0.158
+            0.155,
+            0.315,
+            0.155
           ],
-          "tris": 122
+          "tris": 216
         }
       },
       "params": "Tools/Blender/params/deli_jar.json",
-      "params_sha256": "2f25f7342f1321b8",
+      "params_sha256": "d8d1a9b014699b05",
       "tri_budget": {
-        "LOD0": 800,
-        "LOD1": 200
+        "LOD0": 1000,
+        "LOD1": 250
       }
+    },
+    "PROC_JarFill_DarkCompact": {
+      "export": "Art/Exports/Procedural/PROC_JarFill_DarkCompact.fbx",
+      "export_sha256": "32c73f3cf39610ff",
+      "family": "DarkCompact",
+      "fill_steps_pct": [
+        0,
+        10,
+        20,
+        40,
+        70,
+        100
+      ],
+      "gaps": [
+        "GAP-PROC-01",
+        "GAP-PROC-07",
+        "GAP-PROC-08"
+      ],
+      "generator": "jar_fill",
+      "interior": {
+        "corner_r": 0.013999999999999999,
+        "floor": 0.008,
+        "half_x": 0.071,
+        "half_y": 0.071,
+        "top": 0.28
+      },
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_JarFill_DarkCompact_F000_LOD0": {
+              "geometry_sha256": "933535191b85a422",
+              "size_m_unity_xyz": [
+                0.08308,
+                0.00671,
+                0.10933
+              ],
+              "tris": 200,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_JarFill_DarkCompact_F010_LOD0": {
+              "geometry_sha256": "e9bf5548f8c93d5c",
+              "size_m_unity_xyz": [
+                0.12868,
+                0.04236,
+                0.13675
+              ],
+              "tris": 680,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 372
+            },
+            "PROC_JarFill_DarkCompact_F020_LOD0": {
+              "geometry_sha256": "b62b621f8b314f76",
+              "size_m_unity_xyz": [
+                0.13281,
+                0.06928,
+                0.13727
+              ],
+              "tris": 1040,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 546
+            },
+            "PROC_JarFill_DarkCompact_F040_LOD0": {
+              "geometry_sha256": "791142c6dc12fcc7",
+              "size_m_unity_xyz": [
+                0.13753,
+                0.09669,
+                0.13781
+              ],
+              "tris": 1840,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 966
+            },
+            "PROC_JarFill_DarkCompact_F070_LOD0": {
+              "geometry_sha256": "b024b725ccdcb314",
+              "size_m_unity_xyz": [
+                0.13895,
+                0.15616,
+                0.13922
+              ],
+              "tris": 3200,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1680
+            },
+            "PROC_JarFill_DarkCompact_F100_LOD0": {
+              "geometry_sha256": "0d39ea33ef76b886",
+              "size_m_unity_xyz": [
+                0.13895,
+                0.21621,
+                0.13922
+              ],
+              "tris": 4560,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 2394
+            }
+          },
+          "size_m_unity_xyz": [
+            0.13895,
+            0.21621,
+            0.13922
+          ],
+          "tris": 11520
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_JarFill_DarkCompact_F010_LOD1": {
+              "geometry_sha256": "003030fc14b8db47",
+              "size_m_unity_xyz": [
+                0.13061,
+                0.03931,
+                0.13699
+              ],
+              "tris": 120,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_JarFill_DarkCompact_F020_LOD1": {
+              "geometry_sha256": "4b2e406fe7e06f77",
+              "size_m_unity_xyz": [
+                0.13168,
+                0.06865,
+                0.13699
+              ],
+              "tris": 260,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 156
+            },
+            "PROC_JarFill_DarkCompact_F040_LOD1": {
+              "geometry_sha256": "8bd135e39dada2a2",
+              "size_m_unity_xyz": [
+                0.13801,
+                0.09669,
+                0.13847
+              ],
+              "tris": 460,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 276
+            },
+            "PROC_JarFill_DarkCompact_F070_LOD1": {
+              "geometry_sha256": "86f5e97241950760",
+              "size_m_unity_xyz": [
+                0.13881,
+                0.15468,
+                0.13868
+              ],
+              "tris": 800,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 480
+            },
+            "PROC_JarFill_DarkCompact_F100_LOD1": {
+              "geometry_sha256": "f71da9d4c53e961b",
+              "size_m_unity_xyz": [
+                0.13953,
+                0.21552,
+                0.13882
+              ],
+              "tris": 1140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 684
+            }
+          },
+          "size_m_unity_xyz": [
+            0.13953,
+            0.21552,
+            0.13882
+          ],
+          "tris": 2780
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_JarFill_DarkCompact_F010_LOD2": {
+              "geometry_sha256": "05a1bde97fac4371",
+              "size_m_unity_xyz": [
+                0.136,
+                0.0277,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_DarkCompact_F020_LOD2": {
+              "geometry_sha256": "b58388a8044681f6",
+              "size_m_unity_xyz": [
+                0.136,
+                0.0508,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_DarkCompact_F040_LOD2": {
+              "geometry_sha256": "30820c17d7ba331f",
+              "size_m_unity_xyz": [
+                0.136,
+                0.0904,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_DarkCompact_F070_LOD2": {
+              "geometry_sha256": "5700a3b94ba6788b",
+              "size_m_unity_xyz": [
+                0.136,
+                0.1531,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_DarkCompact_F100_LOD2": {
+              "geometry_sha256": "f2d8cd326ab03fc4",
+              "size_m_unity_xyz": [
+                0.136,
+                0.2158,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.136,
+            0.2158,
+            0.136
+          ],
+          "tris": 140
+        }
+      },
+      "params": "Tools/Blender/params/jar_fill.json",
+      "params_sha256": "c437ad7c52421dd8",
+      "preview_groups": [
+        "F000",
+        "F010",
+        "F020",
+        "F040",
+        "F070",
+        "F100"
+      ],
+      "tri_budget": {
+        "LOD0": 12000,
+        "LOD1": 3400,
+        "LOD2": 200
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/JarFill/PROC_JarFill_DarkCompact.fbx"
+    },
+    "PROC_JarFill_Frosty": {
+      "export": "Art/Exports/Procedural/PROC_JarFill_Frosty.fbx",
+      "export_sha256": "31960aff2aa74db6",
+      "family": "Frosty",
+      "fill_steps_pct": [
+        0,
+        10,
+        20,
+        40,
+        70,
+        100
+      ],
+      "gaps": [
+        "GAP-PROC-01",
+        "GAP-PROC-07",
+        "GAP-PROC-08"
+      ],
+      "generator": "jar_fill",
+      "interior": {
+        "corner_r": 0.013999999999999999,
+        "floor": 0.008,
+        "half_x": 0.071,
+        "half_y": 0.071,
+        "top": 0.28
+      },
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_JarFill_Frosty_F000_LOD0": {
+              "geometry_sha256": "f640960b949cd0a7",
+              "size_m_unity_xyz": [
+                0.09545,
+                0.00671,
+                0.07814
+              ],
+              "tris": 200,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_JarFill_Frosty_F010_LOD0": {
+              "geometry_sha256": "b8f0a39ff3a3581f",
+              "size_m_unity_xyz": [
+                0.13709,
+                0.06058,
+                0.1366
+              ],
+              "tris": 680,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 372
+            },
+            "PROC_JarFill_Frosty_F020_LOD0": {
+              "geometry_sha256": "df95f1796aa8e060",
+              "size_m_unity_xyz": [
+                0.13914,
+                0.08608,
+                0.13836
+              ],
+              "tris": 1040,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 546
+            },
+            "PROC_JarFill_Frosty_F040_LOD0": {
+              "geometry_sha256": "9f5bd40a596c32b6",
+              "size_m_unity_xyz": [
+                0.13914,
+                0.11669,
+                0.13942
+              ],
+              "tris": 1840,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 966
+            },
+            "PROC_JarFill_Frosty_F070_LOD0": {
+              "geometry_sha256": "667077e7f7dc330b",
+              "size_m_unity_xyz": [
+                0.1395,
+                0.18636,
+                0.13942
+              ],
+              "tris": 3200,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1680
+            },
+            "PROC_JarFill_Frosty_F100_LOD0": {
+              "geometry_sha256": "6e44c2f47e0be9e6",
+              "size_m_unity_xyz": [
+                0.1395,
+                0.24799,
+                0.13942
+              ],
+              "tris": 4560,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 2394
+            }
+          },
+          "size_m_unity_xyz": [
+            0.1395,
+            0.24799,
+            0.13942
+          ],
+          "tris": 11520
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_JarFill_Frosty_F010_LOD1": {
+              "geometry_sha256": "36f3dcb4158db583",
+              "size_m_unity_xyz": [
+                0.13709,
+                0.05449,
+                0.13794
+              ],
+              "tris": 120,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_JarFill_Frosty_F020_LOD1": {
+              "geometry_sha256": "321e4a87dee5b1b9",
+              "size_m_unity_xyz": [
+                0.13806,
+                0.08241,
+                0.13794
+              ],
+              "tris": 260,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 156
+            },
+            "PROC_JarFill_Frosty_F040_LOD1": {
+              "geometry_sha256": "e0df87fc7727b792",
+              "size_m_unity_xyz": [
+                0.13855,
+                0.11669,
+                0.13899
+              ],
+              "tris": 460,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 276
+            },
+            "PROC_JarFill_Frosty_F070_LOD1": {
+              "geometry_sha256": "404f1df76da2ad9f",
+              "size_m_unity_xyz": [
+                0.13879,
+                0.18636,
+                0.13908
+              ],
+              "tris": 800,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 480
+            },
+            "PROC_JarFill_Frosty_F100_LOD1": {
+              "geometry_sha256": "5a5883a2b24a4698",
+              "size_m_unity_xyz": [
+                0.13911,
+                0.2461,
+                0.13934
+              ],
+              "tris": 1140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 684
+            }
+          },
+          "size_m_unity_xyz": [
+            0.13911,
+            0.2461,
+            0.13934
+          ],
+          "tris": 2780
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_JarFill_Frosty_F010_LOD2": {
+              "geometry_sha256": "1a15997503e4e302",
+              "size_m_unity_xyz": [
+                0.136,
+                0.031,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_Frosty_F020_LOD2": {
+              "geometry_sha256": "6a7433d7b3ec4fec",
+              "size_m_unity_xyz": [
+                0.136,
+                0.05667,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_Frosty_F040_LOD2": {
+              "geometry_sha256": "3c8bb195dd7e8fa2",
+              "size_m_unity_xyz": [
+                0.136,
+                0.10067,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_Frosty_F070_LOD2": {
+              "geometry_sha256": "59dfad8496546bac",
+              "size_m_unity_xyz": [
+                0.136,
+                0.17033,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_Frosty_F100_LOD2": {
+              "geometry_sha256": "26d4a49214573df5",
+              "size_m_unity_xyz": [
+                0.136,
+                0.24,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.136,
+            0.24,
+            0.136
+          ],
+          "tris": 140
+        }
+      },
+      "params": "Tools/Blender/params/jar_fill.json",
+      "params_sha256": "c437ad7c52421dd8",
+      "preview_groups": [
+        "F000",
+        "F010",
+        "F020",
+        "F040",
+        "F070",
+        "F100"
+      ],
+      "tri_budget": {
+        "LOD0": 12000,
+        "LOD1": 3400,
+        "LOD2": 200
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/JarFill/PROC_JarFill_Frosty.fbx"
+    },
+    "PROC_JarFill_GreenAiry": {
+      "export": "Art/Exports/Procedural/PROC_JarFill_GreenAiry.fbx",
+      "export_sha256": "afc4fc2607f416ba",
+      "family": "GreenAiry",
+      "fill_steps_pct": [
+        0,
+        10,
+        20,
+        40,
+        70,
+        100
+      ],
+      "gaps": [
+        "GAP-PROC-01",
+        "GAP-PROC-07",
+        "GAP-PROC-08"
+      ],
+      "generator": "jar_fill",
+      "interior": {
+        "corner_r": 0.013999999999999999,
+        "floor": 0.008,
+        "half_x": 0.071,
+        "half_y": 0.071,
+        "top": 0.28
+      },
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_JarFill_GreenAiry_F000_LOD0": {
+              "geometry_sha256": "bc26a2672b512699",
+              "size_m_unity_xyz": [
+                0.10419,
+                0.00656,
+                0.10841
+              ],
+              "tris": 200,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_JarFill_GreenAiry_F010_LOD0": {
+              "geometry_sha256": "ce876e857fd644d5",
+              "size_m_unity_xyz": [
+                0.13135,
+                0.06776,
+                0.13886
+              ],
+              "tris": 680,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 372
+            },
+            "PROC_JarFill_GreenAiry_F020_LOD0": {
+              "geometry_sha256": "52956663d895b10e",
+              "size_m_unity_xyz": [
+                0.13881,
+                0.09583,
+                0.13914
+              ],
+              "tris": 960,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 504
+            },
+            "PROC_JarFill_GreenAiry_F040_LOD0": {
+              "geometry_sha256": "0f62c71a974619de",
+              "size_m_unity_xyz": [
+                0.13901,
+                0.12741,
+                0.13914
+              ],
+              "tris": 1840,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 966
+            },
+            "PROC_JarFill_GreenAiry_F070_LOD0": {
+              "geometry_sha256": "56e1b3336d57e7a9",
+              "size_m_unity_xyz": [
+                0.13959,
+                0.19852,
+                0.13931
+              ],
+              "tris": 3200,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1680
+            },
+            "PROC_JarFill_GreenAiry_F100_LOD0": {
+              "geometry_sha256": "9b2e1f0cda75fee0",
+              "size_m_unity_xyz": [
+                0.1397,
+                0.26765,
+                0.13958
+              ],
+              "tris": 4560,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 2394
+            }
+          },
+          "size_m_unity_xyz": [
+            0.1397,
+            0.26765,
+            0.13958
+          ],
+          "tris": 11440
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_JarFill_GreenAiry_F010_LOD1": {
+              "geometry_sha256": "9b235d42226e923a",
+              "size_m_unity_xyz": [
+                0.13335,
+                0.06284,
+                0.13862
+              ],
+              "tris": 120,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_JarFill_GreenAiry_F020_LOD1": {
+              "geometry_sha256": "a90dd64451a60cd7",
+              "size_m_unity_xyz": [
+                0.1373,
+                0.09203,
+                0.13862
+              ],
+              "tris": 240,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 144
+            },
+            "PROC_JarFill_GreenAiry_F040_LOD1": {
+              "geometry_sha256": "ec4c393c8149b774",
+              "size_m_unity_xyz": [
+                0.13928,
+                0.12741,
+                0.13934
+              ],
+              "tris": 460,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 276
+            },
+            "PROC_JarFill_GreenAiry_F070_LOD1": {
+              "geometry_sha256": "96886f60ecf3d1d3",
+              "size_m_unity_xyz": [
+                0.13949,
+                0.19852,
+                0.1395
+              ],
+              "tris": 800,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 480
+            },
+            "PROC_JarFill_GreenAiry_F100_LOD1": {
+              "geometry_sha256": "78809765f1c12d66",
+              "size_m_unity_xyz": [
+                0.13995,
+                0.26765,
+                0.1396
+              ],
+              "tris": 1140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 684
+            }
+          },
+          "size_m_unity_xyz": [
+            0.13995,
+            0.26765,
+            0.1396
+          ],
+          "tris": 2760
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_JarFill_GreenAiry_F010_LOD2": {
+              "geometry_sha256": "a4b613af2449e1eb",
+              "size_m_unity_xyz": [
+                0.136,
+                0.03265,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_GreenAiry_F020_LOD2": {
+              "geometry_sha256": "8ee2edf429e9febb",
+              "size_m_unity_xyz": [
+                0.136,
+                0.0596,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_GreenAiry_F040_LOD2": {
+              "geometry_sha256": "6574229585fbff04",
+              "size_m_unity_xyz": [
+                0.136,
+                0.1058,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_GreenAiry_F070_LOD2": {
+              "geometry_sha256": "b7967fa4e400fc53",
+              "size_m_unity_xyz": [
+                0.136,
+                0.17895,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_GreenAiry_F100_LOD2": {
+              "geometry_sha256": "f8d3742ff787f791",
+              "size_m_unity_xyz": [
+                0.136,
+                0.2521,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.136,
+            0.2521,
+            0.136
+          ],
+          "tris": 140
+        }
+      },
+      "params": "Tools/Blender/params/jar_fill.json",
+      "params_sha256": "c437ad7c52421dd8",
+      "preview_groups": [
+        "F000",
+        "F010",
+        "F020",
+        "F040",
+        "F070",
+        "F100"
+      ],
+      "tri_budget": {
+        "LOD0": 12000,
+        "LOD1": 3400,
+        "LOD2": 200
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/JarFill/PROC_JarFill_GreenAiry.fbx"
+    },
+    "PROC_JarFill_GreenDense": {
+      "export": "Art/Exports/Procedural/PROC_JarFill_GreenDense.fbx",
+      "export_sha256": "f4dd37b825dad838",
+      "family": "GreenDense",
+      "fill_steps_pct": [
+        0,
+        10,
+        20,
+        40,
+        70,
+        100
+      ],
+      "gaps": [
+        "GAP-PROC-01",
+        "GAP-PROC-07",
+        "GAP-PROC-08"
+      ],
+      "generator": "jar_fill",
+      "interior": {
+        "corner_r": 0.013999999999999999,
+        "floor": 0.008,
+        "half_x": 0.071,
+        "half_y": 0.071,
+        "top": 0.28
+      },
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_JarFill_GreenDense_F000_LOD0": {
+              "geometry_sha256": "5cb441daf1269948",
+              "size_m_unity_xyz": [
+                0.08778,
+                0.00733,
+                0.10279
+              ],
+              "tris": 200,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_JarFill_GreenDense_F010_LOD0": {
+              "geometry_sha256": "abc10acbc57071ab",
+              "size_m_unity_xyz": [
+                0.13588,
+                0.04788,
+                0.13584
+              ],
+              "tris": 680,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 372
+            },
+            "PROC_JarFill_GreenDense_F020_LOD0": {
+              "geometry_sha256": "1c32edf04f616502",
+              "size_m_unity_xyz": [
+                0.13772,
+                0.0789,
+                0.13584
+              ],
+              "tris": 1040,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 546
+            },
+            "PROC_JarFill_GreenDense_F040_LOD0": {
+              "geometry_sha256": "d0b217e39e617ab5",
+              "size_m_unity_xyz": [
+                0.13772,
+                0.10647,
+                0.1389
+              ],
+              "tris": 1920,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1008
+            },
+            "PROC_JarFill_GreenDense_F070_LOD0": {
+              "geometry_sha256": "294d0505c158511e",
+              "size_m_unity_xyz": [
+                0.13901,
+                0.17029,
+                0.1389
+              ],
+              "tris": 3200,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1680
+            },
+            "PROC_JarFill_GreenDense_F100_LOD0": {
+              "geometry_sha256": "15f5f7d4462384f1",
+              "size_m_unity_xyz": [
+                0.13951,
+                0.23569,
+                0.13971
+              ],
+              "tris": 4560,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 2394
+            }
+          },
+          "size_m_unity_xyz": [
+            0.13951,
+            0.23569,
+            0.13971
+          ],
+          "tris": 11600
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_JarFill_GreenDense_F010_LOD1": {
+              "geometry_sha256": "0553357430e97efc",
+              "size_m_unity_xyz": [
+                0.13588,
+                0.04442,
+                0.13584
+              ],
+              "tris": 120,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_JarFill_GreenDense_F020_LOD1": {
+              "geometry_sha256": "c2da488b8965adea",
+              "size_m_unity_xyz": [
+                0.13772,
+                0.07653,
+                0.13584
+              ],
+              "tris": 260,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 156
+            },
+            "PROC_JarFill_GreenDense_F040_LOD1": {
+              "geometry_sha256": "4f88eb0d727fd546",
+              "size_m_unity_xyz": [
+                0.13772,
+                0.10465,
+                0.13815
+              ],
+              "tris": 480,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 288
+            },
+            "PROC_JarFill_GreenDense_F070_LOD1": {
+              "geometry_sha256": "3d217227576b1056",
+              "size_m_unity_xyz": [
+                0.13919,
+                0.16724,
+                0.13815
+              ],
+              "tris": 800,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 480
+            },
+            "PROC_JarFill_GreenDense_F100_LOD1": {
+              "geometry_sha256": "0b341c5ff802bd99",
+              "size_m_unity_xyz": [
+                0.13929,
+                0.23428,
+                0.13916
+              ],
+              "tris": 1140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 684
+            }
+          },
+          "size_m_unity_xyz": [
+            0.13929,
+            0.23428,
+            0.13916
+          ],
+          "tris": 2800
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_JarFill_GreenDense_F010_LOD2": {
+              "geometry_sha256": "4abf29207b430dd0",
+              "size_m_unity_xyz": [
+                0.136,
+                0.02935,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_GreenDense_F020_LOD2": {
+              "geometry_sha256": "4c6c9134417f7a7b",
+              "size_m_unity_xyz": [
+                0.136,
+                0.05373,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_GreenDense_F040_LOD2": {
+              "geometry_sha256": "b66356032b6fb430",
+              "size_m_unity_xyz": [
+                0.136,
+                0.09553,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_GreenDense_F070_LOD2": {
+              "geometry_sha256": "f4b99e9b22d5816f",
+              "size_m_unity_xyz": [
+                0.136,
+                0.16172,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_GreenDense_F100_LOD2": {
+              "geometry_sha256": "9093022ab126f516",
+              "size_m_unity_xyz": [
+                0.136,
+                0.2279,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.136,
+            0.2279,
+            0.136
+          ],
+          "tris": 140
+        }
+      },
+      "params": "Tools/Blender/params/jar_fill.json",
+      "params_sha256": "c437ad7c52421dd8",
+      "preview_groups": [
+        "F000",
+        "F010",
+        "F020",
+        "F040",
+        "F070",
+        "F100"
+      ],
+      "tri_budget": {
+        "LOD0": 12000,
+        "LOD1": 3400,
+        "LOD2": 200
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/JarFill/PROC_JarFill_GreenDense.fbx"
+    },
+    "PROC_JarFill_OrangePistil": {
+      "export": "Art/Exports/Procedural/PROC_JarFill_OrangePistil.fbx",
+      "export_sha256": "dfd37b8af97c8f29",
+      "family": "OrangePistil",
+      "fill_steps_pct": [
+        0,
+        10,
+        20,
+        40,
+        70,
+        100
+      ],
+      "gaps": [
+        "GAP-PROC-01",
+        "GAP-PROC-07",
+        "GAP-PROC-08"
+      ],
+      "generator": "jar_fill",
+      "interior": {
+        "corner_r": 0.013999999999999999,
+        "floor": 0.008,
+        "half_x": 0.071,
+        "half_y": 0.071,
+        "top": 0.28
+      },
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_JarFill_OrangePistil_F000_LOD0": {
+              "geometry_sha256": "cb8f900947c4bf39",
+              "size_m_unity_xyz": [
+                0.08576,
+                0.00545,
+                0.09676
+              ],
+              "tris": 200,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_JarFill_OrangePistil_F010_LOD0": {
+              "geometry_sha256": "962f927f7b1806c2",
+              "size_m_unity_xyz": [
+                0.13683,
+                0.06107,
+                0.13854
+              ],
+              "tris": 680,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 372
+            },
+            "PROC_JarFill_OrangePistil_F020_LOD0": {
+              "geometry_sha256": "dfb3cc8125d8a38d",
+              "size_m_unity_xyz": [
+                0.13899,
+                0.08546,
+                0.13854
+              ],
+              "tris": 960,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 504
+            },
+            "PROC_JarFill_OrangePistil_F040_LOD0": {
+              "geometry_sha256": "873268746c02acd4",
+              "size_m_unity_xyz": [
+                0.13911,
+                0.11809,
+                0.13894
+              ],
+              "tris": 1840,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 966
+            },
+            "PROC_JarFill_OrangePistil_F070_LOD0": {
+              "geometry_sha256": "647eacd05aa925a6",
+              "size_m_unity_xyz": [
+                0.13969,
+                0.18697,
+                0.13951
+              ],
+              "tris": 3200,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1680
+            },
+            "PROC_JarFill_OrangePistil_F100_LOD0": {
+              "geometry_sha256": "74364e898211889c",
+              "size_m_unity_xyz": [
+                0.13976,
+                0.25133,
+                0.13973
+              ],
+              "tris": 4560,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 2394
+            }
+          },
+          "size_m_unity_xyz": [
+            0.13976,
+            0.25133,
+            0.13973
+          ],
+          "tris": 11440
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_JarFill_OrangePistil_F010_LOD1": {
+              "geometry_sha256": "5de1aaf6423ef58d",
+              "size_m_unity_xyz": [
+                0.1352,
+                0.0549,
+                0.13853
+              ],
+              "tris": 120,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_JarFill_OrangePistil_F020_LOD1": {
+              "geometry_sha256": "de5b7799161bf5b7",
+              "size_m_unity_xyz": [
+                0.136,
+                0.08546,
+                0.13853
+              ],
+              "tris": 240,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 144
+            },
+            "PROC_JarFill_OrangePistil_F040_LOD1": {
+              "geometry_sha256": "260fed2699c143f6",
+              "size_m_unity_xyz": [
+                0.13724,
+                0.11805,
+                0.13891
+              ],
+              "tris": 460,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 276
+            },
+            "PROC_JarFill_OrangePistil_F070_LOD1": {
+              "geometry_sha256": "d567ddbf197d20aa",
+              "size_m_unity_xyz": [
+                0.13759,
+                0.18697,
+                0.1396
+              ],
+              "tris": 800,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 480
+            },
+            "PROC_JarFill_OrangePistil_F100_LOD1": {
+              "geometry_sha256": "f2ac028783745d79",
+              "size_m_unity_xyz": [
+                0.13827,
+                0.25133,
+                0.1397
+              ],
+              "tris": 1140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 684
+            }
+          },
+          "size_m_unity_xyz": [
+            0.13827,
+            0.25133,
+            0.1397
+          ],
+          "tris": 2760
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_JarFill_OrangePistil_F010_LOD2": {
+              "geometry_sha256": "1a15997503e4e302",
+              "size_m_unity_xyz": [
+                0.136,
+                0.031,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_OrangePistil_F020_LOD2": {
+              "geometry_sha256": "6a7433d7b3ec4fec",
+              "size_m_unity_xyz": [
+                0.136,
+                0.05667,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_OrangePistil_F040_LOD2": {
+              "geometry_sha256": "3c8bb195dd7e8fa2",
+              "size_m_unity_xyz": [
+                0.136,
+                0.10067,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_OrangePistil_F070_LOD2": {
+              "geometry_sha256": "59dfad8496546bac",
+              "size_m_unity_xyz": [
+                0.136,
+                0.17033,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_OrangePistil_F100_LOD2": {
+              "geometry_sha256": "26d4a49214573df5",
+              "size_m_unity_xyz": [
+                0.136,
+                0.24,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.136,
+            0.24,
+            0.136
+          ],
+          "tris": 140
+        }
+      },
+      "params": "Tools/Blender/params/jar_fill.json",
+      "params_sha256": "c437ad7c52421dd8",
+      "preview_groups": [
+        "F000",
+        "F010",
+        "F020",
+        "F040",
+        "F070",
+        "F100"
+      ],
+      "tri_budget": {
+        "LOD0": 12000,
+        "LOD1": 3400,
+        "LOD2": 200
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/JarFill/PROC_JarFill_OrangePistil.fbx"
+    },
+    "PROC_JarFill_PurpleHeavy": {
+      "export": "Art/Exports/Procedural/PROC_JarFill_PurpleHeavy.fbx",
+      "export_sha256": "0a04b7a78a023c89",
+      "family": "PurpleHeavy",
+      "fill_steps_pct": [
+        0,
+        10,
+        20,
+        40,
+        70,
+        100
+      ],
+      "gaps": [
+        "GAP-PROC-01",
+        "GAP-PROC-07",
+        "GAP-PROC-08"
+      ],
+      "generator": "jar_fill",
+      "interior": {
+        "corner_r": 0.013999999999999999,
+        "floor": 0.008,
+        "half_x": 0.071,
+        "half_y": 0.071,
+        "top": 0.28
+      },
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_JarFill_PurpleHeavy_F000_LOD0": {
+              "geometry_sha256": "38c26bb8146d0235",
+              "size_m_unity_xyz": [
+                0.11354,
+                0.00556,
+                0.11579
+              ],
+              "tris": 200,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_JarFill_PurpleHeavy_F010_LOD0": {
+              "geometry_sha256": "a87a1abefcd9e666",
+              "size_m_unity_xyz": [
+                0.1387,
+                0.05898,
+                0.13886
+              ],
+              "tris": 680,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 372
+            },
+            "PROC_JarFill_PurpleHeavy_F020_LOD0": {
+              "geometry_sha256": "39502271dca19725",
+              "size_m_unity_xyz": [
+                0.139,
+                0.0878,
+                0.13886
+              ],
+              "tris": 960,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 504
+            },
+            "PROC_JarFill_PurpleHeavy_F040_LOD0": {
+              "geometry_sha256": "a749adf2c6df32c6",
+              "size_m_unity_xyz": [
+                0.139,
+                0.11713,
+                0.13886
+              ],
+              "tris": 1840,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 966
+            },
+            "PROC_JarFill_PurpleHeavy_F070_LOD0": {
+              "geometry_sha256": "e16f0de3f6bac72c",
+              "size_m_unity_xyz": [
+                0.13954,
+                0.18202,
+                0.13965
+              ],
+              "tris": 3200,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1680
+            },
+            "PROC_JarFill_PurpleHeavy_F100_LOD0": {
+              "geometry_sha256": "4fcf612f1a5387c9",
+              "size_m_unity_xyz": [
+                0.13968,
+                0.2509,
+                0.1398
+              ],
+              "tris": 4560,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 2394
+            }
+          },
+          "size_m_unity_xyz": [
+            0.13968,
+            0.2509,
+            0.1398
+          ],
+          "tris": 11440
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_JarFill_PurpleHeavy_F010_LOD1": {
+              "geometry_sha256": "eff59c8711de2cfc",
+              "size_m_unity_xyz": [
+                0.13768,
+                0.05443,
+                0.13366
+              ],
+              "tris": 120,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_JarFill_PurpleHeavy_F020_LOD1": {
+              "geometry_sha256": "3002e4045e61fcc3",
+              "size_m_unity_xyz": [
+                0.13895,
+                0.0878,
+                0.13799
+              ],
+              "tris": 240,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 144
+            },
+            "PROC_JarFill_PurpleHeavy_F040_LOD1": {
+              "geometry_sha256": "61cdb8099f962861",
+              "size_m_unity_xyz": [
+                0.13895,
+                0.11713,
+                0.139
+              ],
+              "tris": 460,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 276
+            },
+            "PROC_JarFill_PurpleHeavy_F070_LOD1": {
+              "geometry_sha256": "cc54b1e52752b1e1",
+              "size_m_unity_xyz": [
+                0.13943,
+                0.17899,
+                0.139
+              ],
+              "tris": 800,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 480
+            },
+            "PROC_JarFill_PurpleHeavy_F100_LOD1": {
+              "geometry_sha256": "8f0a4d9c048199b2",
+              "size_m_unity_xyz": [
+                0.13943,
+                0.24819,
+                0.13972
+              ],
+              "tris": 1140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 684
+            }
+          },
+          "size_m_unity_xyz": [
+            0.13943,
+            0.24819,
+            0.13972
+          ],
+          "tris": 2760
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_JarFill_PurpleHeavy_F010_LOD2": {
+              "geometry_sha256": "1a15997503e4e302",
+              "size_m_unity_xyz": [
+                0.136,
+                0.031,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_PurpleHeavy_F020_LOD2": {
+              "geometry_sha256": "6a7433d7b3ec4fec",
+              "size_m_unity_xyz": [
+                0.136,
+                0.05667,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_PurpleHeavy_F040_LOD2": {
+              "geometry_sha256": "3c8bb195dd7e8fa2",
+              "size_m_unity_xyz": [
+                0.136,
+                0.10067,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_PurpleHeavy_F070_LOD2": {
+              "geometry_sha256": "59dfad8496546bac",
+              "size_m_unity_xyz": [
+                0.136,
+                0.17033,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_JarFill_PurpleHeavy_F100_LOD2": {
+              "geometry_sha256": "26d4a49214573df5",
+              "size_m_unity_xyz": [
+                0.136,
+                0.24,
+                0.136
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.136,
+            0.24,
+            0.136
+          ],
+          "tris": 140
+        }
+      },
+      "params": "Tools/Blender/params/jar_fill.json",
+      "params_sha256": "c437ad7c52421dd8",
+      "preview_groups": [
+        "F000",
+        "F010",
+        "F020",
+        "F040",
+        "F070",
+        "F100"
+      ],
+      "tri_budget": {
+        "LOD0": 12000,
+        "LOD1": 3400,
+        "LOD2": 200
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/JarFill/PROC_JarFill_PurpleHeavy.fbx"
     },
     "PROC_PackageBox": {
       "export": "Art/Exports/Procedural/PROC_PackageBox.fbx",
