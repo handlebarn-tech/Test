@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_PackageBox",
+  "generator": "package_base",
+  "_note": "No package evidence in References/. Conventional placeholder carton (cart/edible box class) with optional telescoping lid.",
+  "gaps": {
+    "GAP-PROC-04": "package box dimensions: placeholder 6.5 x 2.5 x 10 cm carton; per-SKU sizes unknown",
+    "GAP-PROC-06": "package label region: placeholder rectangle on the front face"
+  },
+  "shape": "box",
+  "width_m": 0.065, "depth_m": 0.025, "height_m": 0.10, "edge_radius_m": 0.0015,
+  "lid": {"enabled": true, "height_m": 0.02, "overhang_m": 0.0008},
+  "label": {"width_m": 0.055, "height_m": 0.06, "bottom_m": 0.01},
+  "preview_rgb": [0.15, 0.35, 0.3],
+  "lods": {"LOD0": {"corner_segments": 2}, "LOD1": {"corner_segments": 0}},
+  "tri_budget": {"LOD0": 300, "LOD1": 60}
+}
