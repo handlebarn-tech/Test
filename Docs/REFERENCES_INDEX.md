@@ -8,11 +8,13 @@ Staff are described by attire/role only.
 
 | File | Type | What it is | Index section |
 |---|---|---|---|
-| `References/Floor Plan.pdf` | PDF, 6 pp (pp5–6 blank), Print-to-PDF, no text layer, vector shapes | "The Flower Shop Phoenix · Floor Plan", **Working Plan V5, not for construction**. Built from the RSP Architects A011/A013 sheets (read as text only), cameras and a walkthrough | §1 |
+| `References/Floor Plan.pdf` | PDF, 6 pp (pp5–6 blank), Print-to-PDF, no text layer, vector shapes | "The Flower Shop Phoenix · Floor Plan", **Working Plan V5, not for construction**. Built from the RSP Architects A011 (floor plan) / A012 (lighting plan) sheets, 2026 AZDHS update (read as text only; "A013" was a mislabel, fixed REF-004), cameras and a walkthrough | §1 |
 | `References/CCTV Camera Wall.png` | PNG 2048×1137, 5×5 tiles | Camera wall snapshot A (busy floor, overlay timestamps read 2012 = NVR clock, not a real date) | §2 |
 | `References/CCTV Camera Wall 2.png` | PNG 2696×1462, 5×5 tiles | Camera wall snapshot B, same tile layout, higher resolution (use this one first) | §2 |
 | `References/BAND_TFS Phoenix (NEW)_…/…_01..13.jpeg` | 13 JPEG 1280×960, body-cam style, EXIF 2026-03-16..20 | Eye-level store/staff snapshots | §3 |
 | `References/CCTV HUB Wall 2026-10-29.webp` | WEBP 2000×564, 2×4 tiles | HUB/HUB 2 camera wall supplied by Nolan 2026-10-29 (DEC-022). Nolan: "First room on left two pictures, the rest are in the bigger side of the hub... It's mostly misc storage." | §2.1 |
+| *(remote, not in repo)* RSP "Interior TI Approved Set - PHX.pdf" | PDF 37 pp, 9.15 MB, 2022-08/10, City-approved 2022-12 | Retail interior TI drawings: G010 mounting heights, A101 plan + RCP, A310 door/material schedules, A320 partitions, A901 elevations, A940 millwork, I101 finish plan, E-sheets luminaire schedule. Read as text through M365 (REF-004); the PDF itself could not be copied (connector returns text only) | §6 |
+| *(remote, not in repo)* RSP A011 "Floor Plan" + A012 "Floor Plan - Lighting" (2026 AZDHS update, sheet date 05/15/23, revs 12/23/22) | PDF, vector text | Room areas and labels behind Working Plan V5; A012 lighting legend | §6.8 |
 | `References/LIVE_TFS_BUDTENDER_v7.11.4.md` | MD | Live budtender app behaviour (v7.11.4: Floor Mode, 6 effect domains, tier filters, accessibility). **No visual tokens** (colours/fonts/layout) are recorded in it | UI only (GAP-114) |
 | `References/Review_Budtender_Tool_Comprehensive_Chat_Record.md` | MD | Project history of the budtender tool (not in the REF-001 input list; not analysed here, MIG owns it) | — |
 
@@ -237,10 +239,97 @@ Product names visible on jar cards or boxes are **not** inventory data and must 
 | Delivery door / emergency exit / HUB 2 door | 3.4 / 3.5 / 2.0 ft | vector arcs | Med / Low / Med |
 | Interior door arcs (1.2–1.8 ft) | **not real widths** | the symbols are smaller than any code-compliant door. Use a standard 3'-0" × 7'-0" commercial door as a **labelled convention** until measured | Low |
 | Arch openings | 3.81 ft (west), 3.0 ft (east) | vector | Med. Height unknown; photo 06 shows the arch top clearly above a standing adult |
-| Counter height | none measured | CCTV/photos show the counter top at standing hip height. A 36–42" retail counter is an **industry convention, not a measurement** | Low |
-| Ceiling height / grid | none | retail has dark slatted baffles (photos 01/05/10), not a T-bar grid. BOH ceilings are white. No height in any source | none (GAP-001) |
+| Counter height | POS / back counter / millwork tops **2'-10" (34") max AFF** | TI 2022 A940 (§6.4); deli case not in the TI set | Med |
+| Ceiling height / grid | retail gyp 9'-0" with 7'-6" soffits and suspended dark-walnut accent panels; back rooms 2×2 ACT at 8'-0"/9'-0" | TI 2022 A101 RCP (§6.1) | High (heights) |
 | Floor tiles | white marble-look large-format (retail field), black/white or brown/white geometric cement tile (counter zones, hall, vestibule), concrete (FOH/BOH), dark gray large-format tile (rack rooms) | visual | Med (finish) / none (tile size) |
 | Wall thickness | 0.4–0.5 ft drawn gaps | vector | Low (drafting gap, not a spec) |
 | Pendant pitch | 3.0 ft, 6 over registers | vector | Med |
 | Register scale stand | ≈1.5 × 1.5 ft footprint, top just below the counter top | relative to the counter and scale in R2C3/R3C2 (§2.2) | Low |
 | HUB wire rack bay | ≈4 × 2 ft, ≈6–7 ft tall | about 4 bays span half the 28.3-ft HUB width in HUB R1C3; matches the common chrome-wire bay size | Low (convention) |
+
+## 6. TI set (REF-004)
+
+Source: RSP Architects "Interior TI Approved Set - PHX" (2022, City-approved 2022-12), read as **text only** through the M365 connector. The sheets were not rendered, so values are matched by label and by their order in the extracted text. **DEC-037: heights, materials and fixture types are valid; positions and run lengths are not** (use §1 / A011). Confidence: **High** = labelled value in a schedule or keynote; **Med** = a dimension next to its label in an elevation or detail; **Low** = a dimension whose owner is inferred from text order. No permit/licence numbers, vendor contacts or names are recorded here.
+
+2022 room numbers → current plan: 101 Retail, 102/109 Hall, 103 Unisex (Restroom), 104 Lounge (→ Office), 105 Break, 106 JC, 107 Fulfillment (FOH/BOH zone), 108 Storage, 110/111 Storage (existing, → HUB / HUB 2).
+
+### 6.1 Ceilings and soffits (A101 RCP, A320)
+| Room | Ceiling | Height AFF | Conf. |
+|---|---|---|---|
+| 101 Retail | painted gypsum (PT-1) | 9'-0" | High |
+| Retail soffits | gypsum, PT-1 on face and bottom; power for lit signage at the soffit | 7'-6" | High |
+| Retail accent | CLG-1: suspended 4'×8' acoustic panels, dark walnut, hung on stainless cable, with end caps (this is the dark "baffle" ceiling in photos 01/05/10) | hung below 9'-0" (drop not given) | High (type) |
+| 102 Hall, 103 Unisex, 104 Lounge, 105 Break, 107 Fulfillment | ACT-1 2×2 lay-in | 8'-0" | High |
+| 108 Storage / 109 Hall | ACT-1 | 9'-0" | Med (which of the two rooms) |
+| 110/111 Storage | existing, open to structure | B.O. truss 11'-0" | Med |
+| Structure | existing wood trusses, roof EL 115'-6" over floor EL 100'-0"; 30×36 roof hatch with a steel ladder | — | High |
+
+### 6.2 Doors and openings (A310 door schedule, A101 keynotes)
+| Door | Room | W × H | Type / frame | Hardware type | Conf. |
+|---|---|---|---|---|---|
+| E101 | Retail entry | 6'-0" × 7'-0" | existing aluminum full-glass storefront | existing; "unlocked during business hours" sign | High |
+| 101B | Retail | 16'-4¾" × 7'-6" | side-folding open-air security grille, clear anodized, with an 18"×7'-6" access door | — | High |
+| 103 | Unisex | 3'-0" × 7'-0" × 1¾" | flush hollow metal, painted, HM frame | privacy lock with indicator, closer, kick plate | High |
+| 104 | Lounge/Office side | 3'-0" × 7'-0" | flush HM, salvaged door reinstalled | storeroom lock, access-controlled | High |
+| 105 | Break | 3'-0" × 7'-0" | flush HM, painted | storeroom lock, closer | High |
+| 106 | JC | 2'-8" × 7'-0" | flush HM, painted | exit-device set | High |
+| 107 | Fulfillment | 3'-0" × 7'-0" | flush HM, painted | storeroom lock, closer | High |
+| 108 | Storage | 3'-0" × 7'-0" | flush HM, painted | storeroom lock, access-controlled | High |
+| E110, E111A, E111B | Storage (existing) | 3'-0" × 7'-0" | existing flush HM | no change | High |
+| Cased openings (the arches) | Retail → halls | 3'-0" × 7'-0" | gypsum-finished opening (keynote 10) | — | High |
+
+Door hardware heights (A310): lever/strike centreline 3'-4" min to 3'-6", pull 3'-6", deadlock 4'-0". Switches are 3'-6" to centre (A101 note I).
+
+### 6.3 Partitions (A320)
+Type A runs full height to the truss: A3 = 3⅝" stud → **4⅞" wall** (typical); A2 3¾", A4 5¼", A6 7¼". Type G has partial-height gypsum on full-height studs: G2 3⅛", G3 4¼" (G3 insulated at exterior walls and the grid-2 south wall), G6 6⅝". Two retail partial walls are tagged **5'-0" tall**. Existing exterior walls are CMU, furred with metal studs and ⅝" gypsum. High.
+
+### 6.4 Millwork and counters (A901 elevations, A940 millwork)
+| Item (A940 tag) | Heights / dims | Finish | Conf. |
+|---|---|---|---|
+| All base cabinets (BC, BD, BP, BO, 3DE, 4D, BT1, BSK) | **counter top 2'-10" (34") max AFF**; 4" toe base; 2'-0" deep box | PL-1 walnut laminate fronts, black melamine interiors | High (34" max repeats on every cabinet) |
+| POS cabinet (11, "two-drawer POS") and the POS elevations (5 front, 8 back counter, 10/11) | 2" quartz top on the 34"-max cabinet; front POS openings 3'-0" clear; QZ-2 waterfall edge wraps the outside of the POS counter; filler panel painted black | QZ-2 white quartz top, WD-1 walnut veneer POS front, ML-1 black-patina metal laminate, HW-2 brushed-brass edge pulls | Med (dims) / High (finishes) |
+| Back-counter tile (POS elevation) | TL-2 8×8 patterned tile with bronze trim; 2'-0", 3'-6" and 7'-0" appear on this elevation (likely backsplash, wainscot top and sconce) | TL-1, TL-2, MTR-3/4 | Low |
+| Retail display shelving (BDD 3/7/14, "special wall display" 4) | cabinet base to 34" max, then glass showcase shelves at 1'-2" spacing (×3) plus 8" and 6"; curved top trim R 1'-4¼"; recessed linear LED; anti-glare film on the glass; modular for relocation | black or chrome glass-showcase hardware, WC-1 wallcovering on the rear panel, PL laminate trim | Med |
+| Retail display with boxes (7, 16 "box display") | glass-lid, wood-frame boxes on a rolling track; 6 equal spaces over 7'-9"; 2" matte-black bar foot rail between boxes; 4" puck lights | PL-1, tempered glass lids | Med |
+| Slat wall (SW, detail 10) | ¾" plywood with Di-Noc wood grain, hung on Z-clips | WC-2 | High |
+| Breakroom sink (OS3) | sink rim 34" max, knee clearance 27" min | QZ-1 quartz | High |
+| Green wall + backlit logo | in-wall backing and power (green wall supplied by others) | — | High (type) |
+| Wall monitor (TV) | outlet at 60" AFF | — | High |
+| Neon signage | **72" AFF to the bottom of the fixture**, owner-provided, on the retail elevations | — | High |
+| Decorative sconces, semi-flush ceiling fixtures | on the retail elevations | — | High (type) |
+
+The deli case, the deli counter and the jar-wall jar sizes are **not in the 2022 set** (it predates the deli layout), so they stay open (GAP-113). The 2022 retail-display run lengths (27'-9", 19'-2¾", 9'-0", etc.) describe the old layout; do not use them for positions.
+
+### 6.5 Finish and material schedule (A310, I101)
+| Tag | Product type | Colour / size | Where |
+|---|---|---|---|
+| TL-1 | porcelain, marble-look | Statuario Bianco, 12"×24"×⅜" | retail floor field |
+| TL-2 | patterned ceramic | "Madrid" 8"×8", dark grey grout | floor zones and walls |
+| VCT-1 | vinyl composite tile | 12"×12" | back rooms |
+| CONC-1 | ground and sealed concrete | — | storage floors |
+| VB-1 | vinyl base | grey, 4" | all base |
+| FRP-1 | white FRP | 4'×8' | to 4'-0" AFF in wet rooms |
+| PT-1 | paint, SW7646 First Star | eggshell on walls, flat on ceilings | typical walls, all gypsum ceilings and soffits |
+| PT-2 | TFS custom mix | — | feature |
+| PT-3..PT-8 | SW0016 Billiard Green, SW6060 Moroccan Brown, SW6057 Malted Milk, SW9137 Niebla Azul, SW7747 Recycled Glass, SW6271 Expressive Plum | — | accent walls (retail elevations) |
+| WC-1 | patterned wallcovering ("Burst", Kasha) | — | wall behind displays only |
+| WC-2 | 3M Di-Noc wood grain | — | slat wall |
+| PL-1 / PL-2 | laminate, Italian Walnut / black matte | 4'×8' | millwork / vertical surfaces |
+| ML-1 | metal laminate, black patina | — | POS and millwork accents |
+| QZ-1 / QZ-2 | quartz, pink-white veined ("Rose Bay") / white ("Vesuvius") | eased edge | counters / POS top |
+| WD-1 | walnut veneer | — | POS front |
+| GL-1 | green-tinted storefront glass | — | storefront |
+| CLG-1 | suspended acoustic panels, dark walnut | 4'×8' | retail accent ceiling |
+| HW-1 / HW-2 | vintage-bronze 3" pull / brushed-brass drop-edge pull | — | cabinets / POS drawers |
+| MTR-1..5 | Schluter trims: antique bronze, brushed brass, dark anthracite | — | tile edges, transitions |
+
+Switch and outlet plates are white on white walls and matte black on finished walls. Fire-extinguisher cabinets are painted black.
+
+### 6.6 Restroom (A901 enlarged plan, G010)
+Mirror 1'-8"×3'-6" at 3'-4" AFF; grab bars 42", 36" and 18" vertical at 33–36" AFF; semi-recessed towel dispenser with waste, wall soap dispenser, surface toilet-paper dispenser and napkin disposal; wall sconce (L6). ACT ceiling at 8'-0", TL-2 floor and wall tile. High (types), Med (positions).
+
+### 6.7 Lighting (E-sheet luminaire schedule, A101 RCP key)
+All LED, 3500K, 0–10 V dimming, dimmed to 30 % after hours. L1 2×2 troffer (ACT rooms); L2 2'/4' strip (storage); L3 linear LED (millwork, recessed); L4A/L4B 4½" downlights (retail gypsum ceiling); L5 small flush mount; L6 bathroom sconce; L7 task light; L8 18" under-cabinet. The RCP key also shows pendants, wall sconces and decorative fixtures. High (types).
+
+### 6.8 2026 A011 / A012 (AZDHS update)
+A011 "Floor Plan" (Dispensary - Floor Plan) and A012 "Floor Plan - Lighting" (legend: checkout counter light, pendant light, recessed can, 2×2 ACT light, downlight; "windows - natural light"). Room areas match §1.3. A011 labels "secure entrance / exit", "emergency exit only", "POS stations", "display cases", "shelving" and "hand washing sink". The working plan is built from A011 + A012. No A013 turned up in that folder; its third sheet is the security plan, which we never read by rule.
