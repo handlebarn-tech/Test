@@ -691,6 +691,7 @@ No `.pyc`. ChatGPT had our drop-5 audit this time (`ROUND3_REBUILD_CLAUDE_AUDIT_
   - **Doors:** closed, with hinge metadata ✓ (drop-5 fix delivered). The metadata is a local dict, not the canonical `hinge_axis()` (C10).
   - **Colour wrong:** grey steel, but RI §2.1 (HUB 2, R2C1) shows **black cabinets, 2+**, Med.
   - **Presence is sourced:** DEC-079 puts them "in the HUB against the office wall", and HUB 2 is the room that shares the office door (RI §1.4). The drop's GAP says presence is not established; only type, size and shelf count are GAPs.
+  - **Security precedent:** DEC-051 Q9 models the office's secure-storage cabinets only as plain tall black closed boxes. Whether that also covers these backstock cabinets (interior, stock anchors, openable doors) is a Hub call (handoff Q6).
   - **Detail:** 836 tris of plain boxes.
 - **Queue stanchions:** black ✓ (R2C1); layout left to placement ✓ (RI §1.5 4 lanes; DEC-079 one line). Sizes are commercial defaults (GAP). Missing detail: no cassette, end clip or rubber foot, and the belt is a plain slab.
 - **Back-room lighting:**
@@ -717,7 +718,8 @@ No `.pyc`. ChatGPT had our drop-5 audit this time (`ROUND3_REBUILD_CLAUDE_AUDIT_
     - receipt printer, card terminal and keyboard (RI §2.2: "each POS has a monitor, keyboard, receipt printer and a customer-facing card terminal/tablet", Med);
     - the card terminal is also DEC-086;
     - label/tape items (RI §2.2, Low).
-  - **Unsourced:** mouse, glove box, weigh boat, pen and sticky notes. Keep them as generic clutter with a GAP.
+  - **Also sourced:** the mouse and label printer (DEC-096 register workstation kit, which also asks for a spray bottle on the scale shelf and a rag; neither is in the drop).
+  - **Unsourced:** glove box, weigh boat, pen and sticky notes. Keep them as generic clutter with a GAP.
   - The drop-5 "blue LCD scale digits" item has lost its home. It belongs on the register scale (RI §2.2: white bench scale, blue LCD) and the refill scale (RI §2.4: LCD).
   - StickyNotes no longer breaks its budget ✓, but now fails its size check.
 - **Product variety:**
@@ -761,3 +763,94 @@ No `.pyc`. ChatGPT had our drop-5 audit this time (`ROUND3_REBUILD_CLAUDE_AUDIT_
   - floating casters.
 
 Fix items: checklist §R3b.
+
+---
+
+## Drop 7 — round 4 v2 (`Dispo_Game_Blender_PROC_Round4_HQ_v2_EvidenceDriven/`, 2026-10-30)
+
+**Brief:** DEC-091 R4 (wardrobe, hair and accessory libraries for MPFB2 bodies; staff uniform per DEC-089; crowd LOD baker; ASSET-004 owns the bodies).
+**Judged against:** DEC-084/087/089/091/093/096, RI §3 (BAND attire column), DEC-023 (licences), canonical core 87807ad.
+
+**Contents (65 files, 49 MB):**
+- 5 generators + `round4_quality.py`, 9 params;
+- tools: `mpfb2_fit_adapter.py`, `mpfb2_glove_overlay.py`, `crowd_lod_baker.py`;
+- arranger `outfit_variation.py` and its baked outputs `OUTFIT_VARIATIONS_64.json` / `STAFF_STYLE_VARIATIONS_12.json`;
+- 30 PBR PNGs (10 materials × BaseColor/Normal/Roughness, 2048²);
+- a 4096² TFS chest decal;
+- `EVIDENCE_REGISTER.json`, `LOCAL_STYLE_RESEARCH.md`, a UV2 runner patch, `STATIC_AUDIT.json`.
+
+It says it supersedes an earlier `…Round4_HQ.zip`, which is not in the Imports folder.
+
+### How it was checked
+- Static read of every `.py`, params and doc; 2 textures and the decal viewed.
+- The same sandbox method as drop 6: canonical core 87807ad plus the drop's `Tools/Blender`, Blender 5.2.3 `--factory-startup`, no `.pyc`. The measuring script built all 36 assets × 4 LODs, twice. Renders were made, and the sandbox was deleted.
+- The tools and arranger were read, not run: they need an MPFB2 body we do not have in a sandbox.
+
+| Family (assets) | LOD0 tris measured | Budget (LOD0) | DEC-084 guide | Build result | Verdict |
+|---|---|---|---|---|---|
+| `wardrobe_library` (11) | 1,044–2,632 | 42–80k | close-up character clothing | builds; deterministic | **reject as built** (block garments) |
+| `hair_library` (9) | — | — | — | **crashes on every asset and LOD** (`face already exists`) | **reject as built** |
+| `headwear_library` (6) | 4,916–13,824 | 39–52k | props 5–20k | builds; **TopButton not deterministic** on 3 caps | **adapt** (best family) |
+| `staff_uniform` (4) | 1,384–2,344 | 56–68k | — | builds | **adapt** green tee + pants; **reject** black tee and blue polo as uniform |
+| `accessory_extensions` (6) | 668–1,960 (2 that build) | 24–30k | props 5–20k | **Watch, Lanyard, PinLanyard, CrossbodyStrap crash** | **adapt** sunglasses/tote; rest broken |
+| tools (fit, glove, crowd LOD) | — | — | — | not run | **adapt** fit/crowd; **reject** glove as built |
+| `outfit_variation` + baked tables | — | — | — | not run | **adapt** (dangling assets, staff mix) |
+| PBR textures + decal | — | — | 2K–4K | viewed | **adapt** (placeholder-grade; ledger) |
+
+### Cross-cutting findings (measured)
+- **X1 Always-pass size check is back.** Every generator returns `actual_unity_size(objs)` (measured from the mesh); this is the exact drop-5 R3.0.1 defect. All 23 assets that build therefore "pass" size trivially.
+- **X2 13 of 36 assets crash:**
+  - `round4_quality.ribbon_obj` makes "two-sided" cards by adding a second face over the same 4 verts in reverse order, which bmesh rejects. That breaks all 9 hair styles, Lanyard, PinLanyard and CrossbodyStrap.
+  - `torus_obj` calls `bmesh.ops.create_torus`, which does not exist in Blender 5.2.3. That breaks Watch.
+  - The drop's static audit could not see either (no Blender at ChatGPT).
+- **X3 Far below every budget:** the garments are 1–2.6k tris against their own 42–80k budgets. The renders show a **closed box torso with capped cylinder sleeves**: no neck, arm or waist openings, no shell thickness, no folds, seams or hems. These are mannequin blocks, not garments, and cannot be skinned to a rig.
+- **X4 No rigging path:** nothing transfers MPFB2 armature weights to garments, hair or accessories. The MPFB2 fit contract lists rig deformation as a local check, but no tool does it. `mpfb2_fit_adapter.fit_garment` shrinkwraps the whole garment to the nearest body surface, which collapses relaxed or oversized fits (hoodie, relaxed tee) onto the skin and removes the variation the drop claims. Add a ease/offset per region plus a Data Transfer of vertex weights.
+- **X5 Glove overlay copies the whole body:** `build_glove_from_hand` copies the "hand object" and solidifies it. MPFB2's basemesh is one mesh (hands are not separate objects), so the "glove" is a full-body shell. It needs a hand vertex-group mask, or a CC0 glove proxy.
+- **X6 Determinism:** 20/23 building assets are identical across runs. `TopButton` (`bmesh.ops.create_uvsphere` + `finish_object` remove_doubles) differs between runs on StructuredFitted, MeshBackTrucker and CurvedBrimCap. Cause not traced; the canonical "two runs byte-identical" gate will fail.
+- **X7 Lightmap UV:** the same per-polygon cell scheme as round 3 (`round4_quality.add_lightmap_uv`). Its own comment says production repacking is left to the local pass. Same decision as R3b.0.4. The UV2 patch is identical in intent to round 3's.
+- **X8 Params contract:**
+  - `unity_dir: Assets/_Game/...` lacks `UnityProject/` (S1);
+  - `validation_warnings` (P3);
+  - `GAP-R4-*` ids (P5);
+  - `round4_quality.py` is a third helper module (C6/C8, DEC-093).
+
+  Collision: none, owned by the body (`COLLISION_POLICY.md`), which is correct for wearables ✓.
+- **X9 Textures:** 2048² as claimed, but placeholder-grade. `knit_basecolor` is plain sine stripes (63 KB), not a knit.
+  - They are self-authored and declared CC0 ✓, but there is no sha256 manifest entry in our `LICENSE_LEDGER.md` (DEC-023).
+  - Several normal maps are 4–6 MB each; 49 MB for 10 materials.
+  - Route them through DEC-023 + the ledger, or replace them with ambientCG/Poly Haven CC0 fabric sets (real scans, the same $0 cost).
+- **X10 Dangling references:**
+  - `OUTFIT_VARIATIONS_64.json`/`STAFF_STYLE_VARIATIONS_12.json` reference `PROC_R3_Accessory_Glasses` ×6, `_Backpack` ×10 and `_Beanie` ×1. Those were in the rejected drop 5, and the round-3 rebuild removed them ("Round 4 owns wearables"). So **nothing supplies glasses, backpack, beanie or purse**.
+  - Every outfit also uses a hair asset that crashes (X2).
+
+### Store / decision findings
+- **Staff uniform conflicts with DEC-089:**
+  - DEC-089: the real store has no dress code; *for the game*, budtenders wear **black pants + a green tee with "The Flower Shop" at the top right of the chest**.
+  - The drop labels that "brief-directed, not footage-confirmed" and adds `ObservedBlackTee` and `ObservedLightBluePolo` as staff variants. **10 of 12 staff presets** use them (7 polo, 3 black tee); only 2 use the DEC-089 uniform.
+  - Its evidence is real (RI §3 BAND 05/12: black TFS tee + lanyard; 01/03/07: polo), but DEC-089 is the decision. The black tee and polo may be **customer/off-shift wardrobe**. As staff presets: reject.
+  - RI §3 says BAND 01's polo is **teal**, not light blue.
+- **Decal side:**
+  - `staff_uniform._add_decal(side='right')` puts the decal at +X. With the asset facing −Y (label faces −Y, PROC contract), +X is the **wearer's left** (the viewer's right), while the metadata says `decal_side_wearer: right`. One of the two is wrong.
+  - DEC-089's "top right of the chest" does not say whose right (handoff question 8).
+  - The decal box also gets no `UVMap_Label` mapping (no `label_rect`), so the 4096² texture would not land on it.
+  - The decal is white DejaVu-style bold text on a square canvas, with the text filling ~10 % of the height. The font licence is not recorded; DEC-023 allows OFL/CC0/MIT.
+- **Brands:** the only real brand is The Flower Shop text on staff tees (DEC-071/089 ✓). Headwear and other wear are unbranded ✓ (fictional patch carriers).
+- **Local-style research:** the anti-stereotype rules are good and match DEC-087(4) (no behaviour or stats tied to appearance) ✓.
+  - The "rougher neighborhood" premise is attributed to "the user". Our docs have no such statement, so it is ChatGPT-chat context, not a repo fact.
+  - The web pages (Manor PHX, NWS) are reference-only and nothing is bundled ✓. The store address on the TFS site is public.
+  - Keep the weights as art direction only; never as a demographic model.
+- **Privacy:** the evidence register lists BAND photo observations of identifiable staff (hair types, eyewear). RI §3 already records attire categories at the same level, and no likeness is built ✓. Do not copy the per-photo, per-person notes ("long locs visible on second worker") into game data.
+- **DEC-084:** headwear is the only family near the props guide (5–14k): crown panels, visor, closures, button. Everything else needs real garment construction, or (recommended) **MPFB2/MakeHuman system clothes and hair**: CC0 assets that already fit and rig to the MPFB2 basemesh (verify each asset's licence through DEC-023). Our own procedural garments should then only add the DEC-089 uniform print and the store-specific items.
+
+### Research gaps, round 4
+- **RG4-1 Uniform print side and size:** DEC-089 "top right of the chest" (wearer or viewer?). Look at BAND 05/12 (black TFS tee) for the real print position, size and font. That is evidence for the print only, not the colour.
+- **RG4-2 Garment source:** which MPFB2/MakeHuman system clothes and hair are CC0 and rig-compatible with ASSET-004's bodies. Check the MPFB2 asset packs' licence files (ASSET-004 owner).
+- **RG4-3 Uniform font:** TFS brand typeface. Look at TFS signage in RI (BAND 05 neon, the logo living wall R2C2). Otherwise use an OFL stand-in.
+- **RG4-4 Polo colour:** teal (RI §3 BAND 01) vs light blue (drop). Only matters if it is kept as customer wardrobe.
+
+### Drop 7 summary
+**Adapt overall, weakest drop so far on execution:** 13/36 assets crash, the size check is always-pass again, and the garments are blocks.
+- **Adopt:** the anti-stereotype rules; headwear forms; the evidence-category approach; the deterministic outfit arranger pattern (seeded, hashed).
+- **Adapt:** headwear (determinism, collision n/a); green tee + black pants (DEC-089; fix the decal side and UV); sunglasses and tote; the fit adapter (weights, per-region ease) and crowd baker; textures (ledger or replace).
+- **Reject as built:** wardrobe blocks, hair (crash), ribbon accessories and watch (crash), glove overlay, and staff black tee / blue polo as uniform presets.
+- **Counts:** adopt 1 (arranger pattern + rules) · adapt 6 · reject 5. Fix items: checklist §R4.

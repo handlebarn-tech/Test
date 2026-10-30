@@ -401,7 +401,8 @@ Replaces §R3 (drop 5 `…Round3_HQ/` is superseded, DEC-095). Integrate after r
 ### R3b.2 HUB storage (`hub_storage`; DEC-079; RI §2.1)
 - [ ] **Colour black** (RI §2.1 HUB 2 R2C1 "black cabinets, 2+", Med), not grey steel.
 - [ ] **Evidence text:** placement "HUB against the office wall" (DEC-079) = HUB 2, which shares the office door (RI §1.4). The `evidence` and GAP text must say presence is sourced. Type, size and shelves stay GAP (RG3-1).
-- [ ] **Doors:** keep closed + hinge, via canonical `hinge_axis()`.
+- [ ] **Security precedent (DEC-051 Q9):** the office's secure-storage cabinets are modelled only as plain tall black closed boxes, with no interior or hardware detail. Until the Hub rules whether that covers these HUB backstock cabinets (handoff Q6), build them as **plain black closed boxes**, and keep the interior shelves and stock anchors behind a params switch that is off by default.
+- [ ] **Doors:** keep closed + hinge, via canonical `hinge_axis()` (only if the Hub allows openable doors).
 - [ ] **Detail:** at 836 tris it is plain boxes. Add folded-steel returns, door reveals, a real handle/latch shape (no lock detail, DEC-051), shelf lips and levelling feet.
 - [ ] **Stock anchors:** fill with the 1 lb bag asset once it exists (round 5 → audit first); never as inventory data (H3).
 
@@ -437,7 +438,10 @@ Replaces §R3 (drop 5 `…Round3_HQ/` is superseded, DEC-095). Integrate after r
 
 ### R3b.9 Counter / workstation props (`counter_workstation_props`)
 - [ ] **Keep and detail:** receipt printer, card terminal, keyboard (RI §2.2, DEC-086). Add a paper roll and cutter, terminal keypad legends as a texture, and a full key grid. Sizes via RG3-5.
-- [ ] **Label/tape items** (RI §2.2, Low): keep. Mouse, glove box, weigh boat, pen, sticky notes: generic clutter, GAP.
+- [ ] **Label/tape items** (RI §2.2, Low): keep.
+- [ ] **DEC-096 register workstation kit:** label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a scale shelf, rag. So the mouse and label printer are **sourced** (DEC-096).
+- [ ] **Add:** the spray bottle and rag; the scanner is not in this drop.
+- [ ] Glove box, weigh boat, pen, sticky notes: generic clutter, GAP.
 - [ ] **Blue LCD scale display:** a texture/emissive item on the register scale (RI §2.2) and the refill scale LCD (RI §2.4); the drop-5 item was dropped.
 
 ### R3b.10 Product variety (`product_variety`)
@@ -456,3 +460,76 @@ Replaces §R3 (drop 5 `…Round3_HQ/` is superseded, DEC-095). Integrate after r
 - the stanchion form;
 - the catalog-matching product shapes;
 - the params-driven `required_uv_maps` patch (only with R3b.0.4 option b).
+
+## R4. Round 4 v2 (`Dispo_Game_Blender_PROC_Round4_HQ_v2_EvidenceDriven/`): fix items (audit "Drop 7")
+**Owner split:** ASSET-004 owns the MPFB2 bodies and the rig (DEC-093). PROC integrates the wearables on top, after ASSET-004 delivers a body. Measured on core 87807ad: 36 assets, **13 crash**, 23 build (always-pass size check).
+
+**Package verdicts:**
+
+| Package | Verdict |
+|---|---|
+| `outfit_variation` (pattern + anti-stereotype rules) | adopt |
+| `headwear_library` | adapt |
+| `staff_uniform`: BriefGreenTee + BlackPants | adapt |
+| `accessory_extensions`: Sunglasses + Tote | adapt |
+| `mpfb2_fit_adapter` | adapt |
+| `crowd_lod_baker` | adapt |
+| PBR textures + decal | adapt |
+| `wardrobe_library` | **reject as built** |
+| `hair_library` | **reject as built** |
+| Watch, Lanyard, PinLanyard, CrossbodyStrap | **reject as built** |
+| `mpfb2_glove_overlay` | **reject as built** |
+| ObservedBlackTee / ObservedLightBluePolo as staff | **reject** |
+| `round4_quality.py` as a module | **reject** |
+
+### R4.0 Shared
+- [ ] **R4.0.1 always-pass size check** [X1]: replace every `actual_unity_size(objs)` return (5 generators) with the authored envelope from params (`body_profile` + ease), as R3.0.1 did.
+- [ ] **R4.0.2 crashes** [X2]:
+  - `round4_quality.ribbon_obj`: build two-sided cards with separate back-face verts, or one-sided cards + a double-sided material (hair/strap). Today 12 assets fail on `face already exists`.
+  - `torus_obj`: `bmesh.ops.create_torus` does not exist in 5.2.3. Use the round-3 `torus` loop (R3b.0.7) once in `proclib`.
+- [ ] **R4.0.3 determinism** [X6]: `headwear_library._button`'s TopButton differs between runs on 3 caps. Rebuild it with a closed lathe (`add_lathe`) instead of `create_uvsphere` + remove_doubles, then re-check two runs.
+- [ ] **R4.0.4 rigging** [X4]: no asset is skinned. Add a Data Transfer of vertex weights from the ASSET-004 MPFB2 body (or use MPFB2's clothes/proxy system) and test deformation in the ASSET-004 rig poses.
+- [ ] **R4.0.5 params** [X8]: `unity_dir` → `UnityProject/Assets/_Game/Art/Procedural/Characters/...` (S1); drop `validation_warnings` (P3); `GAP-R4-*` → `GAP-PROC-*`/`GAP-CHR-*` (P5); a `checks` block; lightmap UV per R3b.0.4.
+- [ ] **R4.0.6 helpers:** do not add `round4_quality.py`. Map `box_obj`/`cyl_obj`/`lathe_obj`/`rotbox_obj` onto `proclib`; keep one `torus`/`ribbon` in `proclib` (DEC-093).
+- [ ] **R4.0.7 textures** [X9]: either register the 30 PNG + decal in `LICENSE_LEDGER.md` with sha256 (DEC-023), or replace them with ambientCG/Poly Haven CC0 fabric scans (preferred; the knit map is sine stripes). Keep 2K, and use the decal at 4K only if the print is legible at close-up.
+
+### R4.1 Wardrobe (`wardrobe_library`): **reject as built**
+- [ ] The 11 garments are closed box/cylinder blocks (1–2.6k tris vs 42–80k budgets), with no openings, thickness, seams or folds.
+- [ ] **Preferred:** MPFB2/MakeHuman system clothes (CC0, already fitted and rigged to the basemesh; verify licences, RG4-2) for the customer wardrobe. Keep the drop's garment list, colourways and material states (`COLOR_MATERIAL_VARIANTS.json`) as the variation spec.
+- [ ] **If procedural:** shell garments with neck/arm/waist openings, 2–4 mm solidify, hems, seams and collars at the DEC-084 close-up bar; fit per R4.0.4.
+
+### R4.2 Hair (`hair_library`): **reject as built**
+- [ ] All 9 styles crash (R4.0.2). After the fix they would be single-strip cards around a radial or ponytail path. Use MPFB2/MakeHuman CC0 hair (RG4-2), or rebuild proper card clumps with an alpha-tested material (`hair_basecolor_alpha_2048` exists).
+- [ ] Keep the style list (cropped, side part, bob, shoulder wavy, long straight, long curly, curly halo, locs, ponytail): it matches the RI §3 categories without likeness.
+
+### R4.3 Headwear (`headwear_library`): **adapt**
+- [ ] Fix TopButton determinism (R4.0.3).
+- [ ] Close the crown underside or give it thickness: the open `Crown`/`Brim` is single-sided and vanishes from inside under back-face culling.
+- [ ] Fit to the MPFB2 head anchor (`head_anchor_z_m` comes from the 1.75 m profile; GAP until ASSET-004).
+- [ ] Patches stay blank or fictional (no team marks) ✓. Forward/backward orientation stays (RI §3 BAND 04/12).
+
+### R4.4 Staff uniform (`staff_uniform`; DEC-089)
+- [ ] **Keep only** BriefGreenTee + BlackPants as the staff uniform (DEC-089, also for managers). Rename them `PROC_Chr_Staff_Tee_Green` / `_Pants_Black`, and drop "brief-directed, not footage-confirmed": DEC-089 is the decision.
+- [ ] **Remove** ObservedBlackTee and ObservedLightBluePolo from the staff set. Move them to the customer/off-shift wardrobe only if wanted; the polo is teal per RI §3 BAND 01 (RG4-4). Rewrite `STAFF_STYLE_VARIATIONS_12.json`: today 10/12 presets use them.
+- [ ] **Decal side:** the code puts it at +X = **wearer's left** while the metadata says "wearer right". Pick one per the Hub's answer (handoff question 8). Placeholder: wearer's left chest, i.e. the viewer's top-right, the usual left-chest print.
+- [ ] **Decal UVs:** give the decal patch a `label_rect` so `UVMap_Label` maps the texture. Crop the decal to the text's aspect (it is 4096² with the text at ~10 % height). Record the font licence, or use an OFL font (RG4-3).
+- [ ] **Gloves** (DEC-079: managers refill and clean jars; RI §3 nitrile gloves) are fine as an optional staff accessory once R4.7 is fixed.
+
+### R4.5 Accessories (`accessory_extensions`)
+- [ ] Sunglasses and tote: adapt (detail: hinges and temples; tote handles and gusset).
+- [ ] Watch, Lanyard, PinLanyard, CrossbodyStrap: fix the crashes (R4.0.2).
+- [ ] **Lanyard:** a plain or pin lanyard only, with a **blank** badge card (no access-control or ID detail; DEC-051/DEC-031).
+- [ ] **Missing wearables:** glasses (prescription), backpack, beanie and purse were dropped between rounds 3 and 4. Add them here (RI §3 BAND 05/07: glasses; crossbody seen).
+
+### R4.6 MPFB2 fit adapter (`tools/mpfb2_fit_adapter.py`)
+- [ ] Shrinkwrap NEAREST_SURFACEPOINT on the whole garment collapses loose fits. Use per-region ease (vertex groups) or MPFB2 proxy fitting, then a weight transfer (R4.0.4). Body object name stays a param (`GAP_REPLACE_…`) until ASSET-004.
+
+### R4.7 Glove overlay (`tools/mpfb2_glove_overlay.py`): **reject as built**
+- [ ] It copies the whole "hand object". MPFB2's basemesh is one mesh, so the result is a full-body shell. Mask by a hand vertex group (delete the rest), or use a CC0 glove proxy. Black nitrile material ✓ (RI §3).
+
+### R4.8 Crowd LOD baker (`tools/crowd_lod_baker.py`)
+- [ ] Decimate COLLAPSE breaks hair cards and seams. Exclude alpha cards, and preserve UV seams (`use_symmetry` off, `vertex_group` for silhouettes). PROC's own LOD chain may make it redundant: keep it for background crowds only (DEC-087 Rocketbox is the interim crowd).
+
+### R4.9 Outfit arranger (`arrangers/outfit_variation.py` + baked tables)
+- [ ] **Adopt** the seeded, hashed pattern and the anti-stereotype rules. Re-bake after R4.1/R4.2/R4.5 so no outfit references a crashing or missing asset (today 17 `PROC_R3_Accessory_*` refs + all hair).
+- [ ] The "rougher neighborhood" weighting comes from ChatGPT chat, not our docs. Keep the weights as art direction; DEC-087(4): no behaviour or stats tied to appearance.
