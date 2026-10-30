@@ -346,3 +346,130 @@ Every round-1 file is byte-identical to the drop 2 audit, and no newer runner or
 | Opt-in validation: non-manifold, degenerate, material slots, aggregate bounds, bottom-centre origin | **partly, not as claimed** | Only `mesh_stats()` gains non-manifold/degenerate counts, material slots and per-object bounds (drop 3 T2, repeated in round 2's `proclib_reference.py`). It is **always on, report-only** (never fails), and changes every manifest entry. There is **no origin check**, no aggregate-bounds check and no opt-in flag. No updated `run_generator.py` was shipped |
 
 **Conclusion:** the fixes ChatGPT describes are probably in its own workspace but were **not delivered**. All drop 1–3 findings stand.
+
+## Drop 4 section B: round-2 generators, materials, dimensions
+
+### B1. How it was checked
+- Every `.py`/`.json` was read; the 12 `.pyc` were not opened.
+- Sandbox as before: copies only, `ROOT` redirected, drop 1 runner + `proclib_reference_after_round2_patch.py`, Blender 5.2.3 `--factory-startup`, deleted afterwards.
+- **No network:** `material_library` ran with `download_sources: false` (a sandbox-only params edit), so no provider API or download was touched.
+- Winding check (drop 2 script) on all exported FBX: **54 meshes, all outward, no inconsistent edges**.
+- Determinism: a second run gave **38/38 FBX + SVG byte-identical**.
+
+| Family (DEC-074 item) | Assets | Result (LOD0 tris) | Verdict |
+|---|---|---|---|
+| `deli_counter_jar_wall` (deli counter + jar wall) | Counter, JarWall | pass (152, 84) | **adapt**: wrong shapes (B2) |
+| `register_counter_run` (×11 + POS frame) | RegisterCounterRun | pass (248) | **adapt**: straight run vs the real L; references the rejected CashDrawer (B2) |
+| `id_check_stand` | IDCheckStand | **fail**: height 1.119 ≠ 1.08 (scanner and lens sit above the declared `height_m`) | **adapt** |
+| `display_cases` | CountertopCase, TallCase | pass (228, 264) | **adapt**: no top glass; glass has no collision |
+| `bag_racks` (bag racks / exit-bag station) | WallRack, ExitDispenser, ToolCaddy | WallRack and Dispenser pass; **ToolCaddy fails**: height 0.259 ≠ 0.25 (handle tube radius above `h + handle_h`) | **adapt**; no store source for these forms |
+| `sign_blanks` | WallPoster, AFrame, MenuBoard | Poster and MenuBoard pass (separate probe); **AFrame fails**: legs splay past depth and height (0.541 × 0.923 vs 0.52 × 0.92) | **adapt** |
+| `material_library` (CC0 library) | PROC_MaterialLibrary swatches + `provenance.json` | pass offline (828) | **adapt**: loader must use our DEC-023 cache (B3) |
+| `label_decals` (generic + approved) | 5 generic + 6 approved labels, SVG per label | pass (84 each) | **adapt** (B4) |
+| `building_shell_exterior` | StorefrontGlazing, EntryVestibule, Parapet_1m, ParkingCurb, ParkingStripe_1m, BlankSignBand | pass | **adapt**: entry is wrong (B2) |
+| first-person hands | omitted ("no people" read conservatively) | — | OK: DEC-074 made it optional; ASSET-003 owns characters |
+
+**Shared fixes** (as drop 2): `unity_dir` lacks `UnityProject/` in all 10 params (S1); no `own_sheet` (S2); `COL_` decision (S4); free-text `validation_warnings` (S8).
+- GAP ids are `GAP-R2-01..09`, a new scheme. Fold them into `GAP-PROC-*` on registration, and only for values that have no source (B5).
+- Round-2 budgets respect ≤5k fixtures / ≤1k props.
+
+### B2. Generators vs DEC-074, our contract and the store
+- **No brands, people, cameras or security detail** in any round-2 geometry. The ID-check stand's scanner is an age-check pad, not access control: OK.
+- **Deli counter:**
+  - The real deli counter is an **L** (plan bbox 14.0–34.2 × 18.0–25.2 ft, RI §1.5) with a **teal/white checker tile front** ("DELI STYLE", R2C1/R2C2, Med) and globe pendants at its west end.
+  - Theirs is a straight 2.4 m counter with a clear acrylic front. Make L segments + a corner piece, tile-front material.
+  - Its height and depth are **not in the TI** (GAP-113): keep as a GAP.
+- **Jar wall:**
+  - Slots match `PROC_DeliJar` exactly (0.1524 × 0.2604 × 0.1397 = 6.0 × 10.25 × 5.5 in, REF-007). Slot anchors use the bottom-centre origin ✓.
+  - The real walls are long runs: **north 26.0 × 1.2 ft, south 21.2 × 1.2 ft, east 1.4 × 14.0 ft** (RI §1.5). The shelves are **dark-grey metal** (DEC-043) on a **teal leaf-pattern backlit** back (R2C3, photo 11), in arched wood frames (photo 11).
+  - Make the width/sections params per run.
+  - **Slot count must not be a fixed 7 × 4.** It comes from the catalog: one jar per strain, house deli doubled (DEC-079); the ~77 jars noted in PROC_PIPELINE.
+  - Shelf heights: the TI "special wall display" (glass showcase shelves at 1'-2" on a 34" base, RI §6.4) is the same store-standard family (Med). Use it as the default instead of an even spread.
+- **Register counter run:**
+  - The store has **11 stations on an L** (DEC-039: south side 7,2,3,4,5,6; east side 12,11; north side 10,9,8), plan L bbox 20–42 × 7–19 ft (RI §1.5). Theirs is one straight 8.2 m box.
+  - Counter per TI: **34 in (0.864) max, 2'-6" (0.762) deep white quartz top (QZ-2), walnut-veneer front, 4 in base, open black shelves underneath** (RI §6.4, R2C3). Theirs: 0.96 tall, 0.74 deep, brown laminate, closed.
+  - **Station components:**
+    - drop `cash_drawer` (rejected under DEC-051, drop 2 C1);
+    - put `scale_stand_slot` **on the floor on the staff side, to the staff's right of each monitor** (RI §2.2), not on the counter top (`y = h`);
+    - add keyboard, receipt printer and card-terminal slots (card terminal pending the Hub ruling).
+  - The countertop display case (1.4 × 1.4 ft at x 38–39.4, RI §1.5, "lit black glass", R3C2) belongs on this run.
+- **ID-check stand:**
+  - Where ID is checked is a store fact we don't have (GAME-008 models ID events, not a place). Entry stanchions/queue exist (R2C1, 4 lanes RI §1.5).
+  - Keep it as GAP and add a Nolan question.
+  - Fix the height: either declare `height_m` as the top including the scanner, or exclude the scanner from the expected size.
+- **Display cases:**
+  - Front + 2 side glass, but **no top glass and no back**. A counter case needs a top. Collision covers only the base and the side posts, so a player can walk into the glass. Add glass to the collision box.
+  - Sizes: countertop case ≈ **0.43 × 0.43 m** (1.4 × 1.4 ft plan, Med); theirs is 1.22 × 0.56.
+  - The tall case has no store row; the retail display shelving family (RI §6.4) is the closest.
+- **Bag racks:**
+  - Store fact: one small FOH rack holds deli bags, exit bags, misc tools and vape batteries (`Rack_Bags_Tools`, 3.0 × 1.5 × 5.0 ft, DEC-051 Q2). Kraft order bags sit on the open shelves under the register counter (RI §2.2).
+  - The wall bag-slot rack and exit-bag dispenser **have no store evidence**. Keep them only as optional dressing; the tool caddy is generic.
+- **Sign blanks:**
+  - The real store uses a **3 × 3 video wall** and wall TVs (menu screen 6.6 × 1.0 ft on the north wall, RI §1.5), a "THURSDAY" deals sheet (photo 10), a "Fine Cannabis" white neon (photo 05) and licenses on the west wall.
+  - The hanging menu board and A-frame have no store source. The poster blank is fine.
+  - Screen content stays out of scope (REF rule).
+- **Building shell / exterior:**
+  - The entry is a **6'-0" × 7'-0" out-swinging aluminium storefront pair, two 3'-0" leaves** (TI E101, DEC-037, RI §1.4, High).
+  - Theirs is a single 0.91 m door in a glass **entry vestibule**. There is **no exterior vestibule** in any source; the A011 vestibule is the interior FOH/BOH lobby. Reject the vestibule; make a storefront-pair door module.
+  - Storefront glass is **GL-1 green-tinted** (TI §6.5). The glazing COL covers only sill and header, so players walk through the glass: add glass collision.
+  - Exterior evidence is night CCTV only (R1C1–R1C5, R3C1): light flat-roof walls, wood fascia, hedge, sidewalk, yellow curb, striping, a dark green fence/gate (Med/Low).
+  - Parapet, curb and stripe sizes: GAP; stripe colour yellow/white per R1C3/R1C2.
+
+### B3. Materials loader (`materials/cc0_pbr.py` + `material_library`)
+| Requirement | Finding |
+|---|---|
+| CC0 sources only | ✓ Poly Haven and ambientCG (both CC0) plus one project-procedural acrylic. Every entry has `provider`, `asset_id`, `source_url`, `license`, `license_url` |
+| Licenses recorded | ✓ in params, on the Blender material (custom props) and in `provenance.json`. **But** not in our `Docs/Assets/LICENSE_LEDGER.md` / `ASSET_CACHE_MANIFEST.json` (DEC-023), which is where `fetch_assets.py --verify` looks |
+| No download at import/build time without a manifest | **✗ fails.** `download_sources: true` by default: a cold cache calls `api.polyhaven.com` / the ambientCG `full_json` API **during the Blender build** and downloads whatever map URLs the response lists. There is **no sha256 or version pin**, so a provider-side update silently changes inputs. The ambientCG zip is `extractall`ed unchecked. Provider **API** terms are separate from the asset licence, which is one more reason to fetch once by hand/tool and pin it |
+| Determinism | Geometry is deterministic (verified offline); the texture inputs are not, for the reason above |
+| Map picking | heuristic substring match (`"color"`, `"rough"`, `"nor_gl"`…) over the API JSON. It works for the standard names but is fragile, and on Poly Haven it can pick a map from a `blend`/`gltf` include entry |
+| Unity value | the FBX carries only material **names**: Blender node trees and image links don't survive FBX into HDRP. The game's materials are built in Unity (ART-003 lookdev already imports cache textures via `Tools/Assets/lookdev_textures.py`) |
+
+- **Fix (adapt):**
+  - Drop the build-time downloader.
+  - Add the 7 provider assets as rows to our fetch list. `fetch_assets.py` already supports Poly Haven and URL sources, and writes sha256 + ledger IDs. `smooth_concrete_floor` is already cached (`PH-smooth_concrete_floor`), and we hold `oak_veneer_05` where they picked `oak_veneer_01`.
+  - Let `cc0_pbr.build_material` read **only** cached, manifest-verified files, failing if one is missing (no network).
+  - Keep the name list (`M_Proc_*`) as the shared naming contract with Unity.
+- **Name collision:** three names point at one source (Stainless, Chrome, BlackPowderCoat all use `Metal011`), which is fine given recorded overrides. `M_Proc_Floor_PolishedConcrete` vs the store: the sales floor is **TL-1 marble-look 12 × 24 and TL-2 8 × 8 tile**; concrete (CONC-1) is the storage-room floor (TI §6.5). Rename or retarget per room.
+
+### B4. Labels / decals
+- The whitelist is enforced in code (`ValueError` on unknown brands), and the default params are generic-only ✓.
+- **Missing "The Flower Mine"** (approved by DEC-081 after the brief). Add it, and keep the list in one shared data file that BRAND-001 also reads, so it can't drift.
+- **Duplicate geometry:** `PROC_DeliJar` already has `Band`, `Label` and `ThcTag` parts with `UVMap_Label` 0..1 (PROC_PIPELINE). Separate label meshes for the jar are redundant. The useful deliverable is the **label texture**, rendered at the label's aspect ratio.
+- The SVGs are all 512 × 512 square, so 100 × 80 mm cards and 150 × 55 mm bands stretch. SVG text names `Arial`, which is not ours to ship: use an OFL font when rasterising.
+- Unity doesn't use SVG textures without an extra package, so rasterise to PNG in the pipeline.
+- Label content must stay generic or from the catalog (strain name and THC % from data at runtime), never invented product data.
+
+### B5. Round-2 guessed dimensions → source
+| Param (theirs) | Guess | Source we have | Status |
+|---|---|---|---|
+| deli counter `width/depth/height` 2.4 × 0.78 × 0.97 | straight | L, bbox 20.2 × 7.2 ft (RI §1.5 vector, Med); height/depth not in TI | footprint: RI; height: GAP (was GAP-113) |
+| jar wall `width` 1.55, `height` 2.05, `shelf_rows` 4, `jar_columns` 7 | — | runs N 26.0 / S 21.2 / E 14.0 ft × 1.2 ft deep (RI §1.5); shelf pitch 1'-2" on a 34" base (TI display family, Med); slot = PROC_DeliJar (REF-007); count from catalog (DEC-079) | sourced, except wall height: GAP |
+| register `station_count` 11 | — | 11 stations, numbering DEC-039 | ✓ |
+| register `height` 0.96, `depth` 0.74, finish | — | 0.864 max, 0.762 top, QZ-2 / WD-1 / open shelves (TI §6.4, High) | **wrong**: TI |
+| register `station_width` 0.72, straight layout | — | L bbox 22 × 12 ft (RI §1.5); stations per side DEC-039 | layout: RI; per-station width: GAP |
+| scale-stand slot on counter top | — | floor, staff side, right of monitor (RI §2.2) | **wrong** |
+| ID stand 0.62 × 0.52 × 1.08 | — | none; location unknown | GAP + Nolan Q |
+| countertop case 1.22 × 0.56 × 0.62 | — | 1.4 × 1.4 ft on the register counter, lit black glass (RI §1.5, R3C2) | footprint: RI; height: GAP |
+| tall case 0.92 × 0.48 × 1.92 | — | no store row | GAP (optional) |
+| bag rack / dispenser / caddy | — | `Rack_Bags_Tools` 3.0 × 1.5 × 5.0 ft (ROOM_FIXTURES) is the only bag fixture | forms unsourced |
+| sign blanks | — | video wall 3 × 3, menu screen 6.6 × 1.0 ft (RI §1.5) | blanks: GAP |
+| storefront `height` 2.7, `bays` 4, `sill` 0.25 | — | retail ceiling 9'-0" (TI §6.1); GL-1 glass; widths from the A011 west wall | heights partly TI; bays: GAP |
+| entry door 0.91 × 2.13 single, vestibule 2.2 × 1.8 | — | **pair 6'-0" × 7'-0"**, no vestibule (TI E101, High) | **wrong** |
+| parapet 0.72, curb 0.1 × 0.15, stripe 0.1 wide | — | night CCTV only | GAP |
+| labels: card 100 × 80 mm, THC tag 45 × 28, band 150 × 55 | — | identical to GAP-PROC-03/09 (PROC_PIPELINE) | already GAP-PROC-03/09 |
+
+### B6. Questions for Nolan (via the Hub; also in the handoff)
+1. **ID check** (GAME-008): where are IDs checked in the store, and on what? Candidates: (a) at the door/queue entrance by a greeter at a podium; (b) at the register by the budtender; (c) both. Best guess: (b).
+2. **Deli counter front:** is the "DELI STYLE" counter front teal/white checker tile all the way along, with a glass/acrylic case on top? Source: R2C1/R2C2 tiles. Best guess: a tile front, a black counter top, and no display glass.
+
+### Drop 4 summary
+| Package | Verdict |
+|---|---|
+| Round-1 fix claims | **not delivered**: request the updated round-1 files from ChatGPT before integrating drop 2 |
+| `proclib_preserve_rgba_alpha.patch` | **adopt** (existing output unchanged) |
+| deli counter / jar wall, register run, display cases, exterior | **adapt**: right idea, wrong shapes; real sizes/finishes exist in RI/TI (B2/B5). Exterior: **reject** the vestibule, make the storefront pair |
+| ID-check stand, bag racks, sign blanks | **adapt** (3 validation fails); low priority, mostly unsourced forms |
+| material library | **adapt**: no build-time downloads; route through `fetch_assets.py` + ledger |
+| labels/decals | **adapt**: add The Flower Mine; textures, not meshes |
+| hands | n/a (omitted) |
