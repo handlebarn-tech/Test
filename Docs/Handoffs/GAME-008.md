@@ -17,8 +17,7 @@
   - refuse invalid → new `CustomerOutcome.Refused`, excluded from satisfaction and queue-wait averages.
   - Report: `IdsChecked`, `BadIdsCaught`, `ValidIdsRefused`, shown in the report's Compliance block.
 - **View** (UX_PS1 §4):
-  - **Cover prompt** (Y/N, Esc = decline): waits until no screen is open, then auto-declines after `coverPromptSeconds` 8.
-  - **Stand:** a marker shows while covering. **E** opens the ID panel when the player is in reach.
+  - **Cover prompt** (Y/N, Esc = decline): waits until no screen is open, then auto-declines after `coverPromptSeconds` 8. **Stand:** a marker shows while covering; **E** in reach opens the ID panel.
   - **ID panel:** header, today's date, an ID-1 card (portrait for vertical IDs), A/R, Esc.
   - **HUD:** while covering it becomes the Counter line strip (patience word + icon, max 5, stand count). Result toasts use §8 strings.
 - **Stand anchor:** `Anchor_CheckInDesk` by name. There is no ART anchor yet, so `TEMP_Anchor_CheckInDesk` sits beside the entry (plan x 3, y 13). GAP-COMP-08, for ART.
@@ -29,12 +28,7 @@
 - **Compile and tests:** compile OK. EditMode **204/204**, including Gate A (TfsParity + goldens). PlayMode 8 passed + 1 skipped.
 - **PlayMode bot:** forces the prompt, covers, judges perfectly: 3 IDs checked, 0 strikes. Seed 1 unchanged: 12/12, $364.00, Kush Cake sold out.
 - **New `IdCheckTests` (11):**
-  - boundaries: 21st birthday today vs tomorrow; vertical day 30 vs 31; expiry today vs yesterday; out-of-state vertical;
-  - 300 IDs per case land on their side;
-  - weights; date = shift weekday; same seed → same IDs;
-  - the prompt fires once at rush start; decline delay;
-  - refuse valid = walkout; admit invalid = 1 strike; refuse bad = caught;
-  - an ignored stand still ends the shift.
+  boundaries (21st birthday today vs tomorrow, vertical day 30 vs 31, expiry today vs yesterday, out-of-state vertical); 300 IDs per case land on their side; weights; date = shift weekday; same seed → same IDs; prompt once at rush start; decline delay; refuse valid = walkout; admit invalid = 1 strike; refuse bad = caught; an ignored stand still ends the shift.
 - **`unity-capture` PASS, 24 shots:** prompt, horizontal and vertical ID panel at 100/125/150 % with layout asserts. Shots: `Docs/Assets/Specs/GAME-008_*.png`.
 
 ## Overlap / for others
