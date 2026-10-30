@@ -85,7 +85,7 @@ namespace Dispo.Slice.Tests
             Assert.AreEqual(16, a.Customers.Count, "GAME-010: 16 per shift");
             CollectionAssert.AreEqual(a.Inventory.StartGrams, b.Inventory.StartGrams);
             Assert.AreEqual(0, a.Customers[0].SpawnTime);
-            Assert.AreEqual(4 * 45 + 4 * 15 + 7 * 45, a.Customers[15].SpawnTime, "45 s gaps, 15 s gaps before customers 6-9");
+            Assert.AreEqual(4 * 150 + 4 * 60 + 7 * 150, a.Customers[15].SpawnTime, "150 s gaps, 60 s gaps before customers 6-9 (GAME-010)");
             Assert.IsTrue(a.Customers.Where(c => c.Rush).Select(c => c.Index).SequenceEqual(new[] { 6, 7, 8, 9 }));
             Assert.IsTrue(a.Customers.All(c => c.HasBudget == c.Archetype.hasBudget));
         }
@@ -125,8 +125,8 @@ namespace Dispo.Slice.Tests
             Assert.AreEqual(1, ShiftSim.PriceFit(14, 14));
             Assert.AreEqual(0.5, ShiftSim.PriceFit(17.5, 14), 1e-9);
             Assert.AreEqual(0, ShiftSim.PriceFit(30, 14));
-            Assert.AreEqual(1, ShiftSim.SpeedFit(cfg, 30));
-            Assert.AreEqual(0.5, ShiftSim.SpeedFit(cfg, 75), 1e-9);
+            Assert.AreEqual(1, ShiftSim.SpeedFit(cfg, 20));
+            Assert.AreEqual(0.5, ShiftSim.SpeedFit(cfg, 55), 1e-9);
             Assert.AreEqual(0, ShiftSim.SpeedFit(cfg, 200));
             Assert.AreEqual(0, ShiftSim.WaitPenalty(cfg, 60));
             Assert.AreEqual(0.02, ShiftSim.WaitPenalty(cfg, 70), 1e-9);

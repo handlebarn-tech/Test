@@ -15,9 +15,9 @@ namespace Dispo.Slice.Tests
         public bool TrueChip, BestCard;           // perfect information vs a random chip and a random card
         public double PickSec, PosSec, RepickSec; // service start → first card, accept → POS confirm, reject → next card
 
-        public static readonly Persona Perfect = new Persona { Name = "perfect", TrueChip = true, BestCard = true, PickSec = 25, PosSec = 20, RepickSec = 10 };
-        public static readonly Persona Careless = new Persona { Name = "careless", PickSec = 25, PosSec = 20, RepickSec = 10 };
-        public static readonly Persona Slow = new Persona { Name = "slow", TrueChip = true, BestCard = true, PickSec = 50, PosSec = 40, RepickSec = 20 };
+        public static readonly Persona Perfect = new Persona { Name = "perfect", TrueChip = true, BestCard = true, PickSec = 45, PosSec = 30, RepickSec = 15 };
+        public static readonly Persona Careless = new Persona { Name = "careless", PickSec = 45, PosSec = 30, RepickSec = 15 };
+        public static readonly Persona Slow = new Persona { Name = "slow", TrueChip = true, BestCard = true, PickSec = 90, PosSec = 60, RepickSec = 30 };
         public static readonly Persona[] All = { Perfect, Careless, Slow };
     }
 
@@ -32,8 +32,9 @@ namespace Dispo.Slice.Tests
         public static SliceData Load() => SliceData.Load(Read("Catalog/batches.json"), Read("Catalog/terpenes.json"), Read("Catalog/engine_tables.json"),
             Read("Catalog/pricing.json"), Read("Slice/SliceConfig.json"), Read("Slice/SliceIntents.json"), Read("Slice/SliceLines.json"));
 
-        /// <summary>Plays one seeded shift. Perfect picks the card with the best fit + price (cards 1-3 plus one More options page);
-        /// careless picks a random chip and a random card, blind to budget. Both sell the stated weight.</summary>
+        /// <summary>Plays one seeded shift through the cart (GAME-006): per ask search, present, then Add item; Confirm when every ask
+        /// is in. Perfect picks the card with the best fit + price (cards 1-3 plus one More options page); careless picks a random chip
+        /// and a random card, blind to budget. Both sell the stated weights.</summary>
         public static ShiftSim Run(SliceData d, Persona p, int seed, double step = 0.5)
         {
             d.Config.seed = seed;
@@ -44,17 +45,22 @@ namespace Dispo.Slice.Tests
             var tried = new HashSet<string>();
             for (int guard = 0; !sim.IsOver; guard++)
             {
-                Assert.Less(guard, 200000, $"{p.Name} seed {seed}: shift never ended");
+                Assert.Less(guard, 400000, $"{p.Name} seed {seed}: shift never ended");
                 sim.Tick(step);
                 var c = sim.Serving;
                 if (c == null) continue;
                 if (c != cur) { cur = c; tried.Clear(); next = c.ServiceStart + p.PickSec; }
                 if (sim.Time < next) continue;
-                if (sim.Pending != null) { Assert.IsNull(sim.Confirm(c.Grams)); continue; }
-
+                if (sim.RegisterOpen)
+                {
+                    if (sim.CanAddItem) { sim.AddItem(); tried.Clear(); next = sim.Time + p.PickSec; }
+                    else Assert.IsNull(sim.Confirm(), $"{p.Name} seed {seed} customer {c.Index}");
+                    continue;
+                }
                 var card = Choose(sim, p, rng, tried);
                 tried.Add(card.Strain.Key);
-                next = sim.Time + (sim.Present(card).Response == Response.Accept ? p.PosSec : p.RepickSec);
+                var r = sim.Present(card).Response;
+                next = sim.Time + (r != Response.Accept ? p.RepickSec : sim.CanAddItem ? 0 : p.PosSec);
             }
             return sim;
         }
@@ -62,77 +68,98 @@ namespace Dispo.Slice.Tests
         static Card Choose(ShiftSim sim, Persona p, System.Random rng, HashSet<string> tried)
         {
             var c = sim.Serving;
-            bool Ok(Card k) => k.HasPrice && !tried.Contains(k.Strain.Key) && sim.Inventory.Grams(k.Rep.Id) >= c.Grams;
+            var ask = sim.CurrentAsk;
+            bool Ok(Card k) => k.HasPrice && !tried.Contains(k.Strain.Key) && sim.Free(k.Rep.Id) >= ask.Grams;
             var fams = sim.Data.Intents.families;
+            double inCart = sim.Cart.Count > 0 ? sim.CartPrice().PostTax : 0;
             for (int attempt = 0; attempt < 20; attempt++)
             {
                 if (sim.Results == null || attempt > 0)
                 {
-                    sim.Search(p.TrueChip ? c.TrueFamily : fams[rng.Next(fams.Length)]);
+                    sim.Search(p.TrueChip ? ask.Family : fams[rng.Next(fams.Length)]);
                     if (p.BestCard && sim.Results.MoreAvailable) sim.MoreOptions();
                 }
                 var ok = sim.Results.Cards.Where(Ok).ToList();
-                if (ok.Count == 0) { Assert.IsFalse(p.TrueChip, $"customer {c.Index}: no card can fill {c.Grams} g"); continue; }
+                if (ok.Count == 0) { Assert.IsFalse(p.TrueChip, $"customer {c.Index}: no card can fill {ask.Grams} g"); continue; }
                 if (!p.BestCard) return ok[rng.Next(ok.Count)];
                 var cfg = sim.Cfg;
-                return ok.OrderByDescending(k => cfg.wFit * sim.Fit(c.TrueFamily, k.Strain.Key) + cfg.wPrice * ShiftSim.PriceFit(k.CheckoutPostTax, c.Budget)).First();
+                return ok.OrderByDescending(k => cfg.wFit * sim.Fit(ask.Family, k.Strain.Key) + cfg.wPrice * ShiftSim.PriceFit(inCart + k.CheckoutPostTax, c.Budget)).First();
             }
             Assert.Fail($"customer {c.Index}: no chip gave a fillable card");
             return null;
         }
 
-        public static double Average(Persona p, int seeds = 20, Action<SliceConfig> tweak = null) =>
-            Enumerable.Range(1, seeds).Average(s =>
-            {
-                var d = Load();
-                tweak?.Invoke(d.Config);
-                return Run(d, p, s).Report().AvgSatisfaction;
-            });
+        public static List<ShiftReport> Sweep(Persona p, int seeds = 20) =>
+            Enumerable.Range(1, seeds).Select(s => Run(Load(), p, s).Report()).ToList();
 
-        // TEMP exploration grid (removed before handoff).
-        [Test, Timeout(3000000)]
+        static string Row(Persona p, List<ShiftReport> rs) =>
+            $"{p.Name,-8} avg {rs.Average(r => r.AvgSatisfaction),5:0.0}  walkouts {rs.Average(r => r.Walkouts):0.0}  noSales {rs.Average(r => r.NoSales):0.0}  units/sale {rs.Average(r => r.UnitsPerSale):0.00}";
+
+        /// <summary>Deliverable 3: seeds 1-20 per persona; prints the table in TUNING_PS1.md. Explicit: about 75 s, run on purpose
+        /// (-testFilter Dispo.Slice.Tests.SlicePersonaTests.Sweep_Seeds1To20). Asserts the bands this tuning reaches (see TUNING_PS1.md).</summary>
+        [Test, Explicit, Category("Balance"), Timeout(1800000)]
+        public void Sweep_Seeds1To20()
+        {
+            var avg = new Dictionary<string, double>();
+            foreach (var p in Persona.All)
+            {
+                var rs = Sweep(p);
+                avg[p.Name] = rs.Average(r => r.AvgSatisfaction);
+                Debug.Log("[Balance] " + Row(p, rs));
+            }
+            Assert.That(avg["perfect"], Is.InRange(80, 95), "perfect band");
+            Assert.Greater(avg["perfect"], avg["slow"]);
+            Assert.Greater(avg["perfect"], avg["careless"]);
+        }
+
+        /// <summary>PS1 exit test, part 1 (ROADMAP_POST_SLICE §2): a perfect-information bot scores &lt; 100 on a seeded 16-customer shift.</summary>
+        [Test]
+        public void PerfectBot_Seed1_Below100_BeatsCarelessAndSlow()
+        {
+            var r = Persona.All.ToDictionary(p => p.Name, p => Run(Load(), p, 1).Report());
+            foreach (var p in Persona.All) Debug.Log("[Balance] seed 1 " + Row(p, new List<ShiftReport> { r[p.Name] }));
+            Assert.AreEqual(16, r["perfect"].CustomersServed + r["perfect"].Walkouts + r["perfect"].NoSales);
+            Assert.Less(r["perfect"].AvgSatisfaction, 100, "tension: a perfect player no longer maxes every customer");
+            Assert.Greater(r["perfect"].AvgSatisfaction, r["careless"].AvgSatisfaction);
+            Assert.Greater(r["perfect"].AvgSatisfaction, r["slow"].AvgSatisfaction);
+        }
+
+        /// <summary>PS1 exit test, part 2: a careless bot gets ≥ 1 strike. Skip-guarded until GAME-007 adds the strike ledger to the report.</summary>
+        [Test]
+        public void CarelessBot_GetsAStrike_AfterGame007()
+        {
+            var f = typeof(ShiftReport).GetField("Strikes");
+            if (f == null) Assert.Ignore("needs GAME-007: ShiftReport.Strikes");
+            Assert.GreaterOrEqual(Count(f.GetValue(Run(Load(), Persona.Careless, 1).Report())), 1);
+        }
+
+        // shortcut: reads GAME-007's ledger by reflection (a count or a list) so this compiles before it lands; type it once merged.
+        static int Count(object v) => v is System.Collections.ICollection c ? c.Count : Convert.ToInt32(v);
+
+        /// <summary>PS1 hook: perfect trims over-limit asks without a strike. Skip-guarded until GAME-007/008 (trim count + strikes).</summary>
+        [Test]
+        public void PerfectBot_NoStrikes_AfterGame007()
+        {
+            var f = typeof(ShiftReport).GetField("Strikes");
+            if (f == null || typeof(ShiftReport).GetField("Trims") == null) Assert.Ignore("needs GAME-007/008: ShiftReport.Strikes and Trims");
+            Assert.AreEqual(0, Count(f.GetValue(Run(Load(), Persona.Perfect, 1).Report())));
+        }
+
+        /// <summary>The tuning grid behind TUNING_PS1.md. Explicit: minutes per config; edit the axes, run on purpose.</summary>
+        [Test, Explicit, Category("Explore"), Timeout(3000000)]
         public void Explore_TuningGrid()
         {
-            var watch = System.Diagnostics.Stopwatch.StartNew();
-            var lines = new List<string>();
-            void Log(string l) { lines.Add(l + $"  [{watch.Elapsed.TotalSeconds:0}s]"); Debug.Log("[Tuning] " + lines.Last()); }
-            foreach (var low in new[] { 0.10, 0.15 })
-            foreach (var lows in new[] { 3, 6 })
+            foreach (var gap in new[] { 150.0 })
+            foreach (var rush in new[] { 40.0, 60.0 })
             {
-                int seed1 = 0, any = 0;
-                for (int s = 1; s <= 20; s++)
+                var cells = Persona.All.Select(p => Row(p, Enumerable.Range(1, 20).Select(s =>
                 {
-                    var d = Load(); d.Config.lowStockFraction = low; d.Config.minLowStartJars = lows; d.Config.seed = s;
-                    var n = SliceTests.RunBot(d, 0.5).Inventory.SoldOutIds.Count;
-                    if (n > 0) { any++; if (s == 1) seed1 = n; }
-                }
-                Log($"soldout lowFrac {low} lows {lows}: seed1={seed1} seedsWithSoldOut={any}/20");
+                    var d = Load();
+                    d.Config.arrivalGapNormalSec = gap; d.Config.arrivalGapRushSec = rush;
+                    return Run(d, p, s).Report();
+                }).ToList()));
+                Debug.Log($"[Tuning] gap {gap}/{rush}: " + string.Join(" | ", cells));
             }
-            foreach (var t in new[] { (pick: 15.0, pos: 15.0, re: 5.0), (pick: 20.0, pos: 15.0, re: 5.0) })
-            foreach (var pm in new[] { 1.0, 2.0 })
-            foreach (var wp in new[] { 0.003, 0.005 })
-            foreach (var thr in new[] { 60.0, 70.0 })
-            {
-                var ps = new[]
-                {
-                    new Persona { Name = "perfect", TrueChip = true, BestCard = true, PickSec = t.pick, PosSec = t.pos, RepickSec = t.re },
-                    new Persona { Name = "careless", PickSec = t.pick, PosSec = t.pos, RepickSec = t.re },
-                    new Persona { Name = "slow", TrueChip = true, BestCard = true, PickSec = 2 * t.pick, PosSec = 2 * t.pos, RepickSec = 2 * t.re },
-                };
-                var cells = ps.Select(p =>
-                {
-                    var reps = Enumerable.Range(1, 20).Select(s =>
-                    {
-                        var d = Load(); var c = d.Config;
-                        foreach (var a in c.archetypes) a.patienceSec *= pm;
-                        c.waitPenaltyPerSec = wp; c.acceptThreshold = thr; c.wFit = 0.75; c.wPrice = 0.15; c.wSpeed = 0.10;
-                        return Run(d, p, s).Report();
-                    }).ToList();
-                    return $"{p.Name}={reps.Average(r => r.AvgSatisfaction):0.0}(w{reps.Average(r => r.Walkouts):0.0} n{reps.Average(r => r.NoSales):0.0})";
-                });
-                Log($"t {t.pick}/{t.pos} pat x{pm} wp {wp} thr {thr}: " + string.Join("  ", cells));
-            }
-            Debug.Log("[Tuning]\n" + string.Join("\n", lines));
         }
     }
 }
