@@ -38,6 +38,20 @@ namespace Dispo.PlayMode.Tests
         }
 
         [Test]
+        public void ElevenRegisters_EachWithAnchorAndScaleStand()
+        {
+            // DEC-039: registers 2-12 on the floor; register 1 is the BOH desk (DEC-040)
+            var names = SceneManager.GetSceneByName("Retail").GetRootGameObjects()
+                .SelectMany(g => g.GetComponentsInChildren<Transform>(true)).Select(t => t.name).ToList();
+            foreach (var reg in Enumerable.Range(2, 11).Select(i => i.ToString("00")))
+            {
+                Assert.Contains($"Anchor_POS_{reg}", names, $"register {reg} anchor missing");
+                Assert.IsTrue(names.Any(n => n.StartsWith($"FX_ScaleStand_POS_{reg} ") && n.EndsWith("collider")), $"register {reg} has no scale stand");
+            }
+            Assert.IsFalse(names.Contains("Anchor_POS_01"), "register 1 is not on the floor (DEC-040)");
+        }
+
+        [Test]
         public void Scale_IsOnItsStand_NextToTerminal()
         {
             var scale = GameObject.Find("Interact_Scale").transform.position;

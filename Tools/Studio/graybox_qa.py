@@ -17,11 +17,12 @@ PLAN_X0, PLAN_Y0, PLAN_PPF = 248.5, 361.5, (1300.5 - 248.5) / 45
 # Scanlines sit off the drawn 1-ft grid (.3 / .7 ft) so grid strokes don't mask the walls.
 SCANS = [
     ("y", 33.3, [8.195, 13.9, 23.5, 36.695]),
-    ("y", 60.3, [28.495]),
     ("x", 2.7, [29.25, 36.3, 46.55]),
     ("x", 30.3, [29.25, 46.55]),
     ("x", 42.3, [29.25, 46.55]),
 ]
+# Walls where the V5 plan raster is known wrong (GAP-120: V5 mirrors HUB / HUB 2): checked against the A011 value instead.
+A011 = [("y", 60.3, [18.995])]
 OUTLINE = [("y", 10.3, 0.0, 47.19), ("y", 60.3, 0.0, 47.19), ("x", 2.7, 0.0, 76.03), ("x", 42.3, 0.0, 76.03)]
 
 
@@ -100,6 +101,12 @@ def main(cap_dir, plan_path):
             c, p = cap_wall.nearest_wall(axis, at, e), pl_gap.nearest_wall(axis, at, e)
             d = abs(c - p) if c is not None and p is not None else None
             rows.append({"scan": f"{axis}={at}", "expect": e, "capture": c, "plan": p, "dev": d})
+            devs.append(d)
+    for axis, at, expects in A011:
+        for e in expects:
+            c = cap_wall.nearest_wall(axis, at, e)
+            d = abs(c - e) if c is not None else None
+            rows.append({"scan": f"{axis}={at} A011", "expect": e, "capture": c, "plan": e, "dev": d})
             devs.append(d)
     for axis, at, lo, hi in OUTLINE:
         c, p = cap_bldg.outline(axis, at, lo, hi), pl_bldg.outline(axis, at, lo, hi)

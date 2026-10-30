@@ -34,19 +34,20 @@ namespace Dispo.Editor.Graybox
         [Serializable] public sealed class RefCam { public string tile, zone, room, h, conf, note; public float x, y, yaw, pitch, fov; public string Id => $"REF_{tile}_{room}"; }
 
         [Serializable] public sealed class Anchor { public string id, zone, conf, note; public float x, y, h, yaw; }
-        /// <summary>POS stations on the register north leg; each gets a monitor and a DEC-021/026 scale stand. The slice station also gets the SLICE_DESIGN §7 anchors.</summary>
+        /// <summary>DEC-039 numbered POS stations, each with a monitor and a DEC-021/026 scale stand. The slice station also gets the SLICE_DESIGN §7 anchors.</summary>
         [Serializable] public sealed class Stations
         {
-            public string zone, conf, gap, note;
-            public float[] xs;
-            public int sliceStation;
-            public float staffEdgeY, customerY, playerY, monitorW, monitorD, monitorH;
+            public string zone, conf, gap, note, slice;
+            public float customerOff, playerOff, monitorW, monitorD, monitorH;
             public Stand stand;
+            public Station[] list;
         }
+        /// <summary>(x, y) = station centre on the counter's staff edge; staff = compass side (N/E/S/W) the budtender stands on.</summary>
+        [Serializable] public sealed class Station { public string reg, staff; public float x, y; }
         [Serializable] public sealed class Stand
         {
             public string conf, gap, note;
-            public float w, d, offsetX, topFt, post, board, scaleW, scaleD, scaleH, panelW, panelH, panelT;
+            public float w, d, offsetT, topFt, post, board, scaleW, scaleD, scaleH, panelW, panelH, panelT;
             public float[] shelvesFt;
         }
         /// <summary>Jar slots on open shelves; numbered run by run, row by row (bottom first), then along the run.</summary>
