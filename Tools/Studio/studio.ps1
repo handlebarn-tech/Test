@@ -286,7 +286,7 @@ switch ($Command) {
             target                = 'StandaloneWindows64'
             buildDateUtc          = (Get-Date).ToUniversalTime().ToString('o')
             commit                = $Commit
-            dirtyPathCount        =@(git -C $Root status --porcelain 2>$null).Count
+            dirtyPathCount        = @(git -C $Root status --porcelain 2>$null).Count
             unityVersion          = ((Get-Content (Join-Path $Project 'ProjectSettings\ProjectVersion.txt'))[0] -split ':\s*')[1]
             scenes                = @([regex]::Matches($buildSettings, '- enabled: 1\s+path: (\S+)') | ForEach-Object { $_.Groups[1].Value })
             catalogManifestMd5    = & $md5 'UnityProject/Assets/_Game/Data/Catalog/manifest.json'

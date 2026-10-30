@@ -28,20 +28,21 @@ CASES = [  # (name, payload or raw stdin, expected exit)
     ("hub notebook edit blocked", {"cwd": HUB, "tool_name": "NotebookEdit", "tool_input": {"notebook_path": HUB + r"\Tools\a.ipynb"}}, 2),
     ("hub doc edit allowed", {"cwd": HUB, "tool_name": "Write", "tool_input": {"file_path": HUB + r"\Docs\BACKLOG.md"}}, 0),
     ("worker code edit allowed", {"cwd": WORKER, "tool_name": "Edit", "tool_input": {"file_path": WORKER + r"\Tools\Studio\studio.ps1"}}, 0),
+    ("worker cwd outside worktree allowed", {"cwd": r"C:\Temp", "tool_name": "Bash", "tool_input": {"command": "$UNITY -batchmode -quit"}, "_project": WORKER}, 0),
     ("bad payload allowed", "{not json", 0),
     ("non-object payload allowed", "[1, 2]", 0),
 ]
 
 
-def run(stdin):
-    env = dict(os.environ, CLAUDE_PROJECT_DIR=HUB)
+def run(stdin, project=HUB):
+    env = dict(os.environ, CLAUDE_PROJECT_DIR=project)
     return subprocess.run([sys.executable, "-I", GUARD], input=stdin, capture_output=True, text=True, env=env).returncode
 
 
 def main():
     failed = 0
     for name, payload, want in CASES:
-        got = run(payload if isinstance(payload, str) else json.dumps(payload))
+        got = run(payload) if isinstance(payload, str) else run(json.dumps(payload), payload.pop("_project", HUB))
         ok = got == want
         failed += not ok
         print(f"{'PASS' if ok else 'FAIL'} {name}: exit {got} (want {want})")

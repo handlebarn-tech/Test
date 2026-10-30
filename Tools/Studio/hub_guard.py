@@ -49,9 +49,10 @@ def is_code_path(path, root):
 
 def check(data):
     cwd = data.get("cwd") or ""
-    if in_worktree(cwd):
+    project = os.environ.get("CLAUDE_PROJECT_DIR") or ""
+    if in_worktree(cwd) or in_worktree(project):  # a worker whose shell cwd left its worktree is still a worker (REVIEW-W4B)
         return None
-    root = os.environ.get("CLAUDE_PROJECT_DIR") or cwd
+    root = project or cwd
     tool = data.get("tool_name", "")
     inp = data.get("tool_input") or {}
     if tool in ("Bash", "PowerShell"):
