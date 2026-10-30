@@ -96,8 +96,8 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | GAME-017a | P0 | First playable recommendation depth (cut from GAME-017, DES-006 §5): needs, read-it-as picker, parser route, Q9, reject→re-search | DES-006, DATA-003, UX-006, GAME-009, GAME-025 (same Presentation/Slice files), QA-002b Gate A | Ready (waits: GAME-025 + DATA-003 merge) |
 | DATA-003 | P0 | Customer needs catalog + golden parses from the TFS tool (GAME-017a data) | DES-006 | Review (996c631, Unity A2) |
 | UX-006 | P0 | Counter UX addendum: read-it-as picker, said cards, query preview | DES-006, DES-005 | Done (REVIEW-UX6, 5920ab2) |
-| BUILD-007 | P0 | Playtest build 2 (PS1 complete) into `Downloads/Dispo Game Builds/` | GAME-009 | Active |
-| GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction  | DES-005, GAME-009 merge, World REF-012 `DOORS.json` | Ready (waits) |
+| BUILD-007 | P0 | Playtest build 2 (PS1 complete) into `Downloads/Dispo Game Builds/` | GAME-009 | On hold (Nolan: build after GAME-025, maybe GAME-026) |
+| GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction  | DES-005, GAME-009 merge, World REF-012 `DOORS.json` | Active |
 | GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next  | DES-005, GAME-025, World REF-011 `SCENE_ANCHORS.json` | Ready (waits) |
 | ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Done (W5A) |
 | IMP-002 | P1 | Integrate the approved DISPO_GAME_DESIGN_V2 pack (DEC-063) into `Docs/Design/DESIGN_V2/` | IMP-001 | Done (W4V, DEC-066) |
