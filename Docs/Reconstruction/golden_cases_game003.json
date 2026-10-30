@@ -1,0 +1,2976 @@
+{
+ "meta": {
+  "generator": "Tools/Data/golden_game003.js",
+  "htmlMd5": "228684e9f02d703cf3a36692baf10d18",
+  "invMd5": "09bfa4f00206b25f77fb2a49db2eea9c",
+  "clock": "Thu dow 4 (MIG-001 harness)",
+  "state": "MIG-001 local-mode defaults",
+  "fixes": {
+   "MC-7": "L15658: daytime:{d:{uplift:22,focus_cognitive:14},neg:{sedation:32},lbl:'daytime',pri:'uplift'},'for the day':{d:{uplift:22,focus_cognitive:14},neg:{sedation:32},lbl:'daytime',pri:'uplift'},",
+   "GAP-206": "L16086: const _sleepAsk=/\\b(sleep\\w*|insomnia)\\b/.test(qi)"
+  }
+ },
+ "v7114": [
+  {
+   "q": "back is killing me",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "pain_inflammation": 50,
+     "sedation": 30
+    },
+    "neg": {
+     "sedation": 55
+    },
+    "primary": "pain_inflammation",
+    "lbls": [
+     "back pain"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "pain_inflammation": 50,
+      "sedation": 30
+     },
+     "neg": {
+      "sedation": 55
+     },
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 1.7844
+      },
+      {
+       "key": "zero gravity",
+       "ms": 1.6757
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 1.6624
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "zero gravity",
+    "honeycomb pave 4"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "lowest_anxiety"
+   ],
+   "more": [
+    "wookie grease",
+    "soho",
+    "goo lagoon"
+   ]
+  },
+  {
+   "q": "knee pain",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "pain_inflammation": 50
+    },
+    "neg": {
+     "sedation": 55
+    },
+    "primary": "pain_inflammation",
+    "lbls": [
+     "joint pain"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "pain_inflammation": 50
+     },
+     "neg": {
+      "sedation": 55
+     },
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 1.7844
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 1.6624
+      },
+      {
+       "key": "zero gravity",
+       "ms": 1.5957
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "zero gravity"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_sedating"
+   ],
+   "more": [
+    "slurricane",
+    "wookie grease",
+    "goo lagoon"
+   ]
+  },
+  {
+   "q": "racing thoughts",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 50,
+     "sedation": 40
+    },
+    "neg": {},
+    "primary": "anxiety_relief",
+    "lbls": [
+     "racing thoughts"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "anxiety_relief": 50,
+      "sedation": 40
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 2.7714
+      },
+      {
+       "key": "rainbow drip",
+       "ms": 2.7706
+      },
+      {
+       "key": "blue mamba 24",
+       "ms": 2.7694
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "rainbow drip",
+    "blue mamba 24"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_uplifting",
+    "most_sedating"
+   ],
+   "more": [
+    "peak og",
+    "double og sour",
+    "squid ink"
+   ]
+  },
+  {
+   "q": "morning pick me up",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "uplift": 35,
+     "focus_cognitive": 18
+    },
+    "neg": {
+     "sedation": 38
+    },
+    "primary": "uplift",
+    "lbls": [
+     "morning",
+     "energy"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "uplift": 35,
+      "focus_cognitive": 18
+     },
+     "neg": {
+      "sedation": 38
+     },
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 1.9667
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 1.8956
+      },
+      {
+       "key": "scented marker",
+       "ms": 1.8365
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "scented marker"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ],
+   "more": [
+    "slurricane",
+    "saffire",
+    "pearlz"
+   ]
+  },
+  {
+   "q": "before the gym",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "uplift": 35,
+     "pain_inflammation": 30
+    },
+    "neg": {
+     "sedation": 40
+    },
+    "primary": "uplift",
+    "lbls": [
+     "pre-workout"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "uplift": 35,
+      "pain_inflammation": 30
+     },
+     "neg": {
+      "sedation": 40
+     },
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 2.3862
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 2.251
+      },
+      {
+       "key": "slurricane",
+       "ms": 1.9804
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "slurricane"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ],
+   "more": [
+    "saffire",
+    "scented marker",
+    "goo lagoon"
+   ]
+  },
+  {
+   "q": "going out tonight",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "uplift": 32,
+     "anxiety_relief": 28
+    },
+    "neg": {
+     "sedation": 42
+    },
+    "primary": "uplift",
+    "lbls": [
+     "social"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "uplift": 32,
+      "anxiety_relief": 28
+     },
+     "neg": {
+      "sedation": 42
+     },
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 2.4517
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 2.3277
+      },
+      {
+       "key": "slurricane",
+       "ms": 2.0064
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "slurricane"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ],
+   "more": [
+    "saffire",
+    "scented marker",
+    "j 31"
+   ]
+  },
+  {
+   "q": "lost my appetite",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 30,
+     "pain_inflammation": 30
+    },
+    "neg": {
+     "sedation": 55
+    },
+    "primary": "sedation",
+    "lbls": [
+     "appetite"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "sedation": 30,
+      "pain_inflammation": 30
+     },
+     "neg": {
+      "sedation": 55
+     },
+     "top": [
+      {
+       "key": "wookie grease",
+       "ms": 0.8752
+      },
+      {
+       "key": "t rekt",
+       "ms": 0.8584
+      },
+      {
+       "key": "double og chem 5 x 15 3",
+       "ms": 0.8412
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "wookie grease",
+    "t rekt",
+    "double og chem 5 x 15 3"
+   ],
+   "roleTags": [
+    "best_match",
+    "gentle",
+    "most_functional"
+   ],
+   "more": [
+    "double og chem 5",
+    "juicehead 9",
+    "duel fuel"
+   ]
+  },
+  {
+   "q": "low tolerance",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 55
+    },
+    "neg": {
+     "uplift": 45
+    },
+    "primary": "anxiety_relief",
+    "lbls": [
+     "sensitive"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "anxiety_relief": 55
+     },
+     "neg": {
+      "uplift": 45
+     },
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 1.75
+      },
+      {
+       "key": "squid ink",
+       "ms": 1.725
+      },
+      {
+       "key": "cloudberry cream",
+       "ms": 1.7004
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "squid ink",
+    "cloudberry cream"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "most_functional"
+   ],
+   "more": [
+    "blue mamba 24",
+    "peak og",
+    "double og sour"
+   ]
+  },
+  {
+   "q": "brain fog",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "focus_cognitive": 25
+    },
+    "neg": {
+     "sedation": 40
+    },
+    "primary": "focus_cognitive",
+    "lbls": [
+     "brain fog"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "focus_cognitive": 25
+     },
+     "neg": {
+      "sedation": 40
+     },
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 1.0354
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 1.0131
+      },
+      {
+       "key": "slurricane",
+       "ms": 0.9797
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "slurricane"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ],
+   "more": [
+    "scented marker",
+    "saffire",
+    "goo lagoon"
+   ]
+  },
+  {
+   "q": "tossing and turning",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 52,
+     "anxiety_relief": 38
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "sedation": 52,
+      "anxiety_relief": 38
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 1.467
+      },
+      {
+       "key": "double og sour",
+       "ms": 1.4387
+      },
+      {
+       "key": "peak og",
+       "ms": 1.4178
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "double og sour",
+    "peak og"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "gentle"
+   ],
+   "more": [
+    "squid ink",
+    "double up",
+    "glueberry"
+   ]
+  },
+  {
+   "q": "wired but tired",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 48,
+     "anxiety_relief": 42
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep + anxiety"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "sedation": 48,
+      "anxiety_relief": 42
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 1.467
+      },
+      {
+       "key": "double og sour",
+       "ms": 1.4387
+      },
+      {
+       "key": "peak og",
+       "ms": 1.4178
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "double og sour",
+    "peak og"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "gentle"
+   ],
+   "more": [
+    "squid ink",
+    "double up",
+    "glueberry"
+   ]
+  },
+  {
+   "q": "jet lag",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 45
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "sedation": 45
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 1.347
+      },
+      {
+       "key": "squid ink",
+       "ms": 1.343
+      },
+      {
+       "key": "double og sour",
+       "ms": 1.3187
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "squid ink",
+    "double og sour"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "lowest_anxiety"
+   ],
+   "more": [
+    "peak og",
+    "double up",
+    "glueberry"
+   ]
+  },
+  {
+   "q": "micro dose",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 38
+    },
+    "neg": {
+     "uplift": 45,
+     "sedation": 48
+    },
+    "primary": "anxiety_relief",
+    "lbls": [
+     "micro-dose"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "anxiety_relief": 38
+     },
+     "neg": {
+      "uplift": 45,
+      "sedation": 48
+     },
+     "top": [
+      {
+       "key": "j 31",
+       "ms": 1.0546
+      },
+      {
+       "key": "soap",
+       "ms": 1.0215
+      },
+      {
+       "key": "vienna",
+       "ms": 1.0129
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "j 31",
+    "soap",
+    "vienna"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_functional",
+    "most_pain"
+   ],
+   "more": [
+    "cryotech 3",
+    "goo lagoon",
+    "beaver cookies"
+   ]
+  },
+  {
+   "q": "nothing too strong",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 35,
+     "sedation": 28
+    },
+    "neg": {
+     "uplift": 45
+    },
+    "primary": "anxiety_relief",
+    "lbls": [
+     "low-key"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "anxiety_relief": 35,
+      "sedation": 28
+     },
+     "neg": {
+      "uplift": 45
+     },
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 2.5547
+      },
+      {
+       "key": "blue mamba 24",
+       "ms": 2.5472
+      },
+      {
+       "key": "squid ink",
+       "ms": 2.5003
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "blue mamba 24",
+    "squid ink"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "lowest_anxiety"
+   ],
+   "more": [
+    "peak og",
+    "cloudberry cream",
+    "double og sour"
+   ]
+  },
+  {
+   "q": "sciatica",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "pain_inflammation": 55
+    },
+    "neg": {
+     "sedation": 55
+    },
+    "primary": "pain_inflammation",
+    "lbls": [
+     "nerve pain"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "pain_inflammation": 55
+     },
+     "neg": {
+      "sedation": 55
+     },
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 1.7844
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 1.6624
+      },
+      {
+       "key": "zero gravity",
+       "ms": 1.5957
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "zero gravity"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_sedating"
+   ],
+   "more": [
+    "slurricane",
+    "wookie grease",
+    "goo lagoon"
+   ]
+  },
+  {
+   "q": "need to drive later, something for pain",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "pain_inflammation": 38
+    },
+    "neg": {
+     "sedation": 38
+    },
+    "primary": "pain_inflammation",
+    "lbls": [
+     "pain relief"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": true
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "pain_inflammation": 38
+     },
+     "neg": {
+      "sedation": 38
+     },
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 1.7092
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 1.5932
+      },
+      {
+       "key": "slurricane",
+       "ms": 1.5047
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "slurricane"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ],
+   "more": [
+    "goo lagoon",
+    "wyatt herb",
+    "beaver cookies"
+   ]
+  },
+  {
+   "q": "no couch lock, still be able to work",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "focus_cognitive": 20
+    },
+    "neg": {
+     "sedation": 42
+    },
+    "primary": "focus_cognitive",
+    "lbls": [
+     "functional",
+     "no couch lock"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "focus_cognitive": 20
+     },
+     "neg": {
+      "sedation": 42
+     },
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 1.0464
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 1.0232
+      },
+      {
+       "key": "slurricane",
+       "ms": 0.9878
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "slurricane"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ],
+   "more": [
+    "scented marker",
+    "saffire",
+    "beaver cookies"
+   ]
+  },
+  {
+   "q": "not too racy, energy",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "uplift": 28
+    },
+    "neg": {
+     "sedation": 36
+    },
+    "primary": "uplift",
+    "lbls": [
+     "energy"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "uplift": 28
+     },
+     "neg": {
+      "sedation": 36
+     },
+     "top": [
+      {
+       "key": "scented marker",
+       "ms": 1.2494
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 1.1361
+      },
+      {
+       "key": "saffire",
+       "ms": 1.0639
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "scented marker",
+    "honeycomb pave 4",
+    "saffire"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_pain",
+    "most_sedating"
+   ],
+   "more": [
+    "slurricane",
+    "beaver cookies",
+    "goo lagoon"
+   ]
+  },
+  {
+   "q": "without getting too heavy for anxiety",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 50
+    },
+    "neg": {
+     "sedation": 42
+    },
+    "primary": "anxiety_relief",
+    "lbls": [
+     "anxiety relief",
+     "heavy body"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "anxiety_relief": 50
+     },
+     "neg": {
+      "sedation": 42
+     },
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 1.814
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 1.7143
+      },
+      {
+       "key": "slurricane",
+       "ms": 1.5485
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "slurricane"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ],
+   "more": [
+    "saffire",
+    "j 31",
+    "vienna"
+   ]
+  },
+  {
+   "q": "indica",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 35,
+     "anxiety_relief": 30
+    },
+    "neg": {},
+    "primary": "anxiety_relief",
+    "lbls": [
+     "relaxing"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "sedation": 35,
+      "anxiety_relief": 30
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 2.7714
+      },
+      {
+       "key": "rainbow drip",
+       "ms": 2.7706
+      },
+      {
+       "key": "blue mamba 24",
+       "ms": 2.7694
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "rainbow drip",
+    "blue mamba 24"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_uplifting",
+    "most_sedating"
+   ],
+   "more": [
+    "peak og",
+    "double og sour",
+    "squid ink"
+   ]
+  },
+  {
+   "q": "hybrid please",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 35,
+     "uplift": 25
+    },
+    "neg": {},
+    "primary": "anxiety_relief",
+    "lbls": [
+     "balanced"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "anxiety_relief": 35,
+      "uplift": 25
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 2.8981
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 2.7382
+      },
+      {
+       "key": "rainbow drip",
+       "ms": 2.5204
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "rainbow drip"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_sedating"
+   ],
+   "more": [
+    "french laundry",
+    "slurricane",
+    "permafrost"
+   ]
+  },
+  {
+   "q": "tense",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 42
+    },
+    "neg": {},
+    "primary": "anxiety_relief",
+    "lbls": [
+     "tension"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "anxiety_relief": 42
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "rainbow drip",
+       "ms": 2.0382
+      },
+      {
+       "key": "bubba verde",
+       "ms": 2.0343
+      },
+      {
+       "key": "kush cake",
+       "ms": 1.9667
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "rainbow drip",
+    "bubba verde",
+    "kush cake"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_focus",
+    "most_sedating"
+   ],
+   "more": [
+    "honeycomb pave 4",
+    "blue mamba 24",
+    "peak og"
+   ]
+  },
+  {
+   "q": "sativa",
+   "parsed": {
+    "intent": "strain",
+    "groupKey": "za tiva",
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [],
+   "shown": [
+    "za tiva",
+    "double og sour",
+    "peach tree",
+    "copper queen"
+   ]
+  },
+  {
+   "q": "relax",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 35,
+     "anxiety_relief": 30
+    },
+    "neg": {},
+    "primary": "anxiety_relief",
+    "lbls": [
+     "relaxing"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "sedation": 35,
+      "anxiety_relief": 30
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 2.7714
+      },
+      {
+       "key": "rainbow drip",
+       "ms": 2.7706
+      },
+      {
+       "key": "blue mamba 24",
+       "ms": 2.7694
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "rainbow drip",
+    "blue mamba 24"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_uplifting",
+    "most_sedating"
+   ],
+   "more": [
+    "peak og",
+    "double og sour",
+    "squid ink"
+   ]
+  },
+  {
+   "q": "best value for sleep",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 38
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": {
+     "type": "budget"
+    },
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "sedation": 38
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 1.347
+      },
+      {
+       "key": "squid ink",
+       "ms": 1.343
+      },
+      {
+       "key": "double og sour",
+       "ms": 1.3187
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "squid ink",
+    "double og sour"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "lowest_anxiety"
+   ],
+   "more": [
+    "peak og",
+    "double up",
+    "glueberry"
+   ]
+  },
+  {
+   "q": "budget of $40 for pain",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "pain_inflammation": 38
+    },
+    "neg": {
+     "sedation": 55
+    },
+    "primary": "pain_inflammation",
+    "lbls": [
+     "pain relief"
+    ],
+    "tf": null,
+    "opts": {
+     "maxPrice": 40
+    },
+    "priceIntent": {
+     "type": "hasBudget",
+     "amount": 40
+    },
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "pain_inflammation": 38
+     },
+     "neg": {
+      "sedation": 55
+     },
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 1.7844
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 1.6624
+      },
+      {
+       "key": "zero gravity",
+       "ms": 1.5957
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "zero gravity"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_sedating"
+   ],
+   "more": [
+    "slurricane",
+    "wookie grease",
+    "goo lagoon"
+   ]
+  },
+  {
+   "q": "money isn't an issue, something for sleep",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 38
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": {
+     "type": "noPrice"
+    },
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "sedation": 38
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 1.347
+      },
+      {
+       "key": "squid ink",
+       "ms": 1.343
+      },
+      {
+       "key": "double og sour",
+       "ms": 1.3187
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "squid ink",
+    "double og sour"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "lowest_anxiety"
+   ],
+   "more": [
+    "peak og",
+    "double up",
+    "glueberry"
+   ]
+  },
+  {
+   "q": "$30 budget",
+   "parsed": {
+    "intent": "unknown",
+    "priceIntent": {
+     "type": "hasBudget",
+     "amount": 30
+    },
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [],
+   "shown": []
+  },
+  {
+   "q": "cheap",
+   "parsed": {
+    "intent": "unknown",
+    "priceIntent": {
+     "type": "budget"
+    },
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [],
+   "shown": []
+  },
+  {
+   "q": "linalool-free sleep",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 38
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {
+     "excl": [
+      {
+       "name": "Linalool",
+       "ids": [
+        "linalool"
+       ]
+      }
+     ]
+    },
+    "excl": [
+     "Linalool"
+    ],
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "none",
+   "calls": [
+    {
+     "crit": {
+      "sedation": 38
+     },
+     "neg": {},
+     "top": []
+    },
+    {
+     "crit": {
+      "sedation": 22
+     },
+     "neg": {},
+     "top": []
+    }
+   ],
+   "shown": [],
+   "exclNote": "Without Linalool: showing only strains whose lab results show under 0.01% or not detected in every in-stock batch."
+  },
+  {
+   "q": "allergic to limonene and pinene, pain",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "pain_inflammation": 38
+    },
+    "neg": {
+     "sedation": 55
+    },
+    "primary": "pain_inflammation",
+    "lbls": [
+     "pain relief"
+    ],
+    "tf": null,
+    "opts": {
+     "excl": [
+      {
+       "name": "D-Limonene",
+       "ids": [
+        "dl_limonene"
+       ]
+      },
+      {
+       "name": "pinene",
+       "ids": [
+        "alpha_pinene",
+        "beta_pinene"
+       ]
+      }
+     ]
+    },
+    "excl": [
+     "D-Limonene",
+     "pinene"
+    ],
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "excluded-all",
+   "calls": [],
+   "shown": [],
+   "exclNote": "No in-stock strain is verified free of D-Limonene or pinene."
+  },
+  {
+   "q": "avoid bcp",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {},
+    "neg": {},
+    "primary": null,
+    "lbls": [
+     "no β-Caryophyllene"
+    ],
+    "tf": null,
+    "opts": {
+     "excl": [
+      {
+       "name": "β-Caryophyllene",
+       "ids": [
+        "beta_caryophyllene"
+       ]
+      }
+     ]
+    },
+    "excl": [
+     "β-Caryophyllene"
+    ],
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "excluded-all",
+   "calls": [],
+   "shown": [],
+   "exclNote": "No in-stock strain is verified free of β-Caryophyllene."
+  },
+  {
+   "q": "compare Kush Cake, Squid Ink and Bubba Verde",
+   "parsed": {
+    "intent": "compare",
+    "strains": [
+     "bubba verde",
+     "kush cake",
+     "squid ink"
+    ],
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [],
+   "shown": [
+    "bubba verde",
+    "kush cake",
+    "squid ink"
+   ],
+   "compareNote": [
+    "Uplift",
+    "Bubba Verde scores notably higher (51 pts)"
+   ]
+  },
+  {
+   "q": "something like Squid Ink but without myrcene",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {},
+    "neg": {},
+    "primary": null,
+    "lbls": [],
+    "tf": null,
+    "opts": {
+     "exclude": [
+      "squid ink"
+     ],
+     "likeKey": "squid ink",
+     "excl": [
+      {
+       "name": "β-Myrcene",
+       "ids": [
+        "beta_myrcene"
+       ]
+      }
+     ]
+    },
+    "excl": [
+     "β-Myrcene"
+    ],
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {},
+     "neg": {},
+     "top": [
+      {
+       "key": "mitten cake",
+       "ms": 0.5679
+      },
+      {
+       "key": "pineapple fruz",
+       "ms": 0.5175
+      },
+      {
+       "key": "tropic gold",
+       "ms": 0.4882
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "mitten cake",
+    "pineapple fruz",
+    "tropic gold"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_functional",
+    "gentle"
+   ],
+   "exclNote": "Without β-Myrcene: showing only strains whose lab results show under 0.01% or not detected in every in-stock batch.",
+   "more": [
+    "mclaren",
+    "pink sherb",
+    "scented marker"
+   ]
+  },
+  {
+   "q": "something like Bubba Verde but less sedating",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {},
+    "neg": {
+     "sedation": 40
+    },
+    "primary": null,
+    "lbls": [
+     "lighter"
+    ],
+    "tf": null,
+    "opts": {
+     "exclude": [
+      "bubba verde"
+     ],
+     "likeKey": "bubba verde"
+    },
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {},
+     "neg": {
+      "sedation": 40
+     },
+     "top": [
+      {
+       "key": "saffire",
+       "ms": 0.9806
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 0.9625
+      },
+      {
+       "key": "slurricane",
+       "ms": 0.9312
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "saffire",
+    "honeycomb pave 4",
+    "slurricane"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_focus",
+    "most_pain"
+   ],
+   "more": [
+    "scented marker",
+    "mclaren",
+    "goo lagoon"
+   ]
+  },
+  {
+   "q": "most terpinolene",
+   "parsed": {
+    "intent": "terpene_rank",
+    "terpene": "terpinolene",
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [],
+   "shown": [],
+   "terpRank": [
+    [
+     "Pomellowz",
+     0.732
+    ],
+    [
+     "SoHo",
+     0.0358
+    ],
+    [
+     "Bubba Verde",
+     0.0157
+    ],
+    [
+     "Honeycomb Pave #4",
+     0.0142
+    ],
+    [
+     "Baklava",
+     0.0124
+    ],
+    [
+     "Permafrost",
+     0.0112
+    ],
+    [
+     "SFV OG",
+     0.0106
+    ],
+    [
+     "Slurricane",
+     0.0102
+    ]
+   ]
+  },
+  {
+   "q": "sleep high in linalool",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 38
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": "linalool",
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "sedation": 38
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "double og sour",
+       "ms": 1.3187
+      },
+      {
+       "key": "kush cake",
+       "ms": 1.347
+      },
+      {
+       "key": "squid ink",
+       "ms": 1.343
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "double og sour",
+    "kush cake",
+    "squid ink"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_sedating"
+   ],
+   "more": [
+    "blue mamba 24",
+    "rainbow drip",
+    "copper queen"
+   ]
+  },
+  {
+   "q": "lavender",
+   "parsed": {
+    "intent": "unknown",
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "help",
+   "calls": [],
+   "shown": []
+  },
+  {
+   "q": "bubba verd",
+   "parsed": {
+    "intent": "strain",
+    "groupKey": "bubba verde",
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [],
+   "shown": [
+    "bubba verde"
+   ]
+  },
+  {
+   "q": "which has the most bcp",
+   "parsed": {
+    "intent": "terpene_rank",
+    "terpene": "beta_caryophyllene",
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [],
+   "shown": [],
+   "terpRank": [
+    [
+     "Wyatt Herb",
+     1.7111
+    ],
+    [
+     "Kush Mountains",
+     1.65
+    ],
+    [
+     "Cloudberry Cream",
+     1.3351
+    ],
+    [
+     "Satao",
+     1.3283
+    ],
+    [
+     "Beaver Cookies",
+     1.1674
+    ],
+    [
+     "Neapolitan",
+     1.106
+    ],
+    [
+     "Gas Shnizz",
+     1.0585
+    ],
+    [
+     "SoHo",
+     1.0204
+    ]
+   ]
+  },
+  {
+   "q": "help me sleep",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 50
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "sedation": 50
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 1.347
+      },
+      {
+       "key": "squid ink",
+       "ms": 1.343
+      },
+      {
+       "key": "double og sour",
+       "ms": 1.3187
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "squid ink",
+    "double og sour"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "lowest_anxiety"
+   ],
+   "more": [
+    "peak og",
+    "double up",
+    "glueberry"
+   ]
+  },
+  {
+   "q": "first time user",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 55,
+     "sedation": 20
+    },
+    "neg": {
+     "uplift": 50
+    },
+    "primary": "anxiety_relief",
+    "lbls": [
+     "first-time"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "anxiety_relief": 55,
+      "sedation": 20
+     },
+     "neg": {
+      "uplift": 50
+     },
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 2.5764
+      },
+      {
+       "key": "blue mamba 24",
+       "ms": 2.5694
+      },
+      {
+       "key": "rainbow drip",
+       "ms": 2.5306
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "blue mamba 24",
+    "rainbow drip"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "most_uplifting"
+   ],
+   "more": [
+    "squid ink",
+    "peak og",
+    "double og sour"
+   ]
+  },
+  {
+   "q": "creative energy but not too racy",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "focus_cognitive": 5,
+     "uplift": 28
+    },
+    "neg": {
+     "sedation": 36
+    },
+    "primary": "uplift",
+    "lbls": [
+     "creative",
+     "energy"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "focus_cognitive": 5,
+      "uplift": 28
+     },
+     "neg": {
+      "sedation": 36
+     },
+     "top": [
+      {
+       "key": "honeycomb pave 4",
+       "ms": 1.8832
+      },
+      {
+       "key": "scented marker",
+       "ms": 1.835
+      },
+      {
+       "key": "slurricane",
+       "ms": 1.6558
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "honeycomb pave 4",
+    "scented marker",
+    "slurricane"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_functional",
+    "lowest_anxiety"
+   ],
+   "more": [
+    "saffire",
+    "pearlz",
+    "goo lagoon"
+   ]
+  },
+  {
+   "q": "a couple joints for joint pain",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "pain_inflammation": 50
+    },
+    "neg": {
+     "sedation": 55
+    },
+    "primary": "pain_inflammation",
+    "lbls": [
+     "joint pain"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "pain_inflammation": 50
+     },
+     "neg": {
+      "sedation": 55
+     },
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 1.7844
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 1.6624
+      },
+      {
+       "key": "zero gravity",
+       "ms": 1.5957
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "zero gravity"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_sedating"
+   ],
+   "more": [
+    "slurricane",
+    "wookie grease",
+    "goo lagoon"
+   ]
+  },
+  {
+   "q": "customer wants pre-rolls for sleep",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 38
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "sedation": 38
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 1.347
+      },
+      {
+       "key": "squid ink",
+       "ms": 1.343
+      },
+      {
+       "key": "double og sour",
+       "ms": 1.3187
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "squid ink",
+    "double og sour"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "lowest_anxiety"
+   ],
+   "more": [
+    "peak og",
+    "double up",
+    "glueberry"
+   ]
+  },
+  {
+   "q": "kush",
+   "parsed": {
+    "intent": "unknown",
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "help",
+   "calls": [],
+   "shown": []
+  },
+  {
+   "q": "Kush Cake vs",
+   "parsed": {
+    "intent": "strain",
+    "groupKey": "kush cake",
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [],
+   "shown": [
+    "kush cake"
+   ]
+  },
+  {
+   "q": "w/o limonene for focus",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "focus_cognitive": 22
+    },
+    "neg": {},
+    "primary": "focus_cognitive",
+    "lbls": [
+     "focus"
+    ],
+    "tf": null,
+    "opts": {
+     "excl": [
+      {
+       "name": "D-Limonene",
+       "ids": [
+        "dl_limonene"
+       ]
+      }
+     ]
+    },
+    "excl": [
+     "D-Limonene"
+    ],
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "excluded-all",
+   "calls": [],
+   "shown": [],
+   "exclNote": "No in-stock strain is verified free of D-Limonene."
+  },
+  {
+   "q": "alpha pinene free",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {},
+    "neg": {},
+    "primary": null,
+    "lbls": [
+     "no α-Pinene"
+    ],
+    "tf": null,
+    "opts": {
+     "excl": [
+      {
+       "name": "α-Pinene",
+       "ids": [
+        "alpha_pinene"
+       ]
+      }
+     ]
+    },
+    "excl": [
+     "α-Pinene"
+    ],
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {},
+     "neg": {},
+     "top": [
+      {
+       "key": "double up",
+       "ms": 0.18
+      },
+      {
+       "key": "the fizz",
+       "ms": 0.16
+      },
+      {
+       "key": "bacio",
+       "ms": 0.04
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "double up",
+    "the fizz",
+    "bacio"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ],
+   "exclNote": "Without α-Pinene: showing only strains whose lab results show under 0.01% or not detected in every in-stock batch.",
+   "more": [
+    "limon catorce"
+   ]
+  },
+  {
+   "q": "he says his back hurts and he has to drive",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "pain_inflammation": 45
+    },
+    "neg": {
+     "sedation": 38
+    },
+    "primary": "pain_inflammation",
+    "lbls": [
+     "pain relief"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": true
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "pain_inflammation": 45
+     },
+     "neg": {
+      "sedation": 38
+     },
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 1.7092
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 1.5932
+      },
+      {
+       "key": "slurricane",
+       "ms": 1.5047
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "slurricane"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ],
+   "more": [
+    "goo lagoon",
+    "wyatt herb",
+    "beaver cookies"
+   ]
+  },
+  {
+   "q": "i have $12, something for anxiety",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 35
+    },
+    "neg": {},
+    "primary": "anxiety_relief",
+    "lbls": [
+     "anxiety relief"
+    ],
+    "tf": null,
+    "opts": {
+     "maxPrice": 12
+    },
+    "priceIntent": {
+     "type": "hasBudget",
+     "amount": 12
+    },
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "anxiety_relief": 35
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "slurricane",
+       "ms": 1.7092
+      },
+      {
+       "key": "the fizz",
+       "ms": 1.2356
+      },
+      {
+       "key": "beaver cookies",
+       "ms": 1.1546
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "slurricane",
+    "the fizz",
+    "beaver cookies"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "most_functional"
+   ],
+   "more": [
+    "papaya melonz"
+   ]
+  },
+  {
+   "q": "night shift",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 45
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "sedation": 45
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 1.347
+      },
+      {
+       "key": "squid ink",
+       "ms": 1.343
+      },
+      {
+       "key": "double og sour",
+       "ms": 1.3187
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "squid ink",
+    "double og sour"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "lowest_anxiety"
+   ],
+   "more": [
+    "peak og",
+    "double up",
+    "glueberry"
+   ]
+  },
+  {
+   "q": "overthinking",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 50,
+     "sedation": 30
+    },
+    "neg": {},
+    "primary": "anxiety_relief",
+    "lbls": [
+     "overthinking"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "anxiety_relief": 50,
+      "sedation": 30
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "kush cake",
+       "ms": 2.7714
+      },
+      {
+       "key": "rainbow drip",
+       "ms": 2.7706
+      },
+      {
+       "key": "blue mamba 24",
+       "ms": 2.7694
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "rainbow drip",
+    "blue mamba 24"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_uplifting",
+    "most_sedating"
+   ],
+   "more": [
+    "peak og",
+    "double og sour",
+    "squid ink"
+   ]
+  },
+  {
+   "q": "philosophical",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "focus_cognitive": 18,
+     "anxiety_relief": 22
+    },
+    "neg": {},
+    "primary": null,
+    "lbls": [
+     "introspective"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null,
+    "drive": false
+   },
+   "outcome": "ok",
+   "calls": [
+    {
+     "crit": {
+      "focus_cognitive": 18,
+      "anxiety_relief": 22
+     },
+     "neg": {},
+     "top": [
+      {
+       "key": "bubba verde",
+       "ms": 2.1906
+      },
+      {
+       "key": "honeycomb pave 4",
+       "ms": 2.0848
+      },
+      {
+       "key": "slurricane",
+       "ms": 1.9018
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "slurricane"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ],
+   "more": [
+    "peach wave",
+    "red bananas",
+    "rainbow drip"
+   ]
+  }
+ ],
+ "defects": [
+  {
+   "id": "MC-7",
+   "v7114": {
+    "q": "something for the day",
+    "parsed": {
+     "intent": "unknown",
+     "priceIntent": null,
+     "drive": false
+    },
+    "outcome": "help",
+    "calls": [],
+    "shown": []
+   },
+   "game": {
+    "q": "something for the day",
+    "parsed": {
+     "intent": "recommend",
+     "crit": {
+      "uplift": 22,
+      "focus_cognitive": 14
+     },
+     "neg": {
+      "sedation": 32
+     },
+     "primary": "uplift",
+     "lbls": [
+      "daytime"
+     ],
+     "tf": null,
+     "opts": {},
+     "priceIntent": null,
+     "drive": false
+    },
+    "outcome": "ok",
+    "calls": [
+     {
+      "crit": {
+       "uplift": 22,
+       "focus_cognitive": 14
+      },
+      "neg": {
+       "sedation": 32
+      },
+      "top": [
+       {
+        "key": "scented marker",
+        "ms": 1.8315
+       },
+       {
+        "key": "slurricane",
+        "ms": 1.6323
+       },
+       {
+        "key": "saffire",
+        "ms": 1.5733
+       }
+      ]
+     }
+    ],
+    "shown": [
+     "scented marker",
+     "slurricane",
+     "saffire"
+    ],
+    "roleTags": [
+     "best_match",
+     "most_pain",
+     "most_sedating"
+    ],
+    "more": [
+     "pearlz",
+     "beaver cookies",
+     "mclaren"
+    ]
+   }
+  },
+  {
+   "id": "GAP-206",
+   "v7114": {
+    "q": "trouble sleeping but gotta work at 6",
+    "parsed": {
+     "intent": "recommend",
+     "crit": {
+      "anxiety_relief": 40
+     },
+     "neg": {
+      "sedation": 38
+     },
+     "primary": "anxiety_relief",
+     "lbls": [
+      "insomnia"
+     ],
+     "tf": null,
+     "opts": {},
+     "priceIntent": null,
+     "drive": false
+    },
+    "outcome": "ok",
+    "calls": [
+     {
+      "crit": {
+       "anxiety_relief": 40
+      },
+      "neg": {
+       "sedation": 38
+      },
+      "top": [
+       {
+        "key": "bubba verde",
+        "ms": 1.7909
+       },
+       {
+        "key": "honeycomb pave 4",
+        "ms": 1.693
+       },
+       {
+        "key": "slurricane",
+        "ms": 1.5316
+       }
+      ]
+     }
+    ],
+    "shown": [
+     "bubba verde",
+     "honeycomb pave 4",
+     "slurricane"
+    ],
+    "roleTags": [
+     "best_match",
+     "lowest_anxiety",
+     "most_functional"
+    ],
+    "more": [
+     "saffire",
+     "j 31",
+     "vienna"
+    ]
+   },
+   "game": {
+    "q": "trouble sleeping but gotta work at 6",
+    "parsed": {
+     "intent": "recommend",
+     "crit": {
+      "sedation": 55,
+      "anxiety_relief": 40
+     },
+     "neg": {},
+     "primary": "sedation",
+     "lbls": [
+      "insomnia"
+     ],
+     "tf": null,
+     "opts": {},
+     "priceIntent": null,
+     "drive": false
+    },
+    "outcome": "ok",
+    "calls": [
+     {
+      "crit": {
+       "sedation": 55,
+       "anxiety_relief": 40
+      },
+      "neg": {},
+      "top": [
+       {
+        "key": "kush cake",
+        "ms": 1.467
+       },
+       {
+        "key": "double og sour",
+        "ms": 1.4387
+       },
+       {
+        "key": "peak og",
+        "ms": 1.4178
+       }
+      ]
+     }
+    ],
+    "shown": [
+     "kush cake",
+     "double og sour",
+     "peak og"
+    ],
+    "roleTags": [
+     "best_match",
+     "lowest_anxiety",
+     "gentle"
+    ],
+    "more": [
+     "squid ink",
+     "double up",
+     "glueberry"
+    ]
+   }
+  }
+ ]
+}

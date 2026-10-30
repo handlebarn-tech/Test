@@ -1,7 +1,7 @@
 {
  "importer": {
   "path": "Tools/Data/import_catalog.js",
-  "version": "1.0.0"
+  "version": "1.1.0"
  },
  "sources": [
   {
@@ -23,7 +23,7 @@
   },
   {
    "file": "terpenes.json",
-   "md5": "9c66cea1aa6020d2693e9083c123a0d0"
+   "md5": "2cde799cbf284351036f5cc1c2a0534c"
   },
   {
    "file": "engine_tables.json",
@@ -32,6 +32,10 @@
   {
    "file": "pricing.json",
    "md5": "7b371225ab641e56568873a98cae9a01"
+  },
+  {
+   "file": "parser_tables.json",
+   "md5": "509158be6b7f82a39686ab142bd0dfab"
   }
  ],
  "counts": {
@@ -40,6 +44,7 @@
   "strainGroups": 366,
   "terpenes": 60,
   "intents": 287,
+  "phrases": 46,
   "skipped": 0,
   "deleted": 30,
   "datesInferred": 453

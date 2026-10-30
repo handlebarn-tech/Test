@@ -6,7 +6,7 @@
 'use strict';
 const fs = require('fs'), path = require('path'), vm = require('vm'), crypto = require('crypto');
 
-const IMPORTER_VERSION = '1.0.0';
+const IMPORTER_VERSION = '1.1.0'; // 1.1.0 (GAME-003): terpene aliases + parser_tables.json
 const TFS_ROOT = process.env.TFS_BUDTENDER_ROOT || 'C:/Users/handl/Downloads/tfs-budtender';
 const HTML = path.join(TFS_ROOT, 'deploy/2026-10-30-v7114/site/index.html');
 const INV = path.join(TFS_ROOT, 'inventory/tfs-inventory-master.json');
@@ -16,14 +16,16 @@ const OUT = path.join(__dirname, '../../UnityProject/Assets/_Game/Data/Catalog')
 // Every key allowed anywhere in the output, per file. Anything else fails the run (PII guard, DEC-006).
 const ALLOW = {
   'batches.json': ['batches', 'id', 'strainName', 'batchCode', 'brand', 'tier', 'inStock', 'testDate', 'dateInferred', 'total', 'terpenes'],
-  'terpenes.json': ['domains', 'terpenes', 'id', 'name', 'cls', 'd', 'baScalars', 'sedation', 'uplift', 'anxiety_relief', 'pain_inflammation', 'focus_cognitive', 'antimicrobial'],
+  'terpenes.json': ['domains', 'terpenes', 'id', 'name', 'cls', 'd', 'aliases', 'baScalars', 'sedation', 'uplift', 'anxiety_relief', 'pain_inflammation', 'focus_cognitive', 'antimicrobial'],
   'engine_tables.json': ['clusterBonus', 'tierNudge', 'intents', 'd', 'neg', 'lbl', 'pri', '1', '2', '4', '5', '6',
     'sedation', 'uplift', 'anxiety_relief', 'pain_inflammation', 'focus_cognitive', 'antimicrobial',
     'smalls', 'house', 'premium', 'fttp', 't1', 't2', 't3', 't4'],
   'pricing.json': ['taxRate', 'weights', 'tiers', 'dayDeals', 'id', 'name', 'gpg', 'w', 'dow', 'deals', 'active', 'target', 'type', 'value',
     'dealType', 'weight', 'flatPrice', '3.5', '7', '14', '28'],
+  'parser_tables.json': ['phraseMap', 'negPatterns', 'fuzzy', 'priceIntents', 'noPrice', 'hasBudget', 'budget', 'r', 'd', 'neg', 'lbl', 'pri',
+    'v', 'positive', 'raw', 'work', 'sedation', 'uplift', 'anxiety_relief', 'pain_inflammation', 'focus_cognitive', 'antimicrobial'],
   'manifest.json': ['importer', 'version', 'sources', 'outputs', 'counts', 'path', 'md5', 'invVersion', 'invExported', 'file',
-    'batches', 'inStockBatches', 'strainGroups', 'terpenes', 'intents', 'skipped', 'deleted', 'datesInferred'],
+    'batches', 'inStockBatches', 'strainGroups', 'terpenes', 'intents', 'phrases', 'skipped', 'deleted', 'datesInferred'],
 };
 // Intent keys are free-text search keys (e.g. 'knock me out'), so engine_tables.json/intents keys are checked by shape, not by list.
 const INTENT_KEY_RE = /^[a-z0-9 '\-.\/&+]{1,40}$/;
@@ -61,6 +63,16 @@ function parseBatchDate(batch) {
   m = batch.match(/(\d{2})(\d{2})(\d{2})/);
   if (m) { const [, a, b, c] = m; if (+a >= 24 && +a <= 30 && +b >= 1 && +b <= 12 && +c >= 1 && +c <= 31) return `20${a}-${b}-${c}`; }
   return null;
+}
+
+// Regex tables that live inside functions: evaluate pinned 1-based line ranges (the html md5 is pinned) and keep each regex's
+// source text, so the C# parser builds the identical pattern (RegexOptions.ECMAScript). Flags must be empty: the engine uses none.
+function linesLiteral(lines, from, to, name) {
+  const v = vm.runInNewContext(`(function(){${lines.slice(from - 1, to).join('\n')}\nreturn ${name};})()`, Object.create(null), { timeout: 1000 });
+  const re = r => { if (r.flags) throw new Error(`${name}: regex /${r.source}/ has flags`); return r.source; };
+  const conv = x => x && typeof x.source === 'string' ? re(x) : Array.isArray(x) ? x.map(conv)
+    : x && typeof x === 'object' ? Object.fromEntries(Object.entries(x).map(([k, y]) => [k, conv(y)])) : x;
+  return conv(v);
 }
 
 function checkAllowList(file, obj) {
@@ -117,7 +129,8 @@ function main() {
   const pick = (o, keys) => Object.fromEntries(keys.filter(k => o[k] !== undefined).map(k => [k, o[k]]));
   const terpenes = {
     domains: DOMS,
-    terpenes: Object.entries(DB).map(([id, t]) => ({ id, name: t.name, cls: t.cls, d: Object.fromEntries(DOMS.map(d => [d, t.d[d] || 0])) })),
+    terpenes: Object.entries(DB).map(([id, t]) => ({ id, name: t.name, cls: t.cls, d: Object.fromEntries(DOMS.map(d => [d, t.d[d] || 0])),
+      aliases: t.aliases || [] })), // _findTerpMention L15961, _extractExclusions L15982
     baScalars: BA,
   };
   const tables = {
@@ -155,7 +168,18 @@ function main() {
       inStock: s.status !== 'oos', testDate, dateInferred, total, terpenes: Object.fromEntries(p) });
   }
 
-  const files = { 'batches.json': { batches }, 'terpenes.json': terpenes, 'engine_tables.json': tables, 'pricing.json': pricing };
+  // Parser regex tables (_parseQueryCore, detectPriceIntent)
+  const lines = src.split('\n');
+  const parser = {
+    negPatterns: linesLiteral(lines, 16066, 16081, 'negPatterns'),   // L16066
+    phraseMap: linesLiteral(lines, 16098, 16158, 'PHRASE_MAP'),      // L16098
+    fuzzy: linesLiteral(lines, 16226, 16235, 'fuzzy'),               // L16226
+    priceIntents: linesLiteral(lines, 21696, 21742, 'PRICE_INTENTS'), // L21696
+  };
+  // 46 PHRASE_MAP entries in source (the contract's "54" counted lines); counts pin the line ranges above
+  if (parser.negPatterns.length !== 10 || parser.phraseMap.length !== 46 || parser.fuzzy.length !== 8) throw new Error('parser table counts changed');
+
+  const files = { 'batches.json': { batches }, 'terpenes.json': terpenes, 'engine_tables.json': tables, 'pricing.json': pricing, 'parser_tables.json': parser };
   const bad = Object.entries(files).flatMap(([f, o]) => checkAllowList(f, o));
   if (bad.length) throw new Error('ALLOW-LIST FAIL\n' + bad.slice(0, 50).join('\n'));
 
@@ -170,7 +194,7 @@ function main() {
     outputs,
     counts: { batches: batches.length, inStockBatches: batches.filter(b => b.inStock).length,
       strainGroups: new Set(batches.map(b => normName(b.strainName))).size, terpenes: terpenes.terpenes.length,
-      intents: Object.keys(tables.intents).length, skipped, deleted: deleted.size, datesInferred: inferred },
+      intents: Object.keys(tables.intents).length, phrases: parser.phraseMap.length, skipped, deleted: deleted.size, datesInferred: inferred },
   };
   const bm = checkAllowList('manifest.json', manifest);
   if (bm.length) throw new Error('ALLOW-LIST FAIL\n' + bm.join('\n'));
