@@ -160,10 +160,13 @@ switch ($Command) {
         if (-not (git -C $Root config --local --get filter.lfs.process)) { git -C $Root lfs install --local 2>&1 | ForEach-Object { Write-Line "$_" } }
         $checks['gitLfs'] = [bool](git -C $Root config --local --get filter.lfs.process)
         $lfsExt = 'png', 'jpg', 'exr', 'hdr', 'fbx', 'glb', 'wav', 'ogg', 'ttf'
-        $untracked = @($lfsExt | Where-Object { (git -C $Root check-attr filter -- "UnityProject/Assets/_Game/Art/ThirdParty/x/a.$_") -notmatch ': lfs$' })
+        # ThirdParty art (DEC-023) plus generated procedural meshes (BUILD-005).
+        $lfsProbes = @($lfsExt | ForEach-Object { "UnityProject/Assets/_Game/Art/ThirdParty/x/a.$_" }) +
+            'Art/Exports/x/a.fbx', 'UnityProject/Assets/_Game/Art/Procedural/x/a.fbx'
+        $untracked = @($lfsProbes | Where-Object { (git -C $Root check-attr filter -- $_) -notmatch ': lfs$' })
         $ErrorActionPreference = 'Stop'
         # Reported, not failed: the patterns land with ASSET-002; make this a bool once that is on main.
-        $checks['lfsPatterns'] = $(if ($untracked.Count) { "missing $($untracked -join ',') (ASSET-002 adds them)" } else { "$($lfsExt.Count)/$($lfsExt.Count) tracked" })
+        $checks['lfsPatterns'] = $(if ($untracked.Count) { "missing $($untracked -join ',')" } else { "$($lfsProbes.Count)/$($lfsProbes.Count) tracked" })
         $checks.GetEnumerator() | ForEach-Object { Write-Line ("{0,-18} {1}" -f $_.Key, $_.Value) }
         $failed = @($checks.GetEnumerator() | Where-Object { $_.Value -is [bool] -and -not $_.Value } | ForEach-Object { $_.Key })
         if ($checks['freeDiskGB'] -lt 20) { $failed += 'freeDiskGB<20' }

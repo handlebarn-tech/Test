@@ -47,3 +47,7 @@ UnityProject/Assets/_Game/Art/ThirdParty/**/*.glb filter=lfs diff=lfs merge=lfs 
 UnityProject/Assets/_Game/Art/ThirdParty/**/*.wav filter=lfs diff=lfs merge=lfs -text
 UnityProject/Assets/_Game/Art/ThirdParty/**/*.ogg filter=lfs diff=lfs merge=lfs -text
 UnityProject/Assets/_Game/Art/ThirdParty/**/*.ttf filter=lfs diff=lfs merge=lfs -text
+
+# Git LFS for generated procedural meshes (BUILD-005, REVIEW-W4E m3): regenerations go to LFS, older history stays as is
+Art/Exports/**/*.fbx filter=lfs diff=lfs merge=lfs -text
+UnityProject/Assets/_Game/Art/Procedural/**/*.fbx filter=lfs diff=lfs merge=lfs -text
