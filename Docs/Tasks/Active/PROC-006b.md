@@ -1,6 +1,6 @@
 # PROC-006b — Register workstation kit: generators with per-station variation (phase 2)
 
-**Dept:** Assets · **Role:** PROC · **Priority:** P1 (DEC-096 #5) · **Owner:** — (launch when a worker slot frees) · **Reviewer:** Unity A2 `local_4e865bb8-479c-41c5-8628-7f3e7cb2a4c3` · **Touches:** none · **Interfaces:** spec `Docs/Assets/Specs/REGISTER_KIT.md` (PROC-006); attach anchors bind to World's ROOM_FIXTURES rev7 register/operator-zone ids when REF-011 merges (until then, named anchor params with `"gap"` notes); shared with PROC-005: `Tools/Blender/` runner/proclib (use them as-is, never edit them here) and the export manifest (append rows only)
+**Dept:** Assets · **Role:** PROC · **Priority:** P1 (DEC-096 #5) · **Owner:** Assets lead subagent (2026-10-30), worktree off `main` + merge of `claude/clever-lamport-837e7f` (PROC-005 core) · **Reviewer:** Unity A2 `local_4e865bb8-479c-41c5-8628-7f3e7cb2a4c3` · **Touches:** none · **Interfaces:** spec `Docs/Assets/Specs/REGISTER_KIT.md` (PROC-006); attach anchors bind to World's ROOM_FIXTURES rev7 register/operator-zone ids when REF-011 merges (until then, named anchor params with `"gap"` notes); shared with PROC-005: `Tools/Blender/` runner/proclib (use them as-is, never edit them here) and the export manifest (append rows only)
 
 ## Goal
 Build the register kit props RK-01..RK-09 from the spec, plus a seeded per-station dressing arranger, so no two of the 11 register stations look the same.

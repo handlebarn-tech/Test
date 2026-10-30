@@ -27,12 +27,13 @@ _Lead keeps this ≤15 lines._ 2026-10-30 (Assets lead `local_172b2109-6384-4914
 | IMP-003 rolling toolkit audit | Agent subagent (lead) | `worktree-agent-aa0d2341e0f4619cc` (4a615d6, 289019d, 02573db, a976d0d) | rounds 3–6 audited (R3b 1/7/2, R4 1/6/5, R5 0/5/0, R6 1/6/0 adopt/adapt/reject); rulings folded in (ecb8132); in review with Docs 2 |
 | PROC-006 register kit spec (phase 1) | done (subagent retired) | `worktree-agent-a5f8a932c9a5f07a9` @ 1070e9c | **merged to main (6af8906)**; Nolan answered (DEC-104) → PROC-006b. 13 items, 11 evidenced, GAP-REG-1..10; trash bin RK-09 added |
 | ASSET-004 MPFB2 customers | Agent subagent (lead) | new worktree; base `claude/task-asset-004` | resumed 2026-10-30; Docs reviewer `local_99d7e5b7…` |
+| PROC-006b register kit generators (DEC-104) | Agent subagent (lead) | new worktree; base main + PROC-005 core | launched 2026-10-30 |
 
 ## Queue (lead re-orders within DEC-096)
 0. PROC-007 (DEC-097 UV layout + re-export) right after PROC-005 merges; agree the cut-over commit with the World lead.
 1. Review/merge path for the three in-flight tasks (Docs reviewer `local_99d7e5b7-ef60-4076-9821-58f16ce3bec0` for IMP-003/PROC-006/ASSET-004; Unity A2 `local_4e865bb8-479c-41c5-8628-7f3e7cb2a4c3` (or B2 `local_041172fa…`) for PROC-005/007 with a borrowed World Unity slot).
 2. Each toolkit round after audit: Docs review → Hub → Nolan approval → PROC integration (DEC-095). After rounds 3–6, a research pass of our own where ChatGPT lacked evidence (IMP-003 lists the gaps).
-3. PROC-006b (packet in Ready, DEC-104 answers + non-uniform rule): launch in the next free slot; anchors bind to World's ROOM_FIXTURES rev7 (REF-011: registers + operator zones, deli walls, HUB) land — size from rev7 rows, not the current graybox; World messages when rev7 is on main; then stocking arranger with believable uneven fill; buds/nugs look (low).
+3. PROC-006b running; anchors bind to World's ROOM_FIXTURES rev7 (REF-011: registers + operator zones, deli walls, HUB) land — size from rev7 rows, not the current graybox; World messages when rev7 is on main; then stocking arranger with believable uneven fill; buds/nugs look (low).
 4. After ASSET-004: GAME-CHR-002 import with Gameplay (Unity), return the extra slot.
 5. Round 7 (interaction + polish, DEC-091 R7) by this studio after rounds 3–6 are integrated.
 6. BRAND-002 name search before any public build (DEC-078). Later (P1): Unity Warehouse/Office packs need a Package Manager download.
