@@ -15,12 +15,12 @@ import sys
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 SRC = os.path.join(ROOT, "Docs", "Reference", "ROOM_FIXTURES.json")
 LAYOUT = os.path.join(ROOT, "UnityProject", "Assets", "_Game", "Art", "Graybox", "graybox_layout.json")
-ROOMS = ("Office", "BreakRoom", "FOH", "BOH")
+ROOMS = ("Office", "BreakRoom", "FOH", "BOH", "Restroom", "Hall")  # Vestibule: shell change (GAP-122), not built here
 LEGACY = {"FX_Office_ITRack", "FX_Office_Safe", "FX_Office_Desk_L", "FX_Break_Kitchen_L", "FX_Break_Bench", "FX_JC_Closet",
           "FX_FOH_WireRack_1", "FX_FOH_WireRack_2", "FX_FOH_Fridge", "FX_BOH_Racks_W", "FX_BOH_Racks_E", "FX_FOH_Desk",
           "FX_FOH_Computer", "FX_FOH_Chair", "FX_FOH_ChairBack", "FX_BOH_Desk", "FX_BOH_Computer", "FX_BOH_Chair", "FX_BOH_ChairBack"}
 SUPPORTS = {"desk", "table", "counter", "rack"}
-NOT_STACKED = {"cabinet", "chair", "signage", "shelf", "lighting", "wall", "room_volume", "floor_mat", "locker", "fridge",
+NOT_STACKED = {"plumbing", "ladder", "cabinet", "chair", "signage", "shelf", "lighting", "wall", "room_volume", "floor_mat", "locker", "fridge",
                "cooler", "bin", "door", "desk", "table", "counter", "bench"}
 CEILING_FT = 9.0  # graybox back-room ceiling (DEC-037)
 # Wall-mounted bottoms (ft AFF) quoted from the REF notes; first value of a quoted range.
@@ -36,14 +36,27 @@ BASE_FT = {
     "FirstAid_Kit": 4.5,             # "~4.5 ft AFF"
     "ElectricalBox_Wall": 4.0,       # "~4-7 ft AFF"
     "Fan_Portable": 6.5,             # "base 6.5 ft AFF" (on the IT box on the standing desk)
+    "Mirror": 3.333,                 # "bottom 3'-4\" AFF kept"
+    "GrabBar_North": 2.75,           # "at 33-36 in AFF"
+    "GrabBar_West": 2.75,            # "at 33-36 in AFF"
+    "Accessories": 3.5,              # dispensers, height not given (Low, convention)
+    "Panel_Blank": 4.0,              # blank panel, height not given (Low, convention)
+    "Board_Cork": 3.7,               # "centre ~5 ft AFF" with a 2.6 ft board
+    "Board_Bulletin_West": 3.5,      # height not given; same convention as the whiteboard (Low)
 }
+# Review minors applied in the build (Hub: "apply REVIEW-W4U minors"; ROOM_FIXTURES itself is REF's).
+OVERRIDES = {"Mops_Brooms_JC": {"pos_ft": [22.4, 43.4]}}  # W4U m1: centred on the JC east-wall line, moved inside
+# The JC (room_volume) is built as two partition walls with its door opening, so its contents are visible.
+JC_WALLS = [("W_JC_W", 19.3, 41.3, 19.3, 46.3), ("W_JC_N", 19.3, 41.3, 23.31, 41.3)]
+JC_T = 0.33
 SHELF_LEVELS = {"Shelves_Floating_x3": [5.0, 5.7, 6.3]}  # "staggered at ~5.0 / 5.7 / 6.3 ft AFF"
-SKIP_INSIDE = {"MopSink_JC"}  # inside the closed JC volume (graybox closet is not enterable)
-SOLID = {"desk", "table", "counter", "cabinet", "rack", "fridge", "cooler", "locker", "wall", "room_volume", "bench",
+SOLID = {"plumbing", "ladder", "desk", "table", "counter", "cabinet", "rack", "fridge", "cooler", "locker", "wall", "room_volume", "bench",
          "cart", "bin", "chair", "prop", "sink"}
 # Openings the REF door rows move (GAP-123): wall id, opening id, A011 span along the wall.
 DOOR_OPENINGS = {"Door_Hall_Office": ("W_Band_Office", "DOOR_Hall_Office", 10.2, 13.3),
-                 "Door_Office_HUB2": ("W_Back_Hub", "DOOR_Office_HUB", 7.2, 10.2)}
+                 "Door_Office_HUB2": ("W_Back_Hub", "DOOR_Office_HUB", 7.2, 10.2),
+                 "Door_Hall_Break": ("W_Hall_Break", "DOOR_Hall_Break", 29.9, 33.0),
+                 "Door_Hall_Restroom": ("W_Restroom_Hall", "DOOR_Hall_Restroom", 33.1, 36.1)}
 ANCHORS = {"Anchor_FOH_Desk": ("FOH", "Chair_Desk", "Desk_WireRack_Computer"),
            "Anchor_BOH_Desk": ("BOH", "Chair_Desk", "Desk_ExRegister1")}
 
@@ -88,7 +101,7 @@ def dump(layout):
 
 def main():
     src = json.load(open(SRC, encoding="utf-8"))
-    rows = [r for r in src["fixtures"] if r["room"] in ROOMS]
+    rows = [dict(r, **OVERRIDES.get(r["fixture"], {})) for r in src["fixtures"] if r["room"] in ROOMS]
     with open(LAYOUT, encoding="utf-8") as f:
         text = f.read()
     layout = json.loads(text)
@@ -96,10 +109,10 @@ def main():
     note = f"ROOM_FIXTURES {rev}"
     skipped, made = [], []
     for r in rows:
-        if r["type"] == "door" and r["fixture"] in DOOR_OPENINGS:
-            continue
-        if r["pos_ft"] is None or r["fixture"] in SKIP_INSIDE:
-            skipped.append(f"{r['room']}_{r['fixture']} ({r.get('gap') or 'no position' if r['pos_ft'] is None else 'inside JC'})")
+        if (r["type"] == "door" and r["fixture"] in DOOR_OPENINGS) or r["fixture"] in ("JC_Closet", "Door_JC"):
+            continue  # wall openings / JC walls below
+        if r["pos_ft"] is None:
+            skipped.append(f"{r['room']}_{r['fixture']} ({r.get('gap') or 'no position'})")
             continue
         levels = SHELF_LEVELS.get(r["fixture"], [None])
         for k, lvl in enumerate(levels):
@@ -116,6 +129,16 @@ def main():
             wall = next(w for w in layout["walls"] if w["id"] == wid)
             op = next(o for o in wall["openings"] if o["id"] == oid)
             op.update({"from": a, "to": b, "conf": r["confidence"], "note": f"A011 via ROOM_FIXTURES {r['fixture']} (GAP-123)"})
+    jc = next(r for r in rows if r["fixture"] == "Door_JC")
+    half = jc["size_ft"][0] / 2
+    layout["walls"] = [w for w in layout["walls"] if w["id"] not in {j[0] for j in JC_WALLS}]
+    for wid, ax, ay, bx, by in JC_WALLS:
+        w = {"id": wid, "zone": "BackRooms", "conf": "Med", "ax": ax, "ay": ay, "bx": bx, "by": by, "t": JC_T, "gap": "GAP-104",
+             "openings": [], "note": "JC partition from ROOM_FIXTURES JC_Closet (A011 x 19.3-23.31, y 41.3-46.3)"}
+        if ax == bx and ax == jc["pos_ft"][0]:
+            w["openings"].append({"id": "DOOR_JC", "from": round(jc["pos_ft"][1] - half, 3), "to": round(jc["pos_ft"][1] + half, 3),
+                                  "h": "door", "conf": jc["confidence"], "note": "Door_JC 2'-8\" (ROOM_FIXTURES)"})
+        layout["walls"].append(w)
     for aid, (room, chair, desk) in ANCHORS.items():
         c = next(r for r in rows if r["room"] == room and r["fixture"] == chair)
         dsk = next(r for r in rows if r["room"] == room and r["fixture"] == desk)
