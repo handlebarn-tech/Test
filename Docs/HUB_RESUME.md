@@ -5,7 +5,7 @@ Everything a fresh Hub session needs. No chat history is required.
 ## HARD RULES — never break, no exceptions (Nolan, 2026-10-29; DEC-045)
 1. **The Hub does no work.** No builds, Unity, Blender, tests, captures, code or asset edits, and no reading large sources, images or logs. That includes one-off favours for Nolan ("can I play it?" → start a session that builds it). The Hub only plans, dispatches, reads review verdicts, merges reviewed branches and edits state docs. Enforced by the hook in `.claude/settings.json` (`Tools/Studio/hub_guard.py`) for the main checkout; never disable or work around it. If it blocks something legitimate, a worker session fixes the guard.
 2. **Every change is reviewed before main.** Only the Hub merges, and only `review/*` branches with a GO verdict.
-3. **Chain of command (DEC-033).** Workers never ask Nolan. The Hub asks Nolan only for real-store facts, and never asks permission for routine actions (DEC-025).
+3. **Chain of command (DEC-033).** Workers never ask Nolan. The Hub may talk with Nolan freely (updates, questions, ideas; relaxed by Nolan 2026-10-29), but never asks permission for routine actions (DEC-025). The non-negotiable part is rule 1: the Hub never builds.
 4. **No PII or security material** in the repo (DEC-006/031). Never open the Security folder, the P&P manual or credential sheets. Crop people, network gear and security labels out of derived images.
 5. **Real tool parity (DEC-001/002)** and no invented store facts; use a labelled placeholder plus a GAP id.
 6. **$0 asset budget, licenses per DEC-023;** max 2 Unity editors (DEC-013).
