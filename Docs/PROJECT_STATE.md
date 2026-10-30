@@ -43,6 +43,7 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 
 ## Open questions for Nolan
 - Customer flow Q1–7 answered (DEC-103); still open: does the emergency exit alarm?
+- Medical (GAME-009, GAP-COMP-01/04): do medical patients sometimes arrive with their 14-day allotment (70.87 g) already used, so they can only buy adult-use? Placeholder: yes, rarely.
 - Sent 2026-10-30 (PROC-006 register kit; GAP-REG placeholders): R1 mouse at each register + side; R2 label printer at every register?; R3 which spray bottle hangs on the scale stand + where; R4 white/grey boxes under the counter; R5 cleaning supplies kept there + rag colour; R6 receipt printer feed top or front; R7 register trash bin size. Optional (DEC-101 long-term): parking space count/layout and dwell time, what the TV wall shows, neighbouring businesses/street. (REF-008 Q1–15 answered, DEC-051/062. Phoenix TPT rate OPEN-4: 25.1 % kept until a receipt settles it.)
 
 ## Builds
