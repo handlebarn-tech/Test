@@ -59,7 +59,7 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 | BOH (backstock; A011 "PRODUCT STORAGE") | 163.44 | 36.90–47.19 | 29.5–46.3 | 10.29 × 16.80 | 173 SF drawn |
 | HUB (sheet: Product Storage) | 818.53 | V5: 0–28.29 · **A011: ≈19.2–47.19 (east)** | 46.8–76.03 | 28.29 × 29.24 | general storage, desks; **A011 (REF-007): the east room, reached through the connecting door; the SE emergency exit opens from it.** V5 mirrors the pair |
 | HUB 2 (sheet: Product Storage) | 541.34 | V5: 28.70–47.19 · **A011: 0–≈18.8 (west)** | 46.8–76.03 | 18.49 (A011 18'-9¼") × 29.24 | **A011: the west room, entered from the office and the west delivery door ("first room", DEC-022).** No access from FOH/BOH |
-| *Arch vestibule (unnamed, "white wall")* | — | 35.2–38.2 | 29.5–31.7 | 3.0 × 2.2 | small lobby behind the east arch, with doors to FOH and BOH |
+| *Arch vestibule (unnamed, "white wall")* | — | 35.2–38.2 | 29.5–31.7 | 3.0 × 2.2 | small lobby behind the east arch, with doors to FOH and BOH. A011 labels it **HALL 35.16 SF** (REF-006); V5 puts that label on the west hall by the restroom |
 | Net / gross | 3,467.77 / 3,590 (assessor) | | | | the plan says walls ≈ 122 SF |
 
 ### 1.4 Doors / openings (from the vector plan)
@@ -76,8 +76,8 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 | Hall→Office door | y≈36.1, x 9.5–11.3 | 1.8 symbol | Low |
 | Vestibule→FOH door | arc at x 34.0–35.2, y 30.6 | 1.2 symbol | Low |
 | Vestibule→BOH door | arc at x 38.2–39.4, y 30.6 | 1.2 symbol | Low |
-| Office→HUB door | y≈46.3, x 4.0–5.8 | 1.8 symbol | Low |
-| EXT. DELIVERY (employees only) | west wall x=0, y 47.8–51.2 | 3.4 | Med |
+| Office→HUB door | V5: y≈46.3, x 4.0–5.8 · **A011 (REVIEW-W4C): at the east end of the office south wall, x≈7.5–10.5, opening into HUB 2 (west room)** | 1.8 symbol; A011 ≈3'-0" | Low (V5) / Med (A011, scaled by eye) |
+| EXT. DELIVERY (employees only) | west wall x=0, y 47.8–51.2 (A011 ≈49.5–52.8, scaled by eye, REVIEW-W4C); opens into HUB 2 per A011 | 3.4 | Med |
 | Door to HUB 2 | V5: wall x≈28.3–28.7, y 48.6–50.6 · **A011: in the partition's north end (partition x≈18.8–19.2), y≈46.8–49.8, swings into HUB** | 2.0 drawn; A011 ≈3'-0" | Med (V5) / High (A011 location) |
 | EMERGENCY EXIT, SE (green door with round logo; DEC-030) | **A011 (REF-007): "access controlled entrance / exit" at the SE corner of the east room (HUB, 818.53 SF), on the south wall at x≈44.4–47.2, y=76.03, swinging out.** HUB is the furthest-east room, so the door opens from **HUB** (DEC-042c: HUB 2 is not furthest east). This agrees with HUB-wall tile R1C4 (HUB) showing the door | ≈3'-0" (A011 vector) | High (room, wall) / Med (exact x) |
 
