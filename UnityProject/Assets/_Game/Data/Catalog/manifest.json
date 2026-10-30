@@ -1,7 +1,7 @@
 {
  "importer": {
   "path": "Tools/Data/import_catalog.js",
-  "version": "1.1.0"
+  "version": "1.2.0"
  },
  "sources": [
   {
@@ -19,7 +19,7 @@
  "outputs": [
   {
    "file": "batches.json",
-   "md5": "6fdc553558ea651ac793ccb43af53167"
+   "md5": "0e7675d71bc9e54b5f7e6b9db2a40eef"
   },
   {
    "file": "terpenes.json",

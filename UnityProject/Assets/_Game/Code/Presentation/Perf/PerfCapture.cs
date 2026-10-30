@@ -84,7 +84,11 @@ namespace Dispo.Presentation.Perf
                     var card = g.Sim.Results.Cards.FirstOrDefault(k => g.Sim.Free(k.Rep.Id) >= g.Sim.CurrentAsk.Grams);
                     if (card != null) g.Choose(card);
                     break;
-                case SliceScreen.Pos: if (g.Sim.CanAddItem) g.AddItem(); else g.PosConfirm(); break;   // GAME-006 cart
+                case SliceScreen.Pos:   // GAME-006 cart; GAME-007: trim an over-limit cart, add only what fits
+                    if (g.Sim.Meter == Dispo.Simulation.Slice.MeterState.Red) g.PosRemove(g.Sim.Cart.Count - 1);
+                    else if (g.Sim.CanAddItem && g.Sim.CartGrams + g.Sim.CurrentAsk.Grams <= g.Sim.Cfg.adultUseLimitGrams) g.AddItem();
+                    else g.PosConfirm();
+                    break;
             }
         }
 

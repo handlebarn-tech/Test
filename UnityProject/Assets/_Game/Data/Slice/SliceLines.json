@@ -30,9 +30,17 @@
   "andClause": " and {0}",
   "secondClause": "{0} of {1}",
   "addToCart": "Add to cart",
-  "cartChip": "🛒 Cart {0} / 3 · {1} g",
+  "cartChip": "🛒 Cart {0} / {1} · {2} g",
   "goToRegister": "Go to register",
   "addItem": "+ Add item",
-  "cartFull": "Cart full (3)",
-  "removeLine": "Remove"
+  "cartFull": "Cart full ({0})",
+  "removeLine": "Remove",
+  "twoOunces": "two ounces",
+  "anotherOunce": "another ounce",
+  "meterFlower": "Flower",
+  "meterValue": "{0} g / {1} g",
+  "nearLimit": "⚠ Near the 1 oz limit",
+  "trimHint": "Remove a line or step a weight down",
+  "strikeToast": "✗ Strike · {0}",
+  "overLimitLeave": "If I can't get all of it, never mind."
 }

@@ -3,7 +3,17 @@ guid: db3c4d32aebeb97498609ccc8aa5e69c
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Proc_BudAccent_Frosty
+    second: {fileID: 2100000, guid: 9a5ac9cfc29698e429f52e8578145e1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Proc_Bud_Frosty
+    second: {fileID: 2100000, guid: b420e128192d8a04a995b49a319a6126, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

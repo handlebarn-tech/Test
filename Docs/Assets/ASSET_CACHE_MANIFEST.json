@@ -1,6 +1,106 @@
 {
  "rows": [
   {
+   "ledger_id": "AUD-BSB-0032",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/bigsoundbank/AUD-BSB-0032/0032.ogg",
+   "source_url": "https://bigsoundbank.com/UPLOAD/ogg/0032.ogg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "f7330d61b87929e1050a49d99442c3a2e1ed660984d87efd709df8e56b5b9983",
+   "bytes": 203717,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-BSB-0034",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/bigsoundbank/AUD-BSB-0034/0034.ogg",
+   "source_url": "https://bigsoundbank.com/UPLOAD/ogg/0034.ogg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "6c59cd9c2477071c45e5a9c12a9352be38dbc9e3482cc1437f4ad3422a93d939",
+   "bytes": 279943,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-BSB-0578",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/bigsoundbank/AUD-BSB-0578/0578.ogg",
+   "source_url": "https://bigsoundbank.com/UPLOAD/ogg/0578.ogg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "b6cd709bdc96615cca6b72d3c09ec171e1563e1d4f81413d327e8324ec3823aa",
+   "bytes": 1506772,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-BSB-0684",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/bigsoundbank/AUD-BSB-0684/0684.ogg",
+   "source_url": "https://bigsoundbank.com/UPLOAD/ogg/0684.ogg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "741a6448e8a2d5bc3372761bfcd95d51175de072c91669253f0f707801bf0942",
+   "bytes": 3279675,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-BSB-1157",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/bigsoundbank/AUD-BSB-1157/1157.flac",
+   "source_url": "https://bigsoundbank.com/UPLOAD/flac/1157.flac",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "250984d1de6f721231ae085435befbc815252134a56c868fea8dd738a873dee7",
+   "bytes": 2007207,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-BSB-1417",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/bigsoundbank/AUD-BSB-1417/1417.flac",
+   "source_url": "https://bigsoundbank.com/UPLOAD/flac/1417.flac",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "3ee546068bb97117fb4377ced466c27d940f65ada69657c75e896ce578fe4cfa",
+   "bytes": 16546,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-BSB-1471",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/bigsoundbank/AUD-BSB-1471/1471.flac",
+   "source_url": "https://bigsoundbank.com/UPLOAD/flac/1471.flac",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "28bbad0799d9874f3a433fc6a8b900f9b42bc95f6fd8ab37a4ffd765ab3659fc",
+   "bytes": 11358312,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-BSB-3527",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/bigsoundbank/AUD-BSB-3527/3527.flac",
+   "source_url": "https://bigsoundbank.com/UPLOAD/flac/3527.flac",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2a1e58df67164a3d566d1ac684f4b99a50429f82e07aa3d8a1613c60ef068295",
+   "bytes": 15633,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-BSB-3542",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/bigsoundbank/AUD-BSB-3542/3542.flac",
+   "source_url": "https://bigsoundbank.com/UPLOAD/flac/3542.flac",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "6a776661965a7da5fda5879ee3dc45d4db1925a0f969b7368699898418c6beaa",
+   "bytes": 30152576,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-BSB-3588",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/bigsoundbank/AUD-BSB-3588/3588.flac",
+   "source_url": "https://bigsoundbank.com/UPLOAD/flac/3588.flac",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "3f545bf8435205f7866ad9b6c7985ab801c24efd63826bf40568b98fcaf02677",
+   "bytes": 123625,
+   "date": "2026-10-30"
+  },
+  {
    "ledger_id": "AUD-BSB",
    "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/bigsoundbank/AUD-BSB/2153.wav",
    "source_url": "https://bigsoundbank.com/UPLOAD/bwf-en/2153.wav",
@@ -249,6 +349,76 @@
    "sha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
    "bytes": 834536,
    "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "AUD-OGA-100CC0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/opengameart/AUD-OGA-100CC0/100-CC0-SFX_0.zip",
+   "source_url": "https://opengameart.org/sites/default/files/100-CC0-SFX_0.zip",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "a5c135878c132f1c59cca54e60061c296cd0ac27ad031ca2c41b8cd5cab3c706",
+   "bytes": 2921904,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-OGA-AIRVENT",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/opengameart/AUD-OGA-AIRVENT/airvent-large-loop.wav",
+   "source_url": "https://opengameart.org/sites/default/files/airvent-large-loop.wav",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "30ba114cfae2b1bd7dcdc46557d5c4a8fd4c132cda584f918a15d6e0706491de",
+   "bytes": 661024,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-OGA-COINDROP",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/opengameart/AUD-OGA-COINDROP/coin_drop.wav",
+   "source_url": "https://opengameart.org/sites/default/files/coin_drop.wav",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2965ecdd82bfefca244eab761597d9409b8ec8dcac18345c125e98b4abf5e21f",
+   "bytes": 249942,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-OGA-GLASSJAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/opengameart/AUD-OGA-GLASSJAR/glass_bottle_close.mp3",
+   "source_url": "https://opengameart.org/sites/default/files/glass_bottle_close.mp3",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "662dde97f54101e0f3e9b302e35e02d74dde98a935bc788648197729adf3b19f",
+   "bytes": 9054,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-OGA-GLASSJAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/opengameart/AUD-OGA-GLASSJAR/glass_bottle_open_0.mp3",
+   "source_url": "https://opengameart.org/sites/default/files/glass_bottle_open_0.mp3",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "a147f30f209169155f895e9b11f3da57ad1a5d789804b8773327b1d428fe0cb2",
+   "bytes": 9324,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-OGA-MORESOUNDS",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/opengameart/AUD-OGA-MORESOUNDS/MoreSounds.zip",
+   "source_url": "https://opengameart.org/sites/default/files/MoreSounds.zip",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9428c1437137d9ea06ba94e13da12488d4c57990a1c32d83db9e7707e69fb3af",
+   "bytes": 14937403,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "AUD-OGA-THESHOP",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/opengameart/AUD-OGA-THESHOP/legit_audio_-_the_shop_free_sfx_wav.zip",
+   "source_url": "https://opengameart.org/sites/default/files/legit_audio_-_the_shop_free_sfx_wav.zip",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "87d49c4431fdf5647f3c434455b3bcd402fc757f97f2640b2ef84e2e5db9d86e",
+   "bytes": 19385775,
+   "date": "2026-10-30"
   },
   {
    "ledger_id": "ORIG-CHIME",

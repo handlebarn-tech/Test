@@ -1,6 +1,6 @@
 {
  "_about": "REF-008 back-room fixture map for ART. Plan frame = REFERENCES_INDEX 1.2 (feet, origin Retail NW outer corner, +x east, +y south). Positions are mapped into the Working Plan V5 / graybox room shells (A011 interior dims do not sum to the building width, GAP-125). pos_ft = footprint centre [x, y]; null = not placeable, see gap. size_ft = [w, d, h]: w along +x when rot = 0, along +y when rot = 90. faces = compass direction the front/opening faces. Doors: pos is the centre of the opening on the wall line, size = [width, leaf thickness, height]. Confidence High/Med/Low as REFERENCES_INDEX. Sources: wall2_/wall1_RrCc = CCTV Camera Wall 2 / Camera Wall tiles; FOH_still / BOH_still = the 2026-10-29 desk stills; chat_* = CCTV views Nolan pasted into the REF-008 session 2026-10-29 (not in the repo); A011 = References/TI A011 vector; TI = REFERENCES_INDEX 6. contents = what a fixture holds (store facts only, e.g. DEC-050); never inventory data. FOH is staff-only: customers never enter, the budtender fetches (DEC-050). Excluded by rule: camera positions, access-control hardware, alarm items, safe interiors, screen contents, one office wall screen, the hall keypad (a blank panel only, DEC-062), and (DEC-051) any safe, cash-equipment or camera-system specifics: generic props only.",
- "version": "REF-009b 2026-10-30 rev5 (REVIEW-W4R fixes + DEC-062 room answers)",
+ "version": "REF-010 2026-10-30 rev6 (DEC-068 restroom cabinet; rev5 = REF-009b REVIEW-W4R fixes + DEC-062 room answers)",
  "fixtures": [
   {
    "room": "Office",
@@ -1262,19 +1262,24 @@
    "fixture": "Cabinet_Storage_Large",
    "type": "cabinet",
    "size_ft": [
-    4.0,
+    3.2,
     1.5,
     7.0
    ],
-   "pos_ft": null,
-   "rot": 0,
-   "faces": "S",
+   "pos_ft": [
+    7.25,
+    31.3
+   ],
+   "rot": 90,
+   "faces": "W",
    "confidence": "Low",
    "source_tiles": [
-    "DEC-062"
+    "DEC-062",
+    "DEC-068",
+    "A011"
    ],
    "gap": "GAP-109",
-   "notes": "one large storage cabinet of bathroom and cleaning supplies forming the \"back wall\" (DEC-062). Which wall is unclear: the west wall already holds sink, chest and toilet; candidates north wall east of the toilet, or above the west-wall fixtures. Unplaced; size Low"
+   "notes": "one large storage cabinet of bathroom and cleaning supplies (DEC-062). Placed per DEC-068 (supersedes DEC-064 \"back wall\"): next to the restroom door, against the door (east) wall, on the north side, the only free side that clears the door span y 33.1-36.1 (side not stated by Nolan). Footprint x 6.5-8.0, y 29.7-32.9 as built by ART-006; width 3.2 ft (was 4.0: only 3.2 ft of wall with 0.2 ft clearances). Size and side Low"
   },
   {
    "room": "Restroom",

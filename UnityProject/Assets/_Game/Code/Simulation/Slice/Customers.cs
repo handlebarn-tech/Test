@@ -15,6 +15,7 @@ namespace Dispo.Simulation.Slice
         public double Grams;
         public string Clause;             // its words in the line ("something for sleep, a half"), for the request strip
         public string Chip;               // chip the player searched with for this item
+        public double Fit = -1;           // fit when the customer accepted it (GAME-007 trim penalty), -1 = never accepted
     }
 
     public sealed class Customer
@@ -27,6 +28,7 @@ namespace Dispo.Simulation.Slice
         public IntentFamily TrueFamily { get => Asks[0].Family; set => Asks[0].Family = value; }   // hidden from the player
         public double Grams { get => Asks[0].Grams; set => Asks[0].Grams = value; }
         public double Budget;             // post-tax $ for the whole cart, 0 = no budget
+        public bool OverLimit;            // GAME-007: asked for more than the 1 oz cap (SPEC_COMP002 §2 shape)
         public string Line;
         public double PatienceMax, Patience;
 
@@ -53,6 +55,7 @@ namespace Dispo.Simulation.Slice
             var list = new List<Customer>();
             // GAME-006 second items. Offset 4 [GDD]: seed 1 keeps its DEC-027 SOLD OUT (20 of offsets 1-30 do; GAME-010 retunes).
             var more = new Random(c.seed + 4);
+            var over = new Random(c.seed + 7);   // GAME-007 over-limit asks, own stream for the same reason
             double t = 0;
             for (int i = 1; i <= c.customersPerShift; i++)
             {
@@ -72,14 +75,33 @@ namespace Dispo.Simulation.Slice
                     var core2 = OneOf(more, fam2.cores.Where(x => !x.Contains('.')).ToList());   // "an eighth of something. I've got…" doesn't read
                     asks.Add(new Ask { Family = fam2, Grams = g2, Clause = SecondClause(d.Lines, core2, g2) });
                 }
-                double budget = arch.hasBudget ? Math.Floor(asks.Sum(a => a.Grams) * c.budgetPerGram[rng.Next(c.budgetPerGram.Length)]) : 0;
+                // GAME-007 [GDD]: SPEC_COMP002 §2 over-limit asks replace the ask list; the player trims at the register.
+                int shape = -1;
+                IntentFamily y = null, z = null;
+                string coreY = null, coreZ = null;
+                if (over.NextDouble() < c.overLimitAskChance)
+                {
+                    shape = over.Next(ShapeGrams.Length);
+                    y = d.Intents.Get(Pick(over, c.familyWeights, f => f.w).id);
+                    z = d.Intents.Get(Pick(over, c.familyWeights, f => f.w).id);
+                    coreY = OneOf(over, y.cores.Where(x => !x.Contains('.')).ToList());
+                    coreZ = OneOf(over, z.cores.Where(x => !x.Contains('.')).ToList());
+                }
+                double total = shape >= 0 ? ShapeGrams[shape] : asks.Sum(a => a.Grams);
+                double budget = arch.hasBudget ? Math.Floor(total * c.budgetPerGram[rng.Next(c.budgetPerGram.Length)]) : 0;
                 string opener = OneOf(rng, d.Lines.Openers(arch.id)), core = OneOf(rng, fam.cores);
-                asks[0].Clause = $"{core}, {d.Lines.Weight(grams)}";
+                List<string> spoken;
+                if (shape >= 0) asks = OverLimitAsks(d.Lines, shape, fam, core, y, coreY, z, coreZ, out spoken);
+                else
+                {
+                    asks[0].Clause = $"{core}, {d.Lines.Weight(grams)}";
+                    spoken = asks.Select(a => a.Clause).ToList();
+                }
                 double patience = arch.patienceSec * (rush ? c.rushPatienceMult : 1);
                 list.Add(new Customer
                 {
-                    Index = i, SpawnTime = t, Rush = rush, Archetype = arch, Asks = asks, Budget = budget,
-                    Line = RenderLine(d.Lines, opener, core, grams, budget, asks.Count > 1 ? asks[1].Clause : null),
+                    Index = i, SpawnTime = t, Rush = rush, Archetype = arch, Asks = asks, Budget = budget, OverLimit = shape >= 0,
+                    Line = Say(d.Lines, opener, spoken, budget),
                     PatienceMax = patience, Patience = patience,
                 });
             }
@@ -88,8 +110,38 @@ namespace Dispo.Simulation.Slice
 
         /// <summary>§2.6: opener + core + weight clause + optional second item (GAME-006) + optional budget clause.</summary>
         public static string RenderLine(SliceLines l, string opener, string core, double grams, double budget, string second = null) =>
-            $"{opener} {core}, {l.Weight(grams)}" + (second != null ? string.Format(l.andClause, second) : "") + "."
+            Say(l, opener, second != null ? new[] { $"{core}, {l.Weight(grams)}", second } : new[] { $"{core}, {l.Weight(grams)}" }, budget);
+
+        /// <summary>opener + clauses joined with "and" + "." + optional budget clause.</summary>
+        public static string Say(SliceLines l, string opener, IReadOnlyList<string> clauses, double budget) =>
+            $"{opener} {clauses[0]}" + string.Concat(clauses.Skip(1).Select(x => string.Format(l.andClause, x))) + "."
             + (budget > 0 ? string.Format(l.budgetClause, budget) : "");
+
+        /// <summary>Total grams of each SPEC_COMP002 §2 ask shape (all over the 28 g cap).</summary>
+        public static readonly double[] ShapeGrams = { 31.5, 56, 35 };
+
+        /// <summary>
+        /// SPEC_COMP002 §2 ask shapes (weights from STD_WEIGHTS [SRC]): 0 "an ounce of X and an eighth of Y"; 1 "two ounces" of X
+        /// (two 28 g asks, the second can only be dropped); 2 "a half of X and a half of Y and a quarter of Z".
+        /// <paramref name="spoken"/> = the clauses as the customer says them.
+        /// </summary>
+        public static List<Ask> OverLimitAsks(SliceLines l, int shape, IntentFamily x, string coreX, IntentFamily y, string coreY,
+            IntentFamily z, string coreZ, out List<string> spoken)
+        {
+            Ask A(IntentFamily f, double g, string clause) => new Ask { Family = f, Grams = g, Clause = clause };
+            List<Ask> asks;
+            switch (shape)
+            {
+                case 0: asks = new List<Ask> { A(x, 28, $"{coreX}, {l.Weight(28)}"), A(y, 3.5, SecondClause(l, coreY, 3.5)) }; break;
+                case 1:
+                    asks = new List<Ask> { A(x, 28, $"{coreX}, {l.Weight(28)}"), A(x, 28, l.anotherOunce) };
+                    spoken = new List<string> { $"{coreX}, {l.twoOunces}" };
+                    return asks;
+                default: asks = new List<Ask> { A(x, 14, $"{coreX}, {l.Weight(14)}"), A(y, 14, SecondClause(l, coreY, 14)), A(z, 7, SecondClause(l, coreZ, 7)) }; break;
+            }
+            spoken = asks.Select(a => a.Clause).ToList();
+            return asks;
+        }
 
         /// <summary>GAME-006: "an eighth of something for energy".</summary>
         public static string SecondClause(SliceLines l, string core, double grams) => string.Format(l.secondClause, l.Weight(grams), core);

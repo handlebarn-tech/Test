@@ -8,8 +8,9 @@
 //        node Tools/Data/import_packaged.js --selftest            (asserts the guards catch planted leaks)
 'use strict';
 const fs = require('fs'), path = require('path'), zlib = require('zlib'), crypto = require('crypto'), assert = require('assert');
+const { aliasBrand, scrubText, guardCatalog } = require('./brands'); // BRAND-001 (DEC-071)
 
-const IMPORTER_VERSION = '1.0.0';
+const IMPORTER_VERSION = '1.1.0'; // 1.1.0 (BRAND-001): non-approved brands -> fictional aliases
 const DROP_DIR = 'C:/Users/handl/Downloads/Dispo Game Imports'; // fresh imports only (DEC-070)
 const ARCHIVE_DIR = 'C:/Users/handl/Downloads/Dispo Game Imports Archive/2026-10-30_dutchie-inventory'; // the export DATA-002 was built from
 const OUT = path.join(__dirname, '../../UnityProject/Assets/_Game/Data/Catalog');
@@ -132,8 +133,8 @@ function build(src, deliMd5, strains) {
     const freq = {}; rs.forEach(x => freq[x.price] = (freq[x.price] || 0) + 1);
     const prices = Object.keys(freq).map(Number).sort((a, b) => freq[b] - freq[a] || a - b);
     if (prices.length > 1) priceConflicts++;
-    const pipe = key.indexOf(' | '), name = pipe >= 0 ? key.slice(pipe + 3).trim() : key;
-    const brand = r['Brand Name'] || (pipe >= 0 ? key.slice(0, pipe).trim() : '');
+    const pipe = key.indexOf(' | '), name = scrubText(pipe >= 0 ? key.slice(pipe + 3).trim() : key);
+    const brand = aliasBrand(r['Brand Name'] || (pipe >= 0 ? key.slice(0, pipe).trim() : ''));
     const N = name.toUpperCase();
     // \d*\.?\d+ also reads leading-dot sizes (".5G" = 0.5, not 5; REVIEW-W4O).
     const sizeG = num(/(\d*\.?\d+)\s?G\b/, N), packCount = num(/(\d+)\s?PK\b/, N), totalMg = num(/(\d*\.?\d+)\s?MG\b/, N);

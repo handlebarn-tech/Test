@@ -3,7 +3,17 @@ guid: 85afc86f6cde11b4a9b9d7d93808eb44
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Proc_BudAccent_DarkCompact
+    second: {fileID: 2100000, guid: 9727e8d8d9df0a448afb53bc38985ac4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Proc_Bud_DarkCompact
+    second: {fileID: 2100000, guid: c0d128466f91c7043b1a5ef5ddb5dd8e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

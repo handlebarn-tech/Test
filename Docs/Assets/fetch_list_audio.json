@@ -1,0 +1,233 @@
+{
+ "note": "AUDIO-001 audio fetch list; IDs = LICENSE_LEDGER.md rows (section 1b). CC0 verified on each source page 2026-10-30.",
+ "entries": [
+  {
+   "ledger_id": "AUD-BSB-3542",
+   "source": "url",
+   "source_dir": "bigsoundbank",
+   "source_url": "https://bigsoundbank.com/small-restaurant-conversations-s3542.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://bigsoundbank.com/UPLOAD/flac/3542.flac",
+     "name": "3542.flac"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-BSB-0684",
+   "source": "url",
+   "source_dir": "bigsoundbank",
+   "source_url": "https://bigsoundbank.com/walla-group-averages-discussions-s0684.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/0684.ogg",
+     "name": "0684.ogg"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-BSB-1471",
+   "source": "url",
+   "source_dir": "bigsoundbank",
+   "source_url": "https://bigsoundbank.com/air-conditioner-s1471.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://bigsoundbank.com/UPLOAD/flac/1471.flac",
+     "name": "1471.flac"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-BSB-0032",
+   "source": "url",
+   "source_dir": "bigsoundbank",
+   "source_url": "https://bigsoundbank.com/ventilation-1-s0032.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/0032.ogg",
+     "name": "0032.ogg"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-BSB-1157",
+   "source": "url",
+   "source_dir": "bigsoundbank",
+   "source_url": "https://bigsoundbank.com/fridge-s1157.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://bigsoundbank.com/UPLOAD/flac/1157.flac",
+     "name": "1157.flac"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-BSB-0034",
+   "source": "url",
+   "source_dir": "bigsoundbank",
+   "source_url": "https://bigsoundbank.com/refrigerator-s0034.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/0034.ogg",
+     "name": "0034.ogg"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-BSB-1417",
+   "source": "url",
+   "source_dir": "bigsoundbank",
+   "source_url": "https://bigsoundbank.com/beep-of-a-cash-register-s1417.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://bigsoundbank.com/UPLOAD/flac/1417.flac",
+     "name": "1417.flac"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-BSB-3527",
+   "source": "url",
+   "source_dir": "bigsoundbank",
+   "source_url": "https://bigsoundbank.com/beep-of-a-cash-register-2-s3527.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://bigsoundbank.com/UPLOAD/flac/3527.flac",
+     "name": "3527.flac"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-BSB-3588",
+   "source": "url",
+   "source_dir": "bigsoundbank",
+   "source_url": "https://bigsoundbank.com/shop-doorbell-chime-s3588.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://bigsoundbank.com/UPLOAD/flac/3588.flac",
+     "name": "3588.flac"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-BSB-0578",
+   "source": "url",
+   "source_dir": "bigsoundbank",
+   "source_url": "https://bigsoundbank.com/supermarket-s0578.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/0578.ogg",
+     "name": "0578.ogg"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-OGA-THESHOP",
+   "source": "url",
+   "source_dir": "opengameart",
+   "source_url": "https://opengameart.org/content/the-shop",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://opengameart.org/sites/default/files/legit_audio_-_the_shop_free_sfx_wav.zip",
+     "name": "legit_audio_-_the_shop_free_sfx_wav.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-OGA-AIRVENT",
+   "source": "url",
+   "source_dir": "opengameart",
+   "source_url": "https://opengameart.org/content/airvent-loop",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://opengameart.org/sites/default/files/airvent-large-loop.wav",
+     "name": "airvent-large-loop.wav"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-OGA-GLASSJAR",
+   "source": "url",
+   "source_dir": "opengameart",
+   "source_url": "https://opengameart.org/content/glass-bottle-open-close",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://opengameart.org/sites/default/files/glass_bottle_open_0.mp3",
+     "name": "glass_bottle_open_0.mp3"
+    },
+    {
+     "url": "https://opengameart.org/sites/default/files/glass_bottle_close.mp3",
+     "name": "glass_bottle_close.mp3"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-OGA-MORESOUNDS",
+   "source": "url",
+   "source_dir": "opengameart",
+   "source_url": "https://opengameart.org/content/202-more-sound-effects",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://opengameart.org/sites/default/files/MoreSounds.zip",
+     "name": "MoreSounds.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-OGA-COINDROP",
+   "source": "url",
+   "source_dir": "opengameart",
+   "source_url": "https://opengameart.org/content/coin-drop",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://opengameart.org/sites/default/files/coin_drop.wav",
+     "name": "coin_drop.wav"
+    }
+   ]
+  },
+  {
+   "ledger_id": "AUD-OGA-100CC0",
+   "source": "url",
+   "source_dir": "opengameart",
+   "source_url": "https://opengameart.org/content/100-cc0-sfx",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://opengameart.org/sites/default/files/100-CC0-SFX_0.zip",
+     "name": "100-CC0-SFX_0.zip"
+    }
+   ]
+  }
+ ]
+}
