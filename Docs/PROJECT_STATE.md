@@ -16,9 +16,9 @@ Merged this session: W4K (GAME-005), W4Q (DES-003; DEC-052..059), W4J (PERF-001)
 | QA-002 Gate A parity + DP harness | `local_e8fae0a3-19cd-429a-b0fa-e555c65a23ec` | Unity run queued | review |
 | GAME-010 tuning + personas | `local_0d166a8e-87b1-40bb-9594-be389c549875` | grid 2 running | review |
 | ART-006 bud HDRP materials, then back rooms | `local_392adc04-9603-4cc9-959c-6e3e2d792743` | running | review; rooms after REF-009b |
-| REF-009b W4R m1–m5 + DEC-062 into ROOM_FIXTURES | `local_8bee29f0-46b7-4ee5-87bf-9792b70f6267` | running | docs review, merge |
 | REVIEW-W4T: QA-002 | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO |
-| IMP-001 audit merged (REVIEW-IMP1 PASS, amendments A1–A4) | — | **awaiting Nolan: approve summary + Q0 precedence** | on approval: IMP-002 integration packet applying A1–A4 |
+| IMP-002: integrate approved V2 pack (DEC-063) | (starting) | running | docs review, merge |
+| REVIEW-W4U: REF-009b (`task-ref-009b` 233ee85) | `local_0dd63bac-df1d-448d-9203-641ead6b6837` | running | merge on GO → ART-006 rooms |
 | AUDIT-001 approval sheet (Nolan asked for one) | `local_b6a24c47-ab71-4d36-9df9-1eb188edc2b0` | drafting `Docs/Audits/AUDIT-001_APPROVAL.md` | → Nolan approves before ANY doc change |
 | Idle, reusable/archivable: PROC-004 `local_ffb38222…`, GAME-005 `local_65e98573…`, DES-003 `local_afc2a299…`, W4Q/W4R reviewer `local_c94488d7…`, W4P reviewer `local_3bc3be53…`, IMP-001 `local_ad2c683f…`, UX-005 `local_802b992e…` | | | |
 
@@ -36,6 +36,7 @@ Merged this session: W4K (GAME-005), W4Q (DES-003; DEC-052..059), W4J (PERF-001)
 
 ## Pending from Nolan
 - ~~"Fully built systems" file~~: arrived 2026-10-30 as `Downloads/Dispo Game Imports/DISPO_GAME_DESIGN_V2/`; IMP-001 auditing.
+- V2 design pack approved 2026-10-30 (DEC-063); IMP-002 integrates.
 - ChatGPT-built mechanics: he will drop them in `C:/Users/handl/Downloads/Dispo Game Imports/`. Process: audit → review → **Nolan's approval** before any use.
 - Imports always go to `Downloads/Dispo Game Imports/` (outside the repo). `Imports/` in the repo root is git-excluded locally; the Dutchie export was moved out of it on 2026-10-30.
 
