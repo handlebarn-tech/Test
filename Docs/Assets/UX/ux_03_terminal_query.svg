@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1230" viewBox="0 0 1920 1230" font-family="Segoe UI, Arial, sans-serif">
+<title>UX-03 Terminal: query</title>
+<rect width="1920" height="1080" fill="#15181c"/>
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="#2b3038" stroke="none" stroke-width="2"/>
+<text x="960.0" y="470" font-size="28" font-weight="400" fill="#4a525e" text-anchor="middle">first-person store view (graybox)</text>
+<rect width="1920" height="1080" fill="#000" opacity="0.55"/>
+<rect x="160" y="90" width="1600" height="900" rx="16" fill="#1d2127" stroke="#3a414c" stroke-width="2"/>
+<text x="200" y="145" font-size="28" font-weight="700" fill="#f2f4f7" text-anchor="start">Recommend</text>
+<text x="1720" y="145" font-size="18" font-weight="400" fill="#8f98a5" text-anchor="end">Esc / Ⓑ  Close</text>
+<rect x="200" y="170" width="1520" height="64" rx="8" fill="#11141a" stroke="none" stroke-width="2"/>
+<text x="224" y="211" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">Customer said: “Something to help me sleep, but nothing too pricey.”</text>
+<text x="1696" y="211" font-size="18" font-weight="400" fill="#8f98a5" text-anchor="end">Regular · 2nd visit</text>
+<text x="200" y="290" font-size="22" font-weight="600" fill="#c3c9d2" text-anchor="start">What are they after?</text>
+<rect x="200" y="310" width="236" height="80" rx="10" fill="#009E73" stroke="#009E73" stroke-width="2"/>
+<text x="318" y="360" font-size="24" font-weight="700" fill="#0b0d10" text-anchor="middle">✓ Sleep</text>
+<rect x="452" y="310" width="236" height="80" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="570" y="360" font-size="24" font-weight="700" fill="#f2f4f7" text-anchor="middle">Pain</text>
+<rect x="704" y="310" width="236" height="80" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="822" y="360" font-size="24" font-weight="700" fill="#f2f4f7" text-anchor="middle">Anxiety / calm</text>
+<rect x="956" y="310" width="236" height="80" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1074" y="360" font-size="24" font-weight="700" fill="#f2f4f7" text-anchor="middle">Energy</text>
+<rect x="1208" y="310" width="236" height="80" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1326" y="360" font-size="24" font-weight="700" fill="#f2f4f7" text-anchor="middle">Focus</text>
+<rect x="1460" y="310" width="236" height="80" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1578" y="360" font-size="24" font-weight="700" fill="#f2f4f7" text-anchor="middle">Social</text>
+<g class="note"><circle cx="190" cy="300" r="17" fill="#CC79A7"/><text x="190" y="307" font-size="18" font-weight="700" fill="#000" text-anchor="middle">1</text></g>
+<text x="200" y="450" font-size="22" font-weight="600" fill="#c3c9d2" text-anchor="start">Constraints</text>
+<rect x="200" y="470" width="470" height="80" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="224" y="518" font-size="22" font-weight="400" fill="#f2f4f7" text-anchor="start">Budget  ≤ $ 20 per 3.5 g</text>
+<g class="note"><circle cx="190" cy="465" r="17" fill="#CC79A7"/><text x="190" y="472" font-size="18" font-weight="700" fill="#000" text-anchor="middle">2</text></g>
+<rect x="690" y="470" width="470" height="80" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="714" y="518" font-size="22" font-weight="400" fill="#8f98a5" text-anchor="start">Stay functional (cap sedation)</text>
+<g class="note"><circle cx="680" cy="465" r="17" fill="#CC79A7"/><text x="680" y="472" font-size="18" font-weight="700" fill="#000" text-anchor="middle">3</text></g>
+<rect x="1180" y="470" width="540" height="80" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="1204" y="518" font-size="22" font-weight="400" fill="#8f98a5" text-anchor="start">Avoid terpene · First-time  (next wave)</text>
+<rect x="200" y="600" width="1520" height="70" rx="8" fill="#11141a" stroke="none" stroke-width="2"/>
+<text x="224" y="645" font-size="20" font-weight="400" fill="#8f98a5" text-anchor="start">Free text search: reserved for the full parser (next wave). Hidden in slice.</text>
+<rect x="1440" y="880" width="280" height="56" rx="8" fill="#009E73" stroke="#009E73" stroke-width="2"/>
+<text x="1580.0" y="916" font-size="22" font-weight="700" fill="#0b0d10" text-anchor="middle">Search</text>
+<text x="1580.0" y="960" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">Enter / Ⓐ</text>
+<g class="note"><circle cx="1430" cy="875" r="17" fill="#CC79A7"/><text x="1430" y="882" font-size="18" font-weight="700" fill="#000" text-anchor="middle">4</text></g>
+<rect x="96" y="54" width="1728" height="972" fill="none" stroke="#CC79A7" stroke-width="1.5" stroke-dasharray="10 8" class="note"/>
+<rect x="0" y="1080" width="1920" height="150" fill="#ffffff"/>
+<text x="24" y="1116" font-size="24" font-weight="700" fill="#111">UX-03 Terminal: query  ·  1920×1080 @100% text  ·  pink = annotation layer (focus order, safe area 96/54 px)</text>
+<text x="24" y="1150" font-size="19" fill="#222">Intent tiles = the 6 slice intent families; each maps to one INTENTS key (DES-001 owns the mapping). Multi-select merges per contract §2.9 (crit=max, neg=min).</text>
+<text x="24" y="1176" font-size="19" fill="#222">Player picks intents from what they heard: interpretation is the skill (spec §14). Assist 'Auto-fill intent' pre-selects the NPC's emitted key.</text>
+<text x="24" y="1202" font-size="19" fill="#222">Focus: tiles (←→) → Budget (−/+ steppers, $5 steps) → Stay functional toggle → Search. Tiles 236×80, text 24.</text>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1230" viewBox="0 0 1920 1230" font-family="Segoe UI, Arial, sans-serif">
+<title>UX-08 POS confirm</title>
+<rect width="1920" height="1080" fill="#15181c"/>
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="#2b3038" stroke="none" stroke-width="2"/>
+<text x="960.0" y="470" font-size="28" font-weight="400" fill="#4a525e" text-anchor="middle">first-person store view (graybox)</text>
+<rect width="1920" height="1080" fill="#000" opacity="0.55"/>
+<rect x="460" y="120" width="1000" height="840" rx="16" fill="#1d2127" stroke="#3a414c" stroke-width="2"/>
+<text x="500" y="180" font-size="28" font-weight="700" fill="#f2f4f7" text-anchor="start">Register</text>
+<text x="500" y="240" font-size="28" font-weight="700" fill="#f2f4f7" text-anchor="start">Strain A</text>
+<text x="500" y="274" font-size="18" font-weight="400" fill="#8f98a5" text-anchor="start">‹batch code› · House Fresh</text>
+<text x="500" y="340" font-size="22" font-weight="600" fill="#c3c9d2" text-anchor="start">Weight</text>
+<rect x="500" y="360" width="210" height="70" rx="10" fill="#009E73" stroke="#009E73" stroke-width="2"/>
+<text x="605" y="405" font-size="24" font-weight="700" fill="#0b0d10" text-anchor="middle">3.5 g</text>
+<rect x="730" y="360" width="210" height="70" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="835" y="405" font-size="24" font-weight="700" fill="#f2f4f7" text-anchor="middle">7 g</text>
+<rect x="960" y="360" width="210" height="70" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1065" y="405" font-size="24" font-weight="700" fill="#f2f4f7" text-anchor="middle">14 g</text>
+<rect x="1190" y="360" width="210" height="70" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1295" y="405" font-size="24" font-weight="700" fill="#f2f4f7" text-anchor="middle">28 g</text>
+<g class="note"><circle cx="490" cy="355" r="17" fill="#CC79A7"/><text x="490" y="362" font-size="18" font-weight="700" fill="#000" text-anchor="middle">1</text></g>
+<text x="500" y="500" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">Price (House Fresh MSRP)</text>
+<text x="1420" y="500" font-size="22" font-weight="400" fill="#f2f4f7" text-anchor="end">$14.00</text>
+<text x="500" y="544" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">Day deal: Tuesday House</text>
+<text x="1420" y="544" font-size="22" font-weight="400" fill="#f2f4f7" text-anchor="end">− $3.50</text>
+<text x="500" y="588" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">Subtotal</text>
+<text x="1420" y="588" font-size="22" font-weight="400" fill="#f2f4f7" text-anchor="end">$10.50</text>
+<text x="500" y="632" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">Tax 25.1%</text>
+<text x="1420" y="632" font-size="22" font-weight="400" fill="#f2f4f7" text-anchor="end">$2.60</text>
+<line x1="500" y1="680" x2="1420" y2="680" stroke="#3a414c" stroke-width="2"/>
+<text x="500" y="728" font-size="30" font-weight="700" fill="#f2f4f7" text-anchor="start">Total</text>
+<text x="1420" y="728" font-size="36" font-weight="700" fill="#f2f4f7" text-anchor="end">$13.10</text>
+<text x="500" y="790" font-size="22" font-weight="600" fill="#c3c9d2" text-anchor="start">Payment</text>
+<rect x="640" y="760" width="180" height="50" rx="10" fill="#262b33" stroke="#009E73" stroke-width="2"/>
+<text x="730" y="794" font-size="22" font-weight="400" fill="#f2f4f7" text-anchor="middle">● Cash</text>
+<rect x="840" y="760" width="180" height="50" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="930" y="794" font-size="22" font-weight="400" fill="#f2f4f7" text-anchor="middle">○ Card</text>
+<g class="note"><circle cx="630" cy="755" r="17" fill="#CC79A7"/><text x="630" y="762" font-size="18" font-weight="700" fill="#000" text-anchor="middle">2</text></g>
+<rect x="500" y="850" width="300" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="650.0" y="886" font-size="22" font-weight="700" fill="#f2f4f7" text-anchor="middle">Cancel</text>
+<text x="650.0" y="930" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">Esc / Ⓑ</text>
+<g class="note"><circle cx="490" cy="845" r="17" fill="#CC79A7"/><text x="490" y="852" font-size="18" font-weight="700" fill="#000" text-anchor="middle">4</text></g>
+<rect x="1120" y="850" width="300" height="56" rx="8" fill="#009E73" stroke="#009E73" stroke-width="2"/>
+<text x="1270.0" y="886" font-size="22" font-weight="700" fill="#0b0d10" text-anchor="middle">Hold to confirm</text>
+<text x="1270.0" y="930" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">Hold Enter / Ⓐ 0.6 s</text>
+<g class="note"><circle cx="1110" cy="845" r="17" fill="#CC79A7"/><text x="1110" y="852" font-size="18" font-weight="700" fill="#000" text-anchor="middle">3</text></g>
+<rect x="1120" y="850" width="120" height="6" rx="3" fill="#0b0d10" stroke="none" stroke-width="2"/>
+<rect x="96" y="54" width="1728" height="972" fill="none" stroke="#CC79A7" stroke-width="1.5" stroke-dasharray="10 8" class="note"/>
+<rect x="0" y="1080" width="1920" height="150" fill="#ffffff"/>
+<text x="24" y="1116" font-size="24" font-weight="700" fill="#111">UX-08 POS confirm  ·  1920×1080 @100% text  ·  pink = annotation layer (focus order, safe area 96/54 px)</text>
+<text x="24" y="1150" font-size="19" fill="#222">Prices: contract §12, Tuesday deal, applyTax floor to $0.05 (10.50 → 13.10; tax line = total − subtotal). Weight tiles disabled when jar grams &lt; weight.</text>
+<text x="24" y="1176" font-size="19" fill="#222">Confirm is hold-to-confirm by default (prevents double sale); setting 'Hold actions → Press' makes it a single press. Cancel releases the reservation (spec §67, §88).</text>
+<text x="24" y="1202" font-size="19" fill="#222">Payment is abstract (spec §24-25). Focus: weight → payment → Confirm → Cancel. Panel 1000×840, total 36.</text>
+</svg>
