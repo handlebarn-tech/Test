@@ -44,6 +44,7 @@ If a request conflicts with a rule, route it so the rule holds (e.g. start a ses
 See `Docs/PROJECT_STATE.md` → "NEXT ACTIONS". Wave 1 is complete and sits on branch `review/wave-1` awaiting REVIEW-W1. Packets for the next sessions are in `Docs/Tasks/Ready/`.
 
 ## Session notes
+- **Remote Control limit:** while Nolan uses Remote Control (phone), `start_session` works only on messages typed in the desktop app; his permission does not change that. Hand work to idle sessions with SendMessage, and leave new sessions for a desktop message or the scheduled resume.
 - **Starting sessions on notice turns:** the app refuses `start_session` on a turn triggered by an idle notice or another session's message (cards only). Do not fall back to a card. Hand the work to an idle workcell with SendMessage (allowed on any turn), or start the session on the next turn where Nolan writes. Nolan wants the Hub to dispatch on its own (2026-10-29).
 - Starting a session: `start_session` user_asked, fresh, `use_worktree: true`, `source_branch: main`; brief = packet path + "read CLAUDE.md, then the packet; never ask Nolan; end with a ≤15-line summary for the Studio Hub" + commit identity `git -c user.name=Nolan_Bradford -c user.email=handlebarn@gmail.com commit` (no global git identity is set). Reviews merge task branches onto `review/wave-*`; the Hub merges reviewed branches into main with the same identity.
 - Unity: max 2 editors (DEC-013); studio.ps1 has a wait gate. Fresh worktrees copy `Tools/Studio/studio.config.example.json` → `studio.config.json`.
