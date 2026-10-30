@@ -7,7 +7,7 @@
   "kind": "dutchie-current-inventory",
   "md5": "d1bc5172569855f78118f0e492e63d22",
   "rows": 1311,
-  "deliCatalogMd5": "8a358a0b241e663c3b4560c557d8ce2e"
+  "deliCatalogMd5": "0e7675d71bc9e54b5f7e6b9db2a40eef"
  },
  "counts": {
   "items": 954,
@@ -51,9 +51,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-quintessa-dashwell-dulce-de-uva-x-strawguava-rosin-pod-1g",
+   "id": "vape-mistaven-dashwell-dulce-de-uva-x-strawguava-rosin-pod-1g",
    "name": "DASHWELL DULCE DE UVA X STRAWGUAVA ROSIN POD 1G",
-   "brand": "Quintessa",
+   "brand": "Mistaven",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 1,
@@ -93,9 +93,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-quintessa-dashwell-incredible-bulk-pod-1g",
+   "id": "vape-mistaven-dashwell-incredible-bulk-pod-1g",
    "name": "DASHWELL INCREDIBLE BULK POD 1G",
-   "brand": "Quintessa",
+   "brand": "Mistaven",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 1,
@@ -114,9 +114,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-quintessa-dashwell-insane-pound-cake-pod-1g",
+   "id": "vape-mistaven-dashwell-insane-pound-cake-pod-1g",
    "name": "DASHWELL INSANE POUND CAKE POD 1G",
-   "brand": "Quintessa",
+   "brand": "Mistaven",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 1,
@@ -4377,9 +4377,9 @@
    "storage": "GAP"
   },
   {
-   "id": "vape-emberlit-cindrall-blackberry-frost-disposable-1g",
+   "id": "vape-embervane-cindrall-blackberry-frost-disposable-1g",
    "name": "CINDRALL BLACKBERRY FROST DISPOSABLE 1G",
-   "brand": "Emberlit",
+   "brand": "Embervane",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 1,
@@ -4398,9 +4398,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-emberlit-cindrall-lemon-twist-disposable-1g",
+   "id": "vape-embervane-cindrall-lemon-twist-disposable-1g",
    "name": "CINDRALL LEMON TWIST DISPOSABLE 1G",
-   "brand": "Emberlit",
+   "brand": "Embervane",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 1,
@@ -4419,9 +4419,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-emberlit-cindrall-summer-strawberry-disposable-1g",
+   "id": "vape-embervane-cindrall-summer-strawberry-disposable-1g",
    "name": "CINDRALL SUMMER STRAWBERRY DISPOSABLE 1G",
-   "brand": "Emberlit",
+   "brand": "Embervane",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 1,
@@ -4440,9 +4440,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-emberlit-cindrall-watermelon-splash-disposable-1g",
+   "id": "vape-embervane-cindrall-watermelon-splash-disposable-1g",
    "name": "CINDRALL WATERMELON SPLASH DISPOSABLE 1G",
-   "brand": "Emberlit",
+   "brand": "Embervane",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 1,
@@ -7254,9 +7254,9 @@
    "storage": "FOH"
   },
   {
-   "id": "beverage-fizzhaven-1-1-black-cherry-seltzer-10mg-10mg-thc-10mg-cbd",
+   "id": "beverage-fizzhollow-1-1-black-cherry-seltzer-10mg-10mg-thc-10mg-cbd",
    "name": "1:1 BLACK CHERRY SELTZER 10MG (10MG THC/10MG CBD)",
-   "brand": "Fizzhaven",
+   "brand": "Fizzhollow",
    "category": "BEVERAGE",
    "subcategory": "SELTZER",
    "sizeG": null,
@@ -7275,9 +7275,9 @@
    "storage": "fridge"
   },
   {
-   "id": "beverage-fizzhaven-1-1-orange-grapefruit-seltzer-10mg-10mg-thc-10mg-cbd",
+   "id": "beverage-fizzhollow-1-1-orange-grapefruit-seltzer-10mg-10mg-thc-10mg-cbd",
    "name": "1:1 ORANGE GRAPEFRUIT SELTZER 10MG (10MG THC/10MG CBD)",
-   "brand": "Fizzhaven",
+   "brand": "Fizzhollow",
    "category": "BEVERAGE",
    "subcategory": "SELTZER",
    "sizeG": null,
@@ -7296,9 +7296,9 @@
    "storage": "fridge"
   },
   {
-   "id": "beverage-fizzhaven-1-1-peach-mango-seltzer-10mg-10mg-thc-10mg-cbd",
+   "id": "beverage-fizzhollow-1-1-peach-mango-seltzer-10mg-10mg-thc-10mg-cbd",
    "name": "1:1 PEACH MANGO SELTZER 10MG (10MG THC/10MG CBD)",
-   "brand": "Fizzhaven",
+   "brand": "Fizzhollow",
    "category": "BEVERAGE",
    "subcategory": "SELTZER",
    "sizeG": null,
@@ -7317,9 +7317,9 @@
    "storage": "fridge"
   },
   {
-   "id": "beverage-fizzhaven-1-1-pomegranate-blueberry-seltzer-10mg-10mg-thc-10mg",
+   "id": "beverage-fizzhollow-1-1-pomegranate-blueberry-seltzer-10mg-10mg-thc-10mg",
    "name": "1:1 POMEGRANATE BLUEBERRY SELTZER 10MG (10MG THC/10MG CBD)",
-   "brand": "Fizzhaven",
+   "brand": "Fizzhollow",
    "category": "BEVERAGE",
    "subcategory": "SELTZER",
    "sizeG": null,
@@ -7338,9 +7338,9 @@
    "storage": "fridge"
   },
   {
-   "id": "beverage-fizzhaven-1-1-prickly-pear-lime-seltzer-10mg-10mg-thc-10mg-cbd",
+   "id": "beverage-fizzhollow-1-1-prickly-pear-lime-seltzer-10mg-10mg-thc-10mg-cbd",
    "name": "1:1 PRICKLY PEAR LIME SELTZER 10MG (10MG THC/10MG CBD)",
-   "brand": "Fizzhaven",
+   "brand": "Fizzhollow",
    "category": "BEVERAGE",
    "subcategory": "SELTZER",
    "sizeG": null,
@@ -7359,9 +7359,9 @@
    "storage": "fridge"
   },
   {
-   "id": "beverage-fizzhaven-1-1-raspberry-lemon-seltzer-10mg-10mg-thc-10mg-cbd",
+   "id": "beverage-fizzhollow-1-1-raspberry-lemon-seltzer-10mg-10mg-thc-10mg-cbd",
    "name": "1:1 RASPBERRY LEMON SELTZER 10MG (10MG THC/10MG CBD)",
-   "brand": "Fizzhaven",
+   "brand": "Fizzhollow",
    "category": "BEVERAGE",
    "subcategory": "SELTZER",
    "sizeG": null,
@@ -7380,9 +7380,9 @@
    "storage": "fridge"
   },
   {
-   "id": "beverage-fizzhaven-berry-lemonade-10mg",
+   "id": "beverage-fizzhollow-berry-lemonade-10mg",
    "name": "BERRY LEMONADE 10MG",
-   "brand": "Fizzhaven",
+   "brand": "Fizzhollow",
    "category": "BEVERAGE",
    "subcategory": "SELTZER",
    "sizeG": null,
@@ -7401,9 +7401,9 @@
    "storage": "fridge"
   },
   {
-   "id": "beverage-fizzhaven-lemonade-10mg",
+   "id": "beverage-fizzhollow-lemonade-10mg",
    "name": "LEMONADE 10MG",
-   "brand": "Fizzhaven",
+   "brand": "Fizzhollow",
    "category": "BEVERAGE",
    "subcategory": "SELTZER",
    "sizeG": null,
@@ -7422,9 +7422,9 @@
    "storage": "fridge"
   },
   {
-   "id": "beverage-fizzhaven-tropical-lemonade-10mg",
+   "id": "beverage-fizzhollow-tropical-lemonade-10mg",
    "name": "TROPICAL LEMONADE 10MG",
-   "brand": "Fizzhaven",
+   "brand": "Fizzhollow",
    "category": "BEVERAGE",
    "subcategory": "SELTZER",
    "sizeG": null,
@@ -11664,9 +11664,9 @@
    "storage": "FOH"
   },
   {
-   "id": "pre-pack-bundlecraft-orange-cookies-3-5g",
+   "id": "pre-pack-parcelwright-orange-cookies-3-5g",
    "name": "ORANGE COOKIES 3.5G",
-   "brand": "Bundlecraft",
+   "brand": "Parcelwright",
    "category": "PRE-PACK",
    "subcategory": "PRE-PACK",
    "sizeG": 3.5,
@@ -11685,9 +11685,9 @@
    "storage": "GAP"
   },
   {
-   "id": "pre-pack-bundlecraft-rainbow-dosi-3-5g",
+   "id": "pre-pack-parcelwright-rainbow-dosi-3-5g",
    "name": "RAINBOW DOSI 3.5G",
-   "brand": "Bundlecraft",
+   "brand": "Parcelwright",
    "category": "PRE-PACK",
    "subcategory": "PRE-PACK",
    "sizeG": 3.5,
@@ -11832,9 +11832,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-clearleaf-2-1-berry-sleepy-gummies-100mg-100mg-thc-50mg-cbn",
+   "id": "edible-glenmint-2-1-berry-sleepy-gummies-100mg-100mg-thc-50mg-cbn",
    "name": "2:1 BERRY SLEEPY GUMMIES 100MG (100MG THC/50MG CBN)",
-   "brand": "Clearleaf",
+   "brand": "Glenmint",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -11853,9 +11853,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-clearleaf-2-1-kicks-sleep-chews-100mg-100mg-thc-50mg-cbn",
+   "id": "edible-glenmint-2-1-kicks-sleep-chews-100mg-100mg-thc-50mg-cbn",
    "name": "2:1 KICKS SLEEP CHEWS 100MG (100MG THC/50MG CBN)",
-   "brand": "Clearleaf",
+   "brand": "Glenmint",
    "category": "EDIBLE",
    "subcategory": "CHEW",
    "sizeG": null,
@@ -11874,9 +11874,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-clearleaf-blue-razz-100mg",
+   "id": "edible-glenmint-blue-razz-100mg",
    "name": "BLUE RAZZ 100MG",
-   "brand": "Clearleaf",
+   "brand": "Glenmint",
    "category": "EDIBLE",
    "subcategory": "CHEW",
    "sizeG": null,
@@ -11895,9 +11895,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-clearleaf-caramels-100mg",
+   "id": "edible-glenmint-caramels-100mg",
    "name": "CARAMELS 100MG",
-   "brand": "Clearleaf",
+   "brand": "Glenmint",
    "category": "EDIBLE",
    "subcategory": "CHEW",
    "sizeG": null,
@@ -11916,9 +11916,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-clearleaf-chocolate-caramels-100mg",
+   "id": "edible-glenmint-chocolate-caramels-100mg",
    "name": "CHOCOLATE CARAMELS 100MG",
-   "brand": "Clearleaf",
+   "brand": "Glenmint",
    "category": "EDIBLE",
    "subcategory": "CHEW",
    "sizeG": null,
@@ -11937,9 +11937,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-clearleaf-fruit-punch-gummies-i-100mg",
+   "id": "edible-glenmint-fruit-punch-gummies-i-100mg",
    "name": "FRUIT PUNCH GUMMIES (I) 100MG",
-   "brand": "Clearleaf",
+   "brand": "Glenmint",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -11958,9 +11958,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-clearleaf-kicks-uplift-chews-100mg",
+   "id": "edible-glenmint-kicks-uplift-chews-100mg",
    "name": "KICKS UPLIFT CHEWS 100MG",
-   "brand": "Clearleaf",
+   "brand": "Glenmint",
    "category": "EDIBLE",
    "subcategory": "CHEW",
    "sizeG": null,
@@ -11979,9 +11979,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-clearleaf-mango-gummies-i-100mg",
+   "id": "edible-glenmint-mango-gummies-i-100mg",
    "name": "MANGO GUMMIES (I) 100MG",
-   "brand": "Clearleaf",
+   "brand": "Glenmint",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -12000,9 +12000,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-clearleaf-mango-gummies-s-100mg",
+   "id": "edible-glenmint-mango-gummies-s-100mg",
    "name": "MANGO GUMMIES (S) 100MG",
-   "brand": "Clearleaf",
+   "brand": "Glenmint",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -12021,9 +12021,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-clearleaf-strawberry-caramels-100mg",
+   "id": "edible-glenmint-strawberry-caramels-100mg",
    "name": "STRAWBERRY CARAMELS 100MG",
-   "brand": "Clearleaf",
+   "brand": "Glenmint",
    "category": "EDIBLE",
    "subcategory": "CHEW",
    "sizeG": null,
@@ -12042,9 +12042,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-clearleaf-watermelon-gummies-i-100mg",
+   "id": "edible-glenmint-watermelon-gummies-i-100mg",
    "name": "WATERMELON GUMMIES (I) 100MG",
-   "brand": "Clearleaf",
+   "brand": "Glenmint",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -12063,9 +12063,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-clearleaf-watermelon-gummies-s-100mg",
+   "id": "edible-glenmint-watermelon-gummies-s-100mg",
    "name": "WATERMELON GUMMIES (S) 100MG",
-   "brand": "Clearleaf",
+   "brand": "Glenmint",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -12420,9 +12420,9 @@
    "storage": "GAP"
   },
   {
-   "id": "preroll-wanderpod-acapulco-gold-ice-packs-infused-5pk-prerolls-2-5g",
+   "id": "preroll-roamcask-acapulco-gold-ice-packs-infused-5pk-prerolls-2-5g",
    "name": "ACAPULCO GOLD ICE PACKS INFUSED 5PK PREROLLS 2.5G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll Pack",
    "sizeG": 2.5,
@@ -12441,9 +12441,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-wanderpod-apple-twist-lr-reload-pod-1g",
+   "id": "vape-roamcask-apple-twist-lr-reload-pod-1g",
    "name": "APPLE TWIST LR RELOAD POD 1G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 1,
@@ -12462,9 +12462,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-wanderpod-apple-twist-lr-rtu-1g",
+   "id": "vape-roamcask-apple-twist-lr-rtu-1g",
    "name": "APPLE TWIST LR RTU 1G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 1,
@@ -12483,9 +12483,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-wanderpod-blue-dream-lr-reload-pod-1g",
+   "id": "vape-roamcask-blue-dream-lr-reload-pod-1g",
    "name": "BLUE DREAM LR RELOAD POD 1G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 1,
@@ -12504,9 +12504,9 @@
    "storage": "FOH"
   },
   {
-   "id": "preroll-wanderpod-blueberry-kush-ice-packs-infused-5pk-prerolls-2-5g",
+   "id": "preroll-roamcask-blueberry-kush-ice-packs-infused-5pk-prerolls-2-5g",
    "name": "BLUEBERRY KUSH ICE PACKS INFUSED 5PK PREROLLS 2.5G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll Pack",
    "sizeG": 2.5,
@@ -12525,9 +12525,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-wanderpod-granddaddy-purp-lr-reload-pod-1g",
+   "id": "vape-roamcask-granddaddy-purp-lr-reload-pod-1g",
    "name": "GRANDDADDY PURP LR RELOAD POD 1G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 1,
@@ -12546,9 +12546,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-wanderpod-granddaddy-purp-lr-rtu-1g",
+   "id": "vape-roamcask-granddaddy-purp-lr-rtu-1g",
    "name": "GRANDDADDY PURP LR RTU 1G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 1,
@@ -12567,9 +12567,9 @@
    "storage": "FOH"
   },
   {
-   "id": "merch-wanderpod-gun-metal-slim-battery",
+   "id": "merch-roamcask-gun-metal-slim-battery",
    "name": "GUN METAL SLIM BATTERY",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "MERCH",
    "subcategory": "BATTERY",
    "sizeG": null,
@@ -12588,9 +12588,9 @@
    "storage": "GAP"
   },
   {
-   "id": "preroll-wanderpod-king-louis-xiii-ice-packs-infused-preroll-1g",
+   "id": "preroll-roamcask-king-louis-xiii-ice-packs-infused-preroll-1g",
    "name": "KING LOUIS XIII ICE PACKS INFUSED PREROLL 1G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll",
    "sizeG": 1,
@@ -12609,9 +12609,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-wanderpod-magic-melon-lr-reload-pod-1g",
+   "id": "vape-roamcask-magic-melon-lr-reload-pod-1g",
    "name": "MAGIC MELON LR RELOAD POD 1G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 1,
@@ -12630,9 +12630,9 @@
    "storage": "FOH"
   },
   {
-   "id": "preroll-wanderpod-maui-waui-ice-packs-infused-5pk-prerolls-2-5g",
+   "id": "preroll-roamcask-maui-waui-ice-packs-infused-5pk-prerolls-2-5g",
    "name": "MAUI WAUI ICE PACKS INFUSED 5PK PREROLLS 2.5G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll Pack",
    "sizeG": 2.5,
@@ -12651,9 +12651,9 @@
    "storage": "FOH"
   },
   {
-   "id": "preroll-wanderpod-maui-waui-ice-packs-infused-preroll-1g",
+   "id": "preroll-roamcask-maui-waui-ice-packs-infused-preroll-1g",
    "name": "MAUI WAUI ICE PACKS INFUSED PREROLL 1G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll",
    "sizeG": 1,
@@ -12672,9 +12672,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-wanderpod-maui-waui-lr-reload-2pk-pod-2g",
+   "id": "vape-roamcask-maui-waui-lr-reload-2pk-pod-2g",
    "name": "MAUI WAUI LR RELOAD 2PK POD 2G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 2,
@@ -12693,9 +12693,9 @@
    "storage": "FOH"
   },
   {
-   "id": "preroll-wanderpod-peaches-and-cream-ice-packs-infused-5pk-prerolls-2-5g",
+   "id": "preroll-roamcask-peaches-and-cream-ice-packs-infused-5pk-prerolls-2-5g",
    "name": "PEACHES AND CREAM ICE PACKS INFUSED 5PK PREROLLS 2.5G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll Pack",
    "sizeG": 2.5,
@@ -12714,9 +12714,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-wanderpod-pineapple-express-lr-reload-2pk-pod-2g",
+   "id": "vape-roamcask-pineapple-express-lr-reload-2pk-pod-2g",
    "name": "PINEAPPLE EXPRESS LR RELOAD 2PK POD 2G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 2,
@@ -12735,9 +12735,9 @@
    "storage": "FOH"
   },
   {
-   "id": "preroll-wanderpod-purple-trainwreck-ice-packs-infused-preroll-1g",
+   "id": "preroll-roamcask-purple-trainwreck-ice-packs-infused-preroll-1g",
    "name": "PURPLE TRAINWRECK ICE PACKS INFUSED PREROLL 1G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll",
    "sizeG": 1,
@@ -12756,9 +12756,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-wanderpod-sky-og-lr-reload-2pk-pod-2g",
+   "id": "vape-roamcask-sky-og-lr-reload-2pk-pod-2g",
    "name": "SKY OG LR RELOAD 2PK POD 2G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 2,
@@ -12777,9 +12777,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-wanderpod-sour-jack-1g",
+   "id": "vape-roamcask-sour-jack-1g",
    "name": "SOUR JACK 1G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "VAPE",
    "subcategory": "510 THREAD",
    "sizeG": 1,
@@ -12798,9 +12798,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-wanderpod-strawberry-cough-lr-reload-pod-1g",
+   "id": "vape-roamcask-strawberry-cough-lr-reload-pod-1g",
    "name": "STRAWBERRY COUGH LR RELOAD POD 1G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 1,
@@ -12819,9 +12819,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-wanderpod-strawberry-cough-lr-rtu-1g",
+   "id": "vape-roamcask-strawberry-cough-lr-rtu-1g",
    "name": "STRAWBERRY COUGH LR RTU 1G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 1,
@@ -12840,9 +12840,9 @@
    "storage": "FOH"
   },
   {
-   "id": "preroll-wanderpod-watermelon-burst-ice-packs-infused-5pk-prerolls-2-5g",
+   "id": "preroll-roamcask-watermelon-burst-ice-packs-infused-5pk-prerolls-2-5g",
    "name": "WATERMELON BURST ICE PACKS INFUSED 5PK PREROLLS 2.5G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll Pack",
    "sizeG": 2.5,
@@ -12861,9 +12861,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-wanderpod-watermelon-burst-lr-reload-pod-1g",
+   "id": "vape-roamcask-watermelon-burst-lr-reload-pod-1g",
    "name": "WATERMELON BURST LR RELOAD POD 1G",
-   "brand": "Wanderpod",
+   "brand": "Roamcask",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 1,
@@ -14184,9 +14184,9 @@
    "storage": "GAP"
   },
   {
-   "id": "beverage-sipwell-blue-razz-100mg",
+   "id": "beverage-tipplemoor-blue-razz-100mg",
    "name": "BLUE RAZZ 100MG",
-   "brand": "Sipwell",
+   "brand": "Tipplemoor",
    "category": "BEVERAGE",
    "subcategory": "ELIXIR",
    "sizeG": null,
@@ -14205,9 +14205,9 @@
    "storage": "fridge"
   },
   {
-   "id": "beverage-sipwell-citrus-spark-100mg",
+   "id": "beverage-tipplemoor-citrus-spark-100mg",
    "name": "CITRUS SPARK 100MG",
-   "brand": "Sipwell",
+   "brand": "Tipplemoor",
    "category": "BEVERAGE",
    "subcategory": "ELIXIR",
    "sizeG": null,
@@ -14226,9 +14226,9 @@
    "storage": "fridge"
   },
   {
-   "id": "beverage-sipwell-wild-berry-100mg",
+   "id": "beverage-tipplemoor-wild-berry-100mg",
    "name": "WILD BERRY 100MG",
-   "brand": "Sipwell",
+   "brand": "Tipplemoor",
    "category": "BEVERAGE",
    "subcategory": "ELIXIR",
    "sizeG": null,
@@ -14247,9 +14247,9 @@
    "storage": "fridge"
   },
   {
-   "id": "beverage-sipwell-xpresso-100mg",
+   "id": "beverage-tipplemoor-xpresso-100mg",
    "name": "XPRESSO 100MG",
-   "brand": "Sipwell",
+   "brand": "Tipplemoor",
    "category": "BEVERAGE",
    "subcategory": "ELIXIR",
    "sizeG": null,
@@ -16389,9 +16389,9 @@
    "storage": "FOH"
   },
   {
-   "id": "preroll-bloomshaft-hybrid-blend-5pk-preroll-2-5g",
+   "id": "preroll-the-flower-mine-hybrid-blend-5pk-preroll-2-5g",
    "name": "HYBRID BLEND 5PK PREROLL 2.5G",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PREROLL",
    "subcategory": "PREROLL PACK",
    "sizeG": 2.5,
@@ -16410,9 +16410,9 @@
    "storage": "GAP"
   },
   {
-   "id": "preroll-bloomshaft-indica-blend-5pk-preroll-2-5g",
+   "id": "preroll-the-flower-mine-indica-blend-5pk-preroll-2-5g",
    "name": "INDICA BLEND 5PK PREROLL 2.5G",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PREROLL",
    "subcategory": "PREROLL PACK",
    "sizeG": 2.5,
@@ -16431,9 +16431,9 @@
    "storage": "GAP"
   },
   {
-   "id": "preroll-bloomshaft-infused-hybrid-blend-3pk-preroll-1-5g",
+   "id": "preroll-the-flower-mine-infused-hybrid-blend-3pk-preroll-1-5g",
    "name": "INFUSED HYBRID BLEND 3PK PREROLL 1.5G",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll Pack",
    "sizeG": 1.5,
@@ -16452,9 +16452,9 @@
    "storage": "FOH"
   },
   {
-   "id": "preroll-bloomshaft-infused-indica-blend-3pk-preroll-1-5g",
+   "id": "preroll-the-flower-mine-infused-indica-blend-3pk-preroll-1-5g",
    "name": "INFUSED INDICA BLEND 3PK PREROLL 1.5G",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll Pack",
    "sizeG": 1.5,
@@ -16473,9 +16473,9 @@
    "storage": "FOH"
   },
   {
-   "id": "preroll-bloomshaft-infused-sativa-blend-3pk-preroll-1-5g",
+   "id": "preroll-the-flower-mine-infused-sativa-blend-3pk-preroll-1-5g",
    "name": "INFUSED SATIVA BLEND 3PK PREROLL 1.5G",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll Pack",
    "sizeG": 1.5,
@@ -16494,9 +16494,9 @@
    "storage": "FOH"
   },
   {
-   "id": "pre-pack-bloomshaft-peach-lemonaze-7g-can",
+   "id": "pre-pack-the-flower-mine-peach-lemonaze-7g-can",
    "name": "PEACH LEMONAZE 7G CAN",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PRE-PACK",
    "subcategory": "PRE-PACK",
    "sizeG": 7,
@@ -16515,9 +16515,9 @@
    "storage": "GAP"
   },
   {
-   "id": "pre-pack-bloomshaft-t-rekt-7g-can",
+   "id": "pre-pack-the-flower-mine-t-rekt-7g-can",
    "name": "T-REKT 7G CAN",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PRE-PACK",
    "subcategory": "PRE-PACK",
    "sizeG": 7,
@@ -16536,9 +16536,9 @@
    "storage": "GAP"
   },
   {
-   "id": "pre-pack-bloomshaft-wookie-grease-7g-can",
+   "id": "pre-pack-the-flower-mine-wookie-grease-7g-can",
    "name": "WOOKIE GREASE 7G CAN",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PRE-PACK",
    "subcategory": "PRE-PACK",
    "sizeG": 7,
@@ -16557,9 +16557,9 @@
    "storage": "GAP"
   },
   {
-   "id": "pre-pack-bloomshaft-zero-gravity-7g-can",
+   "id": "pre-pack-the-flower-mine-zero-gravity-7g-can",
    "name": "ZERO GRAVITY 7G CAN",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PRE-PACK",
    "subcategory": "PRE-PACK",
    "sizeG": 7,
@@ -17775,9 +17775,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-pivotel-berry-dreamy-pod-1g",
+   "id": "vape-hingeway-berry-dreamy-pod-1g",
    "name": "BERRY DREAMY POD 1G",
-   "brand": "Pivotel",
+   "brand": "Hingeway",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 1,
@@ -17796,9 +17796,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-pivotel-blue-razz-lemonade-aio-2g",
+   "id": "vape-hingeway-blue-razz-lemonade-aio-2g",
    "name": "BLUE RAZZ LEMONADE AIO 2G",
-   "brand": "Pivotel",
+   "brand": "Hingeway",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 2,
@@ -17817,9 +17817,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-pivotel-blue-razz-lemonade-pod-1g",
+   "id": "vape-hingeway-blue-razz-lemonade-pod-1g",
    "name": "BLUE RAZZ LEMONADE POD 1G",
-   "brand": "Pivotel",
+   "brand": "Hingeway",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 1,
@@ -17838,9 +17838,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-pivotel-cactus-cool-aio-2g",
+   "id": "vape-hingeway-cactus-cool-aio-2g",
    "name": "CACTUS COOL AIO 2G",
-   "brand": "Pivotel",
+   "brand": "Hingeway",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 2,
@@ -17859,9 +17859,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-pivotel-cactus-cool-pod-1g",
+   "id": "vape-hingeway-cactus-cool-pod-1g",
    "name": "CACTUS COOL POD 1G",
-   "brand": "Pivotel",
+   "brand": "Hingeway",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 1,
@@ -17880,9 +17880,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-pivotel-cherry-bomb-aio-2g",
+   "id": "vape-hingeway-cherry-bomb-aio-2g",
    "name": "CHERRY BOMB AIO 2G",
-   "brand": "Pivotel",
+   "brand": "Hingeway",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 2,
@@ -17901,9 +17901,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-pivotel-cucumber-crisp-aio-2g",
+   "id": "vape-hingeway-cucumber-crisp-aio-2g",
    "name": "CUCUMBER CRISP AIO 2G",
-   "brand": "Pivotel",
+   "brand": "Hingeway",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 2,
@@ -17922,9 +17922,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-pivotel-dragon-fruit-acai-aio-2g",
+   "id": "vape-hingeway-dragon-fruit-acai-aio-2g",
    "name": "DRAGON FRUIT ACAI AIO 2G",
-   "brand": "Pivotel",
+   "brand": "Hingeway",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 2,
@@ -17943,9 +17943,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-pivotel-hot-girl-summer-aio-2g",
+   "id": "vape-hingeway-hot-girl-summer-aio-2g",
    "name": "HOT GIRL SUMMER AIO 2G",
-   "brand": "Pivotel",
+   "brand": "Hingeway",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 2,
@@ -17964,9 +17964,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-pivotel-peaches-n-cream-aio-2g",
+   "id": "vape-hingeway-peaches-n-cream-aio-2g",
    "name": "PEACHES N CREAM AIO 2G",
-   "brand": "Pivotel",
+   "brand": "Hingeway",
    "category": "VAPE",
    "subcategory": "READY TO USE",
    "sizeG": 2,
@@ -17985,9 +17985,9 @@
    "storage": "FOH"
   },
   {
-   "id": "vape-pivotel-peaches-n-cream-pod-1g",
+   "id": "vape-hingeway-peaches-n-cream-pod-1g",
    "name": "PEACHES N CREAM POD 1G",
-   "brand": "Pivotel",
+   "brand": "Hingeway",
    "category": "VAPE",
    "subcategory": "POD",
    "sizeG": 1,
@@ -19077,9 +19077,9 @@
    "storage": "GAP"
   },
   {
-   "id": "edible-pulsewell-sensi-stripes-100mg",
+   "id": "edible-beatmoor-sensi-stripes-100mg",
    "name": "SENSI STRIPES 100MG",
-   "brand": "Pulsewell",
+   "brand": "Beatmoor",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -19098,9 +19098,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-pulsewell-vegan-1-2-cran-raspberry-gummies-150mg-50mg-cbn-100mg-t",
+   "id": "edible-beatmoor-vegan-1-2-cran-raspberry-gummies-150mg-50mg-cbn-100mg-th",
    "name": "VEGAN 1:2 CRAN RASPBERRY GUMMIES 150MG (50MG CBN/100MG THC)",
-   "brand": "Pulsewell",
+   "brand": "Beatmoor",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -19119,9 +19119,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-pulsewell-vegan-2-1-kiwi-strawberry-gummies-100mg-200mg-cbd-100mg",
+   "id": "edible-beatmoor-vegan-2-1-kiwi-strawberry-gummies-100mg-200mg-cbd-100mg",
    "name": "VEGAN 2:1 KIWI STRAWBERRY GUMMIES 100MG (200MG CBD/100MG THC)",
-   "brand": "Pulsewell",
+   "brand": "Beatmoor",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -19140,9 +19140,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-pulsewell-vegan-berry-burst-gummies-100mg",
+   "id": "edible-beatmoor-vegan-berry-burst-gummies-100mg",
    "name": "VEGAN BERRY BURST GUMMIES 100MG",
-   "brand": "Pulsewell",
+   "brand": "Beatmoor",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -19161,9 +19161,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-pulsewell-vegan-black-cherry-rso-gummies-100mg",
+   "id": "edible-beatmoor-vegan-black-cherry-rso-gummies-100mg",
    "name": "VEGAN BLACK CHERRY RSO GUMMIES 100MG",
-   "brand": "Pulsewell",
+   "brand": "Beatmoor",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -19182,9 +19182,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-pulsewell-vegan-blue-raspberry-gummies-100mg",
+   "id": "edible-beatmoor-vegan-blue-raspberry-gummies-100mg",
    "name": "VEGAN BLUE RASPBERRY GUMMIES 100MG",
-   "brand": "Pulsewell",
+   "brand": "Beatmoor",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -19203,9 +19203,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-pulsewell-vegan-kiwi-strawberry-2-1-gummies-100mg",
+   "id": "edible-beatmoor-vegan-kiwi-strawberry-2-1-gummies-100mg",
    "name": "VEGAN KIWI STRAWBERRY 2:1 GUMMIES 100MG",
-   "brand": "Pulsewell",
+   "brand": "Beatmoor",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -19224,9 +19224,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-pulsewell-vegan-pineapple-gummies-100mg",
+   "id": "edible-beatmoor-vegan-pineapple-gummies-100mg",
    "name": "VEGAN PINEAPPLE GUMMIES 100MG",
-   "brand": "Pulsewell",
+   "brand": "Beatmoor",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -19245,9 +19245,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-pulsewell-vegan-tropical-mango-rso-gummies-100mg",
+   "id": "edible-beatmoor-vegan-tropical-mango-rso-gummies-100mg",
    "name": "VEGAN TROPICAL MANGO RSO GUMMIES 100MG",
-   "brand": "Pulsewell",
+   "brand": "Beatmoor",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -19266,9 +19266,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-pulsewell-vegan-watermelon-gummies-100mg",
+   "id": "edible-beatmoor-vegan-watermelon-gummies-100mg",
    "name": "VEGAN WATERMELON GUMMIES 100MG",
-   "brand": "Pulsewell",
+   "brand": "Beatmoor",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
@@ -19287,9 +19287,9 @@
    "storage": "FOH"
   },
   {
-   "id": "edible-pulsewell-watermelon-gummies-100mg",
+   "id": "edible-beatmoor-watermelon-gummies-100mg",
    "name": "WATERMELON GUMMIES 100MG",
-   "brand": "Pulsewell",
+   "brand": "Beatmoor",
    "category": "EDIBLE",
    "subcategory": "GUMMY",
    "sizeG": null,
