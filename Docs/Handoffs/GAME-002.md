@@ -21,6 +21,9 @@
 4. New [GDD] config keys: `impatientFraction` 0.5 (§5), `minLowStartJars` 3, `holdConfirmSeconds` 0.6 (UX §3.7), `npcWalkSpeed` 1.2 m/s. Tax/rounding stay in `pricing.json`.
 5. Jar LOW/SOLD OUT labels are screen-space UI projected over the jars (no world text shader dependency in HDRP).
 
+## REVIEW-W3A n1 (after merging main f3e5bc9 / GAME-003)
+- `Catalog.SetInStock` now also clears `_byKey` and the parser caches, which moved from static `Dictionary<Catalog,…>` fields into `Catalog` instance fields (`ParserNameIndex`, `ParserExcl`, `ParserTerps`). Test `SellOut_ResetsGroupLookupAndParserCaches`. After the merge: compile OK, EditMode 141/141, PlayMode 4 passed + 1 GPU skip.
+
 ## Hub compliance items (DEC-033..036), done
 - **M1** POS blocks Confirm over `adultUseLimitGrams` = 28.0 (A.R.S. 36-2858(A)(1)(c)) with "Over the 1 oz limit". Test: 28 g sells, 28.5 g is blocked with no stock change.
 - **M2** Every slice customer is a 21+ adult-use customer, ID-checked at check-in; the POS shows "✓ 21+ ID verified" (no player action).
@@ -30,7 +33,7 @@
 - Capture re-run after these changes. Afterwards the POS panel got `min-height` so the 28 g tile no longer overlaps MSRP; that CSS change has not been re-captured.
 
 ## Open / follow-ups
-- **TEMP anchors:** none of the §7 anchors exist on main; all 87 (10 points + 77 jar slots) are runtime fallbacks named `TEMP_<anchor>` under `SliceGame`, placed in plan feet (spawn 2/16.5, exit 0.6/12.5, queue x 7.5 y 11.8-17.8, service 30/10.4, player 30/5.6, terminal 30/7.6, scale 32/6.2, jars on the north wall front x 19.5-44.5 at 3/4/5 ft, then the east wall). They switch off automatically when ART-002's names exist.
+- **Anchors:** after merging main, every §7 anchor resolves from ART-002 (bot run: 0 TEMP fallbacks). The `TEMP_<anchor>` fallback code stays as a safety net.
 - **Capture hook:** `studio.ps1 unity-capture` only runs GrayboxCapture (BUILD-002 owns the script). Slice shots run as `-runTests -testPlatform PlayMode -testCategory SliceCapture -sliceCaptureDir <dir>` without `-nographics`; under `unity-test-play` that test is skipped. Ask BUILD-002 to add it.
 - Not done: keyboard focus navigation / Enter-hold on the POS, text-scale and high-contrast settings (mouse + E/Esc/M/F3 only). Slower-patience and explanation settings are hidden (REVIEW-W2B n2).
 - In the batchmode capture the jar labels draw above the jars (camera and panel sizes differ off-screen). In-game placement is not yet checked by eye.
