@@ -24,6 +24,9 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 4. **Recommendation depth** (keep the TFS tool's depth; interpret needs, follow-up questions): Gameplay, PS1b.
 5. Asset integration that unblocks the above (PROC-005, register workstation kit): Assets.
 
+## After playtest build 2 ships (Nolan: max throughput until usage resets)
+- GO `dispo-game026` (GAME-026 flow, Unity). Resume `dispo-proc-005-fixture-f` (PROC-005 rework) + `dispo-proc006b` (register kit). Reuse `dispo-build007` for the REF-013 M1 fix (DEC-115). Merge ART-007 when A2 passes. Then PROC-007 UV after PROC-005.
+
 ## Cross-department dependencies
 - Assets PROC-005 → World final-asset placement and the lived-in pass.
 - World `ROOM_FIXTURES` corrections → Assets generator sizes (registers, deli walls, office).
