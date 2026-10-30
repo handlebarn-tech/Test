@@ -24,7 +24,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30 (Assets lead `local_172b2109-6384-4914
 | Task | Worker | Branch | State |
 |---|---|---|---|
 | PROC-005 toolkit integration + checklist fixes (DEC-092) | Agent subagent (lead) | new worktree; base `claude/clever-lamport-837e7f` | resumed 2026-10-30: wire shelving fix → remaining families |
-| IMP-003 rolling toolkit audit | done | merged (e0fc82c) | rounds 3b–6 approved by Nolan (DEC-111); rejected assets kept as PROC-008/009, ASSET-005..007 |
+| IMP-003 rolling toolkit audit | done | merged (e0fc82c) | rounds 3b–6 approved by Nolan (DEC-111); rejected assets kept as PROC-009, ASSET-005..007 (PROC-008 cash tray rejected per DEC-051/086) |
 | PROC-006 register kit spec (phase 1) | done (subagent retired) | `worktree-agent-a5f8a932c9a5f07a9` @ 1070e9c | **merged to main (6af8906)**; Nolan answered (DEC-104) → PROC-006b. 13 items, 11 evidenced, GAP-REG-1..10; trash bin RK-09 added |
 | ASSET-004 MPFB2 customers | Agent subagent (lead) | new worktree; base `claude/task-asset-004` | resumed 2026-10-30; Docs reviewer `local_99d7e5b7…` |
 | PROC-006b register kit generators (DEC-104) | Agent subagent (lead) | new worktree; base main + PROC-005 core | launched 2026-10-30 |
@@ -35,7 +35,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30 (Assets lead `local_172b2109-6384-4914
 2. Each toolkit round after audit: Docs review → Hub → Nolan approval → PROC integration (DEC-095). After rounds 3–6, a research pass of our own where ChatGPT lacked evidence (IMP-003 lists the gaps).
 3. PROC-006b running; anchors bind to World's ROOM_FIXTURES rev7 (REF-011: registers + operator zones, deli walls, HUB) land — size from rev7 rows, not the current graybox; World messages when rev7 is on main; then stocking arranger with believable uneven fill; buds/nugs look (low).
 4. After ASSET-004: GAME-CHR-002 import with Gameplay (Unity), return the extra slot.
-4b. DEC-111 studio-built replacements for the rejected toolkit assets: PROC-008 (cash tray, blocked on the Hub for DEC-051), PROC-009 (vehicles), ASSET-005/006/007 (wardrobe, hair, gloves; after ASSET-004).
+4b. DEC-111 studio-built replacements for the rejected toolkit assets: PROC-008 cash tray Rejected (DEC-051/086), PROC-009 (vehicles), ASSET-005/006/007 (wardrobe, hair, gloves; after ASSET-004).
 5. Round 7 (interaction + polish, DEC-091 R7) by this studio after rounds 3–6 are integrated.
 6. BRAND-002 name search before any public build (DEC-078). Later (P1): Unity Warehouse/Office packs need a Package Manager download.
 
