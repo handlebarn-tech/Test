@@ -31,7 +31,6 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 |---|---|---|---|
 | GAME-009 medical (+ W5N m2, W5S m1/m2) | done (session `local_7f8c95e9…`, ready to archive) | `claude/task-game-009` @ 26081fa | REVIEW-PS1 with Unity B2 |
 | DATA-003 needs catalog + goldens | lead subagent | worktree | running |
-| UX-006 counter UX addendum | done | `review/ux6` @ a996ae6 | PASS with minors; merge-ready |
 | DES-005b (+ DES-007) | lead subagent | worktree | running |
 
 ## Queue (lead re-orders within DEC-096)
