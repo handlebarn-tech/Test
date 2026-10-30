@@ -176,6 +176,7 @@ namespace Dispo.Presentation.Slice
             if (kb.f3Key.wasPressedThisFrame) _view.ToggleDebug();
         }
 
+        public SliceView View => _view;
         public Camera ViewCamera => _player && _player.Eye ? _player.Eye.GetComponent<Camera>() : Camera.main;
         public bool PlayerInReach => !_player || Vector3.Distance(_player.transform.position, _terminal.position) <= InteractReach;
         public bool CustomerAtCounter => Sim.Serving != null && _npcs.TryGetValue(Sim.Serving, out var go) && Flat(go.transform.position - _service.position) < 0.3f;
