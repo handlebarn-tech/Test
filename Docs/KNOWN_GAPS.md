@@ -90,6 +90,14 @@ These gaps are defined, with placeholders and owners, in the spec named; that sp
 - GAP-DAY-08 | store | Do budtenders have a usual register | any free one | Nolan (low) | CLOSED by DEC-079
 - GAP-DAY-09 | store | Last call / door lock | CLOSED by DEC-076 (lock 22:00, inside customers served) | —
 - GAP-PROC-13 | asset | Chrome rack component sizes (post, wire, collar, caster, foot diameters); shelf count/casters answered by DEC-088 | toolkit defaults | REF/measure
+- GAP-PROC-14 | asset | Register-station prop sizes (monitor, scanners, printer, card terminal, scale body/bowl); scale stand footprint/top from RI 2.2 (Low-Med) | commercial convention | REF/measure (`Docs/Assets/Specs/PROC_PIPELINE.md` "Fixture families")
+- GAP-PROC-15 | asset | Register counter per-station width, customer-side overhang, reveal/grommet sizes, component offsets; leg-to-register mapping is ART's (DEC-039, GAP-106) | draft params | ART/REF
+- GAP-PROC-16 | asset | Deli jar-wall height, shelf count/depth, standard/pull sizes, jar pitch; deli counter depth/height/top colour and the optional case (DEC-090) | params | REF/measure
+- GAP-PROC-17 | asset | Cooler/fridge frame, door, handle and shelf sizes, freezer split, magnet layout/side | params | REF/measure
+- GAP-PROC-18 | asset | Office furniture part sizes (legs, pulls, file-cabinet count, chair parts, cart shelf heights) | params | REF/measure
+- GAP-PROC-19 | asset | Break-room locker parts, backsplash height, door widths, sink/faucet, appliance sizes, hook rail, sink cut-out position | params | REF/measure
+- GAP-PROC-20 | asset | Restroom basin/faucet/trap, toilet rim/bowl, grab-bar diameter + 1.5 in clearance (ADA convention), accessory sizes and mount heights, storage-cabinet finish | params | REF/measure
+- GAP-PROC-21 | asset | Janitor splash-guard height, mop/broom parts, rail height, mop bucket size | params | REF/measure
 
 ## DES-005 / DES-005b controls and customer flow (see `Docs/Specs/CONTROLS_FLOW_PS1.md` §8)
 - GAP-CF-01 | store | How a budtender calls the next guest | spoken call + walk-up | Nolan | CLOSED by DEC-103 (1): "Next in line!" / "Online order!" / "Next guest!"
