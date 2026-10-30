@@ -27,8 +27,8 @@ _Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…` live.
 ## In flight
 | Task | Worker | Branch | State |
 |---|---|---|---|
-| REF-011 sales-floor audit | subagent (worktree) | worktree branch, set on handoff | running |
-| REF-012 office + doors audit | subagent (done) | `worktree-agent-a2f71eef653a08c1c` 7428391 | in review (Docs 2) |
+| REF-011 sales-floor audit | subagent (done) | `worktree-agent-a3e83b7d768da38d0` 9b111fa | in review (Docs 2) |
+| REF-012 office + doors audit | subagent (done) | `worktree-agent-a2f71eef653a08c1c` e798f88 | PASS (REVIEW-REF12) → on `review/world-1` a452259 |
 
 ## Queue (lead re-orders within DEC-096)
 2. Playtest 1 layout audit against the references, room by room, before more dressing:
