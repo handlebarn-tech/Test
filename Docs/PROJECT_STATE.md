@@ -5,7 +5,7 @@
 **Updated:** 2026-10-30 ~04:15 by Hub (session 4).
 
 ## Read with this
-`Docs/HUB_RESUME.md` (HARD RULES first) · `Docs/BACKLOG.md` · last ~15 entries of `Docs/DECISIONS.md` (through DEC-050) · `Docs/Handoffs/*`.
+**Hub:** `Docs/HUB_RESUME.md` (HARD RULES first, then its reading list) + the newest DECs. **Workers:** `CLAUDE.md` → this file → your packet only.
 
 ## In flight (2026-10-30 ~04:15, Hub session 4)
 Merged this session: W4K (GAME-005), W4Q (DES-003; DEC-052..059), W4J (PERF-001), W4P (PROC-003), W4R (REF-009), W4S (UX-005), IMP-001 audit. Nolan answered N1/N2 (DEC-060/061) and the remaining room questions (DEC-062).
@@ -18,11 +18,11 @@ Merged this session: W4K (GAME-005), W4Q (DES-003; DEC-052..059), W4J (PERF-001)
 | ART-006 bud HDRP materials, then back rooms | `local_392adc04-9603-4cc9-959c-6e3e2d792743` | running | review; rooms after REF-009b |
 | REVIEW-W4T: QA-002 | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO |
 | IMP-002: integrate approved V2 pack (DEC-063) | `local_ad2c683f-9022-4d82-8d3d-2cad5d63c888` | running | docs review, merge |
-| REVIEW-W4U: REF-009b (`task-ref-009b` 233ee85) | `local_0dd63bac-df1d-448d-9203-641ead6b6837` | running | merge on GO → ART-006 rooms |
-| AUDIT-001 approval sheet (`claude/audit-001-b559c2` 2f5765d) | `local_b6a24c47-ab71-4d36-9df9-1eb188edc2b0` | **with Nolan for approval** | → Nolan approves before ANY doc change |
+| DOC-001: apply AUDIT-001 A+B+C (DEC-064), 2 phases | `local_b6a24c47-ab71-4d36-9df9-1eb188edc2b0` | phase 1 running; **Hub: don't edit BACKLOG/HUB_RESUME/KNOWN_GAPS until merged**; send phase-2 go after IMP-002 merges | → Nolan approves before ANY doc change |
 | Idle, reusable: W4P/W4Q reviewers done; free reviewer `local_c94488d7…` after W4T, `local_0dd63bac…` after W4U; QA-002 worker `local_e8fae0a3…` (fixes after W4T). Archived 2026-10-30: PERF-001, PROC-004, REF-008/W4P, GAME-005, DES-003, UX-005, W4D/W4J/IMP1 reviewer. | | | |
 
 ## Next tasks to start (dependency order)
+0. DOC-002 (AUDIT batch D) in the next gap between waves; DOC-003 (batch E) low priority. Merged this session also: W4U (REF-009b).
 1. GAME-006 cart (packet in `Docs/Tasks/Ready/`): after GAME-005 merges (same slice files). Then GAME-007 → GAME-008/009 per their packets; GAME-010 is running.
 2. ART back rooms (Office/FOH/BOH/Break) from `ROOM_FIXTURES.json` + Nolan's answers, after W4N.
 3. GAME-004 packaged goods into play: needs DATA-002 + PROC-004 (merged) + UX-002 + DES-003's integration.
