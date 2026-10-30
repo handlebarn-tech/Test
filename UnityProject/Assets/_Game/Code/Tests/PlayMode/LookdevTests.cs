@@ -39,6 +39,22 @@ namespace Dispo.PlayMode.Tests
         }
 
         [Test]
+        public void NoAccentPanel_CoversARetailCamera()
+        {
+            // REVIEW-W4F m2: a CLG-1 panel around a CCTV camera blinds its reference view
+            var cams = SceneManager.GetSceneByName("Retail").GetRootGameObjects().SelectMany(g => g.GetComponentsInChildren<Camera>(true))
+                .Where(c => c.name.StartsWith("REF_") && c.name.EndsWith("_Retail")).ToArray();
+            Assert.IsNotEmpty(cams, "no Retail reference cameras");
+            foreach (var panel in Parts("CLG1_Panel_").Where(r => !r.name.EndsWith("cable")))
+                foreach (var cam in cams)
+                {
+                    var b = panel.bounds;
+                    var p = cam.transform.position;
+                    Assert.IsFalse(p.x >= b.min.x && p.x <= b.max.x && p.z >= b.min.z && p.z <= b.max.z, $"{panel.name} covers {cam.name}");
+                }
+        }
+
+        [Test]
         public void Lights_Are3500K_AndSliceAnchorsStillAboveCounter()
         {
             var lights = SceneManager.GetSceneByName("Retail_Lookdev").GetRootGameObjects().SelectMany(g => g.GetComponentsInChildren<Light>(true)).ToArray();
