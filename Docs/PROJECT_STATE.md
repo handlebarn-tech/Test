@@ -2,30 +2,28 @@
 
 **Milestone:** vertical slice PLAYABLE on main (2026-10-29). Wave 4 (lookdev, real jars, packaged goods, perf) is landing. Next milestone: **PS1** (cart, limit meter, ID checks, medical, tuning; `Docs/Design/ROADMAP_POST_SLICE.md`), extended by Nolan's decision-pressure spec (DES-003).
 **Main:** see `git log`; every merge is a reviewed `review/wave-*` branch.
-**Updated:** 2026-10-30 ~04:15 by Hub (session 4).
+**Updated:** 2026-10-30 ~05:30 by Hub (session 4), main 0fca821.
 
 ## Read with this
 **Hub:** `Docs/HUB_RESUME.md` (HARD RULES first, then its reading list) + the newest DECs. **Workers:** `CLAUDE.md` → this file → your packet only.
 
-## In flight (2026-10-30 ~04:15, Hub session 4)
-Merged this session: W4K (GAME-005), W4Q (DES-003; DEC-052..059), W4J (PERF-001), W4P (PROC-003), W4R (REF-009), W4S (UX-005), IMP-001 audit. Nolan answered N1/N2 (DEC-060/061) and the remaining room questions (DEC-062).
+## In flight (as of main 0fca821, 2026-10-30 ~05:30; verify with `list_sessions {"linked": true}`)
+Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, W4R REF-009, W4S UX-005, IMP-001, W4U REF-009b, W4V IMP-002, W4T QA-002, W4X DOC-001, W4W GAME-006. DECs 052–068.
 
 | Work | Session | State | Next Hub step |
 |---|---|---|---|
-| REVIEW-W4W: GAME-006 cart (19b2866; reviewer fixed PerfCapture compile break) | `local_0dd63bac-df1d-448d-9203-641ead6b6837` (worker `local_7f8c95e9…` idle for fixes) | running | merge on GO → GAME-007 |
-| QA-002b Gate A with ParserOptions.Game (W4T m1; QA-002 merged) | `local_e8fae0a3-19cd-429a-b0fa-e555c65a23ec` | running | review; must merge before GAME-017 |
-| GAME-010 tuning + personas | `local_0d166a8e-87b1-40bb-9594-be389c549875` | grid 2 running | review |
-| ART-006 bud materials + back rooms (`claude/task-art-006` 6871fb3) | `local_392adc04-9603-4cc9-959c-6e3e2d792743` | placing restroom storage cabinet by the door (DEC-068); ROOM_FIXTURES still old placement → next REF pass | Unity review (next free reviewer) |
-| REVIEW-W4T: QA-002 | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO |
-| DOC-003: AUDIT batch E (low priority) | `local_b6a24c47-ab71-4d36-9df9-1eb188edc2b0` | running; DOC-002 (batch D) waits for a gap between waves | **Hub: don't edit BACKLOG/HUB_RESUME/KNOWN_GAPS until merged**; send phase-2 go after IMP-002 merges | → Nolan approves before ANY doc change |
-| Idle, reusable: W4P/W4Q reviewers done; free reviewer `local_c94488d7…` after W4T, `local_0dd63bac…` after W4U; QA-002 worker `local_e8fae0a3…` (fixes after W4T). Archived 2026-10-30: PERF-001, PROC-004, REF-008/W4P, GAME-005, DES-003, UX-005, W4D/W4J/IMP1 reviewer. | | | |
+| GAME-007 limit meter + strikes (+ W4W m1/m2/m4) | `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | running | Unity review → GAME-008 |
+| GAME-010 tuning + personas (merging cart; W4W m3) | `local_0d166a8e-87b1-40bb-9594-be389c549875` | grid 3 | review |
+| ART-006 bud materials + back rooms (`claude/task-art-006`) | `local_392adc04-9603-4cc9-959c-6e3e2d792743` | moving restroom storage cabinet by the door (DEC-068) | Unity review; ROOM_FIXTURES old cabinet spot → next REF pass |
+| REVIEW-W4Y: QA-002b (45a1031) | `local_0dd63bac-df1d-448d-9203-641ead6b6837` (worker `local_e8fae0a3…` idle) | running | merge on GO (before GAME-017) |
+| REVIEW-W4Z: DOC-003 (d0f3028) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` (worker `local_b6a24c47…` idle; keeps context for DOC-002) | running | merge on GO |
 
 ## Next tasks to start (dependency order)
 0. DOC-002 (AUDIT batch D) in the next gap between waves; DOC-003 (batch E) low priority. Merged this session also: W4U (REF-009b), W4V (IMP-002), W4T (QA-002; DEC-067), W4X (DOC-001). Free reviewer: `local_c94488d7…`.
-1. GAME-006 cart (packet in `Docs/Tasks/Ready/`): after GAME-005 merges (same slice files). Then GAME-007 → GAME-008/009 per their packets; GAME-010 is running.
-2. ART back rooms (Office/FOH/BOH/Break) from `ROOM_FIXTURES.json` + Nolan's answers, after W4N.
+1. PS1 chain: GAME-007 (running) → GAME-008 → GAME-009 (serialised, DEC-064 A3); then PS1b GAME-017 after GAME-007/010 + QA-002b.
+2. REF pass: ROOM_FIXTURES restroom cabinet → by the door (DEC-068).
 3. GAME-004 packaged goods into play: needs DATA-002 + PROC-004 (merged) + UX-002 + DES-003's integration.
-4. A bud material pass (buds render white; GAME-005 note), ART or PROC.
+4. A playable build for Nolan after GAME-006/ART-006 (session, never the Hub).
 5. Whatever DES-003 creates for genuine gaps.
 
 ## Open questions for Nolan
