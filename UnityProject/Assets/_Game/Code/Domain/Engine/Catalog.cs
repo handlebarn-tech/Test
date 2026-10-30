@@ -20,6 +20,8 @@ namespace Dispo.Domain.Engine
     {
         public string Id, Name, Cls;
         public Dictionary<string, double> D;
+        /// <summary>DB[t].aliases (search names, as written in the tool); empty when the catalog predates importer 1.1.0.</summary>
+        public List<string> Aliases = new List<string>();
     }
 
     public sealed class IntentEntry
@@ -46,10 +48,24 @@ namespace Dispo.Domain.Engine
         public Dictionary<int, Dictionary<string, double>> ClusterBonus;
         public Dictionary<string, double> TierNudge;
         public PriceTables Pricing;
+        /// <summary>Parser regex tables (parser_tables.json); null when Load got no parser JSON.</summary>
+        public ParserTables Parser;
 
         List<StrainGroup> _groups;
+        Dictionary<string, StrainGroup> _byKey;
+        // QueryParser caches live on the catalog (not static dictionaries keyed by it) so they die with it and SetInStock can clear them.
+        internal List<(string key, string n)> ParserNameIndex;
+        internal QueryParser.ExclRegexes ParserExcl;
+        internal List<(string a, Regex re, string id)> ParserTerps;
 
-        public static Catalog Load(string batchesJson, string terpenesJson, string tablesJson, string pricingJson)
+        /// <summary>The group for a normName key, or null.</summary>
+        public StrainGroup Group(string key)
+        {
+            if (_byKey == null) _byKey = Groups().ToDictionary(g => g.Key);
+            return key != null && _byKey.TryGetValue(key, out var g) ? g : null;
+        }
+
+        public static Catalog Load(string batchesJson, string terpenesJson, string tablesJson, string pricingJson, string parserJson = null)
         {
             var c = new Catalog();
             var b = Obj(Json.Parse(batchesJson));
@@ -69,7 +85,8 @@ namespace Dispo.Domain.Engine
             var t = Obj(Json.Parse(terpenesJson));
             c.Domains = Arr(t["domains"]).Cast<string>().ToList();
             c.Terpenes = Arr(t["terpenes"]).Select(Obj).ToDictionary(x => (string)x["id"],
-                x => new Terpene { Id = (string)x["id"], Name = (string)x["name"], Cls = (string)x["cls"], D = Nums(x["d"]) });
+                x => new Terpene { Id = (string)x["id"], Name = (string)x["name"], Cls = (string)x["cls"], D = Nums(x["d"]),
+                    Aliases = x.TryGetValue("aliases", out var al) ? Arr(al).Cast<string>().ToList() : new List<string>() });
             c.BaScalars = Nums(t["baScalars"]);
 
             var e = Obj(Json.Parse(tablesJson));
@@ -82,6 +99,7 @@ namespace Dispo.Domain.Engine
             c.TierNudge = Nums(e["tierNudge"]);
 
             c.Pricing = PriceTables.FromJson(Obj(Json.Parse(pricingJson)));
+            if (parserJson != null) c.Parser = ParserTables.FromJson(Obj(Json.Parse(parserJson)));
             return c;
         }
 
@@ -109,12 +127,21 @@ namespace Dispo.Domain.Engine
             return _groups = list;
         }
 
+        /// <summary>Live stock (GAME-002 S1): set a batch's in-stock flag and drop the cached groups so the
+        /// in-stock-first order (rep batch) and averaged profiles follow it (batchInStock L15472, averageProfile L15483).</summary>
+        public void SetInStock(string batchId, bool inStock)
+        {
+            Batches.Single(b => b.Id == batchId).InStock = inStock;
+            _groups = null; _byKey = null;
+            ParserNameIndex = null; ParserExcl = null; ParserTerps = null;
+        }
+
         static DateTime? ParseDate(string s) =>
             s != null && DateTime.TryParseExact(s, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out var d) ? d : (DateTime?)null;
 
         internal static Dictionary<string, object> Obj(object o) => (Dictionary<string, object>)o;
         internal static List<object> Arr(object o) => (List<object>)o;
         internal static Dictionary<string, double> Nums(object o) => Obj(o).ToDictionary(kv => kv.Key, kv => (double)kv.Value);
-        static Dictionary<string, int> Ints(object o) => Obj(o).ToDictionary(kv => kv.Key, kv => (int)(double)kv.Value);
+        internal static Dictionary<string, int> Ints(object o) => Obj(o).ToDictionary(kv => kv.Key, kv => (int)(double)kv.Value);
     }
 }

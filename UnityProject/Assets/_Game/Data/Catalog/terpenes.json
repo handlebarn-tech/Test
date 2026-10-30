@@ -19,7 +19,13 @@
     "pain_inflammation": 0.65,
     "focus_cognitive": -0.15,
     "antimicrobial": 0.2
-   }
+   },
+   "aliases": [
+    "beta-myrcene",
+    "β-myrcene",
+    "b-myrcene",
+    "myrcene"
+   ]
   },
   {
    "id": "dl_limonene",
@@ -32,7 +38,14 @@
     "pain_inflammation": 0.35,
     "focus_cognitive": 0.5,
     "antimicrobial": 0.4
-   }
+   },
+   "aliases": [
+    "d-limonene",
+    "dl-limonene",
+    "d,l-limonene",
+    "limonene",
+    "d-l-limonene"
+   ]
   },
   {
    "id": "beta_caryophyllene",
@@ -45,7 +58,15 @@
     "pain_inflammation": 1,
     "focus_cognitive": 0.1,
     "antimicrobial": 0.5
-   }
+   },
+   "aliases": [
+    "beta-caryophyllene",
+    "β-caryophyllene",
+    "b-caryophyllene",
+    "trans-caryophyllene",
+    "caryophyllene",
+    "trans-β-caryophyllene"
+   ]
   },
   {
    "id": "alpha_humulene",
@@ -58,7 +79,13 @@
     "pain_inflammation": 0.9,
     "focus_cognitive": 0,
     "antimicrobial": 0.6
-   }
+   },
+   "aliases": [
+    "alpha-humulene",
+    "α-humulene",
+    "a-humulene",
+    "humulene"
+   ]
   },
   {
    "id": "linalool",
@@ -71,7 +98,10 @@
     "pain_inflammation": 0.5,
     "focus_cognitive": -0.1,
     "antimicrobial": 0.35
-   }
+   },
+   "aliases": [
+    "linalool"
+   ]
   },
   {
    "id": "beta_pinene",
@@ -84,7 +114,12 @@
     "pain_inflammation": 0.3,
     "focus_cognitive": 0.45,
     "antimicrobial": 0.45
-   }
+   },
+   "aliases": [
+    "beta-pinene",
+    "β-pinene",
+    "b-pinene"
+   ]
   },
   {
    "id": "alpha_pinene",
@@ -97,7 +132,12 @@
     "pain_inflammation": 0.4,
     "focus_cognitive": 0.9,
     "antimicrobial": 0.4
-   }
+   },
+   "aliases": [
+    "alpha-pinene",
+    "α-pinene",
+    "a-pinene"
+   ]
   },
   {
    "id": "alpha_bisabolol",
@@ -110,7 +150,14 @@
     "pain_inflammation": 0.6,
     "focus_cognitive": 0,
     "antimicrobial": 0.45
-   }
+   },
+   "aliases": [
+    "alpha-bisabolol",
+    "α-bisabolol",
+    "a-bisabolol",
+    "bisabolol",
+    "(-)-α-bisabolol"
+   ]
   },
   {
    "id": "alpha_terpineol",
@@ -123,7 +170,13 @@
     "pain_inflammation": 0.45,
     "focus_cognitive": -0.1,
     "antimicrobial": 0.55
-   }
+   },
+   "aliases": [
+    "alpha-terpineol",
+    "α-terpineol",
+    "a-terpineol",
+    "terpineol"
+   ]
   },
   {
    "id": "fenchyl_alcohol",
@@ -136,7 +189,14 @@
     "pain_inflammation": 0.45,
     "focus_cognitive": 0.25,
     "antimicrobial": 0.75
-   }
+   },
+   "aliases": [
+    "fenchyl alcohol",
+    "endo-fenchyl alcohol",
+    "endo fenchyl alcohol",
+    "fenchol",
+    "fenchyl-alcohol"
+   ]
   },
   {
    "id": "trans_beta_ocimene",
@@ -149,7 +209,15 @@
     "pain_inflammation": 0.35,
     "focus_cognitive": 0.3,
     "antimicrobial": 0.55
-   }
+   },
+   "aliases": [
+    "trans-beta-ocimene",
+    "trans-β-ocimene",
+    "trans beta ocimene",
+    "beta-ocimene",
+    "ocimene",
+    "(e)-β-ocimene"
+   ]
   },
   {
    "id": "nerolidol",
@@ -162,7 +230,13 @@
     "pain_inflammation": 0.28,
     "focus_cognitive": -0.05,
     "antimicrobial": 0.65
-   }
+   },
+   "aliases": [
+    "nerolidol",
+    "trans-nerolidol",
+    "(e)-nerolidol",
+    "trans nerolidol"
+   ]
   },
   {
    "id": "fenchone",
@@ -175,7 +249,10 @@
     "pain_inflammation": 0.25,
     "focus_cognitive": 0.3,
     "antimicrobial": 0.4
-   }
+   },
+   "aliases": [
+    "fenchone"
+   ]
   },
   {
    "id": "caryophyllene_oxide",
@@ -188,7 +265,11 @@
     "pain_inflammation": 0.15,
     "focus_cognitive": 0,
     "antimicrobial": 0.65
-   }
+   },
+   "aliases": [
+    "caryophyllene oxide",
+    "beta-caryophyllene oxide"
+   ]
   },
   {
    "id": "camphene",
@@ -201,7 +282,10 @@
     "pain_inflammation": 0.45,
     "focus_cognitive": 0.1,
     "antimicrobial": 0.55
-   }
+   },
+   "aliases": [
+    "camphene"
+   ]
   },
   {
    "id": "camphor",
@@ -214,7 +298,10 @@
     "pain_inflammation": 0.4,
     "focus_cognitive": 0.05,
     "antimicrobial": 0.45
-   }
+   },
+   "aliases": [
+    "camphor"
+   ]
   },
   {
    "id": "isoborneol",
@@ -227,7 +314,10 @@
     "pain_inflammation": 0.25,
     "focus_cognitive": 0,
     "antimicrobial": 0.55
-   }
+   },
+   "aliases": [
+    "isoborneol"
+   ]
   },
   {
    "id": "dl_borneol",
@@ -240,7 +330,12 @@
     "pain_inflammation": 0.45,
     "focus_cognitive": 0.05,
     "antimicrobial": 0.45
-   }
+   },
+   "aliases": [
+    "dl-borneol",
+    "d,l-borneol",
+    "borneol"
+   ]
   },
   {
    "id": "terpinolene",
@@ -253,7 +348,10 @@
     "pain_inflammation": 0.4,
     "focus_cognitive": 0.35,
     "antimicrobial": 0.45
-   }
+   },
+   "aliases": [
+    "terpinolene"
+   ]
   },
   {
    "id": "sabinene_hydrate",
@@ -266,7 +364,11 @@
     "pain_inflammation": 0.35,
     "focus_cognitive": 0,
     "antimicrobial": 0.45
-   }
+   },
+   "aliases": [
+    "sabinene hydrate",
+    "trans-sabinene hydrate"
+   ]
   },
   {
    "id": "citronellol",
@@ -279,7 +381,10 @@
     "pain_inflammation": 0.2,
     "focus_cognitive": 0,
     "antimicrobial": 0.55
-   }
+   },
+   "aliases": [
+    "citronellol"
+   ]
   },
   {
    "id": "geraniol",
@@ -292,7 +397,10 @@
     "pain_inflammation": 0.25,
     "focus_cognitive": 0.05,
     "antimicrobial": 0.5
-   }
+   },
+   "aliases": [
+    "geraniol"
+   ]
   },
   {
    "id": "alpha_terpinene",
@@ -305,7 +413,12 @@
     "pain_inflammation": 0.45,
     "focus_cognitive": 0.2,
     "antimicrobial": 0.5
-   }
+   },
+   "aliases": [
+    "alpha-terpinene",
+    "α-terpinene",
+    "a-terpinene"
+   ]
   },
   {
    "id": "terpinen_4_ol",
@@ -318,7 +431,12 @@
     "pain_inflammation": 0.6,
     "focus_cognitive": 0.35,
     "antimicrobial": 0.9
-   }
+   },
+   "aliases": [
+    "terpinen-4-ol",
+    "terpinene-4-ol",
+    "4-terpineol"
+   ]
   },
   {
    "id": "three_carene",
@@ -331,7 +449,12 @@
     "pain_inflammation": 0.45,
     "focus_cognitive": 0.45,
     "antimicrobial": 0.45
-   }
+   },
+   "aliases": [
+    "3-carene",
+    "delta-3-carene",
+    "3 carene"
+   ]
   },
   {
    "id": "guaiol",
@@ -344,7 +467,10 @@
     "pain_inflammation": 0.45,
     "focus_cognitive": 0,
     "antimicrobial": 0.5
-   }
+   },
+   "aliases": [
+    "guaiol"
+   ]
   },
   {
    "id": "alpha_phellandrene",
@@ -357,7 +483,12 @@
     "pain_inflammation": 0.45,
     "focus_cognitive": 0.1,
     "antimicrobial": 0.55
-   }
+   },
+   "aliases": [
+    "alpha-phellandrene",
+    "α-phellandrene",
+    "a-phellandrene"
+   ]
   },
   {
    "id": "gamma_terpinene",
@@ -370,7 +501,12 @@
     "pain_inflammation": 0.6,
     "focus_cognitive": 0,
     "antimicrobial": 0.55
-   }
+   },
+   "aliases": [
+    "gamma-terpinene",
+    "γ-terpinene",
+    "g-terpinene"
+   ]
   },
   {
    "id": "cis_farnesol",
@@ -383,7 +519,11 @@
     "pain_inflammation": 0.3,
     "focus_cognitive": 0,
     "antimicrobial": 0.5
-   }
+   },
+   "aliases": [
+    "cis-farnesol",
+    "farnesol"
+   ]
   },
   {
    "id": "sabinene",
@@ -396,7 +536,10 @@
     "pain_inflammation": 0.4,
     "focus_cognitive": 0.05,
     "antimicrobial": 0.55
-   }
+   },
+   "aliases": [
+    "sabinene"
+   ]
   },
   {
    "id": "eucalyptol",
@@ -409,7 +552,12 @@
     "pain_inflammation": 0.55,
     "focus_cognitive": 0.35,
     "antimicrobial": 0.7
-   }
+   },
+   "aliases": [
+    "eucalyptol",
+    "1,8-cineole",
+    "cineole"
+   ]
   },
   {
    "id": "nootkatone",
@@ -422,7 +570,10 @@
     "pain_inflammation": 0.1,
     "focus_cognitive": 0.1,
     "antimicrobial": 0.2
-   }
+   },
+   "aliases": [
+    "nootkatone"
+   ]
   },
   {
    "id": "valencene",
@@ -435,7 +586,10 @@
     "pain_inflammation": 0.35,
     "focus_cognitive": 0.2,
     "antimicrobial": 0.25
-   }
+   },
+   "aliases": [
+    "valencene"
+   ]
   },
   {
    "id": "nerol",
@@ -448,7 +602,10 @@
     "pain_inflammation": 0.2,
     "focus_cognitive": 0,
     "antimicrobial": 0.4
-   }
+   },
+   "aliases": [
+    "nerol"
+   ]
   },
   {
    "id": "cedrol",
@@ -461,7 +618,10 @@
     "pain_inflammation": 0.3,
     "focus_cognitive": 0,
     "antimicrobial": 0.4
-   }
+   },
+   "aliases": [
+    "cedrol"
+   ]
   },
   {
    "id": "l_menthone",
@@ -474,7 +634,11 @@
     "pain_inflammation": 0.3,
     "focus_cognitive": 0.2,
     "antimicrobial": 0.45
-   }
+   },
+   "aliases": [
+    "l-menthone",
+    "menthone"
+   ]
   },
   {
    "id": "trans_nerolidol",
@@ -487,7 +651,12 @@
     "pain_inflammation": 0.28,
     "focus_cognitive": -0.05,
     "antimicrobial": 0.7
-   }
+   },
+   "aliases": [
+    "trans-nerolidol",
+    "trans nerolidol",
+    "trans beta nerolidol"
+   ]
   },
   {
    "id": "alpha_cedrene",
@@ -500,7 +669,13 @@
     "pain_inflammation": 0.3,
     "focus_cognitive": 0.05,
     "antimicrobial": 0.35
-   }
+   },
+   "aliases": [
+    "alpha-cedrene",
+    "α-cedrene",
+    "a-cedrene",
+    "alpha cedrene"
+   ]
   },
   {
    "id": "alpha_thujone",
@@ -513,7 +688,13 @@
     "pain_inflammation": 0.1,
     "focus_cognitive": 0.05,
     "antimicrobial": 0.3
-   }
+   },
+   "aliases": [
+    "alpha-thujone",
+    "α-thujone",
+    "a-thujone",
+    "alpha thujone"
+   ]
   },
   {
    "id": "carvone",
@@ -526,7 +707,13 @@
     "pain_inflammation": 0.2,
     "focus_cognitive": 0.05,
     "antimicrobial": 0.5
-   }
+   },
+   "aliases": [
+    "carvone",
+    "l-carvone",
+    "d-carvone",
+    "dl-carvone"
+   ]
   },
   {
    "id": "geranyl_acetate",
@@ -539,7 +726,11 @@
     "pain_inflammation": 0.25,
     "focus_cognitive": 0,
     "antimicrobial": 0.45
-   }
+   },
+   "aliases": [
+    "geranyl acetate",
+    "geranyl-acetate"
+   ]
   },
   {
    "id": "isobornyl_acetate",
@@ -552,7 +743,11 @@
     "pain_inflammation": 0.2,
     "focus_cognitive": 0,
     "antimicrobial": 0.5
-   }
+   },
+   "aliases": [
+    "isobornyl acetate",
+    "isobornyl-acetate"
+   ]
   },
   {
    "id": "isopulegol",
@@ -565,7 +760,11 @@
     "pain_inflammation": 0.3,
     "focus_cognitive": 0.05,
     "antimicrobial": 0.5
-   }
+   },
+   "aliases": [
+    "isopulegol",
+    "iso-pulegol"
+   ]
   },
   {
    "id": "m_cymene",
@@ -578,7 +777,12 @@
     "pain_inflammation": 0.4,
     "focus_cognitive": 0.1,
     "antimicrobial": 0.55
-   }
+   },
+   "aliases": [
+    "m-cymene",
+    "meta-cymene",
+    "m cymene"
+   ]
   },
   {
    "id": "menthol",
@@ -591,7 +795,12 @@
     "pain_inflammation": 0.4,
     "focus_cognitive": 0.15,
     "antimicrobial": 0.6
-   }
+   },
+   "aliases": [
+    "menthol",
+    "l-menthol",
+    "dl-menthol"
+   ]
   },
   {
    "id": "o_p_cymene",
@@ -604,7 +813,16 @@
     "pain_inflammation": 0.4,
     "focus_cognitive": 0.1,
     "antimicrobial": 0.55
-   }
+   },
+   "aliases": [
+    "o,p-cymene",
+    "op-cymene",
+    "p-cymene",
+    "para-cymene",
+    "o-cymene",
+    "ortho-cymene",
+    "p cymene"
+   ]
   },
   {
    "id": "octyl_acetate",
@@ -617,7 +835,11 @@
     "pain_inflammation": 0,
     "focus_cognitive": 0,
     "antimicrobial": 0.15
-   }
+   },
+   "aliases": [
+    "octyl acetate",
+    "octyl-acetate"
+   ]
   },
   {
    "id": "phytane",
@@ -630,7 +852,10 @@
     "pain_inflammation": 0,
     "focus_cognitive": 0,
     "antimicrobial": 0.05
-   }
+   },
+   "aliases": [
+    "phytane"
+   ]
   },
   {
    "id": "piperitone",
@@ -643,7 +868,10 @@
     "pain_inflammation": 0.3,
     "focus_cognitive": 0.1,
     "antimicrobial": 0.55
-   }
+   },
+   "aliases": [
+    "piperitone"
+   ]
   },
   {
    "id": "pulegone",
@@ -656,7 +884,10 @@
     "pain_inflammation": 0.15,
     "focus_cognitive": 0.05,
     "antimicrobial": 0.45
-   }
+   },
+   "aliases": [
+    "pulegone"
+   ]
   },
   {
    "id": "thymol",
@@ -669,7 +900,10 @@
     "pain_inflammation": 0.6,
     "focus_cognitive": 0.05,
     "antimicrobial": 0.9
-   }
+   },
+   "aliases": [
+    "thymol"
+   ]
   },
   {
    "id": "trans_citral",
@@ -682,7 +916,14 @@
     "pain_inflammation": 0.35,
     "focus_cognitive": 0.1,
     "antimicrobial": 0.65
-   }
+   },
+   "aliases": [
+    "trans-citral",
+    "trans citral",
+    "geranial",
+    "citral a",
+    "citral-a"
+   ]
   },
   {
    "id": "verbenone",
@@ -695,7 +936,10 @@
     "pain_inflammation": 0.3,
     "focus_cognitive": 0.1,
     "antimicrobial": 0.5
-   }
+   },
+   "aliases": [
+    "verbenone"
+   ]
   },
   {
    "id": "carvacrol",
@@ -708,7 +952,10 @@
     "pain_inflammation": 0.65,
     "focus_cognitive": 0.05,
     "antimicrobial": 0.95
-   }
+   },
+   "aliases": [
+    "carvacrol"
+   ]
   },
   {
    "id": "alpha_bergamotene",
@@ -721,7 +968,13 @@
     "pain_inflammation": 0.35,
     "focus_cognitive": 0.15,
     "antimicrobial": 0.35
-   }
+   },
+   "aliases": [
+    "alpha-bergamotene",
+    "a-bergamotene",
+    "alpha bergamotene",
+    "bergamotene"
+   ]
   },
   {
    "id": "beta_farnesene",
@@ -734,7 +987,14 @@
     "pain_inflammation": 0.4,
     "focus_cognitive": 0.05,
     "antimicrobial": 0.4
-   }
+   },
+   "aliases": [
+    "beta-farnesene",
+    "b-farnesene",
+    "beta farnesene",
+    "farnesene",
+    "alpha-farnesene"
+   ]
   },
   {
    "id": "germacrene_d",
@@ -747,7 +1007,12 @@
     "pain_inflammation": 0.45,
     "focus_cognitive": 0,
     "antimicrobial": 0.5
-   }
+   },
+   "aliases": [
+    "germacrene d",
+    "germacrene-d",
+    "germacrene"
+   ]
   },
   {
    "id": "alpha_bisabolene",
@@ -760,7 +1025,13 @@
     "pain_inflammation": 0.35,
     "focus_cognitive": 0,
     "antimicrobial": 0.4
-   }
+   },
+   "aliases": [
+    "alpha-bisabolene",
+    "a-bisabolene",
+    "alpha bisabolene",
+    "bisabolene"
+   ]
   },
   {
    "id": "aromadendrene",
@@ -773,7 +1044,10 @@
     "pain_inflammation": 0.4,
     "focus_cognitive": 0,
     "antimicrobial": 0.5
-   }
+   },
+   "aliases": [
+    "aromadendrene"
+   ]
   },
   {
    "id": "beta_eudesmol",
@@ -786,7 +1060,12 @@
     "pain_inflammation": 0,
     "focus_cognitive": 0,
     "antimicrobial": 0
-   }
+   },
+   "aliases": [
+    "beta-eudesmol",
+    "b-eudesmol",
+    "beta eudesmol"
+   ]
   }
  ],
  "baScalars": {

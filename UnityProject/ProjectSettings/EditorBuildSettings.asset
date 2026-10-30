@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/_Game/Scenes/Lighting_Night.unity
     guid: 33ad9a22df38e194e94dbae43067d467
   - enabled: 1
+    path: Assets/_Game/Scenes/Gameplay_Slice.unity
+    guid: e396b0d8b4ab80048bc842d5ee64016b
+  - enabled: 1
     path: Assets/_Game/Scenes/Retail_Lookdev.unity
-    guid: 00000000000000000000000000000000
+    guid: fda4b809a61348c4fb3c553a28fb87d1
   m_configObjects: {}

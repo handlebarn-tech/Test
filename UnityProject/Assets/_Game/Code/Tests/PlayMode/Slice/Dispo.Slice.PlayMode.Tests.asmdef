@@ -1,0 +1,9 @@
+{
+    "name": "Dispo.Slice.PlayMode.Tests",
+    "rootNamespace": "Dispo.Slice.PlayMode.Tests",
+    "references": ["Dispo.Domain", "Dispo.Simulation", "Dispo.Presentation", "Unity.RenderPipelines.Core.Runtime", "Unity.RenderPipelines.HighDefinition.Runtime", "UnityEngine.TestRunner", "UnityEditor.TestRunner"],
+    "overrideReferences": true,
+    "precompiledReferences": ["nunit.framework.dll"],
+    "autoReferenced": false,
+    "defineConstraints": ["UNITY_INCLUDE_TESTS"]
+}
