@@ -40,7 +40,7 @@ def render_station(st, path):
     a, h = AR["anchors"], st["top_half_width_m"]
     (su0, su1), (sv0, sv1) = st["stand_m"]["u"], st["stand_m"]["v"]
     slab("Ctx_Top", -h, h, 0, a["TOP"]["v_m"][1], a["TOP"]["z_m"], 0.04)
-    for k in ("UNDER_UPPER", "UNDER_LOWER"):
+    for k in ("UNDER_SHELF",):
         slab("Ctx_" + k, -h, h, 0, a[k]["v_m"][1], a[k]["z_m"])
     slab("Ctx_StandTop", su0, su1, sv0, sv1, a["STAND_RAIL"]["z_m"])
     slab("Ctx_StandLower", su0, su1, sv0, sv1, a["STAND_LOWER"]["z_m"])

@@ -8595,12 +8595,11 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
-          "UNDER_UPPER",
-          "UNDER_LOWER"
+          "UNDER_SHELF"
         ],
         "facing": "-Y Blender / +Z Unity faces the operator",
         "fixed_every_register": false,
@@ -9019,7 +9018,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -10170,7 +10169,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -10760,7 +10759,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -11184,11 +11183,11 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
-          "UNDER_LOWER",
+          "UNDER_SHELF",
           "STAND_LOWER"
         ],
         "facing": "-Y Blender / +Z Unity faces the operator",
@@ -11708,11 +11707,11 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
-          "UNDER_LOWER",
+          "UNDER_SHELF",
           "STAND_LOWER"
         ],
         "facing": "-Y Blender / +Z Unity faces the operator",
@@ -11935,11 +11934,11 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
-          "UNDER_UPPER_EDGE",
+          "UNDER_SHELF_EDGE",
           "STAND_EDGE"
         ],
         "attach_point_unity_xyz": [
@@ -12166,12 +12165,12 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
           "TOP",
-          "UNDER_UPPER",
+          "UNDER_SHELF",
           "STAND_LOWER"
         ],
         "facing": "-Y Blender / +Z Unity faces the operator",
@@ -13020,7 +13019,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -13707,7 +13706,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -14399,7 +14398,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -14795,12 +14794,11 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
-          "UNDER_UPPER",
-          "UNDER_LOWER"
+          "UNDER_SHELF"
         ],
         "facing": "-Y Blender / +Z Unity faces the operator",
         "fixed_every_register": false,
@@ -15219,11 +15217,11 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
-          "UNDER_LOWER",
+          "UNDER_SHELF",
           "FLOOR_STAND"
         ],
         "facing": "-Y Blender / +Z Unity faces the operator",
@@ -15611,7 +15609,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -16134,12 +16132,12 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
           "TOP",
-          "UNDER_UPPER"
+          "UNDER_SHELF"
         ],
         "facing": "-Y Blender / +Z Unity faces the operator",
         "fixed_every_register": false,
@@ -16591,12 +16589,12 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "094fff8bb7aa9189",
+      "params_sha256": "6eb5104cb77c87e3",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
           "STAND_LOWER",
-          "UNDER_UPPER"
+          "UNDER_SHELF"
         ],
         "facing": "-Y Blender / +Z Unity faces the operator",
         "fixed_every_register": false,

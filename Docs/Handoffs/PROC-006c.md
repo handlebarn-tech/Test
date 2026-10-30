@@ -16,6 +16,14 @@
   - Checked in the POS_09 stations render: the bottle hangs off the stand edge.
 - **m4.** The keyboard gets `gaps: ["GAP-REG-11"]` and a `_src` naming `kb_d_m`, `case_h_m` and `key_h_m` as full-size keyboard convention. I added a GAP-REG-11 row to the spec's GAP register.
 - **m5.** The `UNDER_UPPER`, `UNDER_LOWER` and `UNDER_UPPER_EDGE` gap strings now name the real open item: under-counter shelf heights and depth. The TI calls it a "two-drawer POS cabinet" but the CCTV shows open shelves; the question is open with Nolan through the Hub (PROC-006b Q1). Tagged `GAP-RK-LAYOUT`. The spec's Anchors paragraph has the same wording.
+- **DEC-124 applied (Hub request, after the first commit).** I replaced `UNDER_UPPER`/`UNDER_LOWER`/`UNDER_UPPER_EDGE` with `UNDER_SHELF` and `UNDER_SHELF_EDGE`: one open shelf, full counter width, mid height, no drawers, staff side.
+  - The anchor cites DEC-124.
+  - z is 0.43 m, half the 34 in counter (REFERENCES_INDEX §6.4). Depth stays 0.5 m.
+  - Height and depth stay `GAP-RK-LAYOUT`. I looked for a way to measure them (DEC-110): the TI set has no under-counter section, and the CCTV CEN/EAST stills have nothing of known size at shelf depth to scale from.
+  - Every item that used either old shelf now uses `UNDER_SHELF`. That includes the white wastebasket, which CEN shows on the lowest shelf; there is now only one.
+  - The arranger hot-path check and the stations sheet now use the single shelf. The spec's anchors paragraph cites DEC-124.
+  - With half the shelf area, more optional items land in `not_fitted` (they are never forced). For example, POS_02 now drops BagBundle, two TapeRolls and WipesPack. The self-test still passes with 10 of 11 optional sets distinct (the packet needs at least 2).
+  - This closes m5's open item and the PROC-006b FOR NOLAN Q1.
 - **m6:** see For the Hub below.
 - **Re-export.** All 16 `PROC_RK_*` props were re-exported and all pass.
   - Only the `SprayBottle_ISO` FBX content changed (in both the Art export and the Unity copy).
@@ -48,7 +56,7 @@
 - GAP-REG-9 | asset | rag size and where it lies (blue per DEC-104 R5) | Low | more stills
 - GAP-REG-10 | asset | small register bin size and type per station (DEC-104 R7; office-bin convention 11.5 × 14 in vs rev7 `Trash_Small_POS_xx` 0.9 × 0.9 × 1.5 ft; see the PROC-006b World item 1) | Low | World picks one / site measure
 - GAP-REG-11 | asset | keyboard depth, case and key heights (17.5 in width is the only cited value) | none (full-size keyboard convention) | closer still
-- GAP-RK-LAYOUT | store | cm-level arrangement on the POS top (keyboard/printer slots, monitor depth position) and the under-counter shelf heights/depth (placeholder z 0.45/0.12 m, 0.5 m deep; TI A940 det. 11 "two-drawer POS cabinet" vs CCTV open shelves) | Low | the PROC-006b FOR NOLAN under-counter question; World's monitor-depth answer
+- GAP-RK-LAYOUT | store | cm-level arrangement on the POS top (keyboard/printer slots, monitor depth position) and the exact height/depth of the single mid-height under-counter shelf (DEC-124; placeholder z 0.43 m, 0.5 m deep) | Low | site measure or a still with a scale reference at shelf depth; World's monitor-depth answer
 - GAP-RK-WEIGHTS | store | per-station presence weights of the optional dressing items (DEC-104 non-uniform rule gives no rates) | none (designer weights) | playtest tuning
 
 **DEC proposal:** none. The meaning of hanging-anchor placements (`pos_m` = the item's attach point on the edge) is in the `STAND_RAIL` `_src`. World should read it when it places items.

@@ -35,20 +35,17 @@
    "z_m": 0.8636,
    "_src": "34 in AFF and 2'-6\" POS top (REFERENCES_INDEX 6.4, High); u = half the distance to the neighbouring POS on the same run (rev7 pos_ft)"
   },
-  "UNDER_UPPER": {
+  "UNDER_SHELF": {
    "fixture": "POS_04",
-   "z_m": 0.45,
-   "gap": "GAP-RK-LAYOUT: under-counter shelf heights and depth are not in the TI set (TI A940 det. 11 says a two-drawer POS cabinet; CCTV shows open shelves); open with Nolan via the Hub (PROC-006b handoff Q1)"
+   "z_m": 0.43,
+   "_src": "one open shelf, full counter width, mid height, no drawers, staff side (DEC-124, Nolan; overrides TI A940 det. 11 two-drawer cabinet); z = half the 34 in counter (REFERENCES_INDEX 6.4)",
+   "gap": "GAP-RK-LAYOUT: exact shelf height and depth not measured (DEC-124; TI set has no under-counter section, CCTV CEN/EAST stills give no scale at that depth)"
   },
-  "UNDER_LOWER": {
+  "UNDER_SHELF_EDGE": {
    "fixture": "POS_04",
-   "z_m": 0.12,
-   "gap": "GAP-RK-LAYOUT: under-counter shelf heights and depth are not in the TI set (TI A940 det. 11 says a two-drawer POS cabinet; CCTV shows open shelves); open with Nolan via the Hub (PROC-006b handoff Q1)"
-  },
-  "UNDER_UPPER_EDGE": {
-   "fixture": "POS_04",
-   "z_m": 0.45,
-   "gap": "GAP-RK-LAYOUT: under-counter shelf heights and depth are not in the TI set (TI A940 det. 11 says a two-drawer POS cabinet; CCTV shows open shelves); open with Nolan via the Hub (PROC-006b handoff Q1)"
+   "z_m": 0.43,
+   "_src": "front edge of UNDER_SHELF (DEC-124)",
+   "gap": "GAP-RK-LAYOUT: exact shelf height and depth not measured (DEC-124; TI set has no under-counter section, CCTV CEN/EAST stills give no scale at that depth)"
   },
   "STAND_LOWER": {
    "fixture": "POS_04",
@@ -147,11 +144,11 @@
   {
    "asset": "PROC_RK_BagBundle",
    "rk": "RK-06a",
-   "anchor": "UNDER_UPPER",
+   "anchor": "UNDER_SHELF",
    "pos_m": [
     -0.2079,
     0.1712,
-    0.45
+    0.43
    ],
    "yaw_deg": 4.3,
    "condition": {
@@ -161,11 +158,11 @@
   {
    "asset": "PROC_RK_BagBundle",
    "rk": "RK-06a",
-   "anchor": "UNDER_LOWER",
+   "anchor": "UNDER_SHELF",
    "pos_m": [
     0.1167,
     0.1964,
-    0.12
+    0.43
    ],
    "yaw_deg": 4.6,
    "condition": {
@@ -175,11 +172,11 @@
   {
    "asset": "PROC_RK_TapeRoll",
    "rk": "RK-06b",
-   "anchor": "UNDER_UPPER",
+   "anchor": "UNDER_SHELF",
    "pos_m": [
     -0.4082,
     0.1215,
-    0.45
+    0.43
    ],
    "yaw_deg": -134.4,
    "condition": {
@@ -189,43 +186,15 @@
   {
    "asset": "PROC_RK_TapeRoll",
    "rk": "RK-06b",
-   "anchor": "UNDER_UPPER",
+   "anchor": "UNDER_SHELF",
    "pos_m": [
-    0.1103,
-    0.1132,
-    0.45
+    0.3817,
+    0.1176,
+    0.43
    ],
-   "yaw_deg": 128.5,
+   "yaw_deg": 43.7,
    "condition": {
-    "wear_scale": 0.94
-   }
-  },
-  {
-   "asset": "PROC_RK_PaperStock_Open",
-   "rk": "RK-06c",
-   "anchor": "STAND_LOWER",
-   "pos_m": [
-    0.6041,
-    -0.1493,
-    0.15
-   ],
-   "yaw_deg": -2.1,
-   "condition": {
-    "wear_scale": 0.93
-   }
-  },
-  {
-   "asset": "PROC_RK_PaperStock_Closed",
-   "rk": "RK-06c",
-   "anchor": "UNDER_LOWER",
-   "pos_m": [
-    -0.3008,
-    0.1177,
-    0.12
-   ],
-   "yaw_deg": 0.9,
-   "condition": {
-    "wear_scale": 0.62
+    "wear_scale": 0.85
    }
   },
   {
@@ -233,13 +202,42 @@
    "rk": "RK-06d",
    "anchor": "TOP",
    "pos_m": [
-    -0.2543,
-    0.4287,
+    -0.3452,
+    0.3902,
     0.8636
    ],
-   "yaw_deg": 159.5,
+   "yaw_deg": 51.9,
    "condition": {
-    "wear_scale": 0.79
+    "wear_scale": 1.24
+   }
+  },
+  {
+   "asset": "PROC_RK_SprayBottle_ISO",
+   "rk": "RK-07",
+   "anchor": "STAND_RAIL",
+   "pos_m": [
+    0.3048,
+    -0.3176,
+    0.762
+   ],
+   "yaw_deg": -90.0,
+   "condition": {
+    "wear_scale": 1.05,
+    "fill_level": 0.9
+   }
+  },
+  {
+   "asset": "PROC_RK_Rag_Draped",
+   "rk": "RK-08",
+   "anchor": "UNDER_SHELF_EDGE",
+   "pos_m": [
+    -0.3258,
+    0.0,
+    0.43
+   ],
+   "yaw_deg": 15.0,
+   "condition": {
+    "wear_scale": 0.64
    }
   },
   {
@@ -247,14 +245,14 @@
    "rk": "RK-09",
    "anchor": "FLOOR_STAND",
    "pos_m": [
-    0.5286,
-    -0.5715,
+    0.5186,
+    -0.605,
     0.0
    ],
-   "yaw_deg": -10.7,
+   "yaw_deg": -51.4,
    "condition": {
-    "wear_scale": 1.18,
-    "fill_level": 0.99
+    "wear_scale": 1.2,
+    "fill_level": 0.3
    }
   }
  ],
