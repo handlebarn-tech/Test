@@ -1,0 +1,743 @@
+{
+ "generator": "customers_mpfb",
+ "note": "ASSET-004 MPFB2 customer pipeline. Every asset path must be 'allowed' in the MPFB licence index (CC0 only; Tools/Blender/characters/install_mpfb.py). Pools are curated: realistic modern adults only (DEC-084); costume, novelty, political, historical and 'crude' items are left out on purpose.",
+ "seed": 20261030,
+ "roster_size": 60,
+ "export_ids": [
+  "C001",
+  "C002",
+  "C003"
+ ],
+ "rig": "game_engine",
+ "age_bands": {
+  "young": {
+   "mpfb_age": [
+    0.42,
+    0.53
+   ],
+   "years": "21-29",
+   "share": 0.25
+  },
+  "adult": {
+   "mpfb_age": [
+    0.54,
+    0.72
+   ],
+   "years": "30-54",
+   "share": 0.5
+  },
+  "older": {
+   "mpfb_age": [
+    0.73,
+    0.92
+   ],
+   "years": "55-80",
+   "share": 0.25
+  }
+ },
+ "ancestry_race": {
+  "african": {
+   "african": 0.85,
+   "asian": 0.05,
+   "caucasian": 0.1
+  },
+  "east_asian": {
+   "african": 0.05,
+   "asian": 0.85,
+   "caucasian": 0.1
+  },
+  "caucasian": {
+   "african": 0.05,
+   "asian": 0.05,
+   "caucasian": 0.9
+  },
+  "south_asian": {
+   "african": 0.15,
+   "asian": 0.45,
+   "caucasian": 0.4
+  },
+  "eurasian": {
+   "african": 0.05,
+   "asian": 0.45,
+   "caucasian": 0.5
+  }
+ },
+ "skins": [
+  {
+   "id": "young_african_female",
+   "sex": "f",
+   "bands": [
+    "young"
+   ],
+   "ancestry": "african"
+  },
+  {
+   "id": "middleage_african_female",
+   "sex": "f",
+   "bands": [
+    "adult"
+   ],
+   "ancestry": "african"
+  },
+  {
+   "id": "old_african_female",
+   "sex": "f",
+   "bands": [
+    "older"
+   ],
+   "ancestry": "african"
+  },
+  {
+   "id": "young_asian_female",
+   "sex": "f",
+   "bands": [
+    "young"
+   ],
+   "ancestry": "east_asian"
+  },
+  {
+   "id": "middleage_asian_female",
+   "sex": "f",
+   "bands": [
+    "adult"
+   ],
+   "ancestry": "east_asian"
+  },
+  {
+   "id": "old_asian_female",
+   "sex": "f",
+   "bands": [
+    "older"
+   ],
+   "ancestry": "east_asian"
+  },
+  {
+   "id": "young_caucasian_female",
+   "sex": "f",
+   "bands": [
+    "young"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "young_caucasian_female2",
+   "sex": "f",
+   "bands": [
+    "young",
+    "adult"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "middleage_caucasian_female",
+   "sex": "f",
+   "bands": [
+    "adult"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "old_caucasian_female",
+   "sex": "f",
+   "bands": [
+    "older"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "toigo_light_skin_female_freckles",
+   "sex": "f",
+   "bands": [
+    "young"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "toigo_light_skin_female_ginger",
+   "sex": "f",
+   "bands": [
+    "young",
+    "adult"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "darthfurby_caucasian_female",
+   "sex": "f",
+   "bands": [
+    "young",
+    "adult"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "cutoff3d_indian_female_enhanced",
+   "sex": "f",
+   "bands": [
+    "young",
+    "adult"
+   ],
+   "ancestry": "south_asian"
+  },
+  {
+   "id": "cutoff3d_indian_female_skin",
+   "sex": "f",
+   "bands": [
+    "young",
+    "adult"
+   ],
+   "ancestry": "south_asian"
+  },
+  {
+   "id": "onlytheghosts_young_eurasian_female",
+   "sex": "f",
+   "bands": [
+    "young"
+   ],
+   "ancestry": "eurasian"
+  },
+  {
+   "id": "onlytheghosts_middle_aged_eurasian_female",
+   "sex": "f",
+   "bands": [
+    "adult"
+   ],
+   "ancestry": "eurasian"
+  },
+  {
+   "id": "onlytheghosts_old_eurasian_female",
+   "sex": "f",
+   "bands": [
+    "older"
+   ],
+   "ancestry": "eurasian"
+  },
+  {
+   "id": "young_african_male",
+   "sex": "m",
+   "bands": [
+    "young"
+   ],
+   "ancestry": "african"
+  },
+  {
+   "id": "middleage_african_male",
+   "sex": "m",
+   "bands": [
+    "adult"
+   ],
+   "ancestry": "african"
+  },
+  {
+   "id": "mindfront_skin_male_african_middleage",
+   "sex": "m",
+   "bands": [
+    "adult"
+   ],
+   "ancestry": "african"
+  },
+  {
+   "id": "old_african_male",
+   "sex": "m",
+   "bands": [
+    "older"
+   ],
+   "ancestry": "african"
+  },
+  {
+   "id": "young_asian_male",
+   "sex": "m",
+   "bands": [
+    "young"
+   ],
+   "ancestry": "east_asian"
+  },
+  {
+   "id": "middleage_asian_male",
+   "sex": "m",
+   "bands": [
+    "adult"
+   ],
+   "ancestry": "east_asian"
+  },
+  {
+   "id": "old_asian_male",
+   "sex": "m",
+   "bands": [
+    "older"
+   ],
+   "ancestry": "east_asian"
+  },
+  {
+   "id": "young_caucasian_male",
+   "sex": "m",
+   "bands": [
+    "young"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "young_caucasian_male2",
+   "sex": "m",
+   "bands": [
+    "young",
+    "adult"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "middleage_caucasian_male",
+   "sex": "m",
+   "bands": [
+    "adult"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "mindfront_aksel_skin",
+   "sex": "m",
+   "bands": [
+    "adult"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "ken1138_caucasian_male_tattooed_skin",
+   "sex": "m",
+   "bands": [
+    "adult"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "old_caucasian_male",
+   "sex": "m",
+   "bands": [
+    "older"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "toigo_light_skin_male_freckles",
+   "sex": "m",
+   "bands": [
+    "young"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "toigo_light_skin_male_ginger",
+   "sex": "m",
+   "bands": [
+    "young",
+    "adult"
+   ],
+   "ancestry": "caucasian"
+  },
+  {
+   "id": "onlytheghosts_old_eurasian_male",
+   "sex": "m",
+   "bands": [
+    "older"
+   ],
+   "ancestry": "eurasian"
+  }
+ ],
+ "eyes": [
+  "brown",
+  "brownlight",
+  "blue",
+  "bluegreen",
+  "green",
+  "grey",
+  "lightblue",
+  "deepblue"
+ ],
+ "outfits": {
+  "m": [
+   {
+    "id": "m_casual01",
+    "items": [
+     "male_casualsuit01",
+     "shoes01"
+    ]
+   },
+   {
+    "id": "m_casual02",
+    "items": [
+     "male_casualsuit02",
+     "shoes02"
+    ]
+   },
+   {
+    "id": "m_casual03",
+    "items": [
+     "male_casualsuit03",
+     "shoes03"
+    ]
+   },
+   {
+    "id": "m_casual04",
+    "items": [
+     "male_casualsuit04",
+     "shoes04"
+    ]
+   },
+   {
+    "id": "m_casual05",
+    "items": [
+     "male_casualsuit05",
+     "shoes05"
+    ]
+   },
+   {
+    "id": "m_casual06",
+    "items": [
+     "male_casualsuit06",
+     "shoes06"
+    ]
+   },
+   {
+    "id": "m_work01",
+    "items": [
+     "male_worksuit01",
+     "toigo_ankle_boots_male"
+    ]
+   },
+   {
+    "id": "m_polo_cargo",
+    "items": [
+     "namuhekam_male_polo_shirt",
+     "cortu_cargo_pants",
+     "shoes01"
+    ]
+   },
+   {
+    "id": "m_sweater_wool",
+    "items": [
+     "toigo_fisherman_sweater",
+     "toigo_wool_pants",
+     "toigo_ankle_boots_male"
+    ]
+   },
+   {
+    "id": "m_polo_shorts",
+    "items": [
+     "namuhekam_male_polo_shirt",
+     "cortu_jeans_shorts",
+     "toigo_mj_cloth_shoes"
+    ]
+   },
+   {
+    "id": "m_suit_tie",
+    "items": [
+     "toigo_male_suit_tie_and_jacket",
+     "shoes02"
+    ],
+    "formal": true
+   },
+   {
+    "id": "m_suit3",
+    "items": [
+     "toigo_male_suit_3",
+     "shoes04"
+    ],
+    "formal": true
+   },
+   {
+    "id": "m_elegant01",
+    "items": [
+     "male_elegantsuit01",
+     "shoes06"
+    ],
+    "formal": true
+   }
+  ],
+  "f": [
+   {
+    "id": "f_casual01",
+    "items": [
+     "female_casualsuit01",
+     "toigo_flats"
+    ]
+   },
+   {
+    "id": "f_casual02",
+    "items": [
+     "female_casualsuit02",
+     "toigo_ankle_boots_female"
+    ]
+   },
+   {
+    "id": "f_sport01",
+    "items": [
+     "female_sportsuit01",
+     "shoes03"
+    ]
+   },
+   {
+    "id": "f_tee_cargo",
+    "items": [
+     "toigo_basic_tucked_t-shirt",
+     "cortu_cargo_pants",
+     "shoes05"
+    ]
+   },
+   {
+    "id": "f_tee_shorts",
+    "items": [
+     "toigo_basic_tucked_t-shirt",
+     "cortu_jeans_shorts",
+     "toigo_ballet_flats"
+    ]
+   },
+   {
+    "id": "f_sweater_skirt",
+    "items": [
+     "toigo_fisherman_sweater",
+     "toigo_tiered_skirt",
+     "toigo_ankle_boots_female"
+    ]
+   },
+   {
+    "id": "f_tank_wool",
+    "items": [
+     "toigo_keyhole_tank_top",
+     "toigo_wool_pants",
+     "toigo_flats"
+    ]
+   },
+   {
+    "id": "f_turtleneck_skirt",
+    "items": [
+     "toigo_turtleneck_halter_top",
+     "toigo_long_full_skirt",
+     "toigo_ballet_flats"
+    ]
+   },
+   {
+    "id": "f_camisole_mini",
+    "items": [
+     "toigo_camisole_top",
+     "toigo_tiered_mini_skirt",
+     "toigo_stiletto_booties"
+    ]
+   },
+   {
+    "id": "f_elegant01",
+    "items": [
+     "female_elegantsuit01",
+     "toigo_flats"
+    ],
+    "formal": true
+   },
+   {
+    "id": "f_suit01",
+    "items": [
+     "toigo_female_suit",
+     "toigo_stiletto_booties"
+    ],
+    "formal": true
+   },
+   {
+    "id": "f_suit02",
+    "items": [
+     "toigo_female_suit_2",
+     "toigo_flats"
+    ],
+    "formal": true
+   }
+  ]
+ },
+ "formal_max_share": 0.2,
+ "hair": {
+  "m": [
+   "short01",
+   "short02",
+   "short03",
+   "short04",
+   "afro01",
+   "cortu_short_messy_hair",
+   "culturalibre_hair_01",
+   "culturalibre_hair_02",
+   null
+  ],
+  "f": [
+   "bob01",
+   "bob02",
+   "long01",
+   "ponytail01",
+   "braid01",
+   "afro01",
+   "toigo_blunt_bob",
+   "toigo_curled_under_bob",
+   "toigo_inverted_bob_with_bangs",
+   "littleright_bobcut_hair",
+   "rehmanpolanski_hair_bun_brown",
+   "o4saken_long01",
+   "elvs_french_braid_variation"
+  ]
+ },
+ "hair_tints": [
+  "black",
+  "dark_brown",
+  "brown",
+  "auburn",
+  "blond",
+  "grey",
+  "white"
+ ],
+ "glasses": [
+  "spamrakuen_sagerfrogs_glasses_01",
+  "spamrakuen_sagerfrogs_glasses_02",
+  "spamrakuen_sagerfrogs_glasses_03",
+  "spamrakuen_tbm_glasses_frames_01",
+  "kwnet_at_optical_glasses",
+  "frankyaye_glasses_library_male"
+ ],
+ "glasses_share": 0.3,
+ "hats": [
+  "fedora01",
+  "jujube_newsboy_cap"
+ ],
+ "hat_share": 0.1,
+ "beards": [
+  "wdg_scruffy_beard",
+  "grinsegold_beard_sigmund_wip"
+ ],
+ "beard_share_m": 0.3,
+ "face_categories": [
+  "nose",
+  "mouth",
+  "chin",
+  "eyes",
+  "cheek",
+  "head",
+  "ears",
+  "eyebrows",
+  "forehead"
+ ],
+ "face_targets_per_category": 2,
+ "face_amplitude": 0.6,
+ "builds": {
+  "slim": {
+   "weight": [
+    0.25,
+    0.42
+   ],
+   "muscle": [
+    0.35,
+    0.55
+   ]
+  },
+  "average": {
+   "weight": [
+    0.43,
+    0.6
+   ],
+   "muscle": [
+    0.4,
+    0.6
+   ]
+  },
+  "heavy": {
+   "weight": [
+    0.61,
+    0.85
+   ],
+   "muscle": [
+    0.35,
+    0.6
+   ]
+  }
+ },
+ "height": {
+  "f": [
+   0.38,
+   0.62
+  ],
+  "m": [
+   0.38,
+   0.75
+  ]
+ },
+ "proportions": [
+  0.45,
+  0.75
+ ],
+ "lods": {
+  "LOD0": {
+   "subdiv": 1,
+   "subdiv_parts": [
+    "body"
+   ],
+   "ratio": 1.0,
+   "drop": []
+  },
+  "LOD1": {
+   "subdiv": 0,
+   "ratio": 1.0,
+   "drop": [
+    "teeth"
+   ]
+  },
+  "LOD2": {
+   "subdiv": 0,
+   "ratio": 0.35,
+   "drop": [
+    "eyelashes",
+    "eyebrow",
+    "teeth"
+   ]
+  },
+  "LOD3": {
+   "subdiv": 0,
+   "ratio": 0.1,
+   "drop": [
+    "eyelashes",
+    "eyebrow",
+    "high-poly",
+    "teeth",
+    "tongue",
+    "glasses"
+   ]
+  }
+ },
+ "tri_budget": {
+  "LOD0": 150000,
+  "LOD1": 60000,
+  "LOD2": 20000,
+  "LOD3": 6000
+ },
+ "min_texture_px": 2048,
+ "humanoid_required_bones": [
+  "pelvis",
+  "spine_01",
+  "spine_03",
+  "neck_01",
+  "head",
+  "upperarm_l",
+  "lowerarm_l",
+  "hand_l",
+  "upperarm_r",
+  "lowerarm_r",
+  "hand_r",
+  "thigh_l",
+  "calf_l",
+  "foot_l",
+  "thigh_r",
+  "calf_r",
+  "foot_r"
+ ],
+ "solid_colour_texture_px": 64,
+ "height_m_range": {
+  "f": [
+   1.45,
+   1.85
+  ],
+  "m": [
+   1.6,
+   1.95
+  ]
+ }
+}
