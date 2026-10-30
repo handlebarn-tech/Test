@@ -8,17 +8,17 @@
 **Hub:** `Docs/HUB_RESUME.md` (HARD RULES first, then its reading list) + the newest DECs. **Workers:** `CLAUDE.md` → this file → your packet only.
 
 ## In flight (as of main 0fca821, 2026-10-30 ~05:30; verify with `list_sessions {"linked": true}`)
-Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, W4R REF-009, W4S UX-005, IMP-001, W4U REF-009b, W4V IMP-002, W4T QA-002, W4X DOC-001, W4W GAME-006, W4Y QA-002b, W4Z DOC-003, W5B OPS-002, W5C OPS-001+REF-010, W5E AUDIO-001 (ledger author fixes m1/m2 → AUDIO-002), W5A ART-006 (minors: back-room lighting, mop x → later ART/REF), W5G GAME-007. DECs 052–073.
+Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, W4R REF-009, W4S UX-005, IMP-001, W4U REF-009b, W4V IMP-002, W4T QA-002, W4X DOC-001, W4W GAME-006, W4Y QA-002b, W4Z DOC-003, W5B OPS-002, W5C OPS-001+REF-010, W5E AUDIO-001 (ledger author fixes m1/m2 → AUDIO-002), W5A ART-006 (minors: back-room lighting, mop x → later ART/REF), W5G GAME-007, W5H BRAND-001, W5D DES-004 (DEC-077). DECs 052–073.
 
 | Work | Session | State | Next Hub step |
 |---|---|---|---|
 | GAME-008 cover the door / ID checks (+W5G m1/m2) | `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | running | Unity review → GAME-009 |
 | GAME-010 tuning + personas (merging cart; W4W m3) | `local_0d166a8e-87b1-40bb-9594-be389c549875` | grid 3 | review |
 | **IMP-003**: rolling audit of ChatGPT Blender toolkit (drop 1 audited, adapt) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | running | after each audit: review → Nolan approval; message it when Nolan adds drops |
-| REVIEW-W5D re-review of DES-004 fix f23dcbd | `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7` (worker `local_82d327a2…` idle) | running | merge on GO; ratify DEC-DAY-A..E; GAP-DAY questions → Nolan |
+| DES-004b: apply DEC-076 (22:00 door lock, inside customers served) | `local_82d327a2-5b67-4cff-b481-5854a94f6f31` | running | docs review → merge |
 | ASSET-003: CC0 customer characters + animations (sourcing, no Unity) | `local_d31ad4c5-232b-4628-986c-5d276e71a2a2` | running | review |
 | W5F IMP-003 drop 1 PASS w/ minors (`review/wave-5f`) | reviewer `local_b073ffa0…` | held | wait for IMP-003 delta audit of ChatGPT's fixes, then one approval summary to Nolan |
-| REVIEW-W5H: BRAND-001 (71e3732+98ce92c) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` (worker `local_a7e0b8da…` idle) | running | merge on GO |
+| BRAND-001b: rename Clearleaf/Quintessa + name check (DEC-078) | `local_a7e0b8da-ae2d-4dbb-ac46-8194e642ec35` | running | review |
 
 ## Next tasks to start (dependency order)
 0. DOC-002 (AUDIT batch D) in the next gap between waves; DOC-003 (batch E) low priority. Merged this session also: W4U (REF-009b), W4V (IMP-002), W4T (QA-002; DEC-067), W4X (DOC-001). Free reviewer: `local_c94488d7…`.
@@ -29,6 +29,8 @@ Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, 
 5. Whatever DES-003 creates for genuine gaps.
 
 ## Open questions for Nolan
+- PS2 store questions GAP-DAY-01..04, 06..08 (backstock amount/packing/location, registers open by time of day, one line vs per register, line at 08:00, who refills jars, usual register). Sent 2026-10-30.
+- BRAND-001 Q1: is "The Flower Mine" a TFS house line (keep) or not (stays aliased)? Q2: "LV WHITE SHIRT" merch: does LV stand for a trademark?
 - REF-008 questions: Q1–15 answered (DEC-051; Q4 vestibule size unknown, Q11 skipped). **All answered (DEC-062, 2026-10-30); no more CCTV/photos available** (FOH wall, rack runs, vestibule, lockers, bench, office items, BOH items, restroom/JC photos): full list in `Docs/Handoffs/REF-008.md` "Questions for Nolan". Sent 2026-10-30 02:15; answers go to the REF/ART tasks.
 - Phoenix TPT rate (OPEN-4): a receipt's tax lines would settle it; 25.1 % is kept (DEC-001).
 
