@@ -3,14 +3,15 @@
 // Reads (never writes, never copies) a Dutchie "Current Inventory" .xlsx export. Only WHITELIST columns are read; cost, vendor,
 // quantity, package/batch/external IDs, location and dates never reach the output (DEC-006).
 // Writes UnityProject/Assets/_Game/Data/Catalog/packaged_catalog.json (categories DEC-034, limits DEC-048, storage DEC-050).
-// Usage: node Tools/Data/import_packaged.js [export.xlsx]        (default: the one .xlsx in Downloads/Dispo Game Imports/)
+// Usage: node Tools/Data/import_packaged.js [export.xlsx]        (default: the one .xlsx in Downloads/Dispo Game Imports/, else the archived 2026-10-30 export, DEC-070)
 //        node Tools/Data/import_packaged.js --check [export.xlsx] (re-validate the existing output; with the export, also the dropped-value scan)
 //        node Tools/Data/import_packaged.js --selftest            (asserts the guards catch planted leaks)
 'use strict';
 const fs = require('fs'), path = require('path'), zlib = require('zlib'), crypto = require('crypto'), assert = require('assert');
 
 const IMPORTER_VERSION = '1.0.0';
-const DROP_DIR = 'C:/Users/handl/Downloads/Dispo Game Imports';
+const DROP_DIR = 'C:/Users/handl/Downloads/Dispo Game Imports'; // fresh imports only (DEC-070)
+const ARCHIVE_DIR = 'C:/Users/handl/Downloads/Dispo Game Imports Archive/2026-10-30_dutchie-inventory'; // the export DATA-002 was built from
 const OUT = path.join(__dirname, '../../UnityProject/Assets/_Game/Data/Catalog');
 const OUT_FILE = 'packaged_catalog.json';
 
@@ -200,9 +201,10 @@ function selftest() {
 }
 
 function defaultExport() {
-  const xs = fs.existsSync(DROP_DIR) ? fs.readdirSync(DROP_DIR).filter(f => /\.xlsx$/i.test(f)).sort() : [];
-  if (xs.length !== 1) throw new Error(`pass the export path, or put exactly one .xlsx in ${DROP_DIR} (found ${xs.length})`);
-  return path.join(DROP_DIR, xs[0]);
+  const xlsx = d => fs.existsSync(d) ? fs.readdirSync(d).filter(f => /\.xlsx$/i.test(f)).sort() : [];
+  const fresh = xlsx(DROP_DIR), dir = fresh.length ? DROP_DIR : ARCHIVE_DIR, xs = fresh.length ? fresh : xlsx(ARCHIVE_DIR);
+  if (xs.length !== 1) throw new Error(`pass the export path, or put exactly one .xlsx in ${DROP_DIR} (found ${xs.length} in ${dir})`);
+  return path.join(dir, xs[0]);
 }
 
 function main() {

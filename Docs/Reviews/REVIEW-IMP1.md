@@ -1,7 +1,7 @@
 # REVIEW-IMP1 — independent check of the IMP-001 DESIGN_V2 audit
 
 **Branch:** `review/imp-001` = `main` (cab9abf) + `--no-ff` merge of `claude/vigorous-sanderson-28a86a` (b4273b8, 849b6c4). The merge was clean and docs only.
-**Pack:** `C:/Users/handl/Downloads/Dispo Game Imports/DISPO_GAME_DESIGN_V2/`. I read it in place with grep/sed only. Nothing was edited, and no `.py` was run.
+**Pack:** `C:/Users/handl/Downloads/Dispo Game Imports/DISPO_GAME_DESIGN_V2/` (archived 2026-10-30 to `C:/Users/handl/Downloads/Dispo Game Imports Archive/2026-10-30_DISPO_GAME_DESIGN_V2/`, DEC-070). I read it in place with grep/sed only. Nothing was edited, and no `.py` was run.
 **Canon checked:** DECISIONS through DEC-061, `GAMEPLAY_SIMULATION_SPEC.md`, `Design/SPEC_DECISION_PRESSURE.md` (DP), `Design/ROADMAP_POST_SLICE.md`, `Specs/UX_PS1.md`.
 
 **Verdict: PASS with required amendments.** The audit is accurate where I checked it, and its verdicts are sound.
