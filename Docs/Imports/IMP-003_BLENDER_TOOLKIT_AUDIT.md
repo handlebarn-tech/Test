@@ -3,6 +3,10 @@
 Scope: DEC-069 brief. Source folder: `C:/Users/handl/Downloads/Dispo Game Imports/` (untouched, DEC-070). Our pipeline: `Tools/Blender/` at main 33e57a1, `Docs/Assets/Specs/PROC_PIPELINE.md`.
 Verdicts: **adopt** = take as is; **adapt** = take after the listed fixes; **reject** = do not take.
 
+> **Process update (2026-10-30):**
+> - **DEC-083:** findings go to the studio PROC integration worker, not back to ChatGPT. The actionable list is `Docs/Imports/IMP-003_PROC_FIX_CHECKLIST.md`, which supersedes the "ask ChatGPT for the fixed files" advice below (drop 4 §A2); the worker fixes those items from the current files.
+> - **DEC-084 quality bar** (realistic store-specific LOD0, 2K–4K PBR, LOD0–LOD3, LOD0 guides of props 5–20k / fixtures 20–80k / hero 30–150k) **withdraws** the tri caps used below: drop 1 budgets and drop 2 S3 "props ≤ 1k". By that bar every audited generator is too simple; the per-family missing detail is checklist §Q.
+
 ---
 
 ## Drop 1 — `blender_proc_vNext/` (files dated 2026-10-30 03:11)
