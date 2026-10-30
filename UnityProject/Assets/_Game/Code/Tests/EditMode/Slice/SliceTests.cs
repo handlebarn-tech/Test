@@ -359,14 +359,16 @@ namespace Dispo.Slice.Tests
 
         /// <summary>Pure-sim version of the PlayMode bot: per ask, true-family chip, card 1 (next card if the jar is short), stated weight;
         /// Add item while an ask is open (GAME-006), then confirm the cart.</summary>
-        public static ShiftSim RunBot(SliceData d, double step, bool acceptCover = false)
+        public static ShiftSim RunBot(SliceData d, double step, bool acceptCover = false, bool workStand = false)
         {
             var sim = new ShiftSim(d);
             for (int guard = 0; !sim.IsOver; guard++)
             {
                 Assert.Less(guard, 100000, "shift never ended");
                 sim.Tick(step);
-                if (acceptCover && sim.Cover == CoverState.Offered) sim.AcceptCover();   // GAME-008; the stand itself is never worked
+                if (acceptCover && sim.Cover == CoverState.Offered) sim.AcceptCover();   // GAME-008
+                // workStand (GAME-010b): admit valid IDs, refuse bad ones, by the law; without it the stand is never worked.
+                if (workStand && sim.Stand.Count > 0) { var s = sim.Stand[0]; if (sim.IdValid(s)) sim.Admit(s); else sim.Refuse(s); }
                 var c = sim.Serving;
                 if (c == null) continue;
                 if (sim.RegisterOpen)
@@ -393,12 +395,14 @@ namespace Dispo.Slice.Tests
         [Test]
         public void SimBot_Seed1_ResolvesAll_ReportComplete_SellsOut()
         {
-            var sim = RunBot(Load(), 0.5);
+            var sim = RunBot(Load(), 0.5, acceptCover: true, workStand: true);
             var r = sim.Report();
+            Debug.Log($"[SliceBot] cover={sim.Cover} idsChecked={r.IdsChecked} badCaught={r.BadIdsCaught} strikes={r.Strikes.Count}");
+            Assert.IsEmpty(r.Strikes, "a lawful bot never strikes");
             foreach (var s in sim.Sales) Debug.Log($"[SliceBot] sale c{s.CustomerIndex} {sim.Customers[s.CustomerIndex - 1].TrueFamily.id} {s.StrainName} {s.BatchId} {s.Grams} g {s.GramsBefore}->{s.GramsAfter} start {sim.Inventory.StartGrams[s.BatchId]}");
             Debug.Log($"[SliceBot] served={r.CustomersServed} walkouts={r.Walkouts} noSales={r.NoSales} revenue={r.RevenuePostTax} soldOut={string.Join(",", r.SoldOut)} low={r.LowStock.Count} sat={r.AvgSatisfaction} stars={r.Stars}");
             Assert.IsTrue(sim.Customers.All(c => c.Outcome != CustomerOutcome.None));
-            Assert.AreEqual(sim.Cfg.customersPerShift, r.CustomersServed + r.Walkouts + r.NoSales);
+            Assert.AreEqual(sim.Cfg.customersPerShift, r.CustomersServed + r.Walkouts + r.NoSales + r.BadIdsCaught, "bad IDs caught leave as Refused");
             Assert.AreEqual(sim.Sales.Sum(s => s.PricePostTax), r.RevenuePostTax, 1e-9);
             Assert.IsTrue(typeof(ShiftReport).GetFields().All(f => f.GetValue(r) != null), "no null report fields");
             CollectionAssert.IsNotEmpty(r.SoldOut, "DEC-027: the seed-1 bot shift shows at least one SOLD OUT");
