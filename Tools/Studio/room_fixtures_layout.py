@@ -45,7 +45,14 @@ BASE_FT = {
     "Board_Bulletin_West": 3.5,      # height not given; same convention as the whiteboard (Low)
 }
 # Review minors applied in the build (Hub: "apply REVIEW-W4U minors"; ROOM_FIXTURES itself is REF's).
-OVERRIDES = {"Mops_Brooms_JC": {"pos_ft": [22.4, 43.4]}}  # W4U m1: centred on the JC east-wall line, moved inside
+OVERRIDES = {
+    "Mops_Brooms_JC": {"pos_ft": [22.4, 43.4]},  # W4U m1: centred on the JC east-wall line, moved inside
+    # DEC-068 (supersedes DEC-064): the storage cabinet stands next to the restroom door, against the door wall (east,
+    # inner face x 8.0). The door is at the south end (y 33.1-36.1) and its swing stays in that span either hinge, so the
+    # free side is north: y 29.7-32.9 with 0.2 ft clearances (3.2 ft, less than the data's 4 ft). Low, GAP-109.
+    # ROOM_FIXTURES still has pos null (old "back wall" wording) until a REF pass.
+    "Cabinet_Storage_Large": {"pos_ft": [7.25, 31.3], "size_ft": [3.2, 1.5, 7.0], "rot": 90},
+}
 # The JC (room_volume) is built as two partition walls with its door opening, so its contents are visible.
 JC_WALLS = [("W_JC_W", 19.3, 41.3, 19.3, 46.3), ("W_JC_N", 19.3, 41.3, 23.31, 41.3)]
 JC_T = 0.33
