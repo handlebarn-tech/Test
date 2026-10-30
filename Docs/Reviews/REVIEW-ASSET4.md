@@ -38,3 +38,12 @@ I reviewed `worktree-agent-ae6487dd8e469d31b` @ 02e7a5e. This file is committed 
 - m1 **Design quotas need a [GDD] label.** These are design choices, not store facts: hats 10 %, glasses 30 %, beards ~30 %, the 85 % brown-eye and dark-hair shares, and the age-band year ranges. Mark them [GDD] so nobody later reads them as demographics of the real store.
 - m2 **GAP-CHR-9 misses a candidate already in the index.** Two **allowed** CC0 skins have a beard painted into the skin texture: `skins/jartur69_middleage_slavic_male_with_genitals_and_beard` and `skins/jartur69_old_slavic_male_with_genitals_and_beard`. List them as option (c) for some customers, or say why they are unsuitable.
 - m3 **GAP-CHR-4..10 live only in CHARACTERS.md.** Add rows to `Docs/KNOWN_GAPS.md` (Assets rows) so the Hub's gap list sees them.
+
+## Fix-check (264b535): PASS
+- **M1 fixed.** §3 now gives "1.34 m (SCENE_ANCHORS Call↔Operator, REF-011, Low, GAP-129)". Checked against main's `SCENE_ANCHORS.json`: the distance is 1.34 m at all 11 stations (02–12). The §4 LOD distance bands are labelled [GDD].
+- **m1 fixed.** The age-band years, hats/glasses/beards shares and the 85 % eye and hair shares are labelled [GDD].
+- **m2 fixed.** GAP-CHR-9 lists both jartur69 bearded skins as candidate (a), with the clothed-body note.
+- **m3 fixed.** GAP-CHR-4..10 are added to `KNOWN_GAPS.md`. This fix commit adds only those lines there and touches no other rows.
+- Nit, no action: station 08's anchors carry GAP-134 in SCENE_ANCHORS rather than GAP-129. The cited value is the same at every station.
+
+**Final verdict: PASS (GO to merge).** Merge worker branch `worktree-agent-ae6487dd8e469d31b` @ 264b535 together with this review branch.
