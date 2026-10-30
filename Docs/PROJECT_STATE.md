@@ -41,7 +41,7 @@ Merged in Hub session 4 (latest): W5K RES-002 (squashed), W5N GAME-008, W5M GAME
 - Phoenix TPT rate (OPEN-4): a receipt's tax lines would settle it; 25.1 % is kept (DEC-001).
 
 ## Pending from Nolan
-- ChatGPT Blender toolkit (DEC-069; round 2 approved DEC-074: retail floor, materials, labels, exterior, hands): arriving in drops; IMP-003 audits each, re-checking the folder after each audit.
+- ChatGPT Blender toolkit (DEC-069; rounds 4–7 briefed DEC-091; round 2 approved DEC-074: retail floor, materials, labels, exterior, hands): arriving in drops; IMP-003 audits each, re-checking the folder after each audit.
 - ~~"Fully built systems" file~~: arrived 2026-10-30 as `Downloads/Dispo Game Imports Archive/2026-10-30_DISPO_GAME_DESIGN_V2/`; IMP-001 auditing.
 - V2 design pack approved 2026-10-30 (DEC-063); IMP-002 integrates.
 - ChatGPT-built mechanics: he will drop them in `C:/Users/handl/Downloads/Dispo Game Imports/`. Process: audit → review → **Nolan's approval** before any use.
