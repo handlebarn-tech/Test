@@ -25,3 +25,31 @@ Two small rack questions (shelf count, one long rack or several side by side) go
 - Decisions R1 (collision: manifest `collision_boxes` + Unity `BoxCollider`s, recommended, vs `COL_` + `AssetPostprocessor`) and R3 (validation JSON on failure, or drop it). Reviewer agrees with the audit's leans (R1a, drop R3): least code, no churn.
 - Register GAP-PROC-13 on integration; Nolan questions 1–2 from the IMP-003 handoff (rolling-rack shelves/casters; BOH runs one unit vs 4-ft bays).
 - The PROC integration packet should also restore our `_LODn` naming comment (m1) and include `Rack_CleaningSupplies_JC` (m2).
+
+## Addendum 2026-10-30 — drops 2–4, delta check, PROC fix checklist (9d5be47)
+**New verdict: PASS with minors (GO), covering drops 1–4.** `review/wave-5f` merged `main` (4a635ec) and then `claude/brave-brattain-30c797` @ 9d5be47 (aa465fc), cleanly. Docs only: audit +392, new `IMP-003_PROC_FIX_CHECKLIST.md` (318 lines), handoff. Reviewer: standing Docs reviewer (DEC-085). Import folders were read only. The drop 2 zips were extracted to my scratchpad for grep and nothing was executed. The audit's Blender sandbox runs were not repeated.
+
+### Summary for Nolan (to approve, replaces the drop 1 summary)
+ChatGPT has now sent four batches: about 60 store fixtures and props, extra Blender helper code, a texture loader and label maker.
+The code is clean and repeatable, uses no outside assets, and doesn't change any model we already have.
+The fixes ChatGPT said it made in round 1 are not in the files we received, so those findings still stand.
+Most sizes are generic guesses where our store plans already have the real answer (lockers, cabinets, register counter, doors, sink), and everything is below your new high-quality bar.
+Recommendation: approve "adapt": per DEC-083 our PROC worker takes the code and fixes everything on the checklist; reject the cash drawer and the made-up entry vestibule.
+Five store questions (rack shelves, rack runs, locker doors, where IDs are checked, deli counter front) go to you through the Hub.
+
+### Spot-checks against the files (all confirmed)
+- Drop 2: `proclib_add_beveled_box.patch` is 0 bytes; `fixed_ladder.json` LOD1 `tube_segments` 5 (B1); cooler `moving_parts` lists only `DoorFrame_nn` (S6); `break_room.json` lockers `columns` 4 × `rows` 2 (8 doors vs one 2 × 6 ft unit); `register_station.json` has a `CashDrawer` variant (C1).
+- Drop 4: `cc0_pbr.build_material(download_sources=True)` default, calling `api.polyhaven.com` and the ambientCG API at build time with an unchecked `extractall` (B3 fail is right); `label_decals.APPROVED_BRANDS` lacks The Flower Mine (DEC-081); `building_shell_exterior.json` has an `EntryVestibule` variant.
+- Store facts cited by the audit/checklist match their sources: ROOM_FIXTURES `Lockers_Staff` 2.0 × 1.5 × 6.0 High, `Cart_Deli_Prep` 2.5 × 1.6 × 2.9 "FOR DELI USE ONLY", `Cooler_GlassDoor_2Door` 4.0 × 2.5 × 6.5, `Fan_Portable` white 1.0 × 0.8 × 1.0, `ToolChest_Black` 2.75 ft, `Ladder_FireEscape` 9.0 ft, `Cabinet_Tall_Black_A` plain closed; RI E101 6'-0" × 7'-0" storefront pair; RI POS cabinet 34" max / 2'-6" top / 4" base; DEC-062 "old silver manual paper-towel dispenser"; RI "Excluded by rule … cash-handling equipment" (DEC-051).
+- Checklist: every audit finding has an item with a source; DEC-083 (studio PROC worker fixes all, ChatGPT not asked) and DEC-084 (P4 budgets as LOD0 guides, LOD0–LOD3, 2K/4K PBR, §Q per family) are applied; W6 now includes `Rack_CleaningSupplies_JC` (first-pass m2 closed) ✔.
+
+### Minors
+- **m3 ID check isn't unknown.** Audit B2/B5, checklist §20 and handoff Q4 say where IDs are checked is "a store fact we don't have", with best guess (b) at the register. The repo already has a check-in ID desk: DEC-036 M2 ("ID-verified at check-in"), AZ_COMPLIANCE C3 ("a check-in vestibule is store practice"), O15 (training covers check-in), and RES-002 lists a reception/ID-check role. Re-frame Q4 as "where is the check-in desk and what is on it?", with best guess (a) plus the occasional counter re-check (AZ_COMPLIANCE_CHANGES L2).
+- **m4** The handoff's drop 2 bullet "S3: prop budgets above DEC-069's ~1k" and audit S3 ("set prop budgets to ≤ 1000") are superseded by DEC-084. The checklist P4 says so; add the same pointer in the audit/handoff so nobody applies S3.
+- **m5** Checklist §1 still says drop 1's copies "are ours plus additions only". Three lines of `run_generator.py` are rewritten (first-pass m1); equivalent for our generators, but the PROC worker should diff, not assume.
+- **m6** The handoff Q3 locker best guess "2 × 3 small doors" isn't supported by a source (R3C5 shows only the top); fine as a labelled guess, keep GAP-126.
+
+### For the Hub
+- Forward the 6-line summary for Nolan's approval (DEC-069/083), plus handoff Q1–Q5 with Q4 re-framed per m3.
+- Decisions still pending: collision route (R1/S4/C1; reviewer agrees with R1a manifest boxes), validation JSON (R3/C3), `mesh_stats` extras (T2/C4), and the card terminal as a generic prop or not.
+- Ask ChatGPT for the round-1 files it claims to have fixed only if the Hub still wants them. Under DEC-083 the PROC worker fixes them anyway, so they are optional.
