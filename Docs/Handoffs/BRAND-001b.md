@@ -34,7 +34,8 @@ The other 102 names came back clean. Notes from the search:
 
 ## Validation
 - `node Tools/Data/brands.js --selftest` OK; `--check` OK (118 files). `import_packaged.js --selftest` OK.
-- Unity EditMode: see below.
+- Unity EditMode (one `studio.ps1 unity-test-edit` run, `Artifacts/TestResults/20261030-034552-560-20632-editmode.xml`): 194 total, 174 passed, 20 failed. All data/engine suites pass: EngineGolden 23, ParserGolden 95, TfsParity 11 (includes DP-020), EngineFeature 4, Slice 21, Cart 10, OverLimit 9, DomainAssembly 1.
+  The 20 failures are the same as in BRAND-001: `JarFillImportTests` 6 + `PackagedGoodsImportTests` 14, "no LODGroup (the _LOD<n> suffix auto-setup)". This worktree was already warm, so it is **not** a first-import artifact. Data-only changes can't cause it; it looks like a pre-existing, environment-dependent FBX import issue in this worktree. **For the Hub:** check whether the same tests pass on main in another worktree. If they fail there too, it's a PROC/QA task, not BRAND.
 
 ## Not done / risks
 - Product-line words (DASHWELL, FUSELLE, PUFFRUN, PETAL DROP, CINDRALL, TWIRLEENS, GRAND MIST, BLOCKETT, CALMBEAM) were **not** web-checked. They weren't in this task's scope.
