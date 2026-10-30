@@ -14,7 +14,7 @@ Merged in Hub session 4 (latest): W5K RES-002 (squashed), W5N GAME-008, W5M GAME
 |---|---|---|---|
 | GAME-009 medical (+ W5N m2 queue strip at scale) | `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | running | B2 reviews → PS1 done → REVIEW-PS1 + playtest |
 | BUILD-006 playtest build from 38b9e5c | `local_7f53cf19-16d8-4ba4-b186-9c03960e8906` | running | give Nolan exe path + playtest script |
-| OPS-003 slot monitor | `local_0d166a8e-87b1-40bb-9594-be389c549875` | running | Docs review → merge; then GAME-010b (persona 1.5× slow + answer cover prompt, DEC-086) |
+| GAME-010b personas: slow 1.5×, answer cover prompt (DEC-086); OPS-003 merged (W5O) | `local_0d166a8e-87b1-40bb-9594-be389c549875` | running | B2 review |
 | REVIEW-W5L DES-004b+c | Docs reviewer `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7` | running/queued | merge on GO |
 | IMP-003 toolkit audit: **awaiting Nolan's approval** of the W5F summary + Q1–3,5 | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` idle | waiting on Nolan | on approval → PROC-005 integrates + fixes checklist (DEC-083/084/086); round 3 drops → IMP-003 |
 | ASSET-003 realistic customers (DEC-075/084) | `local_d31ad4c5-232b-4628-986c-5d276e71a2a2` | running | Docs review |
