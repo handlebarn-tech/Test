@@ -55,8 +55,10 @@ namespace Dispo.Slice.Tests
                 {
                     // GAME-007 trim rule: perfect/slow drop the last line of a red cart and add an ask only if it fits under the cap;
                     // careless ignores the limit, so a blocked over-limit cart ends in Cancel = the customer refuses (no sale).
-                    bool fits = p.TrueChip ? sim.CurrentAsk != null && sim.CartGrams + sim.CurrentAsk.Grams <= sim.Cfg.adultUseLimitGrams : true;
-                    if (p.TrueChip && sim.Meter == MeterState.Red) sim.RemoveLine(sim.Cart.Count - 1);
+                    if (sim.MedicalSale && c.OutOfStateCard) sim.ToggleSaleType();   // GAME-009: every persona rings an out-of-state card as adult-use
+                    bool fits = p.TrueChip ? sim.CurrentAsk != null && sim.CartGrams + sim.CurrentAsk.Grams <= sim.CartCap : true;
+                    if (p.TrueChip && sim.Meter == MeterState.Red)   // GAME-009: a lone medical line over the allotment rings adult-use
+                    { if (sim.Cart.Count > 1) sim.RemoveLine(sim.Cart.Count - 1); else if (sim.MedicalSale) sim.ToggleSaleType(); else sim.Cancel(); }
                     else if (sim.CanAddItem && fits) { sim.AddItem(); tried.Clear(); next = sim.Time + p.PickSec; }
                     else if (sim.Confirm() is string blocked) { Assert.IsFalse(p.TrueChip, $"{p.Name} seed {seed} customer {c.Index}: {blocked}"); sim.Cancel(); }
                     continue;
@@ -149,7 +151,8 @@ namespace Dispo.Slice.Tests
             var r = perfect.Report();
             Assert.AreEqual(over.Count(c => c.Outcome == CustomerOutcome.Bought), r.OverLimitTrims);
             Assert.IsEmpty(r.Strikes);
-            Assert.IsTrue(perfect.Sales.GroupBy(x => x.CustomerIndex).All(g => g.Sum(x => x.Grams) <= d.Config.adultUseLimitGrams));
+            Assert.IsTrue(perfect.Sales.GroupBy(x => x.CustomerIndex).All(g => g.Sum(x => x.Grams) <= (g.First().Medical
+                ? perfect.MedicalRemaining(perfect.Customers[g.Key - 1]) : d.Config.adultUseLimitGrams)));
             var careless = Run(Load(), Persona.Careless, 1);
             Assert.AreEqual(0, careless.Report().OverLimitTrims);
             Debug.Log($"[Balance] seed 1 over-limit customers {over.Count}: perfect trims {r.OverLimitTrims}, careless outcomes "

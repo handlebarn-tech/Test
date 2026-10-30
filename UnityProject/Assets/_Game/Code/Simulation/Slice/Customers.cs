@@ -32,6 +32,12 @@ namespace Dispo.Simulation.Slice
         public IdCard Id;                 // GAME-008: shown at the ID stand while the player covers it, else null
         public bool IdChecked, IdRefusedValid;
         public double CheckInDelay;       // GAME-008: extra wait (s) when the player declined to cover check-in [GDD]
+        public bool Medical, OutOfStateCard;   // GAME-009: MED card verified at check-in; an out-of-state card must ring as adult-use
+        public double History14d;         // GAME-009: medical grams bought in the last 14 days (seeded)
+        public int OutOfStateMedAttempts; // tries to ring an out-of-state card as medical (1st blocked + hint, later + strike)
+
+        /// <summary>Whether this customer may take a trimmed weight (SPEC_COMP002 §2 / §4): over-limit asks and medical allotments.</summary>
+        public bool CanTrim => OverLimit || Medical;
         public string Line;
         public double PatienceMax, Patience;
 
@@ -59,6 +65,7 @@ namespace Dispo.Simulation.Slice
             // GAME-006 second items. Offset 4 [GDD]: seed 1 keeps its DEC-027 SOLD OUT (20 of offsets 1-30 do; GAME-010 retunes).
             var more = new Random(c.seed + 4);
             var over = new Random(c.seed + 7);   // GAME-007 over-limit asks, own stream for the same reason
+            var med = new Random(c.seed + 13);   // GAME-009 medical customers, own stream for the same reason
             double t = 0;
             for (int i = 1; i <= c.customersPerShift; i++)
             {
@@ -107,6 +114,15 @@ namespace Dispo.Simulation.Slice
                     Line = Say(d.Lines, opener, spoken, budget),
                     PatienceMax = patience, Patience = patience,
                 });
+                // GAME-009 [GDD] (SPEC_COMP002 §4): medicalCustomerShare are MED patients with 0-3 prior buys in the last 14 days.
+                var cust = list[list.Count - 1];
+                if (med.NextDouble() < c.medicalCustomerShare)
+                {
+                    cust.Medical = true;
+                    cust.OutOfStateCard = med.NextDouble() < c.outOfStateMedChance;
+                    int buys = med.Next(c.medicalHistoryMaxBuys + 1);
+                    for (int b = 0; b < buys; b++) cust.History14d += c.weightOdds[med.Next(c.weightOdds.Length)].g;
+                }
             }
             return list;
         }

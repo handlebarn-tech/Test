@@ -260,6 +260,7 @@ namespace Dispo.Presentation.Slice
             if (Screen == SliceScreen.CoverPrompt && kb.yKey.wasPressedThisFrame) AcceptCover();
             if (Screen == SliceScreen.CoverPrompt && kb.nKey.wasPressedThisFrame) DeclineCover();
             if (Screen == SliceScreen.IdCheck && kb.aKey.wasPressedThisFrame) IdAdmit();
+            if (Screen == SliceScreen.Pos && kb.tKey.wasPressedThisFrame) ToggleSaleType();
             if (Screen == SliceScreen.IdCheck && kb.rKey.wasPressedThisFrame) IdRefuse();
             if (kb.escapeKey.wasPressedThisFrame) Back();
             if (kb.mKey.wasPressedThisFrame && Screen == SliceScreen.Results) More();
@@ -402,7 +403,7 @@ namespace Dispo.Presentation.Slice
         {
             if (Screen != SliceScreen.Pos || !Sim.RegisterOpen) return "no open sale";
             var blocked = Sim.Confirm();
-            if (blocked == Sim.Data.Lines.overLimit) _view.Toast("⚠ " + blocked, "", true);
+            if (blocked == Sim.Data.Lines.overLimit || blocked == Sim.Data.Lines.outOfStateMedHint) _view.Toast("⚠ " + blocked, "", true);   // UX_PS1 §3/§5
             if (blocked != null) { _view.Message = blocked; Show(SliceScreen.Pos); return blocked; }
             Show(SliceScreen.World);
             return null;
@@ -411,10 +412,19 @@ namespace Dispo.Presentation.Slice
         /// <summary>Cancel button. An over-limit customer whose cart is still over the cap leaves with no sale (SPEC_COMP002 §2).</summary>
         public void PosCancel()
         {
-            if (Sim.Serving != null && Sim.Serving.OverLimit && Sim.Meter == MeterState.Red) _lastReject = Sim.Data.Lines.overLimitLeave;   // OnLeft's toast
+            if (Sim.Serving != null && Sim.Serving.CanTrim && Sim.Meter == MeterState.Red) _lastReject = Sim.Data.Lines.overLimitLeave;   // OnLeft's toast
             if (Sim.Cancel()) return;   // OnLeft returns to the world
             _view.Message = "";
             Show(Sim.Results != null ? SliceScreen.Results : SliceScreen.Query);
+        }
+
+        /// <summary>UX_PS1 §5 sale-type switch (T), MED customers only.</summary>
+        public void ToggleSaleType()
+        {
+            if (Screen != SliceScreen.Pos || Sim.Serving == null || !Sim.Serving.Medical) return;
+            Sim.ToggleSaleType();
+            _view.Message = "";
+            Show(SliceScreen.Pos);
         }
 
         public void SetTextScale(int pct) { TextScale = pct; _view?.Render(); }

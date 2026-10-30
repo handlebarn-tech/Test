@@ -48,8 +48,10 @@ namespace Dispo.Slice.PlayMode.Tests
                     break;
                 case SliceScreen.Pos:
                     // GAME-007: trim an over-limit cart (drop the last line), add the next ask only if it fits under the cap.
-                    if (g.Sim.Meter == MeterState.Red) g.PosRemove(g.Sim.Cart.Count - 1);
-                    else if (g.Sim.CanAddItem && g.Sim.CartGrams + g.Sim.CurrentAsk.Grams <= g.Sim.Cfg.adultUseLimitGrams) g.AddItem();
+                    if (g.Sim.Meter == MeterState.Red)   // GAME-009: a lone medical line over the allotment rings adult-use instead
+                    { if (g.Sim.Cart.Count > 1) g.PosRemove(g.Sim.Cart.Count - 1); else if (g.Sim.MedicalSale) g.ToggleSaleType(); else g.PosCancel(); }
+                    else if (g.Sim.CanAddItem && g.Sim.CartGrams + g.Sim.CurrentAsk.Grams <= g.Sim.CartCap) g.AddItem();
+                    else if (g.Sim.MedicalSale && g.Sim.Serving.OutOfStateCard) g.ToggleSaleType();   // GAME-009: ring it as adult-use
                     else if (g.Sim.Cart.Count > 1 && !_backChecked)
                     {
                         // DEC-065: Esc on a multi-line cart goes back to the cards and keeps the cart.
@@ -103,7 +105,8 @@ namespace Dispo.Slice.PlayMode.Tests
             Assert.IsTrue(sim.Inventory.SoldOutIds.All(id => g.JarFillShown(id) == 0), "SOLD OUT jars show F000");
             CollectionAssert.IsNotEmpty(r.SoldOut, "at least one SOLD OUT (DEC-027)");
             Assert.LessOrEqual(sim.ClockHours, sim.Cfg.storeCloseHour, "clock inside store hours (DEC-036 M3)");
-            Assert.IsTrue(sim.Sales.GroupBy(s => s.CustomerIndex).All(s => s.Sum(x => x.Grams) <= sim.Cfg.adultUseLimitGrams), "M1 on each cart");
+            Assert.IsTrue(sim.Sales.GroupBy(s => s.CustomerIndex).All(s => s.Sum(x => x.Grams) <= (s.First().Medical
+                ? sim.MedicalRemaining(sim.Customers[s.Key - 1]) : sim.Cfg.adultUseLimitGrams)), "M1 / 14-day allotment on each cart");
             Assert.IsTrue(sim.Sales.GroupBy(s => s.CustomerIndex).Any(s => s.Count() == 2), "GAME-006: the bot sells a 2-item cart");
             Assert.IsTrue(_backChecked, "DEC-065 Esc-keeps-cart path ran");
             Assert.AreEqual(sim.Cfg.coverCheckInCount, r.IdsChecked, "GAME-008: the covered arrivals were all checked");
