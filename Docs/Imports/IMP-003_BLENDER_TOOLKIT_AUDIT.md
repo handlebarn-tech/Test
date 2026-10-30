@@ -304,3 +304,45 @@ So every claim is **unverified**, and the drop 1–3 findings stand as written. 
    - the checks actually fail on a planted bad mesh: an open quad, a zero-area face, an off-origin object.
 3. **Janitor collision:** janitor props gaining `COL_` (drop 2 S4 applies);
 4. **Locker metadata:** it no longer differs per LOD.
+
+---
+
+## Drop 4 — round 2 (`Dispo_Game_Round2_Workstream/`, 2026-10-30 03:50), section A: packages, apply order, round-1 claims
+
+### A1. What is in the Imports folder now, and what supersedes what
+| Package | Date | Status | Supersedes |
+|---|---|---|---|
+| `blender_proc_vNext/` | 03:11 | unchanged (drop 1) | — |
+| `Dispo_Game_Blender_Workstream_Master/` | 03:27 | unchanged: all 11 zips re-extracted and `diff -rq` identical to drop 2 | its zip 1 = `blender_proc_vNext/` (identical), so the loose folder is redundant |
+| `Fixture_Toolkit_Full_Package/` | 03:37 | unchanged (drop 3) | its snapshot supersedes drop 2's `proclib_reference_after_patch.py` (adds 20 helpers + the `mesh_stats` change) |
+| `Dispo_Game_Round2_Workstream/` | 03:50 | **new**: 9 generators, `materials/cc0_pbr.py`, 10 params, 2 `proclib` reference copies, 1 patch, 4 docs, 12 `.pyc` (not opened) | nothing; it is additive |
+
+**`proclib.py` lineage:**
+- Round 2's `proclib_reference.py` = drop 2 snapshot + drop 3's `mesh_stats()` change, **without** drop 3's 20 helpers.
+- `…_after_round2_patch.py` adds only `patches/proclib_preserve_rgba_alpha.patch`: `material()` alpha defaults to `rgba[3]`.
+- Round-2 generators import only `add_box`, `add_beveled_box`, `add_cylinder_between`, `finish_object`, `material`, so they need **drop 1 + `add_beveled_box`**, not drop 3.
+
+**Recommended apply order** (into a PROC worktree, never `main` directly):
+1. Drop 1 runner/proclib, with fixes R1–R5 and P1.
+2. `add_beveled_box` (taken from the drop 3 snapshot).
+3. The round-2 alpha patch.
+4. Drop 3 helpers only together with the family refactor (T3).
+5. Families in the order of the integration list in the summary.
+
+**Alpha patch check:** no existing generator passes a 4-component colour without an explicit alpha. `deli_jar`'s glass passes 0.25 explicitly, and `packaged_goods` unpacks `rgba()`. So **existing output is unchanged; adopt**.
+
+### A2. Round-1 fix claims (relayed by the Hub, 2026-10-30)
+Every round-1 file is byte-identical to the drop 2 audit, and no newer runner or generator exists anywhere in the folder. So:
+
+| Claim | In the files? | Evidence |
+|---|---|---|
+| Ladder bounds (B1) | **no** | `fixed_ladder.json` LOD1 `tube_segments` is still 5 |
+| Open-carton LOD mismatch | **no** | `clutter_kit._carton` still adds flaps only when `detail` is set |
+| Box-fan blade orientation (B2) | **no** | blades still `_rotated_box` about Z |
+| Paper-stack collision (B4) | **no** | still a family-wide `require_collision`, and no `COL_` on PaperStack |
+| Moving-part groupings (S6) | **no** | cooler `moving_parts` still lists only `DoorFrame_nn` |
+| Janitor prop collisions | **no** | Mop/Broom/Bucket still emit no `COL_` |
+| LOD-dependent locker metadata | **no** | same `break_room.py` |
+| Opt-in validation: non-manifold, degenerate, material slots, aggregate bounds, bottom-centre origin | **partly, not as claimed** | Only `mesh_stats()` gains non-manifold/degenerate counts, material slots and per-object bounds (drop 3 T2, repeated in round 2's `proclib_reference.py`). It is **always on, report-only** (never fails), and changes every manifest entry. There is **no origin check**, no aggregate-bounds check and no opt-in flag. No updated `run_generator.py` was shipped |
+
+**Conclusion:** the fixes ChatGPT describes are probably in its own workspace but were **not delivered**. All drop 1–3 findings stand.
