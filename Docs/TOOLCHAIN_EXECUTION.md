@@ -210,9 +210,12 @@ studio.ps1 asset-review <asset-id>
 studio.ps1 qa-smoke
 studio.ps1 qa-full
 studio.ps1 status
+studio.ps1 slots
 ```
 
 The exact interface may evolve, but one wrapper should remain stable so specialist prompts do not need to know low-level executable paths.
+
+`studio.ps1 slots` (OPS-003, DEC-085) is read-only. It lists each Unity editor that counts against the DEC-013 two-editor limit, using the same filter as the slot gate: PID, worktree and branch (from `-projectPath`), the studio command, start time and elapsed minutes. It flags runs over 20 min. A run marked `? (not studio.ps1)` bypassed the slot gate. It never kills anything; OPS-001's `unityRunTimeoutMinutes` does that inside each run. Self-check: `Tools/Studio/studio_slots_test.ps1`.
 
 ---
 

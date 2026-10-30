@@ -14,10 +14,12 @@
   studio.ps1 assets-fetch --verify                                  # forwards to Tools/Assets/fetch_assets.py
 .EXAMPLE
   studio.ps1 perf                                                   # PERF-001: bot shift in the existing dev build -> Artifacts/Perf/
+.EXAMPLE
+  studio.ps1 slots                                                  # OPS-003: who holds each DEC-013 Unity slot, how long (> 20 min flagged); read-only
 #>
 param(
     [Parameter(Mandatory = $true, Position = 0)]
-    [ValidateSet('doctor', 'unity-compile', 'unity-test-edit', 'unity-test-play', 'unity-graybox', 'unity-capture', 'unity-build', 'perf', 'status', 'blender', 'assets-fetch')]
+    [ValidateSet('doctor', 'unity-compile', 'unity-test-edit', 'unity-test-play', 'unity-graybox', 'unity-capture', 'unity-build', 'perf', 'slots', 'status', 'blender', 'assets-fetch')]
     [string]$Command,
     [int]$SmokeSeconds = 90,
     # Arguments forwarded by 'blender' and 'assets-fetch'.
@@ -139,8 +141,7 @@ function Wait-UnitySlot {
     while ($true) {
         try { $script:SlotLock = [IO.File]::Open($lockPath, 'OpenOrCreate', 'ReadWrite', 'None') } catch { $script:SlotLock = $null }
         if ($script:SlotLock) {
-            $n = @(Get-CimInstance Win32_Process -Filter "Name='Unity.exe'" |
-                Where-Object { $_.ExecutablePath -like '*\Editor\Unity.exe' -and $_.CommandLine -notmatch 'AssetImportWorker|\sserve\b' }).Count
+            $n = @(Get-UnityEditors).Count
             if ($n -lt 2) { return }
             Exit-UnitySlot
             $wait = 60; $why = "$n Unity editors running"
@@ -153,6 +154,29 @@ function Wait-UnitySlot {
 
 function Exit-UnitySlot {
     if ($script:SlotLock) { $script:SlotLock.Dispose(); $script:SlotLock = $null }
+}
+
+function Get-UnityEditors {
+    # The editors that count against DEC-013: asset import workers and the Hub's `unity.exe serve` don't.
+    Get-CimInstance Win32_Process -Filter "Name='Unity.exe'" |
+        Where-Object { $_.ExecutablePath -like '*\Editor\Unity.exe' -and $_.CommandLine -notmatch 'AssetImportWorker|\sserve\b' }
+}
+
+function Get-SlotInfo($editor, [string]$parentCmd, [datetime]$now) {
+    # OPS-003: who holds a DEC-013 slot. Worktree from -projectPath; command from the parent studio.ps1 call, else from the
+    # studio log name <stamp>-<command>.log (studio.ps1 run inside an agent shell, whose command line hides the script).
+    # Neither = "not studio.ps1": a run that bypassed the slot gate.
+    $proj = if ($editor.CommandLine -match '-projectPath\s+(?:"([^"]+)"|(\S+))') { "$($Matches[1])$($Matches[2])" } else { $null }
+    $wt = if ($proj) { Split-Path $proj -Parent } else { $null }
+    $branch = if ($wt -and (Test-Path $wt)) { git -C $wt rev-parse --abbrev-ref HEAD 2>$null } else { $null }
+    $cmd = if ($parentCmd -match 'studio\.ps1"?\s+([\w-]+)') { $Matches[1] }
+        elseif ($editor.CommandLine -match '-logFile\s+"?[^"]*\\\d{8}-\d{6}(?:-\d{3}-\d+)?-([\w-]+)\.log') { $Matches[1] }
+        else { '? (not studio.ps1)' }
+    $min = ($now - $editor.CreationDate).TotalMinutes
+    [pscustomobject]@{
+        Pid = $editor.ProcessId; Worktree = $(if ($wt) { Split-Path $wt -Leaf } else { '?' }); Branch = $(if ($branch) { $branch } else { '?' })
+        Command = $cmd; Started = $editor.CreationDate.ToString('HH:mm:ss'); ElapsedMin = [math]::Round($min, 1); Over = $min -gt 20
+    }
 }
 
 switch ($Command) {
@@ -185,6 +209,18 @@ switch ($Command) {
         $failed = @($checks.GetEnumerator() | Where-Object { $_.Value -is [bool] -and -not $_.Value } | ForEach-Object { $_.Key })
         if ($checks['freeDiskGB'] -lt 20) { $failed += 'freeDiskGB<20' }
         Complete ($failed.Count -eq 0) 0 $(if ($failed.Count) { "failed: $($failed -join ', ')" } else { 'all checks passed' })
+    }
+
+    'slots' {
+        # OPS-003 (DEC-085): read-only view of who holds each DEC-013 editor slot; it never kills anything.
+        $now = Get-Date
+        $rows = @(Get-UnityEditors | ForEach-Object {
+            Get-SlotInfo $_ (Get-CimInstance Win32_Process -Filter "ProcessId=$($_.ParentProcessId)").CommandLine $now })
+        $rows | Sort-Object ElapsedMin -Descending | ForEach-Object {
+            Write-Line ('{0,-6} {1,-28} {2,-34} {3,-24} {4} {5,6:0.0} min{6}' -f $_.Pid, $_.Worktree, $_.Branch, $_.Command, $_.Started, $_.ElapsedMin, $(if ($_.Over) { '  OVER 20 MIN' } else { '' }))
+        }
+        $over = @($rows | Where-Object Over).Count
+        Complete $true 0 "$($rows.Count)/2 editor slots in use$(if ($over) { "; $over over 20 min" })"
     }
 
     'status' {
