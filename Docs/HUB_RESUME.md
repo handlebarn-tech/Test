@@ -23,5 +23,9 @@ Everything a fresh Hub session needs. No chat history is required.
 - Priority: shortest path to a playable vertical slice (DEC-008).
 - Packet format: see the existing `Docs/Tasks/*/REF-001.md`, `MIG-001.md`, `BUILD-001.md` (goal, inputs, owns, deliverable, validation, handoff).
 
-## First wave status (2026-10-29)
-REF-001, MIG-001 and BUILD-001 ran as in-session helpers of the first Hub session. See their handoffs and `PROJECT_STATE.md` for their outcome. Next wave per `Docs/BACKLOG.md`: REVIEW of wave 1, then ART-001, DATA-001, QA-001, then GAME-001.
+## Where things stand
+See `Docs/PROJECT_STATE.md` → "NEXT ACTIONS". Wave 1 is complete and sits on branch `review/wave-1` awaiting REVIEW-W1. Packets for the next sessions are in `Docs/Tasks/Ready/`.
+
+## Session notes
+- Starting a session: give it its packet path and "read CLAUDE.md, then the packet; report to the Studio Hub when done". Use a worktree for code/Unity work.
+- The TFS tool's own hub is the peer session "TFS tool: project hub (phases 1-7)". Relay tool defects there; never edit its files.

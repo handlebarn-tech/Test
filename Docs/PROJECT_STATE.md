@@ -1,28 +1,30 @@
 # PROJECT STATE
 
-**Milestone:** M0/M1 — reconstruction contract + repository/Unity foundation
-**Known-good commit:** TBD (first commit = repo bootstrap)
-**Build health:** Unity project NOT YET CREATED (BUILD-001 active)
-**Updated:** 2026-10-29 by Hub
+**Milestone:** M0/M1 done pending review → next M2 graybox + M3 domain engine (in parallel)
+**Known-good commit:** `main` (docs only). Wave 1 work is on branch `review/wave-1` (commit 667ebd1), unreviewed.
+**Build health:** on `review/wave-1`: Unity 6000.6.7f1 HDRP project compiles; 1/1 EditMode tests pass; Windows dev build + smoke launch OK (BUILD-001).
+**Updated:** 2026-10-29 by Hub (session 1, end)
 
-## Current objective
-Shortest path to a playable vertical slice (DEC-008): measured graybox + one shift loop driven by real batch data and the ported recommendation engine.
+## Wave 1 results (all complete, awaiting REVIEW-W1)
+- **REF-001** (handoff `Docs/Handoffs/REF-001.md`): 10 rooms with high-confidence shells in feet from the vector PDF; 17 CCTV feeds mapped; 13 photos indexed. There are no heights anywhere. HUB/HUB2, restroom and JC are visually blind.
+- **MIG-001** (handoff `Docs/Handoffs/MIG-001.md`): full engine contract with line refs; 63 features triaged; 39 executed golden cases; slice subset defined.
+- **BUILD-001** (handoff `Docs/Handoffs/BUILD-001.md`): Unity project, 5 asmdefs, 10 additive scenes, `Tools/Studio/studio.ps1` (doctor / compile / test-edit / build / status).
 
-## Active tasks
-| ID | Owner | State | Packet |
-|---|---|---|---|
-| REF-001 | REF workcell | Active | `Docs/Tasks/Active/REF-001.md` |
-| MIG-001 | MIG workcell | Active | `Docs/Tasks/Active/MIG-001.md` |
-| BUILD-001 | BUILD workcell | Active | `Docs/Tasks/Active/BUILD-001.md` |
+## NEXT ACTIONS (in order) — fresh Hub starts here
+1. Start one session for `Docs/Tasks/Ready/REVIEW-W1.md` (worktree on `review/wave-1`).
+2. On GO: `git merge --no-ff review/wave-1` into `main`. Move REF/MIG/BUILD packets Review → Done; delete the branch.
+3. Then start **two sessions in parallel**, each in its own worktree off `main`:
+   - Unity / art: `Docs/Tasks/Ready/ART-001.md` (graybox + QA harness)
+   - Data / engine: `Docs/Tasks/Ready/GAME-001.md` (importer + C# engine + goldens)
+   - Both touch `UnityProject/`, but in disjoint folders. Merge one at a time, re-running compile and tests after each merge.
+4. After both: GAME-002, the vertical-slice shift loop (write that packet then).
+
+## Cross-project
+- GAP-206 "sleeping" defect relayed to the TFS tool project hub session on 2026-10-29 (no reply needed).
+- When TFS ships v7.11.5, regenerate the goldens and diff them (GAP-210).
 
 ## Blockers
-- None known. (Budtender tool source found locally, see DEC-001/002.)
-
-## Next dependency-ready tasks
-See `Docs/BACKLOG.md`. Next wave: ART-001 graybox (needs REF-001), GAME-001 domain engine (needs MIG-001 + BUILD-001), DATA-001 batch/terpene import (needs MIG-001), QA-001 harness (needs BUILD-001).
+- None.
 
 ## Decisions requiring user input
-- None yet.
-
-## Rules
-Keep this file compact. Replace completed detail with links to handoffs/decisions.
+- None open. Possible later item: tax rounding (floor vs round, GAP-204). That is the TFS tool's open question with Nolan; the game mirrors v7.11.4 until decided.
