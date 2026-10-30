@@ -1,6 +1,6 @@
 {
  "_about": "REF-008 back-room fixture map for ART. Plan frame = REFERENCES_INDEX 1.2 (feet, origin Retail NW outer corner, +x east, +y south). Positions are mapped into the Working Plan V5 / graybox room shells (A011 interior dims do not sum to the building width, GAP-125). pos_ft = footprint centre [x, y]; null = not placeable, see gap. size_ft = [w, d, h]: w along +x when rot = 0, along +y when rot = 90. faces = compass direction the front/opening faces. Doors: pos is the centre of the opening on the wall line, size = [width, leaf thickness, height]. Confidence High/Med/Low as REFERENCES_INDEX. Sources: wall2_/wall1_RrCc = CCTV Camera Wall 2 / Camera Wall tiles; FOH_still / BOH_still = the 2026-10-29 desk stills; chat_* = CCTV views Nolan pasted into the REF-008 session 2026-10-29 (not in the repo); A011 = References/TI A011 vector; TI = REFERENCES_INDEX 6. contents = what a fixture holds (store facts only, e.g. DEC-050); never inventory data. FOH is staff-only: customers never enter, the budtender fetches (DEC-050). Excluded by rule: camera positions, access-control hardware, alarm items, safe interiors, screen contents, one office wall screen, the hall keypad (a blank panel only, DEC-062), and (DEC-051) any safe, cash-equipment or camera-system specifics: generic props only.",
- "version": "REF-010 2026-10-30 rev6 (DEC-068 restroom cabinet; rev5 = REF-009b REVIEW-W4R fixes + DEC-062 room answers)",
+ "version": "REF-011 2026-10-30 rev7 (sales floor: register runs, 11 stations with operator zones, 3 deli walls, HUB/HUB 2 corrections, ID stand + scanner DEC-103, trash bins DEC-104; rev6 = REF-010 DEC-068 restroom cabinet)",
  "fixtures": [
   {
    "room": "Office",
@@ -1968,6 +1968,1208 @@
    ],
    "gap": "GAP-127",
    "notes": "white linear LED strip (TI L2 type) running along the aisle at ceiling height"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Counter_Register_North",
+   "type": "counter",
+   "size_ft": [
+    20.6,
+    2.2,
+    2.833
+   ],
+   "pos_ft": [
+    30.3,
+    8.1
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "Med",
+   "source_tiles": [
+    "V5 plan",
+    "wall2_R3C2",
+    "wall2_R2C4",
+    "Register_Wide_still",
+    "TI A940"
+   ],
+   "notes": "north register run, registers 10/9/8 (DEC-039); staff on the north side, customers south. Plan y 7.0-9.2 kept; east end cut from 42.0 to 40.6 where it meets the moved east return (GAP-130). Customer face carries the DELI STYLE checker wrap (DEC-090) seen from the south run cameras; lit display case on top near the east end (plan x 38-39.4)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Counter_Register_EastReturn",
+   "type": "counter",
+   "size_ft": [
+    2.2,
+    9.8,
+    2.833
+   ],
+   "pos_ft": [
+    39.5,
+    14.1
+   ],
+   "rot": 0,
+   "faces": "W",
+   "confidence": "Low",
+   "source_tiles": [
+    "V5 plan",
+    "wall2_R2C1",
+    "BAND_10 (aisle standard)"
+   ],
+   "gap": "GAP-130",
+   "notes": "east return, registers 12/11; staff on the east side. Moved 1.4 ft west of the plan (x 40.0-42.0) so the staff aisle behind the scale stands is >= 3.0 ft against the east jar wall's back counter (front x 44.9). Plan gave 2.3 ft to the jar wall front and 1.6 ft once the back counter is counted"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Counter_Register_South",
+   "type": "counter",
+   "size_ft": [
+    20.2,
+    2.2,
+    2.833
+   ],
+   "pos_ft": [
+    24.1,
+    21.5
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "V5 plan (x)",
+    "BAND_10",
+    "wall2_R2C3",
+    "wall2_R2C4",
+    "wall2_R2C5",
+    "wall2_R3C2",
+    "Register_Wide_still",
+    "Register_East_still"
+   ],
+   "gap": "GAP-129",
+   "notes": "south register run, registers 7,2,3,4,5,6 (DEC-039); this is the plan's 'DELI COUNTER' long leg. Staff on the SOUTH side facing north (the 'Back Of Register' cameras sit behind it and look north at the north run, living wall and video wall). Moved north from plan/graybox y 23.2-25.2 to y 20.4-22.6 so the aisle behind the stands is 3.0 ft (BAND_10 tile read, south aisle looking east). Customer face is now flush with the two white columns' south faces (y 20.4); x span kept"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Counter_Register_SouthReturn",
+   "type": "counter",
+   "size_ft": [
+    2.0,
+    2.4,
+    2.833
+   ],
+   "pos_ft": [
+    33.2,
+    19.2
+   ],
+   "rot": 0,
+   "faces": "W",
+   "confidence": "Low",
+   "source_tiles": [
+    "V5 plan",
+    "wall2_R2C5"
+   ],
+   "gap": "GAP-129",
+   "notes": "short return at the east end of the south run ('register L end with trash bin, black cabinet end' in R2C5, beside the east white column). Plan y 18.0-23.2 shortened to meet the moved long leg; no register on it"
+  },
+  {
+   "room": "Retail",
+   "fixture": "DeliJarWall_North",
+   "type": "jar_wall",
+   "size_ft": [
+    25.9,
+    2.1,
+    7.0
+   ],
+   "pos_ft": [
+    31.95,
+    1.25
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "Med",
+   "source_tiles": [
+    "V5 plan",
+    "wall2_R2C3",
+    "wall2_R2C4",
+    "Register_Wide_still",
+    "Photo_Deli_Jar_Wall (wall Low)"
+   ],
+   "gap": "GAP-133",
+   "contents": "deli flower canisters (DEC-042b/043), kraft bags at one end; stocking note REFERENCES_INDEX 8.4",
+   "notes": "deli wall 1 of 3. Behind the north run. Black back counter (TI base cabinet depth 2'-1\", Low) with 2 dark-grey metal shelf tiers above on the teal leaf wall (DEC-043). Plan footprint 1.2 ft deep (y 0.2-1.4) does not include the back counter. The retail jar-wall photo (walnut drawers) is probably this wall (Low)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "DeliJarWall_East",
+   "type": "jar_wall",
+   "size_ft": [
+    14.0,
+    2.09,
+    7.0
+   ],
+   "pos_ft": [
+    45.95,
+    7.2
+   ],
+   "rot": 90,
+   "faces": "W",
+   "confidence": "Med",
+   "source_tiles": [
+    "V5 plan",
+    "wall2_R2C3",
+    "Register_Wide_still",
+    "BAND_11",
+    "BAND_01"
+   ],
+   "gap": "GAP-133",
+   "contents": "deli flower canisters on the upper tiers; small jars/packaged on the counter row",
+   "notes": "deli wall 2 of 3. Behind the east return. Backlit teal shelves in arched wood frames over a black counter (BAND_11); upper tiers hold tall deli canisters, the counter row holds small jars. Plan labels it 'jar wall'; depth with counter 2.1 ft (Low)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "DeliJarWall_South",
+   "type": "jar_wall",
+   "size_ft": [
+    21.2,
+    2.1,
+    7.0
+   ],
+   "pos_ft": [
+    24.1,
+    27.95
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Med",
+   "source_tiles": [
+    "V5 plan",
+    "BAND_10",
+    "BAND_01",
+    "BAND_06",
+    "wall2_R3C2"
+   ],
+   "gap": "GAP-133",
+   "contents": "deli flower canisters, kraft bags; stocking note REFERENCES_INDEX 8.4",
+   "notes": "deli wall 3 of 3. Behind the south run, between the arches. Black back counter with open bins / wire bins under it, 2 shelf tiers of canisters with kraft bags hung at one end, a daily-deals sheet on the counter front (BAND_10). Plan footprint y 27.6-28.8 deepened to the wall face (y 29.0) to hold the back counter (2.1 ft, TI base cabinet, Low)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_08",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    24.0,
+    7.22
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "Med",
+   "source_tiles": [
+    "DEC-039",
+    "wall2_R3C2",
+    "Register_Wide_still"
+   ],
+   "reg": "08",
+   "staff_side": "N",
+   "stand_rect": {
+    "x0": 21.4,
+    "x1": 23.0,
+    "y0": 5.7,
+    "y1": 7.0
+   },
+   "operator_zone": {
+    "x0": 21.4,
+    "x1": 24.8,
+    "y0": 2.3,
+    "y1": 7.0
+   },
+   "clearance_ft": {
+    "behind_stand": 3.4,
+    "operator_zone_depth": 4.7,
+    "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
+   },
+   "notes": "north run; monitor x as graybox; operator zone back face = north jar wall back counter front y 2.3. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_09",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    30.0,
+    7.22
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "Med",
+   "source_tiles": [
+    "DEC-039",
+    "wall2_R3C2",
+    "Register_Wide_still"
+   ],
+   "reg": "09",
+   "staff_side": "N",
+   "stand_rect": {
+    "x0": 27.4,
+    "x1": 29.0,
+    "y0": 5.7,
+    "y1": 7.0
+   },
+   "operator_zone": {
+    "x0": 27.4,
+    "x1": 30.8,
+    "y0": 2.3,
+    "y1": 7.0
+   },
+   "clearance_ft": {
+    "behind_stand": 3.4,
+    "operator_zone_depth": 4.7,
+    "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
+   },
+   "notes": "north run; monitor x as graybox; operator zone back face = north jar wall back counter front y 2.3. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_10",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    36.0,
+    7.22
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "Med",
+   "source_tiles": [
+    "DEC-039",
+    "wall2_R3C2",
+    "Register_Wide_still"
+   ],
+   "reg": "10",
+   "staff_side": "N",
+   "stand_rect": {
+    "x0": 33.4,
+    "x1": 35.0,
+    "y0": 5.7,
+    "y1": 7.0
+   },
+   "operator_zone": {
+    "x0": 33.4,
+    "x1": 36.8,
+    "y0": 2.3,
+    "y1": 7.0
+   },
+   "clearance_ft": {
+    "behind_stand": 3.4,
+    "operator_zone_depth": 4.7,
+    "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
+   },
+   "notes": "north run; monitor x as graybox; operator zone back face = north jar wall back counter front y 2.3. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_12",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    40.38,
+    12.0
+   ],
+   "rot": 90,
+   "faces": "W",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-039",
+    "wall2_R2C1"
+   ],
+   "gap": "GAP-130",
+   "reg": "12",
+   "staff_side": "E",
+   "stand_rect": {
+    "x0": 40.6,
+    "x1": 41.9,
+    "y0": 9.4,
+    "y1": 11.0
+   },
+   "operator_zone": {
+    "x0": 40.6,
+    "x1": 44.9,
+    "y0": 9.4,
+    "y1": 12.8
+   },
+   "clearance_ft": {
+    "behind_stand": 3.0,
+    "operator_zone_depth": 4.3,
+    "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
+   },
+   "notes": "east return; y as graybox; back face = east jar wall counter front x 44.9 (station 11 backs onto the east-wall rack front x 45.6, so it has 0.7 ft more). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_11",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    40.38,
+    16.0
+   ],
+   "rot": 90,
+   "faces": "W",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-039",
+    "wall2_R2C1"
+   ],
+   "gap": "GAP-130",
+   "reg": "11",
+   "staff_side": "E",
+   "stand_rect": {
+    "x0": 40.6,
+    "x1": 41.9,
+    "y0": 13.4,
+    "y1": 15.0
+   },
+   "operator_zone": {
+    "x0": 40.6,
+    "x1": 44.9,
+    "y0": 13.4,
+    "y1": 16.8
+   },
+   "clearance_ft": {
+    "behind_stand": 3.0,
+    "operator_zone_depth": 4.3,
+    "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
+   },
+   "notes": "east return; y as graybox; back face = east jar wall counter front x 44.9 (station 11 backs onto the east-wall rack front x 45.6, so it has 0.7 ft more). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_07",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    31.0,
+    22.38
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-039",
+    "BAND_10",
+    "Register_Wide_still",
+    "Register_East_still",
+    "wall2_R2C4"
+   ],
+   "gap": "GAP-131",
+   "reg": "07",
+   "staff_side": "S",
+   "stand_rect": {
+    "x0": 32.0,
+    "x1": 33.6,
+    "y0": 22.6,
+    "y1": 23.9
+   },
+   "operator_zone": {
+    "x0": 30.2,
+    "x1": 33.6,
+    "y0": 22.6,
+    "y1": 26.9
+   },
+   "clearance_ft": {
+    "behind_stand": 3.0,
+    "operator_zone_depth": 4.3,
+    "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
+   },
+   "notes": "south run; DEC-039 'left to right 7,2,3,4,5,6' read as a customer facing the counter (7 east), as ART-003 (GAP-131). x avoids the west column (x 18.6-19.4): stations 05/04 straddle it with customer spots >= 0.05 ft clear. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_02",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    27.8,
+    22.38
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-039",
+    "BAND_10",
+    "Register_Wide_still",
+    "Register_East_still",
+    "wall2_R2C4"
+   ],
+   "gap": "GAP-131",
+   "reg": "02",
+   "staff_side": "S",
+   "stand_rect": {
+    "x0": 28.8,
+    "x1": 30.4,
+    "y0": 22.6,
+    "y1": 23.9
+   },
+   "operator_zone": {
+    "x0": 27.0,
+    "x1": 30.4,
+    "y0": 22.6,
+    "y1": 26.9
+   },
+   "clearance_ft": {
+    "behind_stand": 3.0,
+    "operator_zone_depth": 4.3,
+    "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
+   },
+   "notes": "south run; DEC-039 'left to right 7,2,3,4,5,6' read as a customer facing the counter (7 east), as ART-003 (GAP-131). x avoids the west column (x 18.6-19.4): stations 05/04 straddle it with customer spots >= 0.05 ft clear. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_03",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    24.6,
+    22.38
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-039",
+    "BAND_10",
+    "Register_Wide_still",
+    "Register_East_still",
+    "wall2_R2C4"
+   ],
+   "gap": "GAP-131",
+   "reg": "03",
+   "staff_side": "S",
+   "stand_rect": {
+    "x0": 25.6,
+    "x1": 27.2,
+    "y0": 22.6,
+    "y1": 23.9
+   },
+   "operator_zone": {
+    "x0": 23.8,
+    "x1": 27.2,
+    "y0": 22.6,
+    "y1": 26.9
+   },
+   "clearance_ft": {
+    "behind_stand": 3.0,
+    "operator_zone_depth": 4.3,
+    "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
+   },
+   "notes": "south run; DEC-039 'left to right 7,2,3,4,5,6' read as a customer facing the counter (7 east), as ART-003 (GAP-131). x avoids the west column (x 18.6-19.4): stations 05/04 straddle it with customer spots >= 0.05 ft clear. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_04",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    21.4,
+    22.38
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-039",
+    "BAND_10",
+    "Register_Wide_still",
+    "Register_East_still",
+    "wall2_R2C4"
+   ],
+   "gap": "GAP-131",
+   "reg": "04",
+   "staff_side": "S",
+   "stand_rect": {
+    "x0": 22.4,
+    "x1": 24.0,
+    "y0": 22.6,
+    "y1": 23.9
+   },
+   "operator_zone": {
+    "x0": 20.6,
+    "x1": 24.0,
+    "y0": 22.6,
+    "y1": 26.9
+   },
+   "clearance_ft": {
+    "behind_stand": 3.0,
+    "operator_zone_depth": 4.3,
+    "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
+   },
+   "notes": "south run; DEC-039 'left to right 7,2,3,4,5,6' read as a customer facing the counter (7 east), as ART-003 (GAP-131). x avoids the west column (x 18.6-19.4): stations 05/04 straddle it with customer spots >= 0.05 ft clear. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_05",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    17.8,
+    22.38
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-039",
+    "BAND_10",
+    "Register_Wide_still",
+    "Register_East_still",
+    "wall2_R2C4"
+   ],
+   "gap": "GAP-131",
+   "reg": "05",
+   "staff_side": "S",
+   "stand_rect": {
+    "x0": 18.8,
+    "x1": 20.4,
+    "y0": 22.6,
+    "y1": 23.9
+   },
+   "operator_zone": {
+    "x0": 17.0,
+    "x1": 20.4,
+    "y0": 22.6,
+    "y1": 26.9
+   },
+   "clearance_ft": {
+    "behind_stand": 3.0,
+    "operator_zone_depth": 4.3,
+    "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
+   },
+   "notes": "south run; DEC-039 'left to right 7,2,3,4,5,6' read as a customer facing the counter (7 east), as ART-003 (GAP-131). x avoids the west column (x 18.6-19.4): stations 05/04 straddle it with customer spots >= 0.05 ft clear. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_06",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    14.8,
+    22.38
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-039",
+    "BAND_10",
+    "Register_Wide_still",
+    "Register_East_still",
+    "wall2_R2C4"
+   ],
+   "gap": "GAP-131",
+   "reg": "06",
+   "staff_side": "S",
+   "stand_rect": {
+    "x0": 15.8,
+    "x1": 17.4,
+    "y0": 22.6,
+    "y1": 23.9
+   },
+   "operator_zone": {
+    "x0": 14.0,
+    "x1": 17.4,
+    "y0": 22.6,
+    "y1": 26.9
+   },
+   "clearance_ft": {
+    "behind_stand": 3.0,
+    "operator_zone_depth": 4.3,
+    "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
+   },
+   "notes": "south run; DEC-039 'left to right 7,2,3,4,5,6' read as a customer facing the counter (7 east), as ART-003 (GAP-131). x avoids the west column (x 18.6-19.4): stations 05/04 straddle it with customer spots >= 0.05 ft clear. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+  },
+  {
+   "room": "HUB",
+   "fixture": "Desk_Computer",
+   "type": "desk",
+   "size_ft": [
+    5.0,
+    2.5,
+    2.5
+   ],
+   "pos_ft": [
+    25.5,
+    48.45
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "Low",
+   "source_tiles": [
+    "hub_R1C4"
+   ],
+   "gap": "GAP-132",
+   "notes": "light wood desk with keyboard + black office chair in the R1C4 foreground. R1C4 looks south (the green SE exit is at the far left), so the desk is at the NORTH end of HUB, not the plan raster strip at y 70-74.4. Kept clear of the HUB 2 door swing (x 19.2-22.2)"
+  },
+  {
+   "room": "HUB",
+   "fixture": "Counter_Long_EastWall",
+   "type": "counter",
+   "size_ft": [
+    2.29,
+    20.0,
+    2.833
+   ],
+   "pos_ft": [
+    45.84,
+    62.0
+   ],
+   "rot": 0,
+   "faces": "W",
+   "confidence": "Low",
+   "source_tiles": [
+    "hub_R1C4",
+    "hub_R2C3"
+   ],
+   "gap": "GAP-132",
+   "notes": "long dark counter/bench along the left (east) wall of R1C4 with blue and red rolling carts near its south end; length unknown (20 ft placeholder). Replaces the graybox FX_HUB_RackRun_W chrome run on this wall"
+  },
+  {
+   "room": "HUB",
+   "fixture": "RackIsland_Chrome",
+   "type": "rack",
+   "size_ft": [
+    16.0,
+    6.0,
+    6.5
+   ],
+   "pos_ft": [
+    32.19,
+    60.0
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "hub_R1C3",
+    "hub_R1C4",
+    "hub_R2C2"
+   ],
+   "gap": "GAP-110",
+   "notes": "central island about 4 bays x 3 deep of 4x2 ft chrome wire racks (count Low); graybox position kept, no evidence moves it"
+  },
+  {
+   "room": "HUB",
+   "fixture": "RackRun_South",
+   "type": "rack",
+   "size_ft": [
+    16.0,
+    2.0,
+    6.5
+   ],
+   "pos_ft": [
+    32.0,
+    74.83
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "hub_R1C4",
+    "hub_R1C3"
+   ],
+   "gap": "GAP-132",
+   "notes": "perimeter chrome run along the far (south) wall in R1C4, left of centre; stops west of the SE exit. Replaces the graybox FX_HUB_RackRun_N on the north wall, where R1C4 shows the desk"
+  },
+  {
+   "room": "HUB",
+   "fixture": "Pallets_BlueCases",
+   "type": "pallet",
+   "size_ft": [
+    3.33,
+    12.0,
+    4.0
+   ],
+   "pos_ft": [
+    21.52,
+    61.0
+   ],
+   "rot": 0,
+   "faces": "E",
+   "confidence": "Low",
+   "source_tiles": [
+    "hub_R1C3",
+    "hub_R1C4",
+    "hub_R2C3"
+   ],
+   "gap": "GAP-110",
+   "notes": "2-3 shrink-wrapped pallets of blue cases on the right (west) side of R1C4; graybox positions agree (2 pallets 48x40 in)"
+  },
+  {
+   "room": "HUB",
+   "fixture": "Door_Exit_SE",
+   "type": "door",
+   "size_ft": [
+    3.0,
+    0.2,
+    7.0
+   ],
+   "pos_ft": [
+    45.49,
+    75.93
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "High",
+   "source_tiles": [
+    "A011",
+    "hub_R1C4",
+    "DEC-030"
+   ],
+   "notes": "green emergency exit with round logo, SE corner, swings out (DEC-030/042c); graybox matches"
+  },
+  {
+   "room": "HUB2",
+   "fixture": "Cabinets_Storage_OfficeWall",
+   "type": "cabinet",
+   "size_ft": [
+    6.0,
+    1.5,
+    7.0
+   ],
+   "pos_ft": [
+    4.19,
+    47.75
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "Med",
+   "source_tiles": [
+    "hub_R2C1",
+    "DEC-079"
+   ],
+   "gap": "GAP-132",
+   "contents": "deli flower backstock, 1 lb bags (DEC-079)",
+   "notes": "black storage cabinets against the office (north) wall, west of the office door; hold the deli backstock (1 lb bags, DEC-079). Nolan said 'HUB'; by A011 only HUB 2 shares a wall with the office (question, GAP-132). Graybox FX_HUB2_Cabinets matches"
+  },
+  {
+   "room": "Retail",
+   "fixture": "IDCheck_Stand",
+   "type": "stand",
+   "size_ft": [
+    2.0,
+    1.5,
+    3.5
+   ],
+   "pos_ft": [
+    2.5,
+    11.0
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-048",
+    "DEC-103",
+    "Register_Wide_still (left edge)"
+   ],
+   "gap": "GAP-134",
+   "notes": "ID-check stand directly left inside the entrance (DEC-048); the guard stands behind it (north) facing arriving customers. Size is a podium convention. No second buzzed door after it (DEC-103): check-in leads straight onto the sales floor"
+  },
+  {
+   "room": "Retail",
+   "fixture": "IDCheck_Scanner",
+   "type": "device",
+   "size_ft": [
+    0.5,
+    0.4,
+    0.3
+   ],
+   "pos_ft": [
+    2.5,
+    11.0
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-103"
+   ],
+   "gap": "GAP-134",
+   "notes": "ID scanner with a green-light indicator on top of the ID-check stand (DEC-103), base at the stand top 3.5 ft; generic device, size Low"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Small_POS_08",
+   "type": "trash_bin",
+   "size_ft": [
+    0.9,
+    0.9,
+    1.5
+   ],
+   "pos_ft": [
+    22.2,
+    5.25
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104",
+    "BAND_10",
+    "wide_stand_A"
+   ],
+   "gap": "GAP-131",
+   "notes": "small trash bin at register 08 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Small_POS_09",
+   "type": "trash_bin",
+   "size_ft": [
+    0.9,
+    0.9,
+    1.5
+   ],
+   "pos_ft": [
+    28.2,
+    5.25
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104",
+    "BAND_10",
+    "wide_stand_A"
+   ],
+   "gap": "GAP-131",
+   "notes": "small trash bin at register 09 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Small_POS_10",
+   "type": "trash_bin",
+   "size_ft": [
+    0.9,
+    0.9,
+    1.5
+   ],
+   "pos_ft": [
+    34.2,
+    5.25
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104",
+    "BAND_10",
+    "wide_stand_A"
+   ],
+   "gap": "GAP-131",
+   "notes": "small trash bin at register 10 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Small_POS_12",
+   "type": "trash_bin",
+   "size_ft": [
+    0.9,
+    0.9,
+    1.5
+   ],
+   "pos_ft": [
+    42.35,
+    10.2
+   ],
+   "rot": 0,
+   "faces": "W",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104",
+    "BAND_10",
+    "wide_stand_A"
+   ],
+   "gap": "GAP-131",
+   "notes": "small trash bin at register 12 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Small_POS_11",
+   "type": "trash_bin",
+   "size_ft": [
+    0.9,
+    0.9,
+    1.5
+   ],
+   "pos_ft": [
+    42.35,
+    14.2
+   ],
+   "rot": 0,
+   "faces": "W",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104",
+    "BAND_10",
+    "wide_stand_A"
+   ],
+   "gap": "GAP-131",
+   "notes": "small trash bin at register 11 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Small_POS_07",
+   "type": "trash_bin",
+   "size_ft": [
+    0.9,
+    0.9,
+    1.5
+   ],
+   "pos_ft": [
+    32.8,
+    24.35
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104",
+    "BAND_10",
+    "wide_stand_A"
+   ],
+   "gap": "GAP-131",
+   "notes": "small trash bin at register 07 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Small_POS_02",
+   "type": "trash_bin",
+   "size_ft": [
+    0.9,
+    0.9,
+    1.5
+   ],
+   "pos_ft": [
+    29.6,
+    24.35
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104",
+    "BAND_10",
+    "wide_stand_A"
+   ],
+   "gap": "GAP-131",
+   "notes": "small trash bin at register 02 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Small_POS_03",
+   "type": "trash_bin",
+   "size_ft": [
+    0.9,
+    0.9,
+    1.5
+   ],
+   "pos_ft": [
+    26.4,
+    24.35
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104",
+    "BAND_10",
+    "wide_stand_A"
+   ],
+   "gap": "GAP-131",
+   "notes": "small trash bin at register 03 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Small_POS_04",
+   "type": "trash_bin",
+   "size_ft": [
+    0.9,
+    0.9,
+    1.5
+   ],
+   "pos_ft": [
+    23.2,
+    24.35
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104",
+    "BAND_10",
+    "wide_stand_A"
+   ],
+   "gap": "GAP-131",
+   "notes": "small trash bin at register 04 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Small_POS_05",
+   "type": "trash_bin",
+   "size_ft": [
+    0.9,
+    0.9,
+    1.5
+   ],
+   "pos_ft": [
+    19.6,
+    24.35
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104",
+    "BAND_10",
+    "wide_stand_A"
+   ],
+   "gap": "GAP-131",
+   "notes": "small trash bin at register 05 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Small_POS_06",
+   "type": "trash_bin",
+   "size_ft": [
+    0.9,
+    0.9,
+    1.5
+   ],
+   "pos_ft": [
+    16.6,
+    24.35
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104",
+    "BAND_10",
+    "wide_stand_A"
+   ],
+   "gap": "GAP-131",
+   "notes": "small trash bin at register 06 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Big_SouthReturnEnd",
+   "type": "trash_bin",
+   "size_ft": [
+    1.2,
+    1.2,
+    3.0
+   ],
+   "pos_ft": [
+    33.3,
+    17.2
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104",
+    "wall2_R2C5"
+   ],
+   "gap": "GAP-134",
+   "notes": "big trash bin (DEC-104), customer side at the north end of the south run's return, where R2C5 shows a bin at the counter end"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Big_West_ATM",
+   "type": "trash_bin",
+   "size_ft": [
+    1.2,
+    1.2,
+    3.0
+   ],
+   "pos_ft": [
+    4.4,
+    26.6
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104"
+   ],
+   "gap": "GAP-134",
+   "notes": "big trash bin (DEC-104) spread to the west half near the ATM and queue exit; position not in the evidence"
+  },
+  {
+   "room": "Retail",
+   "fixture": "Trash_Big_East_Sink",
+   "type": "trash_bin",
+   "size_ft": [
+    1.2,
+    1.2,
+    3.0
+   ],
+   "pos_ft": [
+    46.2,
+    27.6
+   ],
+   "rot": 0,
+   "faces": "W",
+   "confidence": "Low",
+   "source_tiles": [
+    "DEC-104"
+   ],
+   "gap": "GAP-134",
+   "notes": "big trash bin (DEC-104) by the east hand-wash sink, clear of the emergency exit (y 20.5-24); position not in the evidence"
   }
  ],
  "graybox_contradictions": [
@@ -1976,6 +3178,10 @@
   "GAP-122 Vestibule 3.0 x 2.2 -> A011 x 31.4-39.8, y 29.5-34.3 (35.16 SF); both doors become full 3'-0\" (the GAP-104 2.2 ft exception lapses); ARCH_E 35.21-38.21 vs A011 34.5-37.6",
   "FOH: FX_FOH_WireRack_1/2 collide with the A011 vestibule and the FOH door swing; FX_FOH_Fridge on the west wall vs the desk+fridge+cooler group on the BOH-shared east wall (DEC-051, GAP-124 closed); glass-door cooler missing; 4 rolling racks (DEC-051) vs 2 graybox runs",
   "BOH: FX_BOH_Racks_W starts at y 33.0 (collides with the A011 vestibule) -> 37.3-45.3",
-  "Break room: kitchen north run should start at x 18.9 (pilaster), return should run to y 37.4, fridge missing, JC 3x3 -> 4.0 x 5.0 at x 19.3-23.31, y 41.3-46.3 with its door on the west face (GAP-103 closed); bench 7 ft -> ~5 ft beside a lunch table on the west wall (DEC-051); whiteboard and first-aid kit missing; one 2 x 6 ft locker unit (DEC-051) missing, wall GAP-126"
+  "Break room: kitchen north run should start at x 18.9 (pilaster), return should run to y 37.4, fridge missing, JC 3x3 -> 4.0 x 5.0 at x 19.3-23.31, y 41.3-46.3 with its door on the west face (GAP-103 closed); bench 7 ft -> ~5 ft beside a lunch table on the west wall (DEC-051); whiteboard and first-aid kit missing; one 2 x 6 ft locker unit (DEC-051) missing, wall GAP-126",
+  "GAP-129 South register run: graybox FX_DeliCounter_L long leg y 23.2-25.2 + stations y 25.2 leave 2.4 ft to FX_DeliJarWall_S (1.1 ft behind the stands); evidence (BAND_10) shows a 3-4 ft aisle behind the stands plus a back counter. Move the long leg to y 20.4-22.6, stations to y 22.6, the return to y 18.0-20.4, the south jar wall to y 26.9-29.0",
+  "GAP-130 East return: graybox x 39.8-42.0 leaves 2.3 ft to FX_JarWall_E (1.6 with its back counter); move to x 38.4-40.6, stations 12/11 to x 40.6, north leg ends at x 40.6",
+  "GAP-133 Deli walls: graybox has three blocks but jarSlots only on N and E and FX_DeliJarWall_S is a solid block with no shelves or jars; all three are stocked deli walls with a back counter + 2 tiers",
+  "GAP-132 HUB: FX_HUB_Desks (y 70-74.4) and FX_HUB_RackRun_N contradict R1C4 (desk at the north end); FX_HUB_RackRun_W (east wall) is a long dark counter in R1C4; graybox cameras R2C3/R2C4/R2C5 sit north of the counters looking south, but they are behind the south run looking north (REFERENCES_INDEX 8.1)"
  ]
 }
