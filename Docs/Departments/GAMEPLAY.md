@@ -29,7 +29,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 ## In flight
 | Task | Worker | Branch | State |
 |---|---|---|---|
-| GAME-009 medical (+ W5N m2, W5S m1/m2) | done (session `local_7f8c95e9…`, ready to archive) | `claude/task-game-009` @ 26081fa | REVIEW-PS1 with Unity B2 |
+| GAME-009 medical (+ W5N m2, W5S m1/m2) | done (session `local_7f8c95e9…`, ready to archive) | `claude/task-game-009` @ 26081fa | REVIEW-PS1 PASS with minors (`review/ps1` @ a935495), merge-ready; m3 strike cap + m4 medical amber string → GAME-026 |
 | DATA-003 needs catalog + goldens | lead subagent | worktree | running |
 | DES-005b (+ DES-007) | lead subagent | worktree | running |
 

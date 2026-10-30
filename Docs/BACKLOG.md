@@ -80,7 +80,7 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | ART-007 | P0 | Graybox/lookdev rebuild from REF-011/012 (registers, HUB, deli walls, office, doors) | REF-011, REF-012 | Active |
 | GAME-007 | P1 | Purchase-limit meter + over-limit asks + strike ledger (COMP-002 §2) | GAME-006 | Done |
 | GAME-008 | P1 | ID-check events (COMP-002 §3) | GAME-007 | Done (W5N) |
-| GAME-009 | P2 | Medical customers (COMP-002 §4) + W5N m2 queue strip | GAME-007, GAME-008 | Review (REVIEW-PS1, Unity B2; 26081fa) |
+| GAME-009 | P2 | Medical customers (COMP-002 §4) + W5N m2 queue strip | GAME-007, GAME-008 | Review (REVIEW-PS1 PASS, `review/ps1` @ a935495 merge-ready) |
 | GAME-010 | P1 | Retune for tension + QA bot personas | GAME-005 (merge after GAME-006: both edit SliceConfig and Slice tests) | Done (W5M; 010b W5S) |
 | GAME-011 | P1 | Shift phases + traffic curve + compressed clock | DES-004 | Ready (waits PS1b, DEC-096) |
 | GAME-012 | P1 | Deli restock loop (re-scoped DEC-080) | DES-004, ART-005 (ROADMAP ID, see DOC-002), DEC-055 | Ready (waits PS1b, DEC-096) |
