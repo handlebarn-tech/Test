@@ -71,7 +71,7 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 |---|---|---|---|
 | ENTRY (customer, double door) | west wall x=0, y 11.0–20.0 (position) | drawn 9.0 opening; **use 6'-0" × 7'-0" storefront pair** (TI E101 = A011 vector 6.0 ft, DEC-037, Hub ruling) | High (size) / Med (position) |
 | EXIT label (orange = position not confirmed) | west wall, just north of entry | — | Low |
-| EMERGENCY EXIT | east wall x=47.19, y 20.5–24.0 | 3.5 (swing drawn orange = unconfirmed) | Low |
+| EMERGENCY EXIT | east wall x=47.19, y 20.5–24.0 · **A011 (REF-016): rough opening y 21.38–24.72 (3'-0" leaf + 2" jambs), hinge N, swings out; it sits in a wall segment recessed 1.07 ft east of the 47.19 line from y 18.2 south (DOORS.json `rough_opening`, `wall_recess`)** | 3.5 (swing drawn orange = unconfirmed) | Low (V5) / Med (A011) |
 | West arch (Retail→Hall) | y≈29.25, x 9.10–12.91 | 3.81 | Med |
 | East arch (Retail→vestibule) | y≈29.25, x 35.21–38.21 | 3.0 | Med |
 | Hall→Restroom door | x≈8.2, y 31.5–33.3 | 1.8 symbol | Low (schematic) |
@@ -104,8 +104,8 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 | queue stanchion lines (dashed, raster-read) | x ≈ 6, 9, 12, 15 | y ≈ 11–19.5 | 4 lanes, Low-Med |
 | ATM | 1.2–3.4 | 25.8–27.6 | 2.2 × 1.8 |
 | deli flower jar wall (south, between arches) | 13.5–34.7 | 27.6–28.8 | 21.2 × 1.2. **REF-011:** it has a back counter under the shelves (BAND 10); real depth runs to the wall, ≈2.1 ft (§8.3) |
-| rack (east wall) | 45.6–47.0 | 15.0–20.0 | 1.4 × 5.0 |
-| sink (hand wash, east wall) | 45.6–47.0 | 24.6–26.8 | 1.4 × 2.2 |
+| rack (east wall) | 45.6–47.0 · **A011 (REF-016): 45.77–47.18** | 15.0–20.0 · **A011: 14.33–18.14** | 1.4 × 5.0 · A011 1.41 × 3.81 |
+| sink (hand wash, east wall) | 45.6–47.0 · **A011 (REF-016): on the SOUTH wall, x 43.67–45.56** | 24.6–26.8 · **A011: 27.40–29.0** | 1.4 × 2.2 · A011 ≈1.9 × 1.6 |
 | Office: IT rack | 0.6–2.0 | 38.0–42.0 | 1.4 × 4.0 |
 | Office: safe | 11.0–13.2 | 37.2–40.2 | 2.2 × 3.0 |
 | Office: desk (L) | 9.0–13.2 | 41.0–45.6 (bbox) | L |
@@ -129,7 +129,7 @@ The plan text says the wall carries **17 distinct feeds: 6 exterior, 6 sales flo
 | R1C3 | Exterior lot by long wall | dark green privacy fence/gate, yellow curb, wall packs | Exterior (likely delivery/rear) | Low |
 | R1C4 | Exterior drive aisle | orange cone, hedge, yellow crosshatch, headlights | Exterior | Med |
 | R1C5 | Exterior front/side parking | sidewalk approach, building edge, street | Exterior | Med |
-| R2C1 | Sales floor, from register end looking toward entry | glass entry doors + exit sign, queue stanchions (black belts), video-wall TV, living wall, "DELI STYLE" counter, POS monitors, card readers, scales on rolling carts; white marble-look tile + black/white geometric cement tile near counter | Retail (west half) | High |
+| R2C1 | Sales floor. **REF-016: camera in the SW, looking N** past the west-end block of the south counter (video wall, living wall and the north run's DELI STYLE front beyond, entry at the far left). Foreground: **register 7** on that block, monitor and keyboard facing an operator on its east side, card terminal on its west edge, the customer standing west of it (was "from register end looking toward entry") | glass entry doors + exit sign, queue stanchions (black belts), video-wall TV, living wall, "DELI STYLE" counter, POS monitors, card readers, scales on rolling carts; white marble-look tile + black/white geometric cement tile near counter | Retail (west half) | High |
 | R2C2 | Sales floor, high SW-ish view over queue | wall planters + wood bench, 3×3 video wall, "THE FLOWER SHOP" logo living wall, stanchion field, DELI STYLE counter with checker tile front, jar walls, globe pendant cluster | Retail | High |
 | R2C3 | Register run close (**REF-011: camera behind the south run, looking north** at the north run) | 3–4 POS stations, black counter with open shelves below, scale carts, jar wall with mint/teal backlit shelving on the side wall, yellow wet-floor sign, "HIGH TIDE" stool/seat back | Retail (registers) | High |
 | R2C4 | Register run, wider (camera name "Back Of Register center", REF-003; **REF-011: behind the south run, looking north**) | 3 POS + spare monitor, kraft order bags, globe pendant clusters, DELI STYLE counter behind | Retail (registers) | High |
@@ -428,7 +428,7 @@ Views: R3C3/R4C5 (looking N), chat_office_L (looking S), R3C4 (through the open 
 R3C4 looks SE from the NW. Break door (black, "EMPLOYEES ONLY", fire label) is on the east wall, y 29.9–33.0. Office door is at the SE corner. Restroom door is on the west wall, y 33.1–36.1 (A011 only). Wood corkboard ≈1.8×2.6 ft with taped notices. A small wall device near the arch (A011) is security hardware (DEC-062): a plain blank panel only. TL-2 black/white tile (High). **GAP-123:** graybox doors are off by 1–2.2 ft.
 
 ### 7.3 Break room + JC
-R3C5 (from the SW, looking N/NE) and A011 agree (Med). A pilaster at x 18.3–18.9. Plain north wall west of it (labour-law poster); the **first-aid kit** is on the pilaster (DEC-051 Q8). A **bulletin board** (staff schedule, events, updates; contents not modelled) is on the hallway (west) wall between the hall door and the whiteboard (DEC-062; position Low). Wood/black-top cabinets east of it, returning down the east wall to y 37.4, with a double sink at y≈34.4. A magnet-covered **fridge** at y 37.7–40.5. West wall (DEC-051 Q6–7): a **whiteboard** (the red/white frame), a lunch **table** pushed against it, and the wood **bench** beside the table on its east side (longer than the table, so it can't go under it); mini hoop and coat hooks near the SW corner. **JC (GAP-103 closed):** SE corner, x 19.3–23.31, y 41.3–46.3 (≈19.2 SF), with its 2'-8" door on the west face at the south end (the black door with a note in R3C5) and inside it a mop sink (A011), mops and brooms, and a small rack of cleaning supplies (DEC-062). **Staff lockers (store fact, DEC-047):** **one unit, about 2 × 6 ft** (DEC-051 Q5; read as 2 ft wide × 6 ft tall). Its grey top shows in the R3C5 foreground (a cap and a strap sit on it). The wall is still unknown (GAP-126 narrowed, position null in the JSON).
+R3C5 (from the SW, looking N/NE) and A011 agree (Med). A pilaster at x 18.3–18.9. Plain north wall west of it (labour-law poster); the **first-aid kit** is on the pilaster (DEC-051 Q8). A **bulletin board** (staff schedule, events, updates; contents not modelled) is on the hallway (west) wall south of the whiteboard, y 39.75–42.75 (DEC-062; moved there in the REF-013 fix round when the table group moved north; position Low, GAP-127). Wood/black-top cabinets east of it, returning down the east wall to y 37.4, with a double sink at y≈34.4. A magnet-covered **fridge** at y 37.7–40.5. West wall (DEC-051 Q6–7): a **whiteboard** (the red/white frame), a lunch **table** pushed against it, and the wood **bench** beside the table on its east side (longer than the table, so it can't go under it); mini hoop and coat hooks near the SW corner. **JC (GAP-103 closed):** SE corner, x 19.3–23.31, y 41.3–46.3 (≈19.2 SF), with its 2'-8" door on the west face at the south end (the black door with a note in R3C5) and inside it a mop sink (A011), mops and brooms, and a small rack of cleaning supplies (DEC-062). **Staff lockers (store fact, DEC-047):** **one unit, about 2 × 6 ft** (DEC-051 Q5; read as 2 ft wide × 6 ft tall). Its grey top shows in the R3C5 foreground (a cap and a strap sit on it). The wall is still unknown (GAP-126 narrowed, position null in the JSON).
 
 ### 7.4 Restroom (no photos; layout from Nolan, DEC-062)
 A011: toilet in the NW corner (tank on the west wall), grab bars on the north and west walls, sink in the SW corner, door at the south end of the east wall. Nolan (DEC-062), entering heading west: **straight ahead** a white full-size sink with a full-size mirror; to the sink's **left** an old silver manual paper-towel dispenser (A011 south-wall item); **far right** a standard white toilet; **between sink and toilet** a flat-black storage tool chest (swing-out doors, 2 shelves); one large storage cabinet of bathroom and cleaning supplies, which DEC-062 called the "back wall". **DEC-068 corrects this:** it stands next to the restroom door, against the door (east) wall. The side is not stated, so the placeholder is the north side, the only side that clears the door span: x 6.5–8.0, y 29.7–32.9, 3.2 ft wide, 7 ft tall (Low, GAP-109; REF-010, as built by ART-006). Finishes per TI §6.6.
@@ -459,11 +459,12 @@ Playtest 1 (DEC-096) audit of the graybox against the evidence. Rows are in `Doc
 |---|---|---|---|---|---|
 | North (staff N) | 08, 09, 10 | x 24.0 / 30.0 / 36.0, y 7.0 | S | 3.4 ft (to back-counter front y 2.3) | Med |
 | East (staff E) | 12, 11 | x 40.49, y 12.0 / 16.0 | W | 3.2 ft (to x 44.99) | Med (REF-013) |
-| South (staff S) | 07, 02, 03, 04, 05, 06 | x 36.4 / 33.2 / 30.0 / 26.8 / 23.6 / 20.4, y 22.5 | N | 3.2 ft (to y 27.0; 07 has 5.2 ft to the wall at the east arch) | Med: y High, x pitch Low-Med (REF-013) |
+| South (staff S) | 02, 03, 04, 05, 06 (west → east) | x 21.2 / 25.0 / 28.8 / 32.6 / 36.4, y 22.5 | N | 3.2 ft (to y 27.0; 06 has 5.2 ft to the wall at the east arch) | Med: y High, x pitch Low-Med (REF-016) |
+| South west-end block (staff E) | 07 | x 17.78 (block x 15.28–17.78), y 25.2 | W | 1.3 ft to POS_02's zone (shared aisle, Low) | Med (block, facing: wall2_R2C1) / Low (y) (REF-016) |
 
-South order follows ART-003's reading of "left to right": a customer facing the counter, so 7 is east (GAP-131). Pitch is ≈3.2 ft (monitor pitch in the wide still is 3–3.5 ft). REF-013: 06 starts at x 20.4 because the west return (x 15.28–17.78) closes the aisle's west end. Every customer spot is ≥ 1.0 ft from both columns.
+**REF-016 (playtest 2, supersedes ART-003's reading):** DEC-039's "left to right" runs **west → east** (staff facing north / north-up plan): register 6 is at the east end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), and register 7 is the POS on the west-end block, facing west (wall2_R2C1). The straight run holds **5** stations, as the 2022 TI rough-ins (E101 POS circuits A-10..A-18, A901 det. 17 outlets) and PT2 #3. Pitch 3.8 ft (TI 3.75–4.08 ft; CCTV ≈4.0 ft, §9). Every customer spot is ≥ 1.0 ft from both columns. Matrix and work list: §9.
 
-- **Station kit and trash (DEC-103/104).** Every station gets a small trash bin (placeholder: against the back of the stand, as in BAND 10 and wide_stand_A; Low, GAP-131). Three big bins are spread across the floor (rows `Trash_Big_*`). Only the one at the south return end has CCTV support (R2C5); the rest are Low (GAP-134). **Rule (DEC-104): small items are never uniform between stations** (presence, placement, condition), so ART and Assets vary each station's kit rather than copying one. The DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, a spray bottle on a stand, a rag. The ID-check stand directly left inside the entry (DEC-048) carries an ID scanner with a green light (DEC-103). There is no second door after it, so check-in leads straight onto the floor.
+- **Station kit and trash (DEC-103/104).** Every station gets a small trash bin (placeholder: against the back of the stand, as in BAND 10 and wide_stand_A; Low, GAP-131). Three big bins are spread across the floor (rows `Trash_Big_*`). Only `Trash_Big_SouthReturnEnd` has CCTV support: R2C5 and R2C3 show it on the staff floor just past the south run's east end (REF-016 moved it there from the customer floor); the rest are Low (GAP-134). Small-bin size ≈1.15 × 1.15 × 1.18 ft (REF-016, §9). **Rule (DEC-104): small items are never uniform between stations** (presence, placement, condition), so ART and Assets vary each station's kit rather than copying one. The DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, a spray bottle on a stand, a rag. The ID-check stand directly left inside the entry (DEC-048) carries an ID scanner with a green light (DEC-103). There is no second door after it, so check-in leads straight onto the floor.
 
 ### 8.2 HUB / HUB 2 (DEC-022, §2.1)
 - **Naming holds (A011).** HUB is the east room and HUB 2 the west room.
@@ -515,3 +516,105 @@ No shelf is uniformly full, and almost no jar is brim-full. Levels vary jar to j
 | Parking | west stall row 18.2 ft deep at 9.1 ft pitch, 24.3 ft drive aisle, 8.0 ft building walk | G000 key plan drawing 29, scaled 3.75 pt/ft from the building outline (180 × 288.6 pt) | stall heads x −32.7 | Med |
 | HUB east counter | no HUB furniture on A011, A012 or A101 | hub_R1C4 perspective | about 20 ft, y 52–72 | Med (position) / Low (length) |
 | Door swings | arcs and leaves for every leaf | A011 vector (e.g. the office→HUB 2 arc 4360 hinges at (7.56, 46.44) with R 3.0) | DOORS.json `audit` | Med–High |
+
+## 9. Store-evidence matrix (REF-016, DEC-120)
+
+**Where it lives.** No new file. Each row of `Docs/Reference/ROOM_FIXTURES.json` (rev9, 132 rows) carries a `matrix` record; `DOORS.json` (rev4) and `SCENE_ANCHORS.json` (v3) carry `implemented` per door / anchor. The fields are defined in each file's `_about`:
+- `src_primary`: the strongest source in the DEC-120 order (TI/architectural → CCTV → store photos → audited mapping → public refs), with its locator.
+- `conf`: one confidence per field (`size`, `position`, `orientation`). This answers REVIEW-REF013b m1. The row-level `confidence` stays for older consumers.
+- `served_side`: staff, customer or both.
+- `implemented`: the item as built today, read from `UnityProject/Assets/_Game/Art/Graybox/graybox_layout.json`. That file is what `GrayboxBuilder.BuildAll` builds (ART-007, from rev7); `SliceSceneBuilder` adds no fixtures. Status is matches / differs / missing (tolerance 0.15 ft unless stated), with the built rect.
+- `gaps`: the GAP/DEC ids the row still depends on.
+
+Section 9.3 below is the list of rows that differ. **It is ART-013's work list.**
+
+### 9.1 Settled from evidence (PT2 #3, #4, #6, #8, #9, #10; PROC-006b World items)
+- **South register count: 5 on the straight run, plus register 7 on the west-end block.**
+  - 2022 TI: the E101 power plan (p.35) has 5 POS circuits, A-10/12/14/16/18, each with a TV/RI rough-in. A901 detail 17 (p.13) places the same 5 outlets 3.78 / 7.53 / 16.61 / 20.69 / 24.77 ft from the 27'-9" counter's west end (pitch 3.75–4.08 ft). High as the 2022 design; Med as today's store.
+  - CCTV agrees: wall2_R2C3 and the wide still show 4 stations on the run's east part at about 4.0 ft pitch.
+  - PT2 #3 says "reduce the count there".
+  - DEC-039's six south-side numbers are kept: 7 is the sixth station, off the straight run.
+- **Numbering direction, west → east: 7 (west block), 2, 3, 4, 5, 6.**
+  - PT2 #6 puts register 6 near the sink and the emergency exit, which is the east end.
+  - wall2_R2C1 shows a POS on the west-end block (x 15.28–17.78, y 20.0–27.0) facing west. The operator stands on its east side and the customer stands west of it.
+  - This is register 7, the leftmost of DEC-039's list read west → east (PT2 #4: "Register 7 is not where it should be").
+  - ART-003's customer-side reading is retired, and GAP-131's direction question is answered.
+  - Positions: 02..06 at x 21.2 / 25.0 / 28.8 / 32.6 / 36.4 on the staff edge y 22.5; 07 at x 17.78, y 25.2, facing W (its y along the block is Low).
+- **Which side, which way (PT2 #8/#9; row `POS_StationKit`).** Read from the back-of-register stills and wall2_R2C1/R2C3.
+  - Staff half of the top: keyboard, mouse, scanner, receipt and label printers, rag.
+  - Staff floor: the scale stand to the operator's right, the small bin and the open under-counter shelves.
+  - The monitor stands on the customer half of the 2'-6" top but faces the operator.
+  - Customer edge: only the card/PIN terminal (and the counter wrap).
+  - In the build, every label/receipt printer sits on the customer half, `POS_06_LabelPrinter` sits on the customer edge, and a rev7 north arm (x 32.2–34.2, y 18.0–20.4) stands on the customer floor. No drawing shows that arm.
+- **Emergency exit by register 6 and the sink (PT2 #6).** A011 vector:
+  - Rough opening y 21.38–24.72: a 3'-0" leaf plus 2" HM jambs. Hinge N, swings out east.
+  - The door sits in a wall segment recessed 1.07 ft east of the 47.19 line from y 18.2 south.
+  - The build cuts the V5 3.5 ft opening (y 20.5–24.0) and hangs a 3.0 ft leaf on the south jamb, which leaves a 0.5 × 7 ft slot (y 20.5–21.0) open to the outside with no frame. That slot is the wall gap Nolan saw.
+  - The hand-wash sink is on the south wall (x 43.67–45.56), not on the east wall beside the door.
+  - New DOORS fields: `rough_opening`, `wall_recess`.
+- **Guard / ID check at the entrance (PT2 #10).** The wide still (top-left, magnified) shows the uniformed guard at a dark podium immediately north of the entry door, with the framed licences further north and a white stool beside it.
+  - The stand stays at y 7.15–8.65 (REF-013, A011 door y 8.9–14.9).
+  - The guard stands between the west wall and the podium, facing into the store: `Anchor_Guard_Post` (0.9, 7.9), facing E (orientation Low).
+  - The build has no guard body (NPC-002/ASSET-008), only the anchor, and its ID stand still sits at y 10.25–11.75.
+- **Small register bin (PROC-006b item 1).** About 1.15 × 1.15 × 1.18 ft.
+  - Wide-still wire-bin rim: 78 px against the adjacent stand top (108 px = 1.6 ft) gives 1.16 ft, and against the keyboard (87 px = 17.5 in) gives 1.31 ft.
+  - The height cannot be measured from overhead, so it stays at GAP-REG-10's 14 in.
+  - This replaces rev7's 0.9 × 0.9 × 1.5 ft and the kit's 0.30 m width.
+- **POS monitor y (PROC-006b item 2, GAP-RK-LAYOUT).** The rev7/rev8 `pos_ft` y (0.22 ft inside the staff edge) is a graybox station reference only.
+  - The wide and centre stills show the monitor on the customer half of the top, facing the operator, with the keyboard between it and the staff edge.
+  - The arranger's choice (monitor footprint at the back of the top) agrees.
+  - Centimetre offsets stay GAP-RK-LAYOUT.
+- **Big bin at the south run's east end.** wall2_R2C5 and wall2_R2C3 show it on the staff floor past the run's east end, so it moves to (42.0, 23.0) (Low, GAP-134). It had been standing on the customer floor, where it blocked register 5's customer spot.
+- **East return (GAP-130, unchanged).** The A011 POS box ends at y 15.80, leaving 4.2 ft to the south run. wall2_R2C3 shows the return meeting the run and the floor past the run's east end as staff tile. REF-013's closed staff L is kept, so the SE pocket (sink, emergency exit, east rack, big bin) is staff floor.
+
+### 9.2 Measurements (method)
+All A011 values use the §8.5 frame (17.987 pt/ft; x from the retail west face, y south-wall-anchored), read from PyMuPDF `get_drawings()` indices. CCTV values are pixel spans in the named still against a named reference length.
+
+| Item | Measurement | Source + locator | Result | Conf. |
+|---|---|---|---|---|
+| South POS count / pitch | 5 POS circuits; outlets 3.78 / 7.53 / 16.61 / 20.69 / 24.77 ft from the run's west end | TI p.35 E101 words "POS" A-10..A-18 (x 644–1021 pt); TI p.13 A901 det. 17 "TV" words x 444–822 pt at 18 pt/ft, 27'-9" = 500 pt | 5 stations, pitch 3.75–4.08 ft | High (2022) / Med (today) |
+| CCTV south pitch | 287 / 295 / 190 px between monitor centres; monitor widths 107–137 / 110 / 75 px | Register_Wide_still; wall2_R2C3 (2.53–2.85 widths) | 2.05–2.85 monitor widths × 1.6–1.75 ft (convention) = 3.3–5.0 ft, about 4.0 | Low-Med |
+| Emergency exit opening | interior wall ends y 21.38 / resumes 24.72; CMU gap 21.42–24.75; leaf hinge (48.93, 21.59) | A011 drawings 3571, 3567, 121, 3610 | rough opening 3.34 ft = 3'-0" + 2 × 2" | Med |
+| East wall recess | interior face 47.19 → 48.26 at y 18.13–18.31 | A011 3413, 3420, 3421 | 1.07 ft step | Med |
+| Hand-wash sink | x 43.67–45.56, y 27.40–29.00 | A011 3843–3899, label "HAND WASHING SINK" + leader 4699/4701 | south wall, SE pocket | Med |
+| East wall rack | x 45.77–47.18, y 14.33–18.14 | A011 3693–3705 | 1.41 × 3.81 ft | Med |
+| Small bin | rim 78 px; stand top 108 px; keyboard 87 px | Register_Wide_still (197–275, 527–610) | ≈1.15 ft rim | Low |
+
+### 9.3 Rows that differ from the build (ART-013 work list)
+Generated from the JSONs. RF = ROOM_FIXTURES. Rows not listed match the build within 0.15 ft, or point to DOORS.json. Every built door also lacks frames, jambs, hardware and glazing (`implemented` "matches (leaf only)"): PT2 #7 and PROC-013.
+
+| # | Row (file) | Status | As built today vs matrix | Matrix source (conf pos) | Gaps |
+|---|---|---|---|---|---|
+| 1 | Retail / Counter_Register_EastReturn (RF) | differs | built x 38.40-40.60, y 9.20-19.00 vs matrix x 37.99-40.49, y 9.20-20.00 (max edge offset 1.00 ft) | A011/A012 vectors (east back counter 2744 x 45.19-47.19; POS label box 5020 x 42.21-43.99, y 5.96-15.80) + A90 (Low) | GAP-130 |
+| 2 | Retail / Counter_Register_South (RF) | differs | built x 14.00-34.20, y 20.40-22.60 vs matrix x 15.29-41.03, y 20.00-22.50 (max edge offset 6.83 ft) | A901 detail 17 (printed 9'-0" wall->customer face, 2'-6" top) + A011/A012 vectors 3017/3019 (x 15.28-41.02, y  (High (y) / Med (x)) | GAP-129 closed |
+| 3 | Retail / Counter_Register_SouthWestReturn (RF) | differs | missing as built; the build has instead a north arm x 32.20-34.20, y 18.00-20.40 standing on the CUSTOMER floor (rev7 Counter_Register_SouthReturn, no drawing shows it): remove it | A901 detail 17 printed 2'-6" + A011 3017/3019 (x 15.28-17.78, y 22.49-26.99) (Med) | GAP-131 |
+| 4 | Retail / DeliJarWall_South (RF) | differs | built x 13.50-34.70, y 26.90-28.70 vs matrix x 15.20-34.42, y 27.00-29.00 (max edge offset 1.70 ft); jar density per DEC-121 | A011/A012 vector (back counter x 15.19-34.42, y 27.0-29.0) + A901 printed 19'-2 3/4" + BAND_10 (High (length) / Med) | GAP-133, DEC-121 |
+| 5 | Retail / POS_07 (RF) | differs | built station point on the staff edge (31.00, 22.60), staff S; matrix (17.78, 25.20), staff E (wrong counter face / orientation) | wall2_R2C1 (camera in the SW looking N: a POS on the west-end block of the south counter, monitor and keyboard (Med (on the west-end block) / Low (y along it)) | GAP-131, GAP-108 |
+| 6 | Retail / POS_02 (RF) | differs | built station point on the staff edge (27.80, 22.60), staff S; matrix (21.20, 22.50), staff S | TI E101 power plan (p.35): 5 POS circuits A-10/12/14/16/18 + 5 TV/RI outlets; A901 det.17 (p.13): the same 5 T (High (y) / Low-Med (x)) | GAP-131, GAP-108 |
+| 7 | Retail / POS_03 (RF) | differs | built station point on the staff edge (24.60, 22.60), staff S; matrix (25.00, 22.50), staff S | TI E101 power plan (p.35): 5 POS circuits A-10/12/14/16/18 + 5 TV/RI outlets; A901 det.17 (p.13): the same 5 T (High (y) / Low-Med (x)) | GAP-131, GAP-108 |
+| 8 | Retail / POS_04 (RF) | differs | built station point on the staff edge (21.40, 22.60), staff S; matrix (28.80, 22.50), staff S | TI E101 power plan (p.35): 5 POS circuits A-10/12/14/16/18 + 5 TV/RI outlets; A901 det.17 (p.13): the same 5 T (High (y) / Low-Med (x)) | GAP-131, GAP-108 |
+| 9 | Retail / POS_05 (RF) | differs | built station point on the staff edge (17.80, 22.60), staff S; matrix (32.60, 22.50), staff S | TI E101 power plan (p.35): 5 POS circuits A-10/12/14/16/18 + 5 TV/RI outlets; A901 det.17 (p.13): the same 5 T (High (y) / Low-Med (x)) | GAP-131, GAP-108 |
+| 10 | Retail / POS_06 (RF) | differs | built station point on the staff edge (14.80, 22.60), staff S; matrix (36.40, 22.50), staff S | TI E101 power plan (p.35): 5 POS circuits A-10/12/14/16/18 + 5 TV/RI outlets; A901 det.17 (p.13): the same 5 T (High (y) / Low-Med (x)) | GAP-131, GAP-108 |
+| 11 | Retail / IDCheck_Stand (RF) | differs | built x 1.50-3.50, y 10.25-11.75 (rev7, beside the V5 door 12.5-18.5); matrix y 7.15-8.65 (north of the A011 door 8.9-14.9). No guard body in the build (PT2 #10; NPC-002/ASSET-008), only Anchor_Guard_Post | Register_Wide_still (guard + podium north of the door) + DEC-048 + A011 entry y 8.9-14.9 (Med) | GAP-134 |
+| 12 | Retail / IDCheck_Scanner (RF) | differs | built x 2.25-2.75, y 10.80-11.20 vs matrix x 2.25-2.75, y 7.70-8.10 (max edge offset 3.10 ft) | DEC-103 (Low) | GAP-134 |
+| 13 | Retail / Trash_Small_POS_02..12 (11 rows) (RF) | differs | every small bin follows its moved stand (south 07, 02..06 moved up to 22 ft) and the size changes 0.9 x 0.9 x 1.5 -> 1.15 x 1.15 x 1.18 ft (north/east: size only) | Register_Wide_still (bin rim vs stand top) + REGISTER_KIT GAP-REG-10 (Low) | GAP-131, GAP-REG-10 |
+| 14 | Retail / Trash_Big_SouthReturnEnd (RF) | differs | built x 32.70-33.90, y 16.60-17.80 vs matrix x 41.40-42.60, y 22.40-23.60 (max edge offset 8.70 ft) | wall2_R2C5 + wall2_R2C3 (Low) | GAP-134 |
+| 15 | Retail / Sink_HandWash (RF) | differs | built on the EAST wall x 45.60-46.99, y 24.60-26.80 (V5), right beside the exit opening; matrix: south wall x 43.67-45.57, y 27.40-29.00 | A011 vector (17.987 pt/ft, frame of REFERENCES_INDEX 8.5: x from the retail west face, y south-wall-anchored)  (Med) | GAP-108 |
+| 16 | Retail / Rack_EastWall (RF) | differs | built x 45.60-46.99, y 15.00-20.00 vs matrix x 45.77-47.18, y 14.33-18.14 (max edge offset 1.86 ft) | A011 vector (17.987 pt/ft, frame of REFERENCES_INDEX 8.5: x from the retail west face, y south-wall-anchored)  (Med) | GAP-002 |
+| 17 | Retail / POS_StationKit (RF) | differs | label/receipt printers sit on the CUSTOMER half of every top (south y 21.00-21.65 on a 20.40-22.60 top; north y 7.95-8.60 on 7.00-9.20; east x 39.05-39.65 on 38.40-40.60); POS_06_LabelPrinter sits on the customer edge (y 20.33-20.98); the monitor box is 0.10-0.35 ft inside the staff edge (real: customer half, facing staff); card terminals correctly on the customer edge; spray bottles on the stands correct | Register_Wide_still + Center_close/East stills + wall2_R2C1/R2C3 (Med (side)) | GAP-RK-LAYOUT, GAP-REG-10 |
+| 18 | BreakRoom / Mops_Brooms_JC (RF) | differs | built x 21.90-22.90, y 43.00-43.80 vs matrix x 22.40-23.40, y 43.00-43.80 (max edge offset 0.50 ft) | DEC-062 (Low) | GAP-127 |
+| 19 | BreakRoom / Whiteboard_West (RF) | differs | built x 14.45-14.55, y 38.50-42.50 vs matrix x 14.45-14.55, y 35.00-39.00 (max edge offset 3.50 ft) | wall2_R3C5 (Med) | GAP-127 |
+| 20 | BreakRoom / Board_Bulletin_West (RF) | differs | built x 14.45-14.55, y 34.25-37.25 vs matrix x 14.45-14.55, y 39.75-42.75 (max edge offset 5.50 ft) | DEC-062 (Med) | GAP-127 |
+| 21 | BreakRoom / Table_Lunch (RF) | differs | built x 14.55-17.05, y 38.50-42.50 vs matrix x 14.55-17.05, y 35.00-39.00 (max edge offset 3.50 ft) | DEC-051 (Low) | GAP-127 |
+| 22 | BreakRoom / Bench_Wood (RF) | differs | built x 17.10-18.40, y 38.00-43.00 vs matrix x 17.10-18.40, y 34.50-39.50 (max edge offset 3.50 ft) | wall2_R3C5 (Low) | GAP-127 |
+| 23 | BreakRoom / Lockers_Staff (RF) | missing | not placeable (pos null), see gap | wall2_R3C5 (High) | GAP-126 |
+| 24 | FOH / Trash_Aluminium (RF) | differs | built x 27.45-28.95, y 29.55-31.05 vs matrix x 28.40-29.90, y 29.95-31.45 (max edge offset 0.95 ft) | DEC-051 (Low) | GAP-127 |
+| 25 | FOH / Props_Floor (RF) | missing | not placeable (pos null), see gap | FOH_still (Low) | - |
+| 26 | Entry (DOORS) | differs | Door_Entry_L hinge built (0.10, 18.50) vs (0.10, 14.90); Door_Entry_R hinge built (0.10, 12.50) vs (0.10, 8.90); wall opening built y 12.50-18.50 vs target 8.90-14.90; no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors) | A011 vector opening y 7.39-13.40 south-anchored = 8.89-14.90 from the north face; mapped north-wall-anchored i | GAP-137, GAP-138 |
+| 27 | Emergency_RetailE (DOORS) | differs | PT2 #6 open wall gap explained: the built wall opening is y 20.50-24.00 (3.50 ft, V5) but the leaf is 3.0 ft hinged at the SOUTH end (y 24.0, yaw -90), so a 0.50 ft x 7 ft slot (y 20.50-21.00) stays open to the outside with no frame or infill; DOORS wants hinge N at y 21.65 and the opening at the A011 rough opening y 21.38-24.72 (leaf + 2 in jambs). Door_Emergency_RetailE hinge built (47.09, 24.00) vs (47.09, 21.65); Door_Emergency_RetailE closed yaw built -90 vs 90; Door_Emergency_RetailE openAngle built 90 vs -90; wall opening built y 20.50-24.00 vs target 21.65-24.65; no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors) | A011 vector (target_opening); graybox/V5 y 20.5-24.0 is Low | GAP-137, GAP-138 |
+| 28 | HUB2_HUB (DOORS) | differs | Door_HUB2_HUB hinge built (19.00, 48.10) vs (19.00, 51.10); Door_HUB2_HUB closed yaw built 90 vs -90; Door_HUB2_HUB openAngle built -90 vs 90; no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors) | REFERENCES_INDEX 1.4 (A011: north end of the partition); A101 tag E111A at the partition's north end | GAP-137, GAP-138 |
+| 29 | Grille_101B (DOORS) | missing | not placed (no pos_ft); not in the build | not placed: TI positions are not valid (DEC-037) and no plan, photo or DEC places it | GAP-137 |
+| 30 | CustomerSpawn, CustomerExit (SCENE_ANCHORS) | differs | CustomerSpawn built (-4.00, 14.00) yaw 90 -> (-32.7, 11.9) yaw 90; CustomerExit built (-4.00, 17.00) yaw 270 -> (-32.7, 14.9) yaw 270 | G000 key plan (TI set p.1) vector, scaled 3.75 pt/ft from the building outline and checked by its 18.2 ft stal | - |
+| 31 | CheckIn, CheckIn_Wait_0, CheckIn_Wait_1, CheckIn_Wait_2, CheckIn_Wait_3 (SCENE_ANCHORS) | differs | CheckIn built (2.50, 11.00) yaw 180 -> (2.5, 7.9) yaw 180; CheckIn_Wait_0 built (2.50, 13.00) yaw 0 -> (2.5, 9.9) yaw 0; CheckIn_Wait_1 built (4.00, 14.60) yaw 0 -> (4, 11.5) yaw 0; CheckIn_Wait_2 built (4.00, 16.60) yaw 0 -> (4, 13.5) yaw 0; CheckIn_Wait_3 built (4.00, 18.60) yaw 0 -> (4, 15.5) yaw 0 | DEC-048 (4): ID stand directly LEFT inside the entrance (entering east, left = north of the door); A011 vector | GAP-134 |
+| 32 | Guard_Post (SCENE_ANCHORS) | differs | Guard_Post built (2.50, 9.80) yaw 180 -> (0.9, 7.9) yaw 90 | REF-016: Register_Wide_still (top-left): the guard stands between the west wall and the podium, facing into th | GAP-134 |
+| 33 | Register_02_Call, Register_02_Operator, Register_03_Call, Register_03_Operator, Register_04_Call, Register_04_Operator, Register_05_Call, Register_05_Operator, Register_06_Call, Register_06_Operator, Register_07_Call, Register_07_Operator, Register_11_Call, Register_12_Call (SCENE_ANCHORS) | differs | Register_02_Call built (27.80, 19.20) yaw 180 -> (21.2, 18.8) yaw 180; Register_02_Operator built (27.80, 23.60) yaw 0 -> (21.2, 23.5) yaw 0; Register_03_Call built (24.60, 19.20) yaw 180 -> (25, 18.8) yaw 180; Register_03_Operator built (24.60, 23.60) yaw 0 -> (25, 23.5) yaw 0; Register_04_Call built (21.40, 19.20) yaw 180 -> (28.8, 18.8) yaw 180; Register_04_Operator built (21.40, 23.60) yaw 0 -> (28.8, 23.5) yaw 0; Register_05_Call built (17.80, 19.20) yaw 180 -> (32.6, 18.8) yaw 180; Register_05_Operator built (17.80, 23.60) yaw 0 -> (32.6, 23.5) yaw 0; Register_06_Call built (14.80, 19.20) yaw 180 -> (36.4, 18.8) yaw 180; Register_06_Operator built (14.80, 23.60) yaw 0 -> (36.4, 23.5) yaw 0; Register_07_Call built (31.00, 19.20) yaw 180 -> (14.08, 25.2) yaw 90; Register_07_Operator built (31.00, 23.60) yaw 0 -> (18.78, 25.2) yaw 270; Register_11_Call built (37.20, 16.00) yaw 90 -> (36.79, 16) yaw 90; Register_12_Call built (37.20, 12.00) yaw 90 -> (36.79, 12) yaw 90 | ROOM_FIXTURES rev9 POS_02 (REF-016: west->east order 2..6, 3.8 ft pitch; customer 1.2 ft off the face y 20.0,  | GAP-131 |
