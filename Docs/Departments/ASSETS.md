@@ -18,7 +18,7 @@ Rules for every department: `Docs/STUDIO_OS.md` §0. This file is the Assets lea
 Quality bar DEC-084 (never low-poly/generic; LOD chains; 2K–4K PBR) in every brief; $0 and the license allow-list DEC-023/087; brands DEC-071/078/081; toolkit intake and fix ownership DEC-069/070/083/092; no-overwrite rule DEC-093; **ChatGPT context limits DEC-095**.
 
 ## Status for Hub
-_Lead keeps this ≤15 lines._ 2026-10-30 (Assets lead `local_172b2109-6384-4914-800b-6dc37226e046`): BACKLOG reconciled (added ASSET-003/004, AUDIO-001, BRAND-001/001b/002, IMP-003, PROC-005/006). 3 of 3 worker slots in use, all Agent subagents in worktrees: PROC-005 resumed from `claude/clever-lamport-837e7f`; IMP-003 re-auditing the rebuilt round 3 (then 4–6) on top of `claude/brave-brattain-30c797`, folding in the REVIEW-W5T follow-ups; PROC-006 phase 1 = register workstation kit evidence spec (DEC-096 #5, no counter geometry until World's register re-audit lands). ASSET-004 paused until a slot frees. Old worker sessions PROC-005/ASSET-004/IMP-003 are superseded by subagents and can be archived. Decision needed: UV2 channel (below).
+_Lead keeps this ≤15 lines._ 2026-10-30 (Assets lead `local_172b2109-6384-4914-800b-6dc37226e046`): BACKLOG reconciled (added ASSET-003/004, AUDIO-001, BRAND-001/001b/002, IMP-003, PROC-005/006). 3 of 3 worker slots in use, all Agent subagents in worktrees: PROC-005 resumed from `claude/clever-lamport-837e7f`; IMP-003 re-auditing the rebuilt round 3 (then 4–6) on top of `claude/brave-brattain-30c797`, folding in the REVIEW-W5T follow-ups; PROC-006 phase 1 = register workstation kit evidence spec (DEC-096 #5, no counter geometry until World's register re-audit lands). ASSET-004 paused until a slot frees. Old worker sessions archived by the Hub. DEC-097 (UV layout) approved → PROC-007 queued after PROC-005; World does the label-shader cut-over in the same wave. DEC-098: anything important for Nolan goes to the Hub marked FOR NOLAN.
 
 ## In flight
 | Task | Worker | Branch | State |
@@ -29,6 +29,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30 (Assets lead `local_172b2109-6384-4914
 | ASSET-004 MPFB2 customers | — | `claude/task-asset-004` (225ac4a, partial) | paused; next steps in its handoff |
 
 ## Queue (lead re-orders within DEC-096)
+0. PROC-007 (DEC-097 UV layout + re-export) right after PROC-005 merges; agree the cut-over commit with the World lead.
 1. Review/merge path for the three in-flight tasks (Docs reviewer for IMP-003/PROC-006; Unity A for PROC-005 with a borrowed World Unity slot).
 2. Each toolkit round after audit: Docs review → Hub → Nolan approval → PROC integration (DEC-095). After rounds 3–6, a research pass of our own where ChatGPT lacked evidence (IMP-003 lists the gaps).
 3. PROC-006 phase 2: generators for the register kit once the spec and World's register re-audit land; then stocking arranger with believable uneven fill; buds/nugs look (low).
@@ -37,5 +38,5 @@ _Lead keeps this ≤15 lines._ 2026-10-30 (Assets lead `local_172b2109-6384-4914
 6. BRAND-002 name search before any public build (DEC-078). Later (P1): Unity Warehouse/Office packs need a Package Manager download.
 
 ## Blockers / Questions for Nolan
-- **Decision for Hub (cross-dept, from PROC-005):** Unity "Generate Lightmap UVs" writes uv1, which is our `UVMap_Label`. Lead's recommendation: Blender exports a dedicated lightmap UV as UV channel 1 (DEC-084 "UV2") and the label UV moves to channel 2; needs Gameplay/World to switch the label shader and a re-export of jars/packaged goods. Until decided, PROC-005 keeps the current layout and leaves Unity lightmap generation off.
+- None open (UV layout settled by DEC-097).
 - No questions for Nolan.
