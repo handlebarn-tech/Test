@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell|Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -I -c \"import os,runpy; p=os.path.join(os.environ.get('CLAUDE_PROJECT_DIR','.'),'Tools','Studio','hub_guard.py'); os.path.isfile(p) and runpy.run_path(p, run_name='__main__')\""
+          }
+        ]
+      }
+    ]
+  }
+}

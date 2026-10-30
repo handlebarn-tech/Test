@@ -44,7 +44,8 @@ $BuildDir   = Resolve-RepoPath $Cfg.builds
 $ResultDir  = Join-Path $Root 'Artifacts\Results'
 foreach ($d in @($LogDir, $TestDir, $BuildDir, $ResultDir)) { New-Item -ItemType Directory -Force $d | Out-Null }
 
-$Stamp   = Get-Date -Format 'yyyyMMdd-HHmmss'
+# ms + PID: same-second runs in one worktree must not share a log Unity holds open (REVIEW-W3A n2).
+$Stamp   = "$(Get-Date -Format 'yyyyMMdd-HHmmss-fff')-$PID"
 $Log     = Join-Path $LogDir "$Stamp-$Command.log"
 $Started = Get-Date
 $Outputs = New-Object System.Collections.ArrayList  # paths reported in the result JSON
@@ -110,6 +111,8 @@ function Assert-UnityReady {
     if (-not (Test-Path (Join-Path $Project 'ProjectSettings'))) { Complete $false -1 "Unity project not found: $Project" }
     if (Test-ProjectLocked) { Complete $false -1 'blocked: another Unity instance has the project open' 2 }
     Wait-UnitySlot
+    # Another run on this worktree may have launched while we waited for the slot (REVIEW-W3A n3).
+    if (Test-ProjectLocked) { Complete $false -1 'blocked: another Unity instance has the project open' 2 }
 }
 
 function Wait-UnitySlot {
@@ -176,7 +179,7 @@ switch ($Command) {
         } finally { Pop-Location }
         Write-Line 'latest results:'
         Get-ChildItem $ResultDir -Filter '*.json' | Sort-Object Name |
-            Group-Object { ($_.BaseName -split '-', 3)[2] } | ForEach-Object {
+            Group-Object { $_.BaseName -replace '^\d{8}-\d{6}(-\d{3}-\d+)?-', '' } | ForEach-Object {
                 $r = Get-Content ($_.Group | Select-Object -Last 1).FullName -Raw | ConvertFrom-Json
                 Write-Line ("  {0,-16} ok={1,-5} {2}s  {3}" -f $r.command, $r.ok, $r.durationSec, $r.summary)
             }
@@ -228,7 +231,26 @@ switch ($Command) {
         $qa = & python (Join-Path $PSScriptRoot 'graybox_qa.py') $outDir (Join-Path $Root 'References/Index/floor_plan_grid_1ft.png') 2>&1
         $qa | ForEach-Object { Write-Line "$_" }
         $ok = $LASTEXITCODE -eq 0
-        Complete $ok $code "$($line.Line.Trim()); qa: $(($qa | Select-Object -Last 1))"
+        $ErrorActionPreference = 'Stop'
+        $summary = "$($line.Line.Trim()); qa: $(($qa | Select-Object -Last 1))"
+
+        # GAME-002 slice screenshots: a PlayMode test that needs a GPU, so it runs here and is skipped under unity-test-play.
+        $hasSlice = [bool](Get-ChildItem (Join-Path $Project 'Assets') -Recurse -Filter '*.cs' |
+            Select-String -Pattern 'Category\("SliceCapture"\)' -List)
+        if (-not $hasSlice) { Complete $ok $code "$summary; slice: skipped (no SliceCapture test category)" }
+        Assert-UnityReady
+        $sliceDir = Join-Path $outDir 'slice'
+        $sliceLog = Join-Path $LogDir "$Stamp-$Command-slice.log"
+        $xml = Join-Path $TestDir "$Stamp-slicecapture.xml"
+        $sliceCode = Invoke-Unity @('-runTests', '-testPlatform', 'PlayMode', '-testCategory', 'SliceCapture', '-testResults', $xml, '-sliceCaptureDir', $sliceDir) $sliceLog -Graphics
+        [void]$Outputs.AddRange(@($sliceDir, $xml, $sliceLog))
+        if (Test-Path $xml) {
+            $run = ([xml](Get-Content $xml -Raw)).'test-run'
+            $sliceOk = ($sliceCode -eq 0) -and ([int]$run.failed -eq 0) -and ([int]$run.passed -gt 0)
+            $shots = @(Get-ChildItem $sliceDir -Filter 'SLICE_*.png' -ErrorAction SilentlyContinue).Count
+            $sliceSummary = "passed=$($run.passed) failed=$($run.failed) skipped=$($run.skipped) shots=$shots"
+        } else { $sliceOk = $false; $sliceSummary = "no test results written (csErrors=$(Get-CsErrorCount $sliceLog))" }
+        Complete ($ok -and $sliceOk) $(if ($code -ne 0) { $code } else { $sliceCode }) "$summary; slice: $sliceSummary"
     }
 
     'unity-build' {
@@ -264,7 +286,7 @@ switch ($Command) {
             target                = 'StandaloneWindows64'
             buildDateUtc          = (Get-Date).ToUniversalTime().ToString('o')
             commit                = $Commit
-            dirtyPaths            = @(git -C $Root status --porcelain 2>$null).Count
+            dirtyPathCount        = @(git -C $Root status --porcelain 2>$null).Count
             unityVersion          = ((Get-Content (Join-Path $Project 'ProjectSettings\ProjectVersion.txt'))[0] -split ':\s*')[1]
             scenes                = @([regex]::Matches($buildSettings, '- enabled: 1\s+path: (\S+)') | ForEach-Object { $_.Groups[1].Value })
             catalogManifestMd5    = & $md5 'UnityProject/Assets/_Game/Data/Catalog/manifest.json'
