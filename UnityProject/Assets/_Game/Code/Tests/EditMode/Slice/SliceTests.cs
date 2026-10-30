@@ -82,10 +82,10 @@ namespace Dispo.Slice.Tests
             var a = new ShiftSim(Load());
             var b = new ShiftSim(Load());
             Assert.AreEqual(Dump(a), Dump(b));
-            Assert.AreEqual(12, a.Customers.Count);
+            Assert.AreEqual(16, a.Customers.Count, "GAME-010: 16 per shift");
             CollectionAssert.AreEqual(a.Inventory.StartGrams, b.Inventory.StartGrams);
             Assert.AreEqual(0, a.Customers[0].SpawnTime);
-            Assert.AreEqual(4 * 45 + 4 * 15 + 3 * 45, a.Customers[11].SpawnTime, "45 s gaps, 15 s gaps before customers 6-9");
+            Assert.AreEqual(4 * 150 + 4 * 60 + 7 * 150, a.Customers[15].SpawnTime, "150 s gaps, 60 s gaps before customers 6-9 (GAME-010)");
             Assert.IsTrue(a.Customers.Where(c => c.Rush).Select(c => c.Index).SequenceEqual(new[] { 6, 7, 8, 9 }));
             Assert.IsTrue(a.Customers.All(c => c.HasBudget == c.Archetype.hasBudget));
         }
@@ -125,8 +125,8 @@ namespace Dispo.Slice.Tests
             Assert.AreEqual(1, ShiftSim.PriceFit(14, 14));
             Assert.AreEqual(0.5, ShiftSim.PriceFit(17.5, 14), 1e-9);
             Assert.AreEqual(0, ShiftSim.PriceFit(30, 14));
-            Assert.AreEqual(1, ShiftSim.SpeedFit(cfg, 30));
-            Assert.AreEqual(0.5, ShiftSim.SpeedFit(cfg, 75), 1e-9);
+            Assert.AreEqual(1, ShiftSim.SpeedFit(cfg, 20));
+            Assert.AreEqual(0.5, ShiftSim.SpeedFit(cfg, 55), 1e-9);
             Assert.AreEqual(0, ShiftSim.SpeedFit(cfg, 200));
             Assert.AreEqual(0, ShiftSim.WaitPenalty(cfg, 60));
             Assert.AreEqual(0.02, ShiftSim.WaitPenalty(cfg, 70), 1e-9);
@@ -292,7 +292,7 @@ namespace Dispo.Slice.Tests
             Assert.GreaterOrEqual(cfg.shiftStartHour, cfg.storeOpenHour);
             Assert.LessOrEqual(sim.ClockHours, cfg.storeCloseHour, "the bot shift ends before close");
             // Worst case: every customer waits out full patience and then the slowest service.
-            double worst = sim.Customers.Max(c => c.SpawnTime) + cfg.archetypes.Max(a => a.patienceSec) * 12 + cfg.slowSeconds * 12;
+            double worst = sim.Customers.Max(c => c.SpawnTime) + (cfg.archetypes.Max(a => a.patienceSec) + cfg.slowSeconds) * cfg.customersPerShift;
             Assert.LessOrEqual(cfg.shiftStartHour + worst / 3600, cfg.storeCloseHour);
         }
 
@@ -393,7 +393,7 @@ namespace Dispo.Slice.Tests
             foreach (var s in sim.Sales) Debug.Log($"[SliceBot] sale c{s.CustomerIndex} {sim.Customers[s.CustomerIndex - 1].TrueFamily.id} {s.StrainName} {s.BatchId} {s.Grams} g {s.GramsBefore}->{s.GramsAfter} start {sim.Inventory.StartGrams[s.BatchId]}");
             Debug.Log($"[SliceBot] served={r.CustomersServed} walkouts={r.Walkouts} noSales={r.NoSales} revenue={r.RevenuePostTax} soldOut={string.Join(",", r.SoldOut)} low={r.LowStock.Count} sat={r.AvgSatisfaction} stars={r.Stars}");
             Assert.IsTrue(sim.Customers.All(c => c.Outcome != CustomerOutcome.None));
-            Assert.AreEqual(12, r.CustomersServed + r.Walkouts + r.NoSales);
+            Assert.AreEqual(sim.Cfg.customersPerShift, r.CustomersServed + r.Walkouts + r.NoSales);
             Assert.AreEqual(sim.Sales.Sum(s => s.PricePostTax), r.RevenuePostTax, 1e-9);
             Assert.IsTrue(typeof(ShiftReport).GetFields().All(f => f.GetValue(r) != null), "no null report fields");
             CollectionAssert.IsNotEmpty(r.SoldOut, "DEC-027: the seed-1 bot shift shows at least one SOLD OUT");
