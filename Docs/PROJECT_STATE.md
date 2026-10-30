@@ -4,16 +4,16 @@ Hub-owned, project level only (`Docs/STUDIO_OS.md` §0). Department detail (work
 
 **Milestone:** vertical slice playable on `main` (2026-10-29). **PS1** (cart, limit meter, ID checks, medical, tuning; `Design/ROADMAP_POST_SLICE.md`) is one task from done (GAME-009). Next: PS1b, re-prioritised by playtest 1 (DEC-096).
 **Main:** see `git log`; every code/asset merge is a reviewed `review/*` branch.
-**Updated:** 2026-10-30 by Hub `local_c6267ff5-2acb-4b09-83a7-53541a088c66`: studio reorganised into departments (DEC-094); all old workcells idle, adopted by their leads.
+**Updated:** 2026-10-30 by Hub `local_78db2735-1777-4eb5-a0a1-e7f8e8a4ecf4` (fresh Hub; replaces `local_c6267ff5…`, no longer listed). Leads idle, all < 220k context.
 
 ## Studio roster
 | Dept | Lead session | Status | Max workers | Unity slots |
 |---|---|---|---|---|
-| Hub | `local_c6267ff5-2acb-4b09-83a7-53541a088c66` | active | DOC/OPS/AUDIT tasks only | 0 |
+| Hub | `local_78db2735-1777-4eb5-a0a1-e7f8e8a4ecf4` | active | DOC/OPS/AUDIT tasks only | 0 |
 | Gameplay | `local_5bcd6ccf-64c1-464e-9fb9-40ad2e27afb4` | active | 3 | 1 |
 | World | `local_d19eda58-a105-4379-aada-4bf61066f717` | active | 2 | 1 (lends to Assets for imports) |
-| Assets | `local_172b2109-6384-4914-800b-6dc37226e046` | active | 3 | 0 (borrows World's) |
-| Reviewer pool | Unity A `local_0dd63bac-df1d-448d-9203-641ead6b6837`, Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7` | idle | — | Unity reviewers use the owning dept's slot |
+| Assets | `local_172b2109-6384-4914-800b-6dc37226e046` | active; replace with a fresh session once PROC-005/ASSET-004/PROC-006b finish (Nolan: too expensive, 224k ctx) | 3 | 0 (borrows World's) |
+| Reviewer pool | Unity A2 `local_4e865bb8-479c-41c5-8628-7f3e7cb2a4c3`, Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs 2 `local_99d7e5b7-ef60-4076-9821-58f16ce3bec0` | idle | — | Unity reviewers use the owning dept's slot |
 
 Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME-009 `local_7f8c95e9…`, DES `local_82d327a2…`; Assets ← PROC-005 `local_6c216f80…`, ASSET-004 `local_d31ad4c5…`, IMP-003 `local_13653ae5…`. Leads may reuse or retire them.
 
@@ -31,16 +31,22 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 - World entry/check-in area ↔ Gameplay customer flow (guard post, queue line anchors).
 
 ## Blockers / risks
+- Structure frozen until playtest 2 (DEC-108); then the cost checkpoint: merged work per usage + lead context sizes. Nolan 2026-10-30: "the process feels like it has gotten progressively dumber as we expanded" (invented DOORS values passed review; questions the floor plan answers; 3 sessions flagging the same rows). Checkpoint must weigh flattening to Hub + workers + reviewers. Nolan away from 2026-10-30 ~15:00: notify only for decisions he must make.
+- IMP-003 rounds 3b–6 audit merged (review/assets-2); review/wave-5t deleted.
+- DEC-094 rollout under validation (DEC-099): Hub-only merges until lead-run subagent workers/worktrees prove stable; then reassess lead merges for domain-local work.
 - ChatGPT toolkit drops lack our research and room evidence (DEC-095): every round needs fixes; round 3 must be re-audited.
 - Several BACKLOG rows are stale; each lead reconciles its prefixes first.
 
 ## Pending from Nolan
-- Approval of each audited ChatGPT round (3 rebuilt, 4, 5, 6) after IMP-003 + review. Round 7 is the studio's (DEC-095).
-- Playtest of the next build after PS1 completes.
+- ChatGPT rounds 3b–6 approved (DEC-111): rejected-but-needed assets get studio-built later.
+- Playtest build 2 once GAME-025 controls land (Nolan 2026-10-30: no build for PS1 alone).
 - Any ChatGPT-built mechanics he drops in Imports: audit → review → **his approval** before use.
 
 ## Open questions for Nolan
-- None open. (REF-008 Q1–15 answered, DEC-051/062. Phoenix TPT rate OPEN-4: 25.1 % kept until a receipt settles it.)
+- REF-011/012 W5–W7 answered (DEC-110; W6 self-closing unanswered → placeholder, never re-ask). W3, W4 answered too; W1, W2 rejected: World settles them from the floor plan/TI (DEC-110). PS1 complete (review/ps1 merged). Nolan: hold playtest build 2 until GAME-025 controls land (saves tokens).
+- Customer flow Q1–7 answered (DEC-103). Emergency exit alarm: left unanswered → placeholder stands, never re-ask (DEC-105).
+- Medical allotment answered (DEC-106).
+- Register kit R1–R7 answered (DEC-104). Optional (DEC-101 long-term): parking space count/layout and dwell time, what the TV wall shows, neighbouring businesses/street. (REF-008 Q1–15 answered, DEC-051/062. Phoenix TPT rate OPEN-4: 25.1 % kept until a receipt settles it.)
 
 ## Builds
 - Last build Nolan played: `Downloads/Dispo Game Builds/slice-38b9e5c/` (feedback = playtest 1). New builds come from a Gameplay worker, never the Hub (DEC-045).

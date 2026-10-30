@@ -477,3 +477,556 @@ Every round-1 file is byte-identical to the drop 2 audit, and no newer runner or
 | material library | **adapt**: no build-time downloads; route through `fetch_assets.py` + ledger |
 | labels/decals | **adapt**: add The Flower Mine; textures, not meshes |
 | hands | n/a (omitted) |
+
+---
+
+## Drop 5 — round 3 (`Dispo_Game_Blender_PROC_Round3_HQ/`, 2026-10-30 04:15)
+
+**Brief:** DEC-083 round 3. **Rules applied:** DEC-084 quality, DEC-071/081 brands, DEC-079 refill/HUB facts, DEC-086 rulings, DEC-088/090.
+**Contents:** 10 generators, the shared `round3_quality.py`, 10 params, `state_presets/interaction_states_round3.json`, `Materials/ROUND3_PBR_BINDINGS.json`, 4 docs, 12 `.pyc` (not opened). The package is additive: no `proclib`/runner replacement, and earlier drops are unchanged.
+
+### How it was checked
+- Static read of every `.py`/`.json`.
+- Sandbox run: drop 1 runner + round-2 `proclib` + `round3_quality.py`, Blender 5.2.3 `--factory-startup`, `PYTHONDONTWRITEBYTECODE`, deleted afterwards.
+- Winding check on 222 LOD0 meshes.
+- Determinism re-run of 5 families: 43/43 FBX byte-identical.
+- Fix items: checklist §R3.
+
+| Family | Assets | LOD0 tris (measured) | DEC-084 guide | Verdict |
+|---|---|---|---|---|
+| `office_refill_station` | 1 (cart + scale + bowl + wall shelf + supplies) | 8,504 | fixture 20–80k | **adapt** |
+| `hub_storage` | CabinetLoaded, DeliBagFull/Partial, ShipmentCartonClosed/Open, StorageTote | 384–6,412 | props 5–20k / fixture 20–80k | **adapt** |
+| `queue_stanchions` | Stanchion, PairExtended | 1,612–1,680 | props 5–20k | **adapt** |
+| `back_room_lighting` | Troffer_2x4, Strip_4ft, WallPack | 592–1,704 | props 5–20k | **adapt** (troffer must be 2 × 2, TI) |
+| `interaction_state_details` | CashDrawerTray, JarResidue | 3,596 / 836 | — | **reject** the till tray; **adapt** the residue |
+| `customer_accessories` | Cap, Beanie, Glasses, Backpack, Purse, Phone, Wallet, BlankID, ExitBag | 324–6,932 | props 5–20k | **adapt** (fit to MPFB2, DEC-087/091 R4) |
+| `exterior_vehicles` | Sedan, Hatchback, Crossover | 8,568 each, **body inside-out** | hero 30–150k | **reject** (rebuild, or a CC0 source via DEC-023) |
+| `seasonal_decor` | Garland, StringLights, WindowClings | 364–9,784 | props 5–20k | **adapt** (no store source; optional) |
+| `counter_props` | ReceiptPrinter, ScaleDigits, CardTerminal, PenCup, StickyNotes | 1,160–5,304; **StickyNotes fails** (12,780 > its 12,000 budget) | props 5–20k | **adapt** |
+| `packaged_product_variety` | 10 `PROC_Pkg_*_R3` | 2,296–4,304 | props 5–20k (hero shelf items) | **adapt**: brand/category assignments invented (below) |
+
+### Cross-cutting findings
+- **Validation is turned off by design.** Every generator returns `actual_unity_size(objs)` as the expected size, so the runner's size check compares the mesh with itself and can never fail.
+  - It hides real errors, e.g. door, flap or shelf parts sticking out.
+  - Return the authored envelope from params, and let the validation layer (C5) allow a stated tolerance for segment extrema.
+- **"High quality" is not met.** The README claims props 12–30k / fixtures 26–80k / vehicles to 130k, but measured LOD0 is 0.3k–9.8k, below every DEC-084 guide. The params budgets are only ceilings. Segment counts went up, but construction detail did not:
+  - cabinet bags are bevelled boxes;
+  - the vehicle is one 6-section loft with box windows;
+  - no wear, no UV unwraps (box projection only).
+- **Collision:** every family emits `COL_*` meshes, which conflicts with DEC-086 (manifest boxes). Convert them.
+- **Params keys:** `require_manifold`, `require_material_slots` and `validate_origin_bottom_center` assume runner checks that do not exist; C5 is checklist work. `validate_origin_bottom_center` is `false` everywhere. `require_manifold: true` would fail many assets (touching boxes, open shelves) if implemented as written.
+- **Shared files / PROC-005 overlap:**
+  - Round 3 needs only `proclib` names that PROC-005 keeps (`add_box`, `add_beveled_box`, `add_cylinder_between`, `finish_object`, `material` with the round-2 alpha default, `rounded_rect`, `loft`).
+  - The new `round3_quality.py` duplicates drop 3 helpers (lathe, rotated box, torus) under other names. Fold it into `proclib` when PROC-005 lands its helper set; no second helper module.
+  - `unity_dir` lacks `UnityProject/` (S1). No `own_sheet` (S2).
+  - PROC-005 had no commits when checked (`claude/clever-lamport-837e7f` = main), so there are no conflicting edits yet.
+- **Family overlaps with rounds 1–2** (pick one each, do not ship both):
+  - lighting: `back_room_lighting` vs drop 2 architecture kit `LEDTroffer_2x2`/`StripLight`;
+  - receipt printer + card terminal: `counter_props` vs checklist R4/RC3;
+  - deli prep cart: `office_refill_station` vs checklist O8;
+  - cartons/totes: `hub_storage` vs `clutter_kit`;
+  - package shapes: `packaged_product_variety` vs `packaged_goods` (+ R5 brief);
+  - cooler door preset `Door_##` vs cooler generator names `DoorFrame_nn`.
+
+### Family findings (facts → source)
+- **Refill station (DEC-079, RF `Cart_Deli_Prep` 2.5 × 1.6 × 2.9 ft, `Shelf_Deli_Canisters` 3.5 × 0.9 ft at ~4.8 ft AFF, RI §2.4):**
+  - Correct: cart (0.72 × 0.50 × 0.92 ≈ RF), shelf (1.02 × 0.27 at 1.48 m ≈ RF) and the DEC-079 supply list.
+  - Fix:
+    - the deli scale is **light-grey with LCD and coloured keys**, carrying a **clear glass mixing bowl ≈ 8 in Ø** (RI §2.4), not a dark scale with a 0.34 m stainless bowl;
+    - add the "FOR DELI USE ONLY" placard (store text) and **spray bottles hung on the rail** (RF);
+    - the cart is **2-shelf**;
+    - split the wall shelf into its own asset (it is placed on the wall, not on the cart);
+    - jar anchors: ~5 empties (RF), house jars per DEC-079.
+- **HUB storage (DEC-079: 1 lb bags in storage cabinets against the office wall; ~10 lb shipments of one strain):**
+  - Cabinet type, size and colour: **no source** (GAP), so ask REF.
+  - Doors are **baked open at 96°**. Ship closed geometry with door parts + hinge metadata (C10) and let Unity animate them.
+  - Bags: 1 lb resealable bag shape and size have no source (GAP); fullness states are good.
+  - The shipment carton is the ~10 lb case; size GAP.
+- **Queue stanchions (DEC-079 one line; R2C1 black belts; RI §1.5 4 lanes):** fine as a form. Sizes are commercial-standard (GAP). Belt colour black ✓.
+- **Lighting:**
+  - TI §6.7: back-room ACT rooms use **L1 2 × 2 troffers** (not 2 × 4), storage L2 2 ft/4 ft strips; BOH `Light_Strip_Pendant` (RF).
+  - The wall pack matches exterior CCTV R1C3; generic housing only ✓.
+- **Interaction states:**
+  - **CashDrawerTray rejected:** a till tray with bill/coin wells is cash-handling equipment (DEC-051/086), and the cash-drawer asset itself is rejected. Remove the `cash_drawer` state preset.
+  - Jar residue: OK; check its colour and look against the real jar photos (DEC-042/043).
+  - The cooler preset must use the cooler's real group names.
+- **Customer accessories:** sized to a 1.75 m reference. They must fit the **MPFB2** bodies (DEC-087) and belong with the R4 wardrobe library (DEC-091).
+  - The ID card is blank ✓.
+  - The exit-bag label area carries an approved-brand whitelist ✓.
+  - The phone camera island is a consumer phone, not security ✓.
+- **Vehicles:**
+  - Inside-out body shell (negative volume on all 3).
+  - The render reads as a flat blob with a floating box cabin and windshield planes sticking out.
+  - All 3 variants are the same topology.
+  - **Reject.** Rebuild with real body panels, wheel arches and glazing, or source CC0 vehicles through DEC-023. Exterior CCTV shows parked SUVs/cars (R1C1/R1C2).
+- **Counter props:**
+  - The receipt printer and card terminal are wanted (RI §2.2, DEC-086).
+  - Scale digits must be **blue LCD** (register bench scale, RI §2.2), not green 7-segment.
+  - StickyNotes: 45 bevelled sheets break their own budget; use a block + top-sheet detail.
+- **Packaged variety: brand misuse.** DEC-071 approves names **for their real lines only**: TFS / Dr Greenthumb / Rebel Grown (house **deli flower**), The Flower Mine (TFS house line, DEC-081), **High Variety = cartridges**, **Tok = disposable vapes**. Round 3 invents product lines for real brands:
+  - High Variety preroll tin and beverage can;
+  - Rebel Grown jar;
+  - Dr Greenthumb edible;
+  - TFS topical;
+  - Flower Mine extract.
+
+  That is fabricated product data (CLAUDE.md rule). Use fictional BRAND-001 names for non-matching categories. Also: the category `flower_or_edible` is not a catalog category; `unity_dir` writes into the existing `Packaged` folder without the `UnityProject/` prefix.
+- **Seasonal decor:** no store evidence of decorations. Keep it as an optional kit; no IP ✓.
+
+### Drop 5 summary
+**Adapt overall.** Round 3 hits the briefed families and the DEC-079 refill facts mostly right, and its geometry is deterministic and wound correctly (except the vehicles).
+
+**Fix before integration:**
+- the always-pass size validation;
+- `COL_` → manifest boxes;
+- below-guide detail everywhere;
+- brand/category misuse in packaged variety;
+- the cash-drawer tray;
+- the 2 × 4 troffer;
+- duplicate families with rounds 1–2.
+
+**Reject:** vehicles and the cash tray.
+
+> **Superseded (DEC-095):** drop 5 is replaced by the rebuilt round 3 (drop 6 below); its fix list §R3 is replaced by checklist §R3b.
+
+---
+
+## Drop 6 — round 3 rebuilt (`Dispo_Game_Blender_PROC_Round3_Rebuild/`, 2026-10-30 05:53)
+
+**Brief:** DEC-095 (re-audit from scratch; supersedes drop 5 and checklist §R3).
+**Judged against:**
+- RF; RI §1.5, §2.1, §2.2, §2.4, §6.7;
+- DEC-051/079/084/086/091/093;
+- `packaged_catalog.json` (DATA-002);
+- the canonical PROC-005 core (`claude/clever-lamport-837e7f` @ 87807ad).
+
+Never against the drop's own docs.
+
+**Contents:**
+- 10 generators + `round3_common.py`;
+- 10 params (30 assets);
+- `Data/` (reuse map, interaction states, licences, manifest);
+- 4 docs;
+- a runner patch (`Patches/run_generator_required_uv_maps.diff`);
+- `Audit/audit_round3.py` + `static_audit.json` (121/121 static checks, `blender_runtime_validated: false`).
+
+No `.pyc`. ChatGPT had our drop-5 audit this time (`ROUND3_REBUILD_CLAUDE_AUDIT_CORRECTIONS.md`), but still not RF or RI (DEC-095). So the facts that only RF/RI hold are again missing or wrong.
+
+### How it was checked
+- Static read of every `.py`/`.json`/`.md`. `audit_round3.py` was **not run**: it `py_compile`s into the tree (writes `.pyc`) and `rmtree`s every `__pycache__` under its root.
+- **Sandbox:** `_sbx_imp003/` inside the worktree holds canonical core 87807ad (`git archive`) plus the drop's generators and params. ROOT = the sandbox (the runner resolves it from its own path). Blender 5.2.3 `--factory-startup`, `sys.dont_write_bytecode`. Sandbox deleted afterwards.
+- **(a) Canonical runner as is:** every asset fails (`UV maps [Main, Label, Lightmap]`; the runner wants exactly 2).
+- **(b) Runner with the drop's UV patch:** each family stops at its first failing asset.
+- **(c) Measuring script:** builds every asset × LOD without the runner and records:
+  - tris;
+  - the Unity-space bbox vs the returned `expected`;
+  - the signed volume of every closed part (inside-out check);
+  - open and non-manifold edges;
+  - a geometry hash.
+
+  Run twice, plus Workbench renders with back-face culling.
+
+| Family (assets) | LOD0 tris measured | Own `quality_floor_lod0` | DEC-084 guide | Runner (patched) | Verdict |
+|---|---|---|---|---|---|
+| `refill_station` (1) | 6,328 | 12,000 | fixture 20–80k | fail: LOD3 size (casters dropped) | **adapt** (dims/colour regressions) |
+| `hub_storage` (1) | 836 | 12,000 | fixture 20–80k | pass | **adapt** (colour; detail) |
+| `queue_stanchions` (1) | 3,116 | 5,000 | props 5–20k | pass | **adopt** form; detail per §R3b |
+| `customer_held_props` (4) | 128–608 | 2,500 | props 5–20k | fail: LOD chain, size | **adapt** (optional) |
+| `cash_drawer_tray` (1) | 832 | 5,000 | — | fail: LOD chain | **reject** (DEC-051/086) |
+| `backroom_lighting` (1) | 164 | 2,500 | props 5–20k | fail: LOD chain | **adapt** (diffuser hidden) |
+| `parked_vehicles` (3) | 8,816 each | 12,000 | hero 30–150k | fail: LOD3 size | **reject as built** |
+| `seasonal_decor` (3) | 424–1,456 | 3,000 | props 5–20k | Pumpkin pass; others LOD chain | **adapt** (optional, no evidence) |
+| `counter_workstation_props` (10) | 116–1,644 | 2,500 | props 5–20k | fail: LOD chain, size | **adapt** |
+| `product_variety` (5) | 56–952 | 3,000 | props 5–20k | fail: size | **adapt** (into `packaged_goods`) |
+
+### Cross-cutting findings (measured)
+- **X1 Size validation can fail again ✓** (drop-5 R3.0.1 fixed). Every generator returns `expected_from_dims(p)`, and the check now catches real drift: **14/30 assets fail size** in ≥ 1 LOD. Causes:
+  - envelope parts dropped at `detail 0`: refill casters (1.72 vs 1.85 m), receipt-printer paper, label tail, weigh-boat sides;
+  - cylinders whose segment count is not divisible by 4 miss the radius: water bottle, cup, tincture at LOD2/3;
+  - the vehicle roof is under-sampled at LOD3 (1.42 vs 1.46 m);
+  - parts that stick out by design: wallet seam −0.001, cone-tube cap 0.52 w, edible-tin lid 0.51 w, the sticky-note sheet offset.
+- **X2 LOD chains do not decrease:** 18/30 assets have LODn ≥ LODn−1. LOD1 and LOD2 both use `detail 1`, which only changes round segments. The canonical `check_lod_chain` (Q0.5) fails them.
+- **X3 Below every bar:** LOD0 is 56–8,816 tris, **below the drop's own `quality_floor_lod0` on 30/30 assets** and below the DEC-084 guide on 30/30.
+  - The README's "manufacturing/construction detail at LOD0" is not met: the 2 × 2 troffer is 164 tris and the rolling papers 56.
+  - Nothing reads `quality_floor_lod0`; the canonical key is `tri_guide.lod0_min`.
+  - Budgets (18k–150k) are guide maxima only.
+- **X4 Runner patch:** the canonical runner (87807ad) still requires exactly `[UVMap_Main, UVMap_Label]`, so 30/30 fail unpatched. The patch (params-driven `required_uv_maps`) is small and correct, but it accepts the drops' order `[Main, Label, Lightmap]`. **DEC-097** fixes the order as channel 0 = Main, **1 = Blender lightmap UV**, **2 = Label**, so the label currently lands where the lightmap should be. Adapt the patch to enforce the DEC-097 order (PROC-007).
+- **X5 Lightmap UV is unusable as built:** `_assign_uvs` gives **every triangle its own grid cell** (n = ⌈√faces⌉, 8 % padding). The UVs do not overlap, but every edge is a seam and texel use is tiny, so lightmaps will bleed and show seams.
+  - Per DEC-097, Blender exports a dedicated lightmap UV (a real unwrap + pack, PROC-007), and Unity's "Generate Lightmap UVs" stays off.
+- **X6 Winding:** **0 inside-out** closed parts across 30 assets × 4 LODs (`recalc_face_normals` in `finish`). The drop-5 vehicle inside-out defect is fixed. One open part remains: `ScaleBowl` (a single surface with a hole in the bottom).
+- **X7 Determinism:** geometry hashes are identical across two runs for 30/30 assets × 4 LODs. FBX byte-identity was checked only for the 2 assets the runner exported (hub cabinet, stanchion pair); the canonical exporter pins time and UUIDs.
+- **X8 Collision:** no `COL_*` meshes ✓ (DEC-086); boxes come from params. But `parked_vehicles`, `counter_workstation_props`, `customer_held_props` and `product_variety` declare **none**. Vehicles need at least a body box.
+- **X9 Params contract:**
+  - no `unity_dir`/`own_sheet` (S1/S2); 30 rows would also break the default sheet's 1 MB cap;
+  - no `checks` block, so the origin, degenerate and material checks stay off;
+  - new `GAP-R3-*` ids instead of `GAP-PROC-*` (P5);
+  - material names `M_R3_*` (M4 naming).
+- **X10 Helper module again:** `round3_common.py` is renamed, not removed. It duplicates canonical `proclib`:
+  - `finish` = `finish_object` + `recalc_face_normals` + lightmap UV;
+  - `box` → `add_box`;
+  - `cylinder`/`tube` → `add_vertical_cylinder`/`add_cylinder_between`;
+  - `rounded_prism` → `rounded_rect` + `loft`/`add_beveled_box`;
+  - `pbr` → `material`.
+
+  Only `torus` and `wedge` are new. Its `cylinder` uses `max(8, segments)`, which ignores C11's even-segment rule.
+- **X11 The reuse map points at things we do not have.** `Data/canonical_reuse_map.json` and `ROUND3_REBUILD_INTEGRATION.md` call round 4/5/6 families "accepted". They reuse `PROC_Register_CashDrawer`, `_POSMonitor`, `_BarcodeScanner` and `_ScaleStand` plus cooler, carton and tote families.
+  - None of these is on main or in PROC-005 (87807ad has the jar, fill, packaged goods and wire-shelving WIP).
+  - Rounds 4–6 are not audited yet, and the cash drawer was rejected in drop 2 (DEC-086).
+  - Treat the map as a wish list.
+- **X12 DEC-093 wording ✓:** the integration doc says live project files win, and calls the package "not an instruction to overwrite". No round-3 file has the name of a canonical file. But `product_variety` again runs parallel to `packaged_goods` in the same `PROC_*Pkg_*` namespace.
+
+### Family findings (facts → source)
+- **Refill station:** worse than drop 5 on sourced facts.
+  - **Correct:** grey scale ✓ and 8 in (0.2032 m) glass bowl ✓ (RI §2.4).
+  - **Scale too big:** the body is 0.285 × 0.265 × 0.105 m vs RI §2.4 ≈ 6–7 × 8 × 3 in (≈ 0.17 × 0.20 × 0.08), about 1.5× too big. It also has no LCD, coloured keys or chrome scoop.
+  - **Sizes called unsourced, but RF has them:** the drop's `GAP-R3-REFILL-DIMS` says cart and shelf sizes are unknown.
+    - RF `Cart_Deli_Prep`: 2.5 × 1.6 × 2.9 ft (0.76 × 0.49 × 0.88 m), Med.
+    - RF `Shelf_Deli_Canisters`: 3.5 × 0.9 ft, wood on black brackets at ~4.8 ft (1.46 m) AFF, Med.
+  - **What the drop builds:** cart 0.84 × 0.65 m with its top hard-coded at 0.94 m; shelf 1.20 m wide at 1.85 m; **dark** metal (0.16 grey); **3 tiers**.
+  - **The real cart** is **stainless/silver** ("silver rolling cart", DEC-079) with a **flat top + lower shelf** (RI §2.4; RF "2-shelf"), a tubular push handle, a "FOR DELI USE ONLY" label and spray bottles on the rail. All of these are missing.
+  - The casters float 6 cm below the legs (render). Cart and wall shelf are again one asset.
+  - Supplies are 3 identical bottles. DEC-079 lists isopropyl, rags, scraper, bins and tongs, kept *under* the cart.
+- **HUB storage:**
+  - **Doors:** closed, with hinge metadata (the drop-5 fix was delivered). The hinge metadata is now moot under the Q6 ruling below.
+  - **Colour wrong:** grey steel, but RI §2.1 (HUB 2, R2C1) shows **black cabinets, 2+**, Med.
+  - **Presence is sourced:** DEC-079 puts them "in the HUB against the office wall", and HUB 2 is the room that shares the office door (RI §1.4). The drop's GAP says presence is not established; only type, size and shelf count are GAPs.
+  - **Lead ruling (Q6):** the backstock cabinets follow the DEC-051 Q9 precedent: **plain black closed cabinets**, with no interior, no stock anchors and no openable doors. So the drop's shelves, anchors and hinge metadata are dropped. Reopen only if Gameplay files a restocking need.
+  - **Detail:** 836 tris of plain boxes.
+- **Queue stanchions:** black ✓ (R2C1); layout left to placement ✓ (RI §1.5 4 lanes; DEC-079 one line). Sizes are commercial defaults (GAP). Missing detail: no cassette, end clip or rubber foot, and the belt is a plain slab.
+- **Back-room lighting:**
+  - 2 × 2 ✓ (TI §6.7 L1).
+  - **The diffuser is invisible.** The dark `Recess` box (z 0–0.35 h) has the same footprint as the diffuser (z ≈ 0.42–0.54 h) and hides it from below; the render from below shows only the dark recess. So the visible face of the ceiling light is dark grey, and there is no emissive part.
+  - **Removed:** the L2 2 ft/4 ft strips (TI §6.7 "storage"), the BOH `Light_Strip_Pendant` (RF, 4.0 × 0.5 × 0.3 ft, Low) and the exterior wall pack (CCTV R1C3), all deferred to "Round 6". All three are sourced, so they must exist somewhere: check round 6.
+- **Cash-drawer tray: reject.**
+  - The drop says the drop-5 rejection was "quality-related". It was not: DEC-086 rejects the cash-drawer variant, and DEC-051 excludes cash-handling equipment. Bill and coin wells are exactly that.
+  - Its parent `PROC_Register_CashDrawer` does not exist (X11).
+  - Also remove the `PROC_Register_CashDrawer` target in `Data/interaction_states.json`.
+- **Parked vehicles:** inside-out fixed ✓, unbranded ✓, but **reject as built**.
+  - **Scope is sourced:** RI §2 R1C1 parked SUV, R1C2 parked cars; DEC-091 R6 has parking in scope.
+  - **Shape:** the render is still a capsule, one elliptical loft with no greenhouse/hood/trunk break and no wheel arches.
+  - **Glazing inside the body:** side glass at x = 0.405 w vs body half-width 0.446 w; the roof glass sits under the roof surface. Wheels and bumpers stand outside the shell.
+  - **Detail:** 8,816 tris vs the 30–150k hero guide.
+  - **Fix:** prefer CC0 vehicles through DEC-023, ledgered.
+- **Interaction states (`Data/interaction_states.json`):**
+  - Deli-jar lid states ✓ (RI §2.4: lids off, laid flat). Add "laid flat" as the rest pose.
+  - Carton and cooler entries are metadata only ✓. Bind the cooler after K3 (its group names).
+  - The drop-5 jar-residue variant is gone. Fine: no cannabis geometry is needed.
+- **Customer held props:** phone, water bottle, cup and wallet. Wearables moved to round 4 ✓ (DEC-091 R4). The item mix has no evidence (GAP, optional). The code has a key-ring branch that no params row uses.
+- **Counter / workstation props:**
+  - **Sourced:**
+    - receipt printer, card terminal and keyboard (RI §2.2: "each POS has a monitor, keyboard, receipt printer and a customer-facing card terminal/tablet", Med);
+    - the card terminal is also DEC-086;
+    - label/tape items (RI §2.2, Low).
+  - **Also sourced:** the mouse and label printer (DEC-096 register workstation kit, which also asks for a spray bottle on the scale shelf and a rag; neither is in the drop).
+  - **Unsourced:** glove box, weigh boat, pen and sticky notes. Keep them as generic clutter with a GAP.
+  - The drop-5 "blue LCD scale digits" item has lost its home. It belongs on the register scale (RI §2.2: white bench scale, blue LCD) and the refill scale (RI §2.4: LCD).
+  - StickyNotes no longer breaks its budget ✓, but now fails its size check.
+- **Product variety:**
+  - Brand fix delivered ✓: all names are fictional, and no real brand string remains.
+  - The **categories are catalog-backed** (`packaged_catalog.json`): DROPPER ×4, BATTERY ×6, ROLLING PAPERS ×7, GUMMY ×158 (the tin), PREROLL (the cone tube).
+  - Pack sizes are GAP (`GAP-PROC-10`).
+  - Still a parallel generator: port the shapes into `packaged_goods` (R3.0.5).
+  - Its `nonduplicate_baseline` metadata lists the very shapes it adds (cosmetic).
+- **Seasonal decor:** pumpkin, wreath, garland, plus an unused snowflake branch. No store evidence (GAP); optional; no IP ✓.
+
+### Research gaps, round 3 (our docs lack the evidence too)
+- **RG3-1 HUB cabinets:** door count and shelves.
+  - **Measured (DEC-110):** graybox `FX_HUB2_Cabinets` = 2 black cabinets on the HUB 2 back wall, a 6.0 × 1.5 ft footprint (x 1.19–7.19, y 47.0–48.5) at the "tall" class of 7.0 ft (Low; GAP-110/120). So the placeholder per cabinet is **3.0 × 1.5 × 7.0 ft** (0.914 × 0.457 × 2.134 m), not the drop's 1.80 × 0.55 × 2.00 m single unit.
+  - RF has no HUB entry. CCTV R2C1 (RI §2.1) gives colour and count only.
+  - Still open: doors and shelves (R2C1 full resolution).
+- **RG3-2 Refill-cart supplies:** bottle, bin and tongs sizes and colours. Look at the lower shelf in `References/Index/photos/deli_jars_scale_cart_crop.webp`; otherwise through the lead/Hub, after the DEC-105/110 search.
+- **RG3-3 Stanchion model** (base Ø, post Ø).
+  - **Measured (DEC-110):** graybox `stanchion` height class = **3.0 ft** (0.914 m, GAP-002) vs the drop's 1.05 m. The lanes (`FX_QueueLane_1..4`, RI §1.5 vector) run x ≈ 6/9/12/15 ft, so they are **3 ft apart**, each 8.71 ft long (y 11.0–19.71).
+  - Use 3.0 ft posts and belt runs fitted to the 8.71 ft lanes, not the drop's fixed 2.0 m pair.
+  - Base and post Ø: no source in TI, RF or the game files (CCTV R2C1 is too far).
+- **RG3-4 Parked-vehicle mix:** only classes are visible (R1C1/R1C2, night IR). Make and colour cannot be resolved, and need not be: stay generic.
+- **RG3-5 Register device sizes** (printer, terminal, keyboard): RI §2.2 gives presence only. The register crops (`References/Index/register/`) may give ratios against the 17.5 in keyboard convention.
+- **RG3-6 Package sizes** for dropper, battery, papers, tin and cone (GAP-PROC-10): measure real SKUs, or use the DATA-002 source pages if they list sizes.
+- **RG3-7 Troffer recess depth and diffuser type:** the TI E-sheet luminaire schedule (RI §6.7) may name a model; recheck it.
+
+### Drop 6 summary
+**Adapt overall:** 1 adopt (stanchion form), 7 adapt, 2 reject (cash tray; vehicles as built).
+- **Delivered from §R3:**
+  - size validation can fail;
+  - no `COL_` meshes;
+  - 2 × 2 troffer;
+  - no real brands;
+  - closed cabinet doors;
+  - vehicle winding;
+  - StickyNotes budget;
+  - wearables moved to round 4.
+- **Not delivered:**
+  - DEC-084 detail (30/30 below its own floor);
+  - usable lightmap UVs;
+  - sourced refill sizes and colour (regressed);
+  - HUB cabinet colour;
+  - the cash tray is back.
+- **New defects:**
+  - non-decreasing LODs (18/30);
+  - size failures (14/30);
+  - hidden troffer diffuser;
+  - floating casters.
+
+Fix items: checklist §R3b.
+
+---
+
+## Drop 7 — round 4 v2 (`Dispo_Game_Blender_PROC_Round4_HQ_v2_EvidenceDriven/`, 2026-10-30)
+
+**Brief:** DEC-091 R4 (wardrobe, hair and accessory libraries for MPFB2 bodies; staff uniform per DEC-089; crowd LOD baker; ASSET-004 owns the bodies).
+**Judged against:** DEC-084/087/089/091/093/096, RI §3 (BAND attire column), DEC-023 (licences), canonical core 87807ad.
+
+**Contents (65 files, 49 MB):**
+- 5 generators + `round4_quality.py`, 9 params;
+- tools: `mpfb2_fit_adapter.py`, `mpfb2_glove_overlay.py`, `crowd_lod_baker.py`;
+- arranger `outfit_variation.py` and its baked outputs `OUTFIT_VARIATIONS_64.json` / `STAFF_STYLE_VARIATIONS_12.json`;
+- 30 PBR PNGs (10 materials × BaseColor/Normal/Roughness, 2048²);
+- a 4096² TFS chest decal;
+- `EVIDENCE_REGISTER.json`, `LOCAL_STYLE_RESEARCH.md`, a UV2 runner patch, `STATIC_AUDIT.json`.
+
+It says it supersedes an earlier `…Round4_HQ.zip`, which is not in the Imports folder.
+
+### How it was checked
+- Static read of every `.py`, params and doc; 2 textures and the decal viewed.
+- The same sandbox method as drop 6: canonical core 87807ad plus the drop's `Tools/Blender`, Blender 5.2.3 `--factory-startup`, no `.pyc`. The measuring script built all 36 assets × 4 LODs, twice. Renders were made, and the sandbox was deleted.
+- The tools and arranger were read, not run: they need an MPFB2 body we do not have in a sandbox.
+
+| Family (assets) | LOD0 tris measured | Budget (LOD0) | DEC-084 guide | Build result | Verdict |
+|---|---|---|---|---|---|
+| `wardrobe_library` (11) | 1,044–2,632 | 42–80k | close-up character clothing | builds; deterministic | **reject as built** (block garments) |
+| `hair_library` (9) | — | — | — | **crashes on every asset and LOD** (`face already exists`) | **reject as built** |
+| `headwear_library` (6) | 4,916–13,824 | 39–52k | props 5–20k | builds; **TopButton not deterministic** on 3 caps | **adapt** (best family) |
+| `staff_uniform` (4) | 1,384–2,344 | 56–68k | — | builds | **adapt** green tee + pants; **reject** black tee and blue polo as uniform |
+| `accessory_extensions` (6) | 668–1,960 (2 that build) | 24–30k | props 5–20k | **Watch, Lanyard, PinLanyard, CrossbodyStrap crash** | **adapt** sunglasses/tote; rest broken |
+| tools (fit, glove, crowd LOD) | — | — | — | not run | **adapt** fit/crowd; **reject** glove as built |
+| `outfit_variation` + baked tables | — | — | — | not run | **adapt** (dangling assets, staff mix) |
+| PBR textures + decal | — | — | 2K–4K | viewed | **adapt** (placeholder-grade; ledger) |
+
+### Cross-cutting findings (measured)
+- **X1 Always-pass size check is back.** Every generator returns `actual_unity_size(objs)` (measured from the mesh); this is the exact drop-5 R3.0.1 defect. All 23 assets that build therefore "pass" size trivially.
+- **X2 13 of 36 assets crash:**
+  - `round4_quality.ribbon_obj` makes "two-sided" cards by adding a second face over the same 4 verts in reverse order, which bmesh rejects. That breaks all 9 hair styles, Lanyard, PinLanyard and CrossbodyStrap.
+  - `torus_obj` calls `bmesh.ops.create_torus`, which does not exist in Blender 5.2.3. That breaks Watch.
+  - The drop's static audit could not see either (no Blender at ChatGPT).
+- **X3 Far below every budget:** the garments are 1–2.6k tris against their own 42–80k budgets. The renders show a **closed box torso with capped cylinder sleeves**: no neck, arm or waist openings, no shell thickness, no folds, seams or hems. These are mannequin blocks, not garments, and cannot be skinned to a rig.
+- **X4 No rigging path:** nothing transfers MPFB2 armature weights to garments, hair or accessories. The MPFB2 fit contract lists rig deformation as a local check, but no tool does it. `mpfb2_fit_adapter.fit_garment` shrinkwraps the whole garment to the nearest body surface, which collapses relaxed or oversized fits (hoodie, relaxed tee) onto the skin and removes the variation the drop claims. Add a ease/offset per region plus a Data Transfer of vertex weights.
+- **X5 Glove overlay copies the whole body:** `build_glove_from_hand` copies the "hand object" and solidifies it. MPFB2's basemesh is one mesh (hands are not separate objects), so the "glove" is a full-body shell. It needs a hand vertex-group mask, or a CC0 glove proxy.
+- **X6 Determinism:** 20/23 building assets are identical across runs. `TopButton` (`bmesh.ops.create_uvsphere` + `finish_object` remove_doubles) differs between runs on StructuredFitted, MeshBackTrucker and CurvedBrimCap. Cause not traced; the canonical "two runs byte-identical" gate will fail.
+- **X7 Lightmap UV:** the same per-polygon cell scheme as round 3 (`round4_quality.add_lightmap_uv`). Its own comment says production repacking is left to the local pass. Same decision as R3b.0.4. The UV2 patch is identical in intent to round 3's.
+- **X8 Params contract:**
+  - `unity_dir: Assets/_Game/...` lacks `UnityProject/` (S1);
+  - `validation_warnings` (P3);
+  - `GAP-R4-*` ids (P5);
+  - `round4_quality.py` is a third helper module (C6/C8, DEC-093).
+
+  Collision: none, owned by the body (`COLLISION_POLICY.md`), which is correct for wearables ✓.
+- **X9 Textures:** 2048² as claimed, but placeholder-grade. `knit_basecolor` is plain sine stripes (63 KB), not a knit.
+  - They are self-authored and declared CC0 ✓, but there is no sha256 manifest entry in our `LICENSE_LEDGER.md` (DEC-023).
+  - Several normal maps are 4–6 MB each; 49 MB for 10 materials.
+  - Route them through DEC-023 + the ledger, or replace them with ambientCG/Poly Haven CC0 fabric sets (real scans, the same $0 cost).
+- **X10 Dangling references:**
+  - `OUTFIT_VARIATIONS_64.json`/`STAFF_STYLE_VARIATIONS_12.json` reference `PROC_R3_Accessory_Glasses` ×6, `_Backpack` ×10 and `_Beanie` ×1. Those were in the rejected drop 5, and the round-3 rebuild removed them ("Round 4 owns wearables"). So **nothing supplies glasses, backpack, beanie or purse**.
+  - Every outfit also uses a hair asset that crashes (X2).
+
+### Store / decision findings
+- **Staff uniform conflicts with DEC-089:**
+  - DEC-089: the real store has no dress code; *for the game*, budtenders wear **black pants + a green tee with "The Flower Shop" at the top right of the chest**.
+  - The drop labels that "brief-directed, not footage-confirmed" and adds `ObservedBlackTee` and `ObservedLightBluePolo` as staff variants. **10 of 12 staff presets** use them (7 polo, 3 black tee); only 2 use the DEC-089 uniform.
+  - Its evidence is real (RI §3 BAND 05/12: black TFS tee + lanyard; 01/03/07: polo), but DEC-089 is the decision. The black tee and polo may be **customer/off-shift wardrobe**. As staff presets: reject.
+  - RI §3 says BAND 01's polo is **teal**, not light blue.
+- **Decal side:**
+  - `staff_uniform._add_decal(side='right')` puts the decal at +X. With the asset facing −Y (label faces −Y, PROC contract), +X is the **wearer's left** (the viewer's right), while the metadata says `decal_side_wearer: right`. One of the two is wrong.
+  - DEC-089's "top right of the chest" does not say whose right. **Pending a World REF look at BAND 05/12** (handoff Q8). Placeholder `GAP-CHR-PRINT-SIDE`: wearer's left chest.
+  - The decal box also gets no `UVMap_Label` mapping (no `label_rect`), so the 4096² texture would not land on it.
+  - The decal is white DejaVu-style bold text on a square canvas, with the text filling ~10 % of the height. The font licence is not recorded; DEC-023 allows OFL/CC0/MIT.
+- **Brands:** the only real brand is The Flower Shop text on staff tees (DEC-071/089 ✓). Headwear and other wear are unbranded ✓ (fictional patch carriers).
+- **Local-style research:** the anti-stereotype rules are good and match DEC-087(4) (no behaviour or stats tied to appearance) ✓.
+  - The "rougher neighborhood" premise is attributed to "the user". Our docs have no such statement, so it is ChatGPT-chat context, not a repo fact.
+  - The web pages (Manor PHX, NWS) are reference-only and nothing is bundled ✓. The store address on the TFS site is public.
+  - Keep the weights as art direction only; never as a demographic model.
+- **Privacy:** the evidence register lists BAND photo observations of identifiable staff (hair types, eyewear). RI §3 already records attire categories at the same level, and no likeness is built ✓. Do not copy the per-photo, per-person notes ("long locs visible on second worker") into game data.
+- **DEC-084:** headwear is the only family near the props guide (5–14k): crown panels, visor, closures, button. Everything else needs real garment construction, or (recommended) **MPFB2/MakeHuman system clothes and hair**: CC0 assets that already fit and rig to the MPFB2 basemesh (verify each asset's licence through DEC-023). Our own procedural garments should then only add the DEC-089 uniform print and the store-specific items.
+
+### Research gaps, round 4
+- **RG4-1 Uniform print side and size:** DEC-089 "top right of the chest" (wearer or viewer?). Look at BAND 05/12 (black TFS tee) for the real print position, size and font. That is evidence for the print only, not the colour.
+- **RG4-2 Garment source:** which MPFB2/MakeHuman system clothes and hair are CC0 and rig-compatible with ASSET-004's bodies. Check the MPFB2 asset packs' licence files (ASSET-004 owner).
+- **RG4-3 Uniform font:** TFS brand typeface. Look at TFS signage in RI (BAND 05 neon, the logo living wall R2C2). Otherwise use an OFL stand-in.
+- **RG4-4 Polo colour:** teal (RI §3 BAND 01) vs light blue (drop). Only matters if it is kept as customer wardrobe.
+
+### Drop 7 summary
+**Adapt overall, weakest drop so far on execution:** 13/36 assets crash, the size check is always-pass again, and the garments are blocks.
+- **Adopt:** the anti-stereotype rules; headwear forms; the evidence-category approach; the deterministic outfit arranger pattern (seeded, hashed).
+- **Adapt:** headwear (determinism, collision n/a); green tee + black pants (DEC-089; fix the decal side and UV); sunglasses and tote; the fit adapter (weights, per-region ease) and crowd baker; textures (ledger or replace).
+- **Reject as built:** wardrobe blocks, hair (crash), ribbon accessories and watch (crash), glove overlay, and staff black tee / blue polo as uniform presets.
+- **Counts:** adopt 1 (arranger pattern + rules) · adapt 6 · reject 5. Fix items: checklist §R4.
+
+---
+
+## Drop 8 — round 5 (`Dispo_Game_Blender_PROC_Round5_HQ/`, 2026-10-30)
+
+**Brief:** DEC-091 R5 (packaging families, 1 lb deli bags, exit bags, label art system, stocking arrangers).
+**Judged against:**
+- `packaged_catalog.json` (DATA-002);
+- DEC-071/079/081/084/093/096;
+- `Docs/Research/AZ_COMPLIANCE.md` §D5/E1;
+- canonical core 87807ad + `packaged_goods` on main.
+
+**Contents (106 files, 9 MB):**
+- 2 generators (`round5_packaging` 14 assets, `deli_supplies` 4) + `round5_common.py`;
+- tools: `label_art.py` (Pillow renderer), `stocking_arranger.py`, `generate_round5_textures.py`;
+- 3 label PNGs (4096²) and ~80 PBR PNGs;
+- a UV2 patch (the same as round 3/4);
+- `validation/static_audit.py` + outputs.
+
+The README says the stocking sample is synthetic and must not be read as store evidence ✓.
+
+### How it was checked
+- Static read; the Tok label and a bag render viewed.
+- Sandbox as for drops 6–7: 87807ad core + `Tools/Blender` + `Art/Source/Procedural/Round5` (textures load by relative path). All 18 assets × 4 LODs measured twice; sandbox deleted.
+- `label_art.py`, `stocking_arranger.py` and `static_audit.py` were read, not run.
+
+| Family (assets) | LOD0 tris | Budget | DEC-084 guide | Build | Verdict |
+|---|---|---|---|---|---|
+| `round5_packaging` (14) | 228–1,496 | 60k | props 5–20k (hero items) | all build; deterministic; 0 inside-out; size fail 6/14 at LOD1–3; LOD3 not lower on 7 | **adapt** (port into `packaged_goods`) |
+| `deli_supplies` (4) | 72–420 | 32k | props 5–20k | all build; deterministic | **adapt** |
+| `label_art.py` + label PNGs | — | — | 2K–4K | viewed | **adapt** (data from catalog, AZ fields) |
+| `stocking_arranger.py` | — | — | — | read | **adapt** (anchors from RF/arranger contract) |
+| PBR textures | — | — | 2K | listed | **adapt** (ledger, DEC-023) |
+
+### Findings
+- **X1 Size check is real again ✓, with one exception.** Generators return authored dimensions. Exceptions: `deli_supplies._bag` returns the measured profile depth `actual_d`, and the bottle returns `diameter * 1.02`, a fudge.
+  - Failures: can, concentrate jar and topical jar at LOD1–3; bottle at LOD2; preroll tube at LOD3. The lathe profiles lose their widest ring at low detail.
+  - Also: the exit bag's measured depth 0.085 m vs its `size_m` depth 0.1016 m passes only because of `actual_d`.
+- **X2 Collision key mismatch:** boxes are emitted under `extra["collision"]["boxes"]`. The canonical runner reads `collision_boxes` (DEC-086 C1), so **no collider reaches the manifest**. Rename the key.
+- **X3 Far below DEC-084:** LOD0 is 72–1,496 tris against a 60k budget. The cartons are 228-tri bevelled boxes with no glue flap or tuck detail, and the bags are gusseted boxes. The `detail` float scales segments only, so 7/14 LOD3 = LOD2 (cartons/pouches at 64 or 112 tris).
+- **X4 Bag states:**
+  - Full vs partial are different meshes ✓, but both keep the full 13 × 15 in envelope. "Partial" should drop the fill line and slump the top.
+  - The 1 lb size is a market reference (13 × 15 + 6 in gusset), flagged provisional ✓; DEC-079 gives no size (RG5-2).
+  - `contains_flower_geometry: false` ✓.
+- **X5 Brands/categories vs the catalog ✓** (better than every earlier round):
+  - High Variety 1 g 510 cart = catalog HIGH VARIETY / VAPE / 510 THREAD (14 rows);
+  - Tok 2 g AIO = catalog ToK / VAPE / READY TO USE (9 rows, all "… AIO 2G");
+  - everything else is fictional ("Copper Mesa Labs": not found in our docs or the catalog).
+  - The strain names on the labels ("ATHEN'S HAZE", "ATOMIC POP") **are real catalog rows**.
+  - But High Variety also has 11 READY TO USE (AIO 2G) rows that are not covered. Display spelling "TŌK" vs catalog "ToK" (use the catalog form unless DEC-071 says otherwise).
+- **X6 Invented label data** (CLAUDE.md: never invent inventory data):
+  - "THC 90.0 %", "THC 78.4 %", "LIQUID DIAMONDS", "CURED RESIN", "DUAL MODE" are not in the catalog. The catalog has `thcMg`/`cbdMg`/`sizeG`, not %.
+  - The fictional edible label prints "THC 72.6 %" on a "10 servings" edible. Edibles are labelled in mg, ≤ 10 mg/serving, ≤ 100 mg/package (AZ_COMPLIANCE E1).
+  - `label_art.py` must take every field from a catalog row (DATA-002); nothing hard-coded.
+- **X7 AZ label content:** AZ_COMPLIANCE §D5 (R9-18-310) lists licence #, strain, batch, form, weight, total THC/CBD, the warning, ingredients and a QR code. The template has strain, batch, form, weight and a warning, but **no licence #, CBD, ingredients or QR placeholder**, and its warning wording is its own. The universal symbol is not in §D5 as quoted (check the full row).
+- **X8 Label art:**
+  - DejaVu Sans via Pillow (system path `/usr/share/fonts/...`, else `load_default`), so the output depends on the machine's fonts and is not reproducible on Windows. Bundle an OFL font and record it (DEC-023).
+  - Labels are 4096² squares, while the label rects are 0.037 × 0.071 m etc.: stretched, unless rendered at the rect aspect (the round-2 B4 finding again).
+- **X9 Stocking arranger:**
+  - Placement-only ✓, seeded ✓, AABB clipping ✓.
+  - Anchors must come from RF fixtures and the per-room jar/shelf counts (DEC-079 jars per strain).
+  - Density must follow DEC-096 playtest feedback ("over-full shelving"), and stock must come from DATA-002 (arranger H3: no random fill as inventory).
+- **X10 Params/helpers:**
+  - no `unity_dir`/`own_sheet`/`checks`; `GAP-R5-*` ids;
+  - `round5_common.py` is the 4th helper module;
+  - `upgrade_target` names (`PROC_Pkg_VapeCartBox`, `…EdibleBag`, `…ExtractJar` …) must be checked against the canonical `packaged_goods` variants (DEC-093: port into it, one family).
+- **X11 Textures:** ~80 self-authored PNGs, 2K, CC0 claimed. As in round 4, register them in `LICENSE_LEDGER.md` with sha256 or replace them with CC0 scans. The label PNGs carry real brand names (approved) and must be regenerated from data anyway (X6).
+
+### Research gaps, round 5
+- **RG5-1 Product sizes:** the Tok 2 g AIO envelope 76 × 38 × 13 mm is marked "authoritative" by the drop, but our docs have no source for it. Verify on the ToK product page or a physical unit; likewise the HV cart and cartons (GAP-PROC-10).
+- **RG5-2 1 lb backstock bag:** type, size and closure (DEC-079 gives only "1 lb bags"). Look at RI §2.1 HUB 2 (black bags on shelves) and the office crop; or ask in the next batched question round.
+- **RG5-3 Exit bag:** RI §3 BAND 05 ("kraft bags hung on the shelf") and DEC-043 ("branded paper bags") say **paper/kraft**. The drop's exit bag is an opaque resealable pouch: check which bag is the exit bag (child-resistant exit bag vs kraft carry bag).
+- **RG5-4 AZ label layout:** the full R9-18-310 field list and the universal symbol; AZ_COMPLIANCE §D5 is the start.
+
+### Drop 8 summary
+**Adapt overall: the best-aligned drop on facts.** Real brands sit only on their catalog categories, real catalog strain names are used, the synthetic-anchor warning is explicit, and every asset builds deterministically.
+- **Open:** DEC-084 detail (72–1.5k tris); the collision key; low-LOD size failures; invented THC %/product-line text; missing AZ label fields; the system-font dependency; the exit-bag material.
+- **Counts:** adopt 0 · adapt 5 · reject 0. Fix items: checklist §R5.
+
+---
+
+## Drop 9 — round 6 (`Dispo_Game_Blender_PROC_Round6_HQ/`, evidence-revised, 2026-10-30)
+
+**Brief:** DEC-091 R6 (architectural detail kit, retail/back-room light fixtures, UV2 readiness, wear decals, signage, exterior storefront/parking/desert landscaping as params).
+**Judged against:** RI §2 (CCTV wall), §6.1 ceilings, §6.2 doors, §6.5 finishes, §6.7 lighting, §6.8 A011/A012; RF; canonical core 87807ad.
+
+**Contents (149 files, 7.6 MB):**
+- 5 generators (37 assets) + `round6_common.py`;
+- ~130 self-authored PNGs (textures, 4 wear decals, 4 sign arts incl. `Sign_TFS.png`);
+- `generate_round6_art.py`;
+- `validation/STORE_EVIDENCE.json` + static audit.
+
+This time ChatGPT had **A012** and two camera stills. It adopts an "evidence-first" rule: every item carries `store_evidence_status`, and unproven items default to `disabled_reference` ✓ (the right idea).
+
+### How it was checked
+- Static read.
+- Sandbox as for drops 6–8: 87807ad + `Tools/Blender` + `Art/Source/Procedural/Round6`. All 37 assets × 4 LODs measured twice; sandbox deleted.
+
+| Family (assets) | LOD0 tris | Budget | Build / size | Verdict |
+|---|---|---|---|---|
+| `architectural_detail` (10) | 20–704 | 80k | builds; **size check fails 10/10** (axis order); CornerGuard **inside-out** | **adapt** |
+| `lighting_fixtures` (10) | 72–16,168 | 90k | size fails 10/10; CheckoutCluster and Pendant **not deterministic** | **adapt** |
+| `signage` (4) | 220–396 | 60k | size fails 4/4; LOD0 = LOD3 | **adapt** (optional) |
+| `exterior_site` (9) | 28–308 | 120k | size fails 9/9; LOD0 = LOD3 on most | **adapt** (sourced sizes below) |
+| `desert_landscaping` (4) | 608–7,948 | 150k | size fails 4/4 (real mismatches) | **adapt** (presence GAP) |
+| textures/decals/sign art | — | — | listed | **adapt** (ledger) |
+
+### Findings (measured)
+- **X1 Axis-order bug: 37/37 fail the canonical size check.**
+  - Generators return `(w, d, h)` (Blender X/Y/Z); the runner compares against the Unity-ordered bbox `(w, h, d)`.
+  - After swapping, **20/37 match** and **17/37 still miss** their declared dims: the agave is 0.45 m wide vs 1.05; the pendant globe 0.096 vs 0.2; the checkout cluster 0.50 × 0.47 × 0.51 vs 0.62 × 0.72 × 0.62; the door lever 0.15 vs 0.20; the downlight and recessed can are short; the A-frame depth 0.32 vs 0.62; and so on.
+- **X2 Determinism:** CheckoutCluster and Pendant_Globe differ between runs. Both use `bmesh.ops.create_uvsphere`, the same primitive as round 4's non-deterministic TopButton.
+  - Conclusion across drops 7 and 9: **avoid `create_uvsphere` in generators**; use a lathe (`add_lathe`) for spheres.
+- **X3 Winding:** `CornerGuard_90` (20 tris) is inside-out. All other closed parts are fine.
+- **X4 Below DEC-084:**
+  - LOD0 is 20–704 tris for everything except the checkout cluster (16k), palo verde (5.6k), shrub (3.6k) and gravel (7.9k).
+  - Many assets have LOD0 = LOD3 (signage, storefront, stall, stripe, sidewalk), so the canonical LOD chain fails.
+  - The 2 × 2 ACT light is 136 tris, the 2 × 4 troffer 196.
+- **X5 Collision key:** `collision.boxes` again (as round 5), so nothing reaches `collision_boxes`.
+- **X6 Helper module 5** (`round6_common.py`, also seeded `random`), `GAP`/params gaps as before, and UV2 per R3b.0.4.
+
+### Store-evidence findings (our docs vs the drop's evidence reading)
+- **Floors contradict the TI (High) and CCTV:**
+  - The drop reads both stills as **wood-look plank flooring**, a **dark blue accent wall** and **light** counters/casework.
+  - Our sources:
+    - retail floor TL-1 marble-look porcelain + TL-2 "Madrid" patterned tile;
+    - back rooms VCT-1 12 × 12 in; storage CONC-1 sealed concrete (RI §6.5);
+    - CCTV R2C1 "white marble-look tile + black/white geometric cement tile";
+    - HUB "gray square floor tile / dark floor" (RI §2.1);
+    - counters **black** (RI §2.4, DEC-043);
+    - wall behind displays **teal** WC-1 (RI §2.4/§6.5).
+  - Either the drop's stills are not this store (compare RI §6.9: a "Flower Shop" TI set that is *not this store*), or they are mis-read. **Its finish observations must not be used.** Use RI §6.5.
+- **Items it disables that our docs confirm:**
+
+  | Drop item (`disabled_reference`) | Our evidence |
+  |---|---|
+  | Strip 4 ft | TI §6.7 **L2 2 ft/4 ft strip (storage)**, High; RF `Light_Strip_Pendant` BOH |
+  | Wall pack | CCTV **R1C3 "wall packs"** (RI §2) |
+  | Ceiling grid (2 × 4 module) | ACT-1 **2 × 2 lay-in** in 102–107 at 8'-0" (RI §6.1, High), so **2 × 2**, not 2 × 4 |
+  | Outlet/switch plates | RI §6.5: white on white walls, **matte black on finished walls**; switches 3'-6" AFF (§6.2) |
+  | Door lever | TI A310 lever hardware, centreline 3'-4"–3'-6" (RI §6.2), on HM doors (no lock or access-control detail, DEC-051) |
+  | Storefront glazing + entry door | E101 **6'-0" × 7'-0" aluminium full-glass storefront pair** (RI §6.2/§6.8, High). The drop's door is a 1.02 × 2.13 single leaf: use two 3'-0" × 7'-0" leaves (0.914 × 2.134) |
+  | Parking stall / stripe / curb | CCTV R1C2 "parked cars, striping"; R1C3 "**yellow curb**", dark-green privacy fence/gate (RI §2) |
+  | Exit sign | ✓ already enabled (R2C1 exit sign) |
+
+- **Door kit vs DEC-110** (World contract `Docs/Reference/DOORS.json` + CF §7.1):
+  - **No push bar / exit device at all.** Three doors need one: DOORS.json `Emergency_RetailE`, `Ext_Emergency_SE` and `Ext_Delivery`.
+  - **The entry door's `PullHandle`** (`exterior_site.py` l.24) is correct: DOORS.json `Entry` has `hardware: storefrontPull`.
+  - The only lever is `DoorLever_Commercial`; its size misses its dims (X1).
+  - **Caution:** main's DOORS.json still has the `JC` and `Ext_Delivery` hardware swapped (the World fix is pending), so bind to the corrected ids.
+- **Missing TI lighting types:** L3 linear LED (recessed in millwork), L5 small flush mount, L6 bathroom sconce, L7 task, L8 18 in under-cabinet (TI §6.7). Also missing: the retail **CLG-1 suspended 4 × 8 ft dark-walnut acoustic panels** on stainless cable (RI §6.1), the "dark baffle ceiling" in BAND 01/05/10. Retail ceiling: painted gypsum at 9'-0", soffits at 7'-6" (RI §6.1).
+- **Pendants:** the globe-pendant cluster matches CCTV R2C2 "globe pendant cluster" ✓; checkout counter light is a plan type ✓ (A012). Counts and sizes are GAP.
+- **Baseboard:** 0.102 m (4 in) matches VB-1 **grey vinyl base 4 in** ✓; set the colour to grey (VB-1).
+- **Signage:**
+  - `Sign_TFS.png` carries the approved brand ✓ (DEC-071).
+  - Store signage we know: the "Fine Cannabis" white neon (BAND 05); the logo living wall (R2C2); the "THURSDAY" daily-deals sheet (BAND 10); the 3 × 3 video wall (R2C2); the required licence and pregnancy-warning signage at entry (AZ_COMPLIANCE G2). Use those instead of a generic A-frame and menu board.
+- **Landscaping:** the agave, palo verde and shrub are generic Phoenix species. Exterior CCTV (R1C1–R1C3) shows a sidewalk, curb, lot and fence; no planting is recorded (RG6-3).
+- **A012 room areas** in the drop match RI §1.3/§6.8 (e.g. HUB 818.53, HUB 2 541.34) ✓. The plan's "access controlled door" label is recorded without modelling any hardware ✓ (DEC-031).
+
+### Research gaps, round 6
+- **RG6-1 The drop's two camera stills:** identify them (file names are not in the package); if they are this store, reconcile them with RI §6.5.
+- **RG6-2 Light counts and sizes:** pendants, checkout cluster, L4A/L4B downlights. RCP A101 positions (RI §6.1) could give counts.
+- **RG6-3 Exterior planting and storefront sign band:** exterior CCTV R1C1–R1C3 at full resolution; a public street view is not in our sources and should not be used without a ruling.
+- **RG6-4 HVAC diffusers/returns, sprinklers:** the TI M/FP sheets are not indexed (RI §6 covers A/E only).
+
+### Drop 9 summary
+**Adapt overall.** The evidence-first metadata is a real improvement.
+- **But:** every asset fails the size check (axis order), 17 also miss their dims, 2 are non-deterministic, 1 is inside-out, and most are 20–700 tris.
+- **Its evidence reading of floors and finishes contradicts our TI (High) and CCTV.**
+- **It disables 8 families our docs confirm**, including the round-3 strips and wall pack (R3b.4).
+- **Counts:** adopt 1 (evidence-status metadata pattern) · adapt 6 · reject 0. Fix items: checklist §R6.

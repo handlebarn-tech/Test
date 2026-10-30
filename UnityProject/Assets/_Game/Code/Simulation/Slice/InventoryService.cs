@@ -11,6 +11,7 @@ namespace Dispo.Simulation.Slice
         public string BatchId, StrainName;
         public int CustomerIndex;
         public double Grams, PricePreTax, PricePostTax, GramsBefore, GramsAfter;
+        public bool Medical;   // GAME-009: rung as a medical sale (medicalTaxRate)
     }
 
     /// <summary>Single stock authority (§4): grams per in-stock batch. Engine stock, POS, jars and the report read it.</summary>

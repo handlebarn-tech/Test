@@ -18,24 +18,38 @@ Rules for every department: `Docs/STUDIO_OS.md` §0. This file is the Gameplay l
 Gate A on every gameplay PR (DEC-067); V2 Critical/High exploit tests before a system is complete (DEC-066); exploration tests `[Explicit]` (DEC-072); realism vs fun (DEC-032); approved brands only (DEC-071/081).
 
 ## Status for Hub
-_Lead keeps this ≤15 lines._ 2026-10-30 (Hub, at handover): PS1 is one task from done (GAME-009). Playtest 1 feedback (DEC-096) makes controls, believable customer flow and recommendation depth this department's top priorities. No lead session yet.
+_Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
+- BACKLOG reconciled: GAME-007/008/010, QA-002b Done; GAME-011/012 Ready (wait for PS1b, DEC-096); new rows DES-005/006, GAME-025/026.
+- DES-004b+c merged (W5L, d79e103).
+- GAME-009 resumed in its own session (Gameplay's Unity slot); then REVIEW-PS1 → playtest build 2.
+- DES-005 (playtest intake, controls + customer-flow spec, GAME-025/026 packets) and DES-006 (PS1b vs TFS depth audit) run as doc-only subagents.
+- Next code after GAME-009: GAME-025 controls, then GAME-026 flow and the DES-006 "first playable depth" cut.
+- Cross-dept: door + entry/guard/queue anchors with World (contract in `Specs/CONTROLS_FLOW_PS1.md` §Contract, from DES-005).
 
 ## In flight
 | Task | Worker | Branch | State |
 |---|---|---|---|
-| GAME-009 medical (+ W5N m2 queue strip) | session `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` (idle) | `claude/task-game-009` @ a4806d6 | unfinished: EditMode 215/217, capture-timeout fix not re-run, no handoff yet |
-| DES-004b+c (PS2 shift day) review | Docs reviewer `local_b073ffa0…`; DES worker session `local_82d327a2-5b67-4cff-b481-5854a94f6f31` idle | REVIEW-W5L | waiting on the verdict |
+| GAME-025 controls + Esc pause + doors | lead subagent | worktree (merged DES-005b cf5d614) | running |
+| BUILD-007 | — | — | ON HOLD (Nolan via Hub): build once GAME-025 lands, ideally with GAME-026; run aborted clean (nothing built or committed; packet stays in Active) |
+| DATA-003 needs catalog + goldens | done | `worktree-agent-afbc722989beda3b0` @ 996c631 | in review (Unity A2); 12 needs, 564 goldens, 0 C#/tool mismatches |
 
 ## Queue (lead re-orders within DEC-096)
-1. **Reconcile BACKLOG rows** for this department's prefixes (several are stale: GAME-007/010, QA-002b, GAME-011/012 now have packets in Ready).
-2. Finish GAME-009 → REVIEW-PS1 → playtest build for Nolan (BUILD).
-3. Playtest 1 (DEC-096), first copy `Downloads/Dispo Game Imports/GameFeedback10-30.txt` to `Docs/Design/PLAYTEST_2026-10-30.md` and archive the original (DEC-070):
-   - controls: camera/look feel, Esc always opens a pause menu;
-   - door interaction (World owns the door geometry; agree the contract);
-   - customer flow: entry check-in with an ID-checking guard (DEC-086, DEC-036 M2) → one line → **the player calls the next customer**, nobody appears at the register on their own;
-   - **recommendation depth (top concern):** customers state needs in different ways, the player interprets them and asks follow-ups, then uses the full TFS recommendation workflow. Bring PS1b (GAME-017..020) forward and check it against the TFS tool's depth before building (DES pass).
-4. PS1b chain GAME-017 → 018 → 019 → 020; then GAME-021/022/024; UX-003; GAME-011/012 per DES-004.
-5. Long-term ideas from playtest 1 go into the roadmap through a DES proposal to the Hub (scope): parking-lot throughput system, character setup/start screen, store condition over the day, coworker personalities, TV ad wall cycling (5–10 s), grounded deadpan humour as a tone pillar.
+1. GAME-009 → REVIEW-PS1 → playtest build 2 for Nolan (BUILD).
+2. GAME-025 controls (after DES-005 + GAME-009 merge; World door contract).
+2b. GAME-025 starts when BUILD-007 frees the Unity slot and DES-005b merges (packet amended there). GAME-026 at activation: add DEC-110 W4 arrivals (mostly parking lot → west door, sometimes sidewalk).
+3. **GAME-017a packet** must carry: REVIEW-DES6 m1 (slice goldens regenerate, old→new list, QA sign-off); REVIEW-UX6 m1 (nearLabel/notFound keyed to tool T:16554/T:16544), m2 (§13.9 add reject→Query and Q6/Q7 reservation), m3 (route line follows engine maxPrice, T:16632); DEC-105 rule; DATA-003 notes: only the first-result `{strain}` has goldens (GAME-017a must restrict runtime strain fill to captured ones or capture more), a modifier like "gotta work" is a parse no-op, verbatim lines keep punctuation.
+3. GAME-026 customer flow (World entry anchors) and the DES-006 first-depth cut, then PS1b GAME-017 → 018 → 019 → 020 as amended.
+4. GAME-021/022/024; UX-003; GAME-011/012 per DES-004.
+5. **DES-005b + DES-007 (one doc worker, next free slot; DES-005 merged 5ab7aeb)**: fold DEC-103 (Nolan's flow answers: call lines, one line, no 2nd door, guard scans ID back + green light, ID re-shown at register, check-in never backs up, FOH/BOH + north office + HUB connector doors propped open, GM assigns registers per DEC-079; emergency-exit alarm stays GAP) into `CONTROLS_FLOW_PS1.md` + GAME-025/026; REVIEW-W5U m1/m2; KNOWN_GAPS GAP-CF rows + GAP-DAY-04 basis → DEC-096 (m3).
+6. DES-007 (same worker): DEC-101 accepted the long-term proposal as phased; add its rows to `ROADMAP_POST_SLICE.md` (Hub-delegated) + a deadpan tone note where dialogue/event writers read. Nolan Q1–7 (GAP-CF) are with the Hub; keep placeholders.
+
+## Lead rulings (DES-006 questions, 2026-10-30)
+- B1: a faithful add-only port of the tool's Refine chip selection into `Code/Domain/` is allowed (DEC-001/002: the tool is the authority; porting it is not changing logic), as its own task with tool-captured goldens and Gate A; record a DEC when it merges. Until then GAME-018 keeps the Refine placeholder.
+- Q2 free typing: not in PS1b; later PC/expert option for the roadmap.
+- Q3 New/Experienced toggle: include it in the TFS input snapshot hash if the tool's results depend on it (follow the tool).
+- Q4 the UX addendum belongs to Gameplay UX (UX-006).
+- Q5 yes: GAME-017a is split out now. Sequence: GAME-009 → GAME-025 → GAME-017a → GAME-026 (shared Slice files, one owner at a time).
+- UX-006 U1–U6: "The tool will" preview stays (route only); "as said" lock OK; soft gate on unread cards; card reorder → GAME-017; GAME-017a copies tool wording in; ASCII wireframes suffice.
 
 ## Blockers / Questions for Nolan
 - None open.

@@ -30,3 +30,6 @@ V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). 
 
 ## Handoff
 `Docs/Handoffs/GAME-024.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).
+
+## DES-004c addition (DEC-080)
+The **manager refill loop** is a manager-rank mechanic unlocked through these gates, as one of the PS2–PS4 unlocks in Deliverable 2. Design: `Docs/Design/SPEC_SHIFT_DAY.md` §9b. Facts from DEC-079: the office silver rolling cart is the only certified refill place; HUB cabinet bags; the empty-jar shelf; cleaning. GAME-024 provides only the unlock flag. The loop itself is a separate packet, written when GAME-024 lands.

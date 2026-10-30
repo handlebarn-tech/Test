@@ -28,5 +28,14 @@ V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). 
 - A Similar/Compare re-run with an unchanged input hash counts as redundant (EX-011; V2 `10_EXPLOIT_FAILURE_ANALYSIS.md`; row 45).
 - Parity oracle = the shipped engine (v7.11.4 + DEC-015/016, DEC-060; A1).
 
+## DES-006 amendments (recommendation depth, DEC-096)
+Source: `Docs/Design/RECOMMENDATION_DEPTH_AUDIT.md` (**RDA**) rows 8, 9, 12, 15, 16. No `Code/Domain/` edits.
+- **Refine, the tool's follow-up loop (RDA row 12):** after an Ok/Fallback recommend result, offer the tool's refine options and run `Refine.Apply(lastParsed, key)` → `Responder.Respond`, with a [GDD] time cost. The chip *selection* (`buildFollowUpChips` `T:19612-19641`) is not ported. **Blocker B1** (DES-006 handoff): until an add-only Domain port lands, ship refine as re-compose only (the player adds the new said card and searches again). Keep the Refine menu behind a config flag, off. Never reimplement the selection outside Domain.
+- **Like-X search** (`T:16047-16050`, `T:16018`): a product-reference card read as "something like {strain}" goes through the composer (LikeKey). It complements the Similar tab.
+- **Strain lookup** (`T:16541-16554`): "Do you have {strain}?" → the `Responder` strain card; when it is out of stock, show the engine's `Near` list in its order.
+- **Card reasons** (`T:16253-16264`, `T:16382-16469`): show the role tag and why line on cards, only when the outcome is Ok (`Responder.cs:39`). These are TFS reasons for choosing *between* cards; no gameplay value is added (UX_COUNTER_INTEL §0).
+- **More options** on the parser route = `Responder.MoreOptions` (`T:19442-19460`), replacing `ShiftSim`'s own `Recommend(n)` rerun.
+- Counters (D5) also count refine uses, re-reads, lookups and like-X searches. Parity tests also cover `Refine.Apply` → `Respond` and lookup + Near against direct engine calls.
+
 ## Handoff
 `Docs/Handoffs/GAME-018.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).

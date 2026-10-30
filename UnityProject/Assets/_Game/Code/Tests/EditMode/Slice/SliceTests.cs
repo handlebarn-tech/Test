@@ -374,8 +374,13 @@ namespace Dispo.Slice.Tests
                 if (sim.RegisterOpen)
                 {
                     // GAME-007: trim an over-limit cart (drop the last line); add the next ask only if it fits under the cap.
-                    if (sim.Meter == MeterState.Red) { sim.RemoveLine(sim.Cart.Count - 1); continue; }
-                    if (sim.CanAddItem && sim.CartGrams + sim.CurrentAsk.Grams <= sim.Cfg.adultUseLimitGrams) sim.AddItem();
+                    if (sim.Meter == MeterState.Red)   // GAME-009: a lone medical line over the allotment rings adult-use instead
+                    {
+                        if (sim.Cart.Count > 1) sim.RemoveLine(sim.Cart.Count - 1); else if (sim.MedicalSale) sim.ToggleSaleType(); else sim.Cancel();
+                        continue;
+                    }
+                    if (sim.CanAddItem && sim.CartGrams + sim.CurrentAsk.Grams <= sim.CartCap) sim.AddItem();
+                    else if (sim.MedicalSale && c.OutOfStateCard) { sim.ToggleSaleType(); continue; }   // GAME-009: ring it as adult-use
                     else { Assert.IsNull(sim.Confirm()); continue; }
                 }
                 var ask = sim.CurrentAsk;

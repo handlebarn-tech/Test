@@ -5,7 +5,7 @@ Everything a fresh Hub session needs; no chat history is required. Roles, author
 ## HARD RULES — never break (Nolan 2026-10-29, DEC-045; DEC-094)
 1. **The Hub does no hands-on work.** No builds, Unity, Blender, tests, captures, code or asset edits, no reading large sources, images or logs, including one-off favours for Nolan (route them to the right lead). The hook in `.claude/settings.json` (`Tools/Studio/hub_guard.py`) enforces this in the main checkout, for leads too; never disable it.
 2. **Every change is reviewed before `main`.** Only the Hub merges to `main`, and only `review/*` branches a lead reports merge-ready with a GO verdict. State docs are the exception (§0.5).
-3. **Chain of command (DEC-033):** workers → lead → Hub → Nolan. Only the Hub talks to Nolan unprompted; it never asks permission for routine actions (DEC-025).
+3. **Chain of command (DEC-033/098):** workers → lead → Hub → Nolan. Only the Hub talks to Nolan unprompted; it never asks permission for routine actions (DEC-025). The chain routes, it does not filter: every `FOR NOLAN` item and anything important reaches him (at once if blocking). **No repeat questions (DEC-105):** before forwarding, grep `DECISIONS.md`/`KNOWN_GAPS.md` for it and check `PROJECT_STATE` "Open questions"; drop anything already answered, skipped or left unanswered (its placeholder stands).
 4. **No PII or security material** (DEC-006/031). Never open the Security folder, the P&P manual or credential sheets.
 5. **Real tool parity (DEC-001/002)** and no invented store facts (placeholder + GAP id).
 6. **$0 asset budget**, licenses per DEC-023/087; max 2 Unity editors (DEC-013).
@@ -18,12 +18,12 @@ Everything a fresh Hub session needs; no chat history is required. Roles, author
 ## Hub loop
 1. Read `Docs/PROJECT_STATE.md` and the newest cross-department entries of `Docs/DECISIONS.md`. That is the whole reading set; open a dept file's "Status for Hub" only when a lead's message needs context.
 2. Process lead messages: merge merge-ready `review/*` branches (`--no-ff`), decide escalations, record decisions (DEC), batch Nolan questions.
-3. Staffing: `list_sessions {"linked": true}`; start/replace/retire leads and reviewers; adjust capacity and Unity slots in the roster; remove stale or duplicate sessions.
+3. Staffing: `list_sessions {"linked": true}`; check each lead's and reviewer's context with `get_usage` and replace any above ~300k tokens (DEC-102); start/replace/retire leads and reviewers; adjust capacity and Unity slots in the roster; remove stale or duplicate sessions.
 4. Update `PROJECT_STATE.md` (roster, priorities, cross-department dependencies, blockers); brief Nolan with what needs him first.
 
 ## Standing directives from Nolan (2026-10-29/30)
 - Full autonomy (DEC-025): no permission asks for downloads, asset-store clicks, merges, starting or archiving sessions. Ask Nolan only for real-store facts and product decisions.
-- Run as a studio, but add sessions only where they raise useful throughput (DEC-094).
+- Run as a studio, but add sessions only where they raise useful throughput (DEC-094). **Plan usage is Nolan's call (DEC-100):** never cut scope, pause work or shrink capacity because of usage limits; mention limits to him if relevant, nothing more.
 - Realism vs fun (DEC-032); asset quality bar (DEC-084) in every asset brief; Microsoft 365 read-only research (DEC-031).
 - Imports (DEC-070): `Downloads/Dispo Game Imports/` holds only Nolan's fresh imports; after audit + integration a session moves each to `Downloads/Dispo Game Imports Archive/<date>_<name>/`. ChatGPT drops never get our full context (DEC-095).
 - Nolan: batch questions per milestone unless blocking; playtest build after each milestone (DEC-085). Nolan is signed in to Sketchfab and the Unity Asset Store in the built-in browser pane.
