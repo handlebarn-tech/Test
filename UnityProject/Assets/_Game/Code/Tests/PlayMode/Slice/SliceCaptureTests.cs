@@ -104,7 +104,7 @@ namespace Dispo.Slice.PlayMode.Tests
                     }
                     Time.timeScale = 10;
                 }
-                if (!saleShot && g.Sim.Sales.Count == 1 && g.Screen == SliceScreen.World)
+                if (!saleShot && g.Sim.Sales.Count > 0 && g.Screen == SliceScreen.World)   // the first cart may be 2 lines (GAME-006/010)
                 {
                     saleShot = true; Time.timeScale = 0;
                     yield return Shot("Sale_Toast");
