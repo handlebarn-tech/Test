@@ -68,11 +68,11 @@ These gaps are defined, with placeholders and owners, in the spec named; that sp
 
 ## IMP-002 / DESIGN_V2 (see `Docs/Design/DESIGN_V2/`, DEC-063/066)
 - GAP-V2-01 | store | V2 store questions (storage zones, deliveries, expiry, staffing/breaks, job titles; IMP-001 Q1–5) | V2 [GDD] placeholders | Nolan at PS2/PS4 start
-- GAP-DAY-01 | store | Typical opening deli backstock per strain in BOH and how it's packed (GAP-DAY-05 merged) | 0/1/2 × 454 g bags (20/50/30 %) | Nolan
-- GAP-DAY-02 | store | Where deli backstock is kept | labelled BOH rack slot (DEC-041) | Nolan
-- GAP-DAY-03 | store | Registers open by time of day | 4 / 2–3 / 5 / 3 | Nolan
-- GAP-DAY-04 | store | One shared line to the next free register, or a line per register | one shared line | Nolan
-- GAP-DAY-06 | store | People waiting at 08:00 open | 3 | Nolan
-- GAP-DAY-07 | store | Who refills deli jars mid-shift (the register budtender, a lead, a dedicated person) | the player | Nolan
-- GAP-DAY-08 | store | Do budtenders have a usual register | any free one | Nolan (low)
+- GAP-DAY-01 | store | Typical opening deli backstock per strain in BOH and how it's packed (GAP-DAY-05 merged) | 0/1/2 × 454 g bags (20/50/30 %) | Nolan | CLOSED by DEC-079
+- GAP-DAY-02 | store | Where deli backstock is kept | labelled BOH rack slot (DEC-041) | Nolan | CLOSED by DEC-079
+- GAP-DAY-03 | store | Registers open by time of day | 4 / 2–3 / 5 / 3 | RES-002 (schedule, counts only)
+- GAP-DAY-04 | store | One shared line to the next free register, or a line per register | one shared line | Nolan | CLOSED by DEC-079
+- GAP-DAY-06 | store | People waiting at 08:00 open | 3 | Nolan | CLOSED by DEC-079
+- GAP-DAY-07 | store | Who refills deli jars mid-shift (the register budtender, a lead, a dedicated person) | the player | Nolan | CLOSED by DEC-079
+- GAP-DAY-08 | store | Do budtenders have a usual register | any free one | Nolan (low) | CLOSED by DEC-079
 - GAP-DAY-09 | store | Last call / door lock | CLOSED by DEC-076 (lock 22:00, inside customers served) | —
