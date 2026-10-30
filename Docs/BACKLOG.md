@@ -177,4 +177,4 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | LT-6b | P3 | Break room NPC use and breaks (LT §6) | NPC-002, PS4 | Later (PS4) |
 | LT-7 | P3 | Neighbourhood activity: traffic, pedestrians, deliveries, weather (LT §7) | ART-012, LT-1a | Later (M-F) |
 | LT-8 | — | Tone pillar adopted (`Design/TONE.md`, DEC-101) | — | Done (DES-005b) |
-| DOC-004 | P3 | Put "fast recommendation" back in GSS §28 (DEC-059 n1, REVIEW-W4Q); rides with the next GSS edit | — | Ready |
+| DOC-004 | P3 | Put "fast recommendation" back in GSS §28 (DEC-059 n1, REVIEW-W4Q); rides with the next GSS edit | — | Done |

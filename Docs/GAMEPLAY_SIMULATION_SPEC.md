@@ -695,7 +695,7 @@ price shopper      → settle price first
 repeat customer    → memory allows very fast service
 ```
 
-Floor Mode, short questions and fewer comparisons are the usual tools, but over-trimming an ambiguous customer must cost as much as over-consulting a decisive one (DP §14, §18).
+Floor Mode, fast recommendation, short questions and fewer comparisons are the usual tools (DEC-059 n1, REVIEW-W4Q), but over-trimming an ambiguous customer must cost as much as over-consulting a decisive one (DP §14, §18).
 
 This turns the historical Floor Mode concept into actual gameplay value.
 
