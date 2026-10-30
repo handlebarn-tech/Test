@@ -28,8 +28,8 @@ _Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…`; repor
 | Task | Worker | Branch | State |
 |---|---|---|---|
 | REF-011 sales-floor audit | subagent (done) | `worktree-agent-a3e83b7d768da38d0` 2731c1a | PASS (REVIEW-REF11) → on `review/world-1` |
-| REF-013 drawings measure + DEC-110 | subagent (worktree) | off `review/world-1` | running |
-| ART-007 graybox rebuild | subagent (worktree, Unity slot) | off `review/world-1` b30d72c | running |
+| REF-013 drawings measure + DEC-110 | subagent (done) | `worktree-agent-a2b65d251ee0f6ac2` 73e0e0c | in review (Docs 2) |
+| ART-007 graybox rebuild | subagent (done) | `worktree-agent-a814e17bba4ec20c5` 404daee | in review (Unity A2 → Hub) |
 | REF-012 office + doors audit | subagent (done) | `worktree-agent-a2f71eef653a08c1c` e798f88 | PASS (REVIEW-REF12) → on `review/world-1` a452259 |
 
 ## Queue (lead re-orders within DEC-096)

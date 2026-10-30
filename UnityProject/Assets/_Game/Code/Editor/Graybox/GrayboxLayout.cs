@@ -22,6 +22,7 @@ namespace Dispo.Editor.Graybox
         public Anchor[] anchors;
         public Stations stations;
         public JarSlots jarSlots;
+        public Door[] doors;
 
         [Serializable] public sealed class Rect { public float x0, x1, y0, y1; }
         [Serializable] public sealed class Height { public string key; public float ft; public string gap; public string note; }
@@ -30,8 +31,9 @@ namespace Dispo.Editor.Graybox
         [Serializable] public sealed class Room { public string id, zone, conf; public Rect r; }
         [Serializable] public sealed class Opening { public string id, h, conf, note; public float from, to; }
         [Serializable] public sealed class Wall { public string id, zone, conf, gap; public float ax, ay, bx, by, t; public Opening[] openings; }
-        /// <summary>h/@base name a height key; hFt/baseFt (ART-006, ROOM_FIXTURES rows) give feet directly when h is empty.</summary>
-        [Serializable] public sealed class Fixture { public string id, zone, h, conf, shape, note; public string @base; public float hFt, baseFt; public bool solid; public Rect[] rects; }
+        /// <summary>h/@base name a height key; hFt/baseFt (ART-006, ROOM_FIXTURES rows) give feet directly when h is empty.
+        /// ART-007: tag (contents / condition) is appended to the object name; yaw (deg) turns each box about its centre.</summary>
+        [Serializable] public sealed class Fixture { public string id, zone, h, conf, shape, note, tag; public string @base; public float hFt, baseFt, yaw; public bool solid; public Rect[] rects; }
         [Serializable] public sealed class RefCam { public string tile, zone, room, h, conf, note; public float x, y, yaw, pitch, fov; public string Id => $"REF_{tile}_{room}"; }
 
         [Serializable] public sealed class Anchor { public string id, zone, conf, note; public float x, y, h, yaw; }
@@ -51,15 +53,20 @@ namespace Dispo.Editor.Graybox
             public float w, d, offsetT, topFt, post, board, scaleW, scaleD, scaleH, panelW, panelH, panelT;
             public float[] shelvesFt;
         }
-        /// <summary>Jar slots on open shelves; numbered run by run, row by row (bottom first), then along the run.</summary>
+        /// <summary>Jar slots on open shelves and deli back counters. ART-007: numbered by a seeded weighted draw (run.fill), so stocking slots 0..N-1 fills the walls unevenly (REFERENCES_INDEX 8.4).</summary>
         [Serializable] public sealed class JarSlots
         {
             public string zone, conf, gap, note;
+            public int seed;
             public float pitch, shelfT;
             public float[] rowsFt;
             public JarRun[] runs;
         }
-        [Serializable] public sealed class JarRun { public string id; public bool alongX; public float yaw; public Rect r; }
+        /// <summary>rowsFt overrides JarSlots.rowsFt; counter = the run is a back counter (solid to its row height); fill = 0..1 share stocked first.</summary>
+        [Serializable] public sealed class JarRun { public string id; public bool alongX, counter; public float yaw, fill; public float[] rowsFt; public Rect r; }
+        /// <summary>DOORS.json leaf door (REF-012): each leaf hangs on a pivot at its hinge (x, y); closed pivot yaw = Unity yaw, open adds openAngle.</summary>
+        [Serializable] public sealed class Door { public string id, zone, conf, gap, note; public bool pair, open; public float h, t; public Leaf[] leaves; }
+        [Serializable] public sealed class Leaf { public string name, pivot; public float x, y, w, yaw, openAngle; }
 
         public static GrayboxLayout Load()
         {

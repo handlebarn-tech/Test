@@ -88,7 +88,14 @@ namespace Dispo.Slice.PlayMode.Tests
                 if (g.Sim.Serving != null && (g.Screen != SliceScreen.World || g.CustomerAtCounter) && seen.Add(g.Screen))
                 {
                     Time.timeScale = 0;
-                    if (g.Screen == SliceScreen.World && !debugShot) { debugShot = true; yield return Shot("World_Hud"); }
+                    if (g.Screen == SliceScreen.World && !debugShot)
+                    {
+                        debugShot = true;
+                        yield return Shot("World_Hud");
+                        g.TogglePause();   // GAME-025: the pause menu over the counter
+                        yield return Shot("Pause_Menu");
+                        g.TogglePause();
+                    }
                     else if (g.Screen != SliceScreen.World) yield return Shot(g.Screen.ToString());
                     if (g.Screen == SliceScreen.Results)
                     {
@@ -201,7 +208,7 @@ namespace Dispo.Slice.PlayMode.Tests
             Assert.AreEqual(1, g.FinalReport.OverLimitTrims);
             Assert.AreEqual(CustomerOutcome.Bought, med.Outcome, "the bot switched the out-of-state card to adult-use and sold");
             Assert.IsTrue(g.Sim.Sales.Where(s => s.CustomerIndex == med.Index).All(s => !s.Medical));
-            Assert.IsTrue(new[] { "Dialogue", "Query", "Results", "Detail", "Pos", "Report", "Sale_Toast", "Jars_SoldOut_Low", "Jars_Closeup",
+            Assert.IsTrue(new[] { "Pause_Menu", "Dialogue","Query", "Results", "Detail", "Pos", "Report", "Sale_Toast", "Jars_SoldOut_Low", "Jars_Closeup",
                     "Pos_Cart_Red_100", "Pos_Cart_Red_125", "Pos_Cart_Red_150", "Pos_Medical_OutOfState_150", "CoverPrompt_150", "IdCard_100", "IdCard_150", "IdCard_Vertical_150" }
                 .All(s => shots.Any(f => f.Contains(s))), string.Join(", ", shots));
         }
