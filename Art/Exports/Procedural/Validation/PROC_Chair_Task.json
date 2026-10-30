@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Chair_Task",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "5ee24e8879ae0d7e",
+  "generator": "office_fixtures",
+  "lod_tris": {
+    "LOD0": 2048,
+    "LOD1": 1504,
+    "LOD2": 752,
+    "LOD3": 36
+  },
+  "params_sha256": "5a4a38147c2d9dad",
+  "passed": true,
+  "warnings": [
+    "LOD0 2048 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}

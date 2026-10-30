@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Desk_Corner_Dual_Monitor",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "a98ac2c6254693d4",
+  "generator": "office_fixtures",
+  "lod_tris": {
+    "LOD0": 764,
+    "LOD1": 540,
+    "LOD2": 48,
+    "LOD3": 36
+  },
+  "params_sha256": "5a4a38147c2d9dad",
+  "passed": true,
+  "warnings": [
+    "LOD0 764 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}

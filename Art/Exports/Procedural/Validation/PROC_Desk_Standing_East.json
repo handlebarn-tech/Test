@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Desk_Standing_East",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "1070abe4df0c6834",
+  "generator": "office_fixtures",
+  "lod_tris": {
+    "LOD0": 932,
+    "LOD1": 612,
+    "LOD2": 120,
+    "LOD3": 36
+  },
+  "params_sha256": "5a4a38147c2d9dad",
+  "passed": true,
+  "warnings": [
+    "LOD0 932 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}

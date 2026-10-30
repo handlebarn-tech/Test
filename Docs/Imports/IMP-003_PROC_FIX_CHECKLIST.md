@@ -141,16 +141,17 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [x] **K5** shelf anchors exist; contents per DEC-050 (cooler: concentrates + perishable edibles; fridge: drinks).
 
 ## 8. Office: `generators/office_fixtures.py`, `params/office_fixtures.json`
-- [ ] **O1 handles z-fight** (inside door/drawer fronts, coplanar) on TallStorageCabinet and FilingCabinet: use `add_handle_pull` / proud handles. [S5]
-- [ ] **O2** TallStorageCabinet = RF `Cabinet_Tall_Black_A/B` **2.4 × 2.0 × 5.0 ft, black, plain closed box, no hardware** (DEC-051 Q9): add `doors: false`.
-- [ ] **O3** FilingCabinet = RF `FileCabinets_UnderDesk`: several **black** cabinets under the standing desk, run 3.4 × 1.8 × **2.4 ft**, so each is ≤ 0.73 m tall with ~2 drawers.
-- [ ] **O4** StandingDesk = RF `Desk_Standing_East` 3.6 × 2.0 × 3.5 ft.
-- [ ] **O5** Desk:
+**PROC-005 done:** new generator with 10 RF assets. Tall black cabinet: plain box, `doors: false`. Under-desk file run: 3 black 2-drawer units with standoff pulls, label holders, a lock and slide axes. Standing desk on T-legs. West arm and corner piece: black laminate; the corner piece is straight and forms the L when placed against the west arm. Ex-register-1 desk: white top. Stainless worktable with folding braces. Mesh task chair: 5-star base, twin wheels, gas lift, arms. Stainless deli prep cart: 2 shelves, push handle, blank rail label. Black wire basket cart. DrawerCart removed. O1: pulls are proud, so no z-fight. Sizes are GAP-PROC-18. LOD0 is 0.1–3.2k (warning; the plain cabinet is 104 tris by design, DEC-051 Q9).
+- [x] **O1 handles z-fight** (inside door/drawer fronts, coplanar) on TallStorageCabinet and FilingCabinet: use `add_handle_pull` / proud handles. [S5]
+- [x] **O2** TallStorageCabinet = RF `Cabinet_Tall_Black_A/B` **2.4 × 2.0 × 5.0 ft, black, plain closed box, no hardware** (DEC-051 Q9): add `doors: false`.
+- [x] **O3** FilingCabinet = RF `FileCabinets_UnderDesk`: several **black** cabinets under the standing desk, run 3.4 × 1.8 × **2.4 ft**, so each is ≤ 0.73 m tall with ~2 drawers.
+- [x] **O4** StandingDesk = RF `Desk_Standing_East` 3.6 × 2.0 × 3.5 ft.
+- [x] **O5** Desk:
   - add an L/corner variant: `Desk_West_Arm` 4.8 × 2.5 × 2.5 + `Desk_Corner_Dual_Monitor` 4.3 × 2.5 × 2.5, **black laminate**;
   - BOH `Desk_ExRegister1` 4.0 × 2.0 × 2.5, **white top**.
-- [ ] **O6** Worktable = RF `Worktable_Stainless` 5.3 × 2.5 × 2.5 ft, stainless top, folding legs.
-- [ ] **O7** OfficeChair = RF `Chair_Task_1/2` 2.0 × 2.0 × 3.2 ft, black mesh, 5-star base.
-- [ ] **O8** remove DrawerCart (no store evidence). Add the **deli prep cart** instead: RF `Cart_Deli_Prep` 2.5 × 1.6 × 2.9 ft, stainless 2-shelf utility cart; the only certified refill spot (DEC-079). Also `Cart_WireBasket` 1.5 × 1.5 × 2.5, black wire.
+- [x] **O6** Worktable = RF `Worktable_Stainless` 5.3 × 2.5 × 2.5 ft, stainless top, folding legs.
+- [x] **O7** OfficeChair = RF `Chair_Task_1/2` 2.0 × 2.0 × 3.2 ft, black mesh, 5-star base.
+- [x] **O8** remove DrawerCart (no store evidence). Add the **deli prep cart** instead: RF `Cart_Deli_Prep` 2.5 × 1.6 × 2.9 ft, stainless 2-shelf utility cart; the only certified refill spot (DEC-079). Also `Cart_WireBasket` 1.5 × 1.5 × 2.5, black wire.
 
 ## 9. Break room: `generators/break_room.py`, `params/break_room.json`
 - [ ] **B1** lockers = RF `Lockers_Staff` **one unit 2.0 × 1.5 × 6.0 ft** (DEC-047/051 Q5, High), grey top. Door grid **2 columns × 6 rows = 12 small doors** (DEC-088, Med; narrows GAP-126): `columns: 2`, `rows: 6`, each door ≈ 0.30 × 0.30 m in the 2.0 × 6.0 ft unit. Hinge metadata must be LOD-independent (claimed fix, not delivered).
