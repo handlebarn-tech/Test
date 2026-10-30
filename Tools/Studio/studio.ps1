@@ -4,22 +4,32 @@
 .EXAMPLE
   powershell -NoProfile -ExecutionPolicy Bypass -File Tools/Studio/studio.ps1 unity-compile
 .NOTES
-  Every command writes a log under <config.logs> and a JSON result
-  {command, ok, exitCode, durationSec, log, summary} to Artifacts/Results/<stamp>-<command>.json.
-  Exit code: 0 ok, 1 failed, 2 blocked (e.g. Unity already has the project open).
+  Every command writes a log under <config.logs> and a JSON result to Artifacts/Results/<stamp>-<command>.json:
+  {command, ok, exitCode, durationSec, log, summary} plus the TOOLCHAIN §8 fields
+  {operation, status, startedUtc, finishedUtc, commit, worktree, logs, outputs}.
+  Exit code: 0 ok, 1 failed, 2 blocked (Unity already has the project open, DEC-013 slot wait timed out, tool missing).
+.EXAMPLE
+  studio.ps1 blender deli_jar Tools/Blender/params/deli_jar.json   # forwards to Tools/Blender/blender.ps1
+.EXAMPLE
+  studio.ps1 assets-fetch --verify                                  # forwards to Tools/Assets/fetch_assets.py
 #>
 param(
     [Parameter(Mandatory = $true, Position = 0)]
-    [ValidateSet('doctor', 'unity-compile', 'unity-test-edit', 'unity-test-play', 'unity-graybox', 'unity-capture', 'unity-build', 'status')]
+    [ValidateSet('doctor', 'unity-compile', 'unity-test-edit', 'unity-test-play', 'unity-graybox', 'unity-capture', 'unity-build', 'status', 'blender', 'assets-fetch')]
     [string]$Command,
-    [int]$SmokeSeconds = 90
+    [int]$SmokeSeconds = 90,
+    # Arguments forwarded by 'blender' and 'assets-fetch'.
+    [Parameter(Position = 1, ValueFromRemainingArguments = $true)]
+    [string[]]$Rest = @()
 )
 
 $ErrorActionPreference = 'Stop'
 $Root = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 $ConfigPath = Join-Path $PSScriptRoot 'studio.config.json'
 if (-not (Test-Path $ConfigPath)) {
-    throw "Missing $ConfigPath. Copy studio.config.example.json to studio.config.json and fix the paths."
+    # Fresh worktree: the real config is gitignored and the example holds this machine's paths (REVIEW-W1 m6).
+    Copy-Item (Join-Path $PSScriptRoot 'studio.config.example.json') $ConfigPath
+    Write-Host "Created $ConfigPath from studio.config.example.json; edit it if paths differ on this machine."
 }
 $Cfg = Get-Content $ConfigPath -Raw | ConvertFrom-Json
 
@@ -37,6 +47,8 @@ foreach ($d in @($LogDir, $TestDir, $BuildDir, $ResultDir)) { New-Item -ItemType
 $Stamp   = Get-Date -Format 'yyyyMMdd-HHmmss'
 $Log     = Join-Path $LogDir "$Stamp-$Command.log"
 $Started = Get-Date
+$Outputs = New-Object System.Collections.ArrayList  # paths reported in the result JSON
+$Commit  = git -C $Root rev-parse HEAD 2>$null
 
 function Write-Line([string]$text) {
     Write-Host $text
@@ -54,7 +66,10 @@ function Invoke-Unity([string[]]$UnityArgs, [string]$UnityLog, [switch]$Graphics
     # Screenshot capture needs a GPU device; everything else runs headless.
     $all = @('-batchmode') + $(if ($Graphics) { @() } else { @('-nographics') }) + @('-projectPath', $Project, '-logFile', $UnityLog) + $UnityArgs
     $argLine = ($all | ForEach-Object { if ($_ -match '\s') { '"' + $_ + '"' } else { $_ } }) -join ' '
-    $p = Start-Process -FilePath $Unity -ArgumentList $argLine -Wait -PassThru -NoNewWindow
+    $p = Start-Process -FilePath $Unity -ArgumentList $argLine -PassThru -NoNewWindow
+    $null = $p.Handle  # cache the handle, or PS 5.1 loses ExitCode
+    Exit-UnitySlot     # the editor now counts in other scripts' slot check
+    $p.WaitForExit()
     return $p.ExitCode
 }
 
@@ -64,12 +79,22 @@ function Get-CsErrorCount([string]$path) {
 }
 
 function Complete([bool]$ok, [int]$exitCode, [string]$summary, [int]$scriptExit = -1) {
+    Exit-UnitySlot
+    if ($scriptExit -lt 0) { $scriptExit = $(if ($ok) { 0 } else { 1 }) }
     $result = [ordered]@{
         command     = $Command
+        operation   = $Command
         ok          = $ok
+        status      = $(if ($scriptExit -eq 2) { 'blocked' } elseif ($ok) { 'pass' } else { 'fail' })
         exitCode    = $exitCode
+        startedUtc  = $Started.ToUniversalTime().ToString('o')
+        finishedUtc = (Get-Date).ToUniversalTime().ToString('o')
         durationSec = [math]::Round(((Get-Date) - $Started).TotalSeconds, 1)
+        commit      = $Commit
+        worktree    = $Root
         log         = Get-RelPath $Log
+        logs        = @(Get-RelPath $Log)
+        outputs     = @($Outputs | ForEach-Object { Get-RelPath $_ })
         summary     = $summary
     }
     $json = $result | ConvertTo-Json
@@ -77,7 +102,6 @@ function Complete([bool]$ok, [int]$exitCode, [string]$summary, [int]$scriptExit 
     [IO.File]::WriteAllText($resultPath, $json)  # UTF-8 without BOM
     Write-Host $json
     Write-Host "result: $(Get-RelPath $resultPath)"
-    if ($scriptExit -lt 0) { $scriptExit = $(if ($ok) { 0 } else { 1 }) }
     exit $scriptExit
 }
 
@@ -89,14 +113,29 @@ function Assert-UnityReady {
 }
 
 function Wait-UnitySlot {
-    # DEC-013: at most 2 Unity editors on this machine; asset import workers don't count.
+    # DEC-013: at most 2 Unity editors on this machine; asset import workers and the Hub's `unity.exe serve` don't count.
+    # A machine-wide lock (shared by all worktrees) spans check-then-launch; Invoke-Unity releases it once the editor started.
+    $timeoutMin = $(if ($Cfg.unitySlotTimeoutMinutes) { [double]$Cfg.unitySlotTimeoutMinutes } else { 45 })
+    $deadline = (Get-Date).AddMinutes($timeoutMin)
+    $lockPath = Join-Path $env:LOCALAPPDATA 'DispoStudio\unity-slot.lock'
+    New-Item -ItemType Directory -Force (Split-Path $lockPath) | Out-Null
     while ($true) {
-        $n = @(Get-CimInstance Win32_Process -Filter "Name='Unity.exe'" |
-            Where-Object { $_.ExecutablePath -like '*\Editor\Unity.exe' -and $_.CommandLine -notmatch 'AssetImportWorker' }).Count
-        if ($n -lt 2) { return }
-        Write-Line "DEC-013: $n Unity editors running, waiting 60 s"
-        Start-Sleep -Seconds 60
+        try { $script:SlotLock = [IO.File]::Open($lockPath, 'OpenOrCreate', 'ReadWrite', 'None') } catch { $script:SlotLock = $null }
+        if ($script:SlotLock) {
+            $n = @(Get-CimInstance Win32_Process -Filter "Name='Unity.exe'" |
+                Where-Object { $_.ExecutablePath -like '*\Editor\Unity.exe' -and $_.CommandLine -notmatch 'AssetImportWorker|\sserve\b' }).Count
+            if ($n -lt 2) { return }
+            Exit-UnitySlot
+            $wait = 60; $why = "$n Unity editors running"
+        } else { $wait = 5; $why = 'another studio.ps1 is launching Unity' }
+        if ((Get-Date) -ge $deadline) { Complete $false -1 "blocked: DEC-013 slot wait timed out after $timeoutMin min ($why)" 2 }
+        Write-Line "DEC-013: $why, waiting $wait s"
+        Start-Sleep -Seconds $wait
     }
+}
+
+function Exit-UnitySlot {
+    if ($script:SlotLock) { $script:SlotLock.Dispose(); $script:SlotLock = $null }
 }
 
 switch ($Command) {
@@ -113,6 +152,15 @@ switch ($Command) {
         $drive = Get-PSDrive -Name ($Root.Substring(0, 1))
         $checks['freeDiskGB'] = [math]::Round($drive.Free / 1GB, 1)
         $checks['projectUnlocked'] = -not (Test-ProjectLocked)
+        # Git LFS (DEC-023): hooks + filter in this repo's config, and the ThirdParty patterns routed to LFS.
+        $ErrorActionPreference = 'Continue'  # PS 5.1 turns native stderr into terminating errors
+        if (-not (git -C $Root config --local --get filter.lfs.process)) { git -C $Root lfs install --local 2>&1 | ForEach-Object { Write-Line "$_" } }
+        $checks['gitLfs'] = [bool](git -C $Root config --local --get filter.lfs.process)
+        $lfsExt = 'png', 'jpg', 'exr', 'hdr', 'fbx', 'glb', 'wav', 'ogg', 'ttf'
+        $untracked = @($lfsExt | Where-Object { (git -C $Root check-attr filter -- "UnityProject/Assets/_Game/Art/ThirdParty/x/a.$_") -notmatch ': lfs$' })
+        $ErrorActionPreference = 'Stop'
+        # Reported, not failed: the patterns land with ASSET-002; make this a bool once that is on main.
+        $checks['lfsPatterns'] = $(if ($untracked.Count) { "missing $($untracked -join ',') (ASSET-002 adds them)" } else { "$($lfsExt.Count)/$($lfsExt.Count) tracked" })
         $checks.GetEnumerator() | ForEach-Object { Write-Line ("{0,-18} {1}" -f $_.Key, $_.Value) }
         $failed = @($checks.GetEnumerator() | Where-Object { $_.Value -is [bool] -and -not $_.Value } | ForEach-Object { $_.Key })
         if ($checks['freeDiskGB'] -lt 20) { $failed += 'freeDiskGB<20' }
@@ -150,6 +198,7 @@ switch ($Command) {
         $xml = Join-Path $TestDir "$Stamp-$($platform.ToLower()).xml"
         # -runTests quits on its own; -quit would skip the run.
         $code = Invoke-Unity @('-runTests', '-testPlatform', $platform, '-testResults', $xml) $Log
+        [void]$Outputs.Add($xml)
         if (-not (Test-Path $xml)) { Complete $false $code "no test results written (csErrors=$(Get-CsErrorCount $Log))" }
         $run = ([xml](Get-Content $xml -Raw)).'test-run'
         $ok = ($code -eq 0) -and ([int]$run.failed -eq 0) -and ([int]$run.total -gt 0)
@@ -169,6 +218,7 @@ switch ($Command) {
         $commit = (git -C $Root rev-parse --short HEAD 2>$null)
         $outDir = Join-Path (Resolve-RepoPath $Cfg.screenshots) $commit
         $code = Invoke-Unity @('-quit', '-executeMethod', 'Dispo.Editor.Graybox.GrayboxCapture.CaptureAll', '-outDir', $outDir, '-commit', $commit) $Log -Graphics
+        [void]$Outputs.Add($outDir)
         $line = Select-String -Path $Log -Pattern '\[Graybox\] Capture (OK.*|FAILED.*)' | Select-Object -Last 1
         if ($code -ne 0 -or $null -eq $line -or $line.Line -notmatch 'Capture OK') {
             Complete $false $code "capture failed: $(if ($line) { $line.Line.Trim() } else { 'GrayboxCapture did not run' })"
@@ -204,6 +254,45 @@ switch ($Command) {
         $crash = (Test-Path $playerLog) -and (Select-String -Path $playerLog -Pattern 'Crash!!!|Unhandled exception|NullReferenceException' -Quiet)
         $marker = if ($ready) { (Select-String -Path $playerLog -Pattern 'STUDIO_SMOKE_READY.*' | Select-Object -First 1).Matches[0].Value } else { 'no ready marker' }
         $ok = $ready -and -not $exitedEarly -and -not $crash
-        Complete $ok $code "exe=$(Get-RelPath $exe); smoke: $marker, exitedEarly=$exitedEarly, crash=$crash, playerLog=$(Get-RelPath $playerLog)"
+        $smoke = "$marker, exitedEarly=$exitedEarly, crash=$crash"
+
+        # TOOLCHAIN §14 manifest next to the exe; md5s are over the committed (LF) bytes.
+        $md5 = { param($rel) $f = Join-Path $Root $rel; if (Test-Path $f) { (Get-FileHash $f -Algorithm MD5).Hash.ToLower() } else { $null } }
+        $buildSettings = Get-Content (Join-Path $Project 'ProjectSettings\EditorBuildSettings.asset') -Raw
+        $manifest = [ordered]@{
+            version               = "Windows64-Dev-$($Commit.Substring(0, 7))"
+            target                = 'StandaloneWindows64'
+            buildDateUtc          = (Get-Date).ToUniversalTime().ToString('o')
+            commit                = $Commit
+            dirtyPaths            = @(git -C $Root status --porcelain 2>$null).Count
+            unityVersion          = ((Get-Content (Join-Path $Project 'ProjectSettings\ProjectVersion.txt'))[0] -split ':\s*')[1]
+            scenes                = @([regex]::Matches($buildSettings, '- enabled: 1\s+path: (\S+)') | ForEach-Object { $_.Groups[1].Value })
+            catalogManifestMd5    = & $md5 'UnityProject/Assets/_Game/Data/Catalog/manifest.json'
+            assetCacheManifestMd5 = & $md5 'Docs/Assets/ASSET_CACHE_MANIFEST.json'
+            smoke                 = $smoke
+            result                = "Artifacts/Results/$Stamp-$Command.json"
+        }
+        $manifestPath = Join-Path (Split-Path $exe) 'BUILD_MANIFEST.json'
+        [IO.File]::WriteAllText($manifestPath, ($manifest | ConvertTo-Json))
+        [void]$Outputs.AddRange(@($exe, $manifestPath, $playerLog))
+        Complete $ok $code "exe=$(Get-RelPath $exe); smoke: $smoke, playerLog=$(Get-RelPath $playerLog); manifest=$(Get-RelPath $manifestPath)"
+    }
+
+    { $_ -in 'blender', 'assets-fetch' } {
+        if ($Command -eq 'blender') {
+            $env:BLENDER_EXE = $Cfg.blenderExecutable
+            $tool = Join-Path $Root 'Tools\Blender\blender.ps1'
+            $toolArgs = @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', $tool) + $Rest
+            $exeName = 'powershell'
+        } else {
+            $tool = Join-Path $Root 'Tools\Assets\fetch_assets.py'
+            $toolArgs = @('-I', $tool) + $Rest
+            $exeName = 'python'
+        }
+        if (-not (Test-Path $tool)) { Complete $false -1 "blocked: $(Get-RelPath $tool) not present on this branch" 2 }
+        $ErrorActionPreference = 'Continue'  # PS 5.1 turns native stderr into terminating errors
+        & $exeName @toolArgs 2>&1 | ForEach-Object { Write-Line "$_" }
+        $code = $LASTEXITCODE
+        Complete ($code -eq 0) $code "$(Get-RelPath $tool) $($Rest -join ' ') exited $code"
     }
 }

@@ -8,5 +8,6 @@
   "screenshots": "Artifacts/Screenshots",
   "renders": "Artifacts/Renders",
   "builds": "Builds",
-  "referenceImages": "References"
+  "referenceImages": "References",
+  "unitySlotTimeoutMinutes": 45
 }

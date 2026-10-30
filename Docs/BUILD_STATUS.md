@@ -1,6 +1,6 @@
 # BUILD STATUS
 
-**Updated:** 2026-10-29 by BUILD-001 · **Unity:** 6000.6.7f1 · **HDRP:** 17.6.0 · **Target:** StandaloneWindows64 (dev)
+**Updated:** 2026-10-29 by BUILD-002 · **Unity:** 6000.6.7f1 · **HDRP:** 17.6.0 · **Target:** StandaloneWindows64 (dev)
 
 | Gate | Command | Result | Duration | Evidence |
 |---|---|---|---|---|
@@ -17,5 +17,17 @@ Artifacts/ and Builds/ are gitignored; evidence is local to this machine.
 - Assemblies: `Dispo.Domain` (noEngineReferences), `Dispo.Simulation`, `Dispo.Presentation`, `Dispo.Editor`, `Dispo.Domain.Tests` (EditMode).
 - Scenes (`Assets/_Game/Scenes`, all in Build Settings, Bootstrap first): Bootstrap loads Retail, BackRooms, Hub, Exterior, GameplaySystems, NPCs, Audio, Lighting_Day additively; Lighting_Night is built but not loaded at boot.
 
+## BUILD-002 re-run (2026-10-29, commit 6f45430)
+| Gate | Result | Duration |
+|---|---|---|
+| `doctor` (fresh worktree, config auto-created) | pass; gitLfs ok; lfsPatterns reported missing until ASSET-002 merges | 2 s |
+| `unity-compile` | pass, 0 `error CS` (cold Library) | 280 s |
+| `unity-test-edit` / `unity-test-play` | 24/24 · 1/1 | 16 s · 36 s |
+| `unity-graybox` / `unity-capture` | pass · 24 shots, QA maxDeviationFt=0.22 PASS | 15 s · 90 s |
+| `unity-build` + smoke + manifest | pass, `STUDIO_SMOKE_READY scenes=9`, no crash; `Builds/Windows64-Dev/BUILD_MANIFEST.json` | 480 s |
+| `blender deli_jar ...` / `assets-fetch --help` | pass (forwarders) | 43 s · 1 s |
+
+W2C n2 closed: the build re-populates `HDRenderPipelineGlobalSettings.m_RuntimeSettings` in the editor and the player runs clean.
+
 ## Not yet covered
-`unity-test-play`, build manifest (TOOLCHAIN §14), screenshot capture.
+Milestone versioning for `Builds/<version>/` (the manifest sits next to the dev exe), known-issues/test-summary fields in the manifest.
