@@ -1,0 +1,295 @@
+{
+  "assets": {
+    "PROC_DeliJar": {
+      "export": "Art/Exports/Procedural/PROC_DeliJar.fbx",
+      "export_sha256": "f988f442d887525f",
+      "gaps": [
+        "GAP-PROC-01",
+        "GAP-PROC-02",
+        "GAP-PROC-03"
+      ],
+      "generator": "deli_jar",
+      "interior": {
+        "floor_y_m": 0.008,
+        "size_x_m": 0.142,
+        "size_z_m": 0.142,
+        "top_y_m": 0.28
+      },
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_DeliJar_Glass_LOD0": {
+              "geometry_sha256": "608ed963f5bfca0c",
+              "size_m_unity_xyz": [
+                0.15,
+                0.28,
+                0.15
+              ],
+              "tris": 276,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 140
+            },
+            "PROC_DeliJar_Label_LOD0": {
+              "geometry_sha256": "738622e74bd9e5cc",
+              "size_m_unity_xyz": [
+                0.1,
+                0.12,
+                0.0
+              ],
+              "tris": 2,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 4
+            },
+            "PROC_DeliJar_Lid_LOD0": {
+              "geometry_sha256": "dc3e4a484df19bb1",
+              "size_m_unity_xyz": [
+                0.158,
+                0.03,
+                0.158
+              ],
+              "tris": 164,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            }
+          },
+          "size_m_unity_xyz": [
+            0.158,
+            0.31,
+            0.158
+          ],
+          "tris": 442
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_DeliJar_Glass_LOD1": {
+              "geometry_sha256": "46d5baf41792f739",
+              "size_m_unity_xyz": [
+                0.15,
+                0.28,
+                0.15
+              ],
+              "tris": 76,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 40
+            },
+            "PROC_DeliJar_Label_LOD1": {
+              "geometry_sha256": "738622e74bd9e5cc",
+              "size_m_unity_xyz": [
+                0.1,
+                0.12,
+                0.0
+              ],
+              "tris": 2,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 4
+            },
+            "PROC_DeliJar_Lid_LOD1": {
+              "geometry_sha256": "c3abbe5ef7308290",
+              "size_m_unity_xyz": [
+                0.158,
+                0.03,
+                0.158
+              ],
+              "tris": 44,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            }
+          },
+          "size_m_unity_xyz": [
+            0.158,
+            0.31,
+            0.158
+          ],
+          "tris": 122
+        }
+      },
+      "params": "Tools/Blender/params/deli_jar.json",
+      "params_sha256": "2f25f7342f1321b8",
+      "tri_budget": {
+        "LOD0": 800,
+        "LOD1": 200
+      }
+    },
+    "PROC_PackageBox": {
+      "export": "Art/Exports/Procedural/PROC_PackageBox.fbx",
+      "export_sha256": "d3e7e2cb0a094060",
+      "gaps": [
+        "GAP-PROC-04",
+        "GAP-PROC-06"
+      ],
+      "generator": "package_base",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_PackageBox_Body_LOD0": {
+              "geometry_sha256": "252e04b138fb73d2",
+              "size_m_unity_xyz": [
+                0.065,
+                0.1,
+                0.025
+              ],
+              "tris": 44,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            },
+            "PROC_PackageBox_Lid_LOD0": {
+              "geometry_sha256": "79d4d21b2e8f36cf",
+              "size_m_unity_xyz": [
+                0.0666,
+                0.0208,
+                0.0266
+              ],
+              "tris": 44,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            }
+          },
+          "size_m_unity_xyz": [
+            0.0666,
+            0.1008,
+            0.0266
+          ],
+          "tris": 88
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_PackageBox_Body_LOD1": {
+              "geometry_sha256": "d68921de07131798",
+              "size_m_unity_xyz": [
+                0.065,
+                0.1,
+                0.025
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_PackageBox_Lid_LOD1": {
+              "geometry_sha256": "dfcf08a9a32d7f4a",
+              "size_m_unity_xyz": [
+                0.0666,
+                0.0208,
+                0.0266
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.0666,
+            0.1008,
+            0.0266
+          ],
+          "tris": 24
+        }
+      },
+      "params": "Tools/Blender/params/package_box.json",
+      "params_sha256": "43021453cfdcff69",
+      "shape": "box",
+      "tri_budget": {
+        "LOD0": 300,
+        "LOD1": 60
+      }
+    },
+    "PROC_PackagePouch": {
+      "export": "Art/Exports/Procedural/PROC_PackagePouch.fbx",
+      "export_sha256": "8477a1310c1d7da0",
+      "gaps": [
+        "GAP-PROC-05",
+        "GAP-PROC-06"
+      ],
+      "generator": "package_base",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_PackagePouch_Body_LOD0": {
+              "geometry_sha256": "2d89f077aa51b5c3",
+              "size_m_unity_xyz": [
+                0.1,
+                0.15,
+                0.04
+              ],
+              "tris": 476,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 240
+            }
+          },
+          "size_m_unity_xyz": [
+            0.1,
+            0.15,
+            0.04
+          ],
+          "tris": 476
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_PackagePouch_Body_LOD1": {
+              "geometry_sha256": "f29d7c83738b7850",
+              "size_m_unity_xyz": [
+                0.1,
+                0.15,
+                0.04
+              ],
+              "tris": 116,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            }
+          },
+          "size_m_unity_xyz": [
+            0.1,
+            0.15,
+            0.04
+          ],
+          "tris": 116
+        }
+      },
+      "params": "Tools/Blender/params/package_pouch.json",
+      "params_sha256": "be7ba7bbb9951054",
+      "shape": "pouch",
+      "tri_budget": {
+        "LOD0": 500,
+        "LOD1": 120
+      }
+    }
+  },
+  "label_faces": "+Z (Unity forward)",
+  "units": "meters",
+  "up": "+Y (Unity)"
+}

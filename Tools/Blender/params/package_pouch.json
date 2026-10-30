@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_PackagePouch",
+  "generator": "package_base",
+  "_note": "No package evidence in References/. Conventional placeholder stand-up gusseted pouch (3.5 g mylar class).",
+  "gaps": {
+    "GAP-PROC-05": "pouch dimensions/gusset/seal: placeholder 10 x 15 cm stand-up pouch with 4 cm gusset; per-SKU sizes unknown",
+    "GAP-PROC-06": "package label region: placeholder rectangle on the front face"
+  },
+  "shape": "pouch",
+  "width_m": 0.10, "height_m": 0.15, "gusset_depth_m": 0.04,
+  "seal_height_m": 0.015, "seal_thickness_m": 0.002, "squareness": 0.6,
+  "label": {"width_m": 0.08, "height_m": 0.08, "bottom_m": 0.03},
+  "preview_rgb": [0.55, 0.2, 0.45],
+  "lods": {"LOD0": {"around": 24, "rings": 8}, "LOD1": {"around": 12, "rings": 3}},
+  "tri_budget": {"LOD0": 500, "LOD1": 120}
+}
