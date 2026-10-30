@@ -4,12 +4,12 @@ Hub-owned, project level only (`Docs/STUDIO_OS.md` §0). Department detail (work
 
 **Milestone:** vertical slice playable on `main` (2026-10-29). **PS1** (cart, limit meter, ID checks, medical, tuning; `Design/ROADMAP_POST_SLICE.md`) is one task from done (GAME-009). Next: PS1b, re-prioritised by playtest 1 (DEC-096).
 **Main:** see `git log`; every code/asset merge is a reviewed `review/*` branch.
-**Updated:** 2026-10-30 by Hub `local_c6267ff5-2acb-4b09-83a7-53541a088c66`: studio reorganised into departments (DEC-094); all old workcells idle, adopted by their leads.
+**Updated:** 2026-10-30 by Hub `local_78db2735-1777-4eb5-a0a1-e7f8e8a4ecf4` (fresh Hub; replaces `local_c6267ff5…`, no longer listed). Leads idle, all < 220k context.
 
 ## Studio roster
 | Dept | Lead session | Status | Max workers | Unity slots |
 |---|---|---|---|---|
-| Hub | `local_c6267ff5-2acb-4b09-83a7-53541a088c66` | active | DOC/OPS/AUDIT tasks only | 0 |
+| Hub | `local_78db2735-1777-4eb5-a0a1-e7f8e8a4ecf4` | active | DOC/OPS/AUDIT tasks only | 0 |
 | Gameplay | `local_5bcd6ccf-64c1-464e-9fb9-40ad2e27afb4` | active | 3 | 1 |
 | World | `local_d19eda58-a105-4379-aada-4bf61066f717` | active | 2 | 1 (lends to Assets for imports) |
 | Assets | `local_172b2109-6384-4914-800b-6dc37226e046` | active | 4 (temporary +1 to finish ASSET-004, cut short by the usage limit) | 0 (borrows World's) |
@@ -31,6 +31,7 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 - World entry/check-in area ↔ Gameplay customer flow (guard post, queue line anchors).
 
 ## Blockers / risks
+- Structure frozen until playtest 2 (DEC-108); then the cost checkpoint: merged work per usage + lead context sizes. Nolan away from 2026-10-30 ~15:00: notify only for decisions he must make.
 - `review/wave-5t` (old IMP-003 round-3 partial PASS) is superseded by the from-scratch round-3 re-audit (DEC-095); never merge it, delete it once the new review lands.
 - DEC-094 rollout under validation (DEC-099): Hub-only merges until lead-run subagent workers/worktrees prove stable; then reassess lead merges for domain-local work.
 - ChatGPT toolkit drops lack our research and room evidence (DEC-095): every round needs fixes; round 3 must be re-audited.
@@ -42,8 +43,9 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 - Any ChatGPT-built mechanics he drops in Imports: audit → review → **his approval** before use.
 
 ## Open questions for Nolan
-- Customer flow Q1–7 answered (DEC-103); still open: does the emergency exit alarm?
-- Sent 2026-10-30 (PROC-006 register kit; GAP-REG placeholders): R1 mouse at each register + side; R2 label printer at every register?; R3 which spray bottle hangs on the scale stand + where; R4 white/grey boxes under the counter; R5 cleaning supplies kept there + rag colour; R6 receipt printer feed top or front; R7 register trash bin size. Optional (DEC-101 long-term): parking space count/layout and dwell time, what the TV wall shows, neighbouring businesses/street. (REF-008 Q1–15 answered, DEC-051/062. Phoenix TPT rate OPEN-4: 25.1 % kept until a receipt settles it.)
+- Customer flow Q1–7 answered (DEC-103). Emergency exit alarm: left unanswered → placeholder stands, never re-ask (DEC-105).
+- Medical allotment answered (DEC-106).
+- Register kit R1–R7 answered (DEC-104). Optional (DEC-101 long-term): parking space count/layout and dwell time, what the TV wall shows, neighbouring businesses/street. (REF-008 Q1–15 answered, DEC-051/062. Phoenix TPT rate OPEN-4: 25.1 % kept until a receipt settles it.)
 
 ## Builds
 - Last build Nolan played: `Downloads/Dispo Game Builds/slice-38b9e5c/` (feedback = playtest 1). New builds come from a Gameplay worker, never the Hub (DEC-045).

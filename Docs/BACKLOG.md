@@ -80,7 +80,7 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | ART-007 | P0 | Graybox/lookdev rebuild from REF-011/012 (registers, HUB, deli walls, office, doors) | REF-011, REF-012 | Ready |
 | GAME-007 | P1 | Purchase-limit meter + over-limit asks + strike ledger (COMP-002 §2) | GAME-006 | Done |
 | GAME-008 | P1 | ID-check events (COMP-002 §3) | GAME-007 | Done (W5N) |
-| GAME-009 | P2 | Medical customers (COMP-002 §4) + W5N m2 queue strip | GAME-007, GAME-008 | Active (`claude/task-game-009`) |
+| GAME-009 | P2 | Medical customers (COMP-002 §4) + W5N m2 queue strip | GAME-007, GAME-008 | Review (REVIEW-PS1, Unity B2; 26081fa) |
 | GAME-010 | P1 | Retune for tension + QA bot personas | GAME-005 (merge after GAME-006: both edit SliceConfig and Slice tests) | Done (W5M; 010b W5S) |
 | GAME-011 | P1 | Shift phases + traffic curve + compressed clock | DES-004 | Ready (waits PS1b, DEC-096) |
 | GAME-012 | P1 | Deli restock loop (re-scoped DEC-080) | DES-004, ART-005 (ROADMAP ID, see DOC-002), DEC-055 | Ready (waits PS1b, DEC-096) |
@@ -89,12 +89,12 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | GAME-015 | P1 | Non-flower recommendation (ROADMAP, no packet yet) | GAME-014, DEC-054 | Later |
 | GAME-016 | P2 | Deals v1 (ROADMAP, no packet yet) | GAME-014 | Later |
 | DES-005 | P0 | Playtest 1 intake (DEC-096): controls + customer-flow spec, GAME-025/026 packets, World door/entry contract needs, long-term ideas proposal | — | Done (W5U, 5ab7aeb) |
-| DES-006 | P0 | Recommendation depth audit: PS1b (GAME-017..020) vs the TFS tool, packet amendments | — | Review (caebbd3, Docs 2) |
-| DES-005b | P0 | Fold DEC-103 into CONTROLS_FLOW_PS1 + GAME-025/026; REVIEW-W5U m1–m3 (KNOWN_GAPS GAP-CF rows, GAP-DAY-04 basis) | DES-005 | Ready (next free slot) |
+| DES-006 | P0 | Recommendation depth audit: PS1b (GAME-017..020) vs the TFS tool, packet amendments | — | Done (REVIEW-DES6, 97ee06f) |
+| DES-005b | P0 | Fold DEC-103 into CONTROLS_FLOW_PS1 + GAME-025/026; REVIEW-W5U m1–m3 (KNOWN_GAPS GAP-CF rows, GAP-DAY-04 basis) | DES-005 | Active |
 | DES-007 | P2 | DEC-101: long-term rows into `ROADMAP_POST_SLICE.md` (Hub-delegated) + deadpan tone note for dialogue/event writers | DES-005 merge | Ready (next free slot) |
 | GAME-017a | P0 | First playable recommendation depth (cut from GAME-017, DES-006 §5): needs, read-it-as picker, parser route, Q9, reject→re-search | DES-006, DATA-003, UX-006, GAME-009, GAME-025 (same Presentation/Slice files), QA-002b Gate A | Ready (waits; packet after DES-006 review) |
 | DATA-003 | P0 | Customer needs catalog + golden parses from the TFS tool (GAME-017a data) | DES-006 | Active |
-| UX-006 | P0 | Counter UX addendum: read-it-as picker, said cards, query preview | DES-006, DES-005 | Active |
+| UX-006 | P0 | Counter UX addendum: read-it-as picker, said cards, query preview | DES-006, DES-005 | Done (REVIEW-UX6, 5920ab2) |
 | GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction  | DES-005, GAME-009 merge, World REF-012 `DOORS.json` | Ready (waits) |
 | GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next  | DES-005, GAME-025, World REF-011 `SCENE_ANCHORS.json` | Ready (waits) |
 | ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Done (W5A) |
@@ -108,6 +108,7 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | IMP-003 | P1 | Rolling ChatGPT toolkit audit (DEC-070/083/095): drops 1–5 done; rebuilt round 3, then rounds 4–6 | — | Active |
 | PROC-005 | P1 | Integrate the approved toolkit + fix every checklist item (DEC-092) | IMP-003 | Active |
 | PROC-006 | P1 | Register workstation kit: evidence spec, then generators (DEC-096) | — | Phase 1 Done (main 6af8906); phase 2 waits on ROOM_FIXTURES rev7 |
+| PROC-006b | P1 | Register kit generators + seeded per-station variation (DEC-104) | PROC-006 | Ready (next free slot) |
 | PROC-007 | P1 | DEC-097 UV layout (lightmap ch1, label ch2) + re-export jars/packaged goods, with World's label-shader cut-over | PROC-005 | Ready |
 | AUDIT-001 | P1 | Read-only .md audit + approval sheet (`Docs/Audits/`) | DES-003 | Done (DEC-064) |
 | DOC-001 | P1 | Apply AUDIT-001 batches A–C (DEC-064), 2 phases | AUDIT-001; phase 2 after IMP-002 | Done (W4X) |

@@ -41,14 +41,14 @@ V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). 
 
 ## DES-006 amendments (recommendation depth, DEC-096)
 Source: `Docs/Design/RECOMMENDATION_DEPTH_AUDIT.md` (cited **RDA§n**; tool lines `T:n` are cited there). These bind over D1, D2 and D5 where they differ. No `Code/Domain/` edits (DEC-001); Gate A (DEC-067) unchanged.
-- **Phase A = GAME-017a** (RDA§5, first playable depth) may be cut out and merged first. This packet then builds on it and does not redo it.
+- **Phase A = GAME-017a** (RDA§5, first playable depth) is its own task (lead ruling Q5, `Departments/GAMEPLAY.md`) and merges first. This packet builds on it and does not redo it.
 - **TRUE need** (RDA§3.1): new `Data/Slice/SliceNeeds.json`: each need has a `trueQuery` in tool vocabulary plus components, with spoken variants per style and 2–3 terms each. Parses are golden-captured on v7.11.4 with `ParserOptions.Game` (extend `Tools/Data/golden_game003.js` → new `Docs/Reconstruction/golden_cases_needs.json`). Never hand-written. `TrueFamily` = the need's base family. Added to Owns: `SliceNeeds.json`, the golden script and file.
 - **Utterance styles** (RDA§3.2): direct, vague, wrong term, story, product reference, "last time", contradictory → reveal sets and tiers 0–4. `{strain}` slots come only from the live game catalog.
 - **KNOWN keeps the customer's words** (RDA§3.5): `KnownField` adds `said` (verbatim) and `term` (the player's reading). A direct phrase is its own term.
 - **"Note it as…" picker** (RDA§3.3): per said card, `Their words` or one of the component's terms; [GDD] time cost; no correctness feedback anywhere.
 - **Composer (replaces D5's source):** it joins the player's chosen terms and verbatim phrases, never wording generated from structured fields. Route `QueryParser.Parse(ParserOptions.Game)` → `Responder.Respond`. Show every tool outcome as the tool words it: Ok, Fallback, None, Help (`T:16677`), AskEffectForBudget (`T:16662-16667`), PriceOnly, Strain + Near, ExclusionNote, Drive line. Chip-only still equals the DEC-017 golden.
 - **Avoid:** a domain avoid ("too sleepy") is a negation phrase; a terpene avoid ("no {terpene}") is an exclusion (`T:15975-15999`). The need data says which.
-- **Q9 "Ever gotten anxious from it?"** (tool follow-ups `T:2263-2264`, `T:2297-2298`): reveals Experience. Once known, the player may set the tool's **New customer** toggle → `ShopState.NewCustomer` (`T:1585-1589`, `T:14827-14845`). The toggle is part of the parser-input snapshot hash (DES-006 handoff Q3).
+- **Q9 "Ever gotten anxious from it?"** (tool follow-ups `T:2263-2264`, `T:2297-2298`): reveals Experience. Once known, the player may set the tool's **New customer** toggle → `ShopState.NewCustomer` (`T:1585-1589`, `T:14827-14845`). The toggle is part of the parser-input snapshot hash (lead ruling Q3; the tool's results depend on it, `T:14827-14845`).
 - **Extra tests:** a wrong reading gives a legitimately different TFS result and a lower Fit; `Their words` on a vague phrase == `Responder.Ask` on that phrase; a potency phrase gives the Help/redirect outcome; every term composition's parse == its golden.
 
 ## Handoff
