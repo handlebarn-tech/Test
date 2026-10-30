@@ -167,10 +167,18 @@ namespace Dispo.Presentation.Slice
 
         void Terminal(System.Action<VisualElement> body)
         {
+            var sim = _g.Sim;
+            var c = sim.Serving;
             var term = Add(_screen, "terminal");
             var strip = Add(term, "request-strip");
-            AddLabel(strip, _g.Sim.Serving.Archetype.label, "archetype");
-            AddLabel(strip, $"“{_g.Sim.Serving.Line}”", "request");
+            AddLabel(strip, c.Archetype.label, "archetype");
+            AddLabel(strip, $"“{c.Line}”", "request");
+            // UX_PS1 §2: tick each clause already in the cart; the cart chip goes to the register (R).
+            if (c.Asks.Count > 1)
+                for (int i = 0; i < c.Asks.Count; i++)
+                    AddLabel(strip, (sim.Cart.Any(x => x.Ask == i) ? "✓ " : "○ ") + c.Asks[i].Clause, "hint");
+            if (sim.Cart.Count > 0)
+                AddButton(strip, string.Format(sim.Data.Lines.cartChip, sim.Cart.Count, sim.CartGrams.ToString("0.#")), _g.GoToRegister).tooltip = sim.Data.Lines.goToRegister;
             body(Add(term, "terminal-body"));
             if (!string.IsNullOrEmpty(Message)) AddLabel(term, "⚠ " + Message, "message st-bad");
             AddButton(term, "Back (Esc)", _g.Back, "back");
@@ -213,13 +221,15 @@ namespace Dispo.Presentation.Slice
             AddLabel(card, $"{k.Rep.Brand} · {k.TierLabel} · {k.Strain.Profile.Values.Sum():0.0}% terps", "card-sub");
             AddLabel(card, outcome == Outcome.Fallback ? l.fitFallback : l.fitOk, outcome == Outcome.Fallback ? "fit st-warn" : "fit st-ok");
             AddLabel(card, k.ClusterLabel, "card-cluster");
-            AddLabel(card, k.HasPrice ? $"${k.PricePostTax:0.00}  ·  {l.Weight(_g.Sim.Serving.Grams)}" : "no price", "price");
+            AddLabel(card, k.HasPrice ? $"${k.PricePostTax:0.00}  ·  {l.Weight(_g.Sim.Serving.Asks[_g.Sim.Results.Ask].Grams)}" : "no price", "price");
             AddLabel(card, $"{_g.Sim.Inventory.Grams(k.Rep.Id):0.#} g in jar", "card-grams");
             AddLabel(card, k.AnxietyLabel, "chip " + AnxClass(k.Strain.AnxietyRisk));
             var row = Add(card, "row");
             AddButton(row, "Inspect", () => _g.Inspect(k));
-            AddButton(row, "Choose", () => _g.Choose(k), "primary");
+            AddButton(row, ChooseText, () => _g.Choose(k), "primary");
         }
+
+        string ChooseText => _g.Sim.Cart.Count > 0 ? _g.Sim.Data.Lines.addToCart : "Choose";
 
         string AnxClass(int risk) => risk < _g.Sim.Cfg.anxietyLowBelow ? "st-ok" : risk < _g.Sim.Cfg.anxietyModerateBelow ? "st-warn" : "st-bad";
 
@@ -260,36 +270,42 @@ namespace Dispo.Presentation.Slice
                 AddLabel(right, p == null ? $"{sim.Data.Lines.Weight(w)}: —" : $"{sim.Data.Lines.Weight(w)}: ${p.CardPostTax:0.00}");
             }
             var row = Add(body, "row");
-            AddButton(row, "Choose", () => _g.Choose(k), "primary");
+            AddButton(row, ChooseText, () => _g.Choose(k), "primary");
         }
 
         void Pos()
         {
             var sim = _g.Sim;
-            var k = sim.Pending;
             var c = sim.Serving;
+            var l = sim.Data.Lines;
             var pos = Add(_screen, "pos");
             AddLabel(pos, "POS", "h1");
-            AddLabel(pos, $"{k.Strain.Name} · batch {k.Rep.BatchCode}");
-            AddLabel(pos, "✓ " + sim.Data.Lines.idVerified, "st-ok");   // DEC-036 M2: checked at the check-in desk
-            var tiles = Add(pos, "row");
-            double jar = sim.Inventory.Grams(k.Rep.Id);
-            foreach (var w in sim.Data.Catalog.Pricing.Weights)
+            AddLabel(pos, "✓ " + l.idVerified, "st-ok");   // DEC-036 M2: checked at the check-in desk
+            // UX_PS1 §2 cart lines: name, batch · tier, − weight +, line pre-tax, ✕.
+            for (int i = 0; i < sim.Cart.Count; i++)
             {
-                var t = AddButton(tiles, $"{w} g", () => _g.PosSelectWeight(w), "tile");
-                t.SetEnabled(jar >= w);
-                t.EnableInClassList("selected", w == _g.PosGrams);
+                int n = i;
+                var x = sim.Cart[i];
+                var lineRow = Add(pos, "price-line");
+                AddLabel(lineRow, $"{x.Card.Strain.Name} · batch {x.Card.Rep.BatchCode} · {x.Card.TierLabel}");
+                AddButton(lineRow, "−", () => _g.PosStep(n, -1));
+                AddLabel(lineRow, $"{x.Grams} g");
+                AddButton(lineRow, "+", () => _g.PosStep(n, 1));
+                AddLabel(lineRow, double.IsNaN(x.PreTax) ? "—" : $"${x.PreTax:0.00}", "amount");
+                AddButton(lineRow, "✕", () => _g.PosRemove(n)).tooltip = l.removeLine;
             }
-            var p = sim.Price(k.Rep, _g.PosGrams);
-            if (p != null)
+            var add = AddButton(pos, sim.Cart.Count >= sim.Cfg.cartMaxLines ? l.cartFull : l.addItem, _g.AddItem);
+            add.SetEnabled(sim.CanAddItem);
+            var p = sim.CartPrice();
+            if (!double.IsNaN(p.PreTax))
             {
-                Line(pos, "MSRP", p.Msrp);
-                if (p.DealName != null) Line(pos, p.DealName, p.PreTax - p.Msrp);
+                if (sim.Cart.Count == 1) Line(pos, "MSRP", p.Msrp);
+                if (sim.Cart.Count == 1 && p.DealName != null) Line(pos, p.DealName, p.PreTax - p.Msrp);
                 Line(pos, "Subtotal", p.PreTax);
                 Line(pos, $"Tax {sim.Data.Catalog.Pricing.TaxRate}%", p.Tax);
                 Line(pos, "Total", p.PostTax, "total");
             }
-            AddLabel(pos, $"Scale: {_g.PosGrams:0.00} g (assisted)", "scale");
+            AddLabel(pos, $"Scale: {sim.CartGrams:0.00} g (assisted)", "scale");
             var pay = Add(pos, "row");
             AddButton(pay, "Cash", () => { });
             AddButton(pay, "Card", () => { });
@@ -300,7 +316,7 @@ namespace Dispo.Presentation.Slice
             _confirm.RegisterCallback<PointerUpEvent>(_ => _g.PosHold(false));
             _confirm.RegisterCallback<PointerLeaveEvent>(_ => _g.PosHold(false));
             AddButton(row, "Cancel", _g.PosCancel);
-            AddLabel(pos, $"Customer asked for {sim.Data.Lines.Weight(c.Grams)}", "hint");
+            AddLabel(pos, $"Customer asked for {string.Join(" + ", c.Asks.Select(a => l.Weight(a.Grams)))}", "hint");
         }
 
         void Line(VisualElement parent, string name, double v, string cls = null)
@@ -323,6 +339,7 @@ namespace Dispo.Presentation.Slice
             Row("Revenue (post-tax)", $"${r.RevenuePostTax:0.00}");
             Row("Revenue (pre-tax)", $"${r.RevenuePreTax:0.00}");
             Row("Grams sold", $"{r.GramsSold:0.#} g");
+            Row("Units per sale", $"{r.UnitsPerSale:0.0}");
             Row("Avg service time", $"{r.AvgServiceSeconds:0} s");
             Row("Avg queue wait", $"{r.AvgQueueWaitSeconds:0} s");
             Row("Avg satisfaction", $"{r.AvgSatisfaction:0}");
