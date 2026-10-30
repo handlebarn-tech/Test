@@ -1,5 +1,48 @@
 # REVIEW-PROC009: studio-built parked vehicles
 
+# Round 2 (fix round 1)
+
+**Reviewed:** `claude/jovial-meninsky-908c0a` @ `429872f` · **Review branch:** `review/proc009-r2` (`review/proc009` @ `a8cfb3d` + worker branch, `--no-ff` merge `dbbaf57`) · **Reviewer:** fresh, Hub-spawned (STUDIO_OS §0.7)
+**Sources read:** the packet; the diff `2495e6c..429872f`; `Docs/Handoffs/PROC-009.md` (fix round 1, Validation, Not done); round 1 of this review (below).
+
+## Verdict: FAIL (1 MAJOR)
+
+## Checks
+1. **Blender validation.** `blender.ps1 parked_vehicles Tools/Blender/params/parked_vehicles.json` exited 0. All 3 validation JSONs show `passed: true` with no errors and no warnings. The tri counts match the handoff exactly: Sedan 88458/29054/6900/1382, Hatchback 87732/28732/6992/1400, SUV 89050/29852/7462/1536.
+2. **Determinism.** After my rerun all 3 FBX are sha256-identical to the commit, and the Unity copies are byte-identical to the Art exports. The JSONs differ only in line endings. Rerunning `parked_vehicles_sheet.py` reproduced the committed sheet byte for byte (sha256 `8f850e2d…`).
+3. **Toolkit self-test.** `[SELFTEST] all passed`.
+4. **Old Specs PNGs removed.** Nothing outside Handoffs/Reviews still points at them.
+5. **Visual review (DEC-122/DEC-114), judged myself.** I looked at the committed sheet and at LOD0 front/rear 3/4 tiles that I re-rendered at 1500 × 1000 with the worker's own sheet code (scratch only, not committed).
+
+## Round-1 findings
+- **MAJOR 2 (contact sheet): FIXED.** The sheet is 2520 × 840 and 527 KB. It has one row per class and six tiles per row: LOD0 front 3/4, rear 3/4 and side, plus LOD1, LOD2 and LOD3. Every tile is labelled with asset, LOD/view, tris and frame width. The LOD steps can be judged: the silhouette holds through LOD2, and LOD3 is a hull with boxes, which is acceptable at that range.
+- **MAJOR 1 (visual read): mostly fixed, one new defect (see MAJOR below).**
+  - Sedan A-pillar wedge: fixed (black sail panel).
+  - Per-class fascia: the hatch gets two lamps and a mesh grille, the SUV a two-bar chrome grille with blunt lamps and vertical tails, the sedan wide tail lamps. They now differ. The sedan front is still weak, though (MAJOR, item b).
+  - Hatchback: the short hood and sloped hatch glass now read as a compact 5-door hatch. Fixed.
+  - SUV: the greenhouse now runs to the tail; the tailgate glass is framed and raked; there is no deck ledge. It reads as a boxy compact SUV/wagon, which is acceptable for the generic class. Fixed.
+  - Mirrors: tapered rounded housings. Fixed.
+  - Raked ends: visible and they help.
+  - "Clay" paint: deferred to the texture dependency, as round 1 ruled.
+- **minor 1 + 2 (texture maps, lightmap UV):** raised in the handoff as FOR THE HUB dependencies. Done as ruled.
+- **minor 3 (plate rule):** now cited, A.R.S. 28-2354(A)(1), in params `_sources` and PROC_PIPELINE. Fixed.
+- **minor 4 (`run_generator.py`):** unchanged; still the Hub's call.
+
+## MAJOR
+1. **The front end still breaks the DEC-084 read (R3b.7 "never low-poly or generic-looking").**
+   - **a. New in this round: the undertray shows as a black brick under the front bumper on all three classes.** It is visible in every front 3/4 tile from LOD0 to LOD2 and in the LOD0 side views. The cause is in `parked_vehicles.py` `bumpers()`, lines ~477–481. The intake/undertray is a square-edged box, `intake_m` wide (the full width at the rear), hung *below* the bumper bottom (`z0 - ih/2`). Its front face sits 1 cm behind the bumper's furthest point. But the bumper is rounded and raked, so the box's front face and lower edge stand proud of the curved cover and read as a separate block hanging under the car. **Fix:** put the intake *inside* the bumper cover as a recessed opening, or tuck the box behind the cover's curve and above its lowest line. Any lip should follow the bumper plan curve, not be a straight box.
+   - **b. The sedan fascia still reads as a blank slab.** The "slim wide" headlamps render as small amber dots at the corners. The slatted grille reads as a black licence-plate rectangle. So at 3/4 the sedan's front still has no lamps and the bumper looks like a box, which is round 1's complaint. **Fix:** headlamps big enough to read at parking-lot distance (they should wrap into the fender, as the handoff's own round-0 "Look" note proposed), and a grille whose slats are visible.
+
+## minor
+- None new. (Observation, not a blocker: overall the set still reads late-1990s/2000s rather than 2020s. Rounder plan-view corners and wrapped lamps would help most. Texture maps will remove the clay read.)
+
+## Not checked
+- Unity import (packet: not needed); in-scene placement in the lot.
+
+---
+
+# Round 1
+
 **Reviewed:** `claude/jovial-meninsky-908c0a` @ `2495e6c` · **Merge base:** `3ab683b` · **Review branch:** `review/proc009` (main @ `8081e5e` + worker branch, `--no-ff` merge `643483e`) · **Reviewer:** fresh, Hub-spawned (STUDIO_OS §0.7)
 **Sources read:** `Docs/Tasks/Active/PROC-009.md`; the full diff `3ab683b..2495e6c`; `Docs/Handoffs/PROC-009.md` (Done, Validation, Not done, For the Hub); DEC-023, DEC-032, DEC-071, DEC-084, DEC-087, DEC-097, DEC-111, DEC-114, DEC-122 in `Docs/DECISIONS.md`; `Docs/Imports/IMP-003_PROC_FIX_CHECKLIST.md` R3b.7; `Docs/Reviews/REVIEW-PROC006c.md` (contact-sheet precedent).
 
