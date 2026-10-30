@@ -112,6 +112,20 @@ class Car:
         self.S = {}  # part -> temp bmesh of closed solids (normals recalculated before emit)
         self.parts = Parts(dict(p["colors"], CarPaint=p["paint"]))
 
+    def rake(self, bm):
+        """Shear the ends back with height (raked fascia, sloped tailgate). y += A * w(y) * g(z): w ramps 1 -> 0 over the
+        zone from each body end, g rises from the bumper top (0) to the roof (1). Bumper fronts (g = 0) keep the exact
+        length; A < zone keeps the map monotone, so no fold; a shear keeps the winding."""
+        r, z0 = self.p["rake"], self.p["bumper"]["z_m"][1]
+        H = self.p["height_m"]
+        for v in bm.verts:
+            g = min(1.0, max(0.0, (v.co.z - z0) / (H - z0)))
+            if g <= 0:
+                continue
+            wf = min(1.0, max(0.0, (self.yf + r["zone_m"][0] - v.co.y) / r["zone_m"][0]))
+            wr = min(1.0, max(0.0, (v.co.y - (self.yr - r["zone_m"][1])) / r["zone_m"][1]))
+            v.co.y += g * (r["front_m"] * wf - r["rear_m"] * wr)
+
     def solid(self, part):
         if part not in self.S:
             self.S[part] = bmesh.new()
@@ -169,15 +183,19 @@ class Car:
         if self.seams:
             g = self.gap / 2 / self.side_h_ref
             ss = [e for e in ss if abs(e[0] - self.s0) > 1.5 * g] + [(self.s0 - g, ""), (self.s0, "mid"), (self.s0 + g, "")]
+            sc = p["crease"]["s"]  # feature line along the doors: a ridge pushed out of the side
+            ss = [e for e in ss if abs(e[0] - sc) > 0.03] + [(sc - 0.02, ""), (sc, "crease"), (sc + 0.02, "")]
             ss.sort()
         pts, labels = [], []
         for i, (s, m) in enumerate(ss):
             x = self.side_x(y, s)
-            if (m and door_on) or (tag == "door" and s >= self.s0 - 1e-9):
+            if (m == "mid" and door_on) or (tag == "door" and s >= self.s0 - 1e-9):
                 x -= dep
+            if m == "crease":
+                x += p["crease"]["m"]
             pts.append((x, zb + (zst - zb) * s))
             nxt = ss[i + 1] if i + 1 < len(ss) else (1.0, "")
-            labels.append("door_gap" if m or nxt[1] else ("side_low" if nxt[0] <= self.s0 + 1e-9 else "side"))
+            labels.append("door_gap" if m == "mid" or nxt[1] == "mid" else ("side_low" if nxt[0] <= self.s0 + 1e-9 else "side"))
         # shoulder arc a in [0, 90] deg; optional hood/trunk longitudinal seam triple at 45 deg
         m_ = lod["arc_rows"]
         aa = [(math.pi / 2 * j / m_, "") for j in range(m_ + 1)]
@@ -267,6 +285,7 @@ class Car:
         for f in fan(bm, rings[0][::-1]) + fan(bm, rings[-1]):
             mats[f] = "Body"
         bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+        self.rake(bm)
         emit(bm, mats, self.parts)
 
     # --- greenhouse -----------------------------------------------------------------------------------------------
@@ -325,7 +344,7 @@ class Car:
             if ym > f(g["roof_rear_y"]) and g["backlight_on_roof"]:
                 return "Glass"
             return "Body"
-        black = inr(g["pillars_black"])
+        black = inr(g["pillars_black"]) or ym < f(g["side_glass"][0][0])
         if label == "gframe":
             return "Trim" if black or inr(g["side_glass"]) else "Body"
         if black:
@@ -371,6 +390,7 @@ class Car:
             for f in fan(bm, rings[-1]):
                 mats[f] = "Trim"
         bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+        self.rake(bm)
         emit(bm, mats, self.parts)
 
     # --- wheels ---------------------------------------------------------------------------------------------------
@@ -443,7 +463,7 @@ class Car:
         b = p["bumper"]
         z0, z1 = b["z_m"]
         zc, bh, bd = (z0 + z1) / 2, z1 - z0, self.bd
-        prof = rounded_rect(bd, bh, 0.02 if d <= 2 else 0.0, 3 if d == 0 else (1 if d <= 2 else 0))
+        prof = rounded_rect(bd, bh, bd * 0.45 if d <= 2 else 0.0, 4 if d == 0 else (2 if d <= 2 else 0))
         for sgn in (-1, 1):
             yp = sgn * (self.L / 2 - bd / 2)
             x0 = self.half_width(sgn * self.yr) - 0.12
@@ -454,55 +474,94 @@ class Car:
             if d <= 2:
                 path = fillet(path, 0.12, 6 if d == 0 else 2)
             add_sweep(self.solid("Cladding" if p.get("cladding") else "Body"), path, prof)
-            if d <= 1:  # black lower lip
-                add_beveled_box(self.solid("Trim"), (2 * x0, bd * 0.6, 0.04), (0, yp + sgn * bd * 0.15, z0 - 0.012),
+            iw, ih = b["intake_m"] if sgn < 0 else (2 * x0, 0.04)
+            if d <= 2:  # lower intake / diffuser band under the cover, set 1 cm back, with a lip below
+                dp = bd + 0.3  # runs back under the body as an undertray, so it does not float
+                add_beveled_box(self.solid("Trim"), (iw, dp, ih), (0, sgn * (self.L / 2 - 0.01 - dp / 2), z0 - ih / 2 + 0.01),
+                                0.02, 0.003, 2 if d == 0 else 1)
+            if d <= 1 and sgn < 0:
+                add_beveled_box(self.solid("Trim"), (iw * 0.9, 0.3, 0.025), (0, -self.L / 2 + 0.02 + 0.15, z0 - ih - 0.002),
                                 0.01, 0.003, 1)
 
     def lamps(self):
+        """Per-class fascia (params `lamps`, `grille`): lamp sizes/corners, grille style, tail-lamp shape."""
         p, d = self.p, self.d
         lp = p["lamps"]
-        box = (lambda bm, s, c: add_beveled_box(bm, s, c, 0.02, 0.004, 3 if d == 0 else 1)) if d <= 2 else \
-            (lambda bm, s, c: add_box(bm, s, c))
+        seg = 3 if d == 0 else 1
+
+        def box(bm, size, c, r):
+            if d <= 2:
+                add_beveled_box(bm, size, c, min(r, size[0] / 2 - 0.002, size[2] / 2 - 0.002), 0.004, seg)
+            else:
+                add_box(bm, size, c)
         for sgn, ye in ((-1, self.yf), (1, self.yr)):
             _, zst, _, _ = self.shoulder(ye)
             hwe = self.half_width(ye)
             w, h = lp["head"] if sgn < 0 else lp["tail"]
+            r = lp["head_corner_m"] if sgn < 0 else lp["tail_corner_m"]
             zc = zst - 0.008 - h / 2
             for side in (-1, 1):
-                xc = side * (hwe - w / 2 - 0.05)
-                c = (xc, ye + sgn * 0.003, zc)  # lens front 12 mm proud of the end face
-                box(self.solid("LampsClear" if sgn < 0 else "LampsRed"), (w, 0.03, h), c)
-                if d <= 1:
-                    inner = self.solid("Reflectors")
-                    add_box(inner, (w - 0.02, 0.008, h - 0.02), (xc, ye + sgn * 0.008, zc))
-                    if sgn < 0:
-                        for k in (-1, 1):  # projector bulbs inside the lens
-                            add_lathe(inner, (xc + k * w / 4, ye + 0.004, zc), (0, -1, 0),
-                                      [(0, 0.0), (h * 0.28, 0.0), (h * 0.28, 0.014), (0, 0.014)], 16 if d == 0 else 8)
-                        add_box(self.solid("LampsAmber"), (w * 0.18, 0.012, h * 0.5),
-                                (xc + side * w * 0.36, ye - 0.006, zc))
-                    else:
-                        add_box(self.solid("LampsClear"), (w * 0.3, 0.012, h * 0.3), (xc - side * w * 0.25, ye + 0.006, zc))
-            if sgn < 0:  # grille between the headlamps
-                gw = 2 * (hwe - w - 0.05 - 0.06)
-                gz0 = p["bumper"]["z_m"][1] + 0.01
-                gh = zst - 0.012 - gz0
-                gc = (0, ye - 0.002, gz0 + gh / 2)
-                box(self.solid("Trim"), (gw, 0.02, gh), gc)
-                if d <= 1:
-                    ch = self.solid("Chrome")
-                    t = 0.012
-                    for s_ in (-1, 1):
-                        add_box(ch, (gw + 2 * t, 0.01, t), (0, ye - 0.011, gc[2] + s_ * (gh / 2 + t / 2)))
-                        add_box(ch, (t, 0.01, gh), (s_ * (gw / 2 + t / 2), ye - 0.011, gc[2]))
-                if d == 0:
-                    for k in range(1, 5):
-                        add_box(self.solid("Trim"), (gw - 0.01, 0.008, 0.008), (0, ye - 0.013, gz0 + gh * k / 5))
-            else:  # rear plate (AZ: rear plate only), blank: no characters (DEC-071)
+                xc = side * (hwe - w / 2 - lp["inset_m"])
+                box(self.solid("LampsClear" if sgn < 0 else "LampsRed"), (w, 0.03, h), (xc, ye + sgn * 0.003, zc), r)
+                if d > 1:
+                    continue
+                inner = self.solid("Reflectors")
+                add_box(inner, (w - 0.02, 0.008, h - 0.02), (xc, ye + sgn * 0.008, zc))
+                if sgn < 0:
+                    for k in (-1, 1):  # projector bulbs inside the lens
+                        add_lathe(inner, (xc + k * w / 4, ye + 0.004, zc), (0, -1, 0),
+                                  [(0, 0.0), (h * 0.3, 0.0), (h * 0.3, 0.014), (0, 0.014)], 16 if d == 0 else 8)
+                    add_box(self.solid("LampsClear"), (w * 0.8, 0.01, 0.012), (xc, ye - 0.008, zc - h / 2 + 0.014))  # DRL strip
+                    add_box(self.solid("LampsAmber"), (w * 0.14, 0.012, h * 0.45), (xc + side * w * 0.38, ye - 0.006, zc))
+                else:
+                    add_box(self.solid("LampsClear"), (w * 0.25, 0.012, h * 0.25), (xc - side * w * 0.22, ye + 0.006,
+                                                                                     zc - h * 0.25))
+            if sgn > 0:  # rear plate (AZ: rear plate only), blank: no characters (DEC-071)
                 pz = p["plate_z_m"]
                 add_box(self.solid("Plate"), (0.305, 0.004, 0.152), (0, ye + 0.002, pz))
                 if d <= 1:
                     add_box(self.solid("Trim"), (0.33, 0.003, 0.175), (0, ye + 0.0005, pz))
+                continue
+            gp = p["grille"]  # upper grille between the headlamps, above the bumper cover
+            gz1 = zst - 0.012
+            gh = min(gp["h_m"], gz1 - p["bumper"]["z_m"][1] - 0.005)
+            gw, gc = gp["w_m"], (0, ye - 0.002, gz1 - gh / 2)
+            box(self.solid("Trim"), (gw, 0.02, gh), gc, gp["corner_m"])
+            if d > 1:
+                continue
+            ch = self.solid("Chrome")
+            t = 0.01
+            for s_ in (-1, 1):  # surround
+                add_box(ch, (gw, 0.008, t), (0, ye - 0.0125, gc[2] + s_ * (gh / 2 - t / 2)))
+                add_box(ch, (t, 0.008, gh - 2 * t), (s_ * (gw / 2 - t / 2), ye - 0.0125, gc[2]))
+            if d == 0 and gp["style"] == "slats":
+                for k in range(1, 5):
+                    add_box(self.solid("Trim"), (gw - 0.03, 0.008, 0.008), (0, ye - 0.013, gc[2] - gh / 2 + gh * k / 5))
+            elif d == 0 and gp["style"] == "mesh":  # staggered cells
+                nx, nz = int(gw / 0.035), max(2, int(gh / 0.03))
+                for iz in range(nz):
+                    for ix in range(nx - (iz % 2)):
+                        x = -gw / 2 + 0.02 + (ix + 0.5 * (iz % 2)) * (gw - 0.04) / (nx - 1)
+                        add_box(self.solid("Trim"), (0.022, 0.006, 0.014), (x, ye - 0.0125, gc[2] - gh / 2 + 0.018 +
+                                                                             iz * (gh - 0.036) / max(1, nz - 1)))
+            elif gp["style"] == "bars":  # two chrome bars across
+                for k in (1, 2):
+                    add_box(ch, (gw - 0.02, 0.008, 0.016), (0, ye - 0.013, gc[2] - gh / 2 + gh * k / 3))
+
+    def mirror(self, bm, side, xin, xout, ym, zm, md, mh, d):
+        """Tapered housing: rounded sections from the stalk (small) to the outer cap, flat rear face for the glass."""
+        r_seg = 3 if d == 0 else 1
+        rings = []
+        for t, k in ((0.0, 0.55), (0.35, 0.88), (0.8, 1.0), (1.0, 0.93)):
+            x = side * (xin + (xout - xin) * t)
+            pts = rounded_rect(md * k, mh * k, min(md, mh) * k * 0.42, r_seg)
+            rings.append([bm.verts.new((x, ym + u + md * (1 - k) / 2, zm + v)) for u, v in pts])
+        for a, b in zip(rings, rings[1:]):
+            n = len(a)
+            for i in range(n):
+                bm.faces.new([a[i], a[(i + 1) % n], b[(i + 1) % n], b[i]])
+        fan(bm, rings[0][::-1])
+        fan(bm, rings[-1])
 
     def mirrors_handles(self):
         p, d = self.p, self.d
@@ -516,8 +575,8 @@ class Car:
             if d >= 3:
                 add_box(self.solid("Body"), (mw, md, mh), c)
                 continue
-            add_beveled_box(self.solid("Body"), (mw, md, mh), c, 0.03, 0.01, 3 if d == 0 else 1)
-            add_box(self.solid("MirrorGlass"), (mw - 0.025, 0.004, mh - 0.025), (c[0], ym + md / 2 + 0.001, zm))
+            self.mirror(self.solid("Body"), side, xo - mw, xo, ym, zm, md, mh, d)
+            add_box(self.solid("MirrorGlass"), (mw * 0.55, 0.004, mh * 0.78), (side * (xo - mw * 0.4), ym + md / 2 + 0.001, zm))
             ax0, ax1 = hb - 0.01, xo - mw + 0.01
             add_box(self.solid("Trim"), (ax1 - ax0, 0.05, 0.04), (side * (ax0 + ax1) / 2, ym + 0.01, zm - mh / 2 + 0.02))
         if d <= 1:
@@ -583,6 +642,8 @@ class Car:
         for name, bm in self.S.items():
             bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-6)
             bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+            if name not in ("Tires", "Rims", "Brakes"):
+                self.rake(bm)
             emit(bm, {f: name for f in bm.faces}, self.parts)
         return self.parts.finish()
 
