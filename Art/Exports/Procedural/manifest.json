@@ -15204,6 +15204,4374 @@
         "scuffs": 0.25,
         "seed": 4101
       }
+    },
+    "PROC_Register_CardTerminal": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.059389,
+            0.0
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            0.09,
+            0.118779,
+            0.154307
+          ]
+        }
+      ],
+      "component_role": "card_terminal",
+      "export": "Art/Exports/Procedural/PROC_Register_CardTerminal.fbx",
+      "export_sha256": "b7a00379ad7e9f67",
+      "fixture_family": "register_station",
+      "gaps": [
+        "GAP-108",
+        "GAP-PROC-14"
+      ],
+      "generator": "register_station",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Register_CardTerminal_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.045,
+                  0.077153,
+                  0.118779
+                ],
+                "min": [
+                  -0.045,
+                  -0.077153,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7e8063d10861dae0",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.09,
+                0.11878,
+                0.15431
+              ],
+              "tris": 332,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 172
+            },
+            "PROC_Register_CardTerminal_Keys_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0235,
+                  -0.008153,
+                  0.084596
+                ],
+                "min": [
+                  -0.0235,
+                  -0.062471,
+                  0.057849
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "4d6ca78672a75376",
+              "material_slots": [
+                "M_Proc_Plastic_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.047,
+                0.02675,
+                0.05432
+              ],
+              "tris": 768,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 408
+            },
+            "PROC_Register_CardTerminal_Screen_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.03042,
+                  0.060943,
+                  0.116123
+                ],
+                "min": [
+                  -0.03042,
+                  -0.002087,
+                  0.085597
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "0627c81e235a2520",
+              "material_slots": [
+                "M_Proc_Glass_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.06084,
+                0.03053,
+                0.06303
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Register_CardTerminal_Slot_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0273,
+                  -0.068828,
+                  0.046219
+                ],
+                "min": [
+                  -0.0273,
+                  -0.070337,
+                  0.043742
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "9453946be2213125",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.0546,
+                0.00248,
+                0.00151
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.09,
+            0.11878,
+            0.15431
+          ],
+          "tris": 1140
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Register_CardTerminal_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.045,
+                  0.077153,
+                  0.118779
+                ],
+                "min": [
+                  -0.045,
+                  -0.077153,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "fbf55e53548937e5",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.09,
+                0.11878,
+                0.15431
+              ],
+              "tris": 236,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 124
+            },
+            "PROC_Register_CardTerminal_Keys_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0235,
+                  -0.008153,
+                  0.084596
+                ],
+                "min": [
+                  -0.0235,
+                  -0.062471,
+                  0.057849
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1d0f4cec1b1f8a50",
+              "material_slots": [
+                "M_Proc_Plastic_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.047,
+                0.02675,
+                0.05432
+              ],
+              "tris": 576,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 312
+            },
+            "PROC_Register_CardTerminal_Screen_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.03042,
+                  0.060943,
+                  0.116123
+                ],
+                "min": [
+                  -0.03042,
+                  -0.002087,
+                  0.085597
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "0627c81e235a2520",
+              "material_slots": [
+                "M_Proc_Glass_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.06084,
+                0.03053,
+                0.06303
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Register_CardTerminal_Slot_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0273,
+                  -0.068828,
+                  0.046219
+                ],
+                "min": [
+                  -0.0273,
+                  -0.070337,
+                  0.043742
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "9453946be2213125",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.0546,
+                0.00248,
+                0.00151
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.09,
+            0.11878,
+            0.15431
+          ],
+          "tris": 852
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Register_CardTerminal_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.045,
+                  0.077153,
+                  0.118779
+                ],
+                "min": [
+                  -0.045,
+                  -0.077153,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ded73318c025b506",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.09,
+                0.11878,
+                0.15431
+              ],
+              "tris": 124,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 68
+            },
+            "PROC_Register_CardTerminal_Screen_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.03042,
+                  0.060943,
+                  0.116123
+                ],
+                "min": [
+                  -0.03042,
+                  -0.002087,
+                  0.085597
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "0627c81e235a2520",
+              "material_slots": [
+                "M_Proc_Glass_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.06084,
+                0.03053,
+                0.06303
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Register_CardTerminal_Slot_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0273,
+                  -0.068828,
+                  0.046219
+                ],
+                "min": [
+                  -0.0273,
+                  -0.070337,
+                  0.043742
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "9453946be2213125",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.0546,
+                0.00248,
+                0.00151
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.09,
+            0.11878,
+            0.15431
+          ],
+          "tris": 164
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Register_CardTerminal_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.045,
+                  0.077153,
+                  0.118779
+                ],
+                "min": [
+                  -0.045,
+                  -0.077153,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "3c4bd1e5c98fd3c8",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.09,
+                0.11878,
+                0.15431
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.09,
+            0.11878,
+            0.15431
+          ],
+          "tris": 24
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/register_station.json",
+      "params_sha256": "19b15e86c9cf5a1a",
+      "seed": 5201,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Register/PROC_Register_CardTerminal.fbx",
+      "wear": {
+        "dust": 0.1,
+        "edge_wear": 0.1,
+        "fingerprints": 0.25,
+        "scuffs": 0.2,
+        "seed": 5201
+      }
+    },
+    "PROC_Register_Keyboard": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.016,
+            0.0
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            0.4445,
+            0.032,
+            0.155
+          ]
+        }
+      ],
+      "component_role": "keyboard",
+      "export": "Art/Exports/Procedural/PROC_Register_Keyboard.fbx",
+      "export_sha256": "5378be3b3a0a1802",
+      "fixture_family": "register_station",
+      "gaps": [
+        "GAP-108",
+        "GAP-PROC-14"
+      ],
+      "generator": "register_station",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Register_Keyboard_Case_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.22225,
+                  0.0775,
+                  0.02
+                ],
+                "min": [
+                  -0.22225,
+                  -0.0775,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "5028e57efa82ed83",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.4445,
+                0.017,
+                0.155
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 80
+            },
+            "PROC_Register_Keyboard_Feet_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.19725,
+                  0.0625,
+                  0.003
+                ],
+                "min": [
+                  -0.19725,
+                  -0.0615,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a5e96c0791b4a6ec",
+              "material_slots": [
+                "M_Proc_Rubber_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.3945,
+                0.003,
+                0.124
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Register_Keyboard_Keys_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.20945,
+                  0.052537,
+                  0.032
+                ],
+                "min": [
+                  -0.20945,
+                  -0.0647,
+                  0.018
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "059d093b9dfcce11",
+              "material_slots": [
+                "M_Proc_Plastic_Keys"
+              ],
+              "size_m_unity_xyz": [
+                0.4189,
+                0.014,
+                0.11724
+              ],
+              "tris": 7072,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 3744
+            },
+            "PROC_Register_Keyboard_LED_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.175185,
+                  0.0579,
+                  0.0214
+                ],
+                "min": [
+                  0.172185,
+                  0.0571,
+                  0.0194
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "709f64e967dc77c6",
+              "material_slots": [
+                "M_Proc_LCD_Green"
+              ],
+              "size_m_unity_xyz": [
+                0.003,
+                0.002,
+                0.0008
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.4445,
+            0.032,
+            0.155
+          ],
+          "tris": 7288
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Register_Keyboard_Case_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.22225,
+                  0.0775,
+                  0.02
+                ],
+                "min": [
+                  -0.22225,
+                  -0.0775,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e91c206606ce9958",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.4445,
+                0.017,
+                0.155
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Register_Keyboard_Feet_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.19725,
+                  0.0625,
+                  0.003
+                ],
+                "min": [
+                  -0.19725,
+                  -0.0615,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a5e96c0791b4a6ec",
+              "material_slots": [
+                "M_Proc_Rubber_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.3945,
+                0.003,
+                0.124
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Register_Keyboard_Keys_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.20945,
+                  0.052537,
+                  0.032
+                ],
+                "min": [
+                  -0.20945,
+                  -0.0647,
+                  0.018
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "37bfff1b945eccb8",
+              "material_slots": [
+                "M_Proc_Plastic_Keys"
+              ],
+              "size_m_unity_xyz": [
+                0.4189,
+                0.014,
+                0.11724
+              ],
+              "tris": 1248,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 832
+            },
+            "PROC_Register_Keyboard_LED_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.175185,
+                  0.0579,
+                  0.0214
+                ],
+                "min": [
+                  0.172185,
+                  0.0571,
+                  0.0194
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "709f64e967dc77c6",
+              "material_slots": [
+                "M_Proc_LCD_Green"
+              ],
+              "size_m_unity_xyz": [
+                0.003,
+                0.002,
+                0.0008
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.4445,
+            0.032,
+            0.155
+          ],
+          "tris": 1400
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Register_Keyboard_Case_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.22225,
+                  0.0775,
+                  0.02
+                ],
+                "min": [
+                  -0.22225,
+                  -0.0775,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "95652c39266fdf3f",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.4445,
+                0.02,
+                0.155
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Register_Keyboard_Keys_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.20945,
+                  0.052537,
+                  0.032
+                ],
+                "min": [
+                  -0.20945,
+                  -0.0647,
+                  0.018
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "15c286c2b447f912",
+              "material_slots": [
+                "M_Proc_Plastic_Keys"
+              ],
+              "size_m_unity_xyz": [
+                0.4189,
+                0.014,
+                0.11724
+              ],
+              "tris": 252,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 168
+            }
+          },
+          "size_m_unity_xyz": [
+            0.4445,
+            0.032,
+            0.155
+          ],
+          "tris": 280
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Register_Keyboard_Case_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.22225,
+                  0.0775,
+                  0.032
+                ],
+                "min": [
+                  -0.22225,
+                  -0.0775,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6ef6e9a8c3224834",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.4445,
+                0.032,
+                0.155
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.4445,
+            0.032,
+            0.155
+          ],
+          "tris": 12
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/register_station.json",
+      "params_sha256": "19b15e86c9cf5a1a",
+      "seed": 5201,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Register/PROC_Register_Keyboard.fbx",
+      "wear": {
+        "dust": 0.1,
+        "edge_wear": 0.1,
+        "fingerprints": 0.25,
+        "scuffs": 0.2,
+        "seed": 5201
+      }
+    },
+    "PROC_Register_POSMonitor": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.2225,
+            0.0385
+          ],
+          "name": "Monitor",
+          "size_unity_xyz": [
+            0.39,
+            0.245,
+            0.043
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.009,
+            0.0
+          ],
+          "name": "Base",
+          "size_unity_xyz": [
+            0.22,
+            0.018,
+            0.18
+          ]
+        }
+      ],
+      "component_role": "pos_monitor",
+      "export": "Art/Exports/Procedural/PROC_Register_POSMonitor.fbx",
+      "export_sha256": "2c5d3fe8f3540538",
+      "fixture_family": "register_station",
+      "gaps": [
+        "GAP-108",
+        "GAP-PROC-14"
+      ],
+      "generator": "register_station",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Register_POSMonitor_Cable_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.006,
+                  0.018,
+                  0.074
+                ],
+                "min": [
+                  -0.006,
+                  0.014,
+                  0.062
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1768d175111cd8cb",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.012,
+                0.012,
+                0.004
+              ],
+              "tris": 64,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 34
+            },
+            "PROC_Register_POSMonitor_Housing_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.195,
+                  -0.017,
+                  0.345
+                ],
+                "min": [
+                  -0.195,
+                  -0.06,
+                  0.097
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 36
+              },
+              "geometry_sha256": "9799513949590ad3",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.39,
+                0.248,
+                0.043
+              ],
+              "tris": 968,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 464
+            },
+            "PROC_Register_POSMonitor_LED_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1765,
+                  -0.0599,
+                  0.1082
+                ],
+                "min": [
+                  0.1735,
+                  -0.0607,
+                  0.1062
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "9bbbc88b74fb9c1d",
+              "material_slots": [
+                "M_Proc_LCD_Blue"
+              ],
+              "size_m_unity_xyz": [
+                0.003,
+                0.002,
+                0.0008
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_POSMonitor_Screen_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.183,
+                  -0.0555,
+                  0.333
+                ],
+                "min": [
+                  -0.183,
+                  -0.0575,
+                  0.1192
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c3cb51088cd93cfe",
+              "material_slots": [
+                "M_Proc_Glass_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.366,
+                0.2138,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_POSMonitor_Stand_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.11,
+                  0.09,
+                  0.2725
+                ],
+                "min": [
+                  -0.11,
+                  -0.09,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c6a3a9673629f3a8",
+              "material_slots": [
+                "M_Proc_Metal_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.22,
+                0.2725,
+                0.18
+              ],
+              "tris": 324,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 168
+            },
+            "PROC_Register_POSMonitor_Vents_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0929,
+                  -0.0161,
+                  0.287
+                ],
+                "min": [
+                  -0.0929,
+                  -0.0171,
+                  0.205
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2b226dcec307b8ab",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.1858,
+                0.082,
+                0.001
+              ],
+              "tris": 648,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 432
+            }
+          },
+          "size_m_unity_xyz": [
+            0.39,
+            0.345,
+            0.18
+          ],
+          "tris": 2028
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Register_POSMonitor_Cable_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.006,
+                  0.018,
+                  0.074
+                ],
+                "min": [
+                  -0.006,
+                  0.014,
+                  0.062
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2af7978b6d692213",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.012,
+                0.012,
+                0.004
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 26
+            },
+            "PROC_Register_POSMonitor_Housing_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.195,
+                  -0.017,
+                  0.345
+                ],
+                "min": [
+                  -0.195,
+                  -0.06,
+                  0.1
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 20
+              },
+              "geometry_sha256": "12e46f9d6af35b77",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.39,
+                0.245,
+                0.043
+              ],
+              "tris": 536,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 256
+            },
+            "PROC_Register_POSMonitor_Screen_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.183,
+                  -0.0555,
+                  0.333
+                ],
+                "min": [
+                  -0.183,
+                  -0.0575,
+                  0.1192
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c3cb51088cd93cfe",
+              "material_slots": [
+                "M_Proc_Glass_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.366,
+                0.2138,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_POSMonitor_Stand_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.11,
+                  0.09,
+                  0.2725
+                ],
+                "min": [
+                  -0.11,
+                  -0.09,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "141eca075255317e",
+              "material_slots": [
+                "M_Proc_Metal_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.22,
+                0.2725,
+                0.18
+              ],
+              "tris": 196,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 104
+            }
+          },
+          "size_m_unity_xyz": [
+            0.39,
+            0.345,
+            0.18
+          ],
+          "tris": 792
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Register_POSMonitor_Housing_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.195,
+                  -0.017,
+                  0.345
+                ],
+                "min": [
+                  -0.195,
+                  -0.06,
+                  0.1
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 12
+              },
+              "geometry_sha256": "6b28139df455d089",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.39,
+                0.245,
+                0.043
+              ],
+              "tris": 168,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 80
+            },
+            "PROC_Register_POSMonitor_Screen_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.183,
+                  -0.0555,
+                  0.333
+                ],
+                "min": [
+                  -0.183,
+                  -0.0575,
+                  0.1192
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c3cb51088cd93cfe",
+              "material_slots": [
+                "M_Proc_Glass_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.366,
+                0.2138,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_POSMonitor_Stand_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.11,
+                  0.09,
+                  0.2525
+                ],
+                "min": [
+                  -0.11,
+                  -0.09,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "4a1bfad69dff2889",
+              "material_slots": [
+                "M_Proc_Metal_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.22,
+                0.2525,
+                0.18
+              ],
+              "tris": 56,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            }
+          },
+          "size_m_unity_xyz": [
+            0.39,
+            0.345,
+            0.18
+          ],
+          "tris": 236
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Register_POSMonitor_Housing_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.195,
+                  -0.042,
+                  0.345
+                ],
+                "min": [
+                  -0.195,
+                  -0.06,
+                  0.1
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "07d718d00dbab386",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.39,
+                0.245,
+                0.018
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_POSMonitor_Stand_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.11,
+                  0.09,
+                  0.2225
+                ],
+                "min": [
+                  -0.11,
+                  -0.09,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2138ed27c6a951ef",
+              "material_slots": [
+                "M_Proc_Metal_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.22,
+                0.2225,
+                0.18
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.39,
+            0.345,
+            0.18
+          ],
+          "tris": 36
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/register_station.json",
+      "params_sha256": "19b15e86c9cf5a1a",
+      "seed": 5201,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Register/PROC_Register_POSMonitor.fbx",
+      "wear": {
+        "dust": 0.1,
+        "edge_wear": 0.1,
+        "fingerprints": 0.25,
+        "scuffs": 0.2,
+        "seed": 5201
+      }
+    },
+    "PROC_Register_ReceiptPrinter": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.074,
+            0.0
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            0.145,
+            0.148,
+            0.195
+          ]
+        }
+      ],
+      "component_role": "receipt_printer",
+      "export": "Art/Exports/Procedural/PROC_Register_ReceiptPrinter.fbx",
+      "export_sha256": "031b6ee15d67fb3a",
+      "fixture_family": "register_station",
+      "gaps": [
+        "GAP-108",
+        "GAP-PROC-14"
+      ],
+      "generator": "register_station",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Register_ReceiptPrinter_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0725,
+                  0.0975,
+                  0.078
+                ],
+                "min": [
+                  -0.0725,
+                  -0.0975,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8347f58f607d2f37",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.145,
+                0.078,
+                0.195
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 80
+            },
+            "PROC_Register_ReceiptPrinter_Button_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0486,
+                  -0.071,
+                  0.08
+                ],
+                "min": [
+                  0.0326,
+                  -0.079,
+                  0.077
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "116be8e202d5dcd0",
+              "material_slots": [
+                "M_Proc_Plastic_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.016,
+                0.003,
+                0.008
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ReceiptPrinter_LED_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0595,
+                  -0.0735,
+                  0.0787
+                ],
+                "min": [
+                  0.0565,
+                  -0.0765,
+                  0.0777
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "de1ab55e44e0622a",
+              "material_slots": [
+                "M_Proc_LCD_Green"
+              ],
+              "size_m_unity_xyz": [
+                0.003,
+                0.001,
+                0.003
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ReceiptPrinter_Lid_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0725,
+                  0.0975,
+                  0.148
+                ],
+                "min": [
+                  -0.0725,
+                  -0.0525,
+                  0.066
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8e06e2ff726d220e",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.145,
+                0.082,
+                0.15
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_Register_ReceiptPrinter_Paper_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.039875,
+                  -0.0547,
+                  0.092
+                ],
+                "min": [
+                  -0.039875,
+                  -0.0553,
+                  0.072
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d36459d56e04b065",
+              "material_slots": [
+                "M_Proc_Paper_White"
+              ],
+              "size_m_unity_xyz": [
+                0.07975,
+                0.02,
+                0.0006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ReceiptPrinter_Slot_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05075,
+                  -0.052,
+                  0.079
+                ],
+                "min": [
+                  -0.05075,
+                  -0.056,
+                  0.073
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6a4e8dc7a5e104c4",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.1015,
+                0.006,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ReceiptPrinter_TearBar_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0522,
+                  -0.05575,
+                  0.08
+                ],
+                "min": [
+                  -0.0522,
+                  -0.05725,
+                  0.077
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d552f092ec9e4e30",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.1044,
+                0.003,
+                0.0015
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.145,
+            0.148,
+            0.195
+          ],
+          "tris": 356
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Register_ReceiptPrinter_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0725,
+                  0.0975,
+                  0.078
+                ],
+                "min": [
+                  -0.0725,
+                  -0.0975,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "4accfe999b9b94af",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.145,
+                0.078,
+                0.195
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Register_ReceiptPrinter_Button_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0486,
+                  -0.071,
+                  0.08
+                ],
+                "min": [
+                  0.0326,
+                  -0.079,
+                  0.077
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "116be8e202d5dcd0",
+              "material_slots": [
+                "M_Proc_Plastic_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.016,
+                0.003,
+                0.008
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ReceiptPrinter_LED_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0595,
+                  -0.0735,
+                  0.0787
+                ],
+                "min": [
+                  0.0565,
+                  -0.0765,
+                  0.0777
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "de1ab55e44e0622a",
+              "material_slots": [
+                "M_Proc_LCD_Green"
+              ],
+              "size_m_unity_xyz": [
+                0.003,
+                0.001,
+                0.003
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ReceiptPrinter_Lid_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0725,
+                  0.0975,
+                  0.148
+                ],
+                "min": [
+                  -0.0725,
+                  -0.0525,
+                  0.066
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "655ff4c6dbcbb0d1",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.145,
+                0.082,
+                0.15
+              ],
+              "tris": 76,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 40
+            },
+            "PROC_Register_ReceiptPrinter_Paper_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.039875,
+                  -0.0547,
+                  0.092
+                ],
+                "min": [
+                  -0.039875,
+                  -0.0553,
+                  0.072
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d36459d56e04b065",
+              "material_slots": [
+                "M_Proc_Paper_White"
+              ],
+              "size_m_unity_xyz": [
+                0.07975,
+                0.02,
+                0.0006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ReceiptPrinter_Slot_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05075,
+                  -0.052,
+                  0.079
+                ],
+                "min": [
+                  -0.05075,
+                  -0.056,
+                  0.073
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6a4e8dc7a5e104c4",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.1015,
+                0.006,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ReceiptPrinter_TearBar_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0522,
+                  -0.05575,
+                  0.08
+                ],
+                "min": [
+                  -0.0522,
+                  -0.05725,
+                  0.077
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d552f092ec9e4e30",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.1044,
+                0.003,
+                0.0015
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.145,
+            0.148,
+            0.195
+          ],
+          "tris": 228
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Register_ReceiptPrinter_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0725,
+                  0.0975,
+                  0.078
+                ],
+                "min": [
+                  -0.0725,
+                  -0.0975,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1be8a859365ef86d",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.145,
+                0.078,
+                0.195
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Register_ReceiptPrinter_Lid_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0725,
+                  0.0975,
+                  0.148
+                ],
+                "min": [
+                  -0.0725,
+                  -0.0525,
+                  0.066
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "4433e5ebdf388d47",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.145,
+                0.082,
+                0.15
+              ],
+              "tris": 44,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            },
+            "PROC_Register_ReceiptPrinter_Paper_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.039875,
+                  -0.0547,
+                  0.092
+                ],
+                "min": [
+                  -0.039875,
+                  -0.0553,
+                  0.072
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d36459d56e04b065",
+              "material_slots": [
+                "M_Proc_Paper_White"
+              ],
+              "size_m_unity_xyz": [
+                0.07975,
+                0.02,
+                0.0006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ReceiptPrinter_Slot_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05075,
+                  -0.052,
+                  0.079
+                ],
+                "min": [
+                  -0.05075,
+                  -0.056,
+                  0.073
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6a4e8dc7a5e104c4",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.1015,
+                0.006,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.145,
+            0.148,
+            0.195
+          ],
+          "tris": 96
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Register_ReceiptPrinter_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0725,
+                  0.0975,
+                  0.148
+                ],
+                "min": [
+                  -0.0725,
+                  -0.0975,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 1
+              },
+              "geometry_sha256": "2bea798fe0f85a6a",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.145,
+                0.148,
+                0.195
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 14
+            }
+          },
+          "size_m_unity_xyz": [
+            0.145,
+            0.148,
+            0.195
+          ],
+          "tris": 24
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/register_station.json",
+      "params_sha256": "19b15e86c9cf5a1a",
+      "seed": 5201,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Register/PROC_Register_ReceiptPrinter.fbx",
+      "wear": {
+        "dust": 0.1,
+        "edge_wear": 0.1,
+        "fingerprints": 0.25,
+        "scuffs": 0.2,
+        "seed": 5201
+      }
+    },
+    "PROC_Register_ScaleStand": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.366,
+            0.0
+          ],
+          "name": "Frame",
+          "size_unity_xyz": [
+            0.47308,
+            0.732,
+            0.38164
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.747,
+            0.0
+          ],
+          "name": "Tray",
+          "size_unity_xyz": [
+            0.48768,
+            0.03,
+            0.39624
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.8874,
+            -0.19112
+          ],
+          "name": "Panel",
+          "size_unity_xyz": [
+            0.48168,
+            0.3048,
+            0.006
+          ]
+        }
+      ],
+      "component_role": "scale_stand",
+      "export": "Art/Exports/Procedural/PROC_Register_ScaleStand.fbx",
+      "export_sha256": "741c2bbae4562dd1",
+      "fixture_family": "register_station",
+      "gaps": [
+        "GAP-108",
+        "GAP-PROC-14"
+      ],
+      "generator": "register_station",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Register_ScaleStand_DraftShield_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.077,
+                  0.017,
+                  0.917
+                ],
+                "min": [
+                  -0.077,
+                  -0.137,
+                  0.827
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 32
+              },
+              "geometry_sha256": "45931aec247fab57",
+              "material_slots": [
+                "M_Proc_Acrylic_Clear"
+              ],
+              "size_m_unity_xyz": [
+                0.154,
+                0.09,
+                0.154
+              ],
+              "tris": 608,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 323
+            },
+            "PROC_Register_ScaleStand_Feet_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.238445,
+                  0.192725,
+                  0.739
+                ],
+                "min": [
+                  -0.238445,
+                  -0.192725,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "09692a3b282bf8ee",
+              "material_slots": [
+                "M_Proc_Rubber_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.47689,
+                0.739,
+                0.38545
+              ],
+              "tris": 640,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 336
+            },
+            "PROC_Register_ScaleStand_Frame_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.23874,
+                  0.19612,
+                  0.767
+                ],
+                "min": [
+                  -0.23874,
+                  -0.19302,
+                  0.012
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 256
+              },
+              "geometry_sha256": "df71f9bf9fbbeb25",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.47748,
+                0.755,
+                0.38914
+              ],
+              "tris": 1448,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 904
+            },
+            "PROC_Register_ScaleStand_Keys_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0815,
+                  -0.161,
+                  0.7815
+                ],
+                "min": [
+                  0.0305,
+                  -0.164,
+                  0.7725
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "88e4993c770d6562",
+              "material_slots": [
+                "M_Proc_Plastic_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.051,
+                0.009,
+                0.003
+              ],
+              "tris": 256,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 136
+            },
+            "PROC_Register_ScaleStand_LCD_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.015,
+                  -0.1614,
+                  0.7908
+                ],
+                "min": [
+                  -0.055,
+                  -0.1634,
+                  0.7708
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8ce38abca918432b",
+              "material_slots": [
+                "M_Proc_LCD_Blue"
+              ],
+              "size_m_unity_xyz": [
+                0.07,
+                0.02,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ScaleStand_Pan_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.06,
+                  0.0,
+                  0.929
+                ],
+                "min": [
+                  -0.06,
+                  -0.12,
+                  0.814
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7f07db4cc62a1e4a",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.12,
+                0.115,
+                0.12
+              ],
+              "tris": 320,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 165
+            },
+            "PROC_Register_ScaleStand_Panel_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.23984,
+                  0.19412,
+                  1.0398
+                ],
+                "min": [
+                  -0.23984,
+                  0.18812,
+                  0.735
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2132904781150c7e",
+              "material_slots": [
+                "M_Proc_Acrylic_Clear"
+              ],
+              "size_m_unity_xyz": [
+                0.47968,
+                0.3048,
+                0.006
+              ],
+              "tris": 148,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 76
+            },
+            "PROC_Register_ScaleStand_Scale_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0825,
+                  0.0415,
+                  0.815
+                ],
+                "min": [
+                  -0.0825,
+                  -0.1615,
+                  0.739
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6362f47ef982df94",
+              "material_slots": [
+                "M_Proc_Plastic_White"
+              ],
+              "size_m_unity_xyz": [
+                0.165,
+                0.076,
+                0.203
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 80
+            },
+            "PROC_Register_ScaleStand_Tray_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.19812,
+                  0.762
+                ],
+                "min": [
+                  -0.24384,
+                  -0.19812,
+                  0.732
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7a26f0840560529f",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.03,
+                0.39624
+              ],
+              "tris": 196,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 100
+            }
+          },
+          "size_m_unity_xyz": [
+            0.48768,
+            1.0398,
+            0.39624
+          ],
+          "tris": 3784
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Register_ScaleStand_DraftShield_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.077,
+                  0.017,
+                  0.917
+                ],
+                "min": [
+                  -0.077,
+                  -0.137,
+                  0.827
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 24
+              },
+              "geometry_sha256": "ebf404348e62ff98",
+              "material_slots": [
+                "M_Proc_Acrylic_Clear"
+              ],
+              "size_m_unity_xyz": [
+                0.154,
+                0.09,
+                0.154
+              ],
+              "tris": 456,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 243
+            },
+            "PROC_Register_ScaleStand_Feet_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.238445,
+                  0.192725,
+                  0.739
+                ],
+                "min": [
+                  -0.238445,
+                  -0.192725,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "85c6da59245aca76",
+              "material_slots": [
+                "M_Proc_Rubber_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.47689,
+                0.739,
+                0.38545
+              ],
+              "tris": 480,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 256
+            },
+            "PROC_Register_ScaleStand_Frame_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.23654,
+                  0.19612,
+                  0.767
+                ],
+                "min": [
+                  -0.23654,
+                  -0.19082,
+                  0.012
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f75b727715c7ad46",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.47308,
+                0.755,
+                0.38694
+              ],
+              "tris": 656,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 362
+            },
+            "PROC_Register_ScaleStand_Keys_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0815,
+                  -0.161,
+                  0.7815
+                ],
+                "min": [
+                  0.0305,
+                  -0.164,
+                  0.7725
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "fa5e94391bfb8d4f",
+              "material_slots": [
+                "M_Proc_Plastic_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.051,
+                0.009,
+                0.003
+              ],
+              "tris": 192,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 104
+            },
+            "PROC_Register_ScaleStand_LCD_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.015,
+                  -0.1614,
+                  0.7908
+                ],
+                "min": [
+                  -0.055,
+                  -0.1634,
+                  0.7708
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8ce38abca918432b",
+              "material_slots": [
+                "M_Proc_LCD_Blue"
+              ],
+              "size_m_unity_xyz": [
+                0.07,
+                0.02,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ScaleStand_Pan_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.06,
+                  0.0,
+                  0.929
+                ],
+                "min": [
+                  -0.06,
+                  -0.12,
+                  0.814
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "643d6b659106eb10",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.12,
+                0.115,
+                0.12
+              ],
+              "tris": 240,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 125
+            },
+            "PROC_Register_ScaleStand_Panel_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.23984,
+                  0.19412,
+                  1.0398
+                ],
+                "min": [
+                  -0.23984,
+                  0.18812,
+                  0.735
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d9af431dd5121b9f",
+              "material_slots": [
+                "M_Proc_Acrylic_Clear"
+              ],
+              "size_m_unity_xyz": [
+                0.47968,
+                0.3048,
+                0.006
+              ],
+              "tris": 84,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 44
+            },
+            "PROC_Register_ScaleStand_Scale_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0825,
+                  0.0415,
+                  0.815
+                ],
+                "min": [
+                  -0.0825,
+                  -0.1615,
+                  0.739
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "74dab55949a39a5d",
+              "material_slots": [
+                "M_Proc_Plastic_White"
+              ],
+              "size_m_unity_xyz": [
+                0.165,
+                0.076,
+                0.203
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Register_ScaleStand_Tray_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.19812,
+                  0.762
+                ],
+                "min": [
+                  -0.24384,
+                  -0.19812,
+                  0.732
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "602bdcde272a4679",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.03,
+                0.39624
+              ],
+              "tris": 116,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            }
+          },
+          "size_m_unity_xyz": [
+            0.48768,
+            1.0398,
+            0.39624
+          ],
+          "tris": 2328
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Register_ScaleStand_DraftShield_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.077,
+                  0.017,
+                  0.917
+                ],
+                "min": [
+                  -0.077,
+                  -0.137,
+                  0.827
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 16
+              },
+              "geometry_sha256": "fc63a27582b91f15",
+              "material_slots": [
+                "M_Proc_Acrylic_Clear"
+              ],
+              "size_m_unity_xyz": [
+                0.154,
+                0.09,
+                0.154
+              ],
+              "tris": 176,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 99
+            },
+            "PROC_Register_ScaleStand_Frame_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.23654,
+                  0.19082,
+                  0.732
+                ],
+                "min": [
+                  -0.23654,
+                  -0.19082,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "841f0a0d1752fd9e",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.47308,
+                0.732,
+                0.38164
+              ],
+              "tris": 416,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 232
+            },
+            "PROC_Register_ScaleStand_LCD_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.015,
+                  -0.1614,
+                  0.7908
+                ],
+                "min": [
+                  -0.055,
+                  -0.1634,
+                  0.7708
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8ce38abca918432b",
+              "material_slots": [
+                "M_Proc_LCD_Blue"
+              ],
+              "size_m_unity_xyz": [
+                0.07,
+                0.02,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ScaleStand_Pan_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.06,
+                  0.0,
+                  0.929
+                ],
+                "min": [
+                  -0.06,
+                  -0.12,
+                  0.814
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "bc38fd8b31ae7bd4",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.12,
+                0.115,
+                0.12
+              ],
+              "tris": 128,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 69
+            },
+            "PROC_Register_ScaleStand_Panel_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.23984,
+                  0.19412,
+                  1.0398
+                ],
+                "min": [
+                  -0.23984,
+                  0.18812,
+                  0.735
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "81ce280c663817c3",
+              "material_slots": [
+                "M_Proc_Acrylic_Clear"
+              ],
+              "size_m_unity_xyz": [
+                0.47968,
+                0.3048,
+                0.006
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Register_ScaleStand_Scale_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0825,
+                  0.0415,
+                  0.815
+                ],
+                "min": [
+                  -0.0825,
+                  -0.1615,
+                  0.739
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "593d6038c5edfbf7",
+              "material_slots": [
+                "M_Proc_Plastic_White"
+              ],
+              "size_m_unity_xyz": [
+                0.165,
+                0.076,
+                0.203
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Register_ScaleStand_Tray_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.19812,
+                  0.762
+                ],
+                "min": [
+                  -0.24384,
+                  -0.19812,
+                  0.732
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e4f9d4c0f96a00ef",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.03,
+                0.39624
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            }
+          },
+          "size_m_unity_xyz": [
+            0.48768,
+            1.0398,
+            0.39624
+          ],
+          "tris": 848
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Register_ScaleStand_Frame_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.23654,
+                  0.19082,
+                  0.732
+                ],
+                "min": [
+                  -0.23654,
+                  -0.19082,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "941860392b109e52",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.47308,
+                0.732,
+                0.38164
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 40
+            },
+            "PROC_Register_ScaleStand_Panel_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.23984,
+                  0.19412,
+                  1.0398
+                ],
+                "min": [
+                  -0.23984,
+                  0.18812,
+                  0.735
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "71947cc40e3ab98c",
+              "material_slots": [
+                "M_Proc_Acrylic_Clear"
+              ],
+              "size_m_unity_xyz": [
+                0.47968,
+                0.3048,
+                0.006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ScaleStand_Scale_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0825,
+                  0.0415,
+                  0.929
+                ],
+                "min": [
+                  -0.0825,
+                  -0.1615,
+                  0.735
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "07ab67fc47748a20",
+              "material_slots": [
+                "M_Proc_Plastic_White"
+              ],
+              "size_m_unity_xyz": [
+                0.165,
+                0.194,
+                0.203
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_ScaleStand_Tray_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.19812,
+                  0.762
+                ],
+                "min": [
+                  -0.24384,
+                  -0.19812,
+                  0.732
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ca65562f226865a0",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.03,
+                0.39624
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.48768,
+            1.0398,
+            0.39624
+          ],
+          "tris": 96
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/register_station.json",
+      "params_sha256": "19b15e86c9cf5a1a",
+      "seed": 5201,
+      "shelf_anchors": [
+        {
+          "id": "Shelf_00",
+          "position_unity_xyz": [
+            0.0,
+            0.19812,
+            0.0
+          ],
+          "size_m_unity_xz": [
+            0.43968,
+            0.34824
+          ]
+        },
+        {
+          "id": "Tray_00",
+          "position_unity_xyz": [
+            0.0,
+            0.735,
+            0.0
+          ],
+          "size_m_unity_xz": [
+            0.48168,
+            0.38424
+          ]
+        }
+      ],
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Register/PROC_Register_ScaleStand.fbx",
+      "wear": {
+        "dust": 0.1,
+        "edge_wear": 0.1,
+        "fingerprints": 0.25,
+        "scuffs": 0.2,
+        "seed": 5201
+      },
+      "weighing_anchor_unity_xyz": [
+        0.0,
+        0.827,
+        0.06
+      ]
+    },
+    "PROC_Register_Scanner_Barcode": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.09144,
+            0.0
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            0.12192,
+            0.18288,
+            0.21336
+          ]
+        }
+      ],
+      "component_role": "handheld_scanner",
+      "export": "Art/Exports/Procedural/PROC_Register_Scanner_Barcode.fbx",
+      "export_sha256": "870b71da4bb7a00f",
+      "fixture_family": "register_station",
+      "gaps": [
+        "GAP-108",
+        "GAP-PROC-14"
+      ],
+      "generator": "register_station",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Register_Scanner_Barcode_Cable_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.003,
+                  0.103501,
+                  0.037324
+                ],
+                "min": [
+                  -0.003,
+                  0.05151,
+                  0.012535
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "85638cadfffda9e0",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.006,
+                0.02479,
+                0.05199
+              ],
+              "tris": 32,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 18
+            },
+            "PROC_Register_Scanner_Barcode_Gun_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0275,
+                  0.05389,
+                  0.18288
+                ],
+                "min": [
+                  -0.0275,
+                  -0.10568,
+                  0.041624
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c7dead17acce28fe",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.055,
+                0.14126,
+                0.15957
+              ],
+              "tris": 152,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 80
+            },
+            "PROC_Register_Scanner_Barcode_Stand_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.06096,
+                  0.10668,
+                  0.07
+                ],
+                "min": [
+                  -0.06096,
+                  -0.021336,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e8002a60b863fd54",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.12192,
+                0.07,
+                0.12802
+              ],
+              "tris": 312,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 160
+            },
+            "PROC_Register_Scanner_Barcode_Trigger_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.003,
+                  -0.016957,
+                  0.124889
+                ],
+                "min": [
+                  -0.003,
+                  -0.040334,
+                  0.09928
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7c1648d93bf3abf2",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.006,
+                0.02561,
+                0.02338
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Register_Scanner_Barcode_Window_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.020625,
+                  -0.10518,
+                  0.17388
+                ],
+                "min": [
+                  -0.020625,
+                  -0.10668,
+                  0.14688
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "802e0fb95376267c",
+              "material_slots": [
+                "M_Proc_Glass_Red"
+              ],
+              "size_m_unity_xyz": [
+                0.04125,
+                0.027,
+                0.0015
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.12192,
+            0.18288,
+            0.21336
+          ],
+          "tris": 536
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Register_Scanner_Barcode_Cable_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.003,
+                  0.103501,
+                  0.037324
+                ],
+                "min": [
+                  -0.003,
+                  0.05151,
+                  0.012535
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "85638cadfffda9e0",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.006,
+                0.02479,
+                0.05199
+              ],
+              "tris": 32,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 18
+            },
+            "PROC_Register_Scanner_Barcode_Gun_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0275,
+                  0.05389,
+                  0.18288
+                ],
+                "min": [
+                  -0.0275,
+                  -0.10568,
+                  0.041624
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f5fcc6948777a147",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.055,
+                0.14126,
+                0.15957
+              ],
+              "tris": 88,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Register_Scanner_Barcode_Stand_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.06096,
+                  0.10668,
+                  0.07
+                ],
+                "min": [
+                  -0.06096,
+                  -0.021336,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "568561c3f3b88096",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.12192,
+                0.07,
+                0.12802
+              ],
+              "tris": 184,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            },
+            "PROC_Register_Scanner_Barcode_Trigger_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.003,
+                  -0.016957,
+                  0.124889
+                ],
+                "min": [
+                  -0.003,
+                  -0.040334,
+                  0.09928
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7c1648d93bf3abf2",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.006,
+                0.02561,
+                0.02338
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Register_Scanner_Barcode_Window_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.020625,
+                  -0.10518,
+                  0.17388
+                ],
+                "min": [
+                  -0.020625,
+                  -0.10668,
+                  0.14688
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "802e0fb95376267c",
+              "material_slots": [
+                "M_Proc_Glass_Red"
+              ],
+              "size_m_unity_xyz": [
+                0.04125,
+                0.027,
+                0.0015
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.12192,
+            0.18288,
+            0.21336
+          ],
+          "tris": 344
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Register_Scanner_Barcode_Gun_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0275,
+                  0.05389,
+                  0.18288
+                ],
+                "min": [
+                  -0.0275,
+                  -0.10568,
+                  0.041624
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "9d57ee62cf5510ae",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.055,
+                0.14126,
+                0.15957
+              ],
+              "tris": 56,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Register_Scanner_Barcode_Stand_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.06096,
+                  0.10668,
+                  0.07
+                ],
+                "min": [
+                  -0.06096,
+                  -0.021336,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "fabb3e96402bbe6c",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.12192,
+                0.07,
+                0.12802
+              ],
+              "tris": 88,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Register_Scanner_Barcode_Window_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.020625,
+                  -0.10518,
+                  0.17388
+                ],
+                "min": [
+                  -0.020625,
+                  -0.10668,
+                  0.14688
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "802e0fb95376267c",
+              "material_slots": [
+                "M_Proc_Glass_Red"
+              ],
+              "size_m_unity_xyz": [
+                0.04125,
+                0.027,
+                0.0015
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.12192,
+            0.18288,
+            0.21336
+          ],
+          "tris": 156
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Register_Scanner_Barcode_Gun_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0275,
+                  0.047672,
+                  0.18288
+                ],
+                "min": [
+                  -0.0275,
+                  -0.10668,
+                  0.07
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "da1682c75dd2e200",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.055,
+                0.11288,
+                0.15435
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Register_Scanner_Barcode_Stand_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.06096,
+                  0.10668,
+                  0.07
+                ],
+                "min": [
+                  -0.06096,
+                  -0.021336,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a06c9fb59ccd0134",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.12192,
+                0.07,
+                0.12802
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.12192,
+            0.18288,
+            0.21336
+          ],
+          "tris": 36
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/register_station.json",
+      "params_sha256": "19b15e86c9cf5a1a",
+      "seed": 5201,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Register/PROC_Register_Scanner_Barcode.fbx",
+      "wear": {
+        "dust": 0.1,
+        "edge_wear": 0.1,
+        "fingerprints": 0.25,
+        "scuffs": 0.2,
+        "seed": 5201
+      }
+    },
+    "PROC_Register_Scanner_Presentation": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.075,
+            0.0
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            0.095,
+            0.15,
+            0.095
+          ]
+        }
+      ],
+      "component_role": "presentation_scanner",
+      "export": "Art/Exports/Procedural/PROC_Register_Scanner_Presentation.fbx",
+      "export_sha256": "470e47cf1522d3ad",
+      "fixture_family": "register_station",
+      "gaps": [
+        "GAP-108",
+        "GAP-PROC-14"
+      ],
+      "generator": "register_station",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Register_Scanner_Presentation_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0475,
+                  0.0475,
+                  0.15
+                ],
+                "min": [
+                  -0.0475,
+                  -0.0475,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1aa6ff5bbcec59ad",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.095,
+                0.15,
+                0.095
+              ],
+              "tris": 464,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 238
+            },
+            "PROC_Register_Scanner_Presentation_Cable_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0028,
+                  0.045613,
+                  0.061084
+                ],
+                "min": [
+                  -0.0028,
+                  0.012831,
+                  0.004811
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6dac905fe1be9306",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.0056,
+                0.05627,
+                0.03278
+              ],
+              "tris": 32,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 18
+            },
+            "PROC_Register_Scanner_Presentation_LED_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.003,
+                  -0.03485,
+                  0.1435
+                ],
+                "min": [
+                  -0.003,
+                  -0.03635,
+                  0.1405
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1e61955acf48a704",
+              "material_slots": [
+                "M_Proc_LCD_Green"
+              ],
+              "size_m_unity_xyz": [
+                0.006,
+                0.003,
+                0.0015
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_Scanner_Presentation_Window_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.027,
+                  -0.0349,
+                  0.1377
+                ],
+                "min": [
+                  -0.027,
+                  -0.0369,
+                  0.1047
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "cd8206176cd3cad8",
+              "material_slots": [
+                "M_Proc_Glass_Red"
+              ],
+              "size_m_unity_xyz": [
+                0.054,
+                0.033,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.095,
+            0.15,
+            0.095
+          ],
+          "tris": 520
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Register_Scanner_Presentation_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0475,
+                  0.0475,
+                  0.15
+                ],
+                "min": [
+                  -0.0475,
+                  -0.0475,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6ac7e9e313bd2ce3",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.095,
+                0.15,
+                0.095
+              ],
+              "tris": 304,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 158
+            },
+            "PROC_Register_Scanner_Presentation_Cable_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0028,
+                  0.045613,
+                  0.061084
+                ],
+                "min": [
+                  -0.0028,
+                  0.012831,
+                  0.004811
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6dac905fe1be9306",
+              "material_slots": [
+                "M_Proc_Plastic_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.0056,
+                0.05627,
+                0.03278
+              ],
+              "tris": 32,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 18
+            },
+            "PROC_Register_Scanner_Presentation_LED_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.003,
+                  -0.03485,
+                  0.1435
+                ],
+                "min": [
+                  -0.003,
+                  -0.03635,
+                  0.1405
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1e61955acf48a704",
+              "material_slots": [
+                "M_Proc_LCD_Green"
+              ],
+              "size_m_unity_xyz": [
+                0.006,
+                0.003,
+                0.0015
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Register_Scanner_Presentation_Window_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.027,
+                  -0.0349,
+                  0.1377
+                ],
+                "min": [
+                  -0.027,
+                  -0.0369,
+                  0.1047
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "cd8206176cd3cad8",
+              "material_slots": [
+                "M_Proc_Glass_Red"
+              ],
+              "size_m_unity_xyz": [
+                0.054,
+                0.033,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.095,
+            0.15,
+            0.095
+          ],
+          "tris": 360
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Register_Scanner_Presentation_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0475,
+                  0.0475,
+                  0.15
+                ],
+                "min": [
+                  -0.0475,
+                  -0.0475,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d9c55d15d46bf2b8",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.095,
+                0.15,
+                0.095
+              ],
+              "tris": 136,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 74
+            },
+            "PROC_Register_Scanner_Presentation_Window_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.027,
+                  -0.0349,
+                  0.1377
+                ],
+                "min": [
+                  -0.027,
+                  -0.0369,
+                  0.1047
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "cd8206176cd3cad8",
+              "material_slots": [
+                "M_Proc_Glass_Red"
+              ],
+              "size_m_unity_xyz": [
+                0.054,
+                0.033,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.095,
+            0.15,
+            0.095
+          ],
+          "tris": 148
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Register_Scanner_Presentation_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0475,
+                  0.0475,
+                  0.15
+                ],
+                "min": [
+                  -0.0475,
+                  -0.0475,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "07df452e58abe12f",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.095,
+                0.15,
+                0.095
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.095,
+            0.15,
+            0.095
+          ],
+          "tris": 24
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/register_station.json",
+      "params_sha256": "19b15e86c9cf5a1a",
+      "seed": 5201,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Register/PROC_Register_Scanner_Presentation.fbx",
+      "wear": {
+        "dust": 0.1,
+        "edge_wear": 0.1,
+        "fingerprints": 0.25,
+        "scuffs": 0.2,
+        "seed": 5201
+      }
     }
   },
   "label_faces": "+Z (Unity forward)",

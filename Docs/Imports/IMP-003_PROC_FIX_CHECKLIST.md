@@ -97,16 +97,17 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [x] **W8 REF follow-up for the PROC worker (do not guess; Hub-confirmed open item):** RF `Rack_East_Wall` is 8.7 ft and `Rack_West_Run` 8.0 ft (2-bay). In 4-ft sections that is 2 sections, which leaves no "middle" section to roll, and 8.7 is not a multiple of 4. Model 2 fixed sections for now and list the run lengths/section counts for the next REF pass (GAP-127).
 
 ## 4. Register station: `generators/register_station.py`, `params/register_station.json`
-- [ ] **R1 remove `CashDrawer`** (variant + `_cash_drawer`): no cash-handling equipment (DEC-051, RI REF-009 rule). [C1]
-- [ ] **R2 scale stand per RI §2.2:**
+**PROC-005 done:** rewritten generator with 7 variants (ScaleStand, POSMonitor + VESA stand, Scanner_Presentation, Scanner_Barcode handheld in its stand, Keyboard, ReceiptPrinter, CardTerminal); no cash drawer. All pass validation with byte-identical reruns. LOD0 is below the DEC-084 lower guide on every variant except the keyboard: ScaleStand 3.8k (guide 20k), monitor 2.0k, terminal 1.1k, scanners 0.5k, printer 0.4k. Validation warns on these; see the PROC-005 handoff question. Q1 register detail is done for the scale stand, monitor and scanner.
+- [x] **R1 remove `CashDrawer`** (variant + `_cash_drawer`): no cash-handling equipment (DEC-051, RI REF-009 rule). [C1]
+- [x] **R2 scale stand per RI §2.2:**
   - footprint 1.6 × 1.3 ft; top 2.5 ft;
   - **one** wire shelf at 0.5–0.8 ft (not two);
   - black top tray with a raised lip;
   - acrylic panel full width on the **counter-side edge**, 0.8–1.2 ft tall (not a 0.54 m back + side panel);
   - **white** scale body, blue LCD, clear round draft-shield bowl; one scale.
-- [ ] **R3** scanner variant: a presentation block is fine for the registers. The BOH `Scanner_Barcode` is a **handheld in a stand** (RF 0.4 × 0.7 × 0.6 ft); add it as a variant.
-- [ ] **R4** add keyboard (17.5 in convention, RI §2.2) and receipt-printer props. **Card terminal included** as a realistic unbranded prop (DEC-086, DEC-084).
-- [ ] **R5** monitor/stand sizes: GAP-PROC-14.
+- [x] **R3** scanner variant: a presentation block is fine for the registers. The BOH `Scanner_Barcode` is a **handheld in a stand** (RF 0.4 × 0.7 × 0.6 ft); add it as a variant.
+- [x] **R4** add keyboard (17.5 in convention, RI §2.2) and receipt-printer props. **Card terminal included** as a realistic unbranded prop (DEC-086, DEC-084).
+- [x] **R5** monitor/stand sizes: GAP-PROC-14.
 
 ## 5. Register counter run (round 2): `generators/register_counter_run.py`, `params/register_counter_run.json`
 - [ ] **RC1 L layout:** sides from DEC-039 (south 7,2,3,4,5,6; east 12,11; north 10,9,8 = 11 stations), plan bbox 20.0–42.0 × 7.0–19.0 ft (RI §1.5). Generate L segments + a corner. `station_anchors` carry the DEC-039 register numbers.

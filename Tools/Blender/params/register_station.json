@@ -1,0 +1,313 @@
+{
+  "generator": "register_station",
+  "asset_prefix": "PROC_Register_",
+  "seed": 5201,
+  "own_sheet": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Register",
+  "gaps": [
+    "GAP-108",
+    "GAP-PROC-14"
+  ],
+  "_sources": "Scale stand: REFERENCES_INDEX 2.2 (footprint 1.6 x 1.3 ft, top 2.5 ft, one wire shelf 0.5-0.8 ft, acrylic panel 0.8-1.2 ft on the counter-side edge, white scale + blue LCD + round draft-shield bowl). Keyboard 17.5 in (RI 2.2 convention). Scanner_Barcode = ROOM_FIXTURES 0.4 x 0.7 x 0.6 ft. Every other size is GAP-PROC-14 (commercial convention, not measured). Card terminal included as an unbranded prop (DEC-086). No cash drawer (DEC-051).",
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 16
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 12
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8
+    }
+  },
+  "wear": {
+    "edge_wear": 0.1,
+    "scuffs": 0.2,
+    "dust": 0.1,
+    "fingerprints": 0.25
+  },
+  "colors": {
+    "Chrome": [
+      0.76,
+      0.77,
+      0.79,
+      1.0
+    ],
+    "Plastic_Black": [
+      0.03,
+      0.03,
+      0.035,
+      1.0
+    ],
+    "Acrylic_Clear": [
+      0.85,
+      0.92,
+      0.95,
+      0.25
+    ],
+    "Plastic_White": [
+      0.88,
+      0.88,
+      0.86,
+      1.0
+    ],
+    "LCD_Blue": [
+      0.15,
+      0.35,
+      0.85,
+      1.0
+    ],
+    "Plastic_Grey": [
+      0.45,
+      0.46,
+      0.48,
+      1.0
+    ],
+    "Stainless": [
+      0.66,
+      0.67,
+      0.68,
+      1.0
+    ],
+    "Rubber_Black": [
+      0.02,
+      0.02,
+      0.02,
+      1.0
+    ],
+    "Metal_Black": [
+      0.04,
+      0.04,
+      0.045,
+      1.0
+    ],
+    "Glass_Dark": [
+      0.02,
+      0.03,
+      0.04,
+      1.0
+    ],
+    "Plastic_Dark": [
+      0.06,
+      0.06,
+      0.065,
+      1.0
+    ],
+    "Glass_Red": [
+      0.35,
+      0.04,
+      0.04,
+      1.0
+    ],
+    "LCD_Green": [
+      0.1,
+      0.8,
+      0.25,
+      1.0
+    ],
+    "Plastic_Keys": [
+      0.05,
+      0.05,
+      0.055,
+      1.0
+    ],
+    "Paper_White": [
+      0.95,
+      0.95,
+      0.93,
+      1.0
+    ]
+  },
+  "variants": [
+    {
+      "id": "ScaleStand",
+      "kind": "scale_stand",
+      "rf": "RI 2.2 scale stand (one per POS)",
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "width_m": 0.48768,
+      "depth_m": 0.39624,
+      "height_m": 0.762,
+      "shelf_z_m": 0.19812,
+      "tray_h_m": 0.03,
+      "tray_wall_m": 0.003,
+      "tray_corner_r_m": 0.015,
+      "post_d_m": 0.0254,
+      "post_inset_m": 0.02,
+      "rail_d_m": 0.008,
+      "foot_h_m": 0.012,
+      "wire_d_m": 0.004,
+      "wire_pitch_m": 0.0254,
+      "panel_h_m": 0.3048,
+      "panel_t_m": 0.006,
+      "scale": {
+        "_size": "GAP-PROC-14; body in the RI 2.4 bench-scale class (6-7 x 8 x 3 in)",
+        "w_m": 0.165,
+        "d_m": 0.203,
+        "h_m": 0.076,
+        "y_m": -0.06,
+        "foot_h_m": 0.004,
+        "lcd_w_m": 0.07,
+        "lcd_h_m": 0.02,
+        "pan_d_m": 0.12,
+        "pan_post_h_m": 0.008,
+        "pan_t_m": 0.004,
+        "bowl_d_m": 0.15,
+        "bowl_h_m": 0.07,
+        "lid_h_m": 0.02,
+        "knob_h_m": 0.012
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "POSMonitor",
+      "kind": "pos_monitor",
+      "monitor": {
+        "w_m": 0.39,
+        "h_m": 0.245,
+        "panel_d_m": 0.018,
+        "rear_d_m": 0.025,
+        "bezel_m": 0.012,
+        "base_w_m": 0.22,
+        "base_d_m": 0.18,
+        "base_h_m": 0.018,
+        "neck_w_m": 0.05,
+        "neck_d_m": 0.025,
+        "bottom_z_m": 0.1,
+        "front_y_m": -0.06
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Scanner_Presentation",
+      "kind": "presentation_scanner",
+      "scanner": {
+        "base_d_m": 0.095,
+        "h_m": 0.15,
+        "head_w_m": 0.072,
+        "head_d_m": 0.07,
+        "head_h_m": 0.06
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Scanner_Barcode",
+      "kind": "handheld_scanner",
+      "rf": "Scanner_Barcode",
+      "width_m": 0.12192,
+      "depth_m": 0.21336,
+      "height_m": 0.18288,
+      "gun": {
+        "base_t_m": 0.012,
+        "head_l_m": 0.11,
+        "head_w_m": 0.055,
+        "head_h_m": 0.045
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Keyboard",
+      "kind": "keyboard",
+      "width_m": 0.4445,
+      "depth_m": 0.155,
+      "height_m": 0.032,
+      "keyboard": {
+        "case_h_m": 0.02,
+        "margin_m": 0.012
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "ReceiptPrinter",
+      "kind": "receipt_printer",
+      "width_m": 0.145,
+      "depth_m": 0.195,
+      "height_m": 0.148,
+      "printer": {
+        "split_z_m": 0.07,
+        "front_d_m": 0.045,
+        "lid_r_m": 0.03
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "CardTerminal",
+      "kind": "card_terminal",
+      "terminal": {
+        "l_m": 0.16,
+        "w_m": 0.078,
+        "t_m": 0.022,
+        "tilt_deg": 25,
+        "centre_z_m": 0.075,
+        "base_d_m": 0.09
+      }
+    }
+  ]
+}

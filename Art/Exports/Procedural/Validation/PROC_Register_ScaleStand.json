@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Register_ScaleStand",
+  "collision_boxes": 3,
+  "errors": [],
+  "export_sha256": "741c2bbae4562dd1",
+  "generator": "register_station",
+  "lod_tris": {
+    "LOD0": 3784,
+    "LOD1": 2328,
+    "LOD2": 848,
+    "LOD3": 96
+  },
+  "params_sha256": "19b15e86c9cf5a1a",
+  "passed": true,
+  "warnings": [
+    "LOD0 3784 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}

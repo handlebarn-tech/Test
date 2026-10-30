@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Register_POSMonitor",
+  "collision_boxes": 2,
+  "errors": [],
+  "export_sha256": "2c5d3fe8f3540538",
+  "generator": "register_station",
+  "lod_tris": {
+    "LOD0": 2028,
+    "LOD1": 792,
+    "LOD2": 236,
+    "LOD3": 36
+  },
+  "params_sha256": "19b15e86c9cf5a1a",
+  "passed": true,
+  "warnings": [
+    "LOD0 2028 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}
