@@ -1,5 +1,5 @@
 {
-  "_about": "ART-001 graybox source data. Plan frame in feet (Docs/REFERENCES_INDEX.md 1.2): origin = Retail NW outer corner, +x east, +y south. Unity: X = x*0.3048, Z = -y*0.3048. Rebuild: Dispo.Editor.Graybox.GrayboxBuilder.Build. Every height is a placeholder tagged with its GAP id; no source gives a measured height.",
+  "_about": "ART-001/ART-002 graybox source data. Plan frame in feet (Docs/REFERENCES_INDEX.md 1.2): origin = Retail NW outer corner, +x east, +y south. Unity: X = x*0.3048, Z = -y*0.3048. Rebuild: Dispo.Editor.Graybox.GrayboxBuilder.Build. Every height is a placeholder tagged with its GAP id; no source gives a measured height.",
   "heights": [
     { "key": "ceiling", "ft": 10.0, "gap": "GAP-001", "note": "wall/ceiling height placeholder" },
     { "key": "door", "ft": 7.0, "gap": "GAP-104", "note": "3'-0\" x 7'-0\" commercial door convention" },
@@ -12,7 +12,9 @@
     { "key": "case", "ft": 1.5, "gap": "GAP-002", "note": "display case, sits on the counter" },
     { "key": "stanchion", "ft": 3.0, "gap": "GAP-002", "note": "queue stanchion belts" },
     { "key": "pendant", "ft": 8.0, "gap": "GAP-113", "note": "globe pendant drop height" },
-    { "key": "camera", "ft": 9.5, "gap": "GAP-001", "note": "CCTV mount, just under the ceiling placeholder" }
+    { "key": "camera", "ft": 9.5, "gap": "GAP-001", "note": "CCTV mount, just under the ceiling placeholder" },
+    { "key": "pallet", "ft": 4.0, "gap": "GAP-002", "note": "shrink-wrapped pallet of cases (HUB/HUB 2 CCTV)" },
+    { "key": "totes", "ft": 4.0, "gap": "GAP-002", "note": "stack of 4 yellow-lid totes (HUB 2 R1C1)" }
   ],
   "spawn": { "zone": "Retail", "x": 3.5, "y": 15.5, "yaw": 90 },
   "floors": [
@@ -63,26 +65,27 @@
     { "id": "W_Ext_W_Hub", "zone": "Hub", "conf": "High", "ax": 0.1, "ay": 46.55, "bx": 0.1, "by": 76.03, "t": 0.2, "gap": "GAP-104", "openings": [
       { "id": "EXT_DELIVERY", "from": 47.8, "to": 51.2, "h": "door", "conf": "Med", "note": "employees only" } ] },
     { "id": "W_Ext_E_Hub", "zone": "Hub", "conf": "High", "ax": 47.09, "ay": 46.55, "bx": 47.09, "by": 76.03, "t": 0.2, "gap": "GAP-104", "openings": [] },
-    { "id": "W_Ext_S", "zone": "Hub", "conf": "High", "ax": 0.1, "ay": 75.93, "bx": 47.09, "by": 75.93, "t": 0.2, "gap": "GAP-104", "openings": [] },
+    { "id": "W_Ext_S", "zone": "Hub", "conf": "High", "ax": 0.1, "ay": 75.93, "bx": 47.09, "by": 75.93, "t": 0.2, "gap": "GAP-104", "openings": [
+      { "id": "EXT_EMERGENCY_HUB", "from": 24.8, "to": 27.8, "h": "door", "conf": "Low", "note": "green emergency exit door seen in HUB R1C4, the building's furthest SE door (DEC-030); not on the plan, placed at the SE end of the HUB south wall, 3'-0\" convention" } ] },
     { "id": "W_HUB_HUB2", "zone": "Hub", "conf": "High", "ax": 28.495, "ay": 46.8, "bx": 28.495, "by": 75.83, "t": 0.41, "gap": "GAP-104", "openings": [
       { "id": "DOOR_HUB_HUB2", "from": 48.1, "to": 51.1, "h": "door", "conf": "Low", "note": "3'-0\" convention centred on the drawn 2.0 ft door" } ] }
   ],
   "fixtures": [
     { "id": "FX_LivingWall_N", "zone": "Retail", "h": "tall", "conf": "Med", "solid": true, "rects": [ { "x0": 1.8, "x1": 11.0, "y0": 0.2, "y1": 1.4 } ], "note": "plan order; CCTV disagrees (GAP-106)" },
     { "id": "FX_MenuScreen_N", "zone": "Retail", "h": "tall", "conf": "Med", "solid": true, "rects": [ { "x0": 11.6, "x1": 18.2, "y0": 0.2, "y1": 1.2 } ], "note": "GAP-106" },
-    { "id": "FX_DeliJarWall_N", "zone": "Retail", "h": "tall", "conf": "Med", "solid": true, "rects": [ { "x0": 19.0, "x1": 45.0, "y0": 0.2, "y1": 1.4 } ] },
-    { "id": "FX_JarWall_E", "zone": "Retail", "h": "tall", "conf": "Med", "solid": true, "rects": [ { "x0": 45.6, "x1": 46.99, "y0": 0.2, "y1": 14.2 } ] },
+    { "id": "FX_DeliJarWall_N_Back", "zone": "Retail", "h": "tall", "conf": "Med", "solid": true, "rects": [ { "x0": 19.0, "x1": 45.0, "y0": 0.2, "y1": 0.5 } ], "note": "plan footprint y 0.2-1.4; open shelves in front (jarSlots)" },
+    { "id": "FX_JarWall_E_Back", "zone": "Retail", "h": "tall", "conf": "Med", "solid": true, "rects": [ { "x0": 46.7, "x1": 46.99, "y0": 0.2, "y1": 14.2 } ], "note": "plan footprint x 45.6-47.0; open shelves in front (jarSlots)" },
     { "id": "FX_Licenses_W", "zone": "Retail", "h": "mid", "conf": "Med", "solid": true, "rects": [ { "x0": 0.2, "x1": 1.0, "y0": 3.0, "y1": 8.0 } ] },
     { "id": "FX_MerchRack", "zone": "Retail", "h": "mid", "conf": "Med", "solid": true, "rects": [ { "x0": 4.0, "x1": 8.6, "y0": 2.6, "y1": 4.0 } ] },
-    { "id": "FX_RegisterCounter_L", "zone": "Retail", "h": "counter", "conf": "Med", "solid": true, "rects": [ { "x0": 20.0, "x1": 42.0, "y0": 7.0, "y1": 9.2 }, { "x0": 39.8, "x1": 42.0, "y0": 9.2, "y1": 19.0 } ], "note": "up to 12 registers; station positions GAP-107; L arm widths read off the plan raster" },
+    { "id": "FX_RegisterCounter_L", "zone": "Retail", "h": "counter", "conf": "Med", "solid": true, "rects": [ { "x0": 20.0, "x1": 42.0, "y0": 7.0, "y1": 9.2 }, { "x0": 39.8, "x1": 42.0, "y0": 9.2, "y1": 19.0 } ], "note": "up to 12 registers; POS stations + scale stands in 'stations' (GAP-107); L arm widths read off the plan raster" },
     { "id": "FX_DisplayCase", "zone": "Retail", "h": "case", "base": "counter", "conf": "Med", "solid": true, "rects": [ { "x0": 38.0, "x1": 39.4, "y0": 7.4, "y1": 8.8 } ] },
     { "id": "FX_DeliCounter_L", "zone": "Retail", "h": "counter", "conf": "Med", "solid": true, "rects": [ { "x0": 14.0, "x1": 34.2, "y0": 23.2, "y1": 25.2 }, { "x0": 32.2, "x1": 34.2, "y0": 18.0, "y1": 23.2 } ], "note": "L arm widths read off the plan raster" },
     { "id": "FX_Column_W", "zone": "Retail", "h": "ceiling", "conf": "Med", "solid": true, "rects": [ { "x0": 18.6, "x1": 19.4, "y0": 19.6, "y1": 20.4 } ] },
     { "id": "FX_Column_E", "zone": "Retail", "h": "ceiling", "conf": "Med", "solid": true, "rects": [ { "x0": 34.6, "x1": 35.4, "y0": 19.6, "y1": 20.4 } ] },
-    { "id": "FX_QueueLane_1", "zone": "Retail", "h": "stanchion", "conf": "Low", "solid": false, "rects": [ { "x0": 5.95, "x1": 6.05, "y0": 11.0, "y1": 19.5 } ], "note": "raster-read dashed line, Low-Med" },
-    { "id": "FX_QueueLane_2", "zone": "Retail", "h": "stanchion", "conf": "Low", "solid": false, "rects": [ { "x0": 8.95, "x1": 9.05, "y0": 11.0, "y1": 19.5 } ] },
-    { "id": "FX_QueueLane_3", "zone": "Retail", "h": "stanchion", "conf": "Low", "solid": false, "rects": [ { "x0": 11.95, "x1": 12.05, "y0": 11.0, "y1": 19.5 } ] },
-    { "id": "FX_QueueLane_4", "zone": "Retail", "h": "stanchion", "conf": "Low", "solid": false, "rects": [ { "x0": 14.95, "x1": 15.05, "y0": 11.0, "y1": 19.5 } ] },
+    { "id": "FX_QueueLane_1", "zone": "Retail", "h": "stanchion", "conf": "Med", "solid": false, "rects": [ { "x0": 5.95, "x1": 6.05, "y0": 11.0, "y1": 19.71 } ], "note": "vector fill bbox x 5.95-15.07, y 11.0-19.71 (REVIEW-W1 m3); inner lines x~9/12 raster-read" },
+    { "id": "FX_QueueLane_2", "zone": "Retail", "h": "stanchion", "conf": "Med", "solid": false, "rects": [ { "x0": 8.95, "x1": 9.05, "y0": 11.0, "y1": 19.71 } ] },
+    { "id": "FX_QueueLane_3", "zone": "Retail", "h": "stanchion", "conf": "Med", "solid": false, "rects": [ { "x0": 11.95, "x1": 12.05, "y0": 11.0, "y1": 19.71 } ] },
+    { "id": "FX_QueueLane_4", "zone": "Retail", "h": "stanchion", "conf": "Med", "solid": false, "rects": [ { "x0": 14.97, "x1": 15.07, "y0": 11.0, "y1": 19.71 } ] },
     { "id": "FX_ATM", "zone": "Retail", "h": "mid", "conf": "Med", "solid": true, "rects": [ { "x0": 1.2, "x1": 3.4, "y0": 25.8, "y1": 27.6 } ] },
     { "id": "FX_DeliJarWall_S", "zone": "Retail", "h": "tall", "conf": "Med", "solid": true, "rects": [ { "x0": 13.5, "x1": 34.7, "y0": 27.6, "y1": 28.8 } ] },
     { "id": "FX_Rack_E", "zone": "Retail", "h": "tall", "conf": "Med", "solid": true, "rects": [ { "x0": 45.6, "x1": 46.99, "y0": 15.0, "y1": 20.0 } ] },
@@ -105,9 +108,18 @@
     { "id": "FX_BOH_Racks_W", "zone": "BackRooms", "h": "tall", "conf": "Med", "solid": true, "rects": [ { "x0": 37.6, "x1": 39.0, "y0": 33.0, "y1": 45.6 } ] },
     { "id": "FX_BOH_Racks_E", "zone": "BackRooms", "h": "tall", "conf": "Med", "solid": true, "rects": [ { "x0": 45.0, "x1": 46.6, "y0": 33.0, "y1": 45.6 } ] },
 
-    { "id": "FX_HUB_StorageStrip", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [ { "x0": 1.5, "x1": 3.0, "y0": 56.0, "y1": 73.0 } ], "note": "raster-read; interior blind (GAP-110)" },
-    { "id": "FX_HUB_Desks", "zone": "Hub", "h": "desk", "conf": "Low", "solid": true, "rects": [ { "x0": 15.0, "x1": 27.0, "y0": 70.0, "y1": 74.4 } ], "note": "raster-read (GAP-110)" },
-    { "id": "FX_HUB2_StorageStrip", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [ { "x0": 30.5, "x1": 31.8, "y0": 52.0, "y1": 73.0 } ], "note": "raster-read (GAP-110)" }
+    { "id": "FX_HUB_RackRun_W", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [ { "x0": 1.5, "x1": 3.0, "y0": 56.0, "y1": 73.0 } ], "note": "chrome wire perimeter run on the plan's raster storage strip (REF-002 2.1, GAP-110)" },
+    { "id": "FX_HUB_RackRun_N", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [ { "x0": 8.0, "x1": 26.0, "y0": 47.0, "y1": 49.0 } ], "note": "perimeter run on the back wall of R1C3/R2C2; position guessed, kept clear of the Office and HUB 2 doors (GAP-110)" },
+    { "id": "FX_HUB_RackIsland", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [ { "x0": 7.0, "x1": 23.0, "y0": 57.0, "y1": 63.0 } ], "note": "central island ~4 x 3 bays of 4 x 2 ft (REF-002 2.1); position guessed (GAP-110)" },
+    { "id": "FX_HUB_Desks", "zone": "Hub", "h": "desk", "conf": "Low", "solid": true, "rects": [ { "x0": 15.0, "x1": 27.0, "y0": 70.0, "y1": 74.4 } ], "note": "plan 'desks + computers' raster strip; desk + chair seen in HUB R1C4 (GAP-110)" },
+    { "id": "FX_HUB_Pallets", "zone": "Hub", "h": "pallet", "conf": "Low", "solid": true, "rects": [ { "x0": 24.0, "x1": 27.33, "y0": 55.0, "y1": 59.0 }, { "x0": 24.0, "x1": 27.33, "y0": 63.0, "y1": 67.0 } ], "note": "2 pallets of blue cases, 48x40 in (R1C3/R1C4/R2C3); positions guessed (GAP-110)" },
+    { "id": "FX_HUB2_WireShelving", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [ { "x0": 30.5, "x1": 31.8, "y0": 52.0, "y1": 73.0 } ], "note": "plan raster storage strip; wire shelving with boxes in HUB 2 R2C1 (GAP-110)" },
+    { "id": "FX_HUB2_Copier", "zone": "Hub", "h": "mid", "conf": "Low", "solid": true, "rects": [ { "x0": 44.5, "x1": 46.8, "y0": 70.5, "y1": 72.5 } ], "note": "copier/printer, R1C1 foreground; position guessed (GAP-110)" },
+    { "id": "FX_HUB2_Totes", "zone": "Hub", "h": "totes", "conf": "Low", "solid": true, "rects": [ { "x0": 44.8, "x1": 46.8, "y0": 67.5, "y1": 69.0 } ], "note": "stack of 4 yellow-lid black totes (R1C1/R2C1); position guessed (GAP-110)" },
+    { "id": "FX_HUB2_Pallets", "zone": "Hub", "h": "pallet", "conf": "Low", "solid": true, "rects": [ { "x0": 36.0, "x1": 40.0, "y0": 71.5, "y1": 74.83 }, { "x0": 40.5, "x1": 44.5, "y0": 71.5, "y1": 74.83 } ], "note": "2-3 shrink-wrapped pallets of blue cases (R1C1); positions guessed (GAP-110)" },
+    { "id": "FX_HUB2_WorkTable", "zone": "Hub", "h": "counter", "conf": "Low", "solid": true, "rects": [ { "x0": 36.0, "x1": 42.0, "y0": 60.0, "y1": 62.5 } ], "note": "work table with patterned front (R2C1); size/position guessed (GAP-110)" },
+    { "id": "FX_HUB2_Cabinets", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [ { "x0": 40.0, "x1": 46.0, "y0": 47.0, "y1": 48.5 } ], "note": "2 black cabinets on the back wall (R2C1); position guessed (GAP-110)" },
+    { "id": "FX_HUB2_MerchRack", "zone": "Hub", "h": "mid", "conf": "Low", "solid": true, "rects": [ { "x0": 45.3, "x1": 46.8, "y0": 55.0, "y1": 59.0 } ], "note": "chrome wire merch rack with bags (R1C1); position guessed (GAP-110)" }
   ],
   "cameras": [
     { "tile": "R1C1", "zone": "Exterior", "room": "Exterior", "x": -4.0, "y": 2.0, "h": "camera", "yaw": 180, "pitch": 30, "fov": 75, "conf": "Low", "note": "sidewalk along a building wall; side unknown, west guessed" },
@@ -127,11 +139,43 @@
     { "tile": "R3C5", "zone": "BackRooms", "room": "BreakRoom", "x": 22.6, "y": 41.0, "h": "camera", "yaw": 330, "pitch": 28, "fov": 80, "conf": "Med" },
     { "tile": "R4C1", "zone": "BackRooms", "room": "FOH", "x": 24.2, "y": 45.8, "h": "camera", "yaw": 35, "pitch": 25, "fov": 80, "conf": "Med" },
     { "tile": "R4C2", "zone": "BackRooms", "room": "BOH", "x": 42.0, "y": 45.8, "h": "camera", "yaw": 350, "pitch": 22, "fov": 75, "conf": "Med", "note": "aisle toward the vestibule doorway" },
-    { "tile": "R4C3", "zone": "Hub", "room": "HUB2", "x": 46.5, "y": 75.4, "h": "camera", "yaw": 315, "pitch": 25, "fov": 80, "conf": "Low", "note": "HUB vs HUB 2 unconfirmed (GAP-105)" },
-    { "tile": "R4C4", "zone": "Hub", "room": "HUB2", "x": 29.3, "y": 47.4, "h": "camera", "yaw": 135, "pitch": 25, "fov": 80, "conf": "Low", "note": "GAP-105" },
-    { "tile": "R5C1", "zone": "Hub", "room": "HUB", "x": 0.8, "y": 47.4, "h": "camera", "yaw": 135, "pitch": 25, "fov": 80, "conf": "Low", "note": "storage near a door (GAP-105)" },
-    { "tile": "R5C2", "zone": "Hub", "room": "HUB", "x": 21.0, "y": 62.0, "h": "camera", "yaw": 180, "pitch": 30, "fov": 80, "conf": "Low", "note": "desks + computers zone; alias R5C5 (repeat) (GAP-105)" },
-    { "tile": "R5C3", "zone": "Hub", "room": "HUB2", "x": 46.5, "y": 47.4, "h": "camera", "yaw": 225, "pitch": 25, "fov": 80, "conf": "Low", "note": "GAP-105" },
-    { "tile": "R5C4", "zone": "Hub", "room": "HUB2", "x": 29.3, "y": 75.4, "h": "camera", "yaw": 45, "pitch": 25, "fov": 80, "conf": "Low", "note": "GAP-105" }
-  ]
+    { "tile": "R4C3", "zone": "Hub", "room": "HUB", "x": 5.0, "y": 49.5, "h": "camera", "yaw": 180, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R1C2: down the aisle between rack banks (DEC-024); pose Low (GAP-105)" },
+    { "tile": "R4C4", "zone": "Hub", "room": "HUB", "x": 27.6, "y": 75.4, "h": "camera", "yaw": 315, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R1C3: across the rack island (DEC-024); pose Low (GAP-105)" },
+    { "tile": "R5C1", "zone": "Hub", "room": "HUB2", "x": 46.5, "y": 75.4, "h": "camera", "yaw": 335, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R1C1: along the room to the HUB doorway, far left (DEC-024); pose Low (GAP-105)" },
+    { "tile": "R5C2", "zone": "Hub", "room": "HUB2", "x": 29.3, "y": 75.4, "h": "camera", "yaw": 45, "pitch": 30, "fov": 80, "conf": "Low", "note": "= HUB wall R2C1: over the clutter to the back wall; alias R5C5 (repeat) (DEC-024); pose Low (GAP-105)" },
+    { "tile": "R5C3", "zone": "Hub", "room": "HUB", "x": 27.6, "y": 52.5, "h": "camera", "yaw": 235, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R2C2: across the rack island (DEC-024); pose Low (GAP-105)" },
+    { "tile": "R5C4", "zone": "Hub", "room": "HUB", "x": 0.8, "y": 75.4, "h": "camera", "yaw": 45, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R2C3: along a wall with racks (DEC-024); pose Low (GAP-105)" }
+  ],
+  "anchors": [
+    { "id": "Anchor_CustomerSpawn", "zone": "Retail", "x": 1.5, "y": 13.0, "h": 0, "yaw": 90, "conf": "Low", "note": "inside the north entry leaf (SLICE_DESIGN 7)" },
+    { "id": "Anchor_CustomerExit", "zone": "Retail", "x": 1.5, "y": 18.0, "h": 0, "yaw": 270, "conf": "Low", "note": "inside the south entry leaf" },
+    { "id": "Anchor_QueueSlot_0", "zone": "Retail", "x": 13.5, "y": 12.0, "h": 0, "yaw": 0, "conf": "Low", "note": "lane between the x~12 and x~15 stanchion lines; slot 0 = head, nearest the registers" },
+    { "id": "Anchor_QueueSlot_1", "zone": "Retail", "x": 13.5, "y": 14.0, "h": 0, "yaw": 0, "conf": "Low" },
+    { "id": "Anchor_QueueSlot_2", "zone": "Retail", "x": 13.5, "y": 16.0, "h": 0, "yaw": 0, "conf": "Low" },
+    { "id": "Anchor_QueueSlot_3", "zone": "Retail", "x": 13.5, "y": 18.0, "h": 0, "yaw": 0, "conf": "Low" }
+  ],
+  "stations": {
+    "zone": "Retail", "conf": "Low", "gap": "GAP-107",
+    "note": "4 POS on the register north leg (CCTV shows 3-4 per view; 'up to 12' on the plan); x positions are a layout choice. Station R1 is the slice station. The return leg gets none (no evidence).",
+    "xs": [23.0, 27.0, 31.0, 35.0], "sliceStation": 0,
+    "staffEdgeY": 7.0, "customerY": 10.2, "playerY": 6.0,
+    "monitorW": 1.6, "monitorD": 0.25, "monitorH": 1.1,
+    "stand": {
+      "conf": "Low", "gap": "GAP-107",
+      "note": "DEC-021/026, REF-002 2.2: chrome wire stand on the staff side against the counter, black top just below the counter top, 2 wire shelves, bench scale on top, clear acrylic panel on the counter edge next to the scale. Size relative only; refine from REF-003.",
+      "w": 1.5, "d": 1.5, "offsetX": 1.0, "topFt": 3.25, "post": 0.08, "board": 0.08,
+      "shelvesFt": [0.5, 1.75],
+      "scaleW": 0.9, "scaleD": 0.9, "scaleH": 0.3,
+      "panelW": 1.5, "panelH": 1.5, "panelT": 0.03
+    }
+  },
+  "jarSlots": {
+    "zone": "Retail", "conf": "Low", "gap": "GAP-002",
+    "note": "SLICE_DESIGN 7: north deli jar wall first, overflow onto the east jar wall. 1 ft pitch and shelf heights are placeholders (no jar count or shelf data in any source).",
+    "pitch": 1.0, "shelfT": 0.08, "rowsFt": [3.0, 4.25, 5.5],
+    "runs": [
+      { "id": "N", "alongX": true, "yaw": 180, "r": { "x0": 19.0, "x1": 45.0, "y0": 0.5, "y1": 1.4 } },
+      { "id": "E", "alongX": false, "yaw": 270, "r": { "x0": 45.6, "x1": 46.7, "y0": 1.4, "y1": 14.2 } }
+    ]
+  }
 }
