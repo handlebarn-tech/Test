@@ -13,7 +13,7 @@ Hub-owned, project level only (`Docs/STUDIO_OS.md` §0). Department detail (work
 | Gameplay | retired + archived; GAME-025 in review (B2 → Hub); BUILD-007 worker `dispo-build007` waits for Hub GO | 3 | 1 |
 | World | retired + archived; ART-007 in review (A2 → Hub) on `worktree-agent-a814e17bba4ec20c5`@404daee; REF-013 FAIL M1 on `worktree-agent-a2b65d251ee0f6ac2`@73e0e0c, fix after build (DEC-115) | 2 | 1 (lends to Assets for imports) |
 | Assets | retired + archived (Nolan: context too high); PROC-005 rework → `local_335db39d-0968-49fa-846c-808a2abb2158`; PROC-006b → direct worker `local_cab28702-140d-48df-963a-3cc4b318aa89`; PROC-005 in review (Unity A2 → Hub); ASSET-004 merged 18b66d1 | 3 | 0 (borrows World's) |
-| Reviewer pool | Unity A2 `local_4e865bb8-479c-41c5-8628-7f3e7cb2a4c3`, Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs 2 `local_99d7e5b7-ef60-4076-9821-58f16ce3bec0` | idle | — | Unity reviewers use the owning dept's slot |
+| Reviewers | DEC-116: fresh per review, archived after verdict. Unity A2 `local_4e865bb8-479c-41c5-8628-7f3e7cb2a4c3` kept only until its ART-007 verdict; B2 + Docs 2 archived | — | — | review needs a Unity slot only for Unity work |
 
 Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME-009 `local_7f8c95e9…`, DES `local_82d327a2…`; Assets ← PROC-005 `local_6c216f80…`, ASSET-004 `local_d31ad4c5…`, IMP-003 `local_13653ae5…`. Leads may reuse or retire them.
 
@@ -25,7 +25,7 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 5. Asset integration that unblocks the above (PROC-005, register workstation kit): Assets.
 
 ## After playtest build 2 ships (Nolan: max throughput until usage resets)
-- GO `dispo-game026` (GAME-026 flow, Unity). Resume `dispo-proc-005-fixture-f` (PROC-005 rework) + `dispo-proc006b` (register kit). Reuse `dispo-build007` for the REF-013 M1 fix (DEC-115). Merge ART-007 when A2 passes. Then PROC-007 UV after PROC-005.
+- Workers send "ready for review" to the Hub (NOT to a named reviewer; their briefs predate DEC-116); Hub spawns a fresh reviewer. GO `dispo-game026` (GAME-026 flow, Unity). Resume `dispo-proc-005-fixture-f` (PROC-005 rework) + `dispo-proc006b` (register kit). Reuse `dispo-build007` for the REF-013 M1 fix (DEC-115). Merge ART-007 when A2 passes. Then PROC-007 UV after PROC-005.
 
 ## Cross-department dependencies
 - Assets PROC-005 → World final-asset placement and the lived-in pass.
