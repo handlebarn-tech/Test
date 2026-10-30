@@ -50,6 +50,16 @@ No graybox scene in the diff. Only `Scenes/Gameplay_Slice.unity` is added (built
 - **N3:** see §4 (budget against card price).
 - **nits:** on Results, "Back (Esc)" overlaps the right end of the full-width "More options (M)" bar. The fix needs a class on that button (C#), so I didn't make it. A sale toast still shows on top of the report screen. Jar wall lighting is very dark in the capture. `MoreOptions()` doesn't check `Pending == null` (the UI can't reach it during POS, so this is harmless).
 
+## 7. Integration (packet step 7)
+| Merge into `review/wave-3d` | compile | EditMode | PlayMode | Slice bot (seed 1) |
+|---|---|---|---|---|
+| + main c704d37 (W3B / ART-002 anchors), c0183d8 | OK | 41/41 | 4 pass, 1 skip (GPU capture) | 12/12, $265.20, Kush Cake SOLD OUT, **fallbacks=0** |
+| + main a6e230c (W3A / GAME-003), a9bc8a6 | OK | **140/140** | 4 pass, 1 skip | same; fallbacks=0 |
+
+- Both merges were text-clean. With ART-002's real anchors, all 87 TEMP_ fallbacks switch off. ART-002's layout has 78 north and about 36 east jar slots, more than the 77 jars. No graybox fileIDs are referenced: the slice looks anchors up by name only (W3B m1).
+- I1 is confirmed in the integrated tree: `Catalog.SetInStock` still clears only `_groups`. The fix belongs to GAME-002 (W3A n1: `_byKey`, `QueryParser.NameCache`, `QueryParser.ExclCache`). It is checked below.
+- DEC-039 (11 numbered registers): the slice uses one service station and never counts registers, so there's no conflict.
+
 ## Open for the Hub
 - Check 7 is waiting: send the GO for W3A + W3B. I'll then merge both here, apply I1, re-run the gates and confirm `FallbackAnchors.Count == 0`. ART-002's `GrayboxBuilder` emits `Anchor_CustomerSpawn/Exit`, `Anchor_QueueSlot_0..3`, `Anchor_ServiceCustomer/Player`, `Interact_Terminal/Scale` and `Anchor_JarSlot_###`, the same names GAME-002 looks up. The jar slot count is still to be checked.
 - Who owns N1 (GAME-002 follow-up or a fix-up during integration)?
