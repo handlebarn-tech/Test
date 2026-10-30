@@ -25,7 +25,7 @@ The other 102 names came back clean. Notes from the search:
 - Wrought, Stubbins and Thornberry are plain words or surnames.
 - Quillmark, Contrail and Topmark showed no cannabis, vape or smoke-shop hit.
 
-"The Flower Mine" stays aliased to Bloomshaft until Nolan answers (DEC-078).
+**DEC-081 addition:** Nolan approved "The Flower Mine" as a TFS house line. It is added to `approved`, the Bloomshaft alias is gone (113 aliases), both imports and `brands.js --check` were re-run and pass, and DP-020 catalogMd5 is now 0e7675d71bc9e54b5f7e6b9db2a40eef. "LV WHITE SHIRT" stays as-is. No Unity run for this addition: the data change is brand-field only, the same as the run above.
 
 ## Changes
 - `Tools/Data/brand_aliases.json`: 12 names changed. The real-brand keys are unchanged, so the map is still 1:1.

@@ -1,6 +1,6 @@
 {
  "_doc": "BRAND-001 (DEC-071). Importer input, never shipped. Only the 'approved' real brands may appear in game data; every other real brand maps to a fictional label. Keys compare upper-cased with non-alphanumerics removed. 'real' = spellings seen in the sources (brand field). 'lines' = the brand's own coined product-line words -> fictional words, replaced in all item names. text:false = the brand is a common word (MADE, SAUCE...), so it is replaced in the brand field only and never searched for in free text. A non-approved brand missing here fails the import. Fictional names are invented words; keep them unique and unlike any real brand.",
- "approved": ["The Flower Shop", "THE FLOWER SHOP", "TFS", "Dr Green Thumb", "Dr Greenthumb", "DR. GREENTHUMB'S", "Rebel Grown", "REBEL GROWN", "High Variety", "HIGH VARIETY", "Tok", "ToK"],
+ "approved": ["The Flower Shop", "THE FLOWER SHOP", "TFS", "Dr Green Thumb", "Dr Greenthumb", "DR. GREENTHUMB'S", "Rebel Grown", "REBEL GROWN", "High Variety", "HIGH VARIETY", "Tok", "ToK", "The Flower Mine", "THE FLOWER MINE"],
  "aliases": [
   { "name": "Quillmark", "real": ["22 RED"] },
   { "name": "Vantlow", "real": ["ABSTRAKT"] },
@@ -96,7 +96,6 @@
   { "name": "Lofthaven", "real": ["SUBLIME"], "text": false },
   { "name": "Flipvane", "real": ["SWIITCH"] },
   { "name": "Mistaven", "real": ["(the) ESSENCE"], "text": false },
-  { "name": "Bloomshaft", "real": ["The Flower Mine", "THE FLOWER MINE"] },
   { "name": "Apothecrest", "real": ["The Pharm"] },
   { "name": "Everwick", "real": ["TIMELESS"], "text": false },
   { "name": "Wayfarel", "real": ["TRIP"], "text": false },

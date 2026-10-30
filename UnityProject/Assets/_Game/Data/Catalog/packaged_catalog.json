@@ -7,7 +7,7 @@
   "kind": "dutchie-current-inventory",
   "md5": "d1bc5172569855f78118f0e492e63d22",
   "rows": 1311,
-  "deliCatalogMd5": "214e59f529cfec6d4437dea1a5b11d42"
+  "deliCatalogMd5": "0e7675d71bc9e54b5f7e6b9db2a40eef"
  },
  "counts": {
   "items": 954,
@@ -16389,9 +16389,9 @@
    "storage": "FOH"
   },
   {
-   "id": "preroll-bloomshaft-hybrid-blend-5pk-preroll-2-5g",
+   "id": "preroll-the-flower-mine-hybrid-blend-5pk-preroll-2-5g",
    "name": "HYBRID BLEND 5PK PREROLL 2.5G",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PREROLL",
    "subcategory": "PREROLL PACK",
    "sizeG": 2.5,
@@ -16410,9 +16410,9 @@
    "storage": "GAP"
   },
   {
-   "id": "preroll-bloomshaft-indica-blend-5pk-preroll-2-5g",
+   "id": "preroll-the-flower-mine-indica-blend-5pk-preroll-2-5g",
    "name": "INDICA BLEND 5PK PREROLL 2.5G",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PREROLL",
    "subcategory": "PREROLL PACK",
    "sizeG": 2.5,
@@ -16431,9 +16431,9 @@
    "storage": "GAP"
   },
   {
-   "id": "preroll-bloomshaft-infused-hybrid-blend-3pk-preroll-1-5g",
+   "id": "preroll-the-flower-mine-infused-hybrid-blend-3pk-preroll-1-5g",
    "name": "INFUSED HYBRID BLEND 3PK PREROLL 1.5G",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll Pack",
    "sizeG": 1.5,
@@ -16452,9 +16452,9 @@
    "storage": "FOH"
   },
   {
-   "id": "preroll-bloomshaft-infused-indica-blend-3pk-preroll-1-5g",
+   "id": "preroll-the-flower-mine-infused-indica-blend-3pk-preroll-1-5g",
    "name": "INFUSED INDICA BLEND 3PK PREROLL 1.5G",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll Pack",
    "sizeG": 1.5,
@@ -16473,9 +16473,9 @@
    "storage": "FOH"
   },
   {
-   "id": "preroll-bloomshaft-infused-sativa-blend-3pk-preroll-1-5g",
+   "id": "preroll-the-flower-mine-infused-sativa-blend-3pk-preroll-1-5g",
    "name": "INFUSED SATIVA BLEND 3PK PREROLL 1.5G",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll Pack",
    "sizeG": 1.5,
@@ -16494,9 +16494,9 @@
    "storage": "FOH"
   },
   {
-   "id": "pre-pack-bloomshaft-peach-lemonaze-7g-can",
+   "id": "pre-pack-the-flower-mine-peach-lemonaze-7g-can",
    "name": "PEACH LEMONAZE 7G CAN",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PRE-PACK",
    "subcategory": "PRE-PACK",
    "sizeG": 7,
@@ -16515,9 +16515,9 @@
    "storage": "GAP"
   },
   {
-   "id": "pre-pack-bloomshaft-t-rekt-7g-can",
+   "id": "pre-pack-the-flower-mine-t-rekt-7g-can",
    "name": "T-REKT 7G CAN",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PRE-PACK",
    "subcategory": "PRE-PACK",
    "sizeG": 7,
@@ -16536,9 +16536,9 @@
    "storage": "GAP"
   },
   {
-   "id": "pre-pack-bloomshaft-wookie-grease-7g-can",
+   "id": "pre-pack-the-flower-mine-wookie-grease-7g-can",
    "name": "WOOKIE GREASE 7G CAN",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PRE-PACK",
    "subcategory": "PRE-PACK",
    "sizeG": 7,
@@ -16557,9 +16557,9 @@
    "storage": "GAP"
   },
   {
-   "id": "pre-pack-bloomshaft-zero-gravity-7g-can",
+   "id": "pre-pack-the-flower-mine-zero-gravity-7g-can",
    "name": "ZERO GRAVITY 7G CAN",
-   "brand": "Bloomshaft",
+   "brand": "THE FLOWER MINE",
    "category": "PRE-PACK",
    "subcategory": "PRE-PACK",
    "sizeG": 7,
