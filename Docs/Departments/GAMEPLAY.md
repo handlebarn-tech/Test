@@ -30,7 +30,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 | Task | Worker | Branch | State |
 |---|---|---|---|
 | GAME-025 controls + Esc pause + doors | lead subagent | worktree (merged DES-005b cf5d614) | running |
-| BUILD-007 | — | — | ON HOLD (Nolan via Hub): build once GAME-025 lands, ideally with GAME-026; aborting the started run |
+| BUILD-007 | — | — | ON HOLD (Nolan via Hub): build once GAME-025 lands, ideally with GAME-026; run aborted clean (nothing built or committed; packet stays in Active) |
 | DATA-003 needs catalog + goldens | done | `worktree-agent-afbc722989beda3b0` @ 996c631 | in review (Unity A2); 12 needs, 564 goldens, 0 C#/tool mismatches |
 
 ## Queue (lead re-orders within DEC-096)
