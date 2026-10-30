@@ -31,11 +31,12 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 |---|---|---|---|
 | BUILD-007 playtest build 2 | lead subagent | `claude/task-build-007` | running (GAME-009 merged 054e159; PS1 complete) |
 | DATA-003 needs catalog + goldens | lead subagent | worktree | running |
-| DES-005b (+ DES-007) | lead subagent | worktree | running |
+| DES-005b (+ DES-007) | done | `worktree-agent-a3b6d4b4d43f54152` @ cf5d614 | in review (Docs 2) |
 
 ## Queue (lead re-orders within DEC-096)
 1. GAME-009 → REVIEW-PS1 → playtest build 2 for Nolan (BUILD).
 2. GAME-025 controls (after DES-005 + GAME-009 merge; World door contract).
+2b. GAME-025 starts when BUILD-007 frees the Unity slot and DES-005b merges (packet amended there). GAME-026 at activation: add DEC-110 W4 arrivals (mostly parking lot → west door, sometimes sidewalk).
 3. **GAME-017a packet** must carry: REVIEW-DES6 m1 (slice goldens regenerate, old→new list, QA sign-off); REVIEW-UX6 m1 (nearLabel/notFound keyed to tool T:16554/T:16544), m2 (§13.9 add reject→Query and Q6/Q7 reservation), m3 (route line follows engine maxPrice, T:16632); DEC-105 rule.
 3. GAME-026 customer flow (World entry anchors) and the DES-006 first-depth cut, then PS1b GAME-017 → 018 → 019 → 020 as amended.
 4. GAME-021/022/024; UX-003; GAME-011/012 per DES-004.
