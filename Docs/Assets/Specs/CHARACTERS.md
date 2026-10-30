@@ -1,5 +1,7 @@
 # CHARACTERS — customers (and later staff)
 
+> **ASSET-004 (2026-10-30, in progress):** MPFB2 is the main customer path (DEC-087). Prototype: `Tools/Blender/characters/` (install_mpfb.py, roster.py, customer_gen.py), params `Tools/Blender/params/customers_mpfb.json`, roster `customer_roster_mpfb.json` (60, Rule D self-check), run `Tools/Blender/blender.ps1 character <params> C001,C002,C003`. Samples C001–C003 exported to `<cache>/mpfb/derived/` (LOD0 90–109k, LOD1 32–45k, LOD2 11–16k, LOD3 3–4k tris; game_engine rig 53 bones, Humanoid bones present; validation JSON each). Full spec rewrite pending (see Docs/Handoffs/ASSET-004.md).
+
 **Task:** ASSET-003 (2026-10-30). **Status:** sourcing + plan only; nothing imported into Unity yet.
 **Governing decisions:** DEC-075 (≥ 10 distinct customers first, **≥ 50 by the end**). **DEC-084 (quality bar): realistic humans with realistic proportions, PBR skin and clothing and facial detail; never low-poly or stylised; performance comes from LODs, not from low-poly bases.** DEC-023 (licences and cache). DEC-033 (no questions to Nolan).
 **Licence record:** `Docs/Assets/LICENSE_LEDGER.md` §1c. **Downloads:** `Docs/Assets/fetch_list_characters.json`, sha256 in `ASSET_CACHE_MANIFEST.json`, files in `C:/Users/handl/Downloads/Dispo Game Assets Cache/<source>/<ledger-id>/`.
@@ -57,6 +59,7 @@ At the register the player looks across the counter at head and torso from about
 Register cue vector: **R0 base person** (face, hair, body; 78 values), R1 headwear (5), R2 top colourway family (10), R3 face/upper accessory (7), R4 build (3).
 - Two roster entries with **different bases** are distinct by construction: different realistic face, hair and outfit cut.
 - Two entries with the **same base** must differ in R2 **and** in R1 or R3, and may never be in the store at the same time.
+- W5P m3: the Rocketbox roster caps Medical ≤ 2 and Business ≤ 4 bases (scrubs/suits read as staff or medical cues; GAP-CHR-1).
 - Roster quota for 60: ≥ 50 different bases, ≤ 10 reused once, 50/50 women/men, a spread of age reads (Rocketbox includes older adults: e.g. Male_Adult_03 grey-haired). Skin tones come from the bases' own authored variety, never tied to a role, outfit or behaviour. The pool includes bases in religious or cultural dress (Female_Adult_06/10/16, Male_Adult_15/19/21). They are ordinary customers, and no stat or behaviour is tied to appearance (handoff Q4).
 - **Capacity:** 78 bases already exceed 60, so the target is met without any reuse. Colourways and accessories add headroom (to ~200 roster-legal identities) and stop the regulars looking cloned during a long shift.
 - **Roster generator (DATA-CHR-001):** a seeded Python script → `customer_roster.json` (`C001…C060`: base, colourway, headwear, accessory, build, height, behaviour). It asserts Rule D and the quotas and exits non-zero on failure. The PS2 16 are its fixed prefix.

@@ -85,7 +85,7 @@ Spec: `Docs/Assets/Specs/CHARACTERS.md`. Fetch list: `Docs/Assets/fetch_list_cha
 | CHR-KEN-AC | Kenney Animated Characters (Protagonists / Survivors / Retro), one shared low-poly mesh + skin textures | https://kenney.nl/assets/animated-characters-protagonists | Creative Commons CC0 (page) | Yes | Kenney | 8 files/pack (not fetched) | Kenney's own rig; skins are texture swaps; very blocky | Fallback only (style too toy-like next to HDRP retail) | later | DEFER | 2026-10-30 |
 | ANM-MIXAMO | Mixamo characters + animations (Adobe) | https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html | **Not CC0.** Adobe FAQ (last updated 2021-09-14): "royalty free for personal, commercial, and non-profit projects including ... Create video games"; raw files may not be redistributed (Adobe Terms of Use; the FAQ's community mirror says no distributing raw character/animation files or asset packs, and no ML training) | Yes (inside a game) | Adobe | n/a | Mixamo rig | not used | - | **REJECT for now**: download needs an Adobe ID sign-in (task forbids accounts); licence allows game use but not redistribution, so if the Hub ever approves an account it would be `_LocalThirdParty/` only (same class as the Unity EULA rows). The CC0 UAL clips cover the P0 list | 2026-10-30 |
 
-**DEC-084 update (2026-10-30):** customers must be realistic. Primary source is now **Microsoft Rocketbox** (MIT). MIT allows commercial use, modification and redistribution with the notice, but DEC-023 admits only CC0/OFL into git, so the rows are `redistributable: false` in the manifest and import via `_LocalThirdParty/`. The MIT notice goes into the build's third-party notices. All Rocketbox avatars are hand-modelled (not scans).
+**DEC-084 update (2026-10-30):** customers must be realistic. Primary source is now **Microsoft Rocketbox** (MIT). MIT allows commercial use, modification and redistribution with the notice, but DEC-023 admits only CC0/OFL into git, so the rows are `redistributable: false` in the manifest and import via `_LocalThirdParty/`. The MIT notice goes into the build's third-party notices. Rocketbox's README and licence state no scan provenance (W5P m2: claim softened; treat as unverified for the no-likeness rule).
 
 | ID | Asset | Source URL | License | Commercial | Author | Size (cache) | Rig / tris (measured, Blender 5.2) | Intended use | Milestone | Status | Visited |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -113,6 +113,30 @@ Spec: `Docs/Assets/Specs/CHARACTERS.md`. Fetch list: `Docs/Assets/fetch_list_cha
 | CHR-CM-VITR | CharMorph "Vitruvian" base | https://charmorph-docs.readthedocs.io/en/main/Introduction.html | CC0 (Antonia/Reom CC-BY; MB-Lab AGPL, which propagates to outputs → never use MB-Lab) | Yes | CharMorph | not fetched | — | P2 alternative realistic base (unclothed) | later | DEFER | 2026-10-30 |
 | CHR-SK-JUSTMAN | "Just man" by vrimen (uid e77a26778dc14b3c8f4838fe6a827dc3) | https://sketchfab.com/3d-models/e77a26778dc14b3c8f4838fe6a827dc3 | CC BY 4.0 (API label "CC Attribution") | Yes | vrimen | not fetched (44.8k tris, 2K maps) | rigged | Possible realistic hero customer; credit "Just man by vrimen (CC BY 4.0)" | later | DEFER (hero candidate) | 2026-10-30 |
 | CHR-SK-SCANS | Renderpeople free (Eric, Carla, Claudia, Nathan, Sophia), in3D iPhone scan, Mike Alger self-scan, "Realistic Old Russian Guy" | https://sketchfab.com/renderpeople (and per-uid pages) | CC BY 4.0 on Sketchfab | — | various | — | 16k-55k tris photogrammetry | — | — | **REJECT: scans of / resemblance to real people (no-likeness rule)** | 2026-10-30 |
+
+## 1d. MPFB2 customer pipeline (ASSET-004, 2026-10-30)
+Packs CC0 per pack page section and `_cc0` file; **per-asset audit** by `Tools/Blender/characters/install_mpfb.py` (pack JSON licence + file headers): 58 units refused (AGPL/CC-BY/no evidence), e.g. AGPL-headed skins and alternative materials inside `_cc0` packs. The generator refuses any non-allowed asset.
+
+| ID | Asset | Source URL | License | Status |
+|---|---|---|---|---|
+| TOOL-MPFB2 | add-on-mpfb-v2.0.18.zip | https://extensions.blender.org/add-ons/mpfb/versions/ | GPL-3.0-or-later (tool only; not shipped) | TOOL (not shipped) |
+| MPFB-MAKEHUMAN-SYSTEM-ASSETS | makehuman_system_assets_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-SYSTEM-CLOTHES-MATERIALS01 | system_clothes_materials01_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/system_clothes_materials01.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-SYSTEM-HAIR-MATERIALS01 | system_hair_materials01_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/system_hair_materials01.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-SKINS01 | skins01_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/skins01.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-SKINS02 | skins02_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/skins02.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-EYEBROWS01 | eyebrows01_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/eyebrows01.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-EYELASHES01 | eyelashes01_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/eyelashes01.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-HAIR01 | hair01_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/hair01.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-SHIRTS01 | shirts01_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/shirts01.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-PANTS01 | pants01_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/pants01.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-SHOES01 | shoes01_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/shoes01.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-SUITS01 | suits01_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/suits01.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-SKIRTS01 | skirts01_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/skirts01.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-HATS01 | hats01_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/hats01.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-GLASSES01 | glasses01_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/glasses01.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-UNDERWEAR04 | underwear04_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/underwear04.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
+| MPFB-BODYPARTS05 | bodyparts05_cc0.zip | https://static.makehumancommunity.org/assets/assetpacks/bodyparts05.html | CC0-1.0 | ACCEPT (CC0 units only, per index) |
 
 ## 2. Poly Haven rows (all CC0 per LIB-PH page; author/size/tris from API)
 | ID | Asset | Source URL | License | Commercial | Author(s) | Size / tris | Intended use | Milestone | Status | Visited |
