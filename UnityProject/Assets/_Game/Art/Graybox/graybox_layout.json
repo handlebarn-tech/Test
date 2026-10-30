@@ -35,8 +35,8 @@
     { "id": "FOH", "zone": "BackRooms", "conf": "High", "r": { "x0": 23.69, "x1": 36.49, "y0": 29.5, "y1": 46.3 } },
     { "id": "BOH", "zone": "BackRooms", "conf": "High", "r": { "x0": 36.90, "x1": 47.19, "y0": 29.5, "y1": 46.3 } },
     { "id": "Vestibule", "zone": "BackRooms", "conf": "Med", "r": { "x0": 35.2, "x1": 38.2, "y0": 29.5, "y1": 31.7 } },
-    { "id": "HUB", "zone": "Hub", "conf": "High", "r": { "x0": 0, "x1": 28.29, "y0": 46.8, "y1": 76.03 } },
-    { "id": "HUB2", "zone": "Hub", "conf": "High", "r": { "x0": 28.70, "x1": 47.19, "y0": 46.8, "y1": 76.03 } }
+    {"id": "HUB", "zone": "Hub", "conf": "High", "r": {"x0": 19.2, "x1": 47.19, "y0": 46.8, "y1": 76.03}, "note": "A011 (GAP-120, REVIEW-W4C): east room, 28'-3¼\" printed; the ≈3\" residual is absorbed here (818.53 SF)"},
+    {"id": "HUB2", "zone": "Hub", "conf": "High", "r": {"x0": 0, "x1": 18.79, "y0": 46.8, "y1": 76.03}, "note": "A011 (GAP-120, REVIEW-W4C): west room, 18'-9¼\" (541.34 SF)"}
   ],
   "walls": [
     { "id": "W_Ext_N", "zone": "Retail", "conf": "High", "ax": 0.1, "ay": 0.1, "bx": 47.09, "by": 0.1, "t": 0.2, "gap": "GAP-104", "openings": [] },
@@ -63,16 +63,12 @@
       { "id": "DOOR_Vest_BOH", "from": 29.5, "to": 31.7, "h": "door", "conf": "Low", "note": "full 2.2 ft vestibule side; a 3'-0\" door does not fit the drawn vestibule (GAP-104)" } ] },
     { "id": "W_Vest_S", "zone": "BackRooms", "conf": "Med", "ax": 35.05, "ay": 31.7, "bx": 38.35, "by": 31.7, "t": 0.3, "gap": "GAP-104", "openings": [] },
     { "id": "W_FOH_BOH", "zone": "BackRooms", "conf": "High", "ax": 36.695, "ay": 31.85, "bx": 36.695, "by": 46.3, "t": 0.41, "gap": "GAP-104", "openings": [] },
-    { "id": "W_Back_Hub", "zone": "BackRooms", "conf": "High", "ax": 0.2, "ay": 46.55, "bx": 46.99, "by": 46.55, "t": 0.5, "gap": "GAP-104", "openings": [
-      { "id": "DOOR_Office_HUB", "from": 3.4, "to": 6.4, "h": "door", "conf": "Low", "note": "3'-0\" convention centred on the 1.8 ft symbol" } ] },
+    {"id": "W_Back_Hub", "zone": "BackRooms", "conf": "High", "ax": 0.2, "ay": 46.55, "bx": 46.99, "by": 46.55, "t": 0.5, "gap": "GAP-104", "openings": [{"id": "DOOR_Office_HUB", "from": 7.5, "to": 10.5, "h": "door", "conf": "Med", "note": "A011 (REVIEW-W4C): east end of the office south wall, opens into HUB 2 (the west room); id kept"}]},
 
-    { "id": "W_Ext_W_Hub", "zone": "Hub", "conf": "High", "ax": 0.1, "ay": 46.55, "bx": 0.1, "by": 76.03, "t": 0.2, "gap": "GAP-104", "openings": [
-      { "id": "EXT_DELIVERY", "from": 47.8, "to": 51.2, "h": "door", "conf": "Med", "note": "employees only" } ] },
+    {"id": "W_Ext_W_Hub", "zone": "Hub", "conf": "High", "ax": 0.1, "ay": 46.55, "bx": 0.1, "by": 76.03, "t": 0.2, "gap": "GAP-104", "openings": [{"id": "EXT_DELIVERY", "from": 49.5, "to": 52.8, "h": "door", "conf": "Med", "note": "employees only; A011 ≈y 49.5–52.8 (REVIEW-W4C), opens into HUB 2"}]},
     { "id": "W_Ext_E_Hub", "zone": "Hub", "conf": "High", "ax": 47.09, "ay": 46.55, "bx": 47.09, "by": 76.03, "t": 0.2, "gap": "GAP-104", "openings": [] },
-    { "id": "W_Ext_S", "zone": "Hub", "conf": "High", "ax": 0.1, "ay": 75.93, "bx": 47.09, "by": 75.93, "t": 0.2, "gap": "GAP-104", "openings": [
-      { "id": "EXT_EMERGENCY_HUB", "from": 24.8, "to": 27.8, "h": "door", "conf": "Low", "note": "green emergency exit door seen in HUB R1C4, the building's furthest SE door (DEC-030); not on the plan, placed at the SE end of the HUB south wall, 3'-0\" convention" } ] },
-    { "id": "W_HUB_HUB2", "zone": "Hub", "conf": "High", "ax": 28.495, "ay": 46.8, "bx": 28.495, "by": 75.83, "t": 0.41, "gap": "GAP-104", "openings": [
-      { "id": "DOOR_HUB_HUB2", "from": 48.1, "to": 51.1, "h": "door", "conf": "Low", "note": "3'-0\" convention centred on the drawn 2.0 ft door" } ] }
+    {"id": "W_Ext_S", "zone": "Hub", "conf": "High", "ax": 0.1, "ay": 75.93, "bx": 47.09, "by": 75.93, "t": 0.2, "gap": "GAP-104", "openings": [{"id": "EXT_EMERGENCY_HUB", "from": 43.99, "to": 46.99, "h": "door", "conf": "Med", "note": "A011 / DEC-030 / DEC-042c: emergency exit at HUB's SE corner, swings out (A011 ≈x 44.5–47.5, clamped to the wall's inner face); 3'-0\""}]},
+    {"id": "W_HUB_HUB2", "zone": "Hub", "conf": "High", "ax": 18.995, "ay": 46.8, "bx": 18.995, "by": 75.83, "t": 0.41, "gap": "GAP-104", "openings": [{"id": "DOOR_HUB_HUB2", "from": 48.1, "to": 51.1, "h": "door", "conf": "Med", "note": "A011: connecting door at the north end of the partition, swings into HUB; 3'-0\" convention"}], "note": "A011 partition anchored from HUB 2's 18'-9¼\" (GAP-120)"}
   ],
   "fixtures": [
     { "id": "FX_LivingWall_N", "zone": "Retail", "h": "tall", "conf": "Med", "solid": true, "rects": [ { "x0": 1.8, "x1": 11.0, "y0": 0.2, "y1": 1.4 } ], "note": "plan order; CCTV disagrees (GAP-106)" },
@@ -120,18 +116,18 @@
     {"id": "FX_BOH_Chair", "zone": "BackRooms", "h": "seat", "conf": "Low", "solid": true, "rects": [{"x0": 43.2, "x1": 44.7, "y0": 41.55, "y1": 43.05}], "note": "DEC-040/041: BOH desk (ex-register 1) + computer + chair against the east wall, right of the rack aisle (CCTV R4C2 / BOH still); FX_BOH_Racks_E shortened to y 39.8 to make room (plan run ended at 45.6); wall Med, position Low"},
     {"id": "FX_BOH_ChairBack", "zone": "BackRooms", "h": "chairBack", "base": "seat", "conf": "Low", "solid": true, "rects": [{"x0": 43.2, "x1": 43.35, "y0": 41.55, "y1": 43.05}], "note": "DEC-040/041: BOH desk (ex-register 1) + computer + chair against the east wall, right of the rack aisle (CCTV R4C2 / BOH still); FX_BOH_Racks_E shortened to y 39.8 to make room (plan run ended at 45.6); wall Med, position Low"},
 
-    { "id": "FX_HUB_RackRun_W", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [ { "x0": 1.5, "x1": 3.0, "y0": 56.0, "y1": 73.0 } ], "note": "chrome wire perimeter run on the plan's raster storage strip (REF-002 2.1, GAP-110)" },
-    { "id": "FX_HUB_RackRun_N", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [ { "x0": 8.0, "x1": 26.0, "y0": 47.0, "y1": 49.0 } ], "note": "perimeter run on the back wall of R1C3/R2C2; position guessed, kept clear of the Office and HUB 2 doors (GAP-110)" },
-    { "id": "FX_HUB_RackIsland", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [ { "x0": 7.0, "x1": 23.0, "y0": 57.0, "y1": 63.0 } ], "note": "central island ~4 x 3 bays of 4 x 2 ft (REF-002 2.1); position guessed (GAP-110)" },
-    { "id": "FX_HUB_Desks", "zone": "Hub", "h": "desk", "conf": "Low", "solid": true, "rects": [ { "x0": 15.0, "x1": 27.0, "y0": 70.0, "y1": 74.4 } ], "note": "plan 'desks + computers' raster strip; desk + chair seen in HUB R1C4 (GAP-110)" },
-    { "id": "FX_HUB_Pallets", "zone": "Hub", "h": "pallet", "conf": "Low", "solid": true, "rects": [ { "x0": 24.0, "x1": 27.33, "y0": 55.0, "y1": 59.0 }, { "x0": 24.0, "x1": 27.33, "y0": 63.0, "y1": 67.0 } ], "note": "2 pallets of blue cases, 48x40 in (R1C3/R1C4/R2C3); positions guessed (GAP-110)" },
-    { "id": "FX_HUB2_WireShelving", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [ { "x0": 30.5, "x1": 31.8, "y0": 52.0, "y1": 73.0 } ], "note": "plan raster storage strip; wire shelving with boxes in HUB 2 R2C1 (GAP-110)" },
-    { "id": "FX_HUB2_Copier", "zone": "Hub", "h": "mid", "conf": "Low", "solid": true, "rects": [ { "x0": 44.5, "x1": 46.8, "y0": 70.5, "y1": 72.5 } ], "note": "copier/printer, R1C1 foreground; position guessed (GAP-110)" },
-    { "id": "FX_HUB2_Totes", "zone": "Hub", "h": "totes", "conf": "Low", "solid": true, "rects": [ { "x0": 44.8, "x1": 46.8, "y0": 67.5, "y1": 69.0 } ], "note": "stack of 4 yellow-lid black totes (R1C1/R2C1); position guessed (GAP-110)" },
-    { "id": "FX_HUB2_Pallets", "zone": "Hub", "h": "pallet", "conf": "Low", "solid": true, "rects": [ { "x0": 36.0, "x1": 40.0, "y0": 71.5, "y1": 74.83 }, { "x0": 40.5, "x1": 44.5, "y0": 71.5, "y1": 74.83 } ], "note": "2-3 shrink-wrapped pallets of blue cases (R1C1); positions guessed (GAP-110)" },
-    { "id": "FX_HUB2_WorkTable", "zone": "Hub", "h": "counter", "conf": "Low", "solid": true, "rects": [ { "x0": 36.0, "x1": 42.0, "y0": 60.0, "y1": 62.5 } ], "note": "work table with patterned front (R2C1); size/position guessed (GAP-110)" },
-    { "id": "FX_HUB2_Cabinets", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [ { "x0": 40.0, "x1": 46.0, "y0": 47.0, "y1": 48.5 } ], "note": "2 black cabinets on the back wall (R2C1); position guessed (GAP-110)" },
-    { "id": "FX_HUB2_MerchRack", "zone": "Hub", "h": "mid", "conf": "Low", "solid": true, "rects": [ { "x0": 45.3, "x1": 46.8, "y0": 55.0, "y1": 59.0 } ], "note": "chrome wire merch rack with bags (R1C1); position guessed (GAP-110)" }
+    {"id": "FX_HUB_RackRun_W", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [{"x0": 44.19, "x1": 45.69, "y0": 56.0, "y1": 73.0}], "note": "chrome wire perimeter run on the plan's raster storage strip (REF-002 2.1, GAP-110); mirrored to A011 (GAP-120, ART-004)"},
+    {"id": "FX_HUB_RackRun_N", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [{"x0": 21.19, "x1": 39.19, "y0": 47.0, "y1": 49.0}], "note": "perimeter run on the back wall of R1C3/R2C2; position guessed, kept clear of the Office and HUB 2 doors (GAP-110); mirrored to A011 (GAP-120, ART-004)"},
+    {"id": "FX_HUB_RackIsland", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [{"x0": 24.19, "x1": 40.19, "y0": 57.0, "y1": 63.0}], "note": "central island ~4 x 3 bays of 4 x 2 ft (REF-002 2.1); position guessed (GAP-110); mirrored to A011 (GAP-120, ART-004)"},
+    {"id": "FX_HUB_Desks", "zone": "Hub", "h": "desk", "conf": "Low", "solid": true, "rects": [{"x0": 20.19, "x1": 32.19, "y0": 70.0, "y1": 74.4}], "note": "plan 'desks + computers' raster strip; desk + chair seen in HUB R1C4 (GAP-110); mirrored to A011 (GAP-120, ART-004)"},
+    {"id": "FX_HUB_Pallets", "zone": "Hub", "h": "pallet", "conf": "Low", "solid": true, "rects": [{"x0": 19.86, "x1": 23.19, "y0": 55.0, "y1": 59.0}, {"x0": 19.86, "x1": 23.19, "y0": 63.0, "y1": 67.0}], "note": "2 pallets of blue cases, 48x40 in (R1C3/R1C4/R2C3); positions guessed (GAP-110); mirrored to A011 (GAP-120, ART-004)"},
+    {"id": "FX_HUB2_WireShelving", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [{"x0": 15.39, "x1": 16.69, "y0": 52.0, "y1": 73.0}], "note": "plan raster storage strip; wire shelving with boxes in HUB 2 R2C1 (GAP-110); mirrored to A011 (GAP-120, ART-004)"},
+    {"id": "FX_HUB2_Copier", "zone": "Hub", "h": "mid", "conf": "Low", "solid": true, "rects": [{"x0": 0.39, "x1": 2.69, "y0": 70.5, "y1": 72.5}], "note": "copier/printer, R1C1 foreground; position guessed (GAP-110); mirrored to A011 (GAP-120, ART-004)"},
+    {"id": "FX_HUB2_Totes", "zone": "Hub", "h": "totes", "conf": "Low", "solid": true, "rects": [{"x0": 0.39, "x1": 2.39, "y0": 67.5, "y1": 69.0}], "note": "stack of 4 yellow-lid black totes (R1C1/R2C1); position guessed (GAP-110); mirrored to A011 (GAP-120, ART-004)"},
+    {"id": "FX_HUB2_Pallets", "zone": "Hub", "h": "pallet", "conf": "Low", "solid": true, "rects": [{"x0": 7.19, "x1": 11.19, "y0": 71.5, "y1": 74.83}, {"x0": 2.69, "x1": 6.69, "y0": 71.5, "y1": 74.83}], "note": "2-3 shrink-wrapped pallets of blue cases (R1C1); positions guessed (GAP-110); mirrored to A011 (GAP-120, ART-004)"},
+    {"id": "FX_HUB2_WorkTable", "zone": "Hub", "h": "counter", "conf": "Low", "solid": true, "rects": [{"x0": 5.19, "x1": 11.19, "y0": 60.0, "y1": 62.5}], "note": "work table with patterned front (R2C1); size/position guessed (GAP-110); mirrored to A011 (GAP-120, ART-004)"},
+    {"id": "FX_HUB2_Cabinets", "zone": "Hub", "h": "tall", "conf": "Low", "solid": true, "rects": [{"x0": 1.19, "x1": 7.19, "y0": 47.0, "y1": 48.5}], "note": "2 black cabinets on the back wall (R2C1); position guessed (GAP-110); mirrored to A011 (GAP-120, ART-004)"},
+    {"id": "FX_HUB2_MerchRack", "zone": "Hub", "h": "mid", "conf": "Low", "solid": true, "rects": [{"x0": 0.39, "x1": 1.89, "y0": 55.0, "y1": 59.0}], "note": "chrome wire merch rack with bags (R1C1); position guessed (GAP-110); mirrored to A011 (GAP-120, ART-004)"}
   ],
   "cameras": [
     { "tile": "R1C1", "zone": "Exterior", "room": "Exterior", "x": -4.0, "y": 2.0, "h": "camera", "yaw": 180, "pitch": 30, "fov": 75, "conf": "Low", "note": "sidewalk along a building wall; side unknown, west guessed" },
@@ -151,12 +147,12 @@
     { "tile": "R3C5", "zone": "BackRooms", "room": "BreakRoom", "x": 22.6, "y": 41.0, "h": "camera", "yaw": 330, "pitch": 28, "fov": 80, "conf": "Med" },
     { "tile": "R4C1", "zone": "BackRooms", "room": "FOH", "x": 24.2, "y": 45.8, "h": "camera", "yaw": 35, "pitch": 25, "fov": 80, "conf": "Med" },
     { "tile": "R4C2", "zone": "BackRooms", "room": "BOH", "x": 42.0, "y": 45.8, "h": "camera", "yaw": 350, "pitch": 22, "fov": 75, "conf": "Med", "note": "aisle toward the vestibule doorway" },
-    { "tile": "R4C3", "zone": "Hub", "room": "HUB", "x": 5.0, "y": 49.5, "h": "camera", "yaw": 180, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R1C2: down the aisle between rack banks (DEC-024); pose Low (GAP-105)" },
-    { "tile": "R4C4", "zone": "Hub", "room": "HUB", "x": 27.6, "y": 75.4, "h": "camera", "yaw": 315, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R1C3: across the rack island (DEC-024); pose Low (GAP-105)" },
-    { "tile": "R5C1", "zone": "Hub", "room": "HUB2", "x": 46.5, "y": 75.4, "h": "camera", "yaw": 335, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R1C1: along the room to the HUB doorway, far left (DEC-024); pose Low (GAP-105)" },
-    { "tile": "R5C2", "zone": "Hub", "room": "HUB2", "x": 29.3, "y": 75.4, "h": "camera", "yaw": 45, "pitch": 30, "fov": 80, "conf": "Low", "note": "= HUB wall R2C1: over the clutter to the back wall; alias R5C5 (repeat) (DEC-024); pose Low (GAP-105)" },
-    { "tile": "R5C3", "zone": "Hub", "room": "HUB", "x": 27.6, "y": 52.5, "h": "camera", "yaw": 235, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R2C2: across the rack island (DEC-024); pose Low (GAP-105)" },
-    { "tile": "R5C4", "zone": "Hub", "room": "HUB", "x": 0.8, "y": 75.4, "h": "camera", "yaw": 45, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R2C3: along a wall with racks (DEC-024); pose Low (GAP-105)" }
+    {"tile": "R4C3", "zone": "Hub", "room": "HUB", "x": 42.19, "y": 49.5, "h": "camera", "yaw": 180, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R1C2: down the aisle between rack banks (DEC-024); pose Low (GAP-105); pose mirrored with the room pair (GAP-120, ART-004)"},
+    {"tile": "R4C4", "zone": "Hub", "room": "HUB", "x": 19.59, "y": 75.4, "h": "camera", "yaw": 45, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R1C3: across the rack island (DEC-024); pose Low (GAP-105); pose mirrored with the room pair (GAP-120, ART-004)"},
+    {"tile": "R5C1", "zone": "Hub", "room": "HUB2", "x": 0.69, "y": 75.4, "h": "camera", "yaw": 25, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R1C1: along the room to the HUB doorway, far left (DEC-024); pose Low (GAP-105); pose mirrored with the room pair (GAP-120, ART-004)"},
+    {"tile": "R5C2", "zone": "Hub", "room": "HUB2", "x": 17.89, "y": 75.4, "h": "camera", "yaw": 315, "pitch": 30, "fov": 80, "conf": "Low", "note": "= HUB wall R2C1: over the clutter to the back wall; alias R5C5 (repeat) (DEC-024); pose Low (GAP-105); pose mirrored with the room pair (GAP-120, ART-004)"},
+    {"tile": "R5C3", "zone": "Hub", "room": "HUB", "x": 19.59, "y": 52.5, "h": "camera", "yaw": 125, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R2C2: across the rack island (DEC-024); pose Low (GAP-105); pose mirrored with the room pair (GAP-120, ART-004)"},
+    {"tile": "R5C4", "zone": "Hub", "room": "HUB", "x": 46.39, "y": 75.4, "h": "camera", "yaw": 315, "pitch": 25, "fov": 80, "conf": "Low", "note": "= HUB wall R2C3: along a wall with racks (DEC-024); pose Low (GAP-105); pose mirrored with the room pair (GAP-120, ART-004)"}
   ],
   "anchors": [
     { "id": "Anchor_CustomerSpawn", "zone": "Retail", "x": 1.5, "y": 13.0, "h": 0, "yaw": 90, "conf": "Low", "note": "inside the north entry leaf (SLICE_DESIGN 7)" },
