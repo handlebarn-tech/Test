@@ -1,0 +1,15 @@
+{
+  "asset_id": "PROC_Pkg_ExtractJar",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "4233aad889022055",
+  "generator": "packaged_goods",
+  "lod_tris": {
+    "LOD0": 376,
+    "LOD1": 184,
+    "LOD2": 28
+  },
+  "params_sha256": "d8a49587443a9a1d",
+  "passed": true,
+  "warnings": []
+}

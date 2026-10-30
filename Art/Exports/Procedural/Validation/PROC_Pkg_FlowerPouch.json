@@ -1,0 +1,15 @@
+{
+  "asset_id": "PROC_Pkg_FlowerPouch",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "7484989f1fcaaceb",
+  "generator": "packaged_goods",
+  "lod_tris": {
+    "LOD0": 380,
+    "LOD1": 188,
+    "LOD2": 28
+  },
+  "params_sha256": "d8a49587443a9a1d",
+  "passed": true,
+  "warnings": []
+}
