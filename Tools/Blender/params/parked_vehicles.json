@@ -1,0 +1,169 @@
+{
+  "generator": "parked_vehicles",
+  "asset_prefix": "PROC_Vehicle_",
+  "own_sheet": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Exterior/Vehicles",
+  "gaps": [
+    "GAP-PROC-23",
+    "GAP-PROC-24"
+  ],
+  "_sources": "Classes only (CCTV R1C1 parked SUV, R1C2 parked cars; RG3-4: make and colour unresolvable, stay generic). Lot: 15 striped spaces (OFFICE_FINDINGS B20). Every dimension below is a generic class proportion, not a measured store vehicle: GAP-PROC-23. Tyre sizes are standard ISO metric designations. Plate 12 x 6 in (US standard), rear only (Arizona).",
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "tri_budget": {
+    "LOD0": 150000,
+    "LOD1": 60000,
+    "LOD2": 25000,
+    "LOD3": 8000
+  },
+  "tri_guide": {
+    "lod0_min": 30000
+  },
+  "lods": {
+    "LOD0": {"detail": 0, "body_step_m": 0.02, "side_rows": 18, "arc_rows": 10, "deck_rows": 12, "arch_cols": 28,
+             "gh_step_m": 0.025, "gh_side_rows": 12, "gh_rail_rows": 6, "gh_roof_rows": 12, "wheel_seg": 64},
+    "LOD1": {"detail": 1, "body_step_m": 0.05, "side_rows": 9, "arc_rows": 5, "deck_rows": 6, "arch_cols": 14,
+             "gh_step_m": 0.06, "gh_side_rows": 6, "gh_rail_rows": 3, "gh_roof_rows": 6, "wheel_seg": 32},
+    "LOD2": {"detail": 2, "body_step_m": 0.14, "side_rows": 4, "arc_rows": 2, "deck_rows": 3, "arch_cols": 8,
+             "gh_step_m": 0.15, "gh_side_rows": 3, "gh_rail_rows": 2, "gh_roof_rows": 3, "wheel_seg": 16},
+    "LOD3": {"detail": 3, "body_step_m": 0.45, "side_rows": 2, "arc_rows": 1, "deck_rows": 2, "arch_cols": 4,
+             "gh_step_m": 0.5, "gh_side_rows": 1, "gh_rail_rows": 1, "gh_roof_rows": 2, "wheel_seg": 8}
+  },
+  "panel_gap_m": 0.005,
+  "panel_gap_depth_m": 0.004,
+  "wear": {
+    "dust": 0.35,
+    "road_grime_low": 0.4,
+    "edge_wear": 0.08,
+    "bird_droppings": 0.05
+  },
+  "colors": {
+    "PanelGap": [0.01, 0.01, 0.011, 1.0],
+    "Underbody": [0.04, 0.04, 0.042, 1.0],
+    "Trim_Black": [0.02, 0.02, 0.022, 1.0],
+    "Cladding": [0.05, 0.05, 0.052, 1.0],
+    "Glass": [0.07, 0.09, 0.1, 0.55],
+    "Chrome": [0.78, 0.79, 0.8, 1.0],
+    "Tire_Rubber": [0.035, 0.035, 0.037, 1.0],
+    "Rim_Alloy": [0.62, 0.63, 0.65, 1.0],
+    "Brake_Steel": [0.3, 0.29, 0.28, 1.0],
+    "Lamp_Clear": [0.85, 0.87, 0.9, 0.4],
+    "Lamp_Red": [0.55, 0.02, 0.02, 0.85],
+    "Lamp_Amber": [0.9, 0.45, 0.02, 0.85],
+    "Lamp_Reflector": [0.82, 0.83, 0.85, 1.0],
+    "Plate_Blank": [0.92, 0.92, 0.9, 1.0],
+    "Mirror_Glass": [0.6, 0.62, 0.64, 1.0]
+  },
+  "pbr": {
+    "_note": "Metallic/smoothness per slot for the Unity material builder (URP Lit). Texture maps (tyre tread/sidewall normal, dust/grime masks, plate) wait for the shared Q0.2/Q0.3 unwrap+texture pipeline: GAP-PROC-24.",
+    "CarPaint": {"metallic": 0.55, "smoothness": 0.82, "clearcoat": true},
+    "PanelGap": {"metallic": 0.0, "smoothness": 0.2},
+    "Underbody": {"metallic": 0.0, "smoothness": 0.15},
+    "Trim_Black": {"metallic": 0.0, "smoothness": 0.45},
+    "Cladding": {"metallic": 0.0, "smoothness": 0.2, "note": "textured unpainted PP"},
+    "Glass": {"metallic": 0.0, "smoothness": 0.95, "alpha": 0.55},
+    "Chrome": {"metallic": 1.0, "smoothness": 0.9},
+    "Tire_Rubber": {"metallic": 0.0, "smoothness": 0.25},
+    "Rim_Alloy": {"metallic": 0.9, "smoothness": 0.7},
+    "Brake_Steel": {"metallic": 0.85, "smoothness": 0.35},
+    "Lamp_Clear": {"metallic": 0.0, "smoothness": 0.95, "alpha": 0.4},
+    "Lamp_Red": {"metallic": 0.0, "smoothness": 0.9, "alpha": 0.85},
+    "Lamp_Amber": {"metallic": 0.0, "smoothness": 0.9, "alpha": 0.85},
+    "Lamp_Reflector": {"metallic": 1.0, "smoothness": 0.85},
+    "Plate_Blank": {"metallic": 0.6, "smoothness": 0.5},
+    "Mirror_Glass": {"metallic": 1.0, "smoothness": 0.98}
+  },
+  "paint_variants": {
+    "_note": "GAP-PROC-24: the CCTV cannot resolve colours (RG3-4). Common neutral car colours for material swaps.",
+    "White": [0.85, 0.86, 0.87, 1.0],
+    "Black": [0.02, 0.02, 0.022, 1.0],
+    "Silver": [0.55, 0.56, 0.58, 1.0],
+    "Graphite": [0.12, 0.125, 0.13, 1.0],
+    "DarkBlue": [0.04, 0.09, 0.2, 1.0],
+    "Red": [0.45, 0.03, 0.03, 1.0]
+  },
+  "classes": {
+    "sedan": {
+      "_class": "generic midsize 4-door sedan (CCTV R1C2 'parked cars')",
+      "length_m": 4.88, "body_width_m": 1.84, "height_m": 1.44, "mirror_out_m": 0.11,
+      "wheelbase_m": 2.83, "front_overhang_m": 0.98, "track_m": 1.59,
+      "tire": {"width_m": 0.225, "aspect": 0.55, "rim_d_in": 17, "grooves": [0.22, 0.4, 0.6, 0.78]},
+      "spokes": 5,
+      "rocker_z_m": 0.2, "end_lift_m": [0.12, 0.16], "arch_gap_m": 0.035,
+      "plan_corner_m": 0.55, "plan_end_k": 0.82,
+      "side_tuck": 0.035, "side_tumble": 0.012, "shoulder_r_m": 0.06, "deck_crown_m": 0.025,
+      "bumper": {"depth_m": 0.07, "z_m": [0.26, 0.46], "wrap_m": 0.3},
+      "deck": [[0.07, 0.72], [0.3, 0.78], [0.8, 0.84], [1.5, 0.93], [3.3, 0.96], [3.8, 1.02], [4.6, 1.02], [4.81, 0.95]],
+      "greenhouse": {
+        "profile": [[1.5, 0.96], [2.25, 1.4], [2.75, 1.44], [3.15, 1.41], [3.88, 1.04]],
+        "roof_front_y": 2.25, "roof_rear_y": 3.15, "backlight_on_roof": true,
+        "base_inset_m": 0.06, "roof_half_w_m": 0.6, "crown_m": 0.04, "rail_r_m": 0.05,
+        "side_glass": [[1.75, 3.5]], "pillars_black": [[2.62, 2.72]], "tailgate_glass_k": 0.85
+      },
+      "seams": {"doors": [1.62, 2.67, 3.55], "hood": [0.3, 1.46], "trunk_front": 3.95, "door_bottom_s": 0.12},
+      "lamps": {"head": [0.32, 0.1], "tail": [0.36, 0.11]},
+      "plate_z_m": 0.58,
+      "mirror": {"size_m": [0.17, 0.1, 0.12], "y_m": 1.86, "above_belt_m": 0.08},
+      "handles_y": [2.45, 3.4],
+      "chrome_handles": true
+    },
+    "hatchback": {
+      "_class": "generic compact 5-door hatchback (CCTV R1C2 'parked cars')",
+      "length_m": 4.37, "body_width_m": 1.8, "height_m": 1.45, "mirror_out_m": 0.1,
+      "wheelbase_m": 2.7, "front_overhang_m": 0.9, "track_m": 1.56,
+      "tire": {"width_m": 0.205, "aspect": 0.55, "rim_d_in": 16, "grooves": [0.22, 0.4, 0.6, 0.78]},
+      "spokes": 6,
+      "rocker_z_m": 0.21, "end_lift_m": [0.11, 0.14], "arch_gap_m": 0.035,
+      "plan_corner_m": 0.5, "plan_end_k": 0.82,
+      "side_tuck": 0.035, "side_tumble": 0.012, "shoulder_r_m": 0.06, "deck_crown_m": 0.025,
+      "bumper": {"depth_m": 0.065, "z_m": [0.27, 0.47], "wrap_m": 0.28},
+      "deck": [[0.065, 0.72], [0.3, 0.78], [0.7, 0.84], [1.4, 0.93], [3.6, 0.97], [4.3, 0.95]],
+      "greenhouse": {
+        "profile": [[1.4, 0.96], [2.12, 1.41], [2.6, 1.45], [3.55, 1.42], [3.8, 1.38], [4.24, 1.02]],
+        "roof_front_y": 2.12, "roof_rear_y": 3.8, "backlight_on_roof": true,
+        "base_inset_m": 0.06, "roof_half_w_m": 0.6, "crown_m": 0.04, "rail_r_m": 0.05,
+        "side_glass": [[1.6, 3.4]], "pillars_black": [[2.5, 2.6]], "tailgate_glass_k": 0.85
+      },
+      "seams": {"doors": [1.5, 2.55, 3.4], "hood": [0.28, 1.36], "trunk_front": null, "door_bottom_s": 0.12},
+      "lamps": {"head": [0.3, 0.1], "tail": [0.3, 0.12]},
+      "plate_z_m": 0.6,
+      "mirror": {"size_m": [0.16, 0.1, 0.11], "y_m": 1.72, "above_belt_m": 0.08},
+      "handles_y": [2.33, 3.25],
+      "chrome_handles": false
+    },
+    "suv": {
+      "_class": "generic compact SUV / crossover (CCTV R1C1 'parked SUV')",
+      "length_m": 4.6, "body_width_m": 1.86, "height_m": 1.7, "mirror_out_m": 0.11,
+      "wheelbase_m": 2.69, "front_overhang_m": 0.93, "track_m": 1.6,
+      "tire": {"width_m": 0.225, "aspect": 0.65, "rim_d_in": 17, "grooves": [0.22, 0.4, 0.6, 0.78]},
+      "spokes": 10,
+      "rocker_z_m": 0.3, "end_lift_m": [0.1, 0.12], "arch_gap_m": 0.04,
+      "plan_corner_m": 0.5, "plan_end_k": 0.84,
+      "side_tuck": 0.03, "side_tumble": 0.012, "shoulder_r_m": 0.07, "deck_crown_m": 0.025,
+      "bumper": {"depth_m": 0.07, "z_m": [0.36, 0.6], "wrap_m": 0.3},
+      "deck": [[0.07, 0.86], [0.3, 0.92], [0.75, 0.99], [1.35, 1.07], [3.9, 1.11], [4.53, 1.09]],
+      "greenhouse": {
+        "profile": [[1.35, 1.1], [2.1, 1.62], [2.7, 1.655], [4.2, 1.63], [4.47, 1.57]],
+        "roof_front_y": 2.1, "roof_rear_y": 4.3, "backlight_on_roof": false,
+        "base_inset_m": 0.06, "roof_half_w_m": 0.66, "crown_m": 0.04, "rail_r_m": 0.06,
+        "side_glass": [[1.55, 3.72], [3.84, 4.28]], "pillars_black": [[2.62, 2.72]], "tailgate_glass_k": 0.82
+      },
+      "seams": {"doors": [1.5, 2.67, 3.7], "hood": [0.3, 1.28], "trunk_front": null, "door_bottom_s": 0.14},
+      "lamps": {"head": [0.34, 0.1], "tail": [0.32, 0.14]},
+      "plate_z_m": 0.72,
+      "mirror": {"size_m": [0.18, 0.11, 0.13], "y_m": 1.7, "above_belt_m": 0.08},
+      "handles_y": [2.45, 3.48],
+      "chrome_handles": false,
+      "cladding": true,
+      "roof_rails": {"h_m": 0.03, "w_m": 0.035, "x_m": 0.5, "y_m": [2.3, 4.25]}
+    }
+  },
+  "variants": [
+    {"id": "Sedan", "class": "sedan", "seed": 9101, "paint": [0.85, 0.86, 0.87, 1.0]},
+    {"id": "Hatchback", "class": "hatchback", "seed": 9102, "paint": [0.04, 0.09, 0.2, 1.0]},
+    {"id": "SUV", "class": "suv", "seed": 9103, "paint": [0.12, 0.125, 0.13, 1.0]}
+  ]
+}

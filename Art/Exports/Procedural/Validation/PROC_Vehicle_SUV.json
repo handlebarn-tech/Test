@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Vehicle_SUV",
+  "collision_boxes": 6,
+  "errors": [],
+  "export_sha256": "599cd63b4ebcfe7c",
+  "generator": "parked_vehicles",
+  "lod_tris": {
+    "LOD0": 86422,
+    "LOD1": 28682,
+    "LOD2": 7164,
+    "LOD3": 1536
+  },
+  "params_sha256": "52d370efd2e03be6",
+  "passed": true,
+  "warnings": []
+}

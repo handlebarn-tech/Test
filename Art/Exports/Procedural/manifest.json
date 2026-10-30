@@ -15204,6 +15204,5775 @@
         "scuffs": 0.25,
         "seed": 4101
       }
+    },
+    "PROC_Vehicle_Hatchback": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.551766,
+            0.0
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            1.8,
+            0.803531,
+            4.37
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            1.201766,
+            -0.635
+          ],
+          "name": "Cabin",
+          "size_unity_xyz": [
+            1.4,
+            0.496469,
+            2.84
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.78,
+            0.31595,
+            1.285
+          ],
+          "name": "Wheel_0L",
+          "size_unity_xyz": [
+            0.205,
+            0.6319,
+            0.6319
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            -0.78,
+            0.31595,
+            1.285
+          ],
+          "name": "Wheel_0R",
+          "size_unity_xyz": [
+            0.205,
+            0.6319,
+            0.6319
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.78,
+            0.31595,
+            -1.415
+          ],
+          "name": "Wheel_1L",
+          "size_unity_xyz": [
+            0.205,
+            0.6319,
+            0.6319
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            -0.78,
+            0.31595,
+            -1.415
+          ],
+          "name": "Wheel_1R",
+          "size_unity_xyz": [
+            0.205,
+            0.6319,
+            0.6319
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_Vehicle_Hatchback.fbx",
+      "export_sha256": "9fe0324531796701",
+      "gaps": [
+        "GAP-PROC-23",
+        "GAP-PROC-24"
+      ],
+      "generator": "parked_vehicles",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Vehicle_Hatchback_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.0,
+                  2.185,
+                  1.45
+                ],
+                "min": [
+                  -1.0,
+                  -2.185,
+                  0.197681
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 1902
+              },
+              "geometry_sha256": "f9884eda679f04ce",
+              "material_slots": [
+                "M_Proc_CarPaint"
+              ],
+              "size_m_unity_xyz": [
+                2.0,
+                1.25232,
+                4.37
+              ],
+              "tris": 49030,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 25490
+            },
+            "PROC_Vehicle_Hatchback_Brakes_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7675,
+                  1.58,
+                  0.49109
+                ],
+                "min": [
+                  -0.7675,
+                  -1.45,
+                  0.15095
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8c3c8e10e751a3c1",
+              "material_slots": [
+                "M_Proc_Brake_Steel"
+              ],
+              "size_m_unity_xyz": [
+                1.535,
+                0.34014,
+                3.03
+              ],
+              "tris": 2096,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1056
+            },
+            "PROC_Vehicle_Hatchback_Chrome_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.34,
+                  -2.126,
+                  0.635
+                ],
+                "min": [
+                  -0.34,
+                  -2.136,
+                  0.468
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
+              "geometry_sha256": "3bcff8e0a7757443",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.68,
+                0.167,
+                0.01
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            },
+            "PROC_Vehicle_Hatchback_Glass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.751563,
+                  2.055,
+                  1.41
+                ],
+                "min": [
+                  -0.751563,
+                  -0.785,
+                  0.936767
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 572
+              },
+              "geometry_sha256": "85f7bf0be8828e21",
+              "material_slots": [
+                "M_Proc_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.50313,
+                0.47323,
+                2.84
+              ],
+              "tris": 5712,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 3148
+            },
+            "PROC_Vehicle_Hatchback_LampsAmber_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.673,
+                  -2.12,
+                  0.602
+                ],
+                "min": [
+                  -0.673,
+                  -2.132,
+                  0.552
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "3d3b1e10a3401ac1",
+              "material_slots": [
+                "M_Proc_Lamp_Amber"
+              ],
+              "size_m_unity_xyz": [
+                1.346,
+                0.05,
+                0.012
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Hatchback_LampsClear_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.688,
+                  2.132,
+                  0.815
+                ],
+                "min": [
+                  -0.688,
+                  -2.138,
+                  0.527
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "5e6f6cad6c86e624",
+              "material_slots": [
+                "M_Proc_Lamp_Clear"
+              ],
+              "size_m_unity_xyz": [
+                1.376,
+                0.288,
+                4.27
+              ],
+              "tris": 256,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 136
+            },
+            "PROC_Vehicle_Hatchback_LampsRed_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.688,
+                  2.138,
+                  0.857
+                ],
+                "min": [
+                  -0.688,
+                  2.108,
+                  0.737
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "71522022fe2a84ca",
+              "material_slots": [
+                "M_Proc_Lamp_Red"
+              ],
+              "size_m_unity_xyz": [
+                1.376,
+                0.12,
+                0.03
+              ],
+              "tris": 232,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_Vehicle_Hatchback_MirrorGlass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9875,
+                  -0.412,
+                  1.041834
+                ],
+                "min": [
+                  -0.9875,
+                  -0.416,
+                  0.956834
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "13bf057c387a0cce",
+              "material_slots": [
+                "M_Proc_Mirror_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.975,
+                0.085,
+                0.004
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Hatchback_PanelGaps_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.893501,
+                  1.2175,
+                  0.928288
+                ],
+                "min": [
+                  -0.893501,
+                  -1.9075,
+                  0.284195
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 960
+              },
+              "geometry_sha256": "0c3c995c58bba81e",
+              "material_slots": [
+                "M_Proc_PanelGap"
+              ],
+              "size_m_unity_xyz": [
+                1.787,
+                0.64409,
+                3.125
+              ],
+              "tris": 1904,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1434
+            },
+            "PROC_Vehicle_Hatchback_Plate_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1525,
+                  2.124,
+                  0.676
+                ],
+                "min": [
+                  -0.1525,
+                  2.12,
+                  0.524
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "42197a5ee641e04b",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.305,
+                0.152,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Vehicle_Hatchback_Reflectors_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.678,
+                  2.132,
+                  0.847
+                ],
+                "min": [
+                  -0.678,
+                  -2.132,
+                  0.537
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d86ac46f8765663e",
+              "material_slots": [
+                "M_Proc_Lamp_Reflector"
+              ],
+              "size_m_unity_xyz": [
+                1.356,
+                0.31,
+                4.264
+              ],
+              "tris": 304,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 168
+            },
+            "PROC_Vehicle_Hatchback_Rims_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8705,
+                  1.6302,
+                  0.53115
+                ],
+                "min": [
+                  -0.8705,
+                  -1.5002,
+                  0.10075
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "499574f683fb4b40",
+              "material_slots": [
+                "M_Proc_Rim_Alloy"
+              ],
+              "size_m_unity_xyz": [
+                1.741,
+                0.4304,
+                3.1304
+              ],
+              "tris": 6640,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 3416
+            },
+            "PROC_Vehicle_Hatchback_Tires_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8825,
+                  1.73095,
+                  0.6319
+                ],
+                "min": [
+                  -0.8825,
+                  -1.60095,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b928d0f39e347bb5",
+              "material_slots": [
+                "M_Proc_Tire_Rubber"
+              ],
+              "size_m_unity_xyz": [
+                1.765,
+                0.6319,
+                3.3319
+              ],
+              "tris": 15360,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 7680
+            },
+            "PROC_Vehicle_Hatchback_Trim_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.85,
+                  2.18175,
+                  1.36
+                ],
+                "min": [
+                  -0.85,
+                  -2.18175,
+                  0.18957
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 702
+              },
+              "geometry_sha256": "d06c7bbdd1728c65",
+              "material_slots": [
+                "M_Proc_Trim_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.7,
+                1.17043,
+                4.3635
+              ],
+              "tris": 1808,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1288
+            },
+            "PROC_Vehicle_Hatchback_Underbody_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8685,
+                  2.12,
+                  0.6669
+                ],
+                "min": [
+                  -0.8685,
+                  -2.12,
+                  0.21
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 428
+              },
+              "geometry_sha256": "16051d22d3eda9d5",
+              "material_slots": [
+                "M_Proc_Underbody"
+              ],
+              "size_m_unity_xyz": [
+                1.737,
+                0.4569,
+                4.24
+              ],
+              "tris": 426,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 428
+            }
+          },
+          "size_m_unity_xyz": [
+            2.0,
+            1.45,
+            4.37
+          ],
+          "tris": 83876
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Vehicle_Hatchback_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.0,
+                  2.185,
+                  1.45
+                ],
+                "min": [
+                  -1.0,
+                  -2.185,
+                  0.197693
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 938
+              },
+              "geometry_sha256": "56d3d1c9856cfc25",
+              "material_slots": [
+                "M_Proc_CarPaint"
+              ],
+              "size_m_unity_xyz": [
+                2.0,
+                1.25231,
+                4.37
+              ],
+              "tris": 13650,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 7318
+            },
+            "PROC_Vehicle_Hatchback_Brakes_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7525,
+                  1.58,
+                  0.48095
+                ],
+                "min": [
+                  -0.7525,
+                  -1.45,
+                  0.15095
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d04cafa9c05bff4e",
+              "material_slots": [
+                "M_Proc_Brake_Steel"
+              ],
+              "size_m_unity_xyz": [
+                1.505,
+                0.33,
+                3.03
+              ],
+              "tris": 1024,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 512
+            },
+            "PROC_Vehicle_Hatchback_Chrome_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.34,
+                  -2.126,
+                  0.635
+                ],
+                "min": [
+                  -0.34,
+                  -2.136,
+                  0.468
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
+              "geometry_sha256": "3bcff8e0a7757443",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.68,
+                0.167,
+                0.01
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            },
+            "PROC_Vehicle_Hatchback_Glass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.751563,
+                  2.055,
+                  1.41
+                ],
+                "min": [
+                  -0.751563,
+                  -0.785,
+                  0.936767
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 264
+              },
+              "geometry_sha256": "da22cfff8ef33df6",
+              "material_slots": [
+                "M_Proc_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.50313,
+                0.47323,
+                2.84
+              ],
+              "tris": 1272,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 774
+            },
+            "PROC_Vehicle_Hatchback_LampsAmber_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.673,
+                  -2.12,
+                  0.602
+                ],
+                "min": [
+                  -0.673,
+                  -2.132,
+                  0.552
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "3d3b1e10a3401ac1",
+              "material_slots": [
+                "M_Proc_Lamp_Amber"
+              ],
+              "size_m_unity_xyz": [
+                1.346,
+                0.05,
+                0.012
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Hatchback_LampsClear_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.688,
+                  2.132,
+                  0.815
+                ],
+                "min": [
+                  -0.688,
+                  -2.138,
+                  0.527
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "3ee52c81ec8d4621",
+              "material_slots": [
+                "M_Proc_Lamp_Clear"
+              ],
+              "size_m_unity_xyz": [
+                1.376,
+                0.288,
+                4.27
+              ],
+              "tris": 128,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_Vehicle_Hatchback_LampsRed_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.688,
+                  2.138,
+                  0.857
+                ],
+                "min": [
+                  -0.688,
+                  2.108,
+                  0.737
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f3a99dad6112051a",
+              "material_slots": [
+                "M_Proc_Lamp_Red"
+              ],
+              "size_m_unity_xyz": [
+                1.376,
+                0.12,
+                0.03
+              ],
+              "tris": 104,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 56
+            },
+            "PROC_Vehicle_Hatchback_MirrorGlass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9875,
+                  -0.412,
+                  1.041834
+                ],
+                "min": [
+                  -0.9875,
+                  -0.416,
+                  0.956834
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "13bf057c387a0cce",
+              "material_slots": [
+                "M_Proc_Mirror_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.975,
+                0.085,
+                0.004
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Hatchback_PanelGaps_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.893363,
+                  1.2175,
+                  0.928288
+                ],
+                "min": [
+                  -0.893363,
+                  -1.9075,
+                  0.284195
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 484
+              },
+              "geometry_sha256": "5ac7e48455f85b80",
+              "material_slots": [
+                "M_Proc_PanelGap"
+              ],
+              "size_m_unity_xyz": [
+                1.78673,
+                0.64409,
+                3.125
+              ],
+              "tris": 952,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 720
+            },
+            "PROC_Vehicle_Hatchback_Plate_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1525,
+                  2.124,
+                  0.676
+                ],
+                "min": [
+                  -0.1525,
+                  2.12,
+                  0.524
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "42197a5ee641e04b",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.305,
+                0.152,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Vehicle_Hatchback_Reflectors_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.678,
+                  2.132,
+                  0.847
+                ],
+                "min": [
+                  -0.678,
+                  -2.132,
+                  0.537
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "eb20db2e6bbc883c",
+              "material_slots": [
+                "M_Proc_Lamp_Reflector"
+              ],
+              "size_m_unity_xyz": [
+                1.356,
+                0.31,
+                4.264
+              ],
+              "tris": 176,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 104
+            },
+            "PROC_Vehicle_Hatchback_Rims_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8705,
+                  1.6302,
+                  0.53115
+                ],
+                "min": [
+                  -0.8705,
+                  -1.5002,
+                  0.10075
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "fe521c9718747981",
+              "material_slots": [
+                "M_Proc_Rim_Alloy"
+              ],
+              "size_m_unity_xyz": [
+                1.741,
+                0.4304,
+                3.1304
+              ],
+              "tris": 3104,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1608
+            },
+            "PROC_Vehicle_Hatchback_Tires_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8825,
+                  1.73095,
+                  0.6319
+                ],
+                "min": [
+                  -0.8825,
+                  -1.60095,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ff7e65c1572aebc8",
+              "material_slots": [
+                "M_Proc_Tire_Rubber"
+              ],
+              "size_m_unity_xyz": [
+                1.765,
+                0.6319,
+                3.3319
+              ],
+              "tris": 5632,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 2816
+            },
+            "PROC_Vehicle_Hatchback_Trim_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.85,
+                  2.18175,
+                  1.36
+                ],
+                "min": [
+                  -0.85,
+                  -2.18175,
+                  0.18957
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 326
+              },
+              "geometry_sha256": "0a8f237bebbf5a2a",
+              "material_slots": [
+                "M_Proc_Trim_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.7,
+                1.17043,
+                4.3635
+              ],
+              "tris": 904,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 640
+            },
+            "PROC_Vehicle_Hatchback_Underbody_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8685,
+                  2.12,
+                  0.6669
+                ],
+                "min": [
+                  -0.8685,
+                  -2.12,
+                  0.21
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 208
+              },
+              "geometry_sha256": "9b0b4a27a8ea356a",
+              "material_slots": [
+                "M_Proc_Underbody"
+              ],
+              "size_m_unity_xyz": [
+                1.737,
+                0.4569,
+                4.24
+              ],
+              "tris": 206,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 208
+            }
+          },
+          "size_m_unity_xyz": [
+            2.0,
+            1.45,
+            4.37
+          ],
+          "tris": 27260
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Vehicle_Hatchback_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.0,
+                  2.185,
+                  1.45
+                ],
+                "min": [
+                  -1.0,
+                  -2.185,
+                  0.21
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 210
+              },
+              "geometry_sha256": "010c6b40958d5e69",
+              "material_slots": [
+                "M_Proc_CarPaint"
+              ],
+              "size_m_unity_xyz": [
+                2.0,
+                1.24,
+                4.37
+              ],
+              "tris": 2526,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1378
+            },
+            "PROC_Vehicle_Hatchback_Glass_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.751563,
+                  2.055,
+                  1.41
+                ],
+                "min": [
+                  -0.751563,
+                  -0.785,
+                  0.936767
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 122
+              },
+              "geometry_sha256": "11ee25029c69183f",
+              "material_slots": [
+                "M_Proc_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.50313,
+                0.47323,
+                2.84
+              ],
+              "tris": 276,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 205
+            },
+            "PROC_Vehicle_Hatchback_LampsClear_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.688,
+                  -2.108,
+                  0.627
+                ],
+                "min": [
+                  -0.688,
+                  -2.138,
+                  0.527
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "5906e49ea85c0540",
+              "material_slots": [
+                "M_Proc_Lamp_Clear"
+              ],
+              "size_m_unity_xyz": [
+                1.376,
+                0.1,
+                0.03
+              ],
+              "tris": 104,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 56
+            },
+            "PROC_Vehicle_Hatchback_LampsRed_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.688,
+                  2.138,
+                  0.857
+                ],
+                "min": [
+                  -0.688,
+                  2.108,
+                  0.737
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f3a99dad6112051a",
+              "material_slots": [
+                "M_Proc_Lamp_Red"
+              ],
+              "size_m_unity_xyz": [
+                1.376,
+                0.12,
+                0.03
+              ],
+              "tris": 104,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 56
+            },
+            "PROC_Vehicle_Hatchback_MirrorGlass_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9875,
+                  -0.412,
+                  1.041834
+                ],
+                "min": [
+                  -0.9875,
+                  -0.416,
+                  0.956834
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "13bf057c387a0cce",
+              "material_slots": [
+                "M_Proc_Mirror_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.975,
+                0.085,
+                0.004
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Hatchback_Plate_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1525,
+                  2.124,
+                  0.676
+                ],
+                "min": [
+                  -0.1525,
+                  2.12,
+                  0.524
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "42197a5ee641e04b",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.305,
+                0.152,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Vehicle_Hatchback_Rims_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8705,
+                  1.6302,
+                  0.53115
+                ],
+                "min": [
+                  -0.8705,
+                  -1.5002,
+                  0.10075
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "9d9f127ad1ff421a",
+              "material_slots": [
+                "M_Proc_Rim_Alloy"
+              ],
+              "size_m_unity_xyz": [
+                1.741,
+                0.4304,
+                3.1304
+              ],
+              "tris": 1920,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 968
+            },
+            "PROC_Vehicle_Hatchback_Tires_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8825,
+                  1.73095,
+                  0.6319
+                ],
+                "min": [
+                  -0.8825,
+                  -1.60095,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "4ca7ec803a40c7ea",
+              "material_slots": [
+                "M_Proc_Tire_Rubber"
+              ],
+              "size_m_unity_xyz": [
+                1.765,
+                0.6319,
+                3.3319
+              ],
+              "tris": 1280,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 640
+            },
+            "PROC_Vehicle_Hatchback_Trim_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.85,
+                  2.055,
+                  1.36
+                ],
+                "min": [
+                  -0.85,
+                  -2.132,
+                  0.48
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 160
+              },
+              "geometry_sha256": "7a062bfd8ec3cf7b",
+              "material_slots": [
+                "M_Proc_Trim_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.7,
+                0.88,
+                4.187
+              ],
+              "tris": 362,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 268
+            },
+            "PROC_Vehicle_Hatchback_Underbody_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8685,
+                  2.12,
+                  0.6669
+                ],
+                "min": [
+                  -0.8685,
+                  -2.12,
+                  0.21
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 88
+              },
+              "geometry_sha256": "fe2b5a7383540da0",
+              "material_slots": [
+                "M_Proc_Underbody"
+              ],
+              "size_m_unity_xyz": [
+                1.737,
+                0.4569,
+                4.24
+              ],
+              "tris": 86,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 88
+            }
+          },
+          "size_m_unity_xyz": [
+            2.0,
+            1.45,
+            4.37
+          ],
+          "tris": 6694
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Vehicle_Hatchback_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.0,
+                  2.185,
+                  1.45
+                ],
+                "min": [
+                  -1.0,
+                  -2.185,
+                  0.21
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 98
+              },
+              "geometry_sha256": "a6344776043c607f",
+              "material_slots": [
+                "M_Proc_CarPaint"
+              ],
+              "size_m_unity_xyz": [
+                2.0,
+                1.24,
+                4.37
+              ],
+              "tris": 666,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 392
+            },
+            "PROC_Vehicle_Hatchback_Glass_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7692,
+                  2.055,
+                  1.41
+                ],
+                "min": [
+                  -0.7692,
+                  -0.785,
+                  0.903469
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 60
+              },
+              "geometry_sha256": "0ed0eca6a6b5523f",
+              "material_slots": [
+                "M_Proc_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.5384,
+                0.50653,
+                2.84
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 66
+            },
+            "PROC_Vehicle_Hatchback_LampsClear_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.688,
+                  -2.108,
+                  0.627
+                ],
+                "min": [
+                  -0.688,
+                  -2.138,
+                  0.527
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "044157216b97d501",
+              "material_slots": [
+                "M_Proc_Lamp_Clear"
+              ],
+              "size_m_unity_xyz": [
+                1.376,
+                0.1,
+                0.03
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Hatchback_LampsRed_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.688,
+                  2.138,
+                  0.857
+                ],
+                "min": [
+                  -0.688,
+                  2.108,
+                  0.737
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "da68323df2373091",
+              "material_slots": [
+                "M_Proc_Lamp_Red"
+              ],
+              "size_m_unity_xyz": [
+                1.376,
+                0.12,
+                0.03
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Hatchback_Plate_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1525,
+                  2.124,
+                  0.676
+                ],
+                "min": [
+                  -0.1525,
+                  2.12,
+                  0.524
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "42197a5ee641e04b",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.305,
+                0.152,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Vehicle_Hatchback_Rims_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8525,
+                  1.6182,
+                  0.51915
+                ],
+                "min": [
+                  -0.8525,
+                  -1.4882,
+                  0.11275
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "be83fa82892bf03c",
+              "material_slots": [
+                "M_Proc_Rim_Alloy"
+              ],
+              "size_m_unity_xyz": [
+                1.705,
+                0.4064,
+                3.1064
+              ],
+              "tris": 128,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_Vehicle_Hatchback_Tires_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8825,
+                  1.73095,
+                  0.6319
+                ],
+                "min": [
+                  -0.8825,
+                  -1.60095,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "29dbadd71a998d81",
+              "material_slots": [
+                "M_Proc_Tire_Rubber"
+              ],
+              "size_m_unity_xyz": [
+                1.765,
+                0.6319,
+                3.3319
+              ],
+              "tris": 384,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            },
+            "PROC_Vehicle_Hatchback_Trim_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7692,
+                  2.055,
+                  1.36
+                ],
+                "min": [
+                  -0.7692,
+                  -2.132,
+                  0.48
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 46
+              },
+              "geometry_sha256": "607e598e796fb32e",
+              "material_slots": [
+                "M_Proc_Trim_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.5384,
+                0.88,
+                4.187
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 56
+            },
+            "PROC_Vehicle_Hatchback_Underbody_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8685,
+                  2.12,
+                  0.6669
+                ],
+                "min": [
+                  -0.8685,
+                  -2.12,
+                  0.21
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 44
+              },
+              "geometry_sha256": "8d3658ede3f2950d",
+              "material_slots": [
+                "M_Proc_Underbody"
+              ],
+              "size_m_unity_xyz": [
+                1.737,
+                0.4569,
+                4.24
+              ],
+              "tris": 42,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 44
+            }
+          },
+          "size_m_unity_xyz": [
+            2.0,
+            1.45,
+            4.37
+          ],
+          "tris": 1400
+        }
+      },
+      "materials_pbr": {
+        "Brake_Steel": {
+          "metallic": 0.85,
+          "smoothness": 0.35
+        },
+        "CarPaint": {
+          "clearcoat": true,
+          "metallic": 0.55,
+          "smoothness": 0.82
+        },
+        "Chrome": {
+          "metallic": 1.0,
+          "smoothness": 0.9
+        },
+        "Cladding": {
+          "metallic": 0.0,
+          "note": "textured unpainted PP",
+          "smoothness": 0.2
+        },
+        "Glass": {
+          "alpha": 0.55,
+          "metallic": 0.0,
+          "smoothness": 0.95
+        },
+        "Lamp_Amber": {
+          "alpha": 0.85,
+          "metallic": 0.0,
+          "smoothness": 0.9
+        },
+        "Lamp_Clear": {
+          "alpha": 0.4,
+          "metallic": 0.0,
+          "smoothness": 0.95
+        },
+        "Lamp_Red": {
+          "alpha": 0.85,
+          "metallic": 0.0,
+          "smoothness": 0.9
+        },
+        "Lamp_Reflector": {
+          "metallic": 1.0,
+          "smoothness": 0.85
+        },
+        "Mirror_Glass": {
+          "metallic": 1.0,
+          "smoothness": 0.98
+        },
+        "PanelGap": {
+          "metallic": 0.0,
+          "smoothness": 0.2
+        },
+        "Plate_Blank": {
+          "metallic": 0.6,
+          "smoothness": 0.5
+        },
+        "Rim_Alloy": {
+          "metallic": 0.9,
+          "smoothness": 0.7
+        },
+        "Tire_Rubber": {
+          "metallic": 0.0,
+          "smoothness": 0.25
+        },
+        "Trim_Black": {
+          "metallic": 0.0,
+          "smoothness": 0.45
+        },
+        "Underbody": {
+          "metallic": 0.0,
+          "smoothness": 0.15
+        },
+        "_note": "Metallic/smoothness per slot for the Unity material builder (URP Lit). Texture maps (tyre tread/sidewall normal, dust/grime masks, plate) wait for the shared Q0.2/Q0.3 unwrap+texture pipeline: GAP-PROC-24."
+      },
+      "own_sheet": true,
+      "paint_variants": {
+        "Black": [
+          0.02,
+          0.02,
+          0.022,
+          1.0
+        ],
+        "DarkBlue": [
+          0.04,
+          0.09,
+          0.2,
+          1.0
+        ],
+        "Graphite": [
+          0.12,
+          0.125,
+          0.13,
+          1.0
+        ],
+        "Red": [
+          0.45,
+          0.03,
+          0.03,
+          1.0
+        ],
+        "Silver": [
+          0.55,
+          0.56,
+          0.58,
+          1.0
+        ],
+        "White": [
+          0.85,
+          0.86,
+          0.87,
+          1.0
+        ],
+        "_note": "GAP-PROC-24: the CCTV cannot resolve colours (RG3-4). Common neutral car colours for material swaps."
+      },
+      "params": "Tools/Blender/params/parked_vehicles.json",
+      "params_sha256": "52d370efd2e03be6",
+      "seed": 9102,
+      "tri_budget": {
+        "LOD0": 150000,
+        "LOD1": 60000,
+        "LOD2": 25000,
+        "LOD3": 8000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Exterior/Vehicles/PROC_Vehicle_Hatchback.fbx",
+      "vehicle_class": "hatchback",
+      "wear": {
+        "bird_droppings": 0.05,
+        "dust": 0.35,
+        "edge_wear": 0.08,
+        "road_grime_low": 0.4,
+        "seed": 9102
+      }
+    },
+    "PROC_Vehicle_SUV": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.62253,
+            0.0
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            1.86,
+            0.94506,
+            4.6
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            1.39753,
+            -0.61
+          ],
+          "name": "Cabin",
+          "size_unity_xyz": [
+            1.52,
+            0.60494,
+            3.12
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.8,
+            0.36215,
+            1.37
+          ],
+          "name": "Wheel_0L",
+          "size_unity_xyz": [
+            0.225,
+            0.7243,
+            0.7243
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            -0.8,
+            0.36215,
+            1.37
+          ],
+          "name": "Wheel_0R",
+          "size_unity_xyz": [
+            0.225,
+            0.7243,
+            0.7243
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.8,
+            0.36215,
+            -1.32
+          ],
+          "name": "Wheel_1L",
+          "size_unity_xyz": [
+            0.225,
+            0.7243,
+            0.7243
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            -0.8,
+            0.36215,
+            -1.32
+          ],
+          "name": "Wheel_1R",
+          "size_unity_xyz": [
+            0.225,
+            0.7243,
+            0.7243
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_Vehicle_SUV.fbx",
+      "export_sha256": "599cd63b4ebcfe7c",
+      "gaps": [
+        "GAP-PROC-23",
+        "GAP-PROC-24"
+      ],
+      "generator": "parked_vehicles",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Vehicle_SUV_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.04,
+                  2.23,
+                  1.655
+                ],
+                "min": [
+                  -1.04,
+                  -2.23,
+                  0.376874
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 1504
+              },
+              "geometry_sha256": "c4983403f525b608",
+              "material_slots": [
+                "M_Proc_CarPaint"
+              ],
+              "size_m_unity_xyz": [
+                2.08,
+                1.27813,
+                4.46
+              ],
+              "tris": 44316,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 22923
+            },
+            "PROC_Vehicle_SUV_Brakes_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7775,
+                  1.485,
+                  0.53729
+                ],
+                "min": [
+                  -0.7775,
+                  -1.535,
+                  0.19715
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "0a375a98ac3c696e",
+              "material_slots": [
+                "M_Proc_Brake_Steel"
+              ],
+              "size_m_unity_xyz": [
+                1.555,
+                0.34014,
+                3.02
+              ],
+              "tris": 2096,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1056
+            },
+            "PROC_Vehicle_SUV_Chrome_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.3432,
+                  -2.236,
+                  0.765
+                ],
+                "min": [
+                  -0.3432,
+                  -2.246,
+                  0.598
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
+              "geometry_sha256": "7500d3087a0ca28f",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.6864,
+                0.167,
+                0.01
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            },
+            "PROC_Vehicle_SUV_Cladding_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9093,
+                  2.3,
+                  0.798445
+                ],
+                "min": [
+                  -0.9093,
+                  -2.3,
+                  0.287825
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 868
+              },
+              "geometry_sha256": "c84763cf21a585d2",
+              "material_slots": [
+                "M_Proc_Cladding"
+              ],
+              "size_m_unity_xyz": [
+                1.8186,
+                0.51062,
+                4.6
+              ],
+              "tris": 5744,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 3320
+            },
+            "PROC_Vehicle_SUV_Glass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.776941,
+                  2.158,
+                  1.62
+                ],
+                "min": [
+                  -0.776941,
+                  -0.95,
+                  1.078474
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 741
+              },
+              "geometry_sha256": "190932e62f75c81d",
+              "material_slots": [
+                "M_Proc_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.55388,
+                0.54153,
+                3.108
+              ],
+              "tris": 6641,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 3699
+            },
+            "PROC_Vehicle_SUV_LampsAmber_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7142,
+                  -2.23,
+                  0.732
+                ],
+                "min": [
+                  -0.7142,
+                  -2.242,
+                  0.682
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "465f8c638d7b90f4",
+              "material_slots": [
+                "M_Proc_Lamp_Amber"
+              ],
+              "size_m_unity_xyz": [
+                1.4284,
+                0.05,
+                0.012
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_SUV_LampsClear_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7312,
+                  2.242,
+                  0.938
+                ],
+                "min": [
+                  -0.7312,
+                  -2.248,
+                  0.657
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "77980ac01a4ca273",
+              "material_slots": [
+                "M_Proc_Lamp_Clear"
+              ],
+              "size_m_unity_xyz": [
+                1.4624,
+                0.281,
+                4.49
+              ],
+              "tris": 256,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 136
+            },
+            "PROC_Vehicle_SUV_LampsRed_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7312,
+                  2.248,
+                  0.987
+                ],
+                "min": [
+                  -0.7312,
+                  2.218,
+                  0.847
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e58b32e80aea3131",
+              "material_slots": [
+                "M_Proc_Lamp_Red"
+              ],
+              "size_m_unity_xyz": [
+                1.4624,
+                0.14,
+                0.03
+              ],
+              "tris": 232,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_Vehicle_SUV_MirrorGlass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.0275,
+                  -0.542,
+                  1.191699
+                ],
+                "min": [
+                  -1.0275,
+                  -0.546,
+                  1.086699
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "540e155a578fed67",
+              "material_slots": [
+                "M_Proc_Mirror_Glass"
+              ],
+              "size_m_unity_xyz": [
+                2.055,
+                0.105,
+                0.004
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_SUV_PanelGaps_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.923643,
+                  1.4025,
+                  1.066379
+                ],
+                "min": [
+                  -0.923643,
+                  -2.0025,
+                  0.392741
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 928
+              },
+              "geometry_sha256": "5e90f19608411605",
+              "material_slots": [
+                "M_Proc_PanelGap"
+              ],
+              "size_m_unity_xyz": [
+                1.84729,
+                0.67364,
+                3.405
+              ],
+              "tris": 1840,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1386
+            },
+            "PROC_Vehicle_SUV_Plate_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1525,
+                  2.234,
+                  0.796
+                ],
+                "min": [
+                  -0.1525,
+                  2.23,
+                  0.644
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "22b34d1926494701",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.305,
+                0.152,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Vehicle_SUV_Reflectors_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7212,
+                  2.242,
+                  0.977
+                ],
+                "min": [
+                  -0.7212,
+                  -2.242,
+                  0.667
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "42bc15454fef3ada",
+              "material_slots": [
+                "M_Proc_Lamp_Reflector"
+              ],
+              "size_m_unity_xyz": [
+                1.4424,
+                0.31,
+                4.484
+              ],
+              "tris": 304,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 168
+            },
+            "PROC_Vehicle_SUV_Rims_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9005,
+                  1.5479,
+                  0.59005
+                ],
+                "min": [
+                  -0.9005,
+                  -1.5979,
+                  0.13425
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b647c2b3f37b2b3f",
+              "material_slots": [
+                "M_Proc_Rim_Alloy"
+              ],
+              "size_m_unity_xyz": [
+                1.801,
+                0.4558,
+                3.1458
+              ],
+              "tris": 6832,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 3544
+            },
+            "PROC_Vehicle_SUV_Tires_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9125,
+                  1.68215,
+                  0.7243
+                ],
+                "min": [
+                  -0.9125,
+                  -1.73215,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "3a51962c904a6db1",
+              "material_slots": [
+                "M_Proc_Tire_Rubber"
+              ],
+              "size_m_unity_xyz": [
+                1.825,
+                0.7243,
+                3.4143
+              ],
+              "tris": 15360,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 7680
+            },
+            "PROC_Vehicle_SUV_Trim_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.87,
+                  2.2965,
+                  1.7
+                ],
+                "min": [
+                  -0.87,
+                  -2.2965,
+                  0.21729
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 809
+              },
+              "geometry_sha256": "35aad6fa54597a0c",
+              "material_slots": [
+                "M_Proc_Trim_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.74,
+                1.48271,
+                4.593
+              ],
+              "tris": 2265,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1588
+            },
+            "PROC_Vehicle_SUV_Underbody_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9021,
+                  2.23,
+                  0.7643
+                ],
+                "min": [
+                  -0.9021,
+                  -2.23,
+                  0.3
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 430
+              },
+              "geometry_sha256": "c4b240072414bd27",
+              "material_slots": [
+                "M_Proc_Underbody"
+              ],
+              "size_m_unity_xyz": [
+                1.8042,
+                0.4643,
+                4.46
+              ],
+              "tris": 428,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 430
+            }
+          },
+          "size_m_unity_xyz": [
+            2.08,
+            1.7,
+            4.6
+          ],
+          "tris": 86422
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Vehicle_SUV_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.04,
+                  2.230001,
+                  1.655
+                ],
+                "min": [
+                  -1.04,
+                  -2.230001,
+                  0.376874
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 768
+              },
+              "geometry_sha256": "c8ddca5487e9d9b8",
+              "material_slots": [
+                "M_Proc_CarPaint"
+              ],
+              "size_m_unity_xyz": [
+                2.08,
+                1.27813,
+                4.46
+              ],
+              "tris": 11984,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 6389
+            },
+            "PROC_Vehicle_SUV_Brakes_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7625,
+                  1.485,
+                  0.52715
+                ],
+                "min": [
+                  -0.7625,
+                  -1.535,
+                  0.19715
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f46ea8138ef61c45",
+              "material_slots": [
+                "M_Proc_Brake_Steel"
+              ],
+              "size_m_unity_xyz": [
+                1.525,
+                0.33,
+                3.02
+              ],
+              "tris": 1024,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 512
+            },
+            "PROC_Vehicle_SUV_Chrome_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.3432,
+                  -2.236,
+                  0.765
+                ],
+                "min": [
+                  -0.3432,
+                  -2.246,
+                  0.598
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
+              "geometry_sha256": "7500d3087a0ca28f",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.6864,
+                0.167,
+                0.01
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            },
+            "PROC_Vehicle_SUV_Cladding_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9093,
+                  2.3,
+                  0.798445
+                ],
+                "min": [
+                  -0.9093,
+                  -2.3,
+                  0.287832
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 432
+              },
+              "geometry_sha256": "3e88194d0edfd6cc",
+              "material_slots": [
+                "M_Proc_Cladding"
+              ],
+              "size_m_unity_xyz": [
+                1.8186,
+                0.51061,
+                4.6
+              ],
+              "tris": 2360,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1410
+            },
+            "PROC_Vehicle_SUV_Glass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.776941,
+                  2.158,
+                  1.62
+                ],
+                "min": [
+                  -0.776941,
+                  -0.95,
+                  1.078474
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 347
+              },
+              "geometry_sha256": "e54ab4e138a2672b",
+              "material_slots": [
+                "M_Proc_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.55388,
+                0.54153,
+                3.108
+              ],
+              "tris": 1499,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 931
+            },
+            "PROC_Vehicle_SUV_LampsAmber_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7142,
+                  -2.23,
+                  0.732
+                ],
+                "min": [
+                  -0.7142,
+                  -2.242,
+                  0.682
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "465f8c638d7b90f4",
+              "material_slots": [
+                "M_Proc_Lamp_Amber"
+              ],
+              "size_m_unity_xyz": [
+                1.4284,
+                0.05,
+                0.012
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_SUV_LampsClear_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7312,
+                  2.242,
+                  0.938
+                ],
+                "min": [
+                  -0.7312,
+                  -2.248,
+                  0.657
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "99b78f934fcf30b7",
+              "material_slots": [
+                "M_Proc_Lamp_Clear"
+              ],
+              "size_m_unity_xyz": [
+                1.4624,
+                0.281,
+                4.49
+              ],
+              "tris": 128,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_Vehicle_SUV_LampsRed_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7312,
+                  2.248,
+                  0.987
+                ],
+                "min": [
+                  -0.7312,
+                  2.218,
+                  0.847
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b9f510322664a4ed",
+              "material_slots": [
+                "M_Proc_Lamp_Red"
+              ],
+              "size_m_unity_xyz": [
+                1.4624,
+                0.14,
+                0.03
+              ],
+              "tris": 104,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 56
+            },
+            "PROC_Vehicle_SUV_MirrorGlass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.0275,
+                  -0.542,
+                  1.191699
+                ],
+                "min": [
+                  -1.0275,
+                  -0.546,
+                  1.086699
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "540e155a578fed67",
+              "material_slots": [
+                "M_Proc_Mirror_Glass"
+              ],
+              "size_m_unity_xyz": [
+                2.055,
+                0.105,
+                0.004
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_SUV_PanelGaps_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.923593,
+                  1.4025,
+                  1.066379
+                ],
+                "min": [
+                  -0.923593,
+                  -2.0025,
+                  0.392741
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 472
+              },
+              "geometry_sha256": "bcca8d8584c63f3f",
+              "material_slots": [
+                "M_Proc_PanelGap"
+              ],
+              "size_m_unity_xyz": [
+                1.84719,
+                0.67364,
+                3.405
+              ],
+              "tris": 928,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 702
+            },
+            "PROC_Vehicle_SUV_Plate_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1525,
+                  2.234,
+                  0.796
+                ],
+                "min": [
+                  -0.1525,
+                  2.23,
+                  0.644
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "22b34d1926494701",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.305,
+                0.152,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Vehicle_SUV_Reflectors_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7212,
+                  2.242,
+                  0.977
+                ],
+                "min": [
+                  -0.7212,
+                  -2.242,
+                  0.667
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "25e62f24560431df",
+              "material_slots": [
+                "M_Proc_Lamp_Reflector"
+              ],
+              "size_m_unity_xyz": [
+                1.4424,
+                0.31,
+                4.484
+              ],
+              "tris": 176,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 104
+            },
+            "PROC_Vehicle_SUV_Rims_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9005,
+                  1.5479,
+                  0.59005
+                ],
+                "min": [
+                  -0.9005,
+                  -1.5979,
+                  0.13425
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "79010793c5e5a756",
+              "material_slots": [
+                "M_Proc_Rim_Alloy"
+              ],
+              "size_m_unity_xyz": [
+                1.801,
+                0.4558,
+                3.1458
+              ],
+              "tris": 3296,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1736
+            },
+            "PROC_Vehicle_SUV_Tires_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9125,
+                  1.68215,
+                  0.7243
+                ],
+                "min": [
+                  -0.9125,
+                  -1.73215,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "dd874acb958130bf",
+              "material_slots": [
+                "M_Proc_Tire_Rubber"
+              ],
+              "size_m_unity_xyz": [
+                1.825,
+                0.7243,
+                3.4143
+              ],
+              "tris": 5632,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 2816
+            },
+            "PROC_Vehicle_SUV_Trim_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.87,
+                  2.2965,
+                  1.7
+                ],
+                "min": [
+                  -0.87,
+                  -2.2965,
+                  0.21729
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 379
+              },
+              "geometry_sha256": "944800584117447e",
+              "material_slots": [
+                "M_Proc_Trim_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.74,
+                1.48271,
+                4.593
+              ],
+              "tris": 1231,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 848
+            },
+            "PROC_Vehicle_SUV_Underbody_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9021,
+                  2.23,
+                  0.7643
+                ],
+                "min": [
+                  -0.9021,
+                  -2.23,
+                  0.3
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 214
+              },
+              "geometry_sha256": "a804fe8056d4d36c",
+              "material_slots": [
+                "M_Proc_Underbody"
+              ],
+              "size_m_unity_xyz": [
+                1.8042,
+                0.4643,
+                4.46
+              ],
+              "tris": 212,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 214
+            }
+          },
+          "size_m_unity_xyz": [
+            2.08,
+            1.7,
+            4.6
+          ],
+          "tris": 28682
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Vehicle_SUV_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.04,
+                  2.23,
+                  1.655
+                ],
+                "min": [
+                  -1.04,
+                  -2.23,
+                  0.3
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 236
+              },
+              "geometry_sha256": "f3c30e0e8fa75ced",
+              "material_slots": [
+                "M_Proc_CarPaint"
+              ],
+              "size_m_unity_xyz": [
+                2.08,
+                1.355,
+                4.46
+              ],
+              "tris": 2360,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1303
+            },
+            "PROC_Vehicle_SUV_Cladding_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.896743,
+                  2.3,
+                  0.6
+                ],
+                "min": [
+                  -0.896743,
+                  -2.3,
+                  0.36
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1eea603cb266e5e3",
+              "material_slots": [
+                "M_Proc_Cladding"
+              ],
+              "size_m_unity_xyz": [
+                1.79349,
+                0.24,
+                4.6
+              ],
+              "tris": 248,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 128
+            },
+            "PROC_Vehicle_SUV_Glass_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.776941,
+                  2.158001,
+                  1.62
+                ],
+                "min": [
+                  -0.776941,
+                  -0.95,
+                  1.078474
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 167
+              },
+              "geometry_sha256": "a94da170b0d2f58e",
+              "material_slots": [
+                "M_Proc_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.55388,
+                0.54153,
+                3.108
+              ],
+              "tris": 357,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 270
+            },
+            "PROC_Vehicle_SUV_LampsClear_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7312,
+                  -2.218,
+                  0.757
+                ],
+                "min": [
+                  -0.7312,
+                  -2.248,
+                  0.657
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ef77f579ac3b02d3",
+              "material_slots": [
+                "M_Proc_Lamp_Clear"
+              ],
+              "size_m_unity_xyz": [
+                1.4624,
+                0.1,
+                0.03
+              ],
+              "tris": 104,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 56
+            },
+            "PROC_Vehicle_SUV_LampsRed_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7312,
+                  2.248,
+                  0.987
+                ],
+                "min": [
+                  -0.7312,
+                  2.218,
+                  0.847
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b9f510322664a4ed",
+              "material_slots": [
+                "M_Proc_Lamp_Red"
+              ],
+              "size_m_unity_xyz": [
+                1.4624,
+                0.14,
+                0.03
+              ],
+              "tris": 104,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 56
+            },
+            "PROC_Vehicle_SUV_MirrorGlass_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.0275,
+                  -0.542,
+                  1.191699
+                ],
+                "min": [
+                  -1.0275,
+                  -0.546,
+                  1.086699
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "540e155a578fed67",
+              "material_slots": [
+                "M_Proc_Mirror_Glass"
+              ],
+              "size_m_unity_xyz": [
+                2.055,
+                0.105,
+                0.004
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_SUV_Plate_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1525,
+                  2.234,
+                  0.796
+                ],
+                "min": [
+                  -0.1525,
+                  2.23,
+                  0.644
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "22b34d1926494701",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.305,
+                0.152,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Vehicle_SUV_Rims_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9005,
+                  1.5479,
+                  0.59005
+                ],
+                "min": [
+                  -0.9005,
+                  -1.5979,
+                  0.13425
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "424d5f08fe995a0e",
+              "material_slots": [
+                "M_Proc_Rim_Alloy"
+              ],
+              "size_m_unity_xyz": [
+                1.801,
+                0.4558,
+                3.1458
+              ],
+              "tris": 1920,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 968
+            },
+            "PROC_Vehicle_SUV_Tires_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9125,
+                  1.68215,
+                  0.7243
+                ],
+                "min": [
+                  -0.9125,
+                  -1.73215,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "101f71fcb11128b3",
+              "material_slots": [
+                "M_Proc_Tire_Rubber"
+              ],
+              "size_m_unity_xyz": [
+                1.825,
+                0.7243,
+                3.4143
+              ],
+              "tris": 1280,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 640
+            },
+            "PROC_Vehicle_SUV_Trim_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.87,
+                  2.17,
+                  1.7
+                ],
+                "min": [
+                  -0.87,
+                  -2.242,
+                  0.61
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 187
+              },
+              "geometry_sha256": "00f8a38aef11e795",
+              "material_slots": [
+                "M_Proc_Trim_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.74,
+                1.09,
+                4.412
+              ],
+              "tris": 671,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 454
+            },
+            "PROC_Vehicle_SUV_Underbody_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9021,
+                  2.23,
+                  0.7643
+                ],
+                "min": [
+                  -0.9021,
+                  -2.23,
+                  0.3
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 86
+              },
+              "geometry_sha256": "28034b16929eb7a3",
+              "material_slots": [
+                "M_Proc_Underbody"
+              ],
+              "size_m_unity_xyz": [
+                1.8042,
+                0.4643,
+                4.46
+              ],
+              "tris": 84,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 86
+            }
+          },
+          "size_m_unity_xyz": [
+            2.08,
+            1.7,
+            4.6
+          ],
+          "tris": 7164
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Vehicle_SUV_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.04,
+                  2.23,
+                  1.655
+                ],
+                "min": [
+                  -1.04,
+                  -2.23,
+                  0.3
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 112
+              },
+              "geometry_sha256": "06dd495237d9b033",
+              "material_slots": [
+                "M_Proc_CarPaint"
+              ],
+              "size_m_unity_xyz": [
+                2.08,
+                1.355,
+                4.46
+              ],
+              "tris": 700,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 411
+            },
+            "PROC_Vehicle_SUV_Cladding_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.896743,
+                  2.3,
+                  0.6
+                ],
+                "min": [
+                  -0.896743,
+                  -2.3,
+                  0.36
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a43a0d115cc5b61b",
+              "material_slots": [
+                "M_Proc_Cladding"
+              ],
+              "size_m_unity_xyz": [
+                1.79349,
+                0.24,
+                4.6
+              ],
+              "tris": 56,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Vehicle_SUV_Glass_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.78884,
+                  2.158,
+                  1.62
+                ],
+                "min": [
+                  -0.78884,
+                  -0.95,
+                  1.042805
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 75
+              },
+              "geometry_sha256": "05627c31bd3dd694",
+              "material_slots": [
+                "M_Proc_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.57768,
+                0.5772,
+                3.108
+              ],
+              "tris": 73,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 82
+            },
+            "PROC_Vehicle_SUV_LampsClear_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7312,
+                  -2.218,
+                  0.757
+                ],
+                "min": [
+                  -0.7312,
+                  -2.248,
+                  0.657
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6ca339fae6e39a8a",
+              "material_slots": [
+                "M_Proc_Lamp_Clear"
+              ],
+              "size_m_unity_xyz": [
+                1.4624,
+                0.1,
+                0.03
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_SUV_LampsRed_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7312,
+                  2.248,
+                  0.987
+                ],
+                "min": [
+                  -0.7312,
+                  2.218,
+                  0.847
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "31c0ee595ee9c7f1",
+              "material_slots": [
+                "M_Proc_Lamp_Red"
+              ],
+              "size_m_unity_xyz": [
+                1.4624,
+                0.14,
+                0.03
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_SUV_Plate_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1525,
+                  2.234,
+                  0.796
+                ],
+                "min": [
+                  -0.1525,
+                  2.23,
+                  0.644
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "22b34d1926494701",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.305,
+                0.152,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Vehicle_SUV_Rims_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8825,
+                  1.5359,
+                  0.57805
+                ],
+                "min": [
+                  -0.8825,
+                  -1.5859,
+                  0.14625
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "73d6540ba55bc33e",
+              "material_slots": [
+                "M_Proc_Rim_Alloy"
+              ],
+              "size_m_unity_xyz": [
+                1.765,
+                0.4318,
+                3.1218
+              ],
+              "tris": 128,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_Vehicle_SUV_Tires_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9125,
+                  1.68215,
+                  0.7243
+                ],
+                "min": [
+                  -0.9125,
+                  -1.73215,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a047b4698d6f4828",
+              "material_slots": [
+                "M_Proc_Tire_Rubber"
+              ],
+              "size_m_unity_xyz": [
+                1.825,
+                0.7243,
+                3.4143
+              ],
+              "tris": 384,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            },
+            "PROC_Vehicle_SUV_Trim_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.78884,
+                  2.17,
+                  1.7
+                ],
+                "min": [
+                  -0.78884,
+                  -2.242,
+                  0.61
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 47
+              },
+              "geometry_sha256": "5001ea36328d9c1c",
+              "material_slots": [
+                "M_Proc_Trim_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.57768,
+                1.09,
+                4.412
+              ],
+              "tris": 91,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 76
+            },
+            "PROC_Vehicle_SUV_Underbody_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9021,
+                  2.23,
+                  0.7643
+                ],
+                "min": [
+                  -0.9021,
+                  -2.23,
+                  0.3
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 46
+              },
+              "geometry_sha256": "5b8e8f3c5f61b5e5",
+              "material_slots": [
+                "M_Proc_Underbody"
+              ],
+              "size_m_unity_xyz": [
+                1.8042,
+                0.4643,
+                4.46
+              ],
+              "tris": 44,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 46
+            }
+          },
+          "size_m_unity_xyz": [
+            2.08,
+            1.7,
+            4.6
+          ],
+          "tris": 1536
+        }
+      },
+      "materials_pbr": {
+        "Brake_Steel": {
+          "metallic": 0.85,
+          "smoothness": 0.35
+        },
+        "CarPaint": {
+          "clearcoat": true,
+          "metallic": 0.55,
+          "smoothness": 0.82
+        },
+        "Chrome": {
+          "metallic": 1.0,
+          "smoothness": 0.9
+        },
+        "Cladding": {
+          "metallic": 0.0,
+          "note": "textured unpainted PP",
+          "smoothness": 0.2
+        },
+        "Glass": {
+          "alpha": 0.55,
+          "metallic": 0.0,
+          "smoothness": 0.95
+        },
+        "Lamp_Amber": {
+          "alpha": 0.85,
+          "metallic": 0.0,
+          "smoothness": 0.9
+        },
+        "Lamp_Clear": {
+          "alpha": 0.4,
+          "metallic": 0.0,
+          "smoothness": 0.95
+        },
+        "Lamp_Red": {
+          "alpha": 0.85,
+          "metallic": 0.0,
+          "smoothness": 0.9
+        },
+        "Lamp_Reflector": {
+          "metallic": 1.0,
+          "smoothness": 0.85
+        },
+        "Mirror_Glass": {
+          "metallic": 1.0,
+          "smoothness": 0.98
+        },
+        "PanelGap": {
+          "metallic": 0.0,
+          "smoothness": 0.2
+        },
+        "Plate_Blank": {
+          "metallic": 0.6,
+          "smoothness": 0.5
+        },
+        "Rim_Alloy": {
+          "metallic": 0.9,
+          "smoothness": 0.7
+        },
+        "Tire_Rubber": {
+          "metallic": 0.0,
+          "smoothness": 0.25
+        },
+        "Trim_Black": {
+          "metallic": 0.0,
+          "smoothness": 0.45
+        },
+        "Underbody": {
+          "metallic": 0.0,
+          "smoothness": 0.15
+        },
+        "_note": "Metallic/smoothness per slot for the Unity material builder (URP Lit). Texture maps (tyre tread/sidewall normal, dust/grime masks, plate) wait for the shared Q0.2/Q0.3 unwrap+texture pipeline: GAP-PROC-24."
+      },
+      "own_sheet": true,
+      "paint_variants": {
+        "Black": [
+          0.02,
+          0.02,
+          0.022,
+          1.0
+        ],
+        "DarkBlue": [
+          0.04,
+          0.09,
+          0.2,
+          1.0
+        ],
+        "Graphite": [
+          0.12,
+          0.125,
+          0.13,
+          1.0
+        ],
+        "Red": [
+          0.45,
+          0.03,
+          0.03,
+          1.0
+        ],
+        "Silver": [
+          0.55,
+          0.56,
+          0.58,
+          1.0
+        ],
+        "White": [
+          0.85,
+          0.86,
+          0.87,
+          1.0
+        ],
+        "_note": "GAP-PROC-24: the CCTV cannot resolve colours (RG3-4). Common neutral car colours for material swaps."
+      },
+      "params": "Tools/Blender/params/parked_vehicles.json",
+      "params_sha256": "52d370efd2e03be6",
+      "seed": 9103,
+      "tri_budget": {
+        "LOD0": 150000,
+        "LOD1": 60000,
+        "LOD2": 25000,
+        "LOD3": 8000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Exterior/Vehicles/PROC_Vehicle_SUV.fbx",
+      "vehicle_class": "suv",
+      "wear": {
+        "bird_droppings": 0.05,
+        "dust": 0.35,
+        "edge_wear": 0.08,
+        "road_grime_low": 0.4,
+        "seed": 9103
+      }
+    },
+    "PROC_Vehicle_Sedan": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.547566,
+            0.0
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            1.84,
+            0.795133,
+            4.88
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            1.192566,
+            -0.25
+          ],
+          "name": "Cabin",
+          "size_unity_xyz": [
+            1.4,
+            0.494867,
+            2.38
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.795,
+            0.33965,
+            1.46
+          ],
+          "name": "Wheel_0L",
+          "size_unity_xyz": [
+            0.225,
+            0.6793,
+            0.6793
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            -0.795,
+            0.33965,
+            1.46
+          ],
+          "name": "Wheel_0R",
+          "size_unity_xyz": [
+            0.225,
+            0.6793,
+            0.6793
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.795,
+            0.33965,
+            -1.37
+          ],
+          "name": "Wheel_1L",
+          "size_unity_xyz": [
+            0.225,
+            0.6793,
+            0.6793
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            -0.795,
+            0.33965,
+            -1.37
+          ],
+          "name": "Wheel_1R",
+          "size_unity_xyz": [
+            0.225,
+            0.6793,
+            0.6793
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_Vehicle_Sedan.fbx",
+      "export_sha256": "0a1f551bd1b36fab",
+      "gaps": [
+        "GAP-PROC-23",
+        "GAP-PROC-24"
+      ],
+      "generator": "parked_vehicles",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Vehicle_Sedan_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.03,
+                  2.44,
+                  1.44
+                ],
+                "min": [
+                  -1.03,
+                  -2.44,
+                  0.199828
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 2218
+              },
+              "geometry_sha256": "f978c7b95c8898aa",
+              "material_slots": [
+                "M_Proc_CarPaint"
+              ],
+              "size_m_unity_xyz": [
+                2.06,
+                1.24017,
+                4.88
+              ],
+              "tris": 49802,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 26025
+            },
+            "PROC_Vehicle_Sedan_Brakes_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7725,
+                  1.535,
+                  0.51479
+                ],
+                "min": [
+                  -0.7725,
+                  -1.625,
+                  0.17465
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d7591da6135d038b",
+              "material_slots": [
+                "M_Proc_Brake_Steel"
+              ],
+              "size_m_unity_xyz": [
+                1.545,
+                0.34014,
+                3.16
+              ],
+              "tris": 2096,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1056
+            },
+            "PROC_Vehicle_Sedan_Chrome_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.93275,
+                  1.03,
+                  0.827424
+                ],
+                "min": [
+                  -0.93275,
+                  -2.386,
+                  0.458
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
+              "geometry_sha256": "7fd4983ab25957eb",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                1.8655,
+                0.36942,
+                3.416
+              ],
+              "tris": 384,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 200
+            },
+            "PROC_Vehicle_Sedan_Glass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.76944,
+                  1.44,
+                  1.41
+                ],
+                "min": [
+                  -0.76944,
+                  -0.94,
+                  0.944102
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 602
+              },
+              "geometry_sha256": "f13f00e3756f2a5b",
+              "material_slots": [
+                "M_Proc_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.53888,
+                0.4659,
+                2.38
+              ],
+              "tris": 6432,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 3523
+            },
+            "PROC_Vehicle_Sedan_LampsAmber_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.6884,
+                  -2.37,
+                  0.602
+                ],
+                "min": [
+                  -0.6884,
+                  -2.382,
+                  0.552
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2626629da8dfa88f",
+              "material_slots": [
+                "M_Proc_Lamp_Amber"
+              ],
+              "size_m_unity_xyz": [
+                1.3768,
+                0.05,
+                0.012
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Sedan_LampsClear_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7044,
+                  2.382,
+                  0.8185
+                ],
+                "min": [
+                  -0.7044,
+                  -2.388,
+                  0.527
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d30a627e52e7c09a",
+              "material_slots": [
+                "M_Proc_Lamp_Clear"
+              ],
+              "size_m_unity_xyz": [
+                1.4088,
+                0.2915,
+                4.77
+              ],
+              "tris": 256,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 136
+            },
+            "PROC_Vehicle_Sedan_LampsRed_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7044,
+                  2.388,
+                  0.857
+                ],
+                "min": [
+                  -0.7044,
+                  2.358,
+                  0.747
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "3b32eea24f5f244c",
+              "material_slots": [
+                "M_Proc_Lamp_Red"
+              ],
+              "size_m_unity_xyz": [
+                1.4088,
+                0.11,
+                0.03
+              ],
+              "tris": 232,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_Vehicle_Sedan_MirrorGlass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.0175,
+                  -0.527,
+                  1.044728
+                ],
+                "min": [
+                  -1.0175,
+                  -0.531,
+                  0.949728
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "afe47630333d8695",
+              "material_slots": [
+                "M_Proc_Mirror_Glass"
+              ],
+              "size_m_unity_xyz": [
+                2.035,
+                0.095,
+                0.004
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Sedan_PanelGaps_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.913356,
+                  2.37,
+                  1.02
+                ],
+                "min": [
+                  -0.913356,
+                  -2.1425,
+                  0.275368
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 1232
+              },
+              "geometry_sha256": "f0f63a8387b5c1ef",
+              "material_slots": [
+                "M_Proc_PanelGap"
+              ],
+              "size_m_unity_xyz": [
+                1.82671,
+                0.74463,
+                4.5125
+              ],
+              "tris": 2440,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1839
+            },
+            "PROC_Vehicle_Sedan_Plate_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1525,
+                  2.374,
+                  0.656
+                ],
+                "min": [
+                  -0.1525,
+                  2.37,
+                  0.504
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "12bf4bc22034574c",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.305,
+                0.152,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Vehicle_Sedan_Reflectors_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.6944,
+                  2.382,
+                  0.847
+                ],
+                "min": [
+                  -0.6944,
+                  -2.382,
+                  0.537
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "26a07536cf34f34a",
+              "material_slots": [
+                "M_Proc_Lamp_Reflector"
+              ],
+              "size_m_unity_xyz": [
+                1.3888,
+                0.31,
+                4.764
+              ],
+              "tris": 304,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 168
+            },
+            "PROC_Vehicle_Sedan_Rims_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8955,
+                  1.5979,
+                  0.56755
+                ],
+                "min": [
+                  -0.8955,
+                  -1.6879,
+                  0.11175
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "dccee036fc92fb5e",
+              "material_slots": [
+                "M_Proc_Rim_Alloy"
+              ],
+              "size_m_unity_xyz": [
+                1.791,
+                0.4558,
+                3.2858
+              ],
+              "tris": 6592,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 3384
+            },
+            "PROC_Vehicle_Sedan_Tires_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9075,
+                  1.70965,
+                  0.6793
+                ],
+                "min": [
+                  -0.9075,
+                  -1.79965,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6272e884aed5a87f",
+              "material_slots": [
+                "M_Proc_Tire_Rubber"
+              ],
+              "size_m_unity_xyz": [
+                1.815,
+                0.6793,
+                3.5093
+              ],
+              "tris": 15360,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 7680
+            },
+            "PROC_Vehicle_Sedan_Trim_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.87,
+                  2.4365,
+                  1.35
+                ],
+                "min": [
+                  -0.87,
+                  -2.4365,
+                  0.20379
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 666
+              },
+              "geometry_sha256": "5a20e74b4bf3be45",
+              "material_slots": [
+                "M_Proc_Trim_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.74,
+                1.14621,
+                4.873
+              ],
+              "tris": 1700,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1216
+            },
+            "PROC_Vehicle_Sedan_Underbody_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8878,
+                  2.37,
+                  0.7143
+                ],
+                "min": [
+                  -0.8878,
+                  -2.37,
+                  0.2
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 478
+              },
+              "geometry_sha256": "b69dcf97d8b661bb",
+              "material_slots": [
+                "M_Proc_Underbody"
+              ],
+              "size_m_unity_xyz": [
+                1.7756,
+                0.5143,
+                4.74
+              ],
+              "tris": 476,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 478
+            }
+          },
+          "size_m_unity_xyz": [
+            2.06,
+            1.44,
+            4.88
+          ],
+          "tris": 86134
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Vehicle_Sedan_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.03,
+                  2.44,
+                  1.44
+                ],
+                "min": [
+                  -1.03,
+                  -2.44,
+                  0.199828
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 1088
+              },
+              "geometry_sha256": "310d132c14893d52",
+              "material_slots": [
+                "M_Proc_CarPaint"
+              ],
+              "size_m_unity_xyz": [
+                2.06,
+                1.24017,
+                4.88
+              ],
+              "tris": 13742,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 7430
+            },
+            "PROC_Vehicle_Sedan_Brakes_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7575,
+                  1.535,
+                  0.50465
+                ],
+                "min": [
+                  -0.7575,
+                  -1.625,
+                  0.17465
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "9fffd6802b5a8dea",
+              "material_slots": [
+                "M_Proc_Brake_Steel"
+              ],
+              "size_m_unity_xyz": [
+                1.515,
+                0.33,
+                3.16
+              ],
+              "tris": 1024,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 512
+            },
+            "PROC_Vehicle_Sedan_Chrome_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.93275,
+                  1.03,
+                  0.827424
+                ],
+                "min": [
+                  -0.93275,
+                  -2.386,
+                  0.458
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
+              "geometry_sha256": "4bd2cac02b096a91",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                1.8655,
+                0.36942,
+                3.416
+              ],
+              "tris": 256,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 136
+            },
+            "PROC_Vehicle_Sedan_Glass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.76944,
+                  1.44,
+                  1.41
+                ],
+                "min": [
+                  -0.76944,
+                  -0.94,
+                  0.944102
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 280
+              },
+              "geometry_sha256": "7ae1cc64351cf984",
+              "material_slots": [
+                "M_Proc_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.53888,
+                0.4659,
+                2.38
+              ],
+              "tris": 1440,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 866
+            },
+            "PROC_Vehicle_Sedan_LampsAmber_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.6884,
+                  -2.37,
+                  0.602
+                ],
+                "min": [
+                  -0.6884,
+                  -2.382,
+                  0.552
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2626629da8dfa88f",
+              "material_slots": [
+                "M_Proc_Lamp_Amber"
+              ],
+              "size_m_unity_xyz": [
+                1.3768,
+                0.05,
+                0.012
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Sedan_LampsClear_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7044,
+                  2.382,
+                  0.8185
+                ],
+                "min": [
+                  -0.7044,
+                  -2.388,
+                  0.527
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a04ba97c1114a279",
+              "material_slots": [
+                "M_Proc_Lamp_Clear"
+              ],
+              "size_m_unity_xyz": [
+                1.4088,
+                0.2915,
+                4.77
+              ],
+              "tris": 128,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_Vehicle_Sedan_LampsRed_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7044,
+                  2.388,
+                  0.857
+                ],
+                "min": [
+                  -0.7044,
+                  2.358,
+                  0.747
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c207dec6b74fa495",
+              "material_slots": [
+                "M_Proc_Lamp_Red"
+              ],
+              "size_m_unity_xyz": [
+                1.4088,
+                0.11,
+                0.03
+              ],
+              "tris": 104,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 56
+            },
+            "PROC_Vehicle_Sedan_MirrorGlass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.0175,
+                  -0.527,
+                  1.044728
+                ],
+                "min": [
+                  -1.0175,
+                  -0.531,
+                  0.949728
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "afe47630333d8695",
+              "material_slots": [
+                "M_Proc_Mirror_Glass"
+              ],
+              "size_m_unity_xyz": [
+                2.035,
+                0.095,
+                0.004
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Sedan_PanelGaps_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.913215,
+                  2.37,
+                  1.02
+                ],
+                "min": [
+                  -0.913215,
+                  -2.1425,
+                  0.275368
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 616
+              },
+              "geometry_sha256": "46437e3d12f16100",
+              "material_slots": [
+                "M_Proc_PanelGap"
+              ],
+              "size_m_unity_xyz": [
+                1.82643,
+                0.74463,
+                4.5125
+              ],
+              "tris": 1208,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 915
+            },
+            "PROC_Vehicle_Sedan_Plate_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1525,
+                  2.374,
+                  0.656
+                ],
+                "min": [
+                  -0.1525,
+                  2.37,
+                  0.504
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "12bf4bc22034574c",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.305,
+                0.152,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Vehicle_Sedan_Reflectors_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.6944,
+                  2.382,
+                  0.847
+                ],
+                "min": [
+                  -0.6944,
+                  -2.382,
+                  0.537
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f4875278256b9bfb",
+              "material_slots": [
+                "M_Proc_Lamp_Reflector"
+              ],
+              "size_m_unity_xyz": [
+                1.3888,
+                0.31,
+                4.764
+              ],
+              "tris": 176,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 104
+            },
+            "PROC_Vehicle_Sedan_Rims_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8955,
+                  1.5979,
+                  0.56755
+                ],
+                "min": [
+                  -0.8955,
+                  -1.6879,
+                  0.11175
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "5149e26e121971fd",
+              "material_slots": [
+                "M_Proc_Rim_Alloy"
+              ],
+              "size_m_unity_xyz": [
+                1.791,
+                0.4558,
+                3.2858
+              ],
+              "tris": 3056,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1576
+            },
+            "PROC_Vehicle_Sedan_Tires_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9075,
+                  1.70965,
+                  0.6793
+                ],
+                "min": [
+                  -0.9075,
+                  -1.79965,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ee8ae2513beda181",
+              "material_slots": [
+                "M_Proc_Tire_Rubber"
+              ],
+              "size_m_unity_xyz": [
+                1.815,
+                0.6793,
+                3.5093
+              ],
+              "tris": 5632,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 2816
+            },
+            "PROC_Vehicle_Sedan_Trim_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.87,
+                  2.4365,
+                  1.35
+                ],
+                "min": [
+                  -0.87,
+                  -2.4365,
+                  0.20379
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 314
+              },
+              "geometry_sha256": "6c873fe308a0b912",
+              "material_slots": [
+                "M_Proc_Trim_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.74,
+                1.14621,
+                4.873
+              ],
+              "tris": 860,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 612
+            },
+            "PROC_Vehicle_Sedan_Underbody_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8878,
+                  2.37,
+                  0.7143
+                ],
+                "min": [
+                  -0.8878,
+                  -2.37,
+                  0.2
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 230
+              },
+              "geometry_sha256": "fc953257a5da567c",
+              "material_slots": [
+                "M_Proc_Underbody"
+              ],
+              "size_m_unity_xyz": [
+                1.7756,
+                0.5143,
+                4.74
+              ],
+              "tris": 228,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 230
+            }
+          },
+          "size_m_unity_xyz": [
+            2.06,
+            1.44,
+            4.88
+          ],
+          "tris": 27914
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Vehicle_Sedan_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.03,
+                  2.44,
+                  1.44
+                ],
+                "min": [
+                  -1.03,
+                  -2.44,
+                  0.2
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 216
+              },
+              "geometry_sha256": "ab93625624d5cfc1",
+              "material_slots": [
+                "M_Proc_CarPaint"
+              ],
+              "size_m_unity_xyz": [
+                2.06,
+                1.24,
+                4.88
+              ],
+              "tris": 2410,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1323
+            },
+            "PROC_Vehicle_Sedan_Glass_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.76944,
+                  1.44,
+                  1.41
+                ],
+                "min": [
+                  -0.76944,
+                  -0.94,
+                  0.944102
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 138
+              },
+              "geometry_sha256": "b3212dab9d6cbef7",
+              "material_slots": [
+                "M_Proc_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.53888,
+                0.4659,
+                2.38
+              ],
+              "tris": 348,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 249
+            },
+            "PROC_Vehicle_Sedan_LampsClear_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7044,
+                  -2.358,
+                  0.627
+                ],
+                "min": [
+                  -0.7044,
+                  -2.388,
+                  0.527
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "14957072bef294b6",
+              "material_slots": [
+                "M_Proc_Lamp_Clear"
+              ],
+              "size_m_unity_xyz": [
+                1.4088,
+                0.1,
+                0.03
+              ],
+              "tris": 104,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 56
+            },
+            "PROC_Vehicle_Sedan_LampsRed_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7044,
+                  2.388,
+                  0.857
+                ],
+                "min": [
+                  -0.7044,
+                  2.358,
+                  0.747
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c207dec6b74fa495",
+              "material_slots": [
+                "M_Proc_Lamp_Red"
+              ],
+              "size_m_unity_xyz": [
+                1.4088,
+                0.11,
+                0.03
+              ],
+              "tris": 104,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 56
+            },
+            "PROC_Vehicle_Sedan_MirrorGlass_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.0175,
+                  -0.527,
+                  1.044728
+                ],
+                "min": [
+                  -1.0175,
+                  -0.531,
+                  0.949728
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "afe47630333d8695",
+              "material_slots": [
+                "M_Proc_Mirror_Glass"
+              ],
+              "size_m_unity_xyz": [
+                2.035,
+                0.095,
+                0.004
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Sedan_Plate_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1525,
+                  2.374,
+                  0.656
+                ],
+                "min": [
+                  -0.1525,
+                  2.37,
+                  0.504
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "12bf4bc22034574c",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.305,
+                0.152,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Vehicle_Sedan_Rims_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8955,
+                  1.5979,
+                  0.56755
+                ],
+                "min": [
+                  -0.8955,
+                  -1.6879,
+                  0.11175
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "63c9c783751321a0",
+              "material_slots": [
+                "M_Proc_Rim_Alloy"
+              ],
+              "size_m_unity_xyz": [
+                1.791,
+                0.4558,
+                3.2858
+              ],
+              "tris": 1920,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 968
+            },
+            "PROC_Vehicle_Sedan_Tires_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9075,
+                  1.70965,
+                  0.6793
+                ],
+                "min": [
+                  -0.9075,
+                  -1.79965,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "967788b1c4b330d2",
+              "material_slots": [
+                "M_Proc_Tire_Rubber"
+              ],
+              "size_m_unity_xyz": [
+                1.815,
+                0.6793,
+                3.5093
+              ],
+              "tris": 1280,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 640
+            },
+            "PROC_Vehicle_Sedan_Trim_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.87,
+                  1.44,
+                  1.35
+                ],
+                "min": [
+                  -0.87,
+                  -2.382,
+                  0.47
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 162
+              },
+              "geometry_sha256": "5ac5bd02a4f3b014",
+              "material_slots": [
+                "M_Proc_Trim_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.74,
+                0.88,
+                3.822
+              ],
+              "tris": 352,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 264
+            },
+            "PROC_Vehicle_Sedan_Underbody_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8878,
+                  2.37,
+                  0.7143
+                ],
+                "min": [
+                  -0.8878,
+                  -2.37,
+                  0.2
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 92
+              },
+              "geometry_sha256": "9cff58ff4d8c051d",
+              "material_slots": [
+                "M_Proc_Underbody"
+              ],
+              "size_m_unity_xyz": [
+                1.7756,
+                0.5143,
+                4.74
+              ],
+              "tris": 90,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 92
+            }
+          },
+          "size_m_unity_xyz": [
+            2.06,
+            1.44,
+            4.88
+          ],
+          "tris": 6644
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Vehicle_Sedan_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.03,
+                  2.44,
+                  1.44
+                ],
+                "min": [
+                  -1.03,
+                  -2.44,
+                  0.2
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 100
+              },
+              "geometry_sha256": "b4829fcf13f9e4a6",
+              "material_slots": [
+                "M_Proc_CarPaint"
+              ],
+              "size_m_unity_xyz": [
+                2.06,
+                1.24,
+                4.88
+              ],
+              "tris": 626,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 373
+            },
+            "PROC_Vehicle_Sedan_Glass_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.78896,
+                  1.44,
+                  1.41
+                ],
+                "min": [
+                  -0.78896,
+                  -0.94,
+                  0.903131
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 72
+              },
+              "geometry_sha256": "a1254ff948c5792f",
+              "material_slots": [
+                "M_Proc_Glass"
+              ],
+              "size_m_unity_xyz": [
+                1.57792,
+                0.50687,
+                2.38
+              ],
+              "tris": 84,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            },
+            "PROC_Vehicle_Sedan_LampsClear_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7044,
+                  -2.358,
+                  0.627
+                ],
+                "min": [
+                  -0.7044,
+                  -2.388,
+                  0.527
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "68c40ca5b875009f",
+              "material_slots": [
+                "M_Proc_Lamp_Clear"
+              ],
+              "size_m_unity_xyz": [
+                1.4088,
+                0.1,
+                0.03
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Sedan_LampsRed_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.7044,
+                  2.388,
+                  0.857
+                ],
+                "min": [
+                  -0.7044,
+                  2.358,
+                  0.747
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "84babc66e16eeab5",
+              "material_slots": [
+                "M_Proc_Lamp_Red"
+              ],
+              "size_m_unity_xyz": [
+                1.4088,
+                0.11,
+                0.03
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Vehicle_Sedan_Plate_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1525,
+                  2.374,
+                  0.656
+                ],
+                "min": [
+                  -0.1525,
+                  2.37,
+                  0.504
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "12bf4bc22034574c",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.305,
+                0.152,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Vehicle_Sedan_Rims_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8775,
+                  1.5859,
+                  0.55555
+                ],
+                "min": [
+                  -0.8775,
+                  -1.6759,
+                  0.12375
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f79e30690345a3ea",
+              "material_slots": [
+                "M_Proc_Rim_Alloy"
+              ],
+              "size_m_unity_xyz": [
+                1.755,
+                0.4318,
+                3.2618
+              ],
+              "tris": 128,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_Vehicle_Sedan_Tires_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.9075,
+                  1.70965,
+                  0.6793
+                ],
+                "min": [
+                  -0.9075,
+                  -1.79965,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "acbceef4aeb326db",
+              "material_slots": [
+                "M_Proc_Tire_Rubber"
+              ],
+              "size_m_unity_xyz": [
+                1.815,
+                0.6793,
+                3.5093
+              ],
+              "tris": 384,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            },
+            "PROC_Vehicle_Sedan_Trim_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.78896,
+                  1.44,
+                  1.349812
+                ],
+                "min": [
+                  -0.78896,
+                  -2.382,
+                  0.47
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 44
+              },
+              "geometry_sha256": "21b54831a972cad6",
+              "material_slots": [
+                "M_Proc_Trim_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.57792,
+                0.87981,
+                3.822
+              ],
+              "tris": 58,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 54
+            },
+            "PROC_Vehicle_Sedan_Underbody_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.8878,
+                  2.37,
+                  0.7143
+                ],
+                "min": [
+                  -0.8878,
+                  -2.37,
+                  0.2
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 44
+              },
+              "geometry_sha256": "a7e309b61c0b30fe",
+              "material_slots": [
+                "M_Proc_Underbody"
+              ],
+              "size_m_unity_xyz": [
+                1.7756,
+                0.5143,
+                4.74
+              ],
+              "tris": 42,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 44
+            }
+          },
+          "size_m_unity_xyz": [
+            2.06,
+            1.44,
+            4.88
+          ],
+          "tris": 1382
+        }
+      },
+      "materials_pbr": {
+        "Brake_Steel": {
+          "metallic": 0.85,
+          "smoothness": 0.35
+        },
+        "CarPaint": {
+          "clearcoat": true,
+          "metallic": 0.55,
+          "smoothness": 0.82
+        },
+        "Chrome": {
+          "metallic": 1.0,
+          "smoothness": 0.9
+        },
+        "Cladding": {
+          "metallic": 0.0,
+          "note": "textured unpainted PP",
+          "smoothness": 0.2
+        },
+        "Glass": {
+          "alpha": 0.55,
+          "metallic": 0.0,
+          "smoothness": 0.95
+        },
+        "Lamp_Amber": {
+          "alpha": 0.85,
+          "metallic": 0.0,
+          "smoothness": 0.9
+        },
+        "Lamp_Clear": {
+          "alpha": 0.4,
+          "metallic": 0.0,
+          "smoothness": 0.95
+        },
+        "Lamp_Red": {
+          "alpha": 0.85,
+          "metallic": 0.0,
+          "smoothness": 0.9
+        },
+        "Lamp_Reflector": {
+          "metallic": 1.0,
+          "smoothness": 0.85
+        },
+        "Mirror_Glass": {
+          "metallic": 1.0,
+          "smoothness": 0.98
+        },
+        "PanelGap": {
+          "metallic": 0.0,
+          "smoothness": 0.2
+        },
+        "Plate_Blank": {
+          "metallic": 0.6,
+          "smoothness": 0.5
+        },
+        "Rim_Alloy": {
+          "metallic": 0.9,
+          "smoothness": 0.7
+        },
+        "Tire_Rubber": {
+          "metallic": 0.0,
+          "smoothness": 0.25
+        },
+        "Trim_Black": {
+          "metallic": 0.0,
+          "smoothness": 0.45
+        },
+        "Underbody": {
+          "metallic": 0.0,
+          "smoothness": 0.15
+        },
+        "_note": "Metallic/smoothness per slot for the Unity material builder (URP Lit). Texture maps (tyre tread/sidewall normal, dust/grime masks, plate) wait for the shared Q0.2/Q0.3 unwrap+texture pipeline: GAP-PROC-24."
+      },
+      "own_sheet": true,
+      "paint_variants": {
+        "Black": [
+          0.02,
+          0.02,
+          0.022,
+          1.0
+        ],
+        "DarkBlue": [
+          0.04,
+          0.09,
+          0.2,
+          1.0
+        ],
+        "Graphite": [
+          0.12,
+          0.125,
+          0.13,
+          1.0
+        ],
+        "Red": [
+          0.45,
+          0.03,
+          0.03,
+          1.0
+        ],
+        "Silver": [
+          0.55,
+          0.56,
+          0.58,
+          1.0
+        ],
+        "White": [
+          0.85,
+          0.86,
+          0.87,
+          1.0
+        ],
+        "_note": "GAP-PROC-24: the CCTV cannot resolve colours (RG3-4). Common neutral car colours for material swaps."
+      },
+      "params": "Tools/Blender/params/parked_vehicles.json",
+      "params_sha256": "52d370efd2e03be6",
+      "seed": 9101,
+      "tri_budget": {
+        "LOD0": 150000,
+        "LOD1": 60000,
+        "LOD2": 25000,
+        "LOD3": 8000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Exterior/Vehicles/PROC_Vehicle_Sedan.fbx",
+      "vehicle_class": "sedan",
+      "wear": {
+        "bird_droppings": 0.05,
+        "dust": 0.35,
+        "edge_wear": 0.08,
+        "road_grime_low": 0.4,
+        "seed": 9101
+      }
     }
   },
   "label_faces": "+Z (Unity forward)",
