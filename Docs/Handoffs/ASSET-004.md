@@ -1,4 +1,4 @@
-# Handoff — ASSET-004 (2026-10-30): MPFB2 customer pipeline — DONE (58/60 exported; 2 deferred)
+# Handoff — ASSET-004 (2026-10-30): MPFB2 customer pipeline — DONE (60/60 exported)
 
 Branch `worktree-agent-ae6487dd8e469d31b` (merges `claude/task-asset-004` 225ac4a). Reviewer: Docs reviewer (pipeline/spec); Unity A later for import.
 
@@ -9,11 +9,11 @@ Branch `worktree-agent-ae6487dd8e469d31b` (merges `claude/task-asset-004` 225ac4
 - **Hair tint:** `customer_gen.tint_texture` recolours hair, brow and beard diffuse to the roster tint (`hair_tint_srgb` in params), keeping luminance and alpha; per-tint texture and material names. No runtime shader needed.
 - **Roster** regenerated: 60, self-check 0 errors, deterministic.
 - **Why the export ran 3 times:** run 1 hit the AGPL-hat licence bug. Run 2 found 2 heavy shoes and over-tall men (21 failures). Run 3 had a body-only height measure that the clothing masks break. Each run surfaced a different root cause, not the same customers failing again. Run 4 (all fixes): 58/60 pass, and the 2 that fail are deferred (below) rather than looped. A final 13-customer re-export only fixed the previews: the Workbench preview showed the hair normal map instead of the colour, and FBX wiring was unaffected.
-- **Export:** **58 of 60** in `<cache>/mpfb/derived/<id>/`, each with 0 validation errors and a CC0 audit that passes (every asset unit allowed). FBX 329 MB + textures 1.43 GB in total (~30 MB per customer; textures are copied per customer, so dedupe on import).
+- **Export:** **60 of 60** (C028/C054 re-exported after the lead ruling lowered the men's height floor to 1.55 m; the height check runs inside the export, so a re-export was needed) in `<cache>/mpfb/derived/<id>/`, each with 0 validation errors and a CC0 audit that passes (every asset unit allowed). FBX 329 MB + textures 1.43 GB in total (~30 MB per customer; textures are copied per customer, so dedupe on import).
 - **Batch robustness:** one failing customer no longer stops the batch; `summary.validation.json` merges partial re-runs and lists failures; exit is still non-zero on any failure.
 - **CHARACTERS.md** rewritten for MPFB: sources/licence gate, pipeline, variation (quotas, hair tint, Rule D), budgets with measured figures, texture gaps, Unity import, animation map, Rocketbox interim, staff (DEC-089).
-- **Manifest:** 58 `MPFB-DERIVED-<id>` rows appended to `ASSET_CACHE_MANIFEST.json` (FBX path, sha256 equal to the validation JSON, CC0, redistributable).
-- **Contact sheet:** `Docs/Assets/Specs/customers_mpfb_contact_sheet.jpg` (`contact_sheet.py`, register framing, row-major C001…, 10 per row, 58 tiles, 288 KB).
+- **Manifest:** 60 `MPFB-DERIVED-<id>` rows in `ASSET_CACHE_MANIFEST.json`, reproducible with `python -I Tools/Blender/characters/manifest_rows.py` (replaces only MPFB-DERIVED rows, checks sha256 against each validation JSON).
+- **Contact sheet:** `Docs/Assets/Specs/customers_mpfb_contact_sheet.jpg` (`contact_sheet.py`, register framing, row-major C001…, 10 per row, 60 tiles, 295 KB).
 
 ## Measured (all exported customers)
 - Tris LOD0 81–127k (mean 100k, budget 150k); LOD1 26–60k (mean 38k, budget 60k); LOD2 8.3–18.9k (mean 12k, budget 20k); LOD3 2.4–5.4k (mean 3.5k, budget 6k).
@@ -28,15 +28,20 @@ GAP-CHR-4 skins 2K diffuse, no normal (procedural pore detail normal / HDRP SSS)
 - **PROC-CHR-004 (follow-up):** close GAP-CHR-4/6/9/10 with our own CC0 work (pore detail normal, brow cards, beard/stubble, logo paint-out), widen the hair pool, then re-export.
 
 ## Deferred
-- Manifest rows were written by a one-off script (logic: one `MPFB-DERIVED-<id>` row per FBX, sha256 checked against the validation JSON); fold it into `customer_gen.py` if re-exports become routine.
+- (done) The manifest-row logic is now `Tools/Blender/characters/manifest_rows.py`.
 - Greyscale/store-lighting contact sheet → GAME-CHR-002.
-- **C028, C054** (men; bodies 1.591 m and 1.598 m against the 1.60 m validation floor). Fix options: lower the men's floor to 1.55 m (realistic adult men) or raise the men's height macro floor 0.38 → 0.42. Either changes the params; re-export just those two. Lead's call.
+- (done) C028/C054: resolved by the lead ruling (men's floor 1.55 m), both pass.
 - Contact-sheet observations: the MakeHuman logo tee is very common (GAP-CHR-10); glasses lenses are an opaque flat blue in the preview (needs HDRP glass).
 
 ## Questions for Nolan (through the Hub)
 None for Nolan. DEC-105 search done (`Docs/DECISIONS.md`, `Docs/KNOWN_GAPS.md`, `Docs/Handoffs/REF-008.md`, `Docs/Research/**`; terms AGPL, MakeClothes, South Asian, GAP-CHR, beard, MPFB, LocalThirdParty, allow-list). None of the questions below was asked before. They are licensing/technical calls that DEC-087 puts within Hub authority, so they go to the lead/Hub, not to Nolan. GAP-CHR-2 is closed by DEC-089 and is not re-asked. DEC-110: none of the questions is about physical size, distance or placement. The register viewing distance (1.2–2 m) and the LOD ranges in CHARACTERS.md are planning figures carried over from ASSET-003, not new measurements; GAME-CHR-002 should check them against the floor plan and the counter in the game files.
 
-## Questions for the lead / Hub
-1. **Licence reading.** Many MakeHuman community assets are listed as CC0 on their pack pages but their files carry the MakeClothes header `# license AGPL3`. I treat them as refused (strict reading, DEC-023/087). Source: `<cache>/mpfb/blender_user/extensions/.user/user_default/mpfb/data/clothes/jujube_newsboy_cap/jujube_newsboy_cap.mhclo` line 3. Candidates: (a) keep refusing (current); (b) accept the pack-page CC0 as authoritative. (b) would bring back beards, 7 hairstyles, 2 glasses and a cap.
-2. GAP-CHR-8: is a derived (hue-shifted) CC0 skin acceptable for South-Asian men, or does the roster stay with South-Asian women only?
-3. Storage of the derived customers: DEC-023 already allows CC0 in git, so this is only a size call (~15–40 MB each with textures). GAME-CHR-002 decides between git (LFS) and a local copy.
+## Lead rulings applied (2026-10-30)
+1. AGPL/CC-BY-headed files stay refused even inside packs labelled CC0; the stricter audit stays.
+2. Men's height floor 1.55 m (params `height_m_range`); C028/C054 pass.
+3. No hue-shifted skins: GAP-CHR-8 stays open as a sourcing task, roster unchanged.
+4. Derived customers stay in the local cache, never in git; GAME-CHR-002 copies them at import (CHARACTERS.md §6).
+5. Manifest rows reproducible via `manifest_rows.py`.
+
+## Open
+- None blocking. Gaps GAP-CHR-4..10 are for PROC-CHR-004.

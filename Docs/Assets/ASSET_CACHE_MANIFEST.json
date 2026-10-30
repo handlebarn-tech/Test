@@ -5601,6 +5601,16 @@
    "date": "2026-10-30"
   },
   {
+   "ledger_id": "MPFB-DERIVED-C028",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/mpfb/derived/C028/C028.fbx",
+   "source_url": "derived: Tools/Blender/characters/customer_gen.py (ASSET-004); inputs per C028.validation.json licence_audit",
+   "license": "CC0-1.0 (built only from CC0-allowed MPFB units; our own output)",
+   "redistributable": true,
+   "sha256": "a199afe42f204537ea13687b919d92dc3c80cfe0a76128383fe72f87bdb2f104",
+   "bytes": 5203724,
+   "date": "2026-10-30"
+  },
+  {
    "ledger_id": "MPFB-DERIVED-C029",
    "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/mpfb/derived/C029/C029.fbx",
    "source_url": "derived: Tools/Blender/characters/customer_gen.py (ASSET-004); inputs per C029.validation.json licence_audit",
@@ -5848,6 +5858,16 @@
    "redistributable": true,
    "sha256": "3893d79d9eececed6bd87a2252a6a76352b6e6007e496a79468f0e92def8df94",
    "bytes": 5480988,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "MPFB-DERIVED-C054",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/mpfb/derived/C054/C054.fbx",
+   "source_url": "derived: Tools/Blender/characters/customer_gen.py (ASSET-004); inputs per C054.validation.json licence_audit",
+   "license": "CC0-1.0 (built only from CC0-allowed MPFB units; our own output)",
+   "redistributable": true,
+   "sha256": "8422fd087a3d5d6beb054d18b781987b5e2b884c0b93a690422d227f5a4bcf98",
+   "bytes": 6022124,
    "date": "2026-10-30"
   },
   {
