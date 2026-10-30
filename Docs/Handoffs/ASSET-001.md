@@ -1,5 +1,5 @@
 # Handoff — ASSET-001 (2026-10-29)
-**Deliverables:** `Docs/Assets/LICENSE_LEDGER.md` (≈108 verified rows + 69 Sketchfab, 52 Poly Haven), `Docs/Assets/ACQUISITION_LIST.md`. No assets downloaded; `UnityProject/` untouched.
+**Deliverables:** `Docs/Assets/LICENSE_LEDGER.md` (21 library/audio/font rows, 52 Poly Haven, 69 Sketchfab), `Docs/Assets/ACQUISITION_LIST.md`. No assets downloaded; `UnityProject/` untouched.
 
 ## Method
 Poly Haven license page + public API; Sketchfab public model API (license, author, tris) for every Sketchfab URL in ASSET_PRODUCTION_PLAN.md; license pages for Unity, Quaternius, MakeHuman, Sonniss, Pixabay, Kenney, ambientCG, BigSoundBank, Google Fonts OFL. Visit date 2026-10-29.
