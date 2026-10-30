@@ -23,7 +23,7 @@ namespace Dispo.Slice.PlayMode.Tests
     {
         const int W = 1920, H = 1080;
 
-        [UnityTest, Category("SliceCapture")]
+        [UnityTest, Category("SliceCapture"), Timeout(900000)]   // GAME-010 retune: a 16-customer shift runs past the 180 s default
         public IEnumerator Capture_EachScreen()
         {
             if (SystemInfo.graphicsDeviceType == GraphicsDeviceType.Null) Assert.Ignore("needs a GPU: run without -nographics");
