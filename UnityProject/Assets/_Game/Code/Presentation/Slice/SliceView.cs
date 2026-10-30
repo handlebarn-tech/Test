@@ -58,10 +58,15 @@ namespace Dispo.Presentation.Slice
             int mins = (int)(sim.ClockHours * 60);
             _clock.text = $"{mins / 60:00}:{mins % 60:00}";
             _sales.text = $"Sales ${sim.Sales.Sum(s => s.PricePostTax):0.00}";
-            _queue.text = $"Queue {sim.Queue.Count}";
-            bool hudOn = _g.Screen == SliceScreen.World;
+            _queue.text = sim.Covering ? CounterLine() : $"Queue {sim.Queue.Count}";
+            _queue.EnableInClassList("counter-line", sim.Covering);
+            // UX_PS1 §4: while covering the stand, the HUD becomes the Counter line strip, also over the ID panel.
+            bool hudOn = _g.Screen == SliceScreen.World || (_g.Screen == SliceScreen.IdCheck && sim.Covering);
             _clock.parent.style.display = hudOn ? DisplayStyle.Flex : DisplayStyle.None;
-            _prompt.text = hudOn && _g.CanTalk ? "E  Talk" : hudOn && sim.Serving != null && _g.CustomerAtCounter ? "Go to the register" : "";
+            bool world = _g.Screen == SliceScreen.World;
+            _prompt.text = world && _g.CanCheckId ? sim.Data.Lines.standPrompt
+                : world && _g.CanTalk ? "E  Talk" : world && sim.Serving != null && _g.CustomerAtCounter ? "Go to the register"
+                : world && sim.Covering ? string.Format(sim.Data.Lines.standHud, sim.StandDone, sim.StandTotal) : "";
             _prompt.style.display = _prompt.text.Length > 0 ? DisplayStyle.Flex : DisplayStyle.None;
 
             for (int i = _toastList.Count - 1; i >= 0; i--)
@@ -70,6 +75,24 @@ namespace Dispo.Presentation.Slice
             JarLabels();
             if (_confirm != null) _confirm.text = _g.HoldProgress > 0 ? $"Confirm… {_g.HoldProgress * 100:0}%" : "Hold to confirm";
             DebugOverlay();
+        }
+
+        /// <summary>UX_PS1 §4 Counter line strip: one patience word + icon per queued customer (max 5, then +n), stand count.</summary>
+        string CounterLine()
+        {
+            var sim = _g.Sim;
+            var l = sim.Data.Lines;
+            string[] icons = { "●", "◐", "▲" };
+            var rows = new List<string> { string.Format(l.counterLine, sim.Queue.Count) };
+            foreach (var c in sim.Queue.Take(5))
+            {
+                double f = c.Patience / c.PatienceMax;
+                int w = f > 0.75 ? 0 : f > sim.Cfg.impatientFraction ? 1 : 2;   // [GDD] Relaxed / Waiting / Impatient
+                rows.Add($"{icons[w]} {l.patienceWords[w]}");
+            }
+            if (sim.Queue.Count > 5) rows.Add($"+{sim.Queue.Count - 5} more");
+            rows.Add(string.Format(l.standWaiting, sim.Stand.Count));
+            return string.Join("\n", rows);
         }
 
         /// <summary>§4: LOW / SOLD OUT labels over the jars, projected into the panel.</summary>
@@ -144,11 +167,12 @@ namespace Dispo.Presentation.Slice
             _root.EnableInClassList("text-125", _g.TextScale == 125);
             _root.EnableInClassList("text-150", _g.TextScale == 150);
             _root.EnableInClassList("register-open", _g.Screen == SliceScreen.Pos);
+            _root.EnableInClassList("id-open", _g.Screen == SliceScreen.IdCheck);
             if (_g.Screen == SliceScreen.Report) { _toasts.Clear(); _toastList.Clear(); }   // nothing on top of the report
             _confirm = null;
             var s = _g.Screen;
             _screen.pickingMode = s == SliceScreen.World ? PickingMode.Ignore : PickingMode.Position;
-            _screen.EnableInClassList("dim", s != SliceScreen.World && s != SliceScreen.Dialogue);
+            _screen.EnableInClassList("dim", s != SliceScreen.World && s != SliceScreen.Dialogue && s != SliceScreen.IdCheck);   // ID panel dims only behind itself
             switch (s)
             {
                 case SliceScreen.Dialogue: Dialogue(); break;
@@ -157,6 +181,8 @@ namespace Dispo.Presentation.Slice
                 case SliceScreen.Detail: Terminal(Detail); break;
                 case SliceScreen.Pos: Pos(); break;
                 case SliceScreen.Report: Report(); break;
+                case SliceScreen.CoverPrompt: CoverPrompt(); break;
+                case SliceScreen.IdCheck: IdPanel(); break;
             }
         }
 
@@ -334,6 +360,62 @@ namespace Dispo.Presentation.Slice
             AddLabel(pos, $"Customer asked for {string.Join(" + ", c.Asks.Select(a => l.Weight(a.Grams)))}", "hint");
         }
 
+        /// <summary>UX_PS1 §4 cover prompt (ps1_04): centred card, Y / N.</summary>
+        void CoverPrompt()
+        {
+            var l = _g.Sim.Data.Lines;
+            var box = Add(_screen, "cover-prompt");
+            AddLabel(box, l.coverPromptTitle, "h1 st-warn");
+            AddLabel(box, string.Format(l.coverPromptBody, _g.Sim.Cfg.coverCheckInCount));
+            AddLabel(box, l.coverPromptCost, "hint");
+            var row = Add(box, "row");
+            AddButton(row, l.coverAccept + " (Y)", _g.AcceptCover, "primary");
+            AddButton(row, l.coverDecline + " (N)", _g.DeclineCover);
+        }
+
+        /// <summary>
+        /// UX_PS1 §4 ID panel (ps1_05): header + in-game date, the card at ID-1 ratio (vertical IDs portrait), no verdict shown.
+        /// At 125/150 % the decision fields are also listed full size in a readout column (UX_COUNTER_INTEL §10: never truncate).
+        /// </summary>
+        void IdPanel()
+        {
+            var sim = _g.Sim;
+            var l = sim.Data.Lines;
+            var c = _g.IdCustomer;
+            var id = c.Id;
+            var panel = Add(_screen, "id-panel");
+            var head = Add(panel, "id-head");
+            AddLabel(head, string.Format(l.idPanelTitle, sim.StandDone + 1, sim.StandTotal), "h1");
+            AddLabel(head, string.Format(l.idToday, sim.Today.ToString("ddd MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture)), "id-today");
+            var body = Add(panel, "id-body");
+            var card = Add(body, "id-card " + (id.Format == IdFormat.Vertical ? "id-v" : "id-h"));
+            string type = l.idTypeNames[(int)id.Type];
+            AddLabel(card, id.State.Length > 0 ? $"{id.State} · {type}" : type, "id-band");
+            var inner = Add(card, "id-inner");
+            Add(inner, "id-photo");
+            var fields = Add(inner, "id-fields");
+            string D(System.DateTime d) => d.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            var rows = new[] { ("NAME", id.Name), ("DOB", D(id.Dob)), ("EXP", D(id.Expires)), ("TYPE", type), ("FORMAT", id.Format == IdFormat.Vertical ? "Vertical" : "Horizontal") };
+            foreach (var (k, v) in rows)
+            {
+                var f = Add(fields, "id-field");
+                AddLabel(f, k, "id-key");
+                AddLabel(f, v, "id-value" + (k == "NAME" ? " id-name" : ""));
+            }
+            var side = Add(body, "id-side");
+            var readout = Add(side, "id-readout");
+            foreach (var (k, v) in rows.Skip(1))
+            {
+                var f = Add(readout, "id-field");
+                AddLabel(f, k, "id-key");
+                AddLabel(f, v, "id-value");
+            }
+            var buttons = Add(side, "id-buttons");
+            AddButton(buttons, l.idAdmit + " (A)", _g.IdAdmit, "primary");
+            AddButton(buttons, l.idRefuse + " (R)", _g.IdRefuse);
+            AddButton(buttons, "Back (Esc)", _g.Back);
+        }
+
         /// <summary>UX_PS1 §3 limit meter: Flower {g} / 28 g, 75 % tick, amber/red state words (never colour only).</summary>
         void Meter(VisualElement parent)
         {
@@ -391,6 +473,9 @@ namespace Dispo.Presentation.Slice
             AddLabel(box, "Compliance", "h1");
             Row("Strikes", r.Strikes.Count + (r.ManagerReview ? "  ⚠ Manager review" : ""));
             foreach (var s in r.Strikes) Row($"    {_g.ClockText(s.Time)} · {s.Reason}", "");
+            Row("IDs checked", r.IdsChecked.ToString());
+            Row("Bad IDs caught", r.BadIdsCaught.ToString());
+            Row("Valid IDs refused", r.ValidIdsRefused.ToString());
             Row("Over-limit trims", r.OverLimitTrims.ToString());
         }
 

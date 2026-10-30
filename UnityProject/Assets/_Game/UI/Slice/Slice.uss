@@ -125,6 +125,58 @@
 .amount { -unity-text-align: middle-right; }
 .scale, .hint { color: var(--t2); font-size: 18px; margin: 6px 0; }
 
+/* GAME-008 cover prompt (UX_PS1 §4, 800x300; height grows and the body wraps at 125/150 %). */
+.cover-prompt { width: 800px; min-height: 300px; background-color: var(--panel); border-radius: 8px; padding: 20px 28px; justify-content: space-between; }
+.text-125 .cover-prompt { width: 1000px; }
+.text-150 .cover-prompt { width: 1200px; }
+.text-125 .cover-prompt Label, .text-125 .cover-prompt Button { font-size: 28px; }
+.text-150 .cover-prompt Label, .text-150 .cover-prompt Button { font-size: 33px; }
+.text-125 .cover-prompt .h1 { font-size: 35px; }
+.text-150 .cover-prompt .h1 { font-size: 42px; }
+
+/* GAME-008 ID panel (UX_PS1 §4, 1200x900 at left; ID-1 card 770x486, vertical IDs portrait). */
+.id-panel { position: absolute; left: 96px; top: 90px; width: 1200px; height: 900px; background-color: var(--panel); border-radius: 8px; padding: 20px 28px; }
+.id-head { flex-direction: row; justify-content: space-between; align-items: center; }
+.id-today { color: var(--t2); }
+.id-body { flex-direction: row; flex-grow: 1; margin-top: 12px; }
+.id-card { background-color: #e9e4d8; border-radius: 18px; padding: 14px 18px; flex-shrink: 0; }
+.id-h { width: 770px; height: 486px; }
+.id-v { width: 400px; height: 635px; }
+.slice-root .id-card Label { color: #1a1a1a; }
+.slice-root .id-band { font-size: 22px; -unity-font-style: bold; color: #1b3a6b; margin-bottom: 10px; }
+.id-inner { flex-direction: row; flex-grow: 1; }
+.id-v .id-inner { flex-direction: column; }
+.id-photo { width: 180px; height: 230px; background-color: #9aa3ad; border-radius: 6px; margin-right: 18px; flex-shrink: 0; }
+.id-v .id-photo { width: 150px; height: 190px; margin: 0 0 12px 0; }
+.id-fields { flex-grow: 1; flex-shrink: 1; min-width: 0; }
+.id-field { flex-direction: row; align-items: center; margin: 3px 0; }
+.slice-root .id-key { width: 110px; font-size: 16px; color: #555; flex-shrink: 0; }
+.slice-root .id-value { font-size: 24px; white-space: nowrap; }
+.slice-root .id-name { overflow: hidden; text-overflow: ellipsis; flex-shrink: 1; }
+/* On the card a value never spills past the edge; when a portrait card can't fit one at 150 %, the readout column carries it (§10). */
+.slice-root .id-card .id-value { overflow: hidden; text-overflow: ellipsis; flex-shrink: 1; min-width: 0; }
+.id-side { flex-grow: 1; padding-left: 24px; justify-content: flex-end; }
+.id-readout { display: none; }
+.id-buttons { }
+/* 125/150 %: the panel fills the safe area, the card scales, and DOB / EXP / TYPE / FORMAT are repeated full size beside it. */
+.text-125 .id-panel, .text-150 .id-panel { left: 96px; top: 54px; width: 1728px; height: 972px; }
+.text-125 .id-panel Label, .text-125 .id-panel Button { font-size: 28px; }
+.text-150 .id-panel Label, .text-150 .id-panel Button { font-size: 33px; }
+.text-125 .id-panel .h1 { font-size: 35px; }
+.text-150 .id-panel .h1 { font-size: 42px; }
+.text-125 .id-h { width: 962px; height: 607px; }
+.text-150 .id-h { width: 1050px; height: 662px; }
+.text-125 .id-v, .text-150 .id-v { width: 440px; height: 700px; }
+.text-125 .id-readout, .text-150 .id-readout { display: flex; margin-bottom: 16px; }
+.text-125 .id-panel .id-key { width: 150px; font-size: 22px; }
+.text-150 .id-panel .id-key { width: 170px; font-size: 26px; }
+.id-readout .id-key { color: var(--t3); }
+.slice-root .id-readout .id-value { color: var(--t1); }
+.counter-line { white-space: normal; }
+/* Toasts never cover the ID card: bottom-right beside the panel at 100 %, the empty top of the side column at 125/150 %. */
+.id-open .toasts { left: auto; right: 96px; top: auto; bottom: 54px; width: 500px; }
+.text-125.id-open .toasts, .text-150.id-open .toasts { right: 130px; top: 160px; bottom: auto; width: 540px; }
+
 .report { width: 900px; background-color: var(--panel); border-radius: 8px; padding: 20px 28px; }
 
 .debug { left: 96px; top: 300px; right: auto; bottom: auto; background-color: rgba(0,0,0,0.75); padding: 8px; }

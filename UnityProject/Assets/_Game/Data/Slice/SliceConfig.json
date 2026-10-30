@@ -69,5 +69,21 @@
   "_strikeReviewThreshold": "SPEC_COMP002 §2 / UX_PS1 §6 [GDD]: strikes in one shift that flag 'Manager review'; strikes never end the shift (DEC-032)",
   "strikeReviewThreshold": 2,
   "_strikeToastSeconds": "UX_PS1 §6: strike toasts stay 6 s (sale toasts toastSeconds)",
-  "strikeToastSeconds": 6
+  "strikeToastSeconds": 6,
+  "_coverCheckIn": "GAME-008 / SPEC_COMP002 §3 [GDD]: at rush start, coverCheckInChance offers 'cover the ID stand' for the next coverCheckInCount arrivals; the prompt auto-declines after coverPromptSeconds (UX_PS1 §4); declining adds declineCheckInDelaySec of wait to those arrivals",
+  "coverCheckInChance": 0.5,
+  "coverCheckInCount": 3,
+  "coverPromptSeconds": 8,
+  "declineCheckInDelaySec": 20,
+  "_idRules": "[SRC] B1 minAgeYears 21; B2/O3 verticalGraceDays 30 (an Arizona vertical ID counts only within 30 days of turning 21)",
+  "minAgeYears": 21,
+  "verticalGraceDays": 30,
+  "_idCaseWeights": "SPEC_COMP002 §3 case table, weights [GDD]",
+  "idCaseWeights": [
+    { "id": "AzLicense21", "w": 40 }, { "id": "OutOfStateLicense21", "w": 15 }, { "id": "PassportMilitary21", "w": 10 },
+    { "id": "AzVerticalRecent", "w": 10 }, { "id": "AzVerticalStale", "w": 5 }, { "id": "OutOfStateVertical21", "w": 5 },
+    { "id": "Expired", "w": 10 }, { "id": "Under21", "w": 5 }
+  ],
+  "_shiftDate": "GAME-008 [GDD]: in-game date the ID panel shows; a Tuesday to match shiftDayOfWeek 2",
+  "shiftDate": "2026-10-27"
 }
