@@ -23,3 +23,6 @@ None. §7 now follows DOORS.json and SCENE_ANCHORS.json as merged. Placing `Inte
 
 ## Questions for Nolan (through the Hub)
 None. Per DEC-105 I searched DECISIONS (079/086/096/101/103–109), KNOWN_GAPS, `Handoffs/REF-008.md` and `Research/` (OFFICE_FINDINGS O2/O11; alarms are deliberately left out). Where the floor map hangs and how "Online order!" is used both have placeholders and are not needed for PS1.
+
+## Late add (lead)
+GAME-026 deliverable 7 + validation: REVIEW-PS1 m3 (max 1 strike per customer per violation, first wrong Confirm a free hint) and m4 (`nearMedLimit` "Near the 14-day limit" [GDD], also in UX_PS1 §8; DEC-106).

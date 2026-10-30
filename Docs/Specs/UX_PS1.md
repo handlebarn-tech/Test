@@ -100,6 +100,7 @@ Tone for every customer, toast-flavour, event and report line: `Docs/Design/TONE
 | `meterConcentrate` | Concentrate | GAME-014 (PS3) |
 | `meterValue` | {0} g / {1} g | GAME-007/009 |
 | `nearLimit` | ⚠ Near the 1 oz limit | GAME-007 |
+| `nearMedLimit` | ⚠ Near the 14-day limit | GAME-026 (REVIEW-PS1 m4; medical amber meter, [GDD]; DEC-106: patients may arrive with the allotment used) |
 | `overLimit` | Over the 1 oz limit (exists; red row adds ✗) | GAME-007 |
 | `trimHint` | Remove a line or step a weight down | GAME-007 |
 | `countsAs` | counts as {0} g | GAME-014 (PS3) |
