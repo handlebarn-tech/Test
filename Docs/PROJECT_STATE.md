@@ -20,7 +20,7 @@
 | REF-003 | dispo-ref-003 | done → REVIEW-W3B (with ART-002) |
 | GAME-003, BUILD-002 | — | done → REVIEW-W3A (dispo-review-w3a) |
 | COMP-001, RES-001, ASSET-002 | — | REVIEW-W3C PASS; merged to main (32a1ad9) |
-| REF-004 | dispo-ref-004 | importing TI drawings (read-only M365) |
+| REF-004 | dispo-ref-004 | done (79f648d): TI values indexed §6; PDFs not importable by tools → needs REVIEW (doc-only, small) |
 Unity Warehouse/Office packs: still need a Unity editor Package Manager download (P1, later).
 
 ### Live session ids (for SendMessage / archive)
@@ -49,5 +49,8 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 - Done 2026-10-29: Nolan signed in to Sketchfab and Unity in the built-in browser pane; Unity Warehouse + UnityJapanOffice are in My Assets (account handlebarn, Personal). ASSET-002 downloads still need one batch OK from Nolan (list with sizes). Nolan may also send a photo of the register scale stand.
 - Open (before any public build): real brand names (Cookies, Alien Labs, ...) ship in `batches.json`; allowed by DATA_SCHEMA §5 and not PII, but a trademark/IP call for Nolan (REVIEW-W2A m2).
 - Later: tax rounding (GAP-204), the TFS tool's open question.
+- Next REF follow-up (REF-005): read `COMPILED_Flower Shop_Int Set.pdf` for deli case/counter/jar sizes (GAP-108/113).
+- Hub ruling: entry storefront width = 6'-0" per TI E101 / DEC-037 (door types/sizes from TI); ART follows it.
 - Follow-up for BUILD: add the SliceCapture test to `studio.ps1 unity-capture` (GAME-002 open item).
+- Batch for Nolan: copy 3 PDFs (TI Approved Set, 2026 A011 floor, A012 lighting) from OneDrive into `References/TI/` (tools can only read text).
 - Batch for Nolan (store fact): a photo of a real receipt's tax lines would settle Phoenix TPT rate (OPEN-4); game keeps 25.1 % (DEC-001) meanwhile.
