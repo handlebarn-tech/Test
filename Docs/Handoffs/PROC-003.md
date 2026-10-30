@@ -6,7 +6,7 @@
 - **DEC-046:** `jar_fill.json` `buds.mound` is a 5-bud front heap: 4 on the floor's front/centre plus 1 on top. It fills first, so F010 (5 of 54 buds) shows a pile above the 55 mm band in every look. LOD2 blocks are raised to the same minimum.
   - `jar_fill.build()` fails any step above 0 g whose top is less than 12 mm above the band. The Unity test checks the same thing on every step and LOD.
   - Lower steps stay subsets of higher ones, and tops still rise monotonically.
-- **Packing (W4E n1):** seeded per-layer offsets (±¼ pitch), 14 mm x/y and 6 mm z jitter, bud size 0.8–1.15×. Full jars no longer read as 3 columns. Tris per step: LOD0 ≤ ~4.3k (budget 5000).
+- **Packing (W4E n1):** seeded per-layer offsets (±¼ pitch), 14 mm x/y and 6 mm z jitter, bud size 0.8–1.15×. Full jars no longer read as 3 columns. Every step stays inside the per-step budgets (LOD0 5000, LOD1 1400, LOD2 40), which the generator enforces; all steps of one look total LOD0 ≈10.1k (budget 12k).
 - **Canister size (REF-007, Low–Med):** 6.0 × 5.5 in footprint, 10.25 in overall (body 235 mm + 1 in lid), ~4.3 L cavity. The fill uses 6 layers (was 7) to fit the shorter jar.
 - **House-smalls jar (DEC-042a):** `params/deli_jar_smalls.json` gives `PROC_DeliJar_Smalls`, the published POP 4 L size 6.1 × 5.3 × 10.4 in (High).
   - It has no brand band. The label card and THC % tag are kept as the shop convention (Low).
