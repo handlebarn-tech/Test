@@ -343,7 +343,7 @@ KINDS = {"scale_stand": scale_stand, "pos_monitor": pos_monitor, "presentation_s
 
 
 def build(p, lod):
-    P = Parts(p["colors"])
+    P = Parts(p["colors"], wear_attr=bool(p.get("pbr")))
     expected, extra = KINDS[p["kind"]](P, p, lod["detail"], lod["seg"])
     extra = dict(extra, fixture_family="register_station", component_role=p["kind"], seed=int(p["seed"]))
     extra.update(wear(p))

@@ -3,6 +3,7 @@
   "asset_prefix": "PROC_RegisterCounter_",
   "seed": 22001,
   "own_sheet": true,
+  "pbr": true,
   "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Register",
   "gaps": [
     "GAP-106",

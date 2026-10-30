@@ -146,7 +146,7 @@ KINDS = {"jar_wall": jar_wall, "deli_counter": deli_counter}
 
 
 def build(p, lod):
-    P = Parts(p["colors"])
+    P = Parts(p["colors"], wear_attr=bool(p.get("pbr")))
     expected, extra = KINDS[p["kind"]](P, p, lod["detail"], lod["seg"])
     extra.update(seed=int(p["seed"]))
     extra.update(wear(p))

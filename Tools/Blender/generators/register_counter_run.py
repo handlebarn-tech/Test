@@ -28,7 +28,7 @@ def build(p, lod):
     L, D, H, tt = p["length_m"], p["depth_m"], p["height_m"], p["top_t_m"]
     kick, krec, ov, lip = p["toe_h_m"], p["toe_recess_m"], p["front_overhang_m"], p["grommet_lip_m"]
     wl, wr = p["waterfall"]
-    P = Parts(p["colors"])
+    P = Parts(p["colors"], wear_attr=bool(p.get("pbr")))
     top, wal, blk, brass = P("Top", "Quartz_QZ2"), P("Front", "Walnut_WD1"), P("Accents", "Black_ML1"), P("Pulls", "Brass_HW2")
     xa, xb = -L / 2 + (tt if wl else 0), L / 2 - (tt if wr else 0)
     yf = -D / 2 + ov  # customer face of the cabinets; the staff face is flush with the top at +D/2

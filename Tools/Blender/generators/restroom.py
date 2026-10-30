@@ -190,7 +190,7 @@ KINDS = {"lavatory": lavatory, "mirror": mirror, "toilet": toilet, "door_cabinet
 
 
 def build(p, lod):
-    P = Parts(p["colors"])
+    P = Parts(p["colors"], wear_attr=bool(p.get("pbr")))
     W, D, H = p["width_m"], p["depth_m"], p["height_m"]
     extra = KINDS[p["kind"]](P, p, lod["detail"], lod["seg"], W, D, H)
     extra = dict(extra, fixture_family="restroom", rf=p["rf"], seed=int(p["seed"]))

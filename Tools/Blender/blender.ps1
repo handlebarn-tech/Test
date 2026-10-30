@@ -2,6 +2,7 @@
 .SYNOPSIS  Run a PROC-001 procedural generator in headless Blender (DEC-007).
 .EXAMPLE   Tools/Blender/blender.ps1 deli_jar Tools/Blender/params/deli_jar.json
 .EXAMPLE   Tools/Blender/blender.ps1 contact_sheet
+.EXAMPLE   Tools/Blender/blender.ps1 textures   # PROC-005 PBR finish maps (proctex.py)
 .EXAMPLE   Tools/Blender/blender.ps1 contact_sheet jar_fill   # that generator's own grouped sheet
 .EXAMPLE   Tools/Blender/blender.ps1 character Tools/Blender/params/customers_mpfb.json C001,C002   # MPFB2 customers (ASSET-004)
 Exits non-zero if Blender, the generator, or validation fails. Override the exe with $env:BLENDER_EXE.
@@ -24,7 +25,7 @@ if ($Generator -eq 'character') {
     exit 0
 }
 $script = Join-Path $PSScriptRoot 'run_generator.py'
-$genArgs = if ($Generator -eq 'contact_sheet') { @($Generator) + @($Params | Where-Object { $_ }) } else {
+$genArgs = if ($Generator -eq 'textures') { @($Generator) } elseif ($Generator -eq 'contact_sheet') { @($Generator) + @($Params | Where-Object { $_ }) } else {
     if (-not $Params -or -not (Test-Path $Params)) { Write-Error "params file required: $Params"; exit 2 }
     @($Generator, (Resolve-Path $Params).Path)
 }

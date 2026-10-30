@@ -3,6 +3,7 @@
   "asset_prefix": "PROC_",
   "seed": 25001,
   "own_sheet": true,
+  "pbr": true,
   "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Office",
   "gaps": [
     "GAP-PROC-18"

@@ -159,7 +159,7 @@ KINDS = {"glass_cooler": glass_cooler, "fridge": fridge}
 
 
 def build(p, lod):
-    P = Parts(p["colors"])
+    P = Parts(p["colors"], wear_attr=bool(p.get("pbr")))
     expected, extra = KINDS[p["kind"]](P, p, lod["detail"], lod["seg"])
     extra = dict(extra, fixture_family="cooler_fridge", rf=p["rf"], seed=int(p["seed"]))
     if p.get("contents"):
