@@ -113,3 +113,19 @@ Why: hundreds of SKUs on racks and in coolers, with GPU instancing. The silhouet
 - **DEC-046:** the first `buds.mound` cells (a front heap, one bud stacked on the front row) fill before the layers, so F010 rises ≥ `min_visible_above_band_m` above the band on every LOD. The generator and `JarFillImportTests` both enforce this; only F000 looks empty.
 - **GAP-PROC-12:** smalls jar lid/body split, corner radius, lid colour and label placement are not published (overall size is).
 - **Packing (W4E n1):** each layer gets a seeded offset (`layer_shift` × pitch), plus x/y/z jitter and a bud-size spread (`radius_jitter`), so full jars no longer stack as 3 columns. 6 layers fill the shorter cavity.
+
+## Parked vehicles (PROC-009)
+```powershell
+Tools/Blender/blender.ps1 parked_vehicles Tools/Blender/params/parked_vehicles.json   # 3 FBX, also copied to Unity
+Tools/Blender/blender.ps1 contact_sheet parked_vehicles                               # Docs/Assets/Specs/PROC_parked_vehicles_contact_sheet.png
+```
+- Replaces the rejected IMP-003 R3b vehicles (DEC-111, checklist R3b.7) with a scripted rebuild: Poly Haven has no vehicle category, and no other DEC-023 CC0 source met DEC-084. Assets `PROC_Vehicle_Sedan|Hatchback|SUV.fbx`, Unity copy `Assets/_Game/Art/Procedural/Exterior/Vehicles/`. Generic unbranded classes only (CCTV R1C1 SUV, R1C2 cars; RG3-4). No plate characters, no badges (DEC-071).
+- Body: one closed loft of cross-sections (side tuck-under, shoulder radius, crowned deck). The bottom edge follows the wheel-arch circle. Shut lines are recessed V grooves: doors, rocker, hood, trunk. Greenhouse: a second closed loft on the deck. Windows are faces of that surface, so the glazing is flush. Wheels sit inside the arches, with well liners behind them.
+- Profiles (`deck`, `greenhouse.profile`) are `[y from the front bumper, z]` control points, joined by a monotone cubic. A new body style is a new `classes` entry. Sizes are exact: width includes mirrors, height is the roof peak (SUV: the rails), length is bumper to bumper.
+- Collision: manifest boxes for the body, cabin and 4 wheels (R3b.0.5). The manifest also carries `materials_pbr` (metallic/smoothness per slot) and `paint_variants` (colour swaps).
+- LOD0 ≈ 84–86k tris (DEC-084 hero guide 30–150k). LOD1 ≈ 28k, LOD2 ≈ 7k, LOD3 ≈ 1.4k.
+
+| GAP | What |
+|---|---|
+| GAP-PROC-23 | every vehicle dimension and proportion is a generic class value (midsize sedan, compact hatch, compact SUV), not a measured store vehicle. Tyre sizes are standard ISO designations. |
+| GAP-PROC-24 | paint mix (the CCTV cannot resolve colour, RG3-4). Texture maps (tread/sidewall normal, dust/grime masks) wait for the shared Q0.2/Q0.3 unwrap + texture pipeline. |
