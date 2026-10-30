@@ -35,7 +35,7 @@ DEC-013: one other editor (GAME-002) was running; the gate never had to wait.
 - **m2 Station count vs DEC-037.** DEC-037 adopts "12 registers (Dutchie report)"; the graybox has 4 POS + 4 stands on the north leg, and GAP-107 still says the count is open. Hub: decide whether "12 registers" means 12 physical stations (then ART-003 adds stands on the return leg) and update GAP-107.
 - **m3 ART-002 handoff** "Delivered" still lists the pre-follow-up stand (1.5×1.5, 3.25 ft top, 2 shelves); the "Gaps / notes" bullet corrects it. Cosmetic.
 - **m4 DEC-026** still cites `References/Incoming/…`; the files are now `References/CCTV Register Back Center {East,Wide} 2026-10-29.webp` (REF-003 flagged it; Hub file).
-- **m5** The SE exit sits on the HUB south wall although the "furthest SE door" would be in HUB 2 (REF-003 tension). Low and labelled; Nolan can settle which room it opens from.
+- **m5** The SE exit sits on the HUB south wall although the "furthest SE door" would be in HUB 2 (REF-003 tension). Low and labelled; Nolan can settle which room it opens from. **Resolved REF-007 (A011, DEC-042c):** HUB (818.53 SF) is the furthest-east room and the exit opens from HUB, at its SE corner on the south wall. But A011 puts HUB east and HUB 2 west, which V5 mirrors (GAP-120), so ART must move the storage pair, not the door.
 - **m6** The raw register stills contain identifiable customers and staff, like the existing CCTV walls. Keep them out of any shipped build or public repo.
 
 ## Questions for the Hub (only Nolan can settle)

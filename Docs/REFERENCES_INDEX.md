@@ -15,6 +15,12 @@ Staff are described by attire/role only.
 | `References/CCTV HUB Wall 2026-10-29.webp` | WEBP 2000×564, 2×4 tiles | HUB/HUB 2 camera wall supplied by Nolan 2026-10-29 (DEC-022). Nolan: "First room on left two pictures, the rest are in the bigger side of the hub... It's mostly misc storage." | §2.1 |
 | `References/CCTV Register Back Center East 2026-10-29.webp` | WEBP 1866×755, NVR playback, 2 feeds | "Back Of Register center" (close) + "Back Of Register East", 11:40:16, 1/21/2026. Supplied by Nolan for the scale stand (DEC-026) | §2.2 |
 | `References/CCTV Register Back Center Wide 2026-10-29.webp` | WEBP 1134×640, 1 feed | "Back Of Register center", 16:48:53, wide. **Same camera and framing as wall tile R2C4** (DEC-026) | §2.2 |
+| `References/CCTV BOH Desk Racks 2026-10-29.webp` | WEBP 2000×1022, 1 feed, no overlay text | BOH overhead still: chrome wire rack island of packaged stock, wall rack of black cases, the ex-register-1 computer on the right (DEC-041). Supplied by Nolan 2026-10-29 | §2.3 |
+| `References/CCTV FOH Desk Racks 2026-10-29.webp` | WEBP 2000×1101, 1 feed, no overlay text | FOH overhead still: computer on a black wire rack against the back wall, fridge, glass-door cooler, chrome racks, patterned-tile doorway (DEC-041). Supplied by Nolan 2026-10-29 | §2.3 |
+| `References/Photo Deli Jars Scale Office 2026-10-29.webp` | WEBP 952×1269, phone photo, office | Deli canisters (empty and in use, THC % label cards), deli scale with glass bowl, stainless "FOR DELI USE ONLY" prep cart (DEC-042b). **Raw photo: never ships** (network rack, thermostat, security-labelled drawer in frame) | §2.4 |
+| `References/Index/photos/deli_jars_scale_cart_crop.webp` | WEBP 570×779, derived crop (330,490)–(900,1269) | Jars + scale + cart only. No network rack, thermostat, security drawer or screen content | §2.4 |
+| `References/Photo Deli Jar Wall Retail 2026-10-29.jpg` | JPEG 640×481, phone photo, retail | Retail deli jar wall: uniform canisters with brand card, THC % tag and brand base band, dark-grey metal shelves, teal leaf-pattern wall, black counter with walnut drawers, branded bags (DEC-043). **A shopper is partly visible at the right edge (x ≥ ≈605); the raw photo never ships** | §2.4 |
+| `References/Index/photos/deli_jar_wall_retail_crop.jpg` | JPEG 590×481, derived crop (0,0)–(590,481) | People-free crop of the jar wall (the shopper is cut off) | §2.4 |
 | `References/TI/Interior TI Approved Set - PHX.pdf` | PDF 37 pp (24"×36"-class sheets, vector + text layer), 9.15 MB, 2022-08/10, City-approved 2022-12 | Retail interior TI drawings: G010 mounting heights, A101 plan + RCP, A310 door/material schedules, A320 partitions, A901 elevations, A940 millwork, I101 finish plan, E-sheets luminaire schedule. Text-read in REF-004; Nolan supplied the file and it was imported in REF-005 (plain git, <10 MB). Every page was checked: no security plan, P&P or credential page (the security mentions are a grille, card-reader hardware lines and spec boilerplate) | §6 |
 | `References/TI/A011 Phoenix AZDHS Floor Plan - 2026 Update.pdf`, `References/TI/A012 AZDHS Floor Plan - Lighting - 5.20.26.pdf` | PDF 1 p each, vector, 1/4"=1'-0" (18 pt/ft), sheet date 05/15/23, revs 12/23/22 | Room areas and labels behind Working Plan V5; A012 lighting legend | §6.8 |
 | `References/LIVE_TFS_BUDTENDER_v7.11.4.md` | MD | Live budtender app behaviour (v7.11.4: Floor Mode, 6 effect domains, tier filters, accessibility). **No visual tokens** (colours/fonts/layout) are recorded in it | UI only (GAP-114) |
@@ -49,11 +55,11 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 | OFFICE | 131.82 | 0–13.70 | 36.5–46.3 | 13.70 × 9.80 | sheet says 13'-8¾" |
 | BREAK ROOM | 151.56 | 14.10–23.31 | 29.5–46.3 | 9.20 × 16.80 | contains JC |
 | JC (janitor closet, inside break room) | 19.19 | 19.9–22.9 | 42.9–45.9 | 3.0 × 3.0 (drawn) | drawn size and corner both unconfirmed. 3×3 = 9 SF, not 19.19 (GAP-103) |
-| FOH (floor restock) | "163 or 180" | 23.69–36.49 | 29.5–46.3 | 12.80 × 16.80 | 215 SF drawn. Which of 163/180 belongs to FOH vs BOH is open (GAP-102) |
-| BOH (backstock) | "163 or 180" | 36.90–47.19 | 29.5–46.3 | 10.29 × 16.80 | 173 SF drawn |
-| HUB (sheet: Product Storage) | 818.53 | 0–28.29 | 46.8–76.03 | 28.29 × 29.24 | deliveries · general storage · entered from office |
-| HUB 2 (sheet: Product Storage) | 541.34 | 28.70–47.19 | 46.8–76.03 | 18.49 × 29.24 | only via HUB connecting door; no access from FOH/BOH |
-| *Arch vestibule (unnamed, "white wall")* | — | 35.2–38.2 | 29.5–31.7 | 3.0 × 2.2 | small lobby behind the east arch, with doors to FOH and BOH |
+| FOH (floor restock; A011 "FULFILLMENT") | 180.26 | 23.69–36.49 | 29.5–46.3 | 12.80 × 16.80 | 215 SF drawn. A011 (REF-006) puts FULFILLMENT 180.26 SF in the west room (next to Break), so FOH = 180.26 |
+| BOH (backstock; A011 "PRODUCT STORAGE") | 163.44 | 36.90–47.19 | 29.5–46.3 | 10.29 × 16.80 | 173 SF drawn |
+| HUB (sheet: Product Storage) | 818.53 | V5: 0–28.29 · **A011: ≈19.2–47.19 (east)** | 46.8–76.03 | 28.29 × 29.24 | general storage, desks; **A011 (REF-007): the east room, reached through the connecting door; the SE emergency exit opens from it.** V5 mirrors the pair |
+| HUB 2 (sheet: Product Storage) | 541.34 | V5: 28.70–47.19 · **A011: 0–≈18.8 (west)** | 46.8–76.03 | 18.49 (A011 18'-9¼") × 29.24 | **A011: the west room, entered from the office and the west delivery door ("first room", DEC-022).** No access from FOH/BOH |
+| *Arch vestibule (unnamed, "white wall")* | — | 35.2–38.2 | 29.5–31.7 | 3.0 × 2.2 | small lobby behind the east arch, with doors to FOH and BOH. A011 labels it **HALL 35.16 SF** (REF-006); V5 puts that label on the west hall by the restroom |
 | Net / gross | 3,467.77 / 3,590 (assessor) | | | | the plan says walls ≈ 122 SF |
 
 ### 1.4 Doors / openings (from the vector plan)
@@ -70,10 +76,10 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 | Hall→Office door | y≈36.1, x 9.5–11.3 | 1.8 symbol | Low |
 | Vestibule→FOH door | arc at x 34.0–35.2, y 30.6 | 1.2 symbol | Low |
 | Vestibule→BOH door | arc at x 38.2–39.4, y 30.6 | 1.2 symbol | Low |
-| Office→HUB door | y≈46.3, x 4.0–5.8 | 1.8 symbol | Low |
-| EXT. DELIVERY (employees only) | west wall x=0, y 47.8–51.2 | 3.4 | Med |
-| Door to HUB 2 | wall x≈28.3–28.7, y 48.6–50.6 | 2.0 | Med |
-| EMERGENCY EXIT, SE (green door with round logo; DEC-030) | Nolan: the building's furthest south-east door. **Not drawn on the plan**: the HUB 2 east (x=47.19) and south (y=76.03) walls and the HUB south wall have no door symbol. Seen in HUB wall tile R1C4 (far left) | not drawn | High (exists, Nolan) / Low (position, width). REF-002 maps R1C4 to HUB, so the door would sit on the HUB south wall near HUB 2, or R1C4 is HUB 2; unresolved |
+| Office→HUB door | V5: y≈46.3, x 4.0–5.8 · **A011 (REVIEW-W4C): at the east end of the office south wall, x≈7.5–10.5, opening into HUB 2 (west room)** | 1.8 symbol; A011 ≈3'-0" | Low (V5) / Med (A011, scaled by eye) |
+| EXT. DELIVERY (employees only) | west wall x=0, y 47.8–51.2 (A011 ≈49.5–52.8, scaled by eye, REVIEW-W4C); opens into HUB 2 per A011 | 3.4 | Med |
+| Door to HUB 2 | V5: wall x≈28.3–28.7, y 48.6–50.6 · **A011: in the partition's north end (partition x≈18.8–19.2), y≈46.8–49.8, swings into HUB** | 2.0 drawn; A011 ≈3'-0" | Med (V5) / High (A011 location) |
+| EMERGENCY EXIT, SE (green door with round logo; DEC-030) | **A011 (REF-007): "access controlled entrance / exit" at the SE corner of the east room (HUB, 818.53 SF), on the south wall at x≈44.4–47.2, y=76.03, swinging out.** HUB is the furthest-east room, so the door opens from **HUB** (DEC-042c: HUB 2 is not furthest east). This agrees with HUB-wall tile R1C4 (HUB) showing the door | ≈3'-0" (A011 vector) | High (room, wall) / Med (exact x) |
 
 ### 1.5 Fixtures, counters, registers (vector, ft; Med unless noted)
 
@@ -148,6 +154,7 @@ Tile matching: each tile was compared with the 25 main-wall tiles (128×72 grays
 **Room decision.** Nolan: "First room on left two pictures, the rest are in the bigger side of the hub."
 - "Left two pictures" = the **left column** (R1C1 + R2C1), not the first two of the top row. R1C1/R2C1 show one cluttered room (copier, yellow-lid totes, work table, gray square floor tile); R1C2 shows the same orange-post chrome racks and dark floor as R1C3/R2C2/R2C3, so it belongs with "the rest". R2C4 repeats R2C1, so the left-column room has exactly two distinct views.
 - "The bigger side" = **HUB** (818.53 SF vs HUB 2 541.34 SF, printed, High). R1C4's desk + office chair + keyboard matches the plan's HUB "desks + computers" strip (x≈15–27, y≈70–74.4).
+- **REF-007 (A011, High):** the office and the west delivery door open into the small west room (541.34 SF = HUB 2), and the bigger east room (818.53 SF = HUB) lies beyond the connecting door. That is the literal "first room", so the naming below holds. Only the V5 geometry is mirrored (§1.3).
 - So left column = **HUB 2**, the rest = **HUB**. Conf. **Med** (owner statement + plan areas). "First room" is read as the order Nolan listed them, since the plan says HUB 2 is reached only through HUB. This supersedes the DEC-018 / REF-001 guess (R5C1/R5C2/R5C5 → HUB), which had the rooms swapped.
 
 | HUB-wall tile | = main wall | Room | View / camera pose guess (pose Low) | Key fixtures & finishes | Conf. (room) |
@@ -208,6 +215,41 @@ Sources: REF-002 (wall R2C3, R2C4, R3C2, BAND 07/10) + REF-003 back-of-register 
 
 Other counter facts in these stills: each POS has a monitor, keyboard, receipt printer and a customer-facing card terminal/tablet on the counter (Med). Open black shelves under the counter hold tape rolls, kraft bags and boxes (Med). Wide still, seen beyond the queue from left to right: video wall (showing a promo panel "HIGH VARIETY · 10 for $75 · 15 for $100"; units not shown, **not pricing data**), "THE FLOWER SHOP" logo living wall, "DELI STYLE FLOWER!!" counter with a teal/white checker front and globe pendant cluster, teal-backlit jar walls (High, same as R2C4; feeds GAP-106).
 
+### 2.3 FOH / BOH desk stills (REF-006, DEC-041)
+Both are single fisheye-ish overhead feeds with no timestamp overlay. **No people are visible in either still.** No chair is visible either, but per DEC-041 each desk gets one in the game. Sizes are Low (no scale object except doors, which are 3'-0" × 7'-0" per TI §6.2). Positions are relative to the frame; ART places them on the plan (§1.3 rooms, A011).
+
+| Still | Item | What is seen | Size / height | Conf. |
+|---|---|---|---|---|
+| FOH | doorway (left of frame) | black-framed door opening into the vestibule; the floor beyond is **white tile with a grey curved/quatrefoil pattern** (TL-2-type 8×8 patterned tile, §6.5), and FOH is concrete. A wall card reader sits beside the jamb, an outlet low on the jamb wall, and red/white floor tape on the concrete | door 3'-0" × 7'-0" (TI) | High (type) |
+| FOH | wood/black-metal open shelf unit | seen through the doorway, in the tiled vestibule, holding supplies | ≈2.5 ft wide, ≈4 ft tall | Low |
+| FOH | **computer desk** | "in the middle against the wall" (DEC-041): a black wire shelving unit used as a desk on the back wall, with a monitor on an upper shelf and a keyboard shelf at standing/desk height; a white apartment fridge is immediately to its right | ≈3–4 ft wide × ≈1.5 ft deep, ≈6 ft tall unit | Low |
+| FOH | fridge | white top-freezer apartment fridge, back wall | ≈2.0 × 2.3 ft, ≈5.5 ft tall | Low |
+| FOH | **glass-door cooler** | black-frame, internally lit merchandiser, right of the fridge on the back wall, two lit glass doors visible (matches R4C1 "two glass-door coolers") | ≈4 ft wide (2 doors), ≈6.5 ft tall | Low |
+| FOH | chrome wire racks | one free-standing chrome rack (4–5 shelves) in the room centre/right, loaded with clear and black bins of packaged product, mylar bags and cartons; a second chrome rack runs along the right/back wall with boxed product; a yellow tote is on the floor in the foreground | standard chrome-wire bays ≈2 × 4 ft (or 2 × 5), ≈6 ft tall | Low (convention) |
+| BOH | chrome wire rack island | large chrome rack of 4–5 shelves seen from above, carrying green "OGeez!" and navy "Baked Bros" case boxes, white cartons and loose product on the lower shelves | ≈2 × 5 ft bay, ≈6 ft tall | Low |
+| BOH | wall rack | chrome rack along the right wall, stacked black cases and white cartons on the upper shelves | ≈1.5–2 ft deep | Low |
+| BOH | **computer desk** | right edge of frame: a white counter/desk with a black monitor, keyboard and a small device. This is the old register-1 computer (DEC-041) | desk depth ≈2 ft; height not measurable | Low |
+| BOH | dark doorway / black panel | top centre of frame beyond the rack, with a small chrome rack above it holding cartons | — | Low |
+
+The HUB-style "wire rack bay ≈4 × 2 ft, ≈6–7 ft tall" in §5 applies here too.
+
+### 2.4 Deli jars, jar wall, scale and prep cart (REF-007, DEC-042, DEC-043)
+| Item | Evidence | Size | Conf. |
+|---|---|---|---|
+| **House deli smalls jar** (DEC-042a) | Amazon B0GX12Q9G8, "USYOGO POP Airtight … Food-Storage Container", sold as a 2-pack with 2 scoops (3.3 oz). Published: **6.1" L × 5.3" W × 10.4" H, 4 L / 4.2 qt**, clear, "food-grade" BPA-free plastic (the resin is not named), one-press airtight pop lid, stackable. Fetched 2026-10-29 | 6.1 × 5.3 × 10.4 in | High (published) |
+| **Deli flower canister** (DEC-042b, DEC-043) | office photo and retail jar-wall photo: tall square clear acrylic canister, white push-button lid with a dark gasket, coloured base band (green seen), a THC % label card ("28.57 %", "27.73 % Blue Tint #2") clipped on the front; about 12 empties on the cart, lids off and laid flat | **≈6 × 5–6" footprint × ≈10–10.5" tall** (Low-Med). Office: read against the scale body (≈6–7"). Jar wall: front height:width 1.6–1.9 on four jars, matching the published POP 4 L jar (6.1 × 5.3 × 10.4", ratio 1.7–2.0). Both photos agree with that size class; no direct measurement. The 12×12 / 8×8 floor tile is too oblique to use | Low-Med |
+| Deli scale | compact digital bench scale, light-grey body, LCD and coloured keys on the front, a clear glass mixing bowl (≈8" Ø) on the pan; a small chrome scoop beside it | body ≈6–7" W × ≈8" D × ≈3" H | Low |
+| Deli prep cart | stainless utility cart, flat top + lower shelf, tubular push handle, casters, "FOR DELI USE ONLY" label on the rail, spray bottles hung from the rail; the lower shelf holds bins, bags and paper | top ≈30" × 18–24", top ≈34–36" AFF (standard utility cart; about 6 jars span the back edge) | Low |
+| **Jar design on the wall** (DEC-043) | every tall jar is the same: clear square acrylic body, **white push-button pop lid**; a **white brand label card** on the front lower half (brand + strain name, e.g. "Sanfermade", "Copperstate", "Purple Raspberry"); a **white THC % tag** (large "22.5 %", "24.9 %", "23.1 %", with a small strain line) clipped across the front at about mid-height; and a **coloured base band** ≈20–25 % of the height (≈2–2.5"), one colour per brand (green, red, white, black seen; the band carries the brand name) | band ≈2–2.5"; card ≈½ jar width; tag ≈⅓–½ width | Med (design) / Low (sizes) |
+| Shorter jars | a few shorter canisters of the same design stand on the counter at the right, ≈⅔ the height of the tall jars (≈7"). Per DEC-043 the game shelves every jar, so these are out-of-place jars and the short size is not confirmed as a standard | ≈7" tall | Low |
+| Jar-wall shelves | wall-mounted **dark-grey sheet-metal shelves** with a front lip on black standards/brackets, one jar deep (≈10–12"); two shelf tiers above the counter, ≈1.3–1.5× jar height apart (≈14–16"), plus jars on the counter top itself; the top shelf runs under a green/black checker tile band | depth ≈10–12", spacing ≈14–16" | Low |
+| Wall behind | **teal** with a darker teal **curved-leaf / arc pattern** (matches WC-1 "wall behind displays", §6.5); green-and-black checker tile band above the top shelf | — | Med (finish) |
+| Counter | **black** top (dark quartz or laminate), base cabinets with **walnut drawer fronts** (PL-1/WD-1-like) and silver cup pulls, two drawer rows; black lower bins of packaged product at the left end | top height not measurable here (34" max per TI millwork, §6.4) | Med (finish) |
+| Bags | branded kraft paper bags with handles, standing in a row on the top shelf at the right end | ≈8–10" wide | Low |
+| Stainless tong cups | small stainless cups/trays behind or beside each jar on the shelves | — | **not modelled** (temporary, Nolan, DEC-043) |
+| Floor / ceiling | white-and-grey patterned tile at the counter (TL-2 type, §6.5); dark wood-slat accent ceiling at the top right (CLG-1) | — | Med |
+Use the derived crops for art reference; never ship the raw photos. The office photo and both crops show no people; the raw jar-wall photo shows a shopper at the right edge.
+
 ## 3. BAND photos (`…_NN.jpeg`)
 
 | # | Room / zone | Fixtures | Materials / finishes | Clutter | Signage | Human-scale cues | Staff attire / vibe |
@@ -238,8 +280,8 @@ Product names visible on jar cards or boxes are **not** inventory data and must 
 | Break room | ✔ | R3C5 | 03 | covered |
 | JC | ✔ | — | — | **BLIND** |
 | Restroom | ✔ | — | — | **BLIND** |
-| FOH | ✔ | R4C1 | — | CCTV only |
-| BOH | ✔ | R4C2 | — | CCTV only |
+| FOH | ✔ | R4C1 + FOH still (§2.3) | — | CCTV only, two views |
+| BOH | ✔ | R4C2 + BOH still (§2.3) | — | CCTV only, two views |
 | Arch vestibule (unnamed) | ✔ | edges in R4C1/R4C2 | — | partial |
 | HUB | ✔ | R4C3, R4C4, R5C3, R5C4 + HUB wall R1C2–C4, R2C2, R2C3 (Med) | — | CCTV only (§2.1); no photo |
 | HUB 2 | ✔ | R5C1, R5C2, R5C5 = HUB wall R1C1, R2C1, R2C4 (Med) | — | CCTV only (§2.1); no photo |
