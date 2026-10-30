@@ -15,10 +15,8 @@ Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, 
 | GAME-007 limit meter + strikes (+ W4W m1/m2/m4) | `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | running | Unity review → GAME-008 |
 | GAME-010 tuning + personas (merging cart; W4W m3) | `local_0d166a8e-87b1-40bb-9594-be389c549875` | grid 3 | review |
 | REVIEW-W5A: ART-006 (c1ad023) | `local_0dd63bac-df1d-448d-9203-641ead6b6837` (worker `local_392adc04…` idle) | running | merge on GO → playable build session; REF pass for DEC-068 cabinet |
-| REVIEW-W5B: DOC-004 imports-path update (66f8602) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO |
-| **OPS-001**: 5 Unity editors vs cap 2 — triage, kill orphans, fix gate | `local_7eefd4c8-e6d0-4f6d-97c9-792efd094313` | running | read handoff; adopt gate fix via review |
+| REVIEW-W5C: OPS-001 run time limit (08e017c) + REF-010 (1c3a9d8) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO; archive OPS session `local_7eefd4c8…` |
 | **IMP-003**: rolling audit of ChatGPT Blender toolkit (first drop `blender_proc_vNext/`) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | running | after each audit: review → Nolan approval; message it when Nolan adds drops |
-| REF-010: ROOM_FIXTURES cabinet per DEC-068 (docs) | `local_b6a24c47-ab71-4d36-9df9-1eb188edc2b0` (kept for DOC-002 later) | running | docs review |
 | DES-004: PS2 shift-day design + UX-003/GAME-011/012 packets (doc) | `local_82d327a2-5b67-4cff-b481-5854a94f6f31` | running | docs review; ratify DECs |
 | AUDIO-001: audio plan + CC0 sourcing (no Unity) | `local_8bddd8f7-b99c-4c0e-80d7-d89dd3359dd4` | running | review |
 
@@ -32,12 +30,11 @@ Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, 
 
 ## Open questions for Nolan
 - REF-008 questions: Q1–15 answered (DEC-051; Q4 vestibule size unknown, Q11 skipped). **All answered (DEC-062, 2026-10-30); no more CCTV/photos available** (FOH wall, rack runs, vestibule, lockers, bench, office items, BOH items, restroom/JC photos): full list in `Docs/Handoffs/REF-008.md` "Questions for Nolan". Sent 2026-10-30 02:15; answers go to the REF/ART tasks.
-- Brand names/IP before any public build (real brands in `batches.json` and the packaged catalog).
 - Phoenix TPT rate (OPEN-4): a receipt's tax lines would settle it; 25.1 % is kept (DEC-001).
 
 ## Pending from Nolan
 - ChatGPT Blender toolkit (DEC-069): arriving in drops; IMP-003 audits each, re-checking the folder after each audit.
-- ~~"Fully built systems" file~~: arrived 2026-10-30 as `Downloads/Dispo Game Imports/DISPO_GAME_DESIGN_V2/`; IMP-001 auditing.
+- ~~"Fully built systems" file~~: arrived 2026-10-30 as `Downloads/Dispo Game Imports Archive/2026-10-30_DISPO_GAME_DESIGN_V2/`; IMP-001 auditing.
 - V2 design pack approved 2026-10-30 (DEC-063); IMP-002 integrates.
 - ChatGPT-built mechanics: he will drop them in `C:/Users/handl/Downloads/Dispo Game Imports/`. Process: audit → review → **Nolan's approval** before any use.
 - Imports always go to `Downloads/Dispo Game Imports/` (outside the repo). `Imports/` in the repo root is git-excluded locally; the Dutchie export was moved out of it on 2026-10-30.
