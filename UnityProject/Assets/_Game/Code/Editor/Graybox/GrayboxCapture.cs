@@ -48,6 +48,9 @@ namespace Dispo.Editor.Graybox
             EditorSceneManager.OpenScene($"{GrayboxBuilder.ScenesDir}/{GrayboxBuilder.Zones[0]}.unity", OpenSceneMode.Single);
             foreach (var s in GrayboxBuilder.Zones.Skip(1).Append("Lighting_Day"))
                 EditorSceneManager.OpenScene($"{GrayboxBuilder.ScenesDir}/{s}.unity", OpenSceneMode.Additive);
+            // ART-003: when the lookdev scene exists, Retail views show it (ceiling closed, interior lights, interior EV)
+            var lookdevPath = $"{GrayboxBuilder.ScenesDir}/{Lookdev.LookdevBuilder.SceneName}.unity";
+            var lookdev = File.Exists(lookdevPath) ? EditorSceneManager.OpenScene(lookdevPath, OpenSceneMode.Additive).GetRootGameObjects() : new GameObject[0];
 
             var volume = new GameObject("CaptureExposure").AddComponent<Volume>();
             volume.isGlobal = true;
@@ -69,14 +72,18 @@ namespace Dispo.Editor.Graybox
                 {
                     var go = GameObject.Find(c.Id) ?? throw new InvalidOperationException($"camera {c.Id} not in scenes; rebuild the graybox");
                     var file = c.Id + ".png";
+                    var interior = lookdev.Length > 0 && c.zone == "Retail";
+                    exposure.fixedExposure.Override(interior ? Lookdev.LookdevBuilder.InteriorEv : FixedEv);
                     Render(go.GetComponent<Camera>(), Width, Height, Path.Combine(outDir, file));
                     manifest.captures.Add(new Entry
                     {
                         cameraId = c.Id, tile = c.tile, room = c.room, scene = go.scene.name, resolution = $"{Width}x{Height}",
-                        commit = commit, timestamp = stamp, lighting = Lighting, conf = c.conf, note = c.note, file = file,
+                        commit = commit, timestamp = stamp, lighting = interior ? $"{Lookdev.LookdevBuilder.SceneName} interior lights, fixed exposure EV {Lookdev.LookdevBuilder.InteriorEv}" : Lighting, conf = c.conf, note = c.note, file = file,
                     });
                 }
+                foreach (var g in lookdev) g.SetActive(false); // the plan overlay QA needs an open roof
                 manifest.topDown = CaptureTopDown(outDir, manifest);
+                foreach (var g in lookdev) g.SetActive(true);
             }
             finally
             {
