@@ -1,0 +1,218 @@
+{
+  "generator": "glass_door_cooler",
+  "asset_prefix": "PROC_",
+  "seed": 24001,
+  "own_sheet": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Cooler",
+  "gaps": [
+    "GAP-111",
+    "GAP-PROC-17"
+  ],
+  "_sources": "Sizes ROOM_FIXTURES (Cooler_GlassDoor_2Door 4.0 x 2.5 x 6.5 ft, Fridge_TopFreezer 2.2 x 2.3 x 5.5 ft, Fridge_Magnets 2.8 x 2.4 x 5.8 ft); contents DEC-050. GAP-PROC-17: frame/door/handle/shelf sizes, shelf count, freezer split, magnet layout and side.",
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 16
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 12
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8
+    }
+  },
+  "wear": {
+    "edge_wear": 0.15,
+    "scuffs": 0.25,
+    "fingerprints": 0.35,
+    "sticker_residue": 0.1
+  },
+  "colors": {
+    "Black_Frame": [
+      0.03,
+      0.03,
+      0.035,
+      1.0
+    ],
+    "Black_Metal": [
+      0.05,
+      0.05,
+      0.055,
+      1.0
+    ],
+    "Plate_Blank": [
+      0.2,
+      0.2,
+      0.21,
+      1.0
+    ],
+    "Interior_White": [
+      0.9,
+      0.9,
+      0.9,
+      1.0
+    ],
+    "LED_Emissive": [
+      0.95,
+      0.95,
+      0.9,
+      1.0
+    ],
+    "Wire_Grey": [
+      0.6,
+      0.61,
+      0.62,
+      1.0
+    ],
+    "Plastic_White": [
+      0.92,
+      0.92,
+      0.9,
+      1.0
+    ],
+    "Glass_Clear": [
+      0.82,
+      0.9,
+      0.94,
+      0.18
+    ],
+    "Rubber_Black": [
+      0.02,
+      0.02,
+      0.02,
+      1.0
+    ],
+    "White_Enamel": [
+      0.9,
+      0.9,
+      0.88,
+      1.0
+    ],
+    "Handle_Grey": [
+      0.55,
+      0.56,
+      0.58,
+      1.0
+    ],
+    "Rubber_Grey": [
+      0.3,
+      0.3,
+      0.31,
+      1.0
+    ],
+    "Black_Plastic": [
+      0.04,
+      0.04,
+      0.045,
+      1.0
+    ],
+    "Magnets_Mixed": [
+      0.7,
+      0.3,
+      0.2,
+      1.0
+    ]
+  },
+  "variants": [
+    {
+      "id": "Cooler_GlassDoor_2Door",
+      "kind": "glass_cooler",
+      "rf": "Cooler_GlassDoor_2Door",
+      "width_m": 1.2192,
+      "depth_m": 0.762,
+      "height_m": 1.9812,
+      "contents": "concentrates + perishable edibles (DEC-050); stock from inventory data, never modelled",
+      "tri_budget": {
+        "LOD0": 150000,
+        "LOD1": 75000,
+        "LOD2": 37500,
+        "LOD3": 15000
+      },
+      "tri_guide": {
+        "lod0_min": 30000
+      },
+      "cooler": {
+        "doors": 2,
+        "side_t_m": 0.05,
+        "header_h_m": 0.2,
+        "base_h_m": 0.15,
+        "door_t_m": 0.05,
+        "rail_w_m": 0.06,
+        "shelves": 4,
+        "wire_pitch_m": 0.0254,
+        "handle_standoff_m": 0.04,
+        "handle_r_m": 0.01,
+        "handle_len_m": 0.6
+      }
+    },
+    {
+      "id": "Fridge_TopFreezer",
+      "kind": "fridge",
+      "rf": "Fridge_TopFreezer",
+      "width_m": 0.67056,
+      "depth_m": 0.70104,
+      "height_m": 1.6764,
+      "contents": "drinks (DEC-050); stock from inventory data, never modelled",
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "fridge": {
+        "door_t_m": 0.05,
+        "door_gap_m": 0.008,
+        "freezer_split": 0.7,
+        "kick_h_m": 0.1,
+        "handle_standoff_m": 0.035,
+        "handle_r_m": 0.009,
+        "handle_len_m": 0.45,
+        "magnet_count": 60,
+        "finish": "White_Enamel"
+      }
+    },
+    {
+      "id": "Fridge_Magnets",
+      "kind": "fridge",
+      "rf": "Fridge_Magnets",
+      "width_m": 0.85344,
+      "depth_m": 0.73152,
+      "height_m": 1.76784,
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "fridge": {
+        "door_t_m": 0.05,
+        "door_gap_m": 0.008,
+        "freezer_split": 0.7,
+        "kick_h_m": 0.1,
+        "handle_standoff_m": 0.035,
+        "handle_r_m": 0.009,
+        "handle_len_m": 0.45,
+        "magnet_count": 60,
+        "finish": "White_Enamel",
+        "magnets_side": "right"
+      }
+    }
+  ]
+}

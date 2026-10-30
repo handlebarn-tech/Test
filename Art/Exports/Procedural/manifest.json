@@ -1,5 +1,1725 @@
 {
   "assets": {
+    "PROC_Cooler_GlassDoor_2Door": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.9906,
+            -0.025
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            1.2192,
+            1.9812,
+            0.712
+          ]
+        }
+      ],
+      "contents": "concentrates + perishable edibles (DEC-050); stock from inventory data, never modelled",
+      "emissive_parts": [
+        "LED",
+        "Interior"
+      ],
+      "export": "Art/Exports/Procedural/PROC_Cooler_GlassDoor_2Door.fbx",
+      "export_sha256": "addbb975445e05d1",
+      "fixture_family": "cooler_fridge",
+      "gaps": [
+        "GAP-111",
+        "GAP-PROC-17"
+      ],
+      "generator": "glass_door_cooler",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Cooler_GlassDoor_2Door_Cabinet_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.6096,
+                  0.381,
+                  1.9812
+                ],
+                "min": [
+                  -0.6096,
+                  -0.331,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 1
+              },
+              "geometry_sha256": "5e8978f7afd8158a",
+              "material_slots": [
+                "M_Proc_Black_Frame"
+              ],
+              "size_m_unity_xyz": [
+                1.2192,
+                1.9812,
+                0.712
+              ],
+              "tris": 520,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 270
+            },
+            "PROC_Cooler_GlassDoor_2Door_DoorFrame_00_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.002,
+                  -0.281,
+                  1.7812
+                ],
+                "min": [
+                  -0.5576,
+                  -0.331,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 80
+              },
+              "geometry_sha256": "4fa274b2dd6f1aa7",
+              "material_slots": [
+                "M_Proc_Black_Frame"
+              ],
+              "size_m_unity_xyz": [
+                0.5556,
+                1.6312,
+                0.05
+              ],
+              "tris": 440,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            },
+            "PROC_Cooler_GlassDoor_2Door_DoorFrame_01_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5576,
+                  -0.281,
+                  1.7812
+                ],
+                "min": [
+                  0.002,
+                  -0.331,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 80
+              },
+              "geometry_sha256": "3fd93983f5a76373",
+              "material_slots": [
+                "M_Proc_Black_Frame"
+              ],
+              "size_m_unity_xyz": [
+                0.5556,
+                1.6312,
+                0.05
+              ],
+              "tris": 440,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            },
+            "PROC_Cooler_GlassDoor_2Door_Gasket_00_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.005,
+                  -0.281,
+                  1.7812
+                ],
+                "min": [
+                  -0.5546,
+                  -0.287,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "5cf16ba15f238bc2",
+              "material_slots": [
+                "M_Proc_Rubber_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.5496,
+                1.6312,
+                0.006
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Cooler_GlassDoor_2Door_Gasket_01_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5546,
+                  -0.281,
+                  1.7812
+                ],
+                "min": [
+                  0.005,
+                  -0.287,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "5e72a5561135cca5",
+              "material_slots": [
+                "M_Proc_Rubber_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.5496,
+                1.6312,
+                0.006
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Cooler_GlassDoor_2Door_Glass_00_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.06,
+                  -0.302,
+                  1.7212
+                ],
+                "min": [
+                  -0.4996,
+                  -0.31,
+                  0.234
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2db35561c9f3d00e",
+              "material_slots": [
+                "M_Proc_Glass_Clear"
+              ],
+              "size_m_unity_xyz": [
+                0.4396,
+                1.4872,
+                0.008
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cooler_GlassDoor_2Door_Glass_01_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.4996,
+                  -0.302,
+                  1.7212
+                ],
+                "min": [
+                  0.06,
+                  -0.31,
+                  0.234
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "cc91c0202630e87f",
+              "material_slots": [
+                "M_Proc_Glass_Clear"
+              ],
+              "size_m_unity_xyz": [
+                0.4396,
+                1.4872,
+                0.008
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cooler_GlassDoor_2Door_Grille_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5296,
+                  -0.3305,
+                  0.1305
+                ],
+                "min": [
+                  -0.5296,
+                  -0.3345,
+                  0.0175
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d49b02512dc553bc",
+              "material_slots": [
+                "M_Proc_Black_Metal"
+              ],
+              "size_m_unity_xyz": [
+                1.0592,
+                0.113,
+                0.004
+              ],
+              "tris": 120,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 80
+            },
+            "PROC_Cooler_GlassDoor_2Door_Handle_00_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.014,
+                  -0.3305,
+                  1.2836
+                ],
+                "min": [
+                  -0.05,
+                  -0.381,
+                  0.6476
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8f067a7a38cb9963",
+              "material_slots": [
+                "M_Proc_Black_Metal"
+              ],
+              "size_m_unity_xyz": [
+                0.036,
+                0.636,
+                0.0505
+              ],
+              "tris": 220,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 116
+            },
+            "PROC_Cooler_GlassDoor_2Door_Handle_01_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  -0.3305,
+                  1.2836
+                ],
+                "min": [
+                  0.014,
+                  -0.381,
+                  0.6476
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "fb287310c33e51be",
+              "material_slots": [
+                "M_Proc_Black_Metal"
+              ],
+              "size_m_unity_xyz": [
+                0.036,
+                0.636,
+                0.0505
+              ],
+              "tris": 220,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 116
+            },
+            "PROC_Cooler_GlassDoor_2Door_Hinges_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5556,
+                  -0.3,
+                  1.8262
+                ],
+                "min": [
+                  -0.5556,
+                  -0.351,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "3b0a2af6cd36d664",
+              "material_slots": [
+                "M_Proc_Black_Metal"
+              ],
+              "size_m_unity_xyz": [
+                1.1112,
+                1.6762,
+                0.051
+              ],
+              "tris": 280,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 152
+            },
+            "PROC_Cooler_GlassDoor_2Door_Interior_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5596,
+                  0.351,
+                  1.7812
+                ],
+                "min": [
+                  -0.5596,
+                  0.341,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "02c150ee4b835f0b",
+              "material_slots": [
+                "M_Proc_Interior_White"
+              ],
+              "size_m_unity_xyz": [
+                1.1192,
+                1.6312,
+                0.01
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cooler_GlassDoor_2Door_LED_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5556,
+                  -0.268,
+                  1.7612
+                ],
+                "min": [
+                  -0.006,
+                  -0.274,
+                  0.17
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "82b98ce79b74752d",
+              "material_slots": [
+                "M_Proc_LED_Emissive"
+              ],
+              "size_m_unity_xyz": [
+                0.5616,
+                1.5912,
+                0.006
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Cooler_GlassDoor_2Door_Plate_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  -0.331,
+                  1.9262
+                ],
+                "min": [
+                  -0.24384,
+                  -0.333,
+                  1.8362
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "df695e5b48c89fcb",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.09,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cooler_GlassDoor_2Door_Shelves_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5466,
+                  0.333,
+                  1.458692
+                ],
+                "min": [
+                  -0.5466,
+                  -0.253,
+                  0.45624
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2080502ccc986cd3",
+              "material_slots": [
+                "M_Proc_Wire_Grey"
+              ],
+              "size_m_unity_xyz": [
+                1.0932,
+                1.00245,
+                0.586
+              ],
+              "tris": 5376,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 3168
+            },
+            "PROC_Cooler_GlassDoor_2Door_TagRails_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5446,
+                  -0.251,
+                  1.45996
+                ],
+                "min": [
+                  -0.5446,
+                  -0.255,
+                  0.45124
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "09764c3d4736622d",
+              "material_slots": [
+                "M_Proc_Plastic_White"
+              ],
+              "size_m_unity_xyz": [
+                1.0892,
+                1.00872,
+                0.004
+              ],
+              "tris": 96,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 64
+            }
+          },
+          "size_m_unity_xyz": [
+            1.2192,
+            1.9812,
+            0.762
+          ],
+          "tris": 7832
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Cooler_GlassDoor_2Door_Cabinet_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.6096,
+                  0.381,
+                  1.9812
+                ],
+                "min": [
+                  -0.6096,
+                  -0.331,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 1
+              },
+              "geometry_sha256": "400898e8a427674d",
+              "material_slots": [
+                "M_Proc_Black_Frame"
+              ],
+              "size_m_unity_xyz": [
+                1.2192,
+                1.9812,
+                0.712
+              ],
+              "tris": 264,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 142
+            },
+            "PROC_Cooler_GlassDoor_2Door_DoorFrame_00_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.002,
+                  -0.281,
+                  1.7812
+                ],
+                "min": [
+                  -0.5576,
+                  -0.331,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 36
+              },
+              "geometry_sha256": "fa42f7c09d664305",
+              "material_slots": [
+                "M_Proc_Black_Frame"
+              ],
+              "size_m_unity_xyz": [
+                0.5556,
+                1.6312,
+                0.05
+              ],
+              "tris": 216,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            },
+            "PROC_Cooler_GlassDoor_2Door_DoorFrame_01_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5576,
+                  -0.281,
+                  1.7812
+                ],
+                "min": [
+                  0.002,
+                  -0.331,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 36
+              },
+              "geometry_sha256": "91f9feea24e17f61",
+              "material_slots": [
+                "M_Proc_Black_Frame"
+              ],
+              "size_m_unity_xyz": [
+                0.5556,
+                1.6312,
+                0.05
+              ],
+              "tris": 216,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            },
+            "PROC_Cooler_GlassDoor_2Door_Gasket_00_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.005,
+                  -0.281,
+                  1.7812
+                ],
+                "min": [
+                  -0.5546,
+                  -0.287,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "5cf16ba15f238bc2",
+              "material_slots": [
+                "M_Proc_Rubber_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.5496,
+                1.6312,
+                0.006
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Cooler_GlassDoor_2Door_Gasket_01_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5546,
+                  -0.281,
+                  1.7812
+                ],
+                "min": [
+                  0.005,
+                  -0.287,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "5e72a5561135cca5",
+              "material_slots": [
+                "M_Proc_Rubber_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.5496,
+                1.6312,
+                0.006
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Cooler_GlassDoor_2Door_Glass_00_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.06,
+                  -0.302,
+                  1.7212
+                ],
+                "min": [
+                  -0.4996,
+                  -0.31,
+                  0.234
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2db35561c9f3d00e",
+              "material_slots": [
+                "M_Proc_Glass_Clear"
+              ],
+              "size_m_unity_xyz": [
+                0.4396,
+                1.4872,
+                0.008
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cooler_GlassDoor_2Door_Glass_01_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.4996,
+                  -0.302,
+                  1.7212
+                ],
+                "min": [
+                  0.06,
+                  -0.31,
+                  0.234
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "cc91c0202630e87f",
+              "material_slots": [
+                "M_Proc_Glass_Clear"
+              ],
+              "size_m_unity_xyz": [
+                0.4396,
+                1.4872,
+                0.008
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cooler_GlassDoor_2Door_Grille_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5296,
+                  -0.3305,
+                  0.1305
+                ],
+                "min": [
+                  -0.5296,
+                  -0.3345,
+                  0.0175
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d49b02512dc553bc",
+              "material_slots": [
+                "M_Proc_Black_Metal"
+              ],
+              "size_m_unity_xyz": [
+                1.0592,
+                0.113,
+                0.004
+              ],
+              "tris": 120,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 80
+            },
+            "PROC_Cooler_GlassDoor_2Door_Handle_00_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.014,
+                  -0.3305,
+                  1.2836
+                ],
+                "min": [
+                  -0.05,
+                  -0.381,
+                  0.6476
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6795921eca3b9602",
+              "material_slots": [
+                "M_Proc_Black_Metal"
+              ],
+              "size_m_unity_xyz": [
+                0.036,
+                0.636,
+                0.0505
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            },
+            "PROC_Cooler_GlassDoor_2Door_Handle_01_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  -0.3305,
+                  1.2836
+                ],
+                "min": [
+                  0.014,
+                  -0.381,
+                  0.6476
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f8015b4c18ba291e",
+              "material_slots": [
+                "M_Proc_Black_Metal"
+              ],
+              "size_m_unity_xyz": [
+                0.036,
+                0.636,
+                0.0505
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            },
+            "PROC_Cooler_GlassDoor_2Door_Hinges_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5556,
+                  -0.3,
+                  1.7812
+                ],
+                "min": [
+                  -0.5556,
+                  -0.312,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "121cb755fb789296",
+              "material_slots": [
+                "M_Proc_Black_Metal"
+              ],
+              "size_m_unity_xyz": [
+                1.1112,
+                1.6312,
+                0.012
+              ],
+              "tris": 192,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 104
+            },
+            "PROC_Cooler_GlassDoor_2Door_Interior_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5596,
+                  0.351,
+                  1.7812
+                ],
+                "min": [
+                  -0.5596,
+                  0.341,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "02c150ee4b835f0b",
+              "material_slots": [
+                "M_Proc_Interior_White"
+              ],
+              "size_m_unity_xyz": [
+                1.1192,
+                1.6312,
+                0.01
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cooler_GlassDoor_2Door_LED_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5556,
+                  -0.268,
+                  1.7612
+                ],
+                "min": [
+                  -0.006,
+                  -0.274,
+                  0.17
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "82b98ce79b74752d",
+              "material_slots": [
+                "M_Proc_LED_Emissive"
+              ],
+              "size_m_unity_xyz": [
+                0.5616,
+                1.5912,
+                0.006
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Cooler_GlassDoor_2Door_Plate_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  -0.331,
+                  1.9262
+                ],
+                "min": [
+                  -0.24384,
+                  -0.333,
+                  1.8362
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "df695e5b48c89fcb",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.09,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cooler_GlassDoor_2Door_Shelves_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5466,
+                  0.333,
+                  1.458692
+                ],
+                "min": [
+                  -0.5466,
+                  -0.253,
+                  0.472508
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "76c1bfe9f5ae3c73",
+              "material_slots": [
+                "M_Proc_Wire_Grey"
+              ],
+              "size_m_unity_xyz": [
+                1.0932,
+                0.98618,
+                0.586
+              ],
+              "tris": 2880,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1680
+            },
+            "PROC_Cooler_GlassDoor_2Door_TagRails_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5446,
+                  -0.251,
+                  1.45996
+                ],
+                "min": [
+                  -0.5446,
+                  -0.255,
+                  0.45124
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "09764c3d4736622d",
+              "material_slots": [
+                "M_Proc_Plastic_White"
+              ],
+              "size_m_unity_xyz": [
+                1.0892,
+                1.00872,
+                0.004
+              ],
+              "tris": 96,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 64
+            }
+          },
+          "size_m_unity_xyz": [
+            1.2192,
+            1.9812,
+            0.762
+          ],
+          "tris": 4416
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Cooler_GlassDoor_2Door_Cabinet_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.6096,
+                  0.381,
+                  1.9812
+                ],
+                "min": [
+                  -0.6096,
+                  -0.331,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 6
+              },
+              "geometry_sha256": "698061c5fe71c869",
+              "material_slots": [
+                "M_Proc_Black_Frame"
+              ],
+              "size_m_unity_xyz": [
+                1.2192,
+                1.9812,
+                0.712
+              ],
+              "tris": 72,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            },
+            "PROC_Cooler_GlassDoor_2Door_DoorFrame_00_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.002,
+                  -0.281,
+                  1.7812
+                ],
+                "min": [
+                  -0.5576,
+                  -0.331,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
+              "geometry_sha256": "1a701e4387776559",
+              "material_slots": [
+                "M_Proc_Black_Frame"
+              ],
+              "size_m_unity_xyz": [
+                0.5556,
+                1.6312,
+                0.05
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            },
+            "PROC_Cooler_GlassDoor_2Door_DoorFrame_01_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5576,
+                  -0.281,
+                  1.7812
+                ],
+                "min": [
+                  0.002,
+                  -0.331,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
+              "geometry_sha256": "bcb97c5b2b1e412f",
+              "material_slots": [
+                "M_Proc_Black_Frame"
+              ],
+              "size_m_unity_xyz": [
+                0.5556,
+                1.6312,
+                0.05
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            },
+            "PROC_Cooler_GlassDoor_2Door_Glass_00_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.06,
+                  -0.302,
+                  1.7212
+                ],
+                "min": [
+                  -0.4996,
+                  -0.31,
+                  0.234
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2db35561c9f3d00e",
+              "material_slots": [
+                "M_Proc_Glass_Clear"
+              ],
+              "size_m_unity_xyz": [
+                0.4396,
+                1.4872,
+                0.008
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cooler_GlassDoor_2Door_Glass_01_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.4996,
+                  -0.302,
+                  1.7212
+                ],
+                "min": [
+                  0.06,
+                  -0.31,
+                  0.234
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "cc91c0202630e87f",
+              "material_slots": [
+                "M_Proc_Glass_Clear"
+              ],
+              "size_m_unity_xyz": [
+                0.4396,
+                1.4872,
+                0.008
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cooler_GlassDoor_2Door_Handle_00_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.014,
+                  -0.3305,
+                  1.2836
+                ],
+                "min": [
+                  -0.05,
+                  -0.381,
+                  0.6476
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6795921eca3b9602",
+              "material_slots": [
+                "M_Proc_Black_Metal"
+              ],
+              "size_m_unity_xyz": [
+                0.036,
+                0.636,
+                0.0505
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            },
+            "PROC_Cooler_GlassDoor_2Door_Handle_01_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  -0.3305,
+                  1.2836
+                ],
+                "min": [
+                  0.014,
+                  -0.381,
+                  0.6476
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f8015b4c18ba291e",
+              "material_slots": [
+                "M_Proc_Black_Metal"
+              ],
+              "size_m_unity_xyz": [
+                0.036,
+                0.636,
+                0.0505
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            },
+            "PROC_Cooler_GlassDoor_2Door_Interior_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5596,
+                  0.351,
+                  1.7812
+                ],
+                "min": [
+                  -0.5596,
+                  0.341,
+                  0.15
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "02c150ee4b835f0b",
+              "material_slots": [
+                "M_Proc_Interior_White"
+              ],
+              "size_m_unity_xyz": [
+                1.1192,
+                1.6312,
+                0.01
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cooler_GlassDoor_2Door_LED_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5556,
+                  -0.268,
+                  1.7612
+                ],
+                "min": [
+                  -0.006,
+                  -0.274,
+                  0.17
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "82b98ce79b74752d",
+              "material_slots": [
+                "M_Proc_LED_Emissive"
+              ],
+              "size_m_unity_xyz": [
+                0.5616,
+                1.5912,
+                0.006
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Cooler_GlassDoor_2Door_Plate_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  -0.331,
+                  1.9262
+                ],
+                "min": [
+                  -0.24384,
+                  -0.333,
+                  1.8362
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "df695e5b48c89fcb",
+              "material_slots": [
+                "M_Proc_Plate_Blank"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.09,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cooler_GlassDoor_2Door_Shelves_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5446,
+                  0.331,
+                  1.45896
+                ],
+                "min": [
+                  -0.5446,
+                  -0.251,
+                  0.47224
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "23c94c0c7777383c",
+              "material_slots": [
+                "M_Proc_Wire_Grey"
+              ],
+              "size_m_unity_xyz": [
+                1.0892,
+                0.98672,
+                0.582
+              ],
+              "tris": 96,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 64
+            }
+          },
+          "size_m_unity_xyz": [
+            1.2192,
+            1.9812,
+            0.762
+          ],
+          "tris": 648
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Cooler_GlassDoor_2Door_Cabinet_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.6096,
+                  0.381,
+                  1.9812
+                ],
+                "min": [
+                  -0.6096,
+                  -0.331,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "fd70e284e71ae4ab",
+              "material_slots": [
+                "M_Proc_Black_Frame"
+              ],
+              "size_m_unity_xyz": [
+                1.2192,
+                1.9812,
+                0.712
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cooler_GlassDoor_2Door_Handles_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.06096,
+                  -0.331,
+                  1.2656
+                ],
+                "min": [
+                  -0.06096,
+                  -0.381,
+                  0.6656
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "eceac373c3702550",
+              "material_slots": [
+                "M_Proc_Black_Metal"
+              ],
+              "size_m_unity_xyz": [
+                0.12192,
+                0.6,
+                0.05
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            1.2192,
+            1.9812,
+            0.762
+          ],
+          "tris": 24
+        }
+      },
+      "moving_parts": [
+        {
+          "axis_unity_xyz": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "group": [
+            "DoorFrame_00",
+            "Glass_00",
+            "Handle_00",
+            "Gasket_00"
+          ],
+          "open_deg": 110,
+          "part": "DoorFrame_00",
+          "pivot_unity_xyz": [
+            0.5596,
+            0.9656,
+            0.306
+          ],
+          "side": "left",
+          "type": "hinge"
+        },
+        {
+          "axis_unity_xyz": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "group": [
+            "DoorFrame_01",
+            "Glass_01",
+            "Handle_01",
+            "Gasket_01"
+          ],
+          "open_deg": 110,
+          "part": "DoorFrame_01",
+          "pivot_unity_xyz": [
+            -0.5596,
+            0.9656,
+            0.306
+          ],
+          "side": "right",
+          "type": "hinge"
+        }
+      ],
+      "own_sheet": true,
+      "params": "Tools/Blender/params/glass_door_cooler.json",
+      "params_sha256": "2ff345c1e66a9a6e",
+      "rf": "Cooler_GlassDoor_2Door",
+      "seed": 24001,
+      "shelf_anchors": [
+        {
+          "id": "D0_Shelf_00",
+          "position_unity_xyz": [
+            0.2798,
+            0.47624,
+            -0.04
+          ],
+          "size_m_unity_xz": [
+            0.5096,
+            0.562
+          ]
+        },
+        {
+          "id": "D0_Shelf_01",
+          "position_unity_xyz": [
+            0.2798,
+            0.80248,
+            -0.04
+          ],
+          "size_m_unity_xz": [
+            0.5096,
+            0.562
+          ]
+        },
+        {
+          "id": "D0_Shelf_02",
+          "position_unity_xyz": [
+            0.2798,
+            1.12872,
+            -0.04
+          ],
+          "size_m_unity_xz": [
+            0.5096,
+            0.562
+          ]
+        },
+        {
+          "id": "D0_Shelf_03",
+          "position_unity_xyz": [
+            0.2798,
+            1.45496,
+            -0.04
+          ],
+          "size_m_unity_xz": [
+            0.5096,
+            0.562
+          ]
+        },
+        {
+          "id": "D1_Shelf_00",
+          "position_unity_xyz": [
+            -0.2798,
+            0.47624,
+            -0.04
+          ],
+          "size_m_unity_xz": [
+            0.5096,
+            0.562
+          ]
+        },
+        {
+          "id": "D1_Shelf_01",
+          "position_unity_xyz": [
+            -0.2798,
+            0.80248,
+            -0.04
+          ],
+          "size_m_unity_xz": [
+            0.5096,
+            0.562
+          ]
+        },
+        {
+          "id": "D1_Shelf_02",
+          "position_unity_xyz": [
+            -0.2798,
+            1.12872,
+            -0.04
+          ],
+          "size_m_unity_xz": [
+            0.5096,
+            0.562
+          ]
+        },
+        {
+          "id": "D1_Shelf_03",
+          "position_unity_xyz": [
+            -0.2798,
+            1.45496,
+            -0.04
+          ],
+          "size_m_unity_xz": [
+            0.5096,
+            0.562
+          ]
+        }
+      ],
+      "tri_budget": {
+        "LOD0": 150000,
+        "LOD1": 75000,
+        "LOD2": 37500,
+        "LOD3": 15000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Cooler/PROC_Cooler_GlassDoor_2Door.fbx",
+      "wear": {
+        "edge_wear": 0.15,
+        "fingerprints": 0.35,
+        "scuffs": 0.25,
+        "seed": 24001,
+        "sticker_residue": 0.1
+      }
+    },
     "PROC_DeliJar": {
       "export": "Art/Exports/Procedural/PROC_DeliJar.fbx",
       "export_sha256": "9ff98e35c811348d",
@@ -8354,6 +10074,1983 @@
         "fingerprints": 0.1,
         "scuffs": 0.25,
         "seed": 4101
+      }
+    },
+    "PROC_Fridge_Magnets": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.88392,
+            -0.022
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            0.85344,
+            1.76784,
+            0.68752
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_Fridge_Magnets.fbx",
+      "export_sha256": "f8536cf15fc6f809",
+      "fixture_family": "cooler_fridge",
+      "gaps": [
+        "GAP-111",
+        "GAP-PROC-17"
+      ],
+      "generator": "glass_door_cooler",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Fridge_Magnets_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.42272,
+                  0.36576,
+                  1.76784
+                ],
+                "min": [
+                  -0.42672,
+                  -0.27176,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "66ac2993eefd5e2b",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.84944,
+                1.76784,
+                0.63752
+              ],
+              "tris": 124,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 64
+            },
+            "PROC_Fridge_Magnets_FreezerDoor_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.41772,
+                  -0.27176,
+                  1.76284
+                ],
+                "min": [
+                  -0.42172,
+                  -0.32176,
+                  1.241488
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "29e813ac7862b7ec",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.83944,
+                0.52135,
+                0.05
+              ],
+              "tris": 116,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            },
+            "PROC_Fridge_Magnets_FreshDoor_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.41772,
+                  -0.27176,
+                  1.233488
+                ],
+                "min": [
+                  -0.42172,
+                  -0.32176,
+                  0.1
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "eea125cb4f0d24bf",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.83944,
+                1.13349,
+                0.05
+              ],
+              "tris": 116,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            },
+            "PROC_Fridge_Magnets_Grille_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.41772,
+                  -0.26276,
+                  1.76784
+                ],
+                "min": [
+                  -0.39672,
+                  -0.31676,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b3847d4fab724996",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.81444,
+                1.75784,
+                0.054
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Fridge_Magnets_Handle_FreezerDoor_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.36052,
+                  -0.32126,
+                  1.544432
+                ],
+                "min": [
+                  -0.39292,
+                  -0.36576,
+                  1.19922
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "399692f17f1a6894",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.0324,
+                0.34521,
+                0.0445
+              ],
+              "tris": 220,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 116
+            },
+            "PROC_Fridge_Magnets_Handle_FreshDoor_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.36052,
+                  -0.32126,
+                  1.191316
+                ],
+                "min": [
+                  -0.39292,
+                  -0.36576,
+                  0.708916
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "66607a0c7093f6d4",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.0324,
+                0.4824,
+                0.0445
+              ],
+              "tris": 220,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 116
+            },
+            "PROC_Fridge_Magnets_Magnets_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.42672,
+                  0.25637,
+                  1.63309
+                ],
+                "min": [
+                  0.42272,
+                  -0.268595,
+                  0.45015
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "5ddcd0e8256a8c7d",
+              "material_slots": [
+                "M_Proc_Magnets_Mixed"
+              ],
+              "size_m_unity_xyz": [
+                0.004,
+                1.18294,
+                0.52497
+              ],
+              "tris": 720,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 480
+            },
+            "PROC_Fridge_Magnets_Seal_FreezerDoor_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.40772,
+                  -0.26676,
+                  1.75284
+                ],
+                "min": [
+                  -0.41172,
+                  -0.27276,
+                  1.251488
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "75f88db531698a1c",
+              "material_slots": [
+                "M_Proc_Rubber_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.81944,
+                0.50135,
+                0.006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_Magnets_Seal_FreshDoor_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.40772,
+                  -0.26676,
+                  1.223488
+                ],
+                "min": [
+                  -0.41172,
+                  -0.27276,
+                  0.11
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "3be375e39c4465b3",
+              "material_slots": [
+                "M_Proc_Rubber_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.81944,
+                1.11349,
+                0.006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.85344,
+            1.76784,
+            0.73152
+          ],
+          "tris": 1588
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Fridge_Magnets_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.42272,
+                  0.36576,
+                  1.76784
+                ],
+                "min": [
+                  -0.42672,
+                  -0.27176,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8288dd308d760044",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.84944,
+                1.76784,
+                0.63752
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Fridge_Magnets_FreezerDoor_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.41772,
+                  -0.27176,
+                  1.76284
+                ],
+                "min": [
+                  -0.42172,
+                  -0.32176,
+                  1.241488
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d8e739d03331c7c9",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.83944,
+                0.52135,
+                0.05
+              ],
+              "tris": 52,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 28
+            },
+            "PROC_Fridge_Magnets_FreshDoor_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.41772,
+                  -0.27176,
+                  1.233488
+                ],
+                "min": [
+                  -0.42172,
+                  -0.32176,
+                  0.1
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d9c779d52534d4f6",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.83944,
+                1.13349,
+                0.05
+              ],
+              "tris": 52,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 28
+            },
+            "PROC_Fridge_Magnets_Grille_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.41772,
+                  -0.26276,
+                  1.76784
+                ],
+                "min": [
+                  -0.39672,
+                  -0.31676,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b3847d4fab724996",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.81444,
+                1.75784,
+                0.054
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Fridge_Magnets_Handle_FreezerDoor_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.36052,
+                  -0.32126,
+                  1.544432
+                ],
+                "min": [
+                  -0.39292,
+                  -0.36576,
+                  1.19922
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1e0193deff15d9a8",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.0324,
+                0.34521,
+                0.0445
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            },
+            "PROC_Fridge_Magnets_Handle_FreshDoor_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.36052,
+                  -0.32126,
+                  1.191316
+                ],
+                "min": [
+                  -0.39292,
+                  -0.36576,
+                  0.708916
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "37c2bc6ebb660260",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.0324,
+                0.4824,
+                0.0445
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            },
+            "PROC_Fridge_Magnets_Magnets_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.42672,
+                  0.245169,
+                  1.490686
+                ],
+                "min": [
+                  0.42272,
+                  -0.268595,
+                  0.541432
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "205964c75f3c506b",
+              "material_slots": [
+                "M_Proc_Magnets_Mixed"
+              ],
+              "size_m_unity_xyz": [
+                0.004,
+                0.94925,
+                0.51376
+              ],
+              "tris": 240,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 160
+            },
+            "PROC_Fridge_Magnets_Seal_FreezerDoor_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.40772,
+                  -0.26676,
+                  1.75284
+                ],
+                "min": [
+                  -0.41172,
+                  -0.27276,
+                  1.251488
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "75f88db531698a1c",
+              "material_slots": [
+                "M_Proc_Rubber_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.81944,
+                0.50135,
+                0.006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_Magnets_Seal_FreshDoor_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.40772,
+                  -0.26676,
+                  1.223488
+                ],
+                "min": [
+                  -0.41172,
+                  -0.27276,
+                  0.11
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "3be375e39c4465b3",
+              "material_slots": [
+                "M_Proc_Rubber_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.81944,
+                1.11349,
+                0.006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.85344,
+            1.76784,
+            0.73152
+          ],
+          "tris": 788
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Fridge_Magnets_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.42272,
+                  0.36576,
+                  1.76784
+                ],
+                "min": [
+                  -0.42672,
+                  -0.27176,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "0370da283bcb8fc8",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.84944,
+                1.76784,
+                0.63752
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_Magnets_FreezerDoor_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.41772,
+                  -0.27176,
+                  1.76284
+                ],
+                "min": [
+                  -0.42172,
+                  -0.32176,
+                  1.241488
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "910d5f51e3085e70",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.83944,
+                0.52135,
+                0.05
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_Magnets_FreshDoor_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.41772,
+                  -0.27176,
+                  1.233488
+                ],
+                "min": [
+                  -0.42172,
+                  -0.32176,
+                  0.1
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d3ae3aae3f4f46c3",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.83944,
+                1.13349,
+                0.05
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_Magnets_Grille_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.39272,
+                  -0.26276,
+                  0.09
+                ],
+                "min": [
+                  -0.39672,
+                  -0.27276,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ab21da506def2977",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.78944,
+                0.08,
+                0.01
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_Magnets_Handle_FreezerDoor_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.36052,
+                  -0.32126,
+                  1.544432
+                ],
+                "min": [
+                  -0.39292,
+                  -0.36576,
+                  1.19922
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1e0193deff15d9a8",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.0324,
+                0.34521,
+                0.0445
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            },
+            "PROC_Fridge_Magnets_Handle_FreshDoor_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.36052,
+                  -0.32126,
+                  1.191316
+                ],
+                "min": [
+                  -0.39292,
+                  -0.36576,
+                  0.708916
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "37c2bc6ebb660260",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.0324,
+                0.4824,
+                0.0445
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            },
+            "PROC_Fridge_Magnets_Magnets_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.42672,
+                  0.219456,
+                  1.414272
+                ],
+                "min": [
+                  0.42272,
+                  -0.219456,
+                  0.530352
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "86bb735a3a59be6f",
+              "material_slots": [
+                "M_Proc_Magnets_Mixed"
+              ],
+              "size_m_unity_xyz": [
+                0.004,
+                0.88392,
+                0.43891
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.85344,
+            1.76784,
+            0.73152
+          ],
+          "tris": 372
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Fridge_Magnets_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.42272,
+                  0.36576,
+                  1.76784
+                ],
+                "min": [
+                  -0.42672,
+                  -0.32176,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "bf16aa7869cb2b32",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.84944,
+                1.76784,
+                0.68752
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_Magnets_Handles_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.35172,
+                  -0.32176,
+                  1.32588
+                ],
+                "min": [
+                  -0.38172,
+                  -0.36576,
+                  0.44196
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "39ad7ea066a6d778",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.03,
+                0.88392,
+                0.044
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_Magnets_Magnets_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.42672,
+                  0.219456,
+                  1.414272
+                ],
+                "min": [
+                  0.42272,
+                  -0.219456,
+                  0.530352
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "86bb735a3a59be6f",
+              "material_slots": [
+                "M_Proc_Magnets_Mixed"
+              ],
+              "size_m_unity_xyz": [
+                0.004,
+                0.88392,
+                0.43891
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.85344,
+            1.76784,
+            0.73152
+          ],
+          "tris": 36
+        }
+      },
+      "moving_parts": [
+        {
+          "axis_unity_xyz": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "group": [
+            "FreezerDoor",
+            "Handle_FreezerDoor",
+            "Seal_FreezerDoor"
+          ],
+          "open_deg": 110,
+          "part": "FreezerDoor",
+          "pivot_unity_xyz": [
+            -0.41272,
+            1.502164,
+            0.29676
+          ],
+          "side": "right",
+          "type": "hinge"
+        },
+        {
+          "axis_unity_xyz": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "group": [
+            "FreshDoor",
+            "Handle_FreshDoor",
+            "Seal_FreshDoor"
+          ],
+          "open_deg": 110,
+          "part": "FreshDoor",
+          "pivot_unity_xyz": [
+            -0.41272,
+            0.666744,
+            0.29676
+          ],
+          "side": "right",
+          "type": "hinge"
+        }
+      ],
+      "own_sheet": true,
+      "params": "Tools/Blender/params/glass_door_cooler.json",
+      "params_sha256": "2ff345c1e66a9a6e",
+      "rf": "Fridge_Magnets",
+      "seed": 24001,
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Cooler/PROC_Fridge_Magnets.fbx",
+      "wear": {
+        "edge_wear": 0.15,
+        "fingerprints": 0.35,
+        "scuffs": 0.25,
+        "seed": 24001,
+        "sticker_residue": 0.1
+      }
+    },
+    "PROC_Fridge_TopFreezer": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.8382,
+            -0.022
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            0.67056,
+            1.6764,
+            0.65704
+          ]
+        }
+      ],
+      "contents": "drinks (DEC-050); stock from inventory data, never modelled",
+      "export": "Art/Exports/Procedural/PROC_Fridge_TopFreezer.fbx",
+      "export_sha256": "c49e3b6236f64c05",
+      "fixture_family": "cooler_fridge",
+      "gaps": [
+        "GAP-111",
+        "GAP-PROC-17"
+      ],
+      "generator": "glass_door_cooler",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Fridge_TopFreezer_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33528,
+                  0.35052,
+                  1.6764
+                ],
+                "min": [
+                  -0.33528,
+                  -0.25652,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1e646f9957931479",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.67056,
+                1.6764,
+                0.60704
+              ],
+              "tris": 124,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 64
+            },
+            "PROC_Fridge_TopFreezer_FreezerDoor_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33028,
+                  -0.25652,
+                  1.6714
+                ],
+                "min": [
+                  -0.33028,
+                  -0.30652,
+                  1.17748
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "85ffb6ffe03b454c",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.66056,
+                0.49392,
+                0.05
+              ],
+              "tris": 116,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            },
+            "PROC_Fridge_TopFreezer_FreshDoor_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33028,
+                  -0.25652,
+                  1.16948
+                ],
+                "min": [
+                  -0.33028,
+                  -0.30652,
+                  0.1
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "64266e6faf67e73a",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.66056,
+                1.06948,
+                0.05
+              ],
+              "tris": 116,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            },
+            "PROC_Fridge_TopFreezer_Grille_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33028,
+                  -0.24752,
+                  1.6764
+                ],
+                "min": [
+                  -0.30528,
+                  -0.30152,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "10cec95d71f32e42",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.63556,
+                1.6664,
+                0.054
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Fridge_TopFreezer_Handle_FreezerDoor_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.26908,
+                  -0.30602,
+                  1.465336
+                ],
+                "min": [
+                  -0.30148,
+                  -0.35052,
+                  1.136584
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "25b40dff4ae0e891",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.0324,
+                0.32875,
+                0.0445
+              ],
+              "tris": 220,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 116
+            },
+            "PROC_Fridge_TopFreezer_Handle_FreshDoor_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.26908,
+                  -0.30602,
+                  1.14331
+                ],
+                "min": [
+                  -0.30148,
+                  -0.35052,
+                  0.66091
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "efcb2e5c4ea53d55",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.0324,
+                0.4824,
+                0.0445
+              ],
+              "tris": 220,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 116
+            },
+            "PROC_Fridge_TopFreezer_Seal_FreezerDoor_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.32028,
+                  -0.25152,
+                  1.6614
+                ],
+                "min": [
+                  -0.32028,
+                  -0.25752,
+                  1.18748
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "676669476efca04c",
+              "material_slots": [
+                "M_Proc_Rubber_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.64056,
+                0.47392,
+                0.006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_TopFreezer_Seal_FreshDoor_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.32028,
+                  -0.25152,
+                  1.15948
+                ],
+                "min": [
+                  -0.32028,
+                  -0.25752,
+                  0.11
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a2054105e1b2e2a0",
+              "material_slots": [
+                "M_Proc_Rubber_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.64056,
+                1.04948,
+                0.006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.67056,
+            1.6764,
+            0.70104
+          ],
+          "tris": 868
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Fridge_TopFreezer_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33528,
+                  0.35052,
+                  1.6764
+                ],
+                "min": [
+                  -0.33528,
+                  -0.25652,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e47b8b6f51e73351",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.67056,
+                1.6764,
+                0.60704
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Fridge_TopFreezer_FreezerDoor_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33028,
+                  -0.25652,
+                  1.6714
+                ],
+                "min": [
+                  -0.33028,
+                  -0.30652,
+                  1.17748
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e53a572822a5ed99",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.66056,
+                0.49392,
+                0.05
+              ],
+              "tris": 52,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 28
+            },
+            "PROC_Fridge_TopFreezer_FreshDoor_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33028,
+                  -0.25652,
+                  1.16948
+                ],
+                "min": [
+                  -0.33028,
+                  -0.30652,
+                  0.1
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "55240d3e2108d37d",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.66056,
+                1.06948,
+                0.05
+              ],
+              "tris": 52,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 28
+            },
+            "PROC_Fridge_TopFreezer_Grille_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33028,
+                  -0.24752,
+                  1.6764
+                ],
+                "min": [
+                  -0.30528,
+                  -0.30152,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "10cec95d71f32e42",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.63556,
+                1.6664,
+                0.054
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Fridge_TopFreezer_Handle_FreezerDoor_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.26908,
+                  -0.30602,
+                  1.465336
+                ],
+                "min": [
+                  -0.30148,
+                  -0.35052,
+                  1.136584
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c349d3517efcc968",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.0324,
+                0.32875,
+                0.0445
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            },
+            "PROC_Fridge_TopFreezer_Handle_FreshDoor_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.26908,
+                  -0.30602,
+                  1.14331
+                ],
+                "min": [
+                  -0.30148,
+                  -0.35052,
+                  0.66091
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "30a2505ac8f38e36",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.0324,
+                0.4824,
+                0.0445
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            },
+            "PROC_Fridge_TopFreezer_Seal_FreezerDoor_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.32028,
+                  -0.25152,
+                  1.6614
+                ],
+                "min": [
+                  -0.32028,
+                  -0.25752,
+                  1.18748
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "676669476efca04c",
+              "material_slots": [
+                "M_Proc_Rubber_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.64056,
+                0.47392,
+                0.006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_TopFreezer_Seal_FreshDoor_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.32028,
+                  -0.25152,
+                  1.15948
+                ],
+                "min": [
+                  -0.32028,
+                  -0.25752,
+                  0.11
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a2054105e1b2e2a0",
+              "material_slots": [
+                "M_Proc_Rubber_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.64056,
+                1.04948,
+                0.006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.67056,
+            1.6764,
+            0.70104
+          ],
+          "tris": 548
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Fridge_TopFreezer_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33528,
+                  0.35052,
+                  1.6764
+                ],
+                "min": [
+                  -0.33528,
+                  -0.25652,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "73a122e19dbcaf5f",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.67056,
+                1.6764,
+                0.60704
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_TopFreezer_FreezerDoor_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33028,
+                  -0.25652,
+                  1.6714
+                ],
+                "min": [
+                  -0.33028,
+                  -0.30652,
+                  1.17748
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "314039383e656351",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.66056,
+                0.49392,
+                0.05
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_TopFreezer_FreshDoor_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33028,
+                  -0.25652,
+                  1.16948
+                ],
+                "min": [
+                  -0.33028,
+                  -0.30652,
+                  0.1
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f7ceee12f6b80bea",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.66056,
+                1.06948,
+                0.05
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_TopFreezer_Grille_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.30528,
+                  -0.24752,
+                  0.09
+                ],
+                "min": [
+                  -0.30528,
+                  -0.25752,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "99946707f8f3a6d6",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.61056,
+                0.08,
+                0.01
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_TopFreezer_Handle_FreezerDoor_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.26908,
+                  -0.30602,
+                  1.465336
+                ],
+                "min": [
+                  -0.30148,
+                  -0.35052,
+                  1.136584
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c349d3517efcc968",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.0324,
+                0.32875,
+                0.0445
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            },
+            "PROC_Fridge_TopFreezer_Handle_FreshDoor_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.26908,
+                  -0.30602,
+                  1.14331
+                ],
+                "min": [
+                  -0.30148,
+                  -0.35052,
+                  0.66091
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "30a2505ac8f38e36",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.0324,
+                0.4824,
+                0.0445
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            }
+          },
+          "size_m_unity_xyz": [
+            0.67056,
+            1.6764,
+            0.70104
+          ],
+          "tris": 360
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Fridge_TopFreezer_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33528,
+                  0.35052,
+                  1.6764
+                ],
+                "min": [
+                  -0.33528,
+                  -0.30652,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ef7a075e6bc0b7ae",
+              "material_slots": [
+                "M_Proc_White_Enamel"
+              ],
+              "size_m_unity_xyz": [
+                0.67056,
+                1.6764,
+                0.65704
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Fridge_TopFreezer_Handles_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.26028,
+                  -0.30652,
+                  1.2573
+                ],
+                "min": [
+                  -0.29028,
+                  -0.35052,
+                  0.4191
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "df25f5faf4ab3186",
+              "material_slots": [
+                "M_Proc_Handle_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.03,
+                0.8382,
+                0.044
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.67056,
+            1.6764,
+            0.70104
+          ],
+          "tris": 24
+        }
+      },
+      "moving_parts": [
+        {
+          "axis_unity_xyz": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "group": [
+            "FreezerDoor",
+            "Handle_FreezerDoor",
+            "Seal_FreezerDoor"
+          ],
+          "open_deg": 110,
+          "part": "FreezerDoor",
+          "pivot_unity_xyz": [
+            -0.32528,
+            1.42444,
+            0.28152
+          ],
+          "side": "right",
+          "type": "hinge"
+        },
+        {
+          "axis_unity_xyz": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "group": [
+            "FreshDoor",
+            "Handle_FreshDoor",
+            "Seal_FreshDoor"
+          ],
+          "open_deg": 110,
+          "part": "FreshDoor",
+          "pivot_unity_xyz": [
+            -0.32528,
+            0.63474,
+            0.28152
+          ],
+          "side": "right",
+          "type": "hinge"
+        }
+      ],
+      "own_sheet": true,
+      "params": "Tools/Blender/params/glass_door_cooler.json",
+      "params_sha256": "2ff345c1e66a9a6e",
+      "rf": "Fridge_TopFreezer",
+      "seed": 24001,
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Cooler/PROC_Fridge_TopFreezer.fbx",
+      "wear": {
+        "edge_wear": 0.15,
+        "fingerprints": 0.35,
+        "scuffs": 0.25,
+        "seed": 24001,
+        "sticker_residue": 0.1
       }
     },
     "PROC_JarFill_DarkCompact": {

@@ -129,11 +129,16 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [x] **D5 deli counter is an L** (bbox 14.0–34.2 × 18.0–25.2 ft, RI §1.5), "DELI STYLE" front = **plywood with a decorative wrap** (DEC-090, Med); the teal/white checker in R2C1/R2C2 is the **wrap print** (a texture on the plywood front, not real tile), with globe pendants at the west end. Replace the clear acrylic front. **No glass case on top is stated**: keep it as an optional placeholder param (GAP-PROC-14). Height/depth: GAP (not in TI, GAP-113).
 
 ## 7. Glass-door cooler + fridges: `generators/glass_door_cooler.py`, `params/glass_door_cooler.json`
-- [ ] **K1** 2-door = RF `Cooler_GlassDoor_2Door` **4.0 × 2.5 × 6.5 ft**, black frame, lit. Drop or keep SingleDoor as a demo only.
-- [ ] **K2** handles float 46 mm off the door: use `add_handle_pull` (C8) from the door face. [cooler]
-- [ ] **K3** moving parts: group `DoorFrame_nn` + `Glass_nn` + `Handle_nn` per door (or merge them into one door object); `hinge_side` per door via C10. [S6]
-- [ ] **K4** add a top-freezer fridge variant: RF `Fridge_TopFreezer` 2.2 × 2.3 × 5.5 ft, white (FOH); `Fridge_Magnets` 2.8 × 2.4 × 5.8 ft (break room, magnet-covered side).
-- [ ] **K5** shelf anchors exist; contents per DEC-050 (cooler: concentrates + perishable edibles; fridge: drinks).
+**PROC-005 done:** new generator with 3 RF variants; the SingleDoor demo is dropped.
+- **Cooler:** black frame, lit interior with LED strips, wire shelves with clips and tag rails, louvred grille, blank plate, door closers. Each door is `DoorFrame_nn` + `Glass_nn` + `Handle_nn` + `Gasket_nn`, with a `moving_parts` hinge and a `group` list. Handles stand off the face (8 sides, C11).
+- **Fridges:** freezer/fresh doors with seals, pulls and hinge caps. `Fridge_Magnets` has a seeded magnet layer on the right side (GAP-PROC-17).
+- **Contents:** per DEC-050, recorded as text only.
+- **Tris:** LOD0 7.8k cooler / 0.9k / 1.6k fridges, below the guide (warning).
+- [x] **K1** 2-door = RF `Cooler_GlassDoor_2Door` **4.0 × 2.5 × 6.5 ft**, black frame, lit. Drop or keep SingleDoor as a demo only.
+- [x] **K2** handles float 46 mm off the door: use `add_handle_pull` (C8) from the door face. [cooler]
+- [x] **K3** moving parts: group `DoorFrame_nn` + `Glass_nn` + `Handle_nn` per door (or merge them into one door object); `hinge_side` per door via C10. [S6]
+- [x] **K4** add a top-freezer fridge variant: RF `Fridge_TopFreezer` 2.2 × 2.3 × 5.5 ft, white (FOH); `Fridge_Magnets` 2.8 × 2.4 × 5.8 ft (break room, magnet-covered side).
+- [x] **K5** shelf anchors exist; contents per DEC-050 (cooler: concentrates + perishable edibles; fridge: drinks).
 
 ## 8. Office: `generators/office_fixtures.py`, `params/office_fixtures.json`
 - [ ] **O1 handles z-fight** (inside door/drawer fronts, coplanar) on TallStorageCabinet and FilingCabinet: use `add_handle_pull` / proud handles. [S5]
