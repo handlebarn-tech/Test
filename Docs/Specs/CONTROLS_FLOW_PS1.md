@@ -1,7 +1,7 @@
 # CONTROLS_FLOW_PS1 — Playtest 1 controls, pause, doors and customer flow (DES-005)
 
 **Owner:** DES-005 (amended DES-005b) · **Consumers:** GAME-025 (§1–§3), GAME-026 (§4–§6), World (§7 Contract) · **Status:** draft for review · 2026-10-30
-**DES-005b amendment (DEC-103, DEC-109; Nolan's real-store answers):** call lines (§5.2), no second door, guard scans the back of the ID with a green light + sound (§4.2), the ID is shown again at the register (§4.4; corrects DEC-086 / DEC-036 M2 "the counter never re-checks"), check-in takes seconds and never backs up (backlog/helper logic dropped, §4.2), four doors propped open (§3.2, §7.1), GM floor-map register assignment (§5.0, DEC-079). GAPs closed in §8. ID checks split by what each check can see (§4.2, §4.4; lead ruling DEC-109). Anchor names from REF-011 `SCENE_ANCHORS.json` and doors from REF-012 `DOORS.json` (both pending merge).
+**DES-005b amendment (DEC-103, DEC-109; Nolan's real-store answers):** call lines (§5.2), no second door, guard scans the back of the ID with a green light + sound (§4.2), the ID is shown again at the register (§4.4; corrects DEC-086 / DEC-036 M2 "the counter never re-checks"), check-in takes seconds and never backs up (backlog/helper logic dropped, §4.2), four doors propped open (§3.2, §7.1), GM floor-map register assignment (§5.0, DEC-079). GAPs closed in §8. ID checks split by what each check can see (§4.2, §4.4; lead ruling DEC-109). Anchor names from REF-011 `SCENE_ANCHORS.json` and doors from REF-012 `DOORS.json` (both on `main`).
 **Inputs:** `Docs/Design/PLAYTEST_2026-10-30.md` (Nolan, build slice-38b9e5c), DEC-103, DEC-096, DEC-086, DEC-079, DEC-076, DEC-048, DEC-036 M2, DEC-039; `Specs/UX_PS1.md` §4, §7; `Design/SPEC_COMP002.md` §3; `Design/SPEC_SHIFT_DAY.md` §5–§7; `Research/OFFICE_FINDINGS.md` O2; code at `UnityProject/Assets/_Game/Code/` (`Presentation/Graybox/GrayboxTestPlayer.cs`, `Editor/Graybox/GrayboxBuilder.cs`, `Presentation/Slice/SliceGame.cs`, `Simulation/Slice/ShiftSim.cs`).
 
 Every number marked **[GDD]** is a design starting value, tunable, not a store fact. Unknown store facts are **GAP-CF-nn** placeholders listed in §8. Nolan's playtest quotes are cited as **PT** (the playtest file).
@@ -75,9 +75,9 @@ Doors are **empty openings**: `graybox_layout.json` walls list `openings` and `G
 - **Walk-through for the player.** A closed, unlocked door opens when the player is inside either trigger (`Anchor_Door_<Id>_A` / `_B`, §7) **and** moving toward the door (velocity · door-normal > 0). No key press on the common path. `E` also toggles any unlocked door in reach (for a door you want to close behind you).
 - **Swing:** the leaf rotates about `Door_<Id>_Hinge` from its closed rotation to the **signed open angle from DOORS.json** (the real swing side; never flipped to suit the player). Open time `doorOpenSeconds` 0.45 s, ease-out [GDD]. A double-leaf door opens both leaves.
 - **Closing:** a door with `selfClosing = true` closes `doorAutoCloseDelay` 1.5 s [GDD] after both triggers are empty; `selfClosing = false` stays where it was left. Until World states closer hardware, every other door is placeholder `selfClosing = true` (GAP-CF-03).
-- **Propped open (DEC-103):** the **FOH door, the BOH door, the north-facing office door and the HUB connector** are almost always propped open. In REF-012's `DOORS.json` (pending merge) these are `Vest_FOH`, `Vest_BOH`, `Hall_Office` and `HUB2_HUB`, with `defaultState = proppedOpen`: they load at their open angle, collider off, and do not auto-close while propped. `E` still toggles them; once the player closes one, its own `selfClosing` / `lock` values apply (DOORS.json rule) until the next shift.
-- **What gets a leaf (REF-012, pending merge):** GAME-025 spawns leaves, triggers and interaction **only for rows with `leaves` = 1 or 2**. Any other value (`0` = opening, `null` = unknown; e.g. the arches `Arch_W` / `Arch_E` and the grille `Grille_101B`) is an **open passage with nothing to spawn**. Rows the JSON marks not placed (their `notes` / `gap`) are skipped until that GAP closes.
-- **The entry (REF-012, pending merge):** a **double door**, leaves `Door_Entry_L` / `Door_Entry_R` (each with its own `_Hinge` pivot), swinging **out (west)**, `lock = entryTimeLock` (DEC-076).
+- **Propped open (DEC-103):** the **FOH door, the BOH door, the north-facing office door and the HUB connector** are almost always propped open. In REF-012's `DOORS.json` these are `Vest_FOH`, `Vest_BOH`, `Hall_Office` and `HUB2_HUB`, with `defaultState = proppedOpen`: they load at their open angle, collider off, and do not auto-close while propped. `E` still toggles them; once the player closes one, its own `selfClosing` / `lock` values apply (DOORS.json rule) until the next shift.
+- **What gets a leaf (REF-012):** GAME-025 spawns leaves, triggers and interaction **only for rows with `leaves` = 1 or 2**. Any other value (`0` = opening, `null` = unknown; e.g. the arches `Arch_W` / `Arch_E` and the grille `Grille_101B`) is an **open passage with nothing to spawn**. Rows the JSON marks not placed (their `notes` / `gap`) are skipped until that GAP closes.
+- **The entry (REF-012):** a **double door**, leaves `Door_Entry_L` / `Door_Entry_R` (each with its own `_Hinge` pivot), swinging **out (west)**, `lock = entryTimeLock` (DEC-076).
 - **Collision:** a closed leaf blocks (box collider). While swinging and while open, the leaf collider is off and the opening is walkable; the leaf never pushes the player or an NPC (kinematic, no physics).
 - **Locked doors:** `lock` ≠ `none` and the actor is not allowed (§3.4) → the door does not open; the player gets the prompt "Locked" (or "Staff only" for staff-only doors that the *player* may use — the player is staff, so staff-only doors open for the player).
 - **NPCs use doors:** an NPC whose path crosses a door's trigger opens it the same way (same animation, same auto-close). Customers only ever use doors with `npcUse` including `customer` (in PS1: the entry). Ambient staff (SPEC_SHIFT_DAY §5) use `staff` doors. Pathing through doors is waypoint-based (anchors), not NavMesh, until a navigation task exists.
@@ -193,17 +193,17 @@ After the entry lock no one new arrives; customers already inside (at check-in, 
 | `queueSlots` | = number of `Anchor_Queue_<n>` found (fallback 4) | GAME-026 |
 
 ## 7. Contract — scene anchors Gameplay needs from World
-**Status: needs; World commits names.** Door names and fields come from REF-012's `Docs/Reference/DOORS.json` (**REF-012, pending merge**: passed review, not yet on `main`); anchor names from REF-011's `Docs/Reference/SCENE_ANCHORS.json` (**REF-011, pending merge**: passed review, not yet on `main`; 42 anchors, plus the old names as aliases). Most anchors are **Low confidence until ART-007 builds the objects**. Gameplay finds every object by name at runtime; a missing object falls back to its alias, then to the SCENE_ANCHORS.json position, then to a `TEMP_` placeholder, and logs **one warning listing what fell back; it never fails** (today's `SliceGame.Anchor` pattern), so GAME-025/026 can start before World lands them.
+**Status: needs; World commits names.** Door names and fields come from REF-012's `Docs/Reference/DOORS.json` (REF-012); anchor names from REF-011's `Docs/Reference/SCENE_ANCHORS.json` (REF-011; 42 anchors, plus the old names as aliases). Most anchors are **Low confidence until ART-007 builds the objects**. Gameplay finds every object by name at runtime; a missing object falls back to its alias, then to the SCENE_ANCHORS.json position, then to a `TEMP_` placeholder, and logs **one warning listing what fell back; it never fails** (today's `SliceGame.Anchor` pattern), so GAME-025/026 can start before World lands them.
 
-### 7.1 Doors (REF-012 → `Docs/Reference/DOORS.json`, pending merge)
+### 7.1 Doors (REF-012 → `Docs/Reference/DOORS.json`)
 | Name | Need | Status |
 |---|---|---|
-| `Door_<Id>` | the leaf object of a row with `leaves` = 1; `<Id>` = the row id | REF-012, pending merge |
-| `Door_<Id>_L` / `_R` | the two leaves of a row with `leaves` = 2 (DOORS.json `leafObjects`; L/R as seen from side A); the entry is `Door_Entry_L` / `Door_Entry_R` | REF-012, pending merge |
-| `<leaf object>_Hinge` | pivot at the hinge jamb, one per leaf; the leaf is its child; rotate about local Y | REF-012, pending merge |
-| DOORS.json `closedRotation`, signed `openAngle` | the swing Gameplay animates (open yaw = closed yaw + `openAngle`); the entry pair swings **out (west)** | REF-012, pending merge |
-| `Anchor_Door_<Id>_A` / `_B` | one trigger anchor per side; Gameplay builds the trigger volume around each (≈ 1.2 m × leaf width [GDD]) | REF-012, pending merge |
-| DOORS.json `type`, `staffOnly`, leaf width | in every row | REF-012, pending merge |
+| `Door_<Id>` | the leaf object of a row with `leaves` = 1; `<Id>` = the row id | REF-012 |
+| `Door_<Id>_L` / `_R` | the two leaves of a row with `leaves` = 2 (DOORS.json `leafObjects`; L/R as seen from side A); the entry is `Door_Entry_L` / `Door_Entry_R` | REF-012 |
+| `<leaf object>_Hinge` | pivot at the hinge jamb, one per leaf; the leaf is its child; rotate about local Y | REF-012 |
+| DOORS.json `closedRotation`, signed `openAngle` | the swing Gameplay animates (open yaw = closed yaw + `openAngle`); the entry pair swings **out (west)** | REF-012 |
+| `Anchor_Door_<Id>_A` / `_B` | one trigger anchor per side; Gameplay builds the trigger volume around each (≈ 1.2 m × leaf width [GDD]) | REF-012 |
+| DOORS.json `type`, `staffOnly`, leaf width | in every row | REF-012 |
 
 **Per-door fields Gameplay reads** (all in REF-012's rows):
 | Field | Values | Used for |
@@ -221,19 +221,19 @@ No second (buzzed) door after the ID stand exists or is modelled (DEC-103 (3); R
 ### 7.2 Entry, check-in and line
 | Name | Need | Status |
 |---|---|---|
-| `Anchor_CustomerSpawn` | **outside** the entry door (parking side), so customers walk through `Door_Entry_L/_R` | REF-011, pending merge |
-| `Anchor_CustomerExit` | outside the entry door | REF-011, pending merge |
-| `Anchor_Guard_Post` | where the guard stands, facing the check-in point; the scanner light sits here + 0.4 m toward `Anchor_CheckIn` [GDD] | REF-011, pending merge |
-| `Anchor_CheckIn` | where the customer stands to be scanned = the DEC-048 ID stand; alias `Anchor_CheckInDesk` (GAME-008) | REF-011, pending merge |
-| `Anchor_CheckIn_Wait_<n>` | n = 0..3, waiting points **inside the entrance** for a guest who arrives mid-scan (check-in never backs up, DEC-103 (5)) | REF-011, pending merge |
-| `Anchor_Queue_<n>` | n = 0 (front) .. N, the one line to the registers (DEC-096, DEC-103 (2)) | REF-011, pending merge (n = 0..11); aliases `Anchor_QueueSlot_0..3` |
+| `Anchor_CustomerSpawn` | **outside** the entry door (parking side), so customers walk through `Door_Entry_L/_R` | REF-011 |
+| `Anchor_CustomerExit` | outside the entry door | REF-011 |
+| `Anchor_Guard_Post` | where the guard stands, facing the check-in point; the scanner light sits here + 0.4 m toward `Anchor_CheckIn` [GDD] | REF-011 |
+| `Anchor_CheckIn` | where the customer stands to be scanned = the DEC-048 ID stand; alias `Anchor_CheckInDesk` (GAME-008) | REF-011 |
+| `Anchor_CheckIn_Wait_<n>` | n = 0..3, waiting points **inside the entrance** for a guest who arrives mid-scan (check-in never backs up, DEC-103 (5)) | REF-011 |
+| `Anchor_Queue_<n>` | n = 0 (front) .. N, the one line to the registers (DEC-096, DEC-103 (2)) | REF-011 (n = 0..11); aliases `Anchor_QueueSlot_0..3` |
 
 ### 7.3 Registers (stations 2–12, DEC-039)
 | Name | Need | Status |
 |---|---|---|
-| `Anchor_Register_<NN>_Call` | where a called customer stands at that station, **zero-padded** `02`..`12`; the register ID beat plays here (§4.4) | REF-011, pending merge |
-| `Anchor_Register_<NN>_Operator` | where the operator (player or ambient staff) stands | REF-011, pending merge |
-| player's station | **08** [GDD placeholder] by GM floor-map assignment (§5.0; DEC-079/103 answer GAP-CF-06); aliases `Anchor_ServiceCustomer` / `Anchor_ServicePlayer` | REF-011, pending merge |
+| `Anchor_Register_<NN>_Call` | where a called customer stands at that station, **zero-padded** `02`..`12`; the register ID beat plays here (§4.4) | REF-011 |
+| `Anchor_Register_<NN>_Operator` | where the operator (player or ambient staff) stands | REF-011 |
+| player's station | **08** [GDD placeholder] by GM floor-map assignment (§5.0; DEC-079/103 answer GAP-CF-06); aliases `Anchor_ServiceCustomer` / `Anchor_ServicePlayer` | REF-011 |
 
 Gameplay owns (not World): `NPC_Guard`, the scanner green/red light, NPC customers, trigger volumes, door animation, `RegisterAssignment`.
 
@@ -242,7 +242,7 @@ Gameplay owns (not World): `NPC_Guard`, the scanner green/red light, NPC custome
 |---|---|---|---|
 | GAP-CF-01 | How a budtender calls the next guest | **CLOSED by DEC-103 (1)**: out loud, "Next in line!" / "Online order!" / "Next guest!" | §5.2; "Online order!" unused until online orders exist |
 | GAP-CF-02 | Where and how guests wait after check-in | **CLOSED by DEC-103 (2)**: in line (one line, DEC-079/096). The line's floor position is World's from evidence (REF-011), not a store question | `Anchor_Queue_<n>` |
-| GAP-CF-03 | Which interior doors self-close / are propped open | **CLOSED**: propped by DEC-103 (6) (FOH, BOH, office, HUB connector); closers from TI A310 in REF-012 (pending merge). Rows with `selfClosing: unknown` are REF-012's own GAPs | `unknown` → self-closing placeholder |
+| GAP-CF-03 | Which interior doors self-close / are propped open | **CLOSED**: propped by DEC-103 (6) (FOH, BOH, office, HUB connector); closers from TI A310 in REF-012. Rows with `selfClosing: unknown` are REF-012's own GAPs | `unknown` → self-closing placeholder |
 | GAP-CF-04 | Emergency exit alarm behaviour | **OPEN, not re-asked**: unanswered in DEC-103, so per DEC-105 the placeholder is the working answer (OFFICE_FINDINGS also leaves alarms out as security-sensitive) | not modelled |
 | GAP-CF-05 | Guard check-in time | **CLOSED by DEC-103 (5)**: a few seconds at most | `guardCheckSeconds` 3 s [GDD] |
 | GAP-CF-06 | Which register the player works | **CLOSED by DEC-079** (restated DEC-103 (7)): the GM assigns registers on a floor map | §5.0 `RegisterAssignment`, station 08 [GDD] |
