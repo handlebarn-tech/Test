@@ -731,9 +731,15 @@ No `.pyc`. ChatGPT had our drop-5 audit this time (`ROUND3_REBUILD_CLAUDE_AUDIT_
 - **Seasonal decor:** pumpkin, wreath, garland, plus an unused snowflake branch. No store evidence (GAP); optional; no IP ✓.
 
 ### Research gaps, round 3 (our docs lack the evidence too)
-- **RG3-1 HUB cabinets:** door count, size, shelves and the exact wall in HUB 2. Look at CCTV HUB wall R2C1 (`References/CCTV HUB Wall 2026-10-29.webp`) at full resolution, or ask Nolan.
+- **RG3-1 HUB cabinets:** door count and shelves.
+  - **Measured (DEC-110):** graybox `FX_HUB2_Cabinets` = 2 black cabinets on the HUB 2 back wall, a 6.0 × 1.5 ft footprint (x 1.19–7.19, y 47.0–48.5) at the "tall" class of 7.0 ft (Low; GAP-110/120). So the placeholder per cabinet is **3.0 × 1.5 × 7.0 ft** (0.914 × 0.457 × 2.134 m), not the drop's 1.80 × 0.55 × 2.00 m single unit.
+  - RF has no HUB entry. CCTV R2C1 (RI §2.1) gives colour and count only.
+  - Still open: doors and shelves (R2C1 full resolution).
 - **RG3-2 Refill-cart supplies:** bottle, bin and tongs sizes and colours. Look at the lower shelf in `References/Index/photos/deli_jars_scale_cart_crop.webp`, or ask Nolan.
-- **RG3-3 Stanchion model** (post height, base Ø, belt length): no source. A FOH CCTV still with a known door height (3'-0" × 7'-0", TI §6.2) could give the post height.
+- **RG3-3 Stanchion model** (base Ø, post Ø).
+  - **Measured (DEC-110):** graybox `stanchion` height class = **3.0 ft** (0.914 m, GAP-002) vs the drop's 1.05 m. The lanes (`FX_QueueLane_1..4`, RI §1.5 vector) run x ≈ 6/9/12/15 ft, so they are **3 ft apart**, each 8.71 ft long (y 11.0–19.71).
+  - Use 3.0 ft posts and belt runs fitted to the 8.71 ft lanes, not the drop's fixed 2.0 m pair.
+  - Base and post Ø: no source in TI, RF or the game files (CCTV R2C1 is too far).
 - **RG3-4 Parked-vehicle mix:** only classes are visible (R1C1/R1C2, night IR). Make and colour cannot be resolved, and need not be: stay generic.
 - **RG3-5 Register device sizes** (printer, terminal, keyboard): RI §2.2 gives presence only. The register crops (`References/Index/register/`) may give ratios against the 17.5 in keyboard convention.
 - **RG3-6 Package sizes** for dropper, battery, papers, tin and cone (GAP-PROC-10): measure real SKUs, or use the DATA-002 source pages if they list sizes.
@@ -932,3 +938,95 @@ The README says the stocking sample is synthetic and must not be read as store e
 **Adapt overall: the best-aligned drop on facts.** Real brands sit only on their catalog categories, real catalog strain names are used, the synthetic-anchor warning is explicit, and every asset builds deterministically.
 - **Open:** DEC-084 detail (72–1.5k tris); the collision key; low-LOD size failures; invented THC %/product-line text; missing AZ label fields; the system-font dependency; the exit-bag material.
 - **Counts:** adopt 0 · adapt 5 · reject 0. Fix items: checklist §R5.
+
+---
+
+## Drop 9 — round 6 (`Dispo_Game_Blender_PROC_Round6_HQ/`, evidence-revised, 2026-10-30)
+
+**Brief:** DEC-091 R6 (architectural detail kit, retail/back-room light fixtures, UV2 readiness, wear decals, signage, exterior storefront/parking/desert landscaping as params).
+**Judged against:** RI §2 (CCTV wall), §6.1 ceilings, §6.2 doors, §6.5 finishes, §6.7 lighting, §6.8 A011/A012; RF; canonical core 87807ad.
+
+**Contents (149 files, 7.6 MB):**
+- 5 generators (37 assets) + `round6_common.py`;
+- ~130 self-authored PNGs (textures, 4 wear decals, 4 sign arts incl. `Sign_TFS.png`);
+- `generate_round6_art.py`;
+- `validation/STORE_EVIDENCE.json` + static audit.
+
+This time ChatGPT had **A012** and two camera stills. It adopts an "evidence-first" rule: every item carries `store_evidence_status`, and unproven items default to `disabled_reference` ✓ (the right idea).
+
+### How it was checked
+- Static read.
+- Sandbox as for drops 6–8: 87807ad + `Tools/Blender` + `Art/Source/Procedural/Round6`. All 37 assets × 4 LODs measured twice; sandbox deleted.
+
+| Family (assets) | LOD0 tris | Budget | Build / size | Verdict |
+|---|---|---|---|---|
+| `architectural_detail` (10) | 20–704 | 80k | builds; **size check fails 10/10** (axis order); CornerGuard **inside-out** | **adapt** |
+| `lighting_fixtures` (10) | 72–16,168 | 90k | size fails 10/10; CheckoutCluster and Pendant **not deterministic** | **adapt** |
+| `signage` (4) | 220–396 | 60k | size fails 4/4; LOD0 = LOD3 | **adapt** (optional) |
+| `exterior_site` (9) | 28–308 | 120k | size fails 9/9; LOD0 = LOD3 on most | **adapt** (sourced sizes below) |
+| `desert_landscaping` (4) | 608–7,948 | 150k | size fails 4/4 (real mismatches) | **adapt** (presence GAP) |
+| textures/decals/sign art | — | — | listed | **adapt** (ledger) |
+
+### Findings (measured)
+- **X1 Axis-order bug: 37/37 fail the canonical size check.**
+  - Generators return `(w, d, h)` (Blender X/Y/Z); the runner compares against the Unity-ordered bbox `(w, h, d)`.
+  - After swapping, **20/37 match** and **17/37 still miss** their declared dims: the agave is 0.45 m wide vs 1.05; the pendant globe 0.096 vs 0.2; the checkout cluster 0.50 × 0.47 × 0.51 vs 0.62 × 0.72 × 0.62; the door lever 0.15 vs 0.20; the downlight and recessed can are short; the A-frame depth 0.32 vs 0.62; and so on.
+- **X2 Determinism:** CheckoutCluster and Pendant_Globe differ between runs. Both use `bmesh.ops.create_uvsphere`, the same primitive as round 4's non-deterministic TopButton.
+  - Conclusion across drops 7 and 9: **avoid `create_uvsphere` in generators**; use a lathe (`add_lathe`) for spheres.
+- **X3 Winding:** `CornerGuard_90` (20 tris) is inside-out. All other closed parts are fine.
+- **X4 Below DEC-084:**
+  - LOD0 is 20–704 tris for everything except the checkout cluster (16k), palo verde (5.6k), shrub (3.6k) and gravel (7.9k).
+  - Many assets have LOD0 = LOD3 (signage, storefront, stall, stripe, sidewalk), so the canonical LOD chain fails.
+  - The 2 × 2 ACT light is 136 tris, the 2 × 4 troffer 196.
+- **X5 Collision key:** `collision.boxes` again (as round 5), so nothing reaches `collision_boxes`.
+- **X6 Helper module 5** (`round6_common.py`, also seeded `random`), `GAP`/params gaps as before, and UV2 per R3b.0.4.
+
+### Store-evidence findings (our docs vs the drop's evidence reading)
+- **Floors contradict the TI (High) and CCTV:**
+  - The drop reads both stills as **wood-look plank flooring**, a **dark blue accent wall** and **light** counters/casework.
+  - Our sources:
+    - retail floor TL-1 marble-look porcelain + TL-2 "Madrid" patterned tile;
+    - back rooms VCT-1 12 × 12 in; storage CONC-1 sealed concrete (RI §6.5);
+    - CCTV R2C1 "white marble-look tile + black/white geometric cement tile";
+    - HUB "gray square floor tile / dark floor" (RI §2.1);
+    - counters **black** (RI §2.4, DEC-043);
+    - wall behind displays **teal** WC-1 (RI §2.4/§6.5).
+  - Either the drop's stills are not this store (compare RI §6.9: a "Flower Shop" TI set that is *not this store*), or they are mis-read. **Its finish observations must not be used.** Use RI §6.5.
+- **Items it disables that our docs confirm:**
+
+  | Drop item (`disabled_reference`) | Our evidence |
+  |---|---|
+  | Strip 4 ft | TI §6.7 **L2 2 ft/4 ft strip (storage)**, High; RF `Light_Strip_Pendant` BOH |
+  | Wall pack | CCTV **R1C3 "wall packs"** (RI §2) |
+  | Ceiling grid (2 × 4 module) | ACT-1 **2 × 2 lay-in** in 102–107 at 8'-0" (RI §6.1, High), so **2 × 2**, not 2 × 4 |
+  | Outlet/switch plates | RI §6.5: white on white walls, **matte black on finished walls**; switches 3'-6" AFF (§6.2) |
+  | Door lever | TI A310 lever hardware, centreline 3'-4"–3'-6" (RI §6.2), on HM doors (no lock or access-control detail, DEC-051) |
+  | Storefront glazing + entry door | E101 **6'-0" × 7'-0" aluminium full-glass storefront pair** (RI §6.2/§6.8, High). The drop's door is a 1.02 × 2.13 single leaf: use two 3'-0" × 7'-0" leaves (0.914 × 2.134) |
+  | Parking stall / stripe / curb | CCTV R1C2 "parked cars, striping"; R1C3 "**yellow curb**", dark-green privacy fence/gate (RI §2) |
+  | Exit sign | ✓ already enabled (R2C1 exit sign) |
+
+- **Door kit vs DEC-110** (push bars only on emergency exits and the delivery door, levers everywhere else). The drop differs on both counts:
+  - **No push bar / exit device at all.** The graybox (`graybox_layout.json`) has 3 doors that need one: `EMERGENCY_EXIT` (retail east wall, y 20.5–), `EXT_EMERGENCY_HUB` (south wall, x 43.99–46.9) and `EXT_DELIVERY` (HUB west wall, y 49.5–52.8; RI §1.4).
+  - **`EntryDoor` has a `PullHandle`** (`exterior_site.py` l.24) instead of a lever.
+  - The only lever is `DoorLever_Commercial`; its size misses its dims (X1).
+- **Missing TI lighting types:** L3 linear LED (recessed in millwork), L5 small flush mount, L6 bathroom sconce, L7 task, L8 18 in under-cabinet (TI §6.7). Also missing: the retail **CLG-1 suspended 4 × 8 ft dark-walnut acoustic panels** on stainless cable (RI §6.1), the "dark baffle ceiling" in BAND 01/05/10. Retail ceiling: painted gypsum at 9'-0", soffits at 7'-6" (RI §6.1).
+- **Pendants:** the globe-pendant cluster matches CCTV R2C2 "globe pendant cluster" ✓; checkout counter light is a plan type ✓ (A012). Counts and sizes are GAP.
+- **Baseboard:** 0.102 m (4 in) matches VB-1 **grey vinyl base 4 in** ✓; set the colour to grey (VB-1).
+- **Signage:**
+  - `Sign_TFS.png` carries the approved brand ✓ (DEC-071).
+  - Store signage we know: the "Fine Cannabis" white neon (BAND 05); the logo living wall (R2C2); the "THURSDAY" daily-deals sheet (BAND 10); the 3 × 3 video wall (R2C2); the required licence and pregnancy-warning signage at entry (AZ_COMPLIANCE G2). Use those instead of a generic A-frame and menu board.
+- **Landscaping:** the agave, palo verde and shrub are generic Phoenix species. Exterior CCTV (R1C1–R1C3) shows a sidewalk, curb, lot and fence; no planting is recorded (RG6-3).
+- **A012 room areas** in the drop match RI §1.3/§6.8 (e.g. HUB 818.53, HUB 2 541.34) ✓. The plan's "access controlled door" label is recorded without modelling any hardware ✓ (DEC-031).
+
+### Research gaps, round 6
+- **RG6-1 The drop's two camera stills:** identify them (file names are not in the package); if they are this store, reconcile them with RI §6.5.
+- **RG6-2 Light counts and sizes:** pendants, checkout cluster, L4A/L4B downlights. RCP A101 positions (RI §6.1) could give counts.
+- **RG6-3 Exterior planting and storefront sign band:** exterior CCTV R1C1–R1C3 at full resolution; a public street view is not in our sources and should not be used without a ruling.
+- **RG6-4 HVAC diffusers/returns, sprinklers:** the TI M/FP sheets are not indexed (RI §6 covers A/E only).
+
+### Drop 9 summary
+**Adapt overall.** The evidence-first metadata is a real improvement.
+- **But:** every asset fails the size check (axis order), 17 also miss their dims, 2 are non-deterministic, 1 is inside-out, and most are 20–700 tris.
+- **Its evidence reading of floors and finishes contradicts our TI (High) and CCTV.**
+- **It disables 8 families our docs confirm**, including the round-3 strips and wall pack (R3b.4).
+- **Counts:** adopt 1 (evidence-status metadata pattern) · adapt 6 · reject 0. Fix items: checklist §R6.

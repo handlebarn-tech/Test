@@ -400,6 +400,7 @@ Replaces §R3 (drop 5 `…Round3_HQ/` is superseded, DEC-095). Integrate after r
 
 ### R3b.2 HUB storage (`hub_storage`; DEC-079; RI §2.1)
 - [ ] **Colour black** (RI §2.1 HUB 2 R2C1 "black cabinets, 2+", Med), not grey steel.
+- [ ] **Size:** **2 cabinets, 3.0 × 1.5 × 7.0 ft each** (graybox `FX_HUB2_Cabinets`, a 6.0 × 1.5 ft footprint on the HUB 2 back wall, "tall" 7.0 ft; Low, GAP-110), not one 1.80 × 0.55 × 2.00 m unit.
 - [ ] **Evidence text:** placement "HUB against the office wall" (DEC-079) = HUB 2, which shares the office door (RI §1.4). The `evidence` and GAP text must say presence is sourced. Type, size and shelves stay GAP (RG3-1).
 - [ ] **Security precedent (DEC-051 Q9):** the office's secure-storage cabinets are modelled only as plain tall black closed boxes, with no interior or hardware detail. Until the Hub rules whether that covers these HUB backstock cabinets (handoff Q6), build them as **plain black closed boxes**, and keep the interior shelves and stock anchors behind a params switch that is off by default.
 - [ ] **Doors:** keep closed + hinge, via canonical `hinge_axis()` (only if the Hub allows openable doors).
@@ -408,7 +409,8 @@ Replaces §R3 (drop 5 `…Round3_HQ/` is superseded, DEC-095). Integrate after r
 
 ### R3b.3 Queue stanchions (`queue_stanchions`)
 - [ ] **Keep:** black ✓ (R2C1), no layout ✓ (RI §1.5 4 lanes, DEC-079 one line).
-- [ ] **Detail:** weighted lathe base with a rubber ring, a cassette head with an end clip and receiver slot, belt webbing texture. Sizes GAP (RG3-3).
+- [ ] **Detail:** weighted lathe base with a rubber ring, a cassette head with an end clip and receiver slot, belt webbing texture.
+- [ ] **Post height 3.0 ft** (0.914 m; graybox `stanchion` class, GAP-002), not 1.05 m. Belt length fits the graybox lanes: 8.71 ft long, 3 ft apart (RI §1.5; RG3-3).
 
 ### R3b.4 Back-room lighting (`backroom_lighting`; TI §6.7; RF `Light_Strip_Pendant`)
 - [ ] **Diffuser hidden:** the `Recess` box covers the diffuser from below. Put the diffuser (emissive material) at the bottom face, z = 0, with the housing above it.
@@ -593,3 +595,61 @@ Measured on core 87807ad: 18 assets; all build; deterministic; 0 inside-out.
 
 ### R5.5 Textures
 - [ ] Register the ~80 PNGs (sha256 + CC0 self-authored) in `LICENSE_LEDGER.md` (DEC-023), or replace them with CC0 scans. Regenerate the label PNGs from data (R5.1).
+
+## R6. Round 6 (`Dispo_Game_Blender_PROC_Round6_HQ/`): fix items (audit "Drop 9")
+Measured on core 87807ad: 37 assets build; **0/37 pass the size check**.
+
+**Package verdicts:**
+
+| Package | Verdict |
+|---|---|
+| evidence-status metadata (`store_evidence_status`, `integration_default`) | adopt |
+| `architectural_detail` | adapt |
+| `lighting_fixtures` | adapt |
+| `exterior_site` | adapt |
+| `signage` | adapt (optional) |
+| `desert_landscaping` | adapt (presence GAP) |
+| textures/decals | adapt |
+| `round6_common.py` as a module | reject |
+
+### R6.0 Shared
+- [ ] **R6.0.1 axis order** [X1]: return `(w, h, d)`, Unity order (`dimensions_m` is `[w, d, h]`). Today 37/37 fail.
+- [ ] **R6.0.2 real dims mismatches** [X1]: build to the declared dims, or fix the dims, for 17 assets:
+  - Sprinkler, ExitSign, DoorLever, TrackHead, Downlight, WallPack;
+  - CheckoutCluster, Pendant, RecessedCan;
+  - AFrame, EntryDoor, ParkingStall, WheelStop;
+  - Gravel, Agave, PaloVerde, Shrub.
+- [ ] **R6.0.3 determinism** [X2]: replace `bmesh.ops.create_uvsphere` (`round6_common.uv_sphere`) with `add_lathe` spheres. The same fix as R4.0.3.
+- [ ] **R6.0.4 winding:** `CornerGuard_90` is inside-out. Fix the face order, or call `recalc_face_normals`.
+- [ ] **R6.0.5 LOD chain + DEC-084 detail** [X4]: most assets are 20–700 tris with LOD0 = LOD3.
+  - Troffer/ACT: real housing + lens (see R3b.4);
+  - storefront: mullions, thresholds, closer arm;
+  - plates: screws, receptacle faces;
+  - exit sign: housing + letters as a texture;
+  - curb and wheel stop: chamfers and wear.
+- [ ] **R6.0.6 collision key:** `collision_boxes`, not `collision.boxes` (R5.0.1). Params `unity_dir`/`own_sheet`/`checks`; lightmap UV per R3b.0.4.
+
+### R6.1 Evidence status: switch on what our docs confirm (RI)
+- [ ] **Do not use** the drop's finish reading (wood-look plank floors, dark-blue wall, light counters). Our finishes come from RI §6.5: TL-1 marble-look porcelain + TL-2 "Madrid" patterned tile (retail), VCT-1 (back rooms), CONC-1 (storage), VB-1 grey 4 in base, black counters (RI §2.4/DEC-043), teal WC-1 behind displays. See RG6-1.
+- [ ] **Set to `store_supported_candidate`:**
+  - `Light_Strip_4ft` + a 2 ft variant (TI §6.7 L2, storage; RF `Light_Strip_Pendant` BOH): these also close R3b.4;
+  - `Light_WallPack` (CCTV R1C3);
+  - outlet/switch plates (RI §6.5 white / matte black; switch 3'-6" AFF, §6.2);
+  - door lever (TI A310; centreline 3'-4"–3'-6"; no lock or access-control detail);
+  - storefront + entry door (E101);
+  - parking stall, stripe and curb (R1C2, R1C3 yellow curb).
+- [ ] **Ceiling grid:** **2 × 2** ACT-1 module (RI §6.1, rooms 102–107 at 8'-0"), not 2 × 4. Keep 2 × 4 disabled.
+- [ ] **Entry:** E101 is a **6'-0" × 7'-0" pair** (two 0.914 × 2.134 m aluminium full-glass leaves), not a 1.02 m single door (RI §6.2/§6.8, High). Exterior entry door per checklist §13 (no vestibule, DEC-086).
+- [ ] **Exterior:** add the dark-green privacy fence/gate (R1C3). Keep landscaping disabled until RG6-3.
+- [ ] **Door kit (DEC-110):**
+  - add a **push bar / exit device** asset, used only on `EMERGENCY_EXIT`, `EXT_EMERGENCY_HUB` and `EXT_DELIVERY` (graybox openings);
+  - **levers** on every other door (TI A310 heights): replace `EntryDoor`'s `PullHandle` with a lever per DEC-110, unless the Hub rules a storefront exception;
+  - no lock, reader or access-control detail (DEC-051/031).
+
+### R6.2 Missing families (sourced)
+- [ ] **TI §6.7:** L3 recessed linear LED (millwork), L5 small flush mount, L6 bathroom sconce, L7 task light, L8 18 in under-cabinet; L4A/L4B 4½ in downlights (retail gypsum). The drop's downlight is 6 in: add a 4½ in size.
+- [ ] **RI §6.1 CLG-1:** suspended 4 × 8 ft dark-walnut acoustic panels on stainless cable with end caps (the retail "baffle" ceiling), plus the gypsum soffit at 7'-6".
+- [ ] **Signage** (replace the generic A-frame/menu): "Fine Cannabis" white neon (RI §3 BAND 05); daily-deals sheet (BAND 10); entry licence + pregnancy warning signage (AZ_COMPLIANCE G2); TFS logo panel (`Sign_TFS.png`, DEC-071).
+
+### R6.3 Textures, decals, sign art
+- [ ] Register the ~130 PNGs in `LICENSE_LEDGER.md` (sha256, self-authored CC0), or replace the surface materials with CC0 scans of the RI §6.5 finishes (marble-look porcelain, VCT, sealed concrete, walnut). Wear decals (scuff, tape line, wall mark, edge wear): keep, and seed them with `wear(p)` (Q0.4).
