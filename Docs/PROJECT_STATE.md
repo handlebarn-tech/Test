@@ -32,13 +32,13 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 
 ## Blockers / risks
 - Structure frozen until playtest 2 (DEC-108); then the cost checkpoint: merged work per usage + lead context sizes. Nolan 2026-10-30: "the process feels like it has gotten progressively dumber as we expanded" (invented DOORS values passed review; questions the floor plan answers; 3 sessions flagging the same rows). Checkpoint must weigh flattening to Hub + workers + reviewers. Nolan away from 2026-10-30 ~15:00: notify only for decisions he must make.
-- `review/wave-5t` (old IMP-003 round-3 partial PASS) is superseded by the from-scratch round-3 re-audit (DEC-095); never merge it, delete it once the new review lands.
+- IMP-003 rounds 3b–6 audit merged (review/assets-2); review/wave-5t deleted.
 - DEC-094 rollout under validation (DEC-099): Hub-only merges until lead-run subagent workers/worktrees prove stable; then reassess lead merges for domain-local work.
 - ChatGPT toolkit drops lack our research and room evidence (DEC-095): every round needs fixes; round 3 must be re-audited.
 - Several BACKLOG rows are stale; each lead reconciles its prefixes first.
 
 ## Pending from Nolan
-- Approval of each audited ChatGPT round (3 rebuilt, 4, 5, 6) after IMP-003 + review. Round 7 is the studio's (DEC-095).
+- **Asked 2026-10-30:** approve integrating ChatGPT rounds 3b–6 as the IMP-003 audit adapts them (adopt/adapt/reject R3b 1/7/2, R4 1/6/5, R5 0/5/0, R6 1/6/0); PROC-005 integrates after. Round 7 is the studio's (DEC-095).
 - Playtest build 2 once GAME-025 controls land (Nolan 2026-10-30: no build for PS1 alone).
 - Any ChatGPT-built mechanics he drops in Imports: audit → review → **his approval** before use.
 
