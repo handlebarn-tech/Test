@@ -77,6 +77,7 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | REF-010 | P1 | Restroom storage cabinet placement (DEC-068) into `ROOM_FIXTURES` | ART-006 | Done (W5C) |
 | REF-011 | P0 | Sales-floor layout audit: registers + operator access, HUB, deli walls, shelf fill (DEC-096) | — | Review (review/world-1) |
 | REF-012 | P0 | Office walkability + door geometry audit; DOORS.json contract for Gameplay (DEC-096) | — | Review (review/world-1) |
+| REF-013 | P0 | Settle GAP-129/130/132/134 from TI/floor-plan vectors; apply DEC-110 to DOORS | REF-011, REF-012 | Active |
 | ART-007 | P0 | Graybox/lookdev rebuild from REF-011/012 (registers, HUB, deli walls, office, doors) | REF-011, REF-012 | Active |
 | GAME-007 | P1 | Purchase-limit meter + over-limit asks + strike ledger (COMP-002 §2) | GAME-006 | Done |
 | GAME-008 | P1 | ID-check events (COMP-002 §3) | GAME-007 | Done (W5N) |

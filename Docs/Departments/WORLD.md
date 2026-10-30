@@ -22,12 +22,13 @@ _Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…`; repor
 - **Merge-ready:** `review/world-1` @ b30d72c = REF-011 (sales floor, ROOM_FIXTURES rev7, SCENE_ANCHORS.json) + REF-012 (office walkability, DOORS.json), both PASS with minors fixed (REVIEW-REF11/REF12). Merges clean with main.
 - Findings: south counter +2.6 ft north for a 3 ft staff aisle; 3 deli walls (N/E/S); HUB desk at the north end; office meets the 3.0/2.5 ft clearances; 15 doors, entry is a pair.
 - Now: ART-007 rebuilds graybox/lookdev from these (World Unity slot).
-- FOR NOLAN sent to the Hub: 7 questions (GAP-129/130/132/134, 137/138/139).
+- DEC-110 answered W5–W7; W1–W4 rejected → REF-013 settles them from the TI/floor-plan vectors, then joins `review/world-1` and ART-007. Rule: no layout question without a floor-plan/TI measurement attempt.
 
 ## In flight
 | Task | Worker | Branch | State |
 |---|---|---|---|
 | REF-011 sales-floor audit | subagent (done) | `worktree-agent-a3e83b7d768da38d0` 2731c1a | PASS (REVIEW-REF11) → on `review/world-1` |
+| REF-013 drawings measure + DEC-110 | subagent (worktree) | off `review/world-1` | running |
 | ART-007 graybox rebuild | subagent (worktree, Unity slot) | off `review/world-1` b30d72c | running |
 | REF-012 office + doors audit | subagent (done) | `worktree-agent-a2f71eef653a08c1c` e798f88 | PASS (REVIEW-REF12) → on `review/world-1` a452259 |
 
