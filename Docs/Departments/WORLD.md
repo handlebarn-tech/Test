@@ -42,5 +42,5 @@ _Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…` live.
 4. Later: livelier exterior and neighbourhood, occupied break room (with Gameplay/Assets).
 
 ## Blockers / Questions for Nolan
-- REF-012 handoff Qs (batch to Hub with REF-011): standing desk vs deli-cart reach; drum kit identity + plant/wire-cart spots; hinge side of 7 doors + does the retail east exit exist; lever vs push bar (office, JC) and self-closing (entry, exits); can customers use the restroom.
+- REF-012 Qs after DEC-105 filter (searched DECISIONS, KNOWN_GAPS, Handoffs/REF-008, Research). **Forward (batch with REF-011):** hinge side of 7 doors (GAP-137); lever vs push bar on office/JC doors + do entry/HUB/office doors self-close (GAP-138); can customers use the restroom (GAP-139). **Not forwarded:** Q1 standing desk vs deli cart: lead ruling, the cart rolls out, placeholder stands; Q2 "drum kit" = REF-008 Q11, skipped by Nolan in DEC-051, so never re-asked, and plant/wire cart stay GAP-127 placeholders; Q3 "does the retail east exit exist": answered by `Research/OFFICE_FINDINGS.md` B9 (a permit added an east retail door).
 - None open. Ask through the Hub only what the references cannot settle (e.g. the deli wall count if CCTV is unclear).
