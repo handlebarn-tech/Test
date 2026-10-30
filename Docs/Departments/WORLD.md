@@ -37,6 +37,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…` live.
    - **office** almost unwalkable at current placeholder density: plan real walking/work space before final assets land;
    - **deli walls:** Nolan believes there are about three, not one; check references; shelving also looks unrealistically full (fill density with Assets' stocking arranger);
    - **doors:** geometry and swing so walking through the store feels natural (interaction with Gameplay).
+2b. **DEC-097 label UV cut-over:** Lookdev label shader reads UV channel 2 (lightmap UV on channel 1); agree timing with the Assets lead, then do it in ART-007 or a small ART task.
 3. Lived-in pass once final assets are in: slight placement variation, partly used supplies, uneven stocking, cleaning and personal items in believable places.
 4. Later: livelier exterior and neighbourhood, occupied break room (with Gameplay/Assets).
 
