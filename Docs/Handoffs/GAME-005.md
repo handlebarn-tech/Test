@@ -24,4 +24,5 @@
 - Brand band colours and the label layout are placeholders until ART/REF have real brand data (DEC-043). No logos.
 - **Buds render white/grey:** the fill FBX colours do not survive Unity's HDRP material import, so every look is the same white. Bud materials were already ART's (PROC-002 handoff); flagging it as the most visible gap now.
 - LOW labels for a lower-row jar sit just under the shelf above (the jar's real top); unchanged behaviour, just more visible with taller jars.
+- Editor runs in this worktree rewrite `Art/Lookdev/Materials/LD_WD1_Walnut.mat` `_MainTex` to fileID 0 (texture guid 7bd7bec1… not resolved here). Reverted, not mine (ART); worth an ART check.
 - Not done: random 90° yaw per jar, HDRP bud materials (ART), graybox/lookdev scenes (DEC-029).
