@@ -395,3 +395,23 @@ Integrate after rounds 1–2 (PROC-005). Copy the generators, params and presets
 - [ ] Category `flower_or_edible` → a real catalog category.
 - [ ] Merge into `packaged_goods` (R3.0.5); sizes GAP-PROC-10 until SKUs are measured; `unity_dir` per P1.
 - [ ] The code mark is non-scannable ✓. Labels are textures (N3) from data (N4).
+
+### R3.11 DEC-093 diff against the canonical repo (PROC-005 core `4ef04ae`)
+**Item status:** no round-3 file has the same name as a file on `main` or in PROC-005. So every R3 family is **new**, except:
+- `round3_quality.py`: a **revision of** the canonical `proclib.py` helpers. **Do not port it.** Map its helpers onto canonical ones: `closed_lathe` → `add_lathe`; `bev_obj`/`box_obj`/`cyl_obj` → `add_beveled_box`/`add_box`/`add_cylinder_between`. `rotbox`, torus and poly-prism have no canonical equivalent yet; port them only if used.
+- `packaged_product_variety.py`: a **revision of** `packaged_goods` (same `PROC_Pkg_*` namespace). Port the new shapes into `packaged_goods`; never run it as a parallel generator.
+
+**Round 3 against the canonical core (sandbox run):** 7 families build. Three fail:
+- **`seasonal_decor`:** `segments must be even and >= 6 (C11), got 9` (`seg//2` with odd results). The same pattern (`max(5, tube//3)`) hits `customer_accessories` ExitBag/Beanie at low LODs.
+- **`queue_stanchions` PairExtended:** a size mismatch even though expected = actual (float rounding against the 1e-4 check).
+- **`counter_props` StickyNotes:** over budget.
+
+**Things that would undo a PROC fix if copied verbatim (do not port):**
+- `actual_unity_size()` returns: they defeat the size check (C5/R3.0.1).
+- `COL_*` meshes: they would ship as render meshes, because the canonical runner uses `collision_box()` → `collision_boxes` (C1).
+- Top-level `require_manifold` / `require_material_slots` / `validate_origin_bottom_center`: the canonical keys sit under `checks` (`fail_on_degenerate`, `material_slots`, `origin_bottom_centre`). The round-3 keys are silently ignored, so rename them. Add `tri_guide.lod0_min` (Q0.5).
+- Odd or < 6 cylinder segments: they violate C11. Use even segments ≥ 6.
+- Baked-open cabinet doors and per-family hinge dicts: use the canonical `hinge_axis()` / `slide_axis()` (C10).
+- Ad-hoc wear: use the canonical `wear(p)` (Q0.4).
+
+**Genuine improvements worth porting:** the DEC-079 refill-station layout and supply list; the bag fullness states; the queue-stanchion form; the wall pack; the receipt printer and card terminal shapes; the 4-LOD params pattern; the round-3 package shapes (into `packaged_goods`).
