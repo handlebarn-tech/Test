@@ -95,12 +95,13 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | DES-006 | P0 | Recommendation depth audit: PS1b (GAME-017..020) vs the TFS tool, packet amendments | — | Done (REVIEW-DES6, 97ee06f) |
 | DES-005b | P0 | Fold DEC-103 into CONTROLS_FLOW_PS1 + GAME-025/026; REVIEW-W5U m1–m3 (KNOWN_GAPS GAP-CF rows, GAP-DAY-04 basis) | DES-005 | Done (REVIEW-DES5b, abede71) |
 | DES-007 | P2 | DEC-101: long-term rows into `ROADMAP_POST_SLICE.md` (Hub-delegated) + deadpan tone note for dialogue/event writers | DES-005 merge | Done (in DES-005b, abede71) |
-| GAME-017a | P0 | First playable recommendation depth (cut from GAME-017, DES-006 §5): needs, read-it-as picker, parser route, Q9, reject→re-search | DES-006, DATA-003, UX-006, GAME-009, GAME-025 (same Presentation/Slice files), QA-002b Gate A | Ready (waits: GAME-026 merge; shared Slice files) |
+| GAME-017a | P0 | First playable recommendation depth (+ PT2 #13: natural-language intent, modifiers/negations, no rigid menu) (cut from GAME-017, DES-006 §5): needs, read-it-as picker, parser route, Q9, reject→re-search | DES-006, DATA-003, UX-006, GAME-009, GAME-025 (same Presentation/Slice files), QA-002b Gate A | Ready (waits: GAME-026 merge; shared Slice files) |
 | DATA-003 | P0 | Customer needs catalog + golden parses from the TFS tool (GAME-017a data) | DES-006 | Done (db43b6d) |
 | UX-006 | P0 | Counter UX addendum: read-it-as picker, said cards, query preview | DES-006, DES-005 | Done (REVIEW-UX6, 5920ab2) |
 | BUILD-007 | P0 | Playtest build 2 (PS1 complete) into `Downloads/Dispo Game Builds/` | GAME-009 | Done (playtest2-741bb43) |
 | GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction  | DES-005, GAME-009 merge, World REF-012 `DOORS.json` | Done (08758c1) |
 | GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next  | DES-005, GAME-025, World REF-011 `SCENE_ANCHORS.json` | Active |
+| GAME-027 | P0 | PT2 #11: budtender ID verification at the register works in the playable build (did GAME-008's events ever reach the player?); defect fix + PlayMode proof | GAME-026 (same Slice files) | Later (drop if GAME-026 proves it in a build) |
 | ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Done (W5A) |
 | IMP-002 | P1 | Integrate the approved DISPO_GAME_DESIGN_V2 pack (DEC-063) into `Docs/Design/DESIGN_V2/` | IMP-001 | Done (W4V, DEC-066) |
 | ASSET-003 | P1 | Customer characters + animations sourcing (CHARACTERS.md, DEC-084/087) | ASSET-001 | Done (W5P) |
@@ -124,7 +125,7 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | DOC-001 | P1 | Apply AUDIT-001 batches A–C (DEC-064), 2 phases | AUDIT-001; phase 2 after IMP-002 | Done (W4X) |
 | DOC-002 | P2 | AUDIT-001 batch D (risky: ART renumber, CLAUDE.md read list, REFERENCES_INDEX split, branch naming) | DOC-001; between waves only | Later |
 | DOC-003 | P3 | AUDIT-001 batch E (Medium/Low cleanup) | DOC-001 | Done (W4Z) |
-| BUILD-008 | P0 | Playtest build 3 (M-B exit: GAME-026 flow, REF-013/ART-008 layout, PROC-005/006b fixtures) | GAME-026, ART-008, PROC-006b | Later (packet when those merge) |
+| BUILD-008 | P0 | Playtest build 3 (M-B exit): candidate build for QA-004; reaches Nolan only after QA-004 PASS (DEC-120) | GAME-026, ART-008, ART-013, PROC-013, PROC-006b (Done) | Later (packet when those merge) |
 | ART-011 | P1 | Lookdev label shader reads Unity `uv3` (DEC-097); lands in the same wave as PROC-007 | PROC-007 | Later |
 | GAME-CHR-002 | P1 | Import the 60 MPFB customers into Unity: prefabs, LODs, Humanoid retarget of the Rocketbox animation map (CHARACTERS.md §6–7) | ASSET-005, ASSET-006, ASSET-007 | Later (PS1b) |
 | NPC-001 | P1 | Customers walk the GAME-026 flow with bodies: NavMesh (AI Navigation), entry → guard → queue → counter → exit, idle/wait/talk animation states | GAME-026, GAME-CHR-002 | Later (PS1b) |
@@ -140,6 +141,11 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | PROC-010 | P1 | Toolkit families phase 2 = PROC-005 handoff "Left, in order": architecture kit, exterior, ladder, display cases, clutter (incl. playtest-1 register details: spray bottle, rag, bins), stocking arranger with uneven fill, labels, materials (incl. register-kit 2K PBR, REVIEW-PROC006b m1), ID stand/bags/signs | PROC-005 PASS, PROC-007 | Later (split into packets at PROC-005 review) |
 | PROC-012 | P2 | Bud/nug look pass (playtest 1: "nugs still look off"): PROC-003 follow-up at DEC-084 | PROC-007 | Later (M-F) |
 | REF-015 | P2 | Exterior envelope, parking, fence and approach evidence from A011/A012, CCTV R1C1–C5/R3C1 and BAND photos → REFERENCES_INDEX §9 + ROOM_FIXTURES exterior rows; GAPs for what no source shows; also fix the stale bulletin-board note (REVIEW-REF013b m2) | — | Later (M-F) |
+| REF-016 | P0 | Canonical store-evidence matrix (DEC-120 (2)): every fixture/zone row has source, confidence, dims/placement/orientation, served side, current implementation, gaps. It settles the south-side register count, Register 7, register-area facing and the emergency-exit wall (PT2 #3, 4, 6, 8, 9) | REF-013 | Active |
+| ART-013 | P0 | Store layout overhaul in Unity from REF-016: register count/positions, facing and served side, placeholder footprints, jar density (DEC-121), door audit + wall sealing incl. emergency exit, glass storefront (PT2 #1, 3–9). Unity implementation review in the assembled scene (DEC-120 (3)) | REF-016, ART-008, PROC-013 | Later |
+| PROC-013 | P1 | Door family at DEC-084: transparent glass aluminium storefront pair, interior/hall/emergency doors with frames and hardware per DOORS.json (PT2 #1, #7); carved out of the PROC-010 architecture kit | REF-013, PROC-005 core | Active |
+| QA-004 | P0 | Playtest-3 gate (DEC-120 (1)): requirement list from PT1 + PT2, each PASS/FAIL in the BUILD-008 candidate player, with evidence (captures, steps). A major FAIL blocks Nolan's build | BUILD-008 candidate | Later |
+| IMP-004 | P1 | Audit the new import `Downloads/Dispo Game Imports/Bender & Asset new plan.md` (and confirm the older subfolders are the IMP-003 rounds already audited) against canonical state; propose adopt/reject per item into existing tasks/DECs/GAPs (DEC-070/095) | — | Active |
 | ART-012 | P2 | Exterior and parking lot from REF-015: façade, lot striping, fence/gate, HVAC, vegetation, night wall packs (M-9) | REF-015, PROC-009, PROC-010 | Later (M-F) |
 | ART-010 | P1 | Lived-in pass (DEC-096/104, playtest 1): placement variation, partly used supplies, uneven stocking, cleaning and personal items in believable places, restroom-cabinet supplies | PROC-010, ART-008 | Later (M-F) |
 | LIGHT-001 | P1 | Final lighting/lookdev: day and night looks, BOH look, glass/reflections/decals, material consistency (M-7) | ART-010, ART-012 | Later (M-F) |

@@ -6,7 +6,7 @@
 Close the review minors on the register kit that need no materials work: `Docs/Reviews/REVIEW-PROC006b.md` § minor items **2, 3, 4, 5, 6**. (Item 1, 2K PBR, is PROC-010's materials scope; item 7, Unity `.meta` import, rides with PROC-007.)
 
 ## Owns
-`Tools/Blender/generators/register_kit.py`, `Tools/Blender/params/register_kit.json`, the arranger module PROC-006b added, `Docs/Assets/Specs/REGISTER_KIT.md`, `Art/Exports/Procedural/RegisterKit/**` + its manifest rows, `Docs/Assets/Previews/` register-kit sheets, `Docs/Handoffs/PROC-006c.md`. Shared runner/proclib: use as-is.
+`Tools/Blender/generators/register_kit.py`, `Tools/Blender/params/register_kit.json`, the arranger module PROC-006b added, `Docs/Assets/Specs/REGISTER_KIT.md`, `Art/Exports/Procedural/RegisterKit/**` + its manifest rows, `Docs/Assets/Specs/PROC_register_kit_*.png`, `Docs/Handoffs/PROC-006c.md`. Shared runner/proclib: use as-is.
 
 ## Deliverables
 - m2: a contact sheet usable for the DEC-114 judgement (labelled tiles, readable size, LOD column visible).

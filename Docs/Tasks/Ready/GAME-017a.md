@@ -24,3 +24,6 @@ Compile; EditMode + PlayMode green (the known ProcArt LODGroup failures, which b
 
 ## Handoff
 `Docs/Handoffs/GAME-017a.md` (≤40 lines). Questions only after the DEC-105 search (list what you searched); report to the Hub; never ask Nolan (DEC-033).
+
+## Also (Hub, 2026-10-30): playtest-2 #13
+`Docs/Design/PLAYTEST2_2026-10-30.md` #13: the interface is still too restrictive. Keep natural-language intent, modifiers and negations, and flexible recommendation behaviour from the tool (DEC-001/002) rather than a rigid menu. This packet's scope is unchanged; where a §5 "In" item could be built either way, take the free-text / parser route. Verify in the built player (DEC-120 (4)).

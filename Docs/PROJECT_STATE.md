@@ -2,7 +2,7 @@
 
 Hub-owned; the **only live state record** (DEC-117). A fresh Hub resumes from `Docs/HUB_RESUME.md` + this file + the newest DECs, then reconciles the table below with `list_sessions` and `git branch` (STUDIO_OS §0.9). Plan and milestones: `Docs/Design/ROADMAP_POST_SLICE.md`. Registry: `Docs/BACKLOG.md`. Workers and reviewers do not read this file.
 
-**Updated:** 2026-10-30 12:05 (REF-013 and PROC-006b merged). **Milestone:** PS1 done (`playtest2-741bb43` is with Nolan). **Current milestone: M-B Believable store** (roadmap §2) → exit = playtest build 3 (BUILD-008). PS1b starts as soon as GAME-026 merges (GAME-017a).
+**Updated:** 2026-10-30 12:30 (playtest-2 intake, DEC-120..123). **Milestone:** PS1 done; Nolan has played `playtest2-741bb43` (findings `Docs/Design/PLAYTEST2_2026-10-30.md`). **Current milestone: M-B Believable store** (roadmap §2), now including the PT2 overhaul (REF-016 → ART-013, PROC-013, GAME-027). Exit = BUILD-008 candidate **plus QA-004 PASS on every PT1 + PT2 requirement in the build before Nolan gets it** (DEC-120). PS1b starts as soon as GAME-026 merges (GAME-017a).
 **Hub session:** the Hub Nolan started 2026-10-30 ~19:30 (main checkout; workers reply to it via the "From" link of its resume message). Earlier Hubs `local_c6267ff5`, `local_5c45166e`, `local_3dbae2f5` are idle and superseded (archive when convenient). Workers below were started by `local_c6267ff5`, so SendMessage by name fails: use `send_message` with the `local_…` id.
 **Structure:** Nolan → Hub → workers → fresh per-review reviewers → Hub merges (DEC-116/117). Nolan is cost-sensitive: no FYI messages, lean briefs (DEC-107).
 
@@ -15,9 +15,12 @@ Hub-owned; the **only live state record** (DEC-117). A fresh Hub resumes from `D
 | `dispo-asset005` `local_1bb17d9a-7584-4a8b-af68-d01479714d05` | **ASSET-005/006** wardrobe + hair (Blender) | `claude/sweet-shirley-002b17` @ 0f3fba5 (packet only, now also on main `Tasks/Active/ASSET-005.md`) | **Resumed (GO) 19:40;** uncommitted wardrobe WIP in worktree. |
 | `dispo-asset007` `local_d3aad36e-a494-47b7-a5c7-2cd0a58efe19` | **ASSET-007** glove overlay (Blender) | `claude/elastic-kilby-04c2ca` @ 36be358 (no work yet) | **Resumed (GO) 19:40.** |
 | `dispo-proc009` `local_738af4a0-c26e-49b9-bd35-43c6dacd5b3f` | **PROC-009** parked vehicles (Blender) | `claude/jovial-meninsky-908c0a` off main @ 3ab683b | First turn died on the plan usage limit (reset 12pm); re-sent 12:05. Await `ready for review`. |
-| `dispo-proc006c` (launching) | **PROC-006c** register kit review follow-ups (Blender) | worktree off main | Launched 12:05. |
+| `dispo-proc006c` `local_796c7c2a-33dc-4897-9a85-ec441c8a9961` | **PROC-006c** register kit review follow-ups (Blender) | `claude/zealous-kalam-4192dd` | Launched 12:05. |
+| `dispo-ref016` (launching) | **REF-016** store-evidence matrix (docs/data) | worktree off main | Launched 12:30. Review = fresh **evidence** reviewer (DEC-120 (3)). |
+| `dispo-proc013` (launching) | **PROC-013** door family incl. glass storefront (Blender) | worktree off main | Launched 12:30. Strong visual review (DEC-122). |
+| `dispo-imp004` (launching) | **IMP-004** audit of `Bender & Asset new plan.md` (docs) | worktree off main | Launched 12:30. Hub applies the adoptions after review. |
 
-Dead Agent runs from the old Hub, nothing to recover: the REF-013 M1 fix on `worktree-agent-a8683a438ebc5cbe4` (superseded by 3890936), the first PROC-009 run, REVIEW-REF13-FIX and the first REVIEW-PROC006b (no verdicts). Stale worktrees under `.claude/worktrees/` for merged tasks can be removed with `git worktree remove` when convenient.
+Dead Agent runs from the old Hub, nothing to recover: the REF-013 M1 fix on `worktree-agent-a8683a438ebc5cbe4` (superseded by 3890936), the first PROC-009 run, REVIEW-REF13-FIX and the first REVIEW-PROC006b (no verdicts). Worktrees/branches are retired only when positively identified as integrated or obsolete (DEC-123); no broad cleanup.
 
 ## Unity slots (max 2, DEC-013)
 GAME-026 holds one; ART-008 takes the other when unblocked. A PROC-005/006b reviewer needing Unity import checks waits for a free slot or borrows GAME-026's while that session is idle.
@@ -26,9 +29,10 @@ GAME-026 holds one; ART-008 takes the other when unblocked. A PROC-005/006b revi
 1. (PROC-009 launched, see In flight.)
 2. **GAME-017a** (Ready, waits for GAME-026 merge): first playable recommendation depth; the packet carries DEC-118 and the REVIEW-DES6/UX6 minors.
 3. **PROC-007** UV layout (Ready, waits for PROC-005 merge) + **ART-011** label-shader cut-over (Later, same wave; packet to write from DEC-097).
-4. **BUILD-008** playtest build 3 (Later; packet when GAME-026 and ART-008 are on main; REF-013 and PROC-006b merged) = M-B exit. Give Nolan the path.
-5. **GAME-CHR-002** Unity import of the customers (Later; after ASSET-005/006/007), then **NPC-001** bodies in the flow (after GAME-026).
-6. PS1b chain GAME-017 → 018 → 019 → 020 (Ready packets, each waits for the previous merge), then PS2 per the roadmap.
+4. **ART-013** layout overhaul (Unity; packet when REF-016 PASS + ART-008 + PROC-013 merge) with a fresh Unity implementation reviewer in the assembled scene, independent of the REF-016 evidence review. **GAME-027** after GAME-026 (drop if GAME-026 proves the register ID check in a build).
+5. **BUILD-008** candidate → **QA-004** PT1+PT2 validation in the player → only on PASS does Nolan get playtest 3 (DEC-120). Do not hand Nolan a build before that.
+6. **GAME-CHR-002** Unity import of the customers (Later; after ASSET-005/006/007), then **NPC-001** bodies in the flow (after GAME-026).
+7. PS1b chain GAME-017 → 018 → 019 → 020 (Ready packets, each waits for the previous merge), then PS2 per the roadmap.
 Everything else registered in BACKLOG as Later with its dependencies; the Hub writes a packet only when those are Done.
 
 ## Priorities (DEC-096, playtest 1)
@@ -36,10 +40,10 @@ Controls (done) → store/layout accuracy → believable customer flow → recom
 
 ## Blocked / open with Nolan
 - **Asked 2026-10-30 (PROC-006b handoff Q1, DEC-105 search listed):** what is under the register counter on the staff side (open shelves vs drawers, how many levels)? Placeholder: two open shelves. Answer → DEC + PROC-006c/PROC-010 params.
-- World follow-ups from PROC-006b (not Nolan): small-bin size conflict (rev7 Trash_Small_POS vs GAP-REG-10) and the rev7 POS monitor y being graybox only (GAP-RK-LAYOUT). Settle in the next REF/ART touch of the registers.
+- World follow-ups from PROC-006b (small-bin size, POS monitor y): in REF-016 deliverable 4.
 - **DATA-004** (PS3 gate): needs Nolan's Dutchie/LeafLogix catalog export (GAP-PKG-01). Asked before (RES-001 O14); ask once more only when PS2 is in sight, batched.
 - **DATA-005:** waits for TFS v7.11.5 to ship (GAP-210); external.
-- Playtest build 2 is with Nolan; his feedback becomes the playtest-2 intake (a DES task when it arrives).
+- Playtest-2 feedback received 2026-10-30 and taken in (DEC-120, `PLAYTEST2_2026-10-30.md` mapping). Nolan's imports `Bender & Asset new plan.md` → IMP-004; the older import subfolders appear to be the IMP-003 rounds (IMP-004 confirms). Archive the imports after his approval (DEC-070).
 - Never re-ask: W6 self-closing doors, emergency exit alarm, drum kit, staff-tee print side (answered: wearer's left, DEC-113) (DEC-105).
 
 ## Risks
