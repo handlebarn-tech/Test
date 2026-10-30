@@ -65,3 +65,6 @@ These gaps are defined, with placeholders and owners, in the spec named; that sp
 - GAP-PROC-07..11 | procedural art (bud looks, fill height, base band, packaged sizes, label art) | `Docs/Assets/Specs/PROC_PIPELINE.md`
 - GAP-PROC-12 | asset | smalls jar lid/body split, corner radius, lid colour, label placement not published (PROC-003, REVIEW-W4P) | `Docs/Assets/Specs/PROC_PIPELINE.md` "PROC-003" | real product photos
 - GAP-128 | dropped by REF-009b (DEC-062: the 4 rolling racks are the only FOH product racks) | `Docs/Handoffs/REF-009b.md`
+
+## IMP-002 / DESIGN_V2 (see `Docs/Design/DESIGN_V2/`, DEC-063/066)
+- GAP-V2-01 | store | V2 store questions (storage zones, deliveries, expiry, staffing/breaks, job titles; IMP-001 Q1–5) | V2 [GDD] placeholders | Nolan at PS2/PS4 start

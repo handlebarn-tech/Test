@@ -19,6 +19,7 @@ This file exists to keep agents from loading unnecessary context.
 | Unknown facts and placeholders (GAP-###) | `KNOWN_GAPS.md` |
 | Decision-pressure gameplay (ratified DEC-057; wins over GSS on conflict) | `Design/SPEC_DECISION_PRESSURE.md` (only the § your packet cites); item status in `Design/DES-003_RECONCILIATION.md` |
 | Post-slice milestones PS1–PS4 and task rows | `Design/ROADMAP_POST_SLICE.md` |
+| Nolan's V2 design pack (add-on; DP wins on conflict, DEC-063/066) | `Design/DESIGN_V2/` (start at its `README_FIRST.md`; exploit tests per `QA_TEST_PLAN.md`) |
 | Compliance / packaged-goods / post-slice specs | `Design/SPEC_COMP002.md`, `Design/SPEC_GAME004.md` |
 | Slice design, engine API, UX specs | `Specs/SLICE_DESIGN.md`, `Specs/ENGINE.md`, `Specs/UX_SLICE.md`, `Specs/UX_PS1.md`, `Specs/UX_COUNTER_INTEL.md` |
 | Budtender-tool reconstruction contract, goldens, data schema | `Reconstruction/` |
