@@ -9,7 +9,7 @@ Turn Nolan's Dutchie inventory export into a deterministic, PII-free, cost-free 
 `CLAUDE.md`; DEC-006, DEC-014, DEC-034, DEC-048, DEC-050 (`Docs/DECISIONS.md`); `Tools/Data/import_catalog.js` (house importer pattern); `Docs/Design/SPEC_GAME004.md` §2, §4, §5, §8; GAP-PKG rows.
 
 ## Input (untrusted, read-only, never copied into the repo)
-A Dutchie "Current Inventory" export (`.xlsx`) from `C:/Users/handl/Downloads/Dispo Game Imports/` or a path passed on the command line. Inspect the header row and category column only before writing code.
+A Dutchie "Current Inventory" export (`.xlsx`) from `C:/Users/handl/Downloads/Dispo Game Imports/` (archived 2026-10-30 to `C:/Users/handl/Downloads/Dispo Game Imports Archive/2026-10-30_dutchie-inventory/`, DEC-070) or a path passed on the command line. Inspect the header row and category column only before writing code.
 
 ## Owns
 - `Tools/Data/import_packaged.js` (new; Node, no dependencies, same style as `import_catalog.js`).
