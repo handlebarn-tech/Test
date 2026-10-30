@@ -1,6 +1,6 @@
 # REVIEW-PROC009: studio-built parked vehicles
 
-**Reviewed:** `claude/jovial-meninsky-908c0a` @ `2495e6c` · **Merge base:** `3ab683b` · **Review branch:** `review/proc009` (main @ `f4bb61d` + worker branch, `--no-ff` merge `643483e`) · **Reviewer:** fresh, Hub-spawned (STUDIO_OS §0.7)
+**Reviewed:** `claude/jovial-meninsky-908c0a` @ `2495e6c` · **Merge base:** `3ab683b` · **Review branch:** `review/proc009` (main @ `8081e5e` + worker branch, `--no-ff` merge `643483e`) · **Reviewer:** fresh, Hub-spawned (STUDIO_OS §0.7)
 **Sources read:** `Docs/Tasks/Active/PROC-009.md`; the full diff `3ab683b..2495e6c`; `Docs/Handoffs/PROC-009.md` (Done, Validation, Not done, For the Hub); DEC-023, DEC-032, DEC-071, DEC-084, DEC-087, DEC-097, DEC-111, DEC-114, DEC-122 in `Docs/DECISIONS.md`; `Docs/Imports/IMP-003_PROC_FIX_CHECKLIST.md` R3b.7; `Docs/Reviews/REVIEW-PROC006c.md` (contact-sheet precedent).
 
 ## Verdict: FAIL
