@@ -40,7 +40,8 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 2. GAME-025 controls (after DES-005 + GAME-009 merge; World door contract).
 3. GAME-026 customer flow (World entry anchors) and the DES-006 first-depth cut, then PS1b GAME-017 → 018 → 019 → 020 as amended.
 4. GAME-021/022/024; UX-003; GAME-011/012 per DES-004.
-5. DES-007 (after DES-005 merges): DEC-101 accepted the long-term proposal as phased; add its rows to `ROADMAP_POST_SLICE.md` (Hub-delegated) + a deadpan tone note where dialogue/event writers read. Nolan Q1–7 (GAP-CF) are with the Hub; keep placeholders.
+5. **DES-005b (next free slot, off `review/w5u`)**: fold DEC-103 (Nolan's flow answers: call lines, one line, no 2nd door, guard scans ID back + green light, ID re-shown at register, check-in never backs up, FOH/BOH + north office + HUB connector doors propped open, GM assigns registers per DEC-079; emergency-exit alarm stays GAP) into `CONTROLS_FLOW_PS1.md` + GAME-025/026; REVIEW-W5U m1/m2; KNOWN_GAPS GAP-CF rows + GAP-DAY-04 basis → DEC-096 (m3).
+6. DES-007 (after DES-005 merges): DEC-101 accepted the long-term proposal as phased; add its rows to `ROADMAP_POST_SLICE.md` (Hub-delegated) + a deadpan tone note where dialogue/event writers read. Nolan Q1–7 (GAP-CF) are with the Hub; keep placeholders.
 
 ## Lead rulings (DES-006 questions, 2026-10-30)
 - B1: a faithful add-only port of the tool's Refine chip selection into `Code/Domain/` is allowed (DEC-001/002: the tool is the authority; porting it is not changing logic), as its own task with tool-captured goldens and Gate A; record a DEC when it merges. Until then GAME-018 keeps the Refine placeholder.
