@@ -1,0 +1,122 @@
+version: design-v2
+status: NEW_PROPOSAL
+
+tfs:
+  canonical_version: v7.11.4
+  difficulty_may_modify: false
+
+shift_profiles:
+  beginner:
+    duration_minutes: 26
+    gamma_shape: 3.0
+    special_customer_slots: 1
+    patience_multiplier: 1.35
+    phases:
+      - [opening, 2, 0.09]
+      - [steady, 5, 0.54]
+      - [rush_1, 4, 0.86]
+      - [recovery, 4, 0.32]
+      - [rush_2, 4, 0.99]
+      - [late, 4, 0.54]
+      - [report, 3, 0.0]
+  standard:
+    duration_minutes: 32
+    gamma_shape: 2.5
+    special_customer_slots: 2
+    patience_multiplier: 1.0
+    phases:
+      - [opening, 2, 0.12]
+      - [steady_a, 5, 0.54]
+      - [rush_1, 6, 0.96]
+      - [recovery, 4, 0.30]
+      - [rush_2, 6, 1.08]
+      - [late, 5, 0.54]
+      - [report, 4, 0.0]
+  expert:
+    duration_minutes: 35
+    gamma_shape: 2.2
+    special_customer_slots: 2
+    patience_multiplier: 0.88
+    phases:
+      - [opening, 2, 0.13]
+      - [steady, 5, 0.55]
+      - [rush_1, 7, 0.94]
+      - [recovery, 4, 0.32]
+      - [rush_2, 7, 1.02]
+      - [late, 6, 0.55]
+      - [report, 4, 0.0]
+
+customer:
+  archetype_share_standard:
+    novice: 0.22
+    regular: 0.24
+    enthusiast: 0.14
+    price_shopper: 0.16
+    decisive_repeat: 0.14
+    indecisive: 0.10
+  ambiguity:
+    beginner: [0.45, 0.40, 0.13, 0.02]
+    standard: [0.25, 0.40, 0.25, 0.10]
+    expert: [0.10, 0.30, 0.40, 0.20]
+  viability:
+    beginner: {solvable: 0.95, tradeoff: 0.04, no_path: 0.01}
+    standard: {solvable: 0.86, tradeoff: 0.11, no_path: 0.03}
+    expert: {solvable: 0.76, tradeoff: 0.19, no_path: 0.05}
+  base_service_median_seconds:
+    decisive_repeat: 32
+    price_shopper: 40
+    regular: 46
+    novice: 58
+    enthusiast: 72
+    indecisive: 76
+  service_lognormal_sigma: 0.20
+  targeted_question_add_seconds: [0, 8, 14, 22]
+  enthusiast_compare_add_seconds: 6
+  ask_all_add_seconds: 42
+  ask_none_delta_seconds: -6
+  patience_median_seconds: {low: 140, normal: 230, high: 330}
+  patience_mix: {low: 0.20, normal: 0.60, high: 0.20}
+  patience_lognormal_sigma: 0.35
+  repeat_share_mature_standard: [0.10, 0.20]
+
+queue:
+  standard_states:
+    clear: [0,0]
+    normal: [1,2]
+    pressure: [3,4]
+    critical: [5,6]
+    overload_min: 7
+  engagement_relief_cap_seconds: 60
+  target_attributable_abandonment_pct_standard: [2,6]
+
+progression:
+  evidence_window_shifts: 6
+  max_unstable_shifts: 1
+  instability_margin: 10
+  gates:
+    senior: {SJ: 70, TP: 65, ID: 60, OA: 75, REL: 65}
+    lead: {SJ: 75, TP: 70, ID: 70, OA: 80, REL: 72, LEAD: 65}
+    assistant_manager: {SJ: 78, TP: 72, ID: 76, OA: 82, REL: 78, LEAD: 72}
+    manager: {SJ: 78, TP: 72, ID: 80, OA: 83, REL: 80, LEAD: 78}
+
+economy:
+  order_review_period_shifts: 2
+  operating_reserve_fraction: 0.25
+  normal_lead_time_shifts: [1,3]
+  supplier_fill_rate: [0.88,1.00]
+  emergency_premium_fraction: [0.08,0.20]
+  service_class_z:
+    critical: 1.65
+    normal: 1.41
+    niche: 1.04
+  comfortable_storage_pct: [0.70,0.85]
+  overstock_warning_pct: 0.90
+
+staff:
+  reassignment_handoff_seconds: [5,10]
+  max_fatigue_service_time_penalty_fraction: 0.15
+
+pressure_budget:
+  beginner: [2,5]
+  standard: [6,10]
+  expert: [10,15]

@@ -20,5 +20,10 @@ SPEC_DECISION_PRESSURE §118, §127, §133–135, §115 (DP-015..018, DP-027); `
 ## Validation
 Compile / EditMode green; QA-002 gate green for every query used. Expert > first-card and expert > ask-everything on overall rating and mean DQ; DP-015..018 pass on this shift; outcomes impossible to perfect exist; a correct no-sale is possible. DEC-013 gate.
 
+## V2 additions (IMP-002, DEC-063)
+V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). Row n = `Docs/Imports/IMP-001_DESIGN_V2_AUDIT.md` §2 row. All V2 numbers are [GDD] starting values (GAP-DP-02). Exploit tests: `DESIGN_V2/QA_TEST_PLAN.md`.
+- Scenario seeds can come from V2's list (Morning Ramp, Budget Night, Low Stock, Recovery Window, Repeat Customer Day, Similar Challenge, Batch Change, No-Perfect-Fit Clinic…) (V2 `09_CONTENT_LONGEVITY.md` §5; row 44).
+- Bot benchmark reference: V2's Standard harness (targeted ≈ 4 % abandonment, ask-all ≈ 19 %, ask-none ≈ 1 %) shows ask-none wins on queue alone by construction (audit C11b). The expert must win on DQ via the GAME-019 counterfactual, not on queue.
+
 ## Handoff
 `Docs/Handoffs/GAME-023.md` (≤40 lines) with the results table. Questions go to the Studio Hub (DEC-033).

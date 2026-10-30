@@ -19,5 +19,14 @@ SPEC_DECISION_PRESSURE §71–86, §115 (DP-029..031), §120–121, §129; `Docs
 ## Validation
 Compile / EditMode green; QA-002 gate green. Tests: DP-029 speed-only bot cannot pass Trusted; DP-030 detail-only bot cannot pass Trusted; DP-031 balanced expert progresses within N seeded shifts; one lucky shift cannot pass a Reliability gate; save round-trip and a v0→v1 migration with missing fields. DEC-013 gate.
 
+## V2 additions (IMP-002, DEC-063)
+V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). Row n = `Docs/Imports/IMP-001_DESIGN_V2_AUDIT.md` §2 row. All V2 numbers are [GDD] starting values (GAP-DP-02). Exploit tests: `DESIGN_V2/QA_TEST_PLAN.md`.
+- **Promotion model (DEC-063b), replaces the rolling-update gating in Deliverable 1–2:** per competency, the promotion statistic is the **median of the last 6 eligible shifts**; at most one of them below gate − 10; fewer than 4 eligible shifts = `INSUFFICIENT_EVIDENCE`; a repeated scenario seed gives no new evidence; low-complexity tutorial shifts stop counting after mastery (V2 `05_PROGRESSION_CAREER.md` §5, §11; rows 34–35). A displayed rolling value (DP §79) may stay for the career screen only.
+- **Gate values: gentler starting thresholds [GDD]** (DEC-063b). Use the DP §80 levels (Trusted SJ 60 / TP 55 / ID 50 / OA 70; Lead SJ 70 / TP 65 / ID 65 / OA 80 / REL 65; AM REL 75 / ID 75 / LEAD 60 / OA 85), not V2's higher table (V2 `05_PROGRESSION_CAREER.md` §6; row 35). Rank names stay DP's (Trusted, not "Trusted/Senior"; the store-title question is parked for PS2/PS4).
+- Competency formulas with an anti-compensation floor, `SJ = 0.75·weighted + 0.25·min(components)` (V2 05 §4; row 33). Unavailable dimensions are N/A, not 0.
+- Revenue never enters a gate (V2 05 §11; row 33; EX-007).
+- Save v1 persists the named RNG stream states, so a reload never rerolls committed customers or events (V2 `01_SYSTEM_CONTRACTS.md` §3, INV-SEED-01; row 3; EX-027/028/062).
+- Tests add V2's stress profiles as bots: speedrunner, perfectionist-slow, careless, inventory-only and revenue-only fail Trusted; balanced passes (V2 `VALIDATION/progression_gate_stress.csv`, reference only, never run the `.py`). Re-tune for the gentler gates. Exploits EX-029..032 (row 45).
+
 ## Handoff
 `Docs/Handoffs/GAME-024.md` (≤40 lines). Questions go to the Studio Hub (DEC-033).

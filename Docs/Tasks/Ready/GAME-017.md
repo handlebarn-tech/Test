@@ -27,5 +27,17 @@ No `Code/Domain/` edits (DEC-001).
 ## Validation
 Compile / EditMode / PlayMode green; QA-002 gate green; slice goldens unchanged. Tests (QA-002 harness scenarios): DP-001 (explicit customer, zero questions, fast), DP-002 (hidden "stay functional" → refined query; both result lists equal the engine's own output for those queries), DP-003 (redundant budget question: no info, time spent), DP-010 (question spam on a low-tolerance explicit customer), DP-011 (zero questions on a tier-3 customer leaves the query incomplete). Seed determinism. DEC-013 gate.
 
+## V2 additions (IMP-002, DEC-063)
+V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). Row n = `Docs/Imports/IMP-001_DESIGN_V2_AUDIT.md` §2 row. All V2 numbers are [GDD] starting values (GAP-DP-02). Exploit tests: `DESIGN_V2/QA_TEST_PLAN.md`.
+- Constraint classes hard / soft / context / hidden-but-revealable; every hidden critical fact has a legitimate reveal route (V2 `02_CUSTOMER_GENERATION_BIBLE.md` §4, §12; row 12).
+- Compatibility rules: fields are not sampled independently, e.g. hard budget + price-insensitive is invalid; exact prior-item requests need repeat history (V2 02 §9; row 16).
+- Generation retry cap 12, then degrade toward a solvable customer (V2 02 §8; row 15).
+- Anti-repetition over rolling 20- and 50-customer windows (V2 02 §14; row 20). Test: a seeded 50-customer run passes or reports the rule it could not meet.
+- Named RNG streams from the shift seed (arrival, profile, dialogue, patience, outcome, supplier, event): adding a dialogue line must not change arrivals (V2 `01_SYSTEM_CONTRACTS.md` §3; row 3).
+- `KnownField` also records `revealedAt` (V2 01 §4; row 4).
+- **Ambiguity stays DP tiers 0–4** (audit C1). V2's 0–3 shares are re-mapped in GAME-022.
+- Customer openers and examples are customer speech and pass copy rule H1 (V2 02 §13; row 19).
+- Exploits: EX-001, 003, 012, 055, 056, 059 (V2 `10_EXPLOIT_FAILURE_ANALYSIS.md`; row 45).
+
 ## Handoff
 `Docs/Handoffs/GAME-017.md` (≤40 lines). Questions go to the Studio Hub (DEC-033).
