@@ -1551,6 +1551,316 @@
    "date": "2026-10-29"
   },
   {
+   "ledger_id": "ANM-QUA-UAL1",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/ANM-QUA-UAL1/UAL1_Standard.zip",
+   "source_url": "https://quaternius.itch.io/universal-animation-library",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "cc73fc4e495b82958207316596317a3f40b9fa38065bde1027937452da537724",
+   "bytes": 15904933,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-QUA-UAL2",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/ANM-QUA-UAL2/UAL2_Standard.zip",
+   "source_url": "https://quaternius.itch.io/universal-animation-library-2",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "4008ea208a604773a2b2177d965f0f5d3195498b5bf838c3f5785d68e95f2a68",
+   "bytes": 18735003,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/How To Use.txt",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1FOD3BMs7o0VzdgRrDwBRBUiwyt7syauC",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9b684add13cc5aa20e7671bd1f47202d762bae1839c00a247fcdd57e29a37439",
+   "bytes": 1224,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/AllTogether/Humans_Master.blend",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1lDSKTJX1CR15qo9JAFHFjRFGR7rp8K8D",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "1c4bd98437d0611be72498e8caf402adbd6f11002b244b35e8d9cc22e6a541bd",
+   "bytes": 9104132,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Adventurer.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1vsz2vSbVJZfAslf4sb2bEniMETzm0FiD",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2dd4bf1bc18968fdc5245863c25dfedcb572dbd63ae7581fe27ae4a8a063d6e3",
+   "bytes": 582604,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Beach.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1dyybNU-4EcLeZojgGrrjPjynr-HTy0K1",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2ab227a41c6a8a594c61828fd63beec69b0d5f3d23edc2fd5a938e5859322862",
+   "bytes": 447948,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Casual.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1yYfYKaOp-yPrpMQ_Am2bBIC-E7MTbffs",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "a4f84c2b788d2761a711cebd628c1770b7ae5a5a40e7a8faf09dd5c37a8eca7b",
+   "bytes": 439948,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Casual2.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1fd7_cf4Dvtt6kjxfsK7y-tWf7RK-gSfn",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "16087f97266eab15cbc154859dc9cb8c0dd068f7adcaa6ad4be685744bd61d49",
+   "bytes": 429964,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Farmer.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1dNGrC-iyiIf2wHDPZZfb_7MuZkFPHUq-",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "76d57bf99aa30146b9376ecfc903fefdef67f8a293d82de323e2dd660933a352",
+   "bytes": 426492,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/King.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1jQJCejZRC1LXqv6VTmyXxl4IkPPOUgrV",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2f428a56c253e01d48501c8d9a63b967b74357beeac9f830df65f7ba68f51c5b",
+   "bytes": 571196,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Punk.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1wj4CJOdDMZxUUO6IHQphqR7gKXBGBviD",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "59b0ee5aa13c02398e818abb6bb9011e2b95bd6b5ae0a8f8014c4a3553434993",
+   "bytes": 425484,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Spacesuit.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1VtyiU3aQDgFWlQSS_zCKo01wJhGkk2gw",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9b8f320e3ee853a928a4d3abf646690eeaac5b2918e0d5ef3a31a526c2953548",
+   "bytes": 537932,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Suit.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1cWnqDxminHIBU_7fYmPWErncEvjhHU6F",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "fea0cd877573ec24e8882f3165708a1c6e3ed1aff7b886b3d867820dee916413",
+   "bytes": 451980,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Swat.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1h01FE-j9sx-L2ff610SWQU2kS_mShXRK",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "3c5eda6fe78350350363cb1e2ff8be0c7d8a02d58fc60584992b471c04357fa0",
+   "bytes": 481820,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Worker.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=10dPAOOrlH6m6ASa3hOcc-ElclT_cIQjU",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "000eb1269f39e0b10a77c9bd33181c790341480324d72708cc7c22be177c49d6",
+   "bytes": 420604,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/License.txt",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1TTvylHa1CsiJuHFWWiv6PFGhLM-aAH5z",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e8dbf915a2b82229913e301a0787696611241bdefec4832bc084f54161db1efe",
+   "bytes": 372,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/Preview.jpg",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1LDgugrHJIEWrc4o8EGIMu-sTRLBMXSqn",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "ccf065362f4035d5a62a7a18dcb092365670d1e0877e55c1de0b5cc184652e4b",
+   "bytes": 360869,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/How To Use.txt",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1-FqaGch58KXpO8GtWEFbKnO6ds763Hd5",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9b684add13cc5aa20e7671bd1f47202d762bae1839c00a247fcdd57e29a37439",
+   "bytes": 1224,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/AllTogether/Humanoid Rig.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1BPy5CDVzHcmM0Ob-6huLZv9aomUIH_fV",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "db7612cd9d69ea816320ea5e77da6e9361e8c6c75311a02fac1f34c1e8c859aa",
+   "bytes": 3787612,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Adventurer.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=167P6xlB3Xbmgb_vCQdg_7XUmHKvNY6UY",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "511aff0d19dcae794e2c9e04c4cb50e3b1317a962cce75551a8aa2012819941d",
+   "bytes": 439148,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Casual.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1oeUCKrPzsKRv9t8gpe2kF0Ps_azVFRdf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2009fc379bee9e3e01ddf440e7a7b4a375b6d9f6989cbb1d6ea79c64eb0714ab",
+   "bytes": 428380,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Formal.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1GfqxE7ZkoitlPueRj238MVAcf5-KYrw0",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "32baa84de3935c84d84ef9cb210850fefb548e3ae7ccb3d3ca29bc5a9c0204b7",
+   "bytes": 413996,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Medieval.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1PDwGeJ38quzn8L3fBUI_GZHGBAh5f753",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "3c46289eaaeb19719de8f08d7144b407a27c31bf97805445bfbc5d5e9c40c7cf",
+   "bytes": 430764,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Punk.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=11R3oFaijDKL6rWslVfadzK6I4S6jhwVx",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "499cd0eb9895c037fb5ef78444cafc5909899028781aca5ec487b2ce9c4386c1",
+   "bytes": 420124,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/SciFi.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1ebc8YJTFQZ9GZvLBhl7vGFJRl5sVjXUn",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2ab53ed30dee4d7db84e6aab308604f6df2957113d21d661f52c74cddcefedb7",
+   "bytes": 445612,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Soldier.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1_JoVz8m1QGFIvZ7zAd8u4NWjExAu_cUe",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e6911062f42a3ee99ba1a48a75eabea6e3287c59c44d47607c4672080bd37269",
+   "bytes": 456508,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Suit.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1KfT8-WaxQQLDpHQlBsQFuhSXu80uO0vY",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "6f9a543c597379e13a16d070a72417713f07df826fbd98c154f0ea24d6a1c537",
+   "bytes": 430396,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Witch.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1tohNct1tGHAV89prDmSYOYtFDAad1KgV",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "c39e7c69405742ae05d1f30f4d268030d5971679c817426edc822b4a20c35373",
+   "bytes": 441788,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Worker.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1m2-hgysb7xhh3dfECiRnf5IYlc2GfI5P",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "cac9cb16299b43e1ef8e0888f505bd77ce9bb82facacd10af5e84de743b22884",
+   "bytes": 420396,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/License.txt",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1lIFL16xEpoPbr0j_HUATgmcEnAmYoIK2",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e8dbf915a2b82229913e301a0787696611241bdefec4832bc084f54161db1efe",
+   "bytes": 372,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/Preview.jpg",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1XDZ2F9UZ116O7PPWIaR7PBPiuTKt5qup",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "80daa5b48791a014d356c5107e6d312672400b87d247472ee72437f66a18efd6",
+   "bytes": 286665,
+   "date": "2026-10-30"
+  },
+  {
    "ledger_id": "SK-2273be",
    "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-2273be/license.txt",
    "source_url": "https://sketchfab.com/3d-models/tv-cctv-monitor-2273be0837bc453b982dfb19d82c9cc0",

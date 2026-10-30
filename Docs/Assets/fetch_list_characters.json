@@ -1,0 +1,157 @@
+{
+ "note": "ASSET-003 characters + animations P0; IDs = LICENSE_LEDGER.md section 1c. CC0 verified 2026-10-30 on each pack page and in the pack's own License.txt. Quaternius Drive links come from the pack page's 'Just give me the Download' button; UAL zips came from itch's anonymous 'No thanks, just take me to the downloads' flow (signed, expiring URL), so they are 'local' entries.",
+ "entries": [
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "source": "url",
+   "source_dir": "quaternius",
+   "source_url": "https://quaternius.com/packs/ultimatemodularcharacters.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1TTvylHa1CsiJuHFWWiv6PFGhLM-aAH5z",
+     "name": "License.txt"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1FOD3BMs7o0VzdgRrDwBRBUiwyt7syauC",
+     "name": "How To Use.txt"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1LDgugrHJIEWrc4o8EGIMu-sTRLBMXSqn",
+     "name": "Preview.jpg"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1lDSKTJX1CR15qo9JAFHFjRFGR7rp8K8D",
+     "name": "HumanoidRig/AllTogether/Humans_Master.blend"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1vsz2vSbVJZfAslf4sb2bEniMETzm0FiD",
+     "name": "HumanoidRig/Individual/FBX/Adventurer.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1dyybNU-4EcLeZojgGrrjPjynr-HTy0K1",
+     "name": "HumanoidRig/Individual/FBX/Beach.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1yYfYKaOp-yPrpMQ_Am2bBIC-E7MTbffs",
+     "name": "HumanoidRig/Individual/FBX/Casual.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1fd7_cf4Dvtt6kjxfsK7y-tWf7RK-gSfn",
+     "name": "HumanoidRig/Individual/FBX/Casual2.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1dNGrC-iyiIf2wHDPZZfb_7MuZkFPHUq-",
+     "name": "HumanoidRig/Individual/FBX/Farmer.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1jQJCejZRC1LXqv6VTmyXxl4IkPPOUgrV",
+     "name": "HumanoidRig/Individual/FBX/King.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1wj4CJOdDMZxUUO6IHQphqR7gKXBGBviD",
+     "name": "HumanoidRig/Individual/FBX/Punk.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1VtyiU3aQDgFWlQSS_zCKo01wJhGkk2gw",
+     "name": "HumanoidRig/Individual/FBX/Spacesuit.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1cWnqDxminHIBU_7fYmPWErncEvjhHU6F",
+     "name": "HumanoidRig/Individual/FBX/Suit.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1h01FE-j9sx-L2ff610SWQU2kS_mShXRK",
+     "name": "HumanoidRig/Individual/FBX/Swat.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=10dPAOOrlH6m6ASa3hOcc-ElclT_cIQjU",
+     "name": "HumanoidRig/Individual/FBX/Worker.fbx"
+    }
+   ]
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "source": "url",
+   "source_dir": "quaternius",
+   "source_url": "https://quaternius.com/packs/ultimatemodularwomen.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1lIFL16xEpoPbr0j_HUATgmcEnAmYoIK2",
+     "name": "License.txt"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1-FqaGch58KXpO8GtWEFbKnO6ds763Hd5",
+     "name": "How To Use.txt"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1XDZ2F9UZ116O7PPWIaR7PBPiuTKt5qup",
+     "name": "Preview.jpg"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1BPy5CDVzHcmM0Ob-6huLZv9aomUIH_fV",
+     "name": "HumanoidRig/AllTogether/Humanoid Rig.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=167P6xlB3Xbmgb_vCQdg_7XUmHKvNY6UY",
+     "name": "HumanoidRig/Individual/FBX/Adventurer.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1oeUCKrPzsKRv9t8gpe2kF0Ps_azVFRdf",
+     "name": "HumanoidRig/Individual/FBX/Casual.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1GfqxE7ZkoitlPueRj238MVAcf5-KYrw0",
+     "name": "HumanoidRig/Individual/FBX/Formal.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1PDwGeJ38quzn8L3fBUI_GZHGBAh5f753",
+     "name": "HumanoidRig/Individual/FBX/Medieval.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=11R3oFaijDKL6rWslVfadzK6I4S6jhwVx",
+     "name": "HumanoidRig/Individual/FBX/Punk.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1ebc8YJTFQZ9GZvLBhl7vGFJRl5sVjXUn",
+     "name": "HumanoidRig/Individual/FBX/SciFi.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1_JoVz8m1QGFIvZ7zAd8u4NWjExAu_cUe",
+     "name": "HumanoidRig/Individual/FBX/Soldier.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1KfT8-WaxQQLDpHQlBsQFuhSXu80uO0vY",
+     "name": "HumanoidRig/Individual/FBX/Suit.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1tohNct1tGHAV89prDmSYOYtFDAad1KgV",
+     "name": "HumanoidRig/Individual/FBX/Witch.fbx"
+    },
+    {
+     "url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1m2-hgysb7xhh3dfECiRnf5IYlc2GfI5P",
+     "name": "HumanoidRig/Individual/FBX/Worker.fbx"
+    }
+   ]
+  },
+  {
+   "ledger_id": "ANM-QUA-UAL1",
+   "source": "local",
+   "source_dir": "quaternius",
+   "source_url": "https://quaternius.itch.io/universal-animation-library",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "ANM-QUA-UAL2",
+   "source": "local",
+   "source_dir": "quaternius",
+   "source_url": "https://quaternius.itch.io/universal-animation-library-2",
+   "license": "CC0-1.0",
+   "redistributable": true
+  }
+ ]
+}
