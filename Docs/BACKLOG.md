@@ -95,7 +95,7 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Done (W5A) |
 | IMP-002 | P1 | Integrate the approved DISPO_GAME_DESIGN_V2 pack (DEC-063) into `Docs/Design/DESIGN_V2/` | IMP-001 | Done (W4V, DEC-066) |
 | ASSET-003 | P1 | Customer characters + animations sourcing (CHARACTERS.md, DEC-084/087) | ASSET-001 | Done (W5P) |
-| ASSET-004 | P1 | MPFB2 customer pipeline (DEC-087/089): 60-customer roster, generator, LODs | ASSET-003 | Paused (partial on `claude/task-asset-004` 225ac4a; restart after PROC-005) |
+| ASSET-004 | P1 | MPFB2 customer pipeline (DEC-087/089): 60-customer roster, generator, LODs | ASSET-003 | Active (resumed 2026-10-30 from `claude/task-asset-004` 225ac4a) |
 | AUDIO-001 | P1 | Audio plan + CC0 sourcing (no Unity) | ASSET-001 | Done |
 | BRAND-001 | P1 | Only approved brands ship (DEC-071) | DATA-002 | Done |
 | BRAND-001b | P1 | Fictional-brand collision pass (DEC-078) | BRAND-001 | Done |
