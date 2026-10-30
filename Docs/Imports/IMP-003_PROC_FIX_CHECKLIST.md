@@ -56,18 +56,19 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [x] **C12 contact sheets:** every new family uses its own sheet (`own_sheet: true`, `contact_sheet <generator>`), or the default sheet breaks its 1 MB cap. [S2]
 
 ## 2. Every params file (all families)
-- [ ] **P1** `unity_dir` must start with `UnityProject/` (`UnityProject/Assets/_Game/Art/Procedural/...`). [A1, S1]
-- [ ] **P2** `own_sheet: true`. [A2, S2]
-- [ ] **P3** delete `validation_warnings` (free text); keep the GAP ids in `gaps`. [A3, S8]
-- [ ] **P4** `tri_budget` per DEC-084 (replaces the DEC-069 caps and audit S3). Budgets are LOD0 **guides**, not caps:
+**PROC-005:** P1–P6 are met by every params file written so far (§3–§11). They apply again to each family still to come. P5: GAP-PROC-13..21 are in KNOWN_GAPS and in the PP "Fixture families" table. P6: `require_collision` is dropped with C1a.
+- [x] **P1** `unity_dir` must start with `UnityProject/` (`UnityProject/Assets/_Game/Art/Procedural/...`). [A1, S1]
+- [x] **P2** `own_sheet: true`. [A2, S2]
+- [x] **P3** delete `validation_warnings` (free text); keep the GAP ids in `gaps`. [A3, S8]
+- [x] **P4** `tri_budget` per DEC-084 (replaces the DEC-069 caps and audit S3). Budgets are LOD0 **guides**, not caps:
   - props 5–20k, fixtures/furniture 20–80k, hero items 30–150k;
   - each LOD1–LOD3 ≈ ½, ¼, ≤ 1/10 of LOD0.
   Validation fails only above the guide's upper bound and **warns** below the lower bound (too simple). See §Q.
-- [ ] **P5** GAP ids:
+- [x] **P5** GAP ids:
   - register `GAP-PROC-13` (wire racks) and `GAP-PROC-14..22` (one per family) **only** for values with no RF/RI/TI source;
   - fold round 2's `GAP-R2-*` into `GAP-PROC-*`;
   - add each to the PP GAP table + KNOWN_GAPS pointer. [S9]
-- [ ] **P6** per-variant `require_collision` (or drop it with C1a). [B4]
+- [x] **P6** per-variant `require_collision` (or drop it with C1a). [B4]
 
 ## 3. Wire shelving: `generators/wire_shelving.py`, `params/wire_shelving.json` (+ janitor supply rack)
 **PROC-005 done:** new generator (drop 1 rewritten); 8 RF variants pass validation, byte-identical reruns. W1: no bracket in the new foot design. W5/W7: per-section `casters`; mixed runs are abutting units. W8: East Wall and West Run are modelled as 2 fixed sections, and the run lengths/section counts are left for the next REF pass (GAP-127). P1–P6 and Q0.1/Q0.5 are met for this family; Q1 wire-rack detail is done except bins/trays (moved to §16 X5). Unity import is not checked yet.
