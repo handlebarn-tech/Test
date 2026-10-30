@@ -1,6 +1,6 @@
 {
  "_about": "REF-008 back-room fixture map for ART. Plan frame = REFERENCES_INDEX 1.2 (feet, origin Retail NW outer corner, +x east, +y south). Positions are mapped into the Working Plan V5 / graybox room shells (A011 interior dims do not sum to the building width, GAP-125). pos_ft = footprint centre [x, y]; null = not placeable, see gap. size_ft = [w, d, h]: w along +x when rot = 0, along +y when rot = 90. faces = compass direction the front/opening faces. Doors: pos is the centre of the opening on the wall line, size = [width, leaf thickness, height]. Confidence High/Med/Low as REFERENCES_INDEX. Sources: wall2_/wall1_RrCc = CCTV Camera Wall 2 / Camera Wall tiles; FOH_still / BOH_still = the 2026-10-29 desk stills; chat_* = CCTV views Nolan pasted into the REF-008 session 2026-10-29 (not in the repo); A011 = References/TI A011 vector; TI = REFERENCES_INDEX 6. contents = what a fixture holds (store facts only, e.g. DEC-050); never inventory data. FOH is staff-only: customers never enter, the budtender fetches (DEC-050). Excluded by rule: camera positions, access-control hardware, alarm items, safe interiors, screen contents, one office wall screen, and (DEC-051) any safe, cash-equipment or camera-system specifics: generic props only.",
- "version": "REF-009 2026-10-30 rev3 (DEC-051 FOH/break/office answers)",
+ "version": "REF-009b 2026-10-30 rev4 (REVIEW-W4R fixes: GAP-127/128, wall racks unplaced, bench, fan)",
  "fixtures": [
   {
    "room": "Office",
@@ -160,6 +160,7 @@
     "wall1_R3C3",
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "generic black desktop office machines on the worktable, one a laminator (DEC-051 Q10); base = table top"
   },
   {
@@ -427,6 +428,7 @@
     "wall1_R3C4",
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "standing desk on the east wall used as a shelf for misc items (DEC-051 Q13); the IT rack box and a computer sit on it. Fits between the step can and the deli cart (y 40.8-44.4); size Low"
   },
   {
@@ -449,7 +451,8 @@
     "wall2_R3C3",
     "DEC-051"
    ],
-   "notes": "several black file cabinets under the standing desk (DEC-051 Q13; was the black multi-drawer unit, REF-008 Q13). Count Low"
+   "gap": "GAP-127",
+   "notes": "several black file cabinets under the standing desk (DEC-051 Q13; was the black multi-drawer unit, REF-008 Q13). Count Low; the portable fan sits on them (R3C3)"
   },
   {
    "room": "Office",
@@ -458,11 +461,11 @@
    "size_ft": [
     1.0,
     0.8,
-    1.3
+    1.0
    ],
    "pos_ft": [
     12.4,
-    42.0
+    43.8
    ],
    "rot": 90,
    "faces": "W",
@@ -471,7 +474,8 @@
     "wall2_R3C3",
     "DEC-051"
    ],
-   "notes": "white portable fan (DEC-051 Q12); it sat on the black file cabinets in R3C3, now drawn on top of the IT rack box (base 6.5 ft AFF, Low)"
+   "gap": "GAP-127",
+   "notes": "white portable fan (DEC-051 Q12) on the black file cabinets, as in R3C3: under the standing desk on the cabinet top (base 2.4 ft AFF; 1.0 ft tall so it clears the 3.5 ft desk top); size and placement Low"
   },
   {
    "room": "Office",
@@ -493,6 +497,7 @@
     "chat_office_L",
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "generic desktop computer and monitor on the standing desk (DEC-051 Q13); screen content not recorded"
   },
   {
@@ -517,6 +522,7 @@
     "BAND_09",
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "IT rack, modelled as a plain black box only (DEC-051 Q15), sitting on the standing desk (Q13). Height 3 ft Low. V5/graybox puts it on the WEST wall (GAP-121)"
   },
   {
@@ -692,6 +698,7 @@
    "source_tiles": [
     "A011"
    ],
+   "gap": "GAP-127",
    "notes": "small recessed box drawn on the hall side of the restroom wall; type not labelled (probably a fire-extinguisher cabinet, painted black per TI 6.5)"
   },
   {
@@ -939,6 +946,7 @@
     "wall2_R3C5",
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "whiteboard in a red/white frame on the west wall (DEC-051 Q6), ~3.5-6.5 ft AFF above the lunch table; size Low; content not recorded"
   },
   {
@@ -960,6 +968,7 @@
    "source_tiles": [
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "lunch table pushed against the whiteboard (west) wall (DEC-051 Q7); size is a convention placeholder, shorter than the bench"
   },
   {
@@ -972,7 +981,7 @@
     1.5
    ],
    "pos_ft": [
-    17.4,
+    17.75,
     40.5
    ],
    "rot": 90,
@@ -983,6 +992,7 @@
     "wall1_R3C5",
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "wood plank top on black steel legs alongside the lunch table on its east side; longer than the table so it does not fit under it; kept north of the JC door swing (y 43.1) (DEC-051 Q7). 5 ft length kept from REF-008 (Low)"
   },
   {
@@ -1368,6 +1378,7 @@
     "chat_FOH_R",
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "black wire shelving unit used as a desk: monitor on an upper shelf, keyboard shelf at desk height, bins below. DEC-040/041. Wall = east, shared with BOH (DEC-051 Q1, GAP-124 closed). Order along the wall (desk N, fridge, cooler S) and exact y are Low"
   },
   {
@@ -1387,6 +1398,7 @@
    "faces": "E",
    "confidence": "Low",
    "source_tiles": [],
+   "gap": "GAP-127",
    "notes": "DEC-040: Nolan says each desk has a chair; none visible on CCTV"
   },
   {
@@ -1412,6 +1424,7 @@
     "chat_FOH_L",
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "white top-freezer apartment fridge, black bins/bags stored on top; on the BOH-shared east wall with the desk and cooler (DEC-051 Q1). Graybox FX_FOH_Fridge sits on the west wall at 24.3-25.9 x 42-45.6",
    "contents": "drinks: cannabis colas and other beverages (DEC-050)"
   },
@@ -1438,6 +1451,7 @@
     "chat_FOH_L",
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "black-frame lit merchandiser with two glass doors next to the fridge (GAP-111); on the BOH-shared east wall (DEC-051 Q1). Not in the graybox",
    "contents": "all concentrates and perishable edibles (DEC-050)"
   },
@@ -1464,6 +1478,7 @@
     "chat_FOH_R",
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "chrome wire rack on rollers, clear sorted bins and black trays (R4C1). DEC-051 Q3: 4 rolling racks slide forward and back to open a working aisle; drawn packed together (y 37.3-45.3) with the open aisle at the north. Length 6 ft and x span are Low",
    "contents": "vapes, edibles, some infused prerolls (DEC-050)"
   },
@@ -1490,6 +1505,7 @@
     "chat_FOH_R",
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "chrome wire rack on rollers, clear sorted bins and black trays (R4C1). DEC-051 Q3: 4 rolling racks slide forward and back to open a working aisle; drawn packed together (y 37.3-45.3) with the open aisle at the north. Length 6 ft and x span are Low",
    "contents": "vapes, edibles, some infused prerolls (DEC-050)"
   },
@@ -1516,6 +1532,7 @@
     "chat_FOH_R",
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "chrome wire rack on rollers, clear sorted bins and black trays (R4C1). DEC-051 Q3: 4 rolling racks slide forward and back to open a working aisle; drawn packed together (y 37.3-45.3) with the open aisle at the north. Length 6 ft and x span are Low",
    "contents": "vapes, edibles, some infused prerolls (DEC-050)"
   },
@@ -1542,7 +1559,50 @@
     "chat_FOH_R",
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "chrome wire rack on rollers, clear sorted bins and black trays (R4C1). DEC-051 Q3: 4 rolling racks slide forward and back to open a working aisle; drawn packed together (y 37.3-45.3) with the open aisle at the north. Length 6 ft and x span are Low",
+   "contents": "vapes, edibles, some infused prerolls (DEC-050)"
+  },
+  {
+   "room": "FOH",
+   "fixture": "Rack_West_Wall",
+   "type": "rack",
+   "size_ft": [
+    8.0,
+    2.0,
+    6.5
+   ],
+   "pos_ft": null,
+   "rot": 90,
+   "faces": "E",
+   "confidence": "Low",
+   "source_tiles": [
+    "A011",
+    "FOH_still",
+    "wall2_R4C1"
+   ],
+   "gap": "GAP-128",
+   "notes": "chrome wire shelving along the west wall, 2 bays (A011 'SHELVING' strip x 23.8-25.8; FOH still right-hand wall rack), boxed product; ends at y 42.5 to clear the cooler REF-009b: unplaced (pos null) until Nolan says whether FOH has fixed wall shelves besides the 4 rolling racks (DEC-051 Q3). REF-008 pos was [24.8, 38.5]. If it exists, the 4 rolling racks shift east by ~1 ft (x 25.8-31.8).",
+   "contents": "vapes, edibles, some infused prerolls (DEC-050)"
+  },
+  {
+   "room": "FOH",
+   "fixture": "Rack_East_Wall",
+   "type": "rack",
+   "size_ft": [
+    8.0,
+    2.0,
+    6.5
+   ],
+   "pos_ft": null,
+   "rot": 90,
+   "faces": "W",
+   "confidence": "Low",
+   "source_tiles": [
+    "A011"
+   ],
+   "gap": "GAP-128",
+   "notes": "A011 'SHELVING' strip on the east wall (x 34.1-36.1, y 38.3-46.3); hidden behind the vestibule in the CCTV views, so presence today is Low REF-009b: unplaced (pos null) until Nolan says whether FOH has fixed wall shelves besides the 4 rolling racks (DEC-051 Q3). REF-008 pos was [35.1, 42.3]. The DEC-051 desk + fridge + cooler group now stands on this wall, so at most a short run fits south of the cooler.",
    "contents": "vapes, edibles, some infused prerolls (DEC-050)"
   },
   {
@@ -1564,6 +1624,7 @@
    "source_tiles": [
     "DEC-051"
    ],
+   "gap": "GAP-127",
    "notes": "small rack straight ahead on entering FOH (west wall): deli bags, exit bags, misc tools, vape batteries (DEC-051 Q2). Size is a convention placeholder"
   },
   {
@@ -1586,6 +1647,7 @@
     "DEC-051",
     "chat_FOH_R"
    ],
+   "gap": "GAP-127",
    "notes": "aluminium trash can on the right (north) on entering, usually propping the FOH door open (DEC-051 Q2); placed at the open leaf end"
   },
   {
@@ -1607,7 +1669,8 @@
    "source_tiles": [
     "DEC-051"
    ],
-   "notes": "grey electrical box against the north wall on the right as you enter (DEC-051 Q2); generic panel box, ~4-7 ft AFF; x Low"
+   "gap": "GAP-127",
+   "notes": "electrical box against the north wall on the right as you enter (DEC-051 Q2); generic panel box. Colour not recorded; height (~4-7 ft AFF) and x are Low"
   },
   {
    "room": "FOH",
@@ -1763,6 +1826,7 @@
     "BOH_still",
     "chat_BOH_R"
    ],
+   "gap": "GAP-127",
    "notes": "small chrome shelf with cartons left of the vestibule door as seen from the SE; placed against the vestibule south face"
   },
   {
@@ -1786,11 +1850,12 @@
     "wall1_R4C2",
     "chat_BOH_L"
    ],
+   "gap": "GAP-127",
    "notes": "white linear LED strip (TI L2 type) running along the aisle at ceiling height"
   }
  ],
  "graybox_contradictions": [
-  "GAP-121 Office is mirrored east-west in V5/graybox: CCTV + A011 doors put the L desk + neon on the WEST wall, the steel cabinets on the SOUTH wall west of the HUB 2 door, the IT rack on the EAST wall; graybox has IT rack west, 'safe' NE (blocking the A011 hall-door swing), desk L east",
+  "GAP-121 Office is mirrored east-west in V5/graybox: CCTV + A011 doors put the L desk + neon on the WEST wall, the two tall black cabinets on the SOUTH wall west of the HUB 2 door, the IT rack on the EAST wall; graybox has IT rack west, a tall box NE (blocking the A011 hall-door swing), desk L east",
   "GAP-123 Door positions: DOOR_Hall_Office 8.9-11.9 -> 10.2-13.3; DOOR_Hall_Break y 30.9-33.9 -> 29.9-33.0; DOOR_Hall_Restroom y 30.9-33.9 -> 33.1-36.1; DOOR_Office_HUB 7.5-10.5 ok (A011 7.2-10.2)",
   "GAP-122 Vestibule 3.0 x 2.2 -> A011 x 31.4-39.8, y 29.5-34.3 (35.16 SF); both doors become full 3'-0\" (the GAP-104 2.2 ft exception lapses); ARCH_E 35.21-38.21 vs A011 34.5-37.6",
   "FOH: FX_FOH_WireRack_1/2 collide with the A011 vestibule and the FOH door swing; FX_FOH_Fridge on the west wall vs the desk+fridge+cooler group on the BOH-shared east wall (DEC-051, GAP-124 closed); glass-door cooler missing; 4 rolling racks (DEC-051) vs 2 graybox runs",
