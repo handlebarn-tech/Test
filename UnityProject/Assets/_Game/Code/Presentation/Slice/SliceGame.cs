@@ -158,7 +158,8 @@ namespace Dispo.Presentation.Slice
         void JarLabel(Transform jar, string text, Font font)
         {
             // Text box inside the PROC_DeliJar label card (deli_jar.json label: 0.10 x 0.08 m from 0.065 m), below the THC tag.
-            const float faceZ = 0.0765f, centreY = 0.092f, maxW = 0.088f, maxH = 0.042f;
+            // faceZ = body depth 0.1397 / 2 + label offset 0.0008 + 0.0007 clearance (PROC-003 jar size, REVIEW-W4P).
+            const float faceZ = 0.0714f, centreY = 0.092f, maxW = 0.088f, maxH = 0.042f;
             var tm = new GameObject("Label_Text").AddComponent<TextMesh>();
             tm.transform.SetParent(jar, false);
             tm.transform.SetLocalPositionAndRotation(new Vector3(0, centreY, faceZ), Quaternion.Euler(0, 180, 0)); // TextMesh reads from -Z
