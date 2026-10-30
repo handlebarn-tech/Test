@@ -71,6 +71,7 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 | Office→HUB door | y≈46.3, x 4.0–5.8 | 1.8 symbol | Low |
 | EXT. DELIVERY (employees only) | west wall x=0, y 47.8–51.2 | 3.4 | Med |
 | Door to HUB 2 | wall x≈28.3–28.7, y 48.6–50.6 | 2.0 | Med |
+| EMERGENCY EXIT, SE (green door with round logo; DEC-030) | Nolan: the building's furthest south-east door. **Not drawn on the plan**: the HUB 2 east (x=47.19) and south (y=76.03) walls and the HUB south wall have no door symbol. Seen in HUB wall tile R1C4 (far left) | not drawn | High (exists, Nolan) / Low (position, width). REF-002 maps R1C4 to HUB, so the door would sit on the HUB south wall near HUB 2, or R1C4 is HUB 2; unresolved |
 
 ### 1.5 Fixtures, counters, registers (vector, ft; Med unless noted)
 
@@ -171,7 +172,7 @@ Tile matching: each tile was compared with the 25 main-wall tiles (128×72 grays
 | HUB | desk with computer + office chair | 1 desk visible | HUB R1C4 (matches plan "desks + computers") | Med |
 | HUB | long counter/bench along a wall | 1 | HUB R1C4 | Low |
 | HUB | rolling carts (blue, red) | 2 | HUB R1C4 | Med |
-| HUB | doors: green door with round logo; black door with yellow sign | 2 | HUB R1C4, R1C2 | Med (exists) / Low (which plan door) |
+| HUB | doors: green door with round logo = **SE emergency exit** (DEC-030, §1.4); black door with yellow sign = **unconfirmed** (Nolan does not recognize it; no door added) | 2 | HUB R1C4, R1C2 | High (green door = exit) / Low (plan position); black door unconfirmed |
 | HUB 2 | copier/printer | 1 | HUB R1C1 | Med |
 | HUB 2 | yellow-lid black totes | stack of 4 (+ more in R2C1) | HUB R1C1, R2C1 | Med |
 | HUB 2 | shrink-wrapped pallets of blue cases | 2–3 | HUB R1C1 | Med |
