@@ -43,7 +43,7 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 - Any ChatGPT-built mechanics he drops in Imports: audit → review → **his approval** before use.
 
 ## Open questions for Nolan
-- **Asked 2026-10-30 (World, REF-011/012, merged 115292c), not blocking, placeholders stand:** W1 south register → jar-wall distance + counter vs white columns (GAP-129); W2 space behind east registers 11/12 (GAP-130); W3 HUB desk/chair at north end + dark east counter (GAP-132); W4 entry route lot vs sidewalk (GAP-134); W5 hinge side of 7 doors (GAP-137); W6 lever/push bar + self-closing doors (GAP-138); W7 customer restroom use (GAP-139, placeholder staff only).
+- REF-011/012 W5–W7 answered (DEC-110; W6 self-closing unanswered → placeholder, never re-ask). W1–W4 rejected: World settles them from the floor plan/TI (DEC-110).
 - Customer flow Q1–7 answered (DEC-103). Emergency exit alarm: left unanswered → placeholder stands, never re-ask (DEC-105).
 - Medical allotment answered (DEC-106).
 - Register kit R1–R7 answered (DEC-104). Optional (DEC-101 long-term): parking space count/layout and dwell time, what the TV wall shows, neighbouring businesses/street. (REF-008 Q1–15 answered, DEC-051/062. Phoenix TPT rate OPEN-4: 25.1 % kept until a receipt settles it.)
