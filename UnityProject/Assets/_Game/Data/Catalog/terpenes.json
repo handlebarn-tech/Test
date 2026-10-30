@@ -1,0 +1,812 @@
+{
+ "domains": [
+  "sedation",
+  "uplift",
+  "anxiety_relief",
+  "pain_inflammation",
+  "focus_cognitive",
+  "antimicrobial"
+ ],
+ "terpenes": [
+  {
+   "id": "beta_myrcene",
+   "name": "β-Myrcene",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.9,
+    "uplift": 0,
+    "anxiety_relief": 0.5,
+    "pain_inflammation": 0.65,
+    "focus_cognitive": -0.15,
+    "antimicrobial": 0.2
+   }
+  },
+  {
+   "id": "dl_limonene",
+   "name": "D-Limonene",
+   "cls": "mono",
+   "d": {
+    "sedation": 0,
+    "uplift": 0.85,
+    "anxiety_relief": 0.7,
+    "pain_inflammation": 0.35,
+    "focus_cognitive": 0.5,
+    "antimicrobial": 0.4
+   }
+  },
+  {
+   "id": "beta_caryophyllene",
+   "name": "β-Caryophyllene",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.2,
+    "uplift": 0.1,
+    "anxiety_relief": 0.65,
+    "pain_inflammation": 1,
+    "focus_cognitive": 0.1,
+    "antimicrobial": 0.5
+   }
+  },
+  {
+   "id": "alpha_humulene",
+   "name": "α-Humulene",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0,
+    "anxiety_relief": 0.25,
+    "pain_inflammation": 0.9,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.6
+   }
+  },
+  {
+   "id": "linalool",
+   "name": "Linalool",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.75,
+    "uplift": 0,
+    "anxiety_relief": 0.9,
+    "pain_inflammation": 0.5,
+    "focus_cognitive": -0.1,
+    "antimicrobial": 0.35
+   }
+  },
+  {
+   "id": "beta_pinene",
+   "name": "β-Pinene",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.05,
+    "uplift": 0.5,
+    "anxiety_relief": 0.55,
+    "pain_inflammation": 0.3,
+    "focus_cognitive": 0.45,
+    "antimicrobial": 0.45
+   }
+  },
+  {
+   "id": "alpha_pinene",
+   "name": "α-Pinene",
+   "cls": "mono",
+   "d": {
+    "sedation": 0,
+    "uplift": 0.3,
+    "anxiety_relief": 0.55,
+    "pain_inflammation": 0.4,
+    "focus_cognitive": 0.9,
+    "antimicrobial": 0.4
+   }
+  },
+  {
+   "id": "alpha_bisabolol",
+   "name": "α-Bisabolol",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.4,
+    "uplift": 0,
+    "anxiety_relief": 0.78,
+    "pain_inflammation": 0.6,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.45
+   }
+  },
+  {
+   "id": "alpha_terpineol",
+   "name": "α-Terpineol",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.3,
+    "uplift": 0,
+    "anxiety_relief": 0.35,
+    "pain_inflammation": 0.45,
+    "focus_cognitive": -0.1,
+    "antimicrobial": 0.55
+   }
+  },
+  {
+   "id": "fenchyl_alcohol",
+   "name": "Fenchyl Alcohol",
+   "cls": "mono",
+   "d": {
+    "sedation": -0.1,
+    "uplift": 0.35,
+    "anxiety_relief": 0.15,
+    "pain_inflammation": 0.45,
+    "focus_cognitive": 0.25,
+    "antimicrobial": 0.75
+   }
+  },
+  {
+   "id": "trans_beta_ocimene",
+   "name": "trans-β-Ocimene",
+   "cls": "mono",
+   "d": {
+    "sedation": -0.1,
+    "uplift": 0.65,
+    "anxiety_relief": 0.25,
+    "pain_inflammation": 0.35,
+    "focus_cognitive": 0.3,
+    "antimicrobial": 0.55
+   }
+  },
+  {
+   "id": "nerolidol",
+   "name": "Nerolidol",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.32,
+    "uplift": 0,
+    "anxiety_relief": 0.35,
+    "pain_inflammation": 0.28,
+    "focus_cognitive": -0.05,
+    "antimicrobial": 0.65
+   }
+  },
+  {
+   "id": "fenchone",
+   "name": "Fenchone",
+   "cls": "mono",
+   "d": {
+    "sedation": -0.1,
+    "uplift": 0.4,
+    "anxiety_relief": 0.1,
+    "pain_inflammation": 0.25,
+    "focus_cognitive": 0.3,
+    "antimicrobial": 0.4
+   }
+  },
+  {
+   "id": "caryophyllene_oxide",
+   "name": "Caryophyllene Oxide",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.05,
+    "uplift": 0,
+    "anxiety_relief": 0.1,
+    "pain_inflammation": 0.15,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.65
+   }
+  },
+  {
+   "id": "camphene",
+   "name": "Camphene",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0,
+    "anxiety_relief": 0.1,
+    "pain_inflammation": 0.45,
+    "focus_cognitive": 0.1,
+    "antimicrobial": 0.55
+   }
+  },
+  {
+   "id": "camphor",
+   "name": "Camphor",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.25,
+    "uplift": 0,
+    "anxiety_relief": 0.1,
+    "pain_inflammation": 0.4,
+    "focus_cognitive": 0.05,
+    "antimicrobial": 0.45
+   }
+  },
+  {
+   "id": "isoborneol",
+   "name": "Isoborneol",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0,
+    "anxiety_relief": 0.1,
+    "pain_inflammation": 0.25,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.55
+   }
+  },
+  {
+   "id": "dl_borneol",
+   "name": "D,L-Borneol",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.45,
+    "uplift": 0,
+    "anxiety_relief": 0.25,
+    "pain_inflammation": 0.45,
+    "focus_cognitive": 0.05,
+    "antimicrobial": 0.45
+   }
+  },
+  {
+   "id": "terpinolene",
+   "name": "Terpinolene",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0.6,
+    "anxiety_relief": 0.38,
+    "pain_inflammation": 0.4,
+    "focus_cognitive": 0.35,
+    "antimicrobial": 0.45
+   }
+  },
+  {
+   "id": "sabinene_hydrate",
+   "name": "Sabinene Hydrate",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0.05,
+    "anxiety_relief": 0.1,
+    "pain_inflammation": 0.35,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.45
+   }
+  },
+  {
+   "id": "citronellol",
+   "name": "Citronellol",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.15,
+    "uplift": 0.1,
+    "anxiety_relief": 0.25,
+    "pain_inflammation": 0.2,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.55
+   }
+  },
+  {
+   "id": "geraniol",
+   "name": "Geraniol",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.2,
+    "uplift": 0.1,
+    "anxiety_relief": 0.3,
+    "pain_inflammation": 0.25,
+    "focus_cognitive": 0.05,
+    "antimicrobial": 0.5
+   }
+  },
+  {
+   "id": "alpha_terpinene",
+   "name": "α-Terpinene",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.2,
+    "uplift": 0.15,
+    "anxiety_relief": 0.25,
+    "pain_inflammation": 0.45,
+    "focus_cognitive": 0.2,
+    "antimicrobial": 0.5
+   }
+  },
+  {
+   "id": "terpinen_4_ol",
+   "name": "Terpinen-4-ol",
+   "cls": "mono",
+   "d": {
+    "sedation": 0,
+    "uplift": 0.1,
+    "anxiety_relief": 0.15,
+    "pain_inflammation": 0.6,
+    "focus_cognitive": 0.35,
+    "antimicrobial": 0.9
+   }
+  },
+  {
+   "id": "three_carene",
+   "name": "Δ3-Carene",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.25,
+    "uplift": 0,
+    "anxiety_relief": 0.2,
+    "pain_inflammation": 0.45,
+    "focus_cognitive": 0.45,
+    "antimicrobial": 0.45
+   }
+  },
+  {
+   "id": "guaiol",
+   "name": "Guaiol",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.4,
+    "uplift": 0.05,
+    "anxiety_relief": 0.35,
+    "pain_inflammation": 0.45,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.5
+   }
+  },
+  {
+   "id": "alpha_phellandrene",
+   "name": "α-Phellandrene",
+   "cls": "mono",
+   "d": {
+    "sedation": 0,
+    "uplift": 0.35,
+    "anxiety_relief": 0.2,
+    "pain_inflammation": 0.45,
+    "focus_cognitive": 0.1,
+    "antimicrobial": 0.55
+   }
+  },
+  {
+   "id": "gamma_terpinene",
+   "name": "γ-Terpinene",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0,
+    "anxiety_relief": 0.15,
+    "pain_inflammation": 0.6,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.55
+   }
+  },
+  {
+   "id": "cis_farnesol",
+   "name": "cis-Farnesol",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.15,
+    "uplift": 0,
+    "anxiety_relief": 0.1,
+    "pain_inflammation": 0.3,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.5
+   }
+  },
+  {
+   "id": "sabinene",
+   "name": "Sabinene",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0.05,
+    "anxiety_relief": 0.2,
+    "pain_inflammation": 0.4,
+    "focus_cognitive": 0.05,
+    "antimicrobial": 0.55
+   }
+  },
+  {
+   "id": "eucalyptol",
+   "name": "Eucalyptol",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0.2,
+    "anxiety_relief": 0.2,
+    "pain_inflammation": 0.55,
+    "focus_cognitive": 0.35,
+    "antimicrobial": 0.7
+   }
+  },
+  {
+   "id": "nootkatone",
+   "name": "Nootkatone",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0,
+    "uplift": 0.15,
+    "anxiety_relief": 0.05,
+    "pain_inflammation": 0.1,
+    "focus_cognitive": 0.1,
+    "antimicrobial": 0.2
+   }
+  },
+  {
+   "id": "valencene",
+   "name": "Valencene",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0,
+    "uplift": 0.3,
+    "anxiety_relief": 0.15,
+    "pain_inflammation": 0.35,
+    "focus_cognitive": 0.2,
+    "antimicrobial": 0.25
+   }
+  },
+  {
+   "id": "nerol",
+   "name": "Nerol",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.2,
+    "uplift": 0.1,
+    "anxiety_relief": 0.3,
+    "pain_inflammation": 0.2,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.4
+   }
+  },
+  {
+   "id": "cedrol",
+   "name": "Cedrol",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.3,
+    "uplift": 0,
+    "anxiety_relief": 0.2,
+    "pain_inflammation": 0.3,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.4
+   }
+  },
+  {
+   "id": "l_menthone",
+   "name": "L-Menthone",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0.1,
+    "anxiety_relief": 0.15,
+    "pain_inflammation": 0.3,
+    "focus_cognitive": 0.2,
+    "antimicrobial": 0.45
+   }
+  },
+  {
+   "id": "trans_nerolidol",
+   "name": "trans-Nerolidol",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.32,
+    "uplift": 0,
+    "anxiety_relief": 0.35,
+    "pain_inflammation": 0.28,
+    "focus_cognitive": -0.05,
+    "antimicrobial": 0.7
+   }
+  },
+  {
+   "id": "alpha_cedrene",
+   "name": "α-Cedrene",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.15,
+    "uplift": 0.05,
+    "anxiety_relief": 0.1,
+    "pain_inflammation": 0.3,
+    "focus_cognitive": 0.05,
+    "antimicrobial": 0.35
+   }
+  },
+  {
+   "id": "alpha_thujone",
+   "name": "α-Thujone",
+   "cls": "mono",
+   "d": {
+    "sedation": -0.05,
+    "uplift": 0.05,
+    "anxiety_relief": -0.1,
+    "pain_inflammation": 0.1,
+    "focus_cognitive": 0.05,
+    "antimicrobial": 0.3
+   }
+  },
+  {
+   "id": "carvone",
+   "name": "Carvone",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.25,
+    "uplift": 0.1,
+    "anxiety_relief": 0.35,
+    "pain_inflammation": 0.2,
+    "focus_cognitive": 0.05,
+    "antimicrobial": 0.5
+   }
+  },
+  {
+   "id": "geranyl_acetate",
+   "name": "Geranyl Acetate",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.15,
+    "uplift": 0.15,
+    "anxiety_relief": 0.25,
+    "pain_inflammation": 0.25,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.45
+   }
+  },
+  {
+   "id": "isobornyl_acetate",
+   "name": "Isobornyl Acetate",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0,
+    "anxiety_relief": 0.1,
+    "pain_inflammation": 0.2,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.5
+   }
+  },
+  {
+   "id": "isopulegol",
+   "name": "Isopulegol",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.15,
+    "uplift": 0.15,
+    "anxiety_relief": 0.3,
+    "pain_inflammation": 0.3,
+    "focus_cognitive": 0.05,
+    "antimicrobial": 0.5
+   }
+  },
+  {
+   "id": "m_cymene",
+   "name": "m-Cymene",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.05,
+    "uplift": 0.1,
+    "anxiety_relief": 0.15,
+    "pain_inflammation": 0.4,
+    "focus_cognitive": 0.1,
+    "antimicrobial": 0.55
+   }
+  },
+  {
+   "id": "menthol",
+   "name": "Menthol",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0.1,
+    "anxiety_relief": 0.2,
+    "pain_inflammation": 0.4,
+    "focus_cognitive": 0.15,
+    "antimicrobial": 0.6
+   }
+  },
+  {
+   "id": "o_p_cymene",
+   "name": "o,p-Cymene",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.05,
+    "uplift": 0.1,
+    "anxiety_relief": 0.15,
+    "pain_inflammation": 0.4,
+    "focus_cognitive": 0.1,
+    "antimicrobial": 0.55
+   }
+  },
+  {
+   "id": "octyl_acetate",
+   "name": "Octyl Acetate",
+   "cls": "mono",
+   "d": {
+    "sedation": 0,
+    "uplift": 0.05,
+    "anxiety_relief": 0,
+    "pain_inflammation": 0,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.15
+   }
+  },
+  {
+   "id": "phytane",
+   "name": "Phytane",
+   "cls": "mono",
+   "d": {
+    "sedation": 0,
+    "uplift": 0,
+    "anxiety_relief": 0,
+    "pain_inflammation": 0,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.05
+   }
+  },
+  {
+   "id": "piperitone",
+   "name": "Piperitone",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.05,
+    "uplift": 0.1,
+    "anxiety_relief": 0.1,
+    "pain_inflammation": 0.3,
+    "focus_cognitive": 0.1,
+    "antimicrobial": 0.55
+   }
+  },
+  {
+   "id": "pulegone",
+   "name": "Pulegone",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.05,
+    "uplift": 0.05,
+    "anxiety_relief": 0.05,
+    "pain_inflammation": 0.15,
+    "focus_cognitive": 0.05,
+    "antimicrobial": 0.45
+   }
+  },
+  {
+   "id": "thymol",
+   "name": "Thymol",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0.05,
+    "anxiety_relief": 0.2,
+    "pain_inflammation": 0.6,
+    "focus_cognitive": 0.05,
+    "antimicrobial": 0.9
+   }
+  },
+  {
+   "id": "trans_citral",
+   "name": "trans-Citral",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.25,
+    "uplift": 0.2,
+    "anxiety_relief": 0.3,
+    "pain_inflammation": 0.35,
+    "focus_cognitive": 0.1,
+    "antimicrobial": 0.65
+   }
+  },
+  {
+   "id": "verbenone",
+   "name": "Verbenone",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.15,
+    "uplift": 0.1,
+    "anxiety_relief": 0.15,
+    "pain_inflammation": 0.3,
+    "focus_cognitive": 0.1,
+    "antimicrobial": 0.5
+   }
+  },
+  {
+   "id": "carvacrol",
+   "name": "Carvacrol",
+   "cls": "mono",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0.05,
+    "anxiety_relief": 0.2,
+    "pain_inflammation": 0.65,
+    "focus_cognitive": 0.05,
+    "antimicrobial": 0.95
+   }
+  },
+  {
+   "id": "alpha_bergamotene",
+   "name": "α-Bergamotene",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.05,
+    "uplift": 0.3,
+    "anxiety_relief": 0.2,
+    "pain_inflammation": 0.35,
+    "focus_cognitive": 0.15,
+    "antimicrobial": 0.35
+   }
+  },
+  {
+   "id": "beta_farnesene",
+   "name": "β-Farnesene",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0.15,
+    "anxiety_relief": 0.15,
+    "pain_inflammation": 0.4,
+    "focus_cognitive": 0.05,
+    "antimicrobial": 0.4
+   }
+  },
+  {
+   "id": "germacrene_d",
+   "name": "Germacrene D",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.15,
+    "uplift": 0.05,
+    "anxiety_relief": 0.15,
+    "pain_inflammation": 0.45,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.5
+   }
+  },
+  {
+   "id": "alpha_bisabolene",
+   "name": "α-Bisabolene",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0.1,
+    "anxiety_relief": 0.15,
+    "pain_inflammation": 0.35,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.4
+   }
+  },
+  {
+   "id": "aromadendrene",
+   "name": "Aromadendrene",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0.1,
+    "uplift": 0.05,
+    "anxiety_relief": 0.1,
+    "pain_inflammation": 0.4,
+    "focus_cognitive": 0,
+    "antimicrobial": 0.5
+   }
+  },
+  {
+   "id": "beta_eudesmol",
+   "name": "β-Eudesmol",
+   "cls": "sesqui",
+   "d": {
+    "sedation": 0,
+    "uplift": 0,
+    "anxiety_relief": 0,
+    "pain_inflammation": 0,
+    "focus_cognitive": 0,
+    "antimicrobial": 0
+   }
+  }
+ ],
+ "baScalars": {
+  "alpha_pinene": 0.6,
+  "beta_pinene": 0.5,
+  "beta_myrcene": 0.62,
+  "dl_limonene": 0.58,
+  "linalool": 0.55,
+  "terpinolene": 0.55,
+  "trans_beta_ocimene": 0.55,
+  "camphene": 0.58,
+  "dl_borneol": 0.55,
+  "geraniol": 0.52,
+  "beta_caryophyllene": 0.48,
+  "alpha_humulene": 0.48,
+  "alpha_bisabolol": 0.46,
+  "nerolidol": 0.44,
+  "trans_nerolidol": 0.44,
+  "guaiol": 0.44,
+  "beta_farnesene": 0.44,
+  "valencene": 0.45
+ }
+}

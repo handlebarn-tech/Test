@@ -1,0 +1,47 @@
+{
+ "importer": {
+  "path": "Tools/Data/import_catalog.js",
+  "version": "1.0.0"
+ },
+ "sources": [
+  {
+   "path": "tfs-budtender/deploy/2026-10-30-v7114/site/index.html",
+   "md5": "228684e9f02d703cf3a36692baf10d18",
+   "version": "v7.11.4"
+  },
+  {
+   "path": "tfs-budtender/inventory/tfs-inventory-master.json",
+   "md5": "09bfa4f00206b25f77fb2a49db2eea9c",
+   "invVersion": "tfs-3.3",
+   "invExported": "2026-10-29T19:13:36.534Z"
+  }
+ ],
+ "outputs": [
+  {
+   "file": "batches.json",
+   "md5": "6fdc553558ea651ac793ccb43af53167"
+  },
+  {
+   "file": "terpenes.json",
+   "md5": "9c66cea1aa6020d2693e9083c123a0d0"
+  },
+  {
+   "file": "engine_tables.json",
+   "md5": "3aaa8ac7ad963cee71b38597234af5b8"
+  },
+  {
+   "file": "pricing.json",
+   "md5": "7b371225ab641e56568873a98cae9a01"
+  }
+ ],
+ "counts": {
+  "batches": 1207,
+  "inStockBatches": 77,
+  "strainGroups": 366,
+  "terpenes": 60,
+  "intents": 287,
+  "skipped": 0,
+  "deleted": 30,
+  "datesInferred": 453
+ }
+}

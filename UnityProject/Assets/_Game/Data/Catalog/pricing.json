@@ -1,0 +1,363 @@
+{
+ "taxRate": 25.1,
+ "weights": [
+  3.5,
+  7,
+  14,
+  28
+ ],
+ "tiers": [
+  {
+   "id": "smalls",
+   "gpg": 3,
+   "w": {
+    "7": 21,
+    "14": 42,
+    "28": 56.99,
+    "3.5": 10.5
+   }
+  },
+  {
+   "id": "house",
+   "gpg": 4,
+   "w": {
+    "7": 28,
+    "14": 56,
+    "28": 66.99,
+    "3.5": 14
+   }
+  },
+  {
+   "id": "premium",
+   "gpg": 5,
+   "w": {
+    "7": 35,
+    "14": 70,
+    "28": 89.99,
+    "3.5": 17.5
+   }
+  },
+  {
+   "id": "fttp",
+   "gpg": 2,
+   "w": {
+    "7": 14,
+    "14": 28,
+    "28": 56.99,
+    "3.5": 7
+   }
+  },
+  {
+   "id": "t1",
+   "gpg": 6,
+   "w": {
+    "7": 33,
+    "14": 50,
+    "28": 80,
+    "3.5": 18
+   }
+  },
+  {
+   "id": "t2",
+   "gpg": 8,
+   "w": {
+    "7": 43,
+    "14": 75,
+    "28": 140,
+    "3.5": 24
+   }
+  },
+  {
+   "id": "t3",
+   "gpg": 12,
+   "w": {
+    "7": 64,
+    "14": 116,
+    "28": 200,
+    "3.5": 36
+   }
+  },
+  {
+   "id": "t4",
+   "gpg": 15,
+   "w": {
+    "7": 86,
+    "14": 154,
+    "28": 308,
+    "3.5": 47
+   }
+  }
+ ],
+ "dayDeals": [
+  {
+   "dow": 0,
+   "deals": []
+  },
+  {
+   "dow": 1,
+   "deals": [
+    {
+     "id": "d1026_mon_t3",
+     "name": "Monday: Tier 3 eighth $19.99",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "t3"
+     },
+     "dealType": "weight_flat",
+     "weight": 3.5,
+     "flatPrice": 19.99
+    }
+   ]
+  },
+  {
+   "dow": 2,
+   "deals": [
+    {
+     "id": "d1026_tue_smalls",
+     "name": "Tuesday: House Smalls $2/g",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "smalls"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 14,
+      "14": 28,
+      "28": 49.99,
+      "3.5": 7
+     }
+    },
+    {
+     "id": "d1026_tue_house",
+     "name": "Tuesday: House Fresh $3/g",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "house"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 21,
+      "14": 42,
+      "28": 56.99,
+      "3.5": 10.5
+     }
+    },
+    {
+     "id": "d1026_tue_premium",
+     "name": "Tuesday: TFS Premium $4/g",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "premium"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 28,
+      "14": 56,
+      "28": 66.99,
+      "3.5": 14
+     }
+    },
+    {
+     "id": "d1026_tue_t1",
+     "name": "Tuesday: Tier 1 $4/g",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "t1"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 28,
+      "14": 40,
+      "28": 65,
+      "3.5": 14
+     }
+    },
+    {
+     "id": "d1026_tue_fttp",
+     "name": "Tuesday: FttP oz $49.99",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "fttp"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 14,
+      "14": 28,
+      "28": 49.99,
+      "3.5": 7
+     }
+    }
+   ]
+  },
+  {
+   "dow": 3,
+   "deals": [
+    {
+     "id": "d1026_wed_t2",
+     "name": "Wednesday: Tier 2 $5/g",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "t2"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 35,
+      "14": 60,
+      "28": 110,
+      "3.5": 17.5
+     }
+    }
+   ]
+  },
+  {
+   "dow": 4,
+   "deals": [
+    {
+     "id": "d1026_thu_t2",
+     "name": "Thursday: Tier 2 $5/g",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "t2"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 35,
+      "14": 60,
+      "28": 110,
+      "3.5": 17.5
+     }
+    }
+   ]
+  },
+  {
+   "dow": 5,
+   "deals": [
+    {
+     "id": "d1026_fri_t3",
+     "name": "Friday: Tier 3 $6/g",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "t3"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 42,
+      "14": 84,
+      "28": 160,
+      "3.5": 21
+     }
+    },
+    {
+     "id": "d1026_fri_t4",
+     "name": "Friday: Tier 4 $10/g",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "t4"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 70,
+      "14": 140,
+      "28": 280,
+      "3.5": 30
+     }
+    }
+   ]
+  },
+  {
+   "dow": 6,
+   "deals": [
+    {
+     "id": "d1026_sat_smalls",
+     "name": "Saturday: House Smalls $2/g",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "smalls"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 14,
+      "14": 28,
+      "28": 49.99,
+      "3.5": 7
+     }
+    },
+    {
+     "id": "d1026_sat_house",
+     "name": "Saturday: House Fresh $3/g",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "house"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 21,
+      "14": 42,
+      "28": 56.99,
+      "3.5": 10.5
+     }
+    },
+    {
+     "id": "d1026_sat_premium",
+     "name": "Saturday: TFS Premium $4/g",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "premium"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 28,
+      "14": 56,
+      "28": 66.99,
+      "3.5": 14
+     }
+    },
+    {
+     "id": "d1026_sat_t1",
+     "name": "Saturday: Tier 1 $4/g",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "t1"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 28,
+      "14": 40,
+      "28": 65,
+      "3.5": 14
+     }
+    },
+    {
+     "id": "d1026_sat_fttp",
+     "name": "Saturday: FttP oz $49.99",
+     "active": true,
+     "target": {
+      "type": "tier",
+      "value": "fttp"
+     },
+     "dealType": "weight_table",
+     "w": {
+      "7": 14,
+      "14": 28,
+      "28": 49.99,
+      "3.5": 7
+     }
+    }
+   ]
+  }
+ ]
+}
