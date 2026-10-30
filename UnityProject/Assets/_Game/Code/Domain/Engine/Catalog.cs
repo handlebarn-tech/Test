@@ -53,6 +53,10 @@ namespace Dispo.Domain.Engine
 
         List<StrainGroup> _groups;
         Dictionary<string, StrainGroup> _byKey;
+        // QueryParser caches live on the catalog (not static dictionaries keyed by it) so they die with it and SetInStock can clear them.
+        internal List<(string key, string n)> ParserNameIndex;
+        internal QueryParser.ExclRegexes ParserExcl;
+        internal List<(string a, Regex re, string id)> ParserTerps;
 
         /// <summary>The group for a normName key, or null.</summary>
         public StrainGroup Group(string key)
@@ -121,6 +125,15 @@ namespace Dispo.Domain.Engine
             }
             foreach (var g in list) g.Batches = g.Batches.OrderBy(x => x.InStock ? 0 : 1).ToList();
             return _groups = list;
+        }
+
+        /// <summary>Live stock (GAME-002 S1): set a batch's in-stock flag and drop the cached groups so the
+        /// in-stock-first order (rep batch) and averaged profiles follow it (batchInStock L15472, averageProfile L15483).</summary>
+        public void SetInStock(string batchId, bool inStock)
+        {
+            Batches.Single(b => b.Id == batchId).InStock = inStock;
+            _groups = null; _byKey = null;
+            ParserNameIndex = null; ParserExcl = null; ParserTerps = null;
         }
 
         static DateTime? ParseDate(string s) =>

@@ -1,0 +1,10 @@
+{
+    "name": "Dispo.Slice.Tests",
+    "rootNamespace": "Dispo.Slice.Tests",
+    "references": ["Dispo.Domain", "Dispo.Simulation", "UnityEngine.TestRunner", "UnityEditor.TestRunner"],
+    "includePlatforms": ["Editor"],
+    "overrideReferences": true,
+    "precompiledReferences": ["nunit.framework.dll"],
+    "autoReferenced": false,
+    "defineConstraints": ["UNITY_INCLUDE_TESTS"]
+}
