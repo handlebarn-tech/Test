@@ -15,8 +15,8 @@ Staff are described by attire/role only.
 | `References/CCTV HUB Wall 2026-10-29.webp` | WEBP 2000×564, 2×4 tiles | HUB/HUB 2 camera wall supplied by Nolan 2026-10-29 (DEC-022). Nolan: "First room on left two pictures, the rest are in the bigger side of the hub... It's mostly misc storage." | §2.1 |
 | `References/CCTV Register Back Center East 2026-10-29.webp` | WEBP 1866×755, NVR playback, 2 feeds | "Back Of Register center" (close) + "Back Of Register East", 11:40:16, 1/21/2026. Supplied by Nolan for the scale stand (DEC-026) | §2.2 |
 | `References/CCTV Register Back Center Wide 2026-10-29.webp` | WEBP 1134×640, 1 feed | "Back Of Register center", 16:48:53, wide. **Same camera and framing as wall tile R2C4** (DEC-026) | §2.2 |
-| *(remote, not in repo)* RSP "Interior TI Approved Set - PHX.pdf" | PDF 37 pp, 9.15 MB, 2022-08/10, City-approved 2022-12 | Retail interior TI drawings: G010 mounting heights, A101 plan + RCP, A310 door/material schedules, A320 partitions, A901 elevations, A940 millwork, I101 finish plan, E-sheets luminaire schedule. Read as text through M365 (REF-004); the PDF itself could not be copied (connector returns text only) | §6 |
-| *(remote, not in repo)* RSP A011 "Floor Plan" + A012 "Floor Plan - Lighting" (2026 AZDHS update, sheet date 05/15/23, revs 12/23/22) | PDF, vector text | Room areas and labels behind Working Plan V5; A012 lighting legend | §6.8 |
+| `References/TI/Interior TI Approved Set - PHX.pdf` | PDF 37 pp (24"×36"-class sheets, vector + text layer), 9.15 MB, 2022-08/10, City-approved 2022-12 | Retail interior TI drawings: G010 mounting heights, A101 plan + RCP, A310 door/material schedules, A320 partitions, A901 elevations, A940 millwork, I101 finish plan, E-sheets luminaire schedule. Text-read in REF-004; Nolan supplied the file and it was imported in REF-005 (plain git, <10 MB). Every page was checked: no security plan, P&P or credential page (the security mentions are a grille, card-reader hardware lines and spec boilerplate) | §6 |
+| `References/TI/A011 Phoenix AZDHS Floor Plan - 2026 Update.pdf`, `References/TI/A012 AZDHS Floor Plan - Lighting - 5.20.26.pdf` | PDF 1 p each, vector, 1/4"=1'-0" (18 pt/ft), sheet date 05/15/23, revs 12/23/22 | Room areas and labels behind Working Plan V5; A012 lighting legend | §6.8 |
 | `References/LIVE_TFS_BUDTENDER_v7.11.4.md` | MD | Live budtender app behaviour (v7.11.4: Floor Mode, 6 effect domains, tier filters, accessibility). **No visual tokens** (colours/fonts/layout) are recorded in it | UI only (GAP-114) |
 | `References/Review_Budtender_Tool_Comprehensive_Chat_Record.md` | MD | Project history of the budtender tool (not in the REF-001 input list; not analysed here, MIG owns it) | — |
 
@@ -60,7 +60,7 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 
 | Opening | Location (ft) | Drawn width | Conf. |
 |---|---|---|---|
-| ENTRY (customer, double door) | west wall x=0, y 11.0–20.0 | 9.0 opening, two 4.0 leaves. **Superseded for build (Hub ruling, REVIEW-W3E): use 6'-0" × 7'-0" storefront (TI E101, DEC-037); keep this centre position** | Med |
+| ENTRY (customer, double door) | west wall x=0, y 11.0–20.0 (position) | drawn 9.0 opening; **use 6'-0" × 7'-0" storefront pair** (TI E101 = A011 vector 6.0 ft, DEC-037, Hub ruling) | High (size) / Med (position) |
 | EXIT label (orange = position not confirmed) | west wall, just north of entry | — | Low |
 | EMERGENCY EXIT | east wall x=47.19, y 20.5–24.0 | 3.5 (swing drawn orange = unconfirmed) | Low |
 | West arch (Retail→Hall) | y≈29.25, x 9.10–12.91 | 3.81 | Med |
@@ -251,11 +251,11 @@ Product names visible on jar cards or boxes are **not** inventory data and must 
 |---|---|---|---|
 | Building / room shells | §1.3 table | printed dims + vector scale 5.6095 pt/ft | High |
 | Fixture footprints | §1.5 table | vector plan ("approximate" per legend) | Med |
-| Entry opening | **6'-0" × 7'-0" storefront** (Hub ruling, REVIEW-W3E; TI E101, DEC-037). Plan draws 9.0 ft (2 × 4.0 leaves) | TI §6.2 / vector arcs | High (TI) |
+| Entry opening | 6'-0" × 7'-0" storefront pair (plan draws 9.0 ft) | TI E101 §6.2, Hub ruling | High |
 | Delivery door / emergency exit / HUB 2 door | 3.4 / 3.5 / 2.0 ft | vector arcs | Med / Low / Med |
 | Interior door arcs (1.2–1.8 ft) | **not real widths** | the symbols are smaller than any code-compliant door. Use a standard 3'-0" × 7'-0" commercial door as a **labelled convention** until measured | Low |
 | Arch openings | 3.81 ft (west), 3.0 ft (east) | vector | Med. Height 7'-0" (TI cased openings, §6.2); TI width 3'-0" vs drawn 3.81 west: plan width kept (position-bound) |
-| Counter height | POS / back counter / millwork tops **2'-10" (34") max AFF** | TI 2022 A940 (§6.4); deli case not in the TI set | Med |
+| Counter height | POS / back counter / millwork tops **2'-10" (34") max AFF** | TI 2022 A940 details 11/12 (§6.4, render-checked); deli case not in the TI set | High (34" max) |
 | Ceiling height / grid | retail gyp 9'-0" with 7'-6" soffits and suspended dark-walnut accent panels; back rooms 2×2 ACT at 8'-0"/9'-0" | TI 2022 A101 RCP (§6.1) | High (heights) |
 | Floor tiles | white marble-look large-format (retail field), black/white or brown/white geometric cement tile (counter zones, hall, vestibule), concrete (FOH/BOH), dark gray large-format tile (rack rooms) | visual | Med (finish) / none (tile size) |
 | Wall thickness | 0.4–0.5 ft drawn gaps | vector | Low (drafting gap, not a spec) |
@@ -265,7 +265,7 @@ Product names visible on jar cards or boxes are **not** inventory data and must 
 
 ## 6. TI set (REF-004)
 
-Source: RSP Architects "Interior TI Approved Set - PHX" (2022, City-approved 2022-12), read as **text only** through the M365 connector. The sheets were not rendered, so values are matched by label and by their order in the extracted text. **DEC-037: heights, materials and fixture types are valid; positions and run lengths are not** (use §1 / A011). Confidence: **High** = labelled value in a schedule or keynote; **Med** = a dimension next to its label in an elevation or detail; **Low** = a dimension whose owner is inferred from text order. No permit/licence numbers, vendor contacts or names are recorded here.
+Source: RSP Architects "Interior TI Approved Set - PHX" (2022, City-approved 2022-12), text-read in REF-004, then imported (`References/TI/`) and spot-checked by render in REF-005 (A940 detail 11, A901 elevations 5/8, A011 entry). Values not render-checked are matched by label and by their order in the extracted text. **DEC-037: heights, materials and fixture types are valid; positions and run lengths are not** (use §1 / A011). Confidence: **High** = labelled value in a schedule or keynote; **Med** = a dimension next to its label in an elevation or detail; **Low** = a dimension whose owner is inferred from text order. No permit/licence numbers, vendor contacts or names are recorded here.
 
 2022 room numbers → current plan: 101 Retail, 102/109 Hall, 103 Unisex (Restroom), 104 Lounge (→ Office), 105 Break, 106 JC, 107 Fulfillment (FOH/BOH zone), 108 Storage, 110/111 Storage (existing, → HUB / HUB 2).
 
@@ -302,8 +302,8 @@ Type A runs full height to the truss: A3 = 3⅝" stud → **4⅞" wall** (typica
 ### 6.4 Millwork and counters (A901 elevations, A940 millwork)
 | Item (A940 tag) | Heights / dims | Finish | Conf. |
 |---|---|---|---|
-| All base cabinets (BC, BD, BP, BO, 3DE, 4D, BT1, BSK) | **counter top 2'-10" (34") max AFF**; 4" toe base; 2'-0" deep box | PL-1 walnut laminate fronts, black melamine interiors | Med (text-read; 34" max repeats on every cabinet, elevations not rendered) |
-| POS cabinet (11, "two-drawer POS") and the POS elevations (5 front, 8 back counter, 10/11) | 2" quartz top on the 34"-max cabinet; front POS openings 3'-0" clear; QZ-2 waterfall edge wraps the outside of the POS counter; filler panel painted black | QZ-2 white quartz top, WD-1 walnut veneer POS front, ML-1 black-patina metal laminate, HW-2 brushed-brass edge pulls | Med (dims) / High (finishes) |
+| All base cabinets (BC, BD, BP, BO, 3DE, 4D, BT1, BSK) | **counter top 2'-10" (34") max AFF**; 4" toe base (2" recess); 2'-1" overall depth (2'-6" top on the POS cabinet); 1½" countertop with backsplash on the 4D/3DE-breakroom cabinets (details 12, 9) | PL-1 walnut laminate fronts, black melamine interiors | High (34" max: rendered A940 details 11, 12; repeats on every cabinet) |
+| POS cabinet (11, "two-drawer POS") and the POS elevations (5 front, 8 back counter, 10/11) | **quartz top with a 2" edge, 34" max AFF, 2'-6" deep top, 4" base** (rendered A940 detail 11 "3DE two-drawer POS cabinet", two equal drawers; the 1½" in the REF-005 first pass belongs to detail 12, the 4D cabinet); elevation 5 runs cabinets 11 + 12 (4D) under QZ-2 with a green wall above; elevation 8 (back counter) runs cabinets 8 + 15 with the register monitors standing on the top; 3'-0" clear arched "open to beyond" pass-throughs in a vertical-slat wall, flanked by 2'-11¼" / 1'-6½" piers; QZ-2 waterfall edge wraps the outside of the POS counter; filler panel painted black | QZ-2 white quartz top, WD-1 walnut veneer POS front, ML-1 black-patina metal laminate, HW-2 brushed-brass edge pulls | High |
 | Back-counter tile (POS elevation) | TL-2 8×8 patterned tile with bronze trim; 2'-0", 3'-6" and 7'-0" appear on this elevation (likely backsplash, wainscot top and sconce) | TL-1, TL-2, MTR-3/4 | Low |
 | Retail display shelving (BDD 3/7/14, "special wall display" 4) | cabinet base to 34" max, then glass showcase shelves at 1'-2" spacing (×3) plus 8" and 6"; curved top trim R 1'-4¼"; recessed linear LED; anti-glare film on the glass; modular for relocation | black or chrome glass-showcase hardware, WC-1 wallcovering on the rear panel, PL laminate trim | Med |
 | Retail display with boxes (7, 16 "box display") | glass-lid, wood-frame boxes on a rolling track; 6 equal spaces over 7'-9"; 2" matte-black bar foot rail between boxes; 4" puck lights | PL-1, tempered glass lids | Med |
@@ -348,4 +348,7 @@ Mirror 1'-8"×3'-6" at 3'-4" AFF; grab bars 42", 36" and 18" vertical at 33–36
 All LED, 3500K, 0–10 V dimming, dimmed to 30 % after hours. L1 2×2 troffer (ACT rooms); L2 2'/4' strip (storage); L3 linear LED (millwork, recessed); L4A/L4B 4½" downlights (retail gypsum ceiling); L5 small flush mount; L6 bathroom sconce; L7 task light; L8 18" under-cabinet. The RCP key also shows pendants, wall sconces and decorative fixtures. High (types).
 
 ### 6.8 2026 A011 / A012 (AZDHS update)
-A011 "Floor Plan" (Dispensary - Floor Plan) and A012 "Floor Plan - Lighting" (legend: checkout counter light, pendant light, recessed can, 2×2 ACT light, downlight; "windows - natural light"). Room areas match §1.3. A011 labels "secure entrance / exit", "emergency exit only", "POS stations", "display cases", "shelving" and "hand washing sink". The working plan is built from A011 + A012. No A013 turned up in that folder; its third sheet is the security plan, which we never read by rule.
+A011 "Floor Plan" (Dispensary - Floor Plan) and A012 "Floor Plan - Lighting" (legend: checkout counter light, pendant light, recessed can, 2×2 ACT light, downlight; "windows - natural light"). Room areas match §1.3. A011 entry ("secure entrance / exit", west wall): a 6'-0" out-swinging storefront pair (two 3'-0" leaves, 6.0 ft by vector at 18 pt/ft), which matches TI E101. A011 also shows access-controlled entrance/exits at the west wall by the office and at the SE corner of the 818 SF storage. A011 labels "secure entrance / exit", "emergency exit only", "POS stations", "display cases", "shelving" and "hand washing sink". The working plan is built from A011 + A012. No A013 turned up in that folder; its third sheet is the security plan, which we never read by rule.
+
+### 6.9 "COMPILED_Flower Shop_Int Set.pdf" (REF-005): not this store
+Same Floor Plans folder (24 pp, 5.9 MB, read as text). It is the RSP **Ahwatukee** retail interior set (10827 S 51st St, sheets dated 09/2021: I100 demo, I102 RCP, I310 schedules, I701 elevations, I940 millwork). It has no Phoenix/McDowell sheet and no deli case, deli counter or jar items. It shows that the Phoenix millwork (§6.4, the same glass-showcase display family) follows the TFS store standard, but **no values from it are used** (another store). A search of M365 for deli case/jar specs found only Dutchie inventory exports.
