@@ -30,8 +30,8 @@ ART-008 reviewer holds one; GAME-026 reviewer (idle) may still hold the other. P
 
 ## Queue (next packets, in order; prerequisites in BACKLOG)
 1. **GAME-017a** (Ready, waits for GAME-026 merge): first playable recommendation depth; the packet carries DEC-118 and the REVIEW-DES6/UX6 minors.
-2. **PROC-007** UV layout (Ready, waits for PROC-005 merge) + **ART-011** label-shader cut-over (Later, same wave; packet to write from DEC-097).
-3. **ART-013** layout overhaul (Unity; packet is now unblocked by REF-016 + PROC-013 (both Done) and waits only on ART-008 merging; door geometry from the `PROC_Door_*` manifest rows, export path per PROC-013b; work list REFERENCES_INDEX §9.3) with a fresh Unity implementation reviewer in the assembled scene, independent of the REF-016 evidence review. **GAME-027** after GAME-026 (drop if GAME-026 proves the register ID check in a build).
+2. **PROC-007** UV layout (Ready, waits for PROC-005 merge) + **ART-011** label cut-over to `uv3` (Ready, `Tasks/Ready/ART-011.md`; starts from PROC-007's accepted commit; both integrated in one wave).
+3. **ART-013** layout overhaul (Ready, `Tasks/Ready/ART-013.md`; Unity; waits only on ART-008 merging; work list REFERENCES_INDEX §9.3; doors from `Art/Exports/Procedural/PROC_Door_*.fbx`) with a fresh Unity implementation reviewer in the assembled scene, independent of the REF-016 evidence review. If GAME-026's `Data/Reference` copies are on `main`, ART-013 re-copies them with any DOORS/SCENE_ANCHORS edit. **GAME-027** after GAME-026 (drop if GAME-026 proves the register ID check in a build).
 4. **BUILD-008** candidate → **QA-004** PT1+PT2 validation in the player → only on PASS does Nolan get playtest 3 (DEC-120). Do not hand Nolan a build before that.
 5. **GAME-CHR-002** Unity import of the customers (Later; after ASSET-005/006/007), then **NPC-001** bodies in the flow (after GAME-026).
 6. PS1b chain GAME-017 → 018 → 019 → 020 (Ready packets, each waits for the previous merge), then PS2 per the roadmap.
