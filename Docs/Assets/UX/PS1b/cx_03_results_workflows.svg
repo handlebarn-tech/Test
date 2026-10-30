@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1230" viewBox="0 0 1920 1230" font-family="Segoe UI, Arial, sans-serif">
+<title>CX-03 Results: Details, Compare marks, Similar, Nothing fits</title>
+<rect width="1920" height="1080" fill="#15181c"/>
+<rect width="1920" height="1080" fill="#000" opacity="0.55"/>
+<rect x="160" y="90" width="1600" height="900" rx="16" fill="#1d2127" stroke="#3a414c" stroke-width="2"/>
+<text x="200" y="145" font-size="24" font-weight="700" fill="#f2f4f7" text-anchor="start">Search: “something relaxing but I need to stay functional, under $20”</text>
+<rect x="200" y="170" width="1520" height="56" rx="8" fill="#11141a" stroke="none" stroke-width="2"/>
+<text x="224" y="207" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">“I want something relaxing.”</text>
+<rect x="200" y="234" width="1520" height="56" rx="8" fill="#11141a" stroke="none" stroke-width="2"/>
+<text x="216" y="270" font-size="16" font-weight="700" fill="#8f98a5" text-anchor="start">KNOWN</text>
+<rect x="296" y="245" width="195" height="32" rx="16" fill="none" stroke="#c3c9d2" stroke-width="2"/>
+<text x="310" y="264" font-size="16" font-weight="600" fill="#c3c9d2" text-anchor="start">Effect: relaxing 💬</text>
+<rect x="501" y="245" width="232" height="32" rx="16" fill="none" stroke="#c3c9d2" stroke-width="2"/>
+<text x="515" y="264" font-size="16" font-weight="600" fill="#c3c9d2" text-anchor="start">Stay functional: yes ❓</text>
+<rect x="743" y="245" width="167" height="32" rx="16" fill="none" stroke="#c3c9d2" stroke-width="2"/>
+<text x="757" y="264" font-size="16" font-weight="600" fill="#c3c9d2" text-anchor="start">Budget: ≈ $20 ❓</text>
+<rect x="1438" y="243" width="270" height="38" rx="2" fill="none" stroke="#c3c9d2" stroke-width="2"/>
+<text x="1456" y="269" font-size="16" font-weight="700" fill="#c3c9d2" text-anchor="start">● CUSTOMER INFO COMPLETE</text>
+<rect x="200" y="320" width="490" height="500" rx="10" fill="#262b33" stroke="#009E73" stroke-width="4"/>
+<rect x="200" y="320" width="8" height="500" rx="4" fill="#009E73" stroke="none" stroke-width="2"/>
+<text x="228" y="370" font-size="28" font-weight="700" fill="#f2f4f7" text-anchor="start">1  Strain A</text>
+<text x="228" y="402" font-size="18" font-weight="400" fill="#8f98a5" text-anchor="start">‹Brand› · House Fresh · ‹n›% terps</text>
+<rect x="228" y="424" width="132" height="34" rx="17" fill="none" stroke="#56B4E9" stroke-width="2"/>
+<text x="242" y="445" font-size="18" font-weight="600" fill="#56B4E9" text-anchor="start">✓ Good fit</text>
+<text x="228" y="506" font-size="34" font-weight="700" fill="#f2f4f7" text-anchor="start">$xx.xx · an eighth</text>
+<text x="228" y="546" font-size="18" font-weight="400" fill="#8f98a5" text-anchor="start">‹g› in jar · ‹why line›</text>
+<rect x="228" y="620" width="30" height="30" rx="4" fill="#009E73" stroke="#009E73" stroke-width="2"/>
+<text x="270" y="644" font-size="18" font-weight="400" fill="#c3c9d2" text-anchor="start">Compare mark (C)</text>
+<rect x="228" y="720" width="150" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="303.0" y="756" font-size="22" font-weight="700" fill="#f2f4f7" text-anchor="middle">Details</text>
+<text x="303.0" y="800" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">I / Ⓨ</text>
+<rect x="396" y="720" width="266" height="56" rx="8" fill="#009E73" stroke="#009E73" stroke-width="2"/>
+<text x="529.0" y="756" font-size="22" font-weight="700" fill="#0b0d10" text-anchor="middle">Choose</text>
+<text x="529.0" y="800" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">Enter / Ⓐ</text>
+<g class="note"><circle cx="396" cy="715" r="17" fill="#CC79A7"/><text x="396" y="722" font-size="18" font-weight="700" fill="#000" text-anchor="middle">1</text></g>
+<rect x="710" y="320" width="490" height="500" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="738" y="370" font-size="28" font-weight="700" fill="#f2f4f7" text-anchor="start">2  Strain B</text>
+<text x="738" y="402" font-size="18" font-weight="400" fill="#8f98a5" text-anchor="start">‹Brand› · House Fresh · ‹n›% terps</text>
+<rect x="738" y="424" width="132" height="34" rx="17" fill="none" stroke="#56B4E9" stroke-width="2"/>
+<text x="752" y="445" font-size="18" font-weight="600" fill="#56B4E9" text-anchor="start">✓ Good fit</text>
+<text x="738" y="506" font-size="34" font-weight="700" fill="#f2f4f7" text-anchor="start">$xx.xx · an eighth</text>
+<text x="738" y="546" font-size="18" font-weight="400" fill="#8f98a5" text-anchor="start">‹g› in jar · ‹why line›</text>
+<rect x="738" y="620" width="30" height="30" rx="4" fill="#009E73" stroke="#009E73" stroke-width="2"/>
+<text x="780" y="644" font-size="18" font-weight="400" fill="#c3c9d2" text-anchor="start">Compare mark (C)</text>
+<rect x="738" y="720" width="150" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="813.0" y="756" font-size="22" font-weight="700" fill="#f2f4f7" text-anchor="middle">Details</text>
+<text x="813.0" y="800" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">I / Ⓨ</text>
+<rect x="906" y="720" width="266" height="56" rx="8" fill="#009E73" stroke="#009E73" stroke-width="2"/>
+<text x="1039.0" y="756" font-size="22" font-weight="700" fill="#0b0d10" text-anchor="middle">Choose</text>
+<text x="1039.0" y="800" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">Enter / Ⓐ</text>
+<rect x="1220" y="320" width="500" height="500" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1248" y="370" font-size="28" font-weight="700" fill="#f2f4f7" text-anchor="start">3  Strain C</text>
+<text x="1248" y="402" font-size="18" font-weight="400" fill="#8f98a5" text-anchor="start">‹Brand› · House Fresh · ‹n›% terps</text>
+<rect x="1248" y="424" width="132" height="34" rx="17" fill="none" stroke="#56B4E9" stroke-width="2"/>
+<text x="1262" y="445" font-size="18" font-weight="600" fill="#56B4E9" text-anchor="start">✓ Good fit</text>
+<text x="1248" y="506" font-size="34" font-weight="700" fill="#f2f4f7" text-anchor="start">$xx.xx · an eighth</text>
+<text x="1248" y="546" font-size="18" font-weight="400" fill="#8f98a5" text-anchor="start">‹g› in jar · ‹why line›</text>
+<rect x="1248" y="620" width="30" height="30" rx="4" fill="none" stroke="#009E73" stroke-width="2"/>
+<text x="1290" y="644" font-size="18" font-weight="400" fill="#c3c9d2" text-anchor="start">Compare mark (C)</text>
+<rect x="1248" y="720" width="150" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1323.0" y="756" font-size="22" font-weight="700" fill="#f2f4f7" text-anchor="middle">Details</text>
+<text x="1323.0" y="800" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">I / Ⓨ</text>
+<rect x="1416" y="720" width="276" height="56" rx="8" fill="#009E73" stroke="#009E73" stroke-width="2"/>
+<text x="1554.0" y="756" font-size="22" font-weight="700" fill="#0b0d10" text-anchor="middle">Choose</text>
+<text x="1554.0" y="800" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">Enter / Ⓐ</text>
+<rect x="200" y="880" width="380" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="390.0" y="916" font-size="22" font-weight="700" fill="#f2f4f7" text-anchor="middle">Nothing fits right now</text>
+<text x="390.0" y="960" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">N / click</text>
+<g class="note"><circle cx="190" cy="880" r="17" fill="#CC79A7"/><text x="190" y="887" font-size="18" font-weight="700" fill="#000" text-anchor="middle">4</text></g>
+<rect x="840" y="880" width="420" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1050.0" y="916" font-size="22" font-weight="700" fill="#f2f4f7" text-anchor="middle">Similar to Strain Q · takes a moment</text>
+<text x="1050.0" y="960" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">S</text>
+<rect x="1280" y="880" width="440" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1500.0" y="916" font-size="22" font-weight="700" fill="#f2f4f7" text-anchor="middle">Compare 2 · takes a moment</text>
+<text x="1500.0" y="960" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">Shift+C / Ⓧ hold</text>
+<g class="note"><circle cx="1270" cy="880" r="17" fill="#CC79A7"/><text x="1270" y="887" font-size="18" font-weight="700" fill="#000" text-anchor="middle">2</text></g>
+<g class="note"><circle cx="830" cy="880" r="17" fill="#CC79A7"/><text x="830" y="887" font-size="18" font-weight="700" fill="#000" text-anchor="middle">3</text></g>
+<rect x="96" y="54" width="1728" height="972" fill="none" stroke="#CC79A7" stroke-width="1.5" stroke-dasharray="10 8" class="note"/>
+<rect x="0" y="1080" width="1920" height="150" fill="#ffffff"/>
+<text x="24" y="1116" font-size="24" font-weight="700" fill="#111">CX-03 Results: Details, Compare marks, Similar, Nothing fits  ·  1920×1080 @100% text  ·  pink = annotation (focus order, safe area)</text>
+<text x="24" y="1150" font-size="19" fill="#222">Cards keep their TFS meaning only (rank order, fit label, price, grams). No completeness, risk, DQ or 'best' marker is ever drawn inside a card (DP §17, DEC-052).</text>
+<text x="24" y="1176" font-size="19" fill="#222">Details (was Inspect, I) opens ux_05; Compare: mark 2–3 cards with C, then Compare n (Shift+C) opens ux_06 with the engine's compare. Each is a timed action; tag in words.</text>
+<text x="24" y="1202" font-size="19" fill="#222">'Nothing fits right now' sits bottom-left, far from Choose, neutral style (it can be the right call); it opens a confirm card (CX-04). Shown after the first search for this customer.</text>
+</svg>
