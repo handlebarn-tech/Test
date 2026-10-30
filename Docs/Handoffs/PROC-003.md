@@ -10,7 +10,7 @@
 - **Canister size (REF-007, Low–Med):** 6.0 × 5.5 in footprint, 10.25 in overall (body 235 mm + 1 in lid), ~4.3 L cavity. The fill uses 6 layers (was 7) to fit the shorter jar.
 - **House-smalls jar (DEC-042a):** `params/deli_jar_smalls.json` gives `PROC_DeliJar_Smalls`, the published POP 4 L size 6.1 × 5.3 × 10.4 in (High).
   - It has no brand band. The label card and THC % tag are kept as the shop convention (Low).
-  - The lid split and corner radius are not published: **GAP-PROC-10** (new).
+  - The lid split and corner radius are not published: **GAP-PROC-12** (new; renumbered by REVIEW-W4P, GAP-PROC-10 is PROC-004's).
 - **W4E m2:** both jar FBXs now copy to `Assets/_Game/Art/Procedural/Jars/`, so GAME can parent the fill to the jar.
 - Updated: `JarFillImportTests` (new cavity + DEC-046 check), `PROC_PIPELINE.md` (PROC-003 section), both contact sheets.
 
@@ -22,5 +22,5 @@
 
 ## For the Hub (DEC-033)
 1. **[NEEDS-HUB] Smalls fill:** the smalls jar has no fill set yet. Its cavity is nearly the canister's, so GAME can reuse `PROC_JarFill_*` inside it (fit checked by eye, not by the test). Alternatively, a `jar_fill_smalls.json` with smaller buds would add ~4.5 MB of FBX, given the churn noted in W4E m3. Which do you want?
-2. **[NEEDS-HUB] Register GAP-PROC-10:** smalls lid/corner/label, not published.
+2. **[NEEDS-HUB] Register GAP-PROC-12:** smalls lid/corner/label, not published.
 3. **Unchanged / still open:** the GAME hook from the PROC-002 handoff; the canister size is still an estimate (GAP-PROC-01); the LFS rule for procedural FBX (W4E m3).

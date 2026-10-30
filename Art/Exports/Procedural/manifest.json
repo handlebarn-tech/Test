@@ -191,7 +191,7 @@
       "export_sha256": "2e19cda23a82915b",
       "gaps": [
         "GAP-PROC-03",
-        "GAP-PROC-10"
+        "GAP-PROC-12"
       ],
       "generator": "deli_jar",
       "interior": {
@@ -335,7 +335,7 @@
         }
       },
       "params": "Tools/Blender/params/deli_jar_smalls.json",
-      "params_sha256": "e7752d08b5f234fa",
+      "params_sha256": "b7a26f90cf857e00",
       "tri_budget": {
         "LOD0": 1000,
         "LOD1": 250

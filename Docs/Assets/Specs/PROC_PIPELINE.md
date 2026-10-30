@@ -81,7 +81,7 @@ Why: ~77 jars on the wall; buds are procedural stand-ins for the §22 scan-baked
 | GAP | What |
 |---|---|
 | GAP-PROC-07 | bud size/shape/colour per look: procedural placeholders; the catalog has no per-strain look data |
-| GAP-PROC-08 | fill height is linear in grams (full = 7 layers ≈ 0.25 m); no measured fill height of a real 1 lb jar |
+| GAP-PROC-08 | fill height is linear in grams (full = 6 layers ≈ 0.23 m, PROC-003); no measured fill height of a real 1 lb jar |
 
 ## Packaged goods (PROC-004)
 ```powershell
@@ -111,4 +111,5 @@ Why: hundreds of SKUs on racks and in coolers, with GPU instancing. The silhouet
 ## PROC-003 — fill follow-ups and the house-smalls jar
 - **Sizes (REF-007, REFERENCES_INDEX §2.4):** `PROC_DeliJar` is 6.0 × 5.5 in, 10.25 in overall (Low–Med estimate). `PROC_DeliJar_Smalls` (`params/deli_jar_smalls.json`, Amazon B0GX12Q9G8) is 6.1 × 5.3 × 10.4 in, 4 L, published (High), with no base band. Both jars now copy to `Assets/_Game/Art/Procedural/Jars/` (REVIEW-W4E m2).
 - **DEC-046:** the first `buds.mound` cells (a front heap, one bud stacked on the front row) fill before the layers, so F010 rises ≥ `min_visible_above_band_m` above the band on every LOD. The generator and `JarFillImportTests` both enforce this; only F000 looks empty.
+- **GAP-PROC-12:** smalls jar lid/body split, corner radius, lid colour and label placement are not published (overall size is).
 - **Packing (W4E n1):** each layer gets a seeded offset (`layer_shift` × pitch), plus x/y/z jitter and a bud-size spread (`radius_jitter`), so full jars no longer stack as 3 columns. 6 layers fill the shorter cavity.
