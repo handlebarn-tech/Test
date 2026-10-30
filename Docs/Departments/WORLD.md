@@ -28,7 +28,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…` live.
 | Task | Worker | Branch | State |
 |---|---|---|---|
 | REF-011 sales-floor audit | subagent (worktree) | worktree branch, set on handoff | running |
-| REF-012 office + doors audit | subagent (worktree) | worktree branch, set on handoff | running |
+| REF-012 office + doors audit | subagent (done) | `worktree-agent-a2f71eef653a08c1c` 7428391 | in review (Docs 2) |
 
 ## Queue (lead re-orders within DEC-096)
 2. Playtest 1 layout audit against the references, room by room, before more dressing:
@@ -42,4 +42,5 @@ _Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…` live.
 4. Later: livelier exterior and neighbourhood, occupied break room (with Gameplay/Assets).
 
 ## Blockers / Questions for Nolan
+- REF-012 handoff Qs (batch to Hub with REF-011): standing desk vs deli-cart reach; drum kit identity + plant/wire-cart spots; hinge side of 7 doors + does the retail east exit exist; lever vs push bar (office, JC) and self-closing (entry, exits); can customers use the restroom.
 - None open. Ask through the Hub only what the references cannot settle (e.g. the deli wall count if CCTV is unclear).
