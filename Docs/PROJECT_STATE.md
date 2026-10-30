@@ -3,7 +3,7 @@
 Hub-owned. A fresh Hub resumes from this file + `Docs/HUB_RESUME.md` + recent `Docs/DECISIONS.md` (DEC-116). Workers do not read this file.
 
 **Updated:** 2026-10-30 ~15:35. **Milestone:** PS1 complete on `main` (GAME-009 + GAME-025 controls merged 08758c1). Next: playtest build 2, then the PS1b work below.
-**Hub session:** reset 2026-10-30 ~15:55 (Nolan). The new Hub is the session titled "Dispo · Studio Hub"; the old `local_c6267ff5` was renamed "(retired)". Workers address the Hub by that name.
+**Hub session:** `local_5c45166e-4872-47c3-bdfa-b8545d61e581` ("Dispo · Studio Hub"), reset 2026-10-30 ~15:55 (Nolan). Old `local_c6267ff5` retired.
 **Structure (DEC-116):** Hub → narrow workers → fresh per-review reviewers → Hub merges. No leads (DEC-112). Nolan is cost-sensitive: no FYI messages, lean briefs.
 
 ## In flight (session name → task)
