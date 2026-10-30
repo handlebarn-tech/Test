@@ -56,6 +56,10 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 - GAP-206 "sleeping" defect relayed to the TFS tool project hub session on 2026-10-29 (no reply needed).
 - When TFS ships v7.11.5, regenerate the goldens and diff them (GAP-210).
 
+## Reminders for Nolan
+- **Remind Nolan** to send the PII-free Dutchie inventory export (SKU, category, brand, size, mg, price) for packaged goods (DEC-048 item 5). He said "yes but remind me later".
+- Still unanswered: an adult-use daily/repeat-visit limit (GAP-COMP-07); which packaged categories sit in which FOH racks/coolers, and whether any are self-browse (GAP-PKG-02/03/06).
+
 ## Blockers
 - None.
 
