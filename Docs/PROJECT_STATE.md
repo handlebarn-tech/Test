@@ -40,6 +40,6 @@
 
 ## Decisions requiring user input
 - Answered 2026-10-29: jars 454 g (DEC-019), deli only (DEC-020), weighed at a register stand (DEC-021), HUB CCTV image supplied (DEC-022).
-- Open: human-only sign-ins for ASSET-002 (Unity Asset Store claims for Warehouse/Office; Sketchfab login). Nolan may also send a photo of the register scale stand.
+- Done 2026-10-29: Nolan signed in to Sketchfab and Unity in the built-in browser pane; Unity Warehouse + UnityJapanOffice are in My Assets (account handlebarn, Personal). ASSET-002 downloads still need one batch OK from Nolan (list with sizes). Nolan may also send a photo of the register scale stand.
 - Open (before any public build): real brand names (Cookies, Alien Labs, ...) ship in `batches.json`; allowed by DATA_SCHEMA §5 and not PII, but a trademark/IP call for Nolan (REVIEW-W2A m2).
 - Later: tax rounding (GAP-204), the TFS tool's open question.
