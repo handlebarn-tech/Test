@@ -1,5 +1,37 @@
 # PROC-009 handoff: studio-built parked vehicles
 
+## Fix round 1 (REVIEW-PROC009, FAIL: 2 MAJOR, 4 minor)
+- **MAJOR 1 (visual read):**
+  - **Raked ends:** a `rake` shear pulls each nose and tail back with height. The fascias now slope (hood edge about 10 cm back) and the SUV tailgate leans. Bumper fronts (shear 0) keep the exact length; the shear is monotone (`front_m`/`rear_m` < `zone_m`), so the mesh cannot fold.
+  - **Own fascia per class** (params `lamps`, `grille`, `bumper.intake_m`):
+    - sedan: slim wide lamps, slatted grille, wide tail lamps;
+    - hatch: taller rounded lamps, mesh grille, deep intake, tall tail lamps;
+    - SUV: blunt nose, big two-bar chrome grille, vertical tail lamps.
+    All three get a DRL strip and an amber marker in the headlamp, and a lower intake/undertray with a lip. The undertray runs back under the body; a first try floated like a sled.
+  - **Sedan A-pillar wedge:** the greenhouse side ahead of the front door glass is now a black sail panel, not paint.
+  - **Hatchback:** shorter hood (cowl 1.22 m from the front, was 1.40). The roof breaks at 3.25–3.70 m into a sloped hatch glass that runs to the tail. It now reads as a compact hatch, not a long-hood wagon.
+  - **SUV:** the greenhouse runs to the tail, so there is no deck ledge. The tailgate glass is recessed in a thicker paint frame and raked by the shear. Rocker raised to 0.34 m, taller nose.
+  - **Mirrors:** tapered rounded housings lofted from the stalk to the cap, glass on the flat rear face.
+  - **Paint surface:** a door feature line (3 mm ridge at 68 % of the side height) and rounder bumper covers.
+  - **Not fixed: the "clay" read.** That needs texture maps (minor 1, blocked).
+- **MAJOR 2 (contact sheet):**
+  - New `Tools/Blender/generators/parked_vehicles_sheet.py` writes `Docs/Assets/Previews/PROC_parked_vehicles_contact_sheet.png` (2520 × 840, 527 KB), following the PROC-006c pattern.
+  - One row per class; tiles: LOD0 front 3/4, rear 3/4 and side, then LOD1, LOD2, LOD3. Each tile is labelled with asset, LOD/view, tris and the true frame width.
+  - The unlabelled runner sheet and the 3/4 review PNG in `Docs/Assets/Specs/` are removed; PROC_PIPELINE points to the new sheet.
+- **minor 1 + 2 (texture maps, lightmap UV): blocked dependency, raised.** **FOR THE HUB:** the vehicles are not DEC-084-complete until the shared Q0.2/Q0.3 unwrap + texture pipeline (tread/sidewall normals, dust/grime masks) and the DEC-097 lightmap UV (PROC-007) exist. Please track both as dependencies of PROC-009. GAP-PROC-24 covers the maps.
+- **minor 3:** looked up and cited. Under A.R.S. 28-2354(A)(1), a vehicle issued one plate shows it on the rear (azleg.gov/ars/28/02354.htm, read 2026-10-30). The cite is in params `_sources` and PROC_PIPELINE.
+- **minor 4:** the 2-line `run_generator.py` camera change stays as is; the Hub to confirm (no `Owns` list in the packet).
+- **Validation (this round):** 3/3 assets pass with 0 warnings; a rerun gives byte-identical FBX; `[SELFTEST] all passed`; sheet inspected by eye.
+
+  | LOD | Sedan | Hatchback | SUV |
+  |---|---|---|---|
+  | LOD0 | 88,458 | 87,732 | 89,050 |
+  | LOD1 | 29,054 | 28,732 | 29,852 |
+  | LOD2 | 6,900 | 6,992 | 7,462 |
+  | LOD3 | 1,382 | 1,400 | 1,536 |
+
+## Original delivery (round 0; superseded where fix round 1 says so)
+
 **Worker:** PROC worker session · **Branch:** `claude/jovial-meninsky-908c0a` (off `main` @ 3ab683b) · **Blender only, no Unity.**
 
 ## Done

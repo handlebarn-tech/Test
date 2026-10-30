@@ -117,13 +117,15 @@ Why: hundreds of SKUs on racks and in coolers, with GPU instancing. The silhouet
 ## Parked vehicles (PROC-009)
 ```powershell
 Tools/Blender/blender.ps1 parked_vehicles Tools/Blender/params/parked_vehicles.json   # 3 FBX, also copied to Unity
-Tools/Blender/blender.ps1 contact_sheet parked_vehicles                               # Docs/Assets/Specs/PROC_parked_vehicles_contact_sheet.png
+blender -b --factory-startup --python-exit-code 10 -P Tools/Blender/generators/parked_vehicles_sheet.py   # labelled review sheet
 ```
+- Review sheet (DEC-114/DEC-122): `Docs/Assets/Previews/PROC_parked_vehicles_contact_sheet.png`. One row per class. Tiles: LOD0 front 3/4, rear 3/4 and side, then LOD1, LOD2, LOD3. Each tile is labelled with the asset, LOD/view, tris and the true frame width.
 - Replaces the rejected IMP-003 R3b vehicles (DEC-111, checklist R3b.7) with a scripted rebuild: Poly Haven has no vehicle category, and no other DEC-023 CC0 source met DEC-084. Assets `PROC_Vehicle_Sedan|Hatchback|SUV.fbx`, Unity copy `Assets/_Game/Art/Procedural/Exterior/Vehicles/`. Generic unbranded classes only (CCTV R1C1 SUV, R1C2 cars; RG3-4). No plate characters, no badges (DEC-071).
 - Body: one closed loft of cross-sections (side tuck-under, shoulder radius, crowned deck). The bottom edge follows the wheel-arch circle. Shut lines are recessed V grooves: doors, rocker, hood, trunk. Greenhouse: a second closed loft on the deck. Windows are faces of that surface, so the glazing is flush. Wheels sit inside the arches, with well liners behind them.
+- Per class: `lamps` (head/tail size and corner), `grille` (`slats`/`mesh`/`bars`), `bumper.intake_m`, `crease` (door feature line). `rake` shears the nose and tail back with height: the bumper fronts stay put, and `front_m`/`rear_m` must be below `zone_m`, so the shear cannot fold the mesh.
 - Profiles (`deck`, `greenhouse.profile`) are `[y from the front bumper, z]` control points, joined by a monotone cubic. A new body style is a new `classes` entry. Sizes are exact: width includes mirrors, height is the roof peak (SUV: the rails), length is bumper to bumper.
 - Collision: manifest boxes for the body, cabin and 4 wheels (R3b.0.5). The manifest also carries `materials_pbr` (metallic/smoothness per slot) and `paint_variants` (colour swaps).
-- LOD0 ≈ 84–86k tris (DEC-084 hero guide 30–150k). LOD1 ≈ 28k, LOD2 ≈ 7k, LOD3 ≈ 1.4k.
+- LOD0 ≈ 88–89k tris (DEC-084 hero guide 30–150k). LOD1 ≈ 29k, LOD2 ≈ 7k, LOD3 ≈ 1.4k. Rear plate only: A.R.S. 28-2354(A)(1).
 
 | GAP | What |
 |---|---|
