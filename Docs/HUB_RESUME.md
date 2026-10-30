@@ -26,6 +26,13 @@ If a request conflicts with a rule, route it so the rule holds (e.g. start a ses
 - **Imports folder (DEC-070):** `Downloads/Dispo Game Imports/` is only for Nolan's fresh imports. After audit + integration, a session moves each import to `Downloads/Dispo Game Imports Archive/<date>_<name>/`.
 - Nolan is signed in to Sketchfab and the Unity Asset Store in the built-in browser pane; Warehouse/Office are claimed.
 
+## Working process (DEC-085, 2026-10-30)
+- **Standing reviewers:** `Dispo · Reviewer (Unity A)` `local_0dd63bac-df1d-448d-9203-641ead6b6837`, `Reviewer (Unity B)` `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac`, `Reviewer (Docs)` `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7`. Every worker brief names its reviewer: "when done, SendMessage the reviewer with branch + commit + handoff path, and give the Hub a ≤15-line summary". Reviewers send verdicts to the Hub. The Hub merges GO and makes the calls.
+- **Titles:** `Dispo · <role> (<current task>)`; retitle on task switch (`set_session_title`).
+- **Asset briefs** always carry the DEC-084 quality bar (high quality, realistic, LOD0 detail, 2K–4K PBR, LOD chains; never low-poly/generic) and the ASSET_PRODUCTION_PLAN realism rule.
+- **Nolan:** batch questions per milestone unless blocking; lead updates with what needs him; playtest build after each milestone.
+- **Unity:** check `studio.ps1 slots` (OPS-003) when things feel slow; exploration tests `[Explicit]` (DEC-072).
+
 ## Hub loop
 1. Read `Docs/PROJECT_STATE.md`, `Docs/BACKLOG.md`, the newest ~15 entries of `Docs/DECISIONS.md`. **This list is the Hub's reading set** (it supersedes `STUDIO_OS.md` §3 and `MASTER_PLAN.md` §16 "Hub" rows, which point here). Workers read only `CLAUDE.md` → `PROJECT_STATE.md` → their packet and the sections it cites.
 2. Check new handoffs in `Docs/Handoffs/`.
