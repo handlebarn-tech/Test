@@ -96,6 +96,65 @@ function main() {
     fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
     for (const c of out.v7114) console.log(c.outcome.padEnd(12), c.parsed.intent.padEnd(13), JSON.stringify(c.q), '->', c.shown.join(', '));
     for (const d of out.defects) console.log(d.id, 'v7.11.4', d.v7114.outcome, d.v7114.shown.join(', '), '| game', d.game.outcome, d.game.shown.join(', '));
+    needs(G, out.meta);
   } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
+}
+
+// DATA-003: SliceNeeds.json goldens under the game parser (both fixes on = C# ParserOptions.Game).
+const NEEDS = path.join(REPO, 'UnityProject/Assets/_Game/Data/Slice/SliceNeeds.json');
+const OUT_NEEDS = process.argv[3] || path.join(REPO, 'Docs/Reconstruction/golden_cases_needs.json');
+
+// Every query the Note-it-as picker can build: a non-empty ordered subset of components, each giving one term or one said line.
+// NeedsGoldenTests.Queries mirrors this; keep the two in step.
+function pickerQueries(n, join) {
+  const opts = n.components.map(c => [...c.terms.map(t => t.text), ...Object.values(c.say).flat()]);
+  const out = new Set();
+  for (let mask = 1; mask < 1 << opts.length; mask++) {
+    let acc = [[]];
+    opts.forEach((o, i) => { if (mask & 1 << i) acc = acc.flatMap(a => o.map(x => [...a, x])); });
+    acc.forEach(a => out.add(a.join(join)));
+  }
+  return [...out];
+}
+
+function needs(G, gameMeta) {
+  const N = JSON.parse(fs.readFileSync(NEEDS, 'utf8'));
+  const fams = JSON.parse(fs.readFileSync(path.join(REPO, 'UnityProject/Assets/_Game/Data/Slice/SliceIntents.json'))).families.map(f => f.id);
+  const sortObj = o => o && Object.fromEntries(Object.entries(o).sort());
+  const sig = r => { const { lbls, ...p } = r.parsed; return JSON.stringify({ ...p, crit: sortObj(p.crit), neg: sortObj(p.neg), opts: sortObj(p.opts) }); };
+  const cases = new Map(), errs = [];
+  const cap = q => { if (!cases.has(q)) cases.set(q, run(G, q)); return cases.get(q); };
+  const outNeeds = N.needs.map(n => {
+    const bad = m => errs.push(`${n.id}: ${m}`);
+    if (!fams.includes(n.family)) bad(`family ${n.family} not in SliceIntents`);
+    if (n.components.length < 1 || n.components.length > 4) bad('needs 1-4 components');
+    n.components.forEach((c, i) => {
+      if (c.terms.length < 2 || c.terms.length > 3) bad(`component ${i}: needs 2-3 terms`);
+      if (c.terms.filter(t => t.true).length !== 1) bad(`component ${i}: exactly one true term`);
+    });
+    const trueTerms = n.components.map(c => (c.terms.find(t => t.true) || {}).text);
+    if (trueTerms.join(N.join) !== n.trueQuery) bad(`trueQuery != join of true terms (${trueTerms.join(N.join)})`);
+    if (/\{strain\}/.test(n.trueQuery)) bad('trueQuery may not hold {strain}');
+    const t = cap(n.trueQuery);
+    if (t.parsed.intent !== 'recommend' || t.outcome !== 'ok' || !t.shown.length) bad(`trueQuery is ${t.parsed.intent}/${t.outcome}`);
+    const strainFill = t.shown[0]; // {strain} = the trueQuery's first card, so the capture uses a real in-stock key
+    const fill = q => q.split('{strain}').join(strainFill);
+    // Exactly one term per component reproduces the need: swapping in any other term changes the full-join parse.
+    n.components.forEach((c, i) => c.terms.filter(x => !x.true).forEach(x => {
+      const q = fill(trueTerms.map((y, j) => j === i ? x.text : y).join(N.join));
+      if (sig(cap(q)) === sig(t)) bad(`term "${x.text}" reproduces trueQuery`);
+    }));
+    const queries = pickerQueries(n, N.join).map(fill);
+    queries.forEach(cap);
+    return { id: n.id, family: n.family, trueQuery: n.trueQuery, strainFill, queries };
+  });
+  if (errs.length) throw new Error('SliceNeeds.json rules:\n' + errs.join('\n'));
+  const out = { meta: { ...gameMeta, generator: 'Tools/Data/golden_game003.js (needs)', parser: 'game (MC-7 + GAP-206 on) = C# ParserOptions.Game',
+      join: N.join, strainFill: '{strain} = first shown key of the need\'s trueQuery' },
+    needs: outNeeds, cases: [...cases.values()] };
+  fs.writeFileSync(OUT_NEEDS, JSON.stringify(out, null, 1) + '\n');
+  const by = o => [...cases.values()].filter(c => c.outcome === o).length;
+  console.log(`needs: ${outNeeds.length} needs, ${cases.size} cases (ok ${by('ok')}, help ${by('help')}, fallback ${by('fallback')}, none ${by('none')})`);
+  for (const n of outNeeds) console.log(n.id.padEnd(20), JSON.stringify(n.trueQuery), '->', cases.get(n.trueQuery).shown.join(', '), `| ${n.queries.length} queries, fill ${n.strainFill}`);
 }
 main();
