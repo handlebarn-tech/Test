@@ -12,7 +12,7 @@ Hub-owned, project level only (`Docs/STUDIO_OS.md` §0). Department detail (work
 | Hub | `local_78db2735-1777-4eb5-a0a1-e7f8e8a4ecf4` | active | DOC/OPS/AUDIT tasks only | 0 |
 | Gameplay | `local_5bcd6ccf-64c1-464e-9fb9-40ad2e27afb4` | active | 3 | 1 |
 | World | `local_d19eda58-a105-4379-aada-4bf61066f717` | active | 2 | 1 (lends to Assets for imports) |
-| Assets | `local_172b2109-6384-4914-800b-6dc37226e046` | active | 4 (temporary +1 to finish ASSET-004, cut short by the usage limit) | 0 (borrows World's) |
+| Assets | `local_172b2109-6384-4914-800b-6dc37226e046` | active; replace with a fresh session once PROC-005/ASSET-004/PROC-006b finish (Nolan: too expensive, 224k ctx) | 3 | 0 (borrows World's) |
 | Reviewer pool | Unity A2 `local_4e865bb8-479c-41c5-8628-7f3e7cb2a4c3`, Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs 2 `local_99d7e5b7-ef60-4076-9821-58f16ce3bec0` | idle | — | Unity reviewers use the owning dept's slot |
 
 Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME-009 `local_7f8c95e9…`, DES `local_82d327a2…`; Assets ← PROC-005 `local_6c216f80…`, ASSET-004 `local_d31ad4c5…`, IMP-003 `local_13653ae5…`. Leads may reuse or retire them.
