@@ -91,8 +91,8 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | DES-005 | P0 | Playtest 1 intake (DEC-096): controls + customer-flow spec, GAME-025/026 packets, World door/entry contract needs, long-term ideas proposal | — | Review (5c8031b, Docs 2) |
 | DES-006 | P0 | Recommendation depth audit: PS1b (GAME-017..020) vs the TFS tool, packet amendments | — | Active |
 | DES-007 | P2 | DEC-101: long-term rows into `ROADMAP_POST_SLICE.md` (Hub-delegated) + deadpan tone note for dialogue/event writers | DES-005 merge | Ready (waits) |
-| GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction  | DES-005, GAME-009 merge, World door contract | Ready (waits) |
-| GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next  | DES-005, GAME-025, World entry anchors | Ready (waits) |
+| GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction  | DES-005, GAME-009 merge, World REF-012 `DOORS.json` | Ready (waits) |
+| GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next  | DES-005, GAME-025, World REF-011 `SCENE_ANCHORS.json` | Ready (waits) |
 | ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Done (W5A) |
 | IMP-002 | P1 | Integrate the approved DISPO_GAME_DESIGN_V2 pack (DEC-063) into `Docs/Design/DESIGN_V2/` | IMP-001 | Done (W4V, DEC-066) |
 | ASSET-003 | P1 | Customer characters + animations sourcing (CHARACTERS.md, DEC-084/087) | ASSET-001 | Done (W5P) |
