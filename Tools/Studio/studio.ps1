@@ -10,7 +10,7 @@
 #>
 param(
     [Parameter(Mandatory = $true, Position = 0)]
-    [ValidateSet('doctor', 'unity-compile', 'unity-test-edit', 'unity-build', 'status')]
+    [ValidateSet('doctor', 'unity-compile', 'unity-test-edit', 'unity-test-play', 'unity-graybox', 'unity-capture', 'unity-build', 'status')]
     [string]$Command,
     [int]$SmokeSeconds = 90
 )
@@ -50,8 +50,9 @@ function Test-ProjectLocked {
     try { $fs = [IO.File]::Open($lock, 'Open', 'ReadWrite', 'None'); $fs.Close(); return $false } catch { return $true }
 }
 
-function Invoke-Unity([string[]]$UnityArgs, [string]$UnityLog) {
-    $all = @('-batchmode', '-nographics', '-projectPath', $Project, '-logFile', $UnityLog) + $UnityArgs
+function Invoke-Unity([string[]]$UnityArgs, [string]$UnityLog, [switch]$Graphics) {
+    # Screenshot capture needs a GPU device; everything else runs headless.
+    $all = @('-batchmode') + $(if ($Graphics) { @() } else { @('-nographics') }) + @('-projectPath', $Project, '-logFile', $UnityLog) + $UnityArgs
     $argLine = ($all | ForEach-Object { if ($_ -match '\s') { '"' + $_ + '"' } else { $_ } }) -join ' '
     $p = Start-Process -FilePath $Unity -ArgumentList $argLine -Wait -PassThru -NoNewWindow
     return $p.ExitCode
@@ -84,6 +85,18 @@ function Assert-UnityReady {
     if (-not (Test-Path $Unity)) { Complete $false -1 "Unity executable not found: $Unity" }
     if (-not (Test-Path (Join-Path $Project 'ProjectSettings'))) { Complete $false -1 "Unity project not found: $Project" }
     if (Test-ProjectLocked) { Complete $false -1 'blocked: another Unity instance has the project open' 2 }
+    Wait-UnitySlot
+}
+
+function Wait-UnitySlot {
+    # DEC-013: at most 2 Unity editors on this machine; asset import workers don't count.
+    while ($true) {
+        $n = @(Get-CimInstance Win32_Process -Filter "Name='Unity.exe'" |
+            Where-Object { $_.ExecutablePath -like '*\Editor\Unity.exe' -and $_.CommandLine -notmatch 'AssetImportWorker' }).Count
+        if ($n -lt 2) { return }
+        Write-Line "DEC-013: $n Unity editors running, waiting 60 s"
+        Start-Sleep -Seconds 60
+    }
 }
 
 switch ($Command) {
@@ -131,15 +144,41 @@ switch ($Command) {
         Complete $ok $code "csErrors=$errors; $(if ($ci) { $ci.Line.Trim() } else { 'CompileCheck did not run' })"
     }
 
-    'unity-test-edit' {
+    { $_ -in 'unity-test-edit', 'unity-test-play' } {
         Assert-UnityReady
-        $xml = Join-Path $TestDir "$Stamp-editmode.xml"
+        $platform = if ($Command -eq 'unity-test-play') { 'PlayMode' } else { 'EditMode' }
+        $xml = Join-Path $TestDir "$Stamp-$($platform.ToLower()).xml"
         # -runTests quits on its own; -quit would skip the run.
-        $code = Invoke-Unity @('-runTests', '-testPlatform', 'EditMode', '-testResults', $xml) $Log
+        $code = Invoke-Unity @('-runTests', '-testPlatform', $platform, '-testResults', $xml) $Log
         if (-not (Test-Path $xml)) { Complete $false $code "no test results written (csErrors=$(Get-CsErrorCount $Log))" }
         $run = ([xml](Get-Content $xml -Raw)).'test-run'
         $ok = ($code -eq 0) -and ([int]$run.failed -eq 0) -and ([int]$run.total -gt 0)
         Complete $ok $code "total=$($run.total) passed=$($run.passed) failed=$($run.failed) skipped=$($run.skipped) xml=$(Get-RelPath $xml)"
+    }
+
+    'unity-graybox' {
+        Assert-UnityReady
+        $code = Invoke-Unity @('-quit', '-executeMethod', 'Dispo.Editor.Graybox.GrayboxBuilder.Build') $Log
+        $line = Select-String -Path $Log -Pattern '\[Graybox\] Build (OK.*|FAILED.*)' | Select-Object -Last 1
+        $ok = ($code -eq 0) -and ($null -ne $line) -and ($line.Line -match 'Build OK')
+        Complete $ok $code "csErrors=$(Get-CsErrorCount $Log); $(if ($line) { $line.Line.Trim() } else { 'GrayboxBuilder did not run' })"
+    }
+
+    'unity-capture' {
+        Assert-UnityReady
+        $commit = (git -C $Root rev-parse --short HEAD 2>$null)
+        $outDir = Join-Path (Resolve-RepoPath $Cfg.screenshots) $commit
+        $code = Invoke-Unity @('-quit', '-executeMethod', 'Dispo.Editor.Graybox.GrayboxCapture.CaptureAll', '-outDir', $outDir, '-commit', $commit) $Log -Graphics
+        $line = Select-String -Path $Log -Pattern '\[Graybox\] Capture (OK.*|FAILED.*)' | Select-Object -Last 1
+        if ($code -ne 0 -or $null -eq $line -or $line.Line -notmatch 'Capture OK') {
+            Complete $false $code "capture failed: $(if ($line) { $line.Line.Trim() } else { 'GrayboxCapture did not run' })"
+        }
+        # Contact sheet + top-down overlay against the 1-ft plan grid (Python + Pillow).
+        $ErrorActionPreference = 'Continue'  # PS 5.1 turns native stderr into terminating errors
+        $qa = & python (Join-Path $PSScriptRoot 'graybox_qa.py') $outDir (Join-Path $Root 'References/Index/floor_plan_grid_1ft.png') 2>&1
+        $qa | ForEach-Object { Write-Line "$_" }
+        $ok = $LASTEXITCODE -eq 0
+        Complete $ok $code "$($line.Line.Trim()); qa: $(($qa | Select-Object -Last 1))"
     }
 
     'unity-build' {
