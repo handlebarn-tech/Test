@@ -44,5 +44,6 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | PERF-001 | P2 | (now unblocked: slice merged) | — | Ready |
 | GAME-005 | P1 | Hook PROC-002 fill meshes into slice jars: copy the jar FBX into Unity (or `unity_dir`), switch SliceBotTests to the step mapping (W4E m2), DEC-046 min pile | PROC-002, ART-003/004 merge | Ready |
 | PROC-003 | P2 | DEC-046 F010 minimum visible pile; more bud jitter (W4E n1); smalls jar type once REF-007 values land | PROC-002 | Ready |
-| BUILD-005 | P2 | LFS rule for `Art/Exports/**/*.fbx` + `_Game/Art/Procedural/**/*.fbx` (W4E m3) | — | Ready |
-
+| BUILD-005 | P2 | (Review W4G) LFS rule for `Art/Exports/**/*.fbx` + `_Game/Art/Procedural/**/*.fbx` (W4E m3) | — | Ready |
+| DES-002 | P1 | Post-slice roadmap + COMP-002/GAME-004 specs + next packets | slice merged | Active |
+| PROC-004 | P1 | Packaged-product generator family (DEC-034), generic labels | PROC-002 | Active |
