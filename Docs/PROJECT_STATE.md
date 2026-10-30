@@ -31,6 +31,7 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 - World entry/check-in area ↔ Gameplay customer flow (guard post, queue line anchors).
 
 ## Blockers / risks
+- DEC-094 rollout under validation (DEC-099): Hub-only merges until lead-run subagent workers/worktrees prove stable; then reassess lead merges for domain-local work.
 - ChatGPT toolkit drops lack our research and room evidence (DEC-095): every round needs fixes; round 3 must be re-audited.
 - Several BACKLOG rows are stale; each lead reconciles its prefixes first.
 
