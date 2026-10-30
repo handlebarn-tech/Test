@@ -26,3 +26,4 @@ None. Per DEC-105 I searched DECISIONS (079/086/096/101/103–109), KNOWN_GAPS, 
 
 ## Late add (lead)
 GAME-026 deliverable 7 + validation: REVIEW-PS1 m3 (max 1 strike per customer per violation, first wrong Confirm a free hint) and m4 (`nearMedLimit` "Near the 14-day limit" [GDD], also in UX_PS1 §8; DEC-106).
+- DEC-110 (main merged again): CF§3.2/§7.1 + GAME-025 state restroom = staff only (DOORS.json already `npcUse: [staff]`) and push bars only on emergency exits + delivery. **For World:** DOORS.json has `JC` = pushBar (should be lever) and `Ext_Delivery` = lever (should be pushBar). Not edited (World-owned).

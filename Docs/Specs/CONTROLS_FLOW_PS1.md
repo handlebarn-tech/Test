@@ -80,7 +80,7 @@ Doors are **empty openings**: `graybox_layout.json` walls list `openings` and `G
 - **The entry (REF-012):** a **double door**, leaves `Door_Entry_L` / `Door_Entry_R` (each with its own `_Hinge` pivot), swinging **out (west)**, `lock = entryTimeLock` (DEC-076).
 - **Collision:** a closed leaf blocks (box collider). While swinging and while open, the leaf collider is off and the opening is walkable; the leaf never pushes the player or an NPC (kinematic, no physics).
 - **Locked doors:** `lock` ≠ `none` and the actor is not allowed (§3.4) → the door does not open; the player gets the prompt "Locked" (or "Staff only" for staff-only doors that the *player* may use — the player is staff, so staff-only doors open for the player).
-- **NPCs use doors:** an NPC whose path crosses a door's trigger opens it the same way (same animation, same auto-close). Customers only ever use doors with `npcUse` including `customer` (in PS1: the entry). Ambient staff (SPEC_SHIFT_DAY §5) use `staff` doors. Pathing through doors is waypoint-based (anchors), not NavMesh, until a navigation task exists.
+- **NPCs use doors:** an NPC whose path crosses a door's trigger opens it the same way (same animation, same auto-close). Customers only ever use doors with `npcUse` including `customer` (in PS1: the entry). Customers cannot use the restroom (DEC-110 W7): `Hall_Restroom` is `npcUse = staff` only. Ambient staff (SPEC_SHIFT_DAY §5) use `staff` doors. Pathing through doors is waypoint-based (anchors), not NavMesh, until a navigation task exists.
 - **Entry lock at 22:00 (DEC-076):** the entry door gets lock state `entryLockedAfter = 22:00` game clock: after it, nobody new enters; the door still opens **outward-going** for customers leaving (`npcUse` exit allowed). In the Quick shift (no game-clock lock) it never locks.
 - **Emergency exits:** `npcUse = none`; the player may open them. No alarm is modelled: GAP-CF-04 was asked and not answered (DEC-103), so this placeholder is the working answer and is not re-asked (DEC-105).
 
@@ -213,7 +213,7 @@ After the entry lock no one new arrives; customers already inside (at check-in, 
 | `selfClosing` | true / false / unknown (unknown → placeholder true) | §3.2 auto-close |
 | `lock` | `none` / `staffOnly` / `keyed` / `entryTimeLock` | §3.2 locked doors; the entry is `entryTimeLock` (DEC-076) |
 | `npcUse` | any of `customer`, `staff`; empty = nobody | §3.2 NPC door use; the guard counts as staff (REF-012 `_about`) |
-| `hardware` | `lever` / `pushBar` / `storefrontPull` / `none` | prompt text and swing feel |
+| `hardware` | `lever` / `pushBar` / `storefrontPull` / `none` | prompt text and swing feel. **DEC-110:** push bars only on the emergency exits (`Emergency_RetailE`, `Ext_Emergency_SE`) and the delivery door (`Ext_Delivery`); every other leaf door is `lever`, the entry `storefrontPull`. GAME-025 reads the field as given; a data mismatch is World's to fix in DOORS.json, not overridden in code |
 | `defaultState` | `closed` / `proppedOpen` (null for openings) | **proppedOpen per DEC-103 (6): `Vest_FOH`, `Vest_BOH`, `Hall_Office` (the north-facing office door), `HUB2_HUB` (the HUB connector)** |
 
 No second (buzzed) door after the ID stand exists or is modelled (DEC-103 (3); REF-012 `_about`).

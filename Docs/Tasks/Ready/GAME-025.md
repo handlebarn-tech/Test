@@ -23,6 +23,7 @@ No edits to World files (`GrayboxBuilder.cs`, `graybox_layout.json`, scenes' geo
 3. Doors per CF§3.2: walk-through open for the player, E toggle, signed swing about the hinge, auto-close, collider rules, locks incl. the entry `entryTimeLock` (DEC-076; inactive in the Quick shift), NPC use by `npcUse`. Read door data from `DOORS.json` when present; missing fields use the CF§7.1 placeholders (log one warning listing them).
    - Spawn leaves, triggers and interaction **only for rows with `leaves` = 1 or 2**; `0` / `null` (arches, the grille) is an open passage with nothing to spawn; rows marked not placed are skipped until their GAP closes (CF§3.2, CF§7.1).
    - Pairs use `leafObjects` (`Door_<Id>_L` / `_R`, each with its own `_Hinge`): the entry is `Door_Entry_L` / `Door_Entry_R`, swinging out (west), `lock = entryTimeLock` (REF-012; DEC-076).
+   - `hardware` and `npcUse` as DOORS.json gives them (DEC-110: push bars only on emergency exits + delivery door, levers elsewhere; `Hall_Restroom` staff only, customers never path through it); report any data mismatch to World, no code override (CF§7.1).
    - `defaultState = proppedOpen` (DEC-103: `Vest_FOH`, `Vest_BOH`, `Hall_Office`, `HUB2_HUB`) loads open, collider off, no auto-close; if the player closes one, its own `selfClosing` / `lock` apply (CF§3.2).
 4. Until World's `Door_<Id>` objects exist, the slice runs with no doors (openings as today) and logs one `[Slice] doors: none found` line — no TEMP door geometry in the store.
 
