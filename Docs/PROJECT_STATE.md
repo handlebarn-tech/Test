@@ -2,29 +2,25 @@
 
 **Milestone:** vertical slice PLAYABLE on main (2026-10-29). Wave 4 (lookdev, real jars, packaged goods, perf) is landing. Next milestone: **PS1** (cart, limit meter, ID checks, medical, tuning; `Docs/Design/ROADMAP_POST_SLICE.md`), extended by Nolan's decision-pressure spec (DES-003).
 **Main:** see `git log`; every merge is a reviewed `review/wave-*` branch.
-**Updated:** 2026-10-30 ~02:20 by Hub (session 3), as a handover for a cleared Hub.
+**Updated:** 2026-10-30 ~02:45 by Hub (session 3), as a handover for a cleared Hub.
 
 ## Read with this
 `Docs/HUB_RESUME.md` (HARD RULES first) · `Docs/BACKLOG.md` · last ~15 entries of `Docs/DECISIONS.md` (through DEC-050) · `Docs/Handoffs/*`.
 
-## In flight (2026-10-30 02:20)
-Sessions report to whichever session is Hub. Message them by id (SendMessage `to` = id).
+## In flight (2026-10-30 02:45)
+Merged since the 02:20 handover: W4L (UX-002, condition M1: text scaling for the new panels, which goes to GAME-006/UX), W4N (REF-008), W4O (DATA-002), W4M (ART-005). DEC-051 records Nolan's room answers (sanitised).
+Sessions report to whichever session is Hub. Message them by id.
 
-| Work | Session | Branch / state | Next Hub step |
+| Work | Session | State | Next Hub step |
 |---|---|---|---|
-| **DES-003**: integrate Nolan's spec `Downloads/DECISION_PRESSURE_CUSTOMER_INTELLIGENCE_PROGRESSION_MANAGEMENT_SPEC.md` | `local_afc2a299-4bb9-4cd4-b92f-a2bb1ec13f9e` | working | review it (docs), merge, ratify its proposed DECs, forward its questions to Nolan |
-| **AUDIT-001**: READ-ONLY audit of all .md | `local_b6a24c47-ab71-4d36-9df9-1eb188edc2b0` | **WAITING for the Hub's go** | once DES-003 is merged, SendMessage "go, main = <sha>". Report → Nolan approves before ANY doc change; don't remove rules or context |
-| GAME-010: tuning + QA personas | `local_0d166a8e-87b1-40bb-9594-be389c549875` | WIP; 8 EditMode failures were LFS pointers (needs `git lfs pull`) | then review |
-| REVIEW-W4J: PERF-001 | `local_fa1d4222-cd8c-4df7-b9ab-799c6519e8b9` | resuming; 1% lows 23–27 FPS on the lookdev build | merge on GO; ratify perf budgets |
-| REVIEW-W4K: GAME-005 (real jars in the slice) | `local_0dd63bac-df1d-448d-9203-641ead6b6837` | running | merge on GO; then GAME-006 cart can start |
-| REVIEW-W4L: UX-002 (PS1 UX spec) | `local_ffb38222-b25a-4efb-9910-d97897bbe8b9` | running | merge on GO |
-| REVIEW-W4M: ART-005 (2" top, R2C3 panel, lookdev at boot) | `local_65e98573-c33d-4c96-bef4-961578ada020` | running | merge on GO |
-| REVIEW-W4N: REF-008 (CCTV map, `ROOM_FIXTURES.json`, 22 questions) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO; route Nolan's answers to an ART back-rooms task |
-| REVIEW-W4O: DATA-002 (packaged catalog, 954 items) | `local_a0a92385-d051-4974-84b8-22bfa01d709e` | running | merge on GO (PII check is the priority) |
-| REVIEW-W4P: PROC-003 (jar readability, smalls jar) | `local_3bc3be53-eb4d-477e-8a99-02d950744ef4` | running | merge on GO |
-| ART session (ART-003/004/005, PROC-003 author) | `local_392adc04-9603-4cc9-959c-6e3e2d792743` | idle | reuse for the ART back-rooms build after W4N |
-
-Archive each session once its work is merged and nothing else is queued for it.
+| REVIEW-W4Q: DES-003 spec integration (`claude/task-des-003-bb569f`) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO; ratify DES-003's proposed DECs; forward its 2 questions to Nolan; **then send AUDIT-001 its go** |
+| **AUDIT-001**: READ-ONLY .md audit | `local_b6a24c47-ab71-4d36-9df9-1eb188edc2b0` | **WAITING for the Hub's go** | after W4Q merges: SendMessage "go, main = <sha>". Report → Nolan approves before ANY doc change; don't remove rules or context |
+| REF-009: apply DEC-051 to ROOM_FIXTURES | `local_8bee29f0-46b7-4ee5-87bf-9792b70f6267` | running | review (docs), merge |
+| REVIEW-W4K: GAME-005 real jars | `local_0dd63bac-df1d-448d-9203-641ead6b6837` | capture gate running | merge on GO → start GAME-006 cart |
+| REVIEW-W4P: PROC-003 | `local_3bc3be53-eb4d-477e-8a99-02d950744ef4` | waiting on Unity; flags a GAME-005 interface clash | merge after W4K; route the clash to a GAME follow-up |
+| REVIEW-W4J: PERF-001 | `local_fa1d4222-cd8c-4df7-b9ab-799c6519e8b9` | re-runs going | merge on GO; ratify perf budgets |
+| GAME-010 tuning + personas | `local_0d166a8e-87b1-40bb-9594-be389c549875` | idle; needed `git lfs pull` | nudge to finish, then review |
+| Idle, reusable or archivable: ART `local_392adc04…`, PROC-004 `local_ffb38222…`, GAME-005 `local_65e98573…`, DES-003 `local_afc2a299…` | | | reuse for ART back rooms after REF-009 |
 
 ## Next tasks to start (dependency order)
 1. GAME-006 cart (packet in `Docs/Tasks/Ready/`): after GAME-005 merges (same slice files). Then GAME-007 → GAME-008/009 per their packets; GAME-010 is running.
@@ -34,7 +30,7 @@ Archive each session once its work is merged and nothing else is queued for it.
 5. Whatever DES-003 creates for genuine gaps.
 
 ## Open questions for Nolan
-- **REF-008's 22 room questions** (FOH wall, rack runs, vestibule, lockers, bench, office items, BOH items, restroom/JC photos): full list in `Docs/Handoffs/REF-008.md` "Questions for Nolan". Sent 2026-10-30 02:15; answers go to the REF/ART tasks.
+- REF-008 questions: Q1–15 answered (DEC-051; Q4 vestibule size unknown, Q11 skipped). **Still open: Q16–22** (FOH wall, rack runs, vestibule, lockers, bench, office items, BOH items, restroom/JC photos): full list in `Docs/Handoffs/REF-008.md` "Questions for Nolan". Sent 2026-10-30 02:15; answers go to the REF/ART tasks.
 - Brand names/IP before any public build (real brands in `batches.json` and the packaged catalog).
 - Phoenix TPT rate (OPEN-4): a receipt's tax lines would settle it; 25.1 % is kept (DEC-001).
 
