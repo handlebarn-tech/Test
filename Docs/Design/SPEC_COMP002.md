@@ -54,6 +54,8 @@
 ## 3. ID-check events (GAME-008)
 **Store facts.** One secure entry; staff verify ID before the door to the sales area opens and check guests in (O2). 21+ with a valid government photo ID; AZ vertical (under-21-format) IDs only within 30 days of turning 21; out-of-state vertical IDs accepted at 21+; medical customers are checked against the state registry (O3). Acceptable ID list: B2 (A.R.S. 4-241(K)).
 
+> **DEC-103 / DEC-109 note (DES-005b):** the guest shows the ID again at the register, so "the counter does not re-check" below is replaced; the guard's scan catches expired/underage at the door and the register check carries the player ID decisions (`Specs/CONTROLS_FLOW_PS1.md` §4.2, §4.4). The cover-prompt mechanic below is retired (check-in never backs up).
+
 **Design.** ID checking happens at check-in (O2), so the counter does **not** re-check (DEC-036 M2 stays). The [GDD] mechanic: during a rush the check-in desk backs up and the player is asked to **cover check-in** for the next few arrivals. That keeps the real flow and makes ID checking an occasional rush decision, never every sale (COMP-001 L2: "never every sale").
 - Trigger: on rush start, with `coverCheckInChance`, a prompt "Check-in is backed up — cover the door?" [GDD]. Accept → the next `coverCheckInCount` arrivals show an ID card panel before they join the queue; meanwhile the counter queue's patience keeps draining (that's the cost). Decline → no ID events, a small satisfaction hit for the next arrivals' wait (they waited longer at check-in) [GDD].
 - Each ID: player picks **Admit** or **Refuse**. The card shows photo, DOB, expiry, state, format (horizontal/vertical), type. The in-game date is shown on the panel [GDD].

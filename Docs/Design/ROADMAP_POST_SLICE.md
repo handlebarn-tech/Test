@@ -108,3 +108,20 @@ Ordering → deliveries (Thursday deli, manifest check, RES-001 O8) → HUB rece
 - **V2 add-on (DEC-063):** `DESIGN_V2/` is an add-on to DP; DP wins on conflicts. The parity oracle is the **shipped** engine (v7.11.4 + DEC-015/016, DEC-060); a TFS input snapshot is the **parser input** (DEC-057), never a structured fact path; the report never shows TFS scores or ranks (DEC-052). V2's 70 exploits are a test plan (`DESIGN_V2/QA_TEST_PLAN.md`) built in QA-002's harness by the owning packets.
 - **Copy rule H1** (COMP-001) applies to every new line: needs may be stated by customers; system text never promises an effect.
 - **Brand names:** real brands in data are an open trademark call for Nolan before any public build (PROJECT_STATE, REVIEW-W2A m2). PS3 placeholders use generic names.
+
+## 7. Playtest 1 long-term ideas (DEC-101; added by DES-005b)
+Accepted from `PROPOSAL_PLAYTEST1_LONGTERM.md` (cited LT §n) with the Hub's phasing (DEC-101). IDs are placeholders (`LT-n`); the Hub numbers them when a lead opens a packet. All values [GDD]; the asks for Nolan stay in LT §n until a row opens (DEC-105: search first, never re-ask).
+
+| ID | P | Title | Depends on | State |
+|---|---|---|---|---|
+| LT-1a | P3 | Presentation-only parking lot: cars come and go with PS2 arrivals, no feedback into the sim (LT §1) | PS2 arrivals (SPEC_SHIFT_DAY §4), exterior/site plan, vehicle assets ($0) | Later (PS2) |
+| LT-1b | P3 | Parking-lot throughput system: spaces, circling/waiting, blocked back-outs, lot occupancy as pressure (LT §1) | LT-1a, PS4 staffing | Later (post-PS4) |
+| LT-2a | P2 | Start screen: difficulty select (LT §2) | GAME-022 profiles (PS2) | Later (PS2) |
+| LT-2b | P3 | Start screen: character customisation, then role select once a second playable role exists (LT §2) | character pipeline (ASSET-004 / DEC-091 R4), DEC-089 uniform rule | Later |
+| LT-3 | P2 | Store condition over the day: per-zone mess state from transactions and skipped tasks; closing looks different from opening (LT §3) | PS2 phases + closing-lite (SPEC_SHIFT_DAY §10), prop state variants (DEC-091 R7), PERF | Later (PS2) |
+| LT-4 | P3 | Coworker personalities: trait axes first (speed / quality / mess), management uses later; no real staff modelled (LT §4) | PS4 staffing, dialogue/bark system, `Design/TONE.md` | Later (PS4) |
+| LT-5 | P2 | TV ad wall: render-texture slideshow, 7 s default, 5–10 s range; approved/fictional brands, no effect claims (H1) (LT §5) | World TV-wall fixture | Later (any time after the wall is modelled) |
+| LT-6a | P3 | Break room ambient props (LT §6) | lived-in pass (DEC-096), DEC-047 lockers | Later (lived-in pass) |
+| LT-6b | P3 | Break room NPC use by ambient staff; break gameplay with PS4 (LT §6) | PS2 ambient staff (SPEC_SHIFT_DAY §5); PS4 breaks | Later (PS2 / PS4) |
+| LT-7 | P3 | Neighbourhood activity: traffic, pedestrians, deliveries, nearby businesses, weather (LT §7) | exterior/site plan, LT-1a, DEC-091 R6 lighting, PERF | Later (after a site plan) |
+| LT-8 | — | Tone pillar: grounded, deadpan humour, adopted now (DEC-101 (8)); every dialogue/event writer reads `Docs/Design/TONE.md` (LT §8) | — | Done (DES-005b) |
