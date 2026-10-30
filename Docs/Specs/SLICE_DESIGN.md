@@ -31,7 +31,7 @@
 
 Rush: patience × 0.75 for customers spawned in the rush window. Enthusiast, Decisive repeat (needs Similar) and Indecisive (needs Compare) are cut. Novice does **not** set the tool's new-customer profile (that is next-wave, MIG-001); it changes lines and patience only.
 
-### 2.2 Intent families: six, each a verified golden parse [SRC]
+### 2.2 Intent families: six, each a verified golden parse [SRC] (DEC-017)
 The NPC carries a hidden **true family**. Its spec (crit/neg/primary) is the exact parse that the golden case shows, so the engine call is golden-checked end to end. The slice ships these in `SliceIntents.json`, not via the NL parser.
 
 | Family | `lbl` (chip text) | crit | neg (cap) | primary | Source | Draw weight [GDD] |
@@ -68,7 +68,7 @@ Deli flower only. Every in-stock catalog batch is treated as a deli jar [GDD; **
 1. Customer reaches the service point and says the line (text bubble; voice cut).
 2. Player opens the terminal and taps **one of six intent chips** (§2.2). This is the interpretation skill; no free-text search.
 3. Engine: `FindStrains(spec(chip), n=3)` on live stock → `Ok`, `Fallback` ("No exact match… Closest available", [SRC] L16638) or `None` ("Nothing matched", [SRC]).
-4. Up to 3 cards. Each shows: strain name, brand, tier label, **post-tax price for the requested weight**, grams left, cluster label (`classifyCluster`, [SRC] L15202). Role tags, terpene bars and detail view are cut (§9; display bars saturate at 99, GAP-208). Layout is UX-001's.
+4. Up to 3 cards. Each shows: strain name, brand, tier label, **post-tax price for the requested weight**, grams left, cluster label (`classifyCluster`, [SRC] L15202). Plus the anxiety chip (low/moderate/high, §6). Role tags and the `buildScript` "why" line are cut (not ported); the cluster label takes their place. **Inspect** (Detail) and **More options** are in (§10). Layout is UX-001's.
 5. Player picks a card (or re-chips; no limit while the customer waits).
 6. If the batch has < requested grams, the POS blocks it with "Not enough in the jar" [SRC hard rule spec §12]. The player must pick another card.
 7. Customer responds (§3.5). On ACCEPT: POS confirm screen (weight, pre-tax, tax, post-tax) → **Confirm** → sale (§4). **Cancel** returns to the cards with no inventory change.
@@ -128,35 +128,27 @@ stars = avgSatisfaction ≥ 80 ? 3 : ≥ 60 ? 2 : 1
 - Patience drains only while queued. At 0 the customer leaves (**walkout**, satisfaction 0). There is no drain during service; slowness hurts `speedFit` instead.
 - Patience state `Calm` (>50 %), `Impatient` (≤50 %), `Leaving`. Shown through behavior/pose cues; whether there is also a HUD indicator is UX-001's call.
 
-## 6. Needs from GAME-001 (engine, `Dispo.Domain`)
-Names are proposals. GAME-001's `ENGINE.md` wins if it differs; GAME-002 adapts.
-```csharp
-// Intent spec (built from SliceIntents.json; GAME-002 owns that file)
-public sealed class IntentSpec { IReadOnlyDictionary<string,int> Crit; IReadOnlyDictionary<string,int> Neg; string Primary; string Label; }
+## 6. GAME-001 engine API used by the slice (`Dispo.Domain.Engine`, per `Docs/Specs/ENGINE.md` on GAME-001's branch)
+| Slice need | Real call |
+|---|---|
+| Load catalog | `Catalog.Load(batchesJson, terpenesJson, tablesJson, pricingJson)`; the caller does file IO |
+| Intent spec (§2.2) | `new IntentQuery { Crit, Neg, Primary, Label }` filled from `SliceIntents.json` (DEC-017). Do **not** use `Intents.Resolve` for these: it is right only for `sleep/anxiety/pain/energy`, not `stress relief`/`insomnia` |
+| Chip results (§3.1 step 3) | `Recommender.Recommend(cat, q.Crit, q.Neg, q.Primary, new ShopState { ResultCount = 3 })` → `RecommendResult.Outcome` (`Ok/Fallback/None`) + `.Strains` (`List<StrainResult>`) |
+| More options (§10) | same call with `ResultCount = 40`; show the next 3 unseen |
+| Strict list for fit (§3.2) | `Recommender.FindStrains(cat, crit, neg, primary, new ShopState { ResultCount = int.MaxValue })` |
+| Relaxed list for fit (§3.2) | `FindStrains` with `crit_d = floor(crit_d × EngineConstants.FallbackCritFactor)`, `neg_d = min(EngineConstants.DisplayMax, neg_d + EngineConstants.FallbackCapAdd)`: the same transform `Recommend` uses |
+| Card fields | `StrainResult.Name`, `.Tier`, `.Ms` (never shown), `.Cluster`, `.AnxietyRisk`, `.Domains` (Detail only), `.Profile` (Detail top-3 terpenes) |
+| Rep batch / brand / grams | `cat.Groups()` → the `StrainGroup` with `Key == result.Key` → `Batches[0]` (in-stock first, L15464) → `Id`, `Brand`, `BatchCode`, `TestDate`, `Total` |
+| Price | `Pricing.GetEffectivePrices(cat.Pricing, tier, dow).Prices[grams]` (pre-tax; missing key = no price) → `Pricing.ApplyTax(pre, cat.Pricing.TaxRate)` |
+| Line-safety key list (§2.6) | `cat.Intents.Keys` |
+| Anxiety label | `AnxietyRisk` <38 low, <55 moderate, else high ([SRC] `_anxLevel` L16377). The thresholds go in `SliceConfig`; the C# port has no helper |
 
-// Live stock: the engine must not cache in-stock status
-public interface IStockView { bool InStock(string batchId); }
+`ShopState.NewCustomer = false`, `ActiveTiers` empty (no tier chips), `EmptyTierCountsAsHouse` irrelevant with no chips.
 
-public enum RankKind { Ok, Fallback, None }
-public sealed class RankedStrain {
-  string GroupKey; string DisplayName; string RepBatchId;  // rep = ids[0], L15464
-  double Ms;                                              // ranking score, L15355-15427
-  int ClusterId; string ClusterLabel; int AnxietyRisk; string Tier; string Brand;
-}
-public sealed class RankResult { RankKind Kind; IReadOnlyList<RankedStrain> Items; }
-
-// findStrains + the one retry. relaxedOnly=true runs only the relaxed pass (needed for §3.2)
-RankResult FindStrains(IntentSpec spec, IStockView stock, int n, bool relaxedOnly = false);
-
-// Pricing
-public readonly struct PriceQuote { decimal PreTax; decimal PostTax; }
-bool TryQuote(string batchId, double grams, DayOfWeek day, out PriceQuote q);   // false = no price (empty tier)
-
-// Catalog
-IReadOnlyList<Batch> Batches;   // Id, StrainName, BatchCode, Brand, Tier, InStock (snapshot), TestDate
-IReadOnlyCollection<string> IntentKeys;   // INTENTS key list, for the line-safety test (§2.6)
-```
-Hard requirements: `FindStrains` with `n=int.MaxValue` returns every passing group (for §3.2), and results are deterministic for a given stock state.
+**API gaps, now GAME-002 sub-tasks.** `Code/Domain/` is GAME-001's, so the Hub routes each one: a small GAME-001 follow-up, or a scoped Domain edit granted to GAME-002.
+1. **Live stock.** `Catalog.Groups()` caches its in-stock-first ordering. Setting `Batch.InStock = false` at 0 g leaves a stale rep and can drop a strain that still has stock. Need `Catalog.SetInStock(batchId, bool)` (or `InvalidateGroups()`) that clears `_groups`. Test: sell out the rep batch of a multi-batch in-stock strain; the strain stays listed with the next batch as rep, and its profile is re-averaged.
+2. **Cluster label text.** `StrainResult.Cluster` is an int; the `CL` names (L15107-15115) are not exposed. Need the label table (engine table or `Scoring.ClusterLabel(int)`), copied from source, not invented.
+3. Nice-to-have, not blocking: `StrainResult.RepBatchId` to skip the group lookup.
 
 ## 7. Needs from ART-001 (graybox anchors)
 Named empty GameObjects (or data points) in the Retail scene. Positions in the REF-001 frame; ART-001 picks exact spots.
@@ -199,8 +191,38 @@ The register-run station is a [GDD] layout choice: which counter really weighs d
 | `startGramsPerBatch` | 28 | GDD placeholder (no source quantity) |
 | `lowStockFraction` | 0.25 | GDD |
 | tax / rounding | 25.1 % / floor $0.05 | SRC L21062, L21123 |
+| anxiety label cutoffs | <38 low, <55 moderate, else high | SRC `_anxLevel` L16377 |
+| `moreOptionsN` / `moreOptionsStep` | 40 / 3 | SRC L19442 |
+| `toastSeconds` | 4 | GDD (UX-001 §3.8) |
 
 Sanity check (seed-independent): an exact top-card pick for a no-budget customer within 30 s and a 0 s wait gives 0.60 + 0.25 + 0.15 = 1.00 → 100. A wrong-family pick with fit 0 at full price/speed fit gives 40 → REJECT. Fit alone at 0.2 with perfect price and speed gives 52 → ACCEPT (lenient by design for the slice; tune later).
 
 ## 9. Cut from the slice
-NL free-text search and parser (chips instead); negations, exclusions/allergies, compare, like-X, Similar, strain lookup, terpene rank; new-customer profile; tier chips and `maxPrice` engine filter; role tags, card scripts, detail view and domain bars; "show more options"; refine chips; feedback aggregation; packaged products and other forms; weighing skill modes; payment methods, cash drawer and receipts; restock, deliveries, BOH/FOH transfer, waste, cleaning; opening/closing phases; multiple registers and AI staff; traffic director; second rush/events; repeat customers; voice/audio barks; save/load; tutorial; progression and difficulty; drive notice; display-saturation fix (GAP-208).
+NL free-text search and parser (chips instead); negations, exclusions/allergies, Compare screen, like-X, Similar, strain lookup, terpene rank; new-customer profile; tier chips and `maxPrice` engine filter; role tags and card scripts (Detail bars are in, display-only); refine chips and ASK_* states; clarifying questions; budget stepper and "Stay functional" toggle; multi-select intents; Focus/Social intents; feedback aggregation; packaged products and other forms; weighing skill modes; payment methods, cash drawer and receipts; restock, deliveries, BOH/FOH transfer, waste, cleaning; opening/closing phases; multiple registers and AI staff; traffic director; second rush/events; repeat customers; voice/audio barks; save/load; tutorial; progression and difficulty; drive notice; display-saturation fix (GAP-208).
+
+## 10. Answers to UX-001 (`UX_SLICE.md` §9 and other conflicts)
+Where UX_SLICE and this doc differ, this section rules for GAME-002.
+
+| # | Question | Answer | Label |
+|---|---|---|---|
+| 1 | Tile → INTENTS mapping; is Social a merge? | Six **single-select** tiles = the six families in §2.2, with exactly those crit/neg/primary values: Sleep, Can't sleep (insomnia), Stress, Anxiety, Pain, Energy. **Focus and Social are cut**: they have no slice golden. No tile maps to an `INTENTS` lookup at runtime. Multi-select merge is cut (merged parses are not golden-checked) | [SRC] DEC-017, RC-01/03/04/09/10/11 · [GDD] single-select |
+| 2 | Player picks, Auto-fill as an assist? | Yes. Auto-fill (assist, off by default) pre-selects the true family. When it is on, that customer is excluded from `interpretationAccuracy` | [GDD] |
+| 3 | Fit label rule / "Strong fit"? | `Outcome.Ok` → "✓ Good fit"; `Outcome.Fallback` → "◐ Possible fit" + banner; `None` → "Nothing matched." No "Strong fit" in the slice: it would need `Ms`, which UX keeps off-screen | [SRC] L16638 · [GDD] |
+| 4 | Clarifying questions: limit and cost? | **None in the slice.** The line already states need, weight and budget (§2.6). Dialogue offers only "Look it up". Questions come back with the parser wave | [GDD] |
+| 5 | "Stay functional" toggle? | Cut (hidden). No family needs it and it would change the golden-checked parse | [GDD] |
+| 6 | Weight: POS or scale? Does the customer state it? | The customer states it in the line (§2.3). The player picks it on the POS weight tiles; tiles with jar grams < weight are disabled. Picking a weight ≠ the stated one blocks Confirm with "I asked for {weight phrase}." The scale is not interactive: on Confirm it shows the chosen weight (Assisted, §4). Card price = the stated weight's price, not always 3.5 g | [GDD] |
+| 7 | ASK_* refine deltas? | Cut. Responses are ACCEPT / REJECT (with reason line) / LEAVE only (§3.5). After REJECT, the dialogue options are "Look it up" (back to Results with the same chip) and "Edit search" | [GDD] |
+| 8 | Does presenting a card other than #1 affect score? | No direct effect. Fit = `Ms / Ms_top` against the **true** family (§3.2), so a near-equal #2 scores almost the same. The same rule applies to More-options cards and to strains reached through a wrong chip | [GDD] |
+| 9 | Weekday? | Tuesday (`shiftDayOfWeek` = 2): smalls/house/premium/t1/fttp deals active | [GDD] value, deals [SRC] L21036 |
+| 10 | HUD money = sales or drawer? | Shift sales total, post-tax (= `revenuePostTax`). No drawer | [GDD] |
+| 11 | Feedback toast wording? | Words only, no numbers but $ and g: ACCEPT "✓ Sale · {name} · {weight}" + "+${post} · jar {g0} → {g1} g"; REJECT "⚠ Not this one" + the reason line; LEAVE "⚠ Left without buying"; walkout "⚠ Walked out — waited too long". Never show satisfaction or fit | [GDD] (spec §51) |
+
+**Other UX_SLICE items, resolved:**
+- **Patience** drains only in the queue (§5), not in UX steps 2–8. A customer at the counter never walks out; slowness costs `speedFit`. The "leave from any step" path applies only to LEAVE after `maxRejections`. [GDD]
+- **Budget stepper** → hidden. `maxPrice` is not ported and the budget is the player's to notice (§2.4). [GDD]
+- **Compare screen** → cut (engine compare is not ported; next wave). **Inspect/Detail** → in, display-only, from `StrainResult.Domains/Profile/Cluster/AnxietyRisk` + rep batch facts. No `buildScript` line. Batch age = whole weeks from `TestDate` to the catalog snapshot date (`manifest.json` export date), not the wall clock, so it stays deterministic. [GDD]
+- **More options** → in: `ResultCount = 40`, append the next 3 unseen (§6). [SRC] L19442
+- **Role tag and why line** on cards → cluster label instead (§3.1). [GDD]
+- **Reservation**: none. Grams change only on Confirm, so UX "Cancel releases the reservation" = no inventory change. [GDD]
+- **Payment Cash/Card** buttons: cosmetic only, no effect on time or score. **Hold-to-confirm 0.6 s**: accepted. [GDD]
+- **Request strip**: shows the customer's line verbatim; the archetype hint is allowed (Novice / Regular / Price shopper). [GDD]

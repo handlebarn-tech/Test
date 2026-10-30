@@ -18,13 +18,21 @@ Make one playable shift (DEC-008) in the Retail graybox exactly as `Docs/Specs/S
 - `Assets/_Game/Data/Slice/` (`SliceConfig` asset, `SliceIntents.json`, line templates)
 - Slice-only edits in the Retail scene: anchors already placed by ART-001, jar spawner, NPC capsule
 - Tests in `Assets/_Game/Code/Tests/EditMode/Slice/` and `.../PlayMode/Slice/`
-Do not touch `Code/Domain/` (GAME-001). If the engine API lacks something in SLICE_DESIGN §6, externalize it to the Hub.
+Do not touch `Code/Domain/` (GAME-001) unless the Hub grants the sub-tasks below as a scoped Domain edit.
+
+## Engine API (real names, `Dispo.Domain.Engine`; mapping in SLICE_DESIGN §6)
+`Catalog.Load` · `IntentQuery` built from `SliceIntents.json` (not `Intents.Resolve`) · `Recommender.Recommend(cat, crit, neg, primary, ShopState)` → `RecommendResult{Outcome, Strains}` · `Recommender.FindStrains(...)` with `ResultCount = int.MaxValue` plus the relaxed transform via `EngineConstants.FallbackCritFactor/FallbackCapAdd/DisplayMax` (fit, §3.2) · `cat.Groups()` → `Batches[0]` for rep batch/brand · `Pricing.GetEffectivePrices(cat.Pricing, tier, dow).Prices[g]` → `Pricing.ApplyTax` · `cat.Intents.Keys` (line-safety test).
+
+## Sub-tasks: API gaps (Hub routes them to GAME-001 or grants a scoped Domain edit)
+- **S1 Live stock (blocking):** `Catalog.Groups()` caches its in-stock-first order, so flipping `Batch.InStock` at 0 g leaves a stale rep. Add `Catalog.SetInStock(batchId, bool)` that invalidates the cache. Test: sell out the rep of a multi-batch strain → the strain stays listed with the next batch as rep, and its profile is re-averaged. Re-run all slice goldens after.
+- **S2 Cluster labels (blocking for cards):** expose the `CL` label strings (L15107-15115), copied from source, as engine data or `Scoring.ClusterLabel(int)`.
+- **S3 (optional):** `StrainResult.RepBatchId`.
 
 ## Deliverable
 1. `SliceConfig` with every key in SLICE_DESIGN §8; no gameplay literals in code.
 2. `SliceIntents.json` (6 families, §2.2) plus line templates (§2.6).
 3. Seeded customer generator (§2), queue + patience (§5), shift timeline and rush (§1).
-4. Terminal flow (§3.1) on the engine's `FindStrains` against live stock; fit/price/speed/satisfaction/response (§3.2–3.5).
+4. Terminal flow (§3.1, with the UX resolutions in §10: single-select tiles, Inspect, More options, no Compare/ASK_*/questions/budget stepper) on `Recommender.Recommend` against live stock; fit/price/speed/satisfaction/response (§3.2–3.5).
 5. `InventoryService` (single stock authority) + `Sell` event; jar fill/LOW/SOLD OUT visuals; POS confirm/cancel (§4).
 6. End-of-shift report with every field in §1.
 7. A debug overlay (dev builds only) showing each customer's true family, budget and computed fit, so QA can verify the scoring.
