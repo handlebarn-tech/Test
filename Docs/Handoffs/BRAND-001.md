@@ -32,7 +32,8 @@ In the imported data the canonical inventory's 33 `brands` rows carry no `pricin
 ## Validation
 - `node Tools/Data/brands.js --selftest` OK; `--check` OK (103 files). `import_packaged.js --selftest` OK.
 - `import_catalog.js` and `import_packaged.js` regenerated from md5-matching sources (index.html 228684e9, inventory 09bfa4f0, archived Dutchie export).
-- Unity EditMode: see the end-of-turn summary (one `studio.ps1 unity-test-edit` run).
+- Unity EditMode (one `studio.ps1 unity-test-edit` run, fresh worktree, `Artifacts/TestResults/20261030-032851-734-42772-editmode.xml`): 185 total, 165 passed, 20 failed. All data/engine suites pass: EngineGolden 23/23, ParserGolden 95/95, TfsParity 11/11 (includes DP-020 on the new catalog md5), EngineFeature 4/4, Slice 21/21, Cart 10/10, DomainAssembly 1/1.
+  The 20 failures are all `JarFillImportTests` (6) + `PackagedGoodsImportTests` (14) with "no LODGroup (the _LOD<n> suffix auto-setup)". This change touches no FBX, importer or model code, so it is most likely the first import in a fresh worktree. **Not re-run** (one-run budget, DEC-013). Reviewer: re-run EditMode in a warm worktree to confirm they pass on main too.
 
 ## Questions for Nolan (through the Hub)
 1. **The Flower Mine** (`batches.json` 14 smalls batches, `packaged_catalog.json` 9 preroll packs): the name looks like a TFS house line, but it isn't on the DEC-071 list, so it's aliased to `Bloomshaft` for now. Is it a TFS brand that should stay? If yes, add it to `approved` and re-run both importers.
