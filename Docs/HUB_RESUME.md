@@ -41,7 +41,7 @@ If a request conflicts with a rule, route it so the rule holds (e.g. start a ses
 - Packet format: see the existing `Docs/Tasks/*/REF-001.md`, `MIG-001.md`, `BUILD-001.md` (goal, inputs, owns, deliverable, validation, handoff).
 
 ## Where things stand
-See `Docs/PROJECT_STATE.md` → "NEXT ACTIONS". Wave 1 is complete and sits on branch `review/wave-1` awaiting REVIEW-W1. Packets for the next sessions are in `Docs/Tasks/Ready/`.
+See `Docs/PROJECT_STATE.md` → "In flight" and "Next tasks to start". Packets for the next sessions are in `Docs/Tasks/Ready/`.
 
 ## Session notes
 - **Remote Control limit:** while Nolan uses Remote Control (phone), `start_session` works only on messages typed in the desktop app; his permission does not change that. Hand work to idle sessions with SendMessage, and leave new sessions for a desktop message or the scheduled resume.
