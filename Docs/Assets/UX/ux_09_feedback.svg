@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1230" viewBox="0 0 1920 1230" font-family="Segoe UI, Arial, sans-serif">
+<title>UX-09 Feedback after sale</title>
+<rect width="1920" height="1080" fill="#15181c"/>
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="#2b3038" stroke="none" stroke-width="2"/>
+<text x="960.0" y="470" font-size="28" font-weight="400" fill="#4a525e" text-anchor="middle">customer turning to leave</text>
+<rect x="1484" y="70" width="324" height="128" rx="10" fill="#0f1215cc" stroke="none" stroke-width="2"/>
+<text x="1508" y="112" font-size="26" font-weight="600" fill="#f2f4f7" text-anchor="start">◷ 2:47 PM</text>
+<text x="1508" y="150" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">$ 412.35 shift sales</text>
+<text x="1508" y="184" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">👥 Queue 3</text>
+<circle cx="960" cy="540" r="4" fill="#f2f4f7" opacity="0.8"/>
+<rect x="96" y="70" width="560" height="150" rx="10" fill="#0f1215e6" stroke="#56B4E9" stroke-width="2"/>
+<text x="124" y="112" font-size="24" font-weight="700" fill="#f2f4f7" text-anchor="start">✓ Sale · Strain A · 3.5 g</text>
+<text x="124" y="148" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">+ $13.10   ·   jar 214 g → 210.5 g</text>
+<text x="124" y="190" font-size="20" font-weight="400" fill="#8f98a5" text-anchor="start">Customer: “Thanks, I'll let you know.”</text>
+<rect x="1484" y="210" width="324" height="40" rx="8" fill="none" stroke="#56B4E9" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="1500" y="238" font-size="16" font-weight="400" fill="#56B4E9" text-anchor="start">+$13.10 (no count-up if reduced motion)</text>
+<rect x="96" y="54" width="1728" height="972" fill="none" stroke="#CC79A7" stroke-width="1.5" stroke-dasharray="10 8" class="note"/>
+<rect x="0" y="1080" width="1920" height="150" fill="#ffffff"/>
+<text x="24" y="1116" font-size="24" font-weight="700" fill="#111">UX-09 Feedback after sale  ·  1920×1080 @100% text  ·  pink = annotation layer (focus order, safe area 96/54 px)</text>
+<text x="24" y="1150" font-size="19" fill="#222">Toast top-left, 4 s, non-blocking, never steals focus. Sale line is OBSERVED (transaction ledger); the customer line is flavour, not a score.</text>
+<text x="24" y="1176" font-size="19" fill="#222">No % satisfaction (spec §51). Outcome words, if any, use Strong/Good/Possible-style language set by DES-001. Shift sales on the HUD ticks once.</text>
+<text x="24" y="1202" font-size="19" fill="#222">Toast on reject/leave uses ⚠ + WARN orange and the customer's line. All toasts also logged in the shift summary (not in slice UI).</text>
+</svg>
