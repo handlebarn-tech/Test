@@ -405,10 +405,10 @@
     ]
    },
    {
-    "id": "m_polo_cargo",
+    "id": "m_polo_wool",
     "items": [
      "namuhekam_male_polo_shirt",
-     "cortu_cargo_pants",
+     "toigo_wool_pants",
      "shoes01"
     ]
    },
@@ -418,14 +418,6 @@
      "toigo_fisherman_sweater",
      "toigo_wool_pants",
      "toigo_ankle_boots_male"
-    ]
-   },
-   {
-    "id": "m_polo_shorts",
-    "items": [
-     "namuhekam_male_polo_shirt",
-     "cortu_jeans_shorts",
-     "toigo_mj_cloth_shoes"
     ]
    },
    {
@@ -476,19 +468,11 @@
     ]
    },
    {
-    "id": "f_tee_cargo",
+    "id": "f_tee_wool",
     "items": [
      "toigo_basic_tucked_t-shirt",
-     "cortu_cargo_pants",
+     "toigo_wool_pants",
      "shoes05"
-    ]
-   },
-   {
-    "id": "f_tee_shorts",
-    "items": [
-     "toigo_basic_tucked_t-shirt",
-     "cortu_jeans_shorts",
-     "toigo_ballet_flats"
     ]
    },
    {
@@ -520,7 +504,7 @@
     "items": [
      "toigo_camisole_top",
      "toigo_tiered_mini_skirt",
-     "toigo_stiletto_booties"
+     "toigo_ankle_boots_female"
     ]
    },
    {
@@ -535,7 +519,7 @@
     "id": "f_suit01",
     "items": [
      "toigo_female_suit",
-     "toigo_stiletto_booties"
+     "toigo_ankle_boots_female"
     ],
     "formal": true
    },
@@ -557,9 +541,6 @@
    "short03",
    "short04",
    "afro01",
-   "cortu_short_messy_hair",
-   "culturalibre_hair_01",
-   "culturalibre_hair_02",
    null
   ],
   "f": [
@@ -571,11 +552,7 @@
    "afro01",
    "toigo_blunt_bob",
    "toigo_curled_under_bob",
-   "toigo_inverted_bob_with_bangs",
-   "littleright_bobcut_hair",
-   "rehmanpolanski_hair_bun_brown",
-   "o4saken_long01",
-   "elvs_french_braid_variation"
+   "toigo_inverted_bob_with_bangs"
   ]
  },
  "hair_tints": [
@@ -587,24 +564,56 @@
   "grey",
   "white"
  ],
+ "hair_tint_srgb_note": "ASSET-004 hair tint: the sRGB mean colour each hair/eyebrow/beard diffuse is recoloured to (customer_gen.tint_texture; luminance pattern and alpha kept). Eyelashes keep their own texture.",
+ "hair_tint_srgb": {
+  "black": [
+   0.07,
+   0.06,
+   0.055
+  ],
+  "dark_brown": [
+   0.2,
+   0.13,
+   0.08
+  ],
+  "brown": [
+   0.36,
+   0.24,
+   0.14
+  ],
+  "auburn": [
+   0.46,
+   0.22,
+   0.11
+  ],
+  "blond": [
+   0.72,
+   0.58,
+   0.37
+  ],
+  "grey": [
+   0.52,
+   0.51,
+   0.49
+  ],
+  "white": [
+   0.83,
+   0.82,
+   0.79
+  ]
+ },
  "glasses": [
   "spamrakuen_sagerfrogs_glasses_01",
   "spamrakuen_sagerfrogs_glasses_02",
   "spamrakuen_sagerfrogs_glasses_03",
-  "spamrakuen_tbm_glasses_frames_01",
-  "kwnet_at_optical_glasses",
-  "frankyaye_glasses_library_male"
+  "spamrakuen_tbm_glasses_frames_01"
  ],
  "glasses_share": 0.3,
  "hats": [
-  "fedora01",
-  "jujube_newsboy_cap"
+  "fedora01"
  ],
  "hat_share": 0.1,
- "beards": [
-  "wdg_scruffy_beard",
-  "grinsegold_beard_sigmund_wip"
- ],
+ "beards": [],
  "beard_share_m": 0.3,
  "face_categories": [
   "nose",
@@ -739,5 +748,6 @@
    1.6,
    1.95
   ]
- }
+ },
+ "licence_pruning_note": "toigo_stiletto_booties (44.7k tris, breaks the LOD1 budget) replaced by toigo_ankle_boots_female. ASSET-004 resume: install_mpfb.py now also refuses MakeClothes-style '# license AGPL3' / 'CC BY' headers. 7 hairstyles, 2 glasses, the newsboy cap, both beards and the cortu cargo pants / jeans shorts left the pools (shorts outfits dropped, cargo swapped for toigo_wool_pants). No CC0 beard remains (GAP-CHR-9)."
 }

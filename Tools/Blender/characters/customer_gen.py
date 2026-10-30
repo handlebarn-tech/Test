@@ -20,6 +20,7 @@ import shutil
 import sys
 
 import bpy
+import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -78,14 +79,37 @@ def source_mhmat(obj, c, basemesh):
     return None
 
 
-def export_material(obj, c, basemesh, tex_dir, report):
+def tint_texture(path, rgb, dst):
+    """Recolour a hair/brow/beard diffuse: keep its luminance pattern, move its mean colour to the tint (sRGB), keep alpha."""
+    src = bpy.data.images.load(path, check_existing=False)
+    w, h = src.size
+    px = np.empty(w * h * 4, dtype=np.float32)
+    src.pixels.foreach_get(px)
+    px = px.reshape(-1, 4)
+    lum = px[:, :3] @ np.array([0.2126, 0.7152, 0.0722], dtype=np.float32)
+    mask = px[:, 3] > 0.5
+    mean = float(lum[mask].mean()) if mask.any() else float(lum.mean())
+    px[:, :3] = np.clip(np.outer(lum / max(mean, 1e-3), rgb), 0.0, 1.0)
+    out = bpy.data.images.new(os.path.basename(dst), w, h, alpha=True)
+    out.pixels.foreach_set(px.ravel())
+    out.filepath_raw, out.file_format = dst, "PNG"
+    out.save()
+    bpy.data.images.remove(src)
+    return out
+
+
+def export_material(obj, c, basemesh, tex_dir, report, p):
     """Replace MPFB's Blender-only node trees with a Principled BSDF on the asset's own textures (copied to tex_dir)."""
     src = source_mhmat(obj, c, basemesh)
-    cutout = os.path.relpath(src, DATA).replace("\\", "/").split("/")[0] in ("hair", "eyebrows", "eyelashes") if src else False
     if not src or not os.path.isfile(src):
         raise RuntimeError(f"{obj.name}: no source material found ({src})")
+    kind = os.path.relpath(src, DATA).replace("\\", "/").split("/")
+    cutout = kind[0] in ("hair", "eyebrows", "eyelashes") or (kind[0] == "clothes" and kind[1] in p["beards"])
+    tint = c["hair_tint"] if cutout and kind[0] != "eyelashes" else None
     tex = parse_mhmat(src)
     name = os.path.splitext(os.path.basename(src))[0]
+    if tint:
+        name += "_" + tint  # per-tint name, so Unity's by-name material extraction never merges two tints
     mat = bpy.data.materials.get("M_" + name) or bpy.data.materials.new("M_" + name)
     if not mat.use_nodes or "Principled BSDF" not in mat.node_tree.nodes:
         mat.use_nodes = True
@@ -95,9 +119,13 @@ def export_material(obj, c, basemesh, tex_dir, report):
         if not os.path.isfile(path):
             continue  # some mhmat lines point at textures the asset never shipped; recorded below
         dst = os.path.join(tex_dir, os.path.basename(path))
-        if not os.path.exists(dst):
-            shutil.copyfile(path, dst)
-        img = bpy.data.images.load(dst, check_existing=True)
+        if tint and role == "base_color":
+            dst = os.path.join(tex_dir, f"{os.path.splitext(os.path.basename(path))[0]}_{tint}.png")
+            img = tint_texture(path, p["hair_tint_srgb"][tint], dst)
+        else:
+            if not os.path.exists(dst):
+                shutil.copyfile(path, dst)
+            img = bpy.data.images.load(dst, check_existing=True)
         report.setdefault(name, {})[role] = {"file": os.path.basename(dst), "px": list(img.size)}
         node = nt.nodes.new("ShaderNodeTexImage")
         node.image = img
@@ -114,6 +142,7 @@ def export_material(obj, c, basemesh, tex_dir, report):
             img.colorspace_settings.name = "Non-Color"  # ao/spec/opacity: copied and listed for the Unity importer
     report.setdefault(name, {})["source"] = os.path.relpath(src, DATA).replace("\\", "/")
     report[name]["alpha_cutout"] = cutout
+    report[name]["tint"] = tint
     report[name]["missing"] = sorted(r for r, pth in tex.items() if not os.path.isfile(pth))
     obj.data.materials.clear()
     obj.data.materials.append(mat)
@@ -236,7 +265,7 @@ def export(c, p):
     rig, meshes, basemesh = build(c, p)
     tex_report = {}
     for o in meshes:
-        export_material(o, c, basemesh, tex_dir, tex_report)
+        export_material(o, c, basemesh, tex_dir, tex_report, p)
     missing = humanoid_check(rig, p)
     if missing:
         errors.append(f"rig lacks Humanoid bones {missing}")
@@ -295,11 +324,24 @@ def main(argv):
     p = json.load(open(argv[0]))
     ids = argv[1].split(",") if len(argv) > 1 else p["export_ids"]
     roster = {c["id"]: c for c in roster_mod.generate(p)}
-    reports = [export(roster[i], p) for i in ids]
-    summary = {r["id"]: {"tris": r["tris"], "height_m": r["height_m"], "gaps": len(r["gaps"]), "fbx_sha256": r["fbx"]["sha256"]} for r in reports}
-    with open(os.path.join(OUT_ROOT, "summary.validation.json"), "w", encoding="utf-8", newline="\n") as f:
-        json.dump(summary, f, indent=1)
+    reports, failed = [], {}
+    for i in ids:  # one bad customer must not stop the batch; the run still exits non-zero below
+        try:
+            reports.append(export(roster[i], p))
+        except Exception as e:  # noqa: BLE001
+            failed[i] = str(e)
+            print(f"[CHAR] {i}: FAILED {e}")
+    path = os.path.join(OUT_ROOT, "summary.validation.json")
+    old = json.load(open(path)) if os.path.isfile(path) else {}
+    summary = old.get("exported", {})  # merge: a partial re-run keeps the other customers
+    failed = {**{k: v for k, v in old.get("failed", {}).items() if k not in ids}, **failed}
+    summary = {k: v for k, v in summary.items() if k not in failed}
+    summary.update({r["id"]: {"tris": r["tris"], "height_m": r["height_m"], "gaps": len(r["gaps"]), "fbx_sha256": r["fbx"]["sha256"]} for r in reports})
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
+        json.dump({"exported": dict(sorted(summary.items())), "failed": failed}, f, indent=1)
         f.write("\n")
+    if failed:
+        raise RuntimeError(f"{len(failed)} customer(s) failed: {sorted(failed)}")
 
 
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []

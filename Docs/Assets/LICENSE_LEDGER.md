@@ -115,7 +115,7 @@ Spec: `Docs/Assets/Specs/CHARACTERS.md`. Fetch list: `Docs/Assets/fetch_list_cha
 | CHR-SK-SCANS | Renderpeople free (Eric, Carla, Claudia, Nathan, Sophia), in3D iPhone scan, Mike Alger self-scan, "Realistic Old Russian Guy" | https://sketchfab.com/renderpeople (and per-uid pages) | CC BY 4.0 on Sketchfab | — | various | — | 16k-55k tris photogrammetry | — | — | **REJECT: scans of / resemblance to real people (no-likeness rule)** | 2026-10-30 |
 
 ## 1d. MPFB2 customer pipeline (ASSET-004, 2026-10-30)
-Packs CC0 per pack page section and `_cc0` file; **per-asset audit** by `Tools/Blender/characters/install_mpfb.py` (pack JSON licence + file headers): 58 units refused (AGPL/CC-BY/no evidence), e.g. AGPL-headed skins and alternative materials inside `_cc0` packs. The generator refuses any non-allowed asset.
+Packs CC0 per pack page section and `_cc0` file; **per-asset audit** by `Tools/Blender/characters/install_mpfb.py` (pack JSON licence + file headers): 106 units refused (AGPL/CC-BY/no evidence), e.g. AGPL-headed skins and alternative materials inside `_cc0` packs, and (ASSET-004 resume) MakeClothes-style `# license AGPL3` / `CC BY` headers on community hair, beards, glasses, a cap and pants/shorts that the first audit missed. Derived customers (`<cache>/mpfb/derived/<id>/<id>.fbx`) are listed in the manifest as `MPFB-DERIVED-<id>` rows (CC0 inputs only, our own output). The generator refuses any non-allowed asset.
 
 | ID | Asset | Source URL | License | Status |
 |---|---|---|---|---|

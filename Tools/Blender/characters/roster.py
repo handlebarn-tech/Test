@@ -88,7 +88,7 @@ def generate(p):
             "id": f"C{i + 1:03d}", "sex": sex, "age_band": band, "skin": skin["id"], "ancestry": skin["ancestry"],
             "hair": hair, "hair_tint": tint, "hat": hat, "outfit": outfit["id"], "items": outfit["items"],
             "glasses": rng.choice(p["glasses"]) if rng.random() < p["glasses_share"] else None,
-            "beard": rng.choice(p["beards"]) if sex == "m" and band != "young" and rng.random() < p["beard_share_m"] / 0.75 else None,
+            "beard": rng.choice(p["beards"]) if p["beards"] and sex == "m" and band != "young" and rng.random() < p["beard_share_m"] / 0.75 else None,
             "eyes": rng.choice(["brown", "brownlight"]) if dark and rng.random() < 0.85 else rng.choice(p["eyes"]),
             "build": build,
             "phenotype": {

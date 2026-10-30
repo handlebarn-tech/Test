@@ -19,7 +19,8 @@ DATA = os.path.join(CACHE, "mpfb/blender_user/extensions/.user/user_default/mpfb
 INDEX = os.path.join(DATA, "dispo_licence_index.json")
 CC0_HEADER = re.compile(rb"released as CC0|licensed (?:under )?CC0|CC0 1\.0", re.I)
 TEXT_EXT = (".mhclo", ".mhmat", ".proxy", ".mhpxy", ".obj", ".mhm", ".txt", ".md")
-BAD_HEADER = re.compile(rb"licen[sc]ed\s+(?:under\s+)?(AGPL|GPL|CC[- ]?BY)", re.I)
+# also the MakeClothes/MakeSkin form "# license AGPL3" (ASSET-004 resume: missed before, let an AGPL hat through)
+BAD_HEADER = re.compile(rb"licen[sc]e[ds]?\s*:?\s+(?:under\s+)?(AGPL|GPL|CC[- ]?BY)", re.I)
 
 
 def install():
