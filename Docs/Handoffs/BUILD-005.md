@@ -13,5 +13,5 @@
 - `doctor` pass (lfsPatterns 11/11) · `unity-compile` csErrors=0 · `unity-test-edit` **149/149**, including the 8 `JarFillImportTests`. DEC-013 gate through `studio.ps1`.
 
 ## Notes for the Hub / reviewer
-- The LFS objects exist only in this machine's local LFS store until someone pushes. A push of this branch uploads the 15 objects (about 10 MB). Clones need `git lfs install` (the `doctor` command does that).
+- The LFS objects exist only in this machine's local LFS store until someone pushes. A push of this branch uploads the 15 objects (9.1 MB). Clones need `git lfs install` (the `doctor` command does that).
 - The `.meta` files are unchanged. Unity sees the same bytes, so nothing reimports.
