@@ -1,29 +1,31 @@
 # DISPENSARY GAME — STUDIO OPERATING SYSTEM
 ## Multi-Agent Hub, Workcells, Context Lifecycle, Reviews & Repository Memory
 
-**Version:** 3.0 (§0 rewritten for the flat model, DEC-117; §1+ historical)  
+**Version:** 3.1 (§0 rewritten for the flat model, DEC-117; dispatcher-only Hub, DEC-128..132; §1+ historical)  
 **Date:** 2026-10-30  
 **Parent:** `MASTER_PLAN.md`  
 **Target environments:** Claude Code, Codex-style coding agents, or comparable repository-capable agent systems
 
 ---
 
-# 0. OPERATING MODEL: Nolan → Hub → Workers → fresh Reviewers → Hub merges (DEC-116/117, current)
+# 0. OPERATING MODEL: Nolan → Hub → sessions (worker, reviewer, integrator, planner) → Hub fast-forwards `main` (DEC-116/117, DEC-128..132, current)
 
-> **This section is the only live rules text in this file.** Everything from §1 down is historical background from earlier structures (workcell pool, department leads) and is superseded wherever it differs. Still-live *reference* sections: §48 repository layout, §56–57 templates (kept in sync with this section), §63–65 acceptance gates, §67 task IDs, §68 priorities, §73–76 asset acquisition, licences and reference confidence. Do not restate these rules elsewhere; point here. Universal rules every agent gets automatically are in the root `CLAUDE.md`.
+> **This section is the only live rules text in this file.** Everything from §1 down is historical background from earlier structures (workcell pool, department leads) and is superseded wherever it differs. Still-live *reference* sections: §48 repository layout, §56–57 templates (kept in sync with this section), §63–65 acceptance gates, §67 task IDs, §68 priorities, §73–76 asset acquisition, licences and reference confidence. Do not restate these rules elsewhere; point here. Universal rules every agent gets automatically are in the root `CLAUDE.md`; the Hub's hard rules and per-message actions are in `Docs/HUB_RESUME.md`.
 
 ## 0.1 Roles
-- **Nolan:** owner. Decides product, real-store facts, scope. Talks to the Hub only.
-- **Hub** (`Dispo · Studio Hub`, main checkout, restartable): priorities, packets, dispatch, reviewer spawning, merges to `main`, decisions (DEC), state (`PROJECT_STATE.md`), the Nolan channel. No hands-on work (`hub_guard.py`, DEC-045). Its conversation is never project memory: a fresh Hub resumes from `Docs/HUB_RESUME.md` + `Docs/PROJECT_STATE.md` + the newest DECs.
-- **Worker:** one packet, one worktree branch, one deliverable. Full authority over implementation inside its `Owns` paths. Reports to the Hub only.
+- **Nolan:** owner. Decides product, real-store facts, scope. Reaches the studio through the Hub chat and the PO communication session (`local_0e722850-d68d-43e0-85af-b280cf2337c4`, DEC-125/130).
+- **Hub** (`Dispo · Studio Hub`, main checkout, restartable, cleared regularly): dispatcher only (DEC-128..132). It starts sessions, relays one-line messages and questions, runs `git merge --ff-only` on `main`, and archives sessions. It does no task work of any kind, edits no files and runs no in-Hub Agents (`HUB_RESUME.md` hard rules; `hub_guard.py`, DEC-045). Its conversation is never project memory.
+- **Worker:** one packet, one worktree branch, one deliverable. Full authority over implementation inside its `Owns` paths. Reports to the Hub only. Builds are worker tasks.
 - **Reviewer:** fresh per review, archived after the verdict. Verifies; never manages, never edits the worker's branch, never writes packets.
-- There are no leads, departments, standing reviewers or coordination agents. `Docs/Departments/*.md` are archived (DEC-112/117).
+- **Integrator** (`Dispo · INTEG <ID>`, DEC-132): fresh per accepted task, one at a time. Does all of §0.8 on `integrate/<id>`, including every state-doc edit.
+- **Planner** (`Dispo · PLAN <topic>`, DEC-120/128): fresh per job. Writes packets, maps playtest feedback and imports onto `BACKLOG.md`, records Nolan's answers as DECs when no task session is waiting, reconciles `PROJECT_STATE.md` on request.
+- There are no leads, departments, standing reviewers or coordination agents (DEC-112/116/117).
 
 ## 0.2 Sources of truth
 | Need | Authority |
 |---|---|
-| Live studio state: in flight (session/agent + branch), queue, open Nolan items, builds | `Docs/PROJECT_STATE.md` (Hub-owned, the only live record) |
-| The plan: milestones to the finished game, their task IDs, dependencies, critical path | `Docs/Design/ROADMAP_POST_SLICE.md` (Hub-owned; no task state) |
+| Live studio state: in flight, queue, open Nolan items, builds | `Docs/PROJECT_STATE.md` (updated only by integrator and planner sessions; running sessions in `list_sessions` win over its In-flight table) |
+| The plan: milestones to the finished game, their task IDs, dependencies, critical path | `Docs/Design/ROADMAP_POST_SLICE.md` (no task state; edited by integrator/planner when a milestone opens, closes or changes scope, DEC-119) |
 | Task registry and lifecycle | `Docs/BACKLOG.md` holds every known work item (ID, title, priority, dependencies, state incl. Later/Blocked/Dropped); packet location `Docs/Tasks/Ready` → `Active` → `Done` is the executable state and the BACKLOG State column mirrors it in the same commit |
 | Ratified decisions | `Docs/DECISIONS.md` (append-only; newest wins on conflict) |
 | Unknowns / placeholders | `Docs/KNOWN_GAPS.md` |
@@ -32,49 +34,54 @@
 | Gameplay / UX / asset specs | `Docs/Specs/`, `Docs/Design/`, `Docs/Assets/Specs/` as the packet cites |
 | History (never updated after the fact) | `Docs/Handoffs/`, `Docs/Reviews/`, git log |
 
-Rules live in `CLAUDE.md` and this section; state lives in `PROJECT_STATE.md`; facts live in the registries above. Nothing is copied between them: packets and briefs cite path + §.
+Rules live in `CLAUDE.md`, `HUB_RESUME.md` and this section; state lives in `PROJECT_STATE.md`; facts live in the registries above. Nothing is copied between them: packets and briefs cite path + §.
 
 ## 0.3 Read sets
-| Role | Reads at start | On demand | Never by default |
+| Role | Reads at start | On demand | Never |
 |---|---|---|---|
-| Hub | `HUB_RESUME.md`, `PROJECT_STATE.md`, newest ~5 DECs | a packet, handoff or review it is acting on; `BACKLOG.md` when allocating IDs | code, assets, worker transcripts, plan docs in full, this file below §0 |
+| Hub | `HUB_RESUME.md`, `PROJECT_STATE.md` | one-line messages from sessions; `list_sessions` | specs, packets, handoffs, reviews, `BACKLOG.md`, roadmap, DECISIONS, code, assets, transcripts, greps, this file |
 | Worker | `CLAUDE.md` (automatic), its packet, the exact docs/§ the packet cites | repo files the task needs; registries in §0.2 when resolving uncertainty (§0.6) | `PROJECT_STATE.md`, `BACKLOG.md`, other packets, `Docs/Departments/`, this file below §0 |
 | Reviewer | `CLAUDE.md`, the packet, the diff, the handoff's Validation and Not-done sections, the acceptance sources the packet cites | the registries to check a cited fact | the worker's reasoning, the Hub's opinion, `PROJECT_STATE.md` |
+| Integrator | `CLAUDE.md`, this §0.8, the packet, the handoff, the review | `BACKLOG.md`, `PROJECT_STATE.md`, roadmap, DECISIONS/KNOWN_GAPS, specs to write unlocked packets | code and assets beyond the merge |
+| Planner | `CLAUDE.md`, this §0, its brief's inputs | `BACKLOG.md`, `PROJECT_STATE.md`, roadmap, the specs and registries it maps against | code and assets |
 
 ## 0.4 Packets (one per task; template §56)
-A packet is the worker's whole brief. It carries only what no canonical file holds: goal, `Owns`, deliverable, validation, the exact citations to read. Facts, rules and decisions are cited by path + §/ID, never pasted. The Hub writes it in `Docs/Tasks/Ready/`, moves it to `Active/` at launch and to `Done/` at merge (with the BACKLOG row, same commit). A packet is not edited while its worker runs, except to prevent lost work; follow-ups go in a new packet or a `## Fix round <n>` section after a FAIL verdict.
+A packet is the worker's whole brief. It carries only what no canonical file holds: goal, `Owns`, deliverable, validation, the exact citations to read. Facts, rules and decisions are cited by path + §/ID, never pasted. **A planner or integrator session writes it in `Docs/Tasks/Ready/`** (the Hub never does). The worker's first commit moves it to `Active/`; the integrator moves it to `Done/` with the BACKLOG row in the integration commit. A packet is not edited while its worker runs, except to prevent lost work; follow-ups go in a new packet (planner) or are driven by the FAIL review file.
 
 ## 0.5 Session mechanics
-- **Worker brief (standard, whole text):** *"Read `Docs/Tasks/Active/<ID>.md` and follow it. Branch: worktree off `<base>`. Commit with `git -c user.name=Nolan_Bradford -c user.email=handlebarn@gmail.com commit`. When done: `Docs/Handoffs/<ID>.md` committed on your branch, then one line to the Hub: `<ID> ready for review: <branch> @ <sha>`."*
-- **Reviewer brief (standard, whole text):** *"Review `<branch>` @ `<sha>` against `Docs/Tasks/Active/<ID>.md`. Read the packet, the diff, the Validation and Not-done sections of `Docs/Handoffs/<ID>.md`, and the acceptance sources the packet cites. Run the packet's validation yourself. Write `Docs/Reviews/REVIEW-<ID>.md` (§0.7) on a `review/<id>` branch cut from `main` with the worker branch merged `--no-ff`; one line to the Hub: `REVIEW-<ID>: PASS|FAIL, <n> MAJOR, <n> minor`. Do not change the worker's branch or message the worker."*
-- Launch: `start_session` (fresh, `use_worktree: true`, title `Dispo · <ID> <what>`) on turns Nolan typed; on other turns the Agent tool (`isolation: "worktree"`, background) or an idle finished session via SendMessage. Never framed as needing Nolan's permission (DEC-025).
+All sessions: `start_session` (`context: "fresh"`, `use_worktree: true`, title `Dispo · <ID> <what>`). Never an in-Hub Agent. When the app refuses `start_session`, follow `HUB_RESUME.md` hard rule 2 (proposal card + one line to the PO session); never run the work in the Hub. Standard briefs (whole text):
+- **Worker:** *"Read `Docs/Tasks/Ready/<ID>.md` and follow it; your first commit moves it to `Docs/Tasks/Active/`. Branch: worktree off `main`. Commit with `git -c user.name=Nolan_Bradford -c user.email=handlebarn@gmail.com commit`. When done: `Docs/Handoffs/<ID>.md` committed on your branch, then one line to the Hub: `<ID> ready for review: <branch> @ <sha>`."*
+- **Reviewer:** *"Review `<branch>` @ `<sha>` against `Docs/Tasks/Active/<ID>.md`. Read the packet, the diff, the Validation and Not-done sections of `Docs/Handoffs/<ID>.md`, and the acceptance sources the packet cites. Run the packet's validation yourself. Write `Docs/Reviews/REVIEW-<ID>.md` (§0.7) on a `review/<id>` branch cut from `main` with the worker branch merged `--no-ff`; one line to the Hub: `REVIEW-<ID>: PASS|FAIL, <n> MAJOR, <n> minor`. Do not change the worker's branch or message the worker."*
+- **Integrator:** *"Integrate `<ID>`: do `Docs/STUDIO_OS.md` §0.8 on a branch `integrate/<id>` cut from current `main`, merging `review/<id>` @ `<sha>`. Commit with the git identity in `CLAUDE.md`. A Hub ruling you need: one line to the Hub, do not decide it. When done, one line to the Hub: `INTEG <ID> ready: integrate/<id> @ <sha>`."*
+- **Planner:** *"<job: map <input> onto BACKLOG / write packets for <IDs> / record Nolan's answer: <verbatim> / reconcile PROJECT_STATE with these sessions: <list>>. Follow `Docs/STUDIO_OS.md` §0.2–0.4 and §0.8 step 4. Branch `plan/<topic>` off current `main`; commit with the git identity in `CLAUDE.md`; one line to the Hub: `PLAN <topic> ready: plan/<topic> @ <sha>`."*
 - Unity: max 2 editors (DEC-013), `studio.ps1 slots`. Fresh worktrees copy `Tools/Studio/studio.config.example.json` → `studio.config.json`.
-- Context ceiling ~300k tokens per session (DEC-102): the Hub checks `get_usage` and replaces oversized sessions after a handoff.
-- Retire a worker when its branch is merged or abandoned; a reviewer right after its verdict.
+- Context ceiling ~300k tokens per session (DEC-102): the Hub checks `get_usage` on long sessions and replaces oversized ones after a handoff.
+- The Hub archives a reviewer after its verdict, and the worker and integrator after the fast-forward.
 
 ## 0.6 Uncertainty and escalation (worker)
 1. **Resolve it yourself first.** Search, in order: the docs the packet cites → `Docs/DECISIONS.md` (grep the topic; newest entry wins) → `Docs/KNOWN_GAPS.md` → for layout, size, distance or hardware: the floor plan / TI drawings, `ROOM_FIXTURES.json`, `DOORS.json`, CCTV (DEC-110) → `Docs/Research/`, `Docs/Handoffs/REF-008.md`. If any of these answers it, apply the answer and cite it. A question Nolan already answered, skipped or left unanswered is never asked again (DEC-105).
-2. **Not found:** use a labelled GAP placeholder, keep working, and list it in the handoff under `## Questions for Nolan (through the Hub)` with the sources you searched. The Hub rejects a question that lacks the search list.
+2. **Not found:** use a labelled GAP placeholder, keep working, and list it in the handoff under `## Questions for Nolan (through the Hub)` with the sources you searched. A question without the search list is sent back.
 3. **Stop and message the Hub at once only for:** scope change; an edit needed outside your `Owns`; two authoritative sources that contradict each other; risk of lost or corrupted work; a blocked dependency. Everything else waits for the handoff.
-4. **Nobody below the Hub talks to Nolan** (DEC-033/098). Mark anything he must know or decide `FOR NOLAN` in the handoff; the Hub forwards it. If Nolan writes to you directly, answer fully and record it in the handoff.
+4. **Nobody below the Hub talks to Nolan** (DEC-033/098). Mark anything he must know or decide `FOR NOLAN` in the handoff; the integrator lists it under PROJECT_STATE "Blocked / open with Nolan" and the Hub forwards it to the PO session, batched (DEC-125). If Nolan writes to you directly, answer fully and record it in the handoff.
 
 ## 0.7 Review
-- Every code/asset/data change is reviewed by a fresh reviewer before `main`. State docs the Hub owns (`PROJECT_STATE`, `BACKLOG`, `DECISIONS`, `KNOWN_GAPS`, packets, `HUB_RESUME`, this §0, `CLAUDE.md`) are the exception.
+- Every code/asset/data change is reviewed by a fresh reviewer before `main`. State docs written by integrator and planner sessions (`PROJECT_STATE`, `BACKLOG`, `DECISIONS`, `KNOWN_GAPS`, packets, roadmap) and changes to `HUB_RESUME`, this §0 and `CLAUDE.md` are the exception.
 - First check on every review: each store value cites a source or is a labelled GAP; an uncited value is a MAJOR (DEC-047).
-- Verdict file `Docs/Reviews/REVIEW-<ID>.md`: header (reviewed branch @ sha, merge base, sources read), `## Verdict: PASS | PASS with minors | FAIL`, `## Checks` (what was run, results), `## MAJOR` (blocks merge), `## minor` (fix in a follow-up or before merge, Hub's call). A FAIL names the failing acceptance item; it never prescribes the implementation.
-- The reviewer reports to the Hub only. The Hub decides: merge, return to the same worker with the review path (`## Fix round` in the packet), or a fresh worker.
+- Verdict file `Docs/Reviews/REVIEW-<ID>.md`: header (reviewed branch @ sha, merge base, sources read), `## Verdict: PASS | PASS with minors | FAIL`, `## Checks` (what was run, results), `## MAJOR` (blocks merge), `## minor` (the integrator routes each to a BACKLOG row or a fix before merge). A FAIL names the failing acceptance item; it never prescribes the implementation.
+- The reviewer reports to the Hub only. PASS → integrator session. FAIL → the Hub forwards the review path to the worker (or a fresh worker if it is gone), nothing more.
 
-## 0.8 Integration and state update (Hub, one commit per accepted task)
-1. Merge the reviewed branch (or the reviewer's `review/<id>`) into `main` with `--no-ff` and the git identity above.
+## 0.8 Integration and state update (integrator session, one commit per accepted task, DEC-132)
+On `integrate/<id>` cut from current `main`:
+1. Merge `review/<id>` (or the reviewed branch) `--no-ff` with the git identity in `CLAUDE.md`.
 2. Move the packet `Active/` → `Done/`; set the BACKLOG row to Done.
-3. Append DEC/GAP entries proposed in the handoff's `## For the Hub`; forward `FOR NOLAN` items.
-4. **Track:** any new legitimate work the handoff or review surfaced gets a BACKLOG row (ID, deps, Later or Ready) now; obsolete rows become `Dropped (reason)`; every BACKLOG row whose dependencies are all Done moves to Ready (write its packet from the roadmap and the cited specs) and into the PROJECT_STATE queue. If a milestone's P0/P1 rows are all Done, close it (§91, build) and open the next in the roadmap.
-5. Update `PROJECT_STATE.md`: remove the in-flight row, pull the next queue item, note the build if one is due.
-6. Archive the worker and reviewer sessions.
+3. Append DEC/GAP entries proposed in the handoff's `## For the Hub` and the review. List `FOR NOLAN` items (after checking the DEC-105 search was done) under PROJECT_STATE "Blocked / open with Nolan". A Hub ruling the integration needs: one line to the Hub; record its answer, never decide it yourself.
+4. **Track:** route review minors to rows; new legitimate work the handoff or review surfaced gets a BACKLOG row (ID, deps, Later or Ready); obsolete rows become `Dropped (reason)`; every row whose dependencies are all Done moves to Ready (write its packet from the roadmap and the cited specs) and into the PROJECT_STATE queue. If a milestone's P0/P1 rows are all Done, mark it closed in the roadmap, queue its build (§91) and open the next milestone.
+5. Update `PROJECT_STATE.md`: remove the in-flight row, put the next queue items in order, note the build if one is due.
+6. Commit, one line to the Hub: `INTEG <ID> ready: integrate/<id> @ <sha>`. The Hub runs `git merge --ff-only integrate/<id>` on `main` (if `main` moved, it asks you to rebase) and archives the sessions.
 Handoffs and reviews are never edited afterwards; corrections are new entries in the registries. If a fact appears in two places, the registry in §0.2 wins and the other copy is deleted, not updated.
 
 ## 0.9 Hub restart
-A new Hub reads `HUB_RESUME.md`, `PROJECT_STATE.md` and the newest DECs, then reconciles `PROJECT_STATE` with `list_sessions {"linked": true}` and `git branch` (worker branches `worktree-agent-*`, `claude/*`, `review/*`). A running session missing from the table: ask it for one line (`<ID>, branch @ sha, state`) and add the row. A table row without a session: check the branch for a handoff; if none, the task goes back to the queue. Then run the Hub loop in `HUB_RESUME.md`. No chat history is ever needed; if it seems to be, `PROJECT_STATE.md` is incomplete and gets fixed first.
+The Hub chat is cleared regularly and in-Hub agents die with it, which is one more reason never to use them. A new Hub reads `HUB_RESUME.md` and `PROJECT_STATE.md`, then compares `list_sessions {"linked": true}` with the In-flight table. If they disagree, it starts a planner to reconcile `PROJECT_STATE.md`; it does not edit or investigate itself. Then it follows the per-message table in `HUB_RESUME.md`. No chat history is ever needed; if it seems to be, `PROJECT_STATE.md` is incomplete and a planner fixes it.
 
 ---
 

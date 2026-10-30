@@ -1,9 +1,9 @@
 # Dispensary Game — Claude Code Instructions
 
-Studio structure (DEC-116/117): **Nolan → Studio Hub → workers → fresh short-lived reviewers → Hub merges.** No leads, departments or standing reviewers. The operating model (roles, sources of truth, read sets, packets, briefs, escalation, review, integration, Hub restart) is `Docs/STUDIO_OS.md` **§0 only**; everything below §0 there is history.
+Studio structure (DEC-116/117): **Nolan → Studio Hub → sessions (workers, fresh short-lived reviewers, integrators, planners) → Hub fast-forwards `main`.** No leads, departments or standing reviewers. The Hub only dispatches sessions, relays messages and questions, fast-forwards `main` and archives sessions; it never does task work or runs in-Hub agents (DEC-128..132). The operating model (roles, sources of truth, read sets, packets, briefs, escalation, review, integration, Hub restart) is `Docs/STUDIO_OS.md` **§0 only**; everything below §0 there is history.
 
 ## Start here (by role)
-- **Studio Hub:** `Docs/HUB_RESUME.md`.
+- **Studio Hub:** `Docs/HUB_RESUME.md` (hard rules and per-message actions) and `Docs/PROJECT_STATE.md`. Nothing else.
 - **Worker:** your packet `Docs/Tasks/Active/<TASK_ID>.md`, then only the docs and sections it cites. Do not load `PROJECT_STATE.md`, `BACKLOG.md`, `Docs/Departments/` or the documentation tree.
 - **Reviewer:** the packet, the diff, the handoff's Validation and Not-done sections, the acceptance sources the packet cites (STUDIO_OS §0.3/§0.7). Nothing else.
 
