@@ -24,6 +24,8 @@
 Unity Warehouse/Office packs: still need a Unity editor Package Manager download (P1, later).
 
 ### Live session ids (for SendMessage / archive)
+- dispo-art-003 `local_392adc04-9603-4cc9-959c-6e3e2d792743` · dispo-proc-002 `local_1b8fb899-d1dc-49d4-8384-8bc73da3e85a` (wave 4, write their own packets first)
+- dispo-review-w3d `local_57aeb17a-1d55-496c-8328-51721cfc125a`
 - dispo-game-002 `local_e574024b-b42a-4f12-b5db-6b6d66ac34bc` (working)
 - dispo-review-w3b `local_53273c02-a00e-46fb-9407-96ecfc4855ad` (started by Hub session 3)
 - dispo-art-002 `local_6681ee58-dbed-4e39-adda-192aa4a576fb` (idle; archive after W3B merges)
