@@ -3,7 +3,17 @@ guid: 2473d347f3b717646a305f2b3f5ed142
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Proc_BudAccent_GreenDense
+    second: {fileID: 2100000, guid: 661d77548f483c645a36f10462f90f10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Proc_Bud_GreenDense
+    second: {fileID: 2100000, guid: 4d4d71975cc5d0c448cd7ec76ef992f8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

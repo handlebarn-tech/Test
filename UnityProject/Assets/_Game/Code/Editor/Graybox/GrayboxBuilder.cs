@@ -39,7 +39,8 @@ namespace Dispo.Editor.Graybox
                 var counts = BuildAll(force);
                 // the additive lookdev scene sits on the graybox, so it is regenerated in the same run (ART-003)
                 var lookdev = Lookdev.LookdevBuilder.BuildAll(force);
-                Debug.Log($"[Graybox] Build OK {counts} {lookdev}");
+                var buds = Lookdev.BudMaterials.Apply(); // ART-006: the fill FBX colours don't survive import
+                Debug.Log($"[Graybox] Build OK {counts} {lookdev} {buds}");
                 EditorApplication.Exit(0);
             }
             catch (Exception e)
@@ -89,8 +90,8 @@ namespace Dispo.Editor.Graybox
                 var fixParent = Child(root, "Fixtures");
                 foreach (var f in layout.fixtures.Where(f => f.zone == zone))
                 {
-                    var h = layout.H(f.h);
-                    var baseFt = string.IsNullOrEmpty(f.@base) ? 0 : layout.H(f.@base).ft;
+                    var h = string.IsNullOrEmpty(f.h) ? new L.Height { ft = f.hFt, gap = "ROOM_FIXTURES" } : layout.H(f.h);
+                    var baseFt = string.IsNullOrEmpty(f.@base) ? f.baseFt : layout.H(f.@base).ft;
                     var mat = f.conf == "Low" ? mats["fixtureLow"] : mats["fixture"];
                     var name = $"{f.id} [conf {f.conf}] [h={h.ft}ft {h.gap}]";
                     for (var i = 0; i < f.rects.Length; i++)
