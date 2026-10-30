@@ -44,3 +44,12 @@ Seeded from MASTER_PLAN §20–21; REF-001 and MIG-001 extend this file.
 - GAP-PROC-04 | asset | package box 65 × 25 × 100 mm, 20 mm lid | none (conventional carton) | real SKU dimensions
 - GAP-PROC-05 | asset | pouch 100 × 150 mm, 40 mm gusset, 15 mm seal | none (conventional stand-up pouch) | real SKU dimensions
 - GAP-PROC-06 | asset | package label rectangles | none | real packaging references
+
+## REF-008 (see `Docs/REFERENCES_INDEX.md` §7, `Docs/Reference/ROOM_FIXTURES.json`)
+- GAP-103 | building | **CLOSED REF-008**: A011 puts the JC in the break-room SE corner, x 19.3-23.31, y 41.3-46.3 (about 19.2 SF), door on its west face | Med | —
+- GAP-121 | building | Office mirrored E-W in V5/graybox: CCTV (3 views) + A011 doors put desk L + neon west, steel cabinets on the south wall, IT rack east | Med-High | ART re-lays the office from ROOM_FIXTURES.json
+- GAP-122 | building | Vestibule: A011 about 8.4 x 4.8 ft (x 31.4-39.8, y 29.5-34.3, 35.16 SF) with 3-0 doors on its W/E faces vs graybox 3.0 x 2.2 | High (A011) | Hub rules; ART adopts A011 and moves the FOH/BOH racks
+- GAP-123 | building | Hall door positions per A011: office door x 10.2-13.3, break door y 29.9-33.0, restroom door y 33.1-36.1 vs graybox | High (A011) | ART edits the openings
+- GAP-124 | building | FOH desk + fridge + cooler wall: south (JSON) vs east; CCTV ambiguous | Low | Nolan confirms the wall
+- GAP-125 | building | A011 back-room interior dims do not sum to the building width with walls; V5 shells kept | Med | site measure
+- GAP-126 | building | Break-room grey table in the R3C5 foreground is unplaced | Low | Nolan / photo

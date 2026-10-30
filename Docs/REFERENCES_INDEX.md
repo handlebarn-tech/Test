@@ -394,3 +394,36 @@ A011 "Floor Plan" (Dispensary - Floor Plan) and A012 "Floor Plan - Lighting" (le
 
 ### 6.9 "COMPILED_Flower Shop_Int Set.pdf" (REF-005): not this store
 Same Floor Plans folder (24 pp, 5.9 MB, read as text). It is the RSP **Ahwatukee** retail interior set (10827 S 51st St, sheets dated 09/2021: I100 demo, I102 RCP, I310 schedules, I701 elevations, I940 millwork). It has no Phoenix/McDowell sheet and no deli case, deli counter or jar items. It shows that the Phoenix millwork (§6.4, the same glass-showcase display family) follows the TFS store standard, but **no values from it are used** (another store). A search of M365 for deli case/jar specs found only Dutchie inventory exports.
+
+## 7. Back-room fixture mapping (REF-008)
+
+Numbers live in **`Docs/Reference/ROOM_FIXTURES.json`** (71 rows: room, fixture, type, size_ft [w,d,h], pos_ft centre, rot, faces, confidence, source tiles, plus a graybox-contradiction list). Positions use the §1.2 frame, mapped into the V5/graybox shells. A011 interior dims (office 13'-8¾", break 10'-6", FOH 12'-1¼", BOH 10'-4¼") do not sum to 47'-2¼" with walls (GAP-125), so A011 features are placed by their fraction of each room.
+
+**Method.** Every tile of both camera walls was cropped from the original PNG and upscaled 2× (wall 2 first), the HUB wall and stills were re-read, and A011 was rendered at 250–300 dpi. Crops are working files only; nothing new is committed. Size refs: 3'-0"×7'-0" doors, 34" counters, 4×2 ft wire bays (convention).
+**New chat-only sources (Nolan, 2026-10-29, not in the repo):** `chat_office_L` (new: office looking south), `chat_office_R` (= R3C3), `chat_BOH_L` (= R4C2), `chat_BOH_R` (= BOH still), `chat_FOH_L` (= R4C1), `chat_FOH_R` (new: FOH looking toward its door).
+**Excluded by rule:** camera mount layout, access-control hardware, alarm items, safe interiors, screen contents, one large office wall screen. Staff in R3C3/R4C5/R4C2 are described by role only and not cropped.
+
+**Tile triage.** Back rooms appear only in R3C3, R4C5 (office), R3C4 (hall), R3C5 (break), R4C1 (FOH) and R4C2 (BOH), plus the FOH/BOH stills and the chat views. Exterior, retail, HUB, HUB-wall and register frames show nothing behind the arches (R3C2 shows the arch from retail). Wall 1 matches wall 2 apart from people and loose items.
+
+### 7.1 Office
+Views: R3C3/R4C5 (looking N), chat_office_L (looking S), R3C4 (through the open door). The hall door is at the **east end of the north wall** (x 10.2–13.3, A011), black, hinged east, swings in. The HUB 2 door is on the south wall (x 7.2–10.2), white, with a coat-hook rail. Layout (Med): black **L desk** along the west wall under a green **"THE FLOWER SHOP" neon**, dual monitors in the NW corner, and a stainless folding-leg worktable along the north wall below a fabric pin board and three floating shelves. **Two tall black steel cabinets** (furniture only) on the south wall west of the HUB 2 door. Deli prep cart (§2.4) under a wood canister shelf east of that door. East wall: file cabinet, open IT rack, step can. Loose items: 2 task chairs, a wire cart, a small drum kit, a plant. White speckled VCT floor. **GAP-121:** V5 and the graybox have the office mirrored east–west.
+
+### 7.2 Hall (west)
+R3C4 looks SE from the NW. Break door (black, "EMPLOYEES ONLY", fire label) is on the east wall, y 29.9–33.0. Office door is at the SE corner. Restroom door is on the west wall, y 33.1–36.1 (A011 only). Wood corkboard ≈1.8×2.6 ft with taped notices. Small recessed wall box near the arch (A011, Low). TL-2 black/white tile (High). **GAP-123:** graybox doors are off by 1–2.2 ft.
+
+### 7.3 Break room + JC
+R3C5 (from the SW, looking N/NE) and A011 agree (Med). A pilaster at x 18.3–18.9. Plain north wall west of it (poster, towel dispenser). Wood/black-top cabinets east of it, returning down the east wall to y 37.4, with a double sink at y≈34.4. A magnet-covered **fridge** at y 37.7–40.5. Bench, mini hoop and coat hooks on the west side. **JC (GAP-103 closed):** SE corner, x 19.3–23.31, y 41.3–46.3 (≈19.2 SF), with its 2'-8" door on the west face at the south end (the black door with a note in R3C5) and a mop sink inside (A011). A foreground grey table can't be placed (GAP-126).
+
+### 7.4 Restroom (blind on camera)
+A011: toilet in the NW corner (tank on the west wall), grab bars on the north and west walls, wall-hung lav in the SW corner, door at the south end of the east wall. Looks are per TI §6.6.
+
+### 7.5 Vestibule (A011 HALL 35.16 SF)
+**≈8.4×4.8 ft** at x 31.4–39.8, y 29.5–34.3 (High). The FOH door is on its west face and the BOH door on its east face, both at the north end, both 3'-0". The arch is x≈34.5–37.6. Supply shelf on the south wall (Low). TL-2 tile. **GAP-122:** the graybox draws it 3.0×2.2. The GAP-104 2.2 ft door exception lapses if ART adopts A011.
+
+### 7.6 FOH
+R4C1/still/chat_FOH_L look south from beside the door; chat_FOH_R looks toward the door. Seen: a contiguous wire-rack **computer desk + white fridge + 2-door glass cooler**, two free-standing chrome runs with bins, a west-wall rack (A011 + R4C1), east-wall shelving (A011 only), sealed concrete with red/white tape. **GAP-124:** the frames read best with the group on the south wall (as in the JSON and the graybox desk); the east wall is not ruled out.
+
+### 7.7 BOH
+R4C2/chat_BOH_L look SW from the NE; the still/chat_BOH_R look NW from the SE. East-wall chrome run from y 31.3 to the desk. 2-bay west run at x 37–39, y 37.3–45.3. South shelving (A011, Low). Ex-register-1 desk on the east wall at y 40.3–44.3 (matches the graybox). LED strip over the aisle. Graybox `FX_BOH_Racks_W` starts at y 33, which collides with the vestibule.
+
+Box and case brand names are not inventory data.
