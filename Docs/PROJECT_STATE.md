@@ -20,7 +20,7 @@
 | REF-003 | dispo-ref-003 | done → REVIEW-W3B (with ART-002) |
 | GAME-003, BUILD-002 | — | done → REVIEW-W3A (dispo-review-w3a) |
 | COMP-001, RES-001, ASSET-002 | — | REVIEW-W3C PASS; merged to main (32a1ad9) |
-| REF-004 | dispo-ref-004 | done (79f648d): TI values indexed §6; PDFs not importable by tools → needs REVIEW (doc-only, small) |
+| REF-004 | dispo-ref-004 | done (79f648d): TI values indexed §6; PDFs not importable by tools → REVIEW-W3E (`local_632adaa1-403b-4158-b66e-aa1f28011736`); REF-005 sent to the same REF-004 session |
 Unity Warehouse/Office packs: still need a Unity editor Package Manager download (P1, later).
 
 ### Live session ids (for SendMessage / archive)
