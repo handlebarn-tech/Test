@@ -38,7 +38,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 2. GAME-025 controls (after DES-005 + GAME-009 merge; World door contract).
 3. GAME-026 customer flow (World entry anchors) and the DES-006 first-depth cut, then PS1b GAME-017 → 018 → 019 → 020 as amended.
 4. GAME-021/022/024; UX-003; GAME-011/012 per DES-004.
-5. Long-term ideas: `Design/PROPOSAL_PLAYTEST1_LONGTERM.md` (DES-005) goes to the Hub for scope.
+5. DES-007 (after DES-005 merges): DEC-101 accepted the long-term proposal as phased; add its rows to `ROADMAP_POST_SLICE.md` (Hub-delegated) + a deadpan tone note where dialogue/event writers read. Nolan Q1–7 (GAP-CF) are with the Hub; keep placeholders.
 
 ## Blockers / Questions for Nolan
 - None open.
