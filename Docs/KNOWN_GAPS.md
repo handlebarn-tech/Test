@@ -97,6 +97,8 @@ These gaps are defined, with placeholders and owners, in the spec named; that sp
 - GAP-DAY-08 | store | Do budtenders have a usual register | any free one | Nolan (low) | CLOSED by DEC-079
 - GAP-DAY-09 | store | Last call / door lock | CLOSED by DEC-076 (lock 22:00, inside customers served) | —
 - GAP-PROC-13 | asset | Chrome rack component sizes (post, wire, collar, caster, foot diameters); shelf count/casters answered by DEC-088 | toolkit defaults | REF/measure
+- GAP-PROC-23..24 | parked vehicles (generic class dimensions; paint mix and texture maps, maps wait for PROC-016) | `Docs/Assets/Specs/PROC_PIPELINE.md` "PROC-009"
+- GAP-PROC-VEH-2 | store | parked cars per shift, kinds, colours | — | Nolan | CLOSED by DEC-134 (count: 1 car per in-store customer); kinds/colours stay GAP-PROC-23/24; above-15-customers overflow open (Hub)
 
 ## DES-005 / DES-005b controls and customer flow (see `Docs/Specs/CONTROLS_FLOW_PS1.md` §8)
 - GAP-CF-01 | store | How a budtender calls the next guest | spoken call + walk-up | Nolan | CLOSED by DEC-103 (1): "Next in line!" / "Online order!" / "Next guest!"
