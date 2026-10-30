@@ -1,6 +1,6 @@
 # CHARACTERS — customers (and later staff)
 
-**Task:** ASSET-004 (2026-10-30), rewrite of the ASSET-003 spec. **Status:** MPFB2 pipeline built; @@EXPORTED@@ of 60 roster customers exported to the cache with 0 validation errors. Nothing is imported into Unity yet (GAME-CHR-002).
+**Task:** ASSET-004 (2026-10-30), rewrite of the ASSET-003 spec. **Status:** MPFB2 pipeline built; 58 of 60 roster customers exported to the cache with 0 validation errors. Nothing is imported into Unity yet (GAME-CHR-002).
 **Governing decisions:** DEC-075 (≥ 10 distinct customers first, **≥ 50 by the end**). **DEC-084 (quality bar): realistic humans with realistic proportions, PBR skin and clothing and facial detail; never low-poly or stylised; performance comes from LODs, not from low-poly bases.** **DEC-087: MPFB2 (CC0, our generator) is the main customer path; Rocketbox (MIT) is the interim/PS2 crowd and background set; MIT is on the DEC-023 allow-list.** DEC-089 (staff uniform). DEC-023 (licences and cache). DEC-033/098 (questions go up the chain, never to Nolan directly).
 **Rules kept:** $0, no account, **no real person's likeness** (no scans of real people; MPFB bodies are morph blends of the CC0 base mesh, faces are seeded target mixes, §3), no customer PII, adults only (21+ store).
 **Licence record:** `Docs/Assets/LICENSE_LEDGER.md` §1d (MPFB2), §1c (Rocketbox). **Downloads:** `Docs/Assets/fetch_list_mpfb.json`, sha256 in `ASSET_CACHE_MANIFEST.json` (fetched packs + derived customers), files in `C:/Users/handl/Downloads/Dispo Game Assets Cache/mpfb/`.
@@ -47,15 +47,15 @@ Register cues: sex, age band, skin, head (hair or hat), top outfit, glasses, bea
 **QA:** the committed contact sheet (§2 step 4) shows every exported customer at register framing (head and shoulders). Pass = a reviewer confuses no pair. A greyscale pass in store lighting belongs to GAME-CHR-002.
 
 ## 4. Budgets
-| Item | Budget | Measured (@@EXPORTED@@ customers) |
+| Item | Budget | Measured (58 customers) |
 |---|---|---|
-| LOD0 (served customer, ≤ 3 m) | ≤ 150k tris; body subdivided once, all parts | @@LOD0@@ |
-| LOD1 (3–8 m) | ≤ 60k; MPFB base resolution, teeth dropped | @@LOD1@@ |
-| LOD2 (8–15 m) | ≤ 20k; Decimate 0.32, brows/lashes/teeth dropped | @@LOD2@@ |
-| LOD3 (> 15 m) | ≤ 6k; Decimate 0.10, eyes/glasses/mouth parts dropped | @@LOD3@@ |
+| LOD0 (served customer, ≤ 3 m) | ≤ 150k tris; body subdivided once, all parts | 81–127k (mean 100k) |
+| LOD1 (3–8 m) | ≤ 60k; MPFB base resolution, teeth dropped | 26–60k (mean 38k) |
+| LOD2 (8–15 m) | ≤ 20k; Decimate 0.32, brows/lashes/teeth dropped | 8.3–18.9k (mean 12k) |
+| LOD3 (> 15 m) | ≤ 6k; Decimate 0.10, eyes/glasses/mouth parts dropped | 2.4–5.4k (mean 3.5k) |
 | Rig | MPFB `game_engine`, 53 bones, Unity Humanoid-compatible names (`pelvis`, `spine_01…`, `upperarm_l…`) | 53 bones each; all 17 Humanoid-required bones present |
-| Height | f 1.45–1.85 m, m 1.60–1.95 m | @@HEIGHT@@ |
-| Materials | one per part (skin, eyes, brows, lashes, teeth, hair, each clothing item, proxies) | @@MATS@@ |
+| Height | f 1.45–1.85 m, m 1.60–1.95 m | f 1.50–1.75 m, m 1.61–1.95 m (C028/C054 at 1.59 m deferred) |
+| Materials | one per part (skin, eyes, brows, lashes, teeth, hair, each clothing item, proxies) | 7–11 per customer |
 | Textures | target ≥ 2K for skin, hair and clothes colour/normal | see §5 gaps |
 
 **On screen (PERF-001: ≤ 3 M tris, ≤ 2000 draws, GPU ≤ 12 ms):** 12 customers with the served one at LOD0, 3 at LOD1 and 8 at LOD2 ≈ 110k + 135k + 120k ≈ 365k tris (12 %). Worst case, all 12 at LOD1 ≈ 540k. Draws ≈ materials per customer (~8–11) × 12 ≈ 130 plus shadows. LOD0 is used only for the served customer.
@@ -65,7 +65,7 @@ Register cues: sex, age band, skin, head (hair or hat), top outfit, glasses, bea
 - **GAP-CHR-4 Skin normals.** Most CC0 skins are a 2K diffuse with no normal, specular or SSS map. Candidates: (a) a tiling skin-pore **detail normal** made in Blender from procedural noise (our own, CC0 by construction), applied as the HDRP detail map; (b) a CC0 tiling skin/leather-pore normal from ambientCG or Poly Haven if one fits (not yet checked); (c) HDRP diffusion profile "Skin" for SSS, no texture needed.
 - **GAP-CHR-5 Eyes 1K.** The CC0 eye materials are 1K. At register distance an iris covers a few dozen pixels, so 1K is likely enough. Candidate if not: a procedural iris baked at 2K in Blender, plus HDRP eye wetness.
 - **GAP-CHR-6 Brows and lashes 512 px.** Candidates: other CC0 eyebrow/eyelash units already in the licence index (to be compared), or our own alpha cards painted in Blender at 1K.
-- **GAP-CHR-7 Some hair and shoes are 1K.** Candidates: prefer the 2K hairstyles in the pool for the served-customer close-up; upscale is not a fix. Shoes are rarely visible across the counter (low priority).
+- **GAP-CHR-7 Shoes, keyhole tank top and fedora normal are 1K** (measured on the 58 exports; all hair in the licence-clean pool is ≥ 2K). Shoes are rarely visible across the counter (low priority); candidate for the tank top: our own 2K repaint. Upscaling is not a fix. Glasses lenses are a flat blue colour texture: HDRP should render them as transparent glass, not textured.
 - **GAP-CHR-8 No South-Asian male skin** in the CC0 set (and only one Eurasian male skin). The roster's 12 South-Asian customers are therefore all women. Candidates: (a) a hue/value-shifted derivative of a CC0 male skin, made by us (still CC0, recorded as derived); (b) another CC0 MakeHuman community skin if one exists (not yet found). Needs a likeness-neutral review either way.
 - **GAP-CHR-9 No CC0 beard.** Both beards in the packs (`wdg_scruffy_beard`, `grinsegold_beard_sigmund_wip`) and the moustaches are AGPL- or CC-BY-headed. Candidates: (a) our own beard/stubble made in Blender (alpha cards or a stubble skin overlay, CC0 by construction); (b) a CC0 beard from another MakeHuman pack, if one exists (not yet found). Until then no customer has a beard.
 - **GAP-CHR-10 MakeHuman logo prints.** Some CC0 system casual suits carry the MakeHuman logo on the tee (seen on the contact sheet). Legal (CC0), but it is a real project's logo in the store. Candidate: paint the logo out in our derived copy of the texture (an `edit` step in `customer_gen.py`).
@@ -101,7 +101,7 @@ Idles, talk and props come from `all_animations_max_motextr_static` (ANM-RB-STAT
 16 Rocketbox avatars are fetched (MIT, 6.7k–9.3k tris, 2K TGA colour/normal/specular, 80-bone Biped, ledger §1c, fetch list `fetch_list_characters.json`); 64 more adults are in the fetch list as `blocked: P1`. They serve as the PS2 crowd and background set until MPFB customers are imported. MIT notice goes into the build's third-party notices; Rocketbox's `FixRocketboxMaxImport.cs` may be ported with its notice (DEC-087). Excluded categories stay excluded (children, fire, military, pilot, police, swimwear).
 
 ## 9. Staff (later)
-- **Budtenders/managers (DEC-089):** black pants and a green t-shirt with "The Flower Shop" printed at the top right of the chest. Built with the same MPFB pipeline from a separate staff roster: a CC0 tee and trousers recoloured, plus a chest print decal made by us from the approved brand (DEC-071). Not built yet.
+- **Budtenders/managers (DEC-089):** black pants and a green t-shirt with "The Flower Shop" printed on the **wearer's left chest** (viewer's top-right; DEC-113, closes GAP-CHR-PRINT-SIDE). Built with the same MPFB pipeline from a separate staff roster: a CC0 tee and trousers recoloured, plus a chest print decal made by us from the approved brand (DEC-071). Not built yet.
 - **Security / door:** MPFB or Rocketbox `Security_*` (MIT), later.
 
 ## 10. Open questions (lead/Hub, within DEC-087 authority; see `Docs/Handoffs/ASSET-004.md`)

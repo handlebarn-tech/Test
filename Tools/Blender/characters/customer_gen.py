@@ -130,6 +130,7 @@ def export_material(obj, c, basemesh, tex_dir, report, p):
         node = nt.nodes.new("ShaderNodeTexImage")
         node.image = img
         if role == "base_color":
+            nt.nodes.active = node  # Workbench previews show the active image node (else the normal map shows)
             nt.links.new(node.outputs["Color"], bsdf.inputs["Base Color"])
             if cutout:  # hair/brow/lash cards: alpha-clip in Unity
                 nt.links.new(node.outputs["Alpha"], bsdf.inputs["Alpha"])

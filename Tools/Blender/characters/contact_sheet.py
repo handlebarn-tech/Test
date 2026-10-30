@@ -3,6 +3,7 @@ framing) into one JPEG, row-major from the top left in id order (C001, C002, ...
 Run: "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe" --background --factory-startup --python-exit-code 10
        --python Tools/Blender/characters/contact_sheet.py
 Output: Docs/Assets/Specs/customers_mpfb_contact_sheet.jpg (must stay <= 1 MB, ASSET-004 rule)."""
+import json
 import os
 
 import bpy
@@ -13,7 +14,12 @@ REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.a
 OUT = os.path.join(REPO, "Docs/Assets/Specs/customers_mpfb_contact_sheet.jpg")
 COLS, TW, TH = 10, 192, 160
 
-ids = sorted(d for d in os.listdir(DERIVED) if os.path.isfile(os.path.join(DERIVED, d, d + "_head.png")))
+def passed(cid):
+    v = os.path.join(DERIVED, cid, cid + ".validation.json")
+    return os.path.isfile(v) and not json.load(open(v))["errors"]
+
+
+ids = sorted(d for d in os.listdir(DERIVED) if os.path.isfile(os.path.join(DERIVED, d, d + "_head.png")) and passed(d))
 rows = -(-len(ids) // COLS)
 sheet = np.full((rows * TH, COLS * TW, 4), 0.5, dtype=np.float32)
 sheet[..., 3] = 1.0
