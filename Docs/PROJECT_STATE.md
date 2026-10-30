@@ -17,7 +17,7 @@ Merged this session: W4K (GAME-005), W4Q (DES-003; DEC-052..059), W4J (PERF-001)
 | GAME-010 tuning + personas | `local_0d166a8e-87b1-40bb-9594-be389c549875` | grid 2 running | review |
 | ART-006 bud HDRP materials, then back rooms | `local_392adc04-9603-4cc9-959c-6e3e2d792743` | running | review; rooms after REF-009b |
 | REVIEW-W4T: QA-002 | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO |
-| IMP-002: integrate approved V2 pack (DEC-063) | (starting) | running | docs review, merge |
+| IMP-002: integrate approved V2 pack (DEC-063) | `local_ad2c683f-9022-4d82-8d3d-2cad5d63c888` | running | docs review, merge |
 | REVIEW-W4U: REF-009b (`task-ref-009b` 233ee85) | `local_0dd63bac-df1d-448d-9203-641ead6b6837` | running | merge on GO → ART-006 rooms |
 | AUDIT-001 approval sheet (Nolan asked for one) | `local_b6a24c47-ab71-4d36-9df9-1eb188edc2b0` | drafting `Docs/Audits/AUDIT-001_APPROVAL.md` | → Nolan approves before ANY doc change |
 | Idle, reusable/archivable: PROC-004 `local_ffb38222…`, GAME-005 `local_65e98573…`, DES-003 `local_afc2a299…`, W4Q/W4R reviewer `local_c94488d7…`, W4P reviewer `local_3bc3be53…`, IMP-001 `local_ad2c683f…`, UX-005 `local_802b992e…` | | | |
