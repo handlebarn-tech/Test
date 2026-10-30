@@ -19,6 +19,6 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | PROC-001 | P1 | Blender headless wrapper + first generators (deli jar / package base) | — | Review |
 | REVIEW-W2A | P0 | Review GAME-001 + PROC-001 | GAME-001, PROC-001 | Active |
 | REVIEW-W2B | P0 | Review DES-001 + UX-001 + ASSET-001 | DES/UX reconcile | Active |
-| REVIEW-W2C | P0 | Review ART-001 + commit HDRP-normalized ProjectSettings | ART-001 | Review |
+| REVIEW-W2C | P0 | Review ART-001 + commit HDRP-normalized ProjectSettings | ART-001 | Active |
 | ASSET-002 | P1 | Fetch P0 CC0 assets + normalize (after Nolan's human-only steps) | ASSET-001 | Later |
 | BUILD-002 | P2 | Build manifest (TOOLCHAIN §14) + fuller result schema (§8) | BUILD-001 | Later |
