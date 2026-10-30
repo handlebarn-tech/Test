@@ -17,6 +17,8 @@ Staff are described by attire/role only.
 | `References/CCTV Register Back Center Wide 2026-10-29.webp` | WEBP 1134×640, 1 feed | "Back Of Register center", 16:48:53, wide. **Same camera and framing as wall tile R2C4** (DEC-026) | §2.2 |
 | `References/CCTV BOH Desk Racks 2026-10-29.webp` | WEBP 2000×1022, 1 feed, no overlay text | BOH overhead still: chrome wire rack island of packaged stock, wall rack of black cases, the ex-register-1 computer on the right (DEC-041). Supplied by Nolan 2026-10-29 | §2.3 |
 | `References/CCTV FOH Desk Racks 2026-10-29.webp` | WEBP 2000×1101, 1 feed, no overlay text | FOH overhead still: computer on a black wire rack against the back wall, fridge, glass-door cooler, chrome racks, patterned-tile doorway (DEC-041). Supplied by Nolan 2026-10-29 | §2.3 |
+| `References/Photo Deli Jars Scale Office 2026-10-29.webp` | WEBP 952×1269, phone photo, office | Deli canisters (empty and in use, THC % label cards), deli scale with glass bowl, stainless "FOR DELI USE ONLY" prep cart (DEC-042b). **Raw photo: never ships** (network rack, thermostat, security-labelled drawer in frame) | §2.4 |
+| `References/Index/photos/deli_jars_scale_cart_crop.webp` | WEBP 570×779, derived crop (330,490)–(900,1269) | Jars + scale + cart only. No network rack, thermostat, security drawer or screen content | §2.4 |
 | `References/TI/Interior TI Approved Set - PHX.pdf` | PDF 37 pp (24"×36"-class sheets, vector + text layer), 9.15 MB, 2022-08/10, City-approved 2022-12 | Retail interior TI drawings: G010 mounting heights, A101 plan + RCP, A310 door/material schedules, A320 partitions, A901 elevations, A940 millwork, I101 finish plan, E-sheets luminaire schedule. Text-read in REF-004; Nolan supplied the file and it was imported in REF-005 (plain git, <10 MB). Every page was checked: no security plan, P&P or credential page (the security mentions are a grille, card-reader hardware lines and spec boilerplate) | §6 |
 | `References/TI/A011 Phoenix AZDHS Floor Plan - 2026 Update.pdf`, `References/TI/A012 AZDHS Floor Plan - Lighting - 5.20.26.pdf` | PDF 1 p each, vector, 1/4"=1'-0" (18 pt/ft), sheet date 05/15/23, revs 12/23/22 | Room areas and labels behind Working Plan V5; A012 lighting legend | §6.8 |
 | `References/LIVE_TFS_BUDTENDER_v7.11.4.md` | MD | Live budtender app behaviour (v7.11.4: Floor Mode, 6 effect domains, tier filters, accessibility). **No visual tokens** (colours/fonts/layout) are recorded in it | UI only (GAP-114) |
@@ -53,8 +55,8 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 | JC (janitor closet, inside break room) | 19.19 | 19.9–22.9 | 42.9–45.9 | 3.0 × 3.0 (drawn) | drawn size and corner both unconfirmed. 3×3 = 9 SF, not 19.19 (GAP-103) |
 | FOH (floor restock; A011 "FULFILLMENT") | 180.26 | 23.69–36.49 | 29.5–46.3 | 12.80 × 16.80 | 215 SF drawn. A011 (REF-006) puts FULFILLMENT 180.26 SF in the west room (next to Break), so FOH = 180.26 |
 | BOH (backstock; A011 "PRODUCT STORAGE") | 163.44 | 36.90–47.19 | 29.5–46.3 | 10.29 × 16.80 | 173 SF drawn |
-| HUB (sheet: Product Storage) | 818.53 | 0–28.29 | 46.8–76.03 | 28.29 × 29.24 | deliveries · general storage · entered from office |
-| HUB 2 (sheet: Product Storage) | 541.34 | 28.70–47.19 | 46.8–76.03 | 18.49 × 29.24 | only via HUB connecting door; no access from FOH/BOH |
+| HUB (sheet: Product Storage) | 818.53 | V5: 0–28.29 · **A011: ≈19.2–47.19 (east)** | 46.8–76.03 | 28.29 × 29.24 | general storage, desks; **A011 (REF-007): the east room, reached through the connecting door; the SE emergency exit opens from it.** V5 mirrors the pair |
+| HUB 2 (sheet: Product Storage) | 541.34 | V5: 28.70–47.19 · **A011: 0–≈18.8 (west)** | 46.8–76.03 | 18.49 (A011 18'-9¼") × 29.24 | **A011: the west room, entered from the office and the west delivery door ("first room", DEC-022).** No access from FOH/BOH |
 | *Arch vestibule (unnamed, "white wall")* | — | 35.2–38.2 | 29.5–31.7 | 3.0 × 2.2 | small lobby behind the east arch, with doors to FOH and BOH |
 | Net / gross | 3,467.77 / 3,590 (assessor) | | | | the plan says walls ≈ 122 SF |
 
@@ -74,8 +76,8 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 | Vestibule→BOH door | arc at x 38.2–39.4, y 30.6 | 1.2 symbol | Low |
 | Office→HUB door | y≈46.3, x 4.0–5.8 | 1.8 symbol | Low |
 | EXT. DELIVERY (employees only) | west wall x=0, y 47.8–51.2 | 3.4 | Med |
-| Door to HUB 2 | wall x≈28.3–28.7, y 48.6–50.6 | 2.0 | Med |
-| EMERGENCY EXIT, SE (green door with round logo; DEC-030) | Nolan: the building's furthest south-east door. **Not drawn on the plan**: the HUB 2 east (x=47.19) and south (y=76.03) walls and the HUB south wall have no door symbol. Seen in HUB wall tile R1C4 (far left) | not drawn | High (exists, Nolan) / Low (position, width). REF-002 maps R1C4 to HUB, so the door would sit on the HUB south wall near HUB 2, or R1C4 is HUB 2; unresolved |
+| Door to HUB 2 | V5: wall x≈28.3–28.7, y 48.6–50.6 · **A011: in the partition's north end (partition x≈18.8–19.2), y≈46.8–49.8, swings into HUB** | 2.0 drawn; A011 ≈3'-0" | Med (V5) / High (A011 location) |
+| EMERGENCY EXIT, SE (green door with round logo; DEC-030) | **A011 (REF-007): "access controlled entrance / exit" at the SE corner of the east room (HUB, 818.53 SF), on the south wall at x≈44.4–47.2, y=76.03, swinging out.** HUB is the furthest-east room, so the door opens from **HUB** (DEC-042c: HUB 2 is not furthest east). This agrees with HUB-wall tile R1C4 (HUB) showing the door | ≈3'-0" (A011 vector) | High (room, wall) / Med (exact x) |
 
 ### 1.5 Fixtures, counters, registers (vector, ft; Med unless noted)
 
@@ -150,6 +152,7 @@ Tile matching: each tile was compared with the 25 main-wall tiles (128×72 grays
 **Room decision.** Nolan: "First room on left two pictures, the rest are in the bigger side of the hub."
 - "Left two pictures" = the **left column** (R1C1 + R2C1), not the first two of the top row. R1C1/R2C1 show one cluttered room (copier, yellow-lid totes, work table, gray square floor tile); R1C2 shows the same orange-post chrome racks and dark floor as R1C3/R2C2/R2C3, so it belongs with "the rest". R2C4 repeats R2C1, so the left-column room has exactly two distinct views.
 - "The bigger side" = **HUB** (818.53 SF vs HUB 2 541.34 SF, printed, High). R1C4's desk + office chair + keyboard matches the plan's HUB "desks + computers" strip (x≈15–27, y≈70–74.4).
+- **REF-007 (A011, High):** the office and the west delivery door open into the small west room (541.34 SF = HUB 2), and the bigger east room (818.53 SF = HUB) lies beyond the connecting door. That is the literal "first room", so the naming below holds. Only the V5 geometry is mirrored (§1.3).
 - So left column = **HUB 2**, the rest = **HUB**. Conf. **Med** (owner statement + plan areas). "First room" is read as the order Nolan listed them, since the plan says HUB 2 is reached only through HUB. This supersedes the DEC-018 / REF-001 guess (R5C1/R5C2/R5C5 → HUB), which had the rooms swapped.
 
 | HUB-wall tile | = main wall | Room | View / camera pose guess (pose Low) | Key fixtures & finishes | Conf. (room) |
@@ -227,6 +230,15 @@ Both are single fisheye-ish overhead feeds with no timestamp overlay. **No peopl
 | BOH | dark doorway / black panel | top centre of frame beyond the rack, with a small chrome rack above it holding cartons | — | Low |
 
 The HUB-style "wire rack bay ≈4 × 2 ft, ≈6–7 ft tall" in §5 applies here too.
+
+### 2.4 Deli jars, scale and prep cart (REF-007, DEC-042)
+| Item | Evidence | Size | Conf. |
+|---|---|---|---|
+| **House deli smalls jar** (DEC-042a) | Amazon B0GX12Q9G8, "USYOGO POP Airtight … Food-Storage Container", sold as a 2-pack with 2 scoops (3.3 oz). Published: **6.1" L × 5.3" W × 10.4" H, 4 L / 4.2 qt**, clear, "food-grade" BPA-free plastic (the resin is not named), one-press airtight pop lid, stackable. Fetched 2026-10-29 | 6.1 × 5.3 × 10.4 in | High (published) |
+| **Deli flower canister** (DEC-042b) | office photo: tall square clear acrylic canister, white push-button lid with a dark gasket, coloured base band (green seen), a THC % label card ("28.57 %", "27.73 % Blue Tint #2") clipped on the front; about 12 empties on the cart, lids off and laid flat | footprint ≈5–6" square, height ≈10–11", base band ≈1.5–2" (Low). Read against the scale (≈6–7" body) and the jar's ≈1.8–2:1 height:width; the 12×12 floor tile is too oblique to use. It is the same size class and shape as the smalls jar | Low |
+| Deli scale | compact digital bench scale, light-grey body, LCD and coloured keys on the front, a clear glass mixing bowl (≈8" Ø) on the pan; a small chrome scoop beside it | body ≈6–7" W × ≈8" D × ≈3" H | Low |
+| Deli prep cart | stainless utility cart, flat top + lower shelf, tubular push handle, casters, "FOR DELI USE ONLY" label on the rail, spray bottles hung from the rail; the lower shelf holds bins, bags and paper | top ≈30" × 18–24", top ≈34–36" AFF (standard utility cart; about 6 jars span the back edge) | Low |
+Use the derived crop for art reference; never ship the raw photo. Neither file shows people.
 
 ## 3. BAND photos (`…_NN.jpeg`)
 
