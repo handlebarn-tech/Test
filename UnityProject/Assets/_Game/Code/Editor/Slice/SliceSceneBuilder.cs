@@ -5,6 +5,7 @@ using Dispo.Presentation.Slice;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -18,7 +19,7 @@ namespace Dispo.Editor.Slice
     public static class SliceSceneBuilder
     {
         public const string ScenePath = "Assets/_Game/Scenes/Gameplay_Slice.unity";
-        const string Ui = "Assets/_Game/UI/Slice", Mats = "Assets/_Game/Prefabs/Slice/Materials", Data = "Assets/_Game/Data";
+        const string Ui = "Assets/_Game/UI/Slice", Mats = "Assets/_Game/Prefabs/Slice/Materials", Data = "Assets/_Game/Data", Proc = "Assets/_Game/Art/Procedural";
 
         [MenuItem("Dispo/Slice/Build Scene")]
         public static void BuildMenu() => Debug.Log(BuildScene());
@@ -60,7 +61,13 @@ namespace Dispo.Editor.Slice
             g.Intents = Load<TextAsset>($"{Data}/Slice/SliceIntents.json");
             g.Lines = Load<TextAsset>($"{Data}/Slice/SliceLines.json");
             g.JarShell = Mat("Slice_JarShell", new Color(0.12f, 0.12f, 0.13f));
-            g.JarFill = Mat("Slice_JarFill", new Color(0.35f, 0.55f, 0.25f));
+            // GAME-005: PROC-002 canister + stepped fill; every PROC_JarFill_* look in the folder is used (PROC-003 may add or change them).
+            g.JarModel = Load<GameObject>($"{Proc}/DeliJar/PROC_DeliJar.fbx");
+            g.FillModels = AssetDatabase.FindAssets("PROC_JarFill_ t:Model", new[] { $"{Proc}/JarFill" }).Select(AssetDatabase.GUIDToAssetPath)
+                .OrderBy(p => p, StringComparer.Ordinal).Select(Load<GameObject>).ToArray();
+            if (g.FillModels.Length == 0) throw new InvalidOperationException($"no PROC_JarFill_* models in {Proc}/JarFill");
+            g.JarGlass = Mat("Slice_JarGlass", new Color(0.92f, 0.96f, 1f, 0.12f), m => HDMaterial.SetSurfaceType(m, true));
+            g.LabelText = Mat("Slice_JarLabelText", Color.black, m => { HDMaterial.SetAlphaClipping(m, true); HDMaterial.SetAlphaCutoff(m, 0.5f); }, "HDRP/Unlit");
             g.Npc = Mat("Slice_Npc", new Color(0.55f, 0.6f, 0.7f));
             g.Bag = Mat("Slice_Bag", new Color(0.85f, 0.75f, 0.55f));
             EditorSceneManager.SaveScene(scene, ScenePath);
@@ -78,14 +85,17 @@ namespace Dispo.Editor.Slice
         static T Load<T>(string path) where T : UnityEngine.Object =>
             AssetDatabase.LoadAssetAtPath<T>(path) ?? throw new InvalidOperationException($"missing {typeof(T).Name} at {path}");
 
-        static Material Mat(string name, Color color)
+        /// <summary>Settings apply only when the asset is first created; delete the .mat to regenerate it.</summary>
+        static Material Mat(string name, Color color, Action<Material> setup = null, string shader = "HDRP/Lit")
         {
             var path = $"{Mats}/{name}.mat";
             var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
             if (mat) return mat;
             Directory.CreateDirectory(Mats);
-            mat = new Material(Shader.Find("HDRP/Lit") ?? throw new InvalidOperationException("HDRP/Lit shader not found"));
-            mat.SetColor("_BaseColor", color);
+            mat = new Material(Shader.Find(shader) ?? throw new InvalidOperationException($"{shader} shader not found"));
+            mat.SetColor(shader == "HDRP/Unlit" ? "_UnlitColor" : "_BaseColor", color);
+            setup?.Invoke(mat);
+            HDMaterial.ValidateMaterial(mat);
             AssetDatabase.CreateAsset(mat, path);
             return mat;
         }
