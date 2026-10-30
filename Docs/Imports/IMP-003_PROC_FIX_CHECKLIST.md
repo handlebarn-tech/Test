@@ -280,7 +280,7 @@ Measured LOD0 tris (IMP-003 sandbox runs) vs the DEC-084 LOD0 guides:
 - [ ] **Jar wall / deli counter:**
   - arched wood frames; dark-grey metal shelves with front lip;
   - teal leaf-pattern backlit panel (emissive + pattern texture) and LED strips;
-  - checker-tile counter front (TL-type tile, real grout lines); stainless tong cups;
+  - plywood counter front with the printed teal/white checker wrap as a texture (DEC-090/D5): plywood edge and seam detail, wrap edges and wear, no tile or grout geometry; stainless tong cups;
   - jars are `PROC_DeliJar` (hero, see PP; its budget is reviewed under DEC-084 by PROC separately).
 - [ ] **Cooler/fridge:**
   - door gaskets, hinges and closers; real pull handles;
