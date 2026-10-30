@@ -51,9 +51,11 @@ Do not touch `Code/Domain/` (GAME-001) unless the Hub grants the sub-tasks below
 - Capture: one screenshot per screen in the flow plus the report (`unity-capture`).
 
 ## Open inputs (from DES-001; Hub resolves before start)
-- `startGramsPerBatch` = 28 g is a placeholder: no source has quantities.
-- Every in-stock batch is treated as deli flower.
-- The register-run service station is a layout choice (GAP-107).
+Resolved by Nolan (`Docs/DECISIONS.md`):
+- `startGramsPerBatch` = 454 g, a full 1 lb jar (DEC-019).
+- Every in-stock batch is deli flower (DEC-020).
+- Deli is weighed at the register, on a scale stand beside it (DEC-021, closes GAP-107); which register is a layout choice.
+Still open (REVIEW-W2B n7): with 454 g jars a 12-customer shift almost never sells a jar out, so the sold-out/LOW states may need a design tweak (DES-001 / Hub call) before the PlayMode test can show them.
 
 ## Handoff
 `Docs/Handoffs/GAME-002.md` (≤40 lines). Report to the Studio Hub.

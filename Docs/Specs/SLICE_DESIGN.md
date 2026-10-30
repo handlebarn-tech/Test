@@ -52,7 +52,7 @@ From `STD_WEIGHTS` [SRC] L21010: 3.5 g (50), 7 g (30), 14 g (15), 28 g (5).
 `budget = grams × budgetPerGram`, with `budgetPerGram` drawn from {4.00, 6.00} (equal odds), post-tax dollars, rounded down to $1. Example: 3.5 g at $4 → $14. Smalls 3.5 g is $13.10 post-tax at list price, or $8.75 on the Tue/Sat deal [SRC] (L21018, L21036, tax L21134). So low budgets are meetable while smalls are in stock (35 in-stock batches in the snapshot), though not always by the best-fitting strain. That trade-off is intended. Budget is **not** passed to the engine (no `maxPrice`): spotting it is the player's job, and scoring catches it (§3.3).
 
 ### 2.5 Product form
-Deli flower only. Every in-stock catalog batch is treated as a deli jar [GDD; **Nolan to confirm**, see handoff]. No form constraint is generated.
+Deli flower only. Every in-stock catalog batch is a deli jar [real-store fact, DEC-020: the store sells deli flower only]. No form constraint is generated.
 
 ### 2.6 Customer lines (templated, no NL parsing) [GDD on [SRC] wording]
 `line = opener(archetype) + core(family) + weightClause(grams) + budgetClause?`
@@ -107,7 +107,7 @@ stars = avgSatisfaction ≥ 80 ? 3 : ≥ 60 ? 2 : 1
 | Rule | Value | Label |
 |---|---|---|
 | Stock authority | One `InventoryService` holds grams per batch. Engine stock, POS, jars and the report all read it | [SRC principle] spec §30; stock filter RC §8 |
-| Starting grams | `startGramsPerBatch` = 28 g for every in-stock batch | [GDD] placeholder: the master JSON has `status` only, no quantities (DATA_SCHEMA §1). **Nolan to confirm or supply** |
+| Starting grams | `startGramsPerBatch` = 454 g (1 lb, a full jar) for every in-stock batch | Real-store fact DEC-019 (the master JSON has `status` only, no quantities, DATA_SCHEMA §1). See REVIEW-W2B n7: sold-out is then almost never seen in a shift |
 | Which batch is sold | The card's representative batch `ids[0]`, the in-stock batch the engine shows | [SRC] L15464 |
 | Event | `Sell(batchId, grams, pricePreTax, pricePostTax)`, emitted once on Confirm | [GDD] (spec §30 event list) |
 | Price | `TIER_DEFAULTS` + day deal + tax 25.1 % floored to $0.05 | [SRC] RC §12, L21018/L21036/L21134 (GAP-204 floor kept) |
@@ -162,7 +162,7 @@ Named empty GameObjects (or data points) in the Retail scene. Positions in the R
 | `Interact_Scale` | scale at that station |
 | `Anchor_JarSlot_000..N` | north deli flower jar wall (x 19–45, y 0.2–1.4), overflow onto the east jar wall (x 45.6–47). N ≥ in-stock batch count (77 in the current snapshot) |
 | `Anchor_CustomerExit` | the exit side of the entry doors |
-The register-run station is a [GDD] layout choice: which counter really weighs deli flower is not recorded (GAP-107; **Nolan to confirm**). The slice needs **1** station only.
+Deli flower is weighed at the register: each register has a stand beside it with a scale, a clear shield toward customers and wire shelves (real-store fact DEC-021, closes GAP-107). `Interact_Scale` sits on that stand. Which register run is used stays a [GDD] layout choice. The slice needs **1** station only.
 
 ## 8. SliceConfig: every constant
 | Key | Value | Label |
@@ -188,7 +188,7 @@ The register-run station is a [GDD] layout choice: which counter really weighs d
 | star cutoffs | 80 / 60 | GDD |
 | `roughShiftThreshold` | 4 (walkouts + noSales) | GDD |
 | `queueSlots` | 4 | GDD |
-| `startGramsPerBatch` | 28 | GDD placeholder (no source quantity) |
+| `startGramsPerBatch` | 454 | Real-store fact DEC-019 (full jar, 1 lb) |
 | `lowStockFraction` | 0.25 | GDD |
 | tax / rounding | 25.1 % / floor $0.05 | SRC L21062, L21123 |
 | anxiety label cutoffs | <38 low, <55 moderate, else high | SRC `_anxLevel` L16377 |

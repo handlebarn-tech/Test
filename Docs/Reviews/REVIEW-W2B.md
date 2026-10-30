@@ -4,7 +4,7 @@
 **Merged (`--no-ff`, no conflicts):** `claude/task-des-001-635c15` (incl. reconcile 64f5fbb), `claude/task-ux-001-1115a2`, `claude/task-asset-001-9856c0`. `git merge-tree` against current `main` (dcd3b88, GAME-001 already merged) is clean.
 
 ## Verdict: **GO with notes**
-GAME-002 can be written with no open design questions. Two engine gaps (S1 live stock, S2 labels) are already GAME-002 sub-tasks and need the Hub's routing before the build starts. The three real-store facts for Nolan are listed and placeholdered.
+GAME-002 can be written with no open design questions. Two engine gaps (S1 live stock, S2 labels) are already GAME-002 sub-tasks and need the Hub's routing before the build starts. The three real-store facts are now answered (DEC-019..021) and cited. With 454 g jars the sold-out state is effectively unreachable in the slice (n7), which needs a DES/Hub call.
 
 ## 1. DES-001 ↔ UX-001 ↔ GAME-001
 - **UX_SLICE §9 questions:** all 11 answered in SLICE_DESIGN §10, plus the other conflicts (patience, budget stepper, Compare, Detail, More options, role tags, reservation, payment, request strip). §10 states it rules where the docs differ. ✔
@@ -28,7 +28,7 @@ GAME-002 can be written with no open design questions. Two engine gaps (S1 live 
 
 - **Goldens:** the six §2.2 rows equal `golden_cases.json` → `parsed` for RC-01/03/04/09/10/11 exactly. ✔
 - **Prices:** Tue deals = smalls/house/premium/t1/fttp ✔. Smalls 3.5 g list $13.10, deal $8.75; house deal $13.10; premium $17.50; house 7/14/28 g $26.25/$52.50/$71.25 post-tax: all recomputed ✔. 35 in-stock smalls, 77 in-stock batches ✔ (snapshot).
-- **No invented store facts:** draw weights, archetypes and budgets are tagged [GDD] and disclaimed. The 3 open facts for Nolan (28 g jars, all-deli flower, weigh station GAP-107) appear in the DES-001 handoff and GAME-002 "Open inputs". ✔
+- **No invented store facts:** draw weights, archetypes and budgets are tagged [GDD] and disclaimed. The 3 open store facts were flagged in the DES-001 handoff; Nolan has since answered them (DEC-019 454 g jars, DEC-020 deli only, DEC-021 scale at the register) and SLICE_DESIGN/GAME-002 now cite them. ✔
 - **Line-safety rule:** rendered every opener × core × weight × budget against the 287 INTENTS keys: no key other than the family's own. ✔
 
 ## 3. Constants
@@ -59,6 +59,9 @@ No PII (email/phone/customer-name scan clean). No tfs-budtender content copied: 
 - **n5 Hub routing.** S1 (live stock) and S2 (cluster + tier labels) touch `Code/Domain/`; GAME-003 is also editing Domain. Route them before GAME-002 starts.
 - **n6 DES-001 handoff** "Needs from GAME-001" still lists pre-ENGINE.md proposals; its follow-up section supersedes them.
 
+- **n7 Sold-out state is effectively unreachable (DEC-019).** With 454 g jars, the worst case is 12 customers × 28 g = 336 g, all on one jar, which still leaves 118 g (26 %, above `lowStockFraction` 0.25). Neither LOW nor SOLD OUT can occur in the slice, and the "batch at 0 g" and S1 rep-sell-out paths are reachable only in EditMode tests. If the slice must *show* these states, it needs a design tweak, e.g. some jars start partly full via a [GDD] `startFillFraction` (per batch or a seeded few). That is a DES-001 / Hub decision; I did not redesign it. GAME-002 tests should still drive 0 g directly through `InventoryService`.
+
 ## Fixes made on this branch
 - SLICE_DESIGN §8: `resultCount` cite L17517 → L17519.
 - SLICE_DESIGN §6 gap 2 + GAME-002 S2: add tier display names (`tierLabels2` L16463).
+- Hub update: SLICE_DESIGN §2.5, §4, §7, §8 and GAME-002 "Open inputs" now cite DEC-019 (454 g jars), DEC-020 (deli only) and DEC-021 (scale stand at the register, GAP-107) instead of placeholders. The DES-001 handoff's "Decisions for Nolan" list is left as a historical record.
