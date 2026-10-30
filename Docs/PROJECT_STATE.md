@@ -52,5 +52,5 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 - Next REF follow-up (REF-005): read `COMPILED_Flower Shop_Int Set.pdf` for deli case/counter/jar sizes (GAP-108/113).
 - Hub ruling: entry storefront width = 6'-0" per TI E101 / DEC-037 (door types/sizes from TI); ART follows it.
 - Follow-up for BUILD: add the SliceCapture test to `studio.ps1 unity-capture` (GAME-002 open item).
-- Batch for Nolan: copy 3 PDFs (TI Approved Set, 2026 A011 floor, A012 lighting) from OneDrive into `References/TI/` (tools can only read text).
+- Done 2026-10-29: Nolan put the 3 TI/A011/A012 PDFs in Downloads; REF-005 imports them to `References/TI/` and render-checks the counter height.
 - Batch for Nolan (store fact): a photo of a real receipt's tax lines would settle Phoenix TPT rate (OPEN-4); game keeps 25.1 % (DEC-001) meanwhile.
