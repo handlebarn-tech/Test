@@ -1,6 +1,6 @@
 # PROJECT STATE
 
-**Milestone:** M0/M1 done pending review → next M2 graybox + M3 domain engine (in parallel)
+**Milestone:** VERTICAL SLICE PLAYABLE on main (0032589, 2026-10-29). Next: slice polish (GAME-002b), wave-4 art/proc, BUILD-003
 **Known-good commit:** `main` (docs only). Wave 1 work is on branch `review/wave-1` (commit 667ebd1), unreviewed.
 **Build health:** on `review/wave-1`: Unity 6000.6.7f1 HDRP project compiles; 1/1 EditMode tests pass; Windows dev build + smoke launch OK (BUILD-001).
 **Updated:** 2026-10-29 by Hub (session 2, end; handover for a cleared hub)
@@ -15,7 +15,7 @@
 ## Wave 3 status (2026-10-29)
 | Task | Session | State |
 |---|---|---|
-| GAME-002 | dispo-game-002 | done (8df0a82, 41/41 EditMode, bot 12/12) → REVIEW-W3D (dispo-review-w3d `local_57aeb17a-1d55-496c-8328-51721cfc125a`) |
+| GAME-002 | dispo-game-002 | REVIEW-W3D GO with notes; MERGED (0032589). EditMode 141/141, bot 12/12 on real anchors. Follow-up GAME-002b: N1 jar labels, DEC-044 PriceFit, nits |
 | ART-002 | — | REVIEW-W3B GO with notes; merged to main |
 | REF-003 | — | merged via W3B |
 | GAME-003, BUILD-002 | — | REVIEW-W3A GO with notes; merged to main (f3e5bc9). n1 cache reset → GAME-002 before its merge; n2/n3/n5 → BUILD-003 |
@@ -25,19 +25,27 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 
 ### Live session ids (for SendMessage / archive)
 - dispo-art-003 `local_392adc04-9603-4cc9-959c-6e3e2d792743` · dispo-proc-002 `local_1b8fb899-d1dc-49d4-8384-8bc73da3e85a` (wave 4, write their own packets first)
-- dispo-review-w3d `local_57aeb17a-1d55-496c-8328-51721cfc125a`
+- dispo-review-w3d `local_57aeb17a-1d55-496c-8328-51721cfc125a` · dispo-game-002 `local_e574024b-b42a-4f12-b5db-6b6d66ac34bc` (W3A n1 fix)
+- dispo-review-w4a `local_92c0cff8-fdfb-4ee5-9c24-1b6e713cb793` (REF-005) · dispo-build-003 `local_be1d6c10-aea5-4f5d-9fae-be727feb85cf` · dispo-ref-004 `local_8e643693-f039-47b6-8392-365947ed9efc` (idle; archive after W4A)
 - dispo-game-002 `local_e574024b-b42a-4f12-b5db-6b6d66ac34bc` (working)
 - dispo-review-w3b `local_53273c02-a00e-46fb-9407-96ecfc4855ad` (started by Hub session 3)
 - dispo-art-002 `local_6681ee58-dbed-4e39-adda-192aa4a576fb` (idle; archive after W3B merges)
 - dispo-review-w3a `local_d40fcd21-be35-4d84-bf4f-90fb27eac376` · dispo-review-w3c `local_819f11d1-8aac-40d4-b6d8-c2435445b1ee` · dispo-ref-004 `local_8e643693-f039-47b6-8392-365947ed9efc` (working)
 - Idle, archive after their reviews merge: game-003 `local_23577d66-0fd6-4bfb-831e-6950d9ff3e3d`, build-002 `local_e58e2c77-01ad-4ef6-b560-9da96488af50`, ref-003 `local_c3b522a0-283d-45c1-af1d-8e0ec1bfca4f`, res-001 `local_f19e4a49-5f05-4f20-a0ca-c56f31e4a50e`, comp-001 `local_7f7a77b4-e098-4fd1-b838-399ac35df20f`, asset-002 `local_4921e361-4a37-4b68-a853-961b622160da`.
 
-## NEXT ACTIONS (in order) — fresh Hub starts here
-1. ~~Start REVIEW-W3B~~ started 2026-10-29 by Hub session 3.
-2. W3A/W3B/W3C/W3E all merged. REVIEW-W3D integrates main + GAME-002 (with W3A n1 fix) → merge → slice playable.; Unity merges re-run compile + tests.
-3. GAME-002 done → REVIEW of the slice (play it via the PlayMode bot + captures) → merge → the vertical slice is playable; brief Nolan.
-4. Then: PERF-001; ART-003 hero retail lookdev (TI finishes DEC-037 + ASSET-002 cache, Montserrat/Crimson Pro brand fonts); PROC-002 jar fill/bud system; COMP later mechanics (limit meter, ID events, medical); packaged assortment (DEC-034).
-5. Archive finished sessions after merge.
+## NEXT ACTIONS (in order) — fresh Hub starts here (handover 2026-10-29 23:20, usage limit; auto-resume 02:00)
+1. **Review queue, ready now (start sessions):**
+   - REVIEW-W4B: BUILD-003 + BUILD-004 hub guard (`claude/task-build-003-0837ba`). Wait for BUILD-004's commit. **Before merging, delete the untracked prototype `.claude/settings.json` and `Tools/Studio/hub_guard.py` in the main checkout** (git won't overwrite untracked files).
+   - BUILD-PLAY (`local_599eaab4-f54f-4421-bdf9-b3729caf654f`): Windows build of the slice for Nolan → `C:/Users/handl/Downloads/Dispo Game Builds/`.
+   - REVIEW-W4C: REF-006 + REF-007 (`claude/task-ref-006`, through cf527fe): FOH/BOH desk stills, jar spec (Amazon smalls + acrylic canister), crops (no people, network rack, thermostat or security drawer), SE exit from A011. Doc review. **Key finding: GAP-120, Working Plan V5 and the graybox have HUB and HUB 2 swapped east–west.** After merge ART fixes it (the SE exit goes on the furthest-east room, DEC-042c).
+2. **Still working at handover** (read their handoffs/branches when they finish; they report to whoever is Hub):
+   - GAME-002b slice polish (session `local_e574024b-b42a-4f12-b5db-6b6d66ac34bc`, fresh branch from main)
+   - ART-003 retail lookdev (`local_392adc04-9603-4cc9-959c-6e3e2d792743`): also DEC-039/040/041/043 registers, desks, jar wall, lighting
+   - PROC-002 jar canister + fill (`local_1b8fb899-d1dc-49d4-8384-8bc73da3e85a`): DEC-042/043 canister design
+   - REF session `local_8e643693-f039-47b6-8392-365947ed9efc` (REF-004..007), idle once REF-007 is done; archive after W4C merges.
+   Each finished task → its own REVIEW session → merge → archive.
+3. Then: PERF-001 (unblocked; start once ≤2 Unity users), COMP-002, GAME-004 packaged assortment, a GAME task to hook PROC-002 fill into the slice jars, ART HUB/HUB 2 swap fix (GAP-120).
+4. Brief Nolan at milestones. The slice is playable on main (0032589).
 
 ## Cross-project
 - GAP-206 "sleeping" defect relayed to the TFS tool project hub session on 2026-10-29 (no reply needed).
