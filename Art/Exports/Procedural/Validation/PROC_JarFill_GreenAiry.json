@@ -1,0 +1,15 @@
+{
+  "asset_id": "PROC_JarFill_GreenAiry",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "e4b019a571a72727",
+  "generator": "jar_fill",
+  "lod_tris": {
+    "LOD0": 10000,
+    "LOD1": 2400,
+    "LOD2": 140
+  },
+  "params_sha256": "c024995a99d42b80",
+  "passed": true,
+  "warnings": []
+}

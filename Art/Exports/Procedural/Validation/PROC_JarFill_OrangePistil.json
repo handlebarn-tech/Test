@@ -1,0 +1,15 @@
+{
+  "asset_id": "PROC_JarFill_OrangePistil",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "e492b92fd9a2a8e8",
+  "generator": "jar_fill",
+  "lod_tris": {
+    "LOD0": 9920,
+    "LOD1": 2380,
+    "LOD2": 140
+  },
+  "params_sha256": "c024995a99d42b80",
+  "passed": true,
+  "warnings": []
+}

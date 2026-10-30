@@ -18,6 +18,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, "..", ".."))
 EXPORT_DIR = os.path.join(ROOT, "Art", "Exports", "Procedural")
 MANIFEST = os.path.join(EXPORT_DIR, "manifest.json")
+VALIDATION_DIR = os.path.join(EXPORT_DIR, "Validation")
 RENDER_DIR = os.path.join(ROOT, "Artifacts", "Renders")
 SHEET = os.path.join(ROOT, "Docs", "Assets", "Specs", "PROC_contact_sheet.png")
 sys.path.insert(0, HERE)
@@ -44,7 +45,9 @@ def generate(gen_name, params_path):
 
 def generate_asset(gen_name, gen, p, asset, raw, params_path):
     reset()
-    entry, errors = {"lods": {}}, []
+    entry, errors, warnings = {"lods": {}}, [], []
+    params_sha = hashlib.sha256(raw.replace(b"\r\n", b"\n")).hexdigest()[:16]  # stable across autocrlf
+    checks = p.get("checks", {})
     for lod_name, lod in p["lods"].items():
         objs, expected, extra = gen.build(p, lod)
         lod_entry = {"objects": {}}
@@ -55,18 +58,34 @@ def generate_asset(gen_name, gen, p, asset, raw, params_path):
                 errors.append(f"{obj.name}: unapplied transform")
             if st["uv_maps"] != [UV_MAIN, UV_LABEL]:
                 errors.append(f"{obj.name}: UV maps {st['uv_maps']}")
+            if checks.get("fail_on_degenerate") and st["geometry"]["degenerate_faces"]:
+                errors.append(f"{obj.name}: {st['geometry']['degenerate_faces']} degenerate faces")
+            if checks.get("material_slots") and (not st["material_slots"] or None in st["material_slots"]):
+                errors.append(f"{obj.name}: material slots {st['material_slots']}")
             lod_entry["objects"][obj.name] = st
         lod_entry["tris"] = sum(o["tris"] for o in lod_entry["objects"].values())
         budget = p["tri_budget"][lod_name]
         if lod_entry["tris"] > budget:
             errors.append(f"{lod_name}: {lod_entry['tris']} tris > budget {budget}")
-        size = [max(a) - min(a) for a in zip(*(c for o in objs.values() for c in bbox_unity(o)))]
-        if any(abs(a - b) > 1e-4 for a, b in zip(size, expected)):
-            errors.append(f"{lod_name}: size {size} != expected {expected}")
-        lod_entry["size_m_unity_xyz"] = [round(v, 5) for v in size]
         entry["lods"][lod_name] = lod_entry
         entry.update(extra)
+        if not objs:
+            errors.append(f"{lod_name}: no objects")
+            continue
+        pts = [c for o in objs.values() for c in bbox_unity(o)]
+        lo, hi = [min(a) for a in zip(*pts)], [max(a) for a in zip(*pts)]
+        size = [b - a for a, b in zip(lo, hi)]
+        if any(abs(a - b) > 1e-4 for a, b in zip(size, expected)):
+            errors.append(f"{lod_name}: size {size} != expected {expected}")
+        # C5 (opt-in): origin at the bottom centre (min z = 0, x/y bbox centred)
+        if checks.get("origin_bottom_centre") and (abs(lo[1]) > 1e-4 or abs(lo[0] + hi[0]) > 2e-4 or abs(lo[2] + hi[2]) > 2e-4):
+            errors.append(f"{lod_name}: origin not bottom centre (min {lo}, max {hi})")
+        lod_entry["size_m_unity_xyz"] = [round(v, 5) for v in size]
+    check_lod_chain(p, entry["lods"], errors, warnings)
+    if "collision_boxes" in entry and not entry["collision_boxes"]:
+        del entry["collision_boxes"]  # C2: key only when non-empty
     if errors:
+        write_validation(asset, gen_name, params_sha, entry, errors, warnings)  # C3: a failure leaves evidence too
         raise RuntimeError("validation failed:\n  " + "\n  ".join(errors))
 
     os.makedirs(EXPORT_DIR, exist_ok=True)
@@ -79,10 +98,12 @@ def generate_asset(gen_name, gen, p, asset, raw, params_path):
         os.makedirs(os.path.dirname(unity_fbx), exist_ok=True)
         shutil.copyfile(fbx, unity_fbx)
         entry["unity_copy"] = os.path.relpath(unity_fbx, ROOT).replace("\\", "/")
+    if p.get("own_sheet"):
+        entry["own_sheet"] = True
     entry.update({
         "generator": gen_name,
         "params": os.path.relpath(params_path, ROOT).replace("\\", "/"),
-        "params_sha256": hashlib.sha256(raw.replace(b"\r\n", b"\n")).hexdigest()[:16],  # stable across autocrlf
+        "params_sha256": params_sha,
         "export": os.path.relpath(fbx, ROOT).replace("\\", "/"),
         "export_sha256": fbx_sha,
         "tri_budget": p["tri_budget"],
@@ -94,10 +115,38 @@ def generate_asset(gen_name, gen, p, asset, raw, params_path):
     with open(MANIFEST, "w", newline="\n") as f:
         json.dump(manifest, f, indent=2, sort_keys=True)
         f.write("\n")
+    write_validation(asset, gen_name, params_sha, entry, [], warnings)
     if hasattr(gen, "preview_context"):
         gen.preview_context(p)  # non-exported scenery for the renders (export and manifest are already written)
     render_previews(asset, list(p["lods"]), entry.get("preview_groups"))
     print(f"[PROC] {asset}: " + ", ".join(f"{k}={v['tris']} tris" for k, v in entry["lods"].items()) + f" -> {fbx}")
+
+
+def check_lod_chain(p, lods, errors, warnings):
+    """Q0.5 (DEC-084): fail above tri_budget (the guide max), warn below tri_guide.lod0_min, and require each LOD
+    to have fewer tris than the one before."""
+    tris = [lods[k]["tris"] for k in p["lods"] if k in lods]
+    lo = p.get("tri_guide", {}).get("lod0_min")
+    if lo and tris and tris[0] < lo:
+        warnings.append(f"LOD0 {tris[0]} tris below the DEC-084 guide minimum {lo} (too simple?)")
+    for name, a, b in zip(list(p["lods"])[1:], tris, tris[1:]):
+        if b >= a:
+            errors.append(f"{name}: {b} tris does not decrease from the previous LOD ({a})")
+    if lo and len(tris) == 4:
+        for name, t, r in zip(("LOD1", "LOD2", "LOD3"), tris[1:], (0.75, 0.4, 0.15)):
+            if t > tris[0] * r:
+                warnings.append(f"{name}: {t} tris > {r:.0%} of LOD0 (guide 1/2, 1/4, <= 1/10)")
+
+
+def write_validation(asset, gen_name, params_sha, entry, errors, warnings):
+    os.makedirs(VALIDATION_DIR, exist_ok=True)
+    doc = {"asset_id": asset, "generator": gen_name, "params_sha256": params_sha, "passed": not errors,
+           "errors": errors, "warnings": warnings, "export_sha256": entry.get("export_sha256"),
+           "lod_tris": {k: v["tris"] for k, v in entry["lods"].items()},
+           "collision_boxes": len(entry.get("collision_boxes", []))}
+    with open(os.path.join(VALIDATION_DIR, asset + ".json"), "w", newline="\n") as f:
+        json.dump(doc, f, indent=2, sort_keys=True)
+        f.write("\n")
 
 
 def bbox_unity(obj):
@@ -188,10 +237,11 @@ def contact_sheet(gen=None):
     print(f"[PROC] contact sheet {sheet_path} ({size} bytes): rows = {[a for a, _ in assets]}")
 
 
-argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
-if argv[:1] == ["contact_sheet"]:
-    contact_sheet(*argv[1:2])
-elif len(argv) == 2:
-    generate(argv[0], os.path.abspath(argv[1]))
-else:
-    raise SystemExit("usage: run_generator.py -- <generator> <params.json> | contact_sheet")
+if __name__ == "__main__":  # Tools/Blender/tests import this module
+    argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
+    if argv[:1] == ["contact_sheet"]:
+        contact_sheet(*argv[1:2])
+    elif len(argv) == 2:
+        generate(argv[0], os.path.abspath(argv[1]))
+    else:
+        raise SystemExit("usage: run_generator.py -- <generator> <params.json> | contact_sheet")

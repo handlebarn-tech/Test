@@ -20,7 +20,26 @@
         "LOD0": {
           "objects": {
             "PROC_DeliJar_Band_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0787,
+                  0.07235,
+                  0.055
+                ],
+                "min": [
+                  -0.0787,
+                  -0.07235,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "0ec6f05013aeb90e",
+              "material_slots": [
+                "M_Proc_JarBand"
+              ],
               "size_m_unity_xyz": [
                 0.1574,
                 0.055,
@@ -34,7 +53,26 @@
               "verts": 112
             },
             "PROC_DeliJar_Glass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0762,
+                  0.06985,
+                  0.235
+                ],
+                "min": [
+                  -0.0762,
+                  -0.06985,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "f7586cc066e84ee9",
+              "material_slots": [
+                "M_Proc_JarGlass"
+              ],
               "size_m_unity_xyz": [
                 0.1524,
                 0.235,
@@ -48,7 +86,26 @@
               "verts": 140
             },
             "PROC_DeliJar_Label_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  -0.07065,
+                  0.145
+                ],
+                "min": [
+                  -0.05,
+                  -0.07065,
+                  0.065
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
               "geometry_sha256": "171e00c175bf2746",
+              "material_slots": [
+                "M_Proc_JarLabel"
+              ],
               "size_m_unity_xyz": [
                 0.1,
                 0.08,
@@ -62,7 +119,26 @@
               "verts": 4
             },
             "PROC_DeliJar_Lid_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0782,
+                  0.07185,
+                  0.2604
+                ],
+                "min": [
+                  -0.0782,
+                  -0.07185,
+                  0.235
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "611b3b35266f0630",
+              "material_slots": [
+                "M_Proc_JarLid"
+              ],
               "size_m_unity_xyz": [
                 0.1564,
                 0.0254,
@@ -76,7 +152,26 @@
               "verts": 140
             },
             "PROC_DeliJar_ThcTag_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0475,
+                  -0.07145,
+                  0.148
+                ],
+                "min": [
+                  0.0025,
+                  -0.07145,
+                  0.12
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
               "geometry_sha256": "f7f348ad357fb8ce",
+              "material_slots": [
+                "M_Proc_JarThcTag"
+              ],
               "size_m_unity_xyz": [
                 0.045,
                 0.028,
@@ -100,7 +195,26 @@
         "LOD1": {
           "objects": {
             "PROC_DeliJar_Band_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0787,
+                  0.07235,
+                  0.055
+                ],
+                "min": [
+                  -0.0787,
+                  -0.07235,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "290110633079395c",
+              "material_slots": [
+                "M_Proc_JarBand"
+              ],
               "size_m_unity_xyz": [
                 0.1574,
                 0.055,
@@ -114,7 +228,26 @@
               "verts": 32
             },
             "PROC_DeliJar_Glass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0762,
+                  0.06985,
+                  0.235
+                ],
+                "min": [
+                  -0.0762,
+                  -0.06985,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "f87d65135c7f2a07",
+              "material_slots": [
+                "M_Proc_JarGlass"
+              ],
               "size_m_unity_xyz": [
                 0.1524,
                 0.235,
@@ -128,7 +261,26 @@
               "verts": 40
             },
             "PROC_DeliJar_Label_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  -0.07065,
+                  0.145
+                ],
+                "min": [
+                  -0.05,
+                  -0.07065,
+                  0.065
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
               "geometry_sha256": "171e00c175bf2746",
+              "material_slots": [
+                "M_Proc_JarLabel"
+              ],
               "size_m_unity_xyz": [
                 0.1,
                 0.08,
@@ -142,7 +294,26 @@
               "verts": 4
             },
             "PROC_DeliJar_Lid_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0782,
+                  0.07185,
+                  0.2604
+                ],
+                "min": [
+                  -0.0782,
+                  -0.07185,
+                  0.235
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "0678b6bfae7f583a",
+              "material_slots": [
+                "M_Proc_JarLid"
+              ],
               "size_m_unity_xyz": [
                 0.1564,
                 0.0254,
@@ -156,7 +327,26 @@
               "verts": 40
             },
             "PROC_DeliJar_ThcTag_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0475,
+                  -0.07145,
+                  0.148
+                ],
+                "min": [
+                  0.0025,
+                  -0.07145,
+                  0.12
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
               "geometry_sha256": "f7f348ad357fb8ce",
+              "material_slots": [
+                "M_Proc_JarThcTag"
+              ],
               "size_m_unity_xyz": [
                 0.045,
                 0.028,
@@ -204,7 +394,26 @@
         "LOD0": {
           "objects": {
             "PROC_DeliJar_Smalls_Glass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.07745,
+                  0.0673,
+                  0.2388
+                ],
+                "min": [
+                  -0.07745,
+                  -0.0673,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "1d42ae886516f5b3",
+              "material_slots": [
+                "M_Proc_JarGlass"
+              ],
               "size_m_unity_xyz": [
                 0.1549,
                 0.2388,
@@ -218,7 +427,26 @@
               "verts": 140
             },
             "PROC_DeliJar_Smalls_Label_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  -0.0681,
+                  0.14
+                ],
+                "min": [
+                  -0.05,
+                  -0.0681,
+                  0.06
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
               "geometry_sha256": "f0a232141292c5f1",
+              "material_slots": [
+                "M_Proc_JarLabel"
+              ],
               "size_m_unity_xyz": [
                 0.1,
                 0.08,
@@ -232,7 +460,26 @@
               "verts": 4
             },
             "PROC_DeliJar_Smalls_Lid_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.07945,
+                  0.0693,
+                  0.2642
+                ],
+                "min": [
+                  -0.07945,
+                  -0.0693,
+                  0.2388
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "df2900c052dd81c6",
+              "material_slots": [
+                "M_Proc_JarLid"
+              ],
               "size_m_unity_xyz": [
                 0.1589,
                 0.0254,
@@ -246,7 +493,26 @@
               "verts": 140
             },
             "PROC_DeliJar_Smalls_ThcTag_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0475,
+                  -0.0689,
+                  0.143
+                ],
+                "min": [
+                  0.0025,
+                  -0.0689,
+                  0.115
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
               "geometry_sha256": "1d8b1d352d7f4a2d",
+              "material_slots": [
+                "M_Proc_JarThcTag"
+              ],
               "size_m_unity_xyz": [
                 0.045,
                 0.028,
@@ -270,7 +536,26 @@
         "LOD1": {
           "objects": {
             "PROC_DeliJar_Smalls_Glass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.07745,
+                  0.0673,
+                  0.2388
+                ],
+                "min": [
+                  -0.07745,
+                  -0.0673,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "627c58db986a3519",
+              "material_slots": [
+                "M_Proc_JarGlass"
+              ],
               "size_m_unity_xyz": [
                 0.1549,
                 0.2388,
@@ -284,7 +569,26 @@
               "verts": 40
             },
             "PROC_DeliJar_Smalls_Label_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  -0.0681,
+                  0.14
+                ],
+                "min": [
+                  -0.05,
+                  -0.0681,
+                  0.06
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
               "geometry_sha256": "f0a232141292c5f1",
+              "material_slots": [
+                "M_Proc_JarLabel"
+              ],
               "size_m_unity_xyz": [
                 0.1,
                 0.08,
@@ -298,7 +602,26 @@
               "verts": 4
             },
             "PROC_DeliJar_Smalls_Lid_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.07945,
+                  0.0693,
+                  0.2642
+                ],
+                "min": [
+                  -0.07945,
+                  -0.0693,
+                  0.2388
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "a7048bbdae010a39",
+              "material_slots": [
+                "M_Proc_JarLid"
+              ],
               "size_m_unity_xyz": [
                 0.1589,
                 0.0254,
@@ -312,7 +635,26 @@
               "verts": 40
             },
             "PROC_DeliJar_Smalls_ThcTag_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0475,
+                  -0.0689,
+                  0.143
+                ],
+                "min": [
+                  0.0025,
+                  -0.0689,
+                  0.115
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
               "geometry_sha256": "1d8b1d352d7f4a2d",
+              "material_slots": [
+                "M_Proc_JarThcTag"
+              ],
               "size_m_unity_xyz": [
                 0.045,
                 0.028,
@@ -373,7 +715,27 @@
         "LOD0": {
           "objects": {
             "PROC_JarFill_DarkCompact_F000_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.030807,
+                  0.045772,
+                  0.016714
+                ],
+                "min": [
+                  -0.053589,
+                  -0.05601,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "3b5898c1ae29041c",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.0844,
                 0.00671,
@@ -387,7 +749,27 @@
               "verts": 120
             },
             "PROC_JarFill_DarkCompact_F010_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.058874,
+                  0.045772,
+                  0.07765
+                ],
+                "min": [
+                  -0.069392,
+                  -0.063129,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "6f337131343a3647",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.12827,
                 0.06765,
@@ -401,7 +783,27 @@
               "verts": 330
             },
             "PROC_JarFill_DarkCompact_F020_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071179,
+                  0.052907,
+                  0.07842
+                ],
+                "min": [
+                  -0.070207,
+                  -0.063129,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "a0cde9674f3edd5f",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.14139,
                 0.06842,
@@ -415,7 +817,27 @@
               "verts": 462
             },
             "PROC_JarFill_DarkCompact_F040_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071179,
+                  0.064681,
+                  0.111865
+                ],
+                "min": [
+                  -0.070254,
+                  -0.064763,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "f2029ecf59df4fff",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.14143,
                 0.10187,
@@ -429,7 +851,27 @@
               "verts": 882
             },
             "PROC_JarFill_DarkCompact_F070_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071179,
+                  0.064681,
+                  0.168048
+                ],
+                "min": [
+                  -0.070254,
+                  -0.064763,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "d610378d7930682a",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.14143,
                 0.15805,
@@ -443,7 +885,27 @@
               "verts": 1470
             },
             "PROC_JarFill_DarkCompact_F100_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071179,
+                  0.064681,
+                  0.204761
+                ],
+                "min": [
+                  -0.070254,
+                  -0.064763,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "7f4cffecaf1df597",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.14143,
                 0.19476,
@@ -467,7 +929,27 @@
         "LOD1": {
           "objects": {
             "PROC_JarFill_DarkCompact_F010_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.058874,
+                  0.015343,
+                  0.076946
+                ],
+                "min": [
+                  -0.068953,
+                  -0.062952,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8d835997c0a3627e",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.12783,
                 0.06695,
@@ -481,7 +963,27 @@
               "verts": 60
             },
             "PROC_JarFill_DarkCompact_F020_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071179,
+                  0.052906,
+                  0.07842
+                ],
+                "min": [
+                  -0.070923,
+                  -0.062952,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "71a7d3d920f1e2b4",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.1421,
                 0.06842,
@@ -495,7 +997,27 @@
               "verts": 132
             },
             "PROC_JarFill_DarkCompact_F040_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071179,
+                  0.064169,
+                  0.111419
+                ],
+                "min": [
+                  -0.070923,
+                  -0.064763,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "322615f009478727",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.1421,
                 0.10142,
@@ -509,7 +1031,27 @@
               "verts": 252
             },
             "PROC_JarFill_DarkCompact_F070_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071179,
+                  0.064169,
+                  0.166736
+                ],
+                "min": [
+                  -0.070923,
+                  -0.064763,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "2ef90dd43d9d4edf",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.1421,
                 0.15674,
@@ -523,7 +1065,27 @@
               "verts": 420
             },
             "PROC_JarFill_DarkCompact_F100_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071179,
+                  0.064495,
+                  0.203642
+                ],
+                "min": [
+                  -0.070923,
+                  -0.064763,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "ecacff5406d9cfd6",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.1421,
                 0.19364,
@@ -547,7 +1109,27 @@
         "LOD2": {
           "objects": {
             "PROC_JarFill_DarkCompact_F010_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.067
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8cb93523d3be1bc2",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.057,
@@ -561,7 +1143,27 @@
               "verts": 16
             },
             "PROC_JarFill_DarkCompact_F020_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.067
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8cb93523d3be1bc2",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.057,
@@ -575,7 +1177,27 @@
               "verts": 16
             },
             "PROC_JarFill_DarkCompact_F040_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.0927
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "56fe3781854239bd",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.0827,
@@ -589,7 +1211,27 @@
               "verts": 16
             },
             "PROC_JarFill_DarkCompact_F070_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.1471
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "145ca3232aa61ecc",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.1371,
@@ -603,7 +1245,27 @@
               "verts": 16
             },
             "PROC_JarFill_DarkCompact_F100_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.2015
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "c41c721425e1ed2b",
+              "material_slots": [
+                "M_Proc_Bud_DarkCompact",
+                "M_Proc_BudAccent_DarkCompact"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.1915,
@@ -673,7 +1335,27 @@
         "LOD0": {
           "objects": {
             "PROC_JarFill_Frosty_F000_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.043119,
+                  0.046982,
+                  0.016708
+                ],
+                "min": [
+                  -0.053842,
+                  -0.025922,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "4d4eb1adda710781",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.09696,
                 0.00671,
@@ -687,7 +1369,27 @@
               "verts": 120
             },
             "PROC_JarFill_Frosty_F010_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.057372,
+                  0.046982,
+                  0.083844
+                ],
+                "min": [
+                  -0.053842,
+                  -0.064288,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "aa3a80bfd547ef46",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.11121,
                 0.07384,
@@ -701,7 +1403,27 @@
               "verts": 330
             },
             "PROC_JarFill_Frosty_F020_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070338,
+                  0.053183,
+                  0.083844
+                ],
+                "min": [
+                  -0.070228,
+                  -0.064288,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "b3b057e871aefc7b",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.14057,
                 0.07384,
@@ -715,7 +1437,27 @@
               "verts": 462
             },
             "PROC_JarFill_Frosty_F040_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070606,
+                  0.063478,
+                  0.13358
+                ],
+                "min": [
+                  -0.070228,
+                  -0.064487,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "bdf56ece7dc21c54",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.14083,
                 0.12358,
@@ -729,7 +1471,27 @@
               "verts": 882
             },
             "PROC_JarFill_Frosty_F070_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070606,
+                  0.063594,
+                  0.201214
+                ],
+                "min": [
+                  -0.070507,
+                  -0.064643,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "637fb5bdd6c6525f",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.14111,
                 0.19121,
@@ -743,7 +1505,27 @@
               "verts": 1470
             },
             "PROC_JarFill_Frosty_F100_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070743,
+                  0.064807,
+                  0.233
+                ],
+                "min": [
+                  -0.071127,
+                  -0.064808,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "fac20746167a8cfa",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.14187,
                 0.223,
@@ -767,7 +1549,27 @@
         "LOD1": {
           "objects": {
             "PROC_JarFill_Frosty_F010_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.054804,
+                  0.010549,
+                  0.083844
+                ],
+                "min": [
+                  -0.04661,
+                  -0.064253,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "d28e5569a04bb6b3",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.10141,
                 0.07384,
@@ -781,7 +1583,27 @@
               "verts": 60
             },
             "PROC_JarFill_Frosty_F020_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070294,
+                  0.054888,
+                  0.083844
+                ],
+                "min": [
+                  -0.070227,
+                  -0.064253,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "40693d9a5f984451",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.14052,
                 0.07384,
@@ -795,7 +1617,27 @@
               "verts": 132
             },
             "PROC_JarFill_Frosty_F040_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070606,
+                  0.064206,
+                  0.128196
+                ],
+                "min": [
+                  -0.070227,
+                  -0.064317,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "b52e50337f9ca981",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.14083,
                 0.1182,
@@ -809,7 +1651,27 @@
               "verts": 252
             },
             "PROC_JarFill_Frosty_F070_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071156,
+                  0.06452,
+                  0.201214
+                ],
+                "min": [
+                  -0.070507,
+                  -0.064643,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "d31528eaa605361f",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.14166,
                 0.19121,
@@ -823,7 +1685,27 @@
               "verts": 420
             },
             "PROC_JarFill_Frosty_F100_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071156,
+                  0.064806,
+                  0.230756
+                ],
+                "min": [
+                  -0.071126,
+                  -0.064643,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "9a1c5f5c77550826",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.14228,
                 0.22076,
@@ -847,7 +1729,27 @@
         "LOD2": {
           "objects": {
             "PROC_JarFill_Frosty_F010_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.067
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8cb93523d3be1bc2",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.057,
@@ -861,7 +1763,27 @@
               "verts": 16
             },
             "PROC_JarFill_Frosty_F020_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.067
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8cb93523d3be1bc2",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.057,
@@ -875,7 +1797,27 @@
               "verts": 16
             },
             "PROC_JarFill_Frosty_F040_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.102111
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "703ef9bb27934cd3",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.09211,
@@ -889,7 +1831,27 @@
               "verts": 16
             },
             "PROC_JarFill_Frosty_F070_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.162556
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "36822889aad6356b",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.15256,
@@ -903,7 +1865,27 @@
               "verts": 16
             },
             "PROC_JarFill_Frosty_F100_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.223
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "6f5473e63f069824",
+              "material_slots": [
+                "M_Proc_Bud_Frosty",
+                "M_Proc_BudAccent_Frosty"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.213,
@@ -973,7 +1955,27 @@
         "LOD0": {
           "objects": {
             "PROC_JarFill_GreenAiry_F000_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.052866,
+                  0.052429,
+                  0.016563
+                ],
+                "min": [
+                  -0.053013,
+                  -0.048485,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "4421798e9f256857",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.10588,
                 0.00656,
@@ -987,7 +1989,27 @@
               "verts": 120
             },
             "PROC_JarFill_GreenAiry_F010_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070378,
+                  0.052429,
+                  0.102596
+                ],
+                "min": [
+                  -0.06946,
+                  -0.064818,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8246fb076f2eeaef",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.13984,
                 0.0926,
@@ -1001,7 +2023,27 @@
               "verts": 330
             },
             "PROC_JarFill_GreenAiry_F020_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070668,
+                  0.064497,
+                  0.10827
+                ],
+                "min": [
+                  -0.071002,
+                  -0.064818,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "6436c637a4133159",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.14167,
                 0.09827,
@@ -1015,7 +2057,27 @@
               "verts": 462
             },
             "PROC_JarFill_GreenAiry_F040_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070668,
+                  0.064497,
+                  0.133626
+                ],
+                "min": [
+                  -0.071002,
+                  -0.064818,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "51ee6f30f3fa779e",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.14167,
                 0.12363,
@@ -1029,7 +2091,27 @@
               "verts": 840
             },
             "PROC_JarFill_GreenAiry_F070_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070668,
+                  0.06474,
+                  0.217524
+                ],
+                "min": [
+                  -0.071002,
+                  -0.064818,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "2e768d1a1117b6e8",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.14167,
                 0.20752,
@@ -1043,7 +2125,27 @@
               "verts": 1470
             },
             "PROC_JarFill_GreenAiry_F100_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070668,
+                  0.06474,
+                  0.233
+                ],
+                "min": [
+                  -0.071002,
+                  -0.064818,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "25b5cb81d3d564ab",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.14167,
                 0.223,
@@ -1067,7 +2169,27 @@
         "LOD1": {
           "objects": {
             "PROC_JarFill_GreenAiry_F010_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070378,
+                  0.017517,
+                  0.099394
+                ],
+                "min": [
+                  -0.069331,
+                  -0.064763,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "439f4bc628c20959",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.13971,
                 0.08939,
@@ -1081,7 +2203,27 @@
               "verts": 60
             },
             "PROC_JarFill_GreenAiry_F020_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071086,
+                  0.064497,
+                  0.107373
+                ],
+                "min": [
+                  -0.07117,
+                  -0.064763,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "1a871f24b9983763",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.14226,
                 0.09737,
@@ -1095,7 +2237,27 @@
               "verts": 132
             },
             "PROC_JarFill_GreenAiry_F040_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071086,
+                  0.064497,
+                  0.133481
+                ],
+                "min": [
+                  -0.07117,
+                  -0.064763,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "64168c78dda70a60",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.14226,
                 0.12348,
@@ -1109,7 +2271,27 @@
               "verts": 240
             },
             "PROC_JarFill_GreenAiry_F070_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071086,
+                  0.064497,
+                  0.217524
+                ],
+                "min": [
+                  -0.07117,
+                  -0.064763,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "c5f15201a2fedf1a",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.14226,
                 0.20752,
@@ -1123,7 +2305,27 @@
               "verts": 420
             },
             "PROC_JarFill_GreenAiry_F100_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071086,
+                  0.064497,
+                  0.233
+                ],
+                "min": [
+                  -0.07117,
+                  -0.064763,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "4b51937377bca423",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.14226,
                 0.223,
@@ -1147,7 +2349,27 @@
         "LOD2": {
           "objects": {
             "PROC_JarFill_GreenAiry_F010_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.067
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8cb93523d3be1bc2",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.057,
@@ -1161,7 +2383,27 @@
               "verts": 16
             },
             "PROC_JarFill_GreenAiry_F020_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.067
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8cb93523d3be1bc2",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.057,
@@ -1175,7 +2417,27 @@
               "verts": 16
             },
             "PROC_JarFill_GreenAiry_F040_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.106817
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "1f0ee210d1dfc20d",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.09682,
@@ -1189,7 +2451,27 @@
               "verts": 16
             },
             "PROC_JarFill_GreenAiry_F070_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.170283
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "42c145623ed2c505",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.16028,
@@ -1203,7 +2485,27 @@
               "verts": 16
             },
             "PROC_JarFill_GreenAiry_F100_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.233
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "6ebd4ff8de2559fc",
+              "material_slots": [
+                "M_Proc_Bud_GreenAiry",
+                "M_Proc_BudAccent_GreenAiry"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.223,
@@ -1273,7 +2575,27 @@
         "LOD0": {
           "objects": {
             "PROC_JarFill_GreenDense_F000_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.032455,
+                  0.042435,
+                  0.017335
+                ],
+                "min": [
+                  -0.056706,
+                  -0.053335,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "dfb0d097dcd73267",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.08916,
                 0.00733,
@@ -1287,7 +2609,27 @@
               "verts": 120
             },
             "PROC_JarFill_GreenDense_F010_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.06116,
+                  0.042435,
+                  0.081935
+                ],
+                "min": [
+                  -0.070807,
+                  -0.057319,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "acc4c913e39e67e3",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.13197,
                 0.07193,
@@ -1301,7 +2643,27 @@
               "verts": 330
             },
             "PROC_JarFill_GreenDense_F020_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.069872,
+                  0.064435,
+                  0.088255
+                ],
+                "min": [
+                  -0.070881,
+                  -0.057319,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "7c7498f621a159a1",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.14075,
                 0.07825,
@@ -1315,7 +2677,27 @@
               "verts": 462
             },
             "PROC_JarFill_GreenDense_F040_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071045,
+                  0.064435,
+                  0.121214
+                ],
+                "min": [
+                  -0.070881,
+                  -0.064166,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "a7a03c5e1bc758bc",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.14193,
                 0.11121,
@@ -1329,7 +2711,27 @@
               "verts": 840
             },
             "PROC_JarFill_GreenDense_F070_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071045,
+                  0.064435,
+                  0.184306
+                ],
+                "min": [
+                  -0.070881,
+                  -0.064166,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "21742f2bdf30dd23",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.14193,
                 0.17431,
@@ -1343,7 +2745,27 @@
               "verts": 1470
             },
             "PROC_JarFill_GreenDense_F100_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071045,
+                  0.064568,
+                  0.220891
+                ],
+                "min": [
+                  -0.070902,
+                  -0.064762,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "7b200e05291c49a8",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.14195,
                 0.21089,
@@ -1367,7 +2789,27 @@
         "LOD1": {
           "objects": {
             "PROC_JarFill_GreenDense_F010_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.060905,
+                  0.018395,
+                  0.080287
+                ],
+                "min": [
+                  -0.070807,
+                  -0.057318,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "66c6fc778c9ae84e",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.13171,
                 0.07029,
@@ -1381,7 +2823,27 @@
               "verts": 60
             },
             "PROC_JarFill_GreenDense_F020_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.069872,
+                  0.064112,
+                  0.088254
+                ],
+                "min": [
+                  -0.070807,
+                  -0.057318,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "3fa90408faee690d",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.14068,
                 0.07825,
@@ -1395,7 +2857,27 @@
               "verts": 132
             },
             "PROC_JarFill_GreenDense_F040_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070242,
+                  0.064112,
+                  0.120605
+                ],
+                "min": [
+                  -0.070807,
+                  -0.062604,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "d18f08d7b2926611",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.14105,
                 0.1106,
@@ -1409,7 +2891,27 @@
               "verts": 240
             },
             "PROC_JarFill_GreenDense_F070_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070242,
+                  0.064112,
+                  0.184246
+                ],
+                "min": [
+                  -0.070807,
+                  -0.063151,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "03dc794c68ab0da0",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.14105,
                 0.17425,
@@ -1423,7 +2925,27 @@
               "verts": 420
             },
             "PROC_JarFill_GreenDense_F100_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070242,
+                  0.064112,
+                  0.217661
+                ],
+                "min": [
+                  -0.070807,
+                  -0.06479,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "4a291b0c1793b92c",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.14105,
                 0.20766,
@@ -1447,7 +2969,27 @@
         "LOD2": {
           "objects": {
             "PROC_JarFill_GreenDense_F010_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.067
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8cb93523d3be1bc2",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.057,
@@ -1461,7 +3003,27 @@
               "verts": 16
             },
             "PROC_JarFill_GreenDense_F020_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.067
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8cb93523d3be1bc2",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.057,
@@ -1475,7 +3037,27 @@
               "verts": 16
             },
             "PROC_JarFill_GreenDense_F040_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.097406
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "718d56661d7e3d38",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.08741,
@@ -1489,7 +3071,27 @@
               "verts": 16
             },
             "PROC_JarFill_GreenDense_F070_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.154828
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "9f7df707d939cf8a",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.14483,
@@ -1503,7 +3105,27 @@
               "verts": 16
             },
             "PROC_JarFill_GreenDense_F100_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.21225
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "098d2161b3905520",
+              "material_slots": [
+                "M_Proc_Bud_GreenDense",
+                "M_Proc_BudAccent_GreenDense"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.20225,
@@ -1573,7 +3195,27 @@
         "LOD0": {
           "objects": {
             "PROC_JarFill_OrangePistil_F000_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.032655,
+                  0.03706,
+                  0.015447
+                ],
+                "min": [
+                  -0.054464,
+                  -0.052941,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "c3ab13c06e4a4343",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.08712,
                 0.00545,
@@ -1587,7 +3229,27 @@
               "verts": 120
             },
             "PROC_JarFill_OrangePistil_F010_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.060696,
+                  0.03706,
+                  0.096344
+                ],
+                "min": [
+                  -0.058981,
+                  -0.064697,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "0312ee7c8ceebd54",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.11968,
                 0.08634,
@@ -1601,7 +3263,27 @@
               "verts": 330
             },
             "PROC_JarFill_OrangePistil_F020_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070873,
+                  0.064783,
+                  0.096344
+                ],
+                "min": [
+                  -0.069697,
+                  -0.064697,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "1430ae837b12daa3",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.14057,
                 0.08634,
@@ -1615,7 +3297,27 @@
               "verts": 420
             },
             "PROC_JarFill_OrangePistil_F040_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070873,
+                  0.064783,
+                  0.137461
+                ],
+                "min": [
+                  -0.070872,
+                  -0.064697,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "7e9774c6798b8d55",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.14174,
                 0.12746,
@@ -1629,7 +3331,27 @@
               "verts": 882
             },
             "PROC_JarFill_OrangePistil_F070_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070873,
+                  0.064783,
+                  0.209893
+                ],
+                "min": [
+                  -0.070872,
+                  -0.064697,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "75332f98daf6eed1",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.14174,
                 0.19989,
@@ -1643,7 +3365,27 @@
               "verts": 1428
             },
             "PROC_JarFill_OrangePistil_F100_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070873,
+                  0.064783,
+                  0.233
+                ],
+                "min": [
+                  -0.070872,
+                  -0.064697,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "b1d6d3614ffab097",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.14174,
                 0.223,
@@ -1667,7 +3409,27 @@
         "LOD1": {
           "objects": {
             "PROC_JarFill_OrangePistil_F010_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.064908,
+                  -0.004582,
+                  0.096344
+                ],
+                "min": [
+                  -0.057284,
+                  -0.064697,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "9c120c94e2123c07",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.12219,
                 0.08634,
@@ -1681,7 +3443,27 @@
               "verts": 60
             },
             "PROC_JarFill_OrangePistil_F020_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070192,
+                  0.063822,
+                  0.096344
+                ],
+                "min": [
+                  -0.069697,
+                  -0.064697,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "6ab176f1bf7d56ea",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.13989,
                 0.08634,
@@ -1695,7 +3477,27 @@
               "verts": 120
             },
             "PROC_JarFill_OrangePistil_F040_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070192,
+                  0.063822,
+                  0.137461
+                ],
+                "min": [
+                  -0.07115,
+                  -0.064697,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "b63a92ed1ec6535d",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.14134,
                 0.12746,
@@ -1709,7 +3511,27 @@
               "verts": 252
             },
             "PROC_JarFill_OrangePistil_F070_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070612,
+                  0.063822,
+                  0.209893
+                ],
+                "min": [
+                  -0.07115,
+                  -0.064697,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "5e169f1e271dfa0e",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.14176,
                 0.19989,
@@ -1723,7 +3545,27 @@
               "verts": 408
             },
             "PROC_JarFill_OrangePistil_F100_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070612,
+                  0.064204,
+                  0.233
+                ],
+                "min": [
+                  -0.07115,
+                  -0.064697,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "1e1bb9cbdc20fcfe",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.14176,
                 0.223,
@@ -1747,7 +3589,27 @@
         "LOD2": {
           "objects": {
             "PROC_JarFill_OrangePistil_F010_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.067
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8cb93523d3be1bc2",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.057,
@@ -1761,7 +3623,27 @@
               "verts": 16
             },
             "PROC_JarFill_OrangePistil_F020_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.067
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8cb93523d3be1bc2",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.057,
@@ -1775,7 +3657,27 @@
               "verts": 16
             },
             "PROC_JarFill_OrangePistil_F040_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.102111
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "703ef9bb27934cd3",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.09211,
@@ -1789,7 +3691,27 @@
               "verts": 16
             },
             "PROC_JarFill_OrangePistil_F070_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.162556
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "36822889aad6356b",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.15256,
@@ -1803,7 +3725,27 @@
               "verts": 16
             },
             "PROC_JarFill_OrangePistil_F100_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.223
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "6f5473e63f069824",
+              "material_slots": [
+                "M_Proc_Bud_OrangePistil",
+                "M_Proc_BudAccent_OrangePistil"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.213,
@@ -1873,7 +3815,27 @@
         "LOD0": {
           "objects": {
             "PROC_JarFill_PurpleHeavy_F000_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.055827,
+                  0.054141,
+                  0.015557
+                ],
+                "min": [
+                  -0.059545,
+                  -0.053501,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "7e8f78e425f83c55",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.11537,
                 0.00556,
@@ -1887,7 +3849,27 @@
               "verts": 120
             },
             "PROC_JarFill_PurpleHeavy_F010_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.057898,
+                  0.054141,
+                  0.090709
+                ],
+                "min": [
+                  -0.059545,
+                  -0.064209,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "f8a3db28d456d3c9",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.11744,
                 0.08071,
@@ -1901,7 +3883,27 @@
               "verts": 330
             },
             "PROC_JarFill_PurpleHeavy_F020_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070985,
+                  0.064259,
+                  0.090709
+                ],
+                "min": [
+                  -0.070858,
+                  -0.064209,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "05477c0a57ba6e35",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.14184,
                 0.08071,
@@ -1915,7 +3917,27 @@
               "verts": 462
             },
             "PROC_JarFill_PurpleHeavy_F040_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070985,
+                  0.064259,
+                  0.130939
+                ],
+                "min": [
+                  -0.070858,
+                  -0.064658,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "fefda0f16b818792",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.14184,
                 0.12094,
@@ -1929,7 +3951,27 @@
               "verts": 840
             },
             "PROC_JarFill_PurpleHeavy_F070_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070985,
+                  0.064259,
+                  0.192576
+                ],
+                "min": [
+                  -0.070858,
+                  -0.064832,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "2b4868441ed7b08f",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.14184,
                 0.18258,
@@ -1943,7 +3985,27 @@
               "verts": 1470
             },
             "PROC_JarFill_PurpleHeavy_F100_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.070985,
+                  0.06469,
+                  0.233
+                ],
+                "min": [
+                  -0.070858,
+                  -0.064832,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "1390abe828b7a831",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.14184,
                 0.223,
@@ -1967,7 +4029,27 @@
         "LOD1": {
           "objects": {
             "PROC_JarFill_PurpleHeavy_F010_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.062847,
+                  0.020375,
+                  0.084751
+                ],
+                "min": [
+                  -0.049543,
+                  -0.063619,
+                  0.012001
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "831576a2c2a7a062",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.11239,
                 0.07275,
@@ -1981,7 +4063,27 @@
               "verts": 60
             },
             "PROC_JarFill_PurpleHeavy_F020_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071168,
+                  0.064493,
+                  0.089478
+                ],
+                "min": [
+                  -0.069135,
+                  -0.063619,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "13d7ce50f946495c",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.1403,
                 0.07948,
@@ -1995,7 +4097,27 @@
               "verts": 132
             },
             "PROC_JarFill_PurpleHeavy_F040_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071168,
+                  0.064493,
+                  0.127176
+                ],
+                "min": [
+                  -0.071079,
+                  -0.064085,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "2da685d9c0f9a593",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.14225,
                 0.11718,
@@ -2009,7 +4131,27 @@
               "verts": 240
             },
             "PROC_JarFill_PurpleHeavy_F070_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071168,
+                  0.064493,
+                  0.191112
+                ],
+                "min": [
+                  -0.071079,
+                  -0.064831,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "6cd135636915a74c",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.14225,
                 0.18111,
@@ -2023,7 +4165,27 @@
               "verts": 420
             },
             "PROC_JarFill_PurpleHeavy_F100_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.071168,
+                  0.064493,
+                  0.233
+                ],
+                "min": [
+                  -0.071079,
+                  -0.064831,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "6b521d5ebf6174a7",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.14225,
                 0.223,
@@ -2047,7 +4209,27 @@
         "LOD2": {
           "objects": {
             "PROC_JarFill_PurpleHeavy_F010_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.067
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8cb93523d3be1bc2",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.057,
@@ -2061,7 +4243,27 @@
               "verts": 16
             },
             "PROC_JarFill_PurpleHeavy_F020_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.067
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8cb93523d3be1bc2",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.057,
@@ -2075,7 +4277,27 @@
               "verts": 16
             },
             "PROC_JarFill_PurpleHeavy_F040_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.102111
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "703ef9bb27934cd3",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.09211,
@@ -2089,7 +4311,27 @@
               "verts": 16
             },
             "PROC_JarFill_PurpleHeavy_F070_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.162556
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "36822889aad6356b",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.15256,
@@ -2103,7 +4345,27 @@
               "verts": 16
             },
             "PROC_JarFill_PurpleHeavy_F100_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0692,
+                  0.06285,
+                  0.223
+                ],
+                "min": [
+                  -0.0692,
+                  -0.06285,
+                  0.01
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "6f5473e63f069824",
+              "material_slots": [
+                "M_Proc_Bud_PurpleHeavy",
+                "M_Proc_BudAccent_PurpleHeavy"
+              ],
               "size_m_unity_xyz": [
                 0.1384,
                 0.213,
@@ -2154,7 +4416,26 @@
         "LOD0": {
           "objects": {
             "PROC_PackageBox_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0325,
+                  0.0125,
+                  0.1
+                ],
+                "min": [
+                  -0.0325,
+                  -0.0125,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "252e04b138fb73d2",
+              "material_slots": [
+                "M_Proc_PackBody"
+              ],
               "size_m_unity_xyz": [
                 0.065,
                 0.1,
@@ -2168,7 +4449,26 @@
               "verts": 24
             },
             "PROC_PackageBox_Lid_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0333,
+                  0.0133,
+                  0.1008
+                ],
+                "min": [
+                  -0.0333,
+                  -0.0133,
+                  0.08
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "79d4d21b2e8f36cf",
+              "material_slots": [
+                "M_Proc_PackLid"
+              ],
               "size_m_unity_xyz": [
                 0.0666,
                 0.0208,
@@ -2192,7 +4492,26 @@
         "LOD1": {
           "objects": {
             "PROC_PackageBox_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0325,
+                  0.0125,
+                  0.1
+                ],
+                "min": [
+                  -0.0325,
+                  -0.0125,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "d68921de07131798",
+              "material_slots": [
+                "M_Proc_PackBody"
+              ],
               "size_m_unity_xyz": [
                 0.065,
                 0.1,
@@ -2206,7 +4525,26 @@
               "verts": 8
             },
             "PROC_PackageBox_Lid_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0333,
+                  0.0133,
+                  0.1008
+                ],
+                "min": [
+                  -0.0333,
+                  -0.0133,
+                  0.08
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "dfcf08a9a32d7f4a",
+              "material_slots": [
+                "M_Proc_PackLid"
+              ],
               "size_m_unity_xyz": [
                 0.0666,
                 0.0208,
@@ -2248,7 +4586,26 @@
         "LOD0": {
           "objects": {
             "PROC_PackagePouch_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  0.02,
+                  0.15
+                ],
+                "min": [
+                  -0.05,
+                  -0.02,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "2d89f077aa51b5c3",
+              "material_slots": [
+                "M_Proc_PackBody"
+              ],
               "size_m_unity_xyz": [
                 0.1,
                 0.15,
@@ -2272,7 +4629,26 @@
         "LOD1": {
           "objects": {
             "PROC_PackagePouch_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  0.02,
+                  0.15
+                ],
+                "min": [
+                  -0.05,
+                  -0.02,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "f29d7c83738b7850",
+              "material_slots": [
+                "M_Proc_PackBody"
+              ],
               "size_m_unity_xyz": [
                 0.1,
                 0.15,
@@ -2315,7 +4691,27 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_BevBottle_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.03,
+                  0.03,
+                  0.185
+                ],
+                "min": [
+                  -0.03,
+                  -0.03,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "a0d8325d74f4b793",
+              "material_slots": [
+                "M_Proc_Pkg_amber",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.06,
                 0.185,
@@ -2329,7 +4725,26 @@
               "verts": 192
             },
             "PROC_Pkg_BevBottle_Cap_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.015,
+                  0.015,
+                  0.2
+                ],
+                "min": [
+                  -0.015,
+                  -0.015,
+                  0.178
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "4797f280f95b42e7",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.03,
                 0.022,
@@ -2353,7 +4768,27 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_BevBottle_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.03,
+                  0.03,
+                  0.185
+                ],
+                "min": [
+                  -0.03,
+                  -0.03,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "be74947c93e86603",
+              "material_slots": [
+                "M_Proc_Pkg_amber",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.06,
                 0.185,
@@ -2367,7 +4802,26 @@
               "verts": 96
             },
             "PROC_Pkg_BevBottle_Cap_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.015,
+                  0.015,
+                  0.2
+                ],
+                "min": [
+                  -0.015,
+                  -0.015,
+                  0.178
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "89d10fc4710191d2",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.03,
                 0.022,
@@ -2391,7 +4845,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_BevBottle_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.03,
+                  0.03,
+                  0.2
+                ],
+                "min": [
+                  -0.03,
+                  -0.03,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "04c00de6de9130f2",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.06,
                 0.2,
@@ -2436,7 +4909,27 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_BevCan_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.033,
+                  0.033,
+                  0.122
+                ],
+                "min": [
+                  -0.033,
+                  -0.033,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "f0f9dfbb3ed3836b",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.066,
                 0.122,
@@ -2460,7 +4953,27 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_BevCan_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.033,
+                  0.033,
+                  0.122
+                ],
+                "min": [
+                  -0.033,
+                  -0.033,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "1422d466681df351",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.066,
                 0.122,
@@ -2484,7 +4997,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_BevCan_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.033,
+                  0.033,
+                  0.122
+                ],
+                "min": [
+                  -0.033,
+                  -0.033,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "010fd21e50ae68aa",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.066,
                 0.122,
@@ -2529,7 +5061,27 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_EdibleBag_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.045,
+                  0.015,
+                  0.125
+                ],
+                "min": [
+                  -0.045,
+                  -0.015,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "6eebc52d7fa4fbe6",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.09,
                 0.125,
@@ -2553,7 +5105,27 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_EdibleBag_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.045,
+                  0.015,
+                  0.125
+                ],
+                "min": [
+                  -0.045,
+                  -0.015,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "bd224f983271765a",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.09,
                 0.125,
@@ -2577,7 +5149,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_EdibleBag_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.045,
+                  0.015,
+                  0.125
+                ],
+                "min": [
+                  -0.045,
+                  -0.015,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "a57e9d271b9c8574",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.09,
                 0.125,
@@ -2622,7 +5213,27 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_EdibleBox_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0425,
+                  0.0125,
+                  0.11
+                ],
+                "min": [
+                  -0.0425,
+                  -0.0125,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "02a5dbf629f0e903",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.085,
                 0.11,
@@ -2646,7 +5257,27 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_EdibleBox_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0425,
+                  0.0125,
+                  0.11
+                ],
+                "min": [
+                  -0.0425,
+                  -0.0125,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "206d321f508d344b",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.085,
                 0.11,
@@ -2670,7 +5301,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_EdibleBox_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0425,
+                  0.0125,
+                  0.11
+                ],
+                "min": [
+                  -0.0425,
+                  -0.0125,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "e6f8c1417a275982",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.085,
                 0.11,
@@ -2715,7 +5365,27 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_ExtractJar_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0175,
+                  0.0175,
+                  0.022
+                ],
+                "min": [
+                  -0.0175,
+                  -0.0175,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "66df197f2e1b4f5c",
+              "material_slots": [
+                "M_Proc_Pkg_glass",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.035,
                 0.022,
@@ -2729,7 +5399,26 @@
               "verts": 120
             },
             "PROC_Pkg_ExtractJar_Cap_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.019,
+                  0.019,
+                  0.033
+                ],
+                "min": [
+                  -0.019,
+                  -0.019,
+                  0.02
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "f383ae0c790926f3",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.038,
                 0.013,
@@ -2753,7 +5442,27 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_ExtractJar_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0175,
+                  0.0175,
+                  0.022
+                ],
+                "min": [
+                  -0.0175,
+                  -0.0175,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "f08939b15f3e5c76",
+              "material_slots": [
+                "M_Proc_Pkg_glass",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.035,
                 0.022,
@@ -2767,7 +5476,26 @@
               "verts": 60
             },
             "PROC_Pkg_ExtractJar_Cap_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.019,
+                  0.019,
+                  0.033
+                ],
+                "min": [
+                  -0.019,
+                  -0.019,
+                  0.02
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "e266ab4d3d462e25",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.038,
                 0.013,
@@ -2791,7 +5519,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_ExtractJar_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.019,
+                  0.019,
+                  0.033
+                ],
+                "min": [
+                  -0.019,
+                  -0.019,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "962a377f4e346a83",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.038,
                 0.033,
@@ -2836,7 +5583,27 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_FlowerPouch_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  0.0175,
+                  0.13
+                ],
+                "min": [
+                  -0.05,
+                  -0.0175,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "c9639b748ba33b42",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.1,
                 0.13,
@@ -2860,7 +5627,27 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_FlowerPouch_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  0.0175,
+                  0.13
+                ],
+                "min": [
+                  -0.05,
+                  -0.0175,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "6654e6e9adb7de0b",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.1,
                 0.13,
@@ -2884,7 +5671,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_FlowerPouch_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  0.0175,
+                  0.13
+                ],
+                "min": [
+                  -0.05,
+                  -0.0175,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "e89071a2da82c74a",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.1,
                 0.13,
@@ -2929,7 +5735,26 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_MerchGrinder_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0275,
+                  0.0275,
+                  0.03
+                ],
+                "min": [
+                  -0.0275,
+                  -0.0275,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "9c17686309a81c83",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.055,
                 0.03,
@@ -2943,7 +5768,26 @@
               "verts": 72
             },
             "PROC_Pkg_MerchGrinder_Lid_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0275,
+                  0.0275,
+                  0.045
+                ],
+                "min": [
+                  -0.0275,
+                  -0.0275,
+                  0.03
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "7f58aa9f8271adca",
+              "material_slots": [
+                "M_Proc_Pkg_metal"
+              ],
               "size_m_unity_xyz": [
                 0.055,
                 0.015,
@@ -2967,7 +5811,26 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_MerchGrinder_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0275,
+                  0.0275,
+                  0.03
+                ],
+                "min": [
+                  -0.0275,
+                  -0.0275,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "c1d28434b4d94b20",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.055,
                 0.03,
@@ -2981,7 +5844,26 @@
               "verts": 36
             },
             "PROC_Pkg_MerchGrinder_Lid_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0275,
+                  0.0275,
+                  0.045
+                ],
+                "min": [
+                  -0.0275,
+                  -0.0275,
+                  0.03
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "cf53a542444c0ad7",
+              "material_slots": [
+                "M_Proc_Pkg_metal"
+              ],
               "size_m_unity_xyz": [
                 0.055,
                 0.015,
@@ -3005,7 +5887,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_MerchGrinder_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0275,
+                  0.0275,
+                  0.045
+                ],
+                "min": [
+                  -0.0275,
+                  -0.0275,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "8f36b09335cc8eda",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.055,
                 0.045,
@@ -3050,7 +5951,27 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_MerchLighter_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0125,
+                  0.006,
+                  0.072
+                ],
+                "min": [
+                  -0.0125,
+                  -0.006,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "f7516a38ca5bc434",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.025,
                 0.072,
@@ -3064,7 +5985,26 @@
               "verts": 48
             },
             "PROC_Pkg_MerchLighter_Hood_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0115,
+                  0.0055,
+                  0.082
+                ],
+                "min": [
+                  -0.0115,
+                  -0.0055,
+                  0.07
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "2963bfa25ee6d684",
+              "material_slots": [
+                "M_Proc_Pkg_metal"
+              ],
               "size_m_unity_xyz": [
                 0.023,
                 0.012,
@@ -3088,7 +6028,27 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_MerchLighter_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0125,
+                  0.006,
+                  0.072
+                ],
+                "min": [
+                  -0.0125,
+                  -0.006,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "f9d5177821c40751",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.025,
                 0.072,
@@ -3102,7 +6062,26 @@
               "verts": 16
             },
             "PROC_Pkg_MerchLighter_Hood_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0115,
+                  0.0055,
+                  0.082
+                ],
+                "min": [
+                  -0.0115,
+                  -0.0055,
+                  0.07
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "ee704eba3949671f",
+              "material_slots": [
+                "M_Proc_Pkg_metal"
+              ],
               "size_m_unity_xyz": [
                 0.023,
                 0.012,
@@ -3126,7 +6105,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_MerchLighter_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0125,
+                  0.006,
+                  0.082
+                ],
+                "min": [
+                  -0.0125,
+                  -0.006,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "b17b68778e8994a4",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.025,
                 0.082,
@@ -3171,7 +6169,26 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_MerchTee_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.11,
+                  0.14,
+                  0.03
+                ],
+                "min": [
+                  -0.11,
+                  -0.14,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "2ef9856197cb8058",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.22,
                 0.03,
@@ -3195,7 +6212,26 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_MerchTee_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.11,
+                  0.14,
+                  0.03
+                ],
+                "min": [
+                  -0.11,
+                  -0.14,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "b2027d887af63660",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.22,
                 0.03,
@@ -3219,7 +6255,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_MerchTee_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.11,
+                  0.14,
+                  0.03
+                ],
+                "min": [
+                  -0.11,
+                  -0.14,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "932aec71361aa99f",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.22,
                 0.03,
@@ -3264,7 +6319,27 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_PrepackJar_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.03,
+                  0.03,
+                  0.06
+                ],
+                "min": [
+                  -0.03,
+                  -0.03,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "a3343cbd73f8d215",
+              "material_slots": [
+                "M_Proc_Pkg_black",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.06,
                 0.06,
@@ -3278,7 +6353,26 @@
               "verts": 120
             },
             "PROC_Pkg_PrepackJar_Cap_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.032,
+                  0.032,
+                  0.077
+                ],
+                "min": [
+                  -0.032,
+                  -0.032,
+                  0.056
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "724396531cdd82fc",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.064,
                 0.021,
@@ -3302,7 +6396,27 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_PrepackJar_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.03,
+                  0.03,
+                  0.06
+                ],
+                "min": [
+                  -0.03,
+                  -0.03,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "a80092b64d40758b",
+              "material_slots": [
+                "M_Proc_Pkg_black",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.06,
                 0.06,
@@ -3316,7 +6430,26 @@
               "verts": 60
             },
             "PROC_Pkg_PrepackJar_Cap_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.032,
+                  0.032,
+                  0.077
+                ],
+                "min": [
+                  -0.032,
+                  -0.032,
+                  0.056
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "7f0a357d4a0dd35e",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.064,
                 0.021,
@@ -3340,7 +6473,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_PrepackJar_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.032,
+                  0.032,
+                  0.077
+                ],
+                "min": [
+                  -0.032,
+                  -0.032,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "a87ffed959bfb782",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.064,
                 0.077,
@@ -3385,7 +6537,27 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_PrerollMultipack_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0375,
+                  0.013,
+                  0.115
+                ],
+                "min": [
+                  -0.0375,
+                  -0.013,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "6d80218826c99ed5",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.075,
                 0.115,
@@ -3409,7 +6581,27 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_PrerollMultipack_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0375,
+                  0.013,
+                  0.115
+                ],
+                "min": [
+                  -0.0375,
+                  -0.013,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "e65adc6a2e5b3b41",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.075,
                 0.115,
@@ -3433,7 +6625,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_PrerollMultipack_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0375,
+                  0.013,
+                  0.115
+                ],
+                "min": [
+                  -0.0375,
+                  -0.013,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "94e4ed5b99db6719",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.075,
                 0.115,
@@ -3478,7 +6689,27 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_PrerollTube_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.011,
+                  0.011,
+                  0.1
+                ],
+                "min": [
+                  -0.011,
+                  -0.011,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "2eb8190220da49c0",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.022,
                 0.1,
@@ -3492,7 +6723,26 @@
               "verts": 120
             },
             "PROC_Pkg_PrerollTube_Cap_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.012,
+                  0.012,
+                  0.12
+                ],
+                "min": [
+                  -0.012,
+                  -0.012,
+                  0.095
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "00bd244ee630700e",
+              "material_slots": [
+                "M_Proc_Pkg_white"
+              ],
               "size_m_unity_xyz": [
                 0.024,
                 0.025,
@@ -3516,7 +6766,27 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_PrerollTube_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.011,
+                  0.011,
+                  0.1
+                ],
+                "min": [
+                  -0.011,
+                  -0.011,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "c7e4aa48d19d4f5f",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.022,
                 0.1,
@@ -3530,7 +6800,26 @@
               "verts": 60
             },
             "PROC_Pkg_PrerollTube_Cap_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.012,
+                  0.012,
+                  0.12
+                ],
+                "min": [
+                  -0.012,
+                  -0.012,
+                  0.095
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "f60fbf903f954f43",
+              "material_slots": [
+                "M_Proc_Pkg_white"
+              ],
               "size_m_unity_xyz": [
                 0.024,
                 0.025,
@@ -3554,7 +6843,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_PrerollTube_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.012,
+                  0.012,
+                  0.12
+                ],
+                "min": [
+                  -0.012,
+                  -0.012,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "83381c26894391e1",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.024,
                 0.12,
@@ -3599,7 +6907,27 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_TopicalTube_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0225,
+                  0.017,
+                  0.155
+                ],
+                "min": [
+                  -0.0225,
+                  -0.017,
+                  0.018
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "eda7204bd58f4b61",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.045,
                 0.137,
@@ -3613,7 +6941,26 @@
               "verts": 192
             },
             "PROC_Pkg_TopicalTube_Cap_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.015,
+                  0.015,
+                  0.02
+                ],
+                "min": [
+                  -0.015,
+                  -0.015,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "664d103b05997c51",
+              "material_slots": [
+                "M_Proc_Pkg_white"
+              ],
               "size_m_unity_xyz": [
                 0.03,
                 0.02,
@@ -3637,7 +6984,27 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_TopicalTube_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0225,
+                  0.017,
+                  0.155
+                ],
+                "min": [
+                  -0.0225,
+                  -0.017,
+                  0.018
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "b4e3e7b99e5472aa",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.045,
                 0.137,
@@ -3651,7 +7018,26 @@
               "verts": 96
             },
             "PROC_Pkg_TopicalTube_Cap_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.015,
+                  0.015,
+                  0.02
+                ],
+                "min": [
+                  -0.015,
+                  -0.015,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "17d6ca0c678080da",
+              "material_slots": [
+                "M_Proc_Pkg_white"
+              ],
               "size_m_unity_xyz": [
                 0.03,
                 0.02,
@@ -3675,7 +7061,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_TopicalTube_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0225,
+                  0.017,
+                  0.155
+                ],
+                "min": [
+                  -0.0225,
+                  -0.017,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "811185c654f95aff",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.045,
                 0.155,
@@ -3720,7 +7125,27 @@
         "LOD0": {
           "objects": {
             "PROC_Pkg_VapeCartBox_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0175,
+                  0.0175,
+                  0.11
+                ],
+                "min": [
+                  -0.0175,
+                  -0.0175,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "738ba456ab3bd6a1",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.035,
                 0.11,
@@ -3744,7 +7169,27 @@
         "LOD1": {
           "objects": {
             "PROC_Pkg_VapeCartBox_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0175,
+                  0.0175,
+                  0.11
+                ],
+                "min": [
+                  -0.0175,
+                  -0.0175,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "1cb8bfa74cb7d8ca",
+              "material_slots": [
+                "M_Proc_Pkg_brand",
+                "M_Proc_PkgLabel"
+              ],
               "size_m_unity_xyz": [
                 0.035,
                 0.11,
@@ -3768,7 +7213,26 @@
         "LOD2": {
           "objects": {
             "PROC_Pkg_VapeCartBox_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0175,
+                  0.0175,
+                  0.11
+                ],
+                "min": [
+                  -0.0175,
+                  -0.0175,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
               "geometry_sha256": "1ac2ad903a448722",
+              "material_slots": [
+                "M_Proc_Pkg_brand"
+              ],
               "size_m_unity_xyz": [
                 0.035,
                 0.11,

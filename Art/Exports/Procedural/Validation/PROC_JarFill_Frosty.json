@@ -1,0 +1,15 @@
+{
+  "asset_id": "PROC_JarFill_Frosty",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "e910f74bde142c20",
+  "generator": "jar_fill",
+  "lod_tris": {
+    "LOD0": 10080,
+    "LOD1": 2420,
+    "LOD2": 140
+  },
+  "params_sha256": "c024995a99d42b80",
+  "passed": true,
+  "warnings": []
+}
