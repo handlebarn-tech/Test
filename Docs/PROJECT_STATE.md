@@ -10,16 +10,16 @@ Hub-owned. A fresh Hub resumes from this file + `Docs/HUB_RESUME.md` + recent `D
 | Session | Task | State / next step |
 |---|---|---|
 | `dispo-build007` `local_01655dfb-07f0-4706-a2a3-156d273999b0` | BUILD-007 playtest build 2 from main 741bb43 (incl. ART-007) | Building → `Downloads/Dispo Game Builds/playtest2-741bb43/`. When it reports: give Nolan the path, then reuse this session for the REF-013 M1 fix. |
-| `dispo-game026` `local_9bc94fb7-d677-4076-81be-83317f26bbf8` | GAME-026 customer flow (Unity) | Read packet, waits for GO. Send GO after the build is out, plus: fix REVIEW-GAME025 M1 (SliceDoor 3 ft width fallback: log a placeholder + GAP tag), and on finish report to the Hub, not to a named reviewer. |
-| `dispo-proc-005-fixture-f` `local_335db39d-0968-49fa-846c-808a2abb2158` | PROC-005 fixture families rework (REVIEW-PROC5 FAIL findings) | PAUSED for the build. Resume after: merge `worktree-agent-ac7414483b9f8bb4a` + main, fix all findings, report to the Hub. |
-| `dispo-proc006b` `local_cab28702-140d-48df-963a-3cc4b318aa89` | PROC-006b register kit generators (from WIP d30bb73) | PAUSED for the build. Resume after: merge main, finish, report to the Hub. |
+| `dispo-game026` `local_9bc94fb7-d677-4076-81be-83317f26bbf8` | GAME-026 customer flow (Unity) | GO sent 15:45 (merge main, + GAME-025 M1 SliceDoor fix). |
+| `dispo-proc-005-fixture-f` `local_335db39d-0968-49fa-846c-808a2abb2158` | PROC-005 fixture families rework (REVIEW-PROC5 FAIL findings) | Resumed 15:45. |
+| `dispo-proc006b` `local_cab28702-140d-48df-963a-3cc4b318aa89` | PROC-006b register kit generators (from WIP d30bb73) | Resumed 15:45. |
 
-| `dispo-asset005` `local_1bb17d9a-7584-4a8b-af68-d01479714d05` | ASSET-005/006 wardrobe + hair (Blender, no Unity) | Writing packet, waits for GO. GO after the build. |
+| `dispo-asset005` `local_1bb17d9a-7584-4a8b-af68-d01479714d05` | ASSET-005/006 wardrobe + hair (Blender, no Unity) | GO sent 15:45. |
 
 Workers' original briefs name long-lived reviewers (now archived). Tell each to report "ready for review" to the Hub; the Hub spawns a fresh reviewer (Agent tool with worktree isolation, or a fresh session).
 
 ## Queue (after the above)
-1. REF-013 M1 fix, plus REVIEW-ART7 m3 (JC door blocked, Vest_FOH trash can in a door swing: settle from evidence, or GAP + NPCs avoid the JC anchors) (DEC-115: HUB desk/counter/cabinet sizes Low + narrowed GAP-132; hinge overrides from A011; storefront keeps pulls; 8 absence-inferred rows Low). Branch `worktree-agent-a2b65d251ee0f6ac2`@73e0e0c; verdict REVIEW-REF13 on `review/ref13`.
+1. (RUNNING as a Hub background agent in a worktree) REF-013 M1 fix, plus REVIEW-ART7 m3 (JC door blocked, Vest_FOH trash can in a door swing: settle from evidence, or GAP + NPCs avoid the JC anchors) (DEC-115: HUB desk/counter/cabinet sizes Low + narrowed GAP-132; hinge overrides from A011; storefront keeps pulls; 8 absence-inferred rows Low). Branch `worktree-agent-a2b65d251ee0f6ac2`@73e0e0c; verdict REVIEW-REF13 on `review/ref13`.
 2. PROC-007 UV layout (DEC-097) after PROC-005 merges; the label-shader cut-over comes with it.
 3. DEC-111 replacements: PROC-009 vehicles, ASSET-005/006/007 wardrobe/hair/gloves (PROC-008 cash tray rejected, DEC-051).
 4. PS1b recommendation depth (GAME-017a packet notes in `Docs/Departments/GAMEPLAY.md` queue), GAME-021/022/024.
@@ -39,4 +39,4 @@ Controls (done) → store/layout accuracy → believable customer flow → recom
 - When TFS ships v7.11.5: re-import, regenerate goldens and diff (GAP-210).
 
 ## Builds
-- Played: `Downloads/Dispo Game Builds/slice-38b9e5c/` (playtest 1). Next: playtest2-08758c1.
+- Played: `slice-38b9e5c/` (playtest 1). Built: `playtest2-08758c1/DispoGame.exe` (no doors). Building: `playtest2-741bb43/` (+ ART-007 graybox, doors) = the one Nolan plays.
