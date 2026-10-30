@@ -29,4 +29,4 @@ V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). 
 - Parity oracle = the shipped engine (v7.11.4 + DEC-015/016, DEC-060; A1).
 
 ## Handoff
-`Docs/Handoffs/GAME-018.md` (≤40 lines). Questions go to the Studio Hub (DEC-033).
+`Docs/Handoffs/GAME-018.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).

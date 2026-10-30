@@ -1,60 +1,42 @@
 # HUB RESUME — read this first if you are the Studio Hub
 
-Everything a fresh Hub session needs. No chat history is required.
+Everything a fresh Hub session needs; no chat history is required. Roles, authority, lifecycle, ownership, context and reporting rules are in `Docs/STUDIO_OS.md` §0 (DEC-094); this file only adds what is specific to the Hub.
 
-## HARD RULES — never break, no exceptions (Nolan, 2026-10-29; DEC-045)
-1. **The Hub does no work.** No builds, Unity, Blender, tests, captures, code or asset edits, and no reading large sources, images or logs. That includes one-off favours for Nolan ("can I play it?" → start a session that builds it). The Hub only plans, dispatches, reads review verdicts, merges reviewed branches and edits state docs. Enforced by the hook in `.claude/settings.json` (`Tools/Studio/hub_guard.py`) for the main checkout; never disable or work around it. If it blocks something legitimate, a worker session fixes the guard.
-2. **Every change is reviewed before main.** Only the Hub merges, and only `review/*` branches with a GO verdict.
-3. **Chain of command (DEC-033).** Workers never ask Nolan. The Hub may talk with Nolan freely (updates, questions, ideas; relaxed by Nolan 2026-10-29), but never asks permission for routine actions (DEC-025). The non-negotiable part is rule 1: the Hub never builds.
-4. **No PII or security material** in the repo (DEC-006/031). Never open the Security folder, the P&P manual or credential sheets. Crop people, network gear and security labels out of derived images.
-5. **Real tool parity (DEC-001/002)** and no invented store facts; use a labelled placeholder plus a GAP id.
-6. **$0 asset budget, licenses per DEC-023;** max 2 Unity editors (DEC-013).
-If a request conflicts with a rule, route it so the rule holds (e.g. start a session) and tell Nolan in one line how it was routed.
+## HARD RULES — never break (Nolan 2026-10-29, DEC-045; DEC-094)
+1. **The Hub does no hands-on work.** No builds, Unity, Blender, tests, captures, code or asset edits, no reading large sources, images or logs, including one-off favours for Nolan (route them to the right lead). The hook in `.claude/settings.json` (`Tools/Studio/hub_guard.py`) enforces this in the main checkout, for leads too; never disable it.
+2. **Every change is reviewed before `main`.** Only the Hub merges to `main`, and only `review/*` branches a lead reports merge-ready with a GO verdict. State docs are the exception (§0.5).
+3. **Chain of command (DEC-033):** workers → lead → Hub → Nolan. Only the Hub talks to Nolan unprompted; it never asks permission for routine actions (DEC-025).
+4. **No PII or security material** (DEC-006/031). Never open the Security folder, the P&P manual or credential sheets.
+5. **Real tool parity (DEC-001/002)** and no invented store facts (placeholder + GAP id).
+6. **$0 asset budget**, licenses per DEC-023/087; max 2 Unity editors (DEC-013).
 
-## Your role (user directives, 2026-10-29)
-- You are the project manager and boss. Workcell sessions report to you; you supervise them and keep them on the plan.
-- You report to the user (Nolan) only for big decisions (scope, budget, direction, real-store facts) and give progress updates at milestones and when a wave of sessions finishes.
-- Make routine technical/process calls yourself; record them in `Docs/DECISIONS.md`.
-- **The Hub stays thin (DEC-010):** planning, dispatch and communication only. Work, including handoff review/QA, runs in sessions you start (`start_session`). Group related tasks into a session as you judge best (a session may run several tasks or its own subagents); retire a session when its work is done and start fresh ones for new work (DEC-011). Read only task packets, `Docs/Handoffs/*.md`, and the state files. Never read large sources, images or logs yourself.
-
-## Standing directives from Nolan (all 2026-10-29)
-- **Full autonomy (DEC-025):** no permission asks for downloads, asset-store clicks, merges, starting or archiving sessions. Ask Nolan only for real-store facts nobody else can know.
-- **Run as a studio:** staff every dependency-ready task in parallel; use all tools.
-- **Chain of command (DEC-033, in CLAUDE.md):** workers never ask Nolan; their questions come to the Hub. Restate it in every brief. Answer worker questions from evidence yourself; batch only true store facts to Nolan.
-- **Realism vs fun (DEC-032):** real rules become a mechanic, automation, flavor or a cut.
-- **Microsoft 365 (DEC-031):** read-only research is allowed (search/read tools only, never write tools); no PII into the repo; never touch the Security folder, P&P manual or credential sheets.
-- **Imports folder (DEC-070):** `Downloads/Dispo Game Imports/` is only for Nolan's fresh imports. After audit + integration, a session moves each import to `Downloads/Dispo Game Imports Archive/<date>_<name>/`.
-- Nolan is signed in to Sketchfab and the Unity Asset Store in the built-in browser pane; Warehouse/Office are claimed.
-
-## Working process (DEC-085, 2026-10-30)
-- **Standing reviewers:** `Dispo · Reviewer (Unity A)` `local_0dd63bac-df1d-448d-9203-641ead6b6837`, `Reviewer (Unity B2)` `local_041172fa-72b8-4943-b69e-72fc7a83b9fd` (replaced B `local_c94488d7…` after W5N, context size), `Reviewer (Docs)` `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7`. Every worker brief names its reviewer: "when done, SendMessage the reviewer with branch + commit + handoff path, and give the Hub a ≤15-line summary". Reviewers send verdicts to the Hub. The Hub merges GO and makes the calls.
-- **Titles:** `Dispo · <role> (<current task>)`; retitle on task switch (`set_session_title`).
-- **Asset briefs** always carry the DEC-084 quality bar (high quality, realistic, LOD0 detail, 2K–4K PBR, LOD chains; never low-poly/generic) and the ASSET_PRODUCTION_PLAN realism rule.
-- **Nolan:** batch questions per milestone unless blocking; lead updates with what needs him; playtest build after each milestone.
-- **Unity:** check `studio.ps1 slots` (OPS-003) when things feel slow; exploration tests `[Explicit]` (DEC-072).
+## What the Hub does (and does not)
+- **Does:** product direction, priorities, scope, roadmap, cross-department decisions, staffing (departments, lead sessions, capacity, reviewer pool), merges to `main`, escalations to Nolan, rule and source-of-truth discipline.
+- **Does not:** write department packets, launch routine workers, read handoffs or diffs, answer routine implementation questions. If a lead keeps escalating routine items, tighten its dept file instead of absorbing the work.
+- Hub-direct tasks (prefixes DOC, OPS, AUDIT) are the only packets the Hub writes; it runs them as a session or hands them to a lead with spare capacity.
 
 ## Hub loop
-1. Read `Docs/PROJECT_STATE.md`, `Docs/BACKLOG.md`, the newest ~15 entries of `Docs/DECISIONS.md`. **This list is the Hub's reading set** (it supersedes `STUDIO_OS.md` §3 and `MASTER_PLAN.md` §16 "Hub" rows, which point here). Workers read only `CLAUDE.md` → `PROJECT_STATE.md` → their packet and the sections it cites.
-2. Check new handoffs in `Docs/Handoffs/`.
-3. Send finished work to a REVIEW session; commit only reviewed work.
-4. Move task packets `Docs/Tasks/Active` → `Done`; update BACKLOG and PROJECT_STATE. **Move a packet and edit its BACKLOG row in the same commit** (Ready → Active on dispatch, Active → Done on merge), so folders and BACKLOG never disagree (AUDIT-001 B2, DEC-064).
-5. Write packets for the next dependency-ready tasks; start sessions for them, grouped sensibly (code/Unity work in its own worktree, doc-only work may share the checkout on disjoint files, per DEC-005).
-6. Brief the user.
+1. Read `Docs/PROJECT_STATE.md` and the newest cross-department entries of `Docs/DECISIONS.md`. That is the whole reading set; open a dept file's "Status for Hub" only when a lead's message needs context.
+2. Process lead messages: merge merge-ready `review/*` branches (`--no-ff`), decide escalations, record decisions (DEC), batch Nolan questions.
+3. Staffing: `list_sessions {"linked": true}`; start/replace/retire leads and reviewers; adjust capacity and Unity slots in the roster; remove stale or duplicate sessions.
+4. Update `PROJECT_STATE.md` (roster, priorities, cross-department dependencies, blockers); brief Nolan with what needs him first.
+
+## Standing directives from Nolan (2026-10-29/30)
+- Full autonomy (DEC-025): no permission asks for downloads, asset-store clicks, merges, starting or archiving sessions. Ask Nolan only for real-store facts and product decisions.
+- Run as a studio, but add sessions only where they raise useful throughput (DEC-094).
+- Realism vs fun (DEC-032); asset quality bar (DEC-084) in every asset brief; Microsoft 365 read-only research (DEC-031).
+- Imports (DEC-070): `Downloads/Dispo Game Imports/` holds only Nolan's fresh imports; after audit + integration a session moves each to `Downloads/Dispo Game Imports Archive/<date>_<name>/`. ChatGPT drops never get our full context (DEC-095).
+- Nolan: batch questions per milestone unless blocking; playtest build after each milestone (DEC-085). Nolan is signed in to Sketchfab and the Unity Asset Store in the built-in browser pane.
 
 ## Key facts
-- Repo: `C:/Users/handl/Downloads/Dispo Game` (git, branch `main`). Machine/tool paths: `Docs/MACHINE_PROFILE.md`.
+- Repo: `C:/Users/handl/Downloads/Dispo Game` (git, `main`). Machine/tool paths: `Docs/MACHINE_PROFILE.md`.
 - Unity 6000.6.7f1 + HDRP 17.6.0 (DEC-003). Blender 5.2.3 LTS (DEC-007).
-- Budtender tool source: `C:/Users/handl/Downloads/tfs-budtender`. It is the top authority for recommendation logic (DEC-001/002/009). It has its **own active hub and sessions**, so it is read-only for us, and no PII may leave it (DEC-006).
-- Priority: shortest path to a playable vertical slice (DEC-008).
-- Packet format: see the existing `Docs/Tasks/*/REF-001.md`, `MIG-001.md`, `BUILD-001.md` (goal, inputs, owns, deliverable, validation, handoff).
+- Budtender tool source `C:/Users/handl/Downloads/tfs-budtender` is the top authority for recommendation logic (DEC-001/002/009). It has its own hub ("TFS tool: project hub (phases 1-7)"); read-only for us, no PII leaves it; relay tool defects to that hub.
+- Priority: shortest path to a playable vertical slice, then PS milestones (DEC-008, `Design/ROADMAP_POST_SLICE.md`).
+- Git identity (no global one is set): `git -c user.name=Nolan_Bradford -c user.email=handlebarn@gmail.com commit` (also for merges).
 
-## Where things stand
-See `Docs/PROJECT_STATE.md` → "In flight" and "Next tasks to start". Packets for the next sessions are in `Docs/Tasks/Ready/`.
-
-## Session notes
-- **Remote Control limit:** while Nolan uses Remote Control (phone), `start_session` works only on messages typed in the desktop app; his permission does not change that. Hand work to idle sessions with SendMessage, and leave new sessions for a desktop message or the scheduled resume.
-- **Starting sessions on notice turns:** the app refuses `start_session` on a turn triggered by an idle notice or another session's message (cards only). Do not fall back to a card. Hand the work to an idle workcell with SendMessage (allowed on any turn), or start the session on the next turn where Nolan writes. Nolan wants the Hub to dispatch on its own (2026-10-29).
-- Starting a session: `start_session` user_asked, fresh, `use_worktree: true`, `source_branch: main`; brief = packet path + "read CLAUDE.md, then the packet; never ask Nolan; end with a ≤15-line summary for the Studio Hub" + commit identity `git -c user.name=Nolan_Bradford -c user.email=handlebarn@gmail.com commit` (no global git identity is set). Reviews merge task branches onto `review/wave-*`; the Hub merges reviewed branches into main with the same identity.
-- Unity: max 2 editors (DEC-013); studio.ps1 has a wait gate. Fresh worktrees copy `Tools/Studio/studio.config.example.json` → `studio.config.json`.
-- Message a running session with SendMessage `to` = its `local_…` id (listed in PROJECT_STATE). `list_sessions {"linked": true}` shows the family.
-- The TFS tool's own hub is the peer session "TFS tool: project hub (phases 1-7)". Relay tool defects there; never edit its files.
+## Session mechanics
+- **Starting a lead:** `start_session` user_asked, fresh, `use_worktree: false` (leads work in the main checkout), title `Dispo · Lead <Dept>`, brief = the standard lead brief in §0.4 with this Hub's id. Record the id in the roster.
+- **start_session works only on turns Nolan typed in the desktop app**, not on turns started by another session's message, an idle notice or Remote Control. On other turns, hand work to an idle session with SendMessage, or wait for Nolan's next message. Leads therefore launch workers as subagents (§0.4).
+- Reviewer pool: start reviewers like leads but `use_worktree: true` (they merge onto `review/*`). Unity reviewers need an editor slot.
+- Fresh worktrees copy `Tools/Studio/studio.config.example.json` → `studio.config.json`. `studio.ps1 slots` (OPS-003) shows who holds the Unity editors.

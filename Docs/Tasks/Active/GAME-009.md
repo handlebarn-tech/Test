@@ -21,4 +21,4 @@ Simulation/Slice (customer type, 14-day history, tax path), Presentation/Slice (
 Compile/EditMode/PlayMode green. Tests: medical 3.5 g total = pre × 1.091 rounded to $0.05; a 42 g medical sale passes with 70 g remaining and is blocked with 35 g remaining; an out-of-state card cannot confirm as MED; the adult-use path is unchanged (slice price goldens). DEC-013 gate.
 
 ## Handoff
-`Docs/Handoffs/GAME-009.md` (≤40 lines). Questions go to the Studio Hub (DEC-033).
+`Docs/Handoffs/GAME-009.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).

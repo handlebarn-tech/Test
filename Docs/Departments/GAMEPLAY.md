@@ -1,0 +1,45 @@
+# Gameplay department
+
+Rules for every department: `Docs/STUDIO_OS.md` §0. This file is the Gameplay lead's resume and domain state; the lead owns it. Lead session and capacity: `Docs/PROJECT_STATE.md` → "Studio roster".
+
+## Charter
+- **Prefixes:** GAME, UX, DES, QA, DATA, COMP, BUILD, PERF.
+- **Owns:** `UnityProject/Assets/_Game/Code/{Domain,Simulation,Presentation}/`, `Code/Editor/{Slice,CI}/`, `Code/Editor/ProjectSetup.cs`, `Code/Tests/` except `Tests/EditMode/ProcArt/`, `_Game/{Data,UI,Audio}/` wiring, the Slice scene and its builder; `Tools/Data/`; `Docs/Specs/`, `Docs/Design/` except `ROADMAP_POST_SLICE.md` (Hub, scope), `Docs/Reconstruction/`, `Docs/BUILD_STATUS.md`, `Docs/PERF_BASELINE.md`; playtest builds in `Downloads/Dispo Game Builds/`.
+- **Does not own:** scene geometry, graybox/lookdev builders and `ROOM_FIXTURES` (World); generators, imported art, characters (Assets).
+
+## Contracts
+- **Provides:** catalog/data schema (`Reconstruction/DATA_SCHEMA.md`, `_Game/Data/Catalog`), the gameplay anchor *needs* (World commits the names), the label text set for Assets' label generator.
+- **Consumes:** scene anchor/object names (World), prefab/FBX names and manifest (Assets).
+
+## Domain reading (on demand, by §)
+`Docs/Design/SPEC_DECISION_PRESSURE.md` (wins over GSS on conflict), `Design/DESIGN_V2/` (DEC-063/066), `Design/ROADMAP_POST_SLICE.md`, `Design/SPEC_COMP002.md`, `SPEC_GAME004.md`, `SPEC_SHIFT_DAY.md`, `TUNING_PS1.md`, `Docs/Specs/*`, `GAMEPLAY_SIMULATION_SPEC.md`, `TOOLCHAIN_EXECUTION.md` (runner/tests). TFS tool source `C:/Users/handl/Downloads/tfs-budtender` is the top authority for recommendation logic (DEC-001/002, read-only, no PII).
+
+## Domain rules (pointers)
+Gate A on every gameplay PR (DEC-067); V2 Critical/High exploit tests before a system is complete (DEC-066); exploration tests `[Explicit]` (DEC-072); realism vs fun (DEC-032); approved brands only (DEC-071/081).
+
+## Status for Hub
+_Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
+- BACKLOG reconciled: GAME-007/008/010, QA-002b Done; GAME-011/012 Ready (wait for PS1b, DEC-096); new rows DES-005/006, GAME-025/026.
+- **Merge-ready:** `review/wave-5l` (DES-004b+c, REVIEW-W5L PASS with minors).
+- GAME-009 resumed in its own session (Gameplay's Unity slot); then REVIEW-PS1 → playtest build 2.
+- DES-005 (playtest intake, controls + customer-flow spec, GAME-025/026 packets) and DES-006 (PS1b vs TFS depth audit) run as doc-only subagents.
+- Next code after GAME-009: GAME-025 controls, then GAME-026 flow and the DES-006 "first playable depth" cut.
+- Cross-dept: door + entry/guard/queue anchors with World (contract in `Specs/CONTROLS_FLOW_PS1.md` §Contract, from DES-005).
+
+## In flight
+| Task | Worker | Branch | State |
+|---|---|---|---|
+| GAME-009 medical (+ W5N m2 queue strip) | session `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | `claude/task-game-009` | resumed: EditMode 217/217, capture re-run, handoff |
+| DES-004b+c | — | `review/wave-5l` | REVIEW-W5L PASS with minors; merge-ready. DES session `local_82d327a2…` retired (no open work) |
+| DES-005 playtest intake | lead subagent | worktree | running |
+| DES-006 recommendation depth audit | lead subagent | worktree | running |
+
+## Queue (lead re-orders within DEC-096)
+1. GAME-009 → REVIEW-PS1 → playtest build 2 for Nolan (BUILD).
+2. GAME-025 controls (after DES-005 + GAME-009 merge; World door contract).
+3. GAME-026 customer flow (World entry anchors) and the DES-006 first-depth cut, then PS1b GAME-017 → 018 → 019 → 020 as amended.
+4. GAME-021/022/024; UX-003; GAME-011/012 per DES-004.
+5. Long-term ideas: `Design/PROPOSAL_PLAYTEST1_LONGTERM.md` (DES-005) goes to the Hub for scope.
+
+## Blockers / Questions for Nolan
+- None open.

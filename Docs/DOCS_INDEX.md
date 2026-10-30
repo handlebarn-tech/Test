@@ -7,13 +7,15 @@ This file exists to keep agents from loading unnecessary context.
 | Project goal / milestone / core architecture | `MASTER_PLAN.md` |
 | Port current Three.js/browser/budtender systems | `UNITY_MIGRATION_PLAN.md` |
 | Find/build/import any art asset | `ASSET_PRODUCTION_PLAN.md` |
-| Run agents/worktrees/reviews/handoffs | `STUDIO_OS.md` |
+| Worktrees, packet/handoff formats, review gates | `STUDIO_OS.md` (§0 first) |
 | Run Unity/Blender/tests/builds/screenshots | `TOOLCHAIN_EXECUTION.md` |
 | Design/implement customers, shifts, transactions and progression | `GAMEPLAY_SIMULATION_SPEC.md` |
 | Codex durable repo guidance | `AGENTS.md` |
 | Claude Code durable repo guidance | `CLAUDE.md` |
+| Roles, authority, escalation, session lifecycle, ownership, reporting | `STUDIO_OS.md` §0 (DEC-094) |
 | **Studio Hub start** (Hub only) | `HUB_RESUME.md` |
-| Current milestone, in-flight work, open questions | `PROJECT_STATE.md` |
+| **Department lead start** + domain state (owned paths, contracts, in flight, queue) | `Departments/GAMEPLAY.md`, `Departments/WORLD.md`, `Departments/ASSETS.md` |
+| Project milestone, studio roster, priorities, cross-dept dependencies, Nolan items | `PROJECT_STATE.md` (Hub, leads) |
 | Task queue and states | `BACKLOG.md` (packets in `Tasks/Active`, `Tasks/Ready`, `Tasks/Done`) |
 | Ratified decisions (DEC-###), newest last | `DECISIONS.md`: read only the entries your packet cites, or the newest few |
 | Unknown facts and placeholders (GAP-###) | `KNOWN_GAPS.md` |

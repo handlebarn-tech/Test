@@ -29,4 +29,4 @@ V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). 
 - Tests add V2's stress profiles as bots: speedrunner, perfectionist-slow, careless, inventory-only and revenue-only fail Trusted; balanced passes (V2 `VALIDATION/progression_gate_stress.csv`, reference only, never run the `.py`). Re-tune for the gentler gates. Exploits EX-029..032 (row 45).
 
 ## Handoff
-`Docs/Handoffs/GAME-024.md` (≤40 lines). Questions go to the Studio Hub (DEC-033).
+`Docs/Handoffs/GAME-024.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).
