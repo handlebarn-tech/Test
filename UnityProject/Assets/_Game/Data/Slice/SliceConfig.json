@@ -1,6 +1,6 @@
 {
   "_doc": "Every slice constant (Docs/Specs/SLICE_DESIGN.md §8). GDD = game tuning; SRC = tool-derived; tax/rounding live in Data/Catalog/pricing.json.",
-  "customersPerShift": 12,
+  "customersPerShift": 16,
   "arrivalGapNormalSec": 45,
   "arrivalGapRushSec": 15,
   "rushFirstIndex": 6,

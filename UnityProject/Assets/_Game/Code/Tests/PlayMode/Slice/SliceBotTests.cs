@@ -65,8 +65,8 @@ namespace Dispo.Slice.PlayMode.Tests
             var r = g.FinalReport;
             Debug.Log($"[SliceBot] PlayMode served={r.CustomersServed} walkouts={r.Walkouts} noSales={r.NoSales} revenue={r.RevenuePostTax:0.00} soldOut={string.Join(",", r.SoldOut)} stars={r.Stars} fallbacks={g.FallbackAnchors.Count}");
             Assert.AreEqual(SliceScreen.Report, g.Screen);
-            Assert.IsTrue(sim.Customers.All(c => c.State == CustomerState.Done && c.Outcome != CustomerOutcome.None), "all 12 resolve");
-            Assert.AreEqual(12, sim.Customers.Count);
+            Assert.IsTrue(sim.Customers.All(c => c.State == CustomerState.Done && c.Outcome != CustomerOutcome.None), "all resolve");
+            Assert.AreEqual(sim.Cfg.customersPerShift, sim.Customers.Count);
             Assert.IsTrue(typeof(ShiftReport).GetFields().All(f => f.GetValue(r) != null), "no null report fields");
             Assert.AreEqual(sim.Sales.Sum(s => s.PricePostTax), r.RevenuePostTax, 1e-9, "revenue = Σ sale events");
             foreach (var id in sim.Sales.Select(s => s.BatchId).Distinct())
