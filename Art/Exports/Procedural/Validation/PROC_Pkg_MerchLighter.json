@@ -1,0 +1,15 @@
+{
+  "asset_id": "PROC_Pkg_MerchLighter",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "237c23e26ac03f2b",
+  "generator": "packaged_goods",
+  "lod_tris": {
+    "LOD0": 136,
+    "LOD1": 40,
+    "LOD2": 12
+  },
+  "params_sha256": "d8a49587443a9a1d",
+  "passed": true,
+  "warnings": []
+}

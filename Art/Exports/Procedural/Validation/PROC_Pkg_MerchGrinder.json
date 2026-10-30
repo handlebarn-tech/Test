@@ -1,0 +1,15 @@
+{
+  "asset_id": "PROC_Pkg_MerchGrinder",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "666b7b08b1652e98",
+  "generator": "packaged_goods",
+  "lod_tris": {
+    "LOD0": 280,
+    "LOD1": 136,
+    "LOD2": 28
+  },
+  "params_sha256": "d8a49587443a9a1d",
+  "passed": true,
+  "warnings": []
+}
