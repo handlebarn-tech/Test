@@ -14,10 +14,12 @@ namespace Dispo.Slice.Tests
         public string Name;
         public bool TrueChip, BestCard;           // perfect information vs a random chip and a random card
         public double PickSec, PosSec, RepickSec; // service start → first card, accept → POS confirm, reject → next card
+        public double IdSec;                      // one ID at the stand (GAME-008)
 
-        public static readonly Persona Perfect = new Persona { Name = "perfect", TrueChip = true, BestCard = true, PickSec = 45, PosSec = 30, RepickSec = 15 };
-        public static readonly Persona Careless = new Persona { Name = "careless", PickSec = 45, PosSec = 30, RepickSec = 15 };
-        public static readonly Persona Slow = new Persona { Name = "slow", TrueChip = true, BestCard = true, PickSec = 90, PosSec = 60, RepickSec = 30 };
+        public static readonly Persona Perfect = new Persona { Name = "perfect", TrueChip = true, BestCard = true, PickSec = 45, PosSec = 30, RepickSec = 15, IdSec = 10 };
+        public static readonly Persona Careless = new Persona { Name = "careless", PickSec = 45, PosSec = 30, RepickSec = 15, IdSec = 5 };
+        // DEC-086: 1.5× perfect (2× is a structural loss: its 2-item service outlasts the 150 s gap all shift, REVIEW-W5M m1).
+        public static readonly Persona Slow = new Persona { Name = "slow", TrueChip = true, BestCard = true, PickSec = 67.5, PosSec = 45, RepickSec = 22.5, IdSec = 15 };
         public static readonly Persona[] All = { Perfect, Careless, Slow };
     }
 
@@ -47,9 +49,19 @@ namespace Dispo.Slice.Tests
             {
                 Assert.Less(guard, 400000, $"{p.Name} seed {seed}: shift never ended");
                 sim.Tick(step);
+                // GAME-008: every bot covers the ID stand and works it between counter actions; perfect/slow judge by the law
+                // (IdRules), careless admits everyone (a bad ID admitted = strike).
+                if (sim.Cover == CoverState.Offered) sim.AcceptCover();
+                if (sim.Stand.Count > 0 && sim.Time >= next)
+                {
+                    var s = sim.Stand[0];
+                    if (!p.TrueChip || sim.IdValid(s)) sim.Admit(s); else sim.Refuse(s);
+                    next = sim.Time + p.IdSec;
+                    continue;
+                }
                 var c = sim.Serving;
                 if (c == null) continue;
-                if (c != cur) { cur = c; tried.Clear(); next = c.ServiceStart + p.PickSec; }
+                if (c != cur) { cur = c; tried.Clear(); next = Math.Max(next, c.ServiceStart) + p.PickSec; }
                 if (sim.Time < next) continue;
                 if (sim.RegisterOpen)
                 {
@@ -97,7 +109,7 @@ namespace Dispo.Slice.Tests
             Enumerable.Range(1, seeds).Select(s => Run(Load(), p, s).Report()).ToList();
 
         static string Row(Persona p, List<ShiftReport> rs) =>
-            $"{p.Name,-8} avg {rs.Average(r => r.AvgSatisfaction),5:0.0}  walkouts {rs.Average(r => r.Walkouts):0.0}  noSales {rs.Average(r => r.NoSales):0.0}  units/sale {rs.Average(r => r.UnitsPerSale):0.00}";
+            $"{p.Name,-8} avg {rs.Average(r => r.AvgSatisfaction),5:0.0}  walkouts {rs.Average(r => r.Walkouts):0.0}  noSales {rs.Average(r => r.NoSales):0.0}  units/sale {rs.Average(r => r.UnitsPerSale):0.00}  ids {rs.Sum(r => r.IdsChecked)}  strikes {rs.Sum(r => r.Strikes.Count)}";
 
         /// <summary>Deliverable 3: seeds 1-20 per persona; prints the table in TUNING_PS1.md. Explicit: about 75 s, run on purpose
         /// (-testFilter Dispo.Slice.Tests.SlicePersonaTests.Sweep_Seeds1To20). Asserts the bands this tuning reaches (see TUNING_PS1.md).</summary>
@@ -128,12 +140,21 @@ namespace Dispo.Slice.Tests
             Assert.Greater(r["perfect"].AvgSatisfaction, r["slow"].AvgSatisfaction);
         }
 
-        /// <summary>PS1 exit test, part 2: a careless bot gets ≥ 1 strike. GAME-007 has the ledger but no strike source (an over-limit
-        /// sale is impossible); GAME-008 (ID checks) adds the first. Remove the Ignore there.</summary>
-        [Test, Ignore("GAME-008 adds the first strike source")]
-        public void CarelessBot_GetsAStrike()
+        /// <summary>PS1 exit test, part 2: a careless bot gets ≥ 1 strike in a seeded shift. The source is GAME-008: admitting a bad ID
+        /// at the stand. The cover prompt comes on about half the seeds, so this takes the first seed where a careless shift strikes,
+        /// and checks that perfect, on the same seed, gets none.</summary>
+        [Test]
+        public void CarelessBot_GetsAStrike_PerfectDoesNot()
         {
-            Assert.GreaterOrEqual(Run(Load(), Persona.Careless, 1).Report().Strikes.Count, 1);
+            for (int s = 1; s <= 20; s++)
+            {
+                var r = Run(Load(), Persona.Careless, s).Report();
+                if (r.Strikes.Count == 0) continue;
+                Debug.Log($"[Balance] seed {s}: careless strikes {r.Strikes.Count} ({string.Join("; ", r.Strikes.Select(x => x.Reason))})");
+                Assert.IsEmpty(Run(Load(), Persona.Perfect, s).Report().Strikes, $"perfect on seed {s}");
+                return;
+            }
+            Assert.Fail("no careless strike on seeds 1-20");
         }
 
         /// <summary>PS1 hook (GAME-007): over-limit customers on seed 1 are trimmed to a legal sale by perfect, with no strike;
