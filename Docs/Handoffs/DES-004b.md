@@ -14,3 +14,32 @@
 ## For the Hub
 - Nothing else depends on DEC-DAY-F; DES-004.md keeps it as history.
 - No questions for Nolan.
+
+## DES-004c: DEC-079 store answers + DEC-080 manager refill (same branch, merged main 465992e)
+- **Spec §9a rewritten:** the budtender **requests a manager refill**.
+  - 3 s request; FIFO, one manager at a time.
+  - The jar leaves for `refillWindowSimSec` 90 s; a house strain keeps its second jar out.
+  - Completion is atomic from 1 lb HUB bags.
+  - New state REFILLING. Tags keep their meaning (start = the request). Unneeded costs a sellable jar plus the manager slot (DP-018 remapped).
+  - Backstock 0 bags (10 %) or 1–9 bags, from "≈ 10 lb per shipment".
+- **New §9b:** manager refill loop (office silver cart, bowl on scale, inventory moves, fill both jars, clean, wooden shelf, HUB cabinets) moved to the manager rank. Physical-job design and EX-016/017/023 go with it.
+- **§5:** GM-assigned register per shift (floor map at Opening, `assignableRegisters`); one shared line called up as registers free. **§3:** door line 2/3/3 stays (Nolan: "at least a couple").
+- **Smaller edits:** §7 refills don't block fast-forward and their completion stops it; §8 `refillsPending` replaces `awayWithQueue`; §10 Opening/Closing (flag jars for the closing manager); §12 attribution back to 3 criteria; §13/§14 updated.
+- **GAPs:** 01/02/04/05/06/07/08 closed (DEC-079); 03 → RES-002.
+- **Packets:**
+  - GAME-012 rewritten (no BOH anchor, no ART-005 dependency).
+  - GAME-011: assigned register, shared-line HUD, 3 criteria.
+  - UX-003: refill request UI, register map, shared line.
+  - GAME-024: DES-004c note (unlock flag only; the loop gets its own packet later).
+  - ROADMAP: GAME-012 row re-scope note + exit test.
+
+### Questions for Nolan (through the Hub)
+1. **GAP-DAY-10:** which deli strains get two jars? Catalog tiers in stock: `house` 6, `smalls` 35, `premium` 2, `t1–t3` 30, `fttp` 4. Is it only the `house` tier, or all house lanes (house smalls, house premium, Bring the Heat, RES-001 P3)? Placeholder: house + smalls + premium (43 of 77).
+2. **GAP-DAY-11:** about how long is a jar off the floor when a manager refills it? Does one manager do them one at a time? Placeholder: 90 s of game time (≈ a short real wait), one at a time.
+3. **GAP-DAY-12:** do managers ever refill a low jar without a budtender asking? Placeholder: no.
+- GAP-DAY-13 (REF, not Nolan): capacity of the house-smalls jar (DEC-042 product page). Placeholder 454 g.
+
+### Notes for the Hub
+- DEC-079's "a popular strain can sell a pound in under an hour" is store-wide. Under DEC-DAY-B, ambient registers don't sell, so PS2 jar pressure comes from seeded start fills. Letting ambient registers drain jars at a background rate would be more faithful, but it amends DEC-DAY-B. That is a PS4 option or your call.
+- House double jars add up to 43 wall jars (placeholder): ART/REF wall-jar count impact.
+- ART-005's "deli backstock location" is now known (HUB cabinets against the office wall). It is only needed for the manager rank and the optional manager NPC walk.

@@ -1,6 +1,6 @@
 # SPEC — PS2 "Full Shift Day" (DES-004)
 
-**Status:** design for the Studio Hub, 2026-10-30, DES-004; door-lock rule updated by DES-004b per DEC-076. Doc-only. Packets: `Docs/Tasks/Ready/GAME-011.md`, `GAME-012.md`, `UX-003.md` (they run after PS1/PS1b).
+**Status:** design for the Studio Hub, 2026-10-30, DES-004; door lock updated by DES-004b (DEC-076); store answers DEC-079 and the manager-refill ruling DEC-080 applied by DES-004c. Doc-only. Packets: `Docs/Tasks/Ready/GAME-011.md`, `GAME-012.md`, `UX-003.md` (they run after PS1/PS1b).
 **Precedence:** tool parity (DEC-001/002/006) > DP (`SPEC_DECISION_PRESSURE.md`) > V2 (`DESIGN_V2/`, DEC-063a) > this spec's [GDD] numbers. Store facts (RES-001, DECs) beat generic choices.
 **Citation key:** DP §n = `Design/SPEC_DECISION_PRESSURE.md`; V2 03 §n = `Design/DESIGN_V2/03_SHIFT_PACING_QUEUE_MODEL.md`; GSS §n = `GAMEPLAY_SIMULATION_SPEC.md`; O*n* = RES-001 `Docs/Research/OFFICE_FINDINGS.md` §3. Labels: **[SRC]** store fact/law (cited) · **[GDD]** game-design decision, tune in playtest · **GAP-DAY-nn** unknown store fact with a labelled placeholder (§14).
 **Validation script:** `Docs/Design/VALIDATION_DAY/shift_day_sim.py` runs V2's own queue harness, unchanged, on the tables in §3. Output: `shift_day_results.csv`.
@@ -8,12 +8,12 @@
 ---
 
 ## 1. What PS2 changes
-The slice is one 12/16-customer stretch at one register. PS2 makes it a day: the doors open, two rushes and a recovery happen, jars run low and only BOH backstock fixes them, and the store closes.
+The slice is one 12/16-customer stretch at one register. PS2 makes it a day: the doors open, two rushes and a recovery happen, jars run low and the player has to decide when to ask a manager for a refill, and the store closes.
 
 | Stays | Changes |
 |---|---|
 | TFS engine, parser, chips, cards, POS, limits, ID, medical (PS1), KNOWN/questions/evaluation (PS1b) | `customersPerShift` + spawn gaps → phase table + arrival process (GAME-011) |
-| `ShiftSim` as the authority (extended, not replaced) | jar = all stock → jar + backstock; EMPTY_WITH_BACKSTOCK is a restock job (GAME-012, DEC-055/061) |
+| `ShiftSim` as the authority (extended, not replaced) | jar = all stock → floor jar(s) + HUB backstock; the player **requests a manager refill** (GAME-012, DEC-055/061, DEC-079/080) |
 | The slice/GAME-010 shift, kept as a **Quick shift** mode with its own config and goldens | game clock 08:00–22:00, phase banners, opening/closing-lite, report v2 sections (GAME-011/013, UX-003) |
 
 ## 2. Phase order and game clock — caveat 0 (order) resolved
@@ -45,7 +45,7 @@ Format = V2 `default_tuning.yaml` `shift_profiles`. Rates are arrivals/min for t
 | **Standard** | 2 @ 0 | 5 @ .70 | 4 @ .30 | 6 @ .50 | 6 @ 1.00 | 5 @ .54 | 4 @ 0 | 2.5 | 2 | 3 | **32 min** |
 | Expert | 2 @ 0 | 6 @ .72 | 4 @ .32 | 6 @ .55 | 7 @ .94 | 6 @ .55 | 4 @ 0 | 2.2 | 2 | 3 | 35 min |
 
-Door-line size is GAP-DAY-06 (placeholder 2/3/3). Lengths match V2 26/32/35 and DEC-056's 25–40 min.
+Door line: "at least a couple" wait at 08:00 [SRC DEC-079]; 2/3/3 by profile [GDD within that]. Lengths match V2 26/32/35 and DEC-056's 25–40 min.
 
 **Harness result** (V2 `shift_queue_sim.py` with only the arrivals and profiles swapped; 700 seeds Standard, 350 Beginner/Expert):
 
@@ -72,10 +72,10 @@ Standard passes every V2 03 §17 gate (18–20 arrivals, 2–6 % abandonment, me
 The store has 11 sales-floor registers [SRC DEC-039/040]. The V2 harness is a single server, and PS2 has no staff gameplay (PS4, DEC-063d).
 
 **Decision [GDD], proposed DEC-DAY-B:**
-1. **The player runs exactly one register.** It is the slice's existing player station. The §3 tables are the player's **share** of store traffic, so the single-server validation holds.
+1. **The player runs exactly one register: the one the GM assigns for this shift.** The GM assigns registers on a floor map [SRC DEC-079]. The Opening shift note shows the assignment on a small floor map. It is drawn from `assignableRegisters` (config, `event_rng`), which holds only the slice's existing player station until the other stations have working anchors (ART). The §3 tables are the player's **share** of store traffic, so the single-server validation holds.
 2. **Other registers are ambient presentation only.** NPC coworkers stand at `openRegistersByPhase` other stations with ambient customers. They have no sim effect: they don't take from the player's queue, sell stock or touch inventory or TFS. They exist for life on the floor and for PERF-002's NPC count. Placeholder (GAP-DAY-03): Opening 0, Rush 1 4, Recovery 2, Steady 3, Rush 2 5, Late 3, Closing 0. A reality cross-check, not a target: 580–860 tx/day over 14 h with a 2.3 min median transaction [SRC O13] averages about 1.6–2.4 busy registers, so 2–5 staffed at peaks is plausible.
-3. **Queue presentation:** the player's queue is their own line from the entry. Whether the real store runs one shared line or per-register lines is GAP-DAY-04. The sim is the same either way, because the player's arrivals are already their share.
-4. Ambient coworkers never sell from the deli jars in PS2: jar depletion is the player's own (keeps DP-016/017 attributable). PS4 staffing replaces ambient registers with real servers and retunes (V2 03 §5 warns the single-server table must not be reused unchanged for a staffed floor).
+3. **One shared line** [SRC DEC-079]: customers are called up as registers free. Presentation: one visible line from the entry; the front customer peels off to whichever register frees up. Ambient customers go to coworkers, and the player's customers (their share, §3) come to the player when the player is free. The HUD queue count shows only the player's share. The sim is unchanged.
+4. Ambient coworkers never sell from the deli jars in PS2: jar depletion is the player's own (keeps DP-016/017 attributable). Real stores drain far faster ("a popular strain can sell a pound in under an hour" [SRC DEC-079]); PS2 makes up for it with seeded start fills (§9a), and ambient drain is a PS4 option. PS4 staffing replaces ambient registers with real servers and retunes (V2 03 §5 warns the single-server table must not be reused unchanged for a staffed floor).
 
 ## 6. Service and patience [GDD, V2 03 §6–9]
 - Queue patience = V2: class mix low/normal/high 20/60/20 %, medians 140 / 230 / 330 s, lognormal σ 0.35, difficulty multiplier 1.35 / 1.00 / 0.88, threshold hidden and seeded. Drains only while queued (the slice rule). Door-line customers start at full patience; their wait outside is off-screen.
@@ -90,17 +90,17 @@ Two layers, both [GDD]:
    - nobody being served and nobody queued;
    - the next scheduled arrival (§4 list) is ≥ `ffHorizonSec` = 20 s of sim time away;
    - no jar is CRITICAL or EMPTY_WITH_BACKSTOCK (LOW is allowed: the player has already seen it);
-   - no restock/opening/closing task is in progress (the player isn't mid-action) and no modal is open;
+   - no opening/closing task or receipt-paper task is in progress (the player isn't mid-action) and no modal is open (pending manager refills don't block it; their completion is a stock-state transition and stops it);
    - not the Opening or Closing phase (those have their own early-end buttons).
 
    It **stops automatically**, returning to 1× in the same tick, on the first of: `ffHorizonSec` before the next arrival; any stock-state transition (HEALTHY→LOW etc.); a phase boundary (banner); a special-slot or event trigger; any player input other than the hold.
-- **It cannot skip a decision:** arrivals are scheduled in sim time (§4), so fast-forward changes only how many real seconds pass, never who arrives or when in sim time. Stock only changes through sales and restocks, which can't happen during fast-forward. Test: same seed with and without fast-forward → identical arrival list and customer contents; with a scripted bot taking identical actions, identical stock at each arrival.
+- **It cannot skip a decision:** arrivals are scheduled in sim time (§4), so fast-forward changes only how many real seconds pass, never who arrives or when in sim time. Stock only changes through sales, which can't happen during fast-forward, and through manager refills, whose completion times are fixed in sim time. Test: same seed with and without fast-forward → identical arrival list and customer contents; with a scripted bot taking identical actions, identical stock at each arrival.
 - **Pause** freezes every sim-affecting system: arrivals, patience, tasks, transfers (V2 EX-025). Menus, Details and the debug panel do **not** slow the clock (EX-026). Only an explicit accessibility assist may (UX-003), and the run is then tagged `assist`.
 - **Real-time budget:** Standard = 32 sim min. Fast-forward saves at most the quiet Recovery/Late stretches, typically 1–3 real min. The exit test measures real minutes; the 25–40 window has room either way.
 
 ## 8. PressureLevel 0–1 [GDD, DP §64]
-`PressureLevel = EMA_10s( clamp01( 0.45·min(waiting/5, 1) + 0.25·(λ_phase/λ_max) + 0.15·min(stockProblems/3, 1) + 0.15·awayWithQueue ) )`
-- `stockProblems` = jars that are CRITICAL or EMPTY_WITH_BACKSTOCK. `awayWithQueue` = 1 while the player is off the counter (restock) and someone waits. `λ_max` = the profile's highest phase rate. An active major event adds +0.1 (clamped).
+`PressureLevel = EMA_10s( clamp01( 0.45·min(waiting/5, 1) + 0.25·(λ_phase/λ_max) + 0.15·min(stockProblems/3, 1) + 0.15·min(refillsPending/2, 1) ) )`
+- `stockProblems` = strains that are CRITICAL, EMPTY_WITH_BACKSTOCK or REFILLING. `refillsPending` = manager refill requests not yet completed. `λ_max` = the profile's highest phase rate. An active major event adds +0.1 (clamped).
 - Consumers: audio intensity, NPC idle/fidget, UX-003 queue tint, telemetry (logged at every player decision, V2 03 §10). **Never** an input to TFS, parser, query composer or `ServiceEvaluator` (Gate A test).
 - Staff coverage (DP §64) is 0 in PS2; PS4 adds it.
 
@@ -114,20 +114,37 @@ Standard: at most 1 major and 1–2 minor events, all emergent or plausible.
 | Receipt paper runs out at the player's register: POS can't finish until a 10 s "change roll" task | minor | O11 "check receipt paper" | GAME-011 (`event_rng`, ≤ 1 per shift, never in Opening/Closing) |
 | Delivery arrives, deal rush, staff needs help | — | O8 Thursday deli; deals; staff | out of PS2 (PS4 / GAME-016 / PS4) |
 
-## 9a. Restock model (GAME-012) [DP §40–50, DEC-055/061, V2 03 §13]
-**Stock per deli batch:** `JarGrams` (service-ready; jar capacity 454 g [SRC DEC-019]) + `BackGrams` (BOH) + `CarriedGrams` (in the player's hands, §9a.4). `TotalGrams` = sum.
-- **TFS eligibility = TotalGrams > 0** [SRC DEC-055, confirmed DEC-061]. `InventoryService.Sell` today calls `SetInStock(false)` when the jar hits 0. In full-day mode it must do so only when TotalGrams hits 0. Quick shift is unchanged: it has no backstock, so jar = total.
-- **Backstock placeholder (GAP-DAY-01):** per batch, 0 / 1 / 2 refill units of 454 g with weights 20 / 50 / 30 % (`inventory_rng`). Unit packaging (bag vs jar vs container) is GAP-DAY-05; the game shows a generic labelled bag. Backstock never refills during a shift (deliveries are PS4).
-- **Start fills (Opening) [GDD, extends DEC-027]:** seeded as left by last night's closer. At least 3 bestseller jars LOW with backstock (the Opening/Recovery proactive choice), 2–3 popular jars at 0.25–0.45 fill (they cross LOW/CRITICAL in Rush 2), and 1 LOW jar with **no** backstock (true SOLD OUT path, DP-020). GAME-012 tunes so the Standard bot meets 2–4 meaningful restock decisions (V2 03 §13).
+## 9a. Restock model (GAME-012): the budtender requests a manager refill [DP §40–50, DEC-055/061, DEC-079/080, V2 03 §13]
+In PS1/PS2 the player is a budtender, and **deli refills are always done by managers** at the certified office cart [SRC DEC-079]. So the player's restock decision is **when to request a refill** and for which strain. The physical loop is the manager-rank mechanic in §9b (DEC-080).
 
-**9a.1 States** (Simulation, `ServiceReadiness`):
+**Stock per deli batch** (Simulation):
+- `JarGrams[]`: the floor jar(s), each ≤ 454 g [SRC DEC-019, DEC-079].
+  - **One 1 lb jar per strain; house strains have two** [SRC DEC-079]. Which tiers count as "house" is GAP-DAY-10. Placeholder: tiers `house`, `smalls`, `premium` (the P3 house lanes) → 2 jars.
+  - Sales draw from the fuller jar until it empties, then from the other. An empty house jar is set aside (off the floor) [SRC DEC-079: it waits in the office].
+- `BackGrams`: HUB storage-cabinet backstock in 1 lb (454 g) bags [SRC DEC-079].
+- `RefillGrams`: grams in a jar that is away with the manager.
+- `TotalGrams` = sum.
+- **TFS eligibility = TotalGrams > 0** [SRC DEC-055, confirmed DEC-061]. `InventoryService.Sell` today calls `SetInStock(false)` when the jar hits 0. In full-day mode it must do so only when TotalGrams hits 0. Quick shift is unchanged: one jar, no backstock, so jar = total.
+- **Backstock at Opening [GDD from SRC DEC-079 "≈ 10 lb of one strain per shipment"]:** per batch, 0 bags with 10 % probability (sold through: the jar is the last of it), otherwise uniform 1–9 bags (`inventory_rng`). No deliveries during a shift (PS4).
+- **Start fills [GDD, extends DEC-027]:** seeded as left by last night's closer.
+  - At least 3 bestseller single-jar strains LOW with backstock (the Opening/Recovery proactive choice).
+  - 2–3 popular jars at 0.25–0.45 fill (they cross LOW/CRITICAL in Rush 2).
+  - 1 LOW jar with 0 bags (true SOLD OUT path, DP-020).
+  - At least 1 house strain with one jar already empty (shows the second-jar buffer).
+
+  GAME-012 tunes so the Standard bot meets 2–4 meaningful refill decisions (V2 03 §13).
+
+**9a.1 States** (Simulation, `ServiceReadiness`, per strain). S = grams in floor jars that are on the floor; n = jars the strain has (1 or 2).
 | State | Rule |
 |---|---|
-| HEALTHY | JarGrams/454 ≥ `lowStockFraction` (0.25) and not CRITICAL |
-| LOW | JarGrams/454 < 0.25, JarGrams > 0, not CRITICAL |
-| CRITICAL | 0 < JarGrams ≤ D·H (below) |
-| EMPTY_WITH_BACKSTOCK | JarGrams = 0, BackGrams + CarriedGrams > 0. Still TFS-eligible; selling it needs a refill first (EX-019) |
+| HEALTHY | S ≥ `lowStockFraction` (0.25) × 454 × n and not CRITICAL |
+| LOW | 0 < S < 0.25 × 454 × n, not CRITICAL |
+| CRITICAL | 0 < S ≤ D·H (below) |
+| EMPTY_WITH_BACKSTOCK | S = 0, BackGrams + RefillGrams > 0, no refill under way. Still TFS-eligible; it can't be sold until a refill completes (EX-019) |
+| REFILLING | S = 0 and a refill for the strain is under way. TFS-eligible, unsellable |
 | SOLD_OUT | TotalGrams = 0. TFS-ineligible per the preserved inventory rule |
+
+A strain with S > 0 and a refill requested or under way keeps its state, plus a "refill requested" marker (e.g. a house strain whose second jar is still out).
 
 **Expected demand** D (g/sim-min) [GDD] = max( EMA of sold grams/min for the batch (half-life 3 min), share_b × λ(t+H) × ḡ ), where:
 - `share_b` = (appearances of the batch in TFS results shown this shift + 1) / (results shown + inStockBatches), i.e. observed usage;
@@ -137,35 +154,58 @@ Standard: at most 1 major and 1–2 minor events, all emergent or plausible.
 
 `share_b` reads the TFS result **lists** after the fact. It never feeds back into TFS.
 
-**9a.2 RestockUrgency** (internal; telemetry, bots, debug only; never shown as "restock this now", DP §48) = StockRisk × ExpectedDemand × OperationalImportance, where:
-- StockRisk = clamp01(D·H / max(JarGrams, 1));
+**9a.2 RestockUrgency** (internal; telemetry, bots, debug only; never shown as "refill this now", DP §48) = StockRisk × ExpectedDemand × OperationalImportance, where:
+- StockRisk = clamp01(D·H / max(S, 1));
 - ExpectedDemand = D / max over batches;
 - OperationalImportance = share_b / max share.
 
-**9a.3 Player cues** (UX-003): LOW / CRITICAL tags on the jar card and the jar itself, a recent-demand trend arrow (EMA up/down), a backstock-present marker. No forecast numbers (DP §52).
+**9a.3 Player cues** (UX-003): LOW / CRITICAL tags on the jar and its card; a recent-demand trend arrow (EMA up/down); a backstock-present marker; "refill requested" / "with manager" markers. No forecast numbers (DP §52) and no countdown (DP §39).
 
-**9a.4 Restock job** (interruptible, DP §50; states NOT_STARTED / IN_PROGRESS / INTERRUPTED / COMPLETED):
-1. The player walks to the BOH deli backstock anchor. Location = GAP-DAY-02; placeholder = a labelled BOH wire-rack slot (DEC-041). ART-005 provides the anchor.
-2. **Pick:** a list of that rack's batches with backstock; choosing one moves one refill unit `BackGrams → CarriedGrams` (atomic). The batch id stays on the carried unit (EX-018). Carry up to 2 units [GDD] (GSS §63 limited carry).
-3. Walk back; at the jar, **Transfer** (8 s [GDD], atomic at completion): `moved = min(CarriedGrams_unit, 454 − JarGrams)`. The remainder stays carried. Partial units return to BOH on the next trip or at close; whole-unit picks are the minimum meaningful transfer (EX-023).
-4. **Interrupt** (walk away or start serving): carried units stay carried, and their grams still count in TotalGrams. An interrupted Transfer moves nothing. No half-transferred stock (DP §50, EX-016/017).
-5. Round-trip target ≈ 35–50 s at 1× (V2 03 §12 "45-sec restock"). The real distance comes from the graybox. GAME-012 reports it and does not fake walk speed.
-6. The player may restock mid-service. The customer then waits in service: active patience at idle 1.0× if GAME-019 shipped it, and a "be right back" line.
+**9a.4 Refill request** [GDD on SRC DEC-079/080]:
+1. **Request:** "Request refill" for a strain, from the register terminal or at the jar. A 3 s action; no walking. Refused when BackGrams = 0 ("no backstock left": the jar is the last of it).
+2. **Manager queue:** requests are handled first-in-first-out, **one at a time** (GAP-DAY-11). A queued request can be cancelled; one under way can't. A second request for the same jar is ignored (EX-013).
+3. **Window:** when the manager takes the request, the jar leaves the floor (its grams → RefillGrams) for `refillWindowSimSec` = 90 s of sim time (GAP-DAY-11 placeholder).
+   - Single-jar strain: unservable for the window.
+   - House strain: the manager takes the emptier jar, and the second jar stays out and sellable [Hub ruling DEC-080].
+   - Until the manager takes the request, the jar stays on the floor and keeps selling: the manager queue is a real delay in a rush.
+4. **Completion** (atomic): the jar returns with `min(454, leftover + BackGrams)` g, and BackGrams drops by what was used. Grams move only at completion; the conservation test holds throughout. Completion fires a stock-state transition (it stops fast-forward, §7).
+5. **Mid-service:** the player may request a refill for the strain the customer wants. The customer can wait (active patience, GAME-019) or the player picks another card (GAME-019 evaluates the outcome, DP-005).
+6. An optional manager NPC walks the jar off and back (dressing, no sim effect). There is no auto-refill without a request (GAP-DAY-12): neglect has its consequence (DP-017, EX-022).
 
-**9a.5 Tags** (DP §46; log the exact start state as well):
-- **Proactive:** started while HEALTHY or LOW.
-- **Reactive:** started while CRITICAL.
-- **Emergency:** started while EMPTY_WITH_BACKSTOCK, or during service for the card being sold.
-- **Unneeded** (DP-018): started while HEALTHY, below a RestockUrgency threshold, with ≥ 1 customer waiting. It costs FLOW (GAME-020) through queue time and feeds "preventable stock workflow interruption" attribution (§12).
+**9a.5 Tags** (DP §46; log the exact start state as well; "start" = the request):
+- **Proactive:** requested while HEALTHY or LOW.
+- **Reactive:** requested while CRITICAL.
+- **Emergency:** requested while EMPTY_WITH_BACKSTOCK, or during service for the card being sold.
+- **Unneeded** (DP-018): requested while HEALTHY and below a RestockUrgency threshold. It costs real stock (a sellable jar leaves the floor) and the manager slot (later requests wait). It is a FLOW/OPERATIONS input per GAME-020.
 
-Diagnostic: more than 2 emergencies in a Standard shift (V2 03 §13).
+DP-018's "player leaves the counter" becomes "the player pulls a sellable jar and occupies the manager". Diagnostic: more than 2 emergencies in a Standard shift (V2 03 §13).
+
+## 9b. Manager refill loop: manager rank, not PS2 (DEC-080)
+These move out of GAME-012 to the manager rank, unlocked through the career ladder (GAME-024 / V2 promotions, DEC-063b). The implementation packet is to be written when GAME-024 lands. The facts are fixed [SRC DEC-079]:
+- **Where:** the refill happens only at the **silver rolling cart in the office**, the only state-certified place to refill deli containers. The deli scale sits on the cart. Cleaning supplies are under it: isopropyl alcohol, rags, scraper, bins, tongs. Emptied house jars wait on the **wooden shelf above the cart** until the second jar is empty or low. Backstock bags are in the **HUB storage cabinets against the office wall**.
+- **Procedure:**
+  1. Collect the jar(s).
+  2. Dump the leftover into a bowl on the scale.
+  3. Adjust inventory in the system.
+  4. Fill both jars from the bags.
+  5. Move the product from back-of-house to recreational in the system.
+  6. Clean (managers also clean jars after sell-through).
+  7. Return the jars to the floor.
+- **Carried over from DES-004's physical job design:**
+  - interruptible states NOT_STARTED / IN_PROGRESS / INTERRUPTED / COMPLETED (DP §50);
+  - atomic bag pick and jar fill, batch id kept (EX-018);
+  - carry cap, whole-bag picks (EX-023);
+  - no grams created or lost on interrupt or cancel (EX-016/017);
+  - real walk times from the graybox.
+- **Gameplay at manager rank:** NPC budtenders' refill requests become the player's queue, so the §9a decision flips to triage. This meets PS4 staffing (DP §87–100).
+- **Art/ref needs:** office cart + shelf + HUB cabinet anchors (ART/REF; DEC-042 photo shows the cart).
 
 ## 10. Opening-lite and closing-lite [GSS §7, §73; O11]
-**Opening** (2 sim min, ends early on "Open doors"; no customers): (a) walk the jars, where LOW/CRITICAL show; (b) read the shift note: today's day of week and "expect a line at open and an evening rush" (DP §52: expectation, not forecast); (c) proactive restock (§9a). Nothing to tick off: GSS §73 says no trivial switches.
+**Opening** (2 sim min, ends early on "Open doors"; no customers): (a) walk the jars, where LOW/CRITICAL show; (b) read the shift note: today's day of week and "expect a line at open and an evening rush" (DP §52: expectation, not forecast); (c) see the assigned register on the floor map (§5); (d) request refills for jars that are already LOW (proactive, §9a). Nothing to tick off: GSS §73 says no trivial switches.
 
 **Closing** (after the last in-store customer leaves; doors locked since 22:00), an O11 subset chosen for decisions [SRC O11, selection GDD]:
-1. **Refill deli jars:** restock LOW jars for tomorrow from the backstock that's left (real choice: limited units). Proactive tag; no queue cost.
-2. **Deli BOH audit:** a summary of each batch's backstock used today vs left, feeding the report inventory section. Read-only in PS2; no discrepancies are generated (receiving/quarantine is PS4, O8).
+1. **Flag jars for the closing manager:** mark the LOW/empty jars that need a refill tonight (managers refill and clean jars [SRC DEC-079]). It feeds the report's Inventory section; no carry-over to the next shift until save v1 (GAME-024).
+2. **Deli BOH audit:** a summary of each batch's backstock used today vs left, in 1 lb bags, feeding the report inventory section. Read-only in PS2; no discrepancies are generated (receiving/quarantine is PS4, O8).
 3. **Clean scale + wipe counter:** one 5 s interaction, flavour [SRC O11].
 4. **Manager signs** = the report's Sign button [SRC O11 "manager signs"].
 
@@ -183,45 +223,43 @@ Section order follows the store's closing report. A section the build doesn't mo
 | Order type | in-store only (online pickup ≈ 17 % [SRC O13] not modelled in PS2) | GAME-013 |
 | Transactions, per-register | the player's register; ambient registers have no sales (§5) | GAME-013 |
 | **Shift flow** (game) | per phase: arrivals, served, abandoned (structural vs attributable), peak queue, mean wait | GAME-011 |
-| **Inventory** (game) | restocks by tag, minutes any jar spent EMPTY_WITH_BACKSTOCK, SOLD_OUT batches, BOH audit | GAME-012 → GAME-013 |
+| **Inventory** (game) | refill requests by tag, minutes each strain spent unservable (EMPTY_WITH_BACKSTOCK / REFILLING), SOLD_OUT batches, BOH audit | GAME-012 → GAME-013 |
 | SERVICE / FLOW / OPERATIONS + stars | GAME-020 (unchanged; PS2 adds inputs) | GAME-020 |
 
 No TFS scores or ranks anywhere (DEC-052). Manager notes (O16 Daily Tracker) are out.
 
 ## 12. Telemetry and attribution [V2 03 §10–11]
-- Log per shift: per-phase arrivals/served/abandoned, service seconds after 22:00 (`overtimeSimSec`), peak waiting, mean/p90 wait, time-to-clear after each rush, PressureLevel at every player decision, restock jobs (start state, tag, duration, interrupted?), stock-state minutes, fast-forward seconds used, pause seconds. Extends GAME-020's log (DP §116–117); the schema is GAME-020's.
+- Log per shift: per-phase arrivals/served/abandoned, service seconds after 22:00 (`overtimeSimSec`), peak waiting, mean/p90 wait, time-to-clear after each rush, PressureLevel at every player decision, refill requests (start state, tag, wait for the manager, window), stock-state minutes, fast-forward seconds used, pause seconds. Extends GAME-020's log (DP §116–117); the schema is GAME-020's.
 - **Abandonment attribution** is `player_attributable` only if one of these held during the abandoner's wait:
   - redundant consultation above allowance (GAME-019);
   - avoidable idle (the player at the counter, nobody served, ≥ 10 s while someone waits);
-  - avoidable rework (wrong card / void);
-  - an **Unneeded** restock in progress.
+  - avoidable rework (wrong card / void).
 
   Otherwise it is `structural_pressure`. FLOW penalises attributable abandonment only.
 
 ## 13. Exit test and acceptance (PS2, ROADMAP §3)
 - A Standard shift with the 3-phase arc (open → two rushes → close) plays in **25–40 real minutes** (DEC-056), measured over 3 human playtests.
 - Targeted bot over 200 seeds in EditMode (pure sim, bot service model): arrivals 18–20, abandonment 2–6 %, mean peak 2.5–3.5, p90 ≤ 5 (V2 03 §17). Ask-all is worse on FLOW; ask-none is worse on DecisionQuality (GAME-020).
-- In ≥ 80 % of Standard seeds at least one jar goes LOW and the bot restocks it from BOH. 2–4 meaningful restock decisions; ≤ 2 emergencies for the restocking bot.
+- In ≥ 80 % of Standard seeds at least one jar goes LOW and the bot requests a manager refill that completes. 2–4 meaningful refill decisions; ≤ 2 emergencies for the refill-aware bot.
 - **Store hours (DEC-076):** EditMode asserts across 200 seeds of every profile: no arrival (phase, door line, special) at or after the 22:00 lock; every customer inside at 22:00 is served or leaves on their own patience, never cut off by the clock; Closing starts only once the store is empty. It extends `SliceTests` store-hours coverage (GAME-011).
-- DP-016 / 017 / 018 / 019 / 020 pass (GAME-012). The determinism test of §7 passes (GAME-011). Gate A parity green throughout. V2 exploit rows: EX-025/026 (GAME-011); EX-013/016/017/019/021–024 (GAME-012) — Critical/High need their test before the system is complete (DEC-066).
+- DP-016 / 017 / 018 / 019 / 020 pass (GAME-012). The determinism test of §7 passes (GAME-011). Gate A parity green throughout. V2 exploit rows: EX-025/026 (GAME-011); EX-013/019/021/022/024 (GAME-012); EX-016/017/023 are physical-handling rows that move with the manager refill loop (§9b) — Critical/High need their test before the system is complete (DEC-066).
 - Report shows the §11 sections.
 
 ## 14. Gaps (placeholders in use) — for KNOWN_GAPS via the Hub
 | GAP | Unknown store fact | Placeholder | Who |
 |---|---|---|---|
-| GAP-DAY-01 | deli backstock grams per batch at the start of a day | 0/1/2 × 454 g units, 20/50/30 % | Nolan |
-| GAP-DAY-02 | where deli backstock lives in BOH (rack, safe, room?) | a labelled BOH wire-rack slot (DEC-041) | Nolan → ART-005 |
-| GAP-DAY-03 | how many registers are staffed per daypart | 0/4/2/3/5/3/0 by phase (§5) | Nolan |
-| GAP-DAY-04 | one shared line or per-register lines | the player's own line from entry | Nolan |
-| GAP-DAY-05 | backstock unit packaging (bag size, container) | generic labelled 454 g bag | Nolan |
-| GAP-DAY-06 | how long the opening door line typically is | 2/3/3 customers by profile | Nolan |
-| GAP-DAY-07 | can a budtender restock their own jar mid-shift, or is it a dedicated role / lead job? | the player restocks (DEC-061 "somebody will need to stock it") | Nolan |
-| GAP-DAY-08 | which register is "the player's" in the real layout (any preferred station?) | the slice's existing player station | Nolan (low priority) |
+| GAP-DAY-01/02/04/05/06/07/08 | backstock, location, line, packing, door line, who refills, registers | **closed by DEC-079** (values in §5, §9a) | — |
+| GAP-DAY-03 | how many registers are staffed per daypart | 0/4/2/3/5/3/0 by phase (§5) | RES-002 (schedule-derived, DEC-031) |
+| GAP-DAY-10 | which deli strains are "house" (two jars on the floor): tier `house` only, or also `smalls` and `premium` (the P3 house lanes)? | tiers house + smalls + premium → 2 jars (43 of 77 in-stock batches) | Nolan |
+| GAP-DAY-11 | how long a jar is off the floor for a manager refill, and whether one manager handles requests one at a time | `refillWindowSimSec` 90 s (Standard), one at a time | Nolan |
+| GAP-DAY-12 | do managers refill a low jar without being asked? | no: only on the budtender's request | Nolan |
+| GAP-DAY-13 | capacity of the house-smalls jar (the DEC-042 product) | 454 g like the others | REF (product page) |
 | GAP-DP-02 | (existing) every [GDD] number here | the values above | playtests |
 
 ## 15. Packets (dependency order; all after PS1 + PS1b, i.e. after GAME-020)
-1. **UX-003** (doc-only, may start any time after this spec merges): wireframes for §2 banners/clock, §7 fast-forward, §9a cues/restock flow, §10 tasks, §11 report.
+1. **UX-003** (doc-only, may start any time after this spec merges): wireframes for §2 banners/clock, §5 register map, §7 fast-forward, §9a cues/refill request, §10 tasks, §11 report.
 2. **GAME-011** (Unity, Simulation/Slice): phases, clock, arrivals, registers-as-ambient, patience, fast-forward, PressureLevel, events, attribution. Needs REVIEW-PS1 and GAME-020 merged; UX-003 for the view.
-3. **GAME-012** (Unity, Simulation/Slice + BOH anchor): stock split, states, restock job, tags, TFS eligibility. Needs GAME-011 (phase rates in D, fast-forward stop hook) and ART-005 (anchor; placeholder allowed).
+3. **GAME-012** (Unity, Simulation/Slice): stock split (floor jars + HUB bags), house double jars, states, manager-refill requests and window, tags, TFS eligibility. Needs GAME-011 (phase rates in D, fast-forward stop hook). No BOH anchor needed in PS2; the manager NPC walk is optional dressing.
+4. **Manager refill loop** (§9b): moves to the manager rank, after GAME-024.
 
 Then GAME-013 (opening/closing tasks + O16 report, row unchanged), GAME-023 (unblocked once GAME-011/012 exist as packets; DEC-059 m2). PERF-002 uses §5's ambient NPC counts. Editor queue: GAME-011 → GAME-012 serialised (same `ShiftSim.cs`/`InventoryService.cs`).
