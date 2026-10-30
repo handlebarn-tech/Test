@@ -1,5 +1,22 @@
 # PROC-005 handoff
 
+## Round 3: REVIEW-PROC005b (FAIL on a stale base), 2026-10-30
+Merged main (REF-013, 75b05e6) and re-fitted every value to the current ROOM_FIXTURES:
+- **`register_counter_run`:**
+  - North 20.49 × 2.2 ft (centre x 30.25);
+  - EastReturn 2.5 × 10.8 ft, with both ends butting;
+  - South 25.75 × 2.5 ft (centre 28.16), with stations at the REF-013 POS_07..06 x 36.4/33.2/30.0/26.8/23.6/20.4;
+  - **SouthWestReturn** 2.5 × 4.5 ft replaces the dropped SouthReturn. Its exports and manifest entry are removed, and its face is GAP-PROC-24 grey;
+  - GAP-129 is closed and no longer cited;
+  - the display-case slot is re-based on x 30.25.
+- **`deli_counter_jar_wall`:** South is now 19.23 × 2.0 ft and East is 2.0 ft deep (REF-013).
+- **Review minors 1 and 2:**
+  - the wood grain warp now varies slowly along the grain, so there is no zig-zag;
+  - smudge and wipe strength is cut to about 1/3 on every finish;
+  - the textures are regenerated and still byte-identical on rerun.
+- **Minor 5:** the manifest now holds 108 entries (main adds the register kit and others), all passing validation; the changed assets rerun byte-identical.
+- **Still owed (needs a Unity slot):** the Unity import check, the EditMode run and the `.meta` files.
+
 ## Fix wave for REVIEW-PROC5 (2026-10-30), branch `claude/elated-satoshi-3a4844`
 This branch merges slice 1 (`worktree-agent-ac7414483b9f8bb4a` @ e9f8173) and then main.
 
@@ -16,7 +33,7 @@ Per-family worker notes are in `Docs/Handoffs/PROC-005-fixwave/`. Each one holds
 | 7/8 minor cites | Every size, count, colour and finish now has an `_src` or GAP, covered by new rows GAP-PROC-22..39 in KNOWN_GAPS. The backsplash height is GAP-PROC-19. Grab-bar depth stays 3 in, with a `_note`. Wire-shelving counts are cited or GAP-PROC-29; their FBX are byte-identical. |
 
 **Validation:**
-- All 92 manifest assets pass (`blender.ps1 <gen>` for all 9 families), and `tests/test_validation.py` passes.
+- All manifest assets pass (92 at the time, 108 after merging main in round 3) (`blender.ps1 <gen>` for all 9 families), and `tests/test_validation.py` passes.
 - Determinism: a full rerun of all 9 families gave the same `export_sha256` for every asset as the workers' runs.
 - Jar, fill and packaged-goods manifest entries are unchanged.
 

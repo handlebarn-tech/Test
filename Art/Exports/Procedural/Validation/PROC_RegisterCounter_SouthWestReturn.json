@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_RegisterCounter_SouthWestReturn",
+  "collision_boxes": 2,
+  "errors": [],
+  "export_sha256": "92a34445aba1dcb1",
+  "generator": "register_counter_run",
+  "lod_tris": {
+    "LOD0": 1620,
+    "LOD1": 660,
+    "LOD2": 144,
+    "LOD3": 24
+  },
+  "params_sha256": "22f31d42f6eec650",
+  "passed": true,
+  "warnings": []
+}

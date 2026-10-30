@@ -5,7 +5,7 @@
 - South (RF DeliJarWall_South): black back counter with open bins under it (BAND_10), black shelves (BAND_01).
 - East (RF DeliJarWall_East): black counter over open cubbies, backlit teal shelves in arched wood frames with warm
   LED strips (BAND_11).
-Depth = RF 2.1 / 2.09 ft including the back counter. The deli counter L was dropped: it is the south register run
+Depth = RF 2.1 ft (North) / 2.0 ft (South, East; REF-013) including the back counter. The deli counter L was dropped: it is the south register run
 (RI §1.5 row 101, §8.1). Every size/count/colour is cited in the params `_src` maps or carries a GAP id.
 Jar slots (game anchors, bottom centre) on the counter row and each jar tier; the top display board has none.
 Origin = bottom centre, customer side = -Y, wall = +Y."""

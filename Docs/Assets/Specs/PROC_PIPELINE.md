@@ -147,8 +147,8 @@ Each family has one generator, one params file with one asset per ROOM_FIXTURES 
 |---|---|---|---|
 | `wire_shelving` | 8 racks (incl. JC supply rack, black desk unit) | GAP-PROC-13, GAP-PROC-29, GAP-127 | 27.9–71.2k |
 | `register_station` | scale stand, monitor, 2 scanners, keyboard, printer, card terminal | GAP-PROC-14, GAP-PROC-22, GAP-108 | 0.5–7.3k |
-| `register_counter_run` | RF `Counter_Register_North` (10/9/8), `_EastReturn` (12/11), `_South` (7,2–6), `_SouthReturn` (RI §1.5 rows 98/101) | GAP-PROC-15, GAP-PROC-22..24, GAP-129/130 | 1.2–11.0k |
-| `deli_counter_jar_wall` | jar walls N/S/E (RF `DeliJarWall_*`, 2.1 ft deep); the deli counter was dropped (it is the south register run) | GAP-PROC-16, GAP-PROC-25..27, GAP-113 | 8.1–64.1k |
+| `register_counter_run` | RF `Counter_Register_North` (10/9/8), `_EastReturn` (12/11), `_South` (7,2–6), `_SouthWestReturn` (RI §1.5 rows 98/101; REF-013 sizes) | GAP-PROC-15, GAP-PROC-22..24, GAP-130/131 | 1.2–11.0k |
+| `deli_counter_jar_wall` | jar walls N/S/E (RF `DeliJarWall_*`, 2.1 / 2.0 / 2.0 ft deep, REF-013); the deli counter was dropped (it is the south register run) | GAP-PROC-16, GAP-PROC-25..27, GAP-113 | 8.1–64.1k |
 | `glass_door_cooler` | 2-door cooler, top-freezer fridge, magnet fridge | GAP-PROC-17, GAP-PROC-28, GAP-111 | 3.7–15.2k |
 | `office_fixtures` | 10 office/BOH furniture rows | GAP-PROC-18, GAP-PROC-31..33 | 3.5–10.6k |
 | `break_room` | 17 break-room rows | GAP-PROC-19, GAP-PROC-34..36, GAP-126 | 0.14–15.0k |

@@ -1,6 +1,6 @@
-"""Register counter runs (PROC-005 fix wave; REVIEW-PROC5 #1/#2/#6). One asset per ROOM_FIXTURES rev7 row:
+"""Register counter runs (PROC-005 fix wave; REVIEW-PROC5 #1/#2/#6). One asset per ROOM_FIXTURES row (REF-013):
 Counter_Register_North (registers 10/9/8), Counter_Register_EastReturn (12/11), Counter_Register_South (7,2,3,4,5,6)
-and Counter_Register_SouthReturn (no register). RI §1.5 rows 98/101 (REF-011), RI §8.1, DEC-039.
+and Counter_Register_SouthWestReturn (no register; REF-013). RI §1.5 rows 98/101 (REF-011), RI §8.1, DEC-039.
 
 Local frame (exported): origin bottom centre, staff side = -Y (asset front: drawers, open shelves), customer face = +Y,
 run along X. `plan_axis_x` in params says which plan direction local +X points along once ART yaws the asset so its +Y

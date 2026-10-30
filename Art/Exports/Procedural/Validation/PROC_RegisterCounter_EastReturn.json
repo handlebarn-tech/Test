@@ -2,17 +2,17 @@
   "asset_id": "PROC_RegisterCounter_EastReturn",
   "collision_boxes": 2,
   "errors": [],
-  "export_sha256": "fc31df68b2065cb3",
+  "export_sha256": "da6bd02204474518",
   "generator": "register_counter_run",
   "lod_tris": {
-    "LOD0": 4644,
-    "LOD1": 1740,
-    "LOD2": 348,
-    "LOD3": 60
+    "LOD0": 4984,
+    "LOD1": 1824,
+    "LOD2": 360,
+    "LOD3": 48
   },
-  "params_sha256": "6b836960a2e0ace9",
+  "params_sha256": "22f31d42f6eec650",
   "passed": true,
   "warnings": [
-    "LOD0 4644 tris below the DEC-084 guide minimum 30000 (too simple?)"
+    "LOD0 4984 tris below the DEC-084 guide minimum 30000 (too simple?)"
   ]
 }

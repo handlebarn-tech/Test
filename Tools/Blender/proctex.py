@@ -117,7 +117,7 @@ def blotches(rng, fmax, thresh):
 def grain(rng, rings, warp, n=N):
     """Wood figure along x: warped growth lines + pores. Returns (albedo var, height)."""
     y = np.arange(n)[:, None] / n
-    w = spectral(rng, beta=3.5, fmin=1, fmax=12, ax=0.15) * warp
+    w = spectral(rng, beta=3.5, fmin=1, fmax=12, ax=6.0) * warp  # slow along x: grain flows, no zig-zag
     phase = 2 * np.pi * (rings * y + w)
     lines = 0.5 + 0.5 * np.sin(phase)
     late = lines ** 6  # dark latewood bands
@@ -137,27 +137,27 @@ def build(name):
         peel = spectral(rng, beta=2.0, fmin=40, fmax=260)  # orange peel
         sc = scratches(rng, 60 if name == "powder_coat" else 25, N * 0.08)
         smud = blotches(rng, 10, 0.8)
-        return 1 + 0.025 * spectral(rng, 3, 1, 20) + 0.15 * sc, 0.5 * peel - 1.5 * sc, -0.12 * smud - 0.25 * sc
+        return 1 + 0.025 * spectral(rng, 3, 1, 20) + 0.15 * sc, 0.5 * peel - 1.5 * sc, -0.04 * smud - 0.25 * sc
     if name in ("brushed_metal",):
         streak = spectral(rng, beta=1.0, fmin=4, ax=60.0)
         sc = scratches(rng, 120, N * 0.1)
         smud = blotches(rng, 10, 0.7)
-        return 1 + 0.05 * streak + 0.1 * sc, 0.6 * streak - 1.0 * sc, 0.05 * streak - 0.15 * smud - 0.2 * sc
+        return 1 + 0.05 * streak + 0.1 * sc, 0.6 * streak - 1.0 * sc, 0.05 * streak - 0.05 * smud - 0.2 * sc
     if name in ("chrome", "mirror", "glass"):
         sc = scratches(rng, 40, N * 0.05)
         smud = blotches(rng, 8, 0.9)
-        return 1 + 0.03 * sc, -0.4 * sc + 0.1 * spectral(rng, 3, 1, 6), -0.06 * smud - 0.15 * sc
+        return 1 + 0.03 * sc, -0.4 * sc + 0.1 * spectral(rng, 3, 1, 6), -0.02 * smud - 0.1 * sc
     if name in ("plastic", "rubber"):
         stip = spectral(rng, beta=1.0, fmin=120, fmax=700)  # moulded stipple / grain
         sc = scratches(rng, 30, N * 0.06)
         smud = blotches(rng, 10, 0.9)
-        return 1 + 0.03 * spectral(rng, 3, 1, 16) + 0.08 * sc, 0.8 * stip - 0.8 * sc, 0.05 * stip - 0.1 * smud + 0.15 * sc
+        return 1 + 0.03 * spectral(rng, 3, 1, 16) + 0.08 * sc, 0.8 * stip - 0.8 * sc, 0.05 * stip - 0.03 * smud + 0.15 * sc
     if name == "laminate":
         paper = spectral(rng, beta=1.2, fmin=80, fmax=900)
         wipe = blotches(rng, 6, 0.6)
-        return 1 + 0.02 * spectral(rng, 2.5, 1, 30), 0.3 * paper, 0.12 * wipe - 0.03 * paper
+        return 1 + 0.02 * spectral(rng, 2.5, 1, 30), 0.3 * paper, 0.04 * wipe - 0.03 * paper
     if name in ("wood", "wood_light"):
-        alb, h = grain(rng, rings=9 if name == "wood" else 14, warp=0.35 if name == "wood" else 0.2)
+        alb, h = grain(rng, rings=9 if name == "wood" else 14, warp=0.12 if name == "wood" else 0.08)
         return alb, h, 0.1 * h
     if name == "fabric":
         x = np.arange(N)[None, :] / N
@@ -171,7 +171,7 @@ def build(name):
         speck = (spectral(rng, beta=0.3, fmin=300) > 2.2).astype(float)
         return 1 + 0.18 * gr - 0.3 * speck, gr - 1.2 * speck, z
     if name == "porcelain":
-        return 1 + 0.01 * spectral(rng, 3, 1, 10), 0.3 * spectral(rng, 3.0, 1, 12), -0.08 * blotches(rng, 8, 1.0)
+        return 1 + 0.01 * spectral(rng, 3, 1, 10), 0.3 * spectral(rng, 3.0, 1, 12), -0.03 * blotches(rng, 8, 1.0)
     if name == "paper":
         fib = spectral(rng, beta=1.0, fmin=60, fmax=900, ax=3.0)
         return 1 + 0.03 * fib, 0.5 * fib, z

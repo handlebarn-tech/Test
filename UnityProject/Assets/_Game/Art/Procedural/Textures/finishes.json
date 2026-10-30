@@ -9,7 +9,7 @@
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/brushed_metal/T_Proc_brushed_metal_Mask.png",
-          "sha256": "4a932fee6e2e7238"
+          "sha256": "557de7b8add6c84e"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/brushed_metal/T_Proc_brushed_metal_Normal.png",
@@ -29,7 +29,7 @@
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/chrome/T_Proc_chrome_Mask.png",
-          "sha256": "83dc94cf73fd738f"
+          "sha256": "928230be90b3ddeb"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/chrome/T_Proc_chrome_Normal.png",
@@ -109,7 +109,7 @@
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/enamel/T_Proc_enamel_Mask.png",
-          "sha256": "a03253ef665ff662"
+          "sha256": "6b0ad8249d2c289b"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/enamel/T_Proc_enamel_Normal.png",
@@ -149,7 +149,7 @@
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/glass/T_Proc_glass_Mask.png",
-          "sha256": "6504b05323e6d48f"
+          "sha256": "84ec14694687c81b"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/glass/T_Proc_glass_Normal.png",
@@ -169,7 +169,7 @@
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/laminate/T_Proc_laminate_Mask.png",
-          "sha256": "8b5a5349345c2056"
+          "sha256": "13a90d691b4c875b"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/laminate/T_Proc_laminate_Normal.png",
@@ -189,7 +189,7 @@
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/mirror/T_Proc_mirror_Mask.png",
-          "sha256": "f4abf4bd7600a15d"
+          "sha256": "1ed65787075fbc86"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/mirror/T_Proc_mirror_Normal.png",
@@ -229,7 +229,7 @@
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/plastic/T_Proc_plastic_Mask.png",
-          "sha256": "c6dcdcfe908ec636"
+          "sha256": "3a3521536625baa7"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/plastic/T_Proc_plastic_Normal.png",
@@ -249,7 +249,7 @@
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/porcelain/T_Proc_porcelain_Mask.png",
-          "sha256": "633e05eb8d11c843"
+          "sha256": "2bf3468fc2954a08"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/porcelain/T_Proc_porcelain_Normal.png",
@@ -269,7 +269,7 @@
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/powder_coat/T_Proc_powder_coat_Mask.png",
-          "sha256": "529755130dcafa2b"
+          "sha256": "ac9536af582383e7"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/powder_coat/T_Proc_powder_coat_Normal.png",
@@ -289,7 +289,7 @@
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/rubber/T_Proc_rubber_Mask.png",
-          "sha256": "5f34c139fbec9f82"
+          "sha256": "07495eba17c5efbd"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/rubber/T_Proc_rubber_Normal.png",
@@ -325,15 +325,15 @@
       "maps": {
         "BaseColor": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/wood/T_Proc_wood_BaseColor.png",
-          "sha256": "10c35f45a5ae4472"
+          "sha256": "69f620c040b9f23f"
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/wood/T_Proc_wood_Mask.png",
-          "sha256": "5a2c9b2116bc0336"
+          "sha256": "fc87ed565bcaf8eb"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/wood/T_Proc_wood_Normal.png",
-          "sha256": "f5bd1f771bac768d"
+          "sha256": "24b69b92bdb41d3a"
         }
       },
       "metallic": 0.0,
@@ -345,15 +345,15 @@
       "maps": {
         "BaseColor": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/wood_light/T_Proc_wood_light_BaseColor.png",
-          "sha256": "de2d3ccc00f144f7"
+          "sha256": "d41629dfa2529bb2"
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/wood_light/T_Proc_wood_light_Mask.png",
-          "sha256": "eae28ce5244ee0ed"
+          "sha256": "aa61ad19d31bdf26"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/wood_light/T_Proc_wood_light_Normal.png",
-          "sha256": "80c7353ba5e021c2"
+          "sha256": "0a34129d0500bae8"
         }
       },
       "metallic": 0.0,
