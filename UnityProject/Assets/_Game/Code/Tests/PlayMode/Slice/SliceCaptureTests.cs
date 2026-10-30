@@ -36,7 +36,7 @@ namespace Dispo.Slice.PlayMode.Tests
             volume.sharedProfile = ScriptableObject.CreateInstance<VolumeProfile>();
             var exposure = volume.sharedProfile.Add<Exposure>(true);
             exposure.mode.Override(ExposureMode.Fixed);
-            exposure.fixedExposure.Override(13f);
+            exposure.fixedExposure.Override(11f);   // 2 EV brighter than GrayboxCapture: the jar wall is unlit until ART-003 lighting
             volume.sharedProfile.Add<MotionBlur>(true).intensity.Override(0f);  // the jar shot teleports the camera
 
             var g = UnityEngine.Object.FindAnyObjectByType<SliceGame>();
@@ -99,8 +99,18 @@ namespace Dispo.Slice.PlayMode.Tests
                     var cam = g.ViewCamera.transform;
                     var keep = (cam.position, cam.rotation);
                     var jar = g.JarTops.First(kv => kv.Key == g.Sim.Inventory.SoldOutIds[0]).Value;
-                    cam.position = jar + new Vector3(0, 0.25f, -1.6f);
+                    // Stand 1.8 m out from the jar toward the register, so it works for any jar-wall orientation.
+                    var toward = Vector3.ProjectOnPlane(keep.position - jar, Vector3.up).normalized;
+                    cam.position = jar + toward * 1.8f + Vector3.up * 0.3f;
                     cam.rotation = Quaternion.LookRotation(jar - cam.position);
+                    yield return null; yield return null;
+                    var label = g.View.JarLabel(g.Sim.Inventory.SoldOutIds[0]);
+                    Assert.IsNotNull(label, "SOLD OUT label exists");
+                    Assert.AreEqual("SOLD OUT", label.text);
+                    Assert.AreEqual(DisplayStyle.Flex, label.resolvedStyle.display, "SOLD OUT label visible in the jar shot");
+                    var vp = g.ViewCamera.WorldToViewportPoint(jar);
+                    var want = new Vector2(vp.x * W, (1 - vp.y) * H);   // the camera RT and panel RT are both W×H
+                    Assert.Less(Vector2.Distance(want, new Vector2(label.resolvedStyle.left + 30, label.resolvedStyle.top + 12)), 8f, "label sits over its jar (label is ~60 px wide)");
                     yield return Shot("Jars_SoldOut_Low");
                     cam.SetPositionAndRotation(keep.position, keep.rotation);
                     Time.timeScale = 10;

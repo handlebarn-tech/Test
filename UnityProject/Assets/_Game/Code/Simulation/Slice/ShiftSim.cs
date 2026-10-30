@@ -10,7 +10,8 @@ namespace Dispo.Simulation.Slice
     {
         public StrainResult Strain;
         public Batch Rep;
-        public double PricePreTax, PricePostTax;   // NaN when the tier has no price for that weight
+        public double PricePreTax, PricePostTax;   // card display (tool priceFloor); NaN when the tier has no price for that weight
+        public double CheckoutPostTax;             // what the POS will charge (DEC-035 nickel rounding)
         public string TierLabel, ClusterLabel, AnxietyLabel;
         public bool HasPrice => !double.IsNaN(PricePostTax);
     }
@@ -106,7 +107,7 @@ namespace Dispo.Simulation.Slice
         /// <summary>§10 More options: rerun with n = moreOptionsN, append the next moreOptionsStep unseen.</summary>
         public SearchResult MoreOptions()
         {
-            Require(Results != null, "no search yet");
+            Require(Results != null && Pending == null, "more options needs a search and no open POS");
             var unseen = Recommend(Results.Chip, Cfg.moreOptionsN).Strains.Where(s => !_seen.Contains(s.Key)).ToList();
             Append(unseen.Take(Cfg.moreOptionsStep));
             Results.MoreAvailable = unseen.Count > Cfg.moreOptionsStep;
@@ -178,7 +179,8 @@ namespace Dispo.Simulation.Slice
         PresentResult Score(Customer c, Card card, double t)
         {
             double fit = Fit(c.TrueFamily, card.Strain.Key);
-            double priceFit = PriceFit(card.PricePostTax, c.Budget), speedFit = SpeedFit(Cfg, t), wait = WaitPenalty(Cfg, c.QueueWait);
+            // DEC-044: the budget is checked against the POS total the customer pays, not the card's priceFloor.
+            double priceFit = PriceFit(card.CheckoutPostTax, c.Budget), speedFit = SpeedFit(Cfg, t), wait = WaitPenalty(Cfg, c.QueueWait);
             return new PresentResult { Fit = fit, PriceFit = priceFit, SpeedFit = speedFit, WaitPenalty = wait,
                 Satisfaction = Satisfaction(Cfg, fit, priceFit, speedFit, wait) };
         }
@@ -275,6 +277,7 @@ namespace Dispo.Simulation.Slice
                 {
                     Strain = s, Rep = rep,
                     PricePreTax = price?.PreTax ?? double.NaN, PricePostTax = price?.CardPostTax ?? double.NaN,
+                    CheckoutPostTax = price?.PostTax ?? double.NaN,
                     TierLabel = Labels.TierLabel(rep.Tier), ClusterLabel = Labels.ClusterLabel(s.Cluster), AnxietyLabel = AnxietyLabel(s.AnxietyRisk),
                 });
             }
