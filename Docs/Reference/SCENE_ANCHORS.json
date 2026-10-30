@@ -72,7 +72,7 @@
    "source": "REF-016: Register_Wide_still (top-left): the guard stands between the west wall and the podium, facing into the store; DEC-048 (stand directly left inside the entrance)",
    "confidence": "Low",
    "gap": "GAP-134",
-   "note": "was (2.5, 6.7) facing S (REF-013). 0.8 ft between the wall face (x 0.1) and the stand (x 1.5-3.5); orientation Low (one fisheye view)",
+   "note": "was (2.5, 6.7) facing S (REF-013). 0.8 ft between the wall face (x 0.1) and the stand (x 1.5-3.5); orientation Low (one fisheye view); PLACEHOLDER pairing (REVIEW-REF016 m3): the evidence supports only 'behind the podium relative to the floor, north of the door', not this x; 0.8 ft is too little for a standing body. ART-013 sets the stand x / guard x pair (e.g. move the stand east) with room for a body (GAP-134)",
    "implemented": {
     "status": "differs",
     "detail": "built (2.50, 9.80) yaw 180"
@@ -515,12 +515,12 @@
    "name": "Anchor_Register_07_Call",
    "pos_ft": [
     14.08,
-    25.2
+    23.2
    ],
    "facing": "E",
    "yaw_deg": 90,
-   "source": "ROOM_FIXTURES rev9 POS_07 (REF-016, wall2_R2C1): west-end block faces W; customer 1.2 ft west of its face x 15.28, operator 1.0 ft east of its staff edge x 17.78; y along the block Low",
-   "confidence": "Med",
+   "source": "ROOM_FIXTURES rev9 POS_07 (REF-016, wall2_R2C1): west-end block faces W; customer 1.2 ft west of its face x 15.28, operator 1.0 ft east of its staff edge x 17.78; y along the block Low; confidence = weakest field (y Low; REVIEW-REF013b m1 / REVIEW-REF016 m6)",
+   "confidence": "Low",
    "gap": "GAP-131",
    "implemented": {
     "status": "differs",
@@ -531,12 +531,12 @@
    "name": "Anchor_Register_07_Operator",
    "pos_ft": [
     18.78,
-    25.2
+    23.2
    ],
    "facing": "W",
    "yaw_deg": 270,
-   "source": "ROOM_FIXTURES rev9 POS_07 (REF-016, wall2_R2C1): west-end block faces W; customer 1.2 ft west of its face x 15.28, operator 1.0 ft east of its staff edge x 17.78; y along the block Low",
-   "confidence": "Med",
+   "source": "ROOM_FIXTURES rev9 POS_07 (REF-016, wall2_R2C1): west-end block faces W; customer 1.2 ft west of its face x 15.28, operator 1.0 ft east of its staff edge x 17.78; y along the block Low; confidence = weakest field (y Low; REVIEW-REF013b m1 / REVIEW-REF016 m6)",
+   "confidence": "Low",
    "gap": "GAP-131",
    "implemented": {
     "status": "differs",

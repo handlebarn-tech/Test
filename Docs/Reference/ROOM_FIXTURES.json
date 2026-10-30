@@ -339,13 +339,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "Office_Chair_Task_2",
      "detail": "built x 5.50-7.50, y 39.30-41.30 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "Office",
@@ -412,13 +415,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "Office_Board_West_BlackFrame",
      "detail": "built x 0.10-0.20, y 42.05-44.55 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "Office",
@@ -488,13 +494,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "Office_Shelves_Floating_x3_0",
      "detail": "built x 6.80-8.80, y 36.50-37.20 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "Office",
@@ -676,13 +685,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "Office_Trash_StepCan",
      "detail": "built x 12.70-13.70, y 39.60-40.60 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "Office",
@@ -916,13 +928,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "Office_Mat_Door",
      "detail": "built x 7.20-10.20, y 44.30-46.30 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "Office",
@@ -1185,13 +1200,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "Hall_Panel_Blank",
      "detail": "built x 8.40-8.50, y 29.95-30.95 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BreakRoom",
@@ -1834,13 +1852,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "BreakRoom_Hoop_Mini",
      "detail": "built x 14.15-15.65, y 44.15-45.65 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BreakRoom",
@@ -1871,13 +1892,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "BreakRoom_Hooks_Coats",
      "detail": "built x 14.10-14.90, y 43.75-46.25 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BreakRoom",
@@ -1983,13 +2007,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "BreakRoom_Mats_Floor_x2",
      "detail": "built x 18.50-21.50, y 31.40-33.40 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BreakRoom",
@@ -2321,13 +2348,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "Restroom_Accessories",
      "detail": "built x 2.65-3.75, y 35.70-36.10 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "Vestibule",
@@ -2478,13 +2508,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "Vestibule_Shelf_Supplies",
      "detail": "built x 34.35-36.85, y 33.00-34.20 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "FOH",
@@ -2589,13 +2622,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "FOH_Chair_Desk",
      "detail": "built x 32.40-34.40, y 36.60-38.60 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "FOH",
@@ -3001,13 +3037,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "missing",
      "graybox": null,
      "detail": "not placeable (pos null), see gap"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BOH",
@@ -3119,13 +3158,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "BOH_Rack_South_Wall",
      "detail": "built x 39.50-44.80, y 44.30-46.10 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BOH",
@@ -3227,13 +3269,16 @@
      "orientation": "Low"
     },
     "served_side": "staff",
-    "gaps": [],
+    "gaps": [
+     "GAP-127"
+    ],
     "implemented": {
      "status": "matches",
      "graybox": "BOH_Chair_Desk",
      "detail": "built x 43.20-44.70, y 41.55-43.05 = matrix within 0.15 ft"
     }
-   }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BOH",
@@ -3948,7 +3993,7 @@
    ],
    "pos_ft": [
     17.56,
-    25.2
+    23.2
    ],
    "rot": 90,
    "faces": "W",
@@ -3966,8 +4011,8 @@
    "stand_rect": {
     "x0": 17.78,
     "x1": 19.08,
-    "y0": 22.6,
-    "y1": 24.2
+    "y0": 24.0,
+    "y1": 25.6
    },
    "operator_zone": {
     "x0": 17.78,
@@ -3980,7 +4025,7 @@
     "operator_zone_depth": 2.62,
     "source": "west-end block x 15.28-17.78 (A011 3017/3019, A901 2'-6\" return); operator zone ends where POS_02's begins (x 20.4); the staff aisle behind is shared with POS_02 (REF-016, Low)"
    },
-   "notes": "REF-016: register 7 is the POS on the west-end block of the south counter (x 15.28-17.78, y 20.0-27.0 = run end + 2'-6\" return), facing WEST: wall2_R2C1 shows its monitor and keyboard facing an operator on the east side (south staff aisle) and the card terminal on the west edge with the customer standing west of the block. That fits DEC-039 (7 is the leftmost south-side register, read west->east) and PT2 #4 (\"Register 7 is not where it should be\"; the build had it mid-run). Position along the block: monitor y 25.2 (Low: wall2_R2C1 shows it mid-block; y chosen so the stand, to the operator's right = north, clears the run's staff edge y 22.5). Customer stands at x ~14.1 on the floor between the queue exit and the ATM. DEC-104 kit variation applies",
+   "notes": "REF-016: register 7 is the POS on the west-end block of the south counter (x 15.28-17.78, y 20.0-27.0 = run end + 2'-6\" return), facing WEST: wall2_R2C1 shows its monitor and keyboard facing an operator on the east side (south staff aisle) and the card terminal on the west edge with the customer standing west of the block. That fits DEC-039 (7 is the leftmost south-side register, read west->east) and PT2 #4 (\"Register 7 is not where it should be\"; the build had it mid-run). Position along the block: monitor y 23.2 (Low: wall2_R2C1 shows the monitor in the NORTH part of the block, with the operator standing about level with the run's staff face, y ~22.5-24; REVIEW-REF016 m1). The operator's right (north) is the run's counter, so the stand goes to the operator's left (south), y 24.0-25.6 (Low, GAP-131). Customer stands at x ~14.1 on the floor between the queue exit and the ATM. DEC-104 kit variation applies",
    "matrix": {
     "src_primary": "wall2_R2C1 (camera in the SW looking N: a POS on the west-end block of the south counter, monitor and keyboard facing E to the operator, card terminal on the W edge, customer standing W of it on patterned tile)",
     "conf": {
@@ -3996,7 +4041,7 @@
     "implemented": {
      "status": "differs",
      "graybox": "stations.list reg 07",
-     "detail": "built station point on the staff edge (31.00, 22.60), staff S; matrix (17.78, 25.20), staff E (wrong counter face / orientation)"
+     "detail": "built station point on the staff edge (31.00, 22.60), staff S; matrix (17.78, 23.20), staff E (wrong counter face / orientation)"
     }
    }
   },
@@ -4047,12 +4092,12 @@
     "operator_zone_depth": 4.5,
     "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0 (x 15.19-34.42; east of it the wall at y 29.0); stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
    },
-   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: 3.8 ft pitch (TI 3.75-4.08, CCTV ~4.0) from 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: even 3.8 ft pitch from CCTV (~4.0 ft, Low); the 2022 TI draws the 5 outlets as 2 + 3 with a 9.1 ft gap and is superseded for x because today's run (A011) is 2.0 ft shorter and the TI's fifth outlet would fall past the east-return face (matrix.src_primary). From 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
    "matrix": {
-    "src_primary": "TI E101 power plan (p.35): 5 POS circuits A-10/12/14/16/18 + 5 TV/RI outlets; A901 det.17 (p.13): the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end (pitch 3.75-4.08 ft); PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\"); CCTV monitor pitch on the south run: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft (Low-Med)",
+    "src_primary": "2022 TI as drawn (count): E101 power plan (p.35) 5 POS circuits A-10/12/14/16/18 (words x 644/710/875/947/1021 pt at 18 pt/ft = gaps 3.67/9.17/4.00/4.11 ft) + 5 TV/RI outlets; A901 det.17 (p.13) the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end = gaps 3.75/9.08/4.08/4.08 ft: TWO outlets, a 9.1 ft blank run, then THREE (not an even pitch). x from CCTV (today's store), not the TI, because the store changed (DEC-120): A011 (2023/2026 update) gives today's run as x 15.28-41.03 = 25.75 ft, 2.0 ft shorter than A901's 27'-9\" (REFERENCES_INDEX 6.4: the 2022 run lengths describe the old layout, not positions); laid on today's run the TI outlets fall at x 19.06/22.81/31.89/35.97/40.05 (west-aligned) or 17.06/20.81/29.89/33.97/38.05 (east-aligned), so either way the fifth is past the east-return face x 37.99 where no customer can stand; CCTV shows the run evenly spaced: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; wall2_R2C5 4 monitors receding at an even spacing; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft -> even 3.8 ft pitch (Low). Count 5 = TI 5 circuits + DEC-039 numbers 2..6; wall2_R2C5 (from the SE, looking W) shows only 4 on the straight run, the fifth (POS_06, nearest that camera) not seen there: unresolved, GAP-131. PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\") puts 06 at the east end",
     "conf": {
      "size": "Low-Med (REFERENCES_INDEX 2.2)",
-     "position": "High (y) / Low-Med (x)",
+     "position": "High (y) / Low (x: CCTV even pitch; TI 2+3 grouping superseded, see src_primary)",
      "orientation": "High (staff S facing N)"
     },
     "served_side": "staff S, customer N",
@@ -4114,12 +4159,12 @@
     "operator_zone_depth": 4.5,
     "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0 (x 15.19-34.42; east of it the wall at y 29.0); stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
    },
-   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: 3.8 ft pitch (TI 3.75-4.08, CCTV ~4.0) from 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: even 3.8 ft pitch from CCTV (~4.0 ft, Low); the 2022 TI draws the 5 outlets as 2 + 3 with a 9.1 ft gap and is superseded for x because today's run (A011) is 2.0 ft shorter and the TI's fifth outlet would fall past the east-return face (matrix.src_primary). From 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
    "matrix": {
-    "src_primary": "TI E101 power plan (p.35): 5 POS circuits A-10/12/14/16/18 + 5 TV/RI outlets; A901 det.17 (p.13): the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end (pitch 3.75-4.08 ft); PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\"); CCTV monitor pitch on the south run: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft (Low-Med)",
+    "src_primary": "2022 TI as drawn (count): E101 power plan (p.35) 5 POS circuits A-10/12/14/16/18 (words x 644/710/875/947/1021 pt at 18 pt/ft = gaps 3.67/9.17/4.00/4.11 ft) + 5 TV/RI outlets; A901 det.17 (p.13) the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end = gaps 3.75/9.08/4.08/4.08 ft: TWO outlets, a 9.1 ft blank run, then THREE (not an even pitch). x from CCTV (today's store), not the TI, because the store changed (DEC-120): A011 (2023/2026 update) gives today's run as x 15.28-41.03 = 25.75 ft, 2.0 ft shorter than A901's 27'-9\" (REFERENCES_INDEX 6.4: the 2022 run lengths describe the old layout, not positions); laid on today's run the TI outlets fall at x 19.06/22.81/31.89/35.97/40.05 (west-aligned) or 17.06/20.81/29.89/33.97/38.05 (east-aligned), so either way the fifth is past the east-return face x 37.99 where no customer can stand; CCTV shows the run evenly spaced: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; wall2_R2C5 4 monitors receding at an even spacing; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft -> even 3.8 ft pitch (Low). Count 5 = TI 5 circuits + DEC-039 numbers 2..6; wall2_R2C5 (from the SE, looking W) shows only 4 on the straight run, the fifth (POS_06, nearest that camera) not seen there: unresolved, GAP-131. PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\") puts 06 at the east end",
     "conf": {
      "size": "Low-Med (REFERENCES_INDEX 2.2)",
-     "position": "High (y) / Low-Med (x)",
+     "position": "High (y) / Low (x: CCTV even pitch; TI 2+3 grouping superseded, see src_primary)",
      "orientation": "High (staff S facing N)"
     },
     "served_side": "staff S, customer N",
@@ -4181,12 +4226,12 @@
     "operator_zone_depth": 4.5,
     "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0 (x 15.19-34.42; east of it the wall at y 29.0); stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
    },
-   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: 3.8 ft pitch (TI 3.75-4.08, CCTV ~4.0) from 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: even 3.8 ft pitch from CCTV (~4.0 ft, Low); the 2022 TI draws the 5 outlets as 2 + 3 with a 9.1 ft gap and is superseded for x because today's run (A011) is 2.0 ft shorter and the TI's fifth outlet would fall past the east-return face (matrix.src_primary). From 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
    "matrix": {
-    "src_primary": "TI E101 power plan (p.35): 5 POS circuits A-10/12/14/16/18 + 5 TV/RI outlets; A901 det.17 (p.13): the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end (pitch 3.75-4.08 ft); PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\"); CCTV monitor pitch on the south run: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft (Low-Med)",
+    "src_primary": "2022 TI as drawn (count): E101 power plan (p.35) 5 POS circuits A-10/12/14/16/18 (words x 644/710/875/947/1021 pt at 18 pt/ft = gaps 3.67/9.17/4.00/4.11 ft) + 5 TV/RI outlets; A901 det.17 (p.13) the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end = gaps 3.75/9.08/4.08/4.08 ft: TWO outlets, a 9.1 ft blank run, then THREE (not an even pitch). x from CCTV (today's store), not the TI, because the store changed (DEC-120): A011 (2023/2026 update) gives today's run as x 15.28-41.03 = 25.75 ft, 2.0 ft shorter than A901's 27'-9\" (REFERENCES_INDEX 6.4: the 2022 run lengths describe the old layout, not positions); laid on today's run the TI outlets fall at x 19.06/22.81/31.89/35.97/40.05 (west-aligned) or 17.06/20.81/29.89/33.97/38.05 (east-aligned), so either way the fifth is past the east-return face x 37.99 where no customer can stand; CCTV shows the run evenly spaced: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; wall2_R2C5 4 monitors receding at an even spacing; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft -> even 3.8 ft pitch (Low). Count 5 = TI 5 circuits + DEC-039 numbers 2..6; wall2_R2C5 (from the SE, looking W) shows only 4 on the straight run, the fifth (POS_06, nearest that camera) not seen there: unresolved, GAP-131. PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\") puts 06 at the east end",
     "conf": {
      "size": "Low-Med (REFERENCES_INDEX 2.2)",
-     "position": "High (y) / Low-Med (x)",
+     "position": "High (y) / Low (x: CCTV even pitch; TI 2+3 grouping superseded, see src_primary)",
      "orientation": "High (staff S facing N)"
     },
     "served_side": "staff S, customer N",
@@ -4248,12 +4293,12 @@
     "operator_zone_depth": 4.5,
     "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0 (x 15.19-34.42; east of it the wall at y 29.0); stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
    },
-   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: 3.8 ft pitch (TI 3.75-4.08, CCTV ~4.0) from 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: even 3.8 ft pitch from CCTV (~4.0 ft, Low); the 2022 TI draws the 5 outlets as 2 + 3 with a 9.1 ft gap and is superseded for x because today's run (A011) is 2.0 ft shorter and the TI's fifth outlet would fall past the east-return face (matrix.src_primary). From 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
    "matrix": {
-    "src_primary": "TI E101 power plan (p.35): 5 POS circuits A-10/12/14/16/18 + 5 TV/RI outlets; A901 det.17 (p.13): the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end (pitch 3.75-4.08 ft); PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\"); CCTV monitor pitch on the south run: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft (Low-Med)",
+    "src_primary": "2022 TI as drawn (count): E101 power plan (p.35) 5 POS circuits A-10/12/14/16/18 (words x 644/710/875/947/1021 pt at 18 pt/ft = gaps 3.67/9.17/4.00/4.11 ft) + 5 TV/RI outlets; A901 det.17 (p.13) the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end = gaps 3.75/9.08/4.08/4.08 ft: TWO outlets, a 9.1 ft blank run, then THREE (not an even pitch). x from CCTV (today's store), not the TI, because the store changed (DEC-120): A011 (2023/2026 update) gives today's run as x 15.28-41.03 = 25.75 ft, 2.0 ft shorter than A901's 27'-9\" (REFERENCES_INDEX 6.4: the 2022 run lengths describe the old layout, not positions); laid on today's run the TI outlets fall at x 19.06/22.81/31.89/35.97/40.05 (west-aligned) or 17.06/20.81/29.89/33.97/38.05 (east-aligned), so either way the fifth is past the east-return face x 37.99 where no customer can stand; CCTV shows the run evenly spaced: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; wall2_R2C5 4 monitors receding at an even spacing; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft -> even 3.8 ft pitch (Low). Count 5 = TI 5 circuits + DEC-039 numbers 2..6; wall2_R2C5 (from the SE, looking W) shows only 4 on the straight run, the fifth (POS_06, nearest that camera) not seen there: unresolved, GAP-131. PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\") puts 06 at the east end",
     "conf": {
      "size": "Low-Med (REFERENCES_INDEX 2.2)",
-     "position": "High (y) / Low-Med (x)",
+     "position": "High (y) / Low (x: CCTV even pitch; TI 2+3 grouping superseded, see src_primary)",
      "orientation": "High (staff S facing N)"
     },
     "served_side": "staff S, customer N",
@@ -4315,12 +4360,12 @@
     "operator_zone_depth": 4.5,
     "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0 (x 15.19-34.42; east of it the wall at y 29.0); stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
    },
-   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: 3.8 ft pitch (TI 3.75-4.08, CCTV ~4.0) from 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: even 3.8 ft pitch from CCTV (~4.0 ft, Low); the 2022 TI draws the 5 outlets as 2 + 3 with a 9.1 ft gap and is superseded for x because today's run (A011) is 2.0 ft shorter and the TI's fifth outlet would fall past the east-return face (matrix.src_primary). From 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
    "matrix": {
-    "src_primary": "TI E101 power plan (p.35): 5 POS circuits A-10/12/14/16/18 + 5 TV/RI outlets; A901 det.17 (p.13): the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end (pitch 3.75-4.08 ft); PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\"); CCTV monitor pitch on the south run: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft (Low-Med)",
+    "src_primary": "2022 TI as drawn (count): E101 power plan (p.35) 5 POS circuits A-10/12/14/16/18 (words x 644/710/875/947/1021 pt at 18 pt/ft = gaps 3.67/9.17/4.00/4.11 ft) + 5 TV/RI outlets; A901 det.17 (p.13) the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end = gaps 3.75/9.08/4.08/4.08 ft: TWO outlets, a 9.1 ft blank run, then THREE (not an even pitch). x from CCTV (today's store), not the TI, because the store changed (DEC-120): A011 (2023/2026 update) gives today's run as x 15.28-41.03 = 25.75 ft, 2.0 ft shorter than A901's 27'-9\" (REFERENCES_INDEX 6.4: the 2022 run lengths describe the old layout, not positions); laid on today's run the TI outlets fall at x 19.06/22.81/31.89/35.97/40.05 (west-aligned) or 17.06/20.81/29.89/33.97/38.05 (east-aligned), so either way the fifth is past the east-return face x 37.99 where no customer can stand; CCTV shows the run evenly spaced: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; wall2_R2C5 4 monitors receding at an even spacing; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft -> even 3.8 ft pitch (Low). Count 5 = TI 5 circuits + DEC-039 numbers 2..6; wall2_R2C5 (from the SE, looking W) shows only 4 on the straight run, the fifth (POS_06, nearest that camera) not seen there: unresolved, GAP-131. PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\") puts 06 at the east end",
     "conf": {
      "size": "Low-Med (REFERENCES_INDEX 2.2)",
-     "position": "High (y) / Low-Med (x)",
+     "position": "High (y) / Low (x: CCTV even pitch; TI 2+3 grouping superseded, see src_primary)",
      "orientation": "High (staff S facing N)"
     },
     "served_side": "staff S, customer N",
@@ -4930,7 +4975,7 @@
    ],
    "pos_ft": [
     19.655,
-    23.4
+    24.8
    ],
    "rot": 0,
    "faces": "N",
@@ -4959,7 +5004,7 @@
     "implemented": {
      "status": "differs",
      "graybox": "Retail_Trash_Small_POS_07",
-     "detail": "built x 32.35-33.25, y 23.90-24.80 vs matrix x 19.08-20.23, y 22.82-23.98 (max edge offset 13.27 ft)"
+     "detail": "built x 32.35-33.25, y 23.90-24.80 vs matrix x 19.08-20.23, y 24.22-25.37 (max edge offset 13.27 ft)"
     }
    }
   },
@@ -5283,7 +5328,7 @@
     "DEC-104"
    ],
    "gap": "GAP-134",
-   "notes": "big trash bin (DEC-104) by the east hand-wash sink, clear of the emergency exit (y 20.5-24); position not in the evidence",
+   "notes": "big trash bin (DEC-104) just east of the hand-wash sink, which A011 puts on the SOUTH wall of the SE pocket (x 43.67-45.56, ROOM_FIXTURES Sink_HandWash); clear of the emergency exit (A011 rough opening y 21.38-24.72 on the east wall). The SE pocket is staff floor under REF-013's kept closed L (GAP-130). Position not in the evidence (Low). Possibly the same bin as Trash_Big_SouthReturnEnd (wall2_R2C5/R2C3, at (42.0, 23.0), ~4 ft away): ART-013 keeps one of the two unless a still shows both (REF-016, GAP-134)",
    "matrix": {
     "src_primary": "DEC-104",
     "conf": {
@@ -5291,7 +5336,7 @@
      "position": "Low",
      "orientation": "Low"
     },
-    "served_side": "customer",
+    "served_side": "staff",
     "gaps": [
      "GAP-134"
     ],
