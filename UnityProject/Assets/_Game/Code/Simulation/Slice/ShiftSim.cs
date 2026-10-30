@@ -251,6 +251,9 @@ namespace Dispo.Simulation.Slice
             RegisterOpen = false; Results = null; _seen.Clear();
         }
 
+        /// <summary>DEC-065: Esc/Back on a multi-line cart closes the register and keeps the cart (only Cancel empties it).</summary>
+        public void LeaveRegister() { Require(RegisterOpen, "no open POS"); CloseRegister(); }
+
         /// <summary>Cart chip / R: back to the register without adding.</summary>
         public void OpenRegister() { Require(Serving != null && Cart.Count > 0, "the cart is empty"); RegisterOpen = true; }
 
@@ -282,7 +285,8 @@ namespace Dispo.Simulation.Slice
         void CloseRegister()
         {
             RegisterOpen = false;
-            if (Results != null && Results.Ask != CurrentAskIndex) Results = null;   // those cards are priced for another ask's weight
+            // Cards priced for another open ask's weight go; with every ask in the cart they stay to look at (Present needs an open ask).
+            if (Results != null && CurrentAskIndex >= 0 && Results.Ask != CurrentAskIndex) Results = null;
         }
 
         // ---------- scoring ----------

@@ -24,6 +24,8 @@ namespace Dispo.Slice.PlayMode.Tests
         public IEnumerator Reset() { Time.timeScale = 1; yield return null; }
 
         /// <summary>One bot step: talk → look it up → true-family chip → card 1 (next if the jar is short) → Add item while an ask is open (GAME-006) → confirm.</summary>
+        static bool _backChecked;
+
         public static void Step(SliceGame g)
         {
             var c = g.Sim.Serving;
@@ -41,6 +43,17 @@ namespace Dispo.Slice.PlayMode.Tests
                     break;
                 case SliceScreen.Pos:
                     if (g.Sim.CanAddItem) g.AddItem();
+                    else if (g.Sim.Cart.Count > 1 && !_backChecked)
+                    {
+                        // DEC-065: Esc on a multi-line cart goes back to the cards and keeps the cart.
+                        int n = g.Sim.Cart.Count;
+                        g.Back();
+                        Assert.AreEqual(SliceScreen.Results, g.Screen);
+                        Assert.AreEqual(n, g.Sim.Cart.Count);
+                        g.GoToRegister();
+                        Assert.AreEqual(SliceScreen.Pos, g.Screen);
+                        _backChecked = true;
+                    }
                     else Assert.IsNull(g.PosConfirm());
                     break;
             }
@@ -52,6 +65,7 @@ namespace Dispo.Slice.PlayMode.Tests
             var g = Object.FindAnyObjectByType<SliceGame>();
             Assert.IsNotNull(g, "SliceGame missing from Gameplay_Slice");
             Assert.AreEqual(1, g.Sim.Cfg.seed);
+            _backChecked = false;
             Time.timeScale = 20;
             float deadline = Time.realtimeSinceStartup + 240;
             while (g.FinalReport == null)
@@ -83,6 +97,7 @@ namespace Dispo.Slice.PlayMode.Tests
             Assert.LessOrEqual(sim.ClockHours, sim.Cfg.storeCloseHour, "clock inside store hours (DEC-036 M3)");
             Assert.IsTrue(sim.Sales.GroupBy(s => s.CustomerIndex).All(s => s.Sum(x => x.Grams) <= sim.Cfg.adultUseLimitGrams), "M1 on each cart");
             Assert.IsTrue(sim.Sales.GroupBy(s => s.CustomerIndex).Any(s => s.Count() == 2), "GAME-006: the bot sells a 2-item cart");
+            Assert.IsTrue(_backChecked, "DEC-065 Esc-keeps-cart path ran");
         }
     }
 }

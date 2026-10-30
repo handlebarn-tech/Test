@@ -226,7 +226,7 @@ namespace Dispo.Presentation.Slice
             AddLabel(card, k.AnxietyLabel, "chip " + AnxClass(k.Strain.AnxietyRisk));
             var row = Add(card, "row");
             AddButton(row, "Inspect", () => _g.Inspect(k));
-            AddButton(row, ChooseText, () => _g.Choose(k), "primary");
+            AddButton(row, ChooseText, () => _g.Choose(k), "primary").SetEnabled(_g.Sim.CurrentAsk != null);
         }
 
         string ChooseText => _g.Sim.Cart.Count > 0 ? _g.Sim.Data.Lines.addToCart : "Choose";

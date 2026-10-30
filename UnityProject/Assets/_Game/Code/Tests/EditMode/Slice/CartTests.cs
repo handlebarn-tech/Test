@@ -100,6 +100,31 @@ namespace Dispo.Slice.Tests
             Assert.AreEqual(0, sim.CurrentAskIndex, "back to the first ask");
         }
 
+        /// <summary>DEC-065: leaving the register keeps a multi-line cart; only Cancel empties it.</summary>
+        [Test]
+        public void LeaveRegister_KeepsCart_CancelEmpties()
+        {
+            var sim = CartOf(7, 3.5);
+            var stock = Stock(sim);
+            sim.LeaveRegister();
+            Assert.IsFalse(sim.RegisterOpen);
+            Assert.AreEqual(2, sim.Cart.Count, "cart kept");
+            Assert.IsNotNull(sim.Results, "back to the cards");
+            Assert.IsNull(sim.CurrentAsk);
+            Assert.Throws<System.InvalidOperationException>(() => sim.Present(sim.Results.Cards[0]), "nothing left to ask for");
+            CollectionAssert.AreEqual(stock, Stock(sim));
+            sim.OpenRegister();
+            sim.Cancel();
+            Assert.AreEqual(0, sim.Cart.Count, "Cancel empties it");
+            CollectionAssert.AreEqual(stock, Stock(sim));
+
+            var open = CartOf(7, 3.5);
+            open.RemoveLine(0);   // ask 0 (7 g) open again; the cards on screen were priced for ask 1 (3.5 g)
+            open.LeaveRegister();
+            Assert.AreEqual(1, open.Cart.Count);
+            Assert.IsNull(open.Results, "cards priced for another ask's weight are dropped");
+        }
+
         [Test]
         public void RemoveAndStep_Lines()
         {

@@ -313,6 +313,7 @@ namespace Dispo.Presentation.Slice
 
         public void ChooseChip(IntentFamily f, bool autoFilled = false)
         {
+            if (Sim.CurrentAsk == null) { GoToRegister(); return; }   // every ask is in the cart
             Sim.Search(f, autoFilled);
             _view.Message = "";
             Show(SliceScreen.Results);
@@ -326,6 +327,7 @@ namespace Dispo.Presentation.Slice
         /// <summary>Choose a card: present it to the customer (§3.1 steps 5-7).</summary>
         public PresentResult Choose(Card card)
         {
+            if (Sim.CurrentAsk == null) { GoToRegister(); return null; }   // every ask is in the cart
             var r = Sim.Present(card);
             switch (r.Response)
             {
@@ -382,6 +384,15 @@ namespace Dispo.Presentation.Slice
 
         public void PosCancel() { Sim.Cancel(); _view.Message = ""; Show(Sim.Results != null ? SliceScreen.Results : SliceScreen.Query); }
 
+        /// <summary>DEC-065: Esc on a multi-line cart goes back to the cards and keeps the cart; a single line keeps US§4 (Cancel).</summary>
+        public void PosBack()
+        {
+            if (Sim.Cart.Count <= 1) { PosCancel(); return; }
+            Sim.LeaveRegister();
+            _view.Message = "";
+            Show(Sim.Results != null ? SliceScreen.Results : SliceScreen.Query);
+        }
+
         /// <summary>Esc / Back: one screen back.</summary>
         public void Back()
         {
@@ -389,7 +400,7 @@ namespace Dispo.Presentation.Slice
             {
                 case SliceScreen.Dialogue: case SliceScreen.Query: case SliceScreen.Results: Show(SliceScreen.World); break;
                 case SliceScreen.Detail: Show(SliceScreen.Results); break;
-                case SliceScreen.Pos: PosCancel(); break;
+                case SliceScreen.Pos: PosBack(); break;
             }
         }
 
