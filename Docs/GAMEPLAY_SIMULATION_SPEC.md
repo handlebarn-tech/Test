@@ -6,6 +6,7 @@
 **Parent:** `MASTER_PLAN.md`  
 **Primary source basis:** `References/Review_Budtender_Tool_Comprehensive_Chat_Record.md`  
 **Status:** Canonical gameplay design for reconstruction unless later user decisions override it
+**Extended:** 2026-10-30 by DES-003 with `Design/SPEC_DECISION_PRESSURE.md` (Nolan's decision-pressure spec, cited below as DP §n). Item-by-item status: `Design/DES-003_RECONCILIATION.md`.
 
 ---
 
@@ -169,6 +170,8 @@ OPENING
 → SHIFT REPORT
 ```
 
+DP §61 names the phases Opening/Preparation → Steady Floor → Rush 1 → Recovery → Pressure Event / Rush 2 → Late Shift → Closing Summary; the second NORMAL TRAFFIC above is that **Recovery**, a preparation window (restock before the next rush, DP §49).
+
 Not every shift needs identical timing.
 
 Traffic profile can vary by:
@@ -202,7 +205,7 @@ Opening should usually take **2–5 minutes of gameplay**, not become a checklis
 
 # 8. Customer generation model
 
-Each customer gets a hidden `CustomerIntentProfile`.
+Each customer gets a hidden `CustomerIntentProfile` (the TRUE profile; DP §3). In code this is the existing `Customer` class (`Simulation/Slice/Customers.cs`), extended in place rather than replaced. The player only ever holds a separate KNOWN profile (§49, DP §4).
 
 Suggested fields:
 
@@ -421,7 +424,7 @@ Do not bake them permanently into code.
 
 Important:
 
-- it models the game's internal recommendation logic;
+- it is the TFS engine's own output (v7.11.4 parity) for the customer's true intent, used as an evaluation oracle only: it never reorders, filters or replaces what the player sees (DP §0A, §19; slice `ShiftSim.Fit`);
 - it is not presented as a clinical certainty;
 - customer satisfaction is a game simulation outcome.
 
@@ -678,14 +681,17 @@ A rush increases:
 
 It does **not** make recommendation math less accurate.
 
-It changes the optimal player strategy:
+It changes the optimal player strategy, **per customer** (DP §37), not "always ask fewer questions":
 
 ```text
-Floor Mode
-short questions
-fast recommendation
-fewer comparisons
+decisive regular   → minimal questions, fast service
+ambiguous novice   → still 1–2 high-value questions
+enthusiast         → shorten the talk at a service-experience cost
+price shopper      → settle price first
+repeat customer    → memory allows very fast service
 ```
+
+Floor Mode, short questions and fewer comparisons are the usual tools, but over-trimming an ambiguous customer must cost as much as over-consulting a decisive one (DP §14, §18).
 
 This turns the historical Floor Mode concept into actual gameplay value.
 
@@ -944,16 +950,9 @@ This creates gameplay around learning/feedback without recreating a surveillance
 
 Later milestone only.
 
-If used:
+**Amended by DP §60 (DES-003, proposed DEC):** fictional outcomes never adjust the TFS recommendation score. The earlier `BaseRecommendationScore + LearnedOutcomeAdjustment` idea is withdrawn; it would alter the recommendation system and needs an explicit Nolan decision first.
 
-```text
-BaseRecommendationScore
-+ LearnedOutcomeAdjustment
-```
-
-The learned component must remain separate, inspectable and bounded.
-
-It cannot completely override chemistry/inventory rules.
+Allowed uses of learned outcomes: customer memory, dialogue, player performance history, career scoring, a customer's willingness to repeat a purchase.
 
 ---
 
@@ -1055,6 +1054,13 @@ Recommended progression:
 
 Do not build Phases 3–4 before the core floor game is fun.
 
+DP §71–86 refinements:
+
+- Progression runs on six rolling competencies (Service Judgment, Throughput, Inventory Discipline, Operational Accuracy, Reliability, Leadership; 0–100, shown as Developing / Reliable / Strong / Expert), with promotion gates (placeholder values, DP §80), not generic XP.
+- Promotion unlocks **control** (responsibility, information, decisions, authority), never a better recommendation engine (DP §81).
+- Phase 2 adds receiving, stock movement, floor prioritisation, limited staff calls, more categories and more complex shifts; Phase 3 adds opening readiness, closing review, staff assignments, inventory exceptions, deal awareness, floor coverage and shift preparation; Phase 4 adds ordering, staffing, merchandising, deal strategy and inventory planning (DP §82–85).
+- The floor game never disappears: a manager can still take a register, help a difficult customer, restock or resolve an escalation (DP §86).
+
 ---
 
 # 45. Difficulty
@@ -1070,6 +1076,8 @@ Difficulty should change:
 - task concurrency.
 
 It should not make recommendation science randomly wrong.
+
+Difficulty acts on information, complexity, scarcity and concurrency, not reaction speed (DP §66). Identical TFS input + inventory + pricing gives identical TFS output in every difficulty mode; this is a hard regression gate (DP §124, DP-028). Profile fields: DP §67.
 
 ---
 
@@ -1145,6 +1153,15 @@ Questions reveal hidden profile fields.
 
 Too many questions cost time.
 
+DP §4–16 make this structured [GDD]:
+
+- The player holds a KNOWN profile: each field is unknown or known with a value, a confidence and a source (opener, player question, repeat memory, customer follow-up, rejection, purchase history).
+- Openers reveal a data-defined subset (DP §6); customers carry an ambiguity tier 0–4 (DP §7).
+- Question set Q1–Q8: desired effect, avoidance, stay functional, budget, product type (only once categories exist), something you liked, something you didn't like, time of use (DP §9). Q6 feeds the TFS Similar workflow (§18), never a new similarity model.
+- A question about an already-known field reveals nothing and still costs time (DP §10). Customers differ in `QuestionTolerance` and `DesiredConsultationDepth`; excess questions add escalating friction, never instant anger (DP §11–14).
+- `InformationCompleteness` and `InformationRisk` are gameplay/debug values only; they never replace or alter a TFS score (DP §15–17).
+- **What reaches TFS:** only known facts, rendered as customer wording through the ported NL parser (`QueryParser` → engine), plus authoritative inventory and pricing. Hidden fields never do (DP §5).
+
 ---
 
 # 50. Customer ambiguity
@@ -1186,6 +1203,8 @@ Possible fit
 ```
 
 Optional detailed score can exist internally for ranking.
+
+Uncertainty caused by missing customer information is shown separately from the TFS cards (e.g. CUSTOMER INFO COMPLETE / PARTIAL / NEED MORE), never as a competing fit score (DP §17).
 
 ---
 
@@ -1347,6 +1366,8 @@ Non-player employees later can:
 - handle queue.
 
 Player should be able to understand what staff are doing from visible behavior.
+
+DP §87–92 constraints for when staff exist (PS4): staff skills (speed, `TfsToolSkill`, accuracy, restock efficiency, independence, complex-customer skill, reliability) change how well a worker gathers customer information and uses the same TFS workflows, never which recommendation model they use. Weak staff fail through slowness, limited complexity and escalations to the player (take over / assist / leave), not corrupted recommendations or random absurd mistakes.
 
 ---
 
@@ -1520,6 +1541,8 @@ Tune after playtesting.
 
 Do not make a full eight-hour simulated shift take eight real hours by default.
 
+Prefer variable compression (DP §63): active service, weighing and meaningful tasks run near natural time; quiet stretches cover more game time.
+
 ---
 
 # 70. Shift duration
@@ -1529,6 +1552,8 @@ Initial design target:
 ```text
 20–45 minutes per full shift
 ```
+
+DP §62 narrows the representative full shift to **25–40 real minutes** (example split: opening 3, steady 6, rush 6, recovery 4, rush 2/event 7, late 5, report 3).
 
 Short scenario modes can be:
 
@@ -1564,7 +1589,10 @@ Later optional events:
 - register unavailable;
 - popular deal;
 - staff calls for restock;
-- difficult comparison customer.
+- difficult comparison customer;
+- top seller runs low;
+- several repeat customers at once;
+- staff needs help (DP §65).
 
 Keep events plausible and operational.
 
@@ -1624,6 +1652,8 @@ demand history
 ```
 
 Do not build before selling/restocking is fun.
+
+DP §94–98 for when it is built (PS4): inputs are current inventory, historical and recent demand, expected deals, category coverage, finite storage, purchasing budget and supplier availability; orders arrive after a lead time; future demand is never revealed exactly. Breadth (many SKUs, more TFS coverage, more stockouts) vs depth (few SKUs, rush resilience, fewer options) must not dominate universally. Management changes floor play only through authoritative inventory, never through recommendation weights (DP-032).
 
 ---
 
@@ -1945,7 +1975,8 @@ Prevent:
 - endless free restock;
 - pause/interaction exploits if scoring time;
 - repeatedly spawning easy customers for progression;
-- selecting top recommendation without revealing enough customer intent if intent is ambiguous.
+- selecting top recommendation without revealing enough customer intent if intent is ambiguous. This is done by leaving the query incomplete until the player learns more (DP §18), never by making the TFS top card wrong;
+- refusing service when a viable TFS-supported path existed (`AvoidableNoSale`, DP §31).
 
 ---
 
@@ -2086,7 +2117,8 @@ Do not require:
 - payroll;
 - full compliance simulation;
 - dozens of product categories;
-- photoreal hero NPCs before core loop works.
+- photoreal hero NPCs before core loop works;
+- (DP §131, until the decision-pressure systems prove fun) deep payroll, complex HR, multi-store management, full accounting, huge upgrade trees, random disasters, extensive janitorial play, cosmetic management with no simulation consequence.
 
 ---
 
@@ -2190,3 +2222,9 @@ If the core loop feels like data entry, fix it before adding features.
 > The player is translating human intent into a constrained inventory decision under time pressure, then physically executing that decision inside a living store whose stock, customers and workflow respond.
 
 That is the gameplay advantage the existing terpene/budtender project gives this simulation.
+
+Decision-pressure extension (DP §1, §135): expert play is judgment, prioritisation and operational foresight, not repeatedly choosing the top card. Several decisions are reasonable, none is perfect, and improving one outcome costs something elsewhere.
+
+> **TFS determines recommendation behavior. The game determines circumstances, information, pressure, physical execution, customer response, operational consequences, progression, and management.**
+
+Evaluation (`ServiceUtility`, `BestAvailableResolution`, `DecisionRegret`, `DecisionQuality`, satisfaction, purchase threshold) answers "how well did the player handle this fictional customer?" and stays separate from the TFS engine in code, data, tests, UI and docs (DP §0A, §19–25). Shift scoring moves to SERVICE / FLOW / OPERATIONS with a star gate and severe-failure caps, revenue reported separately (DP §101–107).

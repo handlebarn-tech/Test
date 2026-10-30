@@ -42,7 +42,7 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | GAME-004 | P2 | Packaged assortment (DEC-034): prepacks, prerolls, vapes, edibles | slice merged, PROC package gen | Later |
 | GAME-002b | P1 | Slice polish: W3D N1 jar-label placement (windowed check), DEC-044 PriceFit on POS total, Results/Esc overlap, toast over report, MoreOptions guard | GAME-002 | Active |
 | PERF-001 | P2 | (now unblocked: slice merged) | — | Ready |
-| GAME-005 | P1 | (Active) Hook PROC-002 fill meshes into slice jars: copy the jar FBX into Unity (or `unity_dir`), switch SliceBotTests to the step mapping (W4E m2), DEC-046 min pile | PROC-002, ART-003/004 merge | Ready |
+| GAME-005 | P1 | (Done, W4K) Hook PROC-002 fill meshes into slice jars: copy the jar FBX into Unity (or `unity_dir`), switch SliceBotTests to the step mapping (W4E m2), DEC-046 min pile | PROC-002, ART-003/004 merge | Ready |
 | PROC-003 | P2 | DEC-046 F010 minimum visible pile; more bud jitter (W4E n1); smalls jar type once REF-007 values land | PROC-002 | Ready |
 | BUILD-005 | P2 | (Review W4G) LFS rule for `Art/Exports/**/*.fbx` + `_Game/Art/Procedural/**/*.fbx` (W4E m3) | — | Ready |
 | DES-002 | P1 | Post-slice roadmap + COMP-002/GAME-004 specs + next packets | slice merged | Active |
@@ -50,3 +50,19 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | REF-008 | P1 | Tile-by-tile CCTV map of Office, FOH, BOH (+ Break, Restroom/JC, halls) → ROOM_FIXTURES.json | — | Active |
 | ART-005 | P2 | W4F m1 2" top + m2 R2C3 panel clash; Retail_Lookdev in AdditiveScenes | ART-003/004 | Ready (queued to ART session) |
 | DATA-002 | P1 | Packaged catalog importer from Nolan's Dutchie export (whitelist, PII-free, DEC-048/050) | DES-002 | Active |
+| DES-003 | P1 | Integrate Nolan's decision-pressure spec | — | Done (W4Q) |
+| QA-002 | P1 | Gate A TFS parity gate + DP scenario harness (EditMode, new `Tests/EditMode/Gates/`) | DES-003 | Ready |
+| UX-005 | P1 | PS1b UX extension of `UX_PS1.md` (doc-only) | UX-002 | Ready |
+| GAME-006 | P1 | Cart | GAME-005 | Ready |
+| GAME-017 | P1 | KNOWN profile, questions, query composer → QueryParser | GAME-006/007/010 | Ready (waits) |
+| GAME-018 | P1 | Similar/Compare/Details at the counter | GAME-017 | Ready (waits) |
+| GAME-019 | P1 | ServiceEvaluator, DecisionQuality, no-sales (DEC-052) | GAME-018 | Ready (waits) |
+| GAME-020 | P1 | Telemetry, debug explanation, star gate | GAME-019 | Ready (waits) |
+| REVIEW-PS1b | P1 | Review of PS1b | GAME-017..020 | Later |
+| GAME-021 | P2 | Repeat-customer memory | PS1b | Ready (waits) |
+| GAME-022 | P2 | Difficulty profiles | PS1b | Ready (waits) |
+| GAME-023 | P2 | Spec §133 acceptance shift | GAME-011/012 (no packets) | Blocked (DEC-059) |
+| GAME-024 | P2 | Career + save v1 | PS1b | Ready (waits) |
+| DES-004 | P2 | PS2 design (was "DES-003" in ROADMAP) | PS1 | Later |
+| IMP-001 | P1 | Audit DISPO_GAME_DESIGN_V2 import | — | Active |
+| PROC-003 | P2 | (W4P PASS) needs re-merge onto main after GAME-005 (manifest/deli_jar conflicts) | GAME-005 | Review |

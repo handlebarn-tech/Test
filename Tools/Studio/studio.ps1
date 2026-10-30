@@ -223,6 +223,7 @@ switch ($Command) {
         Assert-UnityReady
         $commit = (git -C $Root rev-parse --short HEAD 2>$null)
         $outDir = Join-Path (Resolve-RepoPath $Cfg.screenshots) $commit
+        if (Test-Path $outDir) { $outDir = "$outDir-$Stamp" }  # a 2nd capture on one commit must not overwrite the 1st (ART-005)
         $code = Invoke-Unity @('-quit', '-executeMethod', 'Dispo.Editor.Graybox.GrayboxCapture.CaptureAll', '-outDir', $outDir, '-commit', $commit) $Log -Graphics
         [void]$Outputs.Add($outDir)
         $line = Select-String -Path $Log -Pattern '\[Graybox\] Capture (OK.*|FAILED.*)' | Select-Object -Last 1

@@ -50,6 +50,8 @@ The budtender tool (v7.11.4) scores **strains/batches of deli flower** only. Any
 | Strain-less items (edibles, beverages, topicals, unlinked vapes/extracts) | **constraint match**: category, dose (mg), pack size, price vs budget, brand ask. No effect claim. | [GDD] |
 | MERCH | no recommendation; impulse add-on line from the customer generator | [GDD] |
 
+**TFS boundary note (DES-003, DP §0A; ruling pending as DEC-P3, decide before GAME-015):** the TFS tool has no non-flower model, so the game must not present one. (a) `concentrateFitFactor` may only scale the *evaluation* fit (satisfaction / GAME-019 ServiceUtility); it never reorders or filters the strain cards the player sees, and it is not shown as a fit score. (b) For strain-less items the "constraint match" is a catalog filter on stated format, dose, pack size, price and brand, sorted by a neutral key (price, then name); it is not a ranking and makes no effect claim.
+
 Design rules for the [GDD] parts:
 - Customer asks for strain-less items are about **format, dose, price or brand** ("a 100 mg pack of gummies", "a cheap disposable"), never about an effect the item would cause (COMP-001 H1 copy rule). Effect-family asks (sleep, pain…) still go to flower/prepack/preroll via the engine; a player who hands a strain-less item to an effect ask gets `nonStrainEffectFit` [GDD].
 - UI: a category tab + filter chips (format, dose, price band). Strain-linked items appear as an extra "also as: prepack / preroll" row on the existing flower cards (UX-004).

@@ -11,7 +11,7 @@
 - **House-smalls jar (DEC-042a):** `params/deli_jar_smalls.json` gives `PROC_DeliJar_Smalls`, the published POP 4 L size 6.1 × 5.3 × 10.4 in (High).
   - It has no brand band. The label card and THC % tag are kept as the shop convention (Low).
   - The lid split and corner radius are not published: **GAP-PROC-12** (new; renumbered by REVIEW-W4P, GAP-PROC-10 is PROC-004's).
-- **W4E m2:** both jar FBXs now copy to `Assets/_Game/Art/Procedural/Jars/`, so GAME can parent the fill to the jar.
+- **W4E m2:** both jar FBXs now copy to `Assets/_Game/Art/Procedural/DeliJar/` (folder kept from GAME-005 in the W4P re-merge), so GAME can parent the fill to the jar.
 - Updated: `JarFillImportTests` (new cavity + DEC-046 check), `PROC_PIPELINE.md` (PROC-003 section), both contact sheets.
 
 ## Validation (this machine)

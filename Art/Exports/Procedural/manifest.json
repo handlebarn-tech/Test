@@ -179,12 +179,12 @@
         }
       },
       "params": "Tools/Blender/params/deli_jar.json",
-      "params_sha256": "c91a531419853c00",
+      "params_sha256": "ea9d92463204a171",
       "tri_budget": {
         "LOD0": 1000,
         "LOD1": 250
       },
-      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Jars/PROC_DeliJar.fbx"
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/DeliJar/PROC_DeliJar.fbx"
     },
     "PROC_DeliJar_Smalls": {
       "export": "Art/Exports/Procedural/PROC_DeliJar_Smalls.fbx",
@@ -335,12 +335,12 @@
         }
       },
       "params": "Tools/Blender/params/deli_jar_smalls.json",
-      "params_sha256": "b7a26f90cf857e00",
+      "params_sha256": "b75aba6bac0e3a3d",
       "tri_budget": {
         "LOD0": 1000,
         "LOD1": 250
       },
-      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Jars/PROC_DeliJar_Smalls.fbx"
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/DeliJar/PROC_DeliJar_Smalls.fbx"
     },
     "PROC_JarFill_DarkCompact": {
       "export": "Art/Exports/Procedural/PROC_JarFill_DarkCompact.fbx",

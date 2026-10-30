@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1230" viewBox="0 0 1920 1230" font-family="Segoe UI, Arial, sans-serif">
+<title>PS1-04 Rush: 'cover the ID stand?' prompt</title>
+<rect width="1920" height="1080" fill="#15181c"/>
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="#2b3038" stroke="none" stroke-width="2"/>
+<text x="960.0" y="470" font-size="28" font-weight="400" fill="#4a525e" text-anchor="middle">counter view; ID stand is left inside the entrance (DEC-048)</text>
+<rect x="1484" y="70" width="324" height="128" rx="10" fill="#0f1215cc" stroke="none" stroke-width="2"/>
+<text x="1508" y="112" font-size="26" font-weight="600" fill="#f2f4f7" text-anchor="start">◷ 2:47 PM</text>
+<text x="1508" y="150" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">$ 412.35 shift sales</text>
+<text x="1508" y="184" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">👥 Queue 4 · ⚡ Rush</text>
+<rect x="560" y="300" width="800" height="300" rx="16" fill="#1d2127" stroke="#E69F00" stroke-width="2"/>
+<text x="600" y="360" font-size="28" font-weight="700" fill="#f2f4f7" text-anchor="start">⚠ The ID stand is backed up</text>
+<text x="600" y="404" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">Cover it for the next 3 arrivals?</text>
+<text x="600" y="440" font-size="20" font-weight="400" fill="#8f98a5" text-anchor="start">Your counter line keeps waiting while you're away.</text>
+<rect x="600" y="500" width="300" height="56" rx="8" fill="#009E73" stroke="#009E73" stroke-width="2"/>
+<text x="750.0" y="536" font-size="22" font-weight="700" fill="#0b0d10" text-anchor="middle">Cover the stand</text>
+<text x="750.0" y="580" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">Y / Ⓐ</text>
+<g class="note"><circle cx="590" cy="495" r="17" fill="#CC79A7"/><text x="590" y="502" font-size="18" font-weight="700" fill="#000" text-anchor="middle">1</text></g>
+<rect x="1020" y="500" width="300" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1170.0" y="536" font-size="22" font-weight="700" fill="#f2f4f7" text-anchor="middle">Stay at counter</text>
+<text x="1170.0" y="580" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">N / Ⓑ</text>
+<g class="note"><circle cx="1010" cy="495" r="17" fill="#CC79A7"/><text x="1010" y="502" font-size="18" font-weight="700" fill="#000" text-anchor="middle">2</text></g>
+<rect x="96" y="54" width="1728" height="972" fill="none" stroke="#CC79A7" stroke-width="1.5" stroke-dasharray="10 8" class="note"/>
+<rect x="0" y="1080" width="1920" height="150" fill="#ffffff"/>
+<text x="24" y="1116" font-size="24" font-weight="700" fill="#111">PS1-04 Rush: 'cover the ID stand?' prompt  ·  1920×1080 @100% text  ·  pink = annotation (focus order, safe area)</text>
+<text x="24" y="1150" font-size="19" fill="#222">Shown once on rush start at coverCheckInChance; does not pause the sim; auto-declines after 8 s [GDD]. Declining = no ID events (SPEC_COMP002 §3).</text>
+<text x="24" y="1176" font-size="19" fill="#222">Accept → a world marker + HUD line '◆ ID stand · 0/3' guide the player to the stand (anchor near the entry door, left; TEMP fallback per GAME-008).</text>
+<text x="24" y="1202" font-size="19" fill="#222">Wording assumes the player covers the guard's stand; whether a budtender ever does this is a question for Nolan (handoff Q1).</text>
+</svg>
