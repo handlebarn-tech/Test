@@ -1,0 +1,261 @@
+{
+  "generator": "deli_counter_jar_wall",
+  "asset_prefix": "PROC_Deli_",
+  "seed": 23001,
+  "own_sheet": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Deli",
+  "gaps": [
+    "GAP-106",
+    "GAP-113",
+    "GAP-PROC-16"
+  ],
+  "_sources": "Run sizes RI 1.5; jar wall look RI 2.4 + DEC-043 (dark-grey lipped shelves, teal leaf backlit wall, checker band, black top, walnut drawers, silver cup pulls; no tong cups); 34 in base + 1'-2\" pitch TI 6.4 (D2); jar slot = PROC_DeliJar 6.0 x 10.25 x 5.5 in (D4); deli counter L RI 1.5, plywood + decorative wrap DEC-090. GAP-PROC-16: wall height, shelf count/depth, standard/bracket/pull sizes, jar pitch, counter depth/height/top colour, case placeholder. GAP-113: deli counter not in the TI set.",
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 16
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 12
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8
+    }
+  },
+  "tri_budget": {
+    "LOD0": 150000,
+    "LOD1": 75000,
+    "LOD2": 37500,
+    "LOD3": 15000
+  },
+  "tri_guide": {
+    "lod0_min": 30000
+  },
+  "toe_h_m": 0.1016,
+  "toe_recess_m": 0.0508,
+  "reveal_m": 0.004,
+  "wear": {
+    "edge_wear": 0.2,
+    "scuffs": 0.3,
+    "fingerprints": 0.15,
+    "sticker_residue": 0.1
+  },
+  "colors": {
+    "Black_Top": [
+      0.03,
+      0.03,
+      0.032,
+      1.0
+    ],
+    "Black_ML1": [
+      0.035,
+      0.035,
+      0.04,
+      1.0
+    ],
+    "Walnut_WD1": [
+      0.3,
+      0.19,
+      0.11,
+      1.0
+    ],
+    "Silver": [
+      0.75,
+      0.76,
+      0.78,
+      1.0
+    ],
+    "Teal_Backlit": [
+      0.05,
+      0.45,
+      0.45,
+      1.0
+    ],
+    "Tile_Checker": [
+      0.1,
+      0.3,
+      0.15,
+      1.0
+    ],
+    "Grey_Metal": [
+      0.22,
+      0.23,
+      0.24,
+      1.0
+    ],
+    "LED_Emissive": [
+      0.95,
+      0.95,
+      0.9,
+      1.0
+    ],
+    "Wrap_DeliChecker": [
+      0.35,
+      0.7,
+      0.68,
+      1.0
+    ],
+    "Plywood_Edge": [
+      0.72,
+      0.6,
+      0.42,
+      1.0
+    ],
+    "Glass_Clear": [
+      0.85,
+      0.92,
+      0.95,
+      0.2
+    ]
+  },
+  "variants": [
+    {
+      "kind": "jar_wall",
+      "height_m": 2.1336,
+      "counter_h_m": 0.8636,
+      "counter_top_t_m": 0.0381,
+      "counter_front_inset_m": 0.025,
+      "back_panel_t_m": 0.02,
+      "shelf_depth_m": 0.2794,
+      "shelf_t_m": 0.0015,
+      "shelf_lip_m": 0.025,
+      "shelf_pitch_m": 0.3556,
+      "shelf_count": 2,
+      "checker_band_h_m": 0.15,
+      "standard_pitch_m": 0.8128,
+      "jar_asset_id": "PROC_DeliJar",
+      "jar_slot_m": [
+        0.1524,
+        0.26035,
+        0.1397
+      ],
+      "jar_pitch_m": 0.19,
+      "jar_end_margin_m": 0.05,
+      "counter_slot_depth_m": 0.2794,
+      "drawer_w_m": 0.6,
+      "id": "JarWall_North",
+      "rf": "RI 1.5 deli flower jar wall (north)",
+      "length_m": 7.9248,
+      "depth_m": 0.36576
+    },
+    {
+      "kind": "jar_wall",
+      "height_m": 2.1336,
+      "counter_h_m": 0.8636,
+      "counter_top_t_m": 0.0381,
+      "counter_front_inset_m": 0.025,
+      "back_panel_t_m": 0.02,
+      "shelf_depth_m": 0.2794,
+      "shelf_t_m": 0.0015,
+      "shelf_lip_m": 0.025,
+      "shelf_pitch_m": 0.3556,
+      "shelf_count": 2,
+      "checker_band_h_m": 0.15,
+      "standard_pitch_m": 0.8128,
+      "jar_asset_id": "PROC_DeliJar",
+      "jar_slot_m": [
+        0.1524,
+        0.26035,
+        0.1397
+      ],
+      "jar_pitch_m": 0.19,
+      "jar_end_margin_m": 0.05,
+      "counter_slot_depth_m": 0.2794,
+      "drawer_w_m": 0.6,
+      "id": "JarWall_South",
+      "rf": "RI 1.5 deli flower jar wall (south, between arches)",
+      "length_m": 6.46176,
+      "depth_m": 0.36576
+    },
+    {
+      "kind": "jar_wall",
+      "height_m": 2.1336,
+      "counter_h_m": 0.8636,
+      "counter_top_t_m": 0.0381,
+      "counter_front_inset_m": 0.025,
+      "back_panel_t_m": 0.02,
+      "shelf_depth_m": 0.2794,
+      "shelf_t_m": 0.0015,
+      "shelf_lip_m": 0.025,
+      "shelf_pitch_m": 0.3556,
+      "shelf_count": 2,
+      "checker_band_h_m": 0.15,
+      "standard_pitch_m": 0.8128,
+      "jar_asset_id": "PROC_DeliJar",
+      "jar_slot_m": [
+        0.1524,
+        0.26035,
+        0.1397
+      ],
+      "jar_pitch_m": 0.19,
+      "jar_end_margin_m": 0.05,
+      "counter_slot_depth_m": 0.2794,
+      "drawer_w_m": 0.6,
+      "id": "JarWall_East",
+      "rf": "RI 1.5 jar wall (east)",
+      "length_m": 4.2672,
+      "depth_m": 0.42672
+    },
+    {
+      "kind": "deli_counter",
+      "depth_m": 0.762,
+      "height_m": 0.8636,
+      "top_t_m": 0.0381,
+      "front_overhang_m": 0.025,
+      "ply_t_m": 0.019,
+      "ply_sheet_w_m": 1.2192,
+      "seam_m": 0.003,
+      "case_on_top": false,
+      "case": {
+        "d_m": 0.5,
+        "h_m": 0.45
+      },
+      "id": "DeliCounter_LegA",
+      "rf": "RI 1.5 DELI COUNTER L (long leg)",
+      "length_m": 6.15696,
+      "plan_rect_ft": [
+        14.0,
+        34.2,
+        18.0,
+        20.5
+      ],
+      "_note": "leg split of the L is a draft (GAP-106): long leg along x, depth 2.5 ft GAP-PROC-16"
+    },
+    {
+      "kind": "deli_counter",
+      "depth_m": 0.762,
+      "height_m": 0.8636,
+      "top_t_m": 0.0381,
+      "front_overhang_m": 0.025,
+      "ply_t_m": 0.019,
+      "ply_sheet_w_m": 1.2192,
+      "seam_m": 0.003,
+      "case_on_top": false,
+      "case": {
+        "d_m": 0.5,
+        "h_m": 0.45
+      },
+      "id": "DeliCounter_LegB",
+      "rf": "RI 1.5 DELI COUNTER L (return)",
+      "length_m": 1.43256,
+      "plan_rect_ft": [
+        14.0,
+        16.5,
+        20.5,
+        25.2
+      ],
+      "_note": "return leg at the west end (globe pendants side); draft, GAP-106"
+    }
+  ]
+}

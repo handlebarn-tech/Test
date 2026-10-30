@@ -684,6 +684,6710 @@
       },
       "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/DeliJar/PROC_DeliJar_Smalls.fbx"
     },
+    "PROC_Deli_DeliCounter_LegA": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.4318,
+            0.0
+          ],
+          "name": "Counter",
+          "size_unity_xyz": [
+            6.15696,
+            0.8636,
+            0.762
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_Deli_DeliCounter_LegA.fbx",
+      "export_sha256": "dc974e63d9610326",
+      "fixture_family": "deli_counter",
+      "gaps": [
+        "GAP-106",
+        "GAP-113",
+        "GAP-PROC-16"
+      ],
+      "generator": "deli_counter_jar_wall",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Deli_DeliCounter_LegA_Carcass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.07848,
+                  0.381,
+                  0.8255
+                ],
+                "min": [
+                  -3.07848,
+                  -0.337,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f67bb230d65b8d5f",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.15696,
+                0.8255,
+                0.718
+              ],
+              "tris": 144,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            },
+            "PROC_Deli_DeliCounter_LegA_CounterTop_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.07848,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -3.07848,
+                  -0.381,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "18361652ecdca07a",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                6.15696,
+                0.0381,
+                0.762
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Deli_DeliCounter_LegA_FrontWrap_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.07698,
+                  -0.337,
+                  0.8255
+                ],
+                "min": [
+                  -3.07698,
+                  -0.356,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "9da098eda1dfe9e7",
+              "material_slots": [
+                "M_Proc_Wrap_DeliChecker"
+              ],
+              "size_m_unity_xyz": [
+                6.15396,
+                0.7239,
+                0.019
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 40
+            },
+            "PROC_Deli_DeliCounter_LegA_PlyEdges_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.07848,
+                  0.381,
+                  0.8255
+                ],
+                "min": [
+                  -3.07848,
+                  -0.3565,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "4da492c838f0575e",
+              "material_slots": [
+                "M_Proc_Plywood_Edge"
+              ],
+              "size_m_unity_xyz": [
+                6.15696,
+                0.7239,
+                0.7375
+              ],
+              "tris": 36,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            }
+          },
+          "size_m_unity_xyz": [
+            6.15696,
+            0.8636,
+            0.762
+          ],
+          "tris": 332
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Deli_DeliCounter_LegA_Carcass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.07848,
+                  0.381,
+                  0.8255
+                ],
+                "min": [
+                  -3.07848,
+                  -0.337,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f67bb230d65b8d5f",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.15696,
+                0.8255,
+                0.718
+              ],
+              "tris": 144,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            },
+            "PROC_Deli_DeliCounter_LegA_CounterTop_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.07848,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -3.07848,
+                  -0.381,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "facf091218633bbf",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                6.15696,
+                0.0381,
+                0.762
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Deli_DeliCounter_LegA_FrontWrap_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.07698,
+                  -0.337,
+                  0.8255
+                ],
+                "min": [
+                  -3.07698,
+                  -0.356,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "9da098eda1dfe9e7",
+              "material_slots": [
+                "M_Proc_Wrap_DeliChecker"
+              ],
+              "size_m_unity_xyz": [
+                6.15396,
+                0.7239,
+                0.019
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 40
+            },
+            "PROC_Deli_DeliCounter_LegA_PlyEdges_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.07848,
+                  0.381,
+                  0.8255
+                ],
+                "min": [
+                  -3.07848,
+                  -0.3565,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "4da492c838f0575e",
+              "material_slots": [
+                "M_Proc_Plywood_Edge"
+              ],
+              "size_m_unity_xyz": [
+                6.15696,
+                0.7239,
+                0.7375
+              ],
+              "tris": 36,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            }
+          },
+          "size_m_unity_xyz": [
+            6.15696,
+            0.8636,
+            0.762
+          ],
+          "tris": 300
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Deli_DeliCounter_LegA_Carcass_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.07848,
+                  0.381,
+                  0.8255
+                ],
+                "min": [
+                  -3.07848,
+                  -0.327,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "40127563d89e7c39",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.15696,
+                0.8255,
+                0.708
+              ],
+              "tris": 132,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 88
+            },
+            "PROC_Deli_DeliCounter_LegA_CounterTop_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.07848,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -3.07848,
+                  -0.381,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c377a4ce8d7ccd88",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                6.15696,
+                0.0381,
+                0.762
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_DeliCounter_LegA_FrontWrap_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.07848,
+                  -0.337,
+                  0.8255
+                ],
+                "min": [
+                  -3.07848,
+                  -0.356,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 16
+              },
+              "geometry_sha256": "4e5380873a106dc2",
+              "material_slots": [
+                "M_Proc_Wrap_DeliChecker"
+              ],
+              "size_m_unity_xyz": [
+                6.15696,
+                0.7239,
+                0.019
+              ],
+              "tris": 52,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            }
+          },
+          "size_m_unity_xyz": [
+            6.15696,
+            0.8636,
+            0.762
+          ],
+          "tris": 196
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Deli_DeliCounter_LegA_CounterTop_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.07848,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -3.07848,
+                  -0.381,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c377a4ce8d7ccd88",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                6.15696,
+                0.0381,
+                0.762
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_DeliCounter_LegA_FrontWrap_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.07848,
+                  0.381,
+                  0.8255
+                ],
+                "min": [
+                  -3.07848,
+                  -0.356,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "be8e41cf1d8a3397",
+              "material_slots": [
+                "M_Proc_Wrap_DeliChecker"
+              ],
+              "size_m_unity_xyz": [
+                6.15696,
+                0.8255,
+                0.737
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            6.15696,
+            0.8636,
+            0.762
+          ],
+          "tris": 24
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/deli_counter_jar_wall.json",
+      "params_sha256": "d1a739a9248c2366",
+      "plan_rect_ft": [
+        14.0,
+        34.2,
+        18.0,
+        20.5
+      ],
+      "seed": 23001,
+      "tri_budget": {
+        "LOD0": 150000,
+        "LOD1": 75000,
+        "LOD2": 37500,
+        "LOD3": 15000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Deli/PROC_Deli_DeliCounter_LegA.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.15,
+        "scuffs": 0.3,
+        "seed": 23001,
+        "sticker_residue": 0.1
+      },
+      "work_surface_anchor_unity_xyz": [
+        0.0,
+        0.8636,
+        0.0
+      ]
+    },
+    "PROC_Deli_DeliCounter_LegB": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.4318,
+            0.0
+          ],
+          "name": "Counter",
+          "size_unity_xyz": [
+            1.43256,
+            0.8636,
+            0.762
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_Deli_DeliCounter_LegB.fbx",
+      "export_sha256": "64fd884f9799ab5a",
+      "fixture_family": "deli_counter",
+      "gaps": [
+        "GAP-106",
+        "GAP-113",
+        "GAP-PROC-16"
+      ],
+      "generator": "deli_counter_jar_wall",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Deli_DeliCounter_LegB_Carcass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.71628,
+                  0.381,
+                  0.8255
+                ],
+                "min": [
+                  -0.71628,
+                  -0.337,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "900edeb6f403cf6a",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                1.43256,
+                0.8255,
+                0.718
+              ],
+              "tris": 84,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 56
+            },
+            "PROC_Deli_DeliCounter_LegB_CounterTop_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.71628,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -0.71628,
+                  -0.381,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "4d9e1d82502aaf89",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                1.43256,
+                0.0381,
+                0.762
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Deli_DeliCounter_LegB_FrontWrap_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.71478,
+                  -0.337,
+                  0.8255
+                ],
+                "min": [
+                  -0.71478,
+                  -0.356,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f375946159b5a270",
+              "material_slots": [
+                "M_Proc_Wrap_DeliChecker"
+              ],
+              "size_m_unity_xyz": [
+                1.42956,
+                0.7239,
+                0.019
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_DeliCounter_LegB_PlyEdges_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.71628,
+                  0.381,
+                  0.8255
+                ],
+                "min": [
+                  -0.71628,
+                  -0.3565,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7be76f7bc850110d",
+              "material_slots": [
+                "M_Proc_Plywood_Edge"
+              ],
+              "size_m_unity_xyz": [
+                1.43256,
+                0.7239,
+                0.7375
+              ],
+              "tris": 36,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            }
+          },
+          "size_m_unity_xyz": [
+            1.43256,
+            0.8636,
+            0.762
+          ],
+          "tris": 224
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Deli_DeliCounter_LegB_Carcass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.71628,
+                  0.381,
+                  0.8255
+                ],
+                "min": [
+                  -0.71628,
+                  -0.337,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "900edeb6f403cf6a",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                1.43256,
+                0.8255,
+                0.718
+              ],
+              "tris": 84,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 56
+            },
+            "PROC_Deli_DeliCounter_LegB_CounterTop_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.71628,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -0.71628,
+                  -0.381,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "56999dceceb4f6b0",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                1.43256,
+                0.0381,
+                0.762
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Deli_DeliCounter_LegB_FrontWrap_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.71478,
+                  -0.337,
+                  0.8255
+                ],
+                "min": [
+                  -0.71478,
+                  -0.356,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f375946159b5a270",
+              "material_slots": [
+                "M_Proc_Wrap_DeliChecker"
+              ],
+              "size_m_unity_xyz": [
+                1.42956,
+                0.7239,
+                0.019
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_DeliCounter_LegB_PlyEdges_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.71628,
+                  0.381,
+                  0.8255
+                ],
+                "min": [
+                  -0.71628,
+                  -0.3565,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7be76f7bc850110d",
+              "material_slots": [
+                "M_Proc_Plywood_Edge"
+              ],
+              "size_m_unity_xyz": [
+                1.43256,
+                0.7239,
+                0.7375
+              ],
+              "tris": 36,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            }
+          },
+          "size_m_unity_xyz": [
+            1.43256,
+            0.8636,
+            0.762
+          ],
+          "tris": 192
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Deli_DeliCounter_LegB_Carcass_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.71628,
+                  0.381,
+                  0.8255
+                ],
+                "min": [
+                  -0.71628,
+                  -0.327,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "be3b68f34ee89b1f",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                1.43256,
+                0.8255,
+                0.708
+              ],
+              "tris": 72,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Deli_DeliCounter_LegB_CounterTop_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.71628,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -0.71628,
+                  -0.381,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d2d3c633bb296c8e",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                1.43256,
+                0.0381,
+                0.762
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_DeliCounter_LegB_FrontWrap_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.71628,
+                  -0.337,
+                  0.8255
+                ],
+                "min": [
+                  -0.71628,
+                  -0.356,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "0166f1d59fe27117",
+              "material_slots": [
+                "M_Proc_Wrap_DeliChecker"
+              ],
+              "size_m_unity_xyz": [
+                1.43256,
+                0.7239,
+                0.019
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            1.43256,
+            0.8636,
+            0.762
+          ],
+          "tris": 96
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Deli_DeliCounter_LegB_CounterTop_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.71628,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -0.71628,
+                  -0.381,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d2d3c633bb296c8e",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                1.43256,
+                0.0381,
+                0.762
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_DeliCounter_LegB_FrontWrap_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.71628,
+                  0.381,
+                  0.8255
+                ],
+                "min": [
+                  -0.71628,
+                  -0.356,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "47f5f89e4a307a7a",
+              "material_slots": [
+                "M_Proc_Wrap_DeliChecker"
+              ],
+              "size_m_unity_xyz": [
+                1.43256,
+                0.8255,
+                0.737
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            1.43256,
+            0.8636,
+            0.762
+          ],
+          "tris": 24
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/deli_counter_jar_wall.json",
+      "params_sha256": "d1a739a9248c2366",
+      "plan_rect_ft": [
+        14.0,
+        16.5,
+        20.5,
+        25.2
+      ],
+      "seed": 23001,
+      "tri_budget": {
+        "LOD0": 150000,
+        "LOD1": 75000,
+        "LOD2": 37500,
+        "LOD3": 15000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Deli/PROC_Deli_DeliCounter_LegB.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.15,
+        "scuffs": 0.3,
+        "seed": 23001,
+        "sticker_residue": 0.1
+      },
+      "work_surface_anchor_unity_xyz": [
+        0.0,
+        0.8636,
+        0.0
+      ]
+    },
+    "PROC_Deli_JarWall_East": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.4318,
+            0.0
+          ],
+          "name": "Counter",
+          "size_unity_xyz": [
+            4.2672,
+            0.8636,
+            0.42672
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            1.4986,
+            -0.20336
+          ],
+          "name": "BackPanel",
+          "size_unity_xyz": [
+            4.2672,
+            1.27,
+            0.02
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            1.21845,
+            -0.05366
+          ],
+          "name": "Shelf_0",
+          "size_unity_xyz": [
+            4.2672,
+            0.0015,
+            0.2794
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            1.57405,
+            -0.05366
+          ],
+          "name": "Shelf_1",
+          "size_unity_xyz": [
+            4.2672,
+            0.0015,
+            0.2794
+          ]
+        }
+      ],
+      "emissive_parts": [
+        "BackPanel",
+        "LED"
+      ],
+      "export": "Art/Exports/Procedural/PROC_Deli_JarWall_East.fbx",
+      "export_sha256": "488d5b79d41e1cad",
+      "fixture_family": "jar_wall",
+      "gaps": [
+        "GAP-106",
+        "GAP-113",
+        "GAP-PROC-16"
+      ],
+      "generator": "deli_counter_jar_wall",
+      "jar_asset_id": "PROC_DeliJar",
+      "jar_slot_count": 63,
+      "jar_slot_size_m_unity_xyz": [
+        0.1524,
+        0.26035,
+        0.1397
+      ],
+      "jar_slots": [
+        {
+          "id": "Jar_T0_00",
+          "position_unity_xyz": [
+            1.9,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_01",
+          "position_unity_xyz": [
+            1.71,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_02",
+          "position_unity_xyz": [
+            1.52,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_03",
+          "position_unity_xyz": [
+            1.33,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_04",
+          "position_unity_xyz": [
+            1.14,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_05",
+          "position_unity_xyz": [
+            0.95,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_06",
+          "position_unity_xyz": [
+            0.76,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_07",
+          "position_unity_xyz": [
+            0.57,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_08",
+          "position_unity_xyz": [
+            0.38,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_09",
+          "position_unity_xyz": [
+            0.19,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_10",
+          "position_unity_xyz": [
+            0.0,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_11",
+          "position_unity_xyz": [
+            -0.19,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_12",
+          "position_unity_xyz": [
+            -0.38,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_13",
+          "position_unity_xyz": [
+            -0.57,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_14",
+          "position_unity_xyz": [
+            -0.76,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_15",
+          "position_unity_xyz": [
+            -0.95,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_16",
+          "position_unity_xyz": [
+            -1.14,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_17",
+          "position_unity_xyz": [
+            -1.33,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_18",
+          "position_unity_xyz": [
+            -1.52,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_19",
+          "position_unity_xyz": [
+            -1.71,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_20",
+          "position_unity_xyz": [
+            -1.9,
+            0.8636,
+            -0.05366
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T1_00",
+          "position_unity_xyz": [
+            1.9,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_01",
+          "position_unity_xyz": [
+            1.71,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_02",
+          "position_unity_xyz": [
+            1.52,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_03",
+          "position_unity_xyz": [
+            1.33,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_04",
+          "position_unity_xyz": [
+            1.14,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_05",
+          "position_unity_xyz": [
+            0.95,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_06",
+          "position_unity_xyz": [
+            0.76,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_07",
+          "position_unity_xyz": [
+            0.57,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_08",
+          "position_unity_xyz": [
+            0.38,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_09",
+          "position_unity_xyz": [
+            0.19,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_10",
+          "position_unity_xyz": [
+            0.0,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_11",
+          "position_unity_xyz": [
+            -0.19,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_12",
+          "position_unity_xyz": [
+            -0.38,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_13",
+          "position_unity_xyz": [
+            -0.57,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_14",
+          "position_unity_xyz": [
+            -0.76,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_15",
+          "position_unity_xyz": [
+            -0.95,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_16",
+          "position_unity_xyz": [
+            -1.14,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_17",
+          "position_unity_xyz": [
+            -1.33,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_18",
+          "position_unity_xyz": [
+            -1.52,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_19",
+          "position_unity_xyz": [
+            -1.71,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_20",
+          "position_unity_xyz": [
+            -1.9,
+            1.2192,
+            -0.05366
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T2_00",
+          "position_unity_xyz": [
+            1.9,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_01",
+          "position_unity_xyz": [
+            1.71,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_02",
+          "position_unity_xyz": [
+            1.52,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_03",
+          "position_unity_xyz": [
+            1.33,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_04",
+          "position_unity_xyz": [
+            1.14,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_05",
+          "position_unity_xyz": [
+            0.95,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_06",
+          "position_unity_xyz": [
+            0.76,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_07",
+          "position_unity_xyz": [
+            0.57,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_08",
+          "position_unity_xyz": [
+            0.38,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_09",
+          "position_unity_xyz": [
+            0.19,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_10",
+          "position_unity_xyz": [
+            0.0,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_11",
+          "position_unity_xyz": [
+            -0.19,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_12",
+          "position_unity_xyz": [
+            -0.38,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_13",
+          "position_unity_xyz": [
+            -0.57,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_14",
+          "position_unity_xyz": [
+            -0.76,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_15",
+          "position_unity_xyz": [
+            -0.95,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_16",
+          "position_unity_xyz": [
+            -1.14,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_17",
+          "position_unity_xyz": [
+            -1.33,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_18",
+          "position_unity_xyz": [
+            -1.52,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_19",
+          "position_unity_xyz": [
+            -1.71,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_20",
+          "position_unity_xyz": [
+            -1.9,
+            1.5748,
+            -0.05366
+          ],
+          "tier": 2
+        }
+      ],
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Deli_JarWall_East_BackPanel_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.21336,
+                  2.1336
+                ],
+                "min": [
+                  -2.1336,
+                  0.19336,
+                  0.8636
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e7190175ce5f97ba",
+              "material_slots": [
+                "M_Proc_Teal_Backlit"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                1.27,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_East_Carcass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.21336,
+                  0.8255
+                ],
+                "min": [
+                  -2.1336,
+                  -0.16936,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c669983e65c47c50",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                0.8255,
+                0.38272
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_East_CheckerBand_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.19336,
+                  2.1336
+                ],
+                "min": [
+                  -2.1336,
+                  0.18136,
+                  1.9836
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ac34dfb3cc2fe3b0",
+              "material_slots": [
+                "M_Proc_Tile_Checker"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                0.15,
+                0.012
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_East_CounterTop_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.21336,
+                  0.8636
+                ],
+                "min": [
+                  -2.1336,
+                  -0.21336,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1723a4ed4d3db8df",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                0.0381,
+                0.42672
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Deli_JarWall_East_DrawerFronts_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1316,
+                  -0.16936,
+                  0.8235
+                ],
+                "min": [
+                  -2.1316,
+                  -0.18836,
+                  0.1036
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c82910152b149a6a",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                4.2632,
+                0.7199,
+                0.019
+              ],
+              "tris": 1288,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 672
+            },
+            "PROC_Deli_JarWall_East_LED_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1236,
+                  -0.07004,
+                  1.5733
+                ],
+                "min": [
+                  -2.1236,
+                  -0.07804,
+                  1.2137
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "dee4caf5cc926ca2",
+              "material_slots": [
+                "M_Proc_LED_Emissive"
+              ],
+              "size_m_unity_xyz": [
+                4.2472,
+                0.3596,
+                0.008
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_East_Pulls_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.8668,
+                  -0.18836,
+                  0.746013
+                ],
+                "min": [
+                  -1.8668,
+                  -0.20336,
+                  0.362063
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "62eecba5565a6bec",
+              "material_slots": [
+                "M_Proc_Silver"
+              ],
+              "size_m_unity_xyz": [
+                3.7336,
+                0.38395,
+                0.015
+              ],
+              "tris": 840,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 476
+            },
+            "PROC_Deli_JarWall_East_Shelves_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1286,
+                  0.19336,
+                  1.5983
+                ],
+                "min": [
+                  -2.1286,
+                  -0.08604,
+                  1.2177
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "68a1666a186d46d9",
+              "material_slots": [
+                "M_Proc_Grey_Metal"
+              ],
+              "size_m_unity_xyz": [
+                4.2572,
+                0.3806,
+                0.2794
+              ],
+              "tris": 56,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Deli_JarWall_East_Standards_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.0961,
+                  0.19336,
+                  1.9736
+                ],
+                "min": [
+                  -2.0961,
+                  -0.05613,
+                  0.8736
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "536af1ee0bcc56c3",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                4.1922,
+                1.1,
+                0.24949
+              ],
+              "tris": 216,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 144
+            }
+          },
+          "size_m_unity_xyz": [
+            4.2672,
+            2.1336,
+            0.42672
+          ],
+          "tris": 2564
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Deli_JarWall_East_BackPanel_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.21336,
+                  2.1336
+                ],
+                "min": [
+                  -2.1336,
+                  0.19336,
+                  0.8636
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e7190175ce5f97ba",
+              "material_slots": [
+                "M_Proc_Teal_Backlit"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                1.27,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_East_Carcass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.21336,
+                  0.8255
+                ],
+                "min": [
+                  -2.1336,
+                  -0.16936,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c669983e65c47c50",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                0.8255,
+                0.38272
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_East_CheckerBand_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.19336,
+                  2.1336
+                ],
+                "min": [
+                  -2.1336,
+                  0.18136,
+                  1.9836
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ac34dfb3cc2fe3b0",
+              "material_slots": [
+                "M_Proc_Tile_Checker"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                0.15,
+                0.012
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_East_CounterTop_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.21336,
+                  0.8636
+                ],
+                "min": [
+                  -2.1336,
+                  -0.21336,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7d601dc319d92745",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                0.0381,
+                0.42672
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Deli_JarWall_East_DrawerFronts_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1316,
+                  -0.16936,
+                  0.8235
+                ],
+                "min": [
+                  -2.1316,
+                  -0.18836,
+                  0.1036
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "cf945fc062346c74",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                4.2632,
+                0.7199,
+                0.019
+              ],
+              "tris": 840,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 448
+            },
+            "PROC_Deli_JarWall_East_LED_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1236,
+                  -0.07004,
+                  1.5733
+                ],
+                "min": [
+                  -2.1236,
+                  -0.07804,
+                  1.2137
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "dee4caf5cc926ca2",
+              "material_slots": [
+                "M_Proc_LED_Emissive"
+              ],
+              "size_m_unity_xyz": [
+                4.2472,
+                0.3596,
+                0.008
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_East_Shelves_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1286,
+                  0.19336,
+                  1.5983
+                ],
+                "min": [
+                  -2.1286,
+                  -0.08604,
+                  1.2177
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "68a1666a186d46d9",
+              "material_slots": [
+                "M_Proc_Grey_Metal"
+              ],
+              "size_m_unity_xyz": [
+                4.2572,
+                0.3806,
+                0.2794
+              ],
+              "tris": 56,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Deli_JarWall_East_Standards_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.0961,
+                  0.19336,
+                  1.9736
+                ],
+                "min": [
+                  -2.0961,
+                  -0.05613,
+                  0.8736
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "536af1ee0bcc56c3",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                4.1922,
+                1.1,
+                0.24949
+              ],
+              "tris": 216,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 144
+            }
+          },
+          "size_m_unity_xyz": [
+            4.2672,
+            2.1336,
+            0.42672
+          ],
+          "tris": 1244
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Deli_JarWall_East_BackPanel_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.21336,
+                  2.1336
+                ],
+                "min": [
+                  -2.1336,
+                  0.19336,
+                  0.8636
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e7190175ce5f97ba",
+              "material_slots": [
+                "M_Proc_Teal_Backlit"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                1.27,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_East_Carcass_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.21336,
+                  0.8255
+                ],
+                "min": [
+                  -2.1336,
+                  -0.16936,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c669983e65c47c50",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                0.8255,
+                0.38272
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_East_CheckerBand_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.19336,
+                  2.1336
+                ],
+                "min": [
+                  -2.1336,
+                  0.18136,
+                  1.9836
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ac34dfb3cc2fe3b0",
+              "material_slots": [
+                "M_Proc_Tile_Checker"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                0.15,
+                0.012
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_East_CounterTop_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.21336,
+                  0.8636
+                ],
+                "min": [
+                  -2.1336,
+                  -0.21336,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "4bcb68a27365acea",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                0.0381,
+                0.42672
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_East_DrawerFronts_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  -0.16936,
+                  0.8255
+                ],
+                "min": [
+                  -2.1336,
+                  -0.18836,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c854ef75219c3326",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                0.7239,
+                0.019
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_East_Shelves_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1286,
+                  0.19336,
+                  1.5983
+                ],
+                "min": [
+                  -2.1286,
+                  -0.08604,
+                  1.2177
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 2
+              },
+              "geometry_sha256": "4a6d3c5f813c8ba3",
+              "material_slots": [
+                "M_Proc_Grey_Metal"
+              ],
+              "size_m_unity_xyz": [
+                4.2572,
+                0.3806,
+                0.2794
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 28
+            },
+            "PROC_Deli_JarWall_East_Standards_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.0961,
+                  0.19336,
+                  1.9736
+                ],
+                "min": [
+                  -2.0961,
+                  0.18136,
+                  0.8736
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "796099d8da6cb5dc",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                4.1922,
+                1.1,
+                0.012
+              ],
+              "tris": 72,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            }
+          },
+          "size_m_unity_xyz": [
+            4.2672,
+            2.1336,
+            0.42672
+          ],
+          "tris": 192
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Deli_JarWall_East_BackPanel_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.21336,
+                  2.1336
+                ],
+                "min": [
+                  -2.1336,
+                  0.19336,
+                  0.8636
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e7190175ce5f97ba",
+              "material_slots": [
+                "M_Proc_Teal_Backlit"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                1.27,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_East_CounterTop_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.21336,
+                  0.8636
+                ],
+                "min": [
+                  -2.1336,
+                  -0.21336,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "4feeea4678d021ac",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                0.8636,
+                0.42672
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_East_Shelves_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.1336,
+                  0.19336,
+                  1.5983
+                ],
+                "min": [
+                  -2.1336,
+                  -0.08604,
+                  1.2177
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f8f365532a3f5c6f",
+              "material_slots": [
+                "M_Proc_Grey_Metal"
+              ],
+              "size_m_unity_xyz": [
+                4.2672,
+                0.3806,
+                0.2794
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            4.2672,
+            2.1336,
+            0.42672
+          ],
+          "tris": 48
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/deli_counter_jar_wall.json",
+      "params_sha256": "d1a739a9248c2366",
+      "seed": 23001,
+      "tri_budget": {
+        "LOD0": 150000,
+        "LOD1": 75000,
+        "LOD2": 37500,
+        "LOD3": 15000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Deli/PROC_Deli_JarWall_East.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.15,
+        "scuffs": 0.3,
+        "seed": 23001,
+        "sticker_residue": 0.1
+      }
+    },
+    "PROC_Deli_JarWall_North": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.4318,
+            0.0
+          ],
+          "name": "Counter",
+          "size_unity_xyz": [
+            7.9248,
+            0.8636,
+            0.36576
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            1.4986,
+            -0.17288
+          ],
+          "name": "BackPanel",
+          "size_unity_xyz": [
+            7.9248,
+            1.27,
+            0.02
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            1.21845,
+            -0.02318
+          ],
+          "name": "Shelf_0",
+          "size_unity_xyz": [
+            7.9248,
+            0.0015,
+            0.2794
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            1.57405,
+            -0.02318
+          ],
+          "name": "Shelf_1",
+          "size_unity_xyz": [
+            7.9248,
+            0.0015,
+            0.2794
+          ]
+        }
+      ],
+      "emissive_parts": [
+        "BackPanel",
+        "LED"
+      ],
+      "export": "Art/Exports/Procedural/PROC_Deli_JarWall_North.fbx",
+      "export_sha256": "7210b515c2033240",
+      "fixture_family": "jar_wall",
+      "gaps": [
+        "GAP-106",
+        "GAP-113",
+        "GAP-PROC-16"
+      ],
+      "generator": "deli_counter_jar_wall",
+      "jar_asset_id": "PROC_DeliJar",
+      "jar_slot_count": 123,
+      "jar_slot_size_m_unity_xyz": [
+        0.1524,
+        0.26035,
+        0.1397
+      ],
+      "jar_slots": [
+        {
+          "id": "Jar_T0_00",
+          "position_unity_xyz": [
+            3.8,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_01",
+          "position_unity_xyz": [
+            3.61,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_02",
+          "position_unity_xyz": [
+            3.42,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_03",
+          "position_unity_xyz": [
+            3.23,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_04",
+          "position_unity_xyz": [
+            3.04,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_05",
+          "position_unity_xyz": [
+            2.85,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_06",
+          "position_unity_xyz": [
+            2.66,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_07",
+          "position_unity_xyz": [
+            2.47,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_08",
+          "position_unity_xyz": [
+            2.28,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_09",
+          "position_unity_xyz": [
+            2.09,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_10",
+          "position_unity_xyz": [
+            1.9,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_11",
+          "position_unity_xyz": [
+            1.71,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_12",
+          "position_unity_xyz": [
+            1.52,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_13",
+          "position_unity_xyz": [
+            1.33,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_14",
+          "position_unity_xyz": [
+            1.14,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_15",
+          "position_unity_xyz": [
+            0.95,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_16",
+          "position_unity_xyz": [
+            0.76,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_17",
+          "position_unity_xyz": [
+            0.57,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_18",
+          "position_unity_xyz": [
+            0.38,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_19",
+          "position_unity_xyz": [
+            0.19,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_20",
+          "position_unity_xyz": [
+            0.0,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_21",
+          "position_unity_xyz": [
+            -0.19,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_22",
+          "position_unity_xyz": [
+            -0.38,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_23",
+          "position_unity_xyz": [
+            -0.57,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_24",
+          "position_unity_xyz": [
+            -0.76,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_25",
+          "position_unity_xyz": [
+            -0.95,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_26",
+          "position_unity_xyz": [
+            -1.14,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_27",
+          "position_unity_xyz": [
+            -1.33,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_28",
+          "position_unity_xyz": [
+            -1.52,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_29",
+          "position_unity_xyz": [
+            -1.71,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_30",
+          "position_unity_xyz": [
+            -1.9,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_31",
+          "position_unity_xyz": [
+            -2.09,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_32",
+          "position_unity_xyz": [
+            -2.28,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_33",
+          "position_unity_xyz": [
+            -2.47,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_34",
+          "position_unity_xyz": [
+            -2.66,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_35",
+          "position_unity_xyz": [
+            -2.85,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_36",
+          "position_unity_xyz": [
+            -3.04,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_37",
+          "position_unity_xyz": [
+            -3.23,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_38",
+          "position_unity_xyz": [
+            -3.42,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_39",
+          "position_unity_xyz": [
+            -3.61,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_40",
+          "position_unity_xyz": [
+            -3.8,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T1_00",
+          "position_unity_xyz": [
+            3.8,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_01",
+          "position_unity_xyz": [
+            3.61,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_02",
+          "position_unity_xyz": [
+            3.42,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_03",
+          "position_unity_xyz": [
+            3.23,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_04",
+          "position_unity_xyz": [
+            3.04,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_05",
+          "position_unity_xyz": [
+            2.85,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_06",
+          "position_unity_xyz": [
+            2.66,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_07",
+          "position_unity_xyz": [
+            2.47,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_08",
+          "position_unity_xyz": [
+            2.28,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_09",
+          "position_unity_xyz": [
+            2.09,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_10",
+          "position_unity_xyz": [
+            1.9,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_11",
+          "position_unity_xyz": [
+            1.71,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_12",
+          "position_unity_xyz": [
+            1.52,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_13",
+          "position_unity_xyz": [
+            1.33,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_14",
+          "position_unity_xyz": [
+            1.14,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_15",
+          "position_unity_xyz": [
+            0.95,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_16",
+          "position_unity_xyz": [
+            0.76,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_17",
+          "position_unity_xyz": [
+            0.57,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_18",
+          "position_unity_xyz": [
+            0.38,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_19",
+          "position_unity_xyz": [
+            0.19,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_20",
+          "position_unity_xyz": [
+            0.0,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_21",
+          "position_unity_xyz": [
+            -0.19,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_22",
+          "position_unity_xyz": [
+            -0.38,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_23",
+          "position_unity_xyz": [
+            -0.57,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_24",
+          "position_unity_xyz": [
+            -0.76,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_25",
+          "position_unity_xyz": [
+            -0.95,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_26",
+          "position_unity_xyz": [
+            -1.14,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_27",
+          "position_unity_xyz": [
+            -1.33,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_28",
+          "position_unity_xyz": [
+            -1.52,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_29",
+          "position_unity_xyz": [
+            -1.71,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_30",
+          "position_unity_xyz": [
+            -1.9,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_31",
+          "position_unity_xyz": [
+            -2.09,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_32",
+          "position_unity_xyz": [
+            -2.28,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_33",
+          "position_unity_xyz": [
+            -2.47,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_34",
+          "position_unity_xyz": [
+            -2.66,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_35",
+          "position_unity_xyz": [
+            -2.85,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_36",
+          "position_unity_xyz": [
+            -3.04,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_37",
+          "position_unity_xyz": [
+            -3.23,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_38",
+          "position_unity_xyz": [
+            -3.42,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_39",
+          "position_unity_xyz": [
+            -3.61,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_40",
+          "position_unity_xyz": [
+            -3.8,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T2_00",
+          "position_unity_xyz": [
+            3.8,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_01",
+          "position_unity_xyz": [
+            3.61,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_02",
+          "position_unity_xyz": [
+            3.42,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_03",
+          "position_unity_xyz": [
+            3.23,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_04",
+          "position_unity_xyz": [
+            3.04,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_05",
+          "position_unity_xyz": [
+            2.85,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_06",
+          "position_unity_xyz": [
+            2.66,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_07",
+          "position_unity_xyz": [
+            2.47,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_08",
+          "position_unity_xyz": [
+            2.28,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_09",
+          "position_unity_xyz": [
+            2.09,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_10",
+          "position_unity_xyz": [
+            1.9,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_11",
+          "position_unity_xyz": [
+            1.71,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_12",
+          "position_unity_xyz": [
+            1.52,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_13",
+          "position_unity_xyz": [
+            1.33,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_14",
+          "position_unity_xyz": [
+            1.14,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_15",
+          "position_unity_xyz": [
+            0.95,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_16",
+          "position_unity_xyz": [
+            0.76,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_17",
+          "position_unity_xyz": [
+            0.57,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_18",
+          "position_unity_xyz": [
+            0.38,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_19",
+          "position_unity_xyz": [
+            0.19,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_20",
+          "position_unity_xyz": [
+            0.0,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_21",
+          "position_unity_xyz": [
+            -0.19,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_22",
+          "position_unity_xyz": [
+            -0.38,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_23",
+          "position_unity_xyz": [
+            -0.57,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_24",
+          "position_unity_xyz": [
+            -0.76,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_25",
+          "position_unity_xyz": [
+            -0.95,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_26",
+          "position_unity_xyz": [
+            -1.14,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_27",
+          "position_unity_xyz": [
+            -1.33,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_28",
+          "position_unity_xyz": [
+            -1.52,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_29",
+          "position_unity_xyz": [
+            -1.71,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_30",
+          "position_unity_xyz": [
+            -1.9,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_31",
+          "position_unity_xyz": [
+            -2.09,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_32",
+          "position_unity_xyz": [
+            -2.28,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_33",
+          "position_unity_xyz": [
+            -2.47,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_34",
+          "position_unity_xyz": [
+            -2.66,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_35",
+          "position_unity_xyz": [
+            -2.85,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_36",
+          "position_unity_xyz": [
+            -3.04,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_37",
+          "position_unity_xyz": [
+            -3.23,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_38",
+          "position_unity_xyz": [
+            -3.42,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_39",
+          "position_unity_xyz": [
+            -3.61,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_40",
+          "position_unity_xyz": [
+            -3.8,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        }
+      ],
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Deli_JarWall_North_BackPanel_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.18288,
+                  2.1336
+                ],
+                "min": [
+                  -3.9624,
+                  0.16288,
+                  0.8636
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "88677d7e3ed94535",
+              "material_slots": [
+                "M_Proc_Teal_Backlit"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                1.27,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_North_Carcass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.18288,
+                  0.8255
+                ],
+                "min": [
+                  -3.9624,
+                  -0.13888,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "0f327a954070be8c",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                0.8255,
+                0.32176
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_North_CheckerBand_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.16288,
+                  2.1336
+                ],
+                "min": [
+                  -3.9624,
+                  0.15088,
+                  1.9836
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "344cdf4ffae1b44b",
+              "material_slots": [
+                "M_Proc_Tile_Checker"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                0.15,
+                0.012
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_North_CounterTop_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.18288,
+                  0.8636
+                ],
+                "min": [
+                  -3.9624,
+                  -0.18288,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "501031a00f58c8b6",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                0.0381,
+                0.36576
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Deli_JarWall_North_DrawerFronts_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9604,
+                  -0.13888,
+                  0.8235
+                ],
+                "min": [
+                  -3.9604,
+                  -0.15788,
+                  0.1036
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7622c567a21e5549",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                7.9208,
+                0.7199,
+                0.019
+              ],
+              "tris": 2392,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1248
+            },
+            "PROC_Deli_JarWall_North_LED_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9524,
+                  -0.10052,
+                  1.5733
+                ],
+                "min": [
+                  -3.9524,
+                  -0.10852,
+                  1.2137
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a55253077752f1d2",
+              "material_slots": [
+                "M_Proc_LED_Emissive"
+              ],
+              "size_m_unity_xyz": [
+                7.9048,
+                0.3596,
+                0.008
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_North_Pulls_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.6956,
+                  -0.15788,
+                  0.746013
+                ],
+                "min": [
+                  -3.6956,
+                  -0.17288,
+                  0.362063
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6427f2529197d34b",
+              "material_slots": [
+                "M_Proc_Silver"
+              ],
+              "size_m_unity_xyz": [
+                7.3912,
+                0.38395,
+                0.015
+              ],
+              "tris": 1560,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 884
+            },
+            "PROC_Deli_JarWall_North_Shelves_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9574,
+                  0.16288,
+                  1.5983
+                ],
+                "min": [
+                  -3.9574,
+                  -0.11652,
+                  1.2177
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f47c43580b081cf9",
+              "material_slots": [
+                "M_Proc_Grey_Metal"
+              ],
+              "size_m_unity_xyz": [
+                7.9148,
+                0.3806,
+                0.2794
+              ],
+              "tris": 56,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Deli_JarWall_North_Standards_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9249,
+                  0.16288,
+                  1.9736
+                ],
+                "min": [
+                  -3.9249,
+                  -0.08661,
+                  0.8736
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8d1569a4b73d4b59",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                7.8498,
+                1.1,
+                0.24949
+              ],
+              "tris": 396,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 264
+            }
+          },
+          "size_m_unity_xyz": [
+            7.9248,
+            2.1336,
+            0.36576
+          ],
+          "tris": 4568
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Deli_JarWall_North_BackPanel_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.18288,
+                  2.1336
+                ],
+                "min": [
+                  -3.9624,
+                  0.16288,
+                  0.8636
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "88677d7e3ed94535",
+              "material_slots": [
+                "M_Proc_Teal_Backlit"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                1.27,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_North_Carcass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.18288,
+                  0.8255
+                ],
+                "min": [
+                  -3.9624,
+                  -0.13888,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "0f327a954070be8c",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                0.8255,
+                0.32176
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_North_CheckerBand_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.16288,
+                  2.1336
+                ],
+                "min": [
+                  -3.9624,
+                  0.15088,
+                  1.9836
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "344cdf4ffae1b44b",
+              "material_slots": [
+                "M_Proc_Tile_Checker"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                0.15,
+                0.012
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_North_CounterTop_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.18288,
+                  0.8636
+                ],
+                "min": [
+                  -3.9624,
+                  -0.18288,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "53acc32f1832f1ce",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                0.0381,
+                0.36576
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Deli_JarWall_North_DrawerFronts_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9604,
+                  -0.13888,
+                  0.8235
+                ],
+                "min": [
+                  -3.9604,
+                  -0.15788,
+                  0.1036
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d2c9a67224039afa",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                7.9208,
+                0.7199,
+                0.019
+              ],
+              "tris": 1560,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 832
+            },
+            "PROC_Deli_JarWall_North_LED_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9524,
+                  -0.10052,
+                  1.5733
+                ],
+                "min": [
+                  -3.9524,
+                  -0.10852,
+                  1.2137
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a55253077752f1d2",
+              "material_slots": [
+                "M_Proc_LED_Emissive"
+              ],
+              "size_m_unity_xyz": [
+                7.9048,
+                0.3596,
+                0.008
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_North_Shelves_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9574,
+                  0.16288,
+                  1.5983
+                ],
+                "min": [
+                  -3.9574,
+                  -0.11652,
+                  1.2177
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f47c43580b081cf9",
+              "material_slots": [
+                "M_Proc_Grey_Metal"
+              ],
+              "size_m_unity_xyz": [
+                7.9148,
+                0.3806,
+                0.2794
+              ],
+              "tris": 56,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Deli_JarWall_North_Standards_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9249,
+                  0.16288,
+                  1.9736
+                ],
+                "min": [
+                  -3.9249,
+                  -0.08661,
+                  0.8736
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8d1569a4b73d4b59",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                7.8498,
+                1.1,
+                0.24949
+              ],
+              "tris": 396,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 264
+            }
+          },
+          "size_m_unity_xyz": [
+            7.9248,
+            2.1336,
+            0.36576
+          ],
+          "tris": 2144
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Deli_JarWall_North_BackPanel_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.18288,
+                  2.1336
+                ],
+                "min": [
+                  -3.9624,
+                  0.16288,
+                  0.8636
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "88677d7e3ed94535",
+              "material_slots": [
+                "M_Proc_Teal_Backlit"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                1.27,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_North_Carcass_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.18288,
+                  0.8255
+                ],
+                "min": [
+                  -3.9624,
+                  -0.13888,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "0f327a954070be8c",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                0.8255,
+                0.32176
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_North_CheckerBand_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.16288,
+                  2.1336
+                ],
+                "min": [
+                  -3.9624,
+                  0.15088,
+                  1.9836
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "344cdf4ffae1b44b",
+              "material_slots": [
+                "M_Proc_Tile_Checker"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                0.15,
+                0.012
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_North_CounterTop_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.18288,
+                  0.8636
+                ],
+                "min": [
+                  -3.9624,
+                  -0.18288,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2506d7ace900c155",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                0.0381,
+                0.36576
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_North_DrawerFronts_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  -0.13888,
+                  0.8255
+                ],
+                "min": [
+                  -3.9624,
+                  -0.15788,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7fe7a278a374b1d7",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                0.7239,
+                0.019
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_North_Shelves_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9574,
+                  0.16288,
+                  1.5983
+                ],
+                "min": [
+                  -3.9574,
+                  -0.11652,
+                  1.2177
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 2
+              },
+              "geometry_sha256": "66d57675f95e1c8d",
+              "material_slots": [
+                "M_Proc_Grey_Metal"
+              ],
+              "size_m_unity_xyz": [
+                7.9148,
+                0.3806,
+                0.2794
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 28
+            },
+            "PROC_Deli_JarWall_North_Standards_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9249,
+                  0.16288,
+                  1.9736
+                ],
+                "min": [
+                  -3.9249,
+                  0.15088,
+                  0.8736
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7116fb53f4baecee",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                7.8498,
+                1.1,
+                0.012
+              ],
+              "tris": 132,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 88
+            }
+          },
+          "size_m_unity_xyz": [
+            7.9248,
+            2.1336,
+            0.36576
+          ],
+          "tris": 252
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Deli_JarWall_North_BackPanel_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.18288,
+                  2.1336
+                ],
+                "min": [
+                  -3.9624,
+                  0.16288,
+                  0.8636
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "88677d7e3ed94535",
+              "material_slots": [
+                "M_Proc_Teal_Backlit"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                1.27,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_North_CounterTop_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.18288,
+                  0.8636
+                ],
+                "min": [
+                  -3.9624,
+                  -0.18288,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8a5f9aae3179b509",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                0.8636,
+                0.36576
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_North_Shelves_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.9624,
+                  0.16288,
+                  1.5983
+                ],
+                "min": [
+                  -3.9624,
+                  -0.11652,
+                  1.2177
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "74a68b3357b9ae64",
+              "material_slots": [
+                "M_Proc_Grey_Metal"
+              ],
+              "size_m_unity_xyz": [
+                7.9248,
+                0.3806,
+                0.2794
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            7.9248,
+            2.1336,
+            0.36576
+          ],
+          "tris": 48
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/deli_counter_jar_wall.json",
+      "params_sha256": "d1a739a9248c2366",
+      "seed": 23001,
+      "tri_budget": {
+        "LOD0": 150000,
+        "LOD1": 75000,
+        "LOD2": 37500,
+        "LOD3": 15000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Deli/PROC_Deli_JarWall_North.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.15,
+        "scuffs": 0.3,
+        "seed": 23001,
+        "sticker_residue": 0.1
+      }
+    },
+    "PROC_Deli_JarWall_South": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.4318,
+            0.0
+          ],
+          "name": "Counter",
+          "size_unity_xyz": [
+            6.46176,
+            0.8636,
+            0.36576
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            1.4986,
+            -0.17288
+          ],
+          "name": "BackPanel",
+          "size_unity_xyz": [
+            6.46176,
+            1.27,
+            0.02
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            1.21845,
+            -0.02318
+          ],
+          "name": "Shelf_0",
+          "size_unity_xyz": [
+            6.46176,
+            0.0015,
+            0.2794
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            1.57405,
+            -0.02318
+          ],
+          "name": "Shelf_1",
+          "size_unity_xyz": [
+            6.46176,
+            0.0015,
+            0.2794
+          ]
+        }
+      ],
+      "emissive_parts": [
+        "BackPanel",
+        "LED"
+      ],
+      "export": "Art/Exports/Procedural/PROC_Deli_JarWall_South.fbx",
+      "export_sha256": "0aa76e608688b6dc",
+      "fixture_family": "jar_wall",
+      "gaps": [
+        "GAP-106",
+        "GAP-113",
+        "GAP-PROC-16"
+      ],
+      "generator": "deli_counter_jar_wall",
+      "jar_asset_id": "PROC_DeliJar",
+      "jar_slot_count": 99,
+      "jar_slot_size_m_unity_xyz": [
+        0.1524,
+        0.26035,
+        0.1397
+      ],
+      "jar_slots": [
+        {
+          "id": "Jar_T0_00",
+          "position_unity_xyz": [
+            3.04,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_01",
+          "position_unity_xyz": [
+            2.85,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_02",
+          "position_unity_xyz": [
+            2.66,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_03",
+          "position_unity_xyz": [
+            2.47,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_04",
+          "position_unity_xyz": [
+            2.28,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_05",
+          "position_unity_xyz": [
+            2.09,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_06",
+          "position_unity_xyz": [
+            1.9,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_07",
+          "position_unity_xyz": [
+            1.71,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_08",
+          "position_unity_xyz": [
+            1.52,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_09",
+          "position_unity_xyz": [
+            1.33,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_10",
+          "position_unity_xyz": [
+            1.14,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_11",
+          "position_unity_xyz": [
+            0.95,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_12",
+          "position_unity_xyz": [
+            0.76,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_13",
+          "position_unity_xyz": [
+            0.57,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_14",
+          "position_unity_xyz": [
+            0.38,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_15",
+          "position_unity_xyz": [
+            0.19,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_16",
+          "position_unity_xyz": [
+            0.0,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_17",
+          "position_unity_xyz": [
+            -0.19,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_18",
+          "position_unity_xyz": [
+            -0.38,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_19",
+          "position_unity_xyz": [
+            -0.57,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_20",
+          "position_unity_xyz": [
+            -0.76,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_21",
+          "position_unity_xyz": [
+            -0.95,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_22",
+          "position_unity_xyz": [
+            -1.14,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_23",
+          "position_unity_xyz": [
+            -1.33,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_24",
+          "position_unity_xyz": [
+            -1.52,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_25",
+          "position_unity_xyz": [
+            -1.71,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_26",
+          "position_unity_xyz": [
+            -1.9,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_27",
+          "position_unity_xyz": [
+            -2.09,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_28",
+          "position_unity_xyz": [
+            -2.28,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_29",
+          "position_unity_xyz": [
+            -2.47,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_30",
+          "position_unity_xyz": [
+            -2.66,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_31",
+          "position_unity_xyz": [
+            -2.85,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T0_32",
+          "position_unity_xyz": [
+            -3.04,
+            0.8636,
+            -0.02318
+          ],
+          "tier": 0
+        },
+        {
+          "id": "Jar_T1_00",
+          "position_unity_xyz": [
+            3.04,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_01",
+          "position_unity_xyz": [
+            2.85,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_02",
+          "position_unity_xyz": [
+            2.66,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_03",
+          "position_unity_xyz": [
+            2.47,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_04",
+          "position_unity_xyz": [
+            2.28,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_05",
+          "position_unity_xyz": [
+            2.09,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_06",
+          "position_unity_xyz": [
+            1.9,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_07",
+          "position_unity_xyz": [
+            1.71,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_08",
+          "position_unity_xyz": [
+            1.52,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_09",
+          "position_unity_xyz": [
+            1.33,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_10",
+          "position_unity_xyz": [
+            1.14,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_11",
+          "position_unity_xyz": [
+            0.95,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_12",
+          "position_unity_xyz": [
+            0.76,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_13",
+          "position_unity_xyz": [
+            0.57,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_14",
+          "position_unity_xyz": [
+            0.38,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_15",
+          "position_unity_xyz": [
+            0.19,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_16",
+          "position_unity_xyz": [
+            0.0,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_17",
+          "position_unity_xyz": [
+            -0.19,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_18",
+          "position_unity_xyz": [
+            -0.38,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_19",
+          "position_unity_xyz": [
+            -0.57,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_20",
+          "position_unity_xyz": [
+            -0.76,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_21",
+          "position_unity_xyz": [
+            -0.95,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_22",
+          "position_unity_xyz": [
+            -1.14,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_23",
+          "position_unity_xyz": [
+            -1.33,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_24",
+          "position_unity_xyz": [
+            -1.52,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_25",
+          "position_unity_xyz": [
+            -1.71,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_26",
+          "position_unity_xyz": [
+            -1.9,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_27",
+          "position_unity_xyz": [
+            -2.09,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_28",
+          "position_unity_xyz": [
+            -2.28,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_29",
+          "position_unity_xyz": [
+            -2.47,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_30",
+          "position_unity_xyz": [
+            -2.66,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_31",
+          "position_unity_xyz": [
+            -2.85,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T1_32",
+          "position_unity_xyz": [
+            -3.04,
+            1.2192,
+            -0.02318
+          ],
+          "tier": 1
+        },
+        {
+          "id": "Jar_T2_00",
+          "position_unity_xyz": [
+            3.04,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_01",
+          "position_unity_xyz": [
+            2.85,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_02",
+          "position_unity_xyz": [
+            2.66,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_03",
+          "position_unity_xyz": [
+            2.47,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_04",
+          "position_unity_xyz": [
+            2.28,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_05",
+          "position_unity_xyz": [
+            2.09,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_06",
+          "position_unity_xyz": [
+            1.9,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_07",
+          "position_unity_xyz": [
+            1.71,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_08",
+          "position_unity_xyz": [
+            1.52,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_09",
+          "position_unity_xyz": [
+            1.33,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_10",
+          "position_unity_xyz": [
+            1.14,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_11",
+          "position_unity_xyz": [
+            0.95,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_12",
+          "position_unity_xyz": [
+            0.76,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_13",
+          "position_unity_xyz": [
+            0.57,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_14",
+          "position_unity_xyz": [
+            0.38,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_15",
+          "position_unity_xyz": [
+            0.19,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_16",
+          "position_unity_xyz": [
+            0.0,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_17",
+          "position_unity_xyz": [
+            -0.19,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_18",
+          "position_unity_xyz": [
+            -0.38,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_19",
+          "position_unity_xyz": [
+            -0.57,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_20",
+          "position_unity_xyz": [
+            -0.76,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_21",
+          "position_unity_xyz": [
+            -0.95,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_22",
+          "position_unity_xyz": [
+            -1.14,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_23",
+          "position_unity_xyz": [
+            -1.33,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_24",
+          "position_unity_xyz": [
+            -1.52,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_25",
+          "position_unity_xyz": [
+            -1.71,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_26",
+          "position_unity_xyz": [
+            -1.9,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_27",
+          "position_unity_xyz": [
+            -2.09,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_28",
+          "position_unity_xyz": [
+            -2.28,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_29",
+          "position_unity_xyz": [
+            -2.47,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_30",
+          "position_unity_xyz": [
+            -2.66,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_31",
+          "position_unity_xyz": [
+            -2.85,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        },
+        {
+          "id": "Jar_T2_32",
+          "position_unity_xyz": [
+            -3.04,
+            1.5748,
+            -0.02318
+          ],
+          "tier": 2
+        }
+      ],
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Deli_JarWall_South_BackPanel_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.18288,
+                  2.1336
+                ],
+                "min": [
+                  -3.23088,
+                  0.16288,
+                  0.8636
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6b737a5cb389b599",
+              "material_slots": [
+                "M_Proc_Teal_Backlit"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                1.27,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_South_Carcass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.18288,
+                  0.8255
+                ],
+                "min": [
+                  -3.23088,
+                  -0.13888,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "95313a66063d6571",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                0.8255,
+                0.32176
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_South_CheckerBand_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.16288,
+                  2.1336
+                ],
+                "min": [
+                  -3.23088,
+                  0.15088,
+                  1.9836
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "497203ae3619ed09",
+              "material_slots": [
+                "M_Proc_Tile_Checker"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                0.15,
+                0.012
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_South_CounterTop_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.18288,
+                  0.8636
+                ],
+                "min": [
+                  -3.23088,
+                  -0.18288,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8318676eda6b2669",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                0.0381,
+                0.36576
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Deli_JarWall_South_DrawerFronts_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.22888,
+                  -0.13888,
+                  0.8235
+                ],
+                "min": [
+                  -3.22888,
+                  -0.15788,
+                  0.1036
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1583bdb1998e2499",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                6.45776,
+                0.7199,
+                0.019
+              ],
+              "tris": 2024,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1056
+            },
+            "PROC_Deli_JarWall_South_LED_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.22088,
+                  -0.10052,
+                  1.5733
+                ],
+                "min": [
+                  -3.22088,
+                  -0.10852,
+                  1.2137
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a17331e081982fa7",
+              "material_slots": [
+                "M_Proc_LED_Emissive"
+              ],
+              "size_m_unity_xyz": [
+                6.44176,
+                0.3596,
+                0.008
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_South_Pulls_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.975164,
+                  -0.15788,
+                  0.746013
+                ],
+                "min": [
+                  -2.975164,
+                  -0.17288,
+                  0.362063
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a35c3f32a1b8c010",
+              "material_slots": [
+                "M_Proc_Silver"
+              ],
+              "size_m_unity_xyz": [
+                5.95033,
+                0.38395,
+                0.015
+              ],
+              "tris": 1320,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 748
+            },
+            "PROC_Deli_JarWall_South_Shelves_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.22588,
+                  0.16288,
+                  1.5983
+                ],
+                "min": [
+                  -3.22588,
+                  -0.11652,
+                  1.2177
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d324cc01980919c8",
+              "material_slots": [
+                "M_Proc_Grey_Metal"
+              ],
+              "size_m_unity_xyz": [
+                6.45176,
+                0.3806,
+                0.2794
+              ],
+              "tris": 56,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Deli_JarWall_South_Standards_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.19338,
+                  0.16288,
+                  1.9736
+                ],
+                "min": [
+                  -3.19338,
+                  -0.08661,
+                  0.8736
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b82cd8c45af917b2",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.38676,
+                1.1,
+                0.24949
+              ],
+              "tris": 324,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 216
+            }
+          },
+          "size_m_unity_xyz": [
+            6.46176,
+            2.1336,
+            0.36576
+          ],
+          "tris": 3888
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Deli_JarWall_South_BackPanel_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.18288,
+                  2.1336
+                ],
+                "min": [
+                  -3.23088,
+                  0.16288,
+                  0.8636
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6b737a5cb389b599",
+              "material_slots": [
+                "M_Proc_Teal_Backlit"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                1.27,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_South_Carcass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.18288,
+                  0.8255
+                ],
+                "min": [
+                  -3.23088,
+                  -0.13888,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "95313a66063d6571",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                0.8255,
+                0.32176
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_South_CheckerBand_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.16288,
+                  2.1336
+                ],
+                "min": [
+                  -3.23088,
+                  0.15088,
+                  1.9836
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "497203ae3619ed09",
+              "material_slots": [
+                "M_Proc_Tile_Checker"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                0.15,
+                0.012
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_South_CounterTop_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.18288,
+                  0.8636
+                ],
+                "min": [
+                  -3.23088,
+                  -0.18288,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "fbb1a4c23b5cecca",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                0.0381,
+                0.36576
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Deli_JarWall_South_DrawerFronts_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.22888,
+                  -0.13888,
+                  0.8235
+                ],
+                "min": [
+                  -3.22888,
+                  -0.15788,
+                  0.1036
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ae21828e80a18c3e",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                6.45776,
+                0.7199,
+                0.019
+              ],
+              "tris": 1320,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 704
+            },
+            "PROC_Deli_JarWall_South_LED_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.22088,
+                  -0.10052,
+                  1.5733
+                ],
+                "min": [
+                  -3.22088,
+                  -0.10852,
+                  1.2137
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a17331e081982fa7",
+              "material_slots": [
+                "M_Proc_LED_Emissive"
+              ],
+              "size_m_unity_xyz": [
+                6.44176,
+                0.3596,
+                0.008
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_South_Shelves_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.22588,
+                  0.16288,
+                  1.5983
+                ],
+                "min": [
+                  -3.22588,
+                  -0.11652,
+                  1.2177
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d324cc01980919c8",
+              "material_slots": [
+                "M_Proc_Grey_Metal"
+              ],
+              "size_m_unity_xyz": [
+                6.45176,
+                0.3806,
+                0.2794
+              ],
+              "tris": 56,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Deli_JarWall_South_Standards_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.19338,
+                  0.16288,
+                  1.9736
+                ],
+                "min": [
+                  -3.19338,
+                  -0.08661,
+                  0.8736
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b82cd8c45af917b2",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.38676,
+                1.1,
+                0.24949
+              ],
+              "tris": 324,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 216
+            }
+          },
+          "size_m_unity_xyz": [
+            6.46176,
+            2.1336,
+            0.36576
+          ],
+          "tris": 1832
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Deli_JarWall_South_BackPanel_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.18288,
+                  2.1336
+                ],
+                "min": [
+                  -3.23088,
+                  0.16288,
+                  0.8636
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6b737a5cb389b599",
+              "material_slots": [
+                "M_Proc_Teal_Backlit"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                1.27,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_South_Carcass_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.18288,
+                  0.8255
+                ],
+                "min": [
+                  -3.23088,
+                  -0.13888,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "95313a66063d6571",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                0.8255,
+                0.32176
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Deli_JarWall_South_CheckerBand_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.16288,
+                  2.1336
+                ],
+                "min": [
+                  -3.23088,
+                  0.15088,
+                  1.9836
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "497203ae3619ed09",
+              "material_slots": [
+                "M_Proc_Tile_Checker"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                0.15,
+                0.012
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_South_CounterTop_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.18288,
+                  0.8636
+                ],
+                "min": [
+                  -3.23088,
+                  -0.18288,
+                  0.8255
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "43168efb2c1e639a",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                0.0381,
+                0.36576
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_South_DrawerFronts_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  -0.13888,
+                  0.8255
+                ],
+                "min": [
+                  -3.23088,
+                  -0.15788,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b182f39fbd5889c9",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                0.7239,
+                0.019
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_South_Shelves_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.22588,
+                  0.16288,
+                  1.5983
+                ],
+                "min": [
+                  -3.22588,
+                  -0.11652,
+                  1.2177
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 2
+              },
+              "geometry_sha256": "14b847c8e17b346f",
+              "material_slots": [
+                "M_Proc_Grey_Metal"
+              ],
+              "size_m_unity_xyz": [
+                6.45176,
+                0.3806,
+                0.2794
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 28
+            },
+            "PROC_Deli_JarWall_South_Standards_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.19338,
+                  0.16288,
+                  1.9736
+                ],
+                "min": [
+                  -3.19338,
+                  0.15088,
+                  0.8736
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "557cd469b0313938",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.38676,
+                1.1,
+                0.012
+              ],
+              "tris": 108,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            }
+          },
+          "size_m_unity_xyz": [
+            6.46176,
+            2.1336,
+            0.36576
+          ],
+          "tris": 228
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Deli_JarWall_South_BackPanel_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.18288,
+                  2.1336
+                ],
+                "min": [
+                  -3.23088,
+                  0.16288,
+                  0.8636
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6b737a5cb389b599",
+              "material_slots": [
+                "M_Proc_Teal_Backlit"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                1.27,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_South_CounterTop_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.18288,
+                  0.8636
+                ],
+                "min": [
+                  -3.23088,
+                  -0.18288,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "0cce776e7fee5b5d",
+              "material_slots": [
+                "M_Proc_Black_Top"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                0.8636,
+                0.36576
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Deli_JarWall_South_Shelves_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.23088,
+                  0.16288,
+                  1.5983
+                ],
+                "min": [
+                  -3.23088,
+                  -0.11652,
+                  1.2177
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c170738b44033492",
+              "material_slots": [
+                "M_Proc_Grey_Metal"
+              ],
+              "size_m_unity_xyz": [
+                6.46176,
+                0.3806,
+                0.2794
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            6.46176,
+            2.1336,
+            0.36576
+          ],
+          "tris": 48
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/deli_counter_jar_wall.json",
+      "params_sha256": "d1a739a9248c2366",
+      "seed": 23001,
+      "tri_budget": {
+        "LOD0": 150000,
+        "LOD1": 75000,
+        "LOD2": 37500,
+        "LOD3": 15000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Deli/PROC_Deli_JarWall_South.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.15,
+        "scuffs": 0.3,
+        "seed": 23001,
+        "sticker_residue": 0.1
+      }
+    },
     "PROC_Desk_WireRack_Computer": {
       "collision_boxes": [
         {

@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Deli_JarWall_South",
+  "collision_boxes": 4,
+  "errors": [],
+  "export_sha256": "0aa76e608688b6dc",
+  "generator": "deli_counter_jar_wall",
+  "lod_tris": {
+    "LOD0": 3888,
+    "LOD1": 1832,
+    "LOD2": 228,
+    "LOD3": 48
+  },
+  "params_sha256": "d1a739a9248c2366",
+  "passed": true,
+  "warnings": [
+    "LOD0 3888 tris below the DEC-084 guide minimum 30000 (too simple?)"
+  ]
+}
