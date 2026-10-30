@@ -38,4 +38,4 @@ Source: `Docs/Design/RECOMMENDATION_DEPTH_AUDIT.md` (**RDA**) rows 8, 9, 12, 15,
 - Counters (D5) also count refine uses, re-reads, lookups and like-X searches. Parity tests also cover `Refine.Apply` → `Respond` and lookup + Near against direct engine calls.
 
 ## Handoff
-`Docs/Handoffs/GAME-018.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).
+`Docs/Handoffs/GAME-018.md` (≤40 lines). Questions: resolve from the sources in STUDIO_OS §0.6 first, then list the rest for the Hub (DEC-033/105).

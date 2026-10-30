@@ -1,6 +1,6 @@
 # PROC-007 — DEC-097 UV layout: lightmap UV on channel 1, label UV on channel 2
 
-**Dept:** Assets · **Role:** PROC · **Priority:** P1 · **Owner:** — (launch after PROC-005 merges; both edit the shared exporter) · **Reviewer:** Unity A2 `local_4e865bb8-479c-41c5-8628-7f3e7cb2a4c3` · **Touches:** none · **Interfaces:** DEC-097, agreed with the World lead 2026-10-30: Unity `uv` = base, `uv2` = lightmap, `uv3` = label; `generateSecondaryUV` stays 0. Assets sends World the accepted PROC-007 commit; World's ART shader task reads `uv3` against it; the Hub merges both in one wave. Unity slot: borrowed from World when ART-007 is not in Unity (ask first)
+**Role:** PROC · **Priority:** P1 · **Owner:** — (launch after PROC-005 merges; both edit the shared exporter) · **Reviewer:** fresh, Hub-spawned (STUDIO_OS §0.7) · **Touches:** none · **Interfaces:** DEC-097, agreed 2026-10-30 (DEC-097): Unity `uv` = base, `uv2` = lightmap, `uv3` = label; `generateSecondaryUV` stays 0. the ART label-shader task reads `uv3` against the accepted PROC-007 commit; the Hub merges both in one wave. Unity slot per DEC-013
 
 ## Goal
 Every generated mesh exports UV0 = base, UV1 = a dedicated non-overlapping lightmap UV (DEC-084 "UV2"), UV2 = `UVMap_Label` where it exists. Re-export jars, jar fill and packaged goods in the same wave.
@@ -17,3 +17,15 @@ Exporter change + validation check; re-exported FBX (LFS) + manifest; updated te
 
 ## Validation
 Blender validation passes for every family; ProcArt EditMode tests green via `studio.ps1` (needs one Unity slot, borrowed from World).
+
+## Read
+`CLAUDE.md` → this packet, then only: `Docs/DECISIONS.md` DEC-084/097; `Docs/Assets/Specs/PROC_PIPELINE.md` (export path, validation layer); `Docs/Imports/IMP-003_PROC_FIX_CHECKLIST.md` R3b.0.4; `Docs/Handoffs/PROC-005.md` (families and manifest on main).
+
+## Owns
+`Tools/Blender/` runner/proclib export + validation code and params; `Art/Exports/Procedural/**` re-exports + manifest; `UnityProject/Assets/_Game/Art/Procedural/**/*.meta` (`generateSecondaryUV` only); `Code/Tests/EditMode/ProcArt/`; `Docs/Handoffs/PROC-007.md`. Not the Lookdev shader (ART-011).
+
+## Handoff
+`Docs/Handoffs/PROC-007.md` (≤40 lines): the commit ART-011 must land with, per-family vertex/bounds diff result, validation output paths. Uncertainty: STUDIO_OS §0.6 first; one line to the Hub when done.
+
+## Also (Hub, 2026-10-30)
+- RegisterKit FBX copies under `_Game/Art/Procedural/RegisterKit/` have no `.meta`: their first import and `.meta` files ride with this task (REVIEW-PROC006b m7).

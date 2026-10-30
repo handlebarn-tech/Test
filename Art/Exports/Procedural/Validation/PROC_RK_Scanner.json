@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_RK_Scanner",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "d09ed85fd5275f38",
+  "generator": "register_kit",
+  "lod_tris": {
+    "LOD0": 4704,
+    "LOD1": 1528,
+    "LOD2": 352,
+    "LOD3": 56
+  },
+  "params_sha256": "6eb5104cb77c87e3",
+  "passed": true,
+  "warnings": [
+    "LOD0 4704 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_RK_TrashBin_Wire",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "cf1f0eb42bf9d5e1",
+  "generator": "register_kit",
+  "lod_tris": {
+    "LOD0": 16448,
+    "LOD1": 5292,
+    "LOD2": 240,
+    "LOD3": 32
+  },
+  "params_sha256": "6eb5104cb77c87e3",
+  "passed": true,
+  "warnings": []
+}

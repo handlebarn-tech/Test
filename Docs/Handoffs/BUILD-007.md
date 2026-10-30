@@ -1,43 +1,39 @@
 # Handoff: BUILD-007 playtest build 2
 
-**Status:** done. Built from main 08758c1 (GAME-025 merged; ART-007 not in, per Hub GO) in worktree `claude/task-build-007`. Only this handoff is committed; the build lives outside the repo.
+**Status:** done. **The build Nolan plays is `playtest2-741bb43`** (main 741bb43: PS1 + GAME-025 + ART-007), built in worktree `claude/task-build-007`. An earlier `playtest2-08758c1` (pre-ART-007) was built first, per the first GO; it is superseded. Only this handoff is committed.
 
 ## Build
-- **Exe:** `C:/Users/handl/Downloads/Dispo Game Builds/playtest2-08758c1/DispoGame.exe`, folder 228 MB. Earlier builds (`slice-c867cd5`, `slice-38b9e5c`) are untouched.
-- **Built with:** `studio.ps1 unity-build` (DEC-013 gate), Unity 6000.6.7f1, Windows64 dev build. `BUILD_MANIFEST.json` sits next to the exe.
-- **Smoke:** `STUDIO_SMOKE_READY scenes=11`, no crash, no early exit. The copied exe was launched once (1280×720 windowed): `[Slice] shift ready: 16 customers, 77 jars, seed 1` after 8 s, then killed; no player left running.
-- Editor side effects reverted in the worktree, not committed: `HDRenderPipelineGlobalSettings.asset` re-serialised (as in BUILD-006), and new `.meta` files for the PROC-005 wire-shelving FBXs (main has the FBXs without metas; owner: PROC-005 / Assets).
+- **Exe:** `C:/Users/handl/Downloads/Dispo Game Builds/playtest2-741bb43/DispoGame.exe`, folder 228 MB, `BUILD_MANIFEST.json` beside it. Earlier builds are untouched.
+- **Built with:** `studio.ps1 unity-build` (DEC-013 gate), Unity 6000.6.7f1, Windows64 dev build.
+- **Smoke:** `STUDIO_SMOKE_READY scenes=11`, no crash, no early exit. The copied exe launched (1280×720 windowed) logs `[Slice] doors: 12 (...)` and `shift ready: 16 customers, 77 jars, seed 1`, and is then killed; no player is left running.
+- **Door data workaround (FOR the Hub):** `SliceGame.Doors` is unassigned, so the player falls back to `<exe dir>/../Docs/Reference/DOORS.json`. Without that file it logs `doors: none found` and ART-007's closed leaves stay solid (staff doors and the entry can't be opened). I copied main's `Docs/Reference/DOORS.json` to `C:/Users/handl/Downloads/Dispo Game Builds/Docs/Reference/DOORS.json`; after that, 12 doors wire up. If the build folder is moved out of `Dispo Game Builds`, doors break again. The real fix is GAME-025 note 1: a TextAsset copy under `Assets`, assigned in `Gameplay_Slice` (owner: World/Gameplay). That needs a follow-up task.
+- Editor side effects reverted in the worktree: `HDRenderPipelineGlobalSettings.asset` and new `.meta` files for the PROC-005 wire-shelving FBXs (REVIEW-ART7 minor 4; the owner should commit those metas).
 
 ## New since slice-38b9e5c
-- **Medical customers (GAME-009):** about 4 % of customers are MED patients. A `✓ MED card verified` badge replaces the 21+ badge; out-of-state cards show `⚠ Card: out-of-state`.
-- **Medical / Adult-use switch (T, or the payment-row button):** medical tax 9.1 % vs 25.1 % adult-use; 14-day allotment meter (70.87 g minus the patient's recent buys) instead of the 28 g cap. Ringing an out-of-state card as medical is blocked once with a hint, then strikes.
-- **Queue strip:** at 125/150 % text size the ID panel header shows the queue line (count, ●/◐/▲, stand count).
-- **Report:** medical customers, medical sales and tax split.
-- **Controls (GAME-025):** mouse look is always on while the cursor is locked (no right-button hold); Esc pauses from every screen (Resume / Settings / Controls / Quit); Settings has sensitivity, invert Y, FOV, text size, auto-fill assist; Backspace is Back.
+- **Store rebuilt from REF-011/012 (ART-007):** counters, 11 stations with seeded kits, three deli walls (177 jar slots, uneven fill), queue stanchions, vestibule, HUB/office, 12 swinging doors, re-posed CCTV. REF-013 corrections (entry move, counters, hinges) are not in yet.
+- **Medical customers (GAME-009):** about 4 % are MED patients (`✓ MED card verified`, `⚠ Card: out-of-state`). T switches between Medical (9.1 % tax, 14-day 70.87 g allotment) and Adult-use (25.1 %, 28 g). An out-of-state card rung as medical is blocked once, then strikes. The report shows the medical/adult-use tax split. At 125/150 % text, the queue strip sits in the ID panel header.
+- **Controls (GAME-025):** look is always on while the cursor is locked; Esc pauses from every screen (Resume / Settings / Controls / Quit); Settings has sensitivity, invert Y, FOV, text size and auto-fill; doors open by walking up or with E.
 
 ## Controls
 | Action | Key |
 |---|---|
 | Move / run | WASD / Shift |
 | Look | mouse (click to re-lock the cursor) |
-| Interact: ID stand, talk to the counter customer | E |
+| Interact: ID stand, talk, door | E |
 | ID check: admit / refuse | A / R |
 | Cover prompt yes / no | Y / N |
 | Query or results → register; more results | R; M |
-| Medical / Adult-use sale type | T |
-| Back | Backspace |
-| Pause menu | Esc |
+| Medical / Adult-use | T |
+| Back / Pause | Backspace / Esc |
 | Debug overlay | F3 |
 
 ## Known gaps Nolan will notice
-- **No doors:** the log says `[Slice] doors: none found`. The door system is in, but no door geometry is on main yet, and DOORS.json is not packaged for player builds (GAME-025 note 1).
-- **No ART-007 graybox update;** the store is still the earlier graybox/lookdev set, and the check-in desk still uses the TEMP fallback anchor.
-- **Customer flow and recommendation depth from playtest 1 are not in this build:** GAME-026 (call next / waypoints) and GAME-017a are next.
-- No audio; placeholder NPCs; no ambient coworkers.
-- The real windowed cursor lock was never tested in automation (batchmode); this build is its first real check.
+- **Store layout:** the REF-013 fixes are pending. The JC door is blocked by the break-room bench, and the Vest_FOH door swing hits the trash can (REVIEW-ART7 minor 3).
+- **Customer flow and recommendation depth are not in this build:** GAME-026 (call next / waypoints) and GAME-017a come next. Station kits are placeholders until PROC-006b.
+- No audio; placeholder NPCs; no ambient coworkers. The windowed cursor lock has not been tested in automation; this build is the first real check.
 
 ## Validation
-`unity-build` exit 0: `Artifacts/Results/20261030-082228-138-12996-unity-build.json` (worktree). Copied-exe launch passed.
+`unity-build` exit 0: `Artifacts/Results/20261030-083342-009-28776-unity-build.json` (worktree). The copied-exe launch passed with doors wired.
 
 ## Questions for Nolan (through the Hub)
 None.

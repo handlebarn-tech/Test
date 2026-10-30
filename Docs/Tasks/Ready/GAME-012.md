@@ -53,4 +53,4 @@ EX-016/017/023 move to the manager loop (§9b).
 Standard refill-aware bot over 200 seeds: ≥ 1 LOW → completed refill in ≥ 80 % of seeds, 2–4 meaningful refill decisions, ≤ 2 emergencies (V2 03 §13). Conservation test: Σ(jars + back + refill + sold) is constant per batch across a shift. DEC-013 gate.
 
 ## Handoff
-`Docs/Handoffs/GAME-012.md` (≤40 lines): refill decision counts, mean manager wait in Rush 2, any placeholder you had to add. Questions go to your department lead (DEC-033, DEC-094).
+`Docs/Handoffs/GAME-012.md` (≤40 lines): refill decision counts, mean manager wait in Rush 2, any placeholder you had to add. Questions: resolve from the sources in STUDIO_OS §0.6 first, then list the rest for the Hub (DEC-033/105).

@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_RK_LabelPrinter",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "1418c0b6f9d1efe9",
+  "generator": "register_kit",
+  "lod_tris": {
+    "LOD0": 4444,
+    "LOD1": 1496,
+    "LOD2": 128,
+    "LOD3": 36
+  },
+  "params_sha256": "6eb5104cb77c87e3",
+  "passed": true,
+  "warnings": [
+    "LOD0 4444 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

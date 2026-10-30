@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_RK_Tumbler",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "9ab48eae418f7737",
+  "generator": "register_kit",
+  "lod_tris": {
+    "LOD0": 2492,
+    "LOD1": 668,
+    "LOD2": 212,
+    "LOD3": 52
+  },
+  "params_sha256": "6eb5104cb77c87e3",
+  "passed": true,
+  "warnings": [
+    "LOD0 2492 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

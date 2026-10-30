@@ -1,0 +1,276 @@
+{
+ "station": "POS_10",
+ "reg": "10",
+ "seed": 6110,
+ "generator": "register_arranger",
+ "frame": {
+  "_note": "metres; origin = monitor position along the counter, on the counter's staff edge, at the floor; u = operator's right, v = toward the customer, z = up",
+  "origin": [
+   36.0,
+   7.0
+  ],
+  "right": [
+   -1,
+   0
+  ],
+  "forward": [
+   0,
+   1
+  ]
+ },
+ "top_half_width_m": 0.9144,
+ "stand_m": {
+  "u": [
+   0.3048,
+   0.7925
+  ],
+  "v": [
+   -0.3962,
+   0.0
+  ]
+ },
+ "anchors": {
+  "TOP": {
+   "fixture": "POS_10",
+   "z_m": 0.8636,
+   "_src": "34 in AFF and 2'-6\" POS top (REFERENCES_INDEX 6.4, High); u = half the distance to the neighbouring POS on the same run (rev7 pos_ft)"
+  },
+  "UNDER_SHELF": {
+   "fixture": "POS_10",
+   "z_m": 0.43,
+   "_src": "one open shelf, full counter width, mid height, no drawers, staff side (DEC-124, Nolan; overrides TI A940 det. 11 two-drawer cabinet); z = half the 34 in counter (REFERENCES_INDEX 6.4)",
+   "gap": "GAP-RK-LAYOUT: exact shelf height and depth not measured (DEC-124; TI set has no under-counter section, CCTV CEN/EAST stills give no scale at that depth)"
+  },
+  "UNDER_SHELF_EDGE": {
+   "fixture": "POS_10",
+   "z_m": 0.43,
+   "_src": "front edge of UNDER_SHELF (DEC-124)",
+   "gap": "GAP-RK-LAYOUT: exact shelf height and depth not measured (DEC-124; TI set has no under-counter section, CCTV CEN/EAST stills give no scale at that depth)"
+  },
+  "STAND_LOWER": {
+   "fixture": "POS_10",
+   "z_m": 0.15,
+   "_src": "rev7 stand_rect (1.6 x 1.3 ft, REFERENCES_INDEX 2.2)",
+   "gap": "lower shelf height GAP-RK-LAYOUT"
+  },
+  "STAND_RAIL": {
+   "fixture": "POS_10",
+   "z_m": 0.762,
+   "_src": "stand top 2.5 ft (REFERENCES_INDEX 2.2, Low-Med), edge of rev7 stand_rect facing the operator (the stand is on the operator's right, REFERENCES_INDEX 2.2). Hanging items: pos_m is the item's attach point (inside top of its hook) on this edge; yaw -90 puts the hook over the edge and the bottle on the operator side (spec RK-07)",
+   "gap": "GAP-REG-8: rail/edge section of the stand top not measured; hook throat sized for a <= 25 mm edge"
+  },
+  "STAND_EDGE": {
+   "fixture": "POS_10",
+   "z_m": 0.762,
+   "_src": "stand top 2.5 ft (REFERENCES_INDEX 2.2, Low-Med), edge of rev7 stand_rect facing the operator; draped items hang over it"
+  },
+  "FLOOR_STAND": {
+   "fixture": "Trash_Small_POS_10",
+   "z_m": 0.0,
+   "_src": "rev7 Trash_Small_POS_xx pos_ft (DEC-104 R7, Low)"
+  }
+ },
+ "items": [
+  {
+   "asset": "PROC_RK_Keyboard",
+   "rk": "RK-04",
+   "anchor": "TOP",
+   "pos_m": [
+    -0.0083,
+    0.1281,
+    0.8636
+   ],
+   "yaw_deg": 1.1,
+   "condition": {
+    "wear_scale": 0.61
+   }
+  },
+  {
+   "asset": "PROC_RK_Mouse",
+   "rk": "RK-05",
+   "anchor": "TOP",
+   "pos_m": [
+    0.3137,
+    0.1095,
+    0.8636
+   ],
+   "yaw_deg": -9.6,
+   "condition": {
+    "wear_scale": 0.62
+   }
+  },
+  {
+   "asset": "PROC_RK_Scanner",
+   "rk": "RK-03",
+   "anchor": "TOP",
+   "pos_m": [
+    -0.3352,
+    0.1376,
+    0.8636
+   ],
+   "yaw_deg": -1.6,
+   "condition": {
+    "wear_scale": 1.26
+   }
+  },
+  {
+   "asset": "PROC_RK_ReceiptPrinter",
+   "rk": "RK-01",
+   "anchor": "TOP",
+   "pos_m": [
+    -0.1006,
+    0.4192,
+    0.8636
+   ],
+   "yaw_deg": -1.7,
+   "condition": {
+    "wear_scale": 1.19
+   }
+  },
+  {
+   "asset": "PROC_RK_LabelPrinter",
+   "rk": "RK-02",
+   "anchor": "TOP",
+   "pos_m": [
+    -0.3539,
+    0.5054,
+    0.8636
+   ],
+   "yaw_deg": 0.0,
+   "condition": {
+    "wear_scale": 1.26
+   }
+  },
+  {
+   "asset": "PROC_RK_BagBundle",
+   "rk": "RK-06a",
+   "anchor": "UNDER_SHELF",
+   "pos_m": [
+    -0.45,
+    0.1661,
+    0.43
+   ],
+   "yaw_deg": -5.6,
+   "condition": {
+    "wear_scale": 0.83
+   }
+  },
+  {
+   "asset": "PROC_RK_BagBundle",
+   "rk": "RK-06a",
+   "anchor": "UNDER_SHELF",
+   "pos_m": [
+    0.3951,
+    0.1829,
+    0.43
+   ],
+   "yaw_deg": 2.4,
+   "condition": {
+    "wear_scale": 1.32
+   }
+  },
+  {
+   "asset": "PROC_RK_BagBundle",
+   "rk": "RK-06a",
+   "anchor": "UNDER_SHELF",
+   "pos_m": [
+    0.0961,
+    0.1949,
+    0.43
+   ],
+   "yaw_deg": -1.7,
+   "condition": {
+    "wear_scale": 0.99
+   }
+  },
+  {
+   "asset": "PROC_RK_BagBundle",
+   "rk": "RK-06a",
+   "anchor": "UNDER_SHELF",
+   "pos_m": [
+    0.8147,
+    0.1762,
+    0.43
+   ],
+   "yaw_deg": 2.0,
+   "condition": {
+    "wear_scale": 0.61
+   }
+  },
+  {
+   "asset": "PROC_RK_BagBundle",
+   "rk": "RK-06a",
+   "anchor": "UNDER_SHELF",
+   "pos_m": [
+    -0.7213,
+    0.1613,
+    0.43
+   ],
+   "yaw_deg": -1.7,
+   "condition": {
+    "wear_scale": 0.72
+   }
+  },
+  {
+   "asset": "PROC_RK_TapeRoll",
+   "rk": "RK-06b",
+   "anchor": "UNDER_SHELF",
+   "pos_m": [
+    -0.203,
+    0.0848,
+    0.43
+   ],
+   "yaw_deg": 94.4,
+   "condition": {
+    "wear_scale": 1.05
+   }
+  },
+  {
+   "asset": "PROC_RK_SprayBottle_ISO",
+   "rk": "RK-07",
+   "anchor": "STAND_RAIL",
+   "pos_m": [
+    0.3048,
+    -0.0754,
+    0.762
+   ],
+   "yaw_deg": -90.0,
+   "condition": {
+    "wear_scale": 0.77,
+    "fill_level": 0.83
+   }
+  },
+  {
+   "asset": "PROC_RK_Rag_Folded",
+   "rk": "RK-08",
+   "anchor": "TOP",
+   "pos_m": [
+    0.5304,
+    0.6261,
+    0.8636
+   ],
+   "yaw_deg": -9.4,
+   "condition": {
+    "wear_scale": 0.9
+   }
+  },
+  {
+   "asset": "PROC_RK_TrashBin_Wire",
+   "rk": "RK-09",
+   "anchor": "FLOOR_STAND",
+   "pos_m": [
+    0.5201,
+    -0.5989,
+    0.0
+   ],
+   "yaw_deg": -110.3,
+   "condition": {
+    "wear_scale": 0.68,
+    "fill_level": 0.53
+   }
+  }
+ ],
+ "not_fitted": [
+  "TapeRoll"
+ ]
+}

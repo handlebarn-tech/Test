@@ -39,4 +39,4 @@ Source: `Docs/Design/RECOMMENDATION_DEPTH_AUDIT.md` (**RDA**).
 - The Consultation tab adds a plain count, `Misread requests` (no scores).
 
 ## Handoff
-`Docs/Handoffs/GAME-020.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).
+`Docs/Handoffs/GAME-020.md` (≤40 lines). Questions: resolve from the sources in STUDIO_OS §0.6 first, then list the rest for the Hub (DEC-033/105).

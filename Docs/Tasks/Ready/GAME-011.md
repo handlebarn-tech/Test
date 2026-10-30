@@ -43,4 +43,4 @@ Compile / EditMode / PlayMode green; QA-002 Gate A green. Tests:
 Quick shift goldens unchanged. DEC-013 gate.
 
 ## Handoff
-`Docs/Handoffs/GAME-011.md` (≤40 lines): measured median service, real-minute playtime of one Standard run, any table change. Questions go to your department lead (DEC-033, DEC-094).
+`Docs/Handoffs/GAME-011.md` (≤40 lines): measured median service, real-minute playtime of one Standard run, any table change. Questions: resolve from the sources in STUDIO_OS §0.6 first, then list the rest for the Hub (DEC-033/105).
