@@ -4,6 +4,7 @@ Hub-owned; the **only live state record** (DEC-117). A fresh Hub resumes from `D
 
 **Updated:** 2026-10-30 12:30 (playtest-2 intake, DEC-120..123). **Milestone:** PS1 done; Nolan has played `playtest2-741bb43` (findings `Docs/Design/PLAYTEST2_2026-10-30.md`). **Current milestone: M-B Believable store** (roadmap §2), now including the PT2 overhaul (REF-016 → ART-013, PROC-013, GAME-027). Exit = BUILD-008 candidate **plus QA-004 PASS on every PT1 + PT2 requirement in the build before Nolan gets it** (DEC-120). PS1b starts as soon as GAME-026 merges (GAME-017a).
 **Hub session:** the Hub Nolan started 2026-10-30 ~19:30 (main checkout; workers reply to it via the "From" link of its resume message). Earlier Hubs `local_c6267ff5`, `local_5c45166e`, `local_3dbae2f5` are idle and superseded (archive when convenient). Workers below were started by `local_c6267ff5`, so SendMessage by name fails: use `send_message` with the `local_…` id.
+**Hub clear plan (Nolan 2026-10-30):** clear this Hub chat as soon as it's safe, to keep it cheap. It is safe when (1) the two in-Hub Agent workers REF-016 and PROC-013 have finished or been relaunched as sessions (an Agent dies with the chat), and (2) the old Hub `local_c6267ff5` can be archived: its archive also archives its idle children, so wait until GAME-026, PROC-005, ASSET-005/006 and ART-008 merge, or archive it from the sidebar. Already archived: `local_3dbae2f5` and both Side chats. `local_5c45166e` ("Random BS") refused to archive (live Remote Control client): Nolan can archive it from the sidebar. After clearing, the new Hub turn reads `HUB_RESUME.md` and this file only.
 **Structure (DEC-128: lean Hub, all task work in sessions):** Nolan → Hub → workers → fresh per-review reviewers → Hub merges (DEC-116/117). Nolan is cost-sensitive: no FYI messages, lean briefs (DEC-107).
 
 ## In flight
@@ -18,7 +19,7 @@ Hub-owned; the **only live state record** (DEC-117). A fresh Hub resumes from `D
 
 | Agent worker (Hub-spawned, worktree; dies if the Hub restarts: then relaunch as a session) | **REF-016** store-evidence matrix (docs/data) | worktree off main | Launched 12:30. Review = fresh **evidence** reviewer (DEC-120 (3)). |
 | Agent worker (Hub-spawned, worktree) | **PROC-013** door family incl. glass storefront (Blender) | worktree off main | Launched 12:30. Strong visual review (DEC-122). |
-| Agent worker (Hub-spawned, worktree) | **IMP-004** audit of `Bender & Asset new plan.md` (docs) | worktree off main | Launched 12:30. Hub applies the adoptions after review. |
+| reviewer `dispo-rev-imp004` `local_a8c5a7aa-1635-4a37-99d6-a1c816a8a125` | **IMP-004** audit of `Bender & Asset new plan.md` | worker `worktree-agent-a2ff4c7a134881fd4` @ 625ff5c (Agent, done) | **In review** → `review/imp004`. On PASS the Hub applies the adoptions (one commit) and archives the imports after Nolan OKs (DEC-070). |
 
 Dead Agent runs from the old Hub, nothing to recover: the REF-013 M1 fix on `worktree-agent-a8683a438ebc5cbe4` (superseded by 3890936), the first PROC-009 run, REVIEW-REF13-FIX and the first REVIEW-PROC006b (no verdicts). Worktrees/branches are retired only when positively identified as integrated or obsolete (DEC-123); no broad cleanup.
 
