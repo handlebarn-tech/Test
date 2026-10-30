@@ -33,5 +33,6 @@ The Hub stopped writing REVIEW packets after W4E. Each review's scope is the hea
 | REVIEW-W4Q | DES-003 | `181da32` |
 | REVIEW-W4R | REF-009 | `71b48cb` |
 | REVIEW-W4S | UX-005 | `3ff9569` |
+| REVIEW-W4T | QA-002 | `bd6f517` |
 | REVIEW-W4U | REF-009b | `e1b8259` |
 | REVIEW-IMP1 | IMP-001 | `e82efc8` |

@@ -50,7 +50,8 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | ART-005 | P2 | W4F m1 2" top + m2 R2C3 panel clash; Retail_Lookdev in AdditiveScenes | ART-003/004 | Done (W4M) |
 | DATA-002 | P1 | Packaged catalog importer from Nolan's Dutchie export (whitelist, PII-free, DEC-048/050) | DES-002 | Done (W4O) |
 | DES-003 | P1 | Integrate Nolan's decision-pressure spec | — | Done (W4Q) |
-| QA-002 | P1 | Gate A TFS parity gate + DP scenario harness (EditMode, new `Tests/EditMode/Gates/`) | DES-003 | Active |
+| QA-002 | P1 | Gate A TFS parity gate + DP scenario harness (EditMode, new `Tests/EditMode/Gates/`) | DES-003 | Done (W4T) |
+| QA-002b | P1 | Gate A pass with `ParserOptions.Game` + game003 defect queries (REVIEW-W4T m1, DEC-067) | QA-002 | Active |
 | UX-005 | P1 | PS1b UX extension of `UX_PS1.md` (doc-only) | UX-002 | Done (W4S) |
 | GAME-006 | P1 | Cart | GAME-005 | Review |
 | GAME-017 | P1 | KNOWN profile, questions, query composer → QueryParser | GAME-006/007/010 | Ready (waits) |
