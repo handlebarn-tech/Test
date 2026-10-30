@@ -2,33 +2,31 @@
 
 Hub-owned; the **only live state record** (DEC-117). A fresh Hub resumes from `Docs/HUB_RESUME.md` + this file + the newest DECs, then reconciles the table below with `list_sessions` and `git branch` (STUDIO_OS §0.9). Plan and milestones: `Docs/Design/ROADMAP_POST_SLICE.md`. Registry: `Docs/BACKLOG.md`. Workers and reviewers do not read this file.
 
-**Updated:** 2026-10-30 (STATE-001, Hub restart prep). **Milestone:** PS1 done; Nolan has played `playtest2-741bb43` (findings `Docs/Design/PLAYTEST2_2026-10-30.md`). **Current milestone: M-B Believable store** (roadmap §2), including the PT2 overhaul (REF-016 → ART-013, PROC-013, GAME-027). Exit = BUILD-008 candidate **plus QA-004 PASS on every PT1 + PT2 requirement in the build before Nolan gets it** (DEC-120). PS1b starts as soon as GAME-026 merges (GAME-017a).
-**Hub session:** the fresh Hub started after this clear. Workers below were started by the old Hub `local_c6267ff5`, so SendMessage by name fails: use `send_message` with the `local_…` id.
+**Updated:** 2026-10-30 ~19:40 (PLAN state reconcile after Hub restart; DOC-005 + STATE-001 merged @ 751b85a). **Milestone:** PS1 done; Nolan has played `playtest2-741bb43` (findings `Docs/Design/PLAYTEST2_2026-10-30.md`). **Current milestone: M-B Believable store** (roadmap §2), including the PT2 overhaul (REF-016 → ART-013, PROC-013, GAME-027). Exit = BUILD-008 candidate **plus QA-004 PASS on every PT1 + PT2 requirement in the build before Nolan gets it** (DEC-120). PS1b starts as soon as GAME-026 merges (GAME-017a).
+**Hub session:** the fresh Hub is running; old Hub `local_c6267ff5` still unarchived. Workers below were started by the old Hub `local_c6267ff5`, so SendMessage by name fails: use `send_message` with the `local_…` id.
 **Hub clear plan (Nolan 2026-10-30): EXECUTED** (STATE-001). Keep old Hub `local_c6267ff5` unarchived until its children (GAME-026, PROC-005, ASSET-005, ART-008) merge (archiving cascades). `local_5c45166e` ("Random BS", live Remote Control client) is for Nolan to archive from the sidebar.
 **Structure (DEC-128/132: dispatch-only Hub, all task work in sessions):** Nolan → Hub → workers → fresh per-review reviewers → integrator sessions merge (DEC-116/117/132). Nolan is cost-sensitive: no FYI messages, lean briefs (DEC-107).
 
 ## In flight
 | Session | Task | Branch @ sha | State → next Hub action |
 |---|---|---|---|
-| worker `local_9bc94fb7-d677-4076-81be-83317f26bbf8` (done); reviewer `local_b61cea37-9aa2-44ff-889d-5d08606db651` | **GAME-026** customer flow | `task/GAME-026` @ 54c929d; review → `review/game026` | Reviewer is running its test runs. On PASS: INTEG session (DEC-132), then GAME-017a + GAME-027 unlock. |
-| worker `local_335db39d-0968-49fa-846c-808a2abb2158` (done); reviewer `local_9c427f1e-9856-4143-b55f-62862d551e04` | **PROC-005** fixture families fix round | `claude/elated-satoshi-3a4844` @ ddc3112; review → `review/proc005b` | Reviewer running. On PASS: INTEG session. The Hub decides whether the "Left, in order" list closes PROC-005 or moves to PROC-010. |
-| worker `local_738af4a0-c26e-49b9-bd35-43c6dacd5b3f` | **PROC-009** parked vehicles | `claude/jovial-meninsky-908c0a` @ 2495e6c; reviewer FAIL (2 MAJOR) at `review/proc009` @ a8cfb3d | Worker is in its fix round. When it reports ready: fresh reviewer. |
-| `dispo-art008` `local_77fd945b-ecaf-4432-8c51-54b18ed9dc50` | **ART-008** graybox final pass (Unity slot) | `claude/festive-hamilton-c0ced4` @ a8f4bd4 | In progress. Wait for ready-for-review. |
-| `dispo-asset005` `local_1bb17d9a-7584-4a8b-af68-d01479714d05` | **ASSET-005/006** wardrobe + hair (Blender) | `claude/sweet-shirley-002b17` @ 0f3fba5 (uncommitted WIP in worktree) | In progress. At merge the reviewer re-runs the C001 regression (ASSET-007 also edits `customer_gen.py`); then add the staff-gloves line to CHARACTERS.md §9. |
-| REF-016 worker finished | **REF-016** store-evidence matrix (docs/data) | `worktree-agent-a9f9579ab68e3b5d2` @ 14332c3 (committed, 1 ahead of main) | **Ready for review.** The fresh evidence reviewer (DEC-120 (3)) is a pending card for Nolan to start. No relaunch needed. |
-| **none: Agent worker died with the old Hub chat** | **PROC-013** door family incl. glass storefront (Blender) | `worktree-agent-a83016d0b10c940eb` @ 4e1b088 (= main base, no commits). **58 uncommitted files** in the (locked) worktree `.claude/worktrees/agent-a83016d0b10c940eb`: door FBX exports + `manifest.json`. | Start a fresh session continuing from that branch/worktree (`source_branch`; keep the uncommitted files, do not clean the worktree), per `Docs/Tasks/Active/PROC-013.md`. Strong visual review (DEC-122). |
-| `dispo-doc005` `local_b83a44f9-f817-45bc-ad86-bf67124cc602` | **DOC-005** rewriting HUB_RESUME / STUDIO_OS / CLAUDE.md | its own branch | Merge when it reports. |
-| STATE-001 | this file | `claude/inspiring-volhard-934e33` | Merge, then clear the old Hub chat. |
+| worker `local_9bc94fb7-d677-4076-81be-83317f26bbf8` (done); reviewer `local_b61cea37-9aa2-44ff-889d-5d08606db651` (idle) | **GAME-026** customer flow | `task/GAME-026` @ 54c929d; review → `review/game026` @ 195d725 | **Verdict unknown:** no `REVIEW-GAME026.md` on the branch or in its worktree (19:40). Ask the reviewer for its verdict / to write the file. On PASS: INTEG session (DEC-132), then GAME-017a + GAME-027 unlock. |
+| worker `local_335db39d-0968-49fa-846c-808a2abb2158` (done); reviewer `local_9c427f1e-9856-4143-b55f-62862d551e04` (idle) | **PROC-005** fixture families fix round | `claude/elated-satoshi-3a4844` @ ddc3112; review → `review/proc005b` @ 5f6906d | **Verdict unknown:** no `REVIEW-PROC005*.md` on the branch or in its worktree (19:40). Ask the reviewer. On PASS: INTEG session; the Hub decides whether the "Left, in order" list closes PROC-005 or moves to PROC-010. |
+| worker `local_738af4a0-c26e-49b9-bd35-43c6dacd5b3f` (running) | **PROC-009** parked vehicles | `claude/jovial-meninsky-908c0a` @ 429872f (fix round 1 committed); first review FAIL at `review/proc009` @ a8cfb3d | Worker in its fix round. When it reports ready: fresh reviewer. |
+| worker `local_77fd945b-ecaf-4432-8c51-54b18ed9dc50` (done); reviewer `local_f6623b7b-9a38-4980-a8c3-e8b2f2277967` (running) | **ART-008** graybox final pass (Unity slot) | `claude/festive-hamilton-c0ced4` @ 1440ff6; review → `review/art008` @ 1a394a8 | Under review. On PASS: INTEG session. |
+| `dispo-asset005` `local_1bb17d9a-7584-4a8b-af68-d01479714d05` (idle) | **ASSET-005/006** wardrobe + hair (Blender) | `claude/sweet-shirley-002b17` @ 0f3fba5; **no handoff**, 10 uncommitted files in worktree `task-asset-002-ed2b8b` (wardrobe/hair/fabric scripts + params) | Not done, not committed. Nudge the worker to finish, commit and hand off. At merge the reviewer re-runs the C001 regression (ASSET-007 also edits `customer_gen.py`); then add the staff-gloves line to CHARACTERS.md §9. |
+| worker finished; reviewer `local_74e891b6-f474-4e8c-9abb-ccc4af55a562` (running) | **REF-016** store-evidence matrix (docs/data) | `worktree-agent-a9f9579ab68e3b5d2` @ 14332c3 | Evidence review (DEC-120 (3)) running. On PASS: INTEG session. |
+| `dispo-proc013` `local_6b501011-a377-4a18-8f78-90c75f433ede` (running) | **PROC-013** door family incl. glass storefront (Blender) | continues `worktree-agent-a83016d0b10c940eb` @ 4e1b088 + 58 uncommitted files (locked worktree) | Relaunched. When ready: strong visual review (DEC-122). |
 
 Worktrees/branches are retired only when positively identified as integrated or obsolete (DEC-123); no broad cleanup.
 
 ## Pending for the next Hub
 - On each reviewer PASS, start an **integrator session** (DEC-132); **only one integrator at a time**.
-- Relaunch PROC-013 as a session (table above); start the REF-016 evidence reviewer.
+- Get the GAME-026 and PROC-005 verdicts from their idle reviewers; nudge ASSET-005/006.
 - Archive old Hub `local_c6267ff5` once GAME-026, PROC-005, ASSET-005, ART-008 have merged.
 
 ## Unity slots (max 2, DEC-013)
-ART-008 holds one; GAME-026 reviewer may hold the other. A PROC-005/006b reviewer needing Unity import checks waits for a free slot or borrows GAME-026's while that session is idle.
+ART-008 reviewer holds one; GAME-026 reviewer (idle) may still hold the other. PROC-005 reviewer (idle) may also have used Unity. Check `studio.ps1 slots` before starting a Unity session.
 
 ## Queue (next packets, in order; prerequisites in BACKLOG)
 1. (PROC-009 launched, see In flight.)
