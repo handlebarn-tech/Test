@@ -16,3 +16,9 @@
 ## Note for the Hub (no change needed)
 - DEC-088 says it "closes GAP-PROC-13"; the checklist keeps post/wire/collar/caster/foot sizes under GAP-PROC-13 (Nolan gave counts, not component sizes). The checklist is the more accurate reading. When registering GAPs, word GAP-PROC-13 as "component sizes" so it isn't marked closed.
 - W8's run-length conflict goes on the next REF pass list.
+
+## Addendum — f2580f7 (DEC-090 deli counter front; W8 label)
+**Verdict: PASS with one minor (GO).** f2580f7 is already in this branch's merge (40d2e2a: the worker's branch tip had moved to f2580f7 when `review/wave-5r` was cut), so no new merge was needed.
+- **D5 matches DEC-090:** the front is plywood with a decorative wrap, and the teal/white checker is the wrap's print, Med ("a texture on the plywood front, not real tile"). No glass case is stated, so it is an optional placeholder param under GAP-PROC-14 ✔. Handoff Q5 marked answered ✔.
+- **W8** relabelled "REF follow-up for the PROC worker (do not guess; Hub-confirmed open item)": same content ✔.
+- **m1 (stale, fix on next delta):** checklist §Q1 (line ~283) still lists "checker-tile counter front (TL-type tile, real grout lines)" as LOD0 detail. Under DEC-090 that is a printed wrap on plywood: no grout geometry, a wrap texture, plus plywood edge/seam detail. Leaving it would have the PROC worker model real tile against D5. (Handoff line 57, "not an L with a tile front", is the historical drop-4 summary; it could say "wrap front" but needs no change.)
