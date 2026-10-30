@@ -15,7 +15,7 @@ Hub-owned; the **only live state record** (DEC-117). A fresh Hub resumes from `D
 | worker `local_738af4a0-c26e-49b9-bd35-43c6dacd5b3f` | **PROC-009** parked vehicles | `claude/jovial-meninsky-908c0a` @ 2495e6c; reviewer FAIL (2 MAJOR) at `review/proc009` @ a8cfb3d | Worker is in its fix round. When it reports ready: fresh reviewer. |
 | `dispo-art008` `local_77fd945b-ecaf-4432-8c51-54b18ed9dc50` | **ART-008** graybox final pass (Unity slot) | `claude/festive-hamilton-c0ced4` @ a8f4bd4 | In progress. Wait for ready-for-review. |
 | `dispo-asset005` `local_1bb17d9a-7584-4a8b-af68-d01479714d05` | **ASSET-005/006** wardrobe + hair (Blender) | `claude/sweet-shirley-002b17` @ 0f3fba5 (uncommitted WIP in worktree) | In progress. At merge the reviewer re-runs the C001 regression (ASSET-007 also edits `customer_gen.py`); then add the staff-gloves line to CHARACTERS.md §9. |
-| **none: Agent worker died with the old Hub chat** | **REF-016** store-evidence matrix (docs/data) | `worktree-agent-a9f9579ab68e3b5d2` @ 14332c3 (committed, 1 ahead of main; worktree `.claude/worktrees/agent-a9f9579ab68e3b5d2`) | Start a fresh session that continues from that branch (`source_branch`), per `Docs/Tasks/Active/REF-016.md`. Its work may already be complete: check the packet's deliverables first. Review = fresh **evidence** reviewer (DEC-120 (3)). |
+| REF-016 worker finished | **REF-016** store-evidence matrix (docs/data) | `worktree-agent-a9f9579ab68e3b5d2` @ 14332c3 (committed, 1 ahead of main) | **Ready for review.** The fresh evidence reviewer (DEC-120 (3)) is a pending card for Nolan to start. No relaunch needed. |
 | **none: Agent worker died with the old Hub chat** | **PROC-013** door family incl. glass storefront (Blender) | `worktree-agent-a83016d0b10c940eb` @ 4e1b088 (= main base, no commits). **58 uncommitted files** in the (locked) worktree `.claude/worktrees/agent-a83016d0b10c940eb`: door FBX exports + `manifest.json`. | Start a fresh session continuing from that branch/worktree (`source_branch`; keep the uncommitted files, do not clean the worktree), per `Docs/Tasks/Active/PROC-013.md`. Strong visual review (DEC-122). |
 | `dispo-doc005` `local_b83a44f9-f817-45bc-ad86-bf67124cc602` | **DOC-005** rewriting HUB_RESUME / STUDIO_OS / CLAUDE.md | its own branch | Merge when it reports. |
 | STATE-001 | this file | `claude/inspiring-volhard-934e33` | Merge, then clear the old Hub chat. |
@@ -24,7 +24,7 @@ Worktrees/branches are retired only when positively identified as integrated or 
 
 ## Pending for the next Hub
 - On each reviewer PASS, start an **integrator session** (DEC-132); **only one integrator at a time**.
-- Relaunch REF-016 and PROC-013 as sessions (table above).
+- Relaunch PROC-013 as a session (table above); start the REF-016 evidence reviewer.
 - Archive old Hub `local_c6267ff5` once GAME-026, PROC-005, ASSET-005, ART-008 have merged.
 
 ## Unity slots (max 2, DEC-013)
