@@ -41,4 +41,4 @@ Source: `Docs/Design/RECOMMENDATION_DEPTH_AUDIT.md` (**RDA**) §3.4–3.5.
 - Extra test: an ambiguous customer served only through tiles gets a lower DQ than one served by a question plus the correct reading, with identical TFS outputs for identical inputs.
 
 ## Handoff
-`Docs/Handoffs/GAME-019.md` (≤40 lines), including the tuning table of new [GDD] keys. Questions go to your department lead (DEC-033, DEC-094).
+`Docs/Handoffs/GAME-019.md` (≤40 lines), including the tuning table of new [GDD] keys. Questions: resolve from the sources in STUDIO_OS §0.6 first, then list the rest for the Hub (DEC-033/105).

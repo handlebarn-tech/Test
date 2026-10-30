@@ -436,7 +436,7 @@ Detailed sourcing belongs only in `ASSET_PRODUCTION_PLAN.md`.
 
 # 14. Multi-agent studio model
 
-The studio runs as Nolan → Hub → Department Leads → Workers. The operating model (roles, authority, escalation, session lifecycle, ownership, context and reporting) is defined only in `STUDIO_OS.md` §0 (DEC-094); it replaced the Hub-and-Workcell text that was here.
+The studio runs as Nolan → Hub → workers → fresh short-lived reviewers → Hub merges (DEC-116/117; the DEC-094 department leads were retired by DEC-112). The operating model is defined only in `STUDIO_OS.md` §0; it replaced the Hub-and-Workcell text that was here.
 
 ---
 

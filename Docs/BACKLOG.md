@@ -2,7 +2,7 @@
 
 Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Done / Blocked.
 
-The only task registry (DEC-094). **The ID prefix names the owning department** (`STUDIO_OS.md` §0.2); each lead edits only its own rows and packets, the Hub edits DOC/OPS/AUDIT/REVIEW rows. Some rows below are stale as of 2026-10-30; each lead reconciles its prefixes first.
+The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's state is its packet folder** (`Docs/Tasks/Ready|Active|Done`); the State column mirrors it and changes only in the same commit as the packet move. Live in-flight detail (session, branch, next step) is in `PROJECT_STATE.md`, not here. The ID prefix is a role label (REF, ART, GAME, PROC, …), not an owner.
 
 | ID | P | Title | Depends on | State |
 |---|---|---|---|---|
@@ -75,10 +75,11 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | REF-009 | P1 | Apply DEC-051 to `ROOM_FIXTURES.json` | REF-008 | Done (W4R) |
 | REF-009b | P1 | W4R m1–m5 + DEC-062 into `ROOM_FIXTURES.json` | REF-009 | Done (W4U) |
 | REF-010 | P1 | Restroom storage cabinet placement (DEC-068) into `ROOM_FIXTURES` | ART-006 | Done (W5C) |
-| REF-011 | P0 | Sales-floor layout audit: registers + operator access, HUB, deli walls, shelf fill (DEC-096) | — | Review (review/world-1) |
-| REF-012 | P0 | Office walkability + door geometry audit; DOORS.json contract for Gameplay (DEC-096) | — | Review (review/world-1) |
+| REF-011 | P0 | Sales-floor layout audit: registers + operator access, HUB, deli walls, shelf fill (DEC-096) | — | Done (115292c) |
+| REF-012 | P0 | Office walkability + door geometry audit; DOORS.json contract for Gameplay (DEC-096) | — | Done (115292c) |
 | REF-013 | P0 | Settle GAP-129/130/132/134 from TI/floor-plan vectors; apply DEC-110 to DOORS | REF-011, REF-012 | Active |
-| ART-007 | P0 | Graybox/lookdev rebuild from REF-011/012 (registers, HUB, deli walls, office, doors) | REF-011, REF-012 | Active |
+| ART-007 | P0 | Graybox/lookdev rebuild from REF-011/012 (registers, HUB, deli walls, office, doors) | REF-011, REF-012 | Done (741bb43) |
+| ART-008 | P0 | Graybox final pass on the REF-013 fix (rev8, DEC-115 hinges, clearance failures) | REF-013 fix | Active |
 | GAME-007 | P1 | Purchase-limit meter + over-limit asks + strike ledger (COMP-002 §2) | GAME-006 | Done |
 | GAME-008 | P1 | ID-check events (COMP-002 §3) | GAME-007 | Done (W5N) |
 | GAME-009 | P2 | Medical customers (COMP-002 §4) + W5N m2 queue strip | GAME-007, GAME-008 | Done (REVIEW-PS1, 054e159) |
@@ -94,29 +95,29 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | DES-005b | P0 | Fold DEC-103 into CONTROLS_FLOW_PS1 + GAME-025/026; REVIEW-W5U m1–m3 (KNOWN_GAPS GAP-CF rows, GAP-DAY-04 basis) | DES-005 | Done (REVIEW-DES5b, abede71) |
 | DES-007 | P2 | DEC-101: long-term rows into `ROADMAP_POST_SLICE.md` (Hub-delegated) + deadpan tone note for dialogue/event writers | DES-005 merge | Done (in DES-005b, abede71) |
 | GAME-017a | P0 | First playable recommendation depth (cut from GAME-017, DES-006 §5): needs, read-it-as picker, parser route, Q9, reject→re-search | DES-006, DATA-003, UX-006, GAME-009, GAME-025 (same Presentation/Slice files), QA-002b Gate A | Ready (waits: GAME-025 + DATA-003 merge) |
-| DATA-003 | P0 | Customer needs catalog + golden parses from the TFS tool (GAME-017a data) | DES-006 | Review (REVIEW-DATA3 PASS, `review/data3` merge-ready) |
+| DATA-003 | P0 | Customer needs catalog + golden parses from the TFS tool (GAME-017a data) | DES-006 | Done (db43b6d) |
 | UX-006 | P0 | Counter UX addendum: read-it-as picker, said cards, query preview | DES-006, DES-005 | Done (REVIEW-UX6, 5920ab2) |
-| BUILD-007 | P0 | Playtest build 2 (PS1 complete) into `Downloads/Dispo Game Builds/` | GAME-009 | On hold (Nolan: build after GAME-025, maybe GAME-026) |
-| GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction  | DES-005, GAME-009 merge, World REF-012 `DOORS.json` | Active |
-| GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next  | DES-005, GAME-025, World REF-011 `SCENE_ANCHORS.json` | Ready (waits) |
+| BUILD-007 | P0 | Playtest build 2 (PS1 complete) into `Downloads/Dispo Game Builds/` | GAME-009 | Done (playtest2-741bb43) |
+| GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction  | DES-005, GAME-009 merge, World REF-012 `DOORS.json` | Done (08758c1) |
+| GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next  | DES-005, GAME-025, World REF-011 `SCENE_ANCHORS.json` | Active |
 | ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Done (W5A) |
 | IMP-002 | P1 | Integrate the approved DISPO_GAME_DESIGN_V2 pack (DEC-063) into `Docs/Design/DESIGN_V2/` | IMP-001 | Done (W4V, DEC-066) |
 | ASSET-003 | P1 | Customer characters + animations sourcing (CHARACTERS.md, DEC-084/087) | ASSET-001 | Done (W5P) |
-| ASSET-004 | P1 | MPFB2 customer pipeline (DEC-087/089): 60-customer roster, generator, LODs | ASSET-003 | Active (resumed 2026-10-30 from `claude/task-asset-004` 225ac4a) |
+| ASSET-004 | P1 | MPFB2 customer pipeline (DEC-087/089): 60-customer roster, generator, LODs | ASSET-003 | Done (976af6e, 18b66d1) |
 | AUDIO-001 | P1 | Audio plan + CC0 sourcing (no Unity) | ASSET-001 | Done |
 | BRAND-001 | P1 | Only approved brands ship (DEC-071) | DATA-002 | Done |
 | BRAND-001b | P1 | Fictional-brand collision pass (DEC-078) | BRAND-001 | Done |
 | BRAND-002 | P1 | Name search of all fictional names before any public build (DEC-078) | BRAND-001b | Later |
-| IMP-003 | P1 | Rolling ChatGPT toolkit audit (DEC-070/083/095): drops 1–5, rebuilt round 3, rounds 4–6 | — | Rounds 3b–6 Done (e0fc82c, DEC-111 approved); rolling for future drops |
+| IMP-003 | P1 | Rolling ChatGPT toolkit audit (DEC-070/083/095): drops 1–5, rebuilt round 3, rounds 4–6 | — | Done (e0fc82c, DEC-111); a future drop gets a new IMP task |
 | PROC-005 | P1 | Integrate the approved toolkit + fix every checklist item (DEC-092) | IMP-003 | Active |
-| PROC-006 | P1 | Register workstation kit: evidence spec, then generators (DEC-096) | — | Phase 1 Done (main 6af8906); phase 2 waits on ROOM_FIXTURES rev7 |
+| PROC-006 | P1 | Register workstation kit: evidence spec (DEC-096) | — | Done (6af8906); generators = PROC-006b |
 | PROC-006b | P1 | Register kit generators + seeded per-station variation (DEC-104) | PROC-006 | Active |
 | PROC-007 | P1 | DEC-097 UV layout (lightmap ch1, label ch2) + re-export jars/packaged goods, with World's label-shader cut-over | PROC-005 | Ready |
 | PROC-008 | P2 | Cash-drawer tray (R3b.6) | — | Rejected (Hub ruling: DEC-051/086 win; cash equipment is never modelled) |
-| PROC-009 | P2 | Studio-built parked vehicles (DEC-111; R3b.7 rejected as built): CC0 source (DEC-023) or a rebuild per checklist R3b.7 | PROC-005 | Later |
-| ASSET-005 | P1 | Studio-built customer wardrobe (DEC-111; R4.1 rejected as built): MPFB2 CC0 clothes, or procedural shells per R4.1, keeping the drop's garment list and colourways | ASSET-004 | Later |
+| PROC-009 | P2 | Studio-built parked vehicles (DEC-111; R3b.7 rejected as built): CC0 source (DEC-023) or a rebuild per checklist R3b.7 | PROC-005 | Active |
+| ASSET-005 | P1 | Studio-built customer wardrobe (DEC-111; R4.1 rejected as built): MPFB2 CC0 clothes, or procedural shells per R4.1, keeping the drop's garment list and colourways | ASSET-004 | Active (with ASSET-006, one session) |
 | ASSET-006 | P1 | Studio-built hair (DEC-111; R4.2 rejected as built): MPFB2 CC0 hair or alpha card clumps per R4.2, keeping the 9-style list | ASSET-004 | Later |
-| ASSET-007 | P2 | Studio-built nitrile glove overlay (DEC-111; R4.7 rejected as built): hand vertex-group mask or a CC0 glove proxy | ASSET-004 | Later |
+| ASSET-007 | P2 | Studio-built nitrile glove overlay (DEC-111; R4.7 rejected as built): hand vertex-group mask or a CC0 glove proxy | ASSET-004 | Active |
 | AUDIT-001 | P1 | Read-only .md audit + approval sheet (`Docs/Audits/`) | DES-003 | Done (DEC-064) |
 | DOC-001 | P1 | Apply AUDIT-001 batches A–C (DEC-064), 2 phases | AUDIT-001; phase 2 after IMP-002 | Done (W4X) |
 | DOC-002 | P2 | AUDIT-001 batch D (risky: ART renumber, CLAUDE.md read list, REFERENCES_INDEX split, branch naming) | DOC-001; between waves only | Later |

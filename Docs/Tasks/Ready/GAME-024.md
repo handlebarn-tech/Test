@@ -29,7 +29,7 @@ V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). 
 - Tests add V2's stress profiles as bots: speedrunner, perfectionist-slow, careless, inventory-only and revenue-only fail Trusted; balanced passes (V2 `VALIDATION/progression_gate_stress.csv`, reference only, never run the `.py`). Re-tune for the gentler gates. Exploits EX-029..032 (row 45).
 
 ## Handoff
-`Docs/Handoffs/GAME-024.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).
+`Docs/Handoffs/GAME-024.md` (≤40 lines). Questions: resolve from the sources in STUDIO_OS §0.6 first, then list the rest for the Hub (DEC-033/105).
 
 ## DES-004c addition (DEC-080)
 The **manager refill loop** is a manager-rank mechanic unlocked through these gates, as one of the PS2–PS4 unlocks in Deliverable 2. Design: `Docs/Design/SPEC_SHIFT_DAY.md` §9b. Facts from DEC-079: the office silver rolling cart is the only certified refill place; HUB cabinet bags; the empty-jar shelf; cleaning. GAME-024 provides only the unlock flag. The loop itself is a separate packet, written when GAME-024 lands.

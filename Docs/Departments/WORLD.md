@@ -1,5 +1,7 @@
 # World department
 
+> **ARCHIVED (DEC-112/117, 2026-10-30).** Departments and leads no longer exist. Durable rulings from this file are in `Docs/DECISIONS.md` DEC-118; its queue items are in `Docs/PROJECT_STATE.md`. Nothing below is current; do not read it for a task, cite the registries instead.
+
 Rules for every department: `Docs/STUDIO_OS.md` §0. This file is the World lead's resume and domain state; the lead owns it. Lead session and capacity: `Docs/PROJECT_STATE.md` → "Studio roster".
 
 ## Charter

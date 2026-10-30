@@ -7,16 +7,14 @@ This file exists to keep agents from loading unnecessary context.
 | Project goal / milestone / core architecture | `MASTER_PLAN.md` |
 | Port current Three.js/browser/budtender systems | `UNITY_MIGRATION_PLAN.md` |
 | Find/build/import any art asset | `ASSET_PRODUCTION_PLAN.md` |
-| Worktrees, packet/handoff formats, review gates | `STUDIO_OS.md` (§0 first) |
+| Operating model: roles, sources of truth, read sets, packets, briefs, escalation, review, integration, Hub restart | `STUDIO_OS.md` **§0 only** (DEC-117); §56–57 templates, §63–65 gates; the rest is history |
 | Run Unity/Blender/tests/builds/screenshots | `TOOLCHAIN_EXECUTION.md` |
 | Design/implement customers, shifts, transactions and progression | `GAMEPLAY_SIMULATION_SPEC.md` |
 | Codex durable repo guidance | `AGENTS.md` |
 | Claude Code durable repo guidance | `CLAUDE.md` |
-| Roles, authority, escalation, session lifecycle, ownership, reporting | `STUDIO_OS.md` §0 (DEC-094) |
 | **Studio Hub start** (Hub only) | `HUB_RESUME.md` |
-| **Department lead start** + domain state (owned paths, contracts, in flight, queue) | `Departments/GAMEPLAY.md`, `Departments/WORLD.md`, `Departments/ASSETS.md` |
-| Project milestone, studio roster, priorities, cross-dept dependencies, Nolan items | `PROJECT_STATE.md` (Hub, leads) |
-| Task queue and states | `BACKLOG.md` (packets in `Tasks/Active`, `Tasks/Ready`, `Tasks/Done`) |
+| Live state: in flight, queue, priorities, Nolan items, builds | `PROJECT_STATE.md` (Hub only) |
+| Task registry (IDs, titles, dependencies) | `BACKLOG.md`; a task's state = its packet folder `Tasks/Ready|Active|Done` |
 | Ratified decisions (DEC-###), newest last | `DECISIONS.md`: read only the entries your packet cites, or the newest few |
 | Unknown facts and placeholders (GAP-###) | `KNOWN_GAPS.md` |
 | Decision-pressure gameplay (ratified DEC-057; wins over GSS on conflict) | `Design/SPEC_DECISION_PRESSURE.md` (only the § your packet cites); item status in `Design/DES-003_RECONCILIATION.md` |
