@@ -2132,6 +2132,1504 @@
         "LOD0": 500,
         "LOD1": 120
       }
+    },
+    "PROC_Pkg_BevBottle": {
+      "category": "beverage",
+      "export": "Art/Exports/Procedural/PROC_Pkg_BevBottle.fbx",
+      "export_sha256": "39fc20bb215b750c",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_BevBottle_Body_LOD0": {
+              "geometry_sha256": "a0d8325d74f4b793",
+              "size_m_unity_xyz": [
+                0.06,
+                0.185,
+                0.06
+              ],
+              "tris": 380,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            },
+            "PROC_Pkg_BevBottle_Cap_LOD0": {
+              "geometry_sha256": "4797f280f95b42e7",
+              "size_m_unity_xyz": [
+                0.03,
+                0.022,
+                0.03
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            }
+          },
+          "size_m_unity_xyz": [
+            0.06,
+            0.2,
+            0.06
+          ],
+          "tris": 520
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_BevBottle_Body_LOD1": {
+              "geometry_sha256": "be74947c93e86603",
+              "size_m_unity_xyz": [
+                0.06,
+                0.185,
+                0.06
+              ],
+              "tris": 188,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            },
+            "PROC_Pkg_BevBottle_Cap_LOD1": {
+              "geometry_sha256": "89d10fc4710191d2",
+              "size_m_unity_xyz": [
+                0.03,
+                0.022,
+                0.03
+              ],
+              "tris": 68,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            }
+          },
+          "size_m_unity_xyz": [
+            0.06,
+            0.2,
+            0.06
+          ],
+          "tris": 256
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_BevBottle_Body_LOD2": {
+              "geometry_sha256": "04c00de6de9130f2",
+              "size_m_unity_xyz": [
+                0.06,
+                0.2,
+                0.06
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.06,
+            0.2,
+            0.06
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 600,
+        "LOD1": 300,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_BevBottle.fbx"
+    },
+    "PROC_Pkg_BevCan": {
+      "category": "beverage",
+      "export": "Art/Exports/Procedural/PROC_Pkg_BevCan.fbx",
+      "export_sha256": "4acb8febbb0cb4b1",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_BevCan_Body_LOD0": {
+              "geometry_sha256": "f0f9dfbb3ed3836b",
+              "size_m_unity_xyz": [
+                0.066,
+                0.122,
+                0.066
+              ],
+              "tris": 332,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 168
+            }
+          },
+          "size_m_unity_xyz": [
+            0.066,
+            0.122,
+            0.066
+          ],
+          "tris": 332
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_BevCan_Body_LOD1": {
+              "geometry_sha256": "1422d466681df351",
+              "size_m_unity_xyz": [
+                0.066,
+                0.122,
+                0.066
+              ],
+              "tris": 164,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            }
+          },
+          "size_m_unity_xyz": [
+            0.066,
+            0.122,
+            0.066
+          ],
+          "tris": 164
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_BevCan_Body_LOD2": {
+              "geometry_sha256": "010fd21e50ae68aa",
+              "size_m_unity_xyz": [
+                0.066,
+                0.122,
+                0.066
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.066,
+            0.122,
+            0.066
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_BevCan.fbx"
+    },
+    "PROC_Pkg_EdibleBag": {
+      "category": "edible",
+      "export": "Art/Exports/Procedural/PROC_Pkg_EdibleBag.fbx",
+      "export_sha256": "4541750e9fd87fe8",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_EdibleBag_Body_LOD0": {
+              "geometry_sha256": "6eebc52d7fa4fbe6",
+              "size_m_unity_xyz": [
+                0.09,
+                0.125,
+                0.03
+              ],
+              "tris": 380,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            }
+          },
+          "size_m_unity_xyz": [
+            0.09,
+            0.125,
+            0.03
+          ],
+          "tris": 380
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_EdibleBag_Body_LOD1": {
+              "geometry_sha256": "bd224f983271765a",
+              "size_m_unity_xyz": [
+                0.09,
+                0.125,
+                0.03
+              ],
+              "tris": 188,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            }
+          },
+          "size_m_unity_xyz": [
+            0.09,
+            0.125,
+            0.03
+          ],
+          "tris": 188
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_EdibleBag_Body_LOD2": {
+              "geometry_sha256": "a57e9d271b9c8574",
+              "size_m_unity_xyz": [
+                0.09,
+                0.125,
+                0.03
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.09,
+            0.125,
+            0.03
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_EdibleBag.fbx"
+    },
+    "PROC_Pkg_EdibleBox": {
+      "category": "edible",
+      "export": "Art/Exports/Procedural/PROC_Pkg_EdibleBox.fbx",
+      "export_sha256": "808e20f2012b2525",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_EdibleBox_Body_LOD0": {
+              "geometry_sha256": "02a5dbf629f0e903",
+              "size_m_unity_xyz": [
+                0.085,
+                0.11,
+                0.025
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            }
+          },
+          "size_m_unity_xyz": [
+            0.085,
+            0.11,
+            0.025
+          ],
+          "tris": 92
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_EdibleBox_Body_LOD1": {
+              "geometry_sha256": "206d321f508d344b",
+              "size_m_unity_xyz": [
+                0.085,
+                0.11,
+                0.025
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.085,
+            0.11,
+            0.025
+          ],
+          "tris": 28
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_EdibleBox_Body_LOD2": {
+              "geometry_sha256": "e6f8c1417a275982",
+              "size_m_unity_xyz": [
+                0.085,
+                0.11,
+                0.025
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.085,
+            0.11,
+            0.025
+          ],
+          "tris": 12
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 120,
+        "LOD1": 40,
+        "LOD2": 20
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_EdibleBox.fbx"
+    },
+    "PROC_Pkg_ExtractJar": {
+      "category": "extract",
+      "export": "Art/Exports/Procedural/PROC_Pkg_ExtractJar.fbx",
+      "export_sha256": "4233aad889022055",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_ExtractJar_Body_LOD0": {
+              "geometry_sha256": "66df197f2e1b4f5c",
+              "size_m_unity_xyz": [
+                0.035,
+                0.022,
+                0.035
+              ],
+              "tris": 236,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_Pkg_ExtractJar_Cap_LOD0": {
+              "geometry_sha256": "f383ae0c790926f3",
+              "size_m_unity_xyz": [
+                0.038,
+                0.013,
+                0.038
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            }
+          },
+          "size_m_unity_xyz": [
+            0.038,
+            0.033,
+            0.038
+          ],
+          "tris": 376
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_ExtractJar_Body_LOD1": {
+              "geometry_sha256": "f08939b15f3e5c76",
+              "size_m_unity_xyz": [
+                0.035,
+                0.022,
+                0.035
+              ],
+              "tris": 116,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            },
+            "PROC_Pkg_ExtractJar_Cap_LOD1": {
+              "geometry_sha256": "e266ab4d3d462e25",
+              "size_m_unity_xyz": [
+                0.038,
+                0.013,
+                0.038
+              ],
+              "tris": 68,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            }
+          },
+          "size_m_unity_xyz": [
+            0.038,
+            0.033,
+            0.038
+          ],
+          "tris": 184
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_ExtractJar_Body_LOD2": {
+              "geometry_sha256": "962a377f4e346a83",
+              "size_m_unity_xyz": [
+                0.038,
+                0.033,
+                0.038
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.038,
+            0.033,
+            0.038
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_ExtractJar.fbx"
+    },
+    "PROC_Pkg_FlowerPouch": {
+      "category": "prepack_flower",
+      "export": "Art/Exports/Procedural/PROC_Pkg_FlowerPouch.fbx",
+      "export_sha256": "7484989f1fcaaceb",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_FlowerPouch_Body_LOD0": {
+              "geometry_sha256": "c9639b748ba33b42",
+              "size_m_unity_xyz": [
+                0.1,
+                0.13,
+                0.035
+              ],
+              "tris": 380,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            }
+          },
+          "size_m_unity_xyz": [
+            0.1,
+            0.13,
+            0.035
+          ],
+          "tris": 380
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_FlowerPouch_Body_LOD1": {
+              "geometry_sha256": "6654e6e9adb7de0b",
+              "size_m_unity_xyz": [
+                0.1,
+                0.13,
+                0.035
+              ],
+              "tris": 188,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            }
+          },
+          "size_m_unity_xyz": [
+            0.1,
+            0.13,
+            0.035
+          ],
+          "tris": 188
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_FlowerPouch_Body_LOD2": {
+              "geometry_sha256": "e89071a2da82c74a",
+              "size_m_unity_xyz": [
+                0.1,
+                0.13,
+                0.035
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.1,
+            0.13,
+            0.035
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_FlowerPouch.fbx"
+    },
+    "PROC_Pkg_MerchGrinder": {
+      "category": "merch",
+      "export": "Art/Exports/Procedural/PROC_Pkg_MerchGrinder.fbx",
+      "export_sha256": "666b7b08b1652e98",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_MerchGrinder_Body_LOD0": {
+              "geometry_sha256": "9c17686309a81c83",
+              "size_m_unity_xyz": [
+                0.055,
+                0.03,
+                0.055
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_Pkg_MerchGrinder_Lid_LOD0": {
+              "geometry_sha256": "7f58aa9f8271adca",
+              "size_m_unity_xyz": [
+                0.055,
+                0.015,
+                0.055
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            }
+          },
+          "size_m_unity_xyz": [
+            0.055,
+            0.045,
+            0.055
+          ],
+          "tris": 280
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_MerchGrinder_Body_LOD1": {
+              "geometry_sha256": "c1d28434b4d94b20",
+              "size_m_unity_xyz": [
+                0.055,
+                0.03,
+                0.055
+              ],
+              "tris": 68,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            },
+            "PROC_Pkg_MerchGrinder_Lid_LOD1": {
+              "geometry_sha256": "cf53a542444c0ad7",
+              "size_m_unity_xyz": [
+                0.055,
+                0.015,
+                0.055
+              ],
+              "tris": 68,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            }
+          },
+          "size_m_unity_xyz": [
+            0.055,
+            0.045,
+            0.055
+          ],
+          "tris": 136
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_MerchGrinder_Body_LOD2": {
+              "geometry_sha256": "8f36b09335cc8eda",
+              "size_m_unity_xyz": [
+                0.055,
+                0.045,
+                0.055
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.055,
+            0.045,
+            0.055
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_MerchGrinder.fbx"
+    },
+    "PROC_Pkg_MerchLighter": {
+      "category": "merch",
+      "export": "Art/Exports/Procedural/PROC_Pkg_MerchLighter.fbx",
+      "export_sha256": "237c23e26ac03f2b",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_MerchLighter_Body_LOD0": {
+              "geometry_sha256": "f7516a38ca5bc434",
+              "size_m_unity_xyz": [
+                0.025,
+                0.072,
+                0.012
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Pkg_MerchLighter_Hood_LOD0": {
+              "geometry_sha256": "2963bfa25ee6d684",
+              "size_m_unity_xyz": [
+                0.023,
+                0.012,
+                0.011
+              ],
+              "tris": 44,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            }
+          },
+          "size_m_unity_xyz": [
+            0.025,
+            0.082,
+            0.012
+          ],
+          "tris": 136
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_MerchLighter_Body_LOD1": {
+              "geometry_sha256": "f9d5177821c40751",
+              "size_m_unity_xyz": [
+                0.025,
+                0.072,
+                0.012
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Pkg_MerchLighter_Hood_LOD1": {
+              "geometry_sha256": "ee704eba3949671f",
+              "size_m_unity_xyz": [
+                0.023,
+                0.012,
+                0.011
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.025,
+            0.082,
+            0.012
+          ],
+          "tris": 40
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_MerchLighter_Body_LOD2": {
+              "geometry_sha256": "b17b68778e8994a4",
+              "size_m_unity_xyz": [
+                0.025,
+                0.082,
+                0.012
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.025,
+            0.082,
+            0.012
+          ],
+          "tris": 12
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 160,
+        "LOD1": 60,
+        "LOD2": 20
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_MerchLighter.fbx"
+    },
+    "PROC_Pkg_MerchTee": {
+      "category": "merch",
+      "export": "Art/Exports/Procedural/PROC_Pkg_MerchTee.fbx",
+      "export_sha256": "3fe5eb8445543001",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_MerchTee_Body_LOD0": {
+              "geometry_sha256": "2ef9856197cb8058",
+              "size_m_unity_xyz": [
+                0.22,
+                0.03,
+                0.28
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            }
+          },
+          "size_m_unity_xyz": [
+            0.22,
+            0.03,
+            0.28
+          ],
+          "tris": 92
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_MerchTee_Body_LOD1": {
+              "geometry_sha256": "b2027d887af63660",
+              "size_m_unity_xyz": [
+                0.22,
+                0.03,
+                0.28
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.22,
+            0.03,
+            0.28
+          ],
+          "tris": 28
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_MerchTee_Body_LOD2": {
+              "geometry_sha256": "932aec71361aa99f",
+              "size_m_unity_xyz": [
+                0.22,
+                0.03,
+                0.28
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.22,
+            0.03,
+            0.28
+          ],
+          "tris": 12
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 160,
+        "LOD1": 60,
+        "LOD2": 20
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_MerchTee.fbx"
+    },
+    "PROC_Pkg_PrepackJar": {
+      "category": "prepack_flower",
+      "export": "Art/Exports/Procedural/PROC_Pkg_PrepackJar.fbx",
+      "export_sha256": "d4057e5c71b2f4d4",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_PrepackJar_Body_LOD0": {
+              "geometry_sha256": "a3343cbd73f8d215",
+              "size_m_unity_xyz": [
+                0.06,
+                0.06,
+                0.06
+              ],
+              "tris": 236,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_Pkg_PrepackJar_Cap_LOD0": {
+              "geometry_sha256": "724396531cdd82fc",
+              "size_m_unity_xyz": [
+                0.064,
+                0.021,
+                0.064
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            }
+          },
+          "size_m_unity_xyz": [
+            0.064,
+            0.077,
+            0.064
+          ],
+          "tris": 376
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_PrepackJar_Body_LOD1": {
+              "geometry_sha256": "a80092b64d40758b",
+              "size_m_unity_xyz": [
+                0.06,
+                0.06,
+                0.06
+              ],
+              "tris": 116,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            },
+            "PROC_Pkg_PrepackJar_Cap_LOD1": {
+              "geometry_sha256": "7f0a357d4a0dd35e",
+              "size_m_unity_xyz": [
+                0.064,
+                0.021,
+                0.064
+              ],
+              "tris": 68,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            }
+          },
+          "size_m_unity_xyz": [
+            0.064,
+            0.077,
+            0.064
+          ],
+          "tris": 184
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_PrepackJar_Body_LOD2": {
+              "geometry_sha256": "a87ffed959bfb782",
+              "size_m_unity_xyz": [
+                0.064,
+                0.077,
+                0.064
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.064,
+            0.077,
+            0.064
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_PrepackJar.fbx"
+    },
+    "PROC_Pkg_PrerollMultipack": {
+      "category": "preroll",
+      "export": "Art/Exports/Procedural/PROC_Pkg_PrerollMultipack.fbx",
+      "export_sha256": "2f5e532edff44def",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_PrerollMultipack_Body_LOD0": {
+              "geometry_sha256": "6d80218826c99ed5",
+              "size_m_unity_xyz": [
+                0.075,
+                0.115,
+                0.026
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            }
+          },
+          "size_m_unity_xyz": [
+            0.075,
+            0.115,
+            0.026
+          ],
+          "tris": 92
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_PrerollMultipack_Body_LOD1": {
+              "geometry_sha256": "e65adc6a2e5b3b41",
+              "size_m_unity_xyz": [
+                0.075,
+                0.115,
+                0.026
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.075,
+            0.115,
+            0.026
+          ],
+          "tris": 28
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_PrerollMultipack_Body_LOD2": {
+              "geometry_sha256": "94e4ed5b99db6719",
+              "size_m_unity_xyz": [
+                0.075,
+                0.115,
+                0.026
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.075,
+            0.115,
+            0.026
+          ],
+          "tris": 12
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 120,
+        "LOD1": 40,
+        "LOD2": 20
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_PrerollMultipack.fbx"
+    },
+    "PROC_Pkg_PrerollTube": {
+      "category": "preroll",
+      "export": "Art/Exports/Procedural/PROC_Pkg_PrerollTube.fbx",
+      "export_sha256": "56bfa035f4dbb8e7",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_PrerollTube_Body_LOD0": {
+              "geometry_sha256": "2eb8190220da49c0",
+              "size_m_unity_xyz": [
+                0.022,
+                0.1,
+                0.022
+              ],
+              "tris": 236,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_Pkg_PrerollTube_Cap_LOD0": {
+              "geometry_sha256": "00bd244ee630700e",
+              "size_m_unity_xyz": [
+                0.024,
+                0.025,
+                0.024
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            }
+          },
+          "size_m_unity_xyz": [
+            0.024,
+            0.12,
+            0.024
+          ],
+          "tris": 376
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_PrerollTube_Body_LOD1": {
+              "geometry_sha256": "c7e4aa48d19d4f5f",
+              "size_m_unity_xyz": [
+                0.022,
+                0.1,
+                0.022
+              ],
+              "tris": 116,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            },
+            "PROC_Pkg_PrerollTube_Cap_LOD1": {
+              "geometry_sha256": "f60fbf903f954f43",
+              "size_m_unity_xyz": [
+                0.024,
+                0.025,
+                0.024
+              ],
+              "tris": 68,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            }
+          },
+          "size_m_unity_xyz": [
+            0.024,
+            0.12,
+            0.024
+          ],
+          "tris": 184
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_PrerollTube_Body_LOD2": {
+              "geometry_sha256": "83381c26894391e1",
+              "size_m_unity_xyz": [
+                0.024,
+                0.12,
+                0.024
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.024,
+            0.12,
+            0.024
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_PrerollTube.fbx"
+    },
+    "PROC_Pkg_TopicalTube": {
+      "category": "topical",
+      "export": "Art/Exports/Procedural/PROC_Pkg_TopicalTube.fbx",
+      "export_sha256": "17d17fc1f16f47af",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_TopicalTube_Body_LOD0": {
+              "geometry_sha256": "eda7204bd58f4b61",
+              "size_m_unity_xyz": [
+                0.045,
+                0.137,
+                0.034
+              ],
+              "tris": 380,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            },
+            "PROC_Pkg_TopicalTube_Cap_LOD0": {
+              "geometry_sha256": "664d103b05997c51",
+              "size_m_unity_xyz": [
+                0.03,
+                0.02,
+                0.03
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            }
+          },
+          "size_m_unity_xyz": [
+            0.045,
+            0.155,
+            0.034
+          ],
+          "tris": 472
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_TopicalTube_Body_LOD1": {
+              "geometry_sha256": "b4e3e7b99e5472aa",
+              "size_m_unity_xyz": [
+                0.045,
+                0.137,
+                0.034
+              ],
+              "tris": 188,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            },
+            "PROC_Pkg_TopicalTube_Cap_LOD1": {
+              "geometry_sha256": "17d6ca0c678080da",
+              "size_m_unity_xyz": [
+                0.03,
+                0.02,
+                0.03
+              ],
+              "tris": 44,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            }
+          },
+          "size_m_unity_xyz": [
+            0.045,
+            0.155,
+            0.034
+          ],
+          "tris": 232
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_TopicalTube_Body_LOD2": {
+              "geometry_sha256": "811185c654f95aff",
+              "size_m_unity_xyz": [
+                0.045,
+                0.155,
+                0.034
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.045,
+            0.155,
+            0.034
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 600,
+        "LOD1": 300,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_TopicalTube.fbx"
+    },
+    "PROC_Pkg_VapeCartBox": {
+      "category": "vape",
+      "export": "Art/Exports/Procedural/PROC_Pkg_VapeCartBox.fbx",
+      "export_sha256": "c6a185c1c4fbbcdd",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_VapeCartBox_Body_LOD0": {
+              "geometry_sha256": "738ba456ab3bd6a1",
+              "size_m_unity_xyz": [
+                0.035,
+                0.11,
+                0.035
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            }
+          },
+          "size_m_unity_xyz": [
+            0.035,
+            0.11,
+            0.035
+          ],
+          "tris": 92
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_VapeCartBox_Body_LOD1": {
+              "geometry_sha256": "1cb8bfa74cb7d8ca",
+              "size_m_unity_xyz": [
+                0.035,
+                0.11,
+                0.035
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.035,
+            0.11,
+            0.035
+          ],
+          "tris": 28
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_VapeCartBox_Body_LOD2": {
+              "geometry_sha256": "1ac2ad903a448722",
+              "size_m_unity_xyz": [
+                0.035,
+                0.11,
+                0.035
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.035,
+            0.11,
+            0.035
+          ],
+          "tris": 12
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 120,
+        "LOD1": 40,
+        "LOD2": 20
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_VapeCartBox.fbx"
     }
   },
   "label_faces": "+Z (Unity forward)",
