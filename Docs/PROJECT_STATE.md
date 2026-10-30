@@ -31,6 +31,7 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 - World entry/check-in area ↔ Gameplay customer flow (guard post, queue line anchors).
 
 ## Blockers / risks
+- Structure frozen until playtest 2 (DEC-108); then the cost checkpoint: merged work per usage + lead context sizes. Nolan away from 2026-10-30 ~15:00: notify only for decisions he must make.
 - `review/wave-5t` (old IMP-003 round-3 partial PASS) is superseded by the from-scratch round-3 re-audit (DEC-095); never merge it, delete it once the new review lands.
 - DEC-094 rollout under validation (DEC-099): Hub-only merges until lead-run subagent workers/worktrees prove stable; then reassess lead merges for domain-local work.
 - ChatGPT toolkit drops lack our research and room evidence (DEC-095): every round needs fixes; round 3 must be re-audited.
