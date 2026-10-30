@@ -321,97 +321,138 @@ Measured LOD0 tris (IMP-003 sandbox runs) vs the DEC-084 LOD0 guides:
 
 Not in IMP-003 scope, flagged for PROC: the **existing** jar, fill and packaged-goods budgets in PP (jar 1000, packaged 120–600 tris) predate DEC-084. Re-baselining them is a PROC task, not a toolkit fix.
 
-## R3. Round 3 (`Dispo_Game_Blender_PROC_Round3_HQ/`): fix items (audit "Drop 5")
-Integrate after rounds 1–2 (PROC-005). Copy the generators, params and presets. **Do not** add `round3_quality.py` as a second helper module: move the helpers you keep into `proclib.py` (C6/C8).
+## R3b. Round 3 rebuilt (`Dispo_Game_Blender_PROC_Round3_Rebuild/`): fix items (audit "Drop 6")
+Replaces §R3 (drop 5 `…Round3_HQ/` is superseded, DEC-095). Integrate after rounds 1–2 (PROC-005), as **new** families on top of the canonical core (DEC-093). Never copy a drop file over a canonical one. Measured on canonical core 87807ad: 30 assets; with the UV patch only **3/30 pass** (HUB cabinet, stanchion pair, pumpkin).
 
-### R3.0 Shared
-- [ ] **R3.0.1 size validation:** delete the `actual_unity_size(objs)` returns in all 10 generators. Return the authored envelope from params, so the size check can fail again. Allow segment-extrema tolerance only through the validation layer (C5).
-- [ ] **R3.0.2 collision:** convert every `COL_*` builder to manifest `collision_boxes` (DEC-086, C1).
-- [ ] **R3.0.3 params:**
-  - `unity_dir` → `UnityProject/Assets/_Game/Art/Procedural/...` (P1); `own_sheet: true` (P2);
-  - drop `validation_warnings` (P3);
-  - fold `GAP-R3-01..10` into `GAP-PROC-*` (P5);
-  - map `require_manifold` / `require_material_slots` / `validate_origin_bottom_center` onto the C5 checks. Never gate on non-manifold (C4); turn the origin check **on**.
-- [ ] **R3.0.4 DEC-084 detail:** every family is below its LOD0 guide (audit table). Add real construction per family (below) and Q0 items: unwrapped UVs/trim sheets, 2K/4K PBR via the DEC-023 cache, seeded wear. LOD3 must stay recognisable.
-- [ ] **R3.0.5 one family per object** (pick, do not duplicate):
-  - lighting → `back_room_lighting` replaces arch-kit `LEDTroffer_2x2`/`StripLight` (A5);
-  - receipt printer + card terminal → `counter_props` (covers R4/RC3);
-  - deli prep cart → `office_refill_station` (covers O8);
-  - cartons/totes → one family (merge `hub_storage` + `clutter_kit` X5);
-  - packages → extend `packaged_goods` with the round-3 shapes, not a parallel generator (and R5 later).
-- [ ] **R3.0.6 materials:** `Materials/ROUND3_PBR_BINDINGS.json` roles go through §19 M1 (cache + ledger, no build-time download). `M_Proc_R3_*` names follow the M4 naming contract (drop the `R3` infix).
+**Package verdicts:**
 
-### R3.1 Office refill station (`office_refill_station`)
-- [ ] Deli scale per RI §2.4: **light-grey body**, LCD + coloured keys, ≈ 6–7 × 8 × 3 in; bowl = **clear glass mixing bowl ≈ 8 in Ø** (not a 0.34 m stainless bowl). Small chrome scoop beside it.
-- [ ] Cart per RF `Cart_Deli_Prep` 2.5 × 1.6 × 2.9 ft, **2 shelves**, "FOR DELI USE ONLY" placard (store text, RI §2.4), **spray bottles hung on the rail** (RF).
-- [ ] Under-cart supplies per DEC-079 (isopropyl, rags, scraper, bins, tongs): keep them, at real detail (bottle cap/trigger, rag folds).
-- [ ] Split `JarShelf` + brackets into its own asset: RF `Shelf_Deli_Canisters` 3.5 × 0.9 ft, wood on black brackets, ~4.8 ft AFF. Anchors for ~5 empty canisters (RF); house jars per DEC-079.
-- [ ] Tool detail: scraper blade and tongs as real shapes, not boxes.
+| Family | Verdict |
+|---|---|
+| `queue_stanchions` | adopt (form) |
+| `refill_station` | adapt |
+| `hub_storage` | adapt |
+| `backroom_lighting` | adapt |
+| `counter_workstation_props` | adapt |
+| `product_variety` | adapt (into `packaged_goods`) |
+| `customer_held_props` | adapt (optional) |
+| `seasonal_decor` | adapt (optional) |
+| `cash_drawer_tray` | **reject** |
+| `parked_vehicles` | **reject as built** |
+| `round3_common.py` | reject as a module; map onto `proclib` |
+| runner UV patch | adopt only with the R3b.0.4 decision |
 
-### R3.2 HUB storage (`hub_storage`)
-- [ ] Cabinet: ship **closed** doors as separate parts + hinge metadata (C10), not baked open at 96°. Type/size/colour: GAP. Next REF pass: the HUB storage cabinets "against the office wall" (DEC-079), position in A011 HUB.
-- [ ] Stored bags: real 1 lb bag meshes (the standalone `DeliBag*`), instanced, not bevelled boxes.
-- [ ] 1 lb bag: shape/size GAP. Add crimped seal, zipper and gusset at real detail. Fullness states stay (full / partial / empty).
-- [ ] Shipment carton = the ~10 lb single-strain case (DEC-079); size GAP. Tape, flap creases and a shipping-label texture (no carrier marks).
-- [ ] Open carton flaps must not exceed the declared envelope (R3.0.1 will catch it).
+**Status of the drop-5 items (§R3, item by item):**
+| §R3 item | Status in the rebuild |
+|---|---|
+| R3.0.1 size validation | **fixed** (now fails on real drift: R3b.0.1) |
+| R3.0.2 collision | **fixed** (no `COL_*`); 4 families declare no boxes (R3b.0.5) |
+| R3.0.3 params | **open**: no `unity_dir`/`own_sheet`/`checks`; `GAP-R3-*` ids; `quality_floor_lod0` (non-canonical) |
+| R3.0.4 DEC-084 detail | **open**: 30/30 below the drop's own floor |
+| R3.0.5 one family per object | **partly**: the reuse map exists but names non-existent assets; `product_variety` is still parallel; strips/pendant/wall pack dropped |
+| R3.0.6 materials | **open**: `M_R3_*` infix; no textures (binding deferred, acceptable) |
+| R3.1 refill station | **regressed**: sourced dims replaced by a GAP; dark 3-tier cart; scale oversize; no placard/bottles/handle/scoop; shelf merged |
+| R3.2 HUB storage | **partly**: closed doors + hinge ✓; colour wrong (black, RI §2.1); bags/carton moved to reuse |
+| R3.3 stanchions | **kept**; detail still missing |
+| R3.4 lighting | **partly**: 2 × 2 ✓; diffuser hidden; strips/pendant/wall pack removed |
+| R3.5 interaction states | **regressed**: the cash tray is back; residue dropped (fine); cooler metadata generic ✓ |
+| R3.6 customer accessories | **moved** to round 4 (DEC-091) ✓; held props are new |
+| R3.7 vehicles | **partly**: inside-out fixed; still rejected on quality |
+| R3.8 seasonal | unchanged (optional) |
+| R3.9 counter props | **partly**: StickyNotes budget fixed; blue-LCD digits item dropped |
+| R3.10 packaged variety | **fixed** brands (fictional; catalog-backed categories); still parallel |
+| R3.11 DEC-093 | **open**: `round3_common.py` is a second helper module again |
 
-### R3.3 Queue stanchions (`queue_stanchions`)
-- [ ] Keep. Black belts (R2C1); one line (DEC-079); 4 lanes (RI §1.5, Low-Med). Detail: weighted-base lathe with rubber foot ring, cassette head with end clip, belt webbing texture.
+### R3b.0 Shared
+- [ ] **R3b.0.1 size failures (14/30)** [X1]: keep `expected_from_dims(p)`, and make every LOD hit the envelope:
+  - keep envelope-defining parts at every `detail`: refill casters, receipt paper, label tail, weigh-boat sides;
+  - use cylinder segments that are multiples of 4 (also C11: even ≥ 6);
+  - stop parts poking out: wallet seam, cone-tube cap 0.52 w, edible-tin lid 0.51 w, sticky-note offsets;
+  - sample the vehicle roof peak at every LOD.
+  - Source: canonical runner size check (C5).
+- [ ] **R3b.0.2 LOD chains (18/30 non-decreasing)** [X2]: give LOD1 and LOD2 different `detail` levels, or reduce segments on flat parts. Target ½ / ¼ / ≤ 1⁄10 (Q0.5 `check_lod_chain`).
+- [ ] **R3b.0.3 DEC-084 detail** [X3]: LOD0 is 56–8,816 tris; every family needs its real construction (per family below) and the Q0 items (unwrapped UVs/trim sheets, 2K–4K PBR via DEC-023, seeded `wear(p)`). Replace `quality_floor_lod0` with `tri_guide.lod0_min` (Q0.5).
+- [ ] **R3b.0.4 lightmap UV** [X4, X5]: per-triangle atlas cells are unusable. **Decide once in PROC:**
+  - (a) Unity "Generate Lightmap UVs" on import, and keep 2 UV maps; or
+  - (b) a Blender UV2 (`smart_project` + pack) plus the runner `required_uv_maps` patch.
 
-### R3.4 Back-room lighting (`back_room_lighting`)
-- [ ] Troffer **2 × 2** (0.6096 × 0.6096; TI §6.7 L1). Drop or keep 2 × 4 only as an option.
-- [ ] Strip L2 in 2 ft and 4 ft; BOH pendant strip per RF `Light_Strip_Pendant` (4.0 × 0.5 × 0.3 ft, Low).
-- [ ] Wall pack: exterior (R1C3), generic housing, no camera. Emissive lens material.
+  Do not port `_assign_uvs`'s lightmap part. Coordinate with the round-6 UV2 item (DEC-091 R6).
+- [ ] **R3b.0.5 collision** [X8]: add manifest boxes for `parked_vehicles` (body + wheels), the counter props and product shapes (one box each, or let Unity skip pickups by rule). Source: DEC-086 C1.
+- [ ] **R3b.0.6 params** [X9]: `unity_dir: UnityProject/Assets/_Game/Art/Procedural/...` (P1); `own_sheet: true` for multi-variant families (P2); a canonical `checks` block (`fail_on_degenerate`, `material_slots`, `origin_bottom_centre: true`); `GAP-R3-*` → `GAP-PROC-*` (P5); `M_R3_*` → M4 names.
+- [ ] **R3b.0.7 helpers** [X10]: do not add `round3_common.py`. Map `finish`→`finish_object`, `box`→`add_box`, `cylinder`/`tube`→`add_vertical_cylinder`/`add_cylinder_between`, `rounded_prism`→`rounded_rect`+`loft` or `add_beveled_box`, `pbr`→`material`. Port `torus` into `proclib` only if a kept family uses it (wheels, wreath, tape). Hinges/slides via `hinge_axis()`/`slide_axis()` (C10). Source: DEC-093, R3.11.
+- [ ] **R3b.0.8 reuse map** [X11]: ignore `Data/canonical_reuse_map.json`'s "accepted round 4/5/6" and `PROC_Register_*` targets. Wire reuse only to assets that exist in PROC at integration time; list the rest as dependencies.
 
-### R3.5 Interaction states (`interaction_state_details`, `state_presets/…json`)
-- [ ] **Remove `CashDrawerTray`** and the `cash_drawer` preset (cash-handling detail; DEC-051/086).
-- [ ] Jar residue: keep (no cannabis geometry), and set its look against the real jar (DEC-042/043).
-- [ ] Cooler preset: use the cooler generator's real moving-group names after K3 (not `Door_##`).
-- [ ] The deli-jar lid "detached" pose matches the photos (lids off, laid flat: RI §2.4) ✓; add a "laid flat" pose.
+### R3b.1 Refill station (`refill_station`; RF `Cart_Deli_Prep`, `Shelf_Deli_Canisters`; RI §2.4; DEC-079)
+- [ ] **Split** into `PROC_Office_DeliPrepCart` and `PROC_Office_DeliCanisterShelf` (RF lists them as two fixtures).
+- [ ] **Cart dims:** RF 2.5 × 1.6 × 2.9 ft (0.762 × 0.488 × 0.884 m), Med. Remove the hard-coded `top_z = 0.94` and `cart_w = 0.7 w`. Delete `GAP-R3-REFILL-DIMS` (it is sourced).
+- [ ] **Cart construction:**
+  - **stainless/silver** (DEC-079 "silver rolling cart"), not 0.16 dark;
+  - **2 levels**, flat top + lower shelf (RF/RI §2.4), not 3;
+  - a tubular push handle;
+  - casters touching the legs (they float 6 cm below now);
+  - a "FOR DELI USE ONLY" label on the rail (store text, RI §2.4);
+  - spray bottles hung on the rail (RF notes).
+- [ ] **Shelf:** RF 3.5 × 0.9 ft (1.067 × 0.274 m), **wood** board on **black** brackets, top at ~4.8 ft (1.46 m) AFF, Med. Anchors for ~5 empty canisters (RF); house jars per DEC-079.
+- [ ] **Scale:** light grey ✓ and bowl 0.2032 m clear glass ✓ (RI §2.4).
+  - Body ≈ 6–7 × 8 × 3 in (≈ 0.17 × 0.20 × 0.08 m), Low; currently 0.285 × 0.265 × 0.105.
+  - Add the LCD, coloured keys and a small chrome scoop (RI §2.4).
+  - Give the bowl a closed bottom and wall thickness (it is open now).
+- [ ] **Supplies** (DEC-079): isopropyl bottle, rags, scraper, bins and tongs as distinct shapes, **under** the cart on the lower shelf. Currently 3 identical bottles.
 
-### R3.6 Customer accessories (`customer_accessories`)
-- [ ] Re-target from the 1.75 m reference to the **MPFB2** bodies (DEC-087), with attach points per body; coordinate with ASSET-004 and the R4 wardrobe brief (DEC-091).
-- [ ] Detail per DEC-084: cap panels and stitching, knit texture, real glasses temples/hinges, backpack seams and buckles, purse hardware.
-- [ ] The ID card stays blank (no data). The exit-bag label uses only approved brands on matching lines (TFS store bag OK).
+### R3b.2 HUB storage (`hub_storage`; DEC-079; RI §2.1)
+- [ ] **Colour black** (RI §2.1 HUB 2 R2C1 "black cabinets, 2+", Med), not grey steel.
+- [ ] **Evidence text:** placement "HUB against the office wall" (DEC-079) = HUB 2, which shares the office door (RI §1.4). The `evidence` and GAP text must say presence is sourced. Type, size and shelves stay GAP (RG3-1).
+- [ ] **Doors:** keep closed + hinge, via canonical `hinge_axis()`.
+- [ ] **Detail:** at 836 tris it is plain boxes. Add folded-steel returns, door reveals, a real handle/latch shape (no lock detail, DEC-051), shelf lips and levelling feet.
+- [ ] **Stock anchors:** fill with the 1 lb bag asset once it exists (round 5 → audit first); never as inventory data (H3).
 
-### R3.7 Exterior vehicles (`exterior_vehicles`): **rejected as built**
-- [ ] Either rebuild (real panels, wheel arches, door seams, glazing set into the body, interior silhouette, LOD chain at 30–150k) or source CC0 vehicles through DEC-023 (preferred for quality). The current BodyShell is **inside-out** (negative volume): if any loft is kept, fix the ring order.
-- [ ] No make/model marks; blank plates ✓.
+### R3b.3 Queue stanchions (`queue_stanchions`)
+- [ ] **Keep:** black ✓ (R2C1), no layout ✓ (RI §1.5 4 lanes, DEC-079 one line).
+- [ ] **Detail:** weighted lathe base with a rubber ring, a cassette head with an end clip and receiver slot, belt webbing texture. Sizes GAP (RG3-3).
 
-### R3.8 Seasonal decor (`seasonal_decor`)
-- [ ] Optional kit (no store evidence of decorations). Keep unbranded. Detail: needle cards for the garland, real bulb shapes.
+### R3b.4 Back-room lighting (`backroom_lighting`; TI §6.7; RF `Light_Strip_Pendant`)
+- [ ] **Diffuser hidden:** the `Recess` box covers the diffuser from below. Put the diffuser (emissive material) at the bottom face, z = 0, with the housing above it.
+- [ ] **Removed sourced fixtures:** restore the L2 strips 2 ft/4 ft (TI §6.7 "storage"), the BOH pendant strip (RF 4.0 × 0.5 × 0.3 ft, Low) and the exterior wall pack (CCTV R1C3, generic housing, no camera). Restore them here, or confirm round 6 delivers them; do not lose them.
+- [ ] **Detail:** T-bar lay-in flange, louver/lens pattern, rear housing (RG3-7).
 
-### R3.9 Counter props (`counter_props`)
-- [ ] Receipt printer + card terminal (RI §2.2, DEC-086): keep; real housings, paper roll, keypad legends as a texture.
-- [ ] Scale digits **blue LCD** (RI §2.2 register bench scale), not green 7-segment; or a texture on the scale's display.
-- [ ] StickyNotes: fails its own budget (12,780 > 12,000). Use a block + top-sheet curl.
+### R3b.5 Interaction states (`Data/interaction_states.json`)
+- [ ] **Remove** the `PROC_Register_CashDrawer` target (DEC-051/086).
+- [ ] **Deli-jar lid:** add a "laid flat" rest pose (RI §2.4); bind pivots on canonical `PROC_DeliJar`.
+- [ ] **Cooler/carton:** bind to real group names after K3 / the chosen carton family.
 
-### R3.10 Packaged variety (`packaged_product_variety`)
-- [ ] **Brands only on their real lines (DEC-071/081):**
-  - TFS / Dr Greenthumb / Rebel Grown / The Flower Mine = house deli flower (prepack flower OK);
-  - High Variety = cartridges;
-  - Tok = disposable vapes.
-  - Re-label the High Variety preroll tin and can, Rebel Grown jar, Dr Greenthumb edible, TFS topical and Flower Mine extract with **fictional BRAND-001 names**.
-- [ ] Category `flower_or_edible` → a real catalog category.
-- [ ] Merge into `packaged_goods` (R3.0.5); sizes GAP-PROC-10 until SKUs are measured; `unity_dir` per P1.
-- [ ] The code mark is non-scannable ✓. Labels are textures (N3) from data (N4).
+### R3b.6 Cash-drawer tray (`cash_drawer_tray`): **reject**
+- [ ] Do not integrate (DEC-051 cash-handling exclusion; DEC-086 rejects the cash-drawer variant). The drop's "quality-only rejection" claim is wrong.
 
-### R3.11 DEC-093 diff against the canonical repo (PROC-005 core `4ef04ae`)
-**Item status:** no round-3 file has the same name as a file on `main` or in PROC-005. So every R3 family is **new**, except:
-- `round3_quality.py`: a **revision of** the canonical `proclib.py` helpers. **Do not port it.** Map its helpers onto canonical ones: `closed_lathe` → `add_lathe`; `bev_obj`/`box_obj`/`cyl_obj` → `add_beveled_box`/`add_box`/`add_cylinder_between`. `rotbox`, torus and poly-prism have no canonical equivalent yet; port them only if used.
-- `packaged_product_variety.py`: a **revision of** `packaged_goods` (same `PROC_Pkg_*` namespace). Port the new shapes into `packaged_goods`; never run it as a parallel generator.
+### R3b.7 Parked vehicles (`parked_vehicles`): **reject as built**
+- [ ] Source CC0 vehicles through DEC-023 + `LICENSE_LEDGER.md` (preferred). Or rebuild with:
+  - real panels, a greenhouse/hood/trunk break and wheel arches;
+  - glazing set flush into the body (it sits inside now);
+  - wheels inside the arches;
+  - LOD0 at 30–150k.
 
-**Round 3 against the canonical core (sandbox run):** 7 families build. Three fail:
-- **`seasonal_decor`:** `segments must be even and >= 6 (C11), got 9` (`seg//2` with odd results). The same pattern (`max(5, tube//3)`) hits `customer_accessories` ExitBag/Beanie at low LODs.
-- **`queue_stanchions` PairExtended:** a size mismatch even though expected = actual (float rounding against the 1e-4 check).
-- **`counter_props` StickyNotes:** over budget.
+  Keep classes generic (RI R1C1 SUV, R1C2 cars; RG3-4).
+- [ ] If any loft is kept: winding is fixed (0 inside-out); add body collision (R3b.0.5).
 
-**Things that would undo a PROC fix if copied verbatim (do not port):**
-- `actual_unity_size()` returns: they defeat the size check (C5/R3.0.1).
-- `COL_*` meshes: they would ship as render meshes, because the canonical runner uses `collision_box()` → `collision_boxes` (C1).
-- Top-level `require_manifold` / `require_material_slots` / `validate_origin_bottom_center`: the canonical keys sit under `checks` (`fail_on_degenerate`, `material_slots`, `origin_bottom_centre`). The round-3 keys are silently ignored, so rename them. Add `tri_guide.lod0_min` (Q0.5).
-- Odd or < 6 cylinder segments: they violate C11. Use even segments ≥ 6.
-- Baked-open cabinet doors and per-family hinge dicts: use the canonical `hinge_axis()` / `slide_axis()` (C10).
-- Ad-hoc wear: use the canonical `wear(p)` (Q0.4).
+### R3b.8 Customer held props (`customer_held_props`; optional)
+- [ ] GAP item mix. Size failures: wallet seam; bottle/cup radius at LOD2/3 (R3b.0.1). Drop the unused key-ring branch, or add a params row for it. Detail: phone camera island, bottle threads, cup lid tab.
 
-**Genuine improvements worth porting:** the DEC-079 refill-station layout and supply list; the bag fullness states; the queue-stanchion form; the wall pack; the receipt printer and card terminal shapes; the 4-LOD params pattern; the round-3 package shapes (into `packaged_goods`).
+### R3b.9 Counter / workstation props (`counter_workstation_props`)
+- [ ] **Keep and detail:** receipt printer, card terminal, keyboard (RI §2.2, DEC-086). Add a paper roll and cutter, terminal keypad legends as a texture, and a full key grid. Sizes via RG3-5.
+- [ ] **Label/tape items** (RI §2.2, Low): keep. Mouse, glove box, weigh boat, pen, sticky notes: generic clutter, GAP.
+- [ ] **Blue LCD scale display:** a texture/emissive item on the register scale (RI §2.2) and the refill scale LCD (RI §2.4); the drop-5 item was dropped.
+
+### R3b.10 Product variety (`product_variety`)
+- [ ] **Port** the 5 shapes into `packaged_goods` (R3.0.5); no parallel generator.
+- [ ] **Brands:** fictional ✓. **Categories** are catalog-backed (DROPPER, BATTERY, ROLLING PAPERS, GUMMY/EDIBLE, PREROLL in `packaged_catalog.json`). Bind each shape to its catalog subcategory, and use a real approved brand only where the catalog row has one (REVIEW-W5T m1).
+- [ ] **Sizes:** GAP-PROC-10 (RG3-6). Fix the cap/lid overhang size failures (R3b.0.1).
+
+### R3b.11 Seasonal decor (`seasonal_decor`; optional)
+- [ ] No store evidence (GAP). Keep unbranded. Detail: pumpkin ribs as one lathe, wreath needle cards, garland pennant cord. Drop the unused snowflake branch, or add a params row for it.
+
+**Genuine improvements worth porting (DEC-093):**
+- the `expected_from_dims` pattern;
+- `recalc_face_normals` in finishing;
+- `torus`;
+- the closed-door + hinge HUB cabinet;
+- the stanchion form;
+- the catalog-matching product shapes;
+- the params-driven `required_uv_maps` patch (only with R3b.0.4 option b).
