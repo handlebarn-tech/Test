@@ -88,9 +88,10 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | GAME-014 | P1 | Packaged sales (ROADMAP, no packet yet) | GAME-007, DATA-002, ART-006 (ROADMAP ID, see DOC-002) | Later |
 | GAME-015 | P1 | Non-flower recommendation (ROADMAP, no packet yet) | GAME-014, DEC-054 | Later |
 | GAME-016 | P2 | Deals v1 (ROADMAP, no packet yet) | GAME-014 | Later |
-| DES-005 | P0 | Playtest 1 intake (DEC-096): controls + customer-flow spec, GAME-025/026 packets, World door/entry contract needs, long-term ideas proposal | — | Review (5c8031b, Docs 2) |
+| DES-005 | P0 | Playtest 1 intake (DEC-096): controls + customer-flow spec, GAME-025/026 packets, World door/entry contract needs, long-term ideas proposal | — | Done (W5U, 5ab7aeb) |
 | DES-006 | P0 | Recommendation depth audit: PS1b (GAME-017..020) vs the TFS tool, packet amendments | — | Review (caebbd3, Docs 2) |
-| DES-007 | P2 | DEC-101: long-term rows into `ROADMAP_POST_SLICE.md` (Hub-delegated) + deadpan tone note for dialogue/event writers | DES-005 merge | Ready (waits) |
+| DES-005b | P0 | Fold DEC-103 into CONTROLS_FLOW_PS1 + GAME-025/026; REVIEW-W5U m1–m3 (KNOWN_GAPS GAP-CF rows, GAP-DAY-04 basis) | DES-005 | Ready (next free slot) |
+| DES-007 | P2 | DEC-101: long-term rows into `ROADMAP_POST_SLICE.md` (Hub-delegated) + deadpan tone note for dialogue/event writers | DES-005 merge | Ready (next free slot) |
 | GAME-017a | P0 | First playable recommendation depth (cut from GAME-017, DES-006 §5): needs, read-it-as picker, parser route, Q9, reject→re-search | DES-006, DATA-003, UX-006, GAME-009, GAME-025 (same Presentation/Slice files), QA-002b Gate A | Ready (waits; packet after DES-006 review) |
 | DATA-003 | P0 | Customer needs catalog + golden parses from the TFS tool (GAME-017a data) | DES-006 | Active |
 | UX-006 | P0 | Counter UX addendum: read-it-as picker, said cards, query preview | DES-006, DES-005 | Active |
