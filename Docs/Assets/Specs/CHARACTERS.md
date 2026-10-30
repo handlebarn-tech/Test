@@ -29,17 +29,17 @@
 **Determinism:** the roster is seeded (`seed` 20261030). A rebuild gives the same people; FBX bytes can differ by timestamps, so compare the validation tris/heights, not the sha256, across runs.
 
 ## 3. Variation system: 60 customers, readable at register distance
-At the register the player looks across the counter at head and torso from about 1.2–2 m, so every customer is a **different person** (body, face, skin, hair, outfit), never a recolour of another.
+At the register the player looks across the counter at head and torso; the call-point to operator distance is 1.34 m (SCENE_ANCHORS Call↔Operator, REF-011, Low confidence, GAP-129). So every customer is a **different person** (body, face, skin, hair, outfit), never a recolour of another.
 
 ### 3.1 Roster quotas (enforced by `roster.py`)
-- **Size 60** (DEC-075 end target ≥ 50). Sex 30/30. Age bands young 21–29 / adult 30–54 / older 55–80 = 15/30/15 (MPFB age 0.42–0.53 / 0.54–0.72 / 0.73–0.92).
+- **Size 60** (DEC-075 end target ≥ 50). Sex 30/30. Age bands young 21–29 / adult 30–54 / older 55–80 [GDD] = 15/30/15 (MPFB age 0.42–0.53 / 0.54–0.72 / 0.73–0.92).
 - **Ancestry ~12 × 5** (African, East Asian, Caucasian, South Asian, Eurasian; current roster 12/12/13/11/12), balanced within what each sex and age band has CC0 skins for. Skin tone is never tied to a role, outfit or behaviour. Phenotype ancestry blends: `ancestry_race` in params.
 - **Builds** slim / average / heavy (weight and muscle macro ranges). Height per sex 1.45–1.85 m (f), 1.55–1.95 m (m), checked on export (men's floor lowered from 1.60 by lead ruling: 1.59 m is a real adult height).
-- **Formal ≤ 20 %** (suits and elegant dress read as staff/office; W5P m3). Hats 10 %, glasses 30 %, beards ~30 % of non-young men once a CC0 beard exists (pool empty now, GAP-CHR-9). Current roster: 6 hats, 21 glasses, 0 beards, 6 shaved heads; builds 21 slim / 19 average / 20 heavy.
-- Eyes: mostly brown for non-Caucasian skins (85 %), otherwise from the 8 CC0 eye materials.
+- **Formal ≤ 20 %** (suits and elegant dress read as staff/office; W5P m3). Hats 10 %, glasses 30 %, beards ~30 % of non-young men [GDD] once a CC0 beard exists (pool empty now, GAP-CHR-9). Current roster: 6 hats, 21 glasses, 0 beards, 6 shaved heads; builds 21 slim / 19 average / 20 heavy.
+- Eyes: mostly brown for non-Caucasian skins (85 % [GDD]), otherwise from the 8 CC0 eye materials.
 
 ### 3.2 Hair tint
-Tints: black, dark brown, brown, auburn, blond, grey, white. Older customers are grey or white; non-Caucasian skins are black or dark brown 85 % of the time. Current roster: dark brown 24, black 12, white 11, brown 5, grey 4, blond 3, auburn 1.
+Tints: black, dark brown, brown, auburn, blond, grey, white. Older customers are grey or white; non-Caucasian skins are black or dark brown 85 % of the time [GDD]. Current roster: dark brown 24, black 12, white 11, brown 5, grey 4, blond 3, auburn 1.
 **How:** `customer_gen.tint_texture` recolours the hair, eyebrow and beard diffuse in Blender: it keeps the texture's luminance pattern and alpha and moves its mean colour to the tint's sRGB value (`hair_tint_srgb` in params). The tinted copy is written as `<texture>_<tint>.png` and the material is named `M_<asset>_<tint>`, so Unity's by-name material extraction never merges two tints. Eyelashes keep their own texture. No runtime tint shader is needed.
 
 ### 3.3 Readability rule (Rule D, register distance)
@@ -50,10 +50,10 @@ Register cues: sex, age band, skin, head (hair or hat), top outfit, glasses, bea
 ## 4. Budgets
 | Item | Budget | Measured (60 customers) |
 |---|---|---|
-| LOD0 (served customer, ≤ 3 m) | ≤ 150k tris; body subdivided once, all parts | 81–127k (mean 100k) |
-| LOD1 (3–8 m) | ≤ 60k; MPFB base resolution, teeth dropped | 26–60k (mean 38k) |
-| LOD2 (8–15 m) | ≤ 20k; Decimate 0.32, brows/lashes/teeth dropped | 8.3–18.9k (mean 12k) |
-| LOD3 (> 15 m) | ≤ 6k; Decimate 0.10, eyes/glasses/mouth parts dropped | 2.4–5.4k (mean 3.5k) |
+| LOD0 (served customer, ≤ 3 m [GDD]) | ≤ 150k tris; body subdivided once, all parts | 81–127k (mean 100k) |
+| LOD1 (3–8 m [GDD]) | ≤ 60k; MPFB base resolution, teeth dropped | 26–60k (mean 38k) |
+| LOD2 (8–15 m [GDD]) | ≤ 20k; Decimate 0.32, brows/lashes/teeth dropped | 8.3–18.9k (mean 12k) |
+| LOD3 (> 15 m [GDD]) | ≤ 6k; Decimate 0.10, eyes/glasses/mouth parts dropped | 2.4–5.4k (mean 3.5k) |
 | Rig | MPFB `game_engine`, 53 bones, Unity Humanoid-compatible names (`pelvis`, `spine_01…`, `upperarm_l…`) | 53 bones each; all 17 Humanoid-required bones present |
 | Height | f 1.45–1.85 m, m 1.55–1.95 m | f 1.50–1.75 m, m 1.59–1.95 m |
 | Materials | one per part (skin, eyes, brows, lashes, teeth, hair, each clothing item, proxies) | 7–11 per customer |
@@ -68,7 +68,7 @@ Register cues: sex, age band, skin, head (hair or hat), top outfit, glasses, bea
 - **GAP-CHR-6 Brows and lashes 512 px.** Candidates: other CC0 eyebrow/eyelash units already in the licence index (to be compared), or our own alpha cards painted in Blender at 1K.
 - **GAP-CHR-7 Shoes, keyhole tank top and fedora normal are 1K** (measured on the 60 exports; all hair in the licence-clean pool is ≥ 2K). Shoes are rarely visible across the counter (low priority); candidate for the tank top: our own 2K repaint. Upscaling is not a fix. Glasses lenses are a flat blue colour texture: HDRP should render them as transparent glass, not textured.
 - **GAP-CHR-8 No South-Asian male skin** in the CC0 set (and only one Eurasian male skin). The roster's 11 South-Asian customers are therefore all women; the roster stays as it is. **Lead ruling: no hue-shifted skins** (that would be a fake ancestry cue). GAP-CHR-8 stays open as a sourcing task: find a real CC0 South-Asian male skin.
-- **GAP-CHR-9 No CC0 beard.** Both beards in the packs (`wdg_scruffy_beard`, `grinsegold_beard_sigmund_wip`) and the moustaches are AGPL- or CC-BY-headed. Candidates: (a) our own beard/stubble made in Blender (alpha cards or a stubble skin overlay, CC0 by construction); (b) a CC0 beard from another MakeHuman pack, if one exists (not yet found). Until then no customer has a beard.
+- **GAP-CHR-9 No CC0 beard.** Both beards in the packs (`wdg_scruffy_beard`, `grinsegold_beard_sigmund_wip`) and the moustaches are AGPL- or CC-BY-headed. Two allowed CC0 skins have painted beards: `jartur69_middleage_slavic_male_with_genitals_and_beard` and `jartur69_old_slavic_male_with_genitals_and_beard` (both allowed in the licence index; not yet in the pool; full-body skins, but customers are always clothed). Candidates: (a) add those two skins to the men's pool; (b) our own beard/stubble made in Blender (alpha cards or a stubble skin overlay, CC0 by construction); (c) a CC0 beard from another MakeHuman pack, if one exists (not yet found). Until then no customer has a beard.
 - **GAP-CHR-10 MakeHuman logo prints.** Some CC0 system casual suits carry the MakeHuman logo on the tee (seen on the contact sheet). Legal (CC0), but it is a real project's logo in the store. Candidate: paint the logo out in our derived copy of the texture (an `edit` step in `customer_gen.py`).
 - **Hairstyle pool is thin** (5 men's after the licence fix), so some customers share hair and tint; Rule D still holds through other cues. Candidate: our own CC0 hair cards, or more CC0 packs.
 - GAP-CHR-1 (medical vs adult-use, no visual cue → UI-only MED badge) stays open. GAP-CHR-2 is closed by DEC-089. GAP-CHR-3 (Rocketbox per-bone build scale) is moot for MPFB: build is a body morph.
