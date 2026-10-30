@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_RK_Mouse",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "0be77ccd8dff3ac1",
+  "generator": "register_kit",
+  "lod_tris": {
+    "LOD0": 4660,
+    "LOD1": 1252,
+    "LOD2": 340,
+    "LOD3": 40
+  },
+  "params_sha256": "caf200c1e8cef438",
+  "passed": true,
+  "warnings": [
+    "LOD0 4660 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

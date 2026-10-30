@@ -1,0 +1,19 @@
+{
+  "asset_id": "PROC_RK_PaperStock_Closed",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "e1ada46774864ce0",
+  "generator": "register_kit",
+  "lod_tris": {
+    "LOD0": 144,
+    "LOD1": 112,
+    "LOD2": 28,
+    "LOD3": 12
+  },
+  "params_sha256": "caf200c1e8cef438",
+  "passed": true,
+  "warnings": [
+    "LOD0 144 tris below the DEC-084 guide minimum 5000 (too simple?)",
+    "LOD1: 112 tris > 75% of LOD0 (guide 1/2, 1/4, <= 1/10)"
+  ]
+}

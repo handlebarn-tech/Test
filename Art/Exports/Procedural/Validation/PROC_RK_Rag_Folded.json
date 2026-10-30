@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_RK_Rag_Folded",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "b9fdf78527d57de3",
+  "generator": "register_kit",
+  "lod_tris": {
+    "LOD0": 6236,
+    "LOD1": 1556,
+    "LOD2": 156,
+    "LOD3": 12
+  },
+  "params_sha256": "caf200c1e8cef438",
+  "passed": true,
+  "warnings": []
+}
