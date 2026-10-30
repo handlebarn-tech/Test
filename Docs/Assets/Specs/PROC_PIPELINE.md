@@ -56,3 +56,25 @@ Two full runs give byte-identical FBX, manifest and contact sheet (sha256 checke
 | GAP-PROC-06 | package label rectangles | none |
 
 Replacing a placeholder: edit the params JSON, rerun, and the manifest hashes show what changed.
+
+## Jar fill / buds (PROC-002)
+```powershell
+Tools/Blender/blender.ps1 jar_fill Tools/Blender/params/jar_fill.json   # 6 FBX, also copied to Unity
+Tools/Blender/blender.ps1 contact_sheet jar_fill                         # Docs/Assets/Specs/PROC_jar_fill_contact_sheet.png
+```
+- One params file, many assets: a generator may expose `variants(p)` (asset id, params) and `run_generator` builds each. `unity_dir` in params copies the FBX into the Unity project. `preview_context(p)` adds render-only scenery (the jar glass); `preview_groups` renders one tile per part.
+- Assets `PROC_JarFill_<Look>.fbx`, looks = ASSET_PRODUCTION_PLAN §8: GreenDense, GreenAiry, PurpleHeavy, OrangePistil, Frosty, DarkCompact. Unity copy: `Assets/_Game/Art/Procedural/JarFill/`.
+- Objects `PROC_JarFill_<Look>_F<pct>_LOD<n>`, pct ∈ 0, 10, 20, 40, 70, 100. Same origin as `PROC_DeliJar` (bottom centre), so the fill drops into the jar at identity. F000 (SOLD OUT) is a few shake crumbs at LOD0 only. Unity builds one LODGroup over all steps; the game enables one step's renderers.
+- Cavity comes from `deli_jar.json`; every vertex is ≥1 mm inside the glass (the generator fails otherwise). Buds sit on a 3×3 lattice, 7 layers; a step holds round(pct × 63) buds in seeded order, so lower steps are subsets of higher ones. Centre-column buds with a bud above are culled (hidden).
+- LOD0: icosphere-2 buds (80 tris) + shake; LOD1: icosphere-1 buds (20 tris); LOD2: one rounded column (28 tris). Two material slots: `M_Proc_Bud_<Look>` + `M_Proc_BudAccent_<Look>` (pistils/purple/frost). LOD2 has only the first slot.
+- Contact sheet rows (top→bottom): DarkCompact, Frosty, GreenAiry, GreenDense, OrangePistil, PurpleHeavy. Columns: F000…F100 LOD0, then F100 LOD1, F100 LOD2. Tiles at half size.
+
+| Budget (per visible step) | LOD0 | LOD1 | LOD2 |
+|---|---|---|---|
+| step budget / worst actual (F100) | 5000 / 4560 | 1400 / 1140 | 40 / 28 |
+Why: ~77 jars on the wall; buds are procedural stand-ins for the §22 scan-baked buds, which can replace the blob in `jar_fill.blob()` later at the same budgets.
+
+| GAP | What |
+|---|---|
+| GAP-PROC-07 | bud size/shape/colour per look: procedural placeholders; the catalog has no per-strain look data |
+| GAP-PROC-08 | fill height is linear in grams (full = 7 layers ≈ 0.25 m); no measured fill height of a real 1 lb jar |

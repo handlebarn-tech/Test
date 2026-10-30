@@ -9,6 +9,7 @@ import importlib
 import json
 import math
 import os
+import shutil
 import sys
 
 import bpy
@@ -37,8 +38,13 @@ def generate(gen_name, params_path):
     if p["generator"] != gen_name:
         raise ValueError(f"{params_path} is for generator {p['generator']!r}, not {gen_name!r}")
     gen = importlib.import_module("generators." + gen_name)
+    for asset, vp in getattr(gen, "variants", lambda q: [(q["asset_id"], q)])(p):  # variants: one params file, many assets
+        generate_asset(gen_name, gen, vp, asset, raw, params_path)
+
+
+def generate_asset(gen_name, gen, p, asset, raw, params_path):
     reset()
-    asset, entry, errors = p["asset_id"], {"lods": {}}, []
+    entry, errors = {"lods": {}}, []
     for lod_name, lod in p["lods"].items():
         objs, expected, extra = gen.build(p, lod)
         lod_entry = {"objects": {}}
@@ -68,6 +74,11 @@ def generate(gen_name, params_path):
     export_fbx(fbx)
     with open(fbx, "rb") as f:
         fbx_sha = hashlib.sha256(f.read()).hexdigest()[:16]
+    if p.get("unity_dir"):
+        unity_fbx = os.path.join(ROOT, p["unity_dir"], asset + ".fbx")
+        os.makedirs(os.path.dirname(unity_fbx), exist_ok=True)
+        shutil.copyfile(fbx, unity_fbx)
+        entry["unity_copy"] = os.path.relpath(unity_fbx, ROOT).replace("\\", "/")
     entry.update({
         "generator": gen_name,
         "params": os.path.relpath(params_path, ROOT).replace("\\", "/"),
@@ -83,7 +94,9 @@ def generate(gen_name, params_path):
     with open(MANIFEST, "w", newline="\n") as f:
         json.dump(manifest, f, indent=2, sort_keys=True)
         f.write("\n")
-    render_previews(asset, list(p["lods"]))
+    if hasattr(gen, "preview_context"):
+        gen.preview_context(p)  # non-exported scenery for the renders (export and manifest are already written)
+    render_previews(asset, list(p["lods"]), entry.get("preview_groups"))
     print(f"[PROC] {asset}: " + ", ".join(f"{k}={v['tris']} tris" for k, v in entry["lods"].items()) + f" -> {fbx}")
 
 
@@ -106,8 +119,10 @@ def export_fbx(path):
         add_leaf_bones=False, bake_anim=False, path_mode="STRIP", use_custom_props=False)
 
 
-def render_previews(asset, lods):
-    """Front + side of LOD0 and front of the last LOD, Workbench, ortho, with a 10 cm scale cube."""
+def render_previews(asset, lods, groups=None):
+    """Front + side of LOD0 and front of the last LOD, Workbench, ortho, with a 10 cm scale cube.
+    With groups (part names sharing one origin, e.g. fill steps): LOD0 front per group, then the other LODs of the last
+    group. Objects named Context_* always render."""
     s = bpy.context.scene
     s.render.engine = "BLENDER_WORKBENCH"
     s.display.shading.light, s.display.shading.color_type = "STUDIO", "MATERIAL"
@@ -128,44 +143,54 @@ def render_previews(asset, lods):
     cam.data.ortho_scale = max(h, x1 - x0, y1 - y0) * 1.15
     front = ((x0 + x1) / 2, -2, h / 2), (math.pi / 2, 0, 0)
     side = (2, (y0 + y1) / 2, h / 2), (math.pi / 2, 0, math.pi / 2)
-    views = [(lods[0], "front", *front), (lods[0], "side", *side), (lods[-1], "front", *front)]
+    views = [(lods[0], "front", "", *front), (lods[0], "side", "", *side), (lods[-1], "front", "", *front)]
+    if groups:
+        views = [(lods[0], "front", g, *front) for g in groups] + [(lod, "front", groups[-1], *front) for lod in lods[1:]]
     os.makedirs(RENDER_DIR, exist_ok=True)
-    for lod, view, loc, rot in views:
+    for lod, view, g, loc, rot in views:
         for o in objs:
-            o.hide_render = not o.name.endswith("_" + lod)
+            o.hide_render = not (o.name.startswith("Context_") or (o.name.endswith("_" + lod) and (not g or f"_{g}_" in o.name)))
         cam.location, cam.rotation_euler = loc, rot
-        s.render.filepath = os.path.join(RENDER_DIR, f"{asset}_{lod}_{view}.png")
+        s.render.filepath = os.path.join(RENDER_DIR, f"{asset}_{g + '_' if g else ''}{lod}_{view}.png")
         bpy.ops.render.render(write_still=True)
 
 
-def contact_sheet():
-    """Stack every asset's preview row (LOD0 front, LOD0 side, LODn front) into one committed PNG."""
+def contact_sheet(gen=None):
+    """Stack every asset's preview row (LOD0 front, LOD0 side, LODn front) into one committed PNG.
+    With gen: only that generator's grouped assets (row = asset, LOD0 per group then the other LODs, tiles at half
+    size) into PROC_<gen>_contact_sheet.png; the default sheet skips grouped assets."""
     import numpy as np
     assets = sorted(json.load(open(MANIFEST))["assets"].items())
+    assets = [(a, e) for a, e in assets if (e["generator"] == gen if gen else "preview_groups" not in e)]
+    sheet_path = SHEET.replace("PROC_contact", f"PROC_{gen}_contact") if gen else SHEET
     rows = []
     for asset, entry in assets:
         lods = sorted(entry["lods"])
+        names = [f"{lod}_{view}" for lod, view in ((lods[0], "front"), (lods[0], "side"), (lods[-1], "front"))]
+        if gen:
+            g = entry["preview_groups"]
+            names = [f"{x}_{lods[0]}_front" for x in g] + [f"{g[-1]}_{lod}_front" for lod in lods[1:]]
         tiles = []
-        for lod, view in ((lods[0], "front"), (lods[0], "side"), (lods[-1], "front")):
-            img = bpy.data.images.load(os.path.join(RENDER_DIR, f"{asset}_{lod}_{view}.png"))
+        for name in names:
+            img = bpy.data.images.load(os.path.join(RENDER_DIR, f"{asset}_{name}.png"))
             px = np.empty(img.size[0] * img.size[1] * 4, dtype=np.float32)
             img.pixels.foreach_get(px)
-            tiles.append(px.reshape(img.size[1], img.size[0], 4))
+            tiles.append(px.reshape(img.size[1], img.size[0], 4)[::2, ::2] if gen else px.reshape(img.size[1], img.size[0], 4))
         rows.append(np.concatenate(tiles, axis=1))
     sheet = np.concatenate(rows[::-1], axis=0)  # Blender images are bottom-up; first asset ends on top
     out = bpy.data.images.new("sheet", sheet.shape[1], sheet.shape[0])
     out.pixels.foreach_set(sheet.ravel())
-    out.filepath_raw, out.file_format = SHEET, "PNG"
+    out.filepath_raw, out.file_format = sheet_path, "PNG"
     out.save()
-    size = os.path.getsize(SHEET)
+    size = os.path.getsize(sheet_path)
     if size > 1_000_000:
         raise RuntimeError(f"contact sheet {size} bytes > 1 MB")
-    print(f"[PROC] contact sheet {SHEET} ({size} bytes): rows = {[a for a, _ in assets]}")
+    print(f"[PROC] contact sheet {sheet_path} ({size} bytes): rows = {[a for a, _ in assets]}")
 
 
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 if argv[:1] == ["contact_sheet"]:
-    contact_sheet()
+    contact_sheet(*argv[1:2])
 elif len(argv) == 2:
     generate(argv[0], os.path.abspath(argv[1]))
 else:
