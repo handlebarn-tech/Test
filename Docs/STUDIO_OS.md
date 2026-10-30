@@ -44,6 +44,7 @@ The task prefix names the owning department unless the packet says otherwise. A 
 - **Capacity:** the Hub sets each department's max concurrent workers and Unity slots in the roster. Studio-wide limit: 2 Unity editors (DEC-013). A lead stays inside its allotment and asks the Hub to exceed it.
 - **Launch a worker only when** the task is bounded with acceptance criteria, its dependencies are merged or its interface is fixed, its Owns overlaps no active task, and the lead can review and integrate the result soon. Otherwise don't: more agents is not more throughput.
 - **Retire a worker** once its output is reviewed, validation passed, the handoff is accepted and its decisions are persisted.
+- **Context ceiling (Nolan, DEC-102):** the Hub checks every lead's and reviewer's context (`get_usage` with its session id) on each Hub turn, and replaces any above **~300k tokens** (fire and re-hire, standard brief). Leads apply the same ceiling to worker sessions they adopted. A worker close to finishing may finish first, if it hands off right after.
 - **Replace a lead (or Hub) session** when it re-reads old history to remember state, carries mostly finished work, has been compacted, or costs more than it helps. Before ending, it brings its state file up to date (in-flight workers with branch and id, queue, blockers, questions). The Hub then starts a fresh lead with the standard brief and archives the old one. Ending a session never loses knowledge if the state file is current.
 
 ## 0.5 Task ownership, overlap and integration

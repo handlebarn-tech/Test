@@ -18,7 +18,7 @@ Everything a fresh Hub session needs; no chat history is required. Roles, author
 ## Hub loop
 1. Read `Docs/PROJECT_STATE.md` and the newest cross-department entries of `Docs/DECISIONS.md`. That is the whole reading set; open a dept file's "Status for Hub" only when a lead's message needs context.
 2. Process lead messages: merge merge-ready `review/*` branches (`--no-ff`), decide escalations, record decisions (DEC), batch Nolan questions.
-3. Staffing: `list_sessions {"linked": true}`; start/replace/retire leads and reviewers; adjust capacity and Unity slots in the roster; remove stale or duplicate sessions.
+3. Staffing: `list_sessions {"linked": true}`; check each lead's and reviewer's context with `get_usage` and replace any above ~300k tokens (DEC-102); start/replace/retire leads and reviewers; adjust capacity and Unity slots in the roster; remove stale or duplicate sessions.
 4. Update `PROJECT_STATE.md` (roster, priorities, cross-department dependencies, blockers); brief Nolan with what needs him first.
 
 ## Standing directives from Nolan (2026-10-29/30)
