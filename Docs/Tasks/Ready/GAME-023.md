@@ -11,7 +11,7 @@ Build the "highest-priority playable target" of `Docs/Design/SPEC_DECISION_PRESS
 SPEC_DECISION_PRESSURE §118, §127, §133–135, §115 (DP-015..018, DP-027); `Docs/Design/ROADMAP_POST_SLICE.md` §2b–3; handoffs GAME-011, GAME-012, GAME-019..022.
 
 ## Owns
-`Data/Scenarios/DP_AcceptanceShift.json` (new scenario; QA-002 harness format), bot strategies under `Tests/` (extend the GAME-010 persona harness), `Tests/EditMode/Gates/DpAcceptanceTests.cs`, a short tuning note appended to `Docs/Design/TUNING_PS1.md`. Simulation code only for missing hooks, listed in the handoff.
+`Data/Tests/DpScenarios/DP_AcceptanceShift.json` (new scenario in QA-002's harness folder and format; was `Data/Scenarios/…`, AUDIT-001 E7), bot strategies under `Tests/` (extend the GAME-010 persona harness), `Tests/EditMode/Gates/DpAcceptanceTests.cs`, a short tuning note appended to `Docs/Design/TUNING_PS1.md`. Simulation code only for missing hooks, listed in the handoff.
 
 ## Deliverable
 1. One seeded 12–20-customer shift containing at least: 2 explicit easy, 2 ambiguous, 2 budget conflicts, 1 hidden still-unstated constraint, 1 no-perfect-service, 1 valid no-sale, 1 repeat, 1 repeat with changed preference, 1 stock substitution, 1 rush, 1 proactive-restock opportunity, 1 multi-system collision (§133).

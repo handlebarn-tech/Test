@@ -72,8 +72,20 @@ function Invoke-Unity([string[]]$UnityArgs, [string]$UnityLog, [switch]$Graphics
     $p = Start-Process -FilePath $Unity -ArgumentList $argLine -PassThru -NoNewWindow
     $null = $p.Handle  # cache the handle, or PS 5.1 loses ExitCode
     Exit-UnitySlot     # the editor now counts in other scripts' slot check
-    $p.WaitForExit()
+    $limitMin = $(if ($Cfg.unityRunTimeoutMinutes) { [double]$Cfg.unityRunTimeoutMinutes } else { 30 })
+    if (-not (Wait-UnityExit $p $limitMin)) {
+        Write-Line "OPS-001: Unity run exceeded $limitMin min; killed editor $($p.Id) and its helpers to free the DEC-013 slot"
+        Complete $false -1 "failed: Unity run exceeded unityRunTimeoutMinutes=$limitMin and was killed (OPS-001)"
+    }
     return $p.ExitCode
+}
+
+function Wait-UnityExit([Diagnostics.Process]$p, [double]$limitMin) {
+    # OPS-001: a run may hold a DEC-013 slot for at most $limitMin; on overrun kill the editor tree (import workers, ILPP, shader compiler).
+    if ($p.WaitForExit([int][math]::Min([int]::MaxValue, $limitMin * 60000))) { return $true }
+    & taskkill.exe /PID $p.Id /T /F 2>&1 | Out-Null
+    $null = $p.WaitForExit(30000)
+    return $false
 }
 
 function Get-CsErrorCount([string]$path) {

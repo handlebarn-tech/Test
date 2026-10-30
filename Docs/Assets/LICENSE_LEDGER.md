@@ -1,6 +1,8 @@
 # LICENSE LEDGER — ASSET-001
 
-**Verified:** 2026-10-29 by ART-SOURCING (ASSET-001). **No assets downloaded.** Scope: M5 hero retail + M6 stock/BOH, plus audio, fonts, HDRIs, animation, libraries.
+> **Records (AUDIT-001 E4, DEC-064):** this ledger is the **license** record. What was actually downloaded (URL, license, sha256, size, date) is `Docs/Assets/ASSET_CACHE_MANIFEST.json` (ASSET-002 onwards, DEC-023). The header and rows below are the ASSET-001 snapshot of 2026-10-29.
+
+**Verified:** 2026-10-29 by ART-SOURCING (ASSET-001). **No assets downloaded** (as of ASSET-001; see the manifest). Scope: M5 hero retail + M6 stock/BOH, plus audio, fonts, HDRIs, animation, libraries.
 Companion: `ACQUISITION_LIST.md` (priority order), `Docs/Handoffs/ASSET-001.md`.
 
 ## How rows were verified
@@ -43,6 +45,29 @@ Status key: `ACCEPT` fetch as-is · `DONOR` fetch but needs retopo/decimate/rete
 | ANM-KI | Human Basic Motions FREE (Kevin Iglesias) | https://assetstore.unity.com/packages/3d/animations/human-basic-motions-free-154271 | Free; Unity Asset Store EULA | Yes, in build | none | No raw redistribution | 15.3 MB; v2.4.2 (2026-04-30); Unity 6000.0.59; Built-in/URP/HDRP | NPC idle/walk | later (NPC) | DEFER | 2026-10-29 |
 | ANM-CMU | CMU Mocap DB | https://mocap.cs.cmu.edu/ | "Free-use" (plan Appendix A); **not re-verified this task** | unverified | - | unverified | - | - | later | UNVERIFIED - do not use until checked | - |
 | MDL-FAB-JAR | "CC0 Jar" by plaggy (Fab listing in plan) | https://www.fab.com/listings/93812f6a-95ea-4c20-9f9b-7e0f7bb976e0 | Fab returned HTTP 403 to fetch; search found no matching Fab listing | unverified | - | unverified | - | Deli jar | M5 | **REJECT/UNVERIFIED** - use Yusuf Free Jar Pack (CC BY, SK-da8bc0) or model the jar in Blender | 2026-10-29 |
+
+## 1b. Audio (AUDIO-001, 2026-10-30)
+Every row: CC0 1.0 checked on its own page (BigSoundBank: "License CC0 (public domain)"; OpenGameArt: license link `creativecommons.org/publicdomain/zero/1.0/`). Redistribution allowed; attribution optional (courtesy credit in `Docs/Assets/CREDITS.md` when it exists). Fetched by `Tools/Assets/fetch_assets.py --list Docs/Assets/fetch_list_audio.json` (sha256 in the manifest). None is a recording of the reference store. LEGIT Audio note: only the OGA-hosted free samples are CC0; their paid library is not.
+Skipped (login needed, no account per task): Freesound (download requires sign-in), Sonniss GDC (email registration). Not used: OGA CC BY/BY-SA/GPL rows (ventilation-version*, kitchen-ambience, utensils-drawer, inventory-sound-effects).
+
+| ID | Asset | Source URL | License | Commercial | Author | Size (cache) | Intended cue (AUDIO_PLAN id) | Milestone | Status | Visited |
+|---|---|---|---|---|---|---|---|---|---|---|
+| AUD-BSB-3542 | Small Restaurant Conversations (~15 people, French, 2:45) | https://bigsoundbank.com/small-restaurant-conversations-s3542.html | CC0 1.0 (stated on page) | Yes | Joseph SARDIN | FLAC 30.2 MB | AMB-WALLA-LO (murmur bed; keep low so speech stays unintelligible) | Slice | ACCEPT | 2026-10-30 |
+| AUD-BSB-0684 | Walla Group: Averages Discussions (2:01) | https://bigsoundbank.com/walla-group-averages-discussions-s0684.html | CC0 1.0 (stated on page) | Yes | Joseph SARDIN | OGG 3.3 MB (no FLAC offered) | AMB-WALLA-HI (rush layer) | PS2 | ACCEPT | 2026-10-30 |
+| AUD-BSB-1471 | Air-conditioner (1:29) | https://bigsoundbank.com/air-conditioner-s1471.html | CC0 1.0 (stated on page) | Yes | Joseph SARDIN | FLAC 11.4 MB | AMB-HVAC (primary) | Slice | ACCEPT | 2026-10-30 |
+| AUD-BSB-0032 | Ventilation #1 (0:09) | https://bigsoundbank.com/ventilation-1-s0032.html | CC0 1.0 (stated on page) | Yes | Joseph SARDIN | OGG 204 KB | AMB-HVAC alt / BOH vent | PS2 | ACCEPT | 2026-10-30 |
+| AUD-BSB-1157 | Fridge (0:36) | https://bigsoundbank.com/fridge-s1157.html | CC0 1.0 (stated on page) | Yes | Joseph SARDIN | FLAC 2.0 MB | AMB-FRIDGE alt (beverage cooler) | Slice | ACCEPT | 2026-10-30 |
+| AUD-BSB-0034 | Refrigerator (0:10) | https://bigsoundbank.com/refrigerator-s0034.html | CC0 1.0 (stated on page) | Yes | Joseph SARDIN | OGG 280 KB | AMB-FRIDGE alt / BOH | PS2 | ACCEPT | 2026-10-30 |
+| AUD-BSB-1417 | Beep of a Cash Register #1 (0:01) | https://bigsoundbank.com/beep-of-a-cash-register-s1417.html | CC0 1.0 (stated on page) | Yes | Joseph SARDIN | FLAC 17 KB | SFX-POS-SCAN | Slice | ACCEPT | 2026-10-30 |
+| AUD-BSB-3527 | Beep of a Cash Register #2 (0:01) | https://bigsoundbank.com/beep-of-a-cash-register-2-s3527.html | CC0 1.0 (stated on page) | Yes | Joseph SARDIN | FLAC 16 KB | SFX-POS-SCAN variant / SFX-SCALE-BEEP | Slice | ACCEPT | 2026-10-30 |
+| AUD-BSB-3588 | Shop doorbell chime (0:05) | https://bigsoundbank.com/shop-doorbell-chime-s3588.html | CC0 1.0 (stated on page) | Yes | Joseph SARDIN | FLAC 124 KB | SFX-DOOR-CHIME candidate vs ORIG-CHIME (audition) | Slice | ACCEPT | 2026-10-30 |
+| AUD-BSB-0578 | Supermarket (0:54) | https://bigsoundbank.com/supermarket-s0578.html | CC0 1.0 (stated on page) | Yes | Joseph SARDIN | OGG 1.5 MB | AMB-RUSH texture layer (generic supermarket, not the reference store) | PS2 | ACCEPT | 2026-10-30 |
+| AUD-OGA-THESHOP | LEGIT Audio The Shop free samples: convenience-store drinks fridge drone x2 (WAV) | https://opengameart.org/content/the-shop | CC0 1.0 (stated on page) | Yes | LEGIT Audio | ZIP 19.4 MB (2 WAV) | AMB-FRIDGE primary / AMB-ROOMTONE | Slice | ACCEPT | 2026-10-30 |
+| AUD-OGA-AIRVENT | Airvent (large) loop | https://opengameart.org/content/airvent-loop | CC0 1.0 (stated on page) | Yes | Longor | WAV 661 KB | AMB-HVAC alt (BOH/office) | PS2 | ACCEPT | 2026-10-30 |
+| AUD-OGA-GLASSJAR | Glass bottle open + close | https://opengameart.org/content/glass-bottle-open-close | CC0 1.0 (stated on page) | Yes | Sinny | MP3 9 KB x2 | SFX-JAR-OPEN / SFX-JAR-CLOSE | Slice | ACCEPT | 2026-10-30 |
+| AUD-OGA-MORESOUNDS | 202 More Sound Effects (home foley: money, paper, plastic, kitchen, keys, cloth) | https://opengameart.org/content/202-more-sound-effects | CC0 1.0 (stated on page) | Yes | OwlishMedia | ZIP 14.9 MB | SFX-CASH-*, SFX-BAG, SFX-RECEIPT tear, SFX-ID-CARD | Slice/PS1 | ACCEPT | 2026-10-30 |
+| AUD-OGA-COINDROP | Coin drop on table | https://opengameart.org/content/coin-drop | CC0 1.0 (stated on page) | Yes | Vinrax | WAV 250 KB | SFX-CASH-COINS | Slice | ACCEPT | 2026-10-30 |
+| AUD-OGA-100CC0 | 100 CC0 SFX (dishes, glass, metal, switches, wooden box, machine loops) | https://opengameart.org/content/100-cc0-sfx | CC0 1.0 (stated on page) | Yes | rubberduck | ZIP 2.9 MB | SFX-DRAWER candidates (metal_*, wooden_box_open), SFX-JAR-SET (glass_*) | Slice/PS1 | ACCEPT | 2026-10-30 |
 
 ## 2. Poly Haven rows (all CC0 per LIB-PH page; author/size/tris from API)
 | ID | Asset | Source URL | License | Commercial | Author(s) | Size / tris | Intended use | Milestone | Status | Visited |

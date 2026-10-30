@@ -1,7 +1,7 @@
 # IMP-001 — Audit of Nolan's DISPO_GAME_DESIGN_V2 import
 
 **Status:** audit only. Nothing in the pack is adopted until it passes review and **Nolan approves it** (PROJECT_STATE "Pending from Nolan"). Integration is a later task.
-**Input:** `C:/Users/handl/Downloads/Dispo Game Imports/DISPO_GAME_DESIGN_V2/`, read in full and in place (not edited, copied or moved). The `.py` files were read but **not run**.
+**Input:** `C:/Users/handl/Downloads/Dispo Game Imports/DISPO_GAME_DESIGN_V2/` (archived 2026-10-30 to `C:/Users/handl/Downloads/Dispo Game Imports Archive/2026-10-30_DISPO_GAME_DESIGN_V2/`, DEC-070), read in full and in place (not edited, copied or moved). The `.py` files were read but **not run**.
 **Manifest:** `sha256sum -c MANIFEST.sha256` → **27/27 OK**. The 28th file is the manifest itself. No extra or missing files.
 **Compared against:** `DECISIONS.md` (DEC-001/002/006/014/015/016/032/034–051), `GAMEPLAY_SIMULATION_SPEC.md` (GSS), `Design/ROADMAP_POST_SLICE.md`, the Ready packets GAME-006..010, `Specs/UX_PS1.md`, `SliceConfig.json`, and DES-003 on `review/wave-4q` (not merged): `SPEC_DECISION_PRESSURE.md` (cited as **DP §n**), `DES-003_RECONCILIATION.md`, the DES-003 handoff (proposed DEC-P1..P6), and the new packets QA-002, UX-005 and GAME-017..024.
 **Verdicts:** ADOPT = use as written · ADAPT = use, changed to fit canon · REJECT = do not use · COVERED = canon or DES-003 already has it · PARK = sound, but for gated PS4 (no work now).

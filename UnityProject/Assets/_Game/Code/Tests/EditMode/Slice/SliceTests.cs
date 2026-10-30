@@ -370,7 +370,9 @@ namespace Dispo.Slice.Tests
                 if (c == null) continue;
                 if (sim.RegisterOpen)
                 {
-                    if (sim.CanAddItem) sim.AddItem();
+                    // GAME-007: trim an over-limit cart (drop the last line); add the next ask only if it fits under the cap.
+                    if (sim.Meter == MeterState.Red) { sim.RemoveLine(sim.Cart.Count - 1); continue; }
+                    if (sim.CanAddItem && sim.CartGrams + sim.CurrentAsk.Grams <= sim.Cfg.adultUseLimitGrams) sim.AddItem();
                     else { Assert.IsNull(sim.Confirm()); continue; }
                 }
                 var ask = sim.CurrentAsk;

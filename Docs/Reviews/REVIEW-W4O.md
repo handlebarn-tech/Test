@@ -25,7 +25,7 @@
   - None of the 8 preamble cells (export dates, legal entity name) appears in the output.
 
 ## 3. Raw export and determinism: PASS
-- `git rev-list --all --objects` has 0 `.xlsx/.xls/.csv` paths. The export lives in `Downloads/Dispo Game Imports/`, outside the
+- `git rev-list --all --objects` has 0 `.xlsx/.xls/.csv` paths. The export lives in `Downloads/Dispo Game Imports/` (archived 2026-10-30 to `C:/Users/handl/Downloads/Dispo Game Imports Archive/2026-10-30_dutchie-inventory/`, DEC-070), outside the
   repo, and `Imports/` is in `.git/info/exclude`.
 - The original commit reproduces byte-identically (md5 `51477c9f…`, matching the handoff). After M1, two runs both give `bf7a376e…`.
   `--check <export>` (dropped-value scan) passes.

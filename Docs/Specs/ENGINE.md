@@ -1,5 +1,7 @@
 # ENGINE: recommendation engine API (GAME-001, GAME-003)
 
+> **Pinned sources (AUDIT-001 E5, DEC-064):** the source hashes and counts below are as of the import pinned in `Docs/Reconstruction/DATA_SCHEMA.md` ("Pinned sources" block above §1). That block is the one place to update them; on a re-import (DEC-014/038) update it first, then regenerate the goldens.
+
 Pure C# port of the TFS budtender v7.11.4 recommendation engine (GAME-001 slice; GAME-003 parser + remaining KEEP features) (MIG-001 "Recommended vertical-slice subset", DEC-001/002). Assembly `Dispo.Domain` (`noEngineReferences`), namespace `Dispo.Domain.Engine`, folder `UnityProject/Assets/_Game/Code/Domain/Engine/`. Every function cites its v7.11.4 source function and line.
 
 ## Data (generated, do not hand-edit)

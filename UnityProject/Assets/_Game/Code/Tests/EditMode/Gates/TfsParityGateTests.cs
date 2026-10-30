@@ -75,9 +75,16 @@ namespace Dispo.Gates.Tests
             }
         }
 
+        static Dictionary<string, object> Recon(string f) => O(Json.Parse(File.ReadAllText(Path.Combine(Application.dataPath, "../../Docs/Reconstruction", f))));
+
+        /// <summary>MIG-001 queries plus the golden_cases_game003.json defect queries (MC-7, GAP-206: v7.11.4 and game wording).</summary>
         static IEnumerable<string> GoldenQueries() =>
-            A(O(Json.Parse(File.ReadAllText(Path.Combine(Application.dataPath, "../../Docs/Reconstruction/golden_cases.json"))))["cases"])
-                .Select(c => (string)O(c)["q"]).Distinct();
+            A(Recon("golden_cases.json")["cases"]).Select(c => (string)O(c)["q"])
+                .Concat(A(Recon("golden_cases_game003.json")["defects"]).Select(O).SelectMany(d => new[] { (string)O(d["v7114"])["q"], (string)O(d["game"])["q"] }))
+                .Distinct();
+
+        /// <summary>Both parser modes: V7114 is the parity default, Game ships (DEC-060).</summary>
+        static readonly (string name, ParserOptions o)[] Modes = { ("V7114", ParserOptions.V7114), ("Game", ParserOptions.Game) };
 
         /// <summary>The ParserGoldenTests queries through Responder on the sim's live catalog equal the fresh catalog's answers.</summary>
         [TestCaseSource(nameof(States))]
@@ -85,12 +92,13 @@ namespace Dispo.Gates.Tests
         {
             var sim = Sim(state);
             int dow = sim.Cfg.shiftDayOfWeek, n = 0;
+            foreach (var (mode, o) in Modes)
             foreach (var q in GoldenQueries())
             {
-                Assert.AreEqual(Gate.Sig(Responder.Ask(Fresh, q, new ShopState(), dow)), Gate.Sig(Responder.Ask(sim.Data.Catalog, q, new ShopState(), dow)), $"{state}: '{q}'");
+                Assert.AreEqual(Gate.Sig(Responder.Ask(Fresh, q, new ShopState(), dow, o)), Gate.Sig(Responder.Ask(sim.Data.Catalog, q, new ShopState(), dow, o)), $"{state} {mode}: '{q}'");
                 n++;
             }
-            Assert.Greater(n, 30);
+            Assert.Greater(n, 60);
         }
 
         /// <summary>The one allowed difference: a sell-out. The answer then equals the fresh engine with the same stock change, and the batch is gone.</summary>
@@ -109,9 +117,10 @@ namespace Dispo.Gates.Tests
                 var got = sim.Search(chip);
                 Assert.IsFalse(got.Cards.Any(k => k.Rep.Id == rep), $"{chip.id}: sold-out {rep} returned");
                 Assert.AreEqual(Gate.Sig(Engine(cat, chip, sim.Cfg.resultCount).Strains), Gate.Sig(got.Cards.Select(k => k.Strain)), chip.id);
+                foreach (var (mode, o) in Modes)
                 foreach (var q in GoldenQueries())
-                    Assert.AreEqual(Gate.Sig(Responder.Ask(cat, q, new ShopState(), sim.Cfg.shiftDayOfWeek)),
-                        Gate.Sig(Responder.Ask(sim.Data.Catalog, q, new ShopState(), sim.Cfg.shiftDayOfWeek)), $"after {rep}: '{q}'");
+                    Assert.AreEqual(Gate.Sig(Responder.Ask(cat, q, new ShopState(), sim.Cfg.shiftDayOfWeek, o)),
+                        Gate.Sig(Responder.Ask(sim.Data.Catalog, q, new ShopState(), sim.Cfg.shiftDayOfWeek, o)), $"after {rep} {mode}: '{q}'");
             }
         }
 
