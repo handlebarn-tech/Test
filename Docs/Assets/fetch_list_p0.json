@@ -1,0 +1,503 @@
+{
+ "note": "ASSET-002 P0 fetch list; IDs = LICENSE_LEDGER.md rows. local = placed by hand (Sketchfab browser download / generated).",
+ "entries": [
+  {
+   "ledger_id": "PH-marble_01",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "marble_01",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/marble_01",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-marble_tiles",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "marble_tiles",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/marble_tiles",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-fine_grained_wood",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "fine_grained_wood",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/fine_grained_wood",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-oak_veneer_05",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "oak_veneer_05",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/oak_veneer_05",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-concrete_floor_01",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "concrete_floor_01",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/concrete_floor_01",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-smooth_concrete_floor",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "smooth_concrete_floor",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/smooth_concrete_floor",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-CashRegister_01",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "CashRegister_01",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/CashRegister_01",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-security_camera_01",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "security_camera_01",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/security_camera_01",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-security_camera_02",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "security_camera_02",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/security_camera_02",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-korean_fire_extinguisher_01",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "korean_fire_extinguisher_01",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/korean_fire_extinguisher_01",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-potted_plant_04",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "potted_plant_04",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/potted_plant_04",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-fern_02",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "fern_02",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/fern_02",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-kloofendal_overcast_puresky",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "kloofendal_overcast_puresky",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/kloofendal_overcast_puresky",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-courtyard_night",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "courtyard_night",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/courtyard_night",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "exterior_aircon_unit",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/exterior_aircon_unit",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-modular_chainlink_fence",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "modular_chainlink_fence",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/modular_chainlink_fence",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-utility_box_01",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "utility_box_01",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/utility_box_01",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-utility_box_02",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "utility_box_02",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/utility_box_02",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-security_light",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "security_light",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/security_light",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "PH-asphalt_01",
+   "source": "polyhaven",
+   "source_dir": "polyhaven",
+   "asset": "asphalt_01",
+   "res": "2k",
+   "source_url": "https://polyhaven.com/a/asphalt_01",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "LIB-KEN-IF",
+   "source": "kenney",
+   "source_dir": "kenney",
+   "asset": "interface-sounds",
+   "source_url": "https://kenney.nl/assets/interface-sounds",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "LIB-KEN-DA",
+   "source": "kenney",
+   "source_dir": "kenney",
+   "asset": "digital-audio",
+   "source_url": "https://kenney.nl/assets/digital-audio",
+   "license": "CC0-1.0",
+   "redistributable": true
+  },
+  {
+   "ledger_id": "AUD-BSB",
+   "source": "url",
+   "source_dir": "bigsoundbank",
+   "source_url": "https://bigsoundbank.com/subway-door-bell-s2153.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://bigsoundbank.com/UPLOAD/bwf-en/2153.wav",
+     "name": "2153.wav"
+    }
+   ]
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "source": "url",
+   "source_dir": "fonts",
+   "source_url": "https://github.com/google/fonts/tree/main/ofl/barlow",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Thin.ttf",
+     "name": "Barlow-Thin.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-ThinItalic.ttf",
+     "name": "Barlow-ThinItalic.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-ExtraLight.ttf",
+     "name": "Barlow-ExtraLight.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-ExtraLightItalic.ttf",
+     "name": "Barlow-ExtraLightItalic.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Light.ttf",
+     "name": "Barlow-Light.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-LightItalic.ttf",
+     "name": "Barlow-LightItalic.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Regular.ttf",
+     "name": "Barlow-Regular.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Italic.ttf",
+     "name": "Barlow-Italic.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Medium.ttf",
+     "name": "Barlow-Medium.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-MediumItalic.ttf",
+     "name": "Barlow-MediumItalic.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-SemiBold.ttf",
+     "name": "Barlow-SemiBold.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-SemiBoldItalic.ttf",
+     "name": "Barlow-SemiBoldItalic.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Bold.ttf",
+     "name": "Barlow-Bold.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-BoldItalic.ttf",
+     "name": "Barlow-BoldItalic.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-ExtraBold.ttf",
+     "name": "Barlow-ExtraBold.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-ExtraBoldItalic.ttf",
+     "name": "Barlow-ExtraBoldItalic.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Black.ttf",
+     "name": "Barlow-Black.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-BlackItalic.ttf",
+     "name": "Barlow-BlackItalic.ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/OFL.txt",
+     "name": "OFL.txt"
+    }
+   ]
+  },
+  {
+   "ledger_id": "FNT-INT",
+   "source": "url",
+   "source_dir": "fonts",
+   "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+     "name": "Inter[opsz,wght].ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter-Italic%5Bopsz%2Cwght%5D.ttf",
+     "name": "Inter-Italic[opsz,wght].ttf"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt",
+     "name": "OFL.txt"
+    }
+   ]
+  },
+  {
+   "ledger_id": "SK-344514",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "344514043f9b486bb9e90bfa05c4642a",
+   "source_url": "https://sketchfab.com/3d-models/cashier-machine-no-texture-344514043f9b486bb9e90bfa05c4642a",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-dd3b0f",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "dd3b0ff62c044d8ebe59c8cdab2c6fc9",
+   "source_url": "https://sketchfab.com/3d-models/pos-terminal-digital-cash-register-dd3b0ff62c044d8ebe59c8cdab2c6fc9",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-a73f64",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "a73f649778b14b6bbf40083b0fc1f1c8",
+   "source_url": "https://sketchfab.com/3d-models/digital-scale-a73f649778b14b6bbf40083b0fc1f1c8",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "da8bc020664f4a3e99bad40f8a756134",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-bfeabe",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "bfeabeb5adff45b79d3b3b543bb673d0",
+   "source_url": "https://sketchfab.com/3d-models/weed-bud-bfeabeb5adff45b79d3b3b543bb673d0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "a4216f71ffa74df9995b7feda1ae8ee7",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-938a9b",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "938a9ba5180142818dfb0f50fe41f95c",
+   "source_url": "https://sketchfab.com/3d-models/animated-display-cabinet-938a9ba5180142818dfb0f50fe41f95c",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-ab8d2a",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "ab8d2a64d3894deba9af23203ba0368d",
+   "source_url": "https://sketchfab.com/3d-models/dome-camera-free-ab8d2a64d3894deba9af23203ba0368d",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-2273be",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "2273be0837bc453b982dfb19d82c9cc0",
+   "source_url": "https://sketchfab.com/3d-models/tv-cctv-monitor-2273be0837bc453b982dfb19d82c9cc0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-79370d",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "79370d94bd6e4fc9a496de45b168f580",
+   "source_url": "https://sketchfab.com/3d-models/exit-sign-3d-model-free-79370d94bd6e4fc9a496de45b168f580",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-4324a9",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "4324a9252b70446dbf37b80bfb43ee32",
+   "source_url": "https://sketchfab.com/3d-models/emergency-light-4324a9252b70446dbf37b80bfb43ee32",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-976c3f",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "976c3f7c0a604ceb8a0605b700397449",
+   "source_url": "https://sketchfab.com/3d-models/fire-alarm-pull-station-5140mps-2-976c3f7c0a604ceb8a0605b700397449",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-caa8b3",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "caa8b33766f94328a5fa9e6b8a684eca",
+   "source_url": "https://sketchfab.com/3d-models/smoke-detectors-free-low-poly-caa8b33766f94328a5fa9e6b8a684eca",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-e9832f",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "e9832f38484f4f85b3f9081b51fa3799",
+   "source_url": "https://sketchfab.com/3d-models/free-pothos-potted-plant-money-plant-e9832f38484f4f85b3f9081b51fa3799",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "SK-8013c4",
+   "source": "local",
+   "source_dir": "sketchfab",
+   "uid": "8013c47de07d4f96aa5d8b37f05eb4f6",
+   "source_url": "https://sketchfab.com/3d-models/bush-ivy-pack-lowpoly-8013c47de07d4f96aa5d8b37f05eb4f6",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "blocked": "Sketchfab download needs a signed-in session; the built-in browser pane showed LOGIN on 2026-10-29 (agent may not sign in)"
+  },
+  {
+   "ledger_id": "ORIG-CHIME",
+   "source": "local",
+   "source_dir": "original",
+   "source_url": "Tools/Assets/make_chime.py",
+   "license": "project-original",
+   "redistributable": true
+  }
+ ]
+}

@@ -1,0 +1,1385 @@
+{
+ "rows": [
+  {
+   "ledger_id": "AUD-BSB",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/bigsoundbank/AUD-BSB/2153.wav",
+   "source_url": "https://bigsoundbank.com/UPLOAD/bwf-en/2153.wav",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "48636ec96e1aecacbdb0c665b052723cf56fa4194e2f27372ce672f52f87d817",
+   "bytes": 488770,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-Black.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Black.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "fc4f74e8475b181003f7597450c62d630622b417e367a6842972b286c49f9440",
+   "bytes": 111116,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-BlackItalic.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-BlackItalic.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "109ad3b4fff5bfd338d0fbc908e68d601893b97b9b1d8ae698aaab2209f6a618",
+   "bytes": 114596,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-Bold.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Bold.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "84e6a4d61e7c3e21f3c50ea6a4f7e5303a3467864c038be6ea3759bab8d547f9",
+   "bytes": 108220,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-BoldItalic.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-BoldItalic.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "079dcee4a53544177f3b16354b27b40b521e22861a40084ab4d052f0289ed9e8",
+   "bytes": 111996,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-ExtraBold.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-ExtraBold.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "5234d91030e1bb89525cbaccc4386892c3fe005a0582c705264ce3572d96a1a1",
+   "bytes": 110228,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-ExtraBoldItalic.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-ExtraBoldItalic.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "5a78d6f6b7281ac38af2479d87209712457a91478019f9542abfd78fe8bdb332",
+   "bytes": 113112,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-ExtraLight.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-ExtraLight.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "bd47db14c6305ebb647a3f0c6afc0370ffd4e3368f12405c8cd141683a4c2b05",
+   "bytes": 102504,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-ExtraLightItalic.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-ExtraLightItalic.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "8501cb7dafc8a5941fa559854a2e53ca8220bb27be29071e7b5767240dac177f",
+   "bytes": 107988,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-Italic.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Italic.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "70cf45c354af39e55082fd506e748cc6a0a1812949875f99ded3f76bf691e4ca",
+   "bytes": 109624,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-Light.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Light.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "20b1375c0c6606701867bf34c7cc97f44087850567a36587d25abb9510b183cc",
+   "bytes": 103136,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-LightItalic.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-LightItalic.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "567f200fdd53e848cc5966f8bf3fe5aefc6eb5a5f15149a47412777b8cc4c203",
+   "bytes": 108924,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-Medium.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Medium.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "f8906f762cb73dca441da034bc363b2d8e2e68bc10d5c05e58717646c20cc4b4",
+   "bytes": 103536,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-MediumItalic.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-MediumItalic.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "dbf6d2df1348c4a91874a15bbe7b3f3d893d491bd2ae73370795afe157c993b9",
+   "bytes": 109184,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-Regular.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Regular.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "95aa02c7c43096e0dd44d787ba6216864a67157e402adab59b35572e0c1577ea",
+   "bytes": 104068,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-SemiBold.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-SemiBold.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "86577cb32f8abe3673db53ca0f4221e6856751a4f6730c867e00f720f8bb1fc5",
+   "bytes": 108348,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-SemiBoldItalic.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-SemiBoldItalic.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "277b45fc0b9f066bf77e88e5d147baae8d1ad7441cedee1dc305fc3dc6e84ce7",
+   "bytes": 111820,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-Thin.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-Thin.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "103671e5a8daf1c02ac2cb35c61fa30088e055e5ff718d51b4fb20012581d252",
+   "bytes": 101704,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/Barlow-ThinItalic.ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/Barlow-ThinItalic.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "4e948103b1bf05649baaea64747e410dc21671ad56eafd5dd3e6f2062b5ff35d",
+   "bytes": 107296,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-BAR",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-BAR/OFL.txt",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlow/OFL.txt",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+   "bytes": 4377,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-INT",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-INT/Inter-Italic[opsz,wght].ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter-Italic%5Bopsz%2Cwght%5D.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "acd98e64795781b2058f07b18475e0ecee2a0fe2b42a49e2f9e37d0d6bf66ce6",
+   "bytes": 906596,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-INT",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-INT/Inter[opsz,wght].ttf",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+   "bytes": 876576,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "FNT-INT",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/fonts/FNT-INT/OFL.txt",
+   "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt",
+   "license": "OFL-1.1",
+   "redistributable": true,
+   "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+   "bytes": 4377,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "LIB-KEN-DA",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/kenney/LIB-KEN-DA/digital-audio.zip",
+   "source_url": "https://kenney.nl/download/6173736574732f6469676974616c2d617564696f/dc9818f7adf632f1f0ded79f345a7402dc98b938c31c513a11e4e8e6fb30f4e6?expires=1793337257",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "24e6ce28b76a6d8c89cff4d331e0965ff5c3de8a73c612028e9d363cc64e4f06",
+   "bytes": 990367,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "LIB-KEN-IF",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/kenney/LIB-KEN-IF/interface-sounds.zip",
+   "source_url": "https://kenney.nl/download/6173736574732f696e746572666163652d736f756e6473/19ce88cb2362534fedce00e7caebe5a1f8f6be61f2aa7aa8c3bbd77306070bd3?expires=1793337254",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232",
+   "bytes": 834536,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "ORIG-CHIME",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/original/ORIG-CHIME/door_chime.wav",
+   "source_url": "Tools/Assets/make_chime.py",
+   "license": "project-original",
+   "redistributable": true,
+   "sha256": "fbef3281d70108415e8fc9e173dc44b7a51a5fe3847049b62ca767bd8ef1a9c7",
+   "bytes": 242594,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-CashRegister_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-CashRegister_01/CashRegister_01.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/CashRegister_01/CashRegister_01.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "51cfd1329ae1700faaf4d1ce6116f73e795b6a31af7e86fbbb1047b57aa0fe3f",
+   "bytes": 356396,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-CashRegister_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-CashRegister_01/CashRegister_01_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/CashRegister_01/CashRegister_01_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9e7cd6c659466b56f3e8dd3375d3e9a47751556dcddca5b305badda95ea65bf9",
+   "bytes": 6300,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-CashRegister_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-CashRegister_01/textures/CashRegister_01_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/CashRegister_01/CashRegister_01_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "ebdb551da131b20ad38bf1fc24d5acfaf6d1a024f0d282631a5254474307f280",
+   "bytes": 626244,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-CashRegister_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-CashRegister_01/textures/CashRegister_01_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/CashRegister_01/CashRegister_01_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "222144e43c9df703685cc4cbbbc7ade26c8ce1beb81b8e410b91328a9443f0fb",
+   "bytes": 400846,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-CashRegister_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-CashRegister_01/textures/CashRegister_01_glass_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/CashRegister_01/CashRegister_01_glass_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "858244b4434f417a4af43fb10a839f53598ea175253f8fa02e2152bc45c92f26",
+   "bytes": 202947,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-CashRegister_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-CashRegister_01/textures/CashRegister_01_glass_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/CashRegister_01/CashRegister_01_glass_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "7ec614d0b53c8e807594dfa4d9f7f5e60126fa4add96bff65a04477652a75259",
+   "bytes": 288714,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-CashRegister_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-CashRegister_01/textures/CashRegister_01_glass_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/CashRegister_01/CashRegister_01_glass_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "15ec1f4a61b4bf50c71d147f7c99e1a37a7dba4d6a47f6b782a80b5eb2b54ed6",
+   "bytes": 66229,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-CashRegister_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-CashRegister_01/textures/CashRegister_01_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/CashRegister_01/CashRegister_01_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "1e2e6aaa8267b77f2911b2c9d2cbbd0821c2aa3e34ff9aa04718ed93e00d35df",
+   "bytes": 414931,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-asphalt_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-asphalt_01/asphalt_01.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/asphalt_01/asphalt_01.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "5e186c91e085eec263fef84f078cc347a12f3cc5043200327adb67279aa7e852",
+   "bytes": 2370836,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-asphalt_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-asphalt_01/asphalt_01_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/2k/asphalt_01/asphalt_01_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "c95dd85a268629839dfce40e9cb71e15dda3024f3883744c5146102ebb2696f0",
+   "bytes": 2540,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-asphalt_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-asphalt_01/textures/asphalt_01_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/asphalt_01/asphalt_01_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "10fe1dafe34fec51397dbe9011f798c68c4e3fc16abfd4d7aea0123122db8993",
+   "bytes": 3118607,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-asphalt_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-asphalt_01/textures/asphalt_01_rough_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/asphalt_01/asphalt_01_rough_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "c6962037eb41c6f0feafba22353e315d37ae8c8ea472dfd7d4fe28136904ceb5",
+   "bytes": 1599661,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-concrete_floor_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-concrete_floor_01/concrete_floor_01.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/concrete_floor_01/concrete_floor_01.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "c383e8e6bb15fa4c7ec0a177a4c2cb86cdfba6faf83062bae4f43349e700ad81",
+   "bytes": 2369908,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-concrete_floor_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-concrete_floor_01/concrete_floor_01_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/2k/concrete_floor_01/concrete_floor_01_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "92fb5406bab8b736a27ba4dfada88ebfec043caaa8a8dfc30a58236b41e5e223",
+   "bytes": 3583,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-concrete_floor_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-concrete_floor_01/textures/concrete_floor_01_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/concrete_floor_01/concrete_floor_01_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "ca24c52dabae67ef49093f91d8f9b9e5328a3b9fcb1327742ff6181ee542e017",
+   "bytes": 2967720,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-concrete_floor_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-concrete_floor_01/textures/concrete_floor_01_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/concrete_floor_01/concrete_floor_01_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "796b010208e346bbeec4c468f286c3892852a454f77cb516d6f4a6e7c240de01",
+   "bytes": 3261423,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-concrete_floor_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-concrete_floor_01/textures/concrete_floor_01_rough_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/concrete_floor_01/concrete_floor_01_rough_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e66fa941d6daa33ba334c853bf126c85f1d77e7b72778073237e4ef8c7c97774",
+   "bytes": 1488360,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-courtyard_night",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-courtyard_night/courtyard_night_2k.hdr",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/courtyard_night_2k.hdr",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "31f0b645d3a740531b01616ce15bc393a3203bc932cc82a98b09ae5a4b68df29",
+   "bytes": 6529520,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/exterior_aircon_unit.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/exterior_aircon_unit/exterior_aircon_unit.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "b4b9ad082bdaa8f8b437bc14d9981caeaf318334499d4bf65d616fb2ec0c5ca8",
+   "bytes": 494784,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/exterior_aircon_unit_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/exterior_aircon_unit/exterior_aircon_unit_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "3baf6dbbe3af4591b60013ebb40aa9441775b5bf7888ec820c6089c31e35acf6",
+   "bytes": 9634,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/textures/exterior_aircon_unit_01_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/exterior_aircon_unit/exterior_aircon_unit_01_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "1a146357454fc143ed7e3b1443abc901d675d3dbef6b8c5afc9705d53be681a9",
+   "bytes": 2266943,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/textures/exterior_aircon_unit_01_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/exterior_aircon_unit/exterior_aircon_unit_01_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "a346d5f9f6e5c130e051529811443b61af8dfd7f2391b4358931ecef29c403b8",
+   "bytes": 1668804,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/textures/exterior_aircon_unit_01_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/exterior_aircon_unit/exterior_aircon_unit_01_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "f0d04099be28fe83a0c2dd9454c82838b3980520b244d25e912e5ffe56958837",
+   "bytes": 1625796,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/textures/exterior_aircon_unit_01_opacity_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/exterior_aircon_unit/exterior_aircon_unit_01_opacity_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "38247caa9353b1875ba983702e13417732381e25cf0d9ef2945baabb938bd184",
+   "bytes": 919689,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/textures/exterior_aircon_unit_02_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/exterior_aircon_unit/exterior_aircon_unit_02_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "4817491a80bbe44a63d88d6191fe4771128b2e1bc9f772851ce61bcf1d673d49",
+   "bytes": 1693105,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/textures/exterior_aircon_unit_02_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/exterior_aircon_unit/exterior_aircon_unit_02_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "64276d1799429842b823881c557dbf0efffa784096dafd1f69be719866acc39a",
+   "bytes": 3561963,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/textures/exterior_aircon_unit_rusted_01_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_01_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "41763f49cc6f9dfe4ddcb1ef93a3c6340d1fba10c3f81af0c3d80bb00779b580",
+   "bytes": 2328077,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/textures/exterior_aircon_unit_rusted_01_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_01_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e459cf5f606567e7fe11ec486d57fe02b462b7546b324458a0039aa38ed6fc39",
+   "bytes": 1990502,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/textures/exterior_aircon_unit_rusted_01_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_01_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "3a2bae0c5e700e6fd96ea46644e967d739531771ea59330f87ecbff96c6defe5",
+   "bytes": 2059209,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/textures/exterior_aircon_unit_rusted_02_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_02_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "d4c48ab4b811eb514fa78caecd265c672142d326e23edf917da0e8cecb718747",
+   "bytes": 2195033,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/textures/exterior_aircon_unit_rusted_02_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_02_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "d9bed2084f46db041ccbcff6000a88c5177041e2f418071812c899b0e60b37e2",
+   "bytes": 3624562,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-exterior_aircon_unit",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-exterior_aircon_unit/textures/exterior_aircon_unit_rusted_02_opacity_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/exterior_aircon_unit/exterior_aircon_unit_rusted_02_opacity_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "24c395f621ba1f4b8251a02afef7a58038b82c78e6cadf758d059e3d93edd8db",
+   "bytes": 998108,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-fern_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-fern_02/fern_02.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/fern_02/fern_02.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "fe1abb762bcbbc7ad9e86925c8080437a62add257d9280e9142fdc85c226e64c",
+   "bytes": 176176,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-fern_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-fern_02/fern_02_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/fern_02/fern_02_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "50540d37531f93fd693d5340d5b3095c9d6d2834fa05c74bea797d54f290cb6a",
+   "bytes": 6899,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-fern_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-fern_02/textures/fern_02_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/fern_02/fern_02_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "1eaf9bd29e2d83a77ca5d89bdddebcd9216b8b4ba244644580fe5b89bbe713f1",
+   "bytes": 850856,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-fern_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-fern_02/textures/fern_02_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/fern_02/fern_02_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9ee18172170728050871772e2cd6d8d37b52f9138e61b49b04486623f9caf84b",
+   "bytes": 993703,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-fern_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-fern_02/textures/fern_02_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/fern_02/fern_02_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "dfe1ac4a428d21f7c134411500177d66b8dd800c8fec6f0040c50f44414a777b",
+   "bytes": 1365615,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-fine_grained_wood",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-fine_grained_wood/fine_grained_wood.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/fine_grained_wood/fine_grained_wood.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "7bb5b6919139c889296cb7ee2ae4be366fb9478fc4a459b9c3a21fcd4ad58ca0",
+   "bytes": 2369012,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-fine_grained_wood",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-fine_grained_wood/fine_grained_wood_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/2k/fine_grained_wood/fine_grained_wood_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "a5772be6a6b50e004d9037d6b115e0924793df17c5b662b7365fced5bd4a91d0",
+   "bytes": 3586,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-fine_grained_wood",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-fine_grained_wood/textures/fine_grained_wood_col_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/fine_grained_wood/fine_grained_wood_col_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "d97b1ab2c5206ac43bc0c42f21878da14f4d02497fd21396399406c03f3755a9",
+   "bytes": 1327517,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-fine_grained_wood",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-fine_grained_wood/textures/fine_grained_wood_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/fine_grained_wood/fine_grained_wood_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "c76fcd29434978227db5a35b5b0238da1bee0fb5fa8cdfc6819a76c7ef723f3c",
+   "bytes": 855682,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-fine_grained_wood",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-fine_grained_wood/textures/fine_grained_wood_rough_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/fine_grained_wood/fine_grained_wood_rough_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "7e8f5fc146ae7accd3b9deb2a173c1cf253707ccdee5070ce16cefd4ee68f1b7",
+   "bytes": 871792,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-kloofendal_overcast_puresky",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-kloofendal_overcast_puresky/kloofendal_overcast_puresky_2k.hdr",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/kloofendal_overcast_puresky_2k.hdr",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "312b1b04b7f10057a4f1418abc59d1166c8933cc93fc72051502edaf8d6b2fcd",
+   "bytes": 4335717,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-korean_fire_extinguisher_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-korean_fire_extinguisher_01/korean_fire_extinguisher_01.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/korean_fire_extinguisher_01/korean_fire_extinguisher_01.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "a460dd65b63477bb641196d77393258af0c8a6e2a64728156cb45d92658c86bd",
+   "bytes": 279480,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-korean_fire_extinguisher_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-korean_fire_extinguisher_01/korean_fire_extinguisher_01_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/korean_fire_extinguisher_01/korean_fire_extinguisher_01_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "d12176b2979cd8028f84d4068c8049b5e6a47e4d9379f3cb2908fa615c5c6900",
+   "bytes": 7450,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-korean_fire_extinguisher_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-korean_fire_extinguisher_01/textures/korean_fire_extinguisher_01_body_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/korean_fire_extinguisher_01/korean_fire_extinguisher_01_body_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2f5387154f4985ae8103825f05acd1a9c43e3307642f3b74b26db8932346e34c",
+   "bytes": 720892,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-korean_fire_extinguisher_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-korean_fire_extinguisher_01/textures/korean_fire_extinguisher_01_body_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/korean_fire_extinguisher_01/korean_fire_extinguisher_01_body_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "7e06bcb002addaa30c8fea0e4432f3855d77a5348d7cc41791bd10b44cd511f4",
+   "bytes": 404041,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-korean_fire_extinguisher_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-korean_fire_extinguisher_01/textures/korean_fire_extinguisher_01_body_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/korean_fire_extinguisher_01/korean_fire_extinguisher_01_body_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "6fdb28b9bfd83f530f1abaa0ac0e6401a98466d74f20bca0fabf47ba2d2b75f4",
+   "bytes": 317767,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-korean_fire_extinguisher_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-korean_fire_extinguisher_01/textures/korean_fire_extinguisher_01_glass_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/korean_fire_extinguisher_01/korean_fire_extinguisher_01_glass_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "d618f13b5c84957ae3e3b79f189465f52f9d409e17a0e110ded95adf39dcda62",
+   "bytes": 211879,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-korean_fire_extinguisher_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-korean_fire_extinguisher_01/textures/korean_fire_extinguisher_01_glass_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/korean_fire_extinguisher_01/korean_fire_extinguisher_01_glass_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "a9b4a14d19b38947eee3a868e2453053b09804b2addc82f5603b40ec11917ca7",
+   "bytes": 509469,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-korean_fire_extinguisher_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-korean_fire_extinguisher_01/textures/korean_fire_extinguisher_01_glass_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/korean_fire_extinguisher_01/korean_fire_extinguisher_01_glass_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "cfd8ebf3c668f0db5f37baa4b3abe8678f088b18c5eb493e8ccef2e4c78de45e",
+   "bytes": 113323,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-korean_fire_extinguisher_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-korean_fire_extinguisher_01/textures/korean_fire_extinguisher_01_paper_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/korean_fire_extinguisher_01/korean_fire_extinguisher_01_paper_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "b4ea1553ae5a841cc837f92cced525868f0f67d02d72914adba553d3154ce6c5",
+   "bytes": 864091,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-korean_fire_extinguisher_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-korean_fire_extinguisher_01/textures/korean_fire_extinguisher_01_paper_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/korean_fire_extinguisher_01/korean_fire_extinguisher_01_paper_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "7b257c41705c1188017712889e40d5ec4f1a60a065c7c16f54dea4c0b56d9936",
+   "bytes": 594598,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-korean_fire_extinguisher_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-korean_fire_extinguisher_01/textures/korean_fire_extinguisher_01_paper_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/korean_fire_extinguisher_01/korean_fire_extinguisher_01_paper_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2446b9fa2516a5b86ec31227630fb46d297a79c365f00d5f93d010d254bb3794",
+   "bytes": 1454217,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-marble_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-marble_01/marble_01.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/marble_01/marble_01.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "195681bd0fb8f143e5a328c3376cc134014340f7b0ed436f618543b70100fc43",
+   "bytes": 2369108,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-marble_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-marble_01/marble_01_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/2k/marble_01/marble_01_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "b1062a43d47514ae9d7d3a36a55640437e391b1c88ad80ba64cb139195ce5c1a",
+   "bytes": 2676,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-marble_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-marble_01/textures/marble_01_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/marble_01/marble_01_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "d403786171716f86718bdd67eba923d4fb6125c0636bacef0e6a21dd5d623a48",
+   "bytes": 1269188,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-marble_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-marble_01/textures/marble_01_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/marble_01/marble_01_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "d5e17ccb2913adbf28fcb781fddf0aa711259ddea6c1c918442f9a3589aa4660",
+   "bytes": 409581,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-marble_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-marble_01/textures/marble_01_rough_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/marble_01/marble_01_rough_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "1b970e033856c93ee7390d947da5340e101b489fc8c1463354ea9e6655ce039a",
+   "bytes": 281388,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-marble_tiles",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-marble_tiles/marble_tiles.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/marble_tiles/marble_tiles.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "654d2d8af92e6f24d30dbacda24f5d86670b3a8f4f732ffd8b2e9a37ef7f9a39",
+   "bytes": 2368276,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-marble_tiles",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-marble_tiles/marble_tiles_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/2k/marble_tiles/marble_tiles_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "8d6d8f31298c6157c4d8e2ddff962961857022e013396d9123441c9a3e309171",
+   "bytes": 2779,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-marble_tiles",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-marble_tiles/textures/marble_tiles_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/marble_tiles/marble_tiles_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "5da7e0cceb3f822bff1735b43c6a67082aa94fadd5b8dd7641353f521ce88e8a",
+   "bytes": 3244419,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-marble_tiles",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-marble_tiles/textures/marble_tiles_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/marble_tiles/marble_tiles_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9a73fe867cf0c4a14b903542106dee4e33a1de8abf942b1725ff679c00492668",
+   "bytes": 3246069,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-marble_tiles",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-marble_tiles/textures/marble_tiles_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/marble_tiles/marble_tiles_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "632eda29b682fb3757fc5d646e53577f80d1546985bf2adae04ec6c4c4c84df0",
+   "bytes": 2439351,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-modular_chainlink_fence",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-modular_chainlink_fence/modular_chainlink_fence.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/modular_chainlink_fence/modular_chainlink_fence.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "be9ea1817089fd35b0927a8271358f6abd2ec80b306a085de435613d936fcb9a",
+   "bytes": 3168016,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-modular_chainlink_fence",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-modular_chainlink_fence/modular_chainlink_fence_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/modular_chainlink_fence/modular_chainlink_fence_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9c9c3e7301beff0a0ec8d8f16ba386d7c7aecf3c0c0e75131e4f6077bb064444",
+   "bytes": 41838,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-modular_chainlink_fence",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-modular_chainlink_fence/textures/modular_chainlink_fence_posts_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/modular_chainlink_fence/modular_chainlink_fence_posts_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "54da8887d80d86057e1b94818e374515ae8ee585cfe2a0f5351ed45826a14891",
+   "bytes": 3004035,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-modular_chainlink_fence",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-modular_chainlink_fence/textures/modular_chainlink_fence_posts_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/modular_chainlink_fence/modular_chainlink_fence_posts_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "f710dbfd637feb60e69a1c24e04fd6cd03e67684e31511fa5c907929d230c122",
+   "bytes": 2425889,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-modular_chainlink_fence",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-modular_chainlink_fence/textures/modular_chainlink_fence_posts_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/modular_chainlink_fence/modular_chainlink_fence_posts_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "36e6f6c16e13dad18224b1c97a8dd388fd7519b3ee29cff901bd3bdfc206d5d8",
+   "bytes": 1869713,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-modular_chainlink_fence",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-modular_chainlink_fence/textures/modular_chainlink_fence_wire_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/modular_chainlink_fence/modular_chainlink_fence_wire_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "d3e8f0ac72d9177f442d6e2906537f5b4166e50a2dbf74cae9349e7724da2a54",
+   "bytes": 2082073,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-modular_chainlink_fence",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-modular_chainlink_fence/textures/modular_chainlink_fence_wire_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/modular_chainlink_fence/modular_chainlink_fence_wire_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "6d4906f5676f32f53a5089915d5272340d9a33c52659bbdcf7104ab80e830307",
+   "bytes": 1746959,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-modular_chainlink_fence",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-modular_chainlink_fence/textures/modular_chainlink_fence_wire_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/modular_chainlink_fence/modular_chainlink_fence_wire_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "a1b853c5639319d10493aba0e04b67e39186ea5fd98ffde49df6093d29ce4cc0",
+   "bytes": 1882329,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-oak_veneer_05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-oak_veneer_05/oak_veneer_05.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/oak_veneer_05/oak_veneer_05.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "b533f1147529ae03ec5dd0ec9e2488a2bc5053fed2fa2048f0b534ee5d35635b",
+   "bytes": 2369652,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-oak_veneer_05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-oak_veneer_05/oak_veneer_05_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/2k/oak_veneer_05/oak_veneer_05_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "c650966a4e50b34ff7fe3d26a7fc0a5edd87e04ffb7e18daf5c4ab87dbf50586",
+   "bytes": 2790,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-oak_veneer_05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-oak_veneer_05/textures/oak_veneer_05_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/oak_veneer_05/oak_veneer_05_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "5107e18546e1274ba1a03c1efbff4341b34a9973606eeb6c49f7d98561b60f36",
+   "bytes": 3043566,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-oak_veneer_05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-oak_veneer_05/textures/oak_veneer_05_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/oak_veneer_05/oak_veneer_05_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "4989abfa70db76fdfcfa8532e7af83b774e501ebead9a22d9f0737c2db6951f1",
+   "bytes": 2092056,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-oak_veneer_05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-oak_veneer_05/textures/oak_veneer_05_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/oak_veneer_05/oak_veneer_05_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2ddcc2419ed7891a2ea3f9f4e125da85dcaec5001c7b1c51bb7e6e3938fcaca2",
+   "bytes": 1540861,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-potted_plant_04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-potted_plant_04/potted_plant_04.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/potted_plant_04/potted_plant_04.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "158c1d27503d4845eb3573f00c01ae3f4f77f1d6ca8754c67bf1762745946f7f",
+   "bytes": 241800,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-potted_plant_04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-potted_plant_04/potted_plant_04_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/potted_plant_04/potted_plant_04_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "3f9502718be285a6614622774a6b19fd9014e2d5e05e6a08f822321dd157e6d5",
+   "bytes": 7081,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-potted_plant_04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-potted_plant_04/textures/potted_plant_04_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/potted_plant_04/potted_plant_04_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "95fed5f61ce04485b9233f81459fa4f2c7e51ed93a96f8e4470a0db75ce16288",
+   "bytes": 1480527,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-potted_plant_04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-potted_plant_04/textures/potted_plant_04_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/potted_plant_04/potted_plant_04_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "088004de42f405aaa5e14b22f9376e066d3b1ba58e957ad7a67a14697f086bcf",
+   "bytes": 1804144,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-potted_plant_04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-potted_plant_04/textures/potted_plant_04_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/potted_plant_04/potted_plant_04_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "d4ba8dce3a46ab10bf95cf643838222f50778c718fe16acf0f95cba9b599b8a7",
+   "bytes": 2723926,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_camera_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_camera_01/security_camera_01.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/security_camera_01/security_camera_01.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "c43dd3576213c169d1b3a9968788c0da2d14073e59c7d2503bc230c05042bb21",
+   "bytes": 386836,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_camera_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_camera_01/security_camera_01_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/security_camera_01/security_camera_01_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "55969c17c3f700480b7cc93165a2668060b5e4d00476ab53464fdcc3bb719db1",
+   "bytes": 4743,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_camera_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_camera_01/textures/security_camera_01_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/security_camera_01/security_camera_01_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "666909428a2cf5ebc209a56078852862ca7717747321f4d486193db854277383",
+   "bytes": 1807993,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_camera_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_camera_01/textures/security_camera_01_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/security_camera_01/security_camera_01_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9e87e4b75983636cebb4e98ea74a96f09f5a4cb9a2460385ec0e9a056a42ad6e",
+   "bytes": 1913417,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_camera_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_camera_01/textures/security_camera_01_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/security_camera_01/security_camera_01_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "ba0720b10eac5cb1d7e5ff332d472b6ec8c31e40da5f2003d8e48a42e748555d",
+   "bytes": 952350,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_camera_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_camera_02/security_camera_02.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/security_camera_02/security_camera_02.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "15512a4c0add24cd6ec38386e7707b02587f6bb873d9a0620ca6bbc548f1dc7b",
+   "bytes": 407088,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_camera_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_camera_02/security_camera_02_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/security_camera_02/security_camera_02_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "0ca204d355fbc865045217b219a4efcfb7e0a0afbc557c5cc016a111ad2f554a",
+   "bytes": 6299,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_camera_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_camera_02/textures/security_camera_02_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/security_camera_02/security_camera_02_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "5123eea1d25d07e05c7dcda7ff3d561bf672ad71cb43d6341ecf71780e4f8bcc",
+   "bytes": 1738160,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_camera_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_camera_02/textures/security_camera_02_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/security_camera_02/security_camera_02_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "cee7add026ac8435e6229cc96e8898114859f4a77d139e9151864e123b958004",
+   "bytes": 1475390,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_camera_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_camera_02/textures/security_camera_02_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/security_camera_02/security_camera_02_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "47e10d8cd1b49b16fec0dc5ff03f03df7630bf239ee535352056de5a014a9772",
+   "bytes": 1780652,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_light",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_light/security_light.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/security_light/security_light.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "3d45d473d7ad4ace4ce93790db96dd7d6decbd0180b59a7a2774c690594e70e2",
+   "bytes": 141352,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_light",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_light/security_light_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/security_light/security_light_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "8b23f8f3f81d1fa0bf60021a80c73d3c50cb75129b33ef7718fac3998478fdab",
+   "bytes": 6556,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_light",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_light/textures/security_light_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/security_light/security_light_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "a623eac2ff007f82d7169d92e3082b96fa42e4de7c52ab838d691bea3fd99f79",
+   "bytes": 3093308,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_light",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_light/textures/security_light_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/security_light/security_light_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "96e01b5a97922442db08fbbb970b129ede9913f43b5d290a611b9a31e529c6c5",
+   "bytes": 2043804,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-security_light",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-security_light/textures/security_light_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/security_light/security_light_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "baa20be910129ece0ec45c094f03fa640484503bdfa379020d964fee27b00872",
+   "bytes": 3200575,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-smooth_concrete_floor",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-smooth_concrete_floor/smooth_concrete_floor.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/smooth_concrete_floor/smooth_concrete_floor.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "f87491c688f61bf56823d0964facdbd9218f3eed5c24b12ba8760b03521cd8f3",
+   "bytes": 2370228,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-smooth_concrete_floor",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-smooth_concrete_floor/smooth_concrete_floor_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/2k/smooth_concrete_floor/smooth_concrete_floor_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9fc751a7bbf5afe2d74a64a2711d521f08bf653a0a57d662de4ace8c0fc8cde6",
+   "bytes": 2854,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-smooth_concrete_floor",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-smooth_concrete_floor/textures/smooth_concrete_floor_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/smooth_concrete_floor/smooth_concrete_floor_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "5f8a3baf0be96f01b3fb5f8486af55f00e7800f303d7986e9487640edb0c20e8",
+   "bytes": 2932778,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-smooth_concrete_floor",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-smooth_concrete_floor/textures/smooth_concrete_floor_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/smooth_concrete_floor/smooth_concrete_floor_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "19fecf502443f53f5e94b67569461dc571f1de60d3676f925b74b78b398f4897",
+   "bytes": 3561275,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-smooth_concrete_floor",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-smooth_concrete_floor/textures/smooth_concrete_floor_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/smooth_concrete_floor/smooth_concrete_floor_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "0f698e2f3ca8f1b74c79765c8d51489772af05c969715d326490eafb1e92ae79",
+   "bytes": 2819837,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-utility_box_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-utility_box_01/textures/utility_box_01_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/utility_box_01/utility_box_01_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "47631004401c1deb7927bf731d0e5eacead056e8fe1beb5906d21db10b1fb88b",
+   "bytes": 2563064,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-utility_box_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-utility_box_01/textures/utility_box_01_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/utility_box_01/utility_box_01_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "c0b5560ef0bc650139232edb5ae489012eb58bb1d0dfd4b1fde3ad737e11dc56",
+   "bytes": 1983621,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-utility_box_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-utility_box_01/textures/utility_box_01_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/utility_box_01/utility_box_01_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e97b9f34d7b00e697c9de9a47630a54fa089f68b1e0f1d2ef4b6c39f7f241bcd",
+   "bytes": 2362673,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-utility_box_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-utility_box_01/utility_box_01.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/utility_box_01/utility_box_01.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e4249eb754d7802154eed36bb12070dc24c90fc331f355d60ef7570d61fc0f5c",
+   "bytes": 142552,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-utility_box_01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-utility_box_01/utility_box_01_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/utility_box_01/utility_box_01_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "ab862315afc5b8d0a8070e4f5932cae042c20328b017b6e2a3fbd0169a2404c6",
+   "bytes": 2766,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-utility_box_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-utility_box_02/textures/utility_box_02_arm_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/utility_box_02/utility_box_02_arm_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e767bef42b431106db00cfb50374dd399f8acfe8a8d05045ab2590593920a177",
+   "bytes": 2598114,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-utility_box_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-utility_box_02/textures/utility_box_02_diff_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/utility_box_02/utility_box_02_diff_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "59554c019e3bf270cd59eae1ff4f105ba92383174d9b706120cc92de872751a6",
+   "bytes": 1960930,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-utility_box_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-utility_box_02/textures/utility_box_02_nor_gl_2k.jpg",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/utility_box_02/utility_box_02_nor_gl_2k.jpg",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e8963358ce46a96cd63e78a5a950f06043231dfd2a7e31e4a9ed9d176ceac638",
+   "bytes": 2335447,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-utility_box_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-utility_box_02/utility_box_02.bin",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/utility_box_02/utility_box_02.bin",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "0f0a3f8ecc0358e36e97120aa752c2456a78bf922671e6f77e402b0aa58ecfce",
+   "bytes": 199784,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "PH-utility_box_02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/polyhaven/PH-utility_box_02/utility_box_02_2k.gltf",
+   "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/utility_box_02/utility_box_02_2k.gltf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "31abfd95a081532fcba40239cb9aa499c62394ae9b18e756ab49e8c4e1c5e4a7",
+   "bytes": 2764,
+   "date": "2026-10-29"
+  }
+ ],
+ "cache_root": "C:/Users/handl/Downloads/Dispo Game Assets Cache"
+}
