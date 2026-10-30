@@ -13,7 +13,7 @@ Hub-owned, project level only (`Docs/STUDIO_OS.md` §0). Department detail (work
 | Gameplay | `local_5bcd6ccf-64c1-464e-9fb9-40ad2e27afb4` | active | 3 | 1 |
 | World | `local_d19eda58-a105-4379-aada-4bf61066f717` | active | 2 | 1 (lends to Assets for imports) |
 | Assets | `local_172b2109-6384-4914-800b-6dc37226e046` | active | 4 (temporary +1 to finish ASSET-004, cut short by the usage limit) | 0 (borrows World's) |
-| Reviewer pool | Unity A `local_0dd63bac-df1d-448d-9203-641ead6b6837`, Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs 2 `local_99d7e5b7-ef60-4076-9821-58f16ce3bec0` | idle | — | Unity reviewers use the owning dept's slot |
+| Reviewer pool | Unity A2 `local_4e865bb8-479c-41c5-8628-7f3e7cb2a4c3`, Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs 2 `local_99d7e5b7-ef60-4076-9821-58f16ce3bec0` | idle | — | Unity reviewers use the owning dept's slot |
 
 Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME-009 `local_7f8c95e9…`, DES `local_82d327a2…`; Assets ← PROC-005 `local_6c216f80…`, ASSET-004 `local_d31ad4c5…`, IMP-003 `local_13653ae5…`. Leads may reuse or retire them.
 
@@ -31,6 +31,8 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 - World entry/check-in area ↔ Gameplay customer flow (guard post, queue line anchors).
 
 ## Blockers / risks
+- `review/wave-5t` (old IMP-003 round-3 partial PASS) is superseded by the from-scratch round-3 re-audit (DEC-095); never merge it, delete it once the new review lands.
+- Plan usage: weekly all-models limit 67 % used at 2026-10-30 14:15 (resets 2026-11-01 02:00); leads keep worker counts to what they can review.
 - DEC-094 rollout under validation (DEC-099): Hub-only merges until lead-run subagent workers/worktrees prove stable; then reassess lead merges for domain-local work.
 - ChatGPT toolkit drops lack our research and room evidence (DEC-095): every round needs fixes; round 3 must be re-audited.
 - Several BACKLOG rows are stale; each lead reconciles its prefixes first.
