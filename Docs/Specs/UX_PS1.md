@@ -36,6 +36,7 @@ Each item is presented and answered on its own (REJECT reasons stay per item, SL
 | Amber | 75–100 % | `--warn` | `⚠ Near the 1 oz limit` | enabled |
 | Red | > 100 % | `--bad` | `✗ Over the 1 oz limit` + boxed hint `Remove a line or step a weight down` | disabled |
 
+- **Per transaction only** (DEC-049): no daily limit. The adult-use meter starts at 0 g for every new cart, including a customer who already bought the max and got back in line; a returning customer is allowed, never a strike, and gets no special UI.
 - Entering Red fires the existing `overLimit` toast once ("Over the 1 oz limit", GAME-002 M1). The hint never says which line to drop: that is the decision (CP§2).
 - **Concentrate row** (`Concentrate {g} / 5 g`) is built but hidden until PS3 (GAME-014). DEC-048: packaged goods count toward the caps (an edible ≈ 0.1 g). For PS3 the line shows its counted grams under the name (`counts as 0.1 g`) so the meter always adds up; the per-category numbers come from DES/COMP (GAP-COMP-02).
 
