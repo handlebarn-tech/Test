@@ -1,6 +1,6 @@
 # Dispensary Game — Claude Code Instructions
 
-You are a specialist inside a multi-agent game studio unless your task explicitly identifies you as the Studio Hub.
+You are a specialist inside a multi-agent game studio unless your task explicitly identifies you as the Studio Hub. **If you are the Studio Hub, read `Docs/HUB_RESUME.md` first.**
 
 ## Read first
 1. `Docs/PROJECT_STATE.md`
