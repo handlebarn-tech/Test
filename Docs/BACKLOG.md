@@ -107,7 +107,7 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | BRAND-001 | P1 | Only approved brands ship (DEC-071) | DATA-002 | Done |
 | BRAND-001b | P1 | Fictional-brand collision pass (DEC-078) | BRAND-001 | Done |
 | BRAND-002 | P1 | Name search of all fictional names before any public build (DEC-078) | BRAND-001b | Later |
-| IMP-003 | P1 | Rolling ChatGPT toolkit audit (DEC-070/083/095): drops 1–5 done; rebuilt round 3, then rounds 4–6 | — | Active |
+| IMP-003 | P1 | Rolling ChatGPT toolkit audit (DEC-070/083/095): drops 1–5, rebuilt round 3, rounds 4–6 | — | Rounds 3b–6 merge-ready (`review/assets-2`, REVIEW-IMP3B GO); rolling for future drops |
 | PROC-005 | P1 | Integrate the approved toolkit + fix every checklist item (DEC-092) | IMP-003 | Active |
 | PROC-006 | P1 | Register workstation kit: evidence spec, then generators (DEC-096) | — | Phase 1 Done (main 6af8906); phase 2 waits on ROOM_FIXTURES rev7 |
 | PROC-006b | P1 | Register kit generators + seeded per-station variation (DEC-104) | PROC-006 | Active |
