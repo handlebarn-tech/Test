@@ -112,8 +112,9 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | IMP-003 | P1 | Rolling ChatGPT toolkit audit (DEC-070/083/095): drops 1–5, rebuilt round 3, rounds 4–6 | — | Done (e0fc82c, DEC-111); a future drop gets a new IMP task |
 | PROC-005 | P1 | Integrate the approved toolkit + fix every checklist item (DEC-092) | IMP-003 | Active |
 | PROC-006 | P1 | Register workstation kit: evidence spec (DEC-096) | — | Done (6af8906); generators = PROC-006b |
-| PROC-006b | P1 | Register kit generators + seeded per-station variation (DEC-104) | PROC-006 | Active |
-| PROC-007 | P1 | DEC-097 UV layout (lightmap ch1, label ch2) + re-export jars/packaged goods, with World's label-shader cut-over | PROC-005 | Ready |
+| PROC-006b | P1 | Register kit generators + seeded per-station variation (DEC-104) | PROC-006 | Done (e1e8a68; REVIEW-PROC006b PASS, 7 minors → PROC-006c / PROC-010 / PROC-007) |
+| PROC-006c | P2 | Register kit review follow-ups (REVIEW-PROC006b m2–m6: contact sheet, hanging ISO spray, keyboard GAP tags, stale anchor strings, GAP ids for KNOWN_GAPS) | PROC-006b | Active |
+| PROC-007 | P1 | DEC-097 UV layout (lightmap ch1, label ch2) + re-export jars/packaged goods, with World's label-shader cut-over | PROC-005 | Ready (also: RegisterKit FBX `.meta`/first import, REVIEW-PROC006b m7) |
 | PROC-008 | P2 | Cash-drawer tray (R3b.6) | — | Rejected (Hub ruling: DEC-051/086 win; cash equipment is never modelled) |
 | PROC-009 | P2 | Studio-built parked vehicles (DEC-111; R3b.7 rejected as built): CC0 source (DEC-023) or a rebuild per checklist R3b.7 | PROC-005 core (merged) | Active (relaunched 2026-10-30) |
 | ASSET-005 | P1 | Studio-built customer wardrobe (DEC-111; R4.1 rejected as built): MPFB2 CC0 clothes, or procedural shells per R4.1, keeping the drop's garment list and colourways | ASSET-004 | Active (with ASSET-006, one session) |
@@ -136,7 +137,7 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | PERF-002 | P2 | Perf pass with a full-day NPC count against PERF_BASELINE budgets | GAME-011, NPC-002 | Later (PS2) |
 | DATA-004 | P1 | Real packaged catalog from Nolan's Dutchie/LeafLogix export through the DATA-002 importer (PII-free, DEC-048/050); replaces every PLACEHOLDER SKU (GAP-PKG-01) | Nolan provides the export | Blocked (FOR NOLAN, asked once; PS3 gate) |
 | UX-004 | P2 | Packaged UX: category tabs, format/dose filter, packaged cards, cart lines (SPEC_GAME004) | DATA-004 | Later (PS3) |
-| PROC-010 | P1 | Toolkit families phase 2 = PROC-005 handoff "Left, in order": architecture kit, exterior, ladder, display cases, clutter (incl. playtest-1 register details: spray bottle, rag, bins), stocking arranger with uneven fill, labels, materials, ID stand/bags/signs | PROC-005 PASS, PROC-007 | Later (split into packets at PROC-005 review) |
+| PROC-010 | P1 | Toolkit families phase 2 = PROC-005 handoff "Left, in order": architecture kit, exterior, ladder, display cases, clutter (incl. playtest-1 register details: spray bottle, rag, bins), stocking arranger with uneven fill, labels, materials (incl. register-kit 2K PBR, REVIEW-PROC006b m1), ID stand/bags/signs | PROC-005 PASS, PROC-007 | Later (split into packets at PROC-005 review) |
 | PROC-012 | P2 | Bud/nug look pass (playtest 1: "nugs still look off"): PROC-003 follow-up at DEC-084 | PROC-007 | Later (M-F) |
 | REF-015 | P2 | Exterior envelope, parking, fence and approach evidence from A011/A012, CCTV R1C1–C5/R3C1 and BAND photos → REFERENCES_INDEX §9 + ROOM_FIXTURES exterior rows; GAPs for what no source shows; also fix the stale bulletin-board note (REVIEW-REF013b m2) | — | Later (M-F) |
 | ART-012 | P2 | Exterior and parking lot from REF-015: façade, lot striping, fence/gate, HVAC, vegetation, night wall packs (M-9) | REF-015, PROC-009, PROC-010 | Later (M-F) |

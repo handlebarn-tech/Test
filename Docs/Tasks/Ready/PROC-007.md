@@ -26,3 +26,6 @@ Blender validation passes for every family; ProcArt EditMode tests green via `st
 
 ## Handoff
 `Docs/Handoffs/PROC-007.md` (≤40 lines): the commit ART-011 must land with, per-family vertex/bounds diff result, validation output paths. Uncertainty: STUDIO_OS §0.6 first; one line to the Hub when done.
+
+## Also (Hub, 2026-10-30)
+- RegisterKit FBX copies under `_Game/Art/Procedural/RegisterKit/` have no `.meta`: their first import and `.meta` files ride with this task (REVIEW-PROC006b m7).
