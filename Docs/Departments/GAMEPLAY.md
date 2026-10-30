@@ -31,12 +31,13 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 |---|---|---|---|
 | GAME-009 medical (+ W5N m2, W5S m1/m2) | done (session `local_7f8c95e9…`, ready to archive) | `claude/task-game-009` @ 26081fa | REVIEW-PS1 with Unity B2 |
 | DATA-003 needs catalog + goldens | lead subagent | worktree | running |
-| UX-006 counter UX addendum | done | `worktree-agent-ab1c3cb58a8e71856` @ 6e0f00f | in review (Docs 2) |
+| UX-006 counter UX addendum | done | `review/ux6` @ a996ae6 | PASS with minors; merge-ready |
 | DES-005b (+ DES-007) | lead subagent | worktree | running |
 
 ## Queue (lead re-orders within DEC-096)
 1. GAME-009 → REVIEW-PS1 → playtest build 2 for Nolan (BUILD).
 2. GAME-025 controls (after DES-005 + GAME-009 merge; World door contract).
+3. **GAME-017a packet** must carry: REVIEW-DES6 m1 (slice goldens regenerate, old→new list, QA sign-off); REVIEW-UX6 m1 (nearLabel/notFound keyed to tool T:16554/T:16544), m2 (§13.9 add reject→Query and Q6/Q7 reservation), m3 (route line follows engine maxPrice, T:16632); DEC-105 rule.
 3. GAME-026 customer flow (World entry anchors) and the DES-006 first-depth cut, then PS1b GAME-017 → 018 → 019 → 020 as amended.
 4. GAME-021/022/024; UX-003; GAME-011/012 per DES-004.
 5. **DES-005b + DES-007 (one doc worker, next free slot; DES-005 merged 5ab7aeb)**: fold DEC-103 (Nolan's flow answers: call lines, one line, no 2nd door, guard scans ID back + green light, ID re-shown at register, check-in never backs up, FOH/BOH + north office + HUB connector doors propped open, GM assigns registers per DEC-079; emergency-exit alarm stays GAP) into `CONTROLS_FLOW_PS1.md` + GAME-025/026; REVIEW-W5U m1/m2; KNOWN_GAPS GAP-CF rows + GAP-DAY-04 basis → DEC-096 (m3).

@@ -94,7 +94,7 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | DES-007 | P2 | DEC-101: long-term rows into `ROADMAP_POST_SLICE.md` (Hub-delegated) + deadpan tone note for dialogue/event writers | DES-005 merge | Ready (next free slot) |
 | GAME-017a | P0 | First playable recommendation depth (cut from GAME-017, DES-006 §5): needs, read-it-as picker, parser route, Q9, reject→re-search | DES-006, DATA-003, UX-006, GAME-009, GAME-025 (same Presentation/Slice files), QA-002b Gate A | Ready (waits; packet after DES-006 review) |
 | DATA-003 | P0 | Customer needs catalog + golden parses from the TFS tool (GAME-017a data) | DES-006 | Active |
-| UX-006 | P0 | Counter UX addendum: read-it-as picker, said cards, query preview | DES-006, DES-005 | Review (6e0f00f, Docs 2) |
+| UX-006 | P0 | Counter UX addendum: read-it-as picker, said cards, query preview | DES-006, DES-005 | Review (REVIEW-UX6 PASS, `review/ux6` merge-ready) |
 | GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction  | DES-005, GAME-009 merge, World REF-012 `DOORS.json` | Ready (waits) |
 | GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next  | DES-005, GAME-025, World REF-011 `SCENE_ANCHORS.json` | Ready (waits) |
 | ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Done (W5A) |
