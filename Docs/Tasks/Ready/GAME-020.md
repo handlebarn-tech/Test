@@ -31,5 +31,12 @@ V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). 
 - Failure output: seed, fixture ids, input/output hashes, ledger diffs (V2 `11_MASTER_QA_SCENARIOS.md` "Failure reporting"; row 46).
 - **Acceptance (A3, DEC-052):** the report section "questions that would have mattered" names the question only, with no TFS scores, ranks or result lists.
 
+## DES-006 amendments (recommendation depth, DEC-096)
+Source: `Docs/Design/RECOMMENDATION_DEPTH_AUDIT.md` (**RDA**).
+- **Record (D1)** also stores the said/term pairs, verbatim vs translated, refine keys used, the New-customer toggle state and the outcome kind (Ok / Fallback / None / Help / AskEffectForBudget / Strain).
+- **Explanation (D3)** may say `[GAME] they said "…"; you searched it as "…"`. It never says which reading was right.
+- **`ShallowSaleRate`** = sales on a tier ≥ 2 customer with 0 questions, 0 re-reads or refines and 1 search. It goes in the shift log, the debug panel and GAME-010's persona table, and is the DEC-096 KPI for playtest 2. Target [GDD]: perfect bot ≈ 0; a tiles-only bot loses SERVICE.
+- The Consultation tab adds a plain count, `Misread requests` (no scores).
+
 ## Handoff
 `Docs/Handoffs/GAME-020.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).
