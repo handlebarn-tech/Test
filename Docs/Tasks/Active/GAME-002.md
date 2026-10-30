@@ -1,4 +1,4 @@
-# GAME-002 — Vertical-slice shift loop (DRAFT by DES-001; Hub finalizes)
+# GAME-002 — Vertical-slice shift loop (final, Hub 2026-10-29)
 
 **Role:** GAME (Unity gameplay) · **Priority:** P0 · **Depends on:** GAME-001 (engine + catalog), ART-001 (graybox + anchors), UX-001 (UI spec) merged to `main` · **Branch:** `task/GAME-002` worktree off `main`
 
@@ -16,9 +16,9 @@ Make one playable shift (DEC-008) in the Retail graybox exactly as `Docs/Specs/S
 - `Assets/_Game/Code/Simulation/` (`Dispo.Simulation`): shift, customers, queue, inventory service, scoring, POS logic. Keep it Unity-free where practical so EditMode tests can cover it.
 - `Assets/_Game/Code/Presentation/` (`Dispo.Presentation`): slice screens per UX_SLICE, NPC movement, jar visuals
 - `Assets/_Game/Data/Slice/` (`SliceConfig` asset, `SliceIntents.json`, line templates)
-- Slice-only edits in the Retail scene: anchors already placed by ART-001, jar spawner, NPC capsule
+- A new additive scene `Gameplay_Slice.unity` (yours) holding the jar spawner, NPC capsules, terminal and slice systems. It finds ART anchors by name at runtime. **Never edit the graybox-generated scenes** (Retail/BackRooms/Hub/Exterior): ART-002 regenerates them from `graybox_layout.json` (DEC-029).
 - Tests in `Assets/_Game/Code/Tests/EditMode/Slice/` and `.../PlayMode/Slice/`
-Do not touch `Code/Domain/` (GAME-001) unless the Hub grants the sub-tasks below as a scoped Domain edit.
+**Scoped Domain grant (DEC-028):** you may make S1–S3 below in `Code/Domain/` (Catalog cache invalidation, label lookups, `RepBatchId`) and nothing else there. GAME-003 is porting the parser in parallel under `Engine/Parser/` and `Engine/Features/`; keep your Domain diff small so the merge stays easy.
 
 ## Engine API (real names, `Dispo.Domain.Engine`; mapping in SLICE_DESIGN §6)
 `Catalog.Load` · `IntentQuery` built from `SliceIntents.json` (not `Intents.Resolve`) · `Recommender.Recommend(cat, crit, neg, primary, ShopState)` → `RecommendResult{Outcome, Strains}` · `Recommender.FindStrains(...)` with `ResultCount = int.MaxValue` plus the relaxed transform via `EngineConstants.FallbackCritFactor/FallbackCapAdd/DisplayMax` (fit, §3.2) · `cat.Groups()` → `Batches[0]` for rep batch/brand · `Pricing.GetEffectivePrices(cat.Pricing, tier, dow).Prices[g]` → `Pricing.ApplyTax` · `cat.Intents.Keys` (line-safety test).
@@ -50,12 +50,13 @@ Do not touch `Code/Domain/` (GAME-001) unless the Hub grants the sub-tasks below
 - PlayMode test: auto-play seed 1 with a bot that always picks card 1 for the true family. All 12 customers resolve, the report has no null fields, revenue = Σ sale events, and jar fill = grams/start for every sold batch.
 - Capture: one screenshot per screen in the flow plus the report (`unity-capture`).
 
-## Open inputs (from DES-001; Hub resolves before start)
-Resolved by Nolan (`Docs/DECISIONS.md`):
-- `startGramsPerBatch` = 454 g, a full 1 lb jar (DEC-019).
-- Every in-stock batch is deli flower (DEC-020).
-- Deli is weighed at the register, on a scale stand beside it (DEC-021, closes GAP-107); which register is a layout choice.
-Still open (REVIEW-W2B n7): with 454 g jars a 12-customer shift almost never sells a jar out, so the sold-out/LOW states may need a design tweak (DES-001 / Hub call) before the PlayMode test can show them.
+## Resolved inputs
+- `startGramsPerBatch` = 454 g, a full 1 lb jar (DEC-019). Every in-stock batch is deli flower (DEC-020). Deli is weighed at the register on a scale stand beside it, with a clear acrylic panel on the stand next to the scale (DEC-021, DEC-026); which register is a layout choice.
+- **Sold-out visibility (DEC-027):** add [GDD] `startFillMin` = 0.05 and `startFillMax` = 1.0 to SliceConfig. Each in-stock jar starts at a seeded fill in that range, times 454 g, with at least 3 jars (seeded) below `lowStockFraction`, so LOW and SOLD OUT occur in a normal shift. The PlayMode bot run must show at least one SOLD OUT.
+- REVIEW-W2B n1: where UX_SLICE or its wireframes differ from SLICE_DESIGN, **SLICE_DESIGN §10 rules** (no Focus/Social tiles, multi-select, questions, Compare, budget stepper, role tag/why line in the slice).
+- n2: hide "Slower patience / reduced rush" and "Recommendation explanations" settings in the slice.
+- n3: use DES patience states (Calm/Impatient/Leaving) internally; show UX words (Relaxed/Waiting/Impatient).
+- Before building, run `studio.ps1 unity-compile` + `unity-test-edit` + `unity-test-play` on a fresh `main` and report if anything is red (wave 2 just merged).
 
 ## Handoff
 `Docs/Handoffs/GAME-002.md` (≤40 lines). Report to the Studio Hub.

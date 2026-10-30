@@ -3,33 +3,31 @@
 **Milestone:** M0/M1 done pending review → next M2 graybox + M3 domain engine (in parallel)
 **Known-good commit:** `main` (docs only). Wave 1 work is on branch `review/wave-1` (commit 667ebd1), unreviewed.
 **Build health:** on `review/wave-1`: Unity 6000.6.7f1 HDRP project compiles; 1/1 EditMode tests pass; Windows dev build + smoke launch OK (BUILD-001).
-**Updated:** 2026-10-29 by Hub (session 2, wave 2 launched)
+**Updated:** 2026-10-29 by Hub (session 2, wave 3 launched)
 
 ## Wave 1 results (all complete, awaiting REVIEW-W1)
 - **REF-001** (handoff `Docs/Handoffs/REF-001.md`): 10 rooms with high-confidence shells in feet from the vector PDF; 17 CCTV feeds mapped; 13 photos indexed. There are no heights anywhere. HUB/HUB2, restroom and JC are visually blind.
 - **MIG-001** (handoff `Docs/Handoffs/MIG-001.md`): full engine contract with line refs; 63 features triaged; 39 executed golden cases; slice subset defined.
 - **BUILD-001** (handoff `Docs/Handoffs/BUILD-001.md`): Unity project, 5 asmdefs, 10 additive scenes, `Tools/Studio/studio.ps1` (doctor / compile / test-edit / build / status).
 
-## Wave 1: DONE, merged to main (e5c476d), REVIEW-W1 GO with notes.
+## Waves 1 and 2: DONE, all merged to main (latest 93f8b47). Every review GO with notes.
 
-## Wave 2 status (2026-10-29)
-| Task | Session | State |
+## Wave 3 (started 2026-10-29)
+| Task | Session | Notes |
 |---|---|---|
-| ART-001 | dispo-art-001 | working (Unity) |
-| GAME-001 | dispo-game-001 | MERGED to main (6f8eafe) |
-| PROC-001 | dispo-proc-001 | MERGED to main (6f8eafe) |
-| DES-001 | dispo-des-001 | done; reconciling UX-001 questions + ENGINE.md names (claude/task-des-001-635c15) |
-| UX-001 | dispo-ux-001 | done → REVIEW-W2B (claude/task-ux-001-1115a2) |
-| ASSET-001 | dispo-asset-001 | done → REVIEW-W2B (claude/task-asset-001-9856c0) |
-| REVIEW-W2A | dispo-review-w2a | running (branch review/wave-2a) |
-| REVIEW-W2B | not started | start when DES-001 reconcile finishes |
+| GAME-002 | dispo-game-002 | vertical-slice shift loop; scoped Domain grant (DEC-028); own additive scene (DEC-029) |
+| GAME-003 | dispo-game-003 | parser + full features port |
+| ART-002 | dispo-art-002 | HUB swap, scale stands, slice anchors, deterministic scenes |
+| REF-003 | dispo-ref-003 | back-of-register stills → stand spec; tell ART-002 when merged |
+| BUILD-002 | dispo-build-002 | studio.ps1 hardening, blender/assets commands, build manifest |
+| ASSET-002 | dispo-asset-002 | P0 asset fetch into shared cache (DEC-023) |
+Unity: max 2 editors (DEC-013), so Unity sessions queue on the gate.
 
 ## NEXT ACTIONS (in order) — fresh Hub starts here
-1. DES-001 reconcile done → start REVIEW-W2B session (packet in Active).
-2. REVIEW-W2A / W2B GO → merge `review/wave-2a`, `review/wave-2b` into main one at a time (Unity: re-run compile + tests). Move packets to Done.
-3. ART-001 done → its own review (REVIEW-W2C) → merge.
-4. Then finalize GAME-002 from DES-001's draft; start GAME-002 (+ GAME-003 parser port, PERF-001, BUILD-002 incl. `studio.ps1 blender`, ASSET-002 fetch) as wave 3.
-5. Retire finished sessions (archive on Nolan's OK).
+1. As each wave-3 task finishes, start a review session for it (group small ones) and merge reviewed branches one at a time; Unity merges re-run compile + tests.
+2. REF-003 merged → message ART-002 to update stand sizes.
+3. After GAME-002 + ART-002 merge: the vertical slice is playable → PERF-001, then M5 hero retail lookdev (ART-003) from the ASSET-002 cache, PROC-002 jar fill/bud system, and a playtest/QA pass.
+4. Archive finished sessions.
 
 ## Cross-project
 - GAP-206 "sleeping" defect relayed to the TFS tool project hub session on 2026-10-29 (no reply needed).
