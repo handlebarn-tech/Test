@@ -76,3 +76,4 @@ These gaps are defined, with placeholders and owners, in the spec named; that sp
 - GAP-DAY-07 | store | Who refills deli jars mid-shift (the register budtender, a lead, a dedicated person) | the player | Nolan | CLOSED by DEC-079
 - GAP-DAY-08 | store | Do budtenders have a usual register | any free one | Nolan (low) | CLOSED by DEC-079
 - GAP-DAY-09 | store | Last call / door lock | CLOSED by DEC-076 (lock 22:00, inside customers served) | —
+- GAP-PROC-13 | asset | Chrome rack component sizes (post, wire, collar, caster, foot diameters); shelf count/casters answered by DEC-088 | toolkit defaults | REF/measure
