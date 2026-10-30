@@ -1,6 +1,6 @@
 # PROC-005 — Integrate the approved ChatGPT toolkit + fix every audit finding
 
-**Role:** PROC · **Priority:** P1 · **Branch:** worktree off `main` · **Reviewer:** Unity A `local_0dd63bac-df1d-448d-9203-641ead6b6837` (Blender + Unity import checks)
+**Dept:** Assets · **Role:** PROC · **Priority:** P1 · **Owner:** Assets lead subagent (2026-10-30 resume), worktree off `main`; first merge `claude/clever-lamport-837e7f` (core slice 4ef04ae + wire-shelving WIP 87807ad; next steps in its `Docs/Handoffs/PROC-005.md`) · **Reviewer:** Unity A `local_0dd63bac-df1d-448d-9203-641ead6b6837` (Blender + Unity import checks)
 
 ## Goal
 DEC-092: bring the adopted toolkit packages from `C:/Users/handl/Downloads/Dispo Game Imports/` (read-only; copy, never move) into `Tools/Blender/` (proclib helpers, run_generator changes, generators, params, materials loader, label generator, validation layer). Then work the checklist `Docs/Imports/IMP-003_PROC_FIX_CHECKLIST.md` item by item until every item is done or explicitly deferred with a reason.

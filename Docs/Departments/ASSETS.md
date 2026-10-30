@@ -18,23 +18,24 @@ Rules for every department: `Docs/STUDIO_OS.md` §0. This file is the Assets lea
 Quality bar DEC-084 (never low-poly/generic; LOD chains; 2K–4K PBR) in every brief; $0 and the license allow-list DEC-023/087; brands DEC-071/078/081; toolkit intake and fix ownership DEC-069/070/083/092; no-overwrite rule DEC-093; **ChatGPT context limits DEC-095**.
 
 ## Status for Hub
-_Lead keeps this ≤15 lines._ 2026-10-30 (Hub, at handover): three workers paused at the usage limit (PROC-005, ASSET-004, IMP-003). Imports holds ChatGPT round 3 (rebuilt, re-audit) and rounds 4–6; round 7 is ours (DEC-095). No lead session yet.
+_Lead keeps this ≤15 lines._ 2026-10-30 (Assets lead `local_172b2109-6384-4914-800b-6dc37226e046`): BACKLOG reconciled (added ASSET-003/004, AUDIO-001, BRAND-001/001b/002, IMP-003, PROC-005/006). 3 of 3 worker slots in use, all Agent subagents in worktrees: PROC-005 resumed from `claude/clever-lamport-837e7f`; IMP-003 re-auditing the rebuilt round 3 (then 4–6) on top of `claude/brave-brattain-30c797`, folding in the REVIEW-W5T follow-ups; PROC-006 phase 1 = register workstation kit evidence spec (DEC-096 #5, no counter geometry until World's register re-audit lands). ASSET-004 paused until a slot frees. Old worker sessions PROC-005/ASSET-004/IMP-003 are superseded by subagents and can be archived. Decision needed: UV2 channel (below).
 
 ## In flight
 | Task | Worker | Branch | State |
 |---|---|---|---|
-| PROC-005 toolkit integration + checklist fixes (DEC-092) | session `local_6c216f80-4744-4711-9081-d99ed58eba4f` (idle) | `claude/clever-lamport-837e7f` | stopped mid-task at the usage limit |
-| ASSET-004 MPFB2 customers (DEC-087/089) | session `local_d31ad4c5-232b-4628-986c-5d276e71a2a2` (idle) | `claude/objective-archimedes-e3d973` | stopped at the usage limit |
-| IMP-003 rolling toolkit audit | session `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` (idle) | `claude/brave-brattain-30c797` | round 3 audited; REVIEW-W5T on `review/wave-5t` (79568f8) partial PASS: needs a follow-up pass (inside-out vehicles, tri counts, §R3 items, DEC-093 wording) + m1 (a real brand only on a category it has in the catalog; TFS EdibleTub and prepack pouch are wrong). Not merged. |
+| PROC-005 toolkit integration + checklist fixes (DEC-092) | Agent subagent (lead) | new worktree; base `claude/clever-lamport-837e7f` | resumed 2026-10-30: wire shelving fix → remaining families |
+| IMP-003 rolling toolkit audit | Agent subagent (lead) | new worktree; base `claude/brave-brattain-30c797` | rebuilt round 3 from scratch, then rounds 4–6; old §R3 (REVIEW-W5T partial PASS) superseded |
+| PROC-006 register kit spec (phase 1) | Agent subagent (lead) | new worktree off `main` | evidence spec `Docs/Assets/Specs/REGISTER_KIT.md` |
+| ASSET-004 MPFB2 customers | — | `claude/task-asset-004` (225ac4a, partial) | paused; next steps in its handoff |
 
 ## Queue (lead re-orders within DEC-096)
-1. **Reconcile BACKLOG rows** for this department's prefixes.
-2. Resume PROC-005 (it unblocks World's final assets).
-3. IMP-003: re-audit the **rebuilt round 3** (`Dispo_Game_Blender_PROC_Round3_Rebuild/`) from scratch, then rounds 4 (`…Round4_HQ_v2_EvidenceDriven`), 5, 6. Expect gaps against our research and rooms (DEC-095); after the audits, consider a research pass of our own where ChatGPT lacked evidence. Each round: audit → Docs review → Hub → Nolan approval → PROC integration.
-4. **Round 7 (interaction + polish, DEC-091 R7) is done by this studio**, not ChatGPT: plan it after rounds 3–6 are integrated.
-5. Playtest 1 (DEC-096): full register workstation kit (label printer, receipt printer, scanner, mouse, keyboard, under-counter storage with bags/boxes/personal/cleaning items, spray bottle hanging from a scale shelf, rag); stocking arranger with believable uneven fill; buds/nugs look (low priority).
-6. ASSET-004 MPFB2 customers; BRAND name search of all fictional names before any public build (DEC-078).
-7. Later (P1): Unity Warehouse/Office packs (claimed) still need a Package Manager download.
+1. Review/merge path for the three in-flight tasks (Docs reviewer for IMP-003/PROC-006; Unity A for PROC-005 with a borrowed World Unity slot).
+2. Each toolkit round after audit: Docs review → Hub → Nolan approval → PROC integration (DEC-095). After rounds 3–6, a research pass of our own where ChatGPT lacked evidence (IMP-003 lists the gaps).
+3. PROC-006 phase 2: generators for the register kit once the spec and World's register re-audit land; then stocking arranger with believable uneven fill; buds/nugs look (low).
+4. ASSET-004 resume (CHARACTERS.md rewrite, contact sheet, PROC-CHR-004 scale-to-60, GAME-CHR-002 import with Gameplay).
+5. Round 7 (interaction + polish, DEC-091 R7) by this studio after rounds 3–6 are integrated.
+6. BRAND-002 name search before any public build (DEC-078). Later (P1): Unity Warehouse/Office packs need a Package Manager download.
 
 ## Blockers / Questions for Nolan
-- None open.
+- **Decision for Hub (cross-dept, from PROC-005):** Unity "Generate Lightmap UVs" writes uv1, which is our `UVMap_Label`. Lead's recommendation: Blender exports a dedicated lightmap UV as UV channel 1 (DEC-084 "UV2") and the label UV moves to channel 2; needs Gameplay/World to switch the label shader and a re-export of jars/packaged goods. Until decided, PROC-005 keeps the current layout and leaves Unity lightmap generation off.
+- No questions for Nolan.

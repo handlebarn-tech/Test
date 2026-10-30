@@ -91,6 +91,15 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next (packet by DES-005) | DES-005, GAME-025, World entry anchors | Draft |
 | ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Done (W5A) |
 | IMP-002 | P1 | Integrate the approved DISPO_GAME_DESIGN_V2 pack (DEC-063) into `Docs/Design/DESIGN_V2/` | IMP-001 | Done (W4V, DEC-066) |
+| ASSET-003 | P1 | Customer characters + animations sourcing (CHARACTERS.md, DEC-084/087) | ASSET-001 | Done (W5P) |
+| ASSET-004 | P1 | MPFB2 customer pipeline (DEC-087/089): 60-customer roster, generator, LODs | ASSET-003 | Paused (partial on `claude/task-asset-004` 225ac4a; restart after PROC-005) |
+| AUDIO-001 | P1 | Audio plan + CC0 sourcing (no Unity) | ASSET-001 | Done |
+| BRAND-001 | P1 | Only approved brands ship (DEC-071) | DATA-002 | Done |
+| BRAND-001b | P1 | Fictional-brand collision pass (DEC-078) | BRAND-001 | Done |
+| BRAND-002 | P1 | Name search of all fictional names before any public build (DEC-078) | BRAND-001b | Later |
+| IMP-003 | P1 | Rolling ChatGPT toolkit audit (DEC-070/083/095): drops 1–5 done; rebuilt round 3, then rounds 4–6 | — | Active |
+| PROC-005 | P1 | Integrate the approved toolkit + fix every checklist item (DEC-092) | IMP-003 | Active |
+| PROC-006 | P1 | Register workstation kit: evidence spec, then generators (DEC-096) | — | Active (phase 1) |
 | AUDIT-001 | P1 | Read-only .md audit + approval sheet (`Docs/Audits/`) | DES-003 | Done (DEC-064) |
 | DOC-001 | P1 | Apply AUDIT-001 batches A–C (DEC-064), 2 phases | AUDIT-001; phase 2 after IMP-002 | Done (W4X) |
 | DOC-002 | P2 | AUDIT-001 batch D (risky: ART renumber, CLAUDE.md read list, REFERENCES_INDEX split, branch naming) | DOC-001; between waves only | Later |
