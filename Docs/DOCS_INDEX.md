@@ -12,6 +12,25 @@ This file exists to keep agents from loading unnecessary context.
 | Design/implement customers, shifts, transactions and progression | `GAMEPLAY_SIMULATION_SPEC.md` |
 | Codex durable repo guidance | `AGENTS.md` |
 | Claude Code durable repo guidance | `CLAUDE.md` |
+| **Studio Hub start** (Hub only) | `HUB_RESUME.md` |
+| Current milestone, in-flight work, open questions | `PROJECT_STATE.md` |
+| Task queue and states | `BACKLOG.md` (packets in `Tasks/Active`, `Tasks/Ready`, `Tasks/Done`) |
+| Ratified decisions (DEC-###), newest last | `DECISIONS.md`: read only the entries your packet cites, or the newest few |
+| Unknown facts and placeholders (GAP-###) | `KNOWN_GAPS.md` |
+| Decision-pressure gameplay (ratified DEC-057; wins over GSS on conflict) | `Design/SPEC_DECISION_PRESSURE.md` (only the § your packet cites); item status in `Design/DES-003_RECONCILIATION.md` |
+| Post-slice milestones PS1–PS4 and task rows | `Design/ROADMAP_POST_SLICE.md` |
+| Nolan's V2 design pack (add-on; DP wins on conflict, DEC-063/066) | `Design/DESIGN_V2/` (start at its `README_FIRST.md`; exploit tests per `QA_TEST_PLAN.md`) |
+| Compliance / packaged-goods / post-slice specs | `Design/SPEC_COMP002.md`, `Design/SPEC_GAME004.md` |
+| Slice design, engine API, UX specs | `Specs/SLICE_DESIGN.md`, `Specs/ENGINE.md`, `Specs/UX_SLICE.md`, `Specs/UX_PS1.md`, `Specs/UX_COUNTER_INTEL.md` |
+| Budtender-tool reconstruction contract, goldens, data schema | `Reconstruction/` |
+| Store references (floor plan, CCTV, TI, back rooms) | `REFERENCES_INDEX.md` (by §) + `Reference/ROOM_FIXTURES.json` |
+| Store-fact research (M365, AZ compliance) | `Research/` |
+| Asset licenses, downloads, generator pipeline | `Assets/LICENSE_LEDGER.md`, `Assets/ASSET_CACHE_MANIFEST.json`, `Assets/Specs/` |
+| Build health, performance budgets, machine | `BUILD_STATUS.md`, `PERF_BASELINE.md`, `MACHINE_PROFILE.md` |
+| Worker handoffs and review verdicts | `Handoffs/<TASK_ID>.md`, `Reviews/` |
+| Documentation audits | `Audits/` |
+
+> **Router (AUDIT-001 C5, DEC-064):** this table is the one doc router; `MASTER_PLAN.md` §16 points here. Read a row's doc only when your packet needs it.
 
 ## Recommended repository destinations
 
@@ -36,7 +55,7 @@ The attached historical record should be retained under a reference/history path
 
 Example:
 
-`References/ProjectHistory/Review_Budtender_Tool_Comprehensive_Chat_Record.md`
+`References/ProjectHistory/Review_Budtender_Tool_Comprehensive_Chat_Record.md` *(not adopted: the record stayed at `References/Review_Budtender_Tool_Comprehensive_Chat_Record.md`, see below; AUDIT-001 C4)*
 
 The actual current source repository outranks the historical record for implemented behavior.
 

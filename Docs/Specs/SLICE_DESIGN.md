@@ -2,6 +2,10 @@
 
 **Scope:** exactly what GAME-002 builds for DEC-008: one shift at one register. Customer → intent → recommend a real in-stock batch → sale → inventory and jar change → shift report. Anything not here is cut (§9).
 **Labels:** **[SRC]** = source-derived (citation given); **[GDD]** = game-design decision (new mechanic; never present it as a tool feature). Every number lives in `SliceConfig` (§8). Code must not hard-code any of them.
+> **Amended by (AUDIT-001 C8, DEC-064); the body below is the DES-001 original and still describes the shipped slice:** DEC-027 (jars start at a seeded fill 0.05–1.0 of 454 g, ≥3 below LOW; overrides §4 `startGramsPerBatch` for every batch) · DEC-035 (POS total rounded to $0.05) · DEC-036 (28 g cap per transaction, 21+ ID verified at check-in, store hours 08:00–22:00) · DEC-044 (`PriceFit` uses the POS total, §3) · DEC-057 (from PS1b the query reaches the engine only through `QueryParser`, §2.2) · DP §106 (star rating replaced after GAME-020, §5).
+
+**Citation key (AUDIT-001 C7, DEC-064):** "spec §n" / "GSS §n" = `GAMEPLAY_SIMULATION_SPEC.md`; "DP §n" = `Design/SPEC_DECISION_PRESSURE.md`. In DP, DP-001…032 are the §115 tests; the §123 workcells are cited as DP-WC-001…011.
+
 **Engine authority:** MIG-001 slice subset (`Docs/Handoffs/MIG-001.md`), v7.11.4 line refs via `Docs/Reconstruction/RECONSTRUCTION_CONTRACT.md` (RC §n below).
 
 ---

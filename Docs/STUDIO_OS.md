@@ -51,6 +51,8 @@ Official references for future maintainers:
 
 # 3. Document-loading policy
 
+> **Current Hub reading set:** `Docs/HUB_RESUME.md` → "Hub loop" step 1 owns it and wins over the list below (AUDIT-001 B5, DEC-064). Workers: `CLAUDE.md` → `PROJECT_STATE.md` → their packet. The list below is the original policy, kept for context.
+
 Hub default:
 - Master Plan
 - Project State
@@ -75,6 +77,8 @@ No worker is rewarded for reading everything.
 ---
 
 # 48. MASTER REPOSITORY STRUCTURE
+
+> **As built (AUDIT-001 C4, DEC-064):** the repo follows this layout with these differences: no `README.md` (entry docs are `README_FIRST.md`, `CLAUDE.md`, `AGENTS.md`); no `Docs/CHANGELOG.md` (history = git log + `Docs/Handoffs/`, `Docs/Reviews/`); no `Docs/QA_STATUS.md` (QA evidence = `Docs/BUILD_STATUS.md`, `Docs/PERF_BASELINE.md`, reviews); no `Docs/Assets/ASSET_REGISTRY.csv` or `ATTRIBUTION.md` (licenses = `Docs/Assets/LICENSE_LEDGER.md`, downloads = `Docs/Assets/ASSET_CACHE_MANIFEST.json`, DEC-023); no `Docs/Tasks/Review/` (review state lives in `Docs/BACKLOG.md` and `Docs/Reviews/`). Added since: `Docs/HUB_RESUME.md`, `Docs/Design/`, `Docs/Specs/`, `Docs/Research/`, `Docs/Reconstruction/`, `Docs/Reference/`, `Docs/Audits/`, `Docs/Imports/`.
 
 Recommended repository:
 
@@ -187,6 +191,8 @@ Facts that remain unknown:
 Unknowns stay visible instead of slowly turning into invented facts.
 
 ## 49.5 `ASSET_REGISTRY.csv`
+
+> **As built:** not adopted. The same facts live in `Docs/Assets/LICENSE_LEDGER.md` (license per asset) and `Docs/Assets/ASSET_CACHE_MANIFEST.json` (URL, license, sha256, size, date per download; DEC-023). The column list below is kept as the field checklist.
 Columns:
 ```text
 asset_id,
@@ -491,19 +497,66 @@ Does not:
 
 # 56. TASK PACKET FORMAT
 
+> **Task IDs (AUDIT-001 C2, DEC-064):** before giving out a new task ID, check `Docs/BACKLOG.md` (and `ROADMAP_POST_SLICE.md`) so it is unused; plan-doc IDs such as `UNITY_MIGRATION_PLAN.md` §32 and `TOOLCHAIN_EXECUTION.md` §48 are historical and do not reserve numbers.
+
 Every worker starts from a file:
 
 `Docs/Tasks/Active/<TASK_ID>.md`
 
 Template:
 
+*(Template written by DOC-001, AUDIT-001 B7/DEC-064: the original handoff left this block empty. It follows the packets and handoffs actually used in `Docs/Tasks/` and `Docs/Handoffs/`.)*
+
 ```markdown
+# <TASK_ID> — <one-line title>
+
+**Role:** <ROLE> · **Priority:** P<n> · **Branch:** worktree off `main` (<dependencies merged>)
+
+## Goal
+<one deliverable, one paragraph>
+
+## Read
+`CLAUDE.md` → `Docs/PROJECT_STATE.md` → this packet, then only: <exact doc + § list>
+
+## Owns
+<files/folders this task may change; nothing else>
+
+## Deliverable
+1. <numbered, checkable items; cite DEC ids / config keys instead of copying numbers>
+
+## Validation
+<commands/tests/evidence that prove the deliverable>
+
+## Handoff
+`Docs/Handoffs/<TASK_ID>.md` (≤N lines) + ≤15-line summary for the Hub. Questions go to the Studio Hub, never to Nolan (DEC-033); unsure facts get a GAP placeholder (DEC-047).
+```
 
 # 57. WORKER HANDOFF FORMAT
 
 Every worker must write:
 
+*(Template written by DOC-001, AUDIT-001 B7/DEC-064: the original handoff left this block empty. It follows the packets and handoffs actually used in `Docs/Tasks/` and `Docs/Handoffs/`.)*
+
 ```markdown
+# <TASK_ID> handoff
+
+**Branch/commit:** <branch> @ <sha> · **Status:** done | partial | blocked
+
+## Delivered
+- <what changed, with paths>
+
+## Validation
+- <command → result, evidence path>
+
+## Not done / risks
+- <anything skipped and why>
+
+## Questions for Nolan (through the Hub)
+- <source file + tile/crop, what you see, best candidates; GAP id used meanwhile> (DEC-047)
+
+## For the Hub
+- <proposed DEC/GAP entries, follow-up tasks, files the Hub must update>
+```
 
 # 58. HUB OPERATING LOOP
 
@@ -571,6 +624,9 @@ They should be **short**.
 ## 60.1 Recommended `CLAUDE.md`
 
 ```markdown
+The live template is the repository-root `CLAUDE.md` (mirrored by `AGENTS.md`).
+It is not copied here, so the two cannot drift (DOC-001, AUDIT-001 B7).
+```
 
 # 61. AGENT DELEGATION RULES
 
@@ -1100,7 +1156,7 @@ When this document is handed to Claude Code, Codex, or another coding-agent envi
     - save format
     - scene/render code
     - dependencies
-13. Create Unity 6.3 HDRP project.
+13. Create Unity 6.3 HDRP project. *(superseded by DEC-003: the project uses Unity 6000.6.7f1 + HDRP 17.6.0)*
 14. Create initial architecture/validation conventions.
 15. Build dependency graph.
 16. Spawn only the first dependency-ready workcells.
