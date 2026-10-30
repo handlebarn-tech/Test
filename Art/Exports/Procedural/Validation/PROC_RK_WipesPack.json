@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_RK_WipesPack",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "d3e38cc7cd830ab6",
+  "generator": "register_kit",
+  "lod_tris": {
+    "LOD0": 1860,
+    "LOD1": 524,
+    "LOD2": 96,
+    "LOD3": 12
+  },
+  "params_sha256": "caf200c1e8cef438",
+  "passed": true,
+  "warnings": [
+    "LOD0 1860 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}
