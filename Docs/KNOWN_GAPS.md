@@ -53,3 +53,5 @@ Seeded from MASTER_PLAN §20–21; REF-001 and MIG-001 extend this file.
 - GAP-124 | building | FOH desk + fridge + cooler wall: south (JSON) vs east; CCTV ambiguous | Low | Nolan confirms the wall
 - GAP-125 | building | A011 back-room interior dims do not sum to the building width with walls; V5 shells kept | Med | site measure
 - GAP-126 | building | Break-room **staff lockers** (store fact, DEC-047): R3C5 shows only their tops; count, size and wall unknown | none (position) | Nolan: which wall and how many
+- GAP-DP-01 | store | Does the budtender tool still list a batch whose wall jar is empty but BOH has backstock? | none (placeholder DEC-055) | Nolan (N2)
+- GAP-DP-02 | game | Every new [GDD] tuning value in GAME-017..024 (tolerances, weights, regret tolerance, promotion gates) | spec starting values | playtests
