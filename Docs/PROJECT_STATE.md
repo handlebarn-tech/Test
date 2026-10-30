@@ -22,6 +22,7 @@ Merged in Hub session 4 (latest): W5K RES-002 (squashed), W5N GAME-008, W5M GAME
 | Standing reviewers: Unity A `local_0dd63bac…` (idle), Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs `local_b073ffa0…`. DES worker `local_82d327a2…` idle. | | | |
 
 ## Resume checklist (07:00)
+**Hub handover:** the 07:00 scheduled run becomes the new Hub; the old Hub chat `local_c6267ff5-2acb-4b09-83a7-53541a088c66` gets archived by Nolan (cost). The new Hub announces its id to every workcell and updates HUB_RESUME/this file.
 0. Process (DEC-085): standing reviewers Unity A `local_0dd63bac…`, Unity B2 `local_041172fa…` (B retiring), Docs `local_b073ffa0…`; workers message them directly. OPS-003 slot monitor running on `local_0d166a8e…`.
 1. `list_sessions {"linked": true}`; merge any review/* with GO (W5I BRAND-001b on `review/wave-5j`, W5K RES-002, GAME-010 review once its sweep commits, DES-004b+c review).
 2. GAME-010 → Unity review (`local_0dd63bac…`), then the **playable build session** for Nolan.
