@@ -331,17 +331,25 @@ Source: RSP Architects "Interior TI Approved Set - PHX" (2022, City-approved 202
 | E101 | Retail entry | 6'-0" × 7'-0" | existing aluminum full-glass storefront | existing; "unlocked during business hours" sign | High |
 | 101B | Retail | 16'-4¾" × 7'-6" | side-folding open-air security grille, clear anodized, with an 18"×7'-6" access door | — | High |
 | 103 | Unisex | 3'-0" × 7'-0" × 1¾" | flush hollow metal, painted, HM frame | privacy lock with indicator, closer, kick plate | High |
-| 104 | Lounge/Office side | 3'-0" × 7'-0" | flush HM, salvaged door reinstalled | storeroom lock, access-controlled | High |
+| 104 | Lounge → Storage 110 (= office → HUB 2; A101 tag on the lounge south wall, schedule room name STORAGE; REF-013) | 3'-0" × 7'-0" | flush HM, salvaged door reinstalled | schedule set 1.0 (storeroom lock, closer), header set 4.0 (exit device, closer) | High |
 | 105 | Break | 3'-0" × 7'-0" | flush HM, painted | storeroom lock, closer | High |
 | 106 | JC | 2'-8" × 7'-0" | flush HM, painted | exit-device set | High |
 | 107 | Fulfillment | 3'-0" × 7'-0" | flush HM, painted | storeroom lock, closer | High |
 | 108 | Storage | 3'-0" × 7'-0" | flush HM, painted | storeroom lock, access-controlled | High |
-| E110, E111A, E111B | Storage (existing) | 3'-0" × 7'-0" | existing flush HM | no change | High |
+| E110, E111A, E111B | Storage (existing): A101 tags put E110 on the storage 110 west wall (delivery door), E111A at the north end of the 110/111 partition (HUB 2 → HUB), E111B at the SE corner of 111 (SE exit) (REF-013) | 3'-0" × 7'-0" | existing flush HM | no change | High |
 | Cased openings (the arches) | Retail → halls | 3'-0" × 7'-0" | gypsum-finished opening (keynote 10) | — | High |
 
 Door hardware heights (A310): lever/strike centreline 3'-4" min to 3'-6", pull 3'-6", deadlock 4'-0". Switches are 3'-6" to centre (A101 note I).
 
-**REF-012 door contract (DEC-096, DEC-103):** every door and opening, with hinge, swing, closer, lock and NPC use, is in **`Docs/Reference/DOORS.json`** (15 rows; Gameplay builds against it). A310 hardware sets as read (only closer / lock function / lever vs push bar; no access-control detail, DEC-051): set 3.0 (103) privacy lock with indicator + closer; set 2.0 (105) storeroom lever + closer; set 1.0 (108) storeroom lever + closer, "normally closed, latched and locked; free egress". The schedule column and the set headers disagree for 104 (1.0 vs 4.0 exit device), 106 (4.0 vs 2.0) and 107 (2.0 vs 1.0). Every candidate set has a closer and a lock, so only lever vs push bar is open; DOORS.json follows the schedule column (GAP-138). Existing doors (E101, E110/E111A/E111B) have no hardware scheduled. E101 is marked PAIR. Mapping to the current plan: 103 restroom, 104 hall→office, 105 hall→break, 106 JC, 107 vestibule→FOH, 108 vestibule→BOH; E110/E111A/E111B are among office→HUB 2, HUB 2→HUB and the delivery door (which is which: Low). **Propped open in practice (DEC-103):** vestibule→FOH, vestibule→BOH, hall→office, HUB 2→HUB. No second buzzed door after the ID stand (DEC-103). Unknown hinge jambs and swings are placeholders under GAP-137.
+**REF-012 door contract (DEC-096, DEC-103):** every door and opening, with hinge, swing, closer, lock and NPC use, is in **`Docs/Reference/DOORS.json`** (15 rows; Gameplay builds against it). A310 hardware sets as read (only closer / lock function / lever vs push bar; no access-control detail, DEC-051): set 3.0 (103) privacy lock with indicator + closer; set 2.0 (105) storeroom lever + closer; set 1.0 (108) storeroom lever + closer, "normally closed, latched and locked; free egress". The schedule column and the set headers disagree for 104 (1.0 vs 4.0 exit device), 106 (4.0 vs 2.0) and 107 (2.0 vs 1.0). Every candidate set has a closer and a lock, so only lever vs push bar differed. Existing doors (E101, E110/E111A/E111B) have no hardware scheduled. E101 is marked PAIR. **Propped open in practice (DEC-103):** vestibule→FOH, vestibule→BOH, hall→office, HUB 2→HUB. No second buzzed door after the ID stand (DEC-103).
+
+**REF-013 (DEC-110, A101 tags, A011 vector arcs):**
+- **Mapping (from the A101 door-tag positions):** 103 restroom, 104 office→HUB 2 (not hall→office), 105 hall→break, 106 JC, 107 vestibule→FOH, 108 vestibule→BOH, E110 delivery, E111A HUB 2→HUB, E111B SE exit. The hall→office door is not in the 2022 set: A011 (2023) adds it and labels it "ACCESS CONTROLLED DOOR", so it has no scheduled closer (selfClosing placeholder, GAP-138).
+- **Hardware (DEC-110 W6, DEC-115 (2)):** push bar only on the retail east emergency exit, the SE exit and the delivery door (Nolan). Every other door follows its evidence: the A310 locksets are levers (sets 1.0, 2.0, 3.0), hall→office and HUB 2→HUB have no scheduled hardware (Low lever placeholders, GAP-138), and the storefront entry pair keeps its pull handles (`storefrontPull`). This replaces the schedule-column reading (JC was pushBar, delivery was lever).
+- **Hinges (DEC-110 W5):** "left" = the hinge is on your left when you stand on the push side (the side the door swings away from) and face the door. CCTV-backed hinges stay (hall→office E, office→HUB 2 W, vestibule→FOH N). A011 draws the swing of every leaf. Its hinge agrees with the left default on the restroom (S), hall→break (N), JC (S), vestibule→BOH (N), retail east exit (N) and SE exit (E), and draws HUB 2→HUB (S) and the delivery door (N) right-handed. **DEC-115 (1)** lets the A011 vector override the left default (A011 matched CCTV on all 3 checkable doors), so those two are hinged S and N (Med). A011 swings: restroom in, hall→break in, JC out, the vestibule doors into FOH/BOH, office→HUB 2 into the office (the 2022 A101 had it into storage 110), HUB 2→HUB into HUB, delivery out, both exits out.
+- **Restroom (DEC-110 W7):** staff only; the west arch is staff only. GAP-139 closed.
+- **Positions:** A011 puts the entry pair at y 8.89–14.90 (from the retail north face; graybox 12.5–18.5) and the retail east exit at y 21.65–24.65 (from the south wall). Both rows carry a `target_opening`.
+- Every DOORS.json field now has an `audit` record (conf, exact sources, gap); the changed values are tabled in `Docs/Handoffs/REF-013.md`.
 
 ### 6.3 Partitions (A320)
 Type A runs full height to the truss: A3 = 3⅝" stud → **4⅞" wall** (typical); A2 3¾", A4 5¼", A6 7¼". Type G has partial-height gypsum on full-height studs: G2 3⅛", G3 4¼" (G3 insulated at exterior walls and the grid-2 south wall), G6 6⅝". Two retail partial walls are tagged **5'-0" tall**. Existing exterior walls are CMU, furred with metal studs and ⅝" gypsum. High.
@@ -438,26 +446,22 @@ Box and case brand names are not inventory data.
 
 ## 8. Sales floor (REF-011)
 
-Playtest 1 (DEC-096) audit of the graybox against the evidence. Rows are in `Docs/Reference/ROOM_FIXTURES.json` rev7 (rooms Retail, HUB and HUB2) and anchors are in `Docs/Reference/SCENE_ANCHORS.json`. The mismatch table is in `Docs/Research/LAYOUT_AUDIT_SALES_FLOOR.md`. Gaps: GAP-129..134.
+Playtest 1 (DEC-096) audit of the graybox against the evidence. Rows are in `Docs/Reference/ROOM_FIXTURES.json` rev8 (REF-013; rooms Retail, HUB and HUB2) and anchors are in `Docs/Reference/SCENE_ANCHORS.json`. The mismatch table is in `Docs/Research/LAYOUT_AUDIT_SALES_FLOOR.md`. Gaps: GAP-129..134.
 
 ### 8.1 Register runs (DEC-039/040)
 - **Which counter is which (Med-High).** "Back Of Register center/East" (= R2C4), R2C3 and R2C5 sit **behind the south run, looking north**. Beyond the customers they show the north run (DELI STYLE checker wrap, its own jar wall), with the logo living wall and video wall on its left (west), the entry at the far left and the east jar wall on the right. R3C2 sits behind the north run (it has the lit display case) and looks south at the south run, with its jar wall and the east arch on the left. So the plan's "DELI COUNTER" L is the **south register run**. Both runs carry a DELI STYLE wrap. The graybox cameras R2C3/R2C4/R2C5 point the wrong way.
 - **Staff aisle (Low-Med).** BAND 10 (rotate 90° clockwise) looks east along the south staff aisle. On the left is the register counter with POS monitors and chrome scale stands (a spray bottle hangs from one stand: DEC-096 kit). On the right is the south jar wall: a back counter with open bins, 2 shelf tiers, kraft bags and a deals sheet. TL-2 8" grout lines give **3.0–4.0 ft clear between the back of the stands and the back counter**, enough for two staff to pass. 3.0 ft is used.
-- **South run unusable: cause and fix.** The graybox has 2.4 ft from the south counter's staff edge to the jar-wall front, which leaves 1.1 ft behind the 1.3 ft stands. Fix (Low, GAP-129):
-  - Move the long leg to y 20.4–22.6 and put the stations at the staff edge, y 22.6.
-  - That gives the stand at y 22.6–23.9, a 3.0 ft aisle at 23.9–26.9 and the back counter at 26.9–29.0.
-  - The customer face becomes flush with the two white columns (y 20.4).
-  - Side effect: the plan's queue stanchion field (x 6–15, y 11–19.7) now ends 0.7 ft from the counter, and station 06's customer spot falls inside it (question).
-- **East return (Low, GAP-130).** It is tight in the plan: 2.3 ft to the jar-wall front, or 1.6 ft once the back counter is counted. It moves west to x 38.4–40.6 for 3.0 ft. The north run keeps the plan position and has 3.4 ft.
+- **South run unusable: cause and fix.** The graybox has 2.4 ft from the south counter's staff edge to the jar-wall front, which leaves 1.1 ft behind the 1.3 ft stands. REF-011 moved it by estimate; **REF-013 measured it (GAP-129 closed, §8.5):** customer face y 20.0, staff edge y 22.5, stand 22.5–23.8, back counter 27.0–29.0, so 3.2 ft clear behind the stands. The station 06 / stanchion-field clash is gone (06 now at x 20.4).
+- **East return (Med, GAP-130 narrowed).** It is tight in the plan: 2.3 ft to the jar-wall front. REF-013 puts it at x 37.99–40.49, y 9.2–20.0, with 3.2 ft behind the stands (§8.5). The north run keeps the plan position and has 3.4 ft.
 - **Stations.** Each has the monitor centre on the staff edge and the stand to the staff's right. The operator anchor is 1.0 ft off the edge, and the customer 1.2 ft off the counter face.
 
 | Run | Reg | x, y | Operator faces | Clear behind stand | Conf. |
 |---|---|---|---|---|---|
 | North (staff N) | 08, 09, 10 | x 24.0 / 30.0 / 36.0, y 7.0 | S | 3.4 ft (to back-counter front y 2.3) | Med |
-| East (staff E) | 12, 11 | x 40.6, y 12.0 / 16.0 | W | 3.0 ft (to x 44.9) | Low |
-| South (staff S) | 07, 02, 03, 04, 05, 06 | x 31.0 / 27.8 / 24.6 / 21.4 / 17.8 / 14.8, y 22.6 | N | 3.0 ft (to y 26.9) | Low |
+| East (staff E) | 12, 11 | x 40.49, y 12.0 / 16.0 | W | 3.2 ft (to x 44.99) | Med (REF-013) |
+| South (staff S) | 07, 02, 03, 04, 05, 06 | x 36.4 / 33.2 / 30.0 / 26.8 / 23.6 / 20.4, y 22.5 | N | 3.2 ft (to y 27.0; 07 has 5.2 ft to the wall at the east arch) | Med: y High, x pitch Low-Med (REF-013) |
 
-South order follows ART-003's reading of "left to right": a customer facing the counter, so 7 is east (GAP-131). Pitch is ≈3.2 ft (monitor pitch in the wide still is 3–3.5 ft), skipping the west column.
+South order follows ART-003's reading of "left to right": a customer facing the counter, so 7 is east (GAP-131). Pitch is ≈3.2 ft (monitor pitch in the wide still is 3–3.5 ft). REF-013: 06 starts at x 20.4 because the west return (x 15.28–17.78) closes the aisle's west end. Every customer spot is ≥ 1.0 ft from both columns.
 
 - **Station kit and trash (DEC-103/104).** Every station gets a small trash bin (placeholder: against the back of the stand, as in BAND 10 and wide_stand_A; Low, GAP-131). Three big bins are spread across the floor (rows `Trash_Big_*`). Only the one at the south return end has CCTV support (R2C5); the rest are Low (GAP-134). **Rule (DEC-104): small items are never uniform between stations** (presence, placement, condition), so ART and Assets vary each station's kit rather than copying one. The DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, a spray bottle on a stand, a rag. The ID-check stand directly left inside the entry (DEC-048) carries an ID scanner with a green light (DEC-103). There is no second door after it, so check-in leads straight onto the floor.
 
@@ -465,7 +469,7 @@ South order follows ART-003's reading of "left to right": a customer facing the 
 - **Naming holds (A011).** HUB is the east room and HUB 2 the west room.
 - **HUB.** R1C4 looks **south**: the green SE exit (DEC-030) is in its far-left corner. So the desk and chair (foreground) are at the **north** end of HUB, a long dark counter runs along the **east** wall and the pallets are on the west side. The graybox has the desks at the south (y 70–74.4, from the V5 raster strip) and chrome runs on the north and east walls (GAP-132).
 - **HUB 2.** It matches: copier, totes, pallets, work table, merch rack, and cabinets on the office wall. One pose is off: R1C1 looks east, not NNE, since the connecting door is at the far left.
-- **Open question.** DEC-079 puts the deli backstock cabinets "in the HUB against the office wall", but by A011 only HUB 2 shares the office wall (GAP-132).
+- **Positions settled (REF-013; GAP-132 narrowed to sizes, DEC-115 (4)).** Nolan confirmed the HUB layout (DEC-110 W3): the desk and chair are at the north end by the HUB 2 door, and the long dark counter runs along the east wall. A011, A012 and A101 draw no HUB furniture, so the counter length comes from hub_R1C4: about 20 ft (y 52–72). DEC-079's "HUB against the office wall" is HUB 2, because by A011 only HUB 2 shares a wall with the office. The furniture **sizes** (desk, counter depth/height/length, HUB 2 cabinets) have no drawing or measurable view and stay Low under GAP-132.
 
 ### 8.3 Deli walls: three (Med)
 The evidence supports **three** stocked deli jar walls, one behind each register run:
@@ -486,3 +490,28 @@ Sources: the DEC-043 retail jar-wall photo, BAND 10, BAND 11 and BAND 01. All va
 | East (arched bays) | ≈1 jar per bay with ≈1 jar-width gaps (≈50 % linear) | lower counter row dense with small packaged jars | 50–80 % |
 
 No shelf is uniformly full, and almost no jar is brim-full. Levels vary jar to jar because each 1 lb jar per strain sells down at its own rate, and house strains are doubled (DEC-079). Jars stay upright with labels facing out.
+
+### 8.5 Drawing measurements (REF-013, DEC-110)
+**Method.** Vectors were extracted with PyMuPDF `get_drawings()` and `get_text("words")`; no pixel reads. A011 and A012 are 1/4" = 1'-0". The tick-to-tick dimensions give **17.987 pt/ft** (47'-2¼" = 848.76 pt, 30'-6" = 548.52 pt).
+- **Frame.** x = 0 at the A011 retail west interior face (the 47'-2¼" tick). A011 prints the retail interior **30'-6"** deep, but the V5 frame is 29.0 (GAP-125 family; the frame is not re-based here).
+  - South-run and south-wall features are placed by their A011 distance from the south wall (y 29.0).
+  - West-wall features are placed by their distance from the north wall (y 0). That mapping puts the A011 ATM niche at y 25.5–27.5, against the V5 ATM at 25.8–27.6.
+- **Confidence.** High = printed dimension. Med = vector read.
+
+| Item | Measurement | Sheet + vector coordinates | Result in the frame | Conf. |
+|---|---|---|---|---|
+| South run customer face | 9'-0" from the south wall | A901 detail 17 (printed). A011 drawing 3017 line y 19.99; A012 3109–3122 y 19.99 | y 20.0 | High |
+| South run depth | 2'-6" POS top | A901 det. 17 (printed); A940 POS 2'-6"; A011 3019 / A012 3122 staff line y 22.49 | staff edge y 22.5 | High |
+| South run length | x 15.28–41.03 | A011 3017/3019, A012 3120/3122 (agree to 0.01 ft); A901 printed 27'-9" (2022, 2.0 ft longer) | x 15.28–41.03 | Med |
+| South run west return | 2'-6" wide, runs to the back counter | A901 det. 17 printed 2'-6"; A011 3017 x 15.28 to 3019 x 17.78, y 22.49–26.99 | x 15.28–17.78, y 22.5–27.0 | High (width) / Med |
+| South back counter | 2'-0" deep, 19'-2¾" long | A011 2952/3002/3003, A012 3043: x 15.19–34.42, y 26.99–28.99; A901 printed 19'-2¾" = 19.23 | x 15.19–34.42, y 27.0–29.0 | High (length) / Med (depth) |
+| **GAP-129 aisle** | counter to back counter 4.5 ft; 3.2 ft behind a 1.3 ft stand | from the rows above | REF-011 estimate 3.0 → **3.2 ft** | High |
+| Columns vs customer face | no column drawn in A011, A012, A101 or the S201 foundation plan; V5 columns y 19.6–20.4 | V5 (Med) vs A901 9'-0" | columns centred on the face line (non-structural) | Med |
+| East back counter | 2.0 ft deep | A011 2744 x 45.19–47.19, y 2.08–14.24 (south-anchored) | x 44.99–46.99 on the existing wall line | Med |
+| East "POS" box | schematic, white-filled label box | A011 5020 x 42.21–43.99; A012 5377 x 41.12–43.62 (1.2–1.6 ft to the jar wall) | not usable as the counter line | — |
+| **GAP-130 aisle** | 4.5 ft counter to back counter (the south-run millwork), 2'-6" top | derived from the rows above | counter x 37.99–40.49, 3.2 ft behind the stands | Med |
+| Entry pair | 6'-0", hinged at both outer jambs, swings out | A011 2895–2904: hinges y 7.39 / 13.40 south-anchored, i.e. 8.89 ft from the north face | y 8.9–14.9 (graybox 12.5–18.5) | High (size) / Med (frame) |
+| Retail east exit | 3'-0" leaf, hinge N, swings out | A011 wall gap y 21.52–24.78 (south-anchored) | y 21.65–24.65 | Med |
+| Parking | west stall row 18.2 ft deep at 9.1 ft pitch, 24.3 ft drive aisle, 8.0 ft building walk | G000 key plan drawing 29, scaled 3.75 pt/ft from the building outline (180 × 288.6 pt) | stall heads x −32.7 | Med |
+| HUB east counter | no HUB furniture on A011, A012 or A101 | hub_R1C4 perspective | about 20 ft, y 52–72 | Med (position) / Low (length) |
+| Door swings | arcs and leaves for every leaf | A011 vector (e.g. the office→HUB 2 arc 4360 hinges at (7.56, 46.44) with R 3.0) | DOORS.json `audit` | Med–High |

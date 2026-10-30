@@ -44,6 +44,23 @@ This audit compares the current graybox (`UnityProject/Assets/_Game/Art/Graybox/
 | D2 | Depth | 1.2 ft (plan) | back counter (≈2'-1") + 2 shelf tiers; jars also on the counter | BAND_10, BAND_11, Photo Deli Jar Wall; TI A940 | N y 0.2–2.3, E x 44.9–46.99, S y 26.9–29.0 (Low depth, GAP-133) |
 | D3 | Fill | every slot full | top tier ≈85–95 %, middle ≈50–60 %, counter row ≈30–40 %; jar levels 30–80 % | Photo Deli Jar Wall, BAND_10/11/01 | stocking note REFERENCES_INDEX §8.4 (generator params unchanged) |
 
+## REF-013: drawing measurements (DEC-110)
+Nolan rejected the REF-011 layout questions: "You literally have the floor plan and exact dimensions". REF-013 measured the vector drawings with PyMuPDF.
+- Sources: A011 and A012 (17.987 pt/ft from their own dimension ticks), A901 detail 17 "POS enlarged plan" (printed dims) and the G000 key plan.
+- The full measurement table, with drawing ids, is in REFERENCES_INDEX §8.5.
+- What changed against the rows above:
+
+| # | Was (REF-011) | Now (REF-013) | Source | Conf. |
+|---|---|---|---|---|
+| R1 | South counter y 20.4–22.6 (2.2 deep), 3.0 ft aisle behind the stands, back counter 26.9–29.0 | counter y 20.0–22.5 (2'-6"), stand 22.5–23.8, **3.2 ft** clear to the back counter at 27.0–29.0 (2'-0"), x 15.19–34.42 | A901 det. 17 printed 9'-0" + 2'-6"; A011/A012 vectors | High (y) |
+| R3 | South return x 32.2–34.2, y 18.0–20.4 | removed: no drawing shows a north arm. A 2'-6" **west** return (x 15.28–17.78, y 22.5–27.0) closes the staff aisle | A011, A012, A901 det. 17 | Med |
+| R4 | stations x 31.0…14.8 | x 36.4 / 33.2 / 30.0 / 26.8 / 23.6 / 20.4 (07…06): 06 cannot sit west of the west return; every customer spot is ≥ 1.0 ft from both columns | run extent (vector) + wide-still pitch | Low-Med (GAP-131) |
+| R5 | stanchion field 0.7 ft from the counter; station 06's customer spot inside the lane | station 06's spot at x 20.4 is clear of the field (x ≤ 15); the field ends 0.3 ft from the counter's NW corner, which no path uses | — | Med |
+| R6 | East return x 38.4–40.6, 3.0 ft aisle | x 37.99–40.49, y 9.2–20.0 (meets the south run); 3.2 ft behind the stands; east back counter 2.0 ft deep | A011/A012 vectors + the south-run millwork standard (the A011/A012 east "POS" boxes are schematic) | Med (GAP-130) |
+| R11 | ID stand y 10.25–11.75 (entry 12.5–18.5) | entry pair at y 8.9–14.9 (A011); stand y 7.15–8.65, directly left inside | A011 vector, DEC-048 | Med |
+| Spawn | (−4, 14) / (−4, 17), side unknown | (−32.7, 11.9) / (−32.7, 14.9): the west parking row's stall heads opposite the door | G000 key plan vector, DEC-110 W4 | Med |
+| H1/H3/H7 | HUB desk north, east counter, cabinets in HUB 2: questions | confirmed (DEC-110 W3); counter ≈ 20 ft (hub_R1C4: no HUB furniture is drawn); cabinets in HUB 2 (A011: the only room on the office wall) | DEC-110, A011, hub_R1C4 | Med |
+
 ## Not changed / out of scope
 - Office rows belong to REF-012.
 - GAP-106 (video wall vs living-wall order) is still open and was not re-asked (DEC-105).
