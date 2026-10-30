@@ -16,8 +16,8 @@
 | Task | Session | State |
 |---|---|---|
 | GAME-002 | dispo-game-002 | done (8df0a82, 41/41 EditMode, bot 12/12) → REVIEW-W3D (dispo-review-w3d `local_57aeb17a-1d55-496c-8328-51721cfc125a`) |
-| ART-002 | dispo-art-002 | done incl. follow-up 6788cca → REVIEW-W3B (dispo-review-w3b) |
-| REF-003 | dispo-ref-003 | done → REVIEW-W3B (with ART-002) |
+| ART-002 | — | REVIEW-W3B GO with notes; merged to main |
+| REF-003 | — | merged via W3B |
 | GAME-003, BUILD-002 | — | done → REVIEW-W3A (dispo-review-w3a) |
 | COMP-001, RES-001, ASSET-002 | — | REVIEW-W3C PASS; merged to main (32a1ad9) |
 | REF-004 | dispo-ref-004 | done (79f648d): TI values indexed §6; PDFs not importable by tools → REVIEW-W3E (`local_632adaa1-403b-4158-b66e-aa1f28011736`); REF-005 sent to the same REF-004 session |
@@ -32,7 +32,7 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 
 ## NEXT ACTIONS (in order) — fresh Hub starts here
 1. ~~Start REVIEW-W3B~~ started 2026-10-29 by Hub session 3.
-2. Merge W3A/W3B as they pass (W3C merged); Unity merges re-run compile + tests.
+2. Merge W3A when it passes (W3B, W3C, W3E merged). Tell REVIEW-W3D (`local_57aeb17a…`) when W3A is in, so it integrates GAME-003 + ART-002 anchors.; Unity merges re-run compile + tests.
 3. GAME-002 done → REVIEW of the slice (play it via the PlayMode bot + captures) → merge → the vertical slice is playable; brief Nolan.
 4. Then: PERF-001; ART-003 hero retail lookdev (TI finishes DEC-037 + ASSET-002 cache, Montserrat/Crimson Pro brand fonts); PROC-002 jar fill/bud system; COMP later mechanics (limit meter, ID events, medical); packaged assortment (DEC-034).
 5. Archive finished sessions after merge.
@@ -49,6 +49,7 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 - Done 2026-10-29: Nolan signed in to Sketchfab and Unity in the built-in browser pane; Unity Warehouse + UnityJapanOffice are in My Assets (account handlebarn, Personal). ASSET-002 downloads still need one batch OK from Nolan (list with sizes). Nolan may also send a photo of the register scale stand.
 - Open (before any public build): real brand names (Cookies, Alien Labs, ...) ship in `batches.json`; allowed by DATA_SCHEMA §5 and not PII, but a trademark/IP call for Nolan (REVIEW-W2A m2).
 - Later: tax rounding (GAP-204), the TFS tool's open question.
+- W3B notes: m1 reference graybox objects by name/anchor only (fileIDs churn on rebuild); m2 register count open (asked Nolan); m5 SE exit room (HUB vs HUB 2) open; m6 raw CCTV stills never ship in a build.
 - Next REF follow-up (REF-005): read `COMPILED_Flower Shop_Int Set.pdf` for deli case/counter/jar sizes (GAP-108/113).
 - Hub ruling: entry storefront width = 6'-0" per TI E101 / DEC-037 (door types/sizes from TI); ART follows it.
 - Follow-up for BUILD: add the SliceCapture test to `studio.ps1 unity-capture` (GAME-002 open item).
