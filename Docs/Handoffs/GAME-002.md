@@ -21,6 +21,9 @@
 4. New [GDD] config keys: `impatientFraction` 0.5 (§5), `minLowStartJars` 3, `holdConfirmSeconds` 0.6 (UX §3.7), `npcWalkSpeed` 1.2 m/s. Tax/rounding stay in `pricing.json`.
 5. Jar LOW/SOLD OUT labels are screen-space UI projected over the jars (no world text shader dependency in HDRP).
 
+## REVIEW-W3A n1 (after merging main f3e5bc9 / GAME-003)
+- `Catalog.SetInStock` now also clears `_byKey` and the parser caches, which moved from static `Dictionary<Catalog,…>` fields into `Catalog` instance fields (`ParserNameIndex`, `ParserExcl`, `ParserTerps`). Test `SellOut_ResetsGroupLookupAndParserCaches`. After the merge: compile OK, EditMode 141/141, PlayMode 4 passed + 1 GPU skip.
+
 ## Hub compliance items (DEC-033..036), done
 - **M1** POS blocks Confirm over `adultUseLimitGrams` = 28.0 (A.R.S. 36-2858(A)(1)(c)) with "Over the 1 oz limit". Test: 28 g sells, 28.5 g is blocked with no stock change.
 - **M2** Every slice customer is a 21+ adult-use customer, ID-checked at check-in; the POS shows "✓ 21+ ID verified" (no player action).

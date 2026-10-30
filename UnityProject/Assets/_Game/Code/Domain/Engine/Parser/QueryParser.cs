@@ -115,14 +115,14 @@ namespace Dispo.Domain.Engine
             { "terpinene", new[] { "alpha_terpinene", "gamma_terpinene" } }, { "nerolidol", new[] { "nerolidol", "trans_nerolidol" } },
         };
 
-        sealed class ExclRegexes { public Dictionary<string, string[]> Alias; public Regex One; public Regex[] Res; }
-        static readonly Dictionary<Catalog, ExclRegexes> ExclCache = new Dictionary<Catalog, ExclRegexes>();
+        internal sealed class ExclRegexes { public Dictionary<string, string[]> Alias; public Regex One; public Regex[] Res; }
 
         static ExclRegexes ExclFor(Catalog cat)
         {
-            lock (ExclCache)
+            lock (cat)
             {
-                if (ExclCache.TryGetValue(cat, out var c)) return c;
+                var c = cat.ParserExcl;
+                if (c != null) return c;
                 var alias = new Dictionary<string, string[]> { { "bcp", new[] { "beta_caryophyllene" } } };
                 var order = new List<string> { "bcp" };
                 void Put(string k, string[] v) { if (!alias.ContainsKey(k)) order.Add(k); alias[k] = v; }
@@ -141,7 +141,7 @@ namespace Dispo.Domain.Engine
                         R("(^|[^a-z0-9])" + L + @"[\s-]free(?=[^a-z0-9]|$)"),
                     },
                 };
-                return ExclCache[cat] = c;
+                return cat.ParserExcl = c;
             }
         }
 
@@ -332,13 +332,13 @@ namespace Dispo.Domain.Engine
         }
 
         // ── strain mentions L15906-15954 ─────────────────────────────────
-        static readonly Dictionary<Catalog, List<(string key, string n)>> NameCache = new Dictionary<Catalog, List<(string, string)>>();
         static List<(string key, string n)> NameIndex(Catalog cat) // _strainNameIndex L15908
         {
-            lock (NameCache)
+            lock (cat)
             {
-                if (!NameCache.TryGetValue(cat, out var l))
-                    NameCache[cat] = l = cat.Groups().Select(g => (g.Key, g.Name.ToLowerInvariant().Trim())).Where(x => x.Item2.Length >= 3)
+                var l = cat.ParserNameIndex;
+                if (l == null)
+                    cat.ParserNameIndex = l = cat.Groups().Select(g => (g.Key, g.Name.ToLowerInvariant().Trim())).Where(x => x.Item2.Length >= 3)
                         .OrderByDescending(x => x.Item2.Length).ToList();
                 return l;
             }
@@ -402,16 +402,16 @@ namespace Dispo.Domain.Engine
 
         // ── terpene mention L15955-15970 ─────────────────────────────────
         static readonly (string a, string id)[] ExtraAliases = { ("pinene", "alpha_pinene"), ("bcp", "beta_caryophyllene"), ("lavender", "linalool") };
-        static readonly Dictionary<Catalog, List<(string a, Regex re, string id)>> TerpCache = new Dictionary<Catalog, List<(string, Regex, string)>>();
 
         /// <summary>_findTerpMention L15958: longest alias wins.</summary>
         public static string FindTerpMention(Catalog cat, string text)
         {
             List<(string a, Regex re, string id)> list;
-            lock (TerpCache)
+            lock (cat)
             {
-                if (!TerpCache.TryGetValue(cat, out list))
-                    TerpCache[cat] = list = cat.Terpenes.Values.SelectMany(t => t.Aliases.Select(a => (a.ToLowerInvariant(), t.Id)))
+                list = cat.ParserTerps;
+                if (list == null)
+                    cat.ParserTerps = list = cat.Terpenes.Values.SelectMany(t => t.Aliases.Select(a => (a.ToLowerInvariant(), t.Id)))
                         .Concat(ExtraAliases).OrderByDescending(x => x.Item1.Length)
                         .Select(x => (x.Item1, R("(^|[^a-z0-9])" + EscRe(x.Item1) + "(?=[^a-z0-9]|$)"), x.Item2)).ToList();
             }

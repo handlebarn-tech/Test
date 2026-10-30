@@ -296,6 +296,31 @@ namespace Dispo.Slice.Tests
             Assert.LessOrEqual(cfg.shiftStartHour + worst / 3600, cfg.storeCloseHour);
         }
 
+        /// <summary>REVIEW-W3A n1: SetInStock must also reset Group(key) and the parser's per-catalog caches.</summary>
+        [Test]
+        public void SellOut_ResetsGroupLookupAndParserCaches()
+        {
+            var cat = Catalog.Load(Cat("batches.json"), Cat("terpenes.json"), Cat("engine_tables.json"), Cat("pricing.json"), Cat("parser_tables.json"));
+            var group = cat.Groups().First(g => g.Batches.Count(b => b.InStock) >= 2);
+            var rep = group.Batches[0];
+            // Warm every cache first.
+            Assert.AreEqual(rep.Id, cat.Group(group.Key).Batches[0].Id);
+            var before = Dispo.Domain.Engine.QueryParser.Parse(cat, group.Name.ToLowerInvariant());
+            Assert.AreEqual(group.Key, before.GroupKey, "parser finds the strain by name");
+            Dispo.Domain.Engine.QueryParser.ExtractExclusions(cat, "no myrcene");
+
+            cat.SetInStock(rep.Id, false);
+
+            var g2 = cat.Group(group.Key);
+            Assert.AreNotSame(group, g2, "Group(key) rebuilt, not the cached group");
+            Assert.AreNotEqual(rep.Id, g2.Batches[0].Id, "sold-out batch is no longer the rep");
+            Assert.IsTrue(g2.Batches[0].InStock);
+            var after = Dispo.Domain.Engine.QueryParser.Parse(cat, group.Name.ToLowerInvariant());
+            Assert.AreEqual(group.Key, after.GroupKey);
+            Assert.AreNotEqual(rep.Id, cat.Group(after.GroupKey).Batches[0].Id, "parser lookup lands on an in-stock batch");
+            Assert.IsNotEmpty(Dispo.Domain.Engine.QueryParser.ExtractExclusions(cat, "no myrcene").Excl, "exclusion cache rebuilds");
+        }
+
         [Test]
         public void Labels_ClusterAndTier_FromSource()
         {
