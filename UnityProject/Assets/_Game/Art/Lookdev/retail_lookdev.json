@@ -1,0 +1,41 @@
+{
+  "_comment": "ART-003 Retail lookdev, first pass. Plan feet (+x east, +y south) as graybox_layout.json. Heights/materials/fixture types from the TI set (REFERENCES_INDEX Â§6, DEC-037); every position or extent below is a layout choice unless it names a graybox fixture. Built by Dispo.Editor.Lookdev.LookdevBuilder into Scenes/Retail_Lookdev.unity (additive, never hand-edited, DEC-029).",
+  "room": "Retail",
+  "interiorEv": 9.5,
+  "skyAmbient": 0.3,
+  "ceiling": { "key": "ceiling", "t": 0.1, "conf": "High", "note": "PT-1 painted gypsum 9'-0\" (TI A101, Â§6.1); covers the graybox Retail room rect" },
+  "soffit": { "key": "soffit", "depth": 2.0, "walls": ["N", "E", "W"], "conf": "Low", "gap": "GAP-113", "note": "7'-6\" gypsum soffit (TI Â§6.1, High); extent not in the plan: a 2'-0\" perimeter band on N/E/W walls; none on the S wall so the arches stay clear" },
+  "panels": {
+    "w": 8.0, "d": 4.0, "t": 0.17, "bottomFt": 8.25, "cable": 0.03,
+    "x0": 5.0, "y0": 10.5, "nx": 4, "ny": 2, "pitchX": 9.0, "pitchY": 5.0,
+    "conf": "Low", "gap": "GAP-113",
+    "note": "CLG-1 dark-walnut suspended acoustic panels 4'x8' on stainless cable (TI Â§6.1/Â§6.5, High type); drop height and the 4x2 grid over the sales floor are layout choices (photos 01/05/10 show dark baffles, no count)"
+  },
+  "floors": [
+    { "id": "TL1_Field", "mat": "tl1", "t": 0.031, "conf": "High", "rect": { "x0": 0.2, "x1": 46.99, "y0": 0.2, "y1": 29.0 }, "note": "TL-1 Statuario-look porcelain 12x24 x 3/8\", retail field (TI Â§6.5)" },
+    { "id": "TL2_RegisterStaff", "mat": "tl2", "t": 0.035, "conf": "Low", "rect": { "x0": 19.0, "x1": 45.6, "y0": 1.4, "y1": 7.0 }, "note": "TL-2 8x8 patterned tile in the counter zones (TI Â§6.5); zone extent = staff side of the register run, layout choice" },
+    { "id": "TL2_RegisterReturn", "mat": "tl2", "t": 0.035, "conf": "Low", "rect": { "x0": 42.0, "x1": 45.6, "y0": 7.0, "y1": 14.2 }, "note": "staff side of the register L return, layout choice" },
+    { "id": "TL2_DeliStaff", "mat": "tl2", "t": 0.035, "conf": "Low", "rect": { "x0": 13.5, "x1": 34.7, "y0": 25.2, "y1": 27.6 }, "note": "staff side of the deli counter, layout choice" }
+  ],
+  "millwork": {
+    "fixtures": ["FX_RegisterCounter_L", "FX_DeliCounter_L"],
+    "key": "counter", "toe": 0.333, "top": 0.167, "overhang": 0.083,
+    "conf": "Med",
+    "note": "A940 base cabinets: top 2'-10\" (34\") max AFF, 4\" toe, 2\" QZ-2 white quartz top, WD-1/PL-1 walnut fronts, black toe (TI Â§6.4). Footprints are the graybox fixtures (current plan). The deli counter is not in the TI set (GAP-113); it gets the same build as a labelled convention."
+  },
+  "neon": {
+    "text": "Fine Cannabis", "wall": "W", "faceX": 0.22, "y0": 8.2, "y1": 12.2, "bottomFt": 6.0, "heightFt": 1.0, "nits": 300,
+    "conf": "Low", "gap": "GAP-114",
+    "note": "white neon 'Fine Cannabis' (photo 05, register side); bottom at 72\" AFF (TI A901, High). Wall and size are layout choices; lettering is a Barlow Light stand-in"
+  },
+  "downlights": {
+    "x0": 3.0, "x1": 45.0, "y0": 3.0, "y1": 27.0, "pitch": 6.0, "lumens": 1500, "angle": 70, "kelvin": 3500,
+    "conf": "Low", "gap": "GAP-113",
+    "note": "L4A/L4B 4-1/2\" LED downlights in the gypsum ceiling, 3500 K (TI E-sheet Â§6.7, High type); grid pitch is a layout choice; positions under a CLG-1 panel are skipped, positions in the soffit band drop to the soffit"
+  },
+  "pendants": {
+    "fixtures": ["FX_Pendants_Registers", "FX_Pendants_Deli"], "lumens": 450, "kelvin": 3500, "range": 4.0,
+    "conf": "Med",
+    "note": "globe pendants at the graybox pendant spheres (plan, Med); lamp output is a convention"
+  }
+}

@@ -35,8 +35,11 @@ namespace Dispo.Editor.Graybox
         {
             try
             {
-                var counts = BuildAll(force: Environment.GetCommandLineArgs().Contains("-grayboxForce"));
-                Debug.Log($"[Graybox] Build OK {counts}");
+                var force = Environment.GetCommandLineArgs().Contains("-grayboxForce");
+                var counts = BuildAll(force);
+                // the additive lookdev scene sits on the graybox, so it is regenerated in the same run (ART-003)
+                var lookdev = Lookdev.LookdevBuilder.BuildAll(force);
+                Debug.Log($"[Graybox] Build OK {counts} {lookdev}");
                 EditorApplication.Exit(0);
             }
             catch (Exception e)
@@ -284,14 +287,14 @@ namespace Dispo.Editor.Graybox
             light.intensity = 20000f; // lux; graybox only, real lighting belongs to Lighting_Day
         }
 
-        static Transform Child(Transform parent, string name)
+        internal static Transform Child(Transform parent, string name)
         {
             var t = new GameObject(name).transform;
             t.SetParent(parent, false);
             return t;
         }
 
-        static GameObject Box(Transform parent, string name, L.Rect r, float bottomFt, float heightFt, Material mat, bool collider)
+        internal static GameObject Box(Transform parent, string name, L.Rect r, float bottomFt, float heightFt, Material mat, bool collider)
         {
             var go = GameObject.CreatePrimitive(PrimitiveType.Cube);
             go.name = name;

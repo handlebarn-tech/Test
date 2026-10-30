@@ -4,7 +4,7 @@
     { "key": "ceiling", "ft": 9.0, "gap": "DEC-037", "note": "retail gypsum ceiling 9'-0\" (TI A101, RES-001 B4); back rooms 8'-9' ACT with no per-room value (B5), 9'-0\" used; storage rooms gypsum, no height (GAP-001 narrowed to back-room/HUB per-room values)" },
     { "key": "door", "ft": 7.0, "gap": "DEC-037", "note": "interior doors hollow metal 3'-0\" x 7'-0\"; entry storefront 6'-0\" x 7'-0\" (TI A310, RES-001 B8)" },
     { "key": "arch", "ft": 8.0, "gap": "GAP-113", "note": "arch top 'well above head height' (photo 06); rectangular opening, curve not modelled" },
-    { "key": "counter", "ft": 3.5, "gap": "GAP-108", "note": "36-42\" retail counter convention" },
+    { "key": "counter", "ft": 2.833, "gap": "DEC-037", "note": "TI A940: millwork/POS counter top 2'-10\" (34\") max AFF (REFERENCES_INDEX §6.4, Med); was the 42\" convention (GAP-108). Deli counter not in the TI set, same height as convention" },
     { "key": "tall", "ft": 7.0, "gap": "GAP-002", "note": "jar walls, living wall, racks, fridge" },
     { "key": "mid", "ft": 5.0, "gap": "GAP-002", "note": "merch rack, ATM, safe, licenses" },
     { "key": "desk", "ft": 2.5, "gap": "GAP-002", "note": "desks" },
