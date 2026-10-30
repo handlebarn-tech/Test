@@ -18,6 +18,7 @@ Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, 
 | REVIEW-W5C: OPS-001 run time limit (08e017c) + REF-010 (1c3a9d8) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO; archive OPS session `local_7eefd4c8…` |
 | **IMP-003**: rolling audit of ChatGPT Blender toolkit (first drop `blender_proc_vNext/`) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | running | after each audit: review → Nolan approval; message it when Nolan adds drops |
 | DES-004: PS2 shift-day design + UX-003/GAME-011/012 packets (doc) | `local_82d327a2-5b67-4cff-b481-5854a94f6f31` | running | docs review; ratify DECs |
+| BRAND-001: approved brands only (DEC-071) | `local_a7e0b8da-ae2d-4dbb-ac46-8194e642ec35` | running | review (parity-sensitive) |
 | AUDIO-001: audio plan + CC0 sourcing (no Unity) | `local_8bddd8f7-b99c-4c0e-80d7-d89dd3359dd4` | running | review |
 
 ## Next tasks to start (dependency order)
