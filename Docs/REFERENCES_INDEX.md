@@ -57,7 +57,7 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 
 | Opening | Location (ft) | Drawn width | Conf. |
 |---|---|---|---|
-| ENTRY (customer, double door) | west wall x=0, y 11.0–20.0 | 9.0 opening, two 4.0 leaves | Med |
+| ENTRY (customer, double door) | west wall x=0, y 11.0–20.0 (position) | drawn 9.0 opening; **use 6'-0" × 7'-0" storefront pair** (TI E101, DEC-037, Hub ruling REF-005) | High (size) / Med (position) |
 | EXIT label (orange = position not confirmed) | west wall, just north of entry | — | Low |
 | EMERGENCY EXIT | east wall x=47.19, y 20.5–24.0 | 3.5 (swing drawn orange = unconfirmed) | Low |
 | West arch (Retail→Hall) | y≈29.25, x 9.10–12.91 | 3.81 | Med |
@@ -235,7 +235,7 @@ Product names visible on jar cards or boxes are **not** inventory data and must 
 |---|---|---|---|
 | Building / room shells | §1.3 table | printed dims + vector scale 5.6095 pt/ft | High |
 | Fixture footprints | §1.5 table | vector plan ("approximate" per legend) | Med |
-| Entry opening | 9.0 ft (2 × 4.0 leaves) | vector arcs | Med |
+| Entry opening | 6'-0" × 7'-0" storefront pair (plan draws 9.0 ft) | TI E101 §6.2, Hub ruling | High |
 | Delivery door / emergency exit / HUB 2 door | 3.4 / 3.5 / 2.0 ft | vector arcs | Med / Low / Med |
 | Interior door arcs (1.2–1.8 ft) | **not real widths** | the symbols are smaller than any code-compliant door. Use a standard 3'-0" × 7'-0" commercial door as a **labelled convention** until measured | Low |
 | Arch openings | 3.81 ft (west), 3.0 ft (east) | vector | Med. Height unknown; photo 06 shows the arch top clearly above a standing adult |
@@ -333,3 +333,6 @@ All LED, 3500K, 0–10 V dimming, dimmed to 30 % after hours. L1 2×2 troffer (A
 
 ### 6.8 2026 A011 / A012 (AZDHS update)
 A011 "Floor Plan" (Dispensary - Floor Plan) and A012 "Floor Plan - Lighting" (legend: checkout counter light, pendant light, recessed can, 2×2 ACT light, downlight; "windows - natural light"). Room areas match §1.3. A011 labels "secure entrance / exit", "emergency exit only", "POS stations", "display cases", "shelving" and "hand washing sink". The working plan is built from A011 + A012. No A013 turned up in that folder; its third sheet is the security plan, which we never read by rule.
+
+### 6.9 "COMPILED_Flower Shop_Int Set.pdf" (REF-005): not this store
+Same Floor Plans folder (24 pp, 5.9 MB, read as text). It is the RSP **Ahwatukee** retail interior set (10827 S 51st St, sheets dated 09/2021: I100 demo, I102 RCP, I310 schedules, I701 elevations, I940 millwork). It has no Phoenix/McDowell sheet and no deli case, deli counter or jar items. It shows that the Phoenix millwork (§6.4, the same glass-showcase display family) follows the TFS store standard, but **no values from it are used** (another store). A search of M365 for deli case/jar specs found only Dutchie inventory exports.
