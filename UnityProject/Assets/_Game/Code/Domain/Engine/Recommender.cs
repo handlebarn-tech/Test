@@ -97,23 +97,40 @@ namespace Dispo.Domain.Engine
             };
         }
 
-        /// <summary>findStrains L15355 (slice: no exclusions, like-X, maxAnx, exclude or maxPrice options).</summary>
+        /// <summary>The tier-chip test (findStrains L15363, exclNote L16527, terpene rank L16580): true when the group's rep passes.</summary>
+        public static bool PassesTierChips(Batch rep, ShopState state)
+        {
+            if (state.ActiveTiers.Count == 0) return true;
+            string t = string.IsNullOrEmpty(rep.Tier) ? (state.EmptyTierCountsAsHouse ? "house" : null) : rep.Tier;
+            return t != null && state.ActiveTiers.Contains(t);
+        }
+
         public static List<StrainResult> FindStrains(Catalog cat, IReadOnlyDictionary<string, int> crit, IReadOnlyDictionary<string, int> neg,
-            string primary, ShopState state)
+            string primary, ShopState state) => FindStrains(cat, crit, neg, primary, state, null);
+
+        /// <summary>findStrains L15355: stock → tier chips → exclusions → crit/neg → maxAnx → exclude → maxPrice; ms; profile filter; top N.</summary>
+        public static List<StrainResult> FindStrains(Catalog cat, IReadOnlyDictionary<string, int> crit, IReadOnlyDictionary<string, int> neg,
+            string primary, ShopState state, FindOptions opts)
         {
             var results = new List<StrainResult>();
+            var likeG = opts?.LikeKey == null ? null : cat.Group(opts.LikeKey);
+            var likeP = likeG == null ? null : Scoring.AverageProfile(likeG.Batches); // L15357
             foreach (var g in cat.Groups())
             {
                 var rep = g.Batches[0];
                 if (!rep.InStock) continue;
-                if (state.ActiveTiers.Count > 0)
-                {
-                    string t = string.IsNullOrEmpty(rep.Tier) ? (state.EmptyTierCountsAsHouse ? "house" : null) : rep.Tier;
-                    if (t == null || !state.ActiveTiers.Contains(t)) continue;
-                }
+                if (!PassesTierChips(rep, state)) continue;
+                if (opts?.Excl != null && opts.Excl.Count > 0 && Exclusions.Status(g, opts.Excl) != ExclStatus.Clear) continue;
                 var a = AnalyzeGroup(cat, g);
                 int Disp(string d) => a.Domains.TryGetValue(d, out var v) ? v : 0;
                 if (!crit.All(kv => Disp(kv.Key) >= kv.Value) || !neg.All(kv => Disp(kv.Key) <= kv.Value)) continue;
+                if (opts?.MaxAnx != null && a.AnxietyRisk > opts.MaxAnx) continue;
+                if (opts?.Exclude != null && opts.Exclude.Contains(g.Key)) continue;
+                if (opts?.MaxPrice is double maxPrice && maxPrice != 0) // L15374: `if(opts.maxPrice)`
+                {
+                    var c = Pricing.CheapestPostTax(cat.Pricing, Pricing.GetEffectivePrices(cat.Pricing, rep.Tier ?? "", rep.Brand ?? "", g.Name, opts.Dow));
+                    if (c != null && c.Value.Post > maxPrice + 0.01) continue;
+                }
 
                 double ms = 0;
                 foreach (var kv in crit)
@@ -130,6 +147,7 @@ namespace Dispo.Domain.Engine
                 if (cat.ClusterBonus.TryGetValue(a.Cluster, out var bonus))
                     foreach (var kv in bonus) if (crit.ContainsKey(kv.Key)) ms += kv.Value;
                 if (!string.IsNullOrEmpty(rep.Tier) && cat.TierNudge.TryGetValue(rep.Tier, out var nudge)) ms += nudge;
+                if (likeP != null) ms += Similarity.Cosine(likeP, a.Profile); // L15413
                 if (state.NewCustomer)
                 {
                     a.Profile.TryGetValue("beta_myrcene", out var myr);
@@ -144,22 +162,31 @@ namespace Dispo.Domain.Engine
 
         /// <summary>respond L16637-16646: findStrains, then one relaxed retry (crit × 0.60 floored, caps +12 ≤ 99).</summary>
         public static RecommendResult Recommend(Catalog cat, IReadOnlyDictionary<string, int> crit, IReadOnlyDictionary<string, int> neg,
-            string primary, ShopState state)
+            string primary, ShopState state) => Recommend(cat, crit, neg, primary, state, null, null);
+
+        /// <summary>respond L16636-16641 with opts; tf (terpene id) re-sorts a first-pass result by that terpene's % (L16637).</summary>
+        public static RecommendResult Recommend(Catalog cat, IReadOnlyDictionary<string, int> crit, IReadOnlyDictionary<string, int> neg,
+            string primary, ShopState state, FindOptions opts, string tf)
         {
             var res = new RecommendResult();
-            var top = Call(res, cat, crit.ToDictionary(kv => kv.Key, kv => kv.Value), neg.ToDictionary(kv => kv.Key, kv => kv.Value), primary, state);
+            var top = Call(res, cat, crit.ToDictionary(kv => kv.Key, kv => kv.Value), neg.ToDictionary(kv => kv.Key, kv => kv.Value), primary, state, opts);
+            if (tf != null && top.Count > 0) // in place, like the JS sort, so Calls shows the re-sorted list too; LINQ keeps it stable
+            {
+                var sorted = top.OrderByDescending(r => r.Profile.TryGetValue(tf, out var v) ? v : 0).ToList();
+                top.Clear(); top.AddRange(sorted);
+            }
             if (top.Count > 0) { res.Outcome = Outcome.Ok; res.Strains = top; return res; }
             var c2 = crit.ToDictionary(kv => kv.Key, kv => (int)Math.Floor(kv.Value * EngineConstants.FallbackCritFactor));
             var n2 = neg.ToDictionary(kv => kv.Key, kv => Math.Min(EngineConstants.DisplayMax, kv.Value + EngineConstants.FallbackCapAdd));
-            top = Call(res, cat, c2, n2, primary, state);
+            top = Call(res, cat, c2, n2, primary, state, opts);
             res.Outcome = top.Count > 0 ? Outcome.Fallback : Outcome.None;
             res.Strains = top;
             return res;
         }
 
-        static List<StrainResult> Call(RecommendResult res, Catalog cat, Dictionary<string, int> crit, Dictionary<string, int> neg, string primary, ShopState state)
+        static List<StrainResult> Call(RecommendResult res, Catalog cat, Dictionary<string, int> crit, Dictionary<string, int> neg, string primary, ShopState state, FindOptions opts)
         {
-            var top = FindStrains(cat, crit, neg, primary, state);
+            var top = FindStrains(cat, crit, neg, primary, state, opts);
             res.Calls.Add(new FindCall { Crit = crit, Neg = neg, Top = top });
             return top;
         }

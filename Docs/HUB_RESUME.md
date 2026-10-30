@@ -8,6 +8,14 @@ Everything a fresh Hub session needs. No chat history is required.
 - Make routine technical/process calls yourself; record them in `Docs/DECISIONS.md`.
 - **The Hub stays thin (DEC-010):** planning, dispatch and communication only. Work, including handoff review/QA, runs in sessions you start (`start_session`). Group related tasks into a session as you judge best (a session may run several tasks or its own subagents); retire a session when its work is done and start fresh ones for new work (DEC-011). Read only task packets, `Docs/Handoffs/*.md`, and the state files. Never read large sources, images or logs yourself.
 
+## Standing directives from Nolan (all 2026-10-29)
+- **Full autonomy (DEC-025):** no permission asks for downloads, asset-store clicks, merges, starting or archiving sessions. Ask Nolan only for real-store facts nobody else can know.
+- **Run as a studio:** staff every dependency-ready task in parallel; use all tools.
+- **Chain of command (DEC-033, in CLAUDE.md):** workers never ask Nolan; their questions come to the Hub. Restate it in every brief. Answer worker questions from evidence yourself; batch only true store facts to Nolan.
+- **Realism vs fun (DEC-032):** real rules become a mechanic, automation, flavor or a cut.
+- **Microsoft 365 (DEC-031):** read-only research is allowed (search/read tools only, never write tools); no PII into the repo; never touch the Security folder, P&P manual or credential sheets.
+- Nolan is signed in to Sketchfab and the Unity Asset Store in the built-in browser pane; Warehouse/Office are claimed.
+
 ## Hub loop
 1. Read `Docs/PROJECT_STATE.md`, `Docs/BACKLOG.md`, the last ~10 entries of `Docs/DECISIONS.md`.
 2. Check new handoffs in `Docs/Handoffs/`.
@@ -27,5 +35,8 @@ Everything a fresh Hub session needs. No chat history is required.
 See `Docs/PROJECT_STATE.md` → "NEXT ACTIONS". Wave 1 is complete and sits on branch `review/wave-1` awaiting REVIEW-W1. Packets for the next sessions are in `Docs/Tasks/Ready/`.
 
 ## Session notes
-- Starting a session: give it its packet path and "read CLAUDE.md, then the packet; report to the Studio Hub when done". Use a worktree for code/Unity work.
+- **Starting sessions on notice turns:** the app refuses `start_session` on a turn triggered by an idle notice or another session's message (cards only). Do not fall back to a card. Hand the work to an idle workcell with SendMessage (allowed on any turn), or start the session on the next turn where Nolan writes. Nolan wants the Hub to dispatch on its own (2026-10-29).
+- Starting a session: `start_session` user_asked, fresh, `use_worktree: true`, `source_branch: main`; brief = packet path + "read CLAUDE.md, then the packet; never ask Nolan; end with a ≤15-line summary for the Studio Hub" + commit identity `git -c user.name=Nolan_Bradford -c user.email=handlebarn@gmail.com commit` (no global git identity is set). Reviews merge task branches onto `review/wave-*`; the Hub merges reviewed branches into main with the same identity.
+- Unity: max 2 editors (DEC-013); studio.ps1 has a wait gate. Fresh worktrees copy `Tools/Studio/studio.config.example.json` → `studio.config.json`.
+- Message a running session with SendMessage `to` = its `local_…` id (listed in PROJECT_STATE). `list_sessions {"linked": true}` shows the family.
 - The TFS tool's own hub is the peer session "TFS tool: project hub (phases 1-7)". Relay tool defects there; never edit its files.

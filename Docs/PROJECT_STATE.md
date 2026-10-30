@@ -3,7 +3,7 @@
 **Milestone:** M0/M1 done pending review → next M2 graybox + M3 domain engine (in parallel)
 **Known-good commit:** `main` (docs only). Wave 1 work is on branch `review/wave-1` (commit 667ebd1), unreviewed.
 **Build health:** on `review/wave-1`: Unity 6000.6.7f1 HDRP project compiles; 1/1 EditMode tests pass; Windows dev build + smoke launch OK (BUILD-001).
-**Updated:** 2026-10-29 by Hub (session 2, wave 3 launched)
+**Updated:** 2026-10-29 by Hub (session 2, end; handover for a cleared hub)
 
 ## Wave 1 results (all complete, awaiting REVIEW-W1)
 - **REF-001** (handoff `Docs/Handoffs/REF-001.md`): 10 rooms with high-confidence shells in feet from the vector PDF; 17 CCTV feeds mapped; 13 photos indexed. There are no heights anywhere. HUB/HUB2, restroom and JC are visually blind.
@@ -12,22 +12,32 @@
 
 ## Waves 1 and 2: DONE, all merged to main (latest 93f8b47). Every review GO with notes.
 
-## Wave 3 (started 2026-10-29)
-| Task | Session | Notes |
+## Wave 3 status (2026-10-29)
+| Task | Session | State |
 |---|---|---|
-| GAME-002 | dispo-game-002 | vertical-slice shift loop; scoped Domain grant (DEC-028); own additive scene (DEC-029) |
-| GAME-003 | dispo-game-003 | parser + full features port |
-| ART-002 | dispo-art-002 | HUB swap, scale stands, slice anchors, deterministic scenes |
-| REF-003 | dispo-ref-003 | back-of-register stills → stand spec; tell ART-002 when merged |
-| BUILD-002 | dispo-build-002 | studio.ps1 hardening, blender/assets commands, build manifest |
-| ASSET-002 | dispo-asset-002 | P0 asset fetch into shared cache (DEC-023) |
-Unity: max 2 editors (DEC-013), so Unity sessions queue on the gate.
+| GAME-002 | dispo-game-002 | done (8df0a82, 41/41 EditMode, bot 12/12) → REVIEW-W3D (dispo-review-w3d `local_57aeb17a-1d55-496c-8328-51721cfc125a`) |
+| ART-002 | — | REVIEW-W3B GO with notes; merged to main |
+| REF-003 | — | merged via W3B |
+| GAME-003, BUILD-002 | — | REVIEW-W3A GO with notes; merged to main (f3e5bc9). n1 cache reset → GAME-002 before its merge; n2/n3/n5 → BUILD-003 |
+| COMP-001, RES-001, ASSET-002 | — | REVIEW-W3C PASS; merged to main (32a1ad9) |
+| REF-004 | dispo-ref-004 | done (79f648d): TI values indexed §6; PDFs not importable by tools → REVIEW-W3E (`local_632adaa1-403b-4158-b66e-aa1f28011736`); REF-005 sent to the same REF-004 session |
+Unity Warehouse/Office packs: still need a Unity editor Package Manager download (P1, later).
+
+### Live session ids (for SendMessage / archive)
+- dispo-art-003 `local_392adc04-9603-4cc9-959c-6e3e2d792743` · dispo-proc-002 `local_1b8fb899-d1dc-49d4-8384-8bc73da3e85a` (wave 4, write their own packets first)
+- dispo-review-w3d `local_57aeb17a-1d55-496c-8328-51721cfc125a`
+- dispo-game-002 `local_e574024b-b42a-4f12-b5db-6b6d66ac34bc` (working)
+- dispo-review-w3b `local_53273c02-a00e-46fb-9407-96ecfc4855ad` (started by Hub session 3)
+- dispo-art-002 `local_6681ee58-dbed-4e39-adda-192aa4a576fb` (idle; archive after W3B merges)
+- dispo-review-w3a `local_d40fcd21-be35-4d84-bf4f-90fb27eac376` · dispo-review-w3c `local_819f11d1-8aac-40d4-b6d8-c2435445b1ee` · dispo-ref-004 `local_8e643693-f039-47b6-8392-365947ed9efc` (working)
+- Idle, archive after their reviews merge: game-003 `local_23577d66-0fd6-4bfb-831e-6950d9ff3e3d`, build-002 `local_e58e2c77-01ad-4ef6-b560-9da96488af50`, ref-003 `local_c3b522a0-283d-45c1-af1d-8e0ec1bfca4f`, res-001 `local_f19e4a49-5f05-4f20-a0ca-c56f31e4a50e`, comp-001 `local_7f7a77b4-e098-4fd1-b838-399ac35df20f`, asset-002 `local_4921e361-4a37-4b68-a853-961b622160da`.
 
 ## NEXT ACTIONS (in order) — fresh Hub starts here
-1. As each wave-3 task finishes, start a review session for it (group small ones) and merge reviewed branches one at a time; Unity merges re-run compile + tests.
-2. REF-003 merged → message ART-002 to update stand sizes.
-3. After GAME-002 + ART-002 merge: the vertical slice is playable → PERF-001, then M5 hero retail lookdev (ART-003) from the ASSET-002 cache, PROC-002 jar fill/bud system, and a playtest/QA pass.
-4. Archive finished sessions.
+1. ~~Start REVIEW-W3B~~ started 2026-10-29 by Hub session 3.
+2. W3A/W3B/W3C/W3E all merged. REVIEW-W3D integrates main + GAME-002 (with W3A n1 fix) → merge → slice playable.; Unity merges re-run compile + tests.
+3. GAME-002 done → REVIEW of the slice (play it via the PlayMode bot + captures) → merge → the vertical slice is playable; brief Nolan.
+4. Then: PERF-001; ART-003 hero retail lookdev (TI finishes DEC-037 + ASSET-002 cache, Montserrat/Crimson Pro brand fonts); PROC-002 jar fill/bud system; COMP later mechanics (limit meter, ID events, medical); packaged assortment (DEC-034).
+5. Archive finished sessions after merge.
 
 ## Cross-project
 - GAP-206 "sleeping" defect relayed to the TFS tool project hub session on 2026-10-29 (no reply needed).
@@ -41,3 +51,9 @@ Unity: max 2 editors (DEC-013), so Unity sessions queue on the gate.
 - Done 2026-10-29: Nolan signed in to Sketchfab and Unity in the built-in browser pane; Unity Warehouse + UnityJapanOffice are in My Assets (account handlebarn, Personal). ASSET-002 downloads still need one batch OK from Nolan (list with sizes). Nolan may also send a photo of the register scale stand.
 - Open (before any public build): real brand names (Cookies, Alien Labs, ...) ship in `batches.json`; allowed by DATA_SCHEMA §5 and not PII, but a trademark/IP call for Nolan (REVIEW-W2A m2).
 - Later: tax rounding (GAP-204), the TFS tool's open question.
+- W3B notes: m1 reference graybox objects by name/anchor only (fileIDs churn on rebuild); m2 register count settled by DEC-039; m5 SE exit room (HUB vs HUB 2) open; m6 raw CCTV stills never ship in a build.
+- Next REF follow-up (REF-005): read `COMPILED_Flower Shop_Int Set.pdf` for deli case/counter/jar sizes (GAP-108/113).
+- Hub ruling: entry storefront width = 6'-0" per TI E101 / DEC-037 (door types/sizes from TI); ART follows it.
+- Follow-up for BUILD: add the SliceCapture test to `studio.ps1 unity-capture` (GAME-002 open item).
+- Done 2026-10-29: Nolan put the 3 TI/A011/A012 PDFs in Downloads; REF-005 imports them to `References/TI/` and render-checks the counter height.
+- Batch for Nolan (store fact): a photo of a real receipt's tax lines would settle Phoenix TPT rate (OPEN-4); game keeps 25.1 % (DEC-001) meanwhile.
