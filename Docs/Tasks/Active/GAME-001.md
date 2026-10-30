@@ -1,6 +1,6 @@
 # GAME-001 — Data importer (DATA-001) + pure C# domain engine slice
 
-**Role:** GAME / data (one session; it may run the importer and engine as sub-steps) · **Priority:** P0 · **Branch:** `task/GAME-001` worktree off `main` after REVIEW-W1 merges
+**Role:** GAME / data (one session; it may run the importer and engine as sub-steps) · **Priority:** P0 · **Branch:** `task/GAME-001` worktree off `base/wave-2` (DEC-012); rebase onto `main` after REVIEW-W1 merges
 
 ## Goal
 The real recommendation engine running in Unity's `Dispo.Domain` assembly on real, PII-free batch data, matching the golden cases.
