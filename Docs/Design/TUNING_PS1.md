@@ -11,6 +11,8 @@ Goal (ROADMAP_POST_SLICE §2, GAME-010): good play is rewarded but no longer aut
 | careless | random family | random fillable card, blind to budget and limits | same as perfect |
 | slow | as perfect | as perfect | 2× (90 / 60 / 30 s) |
 Pacing is human-scale: RES-001 O13 median transaction 2.3 min. Every ask is sold through the cart (`AddItem`, then `Confirm()`).
+GAME-007 trim rule: perfect/slow drop the last line of a red cart and add an ask only if it fits under 28 g; careless ignores
+the limit, so its over-limit cart ends in Cancel = refusal (no sale).
 
 ## Changed values (all [GDD], `Data/Slice/SliceConfig.json`)
 | Key | Before | After | Why |
@@ -21,6 +23,7 @@ Pacing is human-scale: RES-001 O13 median transaction 2.3 min. Every ask is sold
 | patience N / R / P (s) | 150 / 90 / 120 | 300 / 180 / 240 | RES-001 O13: average walk-in wait 3.7 min, median 1.4 min |
 | `fastSeconds` / `slowSeconds` | 30 / 120 | 20 / 90 | speed matters at human pace (perfect picks at 45 s → speedFit 0.64) |
 | `twoItemAskChance` | 0.25 | 0.5 | REVIEW-W4W m3: units/sale toward the real ≈ 2 (O13); the generator caps at 2 asks, so ≈ 1.5 |
+| `overLimitAskChance` | 0.06 | 0.1 | REVIEW-W5G m4: ≈ 1.6 over-limit customers per 16-customer shift; seed 1 now has one |
 | `lowStockFraction` | 0.25 | 0.10 | 16 customers shift the seeded jar fills (customers draw first); at 0.25 seed 1 lost its DEC-027 SOLD OUT, at 0.10 it sells out on 17/20 seeds. LOW label now < 10 % |
 
 Unchanged on purpose: `budgetPerGram` {4, 6} (every grid from {2, 3.5} to {4, 6} moved perfect by < 1.5 points: the Tue smalls deal
@@ -28,16 +31,16 @@ and the house tier meet almost every budget, so the budget is inert in the slice
 ≤ 2 points, it only turns accepts into no-sales that still record their last score); weights `wFit/wPrice/wSpeed`.
 
 ## Result (seeds 1–20)
-`Sweep_Seeds1To20` (Explicit, category Balance, ~75 s), final config:
+`Sweep_Seeds1To20` (Explicit, category Balance, ~75 s), final config, after GAME-007 merged:
 
 | Persona | avg satisfaction | target | walkouts | no-sales | units/sale |
 |---|---|---|---|---|---|
-| perfect | **85.6** | 80–95 ✅ | 0.5 | 0.0 | 1.50 |
-| careless | **64.9** | < 60 ❌ | 0.3 | 4.5 | 1.43 |
-| slow | **52.3** | 60–80 ❌ | 4.7 | 0.0 | 1.51 |
+| perfect | **83.6** | 80–95 ✅ | 0.4 | 0.0 | 1.48 |
+| careless | **62.9** | < 60 ❌ | 0.5 | 5.7 | 1.43 |
+| slow | **52.5** | 60–80 ❌ | 4.3 | 0.0 | 1.51 |
 
-Seed 1 (default suite, `PerfectBot_Seed1_Below100_BeatsCarelessAndSlow`): perfect 80.9, careless 59.3, slow 46.1.
-Shift length ≈ 32–36 sim min (= real min at timeScale 1). Seed-1 card-1 bot (`SimBot_Seed1…`): 16/16 served, sat 98.1, SOLD OUT Rainbow Drip.
+Seed 1 (default suite, `PerfectBot_Seed1_Below100_BeatsCarelessAndSlow`): perfect 79.2, careless 57.1, slow 46.1. Seed 1 has 1 over-limit customer: perfect trims it to a legal sale, careless loses it (no sale).
+Shift length ≈ 32–36 sim min (= real min at timeScale 1). Seed-1 card-1 bot (`SimBot_Seed1…`): 16/16 served, sat 97.6, SOLD OUT Rainbow Drip.
 
 ## Gaps (for the Hub)
 - **Slow below band (52 vs 60–80).** Its losses are walkouts (4.7/shift, score 0), mostly around the rush. Config can lift it
@@ -58,7 +61,8 @@ Shift length ≈ 32–36 sim min (= real min at timeScale 1). Seed-1 card-1 bot 
 | cart, human bots, gaps 110/30, patience ×1.5, two 0.5 | 79.7 | 59.5 | 40.2 |
 | cart, human bots, gaps 150/40, patience ×2, speed 30/120 | 84.5 | 63.5 | 53.1 |
 | cart, human bots, gaps 150/40, patience ×2, speed 20/90 | 80.8 | 59.6 | 51.3 |
-| **final**: gaps 150/60, patience ×2, speed 20/90, two 0.5 | 85.6 | 64.9 | 52.3 |
+| gaps 150/60, patience ×2, speed 20/90, two 0.5 (pre-GAME-007) | 85.6 | 64.9 | 52.3 |
+| **final** + GAME-007, overLimit 0.1, trim rule | 83.6 | 62.9 | 52.5 |
 Findings: (1) with any pacing, slow = 2× perfect cannot both stay in its band unless arrivals leave slack, because the queue,
 not the score formula, is what separates them (walkouts score 0); (2) the fit model is lenient (a random chip still averages fit
 0.68), so careless only drops when two-item asks and queue pressure add up.

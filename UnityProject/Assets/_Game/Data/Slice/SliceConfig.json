@@ -61,7 +61,7 @@
   "_cartMaxLines": "GAME-006 / UX_PS1 §2: the register holds 1-3 lines",
   "cartMaxLines": 3,
   "_overLimitAskChance": "GAME-007 / SPEC_COMP002 §2 [GDD]: chance a customer asks for more than the 1 oz cap (one of the three §2 ask shapes); retune in GAME-010",
-  "overLimitAskChance": 0.06,
+  "overLimitAskChance": 0.1,
   "_meterAmberFraction": "SPEC_COMP002 §2 / UX_PS1 §3 [GDD]: the limit meter turns amber at this fraction of the cap",
   "meterAmberFraction": 0.75,
   "_primaryTrimFitPenalty": "SPEC_COMP002 §2 [GDD]: trimming the primary item (ask 1) costs this × its fit",

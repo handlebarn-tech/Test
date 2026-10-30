@@ -165,7 +165,7 @@ namespace Dispo.Slice.Tests
             Assert.AreEqual(Dump(a), Dump(new ShiftSim(Load())));
             var two = a.Customers.Where(c => c.Asks.Count == 2).ToList();
             CollectionAssert.IsNotEmpty(two, "seed 1 has a two-item customer");
-            Assert.IsTrue(a.Customers.All(c => c.Asks.Count <= 2 && c.Asks.Sum(x => x.Grams) <= a.Cfg.adultUseLimitGrams));
+            Assert.IsTrue(a.Customers.Where(c => !c.OverLimit).All(c => c.Asks.Count <= 2 && c.Asks.Sum(x => x.Grams) <= a.Cfg.adultUseLimitGrams), "over-limit asks: OverLimitTests");
             foreach (var c in two)
             {
                 StringAssert.Contains(c.Asks[1].Clause, c.Line);

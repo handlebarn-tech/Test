@@ -53,8 +53,12 @@ namespace Dispo.Slice.Tests
                 if (sim.Time < next) continue;
                 if (sim.RegisterOpen)
                 {
-                    if (sim.CanAddItem) { sim.AddItem(); tried.Clear(); next = sim.Time + p.PickSec; }
-                    else Assert.IsNull(sim.Confirm(), $"{p.Name} seed {seed} customer {c.Index}");
+                    // GAME-007 trim rule: perfect/slow drop the last line of a red cart and add an ask only if it fits under the cap;
+                    // careless ignores the limit, so a blocked over-limit cart ends in Cancel = the customer refuses (no sale).
+                    bool fits = p.TrueChip ? sim.CurrentAsk != null && sim.CartGrams + sim.CurrentAsk.Grams <= sim.Cfg.adultUseLimitGrams : true;
+                    if (p.TrueChip && sim.Meter == MeterState.Red) sim.RemoveLine(sim.Cart.Count - 1);
+                    else if (sim.CanAddItem && fits) { sim.AddItem(); tried.Clear(); next = sim.Time + p.PickSec; }
+                    else if (sim.Confirm() is string blocked) { Assert.IsFalse(p.TrueChip, $"{p.Name} seed {seed} customer {c.Index}: {blocked}"); sim.Cancel(); }
                     continue;
                 }
                 var card = Choose(sim, p, rng, tried);
@@ -124,25 +128,32 @@ namespace Dispo.Slice.Tests
             Assert.Greater(r["perfect"].AvgSatisfaction, r["slow"].AvgSatisfaction);
         }
 
-        /// <summary>PS1 exit test, part 2: a careless bot gets ≥ 1 strike. Skip-guarded until GAME-007 adds the strike ledger to the report.</summary>
-        [Test]
-        public void CarelessBot_GetsAStrike_AfterGame007()
+        /// <summary>PS1 exit test, part 2: a careless bot gets ≥ 1 strike. GAME-007 has the ledger but no strike source (an over-limit
+        /// sale is impossible); GAME-008 (ID checks) adds the first. Remove the Ignore there.</summary>
+        [Test, Ignore("GAME-008 adds the first strike source")]
+        public void CarelessBot_GetsAStrike()
         {
-            var f = typeof(ShiftReport).GetField("Strikes");
-            if (f == null) Assert.Ignore("needs GAME-007: ShiftReport.Strikes");
-            Assert.GreaterOrEqual(Count(f.GetValue(Run(Load(), Persona.Careless, 1).Report())), 1);
+            Assert.GreaterOrEqual(Run(Load(), Persona.Careless, 1).Report().Strikes.Count, 1);
         }
 
-        // shortcut: reads GAME-007's ledger by reflection (a count or a list) so this compiles before it lands; type it once merged.
-        static int Count(object v) => v is System.Collections.ICollection c ? c.Count : Convert.ToInt32(v);
-
-        /// <summary>PS1 hook: perfect trims over-limit asks without a strike. Skip-guarded until GAME-007/008 (trim count + strikes).</summary>
+        /// <summary>PS1 hook (GAME-007): over-limit customers on seed 1 are trimmed to a legal sale by perfect, with no strike;
+        /// careless, blind to the limit, loses them (Cancel on a red cart = refusal, no sale).</summary>
         [Test]
-        public void PerfectBot_NoStrikes_AfterGame007()
+        public void OverLimit_PerfectTrims_CarelessLosesTheSale()
         {
-            var f = typeof(ShiftReport).GetField("Strikes");
-            if (f == null || typeof(ShiftReport).GetField("Trims") == null) Assert.Ignore("needs GAME-007/008: ShiftReport.Strikes and Trims");
-            Assert.AreEqual(0, Count(f.GetValue(Run(Load(), Persona.Perfect, 1).Report())));
+            var d = Load();
+            Assert.Greater(d.Config.overLimitAskChance, 0);
+            var perfect = Run(Load(), Persona.Perfect, 1);
+            var over = perfect.Customers.Where(c => c.OverLimit).ToList();
+            Assert.IsNotEmpty(over, "seed 1 shows the over-limit feature (REVIEW-W5G m4)");
+            var r = perfect.Report();
+            Assert.AreEqual(over.Count(c => c.Outcome == CustomerOutcome.Bought), r.OverLimitTrims);
+            Assert.IsEmpty(r.Strikes);
+            Assert.IsTrue(perfect.Sales.GroupBy(x => x.CustomerIndex).All(g => g.Sum(x => x.Grams) <= d.Config.adultUseLimitGrams));
+            var careless = Run(Load(), Persona.Careless, 1);
+            Assert.AreEqual(0, careless.Report().OverLimitTrims);
+            Debug.Log($"[Balance] seed 1 over-limit customers {over.Count}: perfect trims {r.OverLimitTrims}, careless outcomes "
+                + string.Join(",", careless.Customers.Where(c => c.OverLimit).Select(c => c.Outcome)));
         }
 
         /// <summary>The tuning grid behind TUNING_PS1.md. Explicit: minutes per config; edit the axes, run on purpose.</summary>
