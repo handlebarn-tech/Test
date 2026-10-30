@@ -25,6 +25,7 @@ This file is a frozen snapshot of the one-time intake (DES-003, merged in W4Q). 
 ## Key mapping of spec names to existing names (spec §0 rule 5)
 | Spec concept | Existing structure kept | Note |
 |---|---|---|
+| Customer archetypes (AUDIT-001 E1; Hub ruling DEC-064 Q3) | slice `Regular` = DP "Normal customer" (0.60); DP "Decisive regular" (0.20) is a separate repeat-customer type arriving with GAME-021; slice Novice / Price shopper keep their names | GSS §11 Enthusiast / Indecisive / Decisive repeat-style map to DP by name when GAME-017/021 add them; any tuning value stays GAP-DP-02 |
 | TrueCustomerProfile | `Customer` (`Customers.cs`): `TrueFamily`, `Grams`, `Budget`, `Archetype`, `PatienceMax` | extend `Customer` with the missing true fields; no new class unless GAME-017 shows it is cleaner |
 | TrueIntent | `IntentFamily` golden parse (DEC-017) | stays the truth; modifiers added as extra true fields |
 | CustomerOutcome (what happened) | `CustomerOutcome { Bought, Walkout, NoSale }` | kept; `ServiceResolution` is a new *evaluation* enum beside it |

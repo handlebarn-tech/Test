@@ -1,6 +1,6 @@
 # ROADMAP — after the vertical slice (DES-002)
 
-**Status:** proposal for the Studio Hub. Task IDs from GAME-006 on are new proposals; the Hub may renumber. Rows use the `Docs/BACKLOG.md` format.
+**Status:** ratified as the post-slice plan (PS1b by DEC-057; AUDIT-001 E2, DEC-064). **Row states here are as of DES-002/DES-003; the live state of every task is `Docs/BACKLOG.md`.** Original line: proposal for the Studio Hub. Task IDs from GAME-006 on are new proposals; the Hub may renumber. Rows use the `Docs/BACKLOG.md` format.
 **Extended 2026-10-30 by DES-003** with Nolan's decision-pressure spec (`SPEC_DECISION_PRESSURE.md`, cited as DP §n; status per item in `DES-003_RECONCILIATION.md`): new §2b, PS2 rows GAME-021..024, notes on GAME-011/012/015/016 and PS4.
 **Add-on 2026-10-30 by IMP-002** with Nolan's V2 pack (`DESIGN_V2/`, DEC-063; audit `Docs/Imports/IMP-001_DESIGN_V2_AUDIT.md`, cited as V2 `<file>` §n): starting numbers for PS2 rows DES-004/GAME-011/012 and the PS1b/PS2 packets GAME-017..024; PS4 note. DP wins where V2 differs (DEC-063a). No PS1 change.
 **Citation key (AUDIT-001 C7, DEC-064):** "spec §n" / "GSS §n" = `GAMEPLAY_SIMULATION_SPEC.md`; "DP §n" = `Design/SPEC_DECISION_PRESSURE.md`; "V2 <file> §n" = `Design/DESIGN_V2/`. In DP, DP-001…032 are the §115 tests; the §123 workcells are cited as DP-WC-001…011.

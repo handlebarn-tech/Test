@@ -88,3 +88,4 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | DOC-001 | P1 | Apply AUDIT-001 batches A–C (DEC-064), 2 phases | AUDIT-001; phase 2 after IMP-002 | Active |
 | DOC-002 | P2 | AUDIT-001 batch D (risky: ART renumber, CLAUDE.md read list, REFERENCES_INDEX split, branch naming) | DOC-001; between waves only | Later |
 | DOC-003 | P3 | AUDIT-001 batch E (Medium/Low cleanup) | DOC-001 | Later |
+| DOC-004 | P3 | Put "fast recommendation" back in GSS §28 (DEC-059 n1, REVIEW-W4Q); rides with the next GSS edit | — | Ready |

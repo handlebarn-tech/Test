@@ -1,6 +1,6 @@
 # ACQUISITION LIST — ASSET-001
 
-Prepared 2026-10-29. Every row's license is in `LICENSE_LEDGER.md` (IDs match). **Nothing downloaded yet.** Ordered: P0 slice + M5 hero retail → P1 M6 stock/BOH → P2 later. Fetch rule: one asset → record SHA-256 → ledger "Downloaded" → Blender normalize (plan §73). Raws go in gitignored `ThirdParty/`, never committed (ledger "Repo policy").
+Prepared 2026-10-29. Every row's license is in `LICENSE_LEDGER.md` (IDs match). **Nothing downloaded yet** (ASSET-001 snapshot, 2026-10-29; downloads since are in `ASSET_CACHE_MANIFEST.json`, licenses in `LICENSE_LEDGER.md`; AUDIT-001 E4). Ordered: P0 slice + M5 hero retail → P1 M6 stock/BOH → P2 later. Fetch rule: one asset → record SHA-256 → ledger "Downloaded" → Blender normalize (plan §73). Raws go in gitignored `ThirdParty/`, never committed (ledger "Repo policy").
 Sizes: Poly Haven = 2k glTF+textures from API; Sketchfab = tris (MB unknown until download).
 
 ## Human-only steps (agent must not do these)
