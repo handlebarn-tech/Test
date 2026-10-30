@@ -53,7 +53,7 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | QA-002 | P1 | Gate A TFS parity gate + DP scenario harness (EditMode, new `Tests/EditMode/Gates/`) | DES-003 | Done (W4T) |
 | QA-002b | P1 | Gate A pass with `ParserOptions.Game` + game003 defect queries (REVIEW-W4T m1, DEC-067) | QA-002 | Active |
 | UX-005 | P1 | PS1b UX extension of `UX_PS1.md` (doc-only) | UX-002 | Done (W4S) |
-| GAME-006 | P1 | Cart | GAME-005 | Review |
+| GAME-006 | P1 | Cart | GAME-005 | Done (W4W) |
 | GAME-017 | P1 | KNOWN profile, questions, query composer → QueryParser | GAME-006/007/010 | Ready (waits) |
 | GAME-018 | P1 | Similar/Compare/Details at the counter | GAME-017 | Ready (waits) |
 | GAME-019 | P1 | ServiceEvaluator, DecisionQuality, no-sales (DEC-052) | GAME-018 | Ready (waits) |
@@ -72,7 +72,7 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | REF-007 | P1 | Deli jar spec / house-smalls jar dimensions | — | Done (W4C) |
 | REF-009 | P1 | Apply DEC-051 to `ROOM_FIXTURES.json` | REF-008 | Done (W4R) |
 | REF-009b | P1 | W4R m1–m5 + DEC-062 into `ROOM_FIXTURES.json` | REF-009 | Done (W4U) |
-| GAME-007 | P1 | Purchase-limit meter + over-limit asks + strike ledger (COMP-002 §2) | GAME-006 | Ready |
+| GAME-007 | P1 | Purchase-limit meter + over-limit asks + strike ledger (COMP-002 §2) | GAME-006 | Active |
 | GAME-008 | P1 | ID-check events (COMP-002 §3) | GAME-007 | Ready |
 | GAME-009 | P2 | Medical customers (COMP-002 §4) | GAME-007, **GAME-008** (same files; AUDIT-001 A3) | Ready |
 | GAME-010 | P1 | Retune for tension + QA bot personas | GAME-005 (merge after GAME-006: both edit SliceConfig and Slice tests) | Active |
@@ -85,7 +85,7 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Active |
 | IMP-002 | P1 | Integrate the approved DISPO_GAME_DESIGN_V2 pack (DEC-063) into `Docs/Design/DESIGN_V2/` | IMP-001 | Done (W4V, DEC-066) |
 | AUDIT-001 | P1 | Read-only .md audit + approval sheet (`Docs/Audits/`) | DES-003 | Done (DEC-064) |
-| DOC-001 | P1 | Apply AUDIT-001 batches A–C (DEC-064), 2 phases | AUDIT-001; phase 2 after IMP-002 | Active |
+| DOC-001 | P1 | Apply AUDIT-001 batches A–C (DEC-064), 2 phases | AUDIT-001; phase 2 after IMP-002 | Done (W4X) |
 | DOC-002 | P2 | AUDIT-001 batch D (risky: ART renumber, CLAUDE.md read list, REFERENCES_INDEX split, branch naming) | DOC-001; between waves only | Later |
-| DOC-003 | P3 | AUDIT-001 batch E (Medium/Low cleanup) | DOC-001 | Later |
+| DOC-003 | P3 | AUDIT-001 batch E (Medium/Low cleanup) | DOC-001 | Review (W4Z) |
 | DOC-004 | P3 | Put "fast recommendation" back in GSS §28 (DEC-059 n1, REVIEW-W4Q); rides with the next GSS edit | — | Ready |
