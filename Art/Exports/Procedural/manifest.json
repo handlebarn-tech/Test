@@ -15205,6 +15205,2144 @@
         "seed": 4101
       }
     },
+    "PROC_RegisterCounter_LegA_Run": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.8382,
+            0.0
+          ],
+          "name": "Top",
+          "size_unity_xyz": [
+            6.7056,
+            0.0508,
+            0.762
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.4064,
+            -0.0635
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            6.7056,
+            0.8128,
+            0.635
+          ]
+        }
+      ],
+      "display_case_slot": {
+        "asset_id": "PROC_DisplayCase_Countertop",
+        "footprint_m": [
+          0.42672,
+          0.42672
+        ],
+        "position_unity_xyz": [
+          -2.34696,
+          0.8636,
+          0.0
+        ]
+      },
+      "export": "Art/Exports/Procedural/PROC_RegisterCounter_LegA_Run.fbx",
+      "export_sha256": "32a332b031e0df63",
+      "fixture_family": "register_counter_run",
+      "gaps": [
+        "GAP-106",
+        "GAP-107",
+        "GAP-PROC-15"
+      ],
+      "generator": "register_counter_run",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_RegisterCounter_LegA_Run_Accents_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.302,
+                  0.3302,
+                  0.8128
+                ],
+                "min": [
+                  -3.302,
+                  -0.254,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a6fb5266cdde52ca",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.604,
+                0.8128,
+                0.5842
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_RegisterCounter_LegA_Run_Front_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.299,
+                  0.369,
+                  0.8068
+                ],
+                "min": [
+                  -3.299,
+                  -0.254,
+                  0.1046
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "814f5e827c397396",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                6.598,
+                0.7022,
+                0.623
+              ],
+              "tris": 2944,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1536
+            },
+            "PROC_RegisterCounter_LegA_Run_Grommets_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.93275,
+                  0.295,
+                  0.8651
+                ],
+                "min": [
+                  -2.91375,
+                  0.227,
+                  0.8168
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 256
+              },
+              "geometry_sha256": "114f4d6450265f4e",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                5.8465,
+                0.0483,
+                0.068
+              ],
+              "tris": 768,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 512
+            },
+            "PROC_RegisterCounter_LegA_Run_Pulls_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.762944,
+                  0.3745,
+                  0.8068
+                ],
+                "min": [
+                  -3.156694,
+                  0.3645,
+                  0.4597
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f04be46354e5c728",
+              "material_slots": [
+                "M_Proc_Brass_HW2"
+              ],
+              "size_m_unity_xyz": [
+                5.91964,
+                0.3471,
+                0.01
+              ],
+              "tris": 192,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 128
+            },
+            "PROC_RegisterCounter_LegA_Run_Shelves_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.302,
+                  0.381,
+                  0.8128
+                ],
+                "min": [
+                  -3.302,
+                  -0.225,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 2
+              },
+              "geometry_sha256": "645fa639c2941695",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.604,
+                0.7112,
+                0.606
+              ],
+              "tris": 312,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 204
+            },
+            "PROC_RegisterCounter_LegA_Run_Top_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.3528,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -3.3528,
+                  -0.381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 10
+              },
+              "geometry_sha256": "4445de97d3bea00e",
+              "material_slots": [
+                "M_Proc_Quartz_QZ2"
+              ],
+              "size_m_unity_xyz": [
+                6.7056,
+                0.8636,
+                0.762
+              ],
+              "tris": 276,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 132
+            }
+          },
+          "size_m_unity_xyz": [
+            6.7056,
+            0.8651,
+            0.762
+          ],
+          "tris": 4540
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_RegisterCounter_LegA_Run_Accents_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.302,
+                  0.3302,
+                  0.8128
+                ],
+                "min": [
+                  -3.302,
+                  -0.254,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a6fb5266cdde52ca",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.604,
+                0.8128,
+                0.5842
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_RegisterCounter_LegA_Run_Front_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.299,
+                  0.369,
+                  0.8068
+                ],
+                "min": [
+                  -3.299,
+                  -0.254,
+                  0.1046
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6b430a6e2cb73a76",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                6.598,
+                0.7022,
+                0.623
+              ],
+              "tris": 1920,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1024
+            },
+            "PROC_RegisterCounter_LegA_Run_Grommets_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.93275,
+                  0.295,
+                  0.8651
+                ],
+                "min": [
+                  -2.91375,
+                  0.227,
+                  0.8168
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 192
+              },
+              "geometry_sha256": "d42b640d018fb8e6",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                5.8465,
+                0.0483,
+                0.068
+              ],
+              "tris": 576,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 384
+            },
+            "PROC_RegisterCounter_LegA_Run_Shelves_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.302,
+                  0.381,
+                  0.8128
+                ],
+                "min": [
+                  -3.302,
+                  -0.225,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 2
+              },
+              "geometry_sha256": "645fa639c2941695",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.604,
+                0.7112,
+                0.606
+              ],
+              "tris": 312,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 204
+            },
+            "PROC_RegisterCounter_LegA_Run_Top_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.3528,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -3.3528,
+                  -0.381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 6
+              },
+              "geometry_sha256": "13302bb6428c6820",
+              "material_slots": [
+                "M_Proc_Quartz_QZ2"
+              ],
+              "size_m_unity_xyz": [
+                6.7056,
+                0.8636,
+                0.762
+              ],
+              "tris": 180,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 88
+            }
+          },
+          "size_m_unity_xyz": [
+            6.7056,
+            0.8651,
+            0.762
+          ],
+          "tris": 3036
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_RegisterCounter_LegA_Run_Accents_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.302,
+                  0.3302,
+                  0.8128
+                ],
+                "min": [
+                  -3.302,
+                  -0.254,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a6fb5266cdde52ca",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.604,
+                0.8128,
+                0.5842
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_RegisterCounter_LegA_Run_Front_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.302,
+                  0.369,
+                  0.8128
+                ],
+                "min": [
+                  -3.302,
+                  -0.254,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8be4aa4e40193ef7",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                6.604,
+                0.7112,
+                0.623
+              ],
+              "tris": 108,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_RegisterCounter_LegA_Run_Grommets_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  2.93275,
+                  0.295,
+                  0.8651
+                ],
+                "min": [
+                  -2.91375,
+                  0.227,
+                  0.8168
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 128
+              },
+              "geometry_sha256": "797a66a845a9fcfe",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                5.8465,
+                0.0483,
+                0.068
+              ],
+              "tris": 384,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 256
+            },
+            "PROC_RegisterCounter_LegA_Run_Shelves_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.302,
+                  0.381,
+                  0.8128
+                ],
+                "min": [
+                  -3.302,
+                  -0.225,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 2
+              },
+              "geometry_sha256": "9cea0af6e6473f24",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                6.604,
+                0.7112,
+                0.606
+              ],
+              "tris": 216,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 140
+            },
+            "PROC_RegisterCounter_LegA_Run_Top_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.3528,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -3.3528,
+                  -0.381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 2
+              },
+              "geometry_sha256": "7a0936c3403d7251",
+              "material_slots": [
+                "M_Proc_Quartz_QZ2"
+              ],
+              "size_m_unity_xyz": [
+                6.7056,
+                0.8636,
+                0.762
+              ],
+              "tris": 36,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 20
+            }
+          },
+          "size_m_unity_xyz": [
+            6.7056,
+            0.8651,
+            0.762
+          ],
+          "tris": 792
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_RegisterCounter_LegA_Run_Front_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.302,
+                  0.381,
+                  0.8128
+                ],
+                "min": [
+                  -3.302,
+                  -0.254,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e10a8ebc7d735e67",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                6.604,
+                0.8128,
+                0.635
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_RegisterCounter_LegA_Run_Top_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  3.3528,
+                  0.381,
+                  0.8651
+                ],
+                "min": [
+                  -3.3528,
+                  -0.381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 2
+              },
+              "geometry_sha256": "40b51c17ce87546a",
+              "material_slots": [
+                "M_Proc_Quartz_QZ2"
+              ],
+              "size_m_unity_xyz": [
+                6.7056,
+                0.8651,
+                0.762
+              ],
+              "tris": 36,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 20
+            }
+          },
+          "size_m_unity_xyz": [
+            6.7056,
+            0.8651,
+            0.762
+          ],
+          "tris": 48
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/register_counter_run.json",
+      "params_sha256": "711beba570052804",
+      "plan_rect_ft": [
+        20.0,
+        42.0,
+        7.0,
+        9.5
+      ],
+      "seed": 22001,
+      "station_anchors": [
+        {
+          "components": {
+            "card_terminal": {
+              "asset_id": "PROC_Register_CardTerminal",
+              "position_unity_xyz": [
+                2.63925,
+                0.8636,
+                0.28
+              ],
+              "yaw_deg": 0
+            },
+            "keyboard": {
+              "asset_id": "PROC_Register_Keyboard",
+              "position_unity_xyz": [
+                2.88925,
+                0.8636,
+                -0.17
+              ],
+              "yaw_deg": 180
+            },
+            "pos_monitor": {
+              "asset_id": "PROC_Register_POSMonitor",
+              "position_unity_xyz": [
+                2.88925,
+                0.8636,
+                0.15
+              ],
+              "yaw_deg": 180
+            },
+            "receipt_printer": {
+              "asset_id": "PROC_Register_ReceiptPrinter",
+              "position_unity_xyz": [
+                2.55925,
+                0.8636,
+                -0.1
+              ],
+              "yaw_deg": 180
+            },
+            "scale_stand_slot": {
+              "asset_id": "PROC_Register_ScaleStand",
+              "position_unity_xyz": [
+                3.23925,
+                0.0,
+                -0.56388
+              ],
+              "yaw_deg": 180
+            },
+            "scanner": {
+              "asset_id": "PROC_Register_Scanner_Presentation",
+              "position_unity_xyz": [
+                3.18925,
+                0.8636,
+                -0.05
+              ],
+              "yaw_deg": 180
+            }
+          },
+          "position_unity_xyz": [
+            2.88925,
+            0.8636,
+            0.0
+          ],
+          "register": 7,
+          "slot_width_m": 0.8255,
+          "station_id": "Register_07"
+        },
+        {
+          "components": {
+            "card_terminal": {
+              "asset_id": "PROC_Register_CardTerminal",
+              "position_unity_xyz": [
+                1.81375,
+                0.8636,
+                0.28
+              ],
+              "yaw_deg": 0
+            },
+            "keyboard": {
+              "asset_id": "PROC_Register_Keyboard",
+              "position_unity_xyz": [
+                2.06375,
+                0.8636,
+                -0.17
+              ],
+              "yaw_deg": 180
+            },
+            "pos_monitor": {
+              "asset_id": "PROC_Register_POSMonitor",
+              "position_unity_xyz": [
+                2.06375,
+                0.8636,
+                0.15
+              ],
+              "yaw_deg": 180
+            },
+            "receipt_printer": {
+              "asset_id": "PROC_Register_ReceiptPrinter",
+              "position_unity_xyz": [
+                1.73375,
+                0.8636,
+                -0.1
+              ],
+              "yaw_deg": 180
+            },
+            "scale_stand_slot": {
+              "asset_id": "PROC_Register_ScaleStand",
+              "position_unity_xyz": [
+                2.41375,
+                0.0,
+                -0.56388
+              ],
+              "yaw_deg": 180
+            },
+            "scanner": {
+              "asset_id": "PROC_Register_Scanner_Presentation",
+              "position_unity_xyz": [
+                2.36375,
+                0.8636,
+                -0.05
+              ],
+              "yaw_deg": 180
+            }
+          },
+          "position_unity_xyz": [
+            2.06375,
+            0.8636,
+            0.0
+          ],
+          "register": 2,
+          "slot_width_m": 0.8255,
+          "station_id": "Register_02"
+        },
+        {
+          "components": {
+            "card_terminal": {
+              "asset_id": "PROC_Register_CardTerminal",
+              "position_unity_xyz": [
+                0.98825,
+                0.8636,
+                0.28
+              ],
+              "yaw_deg": 0
+            },
+            "keyboard": {
+              "asset_id": "PROC_Register_Keyboard",
+              "position_unity_xyz": [
+                1.23825,
+                0.8636,
+                -0.17
+              ],
+              "yaw_deg": 180
+            },
+            "pos_monitor": {
+              "asset_id": "PROC_Register_POSMonitor",
+              "position_unity_xyz": [
+                1.23825,
+                0.8636,
+                0.15
+              ],
+              "yaw_deg": 180
+            },
+            "receipt_printer": {
+              "asset_id": "PROC_Register_ReceiptPrinter",
+              "position_unity_xyz": [
+                0.90825,
+                0.8636,
+                -0.1
+              ],
+              "yaw_deg": 180
+            },
+            "scale_stand_slot": {
+              "asset_id": "PROC_Register_ScaleStand",
+              "position_unity_xyz": [
+                1.58825,
+                0.0,
+                -0.56388
+              ],
+              "yaw_deg": 180
+            },
+            "scanner": {
+              "asset_id": "PROC_Register_Scanner_Presentation",
+              "position_unity_xyz": [
+                1.53825,
+                0.8636,
+                -0.05
+              ],
+              "yaw_deg": 180
+            }
+          },
+          "position_unity_xyz": [
+            1.23825,
+            0.8636,
+            0.0
+          ],
+          "register": 3,
+          "slot_width_m": 0.8255,
+          "station_id": "Register_03"
+        },
+        {
+          "components": {
+            "card_terminal": {
+              "asset_id": "PROC_Register_CardTerminal",
+              "position_unity_xyz": [
+                0.16275,
+                0.8636,
+                0.28
+              ],
+              "yaw_deg": 0
+            },
+            "keyboard": {
+              "asset_id": "PROC_Register_Keyboard",
+              "position_unity_xyz": [
+                0.41275,
+                0.8636,
+                -0.17
+              ],
+              "yaw_deg": 180
+            },
+            "pos_monitor": {
+              "asset_id": "PROC_Register_POSMonitor",
+              "position_unity_xyz": [
+                0.41275,
+                0.8636,
+                0.15
+              ],
+              "yaw_deg": 180
+            },
+            "receipt_printer": {
+              "asset_id": "PROC_Register_ReceiptPrinter",
+              "position_unity_xyz": [
+                0.08275,
+                0.8636,
+                -0.1
+              ],
+              "yaw_deg": 180
+            },
+            "scale_stand_slot": {
+              "asset_id": "PROC_Register_ScaleStand",
+              "position_unity_xyz": [
+                0.76275,
+                0.0,
+                -0.56388
+              ],
+              "yaw_deg": 180
+            },
+            "scanner": {
+              "asset_id": "PROC_Register_Scanner_Presentation",
+              "position_unity_xyz": [
+                0.71275,
+                0.8636,
+                -0.05
+              ],
+              "yaw_deg": 180
+            }
+          },
+          "position_unity_xyz": [
+            0.41275,
+            0.8636,
+            0.0
+          ],
+          "register": 4,
+          "slot_width_m": 0.8255,
+          "station_id": "Register_04"
+        },
+        {
+          "components": {
+            "card_terminal": {
+              "asset_id": "PROC_Register_CardTerminal",
+              "position_unity_xyz": [
+                -0.66275,
+                0.8636,
+                0.28
+              ],
+              "yaw_deg": 0
+            },
+            "keyboard": {
+              "asset_id": "PROC_Register_Keyboard",
+              "position_unity_xyz": [
+                -0.41275,
+                0.8636,
+                -0.17
+              ],
+              "yaw_deg": 180
+            },
+            "pos_monitor": {
+              "asset_id": "PROC_Register_POSMonitor",
+              "position_unity_xyz": [
+                -0.41275,
+                0.8636,
+                0.15
+              ],
+              "yaw_deg": 180
+            },
+            "receipt_printer": {
+              "asset_id": "PROC_Register_ReceiptPrinter",
+              "position_unity_xyz": [
+                -0.74275,
+                0.8636,
+                -0.1
+              ],
+              "yaw_deg": 180
+            },
+            "scale_stand_slot": {
+              "asset_id": "PROC_Register_ScaleStand",
+              "position_unity_xyz": [
+                -0.06275,
+                0.0,
+                -0.56388
+              ],
+              "yaw_deg": 180
+            },
+            "scanner": {
+              "asset_id": "PROC_Register_Scanner_Presentation",
+              "position_unity_xyz": [
+                -0.11275,
+                0.8636,
+                -0.05
+              ],
+              "yaw_deg": 180
+            }
+          },
+          "position_unity_xyz": [
+            -0.41275,
+            0.8636,
+            0.0
+          ],
+          "register": 5,
+          "slot_width_m": 0.8255,
+          "station_id": "Register_05"
+        },
+        {
+          "components": {
+            "card_terminal": {
+              "asset_id": "PROC_Register_CardTerminal",
+              "position_unity_xyz": [
+                -1.48825,
+                0.8636,
+                0.28
+              ],
+              "yaw_deg": 0
+            },
+            "keyboard": {
+              "asset_id": "PROC_Register_Keyboard",
+              "position_unity_xyz": [
+                -1.23825,
+                0.8636,
+                -0.17
+              ],
+              "yaw_deg": 180
+            },
+            "pos_monitor": {
+              "asset_id": "PROC_Register_POSMonitor",
+              "position_unity_xyz": [
+                -1.23825,
+                0.8636,
+                0.15
+              ],
+              "yaw_deg": 180
+            },
+            "receipt_printer": {
+              "asset_id": "PROC_Register_ReceiptPrinter",
+              "position_unity_xyz": [
+                -1.56825,
+                0.8636,
+                -0.1
+              ],
+              "yaw_deg": 180
+            },
+            "scale_stand_slot": {
+              "asset_id": "PROC_Register_ScaleStand",
+              "position_unity_xyz": [
+                -0.88825,
+                0.0,
+                -0.56388
+              ],
+              "yaw_deg": 180
+            },
+            "scanner": {
+              "asset_id": "PROC_Register_Scanner_Presentation",
+              "position_unity_xyz": [
+                -0.93825,
+                0.8636,
+                -0.05
+              ],
+              "yaw_deg": 180
+            }
+          },
+          "position_unity_xyz": [
+            -1.23825,
+            0.8636,
+            0.0
+          ],
+          "register": 6,
+          "slot_width_m": 0.8255,
+          "station_id": "Register_06"
+        },
+        {
+          "components": {
+            "card_terminal": {
+              "asset_id": "PROC_Register_CardTerminal",
+              "position_unity_xyz": [
+                -2.31375,
+                0.8636,
+                0.28
+              ],
+              "yaw_deg": 0
+            },
+            "keyboard": {
+              "asset_id": "PROC_Register_Keyboard",
+              "position_unity_xyz": [
+                -2.06375,
+                0.8636,
+                -0.17
+              ],
+              "yaw_deg": 180
+            },
+            "pos_monitor": {
+              "asset_id": "PROC_Register_POSMonitor",
+              "position_unity_xyz": [
+                -2.06375,
+                0.8636,
+                0.15
+              ],
+              "yaw_deg": 180
+            },
+            "receipt_printer": {
+              "asset_id": "PROC_Register_ReceiptPrinter",
+              "position_unity_xyz": [
+                -2.39375,
+                0.8636,
+                -0.1
+              ],
+              "yaw_deg": 180
+            },
+            "scale_stand_slot": {
+              "asset_id": "PROC_Register_ScaleStand",
+              "position_unity_xyz": [
+                -1.71375,
+                0.0,
+                -0.56388
+              ],
+              "yaw_deg": 180
+            },
+            "scanner": {
+              "asset_id": "PROC_Register_Scanner_Presentation",
+              "position_unity_xyz": [
+                -1.76375,
+                0.8636,
+                -0.05
+              ],
+              "yaw_deg": 180
+            }
+          },
+          "position_unity_xyz": [
+            -2.06375,
+            0.8636,
+            0.0
+          ],
+          "register": 12,
+          "slot_width_m": 0.8255,
+          "station_id": "Register_12"
+        },
+        {
+          "components": {
+            "card_terminal": {
+              "asset_id": "PROC_Register_CardTerminal",
+              "position_unity_xyz": [
+                -3.13925,
+                0.8636,
+                0.28
+              ],
+              "yaw_deg": 0
+            },
+            "keyboard": {
+              "asset_id": "PROC_Register_Keyboard",
+              "position_unity_xyz": [
+                -2.88925,
+                0.8636,
+                -0.17
+              ],
+              "yaw_deg": 180
+            },
+            "pos_monitor": {
+              "asset_id": "PROC_Register_POSMonitor",
+              "position_unity_xyz": [
+                -2.88925,
+                0.8636,
+                0.15
+              ],
+              "yaw_deg": 180
+            },
+            "receipt_printer": {
+              "asset_id": "PROC_Register_ReceiptPrinter",
+              "position_unity_xyz": [
+                -3.21925,
+                0.8636,
+                -0.1
+              ],
+              "yaw_deg": 180
+            },
+            "scale_stand_slot": {
+              "asset_id": "PROC_Register_ScaleStand",
+              "position_unity_xyz": [
+                -2.53925,
+                0.0,
+                -0.56388
+              ],
+              "yaw_deg": 180
+            },
+            "scanner": {
+              "asset_id": "PROC_Register_Scanner_Presentation",
+              "position_unity_xyz": [
+                -2.58925,
+                0.8636,
+                -0.05
+              ],
+              "yaw_deg": 180
+            }
+          },
+          "position_unity_xyz": [
+            -2.88925,
+            0.8636,
+            0.0
+          ],
+          "register": 11,
+          "slot_width_m": 0.8255,
+          "station_id": "Register_11"
+        }
+      ],
+      "tri_budget": {
+        "LOD0": 150000,
+        "LOD1": 75000,
+        "LOD2": 37500,
+        "LOD3": 15000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Register/PROC_RegisterCounter_LegA_Run.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.2,
+        "scuffs": 0.3,
+        "seed": 22001
+      }
+    },
+    "PROC_RegisterCounter_LegB_Return": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.8382,
+            0.0
+          ],
+          "name": "Top",
+          "size_unity_xyz": [
+            2.8956,
+            0.0508,
+            0.762
+          ]
+        },
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.4064,
+            -0.0635
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            2.8956,
+            0.8128,
+            0.635
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_RegisterCounter_LegB_Return.fbx",
+      "export_sha256": "aa1fa54b12bc06b9",
+      "fixture_family": "register_counter_run",
+      "gaps": [
+        "GAP-106",
+        "GAP-107",
+        "GAP-PROC-15"
+      ],
+      "generator": "register_counter_run",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_RegisterCounter_LegB_Return_Accents_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.4224,
+                  0.3302,
+                  0.8128
+                ],
+                "min": [
+                  -1.4224,
+                  -0.254,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f1339082700eccad",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                2.8448,
+                0.8128,
+                0.5842
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_RegisterCounter_LegB_Return_Front_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.394,
+                  0.369,
+                  0.8068
+                ],
+                "min": [
+                  -1.4448,
+                  -0.254,
+                  0.1046
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c3a36873328c873c",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                2.8388,
+                0.7022,
+                0.623
+              ],
+              "tris": 1104,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 576
+            },
+            "PROC_RegisterCounter_LegB_Return_Grommets_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.966367,
+                  0.295,
+                  0.8651
+                ],
+                "min": [
+                  -0.998167,
+                  0.227,
+                  0.8168
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 96
+              },
+              "geometry_sha256": "3d2990f2bbd4eba0",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.96453,
+                0.0483,
+                0.068
+              ],
+              "tris": 288,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            },
+            "PROC_RegisterCounter_LegB_Return_Pulls_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.776611,
+                  0.3745,
+                  0.8068
+                ],
+                "min": [
+                  -1.282544,
+                  0.3645,
+                  0.4597
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a12e4e07d450653c",
+              "material_slots": [
+                "M_Proc_Brass_HW2"
+              ],
+              "size_m_unity_xyz": [
+                2.05915,
+                0.3471,
+                0.01
+              ],
+              "tris": 72,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_RegisterCounter_LegB_Return_Shelves_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.4224,
+                  0.381,
+                  0.8128
+                ],
+                "min": [
+                  -1.4478,
+                  -0.225,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "cd8f17762b31e3e6",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                2.8702,
+                0.7112,
+                0.606
+              ],
+              "tris": 132,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 88
+            },
+            "PROC_RegisterCounter_LegB_Return_Top_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.4478,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -1.4478,
+                  -0.381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 5
+              },
+              "geometry_sha256": "5903594e498424db",
+              "material_slots": [
+                "M_Proc_Quartz_QZ2"
+              ],
+              "size_m_unity_xyz": [
+                2.8956,
+                0.8636,
+                0.762
+              ],
+              "tris": 184,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 90
+            }
+          },
+          "size_m_unity_xyz": [
+            2.8956,
+            0.8651,
+            0.762
+          ],
+          "tris": 1828
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_RegisterCounter_LegB_Return_Accents_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.4224,
+                  0.3302,
+                  0.8128
+                ],
+                "min": [
+                  -1.4224,
+                  -0.254,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f1339082700eccad",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                2.8448,
+                0.8128,
+                0.5842
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_RegisterCounter_LegB_Return_Front_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.394,
+                  0.369,
+                  0.8068
+                ],
+                "min": [
+                  -1.4448,
+                  -0.254,
+                  0.1046
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a7da81e61e5ac0c5",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                2.8388,
+                0.7022,
+                0.623
+              ],
+              "tris": 720,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 384
+            },
+            "PROC_RegisterCounter_LegB_Return_Grommets_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.966367,
+                  0.295,
+                  0.8651
+                ],
+                "min": [
+                  -0.998167,
+                  0.227,
+                  0.8168
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 72
+              },
+              "geometry_sha256": "9c5452c290635534",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.96453,
+                0.0483,
+                0.068
+              ],
+              "tris": 216,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 144
+            },
+            "PROC_RegisterCounter_LegB_Return_Shelves_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.4224,
+                  0.381,
+                  0.8128
+                ],
+                "min": [
+                  -1.4478,
+                  -0.225,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "cd8f17762b31e3e6",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                2.8702,
+                0.7112,
+                0.606
+              ],
+              "tris": 132,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 88
+            },
+            "PROC_RegisterCounter_LegB_Return_Top_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.4478,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -1.4478,
+                  -0.381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 3
+              },
+              "geometry_sha256": "4097b191339d63e2",
+              "material_slots": [
+                "M_Proc_Quartz_QZ2"
+              ],
+              "size_m_unity_xyz": [
+                2.8956,
+                0.8636,
+                0.762
+              ],
+              "tris": 120,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            }
+          },
+          "size_m_unity_xyz": [
+            2.8956,
+            0.8651,
+            0.762
+          ],
+          "tris": 1236
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_RegisterCounter_LegB_Return_Accents_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.4224,
+                  0.3302,
+                  0.8128
+                ],
+                "min": [
+                  -1.4224,
+                  -0.254,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f1339082700eccad",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                2.8448,
+                0.8128,
+                0.5842
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_RegisterCounter_LegB_Return_Front_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.4224,
+                  0.369,
+                  0.8128
+                ],
+                "min": [
+                  -1.43355,
+                  -0.254,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b132d5fa08a1c265",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                2.85595,
+                0.7112,
+                0.623
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_RegisterCounter_LegB_Return_Grommets_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.966367,
+                  0.295,
+                  0.8651
+                ],
+                "min": [
+                  -0.998167,
+                  0.227,
+                  0.8168
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 48
+              },
+              "geometry_sha256": "ebb1c9506965c7b0",
+              "material_slots": [
+                "M_Proc_Plastic_Black"
+              ],
+              "size_m_unity_xyz": [
+                1.96453,
+                0.0483,
+                0.068
+              ],
+              "tris": 144,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            },
+            "PROC_RegisterCounter_LegB_Return_Shelves_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.4224,
+                  0.381,
+                  0.8128
+                ],
+                "min": [
+                  -1.4478,
+                  -0.225,
+                  0.1016
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "53c0973e16afa1ac",
+              "material_slots": [
+                "M_Proc_Black_ML1"
+              ],
+              "size_m_unity_xyz": [
+                2.8702,
+                0.7112,
+                0.606
+              ],
+              "tris": 96,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 64
+            },
+            "PROC_RegisterCounter_LegB_Return_Top_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.4478,
+                  0.381,
+                  0.8636
+                ],
+                "min": [
+                  -1.4478,
+                  -0.381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 1
+              },
+              "geometry_sha256": "09b78b540aa545b0",
+              "material_slots": [
+                "M_Proc_Quartz_QZ2"
+              ],
+              "size_m_unity_xyz": [
+                2.8956,
+                0.8636,
+                0.762
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 14
+            }
+          },
+          "size_m_unity_xyz": [
+            2.8956,
+            0.8651,
+            0.762
+          ],
+          "tris": 360
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_RegisterCounter_LegB_Return_Front_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.4224,
+                  0.381,
+                  0.8128
+                ],
+                "min": [
+                  -1.4224,
+                  -0.254,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "775ba6be6abb08b1",
+              "material_slots": [
+                "M_Proc_Walnut_WD1"
+              ],
+              "size_m_unity_xyz": [
+                2.8448,
+                0.8128,
+                0.635
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_RegisterCounter_LegB_Return_Top_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  1.4478,
+                  0.381,
+                  0.8651
+                ],
+                "min": [
+                  -1.4478,
+                  -0.381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 1
+              },
+              "geometry_sha256": "09ca9e8878598c3d",
+              "material_slots": [
+                "M_Proc_Quartz_QZ2"
+              ],
+              "size_m_unity_xyz": [
+                2.8956,
+                0.8651,
+                0.762
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 14
+            }
+          },
+          "size_m_unity_xyz": [
+            2.8956,
+            0.8651,
+            0.762
+          ],
+          "tris": 36
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/register_counter_run.json",
+      "params_sha256": "711beba570052804",
+      "plan_rect_ft": [
+        39.5,
+        42.0,
+        9.5,
+        19.0
+      ],
+      "seed": 22001,
+      "station_anchors": [
+        {
+          "components": {
+            "card_terminal": {
+              "asset_id": "PROC_Register_CardTerminal",
+              "position_unity_xyz": [
+                0.723667,
+                0.8636,
+                0.28
+              ],
+              "yaw_deg": 0
+            },
+            "keyboard": {
+              "asset_id": "PROC_Register_Keyboard",
+              "position_unity_xyz": [
+                0.973667,
+                0.8636,
+                -0.17
+              ],
+              "yaw_deg": 180
+            },
+            "pos_monitor": {
+              "asset_id": "PROC_Register_POSMonitor",
+              "position_unity_xyz": [
+                0.973667,
+                0.8636,
+                0.15
+              ],
+              "yaw_deg": 180
+            },
+            "receipt_printer": {
+              "asset_id": "PROC_Register_ReceiptPrinter",
+              "position_unity_xyz": [
+                0.643667,
+                0.8636,
+                -0.1
+              ],
+              "yaw_deg": 180
+            },
+            "scale_stand_slot": {
+              "asset_id": "PROC_Register_ScaleStand",
+              "position_unity_xyz": [
+                1.323667,
+                0.0,
+                -0.56388
+              ],
+              "yaw_deg": 180
+            },
+            "scanner": {
+              "asset_id": "PROC_Register_Scanner_Presentation",
+              "position_unity_xyz": [
+                1.273667,
+                0.8636,
+                -0.05
+              ],
+              "yaw_deg": 180
+            }
+          },
+          "position_unity_xyz": [
+            0.973667,
+            0.8636,
+            0.0
+          ],
+          "register": 10,
+          "slot_width_m": 0.94827,
+          "station_id": "Register_10"
+        },
+        {
+          "components": {
+            "card_terminal": {
+              "asset_id": "PROC_Register_CardTerminal",
+              "position_unity_xyz": [
+                -0.2246,
+                0.8636,
+                0.28
+              ],
+              "yaw_deg": 0
+            },
+            "keyboard": {
+              "asset_id": "PROC_Register_Keyboard",
+              "position_unity_xyz": [
+                0.0254,
+                0.8636,
+                -0.17
+              ],
+              "yaw_deg": 180
+            },
+            "pos_monitor": {
+              "asset_id": "PROC_Register_POSMonitor",
+              "position_unity_xyz": [
+                0.0254,
+                0.8636,
+                0.15
+              ],
+              "yaw_deg": 180
+            },
+            "receipt_printer": {
+              "asset_id": "PROC_Register_ReceiptPrinter",
+              "position_unity_xyz": [
+                -0.3046,
+                0.8636,
+                -0.1
+              ],
+              "yaw_deg": 180
+            },
+            "scale_stand_slot": {
+              "asset_id": "PROC_Register_ScaleStand",
+              "position_unity_xyz": [
+                0.3754,
+                0.0,
+                -0.56388
+              ],
+              "yaw_deg": 180
+            },
+            "scanner": {
+              "asset_id": "PROC_Register_Scanner_Presentation",
+              "position_unity_xyz": [
+                0.3254,
+                0.8636,
+                -0.05
+              ],
+              "yaw_deg": 180
+            }
+          },
+          "position_unity_xyz": [
+            0.0254,
+            0.8636,
+            0.0
+          ],
+          "register": 9,
+          "slot_width_m": 0.94827,
+          "station_id": "Register_09"
+        },
+        {
+          "components": {
+            "card_terminal": {
+              "asset_id": "PROC_Register_CardTerminal",
+              "position_unity_xyz": [
+                -1.172867,
+                0.8636,
+                0.28
+              ],
+              "yaw_deg": 0
+            },
+            "keyboard": {
+              "asset_id": "PROC_Register_Keyboard",
+              "position_unity_xyz": [
+                -0.922867,
+                0.8636,
+                -0.17
+              ],
+              "yaw_deg": 180
+            },
+            "pos_monitor": {
+              "asset_id": "PROC_Register_POSMonitor",
+              "position_unity_xyz": [
+                -0.922867,
+                0.8636,
+                0.15
+              ],
+              "yaw_deg": 180
+            },
+            "receipt_printer": {
+              "asset_id": "PROC_Register_ReceiptPrinter",
+              "position_unity_xyz": [
+                -1.252867,
+                0.8636,
+                -0.1
+              ],
+              "yaw_deg": 180
+            },
+            "scale_stand_slot": {
+              "asset_id": "PROC_Register_ScaleStand",
+              "position_unity_xyz": [
+                -0.572867,
+                0.0,
+                -0.56388
+              ],
+              "yaw_deg": 180
+            },
+            "scanner": {
+              "asset_id": "PROC_Register_Scanner_Presentation",
+              "position_unity_xyz": [
+                -0.622867,
+                0.8636,
+                -0.05
+              ],
+              "yaw_deg": 180
+            }
+          },
+          "position_unity_xyz": [
+            -0.922867,
+            0.8636,
+            0.0
+          ],
+          "register": 8,
+          "slot_width_m": 0.94827,
+          "station_id": "Register_08"
+        }
+      ],
+      "tri_budget": {
+        "LOD0": 150000,
+        "LOD1": 75000,
+        "LOD2": 37500,
+        "LOD3": 15000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Register/PROC_RegisterCounter_LegB_Return.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.2,
+        "scuffs": 0.3,
+        "seed": 22001
+      }
+    },
     "PROC_Register_CardTerminal": {
       "collision_boxes": [
         {

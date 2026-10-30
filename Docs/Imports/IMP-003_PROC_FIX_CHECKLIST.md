@@ -110,14 +110,15 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [x] **R5** monitor/stand sizes: GAP-PROC-14.
 
 ## 5. Register counter run (round 2): `generators/register_counter_run.py`, `params/register_counter_run.json`
-- [ ] **RC1 L layout:** sides from DEC-039 (south 7,2,3,4,5,6; east 12,11; north 10,9,8 = 11 stations), plan bbox 20.0–42.0 × 7.0–19.0 ft (RI §1.5). Generate L segments + a corner. `station_anchors` carry the DEC-039 register numbers.
-- [ ] **RC2 counter per TI §6.4:** top ≤ **34 in (0.864)**, top depth **2'-6" (0.762)**, 2 in edge, **4 in base**; white quartz QZ-2 top, walnut veneer WD-1 front, ML-1 black accents; **open black shelves underneath** (R2C3). Currently 0.96 / 0.74, brown, closed.
-- [ ] **RC3** station components:
+**PROC-005 done:** rewritten as two L legs: `LegA_Run` 22.0 ft and `LegB_Return` 9.5 ft, butting the run, with `plan_rect_ft` from RI §1.5. Built to TI §6.4: QZ-2 top, waterfall ends, walnut front with ML-1 reveals, staff-side two-drawer cabinets with HW-2 pulls and open black shelves, a grommet per station. `station_anchors` carry the DEC-039 numbers and component slots (monitor, keyboard, printer, scanner, card terminal, floor scale-stand slot with yaw). **Draft mapping:** LegA 7,2,3,4,5,6,12,11 and LegB 10,9,8. This is ART's call (DEC-039, GAP-106), and it is flagged in the handoff. RC4: `display_case_slot` on LegA. LOD0 is 4.5k / 1.8k tris against the hero guide of 30k (warning).
+- [x] **RC1 L layout:** sides from DEC-039 (south 7,2,3,4,5,6; east 12,11; north 10,9,8 = 11 stations), plan bbox 20.0–42.0 × 7.0–19.0 ft (RI §1.5). Generate L segments + a corner. `station_anchors` carry the DEC-039 register numbers.
+- [x] **RC2 counter per TI §6.4:** top ≤ **34 in (0.864)**, top depth **2'-6" (0.762)**, 2 in edge, **4 in base**; white quartz QZ-2 top, walnut veneer WD-1 front, ML-1 black accents; **open black shelves underneath** (R2C3). Currently 0.96 / 0.74, brown, closed.
+- [x] **RC3** station components:
   - remove `cash_drawer`;
   - `scale_stand_slot` on the **floor, staff side, to the staff's right of the monitor** (RI §2.2), not at `y = h`;
   - add keyboard, receipt-printer and **card-terminal** slots (DEC-086).
-- [ ] **RC4** countertop display case slot on the run (plan 1.4 × 1.4 ft at x 38–39.4, RI §1.5; "lit black glass", R3C2), using §15.
-- [ ] **RC5** per-station width: GAP.
+- [x] **RC4** countertop display case slot on the run (plan 1.4 × 1.4 ft at x 38–39.4, RI §1.5; "lit black glass", R3C2), using §15.
+- [x] **RC5** per-station width: GAP.
 
 ## 6. Deli jar wall + deli counter (round 2): `generators/deli_counter_jar_wall.py`, `params/deli_counter_jar_wall.json`
 - [ ] **D1 jar wall runs** per RI §1.5: north 26.0 × 1.2 ft, south (between arches) 21.2 × 1.2 ft, east 1.4 × 14.0 ft. Run width and sections are params; shelves are **dark-grey metal** (DEC-043) on a teal leaf-pattern backlit back (R2C3, photo 11).
