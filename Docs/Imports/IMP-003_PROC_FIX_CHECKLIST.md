@@ -92,7 +92,7 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
   - **FOH rolling racks** (`Rack_Rolling_1–4`): **3 shelves including the top**; **small wheels**, **4 casters**, 2 per side at the ends.
   - **BOH chrome runs**: **4-ft sections** (`bays`, W5). The **middle sections also roll** (casters); end sections are fixed (feet). This needs per-section `caster_enabled`.
   - Post, wire, collar and caster/foot dimensions stay GAP-PROC-13.
-- [ ] **W8 REF follow-up (do not guess):** RF `Rack_East_Wall` is 8.7 ft and `Rack_West_Run` 8.0 ft (2-bay). In 4-ft sections that is 2 sections, which leaves no "middle" section to roll, and 8.7 is not a multiple of 4. Model 2 fixed sections for now and list the run lengths/section counts for the next REF pass (GAP-127).
+- [ ] **W8 REF follow-up for the PROC worker (do not guess; Hub-confirmed open item):** RF `Rack_East_Wall` is 8.7 ft and `Rack_West_Run` 8.0 ft (2-bay). In 4-ft sections that is 2 sections, which leaves no "middle" section to roll, and 8.7 is not a multiple of 4. Model 2 fixed sections for now and list the run lengths/section counts for the next REF pass (GAP-127).
 
 ## 4. Register station: `generators/register_station.py`, `params/register_station.json`
 - [ ] **R1 remove `CashDrawer`** (variant + `_cash_drawer`): no cash-handling equipment (DEC-051, RI REF-009 rule). [C1]
@@ -121,7 +121,7 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [ ] **D2 shelf heights:** default to the store display family, a 34 in base then 1'-2" shelf pitch (TI §6.4, Med), instead of an even spread. Wall height: GAP.
 - [ ] **D3 slot count from data, not a fixed 7 × 4:** one jar per strain, house deli ×2 (DEC-079); ~77 jars (PP). Expose the slot grid as params; the game assigns strains.
 - [ ] **D4** keep slot size = `PROC_DeliJar` (6.0 × 10.25 × 5.5 in, REF-007) and bottom-centre anchors (already correct).
-- [ ] **D5 deli counter is an L** (bbox 14.0–34.2 × 18.0–25.2 ft, RI §1.5), "DELI STYLE" **teal/white checker tile front** (R2C1/R2C2; Q5 re-asked of Nolan, DEC-088: keep tile-front as the placeholder), with globe pendants at the west end. Replace the clear acrylic front. Height/depth: GAP (not in TI, GAP-113).
+- [ ] **D5 deli counter is an L** (bbox 14.0–34.2 × 18.0–25.2 ft, RI §1.5), "DELI STYLE" front = **plywood with a decorative wrap** (DEC-090, Med); the teal/white checker in R2C1/R2C2 is the **wrap print** (a texture on the plywood front, not real tile), with globe pendants at the west end. Replace the clear acrylic front. **No glass case on top is stated**: keep it as an optional placeholder param (GAP-PROC-14). Height/depth: GAP (not in TI, GAP-113).
 
 ## 7. Glass-door cooler + fridges: `generators/glass_door_cooler.py`, `params/glass_door_cooler.json`
 - [ ] **K1** 2-door = RF `Cooler_GlassDoor_2Door` **4.0 × 2.5 × 6.5 ft**, black frame, lit. Drop or keep SingleDoor as a demo only.
