@@ -7,6 +7,7 @@
 **Primary source basis:** `References/Review_Budtender_Tool_Comprehensive_Chat_Record.md`  
 **Status:** Canonical gameplay design for reconstruction unless later user decisions override it
 **Extended:** 2026-10-30 by DES-003 with `Design/SPEC_DECISION_PRESSURE.md` (Nolan's decision-pressure spec, cited below as DP §n). Item-by-item status: `Design/DES-003_RECONCILIATION.md`.
+**Add-on:** 2026-10-30 by IMP-002 with `Design/DESIGN_V2/` (Nolan's V2 pack, cited as V2 `<file>` §n; audit `Imports/IMP-001_DESIGN_V2_AUDIT.md`, approval DEC-063). **Precedence:** DP wins over V2 where they differ (DEC-063a). REVIEW-IMP1 A1–A4 bind (oracle = shipped engine per DEC-060; TFS snapshot = parser input per DEC-057; no TFS scores/ranks in the report per DEC-052; EMPTY_WITH_BACKSTOCK per DEC-055/061). V2 numbers are [GDD] starting values (GAP-DP-02).
 
 ---
 
@@ -1060,6 +1061,7 @@ DP §71–86 refinements:
 - Promotion unlocks **control** (responsibility, information, decisions, authority), never a better recommendation engine (DP §81).
 - Phase 2 adds receiving, stock movement, floor prioritisation, limited staff calls, more categories and more complex shifts; Phase 3 adds opening readiness, closing review, staff assignments, inventory exceptions, deal awareness, floor coverage and shift preparation; Phase 4 adds ordering, staffing, merchandising, deal strategy and inventory planning (DP §82–85).
 - The floor game never disappears: a manager can still take a register, help a difficult customer, restock or resolve an escalation (DP §86).
+- Promotion evidence (DEC-063b): V2 model replaces the DP §79 rolling update for gating: per competency, the median of the last 6 eligible shifts, at most one shift below gate − 10, fewer than 4 eligible shifts = insufficient evidence, a repeated seed gives no new evidence (V2 `05_PROGRESSION_CAREER.md` §5, §11). Gate values start at the gentler DP §80 levels [GDD] (GAME-024).
 
 ---
 
@@ -1078,6 +1080,7 @@ Difficulty should change:
 It should not make recommendation science randomly wrong.
 
 Difficulty acts on information, complexity, scarcity and concurrency, not reaction speed (DP §66). Identical TFS input + inventory + pricing gives identical TFS output in every difficulty mode; this is a hard regression gate (DP §124, DP-028). Profile fields: DP §67.
+V2 add-on (DEC-063): starting preset numbers and a per-shift PressureBudget that caps stacked pressures (V2 `04_DIFFICULTY_SYSTEM.md` §4–5; GAME-022). Ambiguity uses DP's tiers 0–4, not V2's 0–3.
 
 ---
 

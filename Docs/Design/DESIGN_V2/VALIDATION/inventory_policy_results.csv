@@ -1,0 +1,7 @@
+policy,fill_rate_pct,contribution,unmet,waste,holding_burden,end_inventory_value,end_cash,seeds,shifts_per_seed
+balanced,81.01,2736.78,79.18,3.98,207.36,140.15,3860.93,45,50
+breadth,79.24,2460.92,87.67,3.93,159.09,105.61,3571.34,45,50
+depth,74.2,1989.83,106.4,1.6,164.15,107.68,3103.24,45,50
+margin,62.24,2704.96,158.91,0.3,130.36,69.55,3822.7,45,50
+everything,97.67,2581.43,9.78,71.01,549.36,371.86,3815.87,45,50
+

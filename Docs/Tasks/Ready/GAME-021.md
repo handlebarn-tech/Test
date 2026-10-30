@@ -20,5 +20,11 @@ SPEC_DECISION_PRESSURE §53–60, §115 (DP-012, DP-021..024), §128; `Docs/GAME
 ## Validation
 Compile / EditMode / PlayMode green; QA-002 gate green. Tests: DP-012 decisive regular (fast service is optimal), DP-021 positive repeat (faster query, engine still the authority), DP-022 "too sleepy" history becomes a KNOWN avoidance the player can put into the query, no hidden reranking, DP-023 Strain X batch A → batch B follows the engine's current batch, DP-024 favourite sold out → engine Similar list. Memory never holds PII (field whitelist test). DEC-013 gate.
 
+## V2 additions (IMP-002, DEC-063)
+V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). Row n = `Docs/Imports/IMP-001_DESIGN_V2_AUDIT.md` §2 row. All V2 numbers are [GDD] starting values (GAP-DP-02). Exploit tests: `DESIGN_V2/QA_TEST_PLAN.md`.
+- Repeat templates as content targets: exact repeat, "like last time", prior item sold out, same strain/new batch, changed use, prior dissatisfaction, budget changed, wants less/more consultation, same-day return (DEC-049) (V2 `02_CUSTOMER_GENERATION_BIBLE.md` §19; row 23).
+- `repeatCustomerRate` starts at 10–20 % of a Standard shift once the pool matures (V2 `09_CONTENT_LONGEVITY.md` §7; row 23).
+- History is context, never current truth: a changed-preference repeat must need a current question (EX-056). Prior satisfaction never reaches TFS (EX-057, DEC-053; V2 `02_CUSTOMER_GENERATION_BIBLE.md` §19–20; rows 23–24).
+
 ## Handoff
 `Docs/Handoffs/GAME-021.md` (≤40 lines). Questions go to the Studio Hub (DEC-033).
