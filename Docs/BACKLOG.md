@@ -15,7 +15,7 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | ASSET-001 | P1 | $0 asset license ledger + acquisition list | — | Done |
 | GAME-002 | P0 | Vertical-slice shift loop: customer intent → recommend UI → sale → inventory/visual change | ART-001, GAME-001, DES-001, UX-001 | Done |
 | GAME-003 | P1 | Full NL parser port (all RC goldens), exclusions, compare, Similar | GAME-001 | Done |
-| PERF-001 | P2 | Machine performance baseline in graybox | ART-001 | Later |
+| PERF-001 | P2 | Machine performance baseline in graybox | ART-001 | Active |
 | PROC-001 | P1 | Blender headless wrapper + first generators (deli jar / package base) | — | Done |
 | REVIEW-W2A | P0 | Review GAME-001 + PROC-001 | GAME-001, PROC-001 | Done (GO with notes) |
 | REVIEW-W2B | P0 | Review DES-001 + UX-001 + ASSET-001 | DES/UX reconcile | Done (GO with notes) |
