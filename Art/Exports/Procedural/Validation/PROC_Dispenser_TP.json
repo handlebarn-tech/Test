@@ -2,17 +2,17 @@
   "asset_id": "PROC_Dispenser_TP",
   "collision_boxes": 0,
   "errors": [],
-  "export_sha256": "d89cc68b3985ad99",
+  "export_sha256": "9c4f0a19dfd70ace",
   "generator": "restroom",
   "lod_tris": {
-    "LOD0": 252,
-    "LOD1": 156,
-    "LOD2": 76,
+    "LOD0": 1628,
+    "LOD1": 772,
+    "LOD2": 356,
     "LOD3": 12
   },
-  "params_sha256": "30eb24be4ca5149d",
+  "params_sha256": "7ce35d46c0ce158d",
   "passed": true,
   "warnings": [
-    "LOD0 252 tris below the DEC-084 guide minimum 5000 (too simple?)"
+    "LOD0 1628 tris below the DEC-084 guide minimum 5000 (too simple?)"
   ]
 }

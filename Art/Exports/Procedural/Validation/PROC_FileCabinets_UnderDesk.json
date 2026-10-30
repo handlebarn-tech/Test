@@ -2,18 +2,17 @@
   "asset_id": "PROC_FileCabinets_UnderDesk",
   "collision_boxes": 1,
   "errors": [],
-  "export_sha256": "f5c69285ec5cc5cb",
+  "export_sha256": "9410c2a354aa1f13",
   "generator": "office_fixtures",
   "lod_tris": {
-    "LOD0": 2168,
-    "LOD1": 1544,
-    "LOD2": 1040,
+    "LOD0": 6376,
+    "LOD1": 3052,
+    "LOD2": 1180,
     "LOD3": 24
   },
-  "params_sha256": "5a4a38147c2d9dad",
+  "params_sha256": "d06038e518e4961e",
   "passed": true,
   "warnings": [
-    "LOD0 2168 tris below the DEC-084 guide minimum 20000 (too simple?)",
-    "LOD2: 1040 tris > 40% of LOD0 (guide 1/2, 1/4, <= 1/10)"
+    "LOD0 6376 tris below the DEC-084 guide minimum 20000 (too simple?)"
   ]
 }

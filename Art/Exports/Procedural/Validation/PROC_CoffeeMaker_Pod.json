@@ -2,17 +2,17 @@
   "asset_id": "PROC_CoffeeMaker_Pod",
   "collision_boxes": 1,
   "errors": [],
-  "export_sha256": "1ca462be5647213d",
+  "export_sha256": "86344977d524befb",
   "generator": "break_room",
   "lod_tris": {
-    "LOD0": 300,
-    "LOD1": 204,
-    "LOD2": 48,
+    "LOD0": 1120,
+    "LOD1": 624,
+    "LOD2": 132,
     "LOD3": 12
   },
-  "params_sha256": "b69907bc8ac355f5",
+  "params_sha256": "e26ffa559c6e8ca0",
   "passed": true,
   "warnings": [
-    "LOD0 300 tris below the DEC-084 guide minimum 5000 (too simple?)"
+    "LOD0 1120 tris below the DEC-084 guide minimum 5000 (too simple?)"
   ]
 }

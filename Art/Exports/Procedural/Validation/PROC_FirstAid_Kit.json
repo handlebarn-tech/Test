@@ -2,17 +2,17 @@
   "asset_id": "PROC_FirstAid_Kit",
   "collision_boxes": 0,
   "errors": [],
-  "export_sha256": "9a5c5be548ea6a76",
+  "export_sha256": "fb7b54ee5e0f5015",
   "generator": "break_room",
   "lod_tris": {
-    "LOD0": 128,
-    "LOD1": 96,
-    "LOD2": 36,
+    "LOD0": 804,
+    "LOD1": 436,
+    "LOD2": 70,
     "LOD3": 12
   },
-  "params_sha256": "b69907bc8ac355f5",
+  "params_sha256": "e26ffa559c6e8ca0",
   "passed": true,
   "warnings": [
-    "LOD0 128 tris below the DEC-084 guide minimum 5000 (too simple?)"
+    "LOD0 804 tris below the DEC-084 guide minimum 5000 (too simple?)"
   ]
 }

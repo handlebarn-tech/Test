@@ -2,18 +2,17 @@
   "asset_id": "PROC_Table_Lunch",
   "collision_boxes": 1,
   "errors": [],
-  "export_sha256": "23d021e95501ee5c",
+  "export_sha256": "9f5452ec05eb07fb",
   "generator": "break_room",
   "lod_tris": {
-    "LOD0": 200,
-    "LOD1": 168,
-    "LOD2": 72,
+    "LOD0": 1228,
+    "LOD1": 540,
+    "LOD2": 108,
     "LOD3": 24
   },
-  "params_sha256": "b69907bc8ac355f5",
+  "params_sha256": "e26ffa559c6e8ca0",
   "passed": true,
   "warnings": [
-    "LOD0 200 tris below the DEC-084 guide minimum 20000 (too simple?)",
-    "LOD1: 168 tris > 75% of LOD0 (guide 1/2, 1/4, <= 1/10)"
+    "LOD0 1228 tris below the DEC-084 guide minimum 20000 (too simple?)"
   ]
 }

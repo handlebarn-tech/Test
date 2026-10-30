@@ -72,6 +72,8 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 
 ## 3. Wire shelving: `generators/wire_shelving.py`, `params/wire_shelving.json` (+ janitor supply rack)
 **PROC-005 done:** new generator (drop 1 rewritten); 8 RF variants pass validation, byte-identical reruns. W1: no bracket in the new foot design. W5/W7: per-section `casters`; mixed runs are abutting units. W8: East Wall and West Run are modelled as 2 fixed sections, and the run lengths/section counts are left for the next REF pass (GAP-127). P1–P6 and Q0.1/Q0.5 are met for this family; Q1 wire-rack detail is done except bins/trays (moved to §16 X5). Unity import is not checked yet.
+
+**PROC-005 fix wave (REVIEW-PROC5):** Shelf counts/heights and the South_Wall single section are now cited per variant or GAP-PROC-29. FBX byte-identical; only the params sha changed.
 - [x] **W1** `_feet()` crashes on a zero-length bracket when `foot_radius_m == collar_outer_diameter_m/2`: skip the bracket if its length is < 1e-6. [B3]
 - [x] **W2** wire pattern: dense front-to-back wires + a few long wires (C9), not a square grid. Check against tiles `wall2_R4C1`, `BOH_still`. [G1]
 - [x] **W3** floating wires: extend the grid to the rail line and set the rails at the grid plane (or add a truss). [G2]
@@ -99,6 +101,8 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 
 ## 4. Register station: `generators/register_station.py`, `params/register_station.json`
 **PROC-005 done:** rewritten generator with 7 variants (ScaleStand, POSMonitor + VESA stand, Scanner_Presentation, Scanner_Barcode handheld in its stand, Keyboard, ReceiptPrinter, CardTerminal); no cash drawer. All pass validation with byte-identical reruns. LOD0 is below the DEC-084 lower guide on every variant except the keyboard: ScaleStand 3.8k (guide 20k), monitor 2.0k, terminal 1.1k, scanners 0.5k, printer 0.4k. Validation warns on these; see the PROC-005 handoff question. Q1 register detail is done for the scale stand, monitor and scanner.
+
+**PROC-005 fix wave (REVIEW-PROC5):** POS props rebuilt as unbranded electronics. Monitor: stepped bezel, vents, VESA plate, tilt hinge, rubber feet. Keyboard: gapped caps. Printer: clamshell seam and tear bar. Card terminal: chip/stripe slots and swivel stand. Scanners: window bezels and cable. Every value cited or GAP-PROC-14/22. LOD0 0.5-7.3k (DEC-114).
 - [x] **R1 remove `CashDrawer`** (variant + `_cash_drawer`): no cash-handling equipment (DEC-051, RI REF-009 rule). [C1]
 - [x] **R2 scale stand per RI §2.2:**
   - footprint 1.6 × 1.3 ft; top 2.5 ft;
@@ -112,6 +116,8 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 
 ## 5. Register counter run (round 2): `generators/register_counter_run.py`, `params/register_counter_run.json`
 **PROC-005 done:** rewritten as two L legs: `LegA_Run` 22.0 ft and `LegB_Return` 9.5 ft, butting the run, with `plan_rect_ft` from RI §1.5. Built to TI §6.4: QZ-2 top, waterfall ends, walnut front with ML-1 reveals, staff-side two-drawer cabinets with HW-2 pulls and open black shelves, a grommet per station. `station_anchors` carry the DEC-039 numbers and component slots (monitor, keyboard, printer, scanner, card terminal, floor scale-stand slot with yaw). **Draft mapping:** LegA 7,2,3,4,5,6,12,11 and LegB 10,9,8. This is ART's call (DEC-039, GAP-106), and it is flagged in the handoff. RC4: `display_case_slot` on LegA. LOD0 is 4.5k / 1.8k tris against the hero guide of 30k (warning).
+
+**PROC-005 fix wave (REVIEW-PROC5):** Re-mapped to RF rev7 (RI §1.5 rows 98/101): `Counter_Register_North` (10/9/8), `_EastReturn` (12/11, GAP-130), `_South` (7,2,3,4,5,6, GAP-129) and `_SouthReturn`. LegA/LegB dropped; GAP-106 cite removed; backsplash height is GAP-PROC-19. TI §6.4 construction: waterfall top, banded gables, POS drawer cabinets with HW-2 pulls, open shelf bays, toe kicks, wrap seams, grommets. Exported staff side front. LOD0 1.2-11k.
 - [x] **RC1 L layout:** sides from DEC-039 (south 7,2,3,4,5,6; east 12,11; north 10,9,8 = 11 stations), plan bbox 20.0–42.0 × 7.0–19.0 ft (RI §1.5). Generate L segments + a corner. `station_anchors` carry the DEC-039 register numbers.
 - [x] **RC2 counter per TI §6.4:** top ≤ **34 in (0.864)**, top depth **2'-6" (0.762)**, 2 in edge, **4 in base**; white quartz QZ-2 top, walnut veneer WD-1 front, ML-1 black accents; **open black shelves underneath** (R2C3). Currently 0.96 / 0.74, brown, closed.
 - [x] **RC3** station components:
@@ -123,6 +129,8 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 
 ## 6. Deli jar wall + deli counter (round 2): `generators/deli_counter_jar_wall.py`, `params/deli_counter_jar_wall.json`
 **PROC-005 done:** rewritten. Jar walls North 26.0 × 1.2 ft, South 21.2 × 1.2 ft and East 14.0 × 1.4 ft: black-top base cabinet with walnut two-row drawers and silver cup pulls; lipped dark-grey sheet shelves on black standards and brackets at 34 in + 1'-2" pitch; teal backlit panel with LED strips; checker band. Jar slots on 3 tiers of PROC_DeliJar size: 123 / 99 / 63 slots, filled by the game. Deli counter in two L legs: plywood sheets with seams and ply edges carrying the `Wrap_DeliChecker` material, black top, open staff shelves; `case_on_top` placeholder, default off. Its GAP id is GAP-PROC-16, not 14, because 14 is the register station's. Not modelled: tong cups (DEC-043); arches and globe pendants (architecture/lighting kit); the leaf and checker patterns, which are textures (Q0.3). Wall height 7 ft and counter depth 2.5 ft / height 34 in are GAP-PROC-16/GAP-113. LOD0 is below the guide (warnings): walls 2.6–4.6k, counter 0.2–0.3k.
+
+**PROC-005 fix wave (REVIEW-PROC5):** DeliCounter_LegA/LegB dropped: that L is the south register run (RI §1.5 row 101). Jar walls use RF depth 2.1 ft (0.64 m) and RF ids; the shelf pitch is no longer cited to TI (GAP-113). Fittings per RF note: North walnut drawers, South open bins (GAP-PROC-25), East arched bays with backlit teal (GAP-PROC-26). Rebuilt as joinery. LOD0 8-64k.
 - [x] **D1 jar wall runs** per RI §1.5: north 26.0 × 1.2 ft, south (between arches) 21.2 × 1.2 ft, east 1.4 × 14.0 ft. Run width and sections are params; shelves are **dark-grey metal** (DEC-043) on a teal leaf-pattern backlit back (R2C3, photo 11).
 - [x] **D2 shelf heights:** default to the store display family, a 34 in base then 1'-2" shelf pitch (TI §6.4, Med), instead of an even spread. Wall height: GAP.
 - [x] **D3 slot count from data, not a fixed 7 × 4:** one jar per strain, house deli ×2 (DEC-079); ~77 jars (PP). Expose the slot grid as params; the game assigns strains.
@@ -131,6 +139,8 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 
 ## 7. Glass-door cooler + fridges: `generators/glass_door_cooler.py`, `params/glass_door_cooler.json`
 **PROC-005 done:** new generator with 3 RF variants; the SingleDoor demo is dropped.
+
+**PROC-005 fix wave (REVIEW-PROC5):** Rebuilt as a real merchandiser (double-glazed framed doors, gaskets, hinge covers, louvred kick, liner pilasters, 5 clipped wire shelves) and real fridges (pillowed doors, gaskets, grille, levellers). Magnets are a seeded mixed assortment. Shelf count, magnets and the fridge body colour are GAP-PROC-28. LOD0 3.7-15.2k.
 - **Cooler:** black frame, lit interior with LED strips, wire shelves with clips and tag rails, louvred grille, blank plate, door closers. Each door is `DoorFrame_nn` + `Glass_nn` + `Handle_nn` + `Gasket_nn`, with a `moving_parts` hinge and a `group` list. Handles stand off the face (8 sides, C11).
 - **Fridges:** freezer/fresh doors with seals, pulls and hinge caps. `Fridge_Magnets` has a seeded magnet layer on the right side (GAP-PROC-17).
 - **Contents:** per DEC-050, recorded as text only.
@@ -143,6 +153,8 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 
 ## 8. Office: `generators/office_fixtures.py`, `params/office_fixtures.json`
 **PROC-005 done:** new generator with 10 RF assets. Tall black cabinet: plain box, `doors: false`. Under-desk file run: 3 black 2-drawer units with standoff pulls, label holders, a lock and slide axes. Standing desk on T-legs. West arm and corner piece: black laminate; the corner piece is straight and forms the L when placed against the west arm. Ex-register-1 desk: white top. Stainless worktable with folding braces. Mesh task chair: 5-star base, twin wheels, gas lift, arms. Stainless deli prep cart: 2 shelves, push handle, blank rail label. Black wire basket cart. DrawerCart removed. O1: pulls are proud, so no z-fight. Sizes are GAP-PROC-18. LOD0 is 0.1–3.2k (warning; the plain cabinet is 104 tris by design, DEC-051 Q9).
+
+**PROC-005 fix wave (REVIEW-PROC5):** Rebuilt as real furniture: banded laminate tops, tube frames, 3-stage standing desk, gapped file drawers with locks, five-star mesh chair, hemmed folding worktable (no undershelf, GAP-PROC-33), caster carts. Finishes not in RF are GAP-PROC-31 mid grey; counts and hardware are GAP-PROC-32. LOD0 3.5-10.6k.
 - [x] **O1 handles z-fight** (inside door/drawer fronts, coplanar) on TallStorageCabinet and FilingCabinet: use `add_handle_pull` / proud handles. [S5]
 - [x] **O2** TallStorageCabinet = RF `Cabinet_Tall_Black_A/B` **2.4 × 2.0 × 5.0 ft, black, plain closed box, no hardware** (DEC-051 Q9): add `doors: false`.
 - [x] **O3** FilingCabinet = RF `FileCabinets_UnderDesk`: several **black** cabinets under the standing desk, run 3.4 × 1.8 × **2.4 ft**, so each is ≤ 0.73 m tall with ~2 drawers.
@@ -156,6 +168,8 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 
 ## 9. Break room: `generators/break_room.py`, `params/break_room.json`
 **PROC-005 done:** new generator with 17 RF assets.
+
+**PROC-005 fix wave (REVIEW-PROC5):** Rebuilt: louvred hemmed lockers, plank bench, mitred board frames, counters with toe kick and pulls, coved sink and gooseneck, appliances with keypads, vents and feet. Hook count 5 is GAP-PROC-35 (rail only). Finishes are cited from BAND_03 or GAP-PROC-34/36. Backsplash is GAP-PROC-19. LOD0 0.14-15k.
 - **Lockers:** one 2.0 × 1.5 × 6.0 ft unit with 2 × 6 doors. Louvres are real slat gaps onto the dark interior. Latch, blank plate, hinge knuckles; hinge metadata on every LOD.
 - **Furniture and boards:** wood bench on black steel legs; 5 boards; lunch table; first-aid kit.
 - **Counters:** North run and East return in light wood with a black 34 in top and backsplash; the return has the sink cut-out. North uppers.
@@ -175,6 +189,8 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 
 ## 10. Restroom: `generators/restroom.py`, `params/restroom.json`
 **PROC-005 done:** new generator with 13 assets.
+
+**PROC-005 fix wave (REVIEW-PROC5):** Rebuilt: hemmed sheet-metal dispensers with locks and windows, mitred channel mirror, panel cabinets with hinges and shelves, 3-screw grab-bar flanges, toilet and lavatory detail. Accessory finishes are GAP-PROC-37; storage-cabinet shelves and doors are GAP-PROC-38. Grab-bar depth keeps 3 in with a `_note`. LOD0 0.7-4.3k.
 - **Lavatory:** wall-hung, with an open lofted basin: no top cap, so no z-fight. Overflow, drain, faucet, brackets, exposed P-trap and supplies.
 - **Mirror:** TI 1'-8" × 3'-6" with a stainless frame, `mount_z_m` 3'-4".
 - **Toilet:** bowl cavity, seat + lid, hinges, tank, lever.
@@ -196,6 +212,8 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 
 ## 11. Janitor closet: `generators/janitor_props.py`, `params/janitor_props.json`, `params/janitor_supply_rack.json`
 **PROC-005 done:** rewritten. MopSink_JC is RF 1.6 × 1.5 × 1.0 ft: open moulded basin, drain grate, stainless splash guards (+0.3 m, `_note`). Mops_Brooms_JC: string mop with strands, broom with bristle tufts, wall holder rail. Mop bucket with wringer and casters, hollow. Every asset has collision boxes (J3). The supply rack is the `wire_shelving` variant (J2), so no separate params file. Rack contents (bottles, rags) belong to §16 clutter. LOD0 0.3–1.0k (warning).
+
+**PROC-005 fix wave (REVIEW-PROC5):** Rebuilt: moulded mop sink with strainer and screwed guards, holder rail, string mop, broom. The bucket is a labelled GAP-PROC-30 placeholder (not in DEC-062/RF), and the DEC-079 cite is removed. All colours are GAP-PROC-30 neutral greys. LOD0 1.5-8.7k.
 - [x] **J1** mop sink = RF `MopSink_JC` **1.6 × 1.5 × 1.0 ft**.
 - [x] **J2** supply rack = RF `Rack_CleaningSupplies_JC` 2.0 × 1.2 × 5.0 ft: done as a `wire_shelving` variant (PROC-005).
 - [x] **J3** collision on mop/broom/bucket (claimed fix, not delivered): add per C1, or set `require_collision: false` for those variants.
@@ -282,6 +300,7 @@ Measured LOD0 tris (IMP-003 sandbox runs) vs the DEC-084 LOD0 guides:
   - Unity's LODGroup is built from the `_LOD<n>` suffix (PP), so no extra wiring is needed.
 - [ ] **Q0.2 UVs:** replace the 1 UV = 1 m box projection (`UVMap_Main`) on hero/fixture parts with proper unwraps or a **trim-sheet** layout at a stated texel density. ART sets the target (GAP until set). Keep `UVMap_Label` for label regions.
 - [ ] **Q0.3 PBR textures:** 2K for props, 4K for hero fixtures/jars/counters (DEC-084). They come from the DEC-023 cache (§19 M1), upgraded from the round-2 `1k` to 2K/4K, or are baked from the procedural detail (normal/AO/curvature) in the pipeline. Record each texture's source in `LICENSE_LEDGER.md`.
+  - **PROC-005 fix wave:** partly done for the fixture families. `proctex.py` bakes 18 tileable 2K finish sets from procedural detail (normal/smoothness/albedo variation), at 2048-20480 px/m; the `Wear` vertex attribute covers Q0.4 edge wear. Licence: original, generated in-repo. Still owed: the Unity material builder and import settings, and the jars/packaged goods.
 - [ ] **Q0.4 wear:**
   - seeded per-instance variation params: edge wear, scuffs, fingerprints on glass and acrylic, sticker residue, floor-tape wear;
   - deterministic from `seed`, which most families record but never use.

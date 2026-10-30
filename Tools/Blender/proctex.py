@@ -280,13 +280,18 @@ def preview_material(mat, key, p):
     attr.attribute_name = "Wear"
     sep = nn("ShaderNodeSeparateColor")
     ln(attr.outputs["Color"], sep.inputs[0])
+    # Vertex values interpolate across whole faces whose corners all sit on edges; keep only the sharp end of R so
+    # a flat panel does not read as worn (a bevel vertex scores ~0.5, a hard 90-degree corner 1.0).
+    sharp = nn("ShaderNodeMapRange")
+    sharp.inputs["From Min"].default_value, sharp.inputs["From Max"].default_value = 0.6, 1.0
+    ln(sep.outputs[0], sharp.inputs["Value"])
     edge = nn("ShaderNodeMath")
     edge.operation = "MULTIPLY"
     edge.inputs[1].default_value = float(w.get("edge_wear", 0.0)) * 1.6
-    ln(sep.outputs[0], edge.inputs[0])
+    ln(sharp.outputs[0], edge.inputs[0])
     lighten = nn("ShaderNodeMix")
     lighten.data_type = "RGBA"
-    lighten.inputs[7].default_value = (0.55, 0.55, 0.56, 1) if d["metallic"] < 0.5 and rgba[0] < 0.3 else (1, 1, 1, 1)
+    lighten.inputs[7].default_value = (0.22, 0.22, 0.23, 1) if d["metallic"] < 0.5 and rgba[0] < 0.3 else (1, 1, 1, 1)
     ln(edge.outputs[0], lighten.inputs[0])
     ln(tint.outputs[2], lighten.inputs[6])
     grime = nn("ShaderNodeMix")
@@ -294,7 +299,10 @@ def preview_material(mat, key, p):
     gm = nn("ShaderNodeMath")
     gm.operation = "MULTIPLY"
     gm.inputs[1].default_value = 0.35 + float(w.get("scuffs", 0.0))
-    ln(sep.outputs[1], gm.inputs[0])
+    crease = nn("ShaderNodeMapRange")
+    crease.inputs["From Min"].default_value, crease.inputs["From Max"].default_value = 0.6, 1.0
+    ln(sep.outputs[1], crease.inputs["Value"])
+    ln(crease.outputs[0], gm.inputs[0])
     ln(gm.outputs[0], grime.inputs[0])
     ln(lighten.outputs[2], grime.inputs[6])
     grime.inputs[7].default_value = (0.45, 0.42, 0.38, 1)

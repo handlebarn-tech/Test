@@ -1,18 +1,18 @@
 {
   "asset_id": "PROC_Deli_JarWall_South",
-  "collision_boxes": 4,
+  "collision_boxes": 5,
   "errors": [],
-  "export_sha256": "0aa76e608688b6dc",
+  "export_sha256": "67d333ea2f1a350a",
   "generator": "deli_counter_jar_wall",
   "lod_tris": {
-    "LOD0": 3888,
-    "LOD1": 1832,
-    "LOD2": 228,
-    "LOD3": 48
+    "LOD0": 24168,
+    "LOD1": 4668,
+    "LOD2": 804,
+    "LOD3": 72
   },
-  "params_sha256": "d1a739a9248c2366",
+  "params_sha256": "1f98f39393f55b93",
   "passed": true,
   "warnings": [
-    "LOD0 3888 tris below the DEC-084 guide minimum 30000 (too simple?)"
+    "LOD0 24168 tris below the DEC-084 guide minimum 30000 (too simple?)"
   ]
 }

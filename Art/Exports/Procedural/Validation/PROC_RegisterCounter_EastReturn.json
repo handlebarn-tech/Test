@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_RegisterCounter_EastReturn",
+  "collision_boxes": 2,
+  "errors": [],
+  "export_sha256": "fc31df68b2065cb3",
+  "generator": "register_counter_run",
+  "lod_tris": {
+    "LOD0": 4644,
+    "LOD1": 1740,
+    "LOD2": 348,
+    "LOD3": 60
+  },
+  "params_sha256": "6b836960a2e0ace9",
+  "passed": true,
+  "warnings": [
+    "LOD0 4644 tris below the DEC-084 guide minimum 30000 (too simple?)"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_RegisterCounter_South",
+  "collision_boxes": 2,
+  "errors": [],
+  "export_sha256": "9a0631201dbc1a33",
+  "generator": "register_counter_run",
+  "lod_tris": {
+    "LOD0": 11032,
+    "LOD1": 3984,
+    "LOD2": 768,
+    "LOD3": 120
+  },
+  "params_sha256": "6b836960a2e0ace9",
+  "passed": true,
+  "warnings": [
+    "LOD0 11032 tris below the DEC-084 guide minimum 30000 (too simple?)"
+  ]
+}

@@ -9,7 +9,29 @@
     "GAP-108",
     "GAP-PROC-14"
   ],
-  "_sources": "Scale stand: REFERENCES_INDEX 2.2 (footprint 1.6 x 1.3 ft, top 2.5 ft, one wire shelf 0.5-0.8 ft, acrylic panel 0.8-1.2 ft on the counter-side edge, white scale + blue LCD + round draft-shield bowl). Keyboard 17.5 in (RI 2.2 convention). Scanner_Barcode = ROOM_FIXTURES 0.4 x 0.7 x 0.6 ft. Every other size is GAP-PROC-14 (commercial convention, not measured). Card terminal included as an unbranded prop (DEC-086). No cash drawer (DEC-051).",
+  "_sources": {
+    "_rule": "Generic manufacturing detail (bevels, bezels, key gaps, hinges, ports, vents, screws, rubber feet, seams, tear bar) is construction (PROC-005 brief) and changes no sourced outer size",
+    "ScaleStand sizes": "RI 2.2: footprint 1.6 x 1.3 ft (width_m/depth_m), top 2.5 ft (height_m), one wire shelf 0.5-0.8 ft (shelf_z_m 0.65 ft), acrylic panel 0.8-1.2 ft on the counter-side edge (panel_h_m 1.0 ft); tray/post/rail/wire/foot/panel-thickness sizes GAP-PROC-14",
+    "ScaleStand.scale": "RI 2.2 one white bench scale, blue LCD, clear round draft-shield bowl with lid; body in the RI 2.4 bench-scale class (6-7 x 8 x 3 in); pan, bowl, lid, LCD sizes GAP-PROC-14",
+    "Keyboard.width_m": "RI 2.2 full-size POS keyboard 17.5 in (convention); depth/height/case/margin GAP-PROC-14",
+    "Scanner_Barcode sizes": "RF Scanner_Barcode 0.4 x 0.7 x 0.6 ft (width/depth/height); gun part sizes GAP-PROC-14",
+    "POSMonitor / Scanner_Presentation / ReceiptPrinter / CardTerminal sizes": "GAP-PROC-14 (commercial convention, not measured); RF POS_xx 1.6 x 0.25 x 1.1 ft is the station envelope, not the monitor",
+    "colors.Chrome": "RI 2.2 chrome wire-frame stand",
+    "colors.Plastic_Black": "RI 2.2 black top tray; REGISTER_KIT RK-03 black scanner, RK-04 black keyboard; RF Desk_ExRegister1 notes 'black monitor' (ex-register 1, DEC-040); also used for slot/opening shadows (construction)",
+    "colors.Plastic_Dark / Plastic_Keys / Metal_Black": "black parts per REGISTER_KIT RK-01 (black receipt printer), RK-03 (handheld), RK-04 (keys), monitor stand with the black monitor (RF Desk_ExRegister1); slight value steps between parts are construction",
+    "colors.Acrylic_Clear": "RI 2.2 / DEC-026 clear acrylic panel and draft-shield bowl",
+    "colors.Plastic_White": "RI 2.2 white bench scale",
+    "colors.LCD_Blue": "RI 2.2 blue scale LCD; monitor power LED reuses it (construction)",
+    "colors.Plastic_Grey": "GAP-PROC-14 neutral mid grey (scale keys, printer button/lever, terminal keys, hinge caps)",
+    "colors.Plastic_Terminal": "GAP-PROC-14 neutral mid grey: card terminal colour unsourced (RI 2.2 only says a customer-facing card terminal/tablet exists)",
+    "colors.Stainless": "GAP-PROC-14 scale pan and tear bar metal (unsourced)",
+    "colors.Rubber_Black / Metal_Screw": "construction (rubber feet, screws)",
+    "colors.Glass_Dark": "screen glass (construction: an off screen reads near black)",
+    "colors.Glass_Red / LCD_Green": "GAP-PROC-14 scan-window tint and status LEDs (unsourced)",
+    "colors.Paper_White": "REGISTER_KIT RK-01 light paper visible at the printer",
+    "finishes": "proctex RULES except Metal_Screw -> brushed_metal",
+    "wear": "PROC-005 wear defaults (shader params, not store facts)"
+  },
   "checks": {
     "origin_bottom_centre": true,
     "fail_on_degenerate": true,
@@ -128,6 +150,18 @@
       0.95,
       0.95,
       0.93,
+      1.0
+    ],
+    "Plastic_Terminal": [
+      0.2,
+      0.2,
+      0.2,
+      1.0
+    ],
+    "Metal_Screw": [
+      0.5,
+      0.5,
+      0.5,
       1.0
     ]
   },
@@ -310,5 +344,9 @@
         "base_d_m": 0.09
       }
     }
-  ]
+  ],
+  "finishes": {
+    "Metal_Screw": "brushed_metal",
+    "Plastic_Terminal": "plastic"
+  }
 }

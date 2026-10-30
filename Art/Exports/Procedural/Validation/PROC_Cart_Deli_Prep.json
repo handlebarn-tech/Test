@@ -2,19 +2,17 @@
   "asset_id": "PROC_Cart_Deli_Prep",
   "collision_boxes": 1,
   "errors": [],
-  "export_sha256": "94063dcd3f4454a7",
+  "export_sha256": "108c246997fff5be",
   "generator": "office_fixtures",
   "lod_tris": {
-    "LOD0": 840,
-    "LOD1": 632,
-    "LOD2": 356,
+    "LOD0": 4880,
+    "LOD1": 2928,
+    "LOD2": 652,
     "LOD3": 72
   },
-  "params_sha256": "5a4a38147c2d9dad",
+  "params_sha256": "d06038e518e4961e",
   "passed": true,
   "warnings": [
-    "LOD0 840 tris below the DEC-084 guide minimum 20000 (too simple?)",
-    "LOD1: 632 tris > 75% of LOD0 (guide 1/2, 1/4, <= 1/10)",
-    "LOD2: 356 tris > 40% of LOD0 (guide 1/2, 1/4, <= 1/10)"
+    "LOD0 4880 tris below the DEC-084 guide minimum 20000 (too simple?)"
   ]
 }

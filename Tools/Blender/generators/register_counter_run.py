@@ -1,12 +1,17 @@
-"""Register counter run (PROC-005 §5; IMP-003 round 2 rewritten). One asset per L leg (variants): the long run and the
-return leg; ART places them on the plan (RI §1.5 bbox 20.0-42.0 x 7.0-19.0 ft; compass GAP-106).
-TI §6.4 POS cabinet: QZ-2 white quartz top 34 in AFF, 2'-6" deep, 2 in eased edge, waterfall on the outside ends,
-4 in toe base (2 in recess), 2'-1" cabinet depth. Customer face (front, -Y) = WD-1 walnut veneer panels with black
-ML-1 reveals and an ML-1 band under the top. Staff side (+Y) per station: two-drawer cabinet (walnut fronts, HW-2
-brass edge pulls) + open black shelves (R2C3). Cable grommet per station. No cash drawer (DEC-051).
-station_anchors carry the DEC-039 register numbers; per-station width = leg length / stations (RC5, GAP-PROC-15).
-LOD0 full; LOD1 no pulls; LOD2 plain blocks per face; LOD3 top + body + ends."""
-from proclib import Parts, add_beveled_box, add_box, add_lathe, collision_box, to_unity, wear
+"""Register counter runs (PROC-005 fix wave; REVIEW-PROC5 #1/#2/#6). One asset per ROOM_FIXTURES rev7 row:
+Counter_Register_North (registers 10/9/8), Counter_Register_EastReturn (12/11), Counter_Register_South (7,2,3,4,5,6)
+and Counter_Register_SouthReturn (no register). RI §1.5 rows 98/101 (REF-011), RI §8.1, DEC-039.
+
+Local frame (exported): origin bottom centre, staff side = -Y (asset front: drawers, open shelves), customer face = +Y,
+run along X. `plan_axis_x` in params says which plan direction local +X points along once ART yaws the asset so its +Y
+customer face points to the RF `faces` direction (so station offsets map back to the plan).
+Construction (TI §6.4 POS cabinet, detail 11): quartz slab top with an eased edge and waterfall ends; carcass 2'-1" deep
+on a 4 in toe base with a 2 in recess; staff side = one two-drawer POS cabinet under each monitor (walnut fronts,
+HW-2 brass edge pulls) and open black shelf bays elsewhere (R2C3, RI §2.2); customer face = plywood sheets carrying the
+decorative wrap (DEC-090, RF North notes, RI §8.1), black ML-1 band under the top. Edge banding on shelf fronts,
+shelf pins, back-rail screws and cable grommets are construction detail. No cash drawer (DEC-051/086). Unbranded.
+LOD0 full; LOD1 no pins/screws/pulls/banding; LOD2 one block per face group; LOD3 top + body + ends."""
+from proclib import Parts, add_beveled_box, add_box, add_cylinder_between, add_lathe, add_screw_head, collision_box, ft, to_unity, wear
 
 
 def variants(p):
@@ -20,94 +25,156 @@ def _bb(bm, size, center, d, corner=0.002, bevel=0.0015):
     if d >= 2:
         add_box(bm, size, center)
     else:
-        add_beveled_box(bm, size, center, corner=corner, bevel=bevel, seg=2 if d == 0 else 1)
+        add_beveled_box(bm, size, center, corner=corner, bevel=bevel, seg=3 if d == 0 else 1)
+
+
+def _modules(xa, xb, drawers, max_bay):
+    """Gable x positions: drawer cabinet edges, the run ends, and extra gables so no open bay is wider than max_bay."""
+    cuts = []
+    for x in sorted({xa, xb} | {min(max(x, xa), xb) for a, b in drawers for x in (a, b)}):
+        if not cuts or x - cuts[-1] > 0.05:  # merge slivers (a cabinet ending at the run end)
+            cuts.append(x)
+    cuts[-1] = xb
+    out = [cuts[0]]
+    for a, b in zip(cuts, cuts[1:]):
+        n = max(1, int(-(-(b - a) // max_bay)))
+        out += [a + (b - a) * i / n for i in range(1, n + 1)]
+    return out
 
 
 def build(p, lod):
     d, s = lod["detail"], lod["seg"]
+    # Exported staff side front (-Y = staff, the side that shows the construction). Built in a customer-front frame and
+    # turned 180 deg about Z at the end; params use the exported frame, so mirror them into the build frame here.
+    p = dict(p, stations=[dict(st, local_x_m=-st["local_x_m"]) for st in p["stations"]], waterfall=p["waterfall"][::-1],
+             end_panel_black=p.get("end_panel_black", [False, False])[::-1])
+
+    def R(x, y, z):  # build frame -> exported Unity point
+        return to_unity(-x, -y, z)
     L, D, H, tt = p["length_m"], p["depth_m"], p["height_m"], p["top_t_m"]
-    kick, krec, ov, lip = p["toe_h_m"], p["toe_recess_m"], p["front_overhang_m"], p["grommet_lip_m"]
+    kick, krec, cd, g = p["toe_h_m"], p["toe_recess_m"], p["carcass_depth_m"], p["gable_t_m"]
     wl, wr = p["waterfall"]
+    stations = p["stations"]
+    lip = p["grommet_lip_m"] if stations else 0.0
+    zt = H - lip - tt  # underside of the top; the grommet flange reaches the cited 34 in (H)
     P = Parts(p["colors"], wear_attr=bool(p.get("pbr")))
-    top, wal, blk, brass = P("Top", "Quartz_QZ2"), P("Front", "Walnut_WD1"), P("Accents", "Black_ML1"), P("Pulls", "Brass_HW2")
+    top = P("Top", "Quartz_QZ2")
+    face = P("FrontWrap", p["face_color"])
+    blk, shelf = P("Accents", "Black_ML1"), P("Carcass", "Black_ML1_Interior")
+    wal, brass = P("DrawerFronts", "Walnut_WD1"), P("Pulls", "Brass_HW2")
     xa, xb = -L / 2 + (tt if wl else 0), L / 2 - (tt if wr else 0)
-    yf = -D / 2 + ov  # customer face of the cabinets; the staff face is flush with the top at +D/2
-    zt = H - tt
-    regs = p["registers"]
-    n = len(regs)
-    pitch = (xb - xa) / n
-    Htot = H + lip
+    yb = D / 2 - p["staff_overhang_m"]  # staff face of the drawer fronts (the top overhangs it)
+    yf, yg = yb - cd, yb - 0.019  # carcass customer face; gable fronts (drawer fronts overlay them)
+    cw = p["drawer_cabinet_w_m"]
+    drawers = [(st["local_x_m"] - cw / 2, st["local_x_m"] + cw / 2) for st in stations]
 
     if d >= 3:
-        add_box(top, (L, D, tt + lip), (0, 0, zt + (tt + lip) / 2))
-        add_box(wal, (xb - xa, D - ov, zt), (0, (yf + D / 2) / 2, zt / 2))
+        add_box(top, (L, D, H - zt), (0, 0, zt + (H - zt) / 2))
+        add_box(face, (xb - xa, cd, zt), (0, (yf + yb) / 2, zt / 2))
         for on, x in ((wl, -L / 2 + tt / 2), (wr, L / 2 - tt / 2)):
             if on:
                 add_box(top, (tt, D, zt), (x, 0, zt / 2))
     else:
-        _bb(top, (L, D, tt), (0, 0, zt + tt / 2), d, 0.003, 0.004 if d <= 1 else 0)  # 2 in slab, eased edge
-        for on, x in ((wl, -L / 2 + tt / 2), (wr, L / 2 - tt / 2)):  # waterfall ends, mitred look via the eased edges
+        # top: 2 in slab, eased edge; waterfall ends run to the floor
+        _bb(top, (L, D, tt), (0, 0, zt + tt / 2), d, 0.003, 0.005 if d <= 1 else 0)
+        for on, x in ((wl, -L / 2 + tt / 2), (wr, L / 2 - tt / 2)):
             if on:
-                _bb(top, (tt, D, zt), (x, 0, zt / 2), d, 0.003, 0.004 if d <= 1 else 0)
-        # customer face: toe kick, black backer (shows in the reveals), walnut panels, ML-1 band under the top
-        band = p["accent_band_h_m"]
+                _bb(top, (tt, D, zt), (x, 0, zt / 2), d, 0.003, 0.005 if d <= 1 else 0)
+            elif p.get("end_panel_black", [False, False])[0 if x < 0 else 1]:  # exposed cabinet end in black ML-1 (R2C5 "black cabinet end")
+                xe = xa + g / 2 if x < 0 else xb - g / 2
+                _bb(blk, (g, cd, zt - 0.001), (xe, (yf + yb) / 2, (zt - 0.001) / 2), d, 0.001, 0.001)
+        pt, band = p["face_panel_t_m"], p["accent_band_h_m"]
+        # customer face: recessed toe kick, plywood sheets with hairline seams (wrap print = texture), ML-1 band
         add_box(blk, (xb - xa, 0.012, kick), (0, yf + krec + 0.006, kick / 2))
-        add_box(blk, (xb - xa, 0.01, zt - kick), (0, yf + 0.019 + 0.005, kick + (zt - kick) / 2))
-        add_box(blk, (xb - xa, 0.02, band), (0, yf + 0.01, zt - band / 2))
-        rv = p["reveal_m"]
+        zp0, zp1 = kick, zt - band
         if d <= 1:
+            sheet, seam = p["face_sheet_w_m"], p["seam_m"]
+            n = max(1, int(-(-(xb - xa) // sheet)))
+            pw = (xb - xa) / n
+            add_box(blk, (xb - xa, 0.004, zp1 - zp0), (0, yf + pt + 0.002, (zp0 + zp1) / 2))  # dark backer in the seams
             for i in range(n):
-                for j in range(2):  # two veneer panels per station
-                    pw = pitch / 2
-                    x = xa + i * pitch + (j + 0.5) * pw
-                    _bb(wal, (pw - rv, 0.019, zt - band - kick - rv), (x, yf + 0.0095, kick + (zt - band - kick) / 2), d, 0.001, 0.0008)
+                _bb(face, (pw - seam, pt, zp1 - zp0 - seam), (xa + (i + 0.5) * pw, yf + pt / 2, (zp0 + zp1) / 2), d, 0.0015, 0.0012)
+            _bb(blk, (xb - xa, pt + 0.004, band), (0, yf + (pt + 0.004) / 2 - 0.004, zt - band / 2), d, 0.001, 0.001)
         else:
-            add_box(wal, (xb - xa, 0.019, zt - band - kick), (0, yf + 0.0095, kick + (zt - band - kick) / 2))
-        # carcass: gables at the station lines and the ends, bottom deck on the toe base
-        sh = P("Shelves", "Black_ML1")
-        cd = D / 2 - (yf + 0.029)
-        cy = (yf + 0.029 + D / 2) / 2
-        for i in range(n + 1):
-            x = min(max(xa + i * pitch, xa + 0.0095), xb - 0.0095)
-            add_box(sh, (0.019, cd, zt - kick), (x, cy, kick + (zt - kick) / 2))
-        add_box(sh, (xb - xa, cd, 0.019), (0, cy, kick + 0.0095))
-        add_box(blk, (xb - xa, 0.012, kick), (0, D / 2 - krec - 0.006, kick / 2))  # staff-side toe kick
-        # staff side per station: left half = two-drawer cabinet, right half = open shelf
-        dh = (zt - kick - 0.019 - 3 * rv) / 2
-        for i in range(n):
-            x0 = xa + i * pitch + 0.0095
-            hw = (pitch - 0.019) / 2
-            xd = x0 + hw / 2 + 0.0095 / 2
-            if d <= 1:
-                add_box(sh, (hw - 0.01, cd - 0.03, zt - kick - 0.02), (xd, cy - 0.015, kick + (zt - kick) / 2))  # drawer boxes
+            add_box(face, (xb - xa, pt, zp1 - zp0), (0, yf + pt / 2, (zp0 + zp1) / 2))
+            add_box(blk, (xb - xa, pt, band), (0, yf + pt / 2, zt - band / 2))
+        # carcass: back (inside the face), bottom deck on the toe base, gables, staff toe kick
+        yi0 = yf + pt + 0.004  # inside face of the back panel
+        bd = yg - yi0
+        add_box(shelf, (xb - xa, 0.012, zt - kick), (0, yi0 + 0.006, kick + (zt - kick) / 2))
+        add_box(shelf, (xb - xa, bd - 0.012, g), (0, (yi0 + 0.012 + yg) / 2, kick + g / 2))
+        add_box(blk, (xb - xa, 0.012, kick), (0, yb - krec - 0.006, kick / 2))
+        gx = _modules(xa, xb, drawers, p["max_open_bay_m"])
+        for x in gx:
+            x = min(max(x, xa + g / 2), xb - g / 2)
+            _bb(shelf, (g, bd, zt - kick - g), (x, (yi0 + yg) / 2, kick + g + (zt - kick - g) / 2), d, 0.0008, 0.0008)
+            if d <= 1:  # black edge banding on the gable front
+                add_box(blk, (g, 0.0012, zt - kick - g), (x, yg + 0.0006, kick + g + (zt - kick - g) / 2))
+        rv, sz = p["reveal_m"], p["open_shelf_z_frac"]
+        for a, b in zip(gx, gx[1:]):
+            xm, w = (a + b) / 2, b - a - g
+            if any(abs(xm - (da + db) / 2) < 0.01 for da, db in drawers):  # two-drawer POS cabinet (TI 11)
+                dh = (zt - kick - g - 3 * rv) / 2
                 for k in range(2):
-                    zc = kick + 0.019 + rv + dh / 2 + k * (dh + rv)
-                    _bb(wal, (hw - rv, 0.019, dh), (xd, D / 2 - 0.012 - 0.0095, zc), d, 0.001, 0.0008)
-                    if d == 0:  # HW-2 brushed-brass edge pull on the drawer's top edge
-                        add_box(brass, (hw * 0.35, 0.010, 0.004), (xd, D / 2 - 0.012 + 0.0045 - 0.004, zc + dh / 2 - 0.002))
-            else:
-                add_box(wal, (hw, 0.019, zt - kick - 0.019), (xd, D / 2 - 0.012 - 0.0095, kick + 0.019 + (zt - kick - 0.019) / 2))
-            add_box(sh, (hw - 0.002, cd - 0.02, 0.019), (x0 + hw * 1.5 + 0.0095, cy, kick + (zt - kick) * 0.5))
-            if d <= 2:  # cable grommet behind the monitor position (kept on LOD0-2: its lip sets the height bound)
-                gx, gy = x0 + pitch * 0.5, D / 2 - p["grommet_inset_m"]
-                r = p["grommet_d_m"] / 2
-                add_lathe(P("Grommets", "Plastic_Black"), (gx, gy, 0), (0, 0, 1),
-                          [(r - 0.006, zt + 0.004), (r - 0.006, H + lip), (r + 0.004, H + lip), (r + 0.004, H)], s)
+                    zc = kick + g + rv + dh / 2 + k * (dh + rv)
+                    if d <= 1:
+                        _bb(shelf, (w - 0.02, bd - 0.04, dh - 0.03), (xm, (yi0 + yg) / 2 - 0.01, zc), d, 0.001, 0.001)  # drawer box
+                    _bb(wal, (w + g - rv, 0.019, dh), (xm, yg + 0.0095, zc), d, 0.0015, 0.0012)
+                    if d == 0:  # HW-2 brushed-brass edge pull clipped over the drawer front's top edge
+                        pw_ = w * p["pull_w_frac"]
+                        add_beveled_box(brass, (pw_, 0.022, 0.003), (xm, yb - 0.008, zc + dh / 2 + 0.0015), 0.001, 0.0005, 2)
+                        add_beveled_box(brass, (pw_, 0.003, 0.016), (xm, yb + 0.0015, zc + dh / 2 - 0.005), 0.001, 0.0005, 2)
+            else:  # open bay: adjustable shelf with black edge banding on 4 pins; back-rail screws
+                zs = kick + g + (zt - kick - g) * sz
+                _bb(shelf, (w - 0.002, bd - 0.03, g), (xm, (yi0 + yg) / 2 - 0.01, zs), d, 0.0008, 0.0008)
+                if d <= 1:
+                    add_box(blk, (w - 0.002, 0.0012, g), (xm, yg - 0.025 + 0.0006, zs))
+                if d == 0:
+                    for xx in (a + g / 2 + 0.0005, b - g / 2 - 0.0005):
+                        for yy in (yi0 + 0.06, yg - 0.06):
+                            sgn = 1 if xx < xm else -1
+                            add_cylinder_between(P("Hardware", "Steel_Pins"), (xx, yy, zs - g / 2 - 0.003),
+                                                 (xx + sgn * 0.009, yy, zs - g / 2 - 0.003), 0.0025, 6)
+                    for xx in (a + 0.06, b - 0.06):
+                        add_screw_head(P("Hardware", "Steel_Pins"), (xx, yi0 + 0.012, zt - 0.05), (0, 1, 0), 0.0045, 8)
+        # cable grommet behind each monitor: flange is the topmost point (34 in, TI §6.4)
+        if d <= 2:
+            r = p["grommet_d_m"] / 2
+            for st in stations:
+                gxp, gyp = st["local_x_m"] + p["grommet_dx_m"], D / 2 - p["grommet_inset_m"]
+                prof = [(r - 0.005, zt - 0.01), (r - 0.005, H - 0.0006), (r - 0.0045, H), (r + 0.006, H), (r + 0.0068, H - lip)]
+                add_lathe(P("Grommets", "Plastic_Grommet"), (gxp, gyp, 0), (0, 0, 1),
+                          prof if d <= 1 else [(r - 0.005, zt), (r - 0.005, H), (r + 0.006, H), (r + 0.006, H - lip)], s)
+                if d == 0:  # cap with the cable slot
+                    add_lathe(P("Grommets", "Plastic_Grommet"), (gxp, gyp, 0), (0, 0, 1),
+                              [(0, H - 0.004), (r - 0.0052, H - 0.004), (r - 0.0052, H - 0.0012), (0, H - 0.0012)], s)
+    if d >= 3 and stations:  # LOD3: one grommet block per station keeps the 34 in bound
+        for st in stations:
+            add_box(P("Grommets", "Plastic_Grommet"), (p["grommet_d_m"], p["grommet_d_m"], lip),
+                    (st["local_x_m"] + p["grommet_dx_m"], D / 2 - p["grommet_inset_m"], H - lip / 2))
+
+    c, an = p["components"], p["anchor_offsets"]
+    yo, yc = D / 2 + an["operator_off_staff_edge_m"], -D / 2 - an["call_off_face_m"]
     anchors = []
-    c = p["components"]
-    for i, reg in enumerate(regs):
-        x = xa + (i + 0.5) * pitch
-        anchors.append({"register": reg, "station_id": f"Register_{reg:02d}", "position_unity_xyz": to_unity(x, 0, H),
-                        "slot_width_m": round(pitch, 5),
-                        "components": {k: {"asset_id": v["asset_id"], "position_unity_xyz": to_unity(x + v["dx_m"], v["dy_m"], v.get("z_m", H)),
-                                           "yaw_deg": v.get("yaw_deg", 0)}
-                                       for k, v in c.items()}})
-    extra = {"fixture_family": "register_counter_run", "seed": int(p["seed"]), "station_anchors": anchors,
-             "plan_rect_ft": p["plan_rect_ft"],
+    for st in stations:
+        x, reg = st["local_x_m"], st["register"]
+        tag = f"{reg:02d}"
+        comps = {k: {"asset_id": v["asset_id"], "position_unity_xyz": R(x + v["dx_m"], D / 2 + v["dy_from_staff_edge_m"], v.get("z_m", H)),
+                     "yaw_deg": v.get("yaw_deg", 0)} for k, v in c.items()}
+        anchors.append({"register": reg, "station_id": f"Register_{tag}", "rf_fixture": f"POS_{tag}", "local_x_m": -x,
+                        "position_unity_xyz": R(x, D / 2 - p["monitor_inset_m"], H),
+                        "scene_anchors": {f"Anchor_Register_{tag}_Operator": R(x, yo, 0),
+                                          f"Anchor_Register_{tag}_Call": R(x, yc, 0)},
+                        "components": comps})
+    extra = {"fixture_family": "register_counter_run", "seed": int(p["seed"]), "rf_fixture": p["rf"],
+             "plan_axis_x": p["plan_axis_x"], "station_anchors": anchors,
              "collision_boxes": [collision_box("Top", (0, 0, zt + tt / 2), (L, D, tt)),
-                                 collision_box("Body", (0, (yf + D / 2) / 2, zt / 2), (L, D - ov, zt))]}
-    if p.get("display_case_slot_x_m") is not None:  # RC4: countertop case on the run (RI §1.5, plan x 38.0-39.4)
-        extra["display_case_slot"] = {"asset_id": p["display_case_asset_id"], "position_unity_xyz": to_unity(p["display_case_slot_x_m"], 0, H),
-                                      "footprint_m": [0.42672, 0.42672]}
+                                 collision_box("Body", (0, -(yf + yb) / 2, zt / 2), (L, cd, zt))]}
+    if p.get("display_case_slot_x_m") is not None:  # RI §1.5 row 99 display case on the north run (x 38.0-39.4)
+        extra["display_case_slot"] = {"asset_id": p["display_case_asset_id"], "position_unity_xyz": R(-p["display_case_slot_x_m"], 0, H - lip),
+                                      "footprint_m": [ft(1.4), ft(1.4)]}
     extra.update(wear(p))
-    return P.finish(), (L, Htot, D), extra
+    for bm, *_ in P._p.values():  # turn 180 deg about Z (keeps winding)
+        for v in bm.verts:
+            v.co.x, v.co.y = -v.co.x, -v.co.y
+    return P.finish(), (L, H, D), extra

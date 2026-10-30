@@ -2,17 +2,17 @@
   "asset_id": "PROC_Lockers_Staff",
   "collision_boxes": 1,
   "errors": [],
-  "export_sha256": "c5c6b9cd71851a5f",
+  "export_sha256": "9a583fafb5e0bb37",
   "generator": "break_room",
   "lod_tris": {
-    "LOD0": 2336,
-    "LOD1": 1248,
-    "LOD2": 336,
+    "LOD0": 15044,
+    "LOD1": 5748,
+    "LOD2": 516,
     "LOD3": 24
   },
-  "params_sha256": "b69907bc8ac355f5",
+  "params_sha256": "e26ffa559c6e8ca0",
   "passed": true,
   "warnings": [
-    "LOD0 2336 tris below the DEC-084 guide minimum 20000 (too simple?)"
+    "LOD0 15044 tris below the DEC-084 guide minimum 20000 (too simple?)"
   ]
 }

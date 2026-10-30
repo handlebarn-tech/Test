@@ -8,7 +8,7 @@ import math
 
 from mathutils import Vector
 
-from proclib import (Parts, add_beveled_box, add_box, add_cylinder_between, add_lathe, add_sweep, add_tube,
+from proclib import (Parts, add_beveled_box, add_box, add_cylinder_between, add_lathe, add_screw_head, add_sweep, add_tube,
                      add_wire_grid, collision_box, loft, rounded_rect, to_unity, wear)
 
 CS = (4, 2, 1, 0)  # rounded-corner segments per detail level
@@ -127,6 +127,17 @@ def scale_stand(P, p, d, s):
     return (w, H, dp), extra
 
 
+def _loft_front(bm, specs, cx, y0, cz, seg):
+    """Rounded-rect rings in the XZ plane stacked toward -Y: specs = [(w, h, r, t)], t = offset toward -Y from y0.
+    Same rules as proclib.loft (outside profile in order; the last ring is capped), mapped by a proper rotation."""
+    loft(bm, [[(cx + x, y0 - t, cz + y) for x, y in rounded_rect(w, h, r, seg)] for w, h, r, t in specs])
+
+
+def _loft_up(bm, specs, cx, cy, seg):
+    """Rounded-rect rings stacked along +Z: specs = [(w, d, r, z)]."""
+    loft(bm, [[(cx + x, cy + y, z) for x, y in rounded_rect(w, dd, r, seg)] for w, dd, r, z in specs])
+
+
 def pos_monitor(P, p, d, s):
     m = p["monitor"]
     w, h, pd, b, rd = m["w_m"], m["h_m"], m["panel_d_m"], m["bezel_m"], m["rear_d_m"]
@@ -140,32 +151,52 @@ def pos_monitor(P, p, d, s):
         add_box(st, (bw, bd, bh), (0, 0, bh / 2))
         add_box(st, (m["neck_w_m"], m["neck_d_m"], zc - bh), (0, yb + m["neck_d_m"] / 2, bh + (zc - bh) / 2))
         return (w, zb + h, bd), {}
-    # bezel bars around a recessed screen, shell behind, rear bulge with vents, VESA plate, neck, base
-    fd = 0.008
-    for size, c in (((w, fd, b), (0, yf + fd / 2, zb + h - b / 2)), ((w, fd, b * 1.6), (0, yf + fd / 2, zb + b * 0.8)),
-                    ((b, fd, h - 2.6 * b), (-w / 2 + b / 2, yf + fd / 2, zb + 1.6 * b + (h - 2.6 * b) / 2)),
-                    ((b, fd, h - 2.6 * b), (w / 2 - b / 2, yf + fd / 2, zb + 1.6 * b + (h - 2.6 * b) / 2))):
-        _rr_box(hs, size, c, d, 0.002, 0.0006)
-    _rr_box(hs, (w, pd - 0.006, h), (0, yf + 0.006 + (pd - 0.006) / 2, zc), d, 0.006, 0.002)
-    add_box(P("Screen", "Glass_Dark"), (w - 2 * b, 0.002, h - 2.6 * b), (0, yf + 0.0035, zb + 1.6 * b + (h - 2.6 * b) / 2))
+    cs = max(1, CS[d])
     rw, rh = w * 0.62, h * 0.6
-    _rr_box(hs, (rw, rd, rh), (0, yf + pd + rd / 2, zc), d, 0.01, 0.003)
+    # rear bulge (tapered back cover), then the panel shell, then the bezel lip stepping into the screen recess
+    if d <= 1:
+        _loft_front(hs, [(rw * 0.86, rh * 0.82, 0.012, 0), (rw, rh, 0.016, rd * 0.55), (rw, rh, 0.016, rd + 0.001)], 0, yb, zc, cs)
+        _loft_front(hs, [(w - 0.004, h - 0.004, 0.005, 0), (w, h, 0.006, 0.002), (w, h, 0.006, pd - 0.0012),
+                         (w - 0.0014, h - 0.0014, 0.0055, pd), (w - 2 * b, h - 2 * b, 0.002, pd),
+                         (w - 2 * b, h - 2 * b, 0.002, pd - 0.0025)], 0, yf + pd, zc, cs)
+        add_box(P("Screen", "Glass_Dark"), (w - 2 * b - 0.0004, 0.0008, h - 2 * b - 0.0004), (0, yf + 0.0021, zc))
+    else:
+        _rr_box(hs, (rw, rd, rh), (0, yf + pd + rd / 2, zc), d, 0.01, 0.0)
+        _rr_box(hs, (w, pd, h), (0, yf + pd / 2, zc), d, 0.006, 0.0)
+        add_box(P("Screen", "Glass_Dark"), (w - 2 * b, 0.001, h - 2 * b), (0, yf - 0.0004, zc))
     if d == 0:
         vents = P("Vents", "Plastic_Dark")
-        for row in range(3):
-            for i in range(18):
-                add_box(vents, (0.004, 0.001, 0.022), (-rw / 2 + 0.03 + i * (rw - 0.06) / 17, yb + 0.0004, zc + rh / 2 - 0.02 - row * 0.03))
-        for i in range(4):  # menu buttons under the bottom bezel, power LED
-            add_box(hs, (0.008, 0.005, 0.003), (w / 2 - 0.03 - i * 0.014, yf + 0.008, zb - 0.0015))
-        add_box(P("LED", "LCD_Blue"), (0.003, 0.0008, 0.002), (w / 2 - 0.02, yf - 0.0003, zb + 0.6 * b))
+        for row in range(3):  # slotted vents on the top of the back cover
+            for i in range(16):
+                add_box(vents, (0.004, 0.0008, 0.018), (-rw * 0.4 + i * rw * 0.8 / 15, yb + 0.0002, zc + rh / 2 - 0.02 - row * 0.026))
+        for i in range(4):  # menu buttons under the bottom bezel, power LED in the bezel corner
+            add_beveled_box(hs, (0.008, 0.005, 0.0025), (w / 2 - 0.03 - i * 0.014, yf + 0.008, zb - 0.001), 0.001, 0.0004, 2)
+        add_box(P("LED", "LCD_Blue"), (0.003, 0.0006, 0.0018), (w / 2 - b / 2, yf - 0.0003, zb + b / 2))
+        ports = P("Ports", "Plastic_Dark")  # recessed I/O block on the lower back cover: power, 2 video, USB
+        for i, pw in enumerate((0.012, 0.016, 0.016, 0.01)):
+            add_box(ports, (pw, 0.0012, 0.006), (-rw * 0.3 + i * 0.026, yb + 0.0004, zc - rh / 2 + 0.02))
+    if d <= 1:  # VESA 100 plate with 4 screws, tilt hinge barrel
+        vp = P("Stand", "Metal_Black")
+        add_beveled_box(vp, (0.11, 0.005, 0.11), (0, yb + 0.0025, zc), 0.006, 0.001, 2)
+        if d == 0:
+            for sx in (-0.05, 0.05):
+                for sz in (-0.05, 0.05):
+                    add_screw_head(P("Screws", "Metal_Screw"), (sx, yb + 0.005, zc + sz), (0, 1, 0), 0.0035, 8)
+    ny = yb + (0.005 if d <= 1 else 0) + m["neck_d_m"] / 2
     if d <= 1:
-        add_box(st, (0.1, 0.006, 0.1), (0, yb + 0.003, zc))  # VESA 100 plate
-    ny = yb + (0.006 if d <= 1 else 0) + m["neck_d_m"] / 2
-    _rr_box(st, (m["neck_w_m"], m["neck_d_m"], zc + 0.03 - bh), (0, ny, bh + (zc + 0.03 - bh) / 2), d, 0.006, 0.0015)
-    _rr_box(st, (bw, bd, bh), (0, 0, bh / 2), d, 0.03, 0.004)
-    if d <= 1:
-        add_cylinder_between(P("Cable", "Plastic_Dark"), (0, ny + m["neck_d_m"] / 2, bh + 0.05),
-                             (0, ny + m["neck_d_m"] / 2 + 0.004, bh + 0.05), 0.006, s)
+        add_cylinder_between(st, (-m["neck_w_m"] / 2 - 0.004, ny - 0.004, zc), (m["neck_w_m"] / 2 + 0.004, ny - 0.004, zc), 0.011, s)
+    _rr_box(st, (m["neck_w_m"], m["neck_d_m"], zc - bh), (0, ny, bh + (zc - bh) / 2), d, 0.008, 0.0015)
+    if d <= 1:  # cable-management cut-out in the neck, rubber feet under the base
+        add_box(P("Vents", "Plastic_Dark"), (m["neck_w_m"] * 0.5, 0.0008, 0.03), (0, ny + m["neck_d_m"] / 2 + 0.0002, bh + 0.05))
+        fz = 0.003
+        _loft_up(st, [(bw - 0.006, bd - 0.006, 0.026, fz), (bw, bd, 0.03, fz + 0.003), (bw, bd, 0.03, bh - 0.004),
+                      (bw - 0.008, bd - 0.008, 0.026, bh)], 0, 0, cs)
+        for fx in (-1, 1):
+            for fy in (-1, 1):
+                add_cylinder_between(P("Feet", "Rubber_Black"), (fx * (bw / 2 - 0.02), fy * (bd / 2 - 0.02), 0),
+                                     (fx * (bw / 2 - 0.02), fy * (bd / 2 - 0.02), fz), 0.007, s)
+    else:
+        _rr_box(st, (bw, bd, bh), (0, 0, bh / 2), d, 0.03, 0.0)
     return (w, zb + h, bd), {"collision_boxes": [collision_box("Monitor", (0, yf + (pd + rd) / 2, zc), (w, pd + rd, h)),
                                                  collision_box("Base", (0, 0, bh / 2), (bw, bd, bh))]}
 
@@ -178,16 +209,31 @@ def presentation_scanner(P, p, d, s):
         add_box(bd, (2 * rb, 2 * rb, 0.02), (0, 0, 0.01))
         add_box(bd, (hw, hd, H - 0.02), (0, 0, 0.02 + (H - 0.02) / 2))
         return (2 * rb, H, 2 * rb), {}
-    add_lathe(bd, (0, 0, 0), (0, 0, 1), [(0, 0), (rb, 0), (rb, 0.012), (rb * 0.85, 0.02), (0, 0.02)] if d <= 1 else
-              [(0, 0), (rb, 0), (rb, 0.02), (0, 0.02)], s * 2)
     cs = max(1, CS[d])
+    fz = 0.003 if d <= 1 else 0.0
+    if d <= 1:  # rubber foot ring, weighted base with a chamfered rim
+        add_lathe(P("Feet", "Rubber_Black"), (0, 0, 0), (0, 0, 1), [(0, 0), (rb - 0.004, 0), (rb - 0.004, fz), (0, fz)], s * 2)
+    add_lathe(bd, (0, 0, 0), (0, 0, 1), [(0, fz), (rb, fz), (rb, 0.012), (rb * 0.85, 0.02), (0, 0.02)] if d <= 1 else
+              [(0, 0), (rb, 0), (rb, 0.02), (0, 0.02)], s * 2)
+    zn = H - hh - 0.012  # neck top / hinge
     loft(bd, [[(x, y, z) for x, y in rounded_rect(ww, dd, 0.01, cs)] for ww, dd, z in
-              ((0.05, 0.045, 0.018), (0.042, 0.038, H - hh * 0.9), (hw * 0.9, hd * 0.9, H - hh + 0.002))])
-    _rr_box(bd, (hw, hd, hh), (0, 0, H - hh / 2), d, 0.012, 0.004)
-    add_box(P("Window", "Glass_Red"), (hw * 0.75, 0.002, hh * 0.55), (0, -hd / 2 - 0.0009, H - hh * 0.48))
-    if d <= 1:
-        add_box(P("LED", "LCD_Green"), (0.006, 0.0015, 0.003), (0, -hd / 2 - 0.0006, H - 0.008))
-        add_tube(P("Cable", "Plastic_Dark"), [(0, 0.015, 0.06), (0, 0.03, 0.03), (0, rb - 0.004, 0.006)], 0.0028, 6)
+              ((0.05, 0.045, 0.018), (0.04, 0.036, zn - 0.01), (0.034, 0.03, zn))])
+    if d <= 1:  # tilt hinge between neck and head, with side caps
+        add_cylinder_between(bd, (-0.024, 0, zn + 0.004), (0.024, 0, zn + 0.004), 0.011, s)
+        for sx in (-1, 1):
+            add_cylinder_between(P("Trim", "Plastic_Grey"), (sx * 0.024, 0, zn + 0.004), (sx * 0.0255, 0, zn + 0.004), 0.008, s)
+        _loft_up(bd, [(hw * 0.8, hd * 0.7, 0.01, zn + 0.004), (hw, hd, 0.012, H - hh + 0.004), (hw, hd, 0.012, H - 0.004),
+                      (hw - 0.006, hd - 0.006, 0.009, H)], 0, 0, cs)
+        # window bezel (front, -Y): recessed red window in a raised frame
+        _loft_front(bd, [(hw * 0.86, hh * 0.68, 0.006, 0), (hw * 0.86, hh * 0.68, 0.006, 0.0015), (hw * 0.74, hh * 0.56, 0.004, 0.0015), (hw * 0.74, hh * 0.56, 0.004, 0.0005)],
+                    0, -hd / 2 + 0.0005, H - hh * 0.48, cs)
+        add_box(P("Window", "Glass_Red"), (hw * 0.74, 0.0006, hh * 0.56), (0, -hd / 2 - 0.0003, H - hh * 0.48))
+        add_box(P("LED", "LCD_Green"), (0.006, 0.0012, 0.003), (0, -hd / 2 - 0.0002, H - 0.008))
+        add_tube(P("Cable", "Plastic_Dark"), [(0, 0.016, 0.05), (0, 0.026, 0.03), (0, rb - 0.006, 0.0215)], 0.0028, 6,
+                 bend_radius=0.008, bend_steps=3)
+    else:
+        _rr_box(bd, (hw, hd, hh + 0.012), (0, 0, H - (hh + 0.012) / 2), d, 0.012, 0.0)
+        add_box(P("Window", "Glass_Red"), (hw * 0.75, 0.002, hh * 0.55), (0, -hd / 2 - 0.0009, H - hh * 0.48))
     return (2 * rb, H, 2 * rb), {"collision_boxes": [collision_box("Body", (0, 0, H / 2), (2 * rb, 2 * rb, H))]}
 
 
@@ -243,14 +289,21 @@ def keyboard(P, p, d, s):
     if d >= 3:
         add_box(case, (W, D, H), (0, 0, H / 2))
         return (W, H, D), {}
-    _rr_box(case, (W, D, zc - z0), (0, 0, z0 + (zc - z0) / 2), d, 0.008, 0.002)
+    if d <= 1:  # case with chamfered edges and a recessed key well (the caps sit in it)
+        yw, ww, dw = -D / 2 + m + 3.25 * u, 23 * u + 0.003, 6.5 * u + 0.003
+        rings = [(W - 0.004, D - 0.004, 0.006, 0, z0), (W, D, 0.008, 0, z0 + 0.002), (W, D, 0.008, 0, zc - 0.0015),
+                 (W - 0.003, D - 0.003, 0.0065, 0, zc), (ww, dw, 0.002, yw, zc), (ww, dw, 0.002, yw, zc - 0.004)]
+        loft(case, [[(x, y + cy, z) for x, y in rounded_rect(w_, d_, r_, 2)] for w_, d_, r_, cy, z in rings])
+    else:
+        _rr_box(case, (W, D, zc - z0), (0, 0, z0 + (zc - z0) / 2), d, 0.008, 0.0)
     if d <= 1:
         for fx in (-1, 1):
             add_box(P("Feet", "Rubber_Black"), (0.03, 0.01, 0.003), (fx * (W / 2 - 0.04), D / 2 - 0.02, 0.0015))
             add_box(P("Feet", "Rubber_Black"), (0.02, 0.008, 0.003), (fx * (W / 2 - 0.04), -D / 2 + 0.02, 0.0015))
-        add_box(P("LED", "LCD_Green"), (0.003, 0.0008, 0.002), (W / 2 - m - 2 * u, D / 2 - m - 0.008, zc + 0.0004))
+        for i in range(3):  # lock-key indicator LEDs in the top margin
+            add_box(P("LED", "LCD_Green"), (0.003, 0.002, 0.0008), (W / 2 - m - 3 * u + i * u, D / 2 - 0.007, zc + 0.0002))
     keys = P("Keys", "Plastic_Keys")
-    gap, kz0 = 0.0016, zc - 0.002
+    gap, kz0 = 0.0016, zc - (0.0035 if d <= 1 else 0.002)
     y_top = -D / 2 + m + 6.5 * u  # back edge of the F row; rows run toward the front (-Y)
     for ri, row in enumerate(KEY_ROWS):
         yr = y_top - (ri + (0.5 if ri else 0)) * u  # half-unit gap under the F row
@@ -291,18 +344,39 @@ def receipt_printer(P, p, d, s):
         add_box(body, (W, D, zs), (0, 0, zs / 2))
         add_box(body, (W, D / 2 - yslot, H - zs), (0, (yslot + D / 2) / 2, zs + (H - zs) / 2))
         return (W, H, D), {}
-    _rr_box(body, (W, D, zs + 0.008), (0, 0, (zs + 0.008) / 2), d, 0.01, 0.003)
-    lid = P("Lid", "Plastic_Dark")
-    ld, lh = D / 2 - yslot, H - zs + 0.004  # lid: swept rounded profile across X (u = Y, v = Z for an X path)
-    prof = [(a + (yslot + D / 2) / 2, b + zs - 0.004 + lh / 2) for a, b in rounded_rect(ld, lh, r["lid_r_m"], max(1, CS[d]) * 2)]
-    add_sweep(lid, [(-W / 2, 0, 0), (W / 2, 0, 0)], prof)
-    add_box(P("Slot", "Plastic_Black"), (W * 0.7, 0.004, 0.006), (0, yslot - 0.0015, zs + 0.006))
-    add_box(P("Paper", "Paper_White"), (W * 0.55, 0.0006, 0.02), (0, yslot - 0.0025, zs + 0.012))
+    cs = max(1, CS[d])
+    side = 0.001 if d <= 1 else 0.0  # body is 1 mm narrower each side; the power rocker and cover lever reach W
+    fz = 0.003 if d <= 1 else 0.0
     if d <= 1:
-        add_box(P("TearBar", "Stainless"), (W * 0.72, 0.0015, 0.003), (0, yslot - 0.004, zs + 0.0085))
-        ytop = (-D / 2 + yslot) / 2  # feed button + LED on the front ledge, inside the bounds
-        add_box(P("Button", "Plastic_Grey"), (0.016, 0.008, 0.003), (W * 0.28, ytop, zs + 0.0085))
-        add_box(P("LED", "LCD_Green"), (0.003, 0.003, 0.001), (W * 0.4, ytop, zs + 0.0082))
+        _loft_up(body, [(W - 2 * side - 0.006, D - 0.006, 0.008, fz), (W - 2 * side, D, 0.01, fz + 0.003),
+                        (W - 2 * side, D, 0.01, zs + 0.005), (W - 2 * side - 0.003, D - 0.003, 0.0085, zs + 0.008)], 0, 0, cs)
+        for fx in (-1, 1):
+            for fy in (-1, 1):
+                add_cylinder_between(P("Feet", "Rubber_Black"), (fx * (W / 2 - 0.018), fy * (D / 2 - 0.02), 0),
+                                     (fx * (W / 2 - 0.018), fy * (D / 2 - 0.02), fz), 0.006, s)
+    else:
+        _rr_box(body, (W, D, zs + 0.008), (0, 0, (zs + 0.008) / 2), d, 0.01, 0.0)
+    lid = P("Lid", "Plastic_Dark")  # clamshell lid: swept rounded profile across X (u = Y, v = Z for an X path)
+    ld, lh = D / 2 - yslot, H - zs + 0.004
+    lw = W / 2 - side - (0.0015 if d <= 1 else 0)  # step at the lid seam
+    prof = [(a + (yslot + D / 2) / 2, b + zs - 0.004 + lh / 2) for a, b in rounded_rect(ld, lh, r["lid_r_m"], cs * 2)]
+    add_sweep(lid, [(-lw, 0, 0), (lw, 0, 0)], prof)
+    add_box(P("Slot", "Plastic_Black"), (W * 0.7, 0.004, 0.006), (0, yslot - 0.0015, zs + 0.006))
+    add_box(P("Paper", "Paper_White"), (W * 0.55, 0.0006, 0.022), (0, yslot - 0.0035, zs + 0.013))
+    if d <= 1:
+        steel = P("TearBar", "Stainless")
+        add_box(steel, (W * 0.72, 0.0015, 0.004), (0, yslot - 0.0045, zs + 0.009))
+        if d == 0:  # serrated tear edge
+            for i in range(24):
+                add_box(steel, (0.0018, 0.0012, 0.0016), (-W * 0.34 + i * W * 0.68 / 23, yslot - 0.0045, zs + 0.0118))
+        seam = P("Slot", "Plastic_Black")  # dark seam line where the lid meets the body
+        add_box(seam, (2 * lw - 0.004, D / 2 - yslot - 0.006, 0.0012), (0, (yslot + D / 2) / 2, zs + 0.0084))
+        ytop = (-D / 2 + yslot) / 2  # front ledge: feed button, status LEDs, cover-open lever
+        add_beveled_box(P("Button", "Plastic_Grey"), (0.016, 0.009, 0.003), (W * 0.27, ytop, zs + 0.0095), 0.002, 0.0008, 2)
+        for i in range(2):
+            add_box(P("LED", "LCD_Green"), (0.003, 0.003, 0.0008), (W * 0.42 - i * 0.006, ytop, zs + 0.0084))
+        add_beveled_box(P("Button", "Plastic_Grey"), (0.0022, 0.03, 0.018), (W / 2 - 0.0011, -D * 0.05, zs - 0.006), 0.0008, 0.0004, 2)
+        add_beveled_box(P("Switch", "Plastic_Black"), (0.0022, 0.012, 0.008), (-W / 2 + 0.0011, D * 0.3, zs * 0.5), 0.0008, 0.0004, 2)
     return (W, H, D), {"collision_boxes": [collision_box("Body", (0, 0, H / 2), (W, D, H))]}
 
 
@@ -314,26 +388,46 @@ def card_terminal(P, p, d, s):
     c = Vector((0, 0, zc))
     p0, p1 = c - a * L / 2, c + a * L / 2
     W, D, H = max(2 * rb, tw), 2 * (L / 2 * a.y + tt / 2 * abs(n.y)), zc + L / 2 * a.z + tt / 2 * n.z
-    body = P("Body", "Plastic_Black")
+    body = P("Body", "Plastic_Terminal")
     if d >= 3:
         add_box(body, (2 * rb, 2 * rb, 0.015), (0, 0, 0.0075))
         add_box(body, (tw, D, H - 0.015), (0, 0, 0.015 + (H - 0.015) / 2))
         return (W, H, D), {}
     cs = max(1, CS[d])
-    add_lathe(body, (0, 0, 0), (0, 0, 1), [(0, 0), (rb, 0), (rb, 0.01), (rb * 0.8, 0.015), (0, 0.015)] if d <= 1
+    stand = P("Stand", "Plastic_Terminal")
+    fz = 0.002 if d <= 1 else 0.0
+    if d <= 1:
+        add_lathe(P("Feet", "Rubber_Black"), (0, 0, 0), (0, 0, 1), [(0, 0), (rb - 0.004, 0), (rb - 0.004, fz), (0, fz)], s * 2)
+    add_lathe(stand, (0, 0, 0), (0, 0, 1), [(0, fz), (rb, fz), (rb, 0.01), (rb * 0.8, 0.015), (0, 0.015)] if d <= 1
               else [(0, 0), (rb, 0), (rb, 0.015), (0, 0.015)], s * 2)
-    add_cylinder_between(body, (0, 0, 0.014), (0, 0, zc - tt / 2 + 0.002), 0.012, s)
+    zh = zc - tt / 2 / math.cos(ang) - 0.004  # swivel/tilt hinge under the body
+    add_cylinder_between(stand, (0, 0, 0.014), (0, 0, zh), 0.012, s)
+    if d <= 1:
+        add_lathe(stand, (0, 0, 0), (0, 0, 1), [(0.0125, 0.014), (0.016, 0.014), (0.016, 0.02), (0.0125, 0.022)], s)  # swivel collar
+        add_cylinder_between(stand, (-tw / 2 + 0.008, 0, zh), (tw / 2 - 0.008, 0, zh), 0.008, s)
+        for sx in (-1, 1):  # cradle cheeks hold the body on the hinge
+            ox = -sx * (tw / 2 + 0.002)
+            add_sweep(stand, [c - a * 0.028 - n * (tt * 0.15), c + a * 0.028 - n * (tt * 0.15)],
+                      [(pu + ox, pv) for pu, pv in rounded_rect(0.004, tt * 0.75, 0.0015, 1)])
+            add_cylinder_between(P("Screws", "Metal_Screw"), (sx * (tw / 2 + 0.004), 0, zh), (sx * (tw / 2 + 0.0045), 0, zh), 0.003, 8)
     add_sweep(body, [p0, p1], rounded_rect(tw, tt, 0.008, cs))
     top = n * (tt / 2)
-    add_sweep(P("Screen", "Glass_Dark"), [c + a * (L * 0.02) + top, c + a * (L * 0.45) + top],
-              rounded_rect(tw * 0.78, 0.0016, 0.0006, 1))
-    add_sweep(P("Slot", "Plastic_Dark"), [p0 + a * 0.004 + top * 0.2, p0 + a * 0.0045 + top * 0.2], rounded_rect(tw * 0.7, 0.0025, 0, 0))
+    # screen in the upper half: glass sheet over a black mask, a hair proud of the body
+    add_sweep(P("Screen", "Glass_Dark"), [c + a * (L * 0.04) + top, c + a * (L * 0.44) + top],
+              [(pu, pv + 0.0004) for pu, pv in rounded_rect(tw * 0.8, 0.0008, 0.0003, 1)])
+    # chip-card slot in the lower end face
+    add_sweep(P("Slot", "Plastic_Black"), [p0 - a * 0.0004, p0 + a * 0.004], [(pu, pv + tt * 0.12) for pu, pv in rounded_rect(tw * 0.7, 0.0022, 0.0008, 1)])
     if d <= 1:
         keys = P("Keys", "Plastic_Grey")
-        for row in range(4):
+        kprof = rounded_rect(0.011, 0.016, 0.0028, 2 if d == 0 else 1)
+        kprof_fn = rounded_rect(0.009, 0.016, 0.0028, 2 if d == 0 else 1)
+        for row in range(5):  # 4 rows of 3 digits, then the function row
             for col in range(3):
-                q = c - a * (L * 0.06 + row * 0.016) + Vector(((col - 1) * 0.018, 0, 0)) + top
-                add_cylinder_between(keys, q - n * 0.0005, q + n * 0.0015, 0.0055, s)
+                q = c - a * (L * 0.06 + row * 0.015) + Vector(((col - 1) * 0.02, 0, 0)) + top
+                add_sweep(keys, [q - n * 0.0005, q + n * 0.0016], kprof if row < 4 else kprof_fn)
+        add_sweep(P("Slot", "Plastic_Black"), [c - a * (L * 0.3), c + a * (L * 0.3)],  # magstripe groove on the side
+                  [(pu - tw / 2 - 0.0002, pv) for pu, pv in rounded_rect(0.0012, 0.003, 0.0004, 1)])
+        add_box(P("LED", "LCD_Green"), (0.012, 0.0012, 0.0012), tuple(c + a * (L * 0.47) + top + n * 0.0003))
     return (W, H, D), {"collision_boxes": [collision_box("Body", (0, 0, H / 2), (W, D, H))]}
 
 

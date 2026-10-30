@@ -7,9 +7,31 @@
   "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom",
   "gaps": [
     "GAP-109",
-    "GAP-PROC-20"
+    "GAP-127",
+    "GAP-PROC-20",
+    "GAP-PROC-37",
+    "GAP-PROC-38",
+    "GAP-PROC-39"
   ],
-  "_sources": "ROOM_FIXTURES Restroom rows; TI 6.4/6.6 (rim 34 in, knee 27 in, mirror 1'-8\" x 3'-6\" at 3'-4\", grab bars 42/36/18 in at 33-36 in, accessory types); DEC-062 (silver manual towel dispenser, tool chest), DEC-068 (storage cabinet). GAP-PROC-20: basin/faucet/trap, toilet bowl and rim height, bar diameter and 1.5 in clearance (ADA convention), accessory sizes and mount heights, cabinet finish.",
+  "_sources": {
+    "_rule": "Every size, count, colour and finish below cites RF (ROOM_FIXTURES rev7 fixture id), TI (REFERENCES_INDEX 6.6), a DEC, or a GAP id. Bevels, hems, seams, hinges, screws, reveals, toe kick and panel thickness are generic construction (PROC-005 brief) and change no outer size.",
+    "colors.Vitreous_White": "DEC-062: white full-size sink, standard white toilet (also bolt caps, tank lid)",
+    "colors.Plastic_White": "DEC-062 'standard white toilet' (seat + lid assumed to match the china); shade GAP-PROC-37",
+    "colors.Chrome": "GAP-PROC-20 (faucet/trap/supplies finish); key-lock and toilet flush/seat-hinge finish GAP-PROC-37",
+    "colors.Black_Trim": "GAP-PROC-37 (dispenser bezels, keyways, slot, lever, push plate, nozzle, overflow insert, lavatory brackets)",
+    "colors.Silver_Towel": "DEC-062: old silver manual paper-towel dispenser (silver -> brushed_metal by the proctex RULES)",
+    "colors.Accessory_Metal": "GAP-PROC-37 neutral mid grey: mirror frame, grab bars, TP dispenser, napkin disposal, sconce body; finish brushed_metal is also GAP-PROC-37",
+    "colors.Accessory_Plastic": "GAP-PROC-37 neutral mid grey: soap dispenser body (TI 6.6 gives the type only)",
+    "colors.Mirror": "DEC-062 full-size mirror; TI 6.6 mirror (mirror glass is the object class)",
+    "colors.Flat_Black": "DEC-062: flat-black storage tool chest",
+    "colors.Cabinet_Grey": "GAP-PROC-20 (storage-cabinet finish) neutral mid grey",
+    "colors.Brushed_Steel": "GAP-PROC-37 (cabinet hinges; LOD3 pull block)",
+    "colors.Glass_Dark": "GAP-PROC-37 (dispenser level windows)",
+    "colors.Glass_Frosted": "GAP-PROC-37 (TI L6 bathroom sconce: type only; diffuser material and colour unsourced)",
+    "colors.Paper_White": "GAP-PROC-37 (TP roll colour; unsourced)",
+    "finishes.Accessory_Metal": "GAP-PROC-37 (brushed_metal placeholder for the uncited accessory metal)",
+    "wear": "PROC-005 Q0.4 shared wear defaults (render-only, no store fact)"
+  },
   "checks": {
     "origin_bottom_centre": true,
     "fail_on_degenerate": true,
@@ -18,7 +40,7 @@
   "lods": {
     "LOD0": {
       "detail": 0,
-      "seg": 16
+      "seg": 24
     },
     "LOD1": {
       "detail": 1,
@@ -58,12 +80,6 @@
       0.045,
       1.0
     ],
-    "Stainless": [
-      0.66,
-      0.67,
-      0.68,
-      1.0
-    ],
     "Mirror": [
       0.7,
       0.75,
@@ -94,12 +110,6 @@
       0.64,
       1.0
     ],
-    "Glass_Dark": [
-      0.05,
-      0.06,
-      0.07,
-      1.0
-    ],
     "Glass_Frosted": [
       0.9,
       0.9,
@@ -111,7 +121,34 @@
       0.96,
       0.94,
       1.0
+    ],
+    "Silver_Towel": [
+      0.66,
+      0.67,
+      0.68,
+      1.0
+    ],
+    "Accessory_Metal": [
+      0.5,
+      0.5,
+      0.5,
+      1.0
+    ],
+    "Accessory_Plastic": [
+      0.5,
+      0.5,
+      0.5,
+      1.0
+    ],
+    "Glass_Dark": [
+      0.05,
+      0.06,
+      0.07,
+      1.0
     ]
+  },
+  "finishes": {
+    "Accessory_Metal": "brushed_metal"
   },
   "variants": [
     {
@@ -136,7 +173,17 @@
         "faucet_h_m": 0.15,
         "rim_z_m": 0.8636
       },
-      "_note": "bound = P-trap bottom to faucet top; rim at 34 in AFF (mount_z_m = origin AFF)"
+      "_note": "bound = P-trap bottom to faucet top; rim at 34 in AFF (mount_z_m = origin AFF)",
+      "_src": {
+        "width_m": "RF Lavatory_WallHung 1.7 ft",
+        "depth_m": "RF Lavatory_WallHung 1.5 ft",
+        "height_m": "bound = trap_drop + body_h + faucet_h (GAP-PROC-20); RF height 2.833 ft = rim 34 in AFF",
+        "lav.rim_z_m": "TI 6.6 / RF Lavatory_WallHung notes: rim 34 in AFF",
+        "lav.body_h_m": "GAP-PROC-20",
+        "lav.trap_drop_m": "GAP-PROC-20",
+        "lav.faucet_h_m": "GAP-PROC-20",
+        "type": "DEC-062 white full-size sink; A011 wall-hung; faucet/trap/supply configuration GAP-PROC-20"
+      }
     },
     {
       "tri_budget": {
@@ -154,7 +201,14 @@
       "width_m": 0.508,
       "depth_m": 0.01524,
       "height_m": 1.0668,
-      "mount_z_m": 1.016
+      "mount_z_m": 1.016,
+      "_src": {
+        "width_m": "TI 6.6 1'-8\"",
+        "height_m": "TI 6.6 3'-6\"",
+        "depth_m": "RF Mirror 0.05 ft",
+        "mount_z_m": "TI 6.6 bottom 3'-4\" AFF",
+        "frame": "channel frame + 4 corner fixings: type GAP-PROC-39"
+      }
     },
     {
       "tri_budget": {
@@ -177,6 +231,16 @@
         "bowl_w_m": 0.36,
         "bowl_l_m": 0.5,
         "tank_d_m": 0.23
+      },
+      "_src": {
+        "width_m": "RF Toilet 1.6 ft",
+        "depth_m": "RF Toilet 2.4 ft",
+        "height_m": "RF Toilet 2.5 ft",
+        "toilet.rim_z_m": "GAP-PROC-20",
+        "toilet.bowl_w_m": "GAP-PROC-20",
+        "toilet.bowl_l_m": "GAP-PROC-20",
+        "toilet.tank_d_m": "GAP-PROC-20",
+        "type": "DEC-062 standard white toilet, tank on the west wall (RF notes)"
       }
     },
     {
@@ -199,6 +263,15 @@
         "finish": "Flat_Black",
         "pull_standoff_m": 0.025,
         "shelves": 2
+      },
+      "_src": {
+        "width_m": "RF ToolChest_Black 2.2 ft (size Low, GAP-127)",
+        "depth_m": "RF ToolChest_Black 1.5 ft",
+        "height_m": "RF ToolChest_Black 2.75 ft (below the 33 in grab bar)",
+        "cab.finish": "DEC-062 flat black",
+        "cab.shelves": "DEC-062: 2 shelves",
+        "doors": "DEC-062 swing-out doors (2 = GAP-PROC-39)",
+        "cab.pull_standoff_m": "GAP-PROC-37 (pull hardware)"
       }
     },
     {
@@ -222,7 +295,16 @@
         "pull_standoff_m": 0.025,
         "shelves": 4
       },
-      "_note": "RF rev6 3.2 ft wide (checklist T6 said 4.0); finish GAP-PROC-20"
+      "_note": "RF rev6 3.2 ft wide (checklist T6 said 4.0); finish GAP-PROC-20",
+      "_src": {
+        "width_m": "RF Cabinet_Storage_Large 3.2 ft",
+        "depth_m": "RF Cabinet_Storage_Large 1.5 ft",
+        "height_m": "RF Cabinet_Storage_Large 7.0 ft",
+        "cab.finish": "GAP-PROC-20 (storage-cabinet finish)",
+        "cab.shelves": "GAP-PROC-38 (shelf count unsourced; 4 is a placeholder)",
+        "doors": "2 doors GAP-PROC-38",
+        "cab.pull_standoff_m": "GAP-PROC-37 (pull hardware)"
+      }
     },
     {
       "tri_budget": {
@@ -241,7 +323,16 @@
       "depth_m": 0.0762,
       "height_m": 0.0762,
       "mount_z_m": 0.8382,
-      "bar_r_m": 0.0159
+      "bar_r_m": 0.0159,
+      "_src": {
+        "depth_m": "RF GrabBar_* 0.15 ft (0.046 m) NOT matched: see _note",
+        "height_m": "flange diameter 3 in (GAP-PROC-20); RF 0.15 ft is the bar outline",
+        "mount_z_m": "TI 6.6 33-36 in AFF (lower bound 33 in)",
+        "bar_r_m": "GAP-PROC-20 (1.25 in bar)",
+        "flange": "3-screw flange type GAP-PROC-39",
+        "width_m": "TI 6.6 42 in (RF GrabBar_North 3.5 ft)"
+      },
+      "_note": "depth 0.0762 m (3 in) vs RF 0.15 ft (0.046 m): the RF row is a schematic outline. A 1.25 in bar on a flange with the 1.5 in wall clearance (ADA convention, GAP-PROC-20) needs ~3 in from wall to bar face; at 0.046 m the clearance would be ~0.4 in. Origin = flange centre line bottom; mount_z_m = 33 in."
     },
     {
       "tri_budget": {
@@ -260,7 +351,16 @@
       "depth_m": 0.0762,
       "height_m": 0.0762,
       "mount_z_m": 0.8382,
-      "bar_r_m": 0.0159
+      "bar_r_m": 0.0159,
+      "_src": {
+        "depth_m": "RF GrabBar_* 0.15 ft (0.046 m) NOT matched: see _note",
+        "height_m": "flange diameter 3 in (GAP-PROC-20); RF 0.15 ft is the bar outline",
+        "mount_z_m": "TI 6.6 33-36 in AFF (lower bound 33 in)",
+        "bar_r_m": "GAP-PROC-20 (1.25 in bar)",
+        "flange": "3-screw flange type GAP-PROC-39",
+        "width_m": "TI 6.6 36 in (RF GrabBar_West 3.0 ft)"
+      },
+      "_note": "depth 0.0762 m (3 in) vs RF 0.15 ft (0.046 m): the RF row is a schematic outline. A 1.25 in bar on a flange with the 1.5 in wall clearance (ADA convention, GAP-PROC-20) needs ~3 in from wall to bar face; at 0.046 m the clearance would be ~0.4 in. Origin = flange centre line bottom; mount_z_m = 33 in."
     },
     {
       "tri_budget": {
@@ -280,7 +380,16 @@
       "height_m": 0.4572,
       "vertical": true,
       "mount_z_m": 0.8382,
-      "bar_r_m": 0.0159
+      "bar_r_m": 0.0159,
+      "_src": {
+        "depth_m": "RF GrabBar_* 0.15 ft (0.046 m) NOT matched: see _note",
+        "height_m": "TI 6.6 18 in vertical (RF GrabBar_West notes)",
+        "mount_z_m": "GAP-PROC-20 (TI 6.6 gives 33-36 in for the bars; vertical bar bottom placed at 33 in)",
+        "bar_r_m": "GAP-PROC-20 (1.25 in bar)",
+        "flange": "3-screw flange type GAP-PROC-39",
+        "width_m": "flange diameter 3 in (GAP-PROC-20)"
+      },
+      "_note": "depth 0.0762 m (3 in) vs RF 0.15 ft (0.046 m): the RF row is a schematic outline. A 1.25 in bar on a flange with the 1.5 in wall clearance (ADA convention, GAP-PROC-20) needs ~3 in from wall to bar face; at 0.046 m the clearance would be ~0.4 in. Origin = flange centre line bottom; mount_z_m = 33 in."
     },
     {
       "tri_budget": {
@@ -301,7 +410,15 @@
       "mount_z_m": 0.762,
       "disp": {
         "type": "towel",
-        "body": "Stainless"
+        "body": "Silver_Towel"
+      },
+      "_src": {
+        "width_m": "RF Accessories 1.1 ft",
+        "depth_m": "RF Accessories 0.4 ft",
+        "height_m": "RF Accessories 1.5 ft",
+        "mount_z_m": "GAP-PROC-20",
+        "disp.body": "DEC-062 silver",
+        "type": "DEC-062 old silver manual dispenser (overrides TI 6.6 'semi-recessed with waste'); window/lock/lever/slot layout GAP-PROC-39"
       }
     },
     {
@@ -323,7 +440,15 @@
       "mount_z_m": 0.5,
       "disp": {
         "type": "tp",
-        "body": "Stainless"
+        "body": "Accessory_Metal"
+      },
+      "_src": {
+        "width_m": "GAP-PROC-20",
+        "depth_m": "GAP-PROC-20",
+        "height_m": "GAP-PROC-20",
+        "mount_z_m": "GAP-PROC-20",
+        "disp.body": "GAP-PROC-37",
+        "type": "TI 6.6 surface toilet-paper dispenser; twin-roll hood GAP-PROC-39"
       }
     },
     {
@@ -345,7 +470,15 @@
       "mount_z_m": 1.0,
       "disp": {
         "type": "soap",
-        "body": "Plastic_White"
+        "body": "Accessory_Plastic"
+      },
+      "_src": {
+        "width_m": "GAP-PROC-20",
+        "depth_m": "GAP-PROC-20",
+        "height_m": "GAP-PROC-20",
+        "mount_z_m": "GAP-PROC-20",
+        "disp.body": "GAP-PROC-37",
+        "type": "TI 6.6 wall soap dispenser; push-plate/window layout GAP-PROC-39"
       }
     },
     {
@@ -367,7 +500,15 @@
       "mount_z_m": 0.7,
       "disp": {
         "type": "napkin",
-        "body": "Stainless"
+        "body": "Accessory_Metal"
+      },
+      "_src": {
+        "width_m": "GAP-PROC-20",
+        "depth_m": "GAP-PROC-20",
+        "height_m": "GAP-PROC-20",
+        "mount_z_m": "GAP-PROC-20",
+        "disp.body": "GAP-PROC-37",
+        "type": "TI 6.6 napkin disposal; top flap GAP-PROC-39"
       }
     },
     {
@@ -389,7 +530,15 @@
       "mount_z_m": 1.8,
       "disp": {
         "type": "sconce",
-        "body": "Brushed_Steel"
+        "body": "Accessory_Metal"
+      },
+      "_src": {
+        "width_m": "GAP-PROC-20",
+        "depth_m": "GAP-PROC-20",
+        "height_m": "GAP-PROC-20",
+        "mount_z_m": "GAP-PROC-20",
+        "disp.body": "GAP-PROC-37",
+        "type": "TI 6.6 / 6.7 L6 bathroom sconce; cylinder diffuser form GAP-PROC-39"
       }
     }
   ]

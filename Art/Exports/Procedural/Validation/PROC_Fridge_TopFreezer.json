@@ -2,18 +2,17 @@
   "asset_id": "PROC_Fridge_TopFreezer",
   "collision_boxes": 1,
   "errors": [],
-  "export_sha256": "c49e3b6236f64c05",
+  "export_sha256": "37ef60dccb46c2d5",
   "generator": "glass_door_cooler",
   "lod_tris": {
-    "LOD0": 868,
-    "LOD1": 548,
-    "LOD2": 360,
+    "LOD0": 3740,
+    "LOD1": 1876,
+    "LOD2": 408,
     "LOD3": 24
   },
-  "params_sha256": "2ff345c1e66a9a6e",
+  "params_sha256": "ee3b33c7e8887182",
   "passed": true,
   "warnings": [
-    "LOD0 868 tris below the DEC-084 guide minimum 20000 (too simple?)",
-    "LOD2: 360 tris > 40% of LOD0 (guide 1/2, 1/4, <= 1/10)"
+    "LOD0 3740 tris below the DEC-084 guide minimum 20000 (too simple?)"
   ]
 }

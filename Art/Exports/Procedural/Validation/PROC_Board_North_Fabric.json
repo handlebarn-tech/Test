@@ -2,17 +2,17 @@
   "asset_id": "PROC_Board_North_Fabric",
   "collision_boxes": 0,
   "errors": [],
-  "export_sha256": "e2d1a6dcb8c90b05",
+  "export_sha256": "0f0d91369d5cac88",
   "generator": "break_room",
   "lod_tris": {
-    "LOD0": 380,
-    "LOD1": 124,
-    "LOD2": 60,
+    "LOD0": 144,
+    "LOD1": 96,
+    "LOD2": 56,
     "LOD3": 12
   },
-  "params_sha256": "b69907bc8ac355f5",
+  "params_sha256": "e26ffa559c6e8ca0",
   "passed": true,
   "warnings": [
-    "LOD0 380 tris below the DEC-084 guide minimum 5000 (too simple?)"
+    "LOD0 144 tris below the DEC-084 guide minimum 5000 (too simple?)"
   ]
 }

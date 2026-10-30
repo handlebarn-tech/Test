@@ -7,9 +7,20 @@
   "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Janitor",
   "gaps": [
     "GAP-109",
-    "GAP-PROC-21"
+    "GAP-127",
+    "GAP-PROC-21",
+    "GAP-PROC-30"
   ],
-  "_sources": "ROOM_FIXTURES MopSink_JC 1.6 x 1.5 x 1.0 ft (A011, GAP-109) and Mops_Brooms_JC 0.8 x 1.0 x 5.0 ft (DEC-062); DEC-079 JC list. GAP-PROC-21: splash-guard height, basin wall, mop/broom parts, rail height, mop bucket size (commercial convention).",
+  "_sources": {
+    "MopSink_JC width/depth/height": "RF MopSink_JC size_ft 1.6 x 1.5 x 1.0 ('square mop sink in the JC SE corner, A011 only'); existence DEC-062 ('a drainage (mop) sink')",
+    "Mops_Brooms_JC width/depth/height": "RF Mops_Brooms_JC size_ft 0.8 x 1.0 x 5.0 (DEC-062 'mops and brooms'; position/size Low, GAP-127)",
+    "MopBucket_Wringer (whole asset)": "GAP-PROC-30 placeholder: no bucket in DEC-062's closet list or RF; GAP-109 no imagery. Size is a generic placeholder",
+    "sink.guard_h_m / extra_h_m / sink.wall_m / basin rim profile": "GAP-PROC-21 (splash-guard height, basin wall); guards themselves GAP-PROC-30 (not in DEC-062/RF)",
+    "mops.handle_r_m / mops.rail_z_m / mop and broom part sizes": "GAP-PROC-21",
+    "bucket.bucket_h_m / bucket.caster_h_m": "GAP-PROC-30",
+    "colors.* (all keys)": "GAP-PROC-30 neutral grey placeholders: DEC-062 and RF give no colour or material for any janitor item; GAP-109 no imagery",
+    "finishes": "GAP-PROC-30 placeholders chosen only so the PBR preview reads (stone basin, brushed guards, cotton heads); not store facts"
+  },
   "checks": {
     "origin_bottom_centre": true,
     "fail_on_degenerate": true,
@@ -39,58 +50,70 @@
     "stains": 0.35
   },
   "colors": {
-    "Moulded_Stone": [
-      0.85,
-      0.85,
-      0.82,
+    "Sink_Grey": [
+      0.62,
+      0.62,
+      0.626,
       1.0
     ],
-    "Stainless": [
-      0.66,
-      0.67,
-      0.68,
+    "Guard_Grey": [
+      0.55,
+      0.55,
+      0.556,
       1.0
     ],
-    "Handle_Wood": [
-      0.6,
-      0.45,
+    "Handle_Grey": [
+      0.5,
+      0.5,
+      0.505,
+      1.0
+    ],
+    "MopHead_Grey": [
+      0.72,
+      0.72,
+      0.727,
+      1.0
+    ],
+    "Bristle_Grey": [
+      0.32,
+      0.32,
+      0.323,
+      1.0
+    ],
+    "Holder_Grey": [
       0.28,
+      0.28,
+      0.283,
       1.0
     ],
-    "Black_Plastic": [
-      0.04,
-      0.04,
-      0.045,
+    "Bucket_Grey": [
+      0.5,
+      0.5,
+      0.505,
       1.0
     ],
-    "Mop_Cotton": [
-      0.88,
-      0.86,
-      0.8,
+    "Wringer_Grey": [
+      0.4,
+      0.4,
+      0.404,
       1.0
     ],
-    "Bristle_Red": [
+    "Lever_Grey": [
       0.6,
-      0.12,
-      0.1,
+      0.6,
+      0.606,
       1.0
     ],
-    "Bucket_Yellow": [
-      0.9,
-      0.75,
-      0.1,
+    "Caster_Grey": [
+      0.22,
+      0.22,
+      0.222,
       1.0
     ],
-    "Plastic_Grey": [
-      0.45,
-      0.46,
-      0.48,
-      1.0
-    ],
-    "Chrome": [
-      0.76,
-      0.77,
-      0.79,
+    "Fastener_Grey": [
+      0.58,
+      0.58,
+      0.586,
       1.0
     ]
   },
@@ -117,7 +140,7 @@
         "guard_h_m": 0.3,
         "wall_m": 0.04
       },
-      "_note": "RF h = basin; the 0.3 m stainless splash guards (GAP-PROC-21) add to the bound"
+      "_note": "RF h = basin; the 0.3 m splash guards (GAP-PROC-21 height, GAP-PROC-30 existence) add to the bound"
     },
     {
       "tri_budget": {
@@ -151,7 +174,7 @@
         "lod0_min": 5000
       },
       "id": "MopBucket_Wringer",
-      "rf": "Mops_Brooms_JC (bucket, DEC-079 JC list)",
+      "rf": "none (GAP-PROC-30 placeholder; not in DEC-062 or RF)",
       "kind": "bucket",
       "width_m": 0.55,
       "depth_m": 0.4,
@@ -159,7 +182,22 @@
       "bucket": {
         "bucket_h_m": 0.3,
         "caster_h_m": 0.06
-      }
+      },
+      "gap": "GAP-PROC-30",
+      "_note": "GAP-PROC-30: unsourced placeholder kept so the closet has a wringer bucket slot; neutral greys only; size 0.55 x 0.40 x 0.90 m generic"
     }
-  ]
+  ],
+  "finishes": {
+    "Sink_Grey": "stone",
+    "Guard_Grey": "brushed_metal",
+    "Handle_Grey": "plastic",
+    "MopHead_Grey": "cotton",
+    "Bristle_Grey": "cotton",
+    "Holder_Grey": "plastic",
+    "Bucket_Grey": "plastic",
+    "Wringer_Grey": "plastic",
+    "Lever_Grey": "brushed_metal",
+    "Caster_Grey": "rubber",
+    "Fastener_Grey": "brushed_metal"
+  }
 }

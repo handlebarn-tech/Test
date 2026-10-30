@@ -1,4 +1,87 @@
-# PROC-005 handoff (in progress; stopped at a clean commit because the context budget ran low)
+# PROC-005 handoff
+
+## Fix wave for REVIEW-PROC5 (2026-10-30), branch `claude/elated-satoshi-3a4844`
+This branch merges slice 1 (`worktree-agent-ac7414483b9f8bb4a` @ e9f8173) and then main.
+
+Per-family worker notes are in `Docs/Handoffs/PROC-005-fixwave/`. Each one holds the change log, the tri table, the GAP rows and DEC-047 questions.
+
+| Finding | Fix |
+|---|---|
+| 1 DEC-084 visual bar | **Infra:** `proctex.py` makes 18 tileable 2K PBR finish sets: BaseColor/Normal/HDRP Mask, 2048–20480 px/m, in `UnityProject/Assets/_Game/Art/Procedural/Textures/` (LFS, byte-identical reruns). It also adds a per-vertex `Wear` attribute (edge wear + grime), a manifest `finishes` block and Eevee contact sheets (`PROC_<gen>_contact_sheet.jpg`, 4 tiles: 3/4, front, close-up, LODn). **Families:** all 8 non-wire families rebuilt at LOD0 with real construction: bevels, seams and reveals, hardware, hems, gaskets, toe kicks, electronics detail. Tri counts are guides under DEC-114. |
+| 2 register mapping | `register_counter_run` now models RF `Counter_Register_North` (10/9/8), `_EastReturn` (12/11, GAP-130), `_South` (7,2,3,4,5,6, GAP-129) and `_SouthReturn`, per RI §1.5 rows 98/101. LegA/LegB were dropped. Station anchors come from RF POS + SCENE_ANCHORS. |
+| 3 phantom deli counter | `DeliCounter_LegA/LegB` were dropped, with their FBX, Unity copy, validation file and manifest entries. |
+| 4 jar-wall depth/fittings | Depth is RF 2.1 ft (0.64 m); `rf` = RF ids; the TI showcase pitch is gone (GAP-113). South wall: open bins (GAP-PROC-25). Walnut drawers on North only. East: arched bays + backlit teal (GAP-PROC-26). |
+| 5 mop bucket | DEC-079 citation removed. The bucket is a labelled GAP-PROC-30 placeholder, and every janitor colour and material is GAP neutral grey. |
+| 6 GAP-106 mis-cite | Removed from params and from GAP-PROC-15. The stray GAP-107 citation is gone too. |
+| 7/8 minor cites | Every size, count, colour and finish now has an `_src` or GAP, covered by new rows GAP-PROC-22..39 in KNOWN_GAPS. The backsplash height is GAP-PROC-19. Grab-bar depth stays 3 in, with a `_note`. Wire-shelving counts are cited or GAP-PROC-29; their FBX are byte-identical. |
+
+**Validation:**
+- All 92 manifest assets pass (`blender.ps1 <gen>` for all 9 families), and `tests/test_validation.py` passes.
+- Determinism: a full rerun of all 9 families gave the same `export_sha256` for every asset as the workers' runs.
+- Jar, fill and packaged-goods manifest entries are unchanged.
+
+**LOD0 tris:**
+
+| Family | LOD0 tris |
+|---|---|
+| register station | 0.5–7.3k |
+| counters | 1.2–11.0k |
+| deli walls | 8.1–64.1k |
+| cooler | 3.7–15.2k |
+| office | 3.5–10.6k |
+| break room | 0.14–15.0k |
+| restroom | 0.7–4.3k |
+| janitor | 1.5–8.7k |
+| wire | 27.9–71.2k |
+
+**Not done; owed with a Unity editor slot (none was free; the Hub said Blender + validation only):**
+- the Unity import check and EditMode run (`studio.ps1`);
+- `.meta` files for every Fixtures FBX (WireShelving included) and for the textures (Normal type, sRGB off for Mask);
+- an HDRP material builder reading manifest `finishes` + `finishes.json`;
+- the `to_unity`/BoxCollider EditMode test (item 12 below).
+
+**Known limits:**
+- Box-projection UVs stay until PROC-007 (DEC-097).
+- Wood grain follows world X, so it runs sideways on cabinet doors.
+- Some acrylic and glass renders near-opaque in Eevee previews.
+- The Board assets are flat framed panels, because what is pinned to them is unrecorded (GAP-PROC-34).
+
+### Questions for Nolan (through the Hub); full DEC-047 detail is in the fixwave notes
+1. **Registers:**
+   - counter-top colour (TI white quartz vs black stone in the stills, GAP-PROC-23);
+   - the keyboard has no room in front of the monitor at the RF slot;
+   - the finish of the East/South return faces (GAP-PROC-24).
+2. **Deli walls:**
+   - is there a third shelf board on South?
+   - East tier count (GAP-133);
+   - are North/South backlit?
+   - does South's "wire bins" mean bins in the counter or the chrome rack beside it (GAP-PROC-25)?
+   - does the walnut-drawer photo (DEC-043) show North?
+3. **Cooler/janitor/wire:**
+   - cooler shelf count (5 est.);
+   - BOH south rack: one 5.3 ft section or 4-ft sections (DEC-088)?
+   - does a mop bucket exist, and what colour is it?
+   - break-room fridge colour.
+4. **Office:**
+   - worktable undershelf: there is none in wall2_R3C3 (GAP-PROC-33);
+   - standing-desk colour;
+   - tall-cabinet doors;
+   - desk frames.
+5. **Break room:**
+   - lunch-table finish;
+   - mini-hoop colours;
+   - bulletin board look;
+   - coat-hook count;
+   - locker body colour.
+6. **Restroom:**
+   - accessory finishes (GAP-PROC-37);
+   - storage-cabinet shelves and doors (GAP-PROC-38);
+   - TP dispenser form (GAP-PROC-39);
+   - toilet seat colour.
+
+---
+
+## Slice 1 handoff (superseded where the fix wave says so)
 
 **Branch:** `worktree-agent-ac7414483b9f8bb4a`. It merges `claude/clever-lamport-837e7f` (core 4ef04ae + WIP 87807ad) and `main` at e0fc82c (IMP-003 R3b–R6 sections, DEC-111).
 
