@@ -1,6 +1,6 @@
 # PROJECT STATE
 
-**Milestone:** M0/M1 done pending review → next M2 graybox + M3 domain engine (in parallel)
+**Milestone:** VERTICAL SLICE PLAYABLE on main (0032589, 2026-10-29). Next: slice polish (GAME-002b), wave-4 art/proc, BUILD-003
 **Known-good commit:** `main` (docs only). Wave 1 work is on branch `review/wave-1` (commit 667ebd1), unreviewed.
 **Build health:** on `review/wave-1`: Unity 6000.6.7f1 HDRP project compiles; 1/1 EditMode tests pass; Windows dev build + smoke launch OK (BUILD-001).
 **Updated:** 2026-10-29 by Hub (session 2, end; handover for a cleared hub)
@@ -15,7 +15,7 @@
 ## Wave 3 status (2026-10-29)
 | Task | Session | State |
 |---|---|---|
-| GAME-002 | dispo-game-002 | done (8df0a82, 41/41 EditMode, bot 12/12) → REVIEW-W3D (dispo-review-w3d `local_57aeb17a-1d55-496c-8328-51721cfc125a`) |
+| GAME-002 | dispo-game-002 | REVIEW-W3D GO with notes; MERGED (0032589). EditMode 141/141, bot 12/12 on real anchors. Follow-up GAME-002b: N1 jar labels, DEC-044 PriceFit, nits |
 | ART-002 | — | REVIEW-W3B GO with notes; merged to main |
 | REF-003 | — | merged via W3B |
 | GAME-003, BUILD-002 | — | REVIEW-W3A GO with notes; merged to main (f3e5bc9). n1 cache reset → GAME-002 before its merge; n2/n3/n5 → BUILD-003 |
