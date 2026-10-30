@@ -1,6 +1,6 @@
 # PROC-007 — DEC-097 UV layout: lightmap UV on channel 1, label UV on channel 2
 
-**Dept:** Assets · **Role:** PROC · **Priority:** P1 · **Owner:** — (launch after PROC-005 merges; both edit the shared exporter) · **Reviewer:** Unity A from the pool · **Touches:** none · **Interfaces:** DEC-097; World's Lookdev label shader reads channel 2 (cut-over agreed with the World lead, same wave)
+**Dept:** Assets · **Role:** PROC · **Priority:** P1 · **Owner:** — (launch after PROC-005 merges; both edit the shared exporter) · **Reviewer:** Unity A from the pool · **Touches:** none · **Interfaces:** DEC-097, agreed with the World lead 2026-10-30: Unity `uv` = base, `uv2` = lightmap, `uv3` = label; `generateSecondaryUV` stays 0. Assets sends World the accepted PROC-007 commit; World's ART shader task reads `uv3` against it; the Hub merges both in one wave. Unity slot: borrowed from World when ART-007 is not in Unity (ask first)
 
 ## Goal
 Every generated mesh exports UV0 = base, UV1 = a dedicated non-overlapping lightmap UV (DEC-084 "UV2"), UV2 = `UVMap_Label` where it exists. Re-export jars, jar fill and packaged goods in the same wave.

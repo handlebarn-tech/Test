@@ -32,7 +32,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30 (Assets lead `local_172b2109-6384-4914
 0. PROC-007 (DEC-097 UV layout + re-export) right after PROC-005 merges; agree the cut-over commit with the World lead.
 1. Review/merge path for the three in-flight tasks (Docs reviewer for IMP-003/PROC-006; Unity A for PROC-005 with a borrowed World Unity slot).
 2. Each toolkit round after audit: Docs review → Hub → Nolan approval → PROC integration (DEC-095). After rounds 3–6, a research pass of our own where ChatGPT lacked evidence (IMP-003 lists the gaps).
-3. PROC-006 phase 2: generators for the register kit once the spec and World's register re-audit land; then stocking arranger with believable uneven fill; buds/nugs look (low).
+3. PROC-006 phase 2: generators for the register kit once the spec and World's ROOM_FIXTURES rev7 (REF-011: registers + operator zones, deli walls, HUB) land — size from rev7 rows, not the current graybox; World messages when rev7 is on main; then stocking arranger with believable uneven fill; buds/nugs look (low).
 4. ASSET-004 resume (CHARACTERS.md rewrite, contact sheet, PROC-CHR-004 scale-to-60, GAME-CHR-002 import with Gameplay).
 5. Round 7 (interaction + polish, DEC-091 R7) by this studio after rounds 3–6 are integrated.
 6. BRAND-002 name search before any public build (DEC-078). Later (P1): Unity Warehouse/Office packs need a Package Manager download.
