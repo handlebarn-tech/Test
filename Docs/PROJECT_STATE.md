@@ -19,6 +19,7 @@ Sessions report to whichever session is Hub. Message them by id.
 | REVIEW-W4K: GAME-005 real jars | `local_0dd63bac-df1d-448d-9203-641ead6b6837` | capture gate running | merge on GO → start GAME-006 cart |
 | REVIEW-W4P: PROC-003 | `local_3bc3be53-eb4d-477e-8a99-02d950744ef4` | waiting on Unity; flags a GAME-005 interface clash | merge after W4K; route the clash to a GAME follow-up |
 | REVIEW-W4J: PERF-001 | `local_fa1d4222-cd8c-4df7-b9ab-799c6519e8b9` | re-runs going | merge on GO; ratify perf budgets |
+| **IMP-001**: audit Nolan's DISPO_GAME_DESIGN_V2 import (read-only) | `local_ad2c683f-9022-4d82-8d3d-2cad5d63c888` | running | send report to a REVIEW session, then to Nolan for approval; no use before approval |
 | GAME-010 tuning + personas | `local_0d166a8e-87b1-40bb-9594-be389c549875` | idle; needed `git lfs pull` | nudge to finish, then review |
 | Idle, reusable or archivable: ART `local_392adc04…`, PROC-004 `local_ffb38222…`, GAME-005 `local_65e98573…`, DES-003 `local_afc2a299…` | | | reuse for ART back rooms after REF-009 |
 
@@ -35,7 +36,7 @@ Sessions report to whichever session is Hub. Message them by id.
 - Phoenix TPT rate (OPEN-4): a receipt's tax lines would settle it; 25.1 % is kept (DEC-001).
 
 ## Pending from Nolan
-- A "fully built systems" file to integrate: he will say when it's ready.
+- ~~"Fully built systems" file~~: arrived 2026-10-30 as `Downloads/Dispo Game Imports/DISPO_GAME_DESIGN_V2/`; IMP-001 auditing.
 - ChatGPT-built mechanics: he will drop them in `C:/Users/handl/Downloads/Dispo Game Imports/`. Process: audit → review → **Nolan's approval** before any use.
 - Imports always go to `Downloads/Dispo Game Imports/` (outside the repo). `Imports/` in the repo root is git-excluded locally; the Dutchie export was moved out of it on 2026-10-30.
 
