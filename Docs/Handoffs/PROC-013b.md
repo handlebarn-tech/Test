@@ -16,7 +16,7 @@
 
 ## Validation
 - `blender -b --factory-startup --python-exit-code 10 -P Tools/Blender/generators/doors.py -- sheets` exits 0 and writes 15 per-door sheets plus the contact and LOD sheets. Those two are unchanged.
-- No geometry, export, manifest or params change: the diff touches only the `# --- review sheets` section of `doors.py`, `Docs/Assets/Specs/PROC_doors_*.png`, the packet and this handoff. `git diff --stat main -- Art/ Tools/Blender/params/` is empty. `params/doors.json` was left alone on purpose: the runner hashes the whole file into every manifest `params_sha256`, so even a caption edit would stale 28 manifest rows.
+- No geometry, export, manifest or params change: the diff touches only the `# --- review sheets` section of `doors.py`, `Docs/Assets/Specs/PROC_doors_*.png`, the packet and this handoff. `git diff --stat 3adc4d1 HEAD -- Art/ Tools/Blender/params/` is empty. `params/doors.json` was left alone on purpose: the runner hashes the whole file into every manifest `params_sha256`, so even a caption edit would stale 28 manifest rows.
 - Visual check: I put all 15 closed tiles side by side and checked them. Every leaf is shut inside its frame. Hardware: Entry has its pulls; the exits have push bars; Hall_Restroom has its kick plate. Office_HUB2's leaf is white. The arches and the grille have no leaf. The contact and LOD sheets came out byte-identical (deterministic), so git shows no change for them.
 
 ## Not done / known limits
