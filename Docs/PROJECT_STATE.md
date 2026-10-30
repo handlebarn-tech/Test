@@ -38,7 +38,7 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 - Several BACKLOG rows are stale; each lead reconciles its prefixes first.
 
 ## Pending from Nolan
-- **Asked 2026-10-30:** approve integrating ChatGPT rounds 3b–6 as the IMP-003 audit adapts them (adopt/adapt/reject R3b 1/7/2, R4 1/6/5, R5 0/5/0, R6 1/6/0); PROC-005 integrates after. Round 7 is the studio's (DEC-095).
+- ChatGPT rounds 3b–6 approved (DEC-111): rejected-but-needed assets get studio-built later.
 - Playtest build 2 once GAME-025 controls land (Nolan 2026-10-30: no build for PS1 alone).
 - Any ChatGPT-built mechanics he drops in Imports: audit → review → **his approval** before use.
 
