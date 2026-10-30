@@ -157,17 +157,17 @@ def render_previews(asset, lods, groups=None):
 
 def contact_sheet(gen=None):
     """Stack every asset's preview row (LOD0 front, LOD0 side, LODn front) into one committed PNG.
-    With gen: only that generator's grouped assets (row = asset, LOD0 per group then the other LODs, tiles at half
-    size) into PROC_<gen>_contact_sheet.png; the default sheet skips grouped assets."""
+    With gen: only that generator's assets (row = asset; grouped assets show LOD0 per group then the other LODs; tiles at
+    half size) into PROC_<gen>_contact_sheet.png; the default sheet skips grouped and own_sheet assets."""
     import numpy as np
     assets = sorted(json.load(open(MANIFEST))["assets"].items())
-    assets = [(a, e) for a, e in assets if (e["generator"] == gen if gen else "preview_groups" not in e)]
+    assets = [(a, e) for a, e in assets if (e["generator"] == gen if gen else "preview_groups" not in e and not e.get("own_sheet"))]
     sheet_path = SHEET.replace("PROC_contact", f"PROC_{gen}_contact") if gen else SHEET
     rows = []
     for asset, entry in assets:
         lods = sorted(entry["lods"])
         names = [f"{lod}_{view}" for lod, view in ((lods[0], "front"), (lods[0], "side"), (lods[-1], "front"))]
-        if gen:
+        if gen and "preview_groups" in entry:
             g = entry["preview_groups"]
             names = [f"{x}_{lods[0]}_front" for x in g] + [f"{g[-1]}_{lod}_front" for lod in lods[1:]]
         tiles = []
