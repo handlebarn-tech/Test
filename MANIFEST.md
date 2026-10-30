@@ -1,5 +1,7 @@
 # Dispo Game — Manifest
 
+> **Historical (AUDIT-001 C4, DEC-064):** lists the original handoff files with their original names and hashes at 2026-10-29. The docs have changed since; do not use these hashes to verify current files.
+
 Generated: 2026-10-29
 
 | Path | Lines | Words | SHA-256 |

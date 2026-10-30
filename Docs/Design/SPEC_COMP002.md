@@ -20,7 +20,7 @@
 | 10 | Medical tax 9.1 % | F4 | AUTO | GAME-009 |
 | 11 | Concentrate 5 g sub-cap | A1, A8, O4 | AUTO (+ meter) | GAME-014 (PS3) |
 | 12 | Edible 10 mg / 100 mg caps, no child-attractive shapes | E1, E2 | AUTO (catalog validator, art brief) | DATA-002 / GAME-014 (PS3) |
-| 13 | Adult-use daily cap (repeat visit) | A2, OPEN-2 | CUT until OPEN-2 | — |
+| 13 | Adult-use daily cap (repeat visit) | A2, OPEN-2 | **Answered DEC-049:** no daily limit; a repeat visit is allowed (flavour or light event, not a violation) | GAME-007 / later (was: CUT until OPEN-2) |
 | 14 | Visibly impaired customer → manager refuses | B3, O5 (store policy) | DECISION (rare) | PS2 backlog (GAME-013 or later) |
 | 15 | Lab results on request | D6 | DECISION already (Inspect) | — |
 | 16 | Agent badge, POS camera dome, entry signs, CR exit bag, scale seal | C2, C4, G2, D4/O6, D1 | FLAVOR | ART backlog (COMP-001 L7) |
@@ -98,28 +98,28 @@
 |---|---|---|
 | `medicalLimitGrams14d` | 70.87 (2.5 oz × 28.35) | [SRC] A5 via COMP-001 CHANGES (note: adult-use uses 28.0 g/oz; the 2.5 oz figure uses 28.35; GAP-COMP-06) |
 | `medicalTaxRate` | 0.091 | [SRC] F4 (provisional with OPEN-4) |
-| `medicalCustomerShare` | 0.10 | **GAP-COMP-01** placeholder; the real Rec/Med split exists in the Dutchie closing report (O16) but the value was not read |
+| `medicalCustomerShare` | 0.04 | [SRC] DEC-048 "medical is under 5 %" (GAP-COMP-01 answered); the exact value is [GDD]. Was the 0.10 placeholder |
 | seeded 14-day history | 0–3 prior purchases of 3.5–28 g, uniform | [GDD] |
 | `outOfStateMedChance` | 0.2 of MED customers | [GDD] |
 
 ## 5. Packaged-product rules (activate in PS3, GAME-014)
 - Concentrate 5 g sub-cap (A1/A8, O4): AUTO; meter row appears when a cart holds an extract/vape.
-- **What counts toward the caps for non-flower is unknown** (A9, OPEN-3). Placeholder until answered: extracts and vapes count their net concentrate grams toward the 5 g cap; prerolls and prepacks count their flower grams toward 28 g; edibles, beverages and topicals count 0 g. This is a labelled **GAP-COMP-02 placeholder**, never shown to players as law.
+- **Partly answered (DEC-048):** prerolls, edibles etc. count toward the per-transaction limits (5 g concentrate, 28 g flower), and an edible usually counts **≈0.1 g**; each packaged category's exact equivalent is still GAP-COMP-02. Earlier text, kept for reference: *What counts toward the caps for non-flower is unknown* (A9, OPEN-3). Placeholder until answered: extracts and vapes count their net concentrate grams toward the 5 g cap; prerolls and prepacks count their flower grams toward 28 g; edibles, beverages and topicals count 0 g. This is a labelled **GAP-COMP-02 placeholder**, never shown to players as law.
 - Edible caps (E1): catalog validator rejects any edible > 10 mg THC per serving or > 100 mg per package. Shapes/names (E2, H3): art brief rule for PROC-004/ART-006.
 
 ## 6. Rolling and repeat limits
 - Medical: the 14-day meter in §4 is the only rolling limit in PS1.
-- Adult-use repeat visits the same day: statute is per transaction only (A2); store policy unknown (OPEN-2). **CUT** until Nolan answers (GAP-COMP-07). No repeat customers in PS1 anyway (spec §39 is G6).
+- Adult-use repeat visits the same day: statute is per transaction only (A2). **Answered (DEC-049):** there is no daily limit; customers sometimes buy the max, take it to the car and queue again. Model it as an allowed repeat-visit customer (flavour or a light event), not a violation. (Earlier text: store policy unknown (OPEN-2), **CUT** until Nolan answers (GAP-COMP-07).) No repeat customers in PS1 anyway (spec §39 is G6).
 
 ## 7. Report rows (UX-002 lays them out)
 `strikes` (with a one-line reason each), `idsChecked`, `badIdsCaught`, `validIdsRefused`, `overLimitTrims`, `medSales`, `medTaxCollected`, `adultUseTaxCollected` (excise and TPT split optional, COMP-001 S1).
 
 ## 8. GAPs raised (proposed for `Docs/KNOWN_GAPS.md`)
-- GAP-COMP-01 | game | share of medical customers | placeholder 10 % | Dutchie closing report Rec/Med row (O16) or Nolan
-- GAP-COMP-02 | law/store | how prerolls, vapes, edibles, beverages and topicals count toward the 1 oz / 5 g caps (the POS "allotments", O15) | placeholder §5 | Nolan / P&P
+- GAP-COMP-01 | game | share of medical customers | **answered DEC-048 (under 5 %; game uses 0.04)**; was placeholder 10 % | Dutchie closing report Rec/Med row (O16) or Nolan
+- GAP-COMP-02 | law/store | (partly answered DEC-048: they count; an edible ≈0.1 g) how prerolls, vapes, edibles, beverages and topicals count toward the 1 oz / 5 g caps (the POS "allotments", O15) | placeholder §5 | Nolan / P&P
 - GAP-COMP-03 | law/store | O3 accepts out-of-state vertical IDs at 21+ while B2's 30-day rule reads as general; we follow store policy O3 | Med | re-read 4-241(K) / Nolan
 - GAP-COMP-04 | store | does the POS auto-switch an out-of-state medical card to adult-use, or does the budtender choose? | placeholder: player chooses | Nolan
 - GAP-COMP-05 | store | medical-only pricing or discounts | placeholder: same pre-tax price | Nolan
 - GAP-COMP-06 | law | ounce definition (28.0 vs 28.35 g) differs between our adult-use cap and medical figure | Low | OPEN-1 official text
-- GAP-COMP-07 | store | adult-use daily/repeat-visit policy | cut | Nolan (OPEN-2)
+- GAP-COMP-07 | store | adult-use daily/repeat-visit policy | **answered DEC-049: no daily limit, repeat visits allowed**; was: cut | Nolan (OPEN-2)
 - GAP-COMP-08 | building | check-in desk position for the "cover check-in" event (O2 says staff check ID before the sales-floor door) | placeholder: an anchor at the entry door inside the vestibule | REF/ART from A011 + Nolan

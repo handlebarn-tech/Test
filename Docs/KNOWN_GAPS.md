@@ -56,3 +56,12 @@ Seeded from MASTER_PLAN §20–21; REF-001 and MIG-001 extend this file.
 - GAP-127 | building | REF-008/009 placement placeholders beyond what Nolan stated (DEC-051/062): rolling-rack spans (length unknown), FOH entry props (bag/tool rack, trash, electrical box), break-room bulletin board/whiteboard/table/bench layout, office east-wall standing-desk stack, restroom tool chest, JC mops/supply rack, BOH carton-rack position, and the REF-008 Q20 LED strip; the rows carry `gap: GAP-127` in ROOM_FIXTURES.json | Low | Nolan / a closer still; ART builds from the placeholders
 - GAP-DP-01 | store | Does the budtender tool still list a batch whose wall jar is empty but BOH has backstock? | none (placeholder DEC-055) | Nolan (N2) | CLOSED by DEC-061
 - GAP-DP-02 | game | Every new [GDD] tuning value in GAME-017..024 (tolerances, weights, regret tolerance, promotion gates) | spec starting values | playtests
+
+## Registered elsewhere (pointer rows; AUDIT-001 C9, DEC-064)
+These gaps are defined, with placeholders and owners, in the spec named; that spec stays the detail owner. Listed here so every unknown is visible in one place.
+- GAP-COMP-01..08 | compliance (medical share, cap equivalents, IDs, med pricing, ounce, repeat visits, check-in desk) | `Docs/Design/SPEC_COMP002.md` §8. Answered: COMP-01 (DEC-048), COMP-07 (DEC-049); partly: COMP-02 (DEC-048)
+- GAP-PKG-01..08 | packaged goods (catalog, rack placement, fridge/cooler, prices, deals, self-serve, brands, beverage caps) | `Docs/Design/SPEC_GAME004.md` §7. Answered: PKG-03, PKG-06 (DEC-050); partly: PKG-02 (DEC-050); PKG-01 via DATA-002 (DEC-048/050)
+- GAP-DAY-01..02 | shift day / restock (incl. deli backstock location) | `Docs/Design/ROADMAP_POST_SLICE.md` (GAME-011/012, ART rows)
+- GAP-PROC-07..11 | procedural art (bud looks, fill height, base band, packaged sizes, label art) | `Docs/Assets/Specs/PROC_PIPELINE.md`
+- GAP-PROC-12 | asset | smalls jar lid/body split, corner radius, lid colour, label placement not published (PROC-003, REVIEW-W4P) | `Docs/Assets/Specs/PROC_PIPELINE.md` "PROC-003" | real product photos
+- GAP-128 | dropped by REF-009b (DEC-062: the 4 rolling racks are the only FOH product racks) | `Docs/Handoffs/REF-009b.md`

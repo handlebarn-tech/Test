@@ -1,5 +1,9 @@
 # READ THIS FIRST — DISPO GAME
 
+> **Historical bootstrap (AUDIT-001 B4, DEC-064):** the start order and "First production task" below come from the original handoff and are done. Current start: workers read `CLAUDE.md` → `Docs/PROJECT_STATE.md` → their packet; the Hub reads `Docs/HUB_RESUME.md` first. Kept for context.
+
+> **Authority (DEC-001/002/009; AUDIT-001 C1, DEC-064):** for recommendation logic the order is (1) the local TFS tool source, v7.11.4 build, at `C:/Users/handl/Downloads/tfs-budtender` (read-only, no PII); (2) `Docs/DECISIONS.md`; (3) the live site (identical to the local build, DEC-009); (4) the historical chat record. Text below that ranks the live site or the chat record first predates DEC-001 and is kept for context.
+
 This folder is designed to be handed directly to Claude Code.
 
 ## Important

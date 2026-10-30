@@ -1236,6 +1236,8 @@ One-time manual setup should not silently become a recurring dependency.
 
 # 48. First toolchain task breakdown
 
+> **Historical plan IDs (AUDIT-001 C2, DEC-059/064):** the IDs below are the original work breakdown. Live task IDs are in `Docs/BACKLOG.md` and several reuse these numbers for different work (e.g. live DATA-002 = Dutchie catalog importer, GAME-006 = cart, QA-002 = Gate A parity gate). Do not cite these headings as task IDs.
+
 ### BUILD-001 — STUDIO-DOCTOR
 Discover software/hardware/paths.
 
