@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_MopSink_JC",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "a875e142aca71745",
+  "generator": "janitor_props",
+  "lod_tris": {
+    "LOD0": 328,
+    "LOD1": 164,
+    "LOD2": 84,
+    "LOD3": 24
+  },
+  "params_sha256": "b9ff3d894fe9ce20",
+  "passed": true,
+  "warnings": [
+    "LOD0 328 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}

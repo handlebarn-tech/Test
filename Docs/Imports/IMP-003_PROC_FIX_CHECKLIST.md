@@ -194,9 +194,10 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [x] **T7** add grab bars: 42 in, 36 in and 18 in vertical at 33–36 in AFF (TI, High). Add TP + soap dispensers and the sconce (TI types).
 
 ## 11. Janitor closet: `generators/janitor_props.py`, `params/janitor_props.json`, `params/janitor_supply_rack.json`
-- [ ] **J1** mop sink = RF `MopSink_JC` **1.6 × 1.5 × 1.0 ft**.
+**PROC-005 done:** rewritten. MopSink_JC is RF 1.6 × 1.5 × 1.0 ft: open moulded basin, drain grate, stainless splash guards (+0.3 m, `_note`). Mops_Brooms_JC: string mop with strands, broom with bristle tufts, wall holder rail. Mop bucket with wringer and casters, hollow. Every asset has collision boxes (J3). The supply rack is the `wire_shelving` variant (J2), so no separate params file. Rack contents (bottles, rags) belong to §16 clutter. LOD0 0.3–1.0k (warning).
+- [x] **J1** mop sink = RF `MopSink_JC` **1.6 × 1.5 × 1.0 ft**.
 - [x] **J2** supply rack = RF `Rack_CleaningSupplies_JC` 2.0 × 1.2 × 5.0 ft: done as a `wire_shelving` variant (PROC-005).
-- [ ] **J3** collision on mop/broom/bucket (claimed fix, not delivered): add per C1, or set `require_collision: false` for those variants.
+- [x] **J3** collision on mop/broom/bucket (claimed fix, not delivered): add per C1, or set `require_collision: false` for those variants.
 
 ## 12. Architecture kit: `generators/architecture_kit.py`, `params/architecture_kit.json`
 - [ ] **A1 door size:** `width_m`/`height_m` are the **leaf**, **3'-0" × 7'-0" × 1¾"** (TI §6.2); add the frame outside. The current leaf comes out 0.816 × 2.08. JC door 2'-8".

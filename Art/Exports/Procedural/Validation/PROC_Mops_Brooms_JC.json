@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Mops_Brooms_JC",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "d72548a8201686bc",
+  "generator": "janitor_props",
+  "lod_tris": {
+    "LOD0": 1040,
+    "LOD1": 528,
+    "LOD2": 292,
+    "LOD3": 12
+  },
+  "params_sha256": "b9ff3d894fe9ce20",
+  "passed": true,
+  "warnings": [
+    "LOD0 1040 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

@@ -30692,6 +30692,1713 @@
         "water_spots": 0.3
       }
     },
+    "PROC_MopBucket_Wringer": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.45,
+            0.0
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            0.55,
+            0.9,
+            0.4
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_MopBucket_Wringer.fbx",
+      "export_sha256": "85410084db10f152",
+      "fixture_family": "janitor_props",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-21"
+      ],
+      "generator": "janitor_props",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_MopBucket_Wringer_Bucket_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.275,
+                  0.2,
+                  0.36
+                ],
+                "min": [
+                  -0.275,
+                  -0.2,
+                  0.06
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "94beea43121b4457",
+              "material_slots": [
+                "M_Proc_Bucket_Yellow"
+              ],
+              "size_m_unity_xyz": [
+                0.55,
+                0.3,
+                0.4
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 80
+            },
+            "PROC_MopBucket_Wringer_Casters_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.225,
+                  0.17,
+                  0.06
+                ],
+                "min": [
+                  -0.225,
+                  -0.17,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "60791d4dc81e73dc",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.45,
+                0.06,
+                0.34
+              ],
+              "tris": 256,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 136
+            },
+            "PROC_MopBucket_Wringer_Lever_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.274648,
+                  0.152,
+                  0.9
+                ],
+                "min": [
+                  -0.274648,
+                  -0.123553,
+                  0.337716
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "140fc94ea3b3fe6e",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.5493,
+                0.56228,
+                0.27555
+              ],
+              "tris": 248,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 128
+            },
+            "PROC_MopBucket_Wringer_Wringer_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.165,
+                  0.17,
+                  0.51
+                ],
+                "min": [
+                  -0.165,
+                  -0.01,
+                  0.33
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e0da6ddd03c321d3",
+              "material_slots": [
+                "M_Proc_Plastic_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.33,
+                0.18,
+                0.18
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 80
+            }
+          },
+          "size_m_unity_xyz": [
+            0.55,
+            0.9,
+            0.4
+          ],
+          "tris": 816
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_MopBucket_Wringer_Bucket_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.275,
+                  0.2,
+                  0.36
+                ],
+                "min": [
+                  -0.275,
+                  -0.2,
+                  0.06
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "9780231bd3eb5fb6",
+              "material_slots": [
+                "M_Proc_Bucket_Yellow"
+              ],
+              "size_m_unity_xyz": [
+                0.55,
+                0.3,
+                0.4
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_MopBucket_Wringer_Casters_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.225,
+                  0.17,
+                  0.06
+                ],
+                "min": [
+                  -0.225,
+                  -0.17,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "5e148a83aba251f4",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.45,
+                0.06,
+                0.34
+              ],
+              "tris": 192,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 104
+            },
+            "PROC_MopBucket_Wringer_Lever_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.274648,
+                  0.152,
+                  0.9
+                ],
+                "min": [
+                  -0.274648,
+                  -0.123553,
+                  0.337716
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "140fc94ea3b3fe6e",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.5493,
+                0.56228,
+                0.27555
+              ],
+              "tris": 248,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 128
+            },
+            "PROC_MopBucket_Wringer_Wringer_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.165,
+                  0.17,
+                  0.51
+                ],
+                "min": [
+                  -0.165,
+                  -0.01,
+                  0.33
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "005bbdd2f43e155e",
+              "material_slots": [
+                "M_Proc_Plastic_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.33,
+                0.18,
+                0.18
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            }
+          },
+          "size_m_unity_xyz": [
+            0.55,
+            0.9,
+            0.4
+          ],
+          "tris": 624
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_MopBucket_Wringer_Bucket_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.275,
+                  0.2,
+                  0.36
+                ],
+                "min": [
+                  -0.275,
+                  -0.2,
+                  0.06
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "47cfb8dd838e8668",
+              "material_slots": [
+                "M_Proc_Bucket_Yellow"
+              ],
+              "size_m_unity_xyz": [
+                0.55,
+                0.3,
+                0.4
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_MopBucket_Wringer_Casters_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.225,
+                  0.17,
+                  0.06
+                ],
+                "min": [
+                  -0.225,
+                  -0.17,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "668ffc2f2e8e4b50",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.45,
+                0.06,
+                0.34
+              ],
+              "tris": 128,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_MopBucket_Wringer_Lever_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1495,
+                  0.152,
+                  0.9
+                ],
+                "min": [
+                  -0.1495,
+                  0.128,
+                  0.48
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2c2aba577138b2c8",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.299,
+                0.42,
+                0.024
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_MopBucket_Wringer_Wringer_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.165,
+                  0.17,
+                  0.51
+                ],
+                "min": [
+                  -0.165,
+                  -0.01,
+                  0.33
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "156b3954d6d067dc",
+              "material_slots": [
+                "M_Proc_Plastic_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.33,
+                0.18,
+                0.18
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.55,
+            0.9,
+            0.4
+          ],
+          "tris": 276
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_MopBucket_Wringer_Bucket_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.275,
+                  0.2,
+                  0.36
+                ],
+                "min": [
+                  -0.275,
+                  -0.2,
+                  0.06
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "02a900df03113a17",
+              "material_slots": [
+                "M_Proc_Bucket_Yellow"
+              ],
+              "size_m_unity_xyz": [
+                0.55,
+                0.3,
+                0.4
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_MopBucket_Wringer_Casters_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.225,
+                  0.15,
+                  0.06
+                ],
+                "min": [
+                  -0.225,
+                  -0.15,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "bf62af43943fbd86",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.45,
+                0.06,
+                0.3
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_MopBucket_Wringer_Wringer_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.165,
+                  0.16,
+                  0.9
+                ],
+                "min": [
+                  -0.165,
+                  -0.04,
+                  0.36
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2c721cc45f351e37",
+              "material_slots": [
+                "M_Proc_Plastic_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.33,
+                0.54,
+                0.2
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.55,
+            0.9,
+            0.4
+          ],
+          "tris": 36
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/janitor_props.json",
+      "params_sha256": "b9ff3d894fe9ce20",
+      "rf": "Mops_Brooms_JC (bucket, DEC-079 JC list)",
+      "seed": 28001,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Janitor/PROC_MopBucket_Wringer.fbx",
+      "wear": {
+        "edge_wear": 0.3,
+        "scuffs": 0.4,
+        "seed": 28001,
+        "stains": 0.35
+      }
+    },
+    "PROC_MopSink_JC": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.1524,
+            0.0
+          ],
+          "name": "Basin",
+          "size_unity_xyz": [
+            0.48768,
+            0.3048,
+            0.4572
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_MopSink_JC.fbx",
+      "export_sha256": "a875e142aca71745",
+      "fixture_family": "janitor_props",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-21"
+      ],
+      "generator": "janitor_props",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_MopSink_JC_Basin_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.2286,
+                  0.3048
+                ],
+                "min": [
+                  -0.24384,
+                  -0.2286,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "74db8e9ea50de63d",
+              "material_slots": [
+                "M_Proc_Moulded_Stone"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.3048,
+                0.4572
+              ],
+              "tris": 156,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 80
+            },
+            "PROC_MopSink_JC_Grate_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  0.05,
+                  0.037
+                ],
+                "min": [
+                  -0.05,
+                  -0.05,
+                  0.03
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1c6973ab564867e2",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.1,
+                0.007,
+                0.1
+              ],
+              "tris": 148,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 90
+            },
+            "PROC_MopSink_JC_Guards_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.2286,
+                  0.6048
+                ],
+                "min": [
+                  -0.24384,
+                  -0.2286,
+                  0.3048
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 1
+              },
+              "geometry_sha256": "da7fb8f9ae9f36f8",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.3,
+                0.4572
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 14
+            }
+          },
+          "size_m_unity_xyz": [
+            0.48768,
+            0.6048,
+            0.4572
+          ],
+          "tris": 328
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_MopSink_JC_Basin_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.2286,
+                  0.3048
+                ],
+                "min": [
+                  -0.24384,
+                  -0.2286,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e66bdde210b3982f",
+              "material_slots": [
+                "M_Proc_Moulded_Stone"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.3048,
+                0.4572
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_MopSink_JC_Grate_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  0.05,
+                  0.034
+                ],
+                "min": [
+                  -0.05,
+                  -0.05,
+                  0.03
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "661c988bd39c954b",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.1,
+                0.004,
+                0.1
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 26
+            },
+            "PROC_MopSink_JC_Guards_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.2286,
+                  0.6048
+                ],
+                "min": [
+                  -0.24384,
+                  -0.2286,
+                  0.3048
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 1
+              },
+              "geometry_sha256": "da7fb8f9ae9f36f8",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.3,
+                0.4572
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 14
+            }
+          },
+          "size_m_unity_xyz": [
+            0.48768,
+            0.6048,
+            0.4572
+          ],
+          "tris": 164
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_MopSink_JC_Basin_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.2286,
+                  0.3048
+                ],
+                "min": [
+                  -0.24384,
+                  -0.2286,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ec35740ebd502ff3",
+              "material_slots": [
+                "M_Proc_Moulded_Stone"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.3048,
+                0.4572
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_MopSink_JC_Guards_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.2286,
+                  0.6048
+                ],
+                "min": [
+                  -0.24384,
+                  -0.2286,
+                  0.3048
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 1
+              },
+              "geometry_sha256": "da7fb8f9ae9f36f8",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.3,
+                0.4572
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 14
+            }
+          },
+          "size_m_unity_xyz": [
+            0.48768,
+            0.6048,
+            0.4572
+          ],
+          "tris": 84
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_MopSink_JC_Basin_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.2286,
+                  0.3048
+                ],
+                "min": [
+                  -0.24384,
+                  -0.2286,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "351ca219c2647b24",
+              "material_slots": [
+                "M_Proc_Moulded_Stone"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.3048,
+                0.4572
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_MopSink_JC_Guards_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.2286,
+                  0.6048
+                ],
+                "min": [
+                  -0.24384,
+                  0.2186,
+                  0.3048
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d02e1159f0170c11",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.3,
+                0.01
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.48768,
+            0.6048,
+            0.4572
+          ],
+          "tris": 24
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/janitor_props.json",
+      "params_sha256": "b9ff3d894fe9ce20",
+      "rf": "MopSink_JC",
+      "seed": 28001,
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Janitor/PROC_MopSink_JC.fbx",
+      "wear": {
+        "edge_wear": 0.3,
+        "scuffs": 0.4,
+        "seed": 28001,
+        "stains": 0.35
+      }
+    },
+    "PROC_Mops_Brooms_JC": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.762,
+            0.0
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            0.24384,
+            1.524,
+            0.3048
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_Mops_Brooms_JC.fbx",
+      "export_sha256": "d72548a8201686bc",
+      "fixture_family": "janitor_props",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-21"
+      ],
+      "generator": "janitor_props",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Mops_Brooms_JC_Bristles_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.08096,
+                  0.1374,
+                  0.08
+                ],
+                "min": [
+                  0.04096,
+                  -0.1374,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "0fc32404ea0715ef",
+              "material_slots": [
+                "M_Proc_Bristle_Red"
+              ],
+              "size_m_unity_xyz": [
+                0.04,
+                0.08,
+                0.2748
+              ],
+              "tris": 168,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 112
+            },
+            "PROC_Mops_Brooms_JC_BroomHead_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.08596,
+                  0.1524,
+                  0.12
+                ],
+                "min": [
+                  0.03596,
+                  -0.1524,
+                  0.08
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f77d9507269573cb",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.05,
+                0.04,
+                0.3048
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Mops_Brooms_JC_Clamp_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.03096,
+                  0.03,
+                  0.18
+                ],
+                "min": [
+                  -0.09096,
+                  -0.03,
+                  0.12
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8445f991a2e98bdd",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.06,
+                0.06,
+                0.06
+              ],
+              "tris": 64,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 34
+            },
+            "PROC_Mops_Brooms_JC_Handles_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.07296,
+                  0.012,
+                  1.524
+                ],
+                "min": [
+                  -0.07296,
+                  -0.012,
+                  0.1
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f6f94e3982f8fa30",
+              "material_slots": [
+                "M_Proc_Handle_Wood"
+              ],
+              "size_m_unity_xyz": [
+                0.14592,
+                1.424,
+                0.024
+              ],
+              "tris": 128,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 68
+            },
+            "PROC_Mops_Brooms_JC_MopHead_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.005271,
+                  0.056729,
+                  0.131907
+                ],
+                "min": [
+                  -0.116649,
+                  -0.056729,
+                  0.010093
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "4d8187d4867bb339",
+              "material_slots": [
+                "M_Proc_Mop_Cotton"
+              ],
+              "size_m_unity_xyz": [
+                0.11138,
+                0.12181,
+                0.11346
+              ],
+              "tris": 576,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 336
+            },
+            "PROC_Mops_Brooms_JC_Rail_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.12192,
+                  0.1524,
+                  1.22
+                ],
+                "min": [
+                  -0.12192,
+                  0.1224,
+                  1.18
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b0f5d5d91b16a209",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.24384,
+                0.04,
+                0.03
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.24384,
+            1.524,
+            0.3048
+          ],
+          "tris": 1040
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Mops_Brooms_JC_Bristles_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.08096,
+                  0.1374,
+                  0.08
+                ],
+                "min": [
+                  0.04096,
+                  -0.1374,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e3ab46478ba86d12",
+              "material_slots": [
+                "M_Proc_Bristle_Red"
+              ],
+              "size_m_unity_xyz": [
+                0.04,
+                0.08,
+                0.2748
+              ],
+              "tris": 72,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Mops_Brooms_JC_BroomHead_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.08596,
+                  0.1524,
+                  0.12
+                ],
+                "min": [
+                  0.03596,
+                  -0.1524,
+                  0.08
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "845efb8127eec811",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.05,
+                0.04,
+                0.3048
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Mops_Brooms_JC_Clamp_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.03096,
+                  0.03,
+                  0.18
+                ],
+                "min": [
+                  -0.09096,
+                  -0.03,
+                  0.12
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "fe7ec8b59f8db960",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.06,
+                0.06,
+                0.06
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 26
+            },
+            "PROC_Mops_Brooms_JC_Handles_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.07296,
+                  0.012,
+                  1.524
+                ],
+                "min": [
+                  -0.07296,
+                  -0.012,
+                  0.1
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "060bbc0101332d54",
+              "material_slots": [
+                "M_Proc_Handle_Wood"
+              ],
+              "size_m_unity_xyz": [
+                0.14592,
+                1.424,
+                0.024
+              ],
+              "tris": 96,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 52
+            },
+            "PROC_Mops_Brooms_JC_MopHead_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.005271,
+                  0.054354,
+                  0.131893
+                ],
+                "min": [
+                  -0.116649,
+                  -0.054354,
+                  0.010107
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7bb41f6fa7bfcac7",
+              "material_slots": [
+                "M_Proc_Mop_Cotton"
+              ],
+              "size_m_unity_xyz": [
+                0.11138,
+                0.12179,
+                0.10871
+              ],
+              "tris": 240,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 140
+            },
+            "PROC_Mops_Brooms_JC_Rail_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.12192,
+                  0.1524,
+                  1.22
+                ],
+                "min": [
+                  -0.12192,
+                  0.1224,
+                  1.18
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b0f5d5d91b16a209",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.24384,
+                0.04,
+                0.03
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.24384,
+            1.524,
+            0.3048
+          ],
+          "tris": 528
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Mops_Brooms_JC_Bristles_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.08096,
+                  0.1374,
+                  0.08
+                ],
+                "min": [
+                  0.04096,
+                  -0.1374,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "11be39e32bda2752",
+              "material_slots": [
+                "M_Proc_Bristle_Red"
+              ],
+              "size_m_unity_xyz": [
+                0.04,
+                0.08,
+                0.2748
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Mops_Brooms_JC_BroomHead_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.08596,
+                  0.1524,
+                  0.12
+                ],
+                "min": [
+                  0.03596,
+                  -0.1524,
+                  0.08
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "32ba68cbb1b37813",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.05,
+                0.04,
+                0.3048
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Mops_Brooms_JC_Clamp_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.03096,
+                  0.03,
+                  0.18
+                ],
+                "min": [
+                  -0.09096,
+                  -0.03,
+                  0.12
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "4b63dcd7588dce73",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.06,
+                0.06,
+                0.06
+              ],
+              "tris": 32,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 18
+            },
+            "PROC_Mops_Brooms_JC_Handles_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.07296,
+                  0.012,
+                  1.524
+                ],
+                "min": [
+                  -0.07296,
+                  -0.012,
+                  0.1
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "96c04c6b7d322ee4",
+              "material_slots": [
+                "M_Proc_Handle_Wood"
+              ],
+              "size_m_unity_xyz": [
+                0.14592,
+                1.424,
+                0.024
+              ],
+              "tris": 64,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            },
+            "PROC_Mops_Brooms_JC_MopHead_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.005271,
+                  0.050226,
+                  0.131663
+                ],
+                "min": [
+                  -0.116649,
+                  -0.050226,
+                  0.010337
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "174d0da50f5f337c",
+              "material_slots": [
+                "M_Proc_Mop_Cotton"
+              ],
+              "size_m_unity_xyz": [
+                0.11138,
+                0.12133,
+                0.10045
+              ],
+              "tris": 144,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            },
+            "PROC_Mops_Brooms_JC_Rail_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.12192,
+                  0.1524,
+                  1.22
+                ],
+                "min": [
+                  -0.12192,
+                  0.1224,
+                  1.18
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b0f5d5d91b16a209",
+              "material_slots": [
+                "M_Proc_Black_Plastic"
+              ],
+              "size_m_unity_xyz": [
+                0.24384,
+                0.04,
+                0.03
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.24384,
+            1.524,
+            0.3048
+          ],
+          "tris": 292
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Mops_Brooms_JC_Handles_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.12192,
+                  0.1524,
+                  1.524
+                ],
+                "min": [
+                  -0.12192,
+                  -0.1524,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "40c9e28f8ebb80ea",
+              "material_slots": [
+                "M_Proc_Handle_Wood"
+              ],
+              "size_m_unity_xyz": [
+                0.24384,
+                1.524,
+                0.3048
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.24384,
+            1.524,
+            0.3048
+          ],
+          "tris": 12
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/janitor_props.json",
+      "params_sha256": "b9ff3d894fe9ce20",
+      "rf": "Mops_Brooms_JC",
+      "seed": 28001,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Janitor/PROC_Mops_Brooms_JC.fbx",
+      "wear": {
+        "edge_wear": 0.3,
+        "scuffs": 0.4,
+        "seed": 28001,
+        "stains": 0.35
+      }
+    },
     "PROC_NapkinDisposal": {
       "export": "Art/Exports/Procedural/PROC_NapkinDisposal.fbx",
       "export_sha256": "77d1e4b56d3db6ed",
