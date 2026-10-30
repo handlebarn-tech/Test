@@ -18,16 +18,17 @@ Rules for every department: `Docs/STUDIO_OS.md` §0. This file is the World lead
 No invented store facts: labelled placeholder + GAP id (DEC-047); quality bar DEC-084; real-store answers DEC-051/062/068/076/079/088/090.
 
 ## Status for Hub
-_Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…` live; reports to Hub `local_78db2735…`.
-- Reconciled: ART-006 (W5A) and REF-010 (W5C, DEC-068 restroom cabinet) are merged; BACKLOG rows fixed. Queue item "DEC-068 into ROOM_FIXTURES" was already done by REF-010.
-- Now: REF-011 sales-floor layout audit (registers DEC-039 L + operator access, HUB, deli walls, shelf fill) and REF-012 office walkability + door geometry audit, run in parallel (2 workers, no Unity). ART-007 graybox rebuild follows both (1 Unity slot).
-- Door contract with Gameplay: World proposes door object/pivot/swing names in REF-012; Gameplay builds interaction against the committed version.
-- Risks: ROOM_FIXTURES so far covers back rooms only; the sales floor lives in graybox_layout + REFERENCES_INDEX §1.5, so REF-011 adds sales-floor rows (contract change Assets consumes).
+_Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…`; reports to Hub `local_78db2735…`.
+- **Merge-ready:** `review/world-1` @ b30d72c = REF-011 (sales floor, ROOM_FIXTURES rev7, SCENE_ANCHORS.json) + REF-012 (office walkability, DOORS.json), both PASS with minors fixed (REVIEW-REF11/REF12). Merges clean with main.
+- Findings: south counter +2.6 ft north for a 3 ft staff aisle; 3 deli walls (N/E/S); HUB desk at the north end; office meets the 3.0/2.5 ft clearances; 15 doors, entry is a pair.
+- Now: ART-007 rebuilds graybox/lookdev from these (World Unity slot).
+- FOR NOLAN sent to the Hub: 7 questions (GAP-129/130/132/134, 137/138/139).
 
 ## In flight
 | Task | Worker | Branch | State |
 |---|---|---|---|
-| REF-011 sales-floor audit | subagent (done) | `worktree-agent-a3e83b7d768da38d0` 9b111fa | in review (Docs 2) |
+| REF-011 sales-floor audit | subagent (done) | `worktree-agent-a3e83b7d768da38d0` 2731c1a | PASS (REVIEW-REF11) → on `review/world-1` |
+| ART-007 graybox rebuild | subagent (worktree, Unity slot) | off `review/world-1` b30d72c | running |
 | REF-012 office + doors audit | subagent (done) | `worktree-agent-a2f71eef653a08c1c` e798f88 | PASS (REVIEW-REF12) → on `review/world-1` a452259 |
 
 ## Queue (lead re-orders within DEC-096)
