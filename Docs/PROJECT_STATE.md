@@ -17,7 +17,7 @@ Merged in Hub session 4 (latest): W5K RES-002 (squashed), W5N GAME-008, W5M GAME
 | GAME-010b personas: slow 1.5×, answer cover prompt (DEC-086); OPS-003 merged (W5O) | `local_0d166a8e-87b1-40bb-9594-be389c549875` | running | B2 review |
 | REVIEW-W5L DES-004b+c | Docs reviewer `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7` | running/queued | merge on GO |
 | IMP-003 toolkit audit: **awaiting Nolan's approval** of the W5F summary + Q1–3,5 | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` idle | waiting on Nolan | on approval → PROC-005 integrates + fixes checklist (DEC-083/084/086); round 3 drops → IMP-003 |
-| ASSET-003 realistic customers (DEC-075/084) | `local_d31ad4c5-232b-4628-986c-5d276e71a2a2` | running | Docs review |
+| ASSET-003 merged (W5P); next: MPFB2 high-quality customer path + GAME-CHR packets (DEC-087) | worker `local_d31ad4c5…` idle | waiting | dispatch ASSET-004 (MPFB2) after the toolkit approval |
 | Standing reviewers: Unity A `local_0dd63bac…` (idle), Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs `local_b073ffa0…`. DES worker `local_82d327a2…` idle. | | | |
 
 ## Resume checklist (07:00)
@@ -36,6 +36,7 @@ Merged in Hub session 4 (latest): W5K RES-002 (squashed), W5N GAME-008, W5M GAME
 5. Whatever DES-003 creates for genuine gaps.
 
 ## Open questions for Nolan
+- Toolkit: approve IMP-003 "adapt" (W5F summary) + Q1 rolling-rack shelves/wheels, Q2 BOH racks one unit vs 4-ft bays, Q3 locker doors, Q5 deli counter front/case. Staff uniform (GAP-CHR-2).
 - REF-008 questions: Q1–15 answered (DEC-051; Q4 vestibule size unknown, Q11 skipped). **All answered (DEC-062, 2026-10-30); no more CCTV/photos available** (FOH wall, rack runs, vestibule, lockers, bench, office items, BOH items, restroom/JC photos): full list in `Docs/Handoffs/REF-008.md` "Questions for Nolan". Sent 2026-10-30 02:15; answers go to the REF/ART tasks.
 - Phoenix TPT rate (OPEN-4): a receipt's tax lines would settle it; 25.1 % is kept (DEC-001).
 
