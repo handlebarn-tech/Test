@@ -23,6 +23,7 @@ If a request conflicts with a rule, route it so the rule holds (e.g. start a ses
 - **Chain of command (DEC-033, in CLAUDE.md):** workers never ask Nolan; their questions come to the Hub. Restate it in every brief. Answer worker questions from evidence yourself; batch only true store facts to Nolan.
 - **Realism vs fun (DEC-032):** real rules become a mechanic, automation, flavor or a cut.
 - **Microsoft 365 (DEC-031):** read-only research is allowed (search/read tools only, never write tools); no PII into the repo; never touch the Security folder, P&P manual or credential sheets.
+- **Imports folder (DEC-070):** `Downloads/Dispo Game Imports/` is only for Nolan's fresh imports. After audit + integration, a session moves each import to `Downloads/Dispo Game Imports Archive/<date>_<name>/`.
 - Nolan is signed in to Sketchfab and the Unity Asset Store in the built-in browser pane; Warehouse/Office are claimed.
 
 ## Hub loop
