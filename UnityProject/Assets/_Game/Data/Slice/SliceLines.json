@@ -24,5 +24,7 @@
   "anxietyLow": "✓ Low anxiety",
   "anxietyModerate": "⚠ Moderate anxiety",
   "anxietyHigh": "✗ High anxiety",
+  "overLimit": "Over the 1 oz limit",
+  "idVerified": "21+ ID verified",
   "patienceWords": [ "Relaxed", "Waiting", "Impatient" ]
 }

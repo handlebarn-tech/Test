@@ -31,6 +31,8 @@ namespace Dispo.Simulation.Slice
         public double lowStockFraction;
         public int anxietyLowBelow, anxietyModerateBelow, moreOptionsN, moreOptionsStep;
         public double toastSeconds, holdConfirmSeconds, npcWalkSpeed;
+        public double adultUseLimitGrams;
+        public int storeOpenHour, storeCloseHour, shiftStartHour;
 
         public static SliceConfig FromJson(string json) => JsonUtility.FromJson<SliceConfig>(json);
     }
@@ -69,7 +71,7 @@ namespace Dispo.Simulation.Slice
     {
         public OpenerSet[] openers;
         public WeightPhrase[] weightPhrases;
-        public string budgetClause, rejectPrice, rejectFit, rejectOther, notEnough, wrongWeight;
+        public string budgetClause, rejectPrice, rejectFit, rejectOther, notEnough, wrongWeight, overLimit, idVerified;
         public string fitOk, fitFallback, fallbackBanner, noneMatched;
         public string toastSale, toastSaleDetail, toastReject, toastLeave, toastWalkout;
         public string anxietyLow, anxietyModerate, anxietyHigh;

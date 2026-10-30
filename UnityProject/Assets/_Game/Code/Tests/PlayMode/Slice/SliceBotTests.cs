@@ -72,6 +72,8 @@ namespace Dispo.Slice.PlayMode.Tests
             foreach (var id in sim.Sales.Select(s => s.BatchId).Distinct())
                 Assert.AreEqual(sim.Inventory.Grams(id) / sim.Cfg.startGramsPerBatch, g.JarFillShown(id), 1e-4, $"jar fill for {id}");
             CollectionAssert.IsNotEmpty(r.SoldOut, "at least one SOLD OUT (DEC-027)");
+            Assert.LessOrEqual(sim.ClockHours, sim.Cfg.storeCloseHour, "clock inside store hours (DEC-036 M3)");
+            Assert.IsTrue(sim.Sales.All(s => s.Grams <= sim.Cfg.adultUseLimitGrams));
         }
     }
 }

@@ -47,5 +47,11 @@
   "moreOptionsStep": 3,
   "toastSeconds": 4,
   "holdConfirmSeconds": 0.6,
-  "npcWalkSpeed": 1.2
+  "npcWalkSpeed": 1.2,
+  "_adultUseLimitGrams": "DEC-036 M1: A.R.S. 36-2858(A)(1)(c), 1 oz adult-use flower per transaction",
+  "adultUseLimitGrams": 28.0,
+  "_storeHours": "DEC-036 M3: real store hours 08:00-22:00 (RES-001); the shift clock starts at shiftStartHour [GDD]",
+  "storeOpenHour": 8,
+  "storeCloseHour": 22,
+  "shiftStartHour": 14
 }

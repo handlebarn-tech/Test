@@ -287,6 +287,7 @@ namespace Dispo.Presentation.Slice
         {
             if (Screen != SliceScreen.Pos || Sim.Pending == null) return "no open sale";
             var blocked = Sim.Confirm(_posGrams);
+            if (blocked == Sim.Data.Lines.overLimit) _view.Toast("⚠ " + blocked, "", true);
             if (blocked != null) { _view.Message = blocked; Show(SliceScreen.Pos); return blocked; }
             Show(SliceScreen.World);
             return null;

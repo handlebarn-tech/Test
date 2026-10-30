@@ -55,8 +55,8 @@ namespace Dispo.Presentation.Slice
         public void Tick()
         {
             var sim = _g.Sim;
-            int secs = (int)sim.Time;
-            _clock.text = $"Shift {secs / 60}:{secs % 60:00}";
+            int mins = (int)(sim.ClockHours * 60);
+            _clock.text = $"{mins / 60:00}:{mins % 60:00}";
             _sales.text = $"Sales ${sim.Sales.Sum(s => s.PricePostTax):0.00}";
             _queue.text = $"Queue {sim.Queue.Count}";
             bool hudOn = _g.Screen == SliceScreen.World;
@@ -245,7 +245,7 @@ namespace Dispo.Presentation.Slice
             foreach (var w in sim.Data.Catalog.Pricing.Weights)
             {
                 var p = sim.Price(b, w);
-                AddLabel(right, p == null ? $"{sim.Data.Lines.Weight(w)}: —" : $"{sim.Data.Lines.Weight(w)}: ${p.PostTax:0.00}");
+                AddLabel(right, p == null ? $"{sim.Data.Lines.Weight(w)}: —" : $"{sim.Data.Lines.Weight(w)}: ${p.CardPostTax:0.00}");
             }
             var row = Add(body, "row");
             AddButton(row, "Choose", () => _g.Choose(k), "primary");
@@ -259,6 +259,7 @@ namespace Dispo.Presentation.Slice
             var pos = Add(_screen, "pos");
             AddLabel(pos, "POS", "h1");
             AddLabel(pos, $"{k.Strain.Name} · batch {k.Rep.BatchCode}");
+            AddLabel(pos, "✓ " + sim.Data.Lines.idVerified, "st-ok");   // DEC-036 M2: checked at the check-in desk
             var tiles = Add(pos, "row");
             double jar = sim.Inventory.Grams(k.Rep.Id);
             foreach (var w in sim.Data.Catalog.Pricing.Weights)

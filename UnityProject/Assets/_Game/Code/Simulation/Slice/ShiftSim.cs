@@ -32,7 +32,8 @@ namespace Dispo.Simulation.Slice
         public double Fit, PriceFit, SpeedFit, WaitPenalty, Satisfaction;
     }
 
-    public sealed class PriceLines { public double Msrp, PreTax, Tax, PostTax; public string DealName; }
+    /// <summary>PostTax = checkout total, nearest $0.05 (DEC-035); CardPostTax = the tool's priceFloor display (v7.11.4) for cards.</summary>
+    public sealed class PriceLines { public double Msrp, PreTax, Tax, PostTax, CardPostTax; public string DealName; }
 
     /// <summary>
     /// The slice shift (SLICE_DESIGN §1-§5): arrivals, queue + patience, service flow, scoring, POS and the report.
@@ -139,15 +140,24 @@ namespace Dispo.Simulation.Slice
             var q = Pricing.GetEffectivePrices(pc, rep.Tier, Cfg.shiftDayOfWeek);
             if (!q.Prices.TryGetValue(grams, out var pre)) return null;
             pc.Tiers.TryGetValue(rep.Tier ?? "", out var msrp);
-            double post = Pricing.ApplyTax(pre, pc.TaxRate);
-            return new PriceLines { Msrp = msrp != null && msrp.TryGetValue(grams, out var m) ? m : pre, PreTax = pre, PostTax = post, Tax = post - pre, DealName = q.DealName };
+            double post = CheckoutRound(pre * (1 + pc.TaxRate / 100));
+            return new PriceLines { Msrp = msrp != null && msrp.TryGetValue(grams, out var m) ? m : pre, PreTax = pre, PostTax = post, Tax = post - pre,
+                CardPostTax = Pricing.ApplyTax(pre, pc.TaxRate), DealName = q.DealName };
         }
+
+        /// <summary>DEC-035: the real register rounds the after-tax total to the nearest $0.05 (same 4-dp pre-round as priceFloor).</summary>
+        public static double CheckoutRound(double x) =>
+            x > 0 ? Math.Round(JsMath.Round(x * 10000) / 10000 * 20, MidpointRounding.AwayFromZero) / 20 : 0;
+
+        /// <summary>DEC-036 M3: store clock (hours) for a sim time.</summary>
+        public double ClockHours => Cfg.shiftStartHour + Time / 3600;
 
         /// <summary>§10 #6: the weight must be the stated one and the jar must hold it. Returns the blocking line, or null on sale.</summary>
         public string Confirm(double grams)
         {
             Require(Pending != null, "nothing accepted");
             var c = Serving;
+            if (grams > Cfg.adultUseLimitGrams) return Data.Lines.overLimit;   // DEC-036 M1, A.R.S. 36-2858(A)(1)(c)
             if (grams != c.Grams) return string.Format(Data.Lines.wrongWeight, Data.Lines.Weight(c.Grams));
             if (Inventory.Grams(Pending.Rep.Id) < grams) return Data.Lines.notEnough;
             var price = Price(Pending.Rep, grams);
@@ -264,7 +274,7 @@ namespace Dispo.Simulation.Slice
                 Results.Cards.Add(new Card
                 {
                     Strain = s, Rep = rep,
-                    PricePreTax = price?.PreTax ?? double.NaN, PricePostTax = price?.PostTax ?? double.NaN,
+                    PricePreTax = price?.PreTax ?? double.NaN, PricePostTax = price?.CardPostTax ?? double.NaN,
                     TierLabel = Labels.TierLabel(rep.Tier), ClusterLabel = Labels.ClusterLabel(s.Cluster), AnxietyLabel = AnxietyLabel(s.AnxietyRisk),
                 });
             }

@@ -237,11 +237,63 @@ namespace Dispo.Slice.Tests
                 var p = sim.Price(new Batch { Tier = tier.Key == "(none)" ? "" : tier.Key }, (double)row[0]);
                 if ((double)row[1] == 0) { Assert.IsNull(p, "no tier → no price"); continue; }
                 Assert.AreEqual((double)row[1], p.PreTax, 1e-9, $"{tier.Key} {row[0]} g pre");
-                Assert.AreEqual((double)row[2], p.PostTax, 1e-9, $"{tier.Key} {row[0]} g post");
+                Assert.AreEqual((double)row[2], p.CardPostTax, 1e-9, $"{tier.Key} {row[0]} g card (tool priceFloor)");
+                Assert.AreEqual(ShiftSim.CheckoutRound(p.PreTax * 1.251), p.PostTax, 1e-9, "POS total, nearest $0.05");
                 Assert.AreEqual(p.PostTax, p.PreTax + p.Tax, 1e-9);
                 n++;
             }
             Assert.Greater(n, 8);
+        }
+
+        [Test]
+        public void Pos_RoundsToNearestNickel_CardsKeepPriceFloor()
+        {
+            var sim = new ShiftSim(Load());
+            var p = sim.Price(new Batch { Tier = "house" }, 3.5);   // Tue: $10.50 × 1.251 = $13.1355
+            Assert.AreEqual(13.10, p.CardPostTax, 1e-9, "card: floor to $0.05 (v7.11.4)");
+            Assert.AreEqual(13.15, p.PostTax, 1e-9, "POS: nearest $0.05 (DEC-035)");
+            Assert.AreEqual(p.PostTax - p.PreTax, p.Tax, 1e-9);
+            Assert.AreEqual(8.75, ShiftSim.CheckoutRound(8.757), 1e-9);
+            Assert.AreEqual(8.80, ShiftSim.CheckoutRound(8.775), 1e-9, "half rounds up");
+        }
+
+        [Test]
+        public void Pos_BlocksOverAdultUseLimit_AllowsOneOunce()
+        {
+            var cfg = Load().Config;
+            Assert.AreEqual(28.0, cfg.adultUseLimitGrams, "A.R.S. 36-2858(A)(1)(c)");
+            var (sim, card) = AcceptedSale();
+            var c = sim.Serving;
+            double g0 = sim.Inventory.Grams(card.Rep.Id);
+            c.Grams = 28.5;
+            Assert.AreEqual(sim.Data.Lines.overLimit, sim.Confirm(28.5));
+            Assert.AreEqual(g0, sim.Inventory.Grams(card.Rep.Id), "blocked sale changes nothing");
+            Assert.AreEqual(0, sim.Sales.Count);
+
+            // 28 g passes: serve a fresh customer with a jar that holds an ounce.
+            var sim2 = new ShiftSim(Load());
+            sim2.Tick(0);
+            var c2 = sim2.Serving;
+            c2.Budget = 0; c2.Grams = 28;
+            var k = sim2.Search(c2.TrueFamily).Cards.First(x => sim2.Inventory.Grams(x.Rep.Id) >= 28);
+            Assert.AreEqual(Response.Accept, sim2.Present(k).Response);
+            Assert.IsNull(sim2.Confirm(28));
+            Assert.AreEqual(28, sim2.Sales.Single().Grams);
+        }
+
+        [Test]
+        public void ShiftClock_InsideStoreHours()
+        {
+            var d = Load();
+            var cfg = d.Config;
+            Assert.AreEqual(8, cfg.storeOpenHour);
+            Assert.AreEqual(22, cfg.storeCloseHour);
+            var sim = RunBot(d, 0.5);
+            Assert.GreaterOrEqual(cfg.shiftStartHour, cfg.storeOpenHour);
+            Assert.LessOrEqual(sim.ClockHours, cfg.storeCloseHour, "the bot shift ends before close");
+            // Worst case: every customer waits out full patience and then the slowest service.
+            double worst = sim.Customers.Max(c => c.SpawnTime) + cfg.archetypes.Max(a => a.patienceSec) * 12 + cfg.slowSeconds * 12;
+            Assert.LessOrEqual(cfg.shiftStartHour + worst / 3600, cfg.storeCloseHour);
         }
 
         [Test]
