@@ -57,7 +57,7 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 
 | Opening | Location (ft) | Drawn width | Conf. |
 |---|---|---|---|
-| ENTRY (customer, double door) | west wall x=0, y 11.0–20.0 | 9.0 opening, two 4.0 leaves | Med |
+| ENTRY (customer, double door) | west wall x=0, y 11.0–20.0 | 9.0 opening, two 4.0 leaves. **Superseded for build (Hub ruling, REVIEW-W3E): use 6'-0" × 7'-0" storefront (TI E101, DEC-037); keep this centre position** | Med |
 | EXIT label (orange = position not confirmed) | west wall, just north of entry | — | Low |
 | EMERGENCY EXIT | east wall x=47.19, y 20.5–24.0 | 3.5 (swing drawn orange = unconfirmed) | Low |
 | West arch (Retail→Hall) | y≈29.25, x 9.10–12.91 | 3.81 | Med |
@@ -235,10 +235,10 @@ Product names visible on jar cards or boxes are **not** inventory data and must 
 |---|---|---|---|
 | Building / room shells | §1.3 table | printed dims + vector scale 5.6095 pt/ft | High |
 | Fixture footprints | §1.5 table | vector plan ("approximate" per legend) | Med |
-| Entry opening | 9.0 ft (2 × 4.0 leaves) | vector arcs | Med |
+| Entry opening | **6'-0" × 7'-0" storefront** (Hub ruling, REVIEW-W3E; TI E101, DEC-037). Plan draws 9.0 ft (2 × 4.0 leaves) | TI §6.2 / vector arcs | High (TI) |
 | Delivery door / emergency exit / HUB 2 door | 3.4 / 3.5 / 2.0 ft | vector arcs | Med / Low / Med |
 | Interior door arcs (1.2–1.8 ft) | **not real widths** | the symbols are smaller than any code-compliant door. Use a standard 3'-0" × 7'-0" commercial door as a **labelled convention** until measured | Low |
-| Arch openings | 3.81 ft (west), 3.0 ft (east) | vector | Med. Height unknown; photo 06 shows the arch top clearly above a standing adult |
+| Arch openings | 3.81 ft (west), 3.0 ft (east) | vector | Med. Height 7'-0" (TI cased openings, §6.2); TI width 3'-0" vs drawn 3.81 west: plan width kept (position-bound) |
 | Counter height | POS / back counter / millwork tops **2'-10" (34") max AFF** | TI 2022 A940 (§6.4); deli case not in the TI set | Med |
 | Ceiling height / grid | retail gyp 9'-0" with 7'-6" soffits and suspended dark-walnut accent panels; back rooms 2×2 ACT at 8'-0"/9'-0" | TI 2022 A101 RCP (§6.1) | High (heights) |
 | Floor tiles | white marble-look large-format (retail field), black/white or brown/white geometric cement tile (counter zones, hall, vestibule), concrete (FOH/BOH), dark gray large-format tile (rack rooms) | visual | Med (finish) / none (tile size) |
@@ -262,7 +262,7 @@ Source: RSP Architects "Interior TI Approved Set - PHX" (2022, City-approved 202
 | 102 Hall, 103 Unisex, 104 Lounge, 105 Break, 107 Fulfillment | ACT-1 2×2 lay-in | 8'-0" | High |
 | 108 Storage / 109 Hall | ACT-1 | 9'-0" | Med (which of the two rooms) |
 | 110/111 Storage | existing, open to structure | B.O. truss 11'-0" | Med |
-| Structure | existing wood trusses, roof EL 115'-6" over floor EL 100'-0"; 30×36 roof hatch with a steel ladder | — | High |
+| Structure | existing wood trusses, roof EL 115'-6" over floor EL 100'-0" | — | High |
 
 ### 6.2 Doors and openings (A310 door schedule, A101 keynotes)
 | Door | Room | W × H | Type / frame | Hardware type | Conf. |
@@ -286,7 +286,7 @@ Type A runs full height to the truss: A3 = 3⅝" stud → **4⅞" wall** (typica
 ### 6.4 Millwork and counters (A901 elevations, A940 millwork)
 | Item (A940 tag) | Heights / dims | Finish | Conf. |
 |---|---|---|---|
-| All base cabinets (BC, BD, BP, BO, 3DE, 4D, BT1, BSK) | **counter top 2'-10" (34") max AFF**; 4" toe base; 2'-0" deep box | PL-1 walnut laminate fronts, black melamine interiors | High (34" max repeats on every cabinet) |
+| All base cabinets (BC, BD, BP, BO, 3DE, 4D, BT1, BSK) | **counter top 2'-10" (34") max AFF**; 4" toe base; 2'-0" deep box | PL-1 walnut laminate fronts, black melamine interiors | Med (text-read; 34" max repeats on every cabinet, elevations not rendered) |
 | POS cabinet (11, "two-drawer POS") and the POS elevations (5 front, 8 back counter, 10/11) | 2" quartz top on the 34"-max cabinet; front POS openings 3'-0" clear; QZ-2 waterfall edge wraps the outside of the POS counter; filler panel painted black | QZ-2 white quartz top, WD-1 walnut veneer POS front, ML-1 black-patina metal laminate, HW-2 brushed-brass edge pulls | Med (dims) / High (finishes) |
 | Back-counter tile (POS elevation) | TL-2 8×8 patterned tile with bronze trim; 2'-0", 3'-6" and 7'-0" appear on this elevation (likely backsplash, wainscot top and sconce) | TL-1, TL-2, MTR-3/4 | Low |
 | Retail display shelving (BDD 3/7/14, "special wall display" 4) | cabinet base to 34" max, then glass showcase shelves at 1'-2" spacing (×3) plus 8" and 6"; curved top trim R 1'-4¼"; recessed linear LED; anti-glare film on the glass; modular for relocation | black or chrome glass-showcase hardware, WC-1 wallcovering on the rear panel, PL laminate trim | Med |
