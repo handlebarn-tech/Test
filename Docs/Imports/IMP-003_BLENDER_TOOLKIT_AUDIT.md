@@ -477,3 +477,112 @@ Every round-1 file is byte-identical to the drop 2 audit, and no newer runner or
 | material library | **adapt**: no build-time downloads; route through `fetch_assets.py` + ledger |
 | labels/decals | **adapt**: add The Flower Mine; textures, not meshes |
 | hands | n/a (omitted) |
+
+---
+
+## Drop 5 — round 3 (`Dispo_Game_Blender_PROC_Round3_HQ/`, 2026-10-30 04:15)
+
+**Brief:** DEC-083 round 3. **Rules applied:** DEC-084 quality, DEC-071/081 brands, DEC-079 refill/HUB facts, DEC-086 rulings, DEC-088/090.
+**Contents:** 10 generators, the shared `round3_quality.py`, 10 params, `state_presets/interaction_states_round3.json`, `Materials/ROUND3_PBR_BINDINGS.json`, 4 docs, 12 `.pyc` (not opened). The package is additive: no `proclib`/runner replacement, and earlier drops are unchanged.
+
+### How it was checked
+- Static read of every `.py`/`.json`.
+- Sandbox run: drop 1 runner + round-2 `proclib` + `round3_quality.py`, Blender 5.2.3 `--factory-startup`, `PYTHONDONTWRITEBYTECODE`, deleted afterwards.
+- Winding check on 222 LOD0 meshes.
+- Determinism re-run of 5 families: 43/43 FBX byte-identical.
+- Fix items: checklist §R3.
+
+| Family | Assets | LOD0 tris (measured) | DEC-084 guide | Verdict |
+|---|---|---|---|---|
+| `office_refill_station` | 1 (cart + scale + bowl + wall shelf + supplies) | 8,504 | fixture 20–80k | **adapt** |
+| `hub_storage` | CabinetLoaded, DeliBagFull/Partial, ShipmentCartonClosed/Open, StorageTote | 384–6,412 | props 5–20k / fixture 20–80k | **adapt** |
+| `queue_stanchions` | Stanchion, PairExtended | 1,612–1,680 | props 5–20k | **adapt** |
+| `back_room_lighting` | Troffer_2x4, Strip_4ft, WallPack | 592–1,704 | props 5–20k | **adapt** (troffer must be 2 × 2, TI) |
+| `interaction_state_details` | CashDrawerTray, JarResidue | 3,596 / 836 | — | **reject** the till tray; **adapt** the residue |
+| `customer_accessories` | Cap, Beanie, Glasses, Backpack, Purse, Phone, Wallet, BlankID, ExitBag | 324–6,932 | props 5–20k | **adapt** (fit to MPFB2, DEC-087/091 R4) |
+| `exterior_vehicles` | Sedan, Hatchback, Crossover | 8,568 each, **body inside-out** | hero 30–150k | **reject** (rebuild, or a CC0 source via DEC-023) |
+| `seasonal_decor` | Garland, StringLights, WindowClings | 364–9,784 | props 5–20k | **adapt** (no store source; optional) |
+| `counter_props` | ReceiptPrinter, ScaleDigits, CardTerminal, PenCup, StickyNotes | 1,160–5,304; **StickyNotes fails** (12,780 > its 12,000 budget) | props 5–20k | **adapt** |
+| `packaged_product_variety` | 10 `PROC_Pkg_*_R3` | 2,296–4,304 | props 5–20k (hero shelf items) | **adapt**: brand/category assignments invented (below) |
+
+### Cross-cutting findings
+- **Validation is turned off by design.** Every generator returns `actual_unity_size(objs)` as the expected size, so the runner's size check compares the mesh with itself and can never fail.
+  - It hides real errors, e.g. door, flap or shelf parts sticking out.
+  - Return the authored envelope from params, and let the validation layer (C5) allow a stated tolerance for segment extrema.
+- **"High quality" is not met.** The README claims props 12–30k / fixtures 26–80k / vehicles to 130k, but measured LOD0 is 0.3k–9.8k, below every DEC-084 guide. The params budgets are only ceilings. Segment counts went up, but construction detail did not:
+  - cabinet bags are bevelled boxes;
+  - the vehicle is one 6-section loft with box windows;
+  - no wear, no UV unwraps (box projection only).
+- **Collision:** every family emits `COL_*` meshes, which conflicts with DEC-086 (manifest boxes). Convert them.
+- **Params keys:** `require_manifold`, `require_material_slots` and `validate_origin_bottom_center` assume runner checks that do not exist; C5 is checklist work. `validate_origin_bottom_center` is `false` everywhere. `require_manifold: true` would fail many assets (touching boxes, open shelves) if implemented as written.
+- **Shared files / PROC-005 overlap:**
+  - Round 3 needs only `proclib` names that PROC-005 keeps (`add_box`, `add_beveled_box`, `add_cylinder_between`, `finish_object`, `material` with the round-2 alpha default, `rounded_rect`, `loft`).
+  - The new `round3_quality.py` duplicates drop 3 helpers (lathe, rotated box, torus) under other names. Fold it into `proclib` when PROC-005 lands its helper set; no second helper module.
+  - `unity_dir` lacks `UnityProject/` (S1). No `own_sheet` (S2).
+  - PROC-005 had no commits when checked (`claude/clever-lamport-837e7f` = main), so there are no conflicting edits yet.
+- **Family overlaps with rounds 1–2** (pick one each, do not ship both):
+  - lighting: `back_room_lighting` vs drop 2 architecture kit `LEDTroffer_2x2`/`StripLight`;
+  - receipt printer + card terminal: `counter_props` vs checklist R4/RC3;
+  - deli prep cart: `office_refill_station` vs checklist O8;
+  - cartons/totes: `hub_storage` vs `clutter_kit`;
+  - package shapes: `packaged_product_variety` vs `packaged_goods` (+ R5 brief);
+  - cooler door preset `Door_##` vs cooler generator names `DoorFrame_nn`.
+
+### Family findings (facts → source)
+- **Refill station (DEC-079, RF `Cart_Deli_Prep` 2.5 × 1.6 × 2.9 ft, `Shelf_Deli_Canisters` 3.5 × 0.9 ft at ~4.8 ft AFF, RI §2.4):**
+  - Correct: cart (0.72 × 0.50 × 0.92 ≈ RF), shelf (1.02 × 0.27 at 1.48 m ≈ RF) and the DEC-079 supply list.
+  - Fix:
+    - the deli scale is **light-grey with LCD and coloured keys**, carrying a **clear glass mixing bowl ≈ 8 in Ø** (RI §2.4), not a dark scale with a 0.34 m stainless bowl;
+    - add the "FOR DELI USE ONLY" placard (store text) and **spray bottles hung on the rail** (RF);
+    - the cart is **2-shelf**;
+    - split the wall shelf into its own asset (it is placed on the wall, not on the cart);
+    - jar anchors: ~5 empties (RF), house jars per DEC-079.
+- **HUB storage (DEC-079: 1 lb bags in storage cabinets against the office wall; ~10 lb shipments of one strain):**
+  - Cabinet type, size and colour: **no source** (GAP), so ask REF.
+  - Doors are **baked open at 96°**. Ship closed geometry with door parts + hinge metadata (C10) and let Unity animate them.
+  - Bags: 1 lb resealable bag shape and size have no source (GAP); fullness states are good.
+  - The shipment carton is the ~10 lb case; size GAP.
+- **Queue stanchions (DEC-079 one line; R2C1 black belts; RI §1.5 4 lanes):** fine as a form. Sizes are commercial-standard (GAP). Belt colour black ✓.
+- **Lighting:**
+  - TI §6.7: back-room ACT rooms use **L1 2 × 2 troffers** (not 2 × 4), storage L2 2 ft/4 ft strips; BOH `Light_Strip_Pendant` (RF).
+  - The wall pack matches exterior CCTV R1C3; generic housing only ✓.
+- **Interaction states:**
+  - **CashDrawerTray rejected:** a till tray with bill/coin wells is cash-handling equipment (DEC-051/086), and the cash-drawer asset itself is rejected. Remove the `cash_drawer` state preset.
+  - Jar residue: OK; check the colour/look against R7.
+  - The cooler preset must use the cooler's real group names.
+- **Customer accessories:** sized to a 1.75 m reference. They must fit the **MPFB2** bodies (DEC-087) and belong with the R4 wardrobe library (DEC-091).
+  - The ID card is blank ✓.
+  - The exit-bag label area carries an approved-brand whitelist ✓.
+  - The phone camera island is a consumer phone, not security ✓.
+- **Vehicles:**
+  - Inside-out body shell (negative volume on all 3).
+  - The render reads as a flat blob with a floating box cabin and windshield planes sticking out.
+  - All 3 variants are the same topology.
+  - **Reject.** Rebuild with real body panels, wheel arches and glazing, or source CC0 vehicles through DEC-023. Exterior CCTV shows parked SUVs/cars (R1C1/R1C2).
+- **Counter props:**
+  - The receipt printer and card terminal are wanted (RI §2.2, DEC-086).
+  - Scale digits must be **blue LCD** (register bench scale, RI §2.2), not green 7-segment.
+  - StickyNotes: 45 bevelled sheets break their own budget; use a block + top-sheet detail.
+- **Packaged variety: brand misuse.** DEC-071 approves names **for their real lines only**: TFS / Dr Greenthumb / Rebel Grown (house **deli flower**), The Flower Mine (TFS house line, DEC-081), **High Variety = cartridges**, **Tok = disposable vapes**. Round 3 invents product lines for real brands:
+  - High Variety preroll tin and beverage can;
+  - Rebel Grown jar;
+  - Dr Greenthumb edible;
+  - TFS topical;
+  - Flower Mine extract.
+
+  That is fabricated product data (CLAUDE.md rule). Use fictional BRAND-001 names for non-matching categories. Also: the category `flower_or_edible` is not a catalog category; `unity_dir` writes into the existing `Packaged` folder without the `UnityProject/` prefix.
+- **Seasonal decor:** no store evidence of decorations. Keep it as an optional kit; no IP ✓.
+
+### Drop 5 summary
+**Adapt overall.** Round 3 hits the briefed families and the DEC-079 refill facts mostly right, and its geometry is deterministic and wound correctly (except the vehicles).
+
+**Fix before integration:**
+- the always-pass size validation;
+- `COL_` → manifest boxes;
+- below-guide detail everywhere;
+- brand/category misuse in packaged variety;
+- the cash-drawer tray;
+- the 2 × 4 troffer;
+- duplicate families with rounds 1–2.
+
+**Reject:** vehicles and the cash tray.
