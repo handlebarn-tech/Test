@@ -90,21 +90,47 @@ namespace Dispo.Slice.Tests
             });
 
         // TEMP exploration grid (removed before handoff).
-        [Test]
+        [Test, Timeout(3000000)]
         public void Explore_TuningGrid()
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
-            var budgets = new[] { new[] { 4.0, 6.0 }, new[] { 3.0, 5.0 }, new[] { 2.5, 4.0 }, new[] { 2.0, 3.5 } };
-            var patience = new[] { 1.0, 0.75, 0.5 };
             var lines = new List<string>();
-            foreach (var b in budgets)
-            foreach (var pm in patience)
+            void Log(string l) { lines.Add(l + $"  [{watch.Elapsed.TotalSeconds:0}s]"); Debug.Log("[Tuning] " + lines.Last()); }
+            foreach (var low in new[] { 0.10, 0.15 })
+            foreach (var lows in new[] { 3, 6 })
             {
-                void Tweak(SliceConfig cfg) { cfg.budgetPerGram = b; foreach (var a in cfg.archetypes) a.patienceSec *= pm; }
-                var avgs = Persona.All.Select(p => Average(p, 20, Tweak)).ToList();
-                lines.Add($"budget {string.Join("/", b)} patience x{pm}: " + string.Join("  ", Persona.All.Select((p, i) => $"{p.Name}={avgs[i]:0.0}")) + $"  [{watch.Elapsed.TotalSeconds:0}s]");
-                Debug.Log("[Tuning] " + lines.Last());
-                if (watch.Elapsed.TotalMinutes > 20) break;
+                int seed1 = 0, any = 0;
+                for (int s = 1; s <= 20; s++)
+                {
+                    var d = Load(); d.Config.lowStockFraction = low; d.Config.minLowStartJars = lows; d.Config.seed = s;
+                    var n = SliceTests.RunBot(d, 0.5).Inventory.SoldOutIds.Count;
+                    if (n > 0) { any++; if (s == 1) seed1 = n; }
+                }
+                Log($"soldout lowFrac {low} lows {lows}: seed1={seed1} seedsWithSoldOut={any}/20");
+            }
+            foreach (var t in new[] { (pick: 15.0, pos: 15.0, re: 5.0), (pick: 20.0, pos: 15.0, re: 5.0) })
+            foreach (var pm in new[] { 1.0, 2.0 })
+            foreach (var wp in new[] { 0.003, 0.005 })
+            foreach (var thr in new[] { 60.0, 70.0 })
+            {
+                var ps = new[]
+                {
+                    new Persona { Name = "perfect", TrueChip = true, BestCard = true, PickSec = t.pick, PosSec = t.pos, RepickSec = t.re },
+                    new Persona { Name = "careless", PickSec = t.pick, PosSec = t.pos, RepickSec = t.re },
+                    new Persona { Name = "slow", TrueChip = true, BestCard = true, PickSec = 2 * t.pick, PosSec = 2 * t.pos, RepickSec = 2 * t.re },
+                };
+                var cells = ps.Select(p =>
+                {
+                    var reps = Enumerable.Range(1, 20).Select(s =>
+                    {
+                        var d = Load(); var c = d.Config;
+                        foreach (var a in c.archetypes) a.patienceSec *= pm;
+                        c.waitPenaltyPerSec = wp; c.acceptThreshold = thr; c.wFit = 0.75; c.wPrice = 0.15; c.wSpeed = 0.10;
+                        return Run(d, p, s).Report();
+                    }).ToList();
+                    return $"{p.Name}={reps.Average(r => r.AvgSatisfaction):0.0}(w{reps.Average(r => r.Walkouts):0.0} n{reps.Average(r => r.NoSales):0.0})";
+                });
+                Log($"t {t.pick}/{t.pos} pat x{pm} wp {wp} thr {thr}: " + string.Join("  ", cells));
             }
             Debug.Log("[Tuning]\n" + string.Join("\n", lines));
         }
