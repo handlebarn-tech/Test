@@ -4,12 +4,12 @@ Hub-owned, project level only (`Docs/STUDIO_OS.md` §0). Department detail (work
 
 **Milestone:** vertical slice playable on `main` (2026-10-29). **PS1** (cart, limit meter, ID checks, medical, tuning; `Design/ROADMAP_POST_SLICE.md`) is one task from done (GAME-009). Next: PS1b, re-prioritised by playtest 1 (DEC-096).
 **Main:** see `git log`; every code/asset merge is a reviewed `review/*` branch.
-**Updated:** 2026-10-30 by Hub `local_c6267ff5-2acb-4b09-83a7-53541a088c66`: studio reorganised into departments (DEC-094); all old workcells idle, adopted by their leads.
+**Updated:** 2026-10-30 by Hub `local_78db2735-1777-4eb5-a0a1-e7f8e8a4ecf4` (fresh Hub; replaces `local_c6267ff5…`, no longer listed). Leads idle, all < 220k context.
 
 ## Studio roster
 | Dept | Lead session | Status | Max workers | Unity slots |
 |---|---|---|---|---|
-| Hub | `local_c6267ff5-2acb-4b09-83a7-53541a088c66` | active | DOC/OPS/AUDIT tasks only | 0 |
+| Hub | `local_78db2735-1777-4eb5-a0a1-e7f8e8a4ecf4` | active | DOC/OPS/AUDIT tasks only | 0 |
 | Gameplay | `local_5bcd6ccf-64c1-464e-9fb9-40ad2e27afb4` | active | 3 | 1 |
 | World | `local_d19eda58-a105-4379-aada-4bf61066f717` | active | 2 | 1 (lends to Assets for imports) |
 | Assets | `local_172b2109-6384-4914-800b-6dc37226e046` | active | 4 (temporary +1 to finish ASSET-004, cut short by the usage limit) | 0 (borrows World's) |
