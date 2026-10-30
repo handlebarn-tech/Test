@@ -16,13 +16,14 @@ PLAN_X0, PLAN_Y0, PLAN_PPF = 248.5, 361.5, (1300.5 - 248.5) / 45
 # Expected wall centrelines (graybox_layout.json) per scanline; outer edges are the building outline.
 # Scanlines sit off the drawn 1-ft grid (.3 / .7 ft) so grid strokes don't mask the walls.
 SCANS = [
-    ("y", 33.3, [8.195, 13.9, 23.5, 36.695]),
+    ("y", 33.3, [8.195, 13.9, 23.5]),
+    ("y", 38.3, [36.695]),  # ART-007: at y 33.3 the FOH/BOH wall now starts south of the A011 vestibule (y 34.45)
     ("x", 2.7, [29.25, 36.3, 46.55]),
     ("x", 30.3, [29.25, 46.55]),
     ("x", 42.3, [29.25, 46.55]),
 ]
 # Walls where the V5 plan raster is known wrong (GAP-120: V5 mirrors HUB / HUB 2): checked against the A011 value instead.
-A011 = [("y", 60.3, [18.995])]
+A011 = [("y", 60.3, [18.995]), ("y", 33.3, [31.4, 39.8])]  # + ART-007 vestibule W/E faces (GAP-122; V5 draws a 3 ft vestibule)
 OUTLINE = [("y", 10.3, 0.0, 47.19), ("y", 60.3, 0.0, 47.19), ("x", 2.7, 0.0, 76.03), ("x", 42.3, 0.0, 76.03)]
 
 
@@ -139,9 +140,32 @@ def main(cap_dir, plan_path):
         draw.text((x + 4, y + 3), f"{c['cameraId']}  [{c['conf']}]", fill=(230, 230, 230))
     sheet.save(os.path.join(cap_dir, "contact_sheet.png"))
 
+    rooms = rooms_sheet(cap_dir, manifest)
     ok = missing == 0 and max_dev is not None and max_dev <= TOLERANCE_FT
-    print(f"views={len(caps)} maxDeviationFt={fmt(max_dev)} missing={missing} tolerance={TOLERANCE_FT} {'PASS' if ok else 'FAIL'}")
+    print(f"views={len(caps)} maxDeviationFt={fmt(max_dev)} missing={missing} tolerance={TOLERANCE_FT}{rooms} {'PASS' if ok else 'FAIL'}")
     return 0 if ok else 1
+
+
+def rooms_sheet(cap_dir, manifest):
+    """ART-007: top-down with fixtures + the review views (registers, deli walls, HUB, office, entry) on one sheet."""
+    views = manifest.get("views") or []
+    if not views or not manifest.get("topDownFixtures"):
+        return ""
+    top = Image.open(os.path.join(cap_dir, manifest["topDownFixtures"])).convert("RGB")
+    tw, th, cols, label = 640, 360, 3, 22
+    rows = (len(views) + cols - 1) // cols
+    h = rows * (th + label)
+    top = top.resize((round(top.size[0] * h / top.size[1]), h))
+    sheet = Image.new("RGB", (top.size[0] + cols * tw, h), (20, 20, 20))
+    sheet.paste(top, (0, 0))
+    draw = ImageDraw.Draw(sheet)
+    draw.text((6, 4), "top-down (fixtures on, north up)", fill=(255, 255, 0))
+    for i, v in enumerate(views):
+        x, y = top.size[0] + (i % cols) * tw, (i // cols) * (th + label)
+        sheet.paste(Image.open(os.path.join(cap_dir, v["file"])).convert("RGB").resize((tw, th)), (x, y + label))
+        draw.text((x + 4, y + 4), v["cameraId"], fill=(230, 230, 230))
+    sheet.save(os.path.join(cap_dir, "rooms_sheet.png"))
+    return f" roomsSheet={len(views)}+topdown"
 
 
 def fmt(v):

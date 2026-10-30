@@ -125,18 +125,23 @@ namespace Dispo.Editor.Lookdev
             foreach (var id in jw.backs)
             {
                 var fx = Fx(layout, id);
-                foreach (var r in fx.rects) G.Box(jarWalls, $"JW_{id.Replace("FX_", "")} teal leaf [conf {jw.conf}]", Grow(r, skin), 0, layout.H(fx.h).ft + skin, m.teal, false);
+                var backFt = string.IsNullOrEmpty(fx.h) ? fx.hFt : layout.H(fx.h).ft;
+                foreach (var r in fx.rects) G.Box(jarWalls, $"JW_{id.Replace("FX_", "")} teal leaf [conf {jw.conf}]", Grow(r, skin), 0, backFt + skin, m.teal, false);
             }
             var js = layout.jarSlots;
             foreach (var run in js.runs)
-                for (var row = 0; row < js.rowsFt.Length; row++)
+            {
+                var rows = G.Rows(js, run);
+                for (var row = 0; row < rows.Length; row++)
                 {
+                    var counter = run.counter; // ART-007: the deli back counter is its own run
                     var name = $"JW_Shelf_{run.id}_row{row} [conf {jw.conf}]";
-                    G.Box(jarWalls, name, Grow(run.r, skin), js.rowsFt[row] - js.shelfT - skin, js.shelfT + 2 * skin, row == 0 ? m.counterTop : m.darkMetal, false);
-                    if (row > 0) continue;
+                    G.Box(jarWalls, name, Grow(run.r, skin), rows[row] - js.shelfT - skin, js.shelfT + 2 * skin, counter ? m.counterTop : m.darkMetal, false);
+                    if (!counter) continue;
                     G.Box(jarWalls, $"{name} toe", Grow(run.r, skin), 0, mw.toe, m.black, false);
-                    G.Box(jarWalls, $"{name} cabinet walnut", Grow(run.r, skin), mw.toe, js.rowsFt[0] - js.shelfT - skin - mw.toe, m.walnut, false);
+                    G.Box(jarWalls, $"{name} cabinet walnut", Grow(run.r, skin), mw.toe, rows[row] - js.shelfT - skin - mw.toe, m.walnut, false);
                 }
+            }
 
             // Neon (W wall faces east)
             var n = d.neon;
