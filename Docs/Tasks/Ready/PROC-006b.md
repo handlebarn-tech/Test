@@ -21,6 +21,7 @@ Build the register kit props RK-01..RK-09 from the spec, plus a seeded per-stati
 - Quality bar DEC-084 per prop: LOD0 5–20k tris, LOD0–3, 2K PBR, real construction details and wear; unbranded is not generic. Collision is manifest boxes (DEC-086). No cash-handling equipment (DEC-051).
 - Generator files `Tools/Blender/generators/register_kit.py`, `params/register_kit.json`, plus an arranger module. Headless via `Tools/Blender/blender.ps1`.
 - No Unity work and no scene placement (World owns placement).
+- DEC-110: measure sizes and positions from the floor plan/TI drawings, CCTV and game files before raising any question about them.
 - DEC-105: before any FOR NOLAN question, search DECISIONS, KNOWN_GAPS, Handoffs/REF-008, Research and list what you searched; never re-ask anything answered or skipped.
 
 ## Deliverables
