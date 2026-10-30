@@ -19,7 +19,7 @@ SPEC_DECISION_PRESSURE §0A, §9 (Q6), §14, §21, §29 (pattern F), §115 (DP-0
 5. Workflow-usage counters for the report (GAME-020: "TFS workflow usage quality").
 
 ## Validation
-Compile / EditMode / PlayMode green; QA-002 gate green. Tests: Similar and Compare results equal the engine's direct call for the same input (parity, as `EngineFeatureTests`); a sold-out favourite yields the engine's Similar list (DP-024 part); each action advances time by its cost. DEC-013 gate.
+Compile / EditMode / PlayMode green; QA-002 gate green. Tests: Similar and Compare results equal the engine's direct call for the same input (parity, as the `EngineFeatureTests` class in `Tests/EditMode/ParserGoldenTests.cs`); a sold-out favourite yields the engine's Similar list (DP-024 part); each action advances time by its cost. DEC-013 gate.
 
 ## V2 additions (IMP-002, DEC-063)
 V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). Row n = `Docs/Imports/IMP-001_DESIGN_V2_AUDIT.md` §2 row. All V2 numbers are [GDD] starting values (GAP-DP-02). Exploit tests: `DESIGN_V2/QA_TEST_PLAN.md`.

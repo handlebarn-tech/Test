@@ -1,5 +1,7 @@
 # Golden cases: TFS Budtender v7.11.4 engine, executed (MIG-001)
 
+> **Pinned sources (AUDIT-001 E5, DEC-064):** the source hashes and counts below are as of the import pinned in `Docs/Reconstruction/DATA_SCHEMA.md` ("Pinned sources" block above §1). That block is the one place to update them; on a re-import (DEC-014/038) update it first, then regenerate the goldens.
+
 These outputs come from the shipped engine code running, not from documents. They are what GAME-001's C# port must reproduce before any game tuning.
 
 ## Method (reproducible)

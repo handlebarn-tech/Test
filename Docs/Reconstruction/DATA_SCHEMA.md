@@ -2,6 +2,8 @@
 
 Sources: `tfs-budtender/inventory/tfs-inventory-master.json` (md5 `09bfa4f00206b25f77fb2a49db2eea9c`, `version "tfs-3.3"`, `exported 2026-10-29T19:13:36.534Z`) and the v7.11.4 page (`L#####` = line in `deploy/2026-10-30-v7114/site/index.html`). All counts come from that snapshot. `deploy/.../site/demo-data.json` (md5 `891575995bccf7a945bd4cf29374b512`) is the same 1207 batches plus `demo` and `source` keys.
 
+> **Pinned sources (single place; AUDIT-001 E5, DEC-064):** v7.11.4 page `deploy/2026-10-30-v7114/site/index.html` md5 `228684e9f02d703cf3a36692baf10d18` (DEC-002); inventory master md5 `09bfa4f00206b25f77fb2a49db2eea9c` (`tfs-3.3`, exported 2026-10-29T19:13:36Z); **1207 batches**. ENGINE.md, RECONSTRUCTION_CONTRACT.md and GOLDEN_CASES.md repeat these values for golden reproduction and point here. On a re-import (DEC-014/038) update this block first.
+
 ## 1. Inventory master (`tfs-inventory-master.json`)
 
 Top level: `{version, exported, custom:{<batchId>:Batch}, deleted:[id], brands:[Brand]}`. There is **no `pricing` key**, so prices come from page defaults (§4).

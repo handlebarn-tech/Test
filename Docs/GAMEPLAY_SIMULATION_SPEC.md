@@ -1559,7 +1559,7 @@ Initial design target:
 20–45 minutes per full shift
 ```
 
-DP §62 narrows the representative full shift to **25–40 real minutes** (example split: opening 3, steady 6, rush 6, recovery 4, rush 2/event 7, late 5, report 3).
+DP §62 (ratified **DEC-056**, which supersedes the 20–45 above) narrows the representative full shift to **25–40 real minutes** (example split: opening 3, steady 6, rush 6, recovery 4, rush 2/event 7, late 5, report 3).
 
 Short scenario modes can be:
 
