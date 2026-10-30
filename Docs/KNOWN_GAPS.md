@@ -50,8 +50,8 @@ Seeded from MASTER_PLAN §20–21; REF-001 and MIG-001 extend this file.
 - GAP-121 | building | Office mirrored E-W in V5/graybox: CCTV (3 views) + A011 doors put desk L + neon west, steel cabinets on the south wall, IT rack east | Med-High | ART re-lays the office from ROOM_FIXTURES.json
 - GAP-122 | building | Vestibule: A011 about 8.4 x 4.8 ft (x 31.4-39.8, y 29.5-34.3, 35.16 SF) with 3-0 doors on its W/E faces vs graybox 3.0 x 2.2 | High (A011) | Hub rules; ART adopts A011 and moves the FOH/BOH racks
 - GAP-123 | building | Hall door positions per A011: office door x 10.2-13.3, break door y 29.9-33.0, restroom door y 33.1-36.1 vs graybox | High (A011) | ART edits the openings
-- GAP-124 | building | FOH desk + fridge + cooler wall: south (JSON) vs east; CCTV ambiguous | Low | Nolan confirms the wall
+- GAP-124 | building | **closed REF-009 (DEC-051 Q1):** the FOH desk + fridge + cooler stand on the east wall shared with BOH; order along the wall Low. Old text: FOH desk + fridge + cooler wall: south (JSON) vs east; CCTV ambiguous | Med | ART places from ROOM_FIXTURES.json
 - GAP-125 | building | A011 back-room interior dims do not sum to the building width with walls; V5 shells kept | Med | site measure
-- GAP-126 | building | Break-room **staff lockers** (store fact, DEC-047): R3C5 shows only their tops; count, size and wall unknown | none (position) | Nolan: which wall and how many
+- GAP-126 | building | (narrowed REF-009, DEC-051 Q5: **one** locker unit, about 2 × 6 ft, read as 2 ft wide × 6 ft tall) Break-room **staff lockers** (store fact, DEC-047): R3C5 shows only the top; the wall is still unknown | none (position) | Nolan: which wall, and whether 2 × 6 ft is width × height
 - GAP-DP-01 | store | Does the budtender tool still list a batch whose wall jar is empty but BOH has backstock? | none (placeholder DEC-055) | Nolan (N2) | CLOSED by DEC-061
 - GAP-DP-02 | game | Every new [GDD] tuning value in GAME-017..024 (tolerances, weights, regret tolerance, promotion gates) | spec starting values | playtests
