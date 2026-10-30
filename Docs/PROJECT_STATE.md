@@ -7,18 +7,18 @@
 ## Read with this
 **Hub:** `Docs/HUB_RESUME.md` (HARD RULES first, then its reading list) + the newest DECs. **Workers:** `CLAUDE.md` → this file → your packet only.
 
-## In flight (as of main 0fca821, 2026-10-30 ~05:30; verify with `list_sessions {"linked": true}`)
-Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, W4R REF-009, W4S UX-005, IMP-001, W4U REF-009b, W4V IMP-002, W4T QA-002, W4X DOC-001, W4W GAME-006, W4Y QA-002b, W4Z DOC-003, W5B OPS-002, W5C OPS-001+REF-010, W5E AUDIO-001 (ledger author fixes m1/m2 → AUDIO-002), W5A ART-006 (minors: back-room lighting, mop x → later ART/REF), W5G GAME-007, W5H BRAND-001, W5D DES-004 (DEC-077), W5I BRAND-001b, W5K RES-002 (squashed). DECs through 084 (high-quality asset bar). DECs 052–073.
+## In flight (as of main 38b9e5c, 2026-10-30 ~04:40 MST; verify with `list_sessions {"linked": true}`)
+Merged in Hub session 4 (latest): W5K RES-002 (squashed), W5N GAME-008, W5M GAME-010, W5F IMP-003 audit (drops 1–4 + PROC checklist). DECs through 086.
 
 | Work | Session | State | Next Hub step |
 |---|---|---|---|
-| REVIEW-W5N: GAME-008 (a73f8b7+7b5b056) — last review of Unity B, then archive it; B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd` takes over | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` (worker `local_7f8c95e9…` idle) | running | merge on GO → GAME-009 |
-| REVIEW-W5M: GAME-010 (2d81a7b) | `local_0dd63bac-df1d-448d-9203-641ead6b6837` (worker `local_0d166a8e…` idle) | running | merge on GO → playable build session |
-| **IMP-003**: rolling toolkit audit; round 2 landed (3 new packages) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | auditing round 2 | review → one approval summary to Nolan → PROC-005 integrates + fixes findings (DEC-083) |
-| REVIEW-W5L: DES-004b+c (22ccc85) | `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7` (worker `local_82d327a2…` idle) | running | merge on GO |
-| RES-002: staffing counts from OneDrive schedule (read-only, counts only) | `local_7f53cf19-16d8-4ba4-b186-9c03960e8906` | running | review (PII check) → GAP-DAY-03 |
-| ASSET-003: CC0 customer characters + animations (sourcing, no Unity) | `local_d31ad4c5-232b-4628-986c-5d276e71a2a2` | running | review |
-| W5F IMP-003 drop 1 PASS w/ minors (`review/wave-5f`) | reviewer `local_b073ffa0…` | held | wait for IMP-003 delta audit of ChatGPT's fixes, then one approval summary to Nolan |
+| GAME-009 medical (+ W5N m2 queue strip at scale) | `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | running | B2 reviews → PS1 done → REVIEW-PS1 + playtest |
+| BUILD-006 playtest build from 38b9e5c | `local_7f53cf19-16d8-4ba4-b186-9c03960e8906` | running | give Nolan exe path + playtest script |
+| OPS-003 slot monitor | `local_0d166a8e-87b1-40bb-9594-be389c549875` | running | Docs review → merge; then GAME-010b (persona 1.5× slow + answer cover prompt, DEC-086) |
+| REVIEW-W5L DES-004b+c | Docs reviewer `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7` | running/queued | merge on GO |
+| IMP-003 toolkit audit: **awaiting Nolan's approval** of the W5F summary + Q1–3,5 | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` idle | waiting on Nolan | on approval → PROC-005 integrates + fixes checklist (DEC-083/084/086); round 3 drops → IMP-003 |
+| ASSET-003 realistic customers (DEC-075/084) | `local_d31ad4c5-232b-4628-986c-5d276e71a2a2` | running | Docs review |
+| Standing reviewers: Unity A `local_0dd63bac…` (idle), Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs `local_b073ffa0…`. DES worker `local_82d327a2…` idle. | | | |
 
 ## Resume checklist (07:00)
 0. Process (DEC-085): standing reviewers Unity A `local_0dd63bac…`, Unity B2 `local_041172fa…` (B retiring), Docs `local_b073ffa0…`; workers message them directly. OPS-003 slot monitor running on `local_0d166a8e…`.
