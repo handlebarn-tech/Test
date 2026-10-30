@@ -28,8 +28,8 @@ _Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…`; repor
 | Task | Worker | Branch | State |
 |---|---|---|---|
 | REF-011 sales-floor audit | subagent (done) | `worktree-agent-a3e83b7d768da38d0` 2731c1a | PASS (REVIEW-REF11) → on `review/world-1` |
-| REF-013 drawings measure + DEC-110 | subagent (worktree) | off `review/world-1` | running |
-| ART-007 graybox rebuild | subagent (worktree, Unity slot) | off `review/world-1` b30d72c | running |
+| REF-013 drawings measure + DEC-110 | subagent (done) | `worktree-agent-a2b65d251ee0f6ac2` 73e0e0c | in review (Docs 2) |
+| ART-007 graybox rebuild | subagent (done) | `worktree-agent-a814e17bba4ec20c5` 404daee | in review (Unity A2 → Hub) |
 | REF-012 office + doors audit | subagent (done) | `worktree-agent-a2f71eef653a08c1c` e798f88 | PASS (REVIEW-REF12) → on `review/world-1` a452259 |
 
 ## Queue (lead re-orders within DEC-096)
@@ -40,7 +40,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…`; repor
    - **deli walls:** Nolan believes there are about three, not one; check references; shelving also looks unrealistically full (fill density with Assets' stocking arranger);
    - **doors:** geometry and swing so walking through the store feels natural (interaction with Gameplay).
 2b. **DEC-097 label UV cut-over:** Lookdev label shader reads UV channel 2 (lightmap UV on channel 1); agree timing with the Assets lead, then do it in ART-007 or a small ART task.
-2c. **Assets ask (low):** staff tee (DEC-089) logo chest side from BAND 05/12; reply to the Assets lead with side + crop, or "not shown → GAP". Read-only REF check when a worker slot frees.
+2c. **Assets ask (low):** staff tee (DEC-089) logo chest side from BAND 05/12; reply to the Assets lead with side + crop, or "not shown → GAP". Not started; DEC-112 retired departments, so it is left for the Hub (Assets lead was told it was queued).
 3. Lived-in pass once final assets are in (DEC-104: small items never uniform between stations; small bins per register, big bins spread out; main cleaning supplies in the restroom cabinet `Cabinet_Storage_Large`, note to add in ART-007/next REF): slight placement variation, partly used supplies, uneven stocking, cleaning and personal items in believable places.
 4. Later: livelier exterior and neighbourhood, occupied break room (with Gameplay/Assets).
 

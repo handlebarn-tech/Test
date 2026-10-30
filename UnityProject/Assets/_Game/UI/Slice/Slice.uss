@@ -190,3 +190,15 @@
 .debug { left: 96px; top: 300px; right: auto; bottom: auto; background-color: rgba(0,0,0,0.75); padding: 8px; }
 .debug-title { color: var(--warn); font-size: 18px; }
 .debug-line { font-size: 15px; color: var(--t2); white-space: nowrap; }
+
+/* GAME-025 pause menu (CONTROLS_FLOW_PS1 §2.3): centred panel on a dimmed world, UX_SLICE §6 tokens; UX may restyle. */
+.pause-layer { position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; background-color: rgba(0,0,0,0.6); }
+.pause-menu { width: 720px; background-color: var(--panel); border-radius: 8px; padding: 24px 32px; border-width: 2px; border-color: var(--line); }
+.pause-menu > Button { margin: 6px 0; }
+.pause-menu .unity-base-field { min-height: 56px; margin: 6px 0; }
+.pause-menu .unity-base-field__label { color: var(--t1); font-size: 22px; min-width: 260px; }
+.pause-menu .unity-base-field__input { color: var(--t1); }
+.pause-menu .unity-text-field__input { background-color: var(--card); color: var(--t1); min-width: 70px; }
+.text-125 .pause-menu Label, .text-125 .pause-menu Button { font-size: 28px; }
+.text-150 .pause-menu Label, .text-150 .pause-menu Button { font-size: 33px; }
+.text-125 .pause-menu, .text-150 .pause-menu { width: 1000px; }

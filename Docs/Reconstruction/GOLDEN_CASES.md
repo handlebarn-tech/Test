@@ -245,3 +245,19 @@ out.batchScores = ['Kush Cake', 'Scented Marker', 'Bubba Verde', 'Amplified'].ma
 fs.writeFileSync(OUT, JSON.stringify(out, null, 1));
 console.log(out.cases.map(c => `${c.id.padEnd(6)} ${c.outcome.padEnd(9)} ${c.parsed.intent.padEnd(13)} ${JSON.stringify(c.q)} -> ${(c.findStrainsCalls.at(-1)?.top.map(t => t.name + ':' + t.ms) || c.cards?.map(t => t.name) || c.terpRank?.slice(0, 3) || []).join(' | ')}`).join('\n'));
 ```
+
+---
+
+## Needs goldens (DATA-003): `golden_cases_needs.json`
+
+Source data: `UnityProject/Assets/_Game/Data/Slice/SliceNeeds.json` (GAME-017a loads it). Generator: `node Tools/Data/golden_game003.js` writes `golden_cases_game003.json` (unchanged) and then this file; an optional 2nd argument overrides its path. Parser = the v7.11.4 page with the MC-7 and GAP-206 patches, i.e. C# `ParserOptions.Game`. Same inventory, clock and state as above.
+
+`SliceNeeds.json` schema:
+- `join` (`", "`): how picked pieces become one query. `styles`: direct, vague, wrongTerm, story, productRef, lastTime, contradictory (audit §3.2).
+- `needs[]`: `id`; `family` (a `SliceIntents.json` id, so `TrueFamily` keeps working); `trueQuery` (= the `true` term of each component joined with `join`, in order; never holds `{strain}`); `components[]` (1-4).
+- `components[]`: `kind` (effect, budget, experience, modifier, time, avoid); `terms[]` (2-3 `{text, true?}`, tool wording, exactly one `true`); `say` (style → spoken lines, entered verbatim when the player keeps "their words").
+- Picker query = any non-empty, in-order subset of components, each giving one term or one said line, joined with `join`. `{strain}` is filled at runtime from the game catalog.
+
+Rules the generator enforces (throws on violation): family exists; 1-4 components; 2-3 terms with one `true`; `trueQuery` = join of the true terms and parses as `recommend`/`ok` with cards; swapping any non-true term into the full join changes the parse (everything except `lbls`). So exactly one term per component reproduces the need.
+
+`golden_cases_needs.json`: `meta` (as `golden_cases_game003.json` plus `parser`, `join`, `strainFill`); `needs[]` = `{id, family, trueQuery, strainFill, queries[]}`, where `strainFill` = first card key of `trueQuery` and is used for every `{strain}` in that need's captures; `cases[]` = one `run()` record per distinct query (same shape as the `v7114` cases above). `NeedsGoldenTests` (Gates) replays every case through `Responder.Ask(..., ParserOptions.Game)` and checks that `queries` equals the picker enumeration of the current `SliceNeeds.json`. Edit the data, then rerun the generator.

@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Desk_WireRack_Computer",
+  "collision_boxes": 5,
+  "errors": [],
+  "export_sha256": "c693538c75a74828",
+  "generator": "wire_shelving",
+  "lod_tris": {
+    "LOD0": 38240,
+    "LOD1": 15936,
+    "LOD2": 5416,
+    "LOD3": 156
+  },
+  "params_sha256": "69dd09971ea62805",
+  "passed": true,
+  "warnings": []
+}

@@ -76,7 +76,7 @@
     "wheel_w_m": 0.022,
     "fork_t_m": 0.003,
     "trail_m": 0.02,
-    "race_d_m": 0.04,
+    "race_d_m": 0.036,
     "stem_d_m": 0.0127,
     "height_m": 0.105,
     "brake": true

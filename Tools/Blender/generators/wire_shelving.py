@@ -49,7 +49,7 @@ def grooved_post_profile(p, z0, z1, grooves):
     if grooves:
         z = z0 + pitch
         while z + gw < z1 - pitch / 2:
-            prof += [(r, z), (r - gd, z + gw * 0.3), (r - gd, z + gw * 0.7), (r, z + gw)]
+            prof += [(r, z), (r - gd, z + gw / 2), (r, z + gw)]  # V groove: 3 rings keep the 2-section runs < 80k
             z += pitch
     return prof + [(r, z1), (0, z1)]
 
@@ -83,7 +83,7 @@ def build_base(parts, p, lod, x, y, rolls, finish):
     cy = y - math.copysign(c["trail_m"], y)  # swivel trail points inward so the wheel stays in the footprint
     whl = parts("CasterWheels", "Rubber_Grey")
     if d >= 3:
-        add_box(hw, (wd * 1.6, R * 2, top - R * 2), (x, y, R * 2 + (top - R * 2) / 2))
+        add_box(hw, (wd * 1.6, c["race_d_m"], top - R * 2), (x, y, R * 2 + (top - R * 2) / 2))  # swivel block, inside the collar
         add_box(whl, (wd, R * 2, R * 2), (x, cy, R))
         return top
     ws = s * 2 if d == 0 else s
@@ -97,7 +97,8 @@ def build_base(parts, p, lod, x, y, rolls, finish):
     for sx in (-1, 1):  # fork legs: bent plate from the swivel down to the axle
         fx = x + sx * (wd / 2 + fork_t / 2 + 0.0015)
         add_sweep(hw, [(fx, cy, R), (fx, cy, fork_top - 0.004), (fx, y, fork_top)],
-                  [(fork_t / 2, -R * 0.45), (fork_t / 2, R * 0.45), (-fork_t / 2, R * 0.45), (-fork_t / 2, -R * 0.45)])
+                  # profile (u, v): on a +Z path u = -Y and v = +X (proclib._basis), so plate width on Y, thickness on X
+                  [(-R * 0.45, -fork_t / 2), (R * 0.45, -fork_t / 2), (R * 0.45, fork_t / 2), (-R * 0.45, fork_t / 2)])
         if d <= 1:
             add_cylinder_between(hw, (fx + sx * fork_t / 2, cy, R), (fx + sx * (fork_t / 2 + 0.003), cy, R), 0.005, s)
     add_cylinder_between(hw, (x - wd / 2 - fork_t, cy, R), (x + wd / 2 + fork_t, cy, R), 0.003, s)  # axle
@@ -151,7 +152,7 @@ def build(p, lod):
             anchors.append({"id": f"S{si}_Shelf_{li:02d}", "position_unity_xyz": to_unity(xm, 0, z),
                             "size_m_unity_xz": [round(sw - 2 * cr, 5), round(D - 4 * cr, 5)]})  # H2: inside the collars
             if d >= 3:
-                add_box(shelves, (sw - 2 * cr, D - 2 * cr, fh), (xm, 0, z - fh / 2))
+                add_box(shelves, (sw + 2 * cr, D, fh), (xm, 0, z - fh / 2))  # silhouette = collar extents, like the collision box
                 continue
             x0, x1, y0, y1 = xa + cr * 0.8, xb - cr * 0.8, ys[0] + cr * 0.8, ys[1] - cr * 0.8
             zt, zbr = z - rr, z - fh + rr
@@ -163,7 +164,7 @@ def build(p, lod):
                     L = math.dist(a, b)
                     n = max(2, round(L / p["truss_pitch_m"]) * 2)
                     pts = [(a[0] + (b[0] - a[0]) * i / n, a[1] + (b[1] - a[1]) * i / n, zt if i % 2 else zbr) for i in range(n + 1)]
-                    add_tube(shelves, pts, p["truss_d_m"] / 2, s)
+                    add_tube(shelves, pts, p["truss_d_m"] / 2, 6)  # 3.5 mm wire: 6 sides, like the deck wires
             # deck: dense front-to-back wires sitting on the top rail, on long support wires underneath (W2/C9)
             wd = p["deck_wire_d_m"] / 2
             pitch = p["deck_pitch_m"] * (2 if d >= 2 else 1)

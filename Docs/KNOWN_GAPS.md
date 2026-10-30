@@ -77,6 +77,13 @@ These gaps are defined, with placeholders and owners, in the spec named; that sp
 - GAP-DAY-01..02 | shift day / restock (incl. deli backstock location) | `Docs/Design/ROADMAP_POST_SLICE.md` (GAME-011/012, ART rows)
 - GAP-PROC-07..11 | procedural art (bud looks, fill height, base band, packaged sizes, label art) | `Docs/Assets/Specs/PROC_PIPELINE.md`
 - GAP-PROC-12 | asset | smalls jar lid/body split, corner radius, lid colour, label placement not published (PROC-003, REVIEW-W4P) | `Docs/Assets/Specs/PROC_PIPELINE.md` "PROC-003" | real product photos
+- GAP-CHR-4 | asset | most CC0 MPFB skins are 2K diffuse with no normal/spec/SSS map (ASSET-004) | Med | `Docs/Assets/Specs/CHARACTERS.md` §5: procedural pore detail normal (our own) + HDRP Skin diffusion profile
+- GAP-CHR-5 | asset | CC0 eye materials are 1K | Med (likely enough at register) | CHARACTERS.md §5: procedural 2K iris if needed
+- GAP-CHR-6 | asset | CC0 eyebrows/eyelashes are 512 px | Med | CHARACTERS.md §5: other CC0 brow units or our own 1K cards
+- GAP-CHR-7 | asset | shoes, keyhole tank top, fedora normal 1K; glasses lenses flat colour | Med | CHARACTERS.md §5: own 2K repaint; HDRP glass for lenses
+- GAP-CHR-8 | asset | no CC0 South-Asian male skin; South-Asian customers are all women (no hue-shifted skins, lead ruling) | n/a | CHARACTERS.md §5: sourcing task
+- GAP-CHR-9 | asset | no CC0 beard asset (both beards AGPL-headed); two allowed skins have painted beards | Med | CHARACTERS.md §5: own beard/stubble cards, or the jartur69 bearded skins
+- GAP-CHR-10 | asset | MakeHuman logo printed on some CC0 system casual tees | High (seen on contact sheet) | CHARACTERS.md §5: paint the logo out in the derived texture
 - GAP-128 | dropped by REF-009b (DEC-062: the 4 rolling racks are the only FOH product racks) | `Docs/Handoffs/REF-009b.md`
 
 ## IMP-002 / DESIGN_V2 (see `Docs/Design/DESIGN_V2/`, DEC-063/066)

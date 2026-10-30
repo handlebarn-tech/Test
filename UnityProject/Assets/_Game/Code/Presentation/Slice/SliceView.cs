@@ -17,7 +17,8 @@ namespace Dispo.Presentation.Slice
         static readonly string[] ShownDomains = { DomainIds.Sedation, DomainIds.Uplift, DomainIds.AnxietyRelief, DomainIds.PainInflammation, "focus_cognitive" };
 
         readonly SliceGame _g;
-        readonly VisualElement _root, _screen, _toasts, _jarLayer, _debug;
+        readonly VisualElement _root, _screen, _toasts, _jarLayer, _debug, _pause;
+        string _pausePage = "main";
         readonly Label _clock, _sales, _queue, _prompt;
         readonly Dictionary<string, Label> _jarLabels = new Dictionary<string, Label>();
         readonly List<(VisualElement el, float until)> _toastList = new List<(VisualElement, float)>();
@@ -43,8 +44,82 @@ namespace Dispo.Presentation.Slice
             _screen = Add(root, "screen");
             _toasts = Add(root, "toasts");
             _debug = Add(root, "debug");
+            _pause = Add(root, "pause-layer");   // topmost: covers the screen underneath without rebuilding it (CF§2.2)
             _debugOn = false;
             Render();
+            RenderPause();
+        }
+
+        // ---------------- pause menu (CF§2.3) ----------------
+
+        public bool PauseVisible => _pause.style.display == DisplayStyle.Flex && _pause.childCount > 0;
+
+        public void RenderPause()
+        {
+            _pause.Clear();
+            _pause.style.display = _g.Paused ? DisplayStyle.Flex : DisplayStyle.None;
+            if (!_g.Paused) { _pausePage = "main"; return; }
+            var box = Add(_pause, "pause-menu");
+            void Page(string p) { _pausePage = p; RenderPause(); }
+            switch (_pausePage)
+            {
+                case "settings": PauseSettings(box, () => Page("main")); break;
+                case "controls":
+                    AddLabel(box, "Controls", "h1");
+                    foreach (var (action, key) in ControlsList) { var r = Add(box, "price-line"); AddLabel(r, action); AddLabel(r, key, "amount"); }
+                    AddButton(box, "Back", () => Page("main"));
+                    break;
+                case "quit":
+                    AddLabel(box, "Quit to desktop?", "h1");
+                    AddLabel(box, "The shift is not saved.", "hint");
+                    var row = Add(box, "row");
+                    AddButton(row, "Quit", _g.QuitToDesktop, "primary");
+                    AddButton(row, "Cancel", () => Page("main")).Focus();
+                    break;
+                default:
+                    AddLabel(box, "Paused", "h1");
+                    var resume = AddButton(box, "Resume (Esc)", _g.Resume, "primary");
+                    AddButton(box, "Settings", () => Page("settings"));
+                    AddButton(box, "Controls", () => Page("controls"));
+                    AddButton(box, "Quit to desktop", () => Page("quit"));
+                    resume.Focus();   // default focus
+                    break;
+            }
+        }
+
+        /// <summary>CF§3.3 + UX_PS1 §7, keys as bound today.</summary>
+        static readonly (string, string)[] ControlsList =
+        {
+            ("Move / run", "W A S D / Shift"), ("Look", "Mouse"), ("Talk · ID check · door", "E"), ("Pause / resume", "Esc"),
+            ("Back", "Backspace / Back button"), ("Go to register", "R"), ("More options", "M"), ("Sale type (MED)", "T"),
+            ("Admit · Refuse ID", "A · R"), ("Cover the stand", "Y · N"), ("Confirm sale", "Hold the Confirm button"),
+        };
+
+        /// <summary>CF§1.2 look settings (PlayerPrefs) + the UX_SLICE §7 accessibility settings that exist today.</summary>
+        void PauseSettings(VisualElement box, System.Action back)
+        {
+            AddLabel(box, "Settings", "h1");
+            var p = _g.Player;
+            if (p)
+            {
+                var sens = new Slider("Look sensitivity", Graybox.GrayboxTestPlayer.MinSensitivity, Graybox.GrayboxTestPlayer.MaxSensitivity) { value = p.LookSensitivity, showInputField = true };
+                sens.RegisterValueChangedCallback(e => { p.LookSensitivity = e.newValue; p.SaveSettings(); });
+                box.Add(sens);
+                var inv = new Toggle("Invert Y") { value = p.InvertY };
+                inv.RegisterValueChangedCallback(e => { p.InvertY = e.newValue; p.SaveSettings(); });
+                box.Add(inv);
+                var fov = new SliderInt("Field of view", (int)Graybox.GrayboxTestPlayer.MinFov, (int)Graybox.GrayboxTestPlayer.MaxFov) { value = Mathf.RoundToInt(p.FovVertical), showInputField = true };
+                fov.RegisterValueChangedCallback(e => { p.FovVertical = e.newValue; p.SaveSettings(); });
+                box.Add(fov);
+            }
+            var scale = Add(box, "row");
+            AddLabel(scale, "Text size");
+            foreach (var pct in new[] { 100, 125, 150 })
+                AddButton(scale, pct + " %", () => { _g.SetTextScale(pct); RenderPause(); }, _g.TextScale == pct ? "primary" : null);
+            var fill = new Toggle("Auto-fill intent (assist)") { value = _g.AutoFillIntent };
+            fill.RegisterValueChangedCallback(e => _g.AutoFillIntent = e.newValue);
+            box.Add(fill);
+            AddButton(box, "Back", back);
         }
 
         public void ToggleDebug() => _debugOn = !_debugOn && (Debug.isDebugBuild || Application.isEditor);
@@ -66,7 +141,8 @@ namespace Dispo.Presentation.Slice
             bool world = _g.Screen == SliceScreen.World;
             _prompt.text = world && _g.CanCheckId ? sim.Data.Lines.standPrompt
                 : world && _g.CanTalk ? "E  Talk" : world && sim.Serving != null && _g.CustomerAtCounter ? "Go to the register"
-                : world && sim.Covering ? string.Format(sim.Data.Lines.standHud, sim.StandDone, sim.StandTotal) : "";
+                : world && sim.Covering ? string.Format(sim.Data.Lines.standHud, sim.StandDone, sim.StandTotal)
+                : world ? _g.DoorPrompt : "";   // "Locked" / "Staff only" (CF§3.2)
             _prompt.style.display = _prompt.text.Length > 0 ? DisplayStyle.Flex : DisplayStyle.None;
 
             for (int i = _toastList.Count - 1; i >= 0; i--)
@@ -233,7 +309,7 @@ namespace Dispo.Presentation.Slice
                 AddButton(strip, string.Format(sim.Data.Lines.cartChip, sim.Cart.Count, sim.Cfg.cartMaxLines, sim.CartGrams.ToString("0.#")), _g.GoToRegister).tooltip = sim.Data.Lines.goToRegister;
             body(Add(term, "terminal-body"));
             if (!string.IsNullOrEmpty(Message)) AddLabel(term, "⚠ " + Message, "message st-bad");
-            AddButton(term, "Back (Esc)", _g.Back, "back");
+            AddButton(term, "Back (Backspace)", _g.Back, "back");
         }
 
         void Query(VisualElement body)
@@ -437,7 +513,7 @@ namespace Dispo.Presentation.Slice
             var buttons = Add(side, "id-buttons");
             AddButton(buttons, l.idAdmit + " (A)", _g.IdAdmit, "primary");
             AddButton(buttons, l.idRefuse + " (R)", _g.IdRefuse);
-            AddButton(buttons, "Back (Esc)", _g.Back);
+            AddButton(buttons, "Back (Backspace)", _g.Back);
         }
 
         /// <summary>UX_PS1 §3 limit meter: Flower {g} / 28 g, 75 % tick, amber/red state words (never colour only).</summary>

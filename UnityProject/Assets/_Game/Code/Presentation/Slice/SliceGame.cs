@@ -29,9 +29,14 @@ namespace Dispo.Presentation.Slice
         public GameObject JarModel;          // PROC_DeliJar.fbx
         public GameObject[] FillModels;      // PROC_JarFill_<Look>.fbx, one per bud look
         public Material JarGlass, LabelText;
+        [Header("Doors (GAME-025)")]
+        public TextAsset Doors;              // REF-012 DOORS.json; unset → the repo's Docs/Reference copy (Editor)
 
         public ShiftSim Sim { get; private set; }
         public SliceScreen Screen { get; private set; } = SliceScreen.World;
+        /// <summary>CF§2: Esc pause. Freezes the sim, NPCs, doors, the cover countdown and the POS hold; the screen underneath stays.</summary>
+        public bool Paused { get; private set; }
+        public SliceDoor DoorRuntime { get; private set; }
         public ShiftReport FinalReport { get; private set; }
         public readonly List<string> FallbackAnchors = new List<string>();
         public bool AutoFillIntent;        // UX assist, off by default (SLICE_DESIGN §10 #2)
@@ -82,8 +87,10 @@ namespace Dispo.Presentation.Slice
             SpawnJars();
             _player = FindAnyObjectByType<GrayboxTestPlayer>();
             if (_player) PlacePlayer();
+            BuildDoors();
 
             _view = new SliceView(Document.rootVisualElement, Style, this);
+            ApplyCursor();
             if (FallbackAnchors.Count > 0) Debug.LogWarning($"[Slice] TEMP fallback anchors (ART-002 pending): {string.Join(", ", FallbackAnchors)}");
             Debug.Log($"[Slice] shift ready: {Sim.Customers.Count} customers, {Sim.Inventory.JarBatchIds.Count} jars, seed {Sim.Cfg.seed}");
         }
@@ -225,11 +232,25 @@ namespace Dispo.Presentation.Slice
             cc.enabled = true;
         }
 
+        void BuildDoors()
+        {
+            DoorRuntime = gameObject.AddComponent<SliceDoor>();
+            DoorRuntime.Player = _player;
+            DoorRuntime.Paused = () => Paused;
+            DoorRuntime.Npcs = () => _npcs.Values.Where(go => go).Select(go => (go.transform.position, DoorActor.Customer));
+            var json = SliceDoor.LoadJson(Doors);
+            var placeholders = new List<string>();
+            DoorRuntime.Build(json != null ? DoorRow.Parse(json, placeholders) : new List<DoorRow>(), placeholders);
+        }
+
         // ---------------- loop ----------------
 
         void Update()
         {
             if (Sim == null) return;
+            HandleInput();
+            if (_player) _player.ScriptedWorldMove = Screen == SliceScreen.World && !Paused ? (Vector3?)null : Vector3.zero;
+            if (Paused) { _view.Tick(); return; }
             if (!Sim.IsOver) Sim.Tick(Time.deltaTime);
             else if (FinalReport == null) { FinalReport = Sim.Report(); Show(SliceScreen.Report); }
 
@@ -242,13 +263,11 @@ namespace Dispo.Presentation.Slice
             _standMarker.SetActive(Sim.Covering);
 
             MoveNpcs();
-            HandleInput();
             if (_holding)
             {
                 _hold += Time.unscaledDeltaTime;
                 if (_hold >= Sim.Cfg.holdConfirmSeconds) { _holding = false; _hold = 0; PosConfirm(); }
             }
-            if (_player) _player.ScriptedWorldMove = Screen == SliceScreen.World ? (Vector3?)null : Vector3.zero;
             _view.Tick();
         }
 
@@ -256,13 +275,16 @@ namespace Dispo.Presentation.Slice
         {
             var kb = Keyboard.current;
             if (kb == null) return;
-            if (kb.eKey.wasPressedThisFrame && Screen == SliceScreen.World) { if (CanCheckId) OpenIdPanel(); else if (CanTalk) Talk(); }
+            if (kb.escapeKey.wasPressedThisFrame) TogglePause();   // CF§2.1: Esc always pauses, Esc again resumes
+            if (Paused) return;
+            // CF§3.3 E priority: ID check > talk > (call next, GAME-026) > door toggle.
+            if (kb.eKey.wasPressedThisFrame && Screen == SliceScreen.World) { if (CanCheckId) OpenIdPanel(); else if (CanTalk) Talk(); else DoorRuntime.ToggleInReach(); }
             if (Screen == SliceScreen.CoverPrompt && kb.yKey.wasPressedThisFrame) AcceptCover();
             if (Screen == SliceScreen.CoverPrompt && kb.nKey.wasPressedThisFrame) DeclineCover();
             if (Screen == SliceScreen.IdCheck && kb.aKey.wasPressedThisFrame) IdAdmit();
             if (Screen == SliceScreen.Pos && kb.tKey.wasPressedThisFrame) ToggleSaleType();
             if (Screen == SliceScreen.IdCheck && kb.rKey.wasPressedThisFrame) IdRefuse();
-            if (kb.escapeKey.wasPressedThisFrame) Back();
+            if (kb.backspaceKey.wasPressedThisFrame) Back();   // CF§2.4: Backspace took over Back from Esc
             if (kb.mKey.wasPressedThisFrame && Screen == SliceScreen.Results) More();
             if (kb.rKey.wasPressedThisFrame && (Screen == SliceScreen.Query || Screen == SliceScreen.Results || Screen == SliceScreen.Detail)) GoToRegister();
             if (kb.f3Key.wasPressedThisFrame) _view.ToggleDebug();
@@ -436,7 +458,7 @@ namespace Dispo.Presentation.Slice
             return $"{(int)h:00}:{(int)((h - (int)h) * 60):00}";
         }
 
-        /// <summary>DEC-065: Esc on a multi-line cart goes back to the cards and keeps the cart; a single line keeps US§4 (Cancel).</summary>
+        /// <summary>DEC-065: Back (Backspace since GAME-025) on a multi-line cart goes back to the cards and keeps the cart; a single line keeps US§4 (Cancel).</summary>
         public void PosBack()
         {
             if (Sim.Cart.Count <= 1) { PosCancel(); return; }
@@ -445,7 +467,6 @@ namespace Dispo.Presentation.Slice
             Show(Sim.Results != null ? SliceScreen.Results : SliceScreen.Query);
         }
 
-        /// <summary>Esc / Back: one screen back.</summary>
         // ---- ID stand (GAME-008, UX_PS1 §4) ----
 
         public float PromptSecondsLeft => _promptLeft;
@@ -476,6 +497,7 @@ namespace Dispo.Presentation.Slice
             Show(IdCustomer != null ? SliceScreen.IdCheck : SliceScreen.World);
         }
 
+        /// <summary>Backspace / Back button: one screen back (CF§2.4; Esc pauses instead).</summary>
         public void Back()
         {
             switch (Screen)
@@ -495,9 +517,51 @@ namespace Dispo.Presentation.Slice
             if (FinalReport != null) s = SliceScreen.Report;
             Screen = s;
             _view?.Render();
-            UnityEngine.Cursor.lockState = CursorLockMode.None;
-            UnityEngine.Cursor.visible = true;
+            ApplyCursor();
         }
+
+        // ---- pause (CF§2) ----
+
+        public void TogglePause() { if (Paused) Resume(); else Pause(); }
+
+        public void Pause()
+        {
+            if (Paused) return;
+            Paused = true;
+            _holding = false; _hold = 0;   // a POS hold in progress is cancelled (CF§2.2)
+            _view?.RenderPause();
+            ApplyCursor();
+        }
+
+        public void Resume()
+        {
+            if (!Paused) return;
+            Paused = false;
+            _view?.RenderPause();
+            ApplyCursor();
+        }
+
+        public void QuitToDesktop()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
+
+        /// <summary>CF§1.2: World = locked + hidden; any UI screen or the pause menu = free + visible.</summary>
+        public bool WantsCursorLocked => Screen == SliceScreen.World && !Paused;
+
+        void ApplyCursor()
+        {
+            bool walk = WantsCursorLocked;
+            UnityEngine.Cursor.lockState = walk ? CursorLockMode.Locked : CursorLockMode.None;
+            UnityEngine.Cursor.visible = !walk;
+        }
+
+        public GrayboxTestPlayer Player => _player;
+        public string DoorPrompt => DoorRuntime ? DoorRuntime.Prompt : "";
 
         void OnSold(SaleEvent e)
         {

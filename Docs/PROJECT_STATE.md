@@ -1,58 +1,42 @@
 # PROJECT STATE
 
-Hub-owned, project level only (`Docs/STUDIO_OS.md` §0). Department detail (workers, packets, domain queue) lives in `Docs/Departments/<DEPT>.md`. Workers do not need this file.
+Hub-owned. A fresh Hub resumes from this file + `Docs/HUB_RESUME.md` + recent `Docs/DECISIONS.md` (DEC-116). Workers do not read this file.
 
-**Milestone:** vertical slice playable on `main` (2026-10-29). **PS1** (cart, limit meter, ID checks, medical, tuning; `Design/ROADMAP_POST_SLICE.md`) is one task from done (GAME-009). Next: PS1b, re-prioritised by playtest 1 (DEC-096).
-**Main:** see `git log`; every code/asset merge is a reviewed `review/*` branch.
-**Updated:** 2026-10-30 by Hub `local_78db2735-1777-4eb5-a0a1-e7f8e8a4ecf4` (fresh Hub; replaces `local_c6267ff5…`, no longer listed). Leads idle, all < 220k context.
+**Updated:** 2026-10-30 ~15:35. **Milestone:** PS1 complete on `main` (GAME-009 + GAME-025 controls merged 08758c1). Next: playtest build 2, then the PS1b work below.
+**Hub session:** `local_c6267ff5-2acb-4b09-83a7-53541a088c66` ("Dispo · Studio Hub"). Nolan resets it himself if it gets expensive.
+**Structure (DEC-116):** Hub → narrow workers → fresh per-review reviewers → Hub merges. No leads (DEC-112). Nolan is cost-sensitive: no FYI messages, lean briefs.
 
-## Studio roster
-| Dept | Lead session | Status | Max workers | Unity slots |
-|---|---|---|---|---|
-| Hub | `local_78db2735-1777-4eb5-a0a1-e7f8e8a4ecf4` | active | DOC/OPS/AUDIT tasks only | 0 |
-| Gameplay | `local_5bcd6ccf-64c1-464e-9fb9-40ad2e27afb4` | active | 3 | 1 |
-| World | `local_d19eda58-a105-4379-aada-4bf61066f717` | active | 2 | 1 (lends to Assets for imports) |
-| Assets | `local_172b2109-6384-4914-800b-6dc37226e046` | active | 4 (temporary +1 to finish ASSET-004, cut short by the usage limit) | 0 (borrows World's) |
-| Reviewer pool | Unity A2 `local_4e865bb8-479c-41c5-8628-7f3e7cb2a4c3`, Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs 2 `local_99d7e5b7-ef60-4076-9821-58f16ce3bec0` | idle | — | Unity reviewers use the owning dept's slot |
+## In flight (session name → task)
+| Session | Task | State / next step |
+|---|---|---|
+| `dispo-build007` `local_01655dfb-07f0-4706-a2a3-156d273999b0` | BUILD-007 playtest build 2 from main 741bb43 (incl. ART-007) | Building → `Downloads/Dispo Game Builds/playtest2-741bb43/`. When it reports: give Nolan the path, then reuse this session for the REF-013 M1 fix. |
+| `dispo-game026` `local_9bc94fb7-d677-4076-81be-83317f26bbf8` | GAME-026 customer flow (Unity) | Read packet, waits for GO. Send GO after the build is out, plus: fix REVIEW-GAME025 M1 (SliceDoor 3 ft width fallback: log a placeholder + GAP tag), and on finish report to the Hub, not to a named reviewer. |
+| `dispo-proc-005-fixture-f` `local_335db39d-0968-49fa-846c-808a2abb2158` | PROC-005 fixture families rework (REVIEW-PROC5 FAIL findings) | PAUSED for the build. Resume after: merge `worktree-agent-ac7414483b9f8bb4a` + main, fix all findings, report to the Hub. |
+| `dispo-proc006b` `local_cab28702-140d-48df-963a-3cc4b318aa89` | PROC-006b register kit generators (from WIP d30bb73) | PAUSED for the build. Resume after: merge main, finish, report to the Hub. |
 
-Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME-009 `local_7f8c95e9…`, DES `local_82d327a2…`; Assets ← PROC-005 `local_6c216f80…`, ASSET-004 `local_d31ad4c5…`, IMP-003 `local_13653ae5…`. Leads may reuse or retire them.
+| `dispo-asset005` `local_1bb17d9a-7584-4a8b-af68-d01479714d05` | ASSET-005/006 wardrobe + hair (Blender, no Unity) | Writing packet, waits for GO. GO after the build. |
 
-## Priorities (DEC-096, from Nolan's playtest 1)
-1. **Controls** (camera/look feel, Esc pause menu, doors): Gameplay (+ World for door geometry).
-2. **Store/layout accuracy** (registers, HUB, office walkability, deli walls): World.
-3. **Believable customer flow** (entry ID check with a guard, one line, player calls the next customer): Gameplay.
-4. **Recommendation depth** (keep the TFS tool's depth; interpret needs, follow-up questions): Gameplay, PS1b.
-5. Asset integration that unblocks the above (PROC-005, register workstation kit): Assets.
+Workers' original briefs name long-lived reviewers (now archived). Tell each to report "ready for review" to the Hub; the Hub spawns a fresh reviewer (Agent tool with worktree isolation, or a fresh session).
 
-## Cross-department dependencies
-- Assets PROC-005 → World final-asset placement and the lived-in pass.
-- World `ROOM_FIXTURES` corrections → Assets generator sizes (registers, deli walls, office).
-- World door geometry ↔ Gameplay door interaction: agree the contract first (§0.5).
-- World entry/check-in area ↔ Gameplay customer flow (guard post, queue line anchors).
+## Queue (after the above)
+1. REF-013 M1 fix, plus REVIEW-ART7 m3 (JC door blocked, Vest_FOH trash can in a door swing: settle from evidence, or GAP + NPCs avoid the JC anchors) (DEC-115: HUB desk/counter/cabinet sizes Low + narrowed GAP-132; hinge overrides from A011; storefront keeps pulls; 8 absence-inferred rows Low). Branch `worktree-agent-a2b65d251ee0f6ac2`@73e0e0c; verdict REVIEW-REF13 on `review/ref13`.
+2. PROC-007 UV layout (DEC-097) after PROC-005 merges; the label-shader cut-over comes with it.
+3. DEC-111 replacements: PROC-009 vehicles, ASSET-005/006/007 wardrobe/hair/gloves (PROC-008 cash tray rejected, DEC-051).
+4. PS1b recommendation depth (GAME-017a packet notes in `Docs/Departments/GAMEPLAY.md` queue), GAME-021/022/024.
+5. World lived-in pass after final assets; PROC-005 WireShelving FBX `.meta` files missing on main.
+Dept files (`Docs/Departments/*.md`) are reference queues only.
 
-## Blockers / risks
-- Structure frozen until playtest 2 (DEC-108); then the cost checkpoint: merged work per usage + lead context sizes. Nolan 2026-10-30: "the process feels like it has gotten progressively dumber as we expanded" (invented DOORS values passed review; questions the floor plan answers; 3 sessions flagging the same rows). Checkpoint must weigh flattening to Hub + workers + reviewers. Nolan away from 2026-10-30 ~15:00: notify only for decisions he must make.
-- `review/wave-5t` (old IMP-003 round-3 partial PASS) is superseded by the from-scratch round-3 re-audit (DEC-095); never merge it, delete it once the new review lands.
-- DEC-094 rollout under validation (DEC-099): Hub-only merges until lead-run subagent workers/worktrees prove stable; then reassess lead merges for domain-local work.
-- ChatGPT toolkit drops lack our research and room evidence (DEC-095): every round needs fixes; round 3 must be re-audited.
-- Several BACKLOG rows are stale; each lead reconciles its prefixes first.
+## Priorities (DEC-096, playtest 1)
+Controls (done) → store/layout accuracy → believable customer flow → recommendation depth → asset integration that unblocks these.
 
-## Pending from Nolan
-- Approval of each audited ChatGPT round (3 rebuilt, 4, 5, 6) after IMP-003 + review. Round 7 is the studio's (DEC-095).
-- Playtest build 2 once GAME-025 controls land (Nolan 2026-10-30: no build for PS1 alone).
-- Any ChatGPT-built mechanics he drops in Imports: audit → review → **his approval** before use.
+## Open with Nolan
+- Playtest build 2: give him the path when it lands; his feedback becomes playtest 2.
+- Nothing else open. Answered/closed: DEC-103/104/106/110/111/113. Never re-ask: W6 self-closing doors, emergency exit alarm (DEC-105).
 
-## Open questions for Nolan
-- REF-011/012 W5–W7 answered (DEC-110; W6 self-closing unanswered → placeholder, never re-ask). W3, W4 answered too; W1, W2 rejected: World settles them from the floor plan/TI (DEC-110). PS1 complete (review/ps1 merged). Nolan: hold playtest build 2 until GAME-025 controls land (saves tokens).
-- Customer flow Q1–7 answered (DEC-103). Emergency exit alarm: left unanswered → placeholder stands, never re-ask (DEC-105).
-- Medical allotment answered (DEC-106).
-- Register kit R1–R7 answered (DEC-104). Optional (DEC-101 long-term): parking space count/layout and dwell time, what the TV wall shows, neighbouring businesses/street. (REF-008 Q1–15 answered, DEC-051/062. Phoenix TPT rate OPEN-4: 25.1 % kept until a receipt settles it.)
+## Risks
+- Unity editors: max 2 (DEC-013). `studio.ps1 slots`.
+- ChatGPT toolkit drops need full audit before use (DEC-095).
+- When TFS ships v7.11.5: re-import, regenerate goldens and diff (GAP-210).
 
 ## Builds
-- Last build Nolan played: `Downloads/Dispo Game Builds/slice-38b9e5c/` (feedback = playtest 1). New builds come from a Gameplay worker, never the Hub (DEC-045).
-
-## Cross-project
-- GAP-206 relayed to the TFS tool hub. When TFS ships v7.11.5: re-import, regenerate goldens and diff (GAP-210, DEC-014/038).
-
-## Hub-direct backlog
-- DOC-002 (AUDIT-001 batch D) in a gap between waves; DOC-003 (batch E, in review W4Z); DOC-004 (GSS §28 "fast recommendation").
+- Played: `Downloads/Dispo Game Builds/slice-38b9e5c/` (playtest 1). Next: playtest2-08758c1.
