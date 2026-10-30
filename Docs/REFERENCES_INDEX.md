@@ -12,6 +12,7 @@ Staff are described by attire/role only.
 | `References/CCTV Camera Wall.png` | PNG 2048×1137, 5×5 tiles | Camera wall snapshot A (busy floor, overlay timestamps read 2012 = NVR clock, not a real date) | §2 |
 | `References/CCTV Camera Wall 2.png` | PNG 2696×1462, 5×5 tiles | Camera wall snapshot B, same tile layout, higher resolution (use this one first) | §2 |
 | `References/BAND_TFS Phoenix (NEW)_…/…_01..13.jpeg` | 13 JPEG 1280×960, body-cam style, EXIF 2026-03-16..20 | Eye-level store/staff snapshots | §3 |
+| `References/CCTV HUB Wall 2026-10-29.webp` | WEBP 2000×564, 2×4 tiles | HUB/HUB 2 camera wall supplied by Nolan 2026-10-29 (DEC-022). Nolan: "First room on left two pictures, the rest are in the bigger side of the hub... It's mostly misc storage." | §2.1 |
 | `References/LIVE_TFS_BUDTENDER_v7.11.4.md` | MD | Live budtender app behaviour (v7.11.4: Floor Mode, 6 effect domains, tier filters, accessibility). **No visual tokens** (colours/fonts/layout) are recorded in it | UI only (GAP-114) |
 | `References/Review_Budtender_Tool_Comprehensive_Chat_Record.md` | MD | Project history of the budtender tool (not in the REF-001 input list; not analysed here, MIG owns it) | — |
 
@@ -20,6 +21,7 @@ Derived files (`References/Index/`):
 - `floor_plan_stitched_300dpi.png` — plan drawing stitched across the p1/p2 page break (the pages join exactly: p1 clip ends 584.28 pt, p2 starts 28.44 pt, so offset is 555.84 pt).
 - `floor_plan_grid_1ft.png` — stitched plan with a 1-ft grid (bold every 5 ft) in the §1.2 coordinate frame. **ART-001: start here.**
 - `cctv/wall1_RrCc.jpg`, `cctv/wall2_RrCc.jpg` — 50 tile crops (row r, column c).
+- `hub/hub_RrCc.jpg` — 8 tile crops of the HUB wall (REF-002), 500×282 each.
 
 ## 1. Floor plan
 
@@ -103,7 +105,7 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 
 ## 2. CCTV camera wall (both snapshots, identical 5×5 layout)
 
-The plan text says the wall carries **17 distinct feeds: 6 exterior, 6 sales floor, 5 BOH**. The 25 tiles break down as those 17, plus 2 apparent repeats, plus 6 storage-room feeds that the plan does not account for (GAP-105).
+The plan text says the wall carries **17 distinct feeds: 6 exterior, 6 sales floor, 5 BOH**. The 25 tiles break down as those 17, plus 2 apparent repeats, plus 6 storage-room feeds that the plan does not account for (GAP-105); REF-002 maps them to HUB / HUB 2 from Nolan's HUB wall (§2.1).
 
 | Tile | Zone / view | Key fixtures & finishes | Mapped plan room | Conf. |
 |---|---|---|---|---|
@@ -124,14 +126,69 @@ The plan text says the wall carries **17 distinct feeds: 6 exterior, 6 sales flo
 | R3C5 | Break room | L wood cabinets + black counter, sink, microwave, coffee maker, labor-law poster, wood/metal bench, coats/bags on hooks, fridge side covered in magnets, mini hoop, floor mats, black door with taped note | Break room | High |
 | R4C1 | FOH | chrome wire racks with clear sorted bins, yellow tote on top, white fridge, **two glass-door coolers**, concrete floor with red floor tape, doorway to the tiled vestibule | FOH | High |
 | R4C2 | BOH | narrow aisle, stacked "Dr Greenthumbs" black cases, kraft order bags, wire racks of cased product, doorway to the tiled vestibule | BOH | High |
-| R4C3 | Large storage room | rows of chrome wire racks, some posts painted orange, cased product, dark floor, black double door at the far wall | HUB or HUB 2 (unconfirmed) | Low |
-| R4C4 | Large storage room | grid of chrome wire racks, pallet of blue cases, yellow tote, dark large-format floor tile, wood-panel wall band with lit strip | HUB or HUB 2 | Low |
+| R4C3 | Large storage room | rows of chrome wire racks, some posts painted orange, cased product, dark floor, black double door at the far wall | **HUB** (= HUB wall R1C2, §2.1) | Med |
+| R4C4 | Large storage room | grid of chrome wire racks, pallet of blue cases, yellow tote, dark large-format floor tile, wood-panel wall band with lit strip | **HUB** (= HUB wall R1C3) | Med |
 | R4C5 | Office (apparent repeat of R3C3, mean pixel diff 12–16) | same as R3C3 | Office | Med |
-| R5C1 | Storage, near a door | shrink-wrapped pallets of blue cases, stacked yellow-lid black totes, large copier/printer, black cabinets, wire merch rack, dark gray tile | HUB (desk/copier zone?; plan says HUB has no feed, GAP-105) | Low |
-| R5C2 | Storage/work area | work table with patterned front, cardboard cases, blue totes, wire carts, copier, black cabinets, white door | HUB ("desks + computers"; plan says HUB has no feed, GAP-105) | Low |
-| R5C3 | Large storage room | chrome wire racks, stacked yellow tote lids, hand truck, black crates, black cabinet | HUB or HUB 2 | Low |
-| R5C4 | Large storage room | wire racks, 2 pallets of blue cases, black totes, wainscot band with wall signs | HUB or HUB 2 | Low |
-| R5C5 | Apparent repeat of R5C2 (diff 12–19) | same as R5C2 | HUB | Low |
+| R5C1 | Storage, near a door | shrink-wrapped pallets of blue cases, stacked yellow-lid black totes, large copier/printer, black cabinets, wire merch rack, dark gray tile | **HUB 2** (= HUB wall R1C1) | Med |
+| R5C2 | Storage/work area | work table with patterned front, cardboard cases, blue totes, wire carts, copier, black cabinets, white door | **HUB 2** (= HUB wall R2C1) | Med |
+| R5C3 | Large storage room | chrome wire racks, stacked yellow tote lids, hand truck, black crates, black cabinet | **HUB** (= HUB wall R2C2) | Med |
+| R5C4 | Large storage room | wire racks, 2 pallets of blue cases, black totes, wainscot band with wall signs | **HUB** (= HUB wall R2C3) | Med |
+| R5C5 | Apparent repeat of R5C2 (diff 12–19) | same as R5C2 | **HUB 2** (= HUB wall R2C4) | Med |
+
+### 2.1 HUB camera wall (REF-002, `References/CCTV HUB Wall 2026-10-29.webp`)
+
+Tile matching: each tile was compared with the 25 main-wall tiles (128×72 grayscale, mean abs diff). Seven tiles are the same cameras as the main wall's unmapped storage tiles (diff 9–27 vs ≥35 for any other tile); **R1C4 is new** (best diff 46).
+
+**Room decision.** Nolan: "First room on left two pictures, the rest are in the bigger side of the hub."
+- "Left two pictures" = the **left column** (R1C1 + R2C1), not the first two of the top row. R1C1/R2C1 show one cluttered room (copier, yellow-lid totes, work table, gray square floor tile); R1C2 shows the same orange-post chrome racks and dark floor as R1C3/R2C2/R2C3, so it belongs with "the rest". R2C4 repeats R2C1, so the left-column room has exactly two distinct views.
+- "The bigger side" = **HUB** (818.53 SF vs HUB 2 541.34 SF, printed, High). R1C4's desk + office chair + keyboard matches the plan's HUB "desks + computers" strip (x≈15–27, y≈70–74.4).
+- So left column = **HUB 2**, the rest = **HUB**. Conf. **Med** (owner statement + plan areas). "First room" is read as the order Nolan listed them, since the plan says HUB 2 is reached only through HUB. This supersedes the DEC-018 / REF-001 guess (R5C1/R5C2/R5C5 → HUB), which had the rooms swapped.
+
+| HUB-wall tile | = main wall | Room | View / camera pose guess (pose Low) | Key fixtures & finishes | Conf. (room) |
+|---|---|---|---|---|---|
+| R1C1 | R5C1 | HUB 2 | high corner looking along the room to a doorway at the far left (shelving with black bags beyond: likely the connecting door to HUB) | copier/printer (left foreground), stack of 4 yellow-lid black totes, 3 shrink-wrapped pallets of blue cases, chrome wire merch rack with kraft bags + a green branded panel, gray square floor tile, white walls | Med |
+| R1C2 | R4C3 | HUB | down the aisle between two long rack banks toward a white end wall | chrome wire racks, some posts painted orange, orange product cases on the foreground racks, small black bin cart at the aisle end, black door + yellow sign on the far wall, dark floor | Med |
+| R1C3 | R4C4 | HUB | high corner looking across the central rack island | island ≈4 bays wide × 3 deep of chrome wire racks (mostly empty), perimeter racks on the left and back, pallet of blue cases + small bins on the right, yellow sign on a rack, dark wood-panel wall band with a lit strip on the back wall, dark large-format floor | Med |
+| R1C4 | — (new) | HUB | from above the desk corner, looking across the room past the rack island | light wood desk with keyboard + black office chair (foreground right), long dark counter/bench along the left wall, green door with round logo (far left), blue and red rolling carts, rack island with cased product, pallet of blue cases (right), white walls, dark floor | Med |
+| R2C1 | R5C2 | HUB 2 | high corner over the clutter, looking toward the back wall | work table with patterned (geometric) front panel, cardboard cases, blue stackable bins, wire shelving with boxes, stacked black/yellow totes, black cabinets (back right), white door (back right), brown wire display panels (right), yellow tote (foreground) | Med |
+| R2C2 | R5C3 | HUB | high corner looking across the rack island | rack island + perimeter racks on the left and back walls, white cases on the racks, black plastic crates (left foreground), black bins/cart (left), stack of yellow totes + hand truck (right) | Med |
+| R2C3 | R5C4 | HUB | high corner looking along a wall with racks behind | wire racks, 2 pallets of blue cases, black totes/crates, dark-brown wainscot band with small wall signs (left wall), rack on the left edge | Med |
+| R2C4 | R5C5 | HUB 2 | **repeat of R2C1** (diff 26.8; slight crop/time change) | same as R2C1 | Med |
+
+**Fixture list for ART.** Positions on the plan are not derivable from these views; place within the §1.3 shells, using the §1.5 raster strips as the only plan evidence.
+
+| Room | Fixture | Count / size | Evidence | Conf. |
+|---|---|---|---|---|
+| HUB | chrome wire shelving, central island | ≈4 × 3 bays; bay ≈4 × 2 ft, ≈6–7 ft tall (convention) | HUB R1C3, R1C4, R2C2 | count Low, type Med |
+| HUB | chrome wire shelving, perimeter runs | along at least the back and left walls of the R1C3/R2C2 views; two long banks forming an aisle in R1C2 | HUB R1C2, R1C3, R2C2 | Low |
+| HUB | orange-painted rack posts on some bays | a few | HUB R1C2 | Med |
+| HUB | shrink-wrapped pallets of blue cases | 2–3 | HUB R1C3, R1C4, R2C3 | Med |
+| HUB | yellow tote stack + hand truck | 1 stack | HUB R2C2 | Med |
+| HUB | black plastic crates / totes | several | HUB R2C2, R2C3 | Med |
+| HUB | desk with computer + office chair | 1 desk visible | HUB R1C4 (matches plan "desks + computers") | Med |
+| HUB | long counter/bench along a wall | 1 | HUB R1C4 | Low |
+| HUB | rolling carts (blue, red) | 2 | HUB R1C4 | Med |
+| HUB | doors: green door with round logo; black door with yellow sign | 2 | HUB R1C4, R1C2 | Med (exists) / Low (which plan door) |
+| HUB 2 | copier/printer | 1 | HUB R1C1 | Med |
+| HUB 2 | yellow-lid black totes | stack of 4 (+ more in R2C1) | HUB R1C1, R2C1 | Med |
+| HUB 2 | shrink-wrapped pallets of blue cases | 2–3 | HUB R1C1 | Med |
+| HUB 2 | work table with patterned front | 1 | HUB R2C1 | Med |
+| HUB 2 | wire shelving / wire carts with boxes; blue stackable bins | several | HUB R2C1 | Med |
+| HUB 2 | black cabinets | 2+ | HUB R2C1 | Med |
+| HUB 2 | chrome wire merch rack with bags; brown wire display panels | 1 + several | HUB R1C1, R2C1 | Med |
+| HUB 2 | doors: doorway (far left of R1C1), white door (R2C1) | 1–2 (plan shows 1) | HUB R1C1, R2C1 | Low (may be the same door seen twice) |
+| both | finishes: white walls; dark large-format floor (HUB) vs gray square tile (HUB 2); dark-brown wood/wainscot band, with a lit strip on some HUB walls; ceiling not visible | — | HUB R1C1, R1C3, R2C3 | Med (finish) / none (sizes) |
+
+Contents: misc storage only (Nolan). Case/box labels are **not** inventory data.
+
+### 2.2 Register scale stand (DEC-021)
+
+Found in the existing CCTV and photos. At each POS station, on the staff side, a free-standing **chrome wire-frame stand** is pushed against the back of the register counter:
+- **Top:** black tray/top just below the counter top, carrying one white bench scale with a blue display and a clear round weigh bowl/draft shield. Seen in R2C3 (stands at centre and left, a third at the right edge), R2C4 (2–3 stands, one per POS), R3C2 (2 stands flanking the lit display case), BAND 10 (rotated; chrome stand with scales, spray bottle on a lower shelf, black trash bin beside), BAND 07 (scale with clear shield, lower right). **Med.**
+- **Shelves:** 1–2 open wire shelves under the top, holding small items (bottles, wipes, papers). R2C3, R2C4, BAND 10. **Med** (contents per DEC-021; not readable).
+- **Clear shield:** a clear acrylic panel/box stands on the counter top in front of the scale, between scale and customer (R2C3 centre, R2C4 left). **Low-Med**: it could instead be the scale's own draft shield; Nolan's wording ("plastic clear shield blocking customers") fits the counter panel.
+- **Placement:** one stand per POS, beside the POS monitor; a black trash bin often sits next to or under it (R2C3, BAND 10). **Med.**
+- **Size:** footprint ≈1.5 × 1.5 ft; height ≈ counter height minus a few inches (relative to the counter and scale; no measurement). **Low.**
 
 ## 3. BAND photos (`…_NN.jpeg`)
 
@@ -166,8 +223,8 @@ Product names visible on jar cards or boxes are **not** inventory data and must 
 | FOH | ✔ | R4C1 | — | CCTV only |
 | BOH | ✔ | R4C2 | — | CCTV only |
 | Arch vestibule (unnamed) | ✔ | edges in R4C1/R4C2 | — | partial |
-| HUB | ✔ | R5C1/C2/C5? (Low) | — | **effectively blind** until the mapping is confirmed |
-| HUB 2 | ✔ | R4C3/R4C4/R5C3/R5C4? (Low) | — | **effectively blind** until the mapping is confirmed |
+| HUB | ✔ | R4C3, R4C4, R5C3, R5C4 + HUB wall R1C2–C4, R2C2, R2C3 (Med) | — | CCTV only (§2.1); no photo |
+| HUB 2 | ✔ | R5C1, R5C2, R5C5 = HUB wall R1C1, R2C1, R2C4 (Med) | — | CCTV only (§2.1); no photo |
 | Exterior | (doors only) | R1C1–C5, R3C1 | — | CCTV only, night |
 
 ## 5. Scale cues for the graybox
@@ -185,3 +242,5 @@ Product names visible on jar cards or boxes are **not** inventory data and must 
 | Floor tiles | white marble-look large-format (retail field), black/white or brown/white geometric cement tile (counter zones, hall, vestibule), concrete (FOH/BOH), dark gray large-format tile (rack rooms) | visual | Med (finish) / none (tile size) |
 | Wall thickness | 0.4–0.5 ft drawn gaps | vector | Low (drafting gap, not a spec) |
 | Pendant pitch | 3.0 ft, 6 over registers | vector | Med |
+| Register scale stand | ≈1.5 × 1.5 ft footprint, top just below the counter top | relative to the counter and scale in R2C3/R3C2 (§2.2) | Low |
+| HUB wire rack bay | ≈4 × 2 ft, ≈6–7 ft tall | about 4 bays span half the 28.3-ft HUB width in HUB R1C3; matches the common chrome-wire bay size | Low (convention) |
