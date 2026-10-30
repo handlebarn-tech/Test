@@ -82,7 +82,7 @@ Doors are **empty openings**: `graybox_layout.json` walls list `openings` and `G
 - **Locked doors:** `lock` ≠ `none` and the actor is not allowed (§3.4) → the door does not open; the player gets the prompt "Locked" (or "Staff only" for staff-only doors that the *player* may use — the player is staff, so staff-only doors open for the player).
 - **NPCs use doors:** an NPC whose path crosses a door's trigger opens it the same way (same animation, same auto-close). Customers only ever use doors with `npcUse` including `customer` (in PS1: the entry). Customers cannot use the restroom (DEC-110 W7): `Hall_Restroom` is `npcUse = staff` only. Ambient staff (SPEC_SHIFT_DAY §5) use `staff` doors. Pathing through doors is waypoint-based (anchors), not NavMesh, until a navigation task exists.
 - **Entry lock at 22:00 (DEC-076):** the entry door gets lock state `entryLockedAfter = 22:00` game clock: after it, nobody new enters; the door still opens **outward-going** for customers leaving (`npcUse` exit allowed). In the Quick shift (no game-clock lock) it never locks.
-- **Emergency exits:** `npcUse = none`; the player may open them. No alarm is modelled: GAP-CF-04 was asked and not answered (DEC-103), so this placeholder is the working answer and is not re-asked (DEC-105).
+- **Emergency exits:** `npcUse` empty (no NPC uses them); the player may open them. No alarm is modelled: GAP-CF-04 was asked and not answered (DEC-103), so this placeholder is the working answer and is not re-asked (DEC-105).
 
 ### 3.3 Controls added by GAME-025
 | Control | Keyboard / mouse | Controller |
@@ -135,7 +135,7 @@ One shared line for the player's register, `Anchor_Queue_0..N`; guests wait **in
   | Medical card name ≠ ID name | no (for the medical sale) | new [GDD] case; refuse = adult-use only if 21+, as CP§4 |
   | Out-of-state medical card | adult-use only | existing GAME-009 decision (CP§4, A7), now framed as part of the register check |
   | Damaged / unreadable ID | no | new [GDD] case: the card art is worn/cracked so a field can't be read |
-  | AZ vertical, turned 21 > 30 days ago | no | GAME-008 case kept here: a format rule the guard's age scan does not apply [GDD, flagged to the lead] |
+  | AZ vertical, turned 21 > 30 days ago | no | GAME-008 case kept here: a format rule the guard's age scan does not apply (lead ruling, REVIEW-DES5b; DEC-109) |
   | Valid IDs (all other GAME-008 valid cases) | yes | the "nothing wrong" answers that keep it a real decision |
 - **Selection [GDD]:** at rush start, with `coverCheckInChance` (key kept to avoid churn; reads as "ID-event chance"), the next `coverCheckInCount` guests **called to the register** carry an `IdCard` drawn from the register cases (weights [GDD], GAME-026 sets them in SliceConfig). GAME-009's out-of-state medical cards keep their own frequency. **Expired and under-21 cases are never drawn here** (the door caught them, §4.2).
 - **Admit** → service continues; **Refuse** → the guest leaves via the entry; strikes exactly as CP§3. No prompt, no walk to the stand. The `AtStand` state and the `Stand` list are no longer reached (GAME-026 may delete them or leave them unused; no save data depends on them).

@@ -37,7 +37,7 @@ Compile / EditMode / PlayMode green; QA-002 gate and DEC-013 gate green. **Slice
 - Capture: `SliceCaptureTests` adds (a) the guard scanning an ID at the stand (green light) with the line visible, (b) a called customer walking up with the `Called · walking up` HUD, (c) the ID panel at the register.
 
 ## Dependencies
-GAME-009 merged; GAME-025 merged (E priority, pause). World anchors CF§7.2–7.3 (`Anchor_Guard_Post`, `Anchor_CheckIn`, `Anchor_CheckIn_Wait_<n>`, `Anchor_Queue_<n>`, `Anchor_Register_<n>_Call/_Operator`, `Anchor_CustomerSpawn` moved outside): **not blocking** — fallbacks keep the slice playable; the final capture waits for them. Entry door use needs GAME-025's door runtime and World's `Door_Entry_L/_R` (REF-012). SPEC_COMP002 §3 and UX_PS1 §4 carry a DEC-103 note; their full rewrite is not this packet's.
+GAME-009 merged; GAME-025 merged (E priority, pause). World anchors CF§7.2–7.3 (`Anchor_Guard_Post`, `Anchor_CheckIn`, `Anchor_CheckIn_Wait_<n>`, `Anchor_Queue_<n>`, `Anchor_Register_<NN>_Call/_Operator` (zero-padded 02–12), `Anchor_CustomerSpawn` moved outside): **not blocking** — fallbacks keep the slice playable; the final capture waits for them. Entry door use needs GAME-025's door runtime and World's `Door_Entry_L/_R` (REF-012). SPEC_COMP002 §3 and UX_PS1 §4 carry a DEC-103 note; their full rewrite is not this packet's.
 
 ## Handoff
 `Docs/Handoffs/GAME-026.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).
