@@ -1,0 +1,1245 @@
+{
+ "_about": "REF-012 door contract, World -> Gameplay (DEC-096 playtest 1: doors). One row per door or opening. Plan frame = REFERENCES_INDEX 1.2 (feet, origin Retail NW outer corner, +x east, +y south); Unity X = x*0.3048, Z = -y*0.3048 (graybox_layout.json). Sources: TI A310 door schedule + hardware sets (read 2026-10-30, only closer/lock/lever-vs-push-bar recorded; no access-control hardware, DEC-051), A011, ROOM_FIXTURES.json, DECs. Fields: id; object = scene object 'Door_<id>'; type = swing | storefrontPair | opening (no leaf) | foldingGrille; ti_door = A310 number (2022 room numbers, REFERENCES_INDEX 6); rooms.A/B = the two sides; graybox_wall + graybox_opening = current graybox wall id and opening [from,to] along it (read-only here); target_opening = where A011 puts it when the graybox is still wrong (ART fixes; hinge and anchors use the target); pos_ft = opening centre on the wall line; hinge_jamb = compass jamb (N/S/E/W) or 'placeholder'; swing = in/out and which room; leafWidth_ft / leafHeight_ft = leaf size; clearOpening_ft = clear width at 90 deg, derived as leaf minus ~2.25 in (1.75 in leaf + 0.5 in stop; storefront 1.5 in leaves), never a store fact; leaves = 1 or 2 (0 for an opening, null when unknown). Single leaf: pivot 'Door_<id>_Hinge' at hinge_ft, the leaf mesh 'Door_<id>' is its child. Pair: leafObjects lists 'Door_<id>_L' and 'Door_<id>_R' (L/R as seen from side A facing side B), each with its own '<object>_Hinge' pivot. The hinge pivot is the parent and rotates about its local Y only; the leaf child extends along the pivot's local +X from hinge to latch. closedRotation = pivot Euler [0, yaw, 0] in Unity degrees, yaw = plan angle of hinge->latch (0 = east, +90 = south, 180 = west, -90 = north; Unity +Y yaw turns +X toward -Z = plan south). openAngle = signed degrees added to the closed yaw for fully open (90 deg max; + = clockwise seen from above); open yaw = closed yaw + openAngle. hinge_unity_m = pivot position in metres at floor level. anchors.A/B = trigger anchors 'Anchor_Door_<id>_A' / '_B', one per side on the opening centreline, 1.5 ft off the wall line on the non-swing side and 3.5 ft on the swing side (clear of a 3 ft leaf). selfClosing = true (A310 schedules a closer), false (no closer or no leaf) or 'unknown' (existing hardware not scheduled). lock = none (no staff gate; the restroom privacy lock is occupant-only), staffOnly (normally closed and locked, staff open it, free egress from inside), keyed (key only), entryTimeLock (customer entry: locked before Open doors and from 22:00, DEC-076). hardware = lever | pushBar | storefrontPull | none. npcUse = who may path through in normal play: 'customer' and/or 'staff'; empty = nobody (emergency-only exits, the unplaced grille). The player is staff. The ID-checking guard (DEC-086, DEC-096) is staff for door rights, but its routine post is the entry check-in; no source puts it in the back rooms. defaultState = closed | proppedOpen at shift start (null for openings); proppedOpen leaves keep their closer/lock values, which apply if the prop is removed. There is no second buzzed door after the ID stand (DEC-103): customers go entry -> ID stand -> sales floor with no inner door; none is modelled. staffOnly = customers must not pass. confidence = per-field High/Med/Low; any Low field carries a gap id (GAP-135..139, KNOWN_GAPS); 'placeholder' in a text field marks a guessed value.",
+ "version": "REF-012 2026-10-30 rev1",
+ "doors": [
+  {
+   "id": "Entry",
+   "object": "Door_Entry",
+   "type": "storefrontPair",
+   "ti_door": "E101",
+   "rooms": {
+    "A": "Retail",
+    "B": "Exterior"
+   },
+   "graybox_wall": "W_Ext_W_Retail",
+   "graybox_opening": [
+    12.5,
+    18.5
+   ],
+   "pos_ft": [
+    0.1,
+    15.5
+   ],
+   "hinge_jamb": "outer jambs (each leaf hinged at its outer jamb, meeting at the centre)",
+   "swing": "out (west, to the exterior)",
+   "leafWidth_ft": 3.0,
+   "leafHeight_ft": 7.0,
+   "clearOpening_ft": 5.67,
+   "leaves": 2,
+   "leafObjects": [
+    {
+     "object": "Door_Entry_L",
+     "pivot": "Door_Entry_L_Hinge",
+     "hinge_ft": [
+      0.1,
+      18.5
+     ],
+     "hinge_unity_m": [
+      0.03,
+      0.0,
+      -5.639
+     ],
+     "leafWidth_ft": 3.0,
+     "closedRotation": [
+      0,
+      -90,
+      0
+     ],
+     "openAngle": -90
+    },
+    {
+     "object": "Door_Entry_R",
+     "pivot": "Door_Entry_R_Hinge",
+     "hinge_ft": [
+      0.1,
+      12.5
+     ],
+     "hinge_unity_m": [
+      0.03,
+      0.0,
+      -3.81
+     ],
+     "leafWidth_ft": 3.0,
+     "closedRotation": [
+      0,
+      90,
+      0
+     ],
+     "openAngle": 90
+    }
+   ],
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_Entry_A",
+     "room": "Retail",
+     "pos_ft": [
+      1.6,
+      15.5
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_Entry_B",
+     "room": "Exterior",
+     "pos_ft": [
+      -3.4,
+      15.5
+     ]
+    }
+   },
+   "selfClosing": "unknown",
+   "lock": "entryTimeLock",
+   "hardware": "storefrontPull",
+   "npcUse": [
+    "customer",
+    "staff"
+   ],
+   "defaultState": "closed",
+   "staffOnly": false,
+   "confidence": {
+    "pair": "High",
+    "position": "Med",
+    "swing": "High",
+    "clearOpening": "Low",
+    "selfClosing": "Low",
+    "hardware": "Low",
+    "defaultState": "Low",
+    "lock": "High"
+   },
+   "gap": [
+    "GAP-138"
+   ],
+   "sources": [
+    "A310 door schedule E101 (PAIR, existing aluminium full glass)",
+    "A011 (REFERENCES_INDEX 6.8)",
+    "DEC-037",
+    "DEC-076",
+    "SPEC_SHIFT_DAY 2"
+   ],
+   "notes": "TI E101: existing hardware, sign \"door to remain unlocked during business hours\". entryTimeLock: locked before \"Open doors\" (08:00) and from 22:00 on the dot (DEC-076); customers already inside are still served and may leave (free egress). Closer and pull hardware not scheduled (existing): selfClosing unknown, storefrontPull is the placeholder (GAP-138). L/R as seen from side A (inside) facing west: L = south leaf, R = north leaf."
+  },
+  {
+   "id": "Emergency_RetailE",
+   "object": "Door_Emergency_RetailE",
+   "type": "swing",
+   "ti_door": null,
+   "rooms": {
+    "A": "Retail",
+    "B": "Exterior"
+   },
+   "graybox_wall": "W_Ext_E_Retail",
+   "graybox_opening": [
+    20.5,
+    24.0
+   ],
+   "pos_ft": [
+    47.09,
+    22.25
+   ],
+   "hinge_jamb": "S placeholder",
+   "swing": "out (east) placeholder",
+   "leafWidth_ft": 3.0,
+   "leafHeight_ft": 7.0,
+   "clearOpening_ft": 2.81,
+   "leaves": 1,
+   "pivot": "Door_Emergency_RetailE_Hinge",
+   "hinge_ft": [
+    47.09,
+    24.0
+   ],
+   "hinge_unity_m": [
+    14.353,
+    0.0,
+    -7.315
+   ],
+   "closedRotation": [
+    0,
+    -90,
+    0
+   ],
+   "openAngle": 90,
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_Emergency_RetailE_A",
+     "room": "Retail",
+     "pos_ft": [
+      45.59,
+      22.25
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_Emergency_RetailE_B",
+     "room": "Exterior",
+     "pos_ft": [
+      50.59,
+      22.25
+     ]
+    }
+   },
+   "selfClosing": "unknown",
+   "lock": "staffOnly",
+   "hardware": "pushBar",
+   "npcUse": [],
+   "defaultState": "closed",
+   "staffOnly": true,
+   "confidence": {
+    "existence": "Low",
+    "all_leaf_fields": "Low"
+   },
+   "gap": [
+    "GAP-137",
+    "GAP-138"
+   ],
+   "sources": [
+    "REFERENCES_INDEX 1.4 (V5, orange = unconfirmed)",
+    "A011 \"emergency exit only\" label (6.8)"
+   ],
+   "notes": "V5 draws a 3.5 ft opening with an unconfirmed swing; A011 labels an \"emergency exit only\" but this row does not prove which door it is. Leaf 3.0, hinge, swing, hardware and lock are placeholders. npcUse empty: emergency only, nobody paths through it in normal play. Exit alarm unknown (DEC-103, GAP-138)."
+  },
+  {
+   "id": "Arch_W",
+   "object": "Door_Arch_W",
+   "type": "opening",
+   "ti_door": "cased opening (A101 keynote 10)",
+   "rooms": {
+    "A": "Retail",
+    "B": "Hall"
+   },
+   "graybox_wall": "W_Retail_S",
+   "graybox_opening": [
+    9.1,
+    12.91
+   ],
+   "pos_ft": [
+    11.005,
+    29.25
+   ],
+   "hinge_jamb": null,
+   "swing": "none (no leaf)",
+   "leafWidth_ft": null,
+   "leafHeight_ft": null,
+   "clearOpening_ft": 3.0,
+   "leaves": null,
+   "pivot": null,
+   "closedRotation": null,
+   "openAngle": null,
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_Arch_W_A",
+     "room": "Retail",
+     "pos_ft": [
+      11.005,
+      27.75
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_Arch_W_B",
+     "room": "Hall",
+     "pos_ft": [
+      11.005,
+      30.75
+     ]
+    }
+   },
+   "selfClosing": false,
+   "lock": "none",
+   "hardware": "none",
+   "npcUse": [
+    "staff"
+   ],
+   "defaultState": null,
+   "staffOnly": true,
+   "confidence": {
+    "opening": "Med",
+    "npcUse": "Low",
+    "staffOnly": "Low"
+   },
+   "gap": [
+    "GAP-139"
+   ],
+   "sources": [
+    "A310/A101 cased openings 3'-0\" x 7'-0\" (REFERENCES_INDEX 6.2)",
+    "REFERENCES_INDEX 1.4",
+    "graybox ARCH_W"
+   ],
+   "notes": "TI: cased opening 3'-0\" x 7'-0\"; the graybox opening is the V5 drawn 3.81 ft (Med). The hall serves the restroom, office and break room. Whether customers may use the restroom (and so this arch) is not stated: placeholder staff only (GAP-139)."
+  },
+  {
+   "id": "Arch_E",
+   "object": "Door_Arch_E",
+   "type": "opening",
+   "ti_door": "cased opening (A101 keynote 10)",
+   "rooms": {
+    "A": "Retail",
+    "B": "Vestibule"
+   },
+   "graybox_wall": "W_Retail_S",
+   "graybox_opening": [
+    35.21,
+    38.21
+   ],
+   "pos_ft": [
+    36.71,
+    29.25
+   ],
+   "target_opening": {
+    "x": [
+     34.5,
+     37.6
+    ],
+    "source": "A011"
+   },
+   "hinge_jamb": null,
+   "swing": "none (no leaf)",
+   "leafWidth_ft": null,
+   "leafHeight_ft": null,
+   "clearOpening_ft": 3.0,
+   "leaves": null,
+   "pivot": null,
+   "closedRotation": null,
+   "openAngle": null,
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_Arch_E_A",
+     "room": "Retail",
+     "pos_ft": [
+      36.71,
+      27.75
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_Arch_E_B",
+     "room": "Vestibule",
+     "pos_ft": [
+      36.71,
+      30.75
+     ]
+    }
+   },
+   "selfClosing": false,
+   "lock": "none",
+   "hardware": "none",
+   "npcUse": [
+    "staff"
+   ],
+   "defaultState": null,
+   "staffOnly": true,
+   "confidence": {
+    "opening": "Med",
+    "npcUse": "Med"
+   },
+   "gap": [
+    "GAP-122"
+   ],
+   "sources": [
+    "A310/A101 cased openings (6.2)",
+    "A011 (7.5)",
+    "DEC-050"
+   ],
+   "notes": "The vestibule only leads to FOH and BOH, which customers never enter (DEC-050), so the arch is staff-only (Med). A011 puts it at x 34.5-37.6 (GAP-122, ART pending)."
+  },
+  {
+   "id": "Hall_Restroom",
+   "object": "Door_Hall_Restroom",
+   "type": "swing",
+   "ti_door": "103",
+   "rooms": {
+    "A": "Hall",
+    "B": "Restroom"
+   },
+   "graybox_wall": "W_Restroom_Hall",
+   "graybox_opening": [
+    33.1,
+    36.1
+   ],
+   "pos_ft": [
+    8.195,
+    34.6
+   ],
+   "hinge_jamb": "S placeholder",
+   "swing": "in (west, into the restroom)",
+   "leafWidth_ft": 3.0,
+   "leafHeight_ft": 7.0,
+   "clearOpening_ft": 2.81,
+   "leaves": 1,
+   "pivot": "Door_Hall_Restroom_Hinge",
+   "hinge_ft": [
+    8.195,
+    36.1
+   ],
+   "hinge_unity_m": [
+    2.498,
+    0.0,
+    -11.003
+   ],
+   "closedRotation": [
+    0,
+    -90,
+    0
+   ],
+   "openAngle": -90,
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_Hall_Restroom_A",
+     "room": "Hall",
+     "pos_ft": [
+      9.695,
+      34.6
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_Hall_Restroom_B",
+     "room": "Restroom",
+     "pos_ft": [
+      4.695,
+      34.6
+     ]
+    }
+   },
+   "selfClosing": true,
+   "lock": "none",
+   "hardware": "lever",
+   "npcUse": [
+    "staff"
+   ],
+   "defaultState": "closed",
+   "staffOnly": true,
+   "confidence": {
+    "swing": "Med",
+    "hinge": "Low",
+    "selfClosing": "High",
+    "hardware": "Med",
+    "npcUse": "Low",
+    "staffOnly": "Low"
+   },
+   "gap": [
+    "GAP-137",
+    "GAP-139"
+   ],
+   "sources": [
+    "A310 door 103, hardware set 3.0 (privacy lock with indicator, surface closer, wall stop)",
+    "ROOM_FIXTURES Door_Hall_Restroom",
+    "A011"
+   ],
+   "notes": "lock = none for the contract: set 3.0 is an occupant privacy lock (locked from inside while in use), not a staff gate; Gameplay may model \"occupied\". Hinge placeholder at the south (corner) jamb so the leaf parks against the restroom south wall; DEC-068 cabinet goes on the free (north) side. Customer use of the restroom is not stated (GAP-139)."
+  },
+  {
+   "id": "Hall_Office",
+   "object": "Door_Hall_Office",
+   "type": "swing",
+   "ti_door": "104",
+   "rooms": {
+    "A": "Hall",
+    "B": "Office"
+   },
+   "graybox_wall": "W_Band_Office",
+   "graybox_opening": [
+    10.2,
+    13.3
+   ],
+   "pos_ft": [
+    11.75,
+    36.3
+   ],
+   "hinge_jamb": "E",
+   "swing": "in (south, into the office)",
+   "leafWidth_ft": 3.0,
+   "leafHeight_ft": 7.0,
+   "clearOpening_ft": 2.81,
+   "leaves": 1,
+   "pivot": "Door_Hall_Office_Hinge",
+   "hinge_ft": [
+    13.3,
+    36.3
+   ],
+   "hinge_unity_m": [
+    4.054,
+    0.0,
+    -11.064
+   ],
+   "closedRotation": [
+    0,
+    180,
+    0
+   ],
+   "openAngle": -90,
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_Hall_Office_A",
+     "room": "Hall",
+     "pos_ft": [
+      11.75,
+      34.8
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_Hall_Office_B",
+     "room": "Office",
+     "pos_ft": [
+      11.75,
+      39.8
+     ]
+    }
+   },
+   "selfClosing": true,
+   "lock": "staffOnly",
+   "hardware": "lever",
+   "npcUse": [
+    "staff"
+   ],
+   "defaultState": "proppedOpen",
+   "staffOnly": true,
+   "confidence": {
+    "position": "High",
+    "hinge": "High",
+    "swing": "High",
+    "selfClosing": "Med",
+    "lock": "Med",
+    "hardware": "Med",
+    "defaultState": "High"
+   },
+   "gap": [
+    "GAP-138"
+   ],
+   "sources": [
+    "ROOM_FIXTURES Door_Hall_Office (A011, R3C3/R3C4)",
+    "A310 door 104 (schedule: set 1.0; set headers list 104 under set 4.0)",
+    "DEC-103"
+   ],
+   "notes": "Both candidate hardware sets (1.0 and 4.0) have a closer and read \"normally closed, latched and locked; free egress\", so selfClosing/lock hold either way; hardware lever follows the schedule column (set 1.0), set 4.0 would make it pushBar (GAP-138). proppedOpen: Nolan, the office door on its north wall is almost always propped open (DEC-103; matches R3C4 showing it open)."
+  },
+  {
+   "id": "Hall_Break",
+   "object": "Door_Hall_Break",
+   "type": "swing",
+   "ti_door": "105",
+   "rooms": {
+    "A": "Hall",
+    "B": "BreakRoom"
+   },
+   "graybox_wall": "W_Hall_Break",
+   "graybox_opening": [
+    29.9,
+    33.0
+   ],
+   "pos_ft": [
+    13.9,
+    31.45
+   ],
+   "hinge_jamb": "N placeholder",
+   "swing": "in (east, into the break room)",
+   "leafWidth_ft": 3.0,
+   "leafHeight_ft": 7.0,
+   "clearOpening_ft": 2.81,
+   "leaves": 1,
+   "pivot": "Door_Hall_Break_Hinge",
+   "hinge_ft": [
+    13.9,
+    29.9
+   ],
+   "hinge_unity_m": [
+    4.237,
+    0.0,
+    -9.114
+   ],
+   "closedRotation": [
+    0,
+    90,
+    0
+   ],
+   "openAngle": -90,
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_Hall_Break_A",
+     "room": "Hall",
+     "pos_ft": [
+      12.4,
+      31.45
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_Hall_Break_B",
+     "room": "BreakRoom",
+     "pos_ft": [
+      17.4,
+      31.45
+     ]
+    }
+   },
+   "selfClosing": true,
+   "lock": "staffOnly",
+   "hardware": "lever",
+   "npcUse": [
+    "staff"
+   ],
+   "defaultState": "closed",
+   "staffOnly": true,
+   "confidence": {
+    "position": "High",
+    "swing": "High",
+    "hinge": "Low",
+    "selfClosing": "High",
+    "lock": "High",
+    "hardware": "High",
+    "defaultState": "Med"
+   },
+   "gap": [
+    "GAP-137"
+   ],
+   "sources": [
+    "ROOM_FIXTURES Door_Hall_Break (\"EMPLOYEES ONLY\", fire-door label)",
+    "A310 door 105, hardware set 2.0 (storeroom lock, closer/stop)"
+   ],
+   "notes": "Hinge placeholder at the north jamb: the leaf then parks along the break-room north wall west of the kitchen run (which starts at x 18.9, REF-008)."
+  },
+  {
+   "id": "JC",
+   "object": "Door_JC",
+   "type": "swing",
+   "ti_door": "106",
+   "rooms": {
+    "A": "BreakRoom",
+    "B": "JC"
+   },
+   "graybox_wall": "W_JC_W",
+   "graybox_opening": [
+    43.115,
+    45.785
+   ],
+   "pos_ft": [
+    19.3,
+    44.45
+   ],
+   "hinge_jamb": "S placeholder",
+   "swing": "out (west, into the break room)",
+   "leafWidth_ft": 2.67,
+   "leafHeight_ft": 7.0,
+   "clearOpening_ft": 2.48,
+   "leaves": 1,
+   "pivot": "Door_JC_Hinge",
+   "hinge_ft": [
+    19.3,
+    45.785
+   ],
+   "hinge_unity_m": [
+    5.883,
+    0.0,
+    -13.955
+   ],
+   "closedRotation": [
+    0,
+    -90,
+    0
+   ],
+   "openAngle": -90,
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_JC_A",
+     "room": "BreakRoom",
+     "pos_ft": [
+      15.8,
+      44.45
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_JC_B",
+     "room": "JC",
+     "pos_ft": [
+      20.8,
+      44.45
+     ]
+    }
+   },
+   "selfClosing": true,
+   "lock": "staffOnly",
+   "hardware": "pushBar",
+   "npcUse": [
+    "staff"
+   ],
+   "defaultState": "closed",
+   "staffOnly": true,
+   "confidence": {
+    "position": "Med",
+    "swing": "Med",
+    "hinge": "Low",
+    "selfClosing": "Med",
+    "lock": "Med",
+    "hardware": "Low"
+   },
+   "gap": [
+    "GAP-137",
+    "GAP-138"
+   ],
+   "sources": [
+    "ROOM_FIXTURES Door_JC (A011, R3C5)",
+    "A310 door 106 (schedule: set 4.0 exit device; set headers list 106 under set 2.0 storeroom lever)"
+   ],
+   "notes": "Both candidate sets have a closer and a lock. hardware pushBar follows the schedule column (set 4.0); set 2.0 would make it lever (GAP-138)."
+  },
+  {
+   "id": "Vest_FOH",
+   "object": "Door_Vest_FOH",
+   "type": "swing",
+   "ti_door": "107",
+   "rooms": {
+    "A": "Vestibule",
+    "B": "FOH"
+   },
+   "graybox_wall": "W_Vest_W",
+   "graybox_opening": [
+    29.5,
+    31.7
+   ],
+   "pos_ft": [
+    31.4,
+    31.3
+   ],
+   "target_opening": {
+    "x": 31.4,
+    "y": [
+     29.8,
+     32.8
+    ],
+    "source": "A011 via ROOM_FIXTURES"
+   },
+   "hinge_jamb": "N",
+   "swing": "in (west, into FOH)",
+   "leafWidth_ft": 3.0,
+   "leafHeight_ft": 7.0,
+   "clearOpening_ft": 2.81,
+   "leaves": 1,
+   "pivot": "Door_Vest_FOH_Hinge",
+   "hinge_ft": [
+    31.4,
+    29.8
+   ],
+   "hinge_unity_m": [
+    9.571,
+    0.0,
+    -9.083
+   ],
+   "closedRotation": [
+    0,
+    90,
+    0
+   ],
+   "openAngle": 90,
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_Vest_FOH_A",
+     "room": "Vestibule",
+     "pos_ft": [
+      32.9,
+      31.3
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_Vest_FOH_B",
+     "room": "FOH",
+     "pos_ft": [
+      27.9,
+      31.3
+     ]
+    }
+   },
+   "selfClosing": true,
+   "lock": "staffOnly",
+   "hardware": "lever",
+   "npcUse": [
+    "staff"
+   ],
+   "defaultState": "proppedOpen",
+   "staffOnly": true,
+   "confidence": {
+    "position": "High",
+    "hinge": "High",
+    "swing": "High",
+    "selfClosing": "High",
+    "lock": "High",
+    "hardware": "High",
+    "defaultState": "High"
+   },
+   "gap": [
+    "GAP-122"
+   ],
+   "sources": [
+    "ROOM_FIXTURES Door_Vest_FOH (A011, FOH still, R4C1)",
+    "A310 door 107 (schedule set 2.0, headers set 1.0: both storeroom lever + closer)",
+    "DEC-051 Q2",
+    "DEC-050",
+    "DEC-103"
+   ],
+   "notes": "proppedOpen: an aluminium trash can usually props this door open (DEC-051 Q2, DEC-103: almost always propped open); the closer still exists, so it swings shut if the prop is moved. Target A011 wall x 31.4, opening y 29.8-32.8; the graybox still has the 2.2 ft V5 vestibule (GAP-122, ART pending). Hinge/anchors use the A011 target."
+  },
+  {
+   "id": "Vest_BOH",
+   "object": "Door_Vest_BOH",
+   "type": "swing",
+   "ti_door": "108",
+   "rooms": {
+    "A": "Vestibule",
+    "B": "BOH"
+   },
+   "graybox_wall": "W_Vest_E",
+   "graybox_opening": [
+    29.5,
+    31.7
+   ],
+   "pos_ft": [
+    39.8,
+    31.3
+   ],
+   "target_opening": {
+    "x": 39.8,
+    "y": [
+     29.8,
+     32.8
+    ],
+    "source": "A011 via ROOM_FIXTURES"
+   },
+   "hinge_jamb": "N placeholder",
+   "swing": "in (east, into BOH)",
+   "leafWidth_ft": 3.0,
+   "leafHeight_ft": 7.0,
+   "clearOpening_ft": 2.81,
+   "leaves": 1,
+   "pivot": "Door_Vest_BOH_Hinge",
+   "hinge_ft": [
+    39.8,
+    29.8
+   ],
+   "hinge_unity_m": [
+    12.131,
+    0.0,
+    -9.083
+   ],
+   "closedRotation": [
+    0,
+    90,
+    0
+   ],
+   "openAngle": -90,
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_Vest_BOH_A",
+     "room": "Vestibule",
+     "pos_ft": [
+      38.3,
+      31.3
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_Vest_BOH_B",
+     "room": "BOH",
+     "pos_ft": [
+      43.3,
+      31.3
+     ]
+    }
+   },
+   "selfClosing": true,
+   "lock": "staffOnly",
+   "hardware": "lever",
+   "npcUse": [
+    "staff"
+   ],
+   "defaultState": "proppedOpen",
+   "staffOnly": true,
+   "confidence": {
+    "position": "High",
+    "swing": "High",
+    "hinge": "Low",
+    "selfClosing": "High",
+    "lock": "High",
+    "hardware": "High",
+    "defaultState": "High"
+   },
+   "gap": [
+    "GAP-122",
+    "GAP-137"
+   ],
+   "sources": [
+    "ROOM_FIXTURES Door_Vest_BOH (A011, R4C2, BOH still)",
+    "A310 door 108, hardware set 1.0 (storeroom lock, closer; normally closed, latched, locked; free egress)",
+    "DEC-103"
+   ],
+   "notes": "proppedOpen: almost always propped open (DEC-103); the closer and lock still exist. Hinge placeholder north (mirrors the FOH door). Target A011 wall x 39.8; graybox still V5 (GAP-122)."
+  },
+  {
+   "id": "Office_HUB2",
+   "object": "Door_Office_HUB2",
+   "type": "swing",
+   "ti_door": "E110/E111A/E111B (which one: Low)",
+   "rooms": {
+    "A": "Office",
+    "B": "HUB2"
+   },
+   "graybox_wall": "W_Back_Hub",
+   "graybox_opening": [
+    7.2,
+    10.2
+   ],
+   "pos_ft": [
+    8.7,
+    46.55
+   ],
+   "hinge_jamb": "W",
+   "swing": "in (north, into the office)",
+   "leafWidth_ft": 3.0,
+   "leafHeight_ft": 7.0,
+   "clearOpening_ft": 2.81,
+   "leaves": 1,
+   "pivot": "Door_Office_HUB2_Hinge",
+   "hinge_ft": [
+    7.2,
+    46.55
+   ],
+   "hinge_unity_m": [
+    2.195,
+    0.0,
+    -14.188
+   ],
+   "closedRotation": [
+    0,
+    0,
+    0
+   ],
+   "openAngle": -90,
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_Office_HUB2_A",
+     "room": "Office",
+     "pos_ft": [
+      8.7,
+      43.05
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_Office_HUB2_B",
+     "room": "HUB2",
+     "pos_ft": [
+      8.7,
+      48.05
+     ]
+    }
+   },
+   "selfClosing": "unknown",
+   "lock": "staffOnly",
+   "hardware": "lever",
+   "npcUse": [
+    "staff"
+   ],
+   "defaultState": "closed",
+   "staffOnly": true,
+   "confidence": {
+    "position": "High",
+    "hinge": "High",
+    "swing": "High",
+    "selfClosing": "Low",
+    "lock": "Low",
+    "hardware": "Low",
+    "defaultState": "Low"
+   },
+   "gap": [
+    "GAP-138"
+   ],
+   "sources": [
+    "ROOM_FIXTURES Door_Office_HUB2 (A011, chat_office_L)",
+    "A310 E110/E111A/E111B: existing 3'-0\" x 7'-0\" flush HM, no hardware change"
+   ],
+   "notes": "Existing door, hardware not scheduled: selfClosing unknown; lock and lever are placeholders. HUB 2 is back-of-house storage (staff only). Coat-hook rail on its office face."
+  },
+  {
+   "id": "HUB2_HUB",
+   "object": "Door_HUB2_HUB",
+   "type": "swing",
+   "ti_door": "E110/E111A/E111B (which one: Low)",
+   "rooms": {
+    "A": "HUB2",
+    "B": "HUB"
+   },
+   "graybox_wall": "W_HUB_HUB2",
+   "graybox_opening": [
+    48.1,
+    51.1
+   ],
+   "pos_ft": [
+    18.995,
+    49.6
+   ],
+   "hinge_jamb": "N placeholder",
+   "swing": "in (east, into HUB)",
+   "leafWidth_ft": 3.0,
+   "leafHeight_ft": 7.0,
+   "clearOpening_ft": 2.81,
+   "leaves": 1,
+   "pivot": "Door_HUB2_HUB_Hinge",
+   "hinge_ft": [
+    18.995,
+    48.1
+   ],
+   "hinge_unity_m": [
+    5.79,
+    0.0,
+    -14.661
+   ],
+   "closedRotation": [
+    0,
+    90,
+    0
+   ],
+   "openAngle": -90,
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_HUB2_HUB_A",
+     "room": "HUB2",
+     "pos_ft": [
+      17.495,
+      49.6
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_HUB2_HUB_B",
+     "room": "HUB",
+     "pos_ft": [
+      22.495,
+      49.6
+     ]
+    }
+   },
+   "selfClosing": "unknown",
+   "lock": "staffOnly",
+   "hardware": "lever",
+   "npcUse": [
+    "staff"
+   ],
+   "defaultState": "proppedOpen",
+   "staffOnly": true,
+   "confidence": {
+    "position": "High",
+    "swing": "High",
+    "hinge": "Low",
+    "selfClosing": "Low",
+    "lock": "Low",
+    "hardware": "Low",
+    "defaultState": "High"
+   },
+   "gap": [
+    "GAP-137",
+    "GAP-138"
+   ],
+   "sources": [
+    "REFERENCES_INDEX 1.4 (A011: north end of the partition, swings into HUB)",
+    "graybox DOOR_HUB_HUB2",
+    "DEC-103"
+   ],
+   "notes": "proppedOpen: the HUB connector is almost always propped open (DEC-103). Existing door; hardware unknown. Hinge placeholder at the north jamb (leaf parks against the HUB north wall)."
+  },
+  {
+   "id": "Ext_Delivery",
+   "object": "Door_Ext_Delivery",
+   "type": "swing",
+   "ti_door": "E110/E111A/E111B (which one: Low)",
+   "rooms": {
+    "A": "HUB2",
+    "B": "Exterior"
+   },
+   "graybox_wall": "W_Ext_W_Hub",
+   "graybox_opening": [
+    49.5,
+    52.8
+   ],
+   "pos_ft": [
+    0.1,
+    51.15
+   ],
+   "hinge_jamb": "N placeholder",
+   "swing": "out (west) placeholder",
+   "leafWidth_ft": 3.0,
+   "leafHeight_ft": 7.0,
+   "clearOpening_ft": 2.81,
+   "leaves": 1,
+   "pivot": "Door_Ext_Delivery_Hinge",
+   "hinge_ft": [
+    0.1,
+    49.5
+   ],
+   "hinge_unity_m": [
+    0.03,
+    0.0,
+    -15.088
+   ],
+   "closedRotation": [
+    0,
+    90,
+    0
+   ],
+   "openAngle": 90,
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_Ext_Delivery_A",
+     "room": "HUB2",
+     "pos_ft": [
+      1.6,
+      51.15
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_Ext_Delivery_B",
+     "room": "Exterior",
+     "pos_ft": [
+      -3.4,
+      51.15
+     ]
+    }
+   },
+   "selfClosing": "unknown",
+   "lock": "staffOnly",
+   "hardware": "lever",
+   "npcUse": [
+    "staff"
+   ],
+   "defaultState": "closed",
+   "staffOnly": true,
+   "confidence": {
+    "position": "Med",
+    "swing": "Low",
+    "hinge": "Low",
+    "selfClosing": "Low",
+    "lock": "Med",
+    "hardware": "Low"
+   },
+   "gap": [
+    "GAP-137",
+    "GAP-138"
+   ],
+   "sources": [
+    "REFERENCES_INDEX 1.4 (EXT. DELIVERY, employees only)",
+    "A011 access-controlled entrance/exit by the office (6.8)"
+   ],
+   "notes": "staffOnly from A011 \"access controlled\" + the \"employees only\" label; no access-control detail is recorded (DEC-051). Swing, hinge and hardware are placeholders."
+  },
+  {
+   "id": "Ext_Emergency_SE",
+   "object": "Door_Ext_Emergency_SE",
+   "type": "swing",
+   "ti_door": "E110/E111A/E111B (which one: Low)",
+   "rooms": {
+    "A": "HUB",
+    "B": "Exterior"
+   },
+   "graybox_wall": "W_Ext_S",
+   "graybox_opening": [
+    43.99,
+    46.99
+   ],
+   "pos_ft": [
+    45.49,
+    75.93
+   ],
+   "hinge_jamb": "E placeholder",
+   "swing": "out (south)",
+   "leafWidth_ft": 3.0,
+   "leafHeight_ft": 7.0,
+   "clearOpening_ft": 2.81,
+   "leaves": 1,
+   "pivot": "Door_Ext_Emergency_SE_Hinge",
+   "hinge_ft": [
+    46.99,
+    75.93
+   ],
+   "hinge_unity_m": [
+    14.323,
+    0.0,
+    -23.143
+   ],
+   "closedRotation": [
+    0,
+    180,
+    0
+   ],
+   "openAngle": -90,
+   "anchors": {
+    "A": {
+     "name": "Anchor_Door_Ext_Emergency_SE_A",
+     "room": "HUB",
+     "pos_ft": [
+      45.49,
+      74.43
+     ]
+    },
+    "B": {
+     "name": "Anchor_Door_Ext_Emergency_SE_B",
+     "room": "Exterior",
+     "pos_ft": [
+      45.49,
+      79.43
+     ]
+    }
+   },
+   "selfClosing": "unknown",
+   "lock": "staffOnly",
+   "hardware": "pushBar",
+   "npcUse": [],
+   "defaultState": "closed",
+   "staffOnly": true,
+   "confidence": {
+    "position": "Med",
+    "swing": "High",
+    "hinge": "Low",
+    "selfClosing": "Low",
+    "lock": "Med",
+    "hardware": "Low",
+    "npcUse": "Med"
+   },
+   "gap": [
+    "GAP-137",
+    "GAP-138"
+   ],
+   "sources": [
+    "REFERENCES_INDEX 1.4 (A011, REF-007)",
+    "DEC-030",
+    "A011 access-controlled entrance/exit at the SE corner (6.8)"
+   ],
+   "notes": "Exit alarm: unknown (DEC-103 left it open; GAP-138), not modelled. Green door with a round logo; Nolan calls it an emergency exit (DEC-030), so npcUse is empty for normal play. pushBar is a placeholder (exit door)."
+  },
+  {
+   "id": "Grille_101B",
+   "object": "Door_Grille_101B",
+   "type": "foldingGrille",
+   "ti_door": "101B",
+   "rooms": {
+    "A": "Retail",
+    "B": "unknown"
+   },
+   "graybox_wall": null,
+   "graybox_opening": null,
+   "pos_ft": null,
+   "hinge_jamb": null,
+   "swing": "side-folding",
+   "leafWidth_ft": 16.4,
+   "leafHeight_ft": 7.0,
+   "clearOpening_ft": null,
+   "leaves": null,
+   "pivot": null,
+   "closedRotation": null,
+   "openAngle": null,
+   "anchors": null,
+   "selfClosing": false,
+   "lock": "keyed",
+   "hardware": "none",
+   "npcUse": [],
+   "defaultState": "proppedOpen",
+   "staffOnly": null,
+   "confidence": {
+    "all": "Low"
+   },
+   "gap": [
+    "GAP-137"
+   ],
+   "sources": [
+    "A310 door schedule 101B (16'-4 3/4\" x 7'-6\" side-folding open-air security grille, clear anodized)"
+   ],
+   "notes": "Not placed and not part of the build contract: TI positions are not valid (DEC-037) and no plan, photo or DEC places it. Listed so the schedule is complete. lock/defaultState are placeholders (a grille is normally folded open during business hours)."
+  }
+ ]
+}

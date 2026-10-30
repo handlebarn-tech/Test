@@ -24,7 +24,7 @@
     "wall1_R3C4",
     "wall2_R3C3"
    ],
-   "notes": "black flush HM door at the east end of the office north wall (A011 opening x 10.2-13.3); hinge on the east jamb, swings into the office; cannabis-leaf poster on the office face. Graybox DOOR_Hall_Office 8.9-11.9 is 1.3 ft too far west"
+   "notes": "black flush HM door at the east end of the office north wall (A011 opening x 10.2-13.3); hinge on the east jamb, swings into the office; cannabis-leaf poster on the office face. Graybox DOOR_Hall_Office 8.9-11.9 is 1.3 ft too far west; door contract (hinge, swing, lock, closer) in Docs/Reference/DOORS.json (REF-012)"
   },
   {
    "room": "Office",
@@ -46,7 +46,7 @@
     "A011",
     "chat_office_L"
    ],
-   "notes": "white painted door, south wall (A011 x 7.2-10.2), hinge on the west jamb, swings into the office; coat-hook rail with a tote bag on its office face. Graybox 7.5-10.5 is within 0.3 ft"
+   "notes": "white painted door, south wall (A011 x 7.2-10.2), hinge on the west jamb, swings into the office; coat-hook rail with a tote bag on its office face. Graybox 7.5-10.5 is within 0.3 ft; door contract (hinge, swing, lock, closer) in Docs/Reference/DOORS.json (REF-012)"
   },
   {
    "room": "Office",
@@ -174,7 +174,7 @@
    ],
    "pos_ft": [
     3.7,
-    41.0
+    40.8
    ],
    "rot": 90,
    "faces": "W",
@@ -183,7 +183,8 @@
     "chat_office_L",
     "wall1_R3C3"
    ],
-   "notes": "black mesh task chair at the west arm"
+   "notes": "black mesh task chair at the west arm; REF-012 (DEC-096 office walkability): y 39.8-41.8 so it stays out of the cabinet reach zone (was 40.0-42.0)",
+   "gap": "GAP-135"
   },
   {
    "room": "Office",
@@ -306,8 +307,8 @@
     5.0
    ],
    "pos_ft": [
-    6.1,
-    45.15
+    5.8,
+    45.3
    ],
    "rot": 0,
    "faces": "N",
@@ -316,7 +317,7 @@
     "chat_office_L",
     "BAND_04"
    ],
-   "notes": "plain tall black cabinet, right (west) of the HUB 2 door; closed box, no interior, no hardware detail (DEC-051 Q9). Height Low"
+   "notes": "plain tall black cabinet, right (west) of the HUB 2 door; closed box, no interior, no hardware detail (DEC-051 Q9). Height Low; REF-012 (DEC-096 office walkability): x 4.6-7.0 against the south wall face: clears the open HUB 2 leaf (hinge x 7.2; was x 4.9-7.3, 0.1 ft into the opening). Stated: south wall, west of and beside the HUB 2 door (DEC-051 Q9) - kept"
   },
   {
    "room": "Office",
@@ -328,8 +329,8 @@
     5.0
    ],
    "pos_ft": [
-    3.6,
-    45.15
+    3.4,
+    45.3
    ],
    "rot": 0,
    "faces": "N",
@@ -337,7 +338,7 @@
    "source_tiles": [
     "chat_office_L"
    ],
-   "notes": "plain tall black cabinet, beside A; closed box, no interior, no hardware detail (DEC-051 Q9). Height Low"
+   "notes": "plain tall black cabinet, beside A; closed box, no interior, no hardware detail (DEC-051 Q9). Height Low; REF-012 (DEC-096 office walkability): x 2.2-4.6 beside A, against the south wall face. Front reach zone y 41.8-44.3 kept clear"
   },
   {
    "room": "Office",
@@ -349,8 +350,8 @@
     2.9
    ],
    "pos_ft": [
-    12.0,
-    45.3
+    11.55,
+    45.5
    ],
    "rot": 0,
    "faces": "N",
@@ -361,7 +362,8 @@
     "wall1_R3C3",
     "Photo_Deli_Jars_Scale_Office"
    ],
-   "notes": "stainless 2-shelf utility cart 'FOR DELI USE ONLY' (REFERENCES_INDEX 2.4) with deli scale and glass bowl on top, spray bottles hung on the rail"
+   "notes": "stainless 2-shelf utility cart 'FOR DELI USE ONLY' (REFERENCES_INDEX 2.4) with deli scale and glass bowl on top, spray bottles hung on the rail; REF-012 (DEC-096 office walkability): x 10.3-12.8 against the south wall, 0.1 ft east of the HUB 2 opening, still under the canister shelf. Front reach only 1.4 ft wide (x 10.3-11.7) because of the east-wall stack (GAP-136)",
+   "gap": "GAP-136"
   },
   {
    "room": "Office",
@@ -394,8 +396,8 @@
     2.0
    ],
    "pos_ft": [
-    12.9,
-    40.2
+    13.2,
+    40.1
    ],
    "rot": 0,
    "faces": "W",
@@ -404,7 +406,7 @@
     "wall2_R3C3",
     "wall1_R3C4"
    ],
-   "notes": "stainless step can by the hall door; placed just south of the door swing"
+   "notes": "stainless step can by the hall door; placed just south of the door swing; REF-012 (DEC-096 office walkability): pushed to the east wall, y 39.6-40.6, just south of the hall-door swing (y <= 39.5)"
   },
   {
    "room": "Office",
@@ -416,7 +418,7 @@
     3.5
    ],
    "pos_ft": [
-    12.3,
+    12.7,
     42.6
    ],
    "rot": 90,
@@ -429,7 +431,7 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "standing desk on the east wall used as a shelf for misc items (DEC-051 Q13); the IT rack box and a computer sit on it. Fits between the step can and the deli cart (y 40.8-44.4); size Low"
+   "notes": "standing desk on the east wall used as a shelf for misc items (DEC-051 Q13); the IT rack box and a computer sit on it. Fits between the step can and the deli cart (y 40.8-44.4); size Low; REF-012 (DEC-096 office walkability): pushed to the east wall face (x 11.7-13.7; was 0.4 ft off it), y 40.8-44.4 unchanged. Front reach zone x 9.2-11.7 clear. A real standing desk is likely 4 ft (GAP-127)"
   },
   {
    "room": "Office",
@@ -441,7 +443,7 @@
     2.4
    ],
    "pos_ft": [
-    12.3,
+    12.7,
     42.6
    ],
    "rot": 90,
@@ -452,7 +454,7 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "several black file cabinets under the standing desk (DEC-051 Q13; was the black multi-drawer unit, REF-008 Q13). Count Low; the portable fan sits on them (R3C3)"
+   "notes": "several black file cabinets under the standing desk (DEC-051 Q13; was the black multi-drawer unit, REF-008 Q13). Count Low; the portable fan sits on them (R3C3); REF-012 (DEC-096 office walkability): moved with the standing desk (+0.4 ft east); drawers open west into the clear zone"
   },
   {
    "room": "Office",
@@ -464,7 +466,7 @@
     1.0
    ],
    "pos_ft": [
-    12.4,
+    12.8,
     43.8
    ],
    "rot": 90,
@@ -475,7 +477,7 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "white portable fan (DEC-051 Q12) on the black file cabinets, as in R3C3: under the standing desk on the cabinet top (base 2.4 ft AFF; 1.0 ft tall so it clears the 3.5 ft desk top); size and placement Low"
+   "notes": "white portable fan (DEC-051 Q12) on the black file cabinets, as in R3C3: under the standing desk on the cabinet top (base 2.4 ft AFF; 1.0 ft tall so it clears the 3.5 ft desk top); size and placement Low; REF-012 (DEC-096 office walkability): moved with the standing desk (+0.4 ft east)"
   },
   {
    "room": "Office",
@@ -487,7 +489,7 @@
     1.4
    ],
    "pos_ft": [
-    12.5,
+    12.9,
     43.7
    ],
    "rot": 90,
@@ -498,7 +500,7 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "generic desktop computer and monitor on the standing desk (DEC-051 Q13); screen content not recorded"
+   "notes": "generic desktop computer and monitor on the standing desk (DEC-051 Q13); screen content not recorded; REF-012 (DEC-096 office walkability): moved with the standing desk (+0.4 ft east)"
   },
   {
    "room": "Office",
@@ -510,7 +512,7 @@
     3.0
    ],
    "pos_ft": [
-    12.4,
+    12.7,
     42.0
    ],
    "rot": 90,
@@ -523,7 +525,7 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "IT rack, modelled as a plain black box only (DEC-051 Q15), sitting on the standing desk (Q13). Height 3 ft Low. V5/graybox puts it on the WEST wall (GAP-121)"
+   "notes": "IT rack, modelled as a plain black box only (DEC-051 Q15), sitting on the standing desk (Q13). Height 3 ft Low. V5/graybox puts it on the WEST wall (GAP-121); REF-012 (DEC-096 office walkability): moved with the standing desk (x 11.7-13.7)"
   },
   {
    "room": "Office",
@@ -551,36 +553,37 @@
    "fixture": "DrumKit_Small",
    "type": "prop",
    "size_ft": [
-    2.5,
+    2.2,
     2.0,
     3.0
    ],
    "pos_ft": [
-    5.9,
-    43.0
+    1.2,
+    45.15
    ],
-   "rot": 0,
-   "faces": "N",
+   "rot": 90,
+   "faces": "E",
    "confidence": "Low",
    "source_tiles": [
     "wall2_R3C3",
     "wall2_R4C5",
     "wall1_R3C3"
    ],
-   "notes": "small kit with two cymbals and a pad in the R3C3 foreground; position Low"
+   "notes": "small kit with two cymbals and a pad in the R3C3 foreground; position Low; REF-012 (DEC-096 office walkability): moved to the SW corner pocket south of the desk arm, west of cabinet B (x 0.2-2.2, y 44.05-46.25), rot 90; footprint cut from 2.5 x 2.0 (a guess) to fit. Still unconfirmed (REF-008 Q11 unanswered). A real compact kit is ~3 x 3 ft (GAP-135)",
+   "gap": "GAP-135"
   },
   {
    "room": "Office",
    "fixture": "Plant_Potted",
    "type": "prop",
    "size_ft": [
-    1.2,
-    1.2,
+    0.9,
+    0.9,
     3.0
    ],
    "pos_ft": [
-    7.8,
-    43.4
+    13.25,
+    44.95
    ],
    "rot": 0,
    "faces": "N",
@@ -589,7 +592,8 @@
     "wall2_R3C3",
     "wall1_R3C3"
    ],
-   "notes": "leafy potted plant, R3C3 foreground right of the drum kit"
+   "notes": "leafy potted plant, R3C3 foreground right of the drum kit; REF-012 (DEC-096 office walkability): moved to the strip east of the deli cart (x 12.8-13.7, y 44.5-45.4); pot cut from 1.2 to 0.9 ft (a guess). Was x 7.2-8.4, y 42.8-44.0, inside the HUB 2 door swing (GAP-135)",
+   "gap": "GAP-135"
   },
   {
    "room": "Office",
@@ -601,8 +605,8 @@
     2.5
    ],
    "pos_ft": [
-    3.6,
-    43.3
+    8.95,
+    39.95
    ],
    "rot": 0,
    "faces": "N",
@@ -611,7 +615,8 @@
     "wall2_R3C3",
     "chat_office_R"
    ],
-   "notes": "black wire basket cart with bags, R3C3 foreground left"
+   "notes": "black wire basket cart with bags, R3C3 foreground left; REF-012 (DEC-096 office walkability): moved out of the cabinet reach zone to the free east end of the worktable front (x 8.2-9.7, y 39.2-40.7); leaves 3.0 ft to the step can for the main path. Was x 2.85-4.35, y 42.55-44.05 (blocked both cabinets)",
+   "gap": "GAP-135"
   },
   {
    "room": "Hall",
