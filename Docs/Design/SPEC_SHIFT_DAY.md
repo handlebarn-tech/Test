@@ -21,16 +21,21 @@ DP §61 lists Opening → Steady → Rush 1 → Recovery → Rush 2 → Late →
 
 | # | Phase (DP §61 name) | Std sim min | Game clock (display) | Doors | What it is |
 |---|---|---:|---|---|---|
-| 0 | Opening / Preparation | 2 | 07:30 → 08:00 | closed | opening-lite tasks (§10); "Open doors" button ends it early |
+| 0 | Opening / Preparation | 2 | 07:30 → 08:00 [GDD: staff start time not sourced] | closed | opening-lite tasks (§10); "Open doors" button ends it early |
 | 1 | Rush 1 ("door rush") | 5 | 08:00 → 09:30 | open | door line already waiting [SRC O12] + elevated arrivals |
 | 2 | Recovery | 4 | 09:30 → 12:00 | open | low arrivals; preparation window (DP §49) |
 | 3 | Steady Floor | 6 | 12:00 → 17:00 | open | normal traffic; contains the 14:00 checkpoint [SRC O12] |
 | 4 | Rush 2 (Pressure Event) | 6 | 17:00 → 20:00 | open | evening rush [SRC O12]; the shift's peak |
-| 5 | Late Shift | 5 | 20:00 → 22:00 | open | taper to close [SRC O1: 8:00–22:00] |
-| 6 | Closing Summary | 4 (nominal) | 22:00 → | locked | queue drains, closing-lite (§10), report v2 (§11) |
+| 5 | Late Shift | 5 | 20:00 → 21:45 | open | taper; doors lock at 21:45 = last entry (GAP-DAY-09 placeholder) |
+| 6 | Closing Summary | 4 (nominal) | 21:45 → 21:59 last call (≤ 180 s sim), then 22:00 → | locked | last call serves the queue; **sales lock at 22:00**; then closing-lite (§10), report v2 (§11) |
 
 - **Sim time** (shift seconds) drives everything; the **game clock** is a piecewise-linear display map of sim time per phase (structural compression, DP §63). Ratios vary from ≈ 15× (Opening) to ≈ 50× (Steady); nothing reads the clock for logic.
-- At 22:00 no more arrivals; customers already queued are still served (Closing waits for an empty queue). Closing ends when the player signs the report.
+- **No sale at or after 22:00** [SRC O1; DEC-036 M3; AZ window 07:00–22:00, `Research/AZ_COMPLIANCE.md` G1]. Mechanism [GDD, proposed DEC-DAY-F]:
+  1. **Last entry 21:45:** the doors lock at the end of Late. No arrivals after that (the §3 tables already end there). The real last-entry practice is GAP-DAY-09.
+  2. **Last call** (start of Closing): the queue is served for at most `lastCallSimSec` = 180 s of sim time. The clock maps 21:45 → 21:59 over that window and **never displays 22:00 while a sale is possible**. The segment ends early when the queue and counter are empty.
+  3. **Sales lock at 22:00** (window over): the POS refuses Confirm. Anyone still queued or mid-service leaves without a sale, outcome `closed_out`. That is logged as `structural_pressure`, not counted in the abandonment gate, never blamed on the player, and customers get a polite "we're closed" line.
+  4. Measured with V2's harness (`VALIDATION_DAY/shift_day_drain.py`, targeted bot): `closed_out` per shift is 0.024 Standard (1.9 % of shifts), 0.026 Expert and 0.137 Beginner. A 120 s window would give 0.11 Standard.
+  5. After 22:00 only closing tasks run (no POS). Closing ends when the player signs the report.
 - After a Rush ≥ 5 min the next phase is low-rate (V2 03 §12): Rush 1 → Recovery holds. Rush 2 → Late is a taper, not a recovery: by design, the evening rush runs into close.
 - Shift start hour: the slice config's `shiftStartHour` 14 belongs to the Quick shift only.
 
@@ -92,7 +97,7 @@ Two layers, both [GDD]:
    - not the Opening or Closing phase (those have their own early-end buttons).
 
    It **stops automatically**, returning to 1× in the same tick, on the first of: `ffHorizonSec` before the next arrival; any stock-state transition (HEALTHY→LOW etc.); a phase boundary (banner); a special-slot or event trigger; any player input other than the hold.
-- **It cannot skip a decision:** arrivals are scheduled in sim time (§4), so fast-forward changes only how many real seconds pass, never who arrives or when in sim time. Stock only changes through sales and restocks, which can't happen during fast-forward. Test: same seed with and without fast-forward → identical arrival list, identical customer contents, identical stock at each arrival.
+- **It cannot skip a decision:** arrivals are scheduled in sim time (§4), so fast-forward changes only how many real seconds pass, never who arrives or when in sim time. Stock only changes through sales and restocks, which can't happen during fast-forward. Test: same seed with and without fast-forward → identical arrival list and customer contents; with a scripted bot taking identical actions, identical stock at each arrival.
 - **Pause** freezes every sim-affecting system: arrivals, patience, tasks, transfers (V2 EX-025). Menus, Details and the debug panel do **not** slow the clock (EX-026). Only an explicit accessibility assist may (UX-003), and the run is then tagged `assist`.
 - **Real-time budget:** Standard = 32 sim min. Fast-forward saves at most the quiet Recovery/Late stretches, typically 1–3 real min. The exit test measures real minutes; the 25–40 window has room either way.
 
@@ -161,7 +166,7 @@ Diagnostic: more than 2 emergencies in a Standard shift (V2 03 §13).
 ## 10. Opening-lite and closing-lite [GSS §7, §73; O11]
 **Opening** (2 sim min, ends early on "Open doors"; no customers): (a) walk the jars, where LOW/CRITICAL show; (b) read the shift note: today's day of week and "expect a line at open and an evening rush" (DP §52: expectation, not forecast); (c) proactive restock (§9a). Nothing to tick off: GSS §73 says no trivial switches.
 
-**Closing** (doors locked at 22:00; after the queue drains), an O11 subset chosen for decisions [SRC O11, selection GDD]:
+**Closing** (after last call; sales locked at 22:00), an O11 subset chosen for decisions [SRC O11, selection GDD]:
 1. **Refill deli jars:** restock LOW jars for tomorrow from the backstock that's left (real choice: limited units). Proactive tag; no queue cost.
 2. **Deli BOH audit:** a summary of each batch's backstock used today vs left, feeding the report inventory section. Read-only in PS2; no discrepancies are generated (receiving/quarantine is PS4, O8).
 3. **Clean scale + wipe counter:** one 5 s interaction, flavour [SRC O11].
@@ -173,7 +178,7 @@ The rest of O11 (cones, trash, bathroom, mop, online orders) stays out: no decis
 Section order follows the store's closing report. A section the build doesn't model is omitted, not zero-filled with invented data.
 | O16 section | PS2 content | Owner |
 |---|---|---|
-| Income: Gross, Discounts, Returns, Net, Loyalty, Tax, Subtotal, **Rounding**, Total | Gross / Net / Tax / Subtotal / Rounding (nickel, DEC-036) / Total. Discounts only if deals exist (GAME-016). Returns, Loyalty omitted | GAME-013 |
+| Income: Gross, Discounts, Returns, Net, Loyalty, Tax, Subtotal, **Rounding**, Total | Gross / Net / Tax / Subtotal / Rounding (nickel, DEC-035) / Total. Discounts only if deals exist (GAME-016). Returns, Loyalty omitted | GAME-013 |
 | Tax: Excise, Sales | from the engine's pricing tax lines; rec vs med rate (GAME-009) | GAME-013 |
 | Payments | **omitted**: payment method isn't modelled (cash / PIN debit / ACH exist [SRC O14], no data to split) | — |
 | Category | Deli flower only in PS2 (packaged = PS3) | GAME-013 |
@@ -187,7 +192,7 @@ Section order follows the store's closing report. A section the build doesn't mo
 No TFS scores or ranks anywhere (DEC-052). Manager notes (O16 Daily Tracker) are out.
 
 ## 12. Telemetry and attribution [V2 03 §10–11]
-- Log per shift: per-phase arrivals/served/abandoned, peak waiting, mean/p90 wait, time-to-clear after each rush, PressureLevel at every player decision, restock jobs (start state, tag, duration, interrupted?), stock-state minutes, fast-forward seconds used, pause seconds. Extends GAME-020's log (DP §116–117); the schema is GAME-020's.
+- Log per shift: per-phase arrivals/served/abandoned, `closed_out` count, peak waiting, mean/p90 wait, time-to-clear after each rush, PressureLevel at every player decision, restock jobs (start state, tag, duration, interrupted?), stock-state minutes, fast-forward seconds used, pause seconds. Extends GAME-020's log (DP §116–117); the schema is GAME-020's.
 - **Abandonment attribution** is `player_attributable` only if one of these held during the abandoner's wait:
   - redundant consultation above allowance (GAME-019);
   - avoidable idle (the player at the counter, nobody served, ≥ 10 s while someone waits);
@@ -200,6 +205,7 @@ No TFS scores or ranks anywhere (DEC-052). Manager notes (O16 Daily Tracker) are
 - A Standard shift with the 3-phase arc (open → two rushes → close) plays in **25–40 real minutes** (DEC-056), measured over 3 human playtests.
 - Targeted bot over 200 seeds in EditMode (pure sim, bot service model): arrivals 18–20, abandonment 2–6 %, mean peak 2.5–3.5, p90 ≤ 5 (V2 03 §17). Ask-all is worse on FLOW; ask-none is worse on DecisionQuality (GAME-020).
 - In ≥ 80 % of Standard seeds at least one jar goes LOW and the bot restocks it from BOH. 2–4 meaningful restock decisions; ≤ 2 emergencies for the restocking bot.
+- **Store hours:** an EditMode assert that no sale timestamp maps to a clock time ≥ 22:00 (`salesHoursEnd`), across 200 seeds of every profile. It extends `SliceTests` store-hours coverage (GAME-011).
 - DP-016 / 017 / 018 / 019 / 020 pass (GAME-012). The determinism test of §7 passes (GAME-011). Gate A parity green throughout. V2 exploit rows: EX-025/026 (GAME-011); EX-013/016/017/019/021–024 (GAME-012) — Critical/High need their test before the system is complete (DEC-066).
 - Report shows the §11 sections.
 
@@ -214,6 +220,7 @@ No TFS scores or ranks anywhere (DEC-052). Manager notes (O16 Daily Tracker) are
 | GAP-DAY-06 | how long the opening door line typically is | 2/3/3 customers by profile | Nolan |
 | GAP-DAY-07 | can a budtender restock their own jar mid-shift, or is it a dedicated role / lead job? | the player restocks (DEC-061 "somebody will need to stock it") | Nolan |
 | GAP-DAY-08 | which register is "the player's" in the real layout (any preferred station?) | the slice's existing player station | Nolan (low priority) |
+| GAP-DAY-09 | when the store stops letting customers in before 22:00, and what happens to people still inside at 22:00 | doors lock 21:45; last call ≤ 180 s sim; unserved at 22:00 leave without a sale | Nolan |
 | GAP-DP-02 | (existing) every [GDD] number here | the values above | playtests |
 
 ## 15. Packets (dependency order; all after PS1 + PS1b, i.e. after GAME-020)
