@@ -29,7 +29,7 @@
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/chrome/T_Proc_chrome_Mask.png",
-          "sha256": "57a28ed3a1e205b2"
+          "sha256": "83dc94cf73fd738f"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/chrome/T_Proc_chrome_Normal.png",
@@ -149,7 +149,7 @@
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/glass/T_Proc_glass_Mask.png",
-          "sha256": "f13e13f664b94edc"
+          "sha256": "6504b05323e6d48f"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/glass/T_Proc_glass_Normal.png",
@@ -189,7 +189,7 @@
         },
         "Mask": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/mirror/T_Proc_mirror_Mask.png",
-          "sha256": "a17fee0041f0c11b"
+          "sha256": "f4abf4bd7600a15d"
         },
         "Normal": {
           "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/mirror/T_Proc_mirror_Normal.png",
