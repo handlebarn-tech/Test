@@ -1,0 +1,14 @@
+{
+  "asset_id": "PROC_PackageBox",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "d3e7e2cb0a094060",
+  "generator": "package_base",
+  "lod_tris": {
+    "LOD0": 88,
+    "LOD1": 24
+  },
+  "params_sha256": "43021453cfdcff69",
+  "passed": true,
+  "warnings": []
+}

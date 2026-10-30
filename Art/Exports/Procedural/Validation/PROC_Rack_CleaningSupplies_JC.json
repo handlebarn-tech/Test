@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Rack_CleaningSupplies_JC",
+  "collision_boxes": 4,
+  "errors": [],
+  "export_sha256": "b9837eb6942d008f",
+  "generator": "wire_shelving",
+  "lod_tris": {
+    "LOD0": 27872,
+    "LOD1": 9344,
+    "LOD2": 3712,
+    "LOD3": 144
+  },
+  "params_sha256": "69dd09971ea62805",
+  "passed": true,
+  "warnings": []
+}

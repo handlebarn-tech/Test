@@ -1,0 +1,15 @@
+{
+  "asset_id": "PROC_JarFill_DarkCompact",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "36d931daa1d99750",
+  "generator": "jar_fill",
+  "lod_tris": {
+    "LOD0": 10080,
+    "LOD1": 2420,
+    "LOD2": 140
+  },
+  "params_sha256": "c024995a99d42b80",
+  "passed": true,
+  "warnings": []
+}

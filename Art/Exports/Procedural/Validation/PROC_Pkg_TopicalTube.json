@@ -1,0 +1,15 @@
+{
+  "asset_id": "PROC_Pkg_TopicalTube",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "17d17fc1f16f47af",
+  "generator": "packaged_goods",
+  "lod_tris": {
+    "LOD0": 472,
+    "LOD1": 232,
+    "LOD2": 28
+  },
+  "params_sha256": "d8a49587443a9a1d",
+  "passed": true,
+  "warnings": []
+}

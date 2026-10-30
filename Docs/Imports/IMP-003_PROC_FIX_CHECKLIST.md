@@ -36,23 +36,24 @@ Round 3 will arrive as more deltas; IMP-003 will append items here.
 5. Unity import check.
 
 ## 1. Core: `Tools/Blender/run_generator.py`, `Tools/Blender/proclib.py`
+**PROC-005:** C1–C11 done in 4ef04ae; C12 done with wire shelving (`own_sheet`, `PROC_wire_shelving_contact_sheet.png`). C8: only the helpers in use were added.
 Start from drop 1's copies; they are ours plus additions only. Do **not** use any `.patch` file: they are whole-file CRLF→LF rewrites, drop 2's is 0 bytes, and drop 3's don't apply to `main`. [R5, T1]
 
-- [ ] **C1 collision** (`run_generator.py`, every generator's `COL_*`). Unity has no postprocessor, so `COL_` meshes would render as blue boxes. **Decided (DEC-086): option (a), manifest boxes.** No `COL_*` render meshes in the FBX:
+- [x] **C1 collision** (`run_generator.py`, every generator's `COL_*`). Unity has no postprocessor, so `COL_` meshes would render as blue boxes. **Decided (DEC-086): option (a), manifest boxes.** No `COL_*` render meshes in the FBX:
   - **(a) recommended:** generators return `collision_boxes` (Unity centre + size) in `extra`; the Unity builder adds `BoxCollider`s; delete the `COL_` meshes and `require_collision`;
   - **(b)** keep `COL_` and add a Unity `AssetPostprocessor` (`*_COL_*` → MeshCollider, renderer removed; non-convex, so not on moving rigidbodies).
   - [R1, S4]
-- [ ] **C2 manifest churn** (`run_generator.py`). Add `collision` to the entry only when non-empty, and don't add a `validation` key to existing assets. Check: rerun `deli_jar` and expect a byte-identical manifest entry. [R2]
-- [ ] **C3 validation JSON.** It is written only after a pass, so `errors` is always empty. **Decided (DEC-086):** write it **on failure** too, before the `raise`, with the error list; keep it as the PROC gate. [R3]
-- [ ] **C4 `mesh_stats()`** (drop 3 / round-2 snapshot change). Take the empty-mesh `raise`. Bounds, material slots and non-manifold/degenerate counts are **accepted as diagnostics (DEC-086)**; **never gate on non-manifold**: touching boxes and the jar's open label quads trip it. Make it one deliberate manifest re-baseline commit. [T2]
-- [ ] **C5 opt-in checks** (claimed by ChatGPT, not delivered). If wanted, add params-flagged checks in `generate_asset`: `check_origin_bottom_centre` (min Blender z = 0, x/y bbox centred), `fail_on_degenerate`, `check_material_slots`. Default off, with the existing generators' output unchanged. Test them on planted bad meshes: an open quad, a zero-area face, an off-origin object. [A2]
-- [ ] **C6 helpers:** add `add_box`, `add_cylinder_between`, `add_vertical_cylinder` (drop 1) and `add_beveled_box` (drop 3 snapshot). Move `from mathutils import …` to the top imports. Fix the missing blank lines at the function seams. Remove the "existing PROC helpers unchanged" comment if C4 lands. [P1, T1]
-- [ ] **C7 alpha patch:** apply `Round2/patches/proclib_preserve_rgba_alpha.patch` (`material()` alpha defaults to `rgba[3]`). Verified: no existing caller changes.
-- [ ] **C8 drop 3 helpers** (`add_wire_grid`, `add_door_panel`, `add_drawer_box`, `add_cabinet_carcass`, `add_handle_pull`, …): add **only** the ones the families use after their refactor (§3–§10 use them). Leave the rest out until needed. [T3]
-- [ ] **C9 `add_wire_grid`:** separate `spacing_x` / `spacing_y`. [T4, G1]
-- [ ] **C10 hinge/slide metadata helper:** `hinge_axis(x, y0, y1, z_front, side)` / `slide_axis(...)` returning the manifest dict, used by every door/drawer family instead of per-family dicts. [T4]
-- [ ] **C11 cylinder extents:** a cylinder that defines an asset's bounds needs an even segment count ≥ 6, because the ring roll is arbitrary on Y-axis cylinders (caster wheel x extent is 0.0951 for 0.1). [B1]
-- [ ] **C12 contact sheets:** every new family uses its own sheet (`own_sheet: true`, `contact_sheet <generator>`), or the default sheet breaks its 1 MB cap. [S2]
+- [x] **C2 manifest churn** (`run_generator.py`). Add `collision` to the entry only when non-empty, and don't add a `validation` key to existing assets. Check: rerun `deli_jar` and expect a byte-identical manifest entry. [R2]
+- [x] **C3 validation JSON.** It is written only after a pass, so `errors` is always empty. **Decided (DEC-086):** write it **on failure** too, before the `raise`, with the error list; keep it as the PROC gate. [R3]
+- [x] **C4 `mesh_stats()`** (drop 3 / round-2 snapshot change). Take the empty-mesh `raise`. Bounds, material slots and non-manifold/degenerate counts are **accepted as diagnostics (DEC-086)**; **never gate on non-manifold**: touching boxes and the jar's open label quads trip it. Make it one deliberate manifest re-baseline commit. [T2]
+- [x] **C5 opt-in checks** (claimed by ChatGPT, not delivered). If wanted, add params-flagged checks in `generate_asset`: `check_origin_bottom_centre` (min Blender z = 0, x/y bbox centred), `fail_on_degenerate`, `check_material_slots`. Default off, with the existing generators' output unchanged. Test them on planted bad meshes: an open quad, a zero-area face, an off-origin object. [A2]
+- [x] **C6 helpers:** add `add_box`, `add_cylinder_between`, `add_vertical_cylinder` (drop 1) and `add_beveled_box` (drop 3 snapshot). Move `from mathutils import …` to the top imports. Fix the missing blank lines at the function seams. Remove the "existing PROC helpers unchanged" comment if C4 lands. [P1, T1]
+- [x] **C7 alpha patch:** apply `Round2/patches/proclib_preserve_rgba_alpha.patch` (`material()` alpha defaults to `rgba[3]`). Verified: no existing caller changes.
+- [x] **C8 drop 3 helpers** (`add_wire_grid`, `add_door_panel`, `add_drawer_box`, `add_cabinet_carcass`, `add_handle_pull`, …): add **only** the ones the families use after their refactor (§3–§10 use them). Leave the rest out until needed. [T3]
+- [x] **C9 `add_wire_grid`:** separate `spacing_x` / `spacing_y`. [T4, G1]
+- [x] **C10 hinge/slide metadata helper:** `hinge_axis(x, y0, y1, z_front, side)` / `slide_axis(...)` returning the manifest dict, used by every door/drawer family instead of per-family dicts. [T4]
+- [x] **C11 cylinder extents:** a cylinder that defines an asset's bounds needs an even segment count ≥ 6, because the ring roll is arbitrary on Y-axis cylinders (caster wheel x extent is 0.0951 for 0.1). [B1]
+- [x] **C12 contact sheets:** every new family uses its own sheet (`own_sheet: true`, `contact_sheet <generator>`), or the default sheet breaks its 1 MB cap. [S2]
 
 ## 2. Every params file (all families)
 - [ ] **P1** `unity_dir` must start with `UnityProject/` (`UnityProject/Assets/_Game/Art/Procedural/...`). [A1, S1]
@@ -69,12 +70,13 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [ ] **P6** per-variant `require_collision` (or drop it with C1a). [B4]
 
 ## 3. Wire shelving: `generators/wire_shelving.py`, `params/wire_shelving.json` (+ janitor supply rack)
-- [ ] **W1** `_feet()` crashes on a zero-length bracket when `foot_radius_m == collar_outer_diameter_m/2`: skip the bracket if its length is < 1e-6. [B3]
-- [ ] **W2** wire pattern: dense front-to-back wires + a few long wires (C9), not a square grid. Check against tiles `wall2_R4C1`, `BOH_still`. [G1]
-- [ ] **W3** floating wires: extend the grid to the rail line and set the rails at the grid plane (or add a truss). [G2]
-- [ ] **W4** replace the even spacing with a `shelf_z_m` list param (even is the default). [G3]
-- [ ] **W5** `bays` param with shared inner posts (2-bay West run). [G4]
-- [ ] **W6** one params entry per RF rack (convert ft → m in params):
+**PROC-005 done:** new generator (drop 1 rewritten); 8 RF variants pass validation, byte-identical reruns. W1: no bracket in the new foot design. W5/W7: per-section `casters`; mixed runs are abutting units. W8: East Wall and West Run are modelled as 2 fixed sections, and the run lengths/section counts are left for the next REF pass (GAP-127). P1–P6 and Q0.1/Q0.5 are met for this family; Q1 wire-rack detail is done except bins/trays (moved to §16 X5). Unity import is not checked yet.
+- [x] **W1** `_feet()` crashes on a zero-length bracket when `foot_radius_m == collar_outer_diameter_m/2`: skip the bracket if its length is < 1e-6. [B3]
+- [x] **W2** wire pattern: dense front-to-back wires + a few long wires (C9), not a square grid. Check against tiles `wall2_R4C1`, `BOH_still`. [G1]
+- [x] **W3** floating wires: extend the grid to the rail line and set the rails at the grid plane (or add a truss). [G2]
+- [x] **W4** replace the even spacing with a `shelf_z_m` list param (even is the default). [G3]
+- [x] **W5** `bays` param with shared inner posts (2-bay West run). [G4]
+- [x] **W6** one params entry per RF rack (convert ft → m in params):
 
   | RF row | w × d × h (ft) | notes |
   |---|---|---|
@@ -88,11 +90,11 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
   | `Rack_CleaningSupplies_JC` | 2.0 × 1.2 × 5.0 | janitor supply rack |
 
   [dimension table drop 1; janitor §7]
-- [ ] **W7 real values (DEC-088, closes GAP-PROC-13 for these):**
+- [x] **W7 real values (DEC-088, closes GAP-PROC-13 for these):**
   - **FOH rolling racks** (`Rack_Rolling_1–4`): **3 shelves including the top**; **small wheels**, **4 casters**, 2 per side at the ends.
   - **BOH chrome runs**: **4-ft sections** (`bays`, W5). The **middle sections also roll** (casters); end sections are fixed (feet). This needs per-section `caster_enabled`.
   - Post, wire, collar and caster/foot dimensions stay GAP-PROC-13.
-- [ ] **W8 REF follow-up for the PROC worker (do not guess; Hub-confirmed open item):** RF `Rack_East_Wall` is 8.7 ft and `Rack_West_Run` 8.0 ft (2-bay). In 4-ft sections that is 2 sections, which leaves no "middle" section to roll, and 8.7 is not a multiple of 4. Model 2 fixed sections for now and list the run lengths/section counts for the next REF pass (GAP-127).
+- [x] **W8 REF follow-up for the PROC worker (do not guess; Hub-confirmed open item):** RF `Rack_East_Wall` is 8.7 ft and `Rack_West_Run` 8.0 ft (2-bay). In 4-ft sections that is 2 sections, which leaves no "middle" section to roll, and 8.7 is not a multiple of 4. Model 2 fixed sections for now and list the run lengths/section counts for the next REF pass (GAP-127).
 
 ## 4. Register station: `generators/register_station.py`, `params/register_station.json`
 - [ ] **R1 remove `CashDrawer`** (variant + `_cash_drawer`): no cash-handling equipment (DEC-051, RI REF-009 rule). [C1]
@@ -168,7 +170,7 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 
 ## 11. Janitor closet: `generators/janitor_props.py`, `params/janitor_props.json`, `params/janitor_supply_rack.json`
 - [ ] **J1** mop sink = RF `MopSink_JC` **1.6 × 1.5 × 1.0 ft**.
-- [ ] **J2** supply rack = RF `Rack_CleaningSupplies_JC` 2.0 × 1.2 × 5.0 ft (fails until W1).
+- [x] **J2** supply rack = RF `Rack_CleaningSupplies_JC` 2.0 × 1.2 × 5.0 ft: done as a `wire_shelving` variant (PROC-005).
 - [ ] **J3** collision on mop/broom/bucket (claimed fix, not delivered): add per C1, or set `require_collision: false` for those variants.
 
 ## 12. Architecture kit: `generators/architecture_kit.py`, `params/architecture_kit.json`

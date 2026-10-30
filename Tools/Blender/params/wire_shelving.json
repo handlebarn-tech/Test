@@ -1,0 +1,257 @@
+{
+  "generator": "wire_shelving",
+  "asset_prefix": "PROC_",
+  "seed": 4101,
+  "own_sheet": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/WireShelving",
+  "gaps": [
+    "GAP-127",
+    "GAP-PROC-13"
+  ],
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "tri_budget": {
+    "LOD0": 80000,
+    "LOD1": 40000,
+    "LOD2": 20000,
+    "LOD3": 8000
+  },
+  "tri_guide": {
+    "lod0_min": 20000
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 8,
+      "post_seg": 12
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 8,
+      "post_seg": 8
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8,
+      "post_seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8,
+      "post_seg": 8
+    }
+  },
+  "shelf_count": 5,
+  "bottom_shelf_z_m": 0.1524,
+  "top_shelf_drop_m": 0.03,
+  "_component_sizes": "GAP-PROC-13: commercial wire-shelving conventions, not measured in the store",
+  "post_d_m": 0.0254,
+  "groove_pitch_m": 0.0254,
+  "groove_depth_m": 0.0006,
+  "groove_width_m": 0.003,
+  "cap_h_m": 0.012,
+  "collar_outer_d_m": 0.038,
+  "collar_h_m": 0.032,
+  "sleeve_lip_m": 0.004,
+  "frame_h_m": 0.0254,
+  "rail_d_m": 0.0048,
+  "truss_d_m": 0.0035,
+  "truss_pitch_m": 0.05,
+  "deck_wire_d_m": 0.0035,
+  "deck_pitch_m": 0.0254,
+  "support_wires": 3,
+  "foot": {
+    "pad_d_m": 0.03,
+    "pad_h_m": 0.006,
+    "stem_d_m": 0.0095,
+    "nut_af_m": 0.019,
+    "nut_h_m": 0.006,
+    "height_m": 0.025
+  },
+  "caster": {
+    "wheel_d_m": 0.075,
+    "wheel_w_m": 0.022,
+    "fork_t_m": 0.003,
+    "trail_m": 0.02,
+    "race_d_m": 0.036,
+    "stem_d_m": 0.0127,
+    "height_m": 0.105,
+    "brake": true
+  },
+  "wear": {
+    "edge_wear": 0.15,
+    "scuffs": 0.25,
+    "dust": 0.15,
+    "fingerprints": 0.1
+  },
+  "colors": {
+    "Chrome": [
+      0.76,
+      0.77,
+      0.79,
+      1.0
+    ],
+    "Black_Epoxy": [
+      0.03,
+      0.03,
+      0.035,
+      1.0
+    ],
+    "Plastic_Black": [
+      0.02,
+      0.02,
+      0.02,
+      1.0
+    ],
+    "Plastic_Grey": [
+      0.35,
+      0.35,
+      0.36,
+      1.0
+    ],
+    "Rubber_Grey": [
+      0.18,
+      0.18,
+      0.19,
+      1.0
+    ]
+  },
+  "variants": [
+    {
+      "id": "Rack_Rolling",
+      "rf": "Rack_Rolling_1..4",
+      "note": "Rack_Rolling_1-4 (one asset, 4 instances); FOH, 3 shelves incl. the top, 4 small casters (DEC-088)",
+      "width_m": 1.8288,
+      "depth_m": 0.6096,
+      "height_m": 1.8288,
+      "finish": "Chrome",
+      "sections": [
+        {
+          "casters": true
+        }
+      ],
+      "shelf_count": 3,
+      "bottom_shelf_z_m": 0.254
+    },
+    {
+      "id": "Rack_East_Wall",
+      "rf": "Rack_East_Wall",
+      "note": "BOH east wall; 2 fixed sections pending the REF run-length pass (W8, GAP-127)",
+      "width_m": 2.65176,
+      "depth_m": 0.6096,
+      "height_m": 1.8288,
+      "finish": "Chrome",
+      "sections": [
+        {
+          "casters": false
+        },
+        {
+          "casters": false
+        }
+      ],
+      "shelf_count": 5
+    },
+    {
+      "id": "Rack_West_Run",
+      "rf": "Rack_West_Run",
+      "note": "BOH west 2-bay run, 4-5 shelves (5 used)",
+      "width_m": 2.4384,
+      "depth_m": 0.6096,
+      "height_m": 1.8288,
+      "finish": "Chrome",
+      "sections": [
+        {
+          "casters": false
+        },
+        {
+          "casters": false
+        }
+      ],
+      "shelf_count": 5
+    },
+    {
+      "id": "Rack_South_Wall",
+      "rf": "Rack_South_Wall",
+      "note": "BOH south wall",
+      "width_m": 1.61544,
+      "depth_m": 0.54864,
+      "height_m": 1.8288,
+      "finish": "Chrome",
+      "sections": [
+        {
+          "casters": false
+        }
+      ],
+      "shelf_count": 5
+    },
+    {
+      "id": "Rack_Chrome_Cartons",
+      "rf": "Rack_Chrome_Cartons",
+      "note": "BOH, left of the vestibule door",
+      "width_m": 0.762,
+      "depth_m": 0.36576,
+      "height_m": 1.8288,
+      "finish": "Chrome",
+      "sections": [
+        {
+          "casters": false
+        }
+      ],
+      "shelf_count": 5
+    },
+    {
+      "id": "Rack_Bags_Tools",
+      "rf": "Rack_Bags_Tools",
+      "note": "FOH west wall: deli bags, exit bags, tools",
+      "width_m": 0.9144,
+      "depth_m": 0.4572,
+      "height_m": 1.524,
+      "finish": "Chrome",
+      "sections": [
+        {
+          "casters": false
+        }
+      ],
+      "shelf_count": 4
+    },
+    {
+      "id": "Desk_WireRack_Computer",
+      "rf": "Desk_WireRack_Computer",
+      "note": "FOH black wire unit used as a desk; keyboard shelf at desk height 0.7366 m (29 in convention, GAP-PROC-13)",
+      "width_m": 1.03632,
+      "depth_m": 0.4572,
+      "height_m": 1.8288,
+      "finish": "Black_Epoxy",
+      "sections": [
+        {
+          "casters": false
+        }
+      ],
+      "shelf_z_m": [
+        0.1524,
+        0.4572,
+        0.7366,
+        1.2192,
+        1.7983
+      ]
+    },
+    {
+      "id": "Rack_CleaningSupplies_JC",
+      "rf": "Rack_CleaningSupplies_JC",
+      "note": "janitor closet supply rack (J2)",
+      "width_m": 0.6096,
+      "depth_m": 0.36576,
+      "height_m": 1.524,
+      "finish": "Chrome",
+      "sections": [
+        {
+          "casters": false
+        }
+      ],
+      "shelf_count": 4
+    }
+  ]
+}

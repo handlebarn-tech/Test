@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Rack_East_Wall",
+  "collision_boxes": 10,
+  "errors": [],
+  "export_sha256": "05d54057c1c3284d",
+  "generator": "wire_shelving",
+  "lod_tris": {
+    "LOD0": 71200,
+    "LOD1": 37744,
+    "LOD2": 11104,
+    "LOD3": 264
+  },
+  "params_sha256": "69dd09971ea62805",
+  "passed": true,
+  "warnings": []
+}

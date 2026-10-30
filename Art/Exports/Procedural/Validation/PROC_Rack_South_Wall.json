@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Rack_South_Wall",
+  "collision_boxes": 5,
+  "errors": [],
+  "export_sha256": "25f87b39b39b6904",
+  "generator": "wire_shelving",
+  "lod_tris": {
+    "LOD0": 44360,
+    "LOD1": 22056,
+    "LOD2": 6736,
+    "LOD3": 156
+  },
+  "params_sha256": "69dd09971ea62805",
+  "passed": true,
+  "warnings": []
+}

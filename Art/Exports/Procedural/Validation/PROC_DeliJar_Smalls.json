@@ -1,0 +1,14 @@
+{
+  "asset_id": "PROC_DeliJar_Smalls",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "2e19cda23a82915b",
+  "generator": "deli_jar",
+  "lod_tris": {
+    "LOD0": 556,
+    "LOD1": 156
+  },
+  "params_sha256": "b75aba6bac0e3a3d",
+  "passed": true,
+  "warnings": []
+}
