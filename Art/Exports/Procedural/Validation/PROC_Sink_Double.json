@@ -1,0 +1,19 @@
+{
+  "asset_id": "PROC_Sink_Double",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "6be0158bfae14948",
+  "generator": "break_room",
+  "lod_tris": {
+    "LOD0": 576,
+    "LOD1": 456,
+    "LOD2": 192,
+    "LOD3": 24
+  },
+  "params_sha256": "b69907bc8ac355f5",
+  "passed": true,
+  "warnings": [
+    "LOD0 576 tris below the DEC-084 guide minimum 5000 (too simple?)",
+    "LOD1: 456 tris > 75% of LOD0 (guide 1/2, 1/4, <= 1/10)"
+  ]
+}

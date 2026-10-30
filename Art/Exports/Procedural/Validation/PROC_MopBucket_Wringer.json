@@ -1,0 +1,19 @@
+{
+  "asset_id": "PROC_MopBucket_Wringer",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "85410084db10f152",
+  "generator": "janitor_props",
+  "lod_tris": {
+    "LOD0": 816,
+    "LOD1": 624,
+    "LOD2": 276,
+    "LOD3": 36
+  },
+  "params_sha256": "b9ff3d894fe9ce20",
+  "passed": true,
+  "warnings": [
+    "LOD0 816 tris below the DEC-084 guide minimum 5000 (too simple?)",
+    "LOD1: 624 tris > 75% of LOD0 (guide 1/2, 1/4, <= 1/10)"
+  ]
+}

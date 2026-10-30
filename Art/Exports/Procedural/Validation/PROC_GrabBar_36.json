@@ -1,0 +1,19 @@
+{
+  "asset_id": "PROC_GrabBar_36",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "57a05b5d4aedfbec",
+  "generator": "restroom",
+  "lod_tris": {
+    "LOD0": 384,
+    "LOD1": 288,
+    "LOD2": 192,
+    "LOD3": 12
+  },
+  "params_sha256": "30eb24be4ca5149d",
+  "passed": true,
+  "warnings": [
+    "LOD0 384 tris below the DEC-084 guide minimum 5000 (too simple?)",
+    "LOD2: 192 tris > 40% of LOD0 (guide 1/2, 1/4, <= 1/10)"
+  ]
+}

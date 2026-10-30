@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Cabinet_Tall_Black",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "6c4e53252701927a",
+  "generator": "office_fixtures",
+  "lod_tris": {
+    "LOD0": 104,
+    "LOD1": 72,
+    "LOD2": 24,
+    "LOD3": 12
+  },
+  "params_sha256": "5a4a38147c2d9dad",
+  "passed": true,
+  "warnings": [
+    "LOD0 104 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}

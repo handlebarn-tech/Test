@@ -1,0 +1,368 @@
+{
+  "generator": "office_fixtures",
+  "asset_prefix": "PROC_",
+  "seed": 25001,
+  "own_sheet": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Office",
+  "gaps": [
+    "GAP-PROC-18"
+  ],
+  "_sources": "Every size = its ROOM_FIXTURES row; finishes from the RF notes (black laminate, white top, stainless, black mesh, black wire). DEC-051 Q9/Q13, DEC-079 (deli prep cart). GAP-PROC-18: legs, pulls, file-cabinet count, chair parts, cart shelf heights, worktable leg mechanism.",
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 16
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 12
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8
+    }
+  },
+  "wear": {
+    "edge_wear": 0.2,
+    "scuffs": 0.3,
+    "fingerprints": 0.15
+  },
+  "colors": {
+    "Black_Laminate": [
+      0.03,
+      0.03,
+      0.032,
+      1.0
+    ],
+    "Black_Edge": [
+      0.02,
+      0.02,
+      0.02,
+      1.0
+    ],
+    "Black_Metal": [
+      0.04,
+      0.04,
+      0.045,
+      1.0
+    ],
+    "White_Laminate": [
+      0.9,
+      0.9,
+      0.88,
+      1.0
+    ],
+    "Grey_Edge": [
+      0.6,
+      0.6,
+      0.6,
+      1.0
+    ],
+    "Stainless": [
+      0.66,
+      0.67,
+      0.68,
+      1.0
+    ],
+    "Frame_Grey": [
+      0.45,
+      0.46,
+      0.48,
+      1.0
+    ],
+    "Chrome": [
+      0.76,
+      0.77,
+      0.79,
+      1.0
+    ],
+    "Plastic_Black": [
+      0.02,
+      0.02,
+      0.02,
+      1.0
+    ],
+    "Black_Plastic": [
+      0.03,
+      0.03,
+      0.035,
+      1.0
+    ],
+    "Mesh_Black": [
+      0.05,
+      0.05,
+      0.055,
+      0.85
+    ],
+    "Fabric_Black": [
+      0.04,
+      0.04,
+      0.045,
+      1.0
+    ],
+    "Rubber_Black": [
+      0.02,
+      0.02,
+      0.02,
+      1.0
+    ],
+    "Black_Wire": [
+      0.03,
+      0.03,
+      0.035,
+      1.0
+    ],
+    "Label_White": [
+      0.95,
+      0.95,
+      0.93,
+      1.0
+    ]
+  },
+  "variants": [
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Cabinet_Tall_Black",
+      "rf": "Cabinet_Tall_Black_A/B",
+      "kind": "tall_cabinet",
+      "width_m": 0.73152,
+      "depth_m": 0.6096,
+      "height_m": 1.524,
+      "doors": false
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "FileCabinets_UnderDesk",
+      "rf": "FileCabinets_UnderDesk",
+      "kind": "file_cabinets",
+      "width_m": 1.03632,
+      "depth_m": 0.54864,
+      "height_m": 0.73152,
+      "files": {
+        "count": 3,
+        "pull_standoff_m": 0.025,
+        "pull_r_m": 0.005
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Desk_Standing_East",
+      "rf": "Desk_Standing_East",
+      "kind": "standing_desk",
+      "width_m": 1.09728,
+      "depth_m": 0.6096,
+      "height_m": 1.0668,
+      "desk": {
+        "top_t_m": 0.025,
+        "leg_w_m": 0.03,
+        "top": "Black_Laminate",
+        "edge": "Black_Edge",
+        "frame": "Black_Metal"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Desk_West_Arm",
+      "rf": "Desk_West_Arm",
+      "kind": "desk",
+      "width_m": 1.46304,
+      "depth_m": 0.762,
+      "height_m": 0.762,
+      "desk": {
+        "top_t_m": 0.025,
+        "leg_w_m": 0.03,
+        "top": "Black_Laminate",
+        "edge": "Black_Edge",
+        "frame": "Black_Metal"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Desk_Corner_Dual_Monitor",
+      "rf": "Desk_Corner_Dual_Monitor",
+      "kind": "desk",
+      "width_m": 1.31064,
+      "depth_m": 0.762,
+      "height_m": 0.762,
+      "desk": {
+        "top_t_m": 0.025,
+        "leg_w_m": 0.03,
+        "top": "Black_Laminate",
+        "edge": "Black_Edge",
+        "frame": "Black_Metal"
+      },
+      "_note": "straight piece; the L forms when placed against Desk_West_Arm (RF)"
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Desk_ExRegister1",
+      "rf": "Desk_ExRegister1",
+      "kind": "desk",
+      "width_m": 1.2192,
+      "depth_m": 0.6096,
+      "height_m": 0.762,
+      "desk": {
+        "top_t_m": 0.025,
+        "leg_w_m": 0.03,
+        "top": "White_Laminate",
+        "edge": "Grey_Edge",
+        "frame": "Black_Metal"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Worktable_Stainless",
+      "rf": "Worktable_Stainless",
+      "kind": "worktable",
+      "width_m": 1.61544,
+      "depth_m": 0.762,
+      "height_m": 0.762,
+      "desk": {
+        "top_t_m": 0.04
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Chair_Task",
+      "rf": "Chair_Task_1/2",
+      "kind": "task_chair",
+      "width_m": 0.6096,
+      "depth_m": 0.6096,
+      "height_m": 0.97536,
+      "chair": {
+        "star_r_m": 0.25,
+        "seat_z_m": 0.48,
+        "seat_d_m": 0.48,
+        "seat_w_m": 0.5
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Cart_Deli_Prep",
+      "rf": "Cart_Deli_Prep",
+      "kind": "cart",
+      "width_m": 0.762,
+      "depth_m": 0.48768,
+      "height_m": 0.88392,
+      "cart": {
+        "finish": "Stainless",
+        "shelf": "tray",
+        "shelf_z_m": [
+          0.25,
+          0.84
+        ],
+        "caster_h_m": 0.1,
+        "handle": true
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Cart_WireBasket",
+      "rf": "Cart_WireBasket",
+      "kind": "cart",
+      "width_m": 0.4572,
+      "depth_m": 0.4572,
+      "height_m": 0.762,
+      "cart": {
+        "finish": "Black_Wire",
+        "shelf": "basket",
+        "shelf_z_m": [
+          0.2,
+          0.42,
+          0.637
+        ],
+        "caster_h_m": 0.1,
+        "wire_pitch_m": 0.03
+      }
+    }
+  ]
+}

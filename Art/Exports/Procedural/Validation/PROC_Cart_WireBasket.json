@@ -1,0 +1,19 @@
+{
+  "asset_id": "PROC_Cart_WireBasket",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "2e7f08309ad7f08d",
+  "generator": "office_fixtures",
+  "lod_tris": {
+    "LOD0": 3248,
+    "LOD1": 1968,
+    "LOD2": 1840,
+    "LOD3": 84
+  },
+  "params_sha256": "5a4a38147c2d9dad",
+  "passed": true,
+  "warnings": [
+    "LOD0 3248 tris below the DEC-084 guide minimum 20000 (too simple?)",
+    "LOD2: 1840 tris > 40% of LOD0 (guide 1/2, 1/4, <= 1/10)"
+  ]
+}

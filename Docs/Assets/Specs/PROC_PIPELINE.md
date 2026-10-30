@@ -113,3 +113,30 @@ Why: hundreds of SKUs on racks and in coolers, with GPU instancing. The silhouet
 - **DEC-046:** the first `buds.mound` cells (a front heap, one bud stacked on the front row) fill before the layers, so F010 rises ≥ `min_visible_above_band_m` above the band on every LOD. The generator and `JarFillImportTests` both enforce this; only F000 looks empty.
 - **GAP-PROC-12:** smalls jar lid/body split, corner radius, lid colour and label placement are not published (overall size is).
 - **Packing (W4E n1):** each layer gets a seeded offset (`layer_shift` × pitch), plus x/y/z jitter and a bud-size spread (`radius_jitter`), so full jars no longer stack as 3 columns. 6 layers fill the shorter cavity.
+
+## Fixture families (PROC-005, IMP-003 toolkit)
+Each family has one generator, one params file with one asset per ROOM_FIXTURES row (`variants`), and its own contact sheet (`own_sheet`): `Tools/Blender/blender.ps1 contact_sheet <generator>` writes `Docs/Assets/Specs/PROC_<generator>_contact_sheet.png`.
+
+**Validation:**
+- Every params file turns on the opt-in checks (origin bottom-centre, degenerate faces, material slots).
+- The DEC-084 guide applies: `tri_budget` is the fail line and `tri_guide.lod0_min` the warning.
+- Collision is manifest `collision_boxes` (DEC-086), never `COL_` meshes.
+
+**Size and metadata conventions:**
+- Sizes are exact to the RF row. Where a part adds to the RF height, the params say so in `_note`: counter backsplash, sink faucet, mop-sink splash guards, grommet lips.
+- Wall-hung items carry `mount_z_m`, the origin height AFF.
+- Doors and drawers carry `moving_parts` (C10).
+
+| Generator | Assets | GAP | LOD0 tris |
+|---|---|---|---|
+| `wire_shelving` | 8 racks (incl. JC supply rack, black desk unit) | GAP-PROC-13, GAP-127 | 27.9–71.2k |
+| `register_station` | scale stand, monitor, 2 scanners, keyboard, printer, card terminal | GAP-PROC-14, GAP-108 | 0.4–7.3k |
+| `register_counter_run` | LegA run, LegB return (DEC-039 anchors) | GAP-PROC-15, GAP-106/107 | 1.8–4.5k |
+| `deli_counter_jar_wall` | jar walls N/S/E, deli counter LegA/LegB | GAP-PROC-16, GAP-113 | 0.2–4.6k |
+| `glass_door_cooler` | 2-door cooler, top-freezer fridge, magnet fridge | GAP-PROC-17, GAP-111 | 0.9–7.8k |
+| `office_fixtures` | 10 office/BOH furniture rows | GAP-PROC-18 | 0.1–3.2k |
+| `break_room` | 17 break-room rows | GAP-PROC-19, GAP-126 | 0.1–2.3k |
+| `restroom` | 13 restroom items | GAP-PROC-20, GAP-109 | 0.1–0.8k |
+| `janitor_props` | mop sink, mops/brooms, mop bucket | GAP-PROC-21, GAP-109 | 0.3–1.0k |
+
+Most families are below the DEC-084 lower guide; validation warns, and the question is open with the Assets lead (PROC-005 handoff). UVs keep the current layout until PROC-007 (DEC-097).

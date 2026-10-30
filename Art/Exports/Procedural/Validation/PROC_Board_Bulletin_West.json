@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Board_Bulletin_West",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "afa9a5105728bfae",
+  "generator": "break_room",
+  "lod_tris": {
+    "LOD0": 380,
+    "LOD1": 124,
+    "LOD2": 60,
+    "LOD3": 12
+  },
+  "params_sha256": "b69907bc8ac355f5",
+  "passed": true,
+  "warnings": [
+    "LOD0 380 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

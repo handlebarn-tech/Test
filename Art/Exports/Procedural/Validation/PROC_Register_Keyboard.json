@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Register_Keyboard",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "5378be3b3a0a1802",
+  "generator": "register_station",
+  "lod_tris": {
+    "LOD0": 7288,
+    "LOD1": 1400,
+    "LOD2": 280,
+    "LOD3": 12
+  },
+  "params_sha256": "19b15e86c9cf5a1a",
+  "passed": true,
+  "warnings": []
+}

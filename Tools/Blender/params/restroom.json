@@ -1,0 +1,395 @@
+{
+  "generator": "restroom",
+  "asset_prefix": "PROC_",
+  "seed": 27001,
+  "own_sheet": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom",
+  "gaps": [
+    "GAP-109",
+    "GAP-PROC-20"
+  ],
+  "_sources": "ROOM_FIXTURES Restroom rows; TI 6.4/6.6 (rim 34 in, knee 27 in, mirror 1'-8\" x 3'-6\" at 3'-4\", grab bars 42/36/18 in at 33-36 in, accessory types); DEC-062 (silver manual towel dispenser, tool chest), DEC-068 (storage cabinet). GAP-PROC-20: basin/faucet/trap, toilet bowl and rim height, bar diameter and 1.5 in clearance (ADA convention), accessory sizes and mount heights, cabinet finish.",
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 16
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 12
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8
+    }
+  },
+  "wear": {
+    "edge_wear": 0.2,
+    "scuffs": 0.25,
+    "fingerprints": 0.3,
+    "water_spots": 0.3
+  },
+  "colors": {
+    "Vitreous_White": [
+      0.95,
+      0.95,
+      0.94,
+      1.0
+    ],
+    "Chrome": [
+      0.8,
+      0.81,
+      0.83,
+      1.0
+    ],
+    "Black_Trim": [
+      0.04,
+      0.04,
+      0.045,
+      1.0
+    ],
+    "Stainless": [
+      0.66,
+      0.67,
+      0.68,
+      1.0
+    ],
+    "Mirror": [
+      0.7,
+      0.75,
+      0.78,
+      1.0
+    ],
+    "Plastic_White": [
+      0.93,
+      0.93,
+      0.91,
+      1.0
+    ],
+    "Flat_Black": [
+      0.03,
+      0.03,
+      0.03,
+      1.0
+    ],
+    "Cabinet_Grey": [
+      0.6,
+      0.6,
+      0.6,
+      1.0
+    ],
+    "Brushed_Steel": [
+      0.62,
+      0.63,
+      0.64,
+      1.0
+    ],
+    "Glass_Dark": [
+      0.05,
+      0.06,
+      0.07,
+      1.0
+    ],
+    "Glass_Frosted": [
+      0.9,
+      0.9,
+      0.88,
+      1.0
+    ],
+    "Paper_White": [
+      0.96,
+      0.96,
+      0.94,
+      1.0
+    ]
+  },
+  "variants": [
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Lavatory_WallHung",
+      "rf": "Lavatory_WallHung",
+      "kind": "lavatory",
+      "width_m": 0.51816,
+      "depth_m": 0.4572,
+      "height_m": 0.5778,
+      "lav": {
+        "body_h_m": 0.1778,
+        "trap_drop_m": 0.25,
+        "faucet_h_m": 0.15,
+        "rim_z_m": 0.8636
+      },
+      "_note": "bound = P-trap bottom to faucet top; rim at 34 in AFF (mount_z_m = origin AFF)"
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Mirror",
+      "rf": "Mirror",
+      "kind": "mirror",
+      "width_m": 0.508,
+      "depth_m": 0.01524,
+      "height_m": 1.0668,
+      "mount_z_m": 1.016
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Toilet",
+      "rf": "Toilet",
+      "kind": "toilet",
+      "width_m": 0.48768,
+      "depth_m": 0.73152,
+      "height_m": 0.762,
+      "toilet": {
+        "rim_z_m": 0.4318,
+        "bowl_w_m": 0.36,
+        "bowl_l_m": 0.5,
+        "tank_d_m": 0.23
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "ToolChest_Black",
+      "rf": "ToolChest_Black",
+      "kind": "door_cabinet",
+      "width_m": 0.67056,
+      "depth_m": 0.4572,
+      "height_m": 0.8382,
+      "cab": {
+        "finish": "Flat_Black",
+        "pull_standoff_m": 0.025,
+        "shelves": 2
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Cabinet_Storage_Large",
+      "rf": "Cabinet_Storage_Large",
+      "kind": "door_cabinet",
+      "width_m": 0.97536,
+      "depth_m": 0.4572,
+      "height_m": 2.1336,
+      "cab": {
+        "finish": "Cabinet_Grey",
+        "pull_standoff_m": 0.025,
+        "shelves": 4
+      },
+      "_note": "RF rev6 3.2 ft wide (checklist T6 said 4.0); finish GAP-PROC-20"
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "GrabBar_42",
+      "rf": "GrabBar_North",
+      "kind": "grab_bar",
+      "width_m": 1.0668,
+      "depth_m": 0.0762,
+      "height_m": 0.0762,
+      "mount_z_m": 0.8382,
+      "bar_r_m": 0.0159
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "GrabBar_36",
+      "rf": "GrabBar_West",
+      "kind": "grab_bar",
+      "width_m": 0.9144,
+      "depth_m": 0.0762,
+      "height_m": 0.0762,
+      "mount_z_m": 0.8382,
+      "bar_r_m": 0.0159
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "GrabBar_18V",
+      "rf": "GrabBar_West (vertical)",
+      "kind": "grab_bar",
+      "width_m": 0.0762,
+      "depth_m": 0.0762,
+      "height_m": 0.4572,
+      "vertical": true,
+      "mount_z_m": 0.8382,
+      "bar_r_m": 0.0159
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Dispenser_PaperTowel",
+      "rf": "Accessories",
+      "kind": "dispenser",
+      "width_m": 0.33528,
+      "depth_m": 0.12192,
+      "height_m": 0.4572,
+      "mount_z_m": 0.762,
+      "disp": {
+        "type": "towel",
+        "body": "Stainless"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Dispenser_TP",
+      "rf": "Accessories",
+      "kind": "dispenser",
+      "width_m": 0.3,
+      "depth_m": 0.14,
+      "height_m": 0.15,
+      "mount_z_m": 0.5,
+      "disp": {
+        "type": "tp",
+        "body": "Stainless"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Dispenser_Soap",
+      "rf": "Accessories",
+      "kind": "dispenser",
+      "width_m": 0.11,
+      "depth_m": 0.11,
+      "height_m": 0.2,
+      "mount_z_m": 1.0,
+      "disp": {
+        "type": "soap",
+        "body": "Plastic_White"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "NapkinDisposal",
+      "rf": "Accessories",
+      "kind": "dispenser",
+      "width_m": 0.25,
+      "depth_m": 0.1,
+      "height_m": 0.28,
+      "mount_z_m": 0.7,
+      "disp": {
+        "type": "napkin",
+        "body": "Stainless"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Sconce_L6",
+      "rf": "Accessories (TI L6)",
+      "kind": "dispenser",
+      "width_m": 0.15,
+      "depth_m": 0.12,
+      "height_m": 0.3,
+      "mount_z_m": 1.8,
+      "disp": {
+        "type": "sconce",
+        "body": "Brushed_Steel"
+      }
+    }
+  ]
+}

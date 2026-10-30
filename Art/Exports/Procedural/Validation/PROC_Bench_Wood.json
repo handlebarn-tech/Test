@@ -1,0 +1,19 @@
+{
+  "asset_id": "PROC_Bench_Wood",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "060203a9c6308b4b",
+  "generator": "break_room",
+  "lod_tris": {
+    "LOD0": 432,
+    "LOD1": 336,
+    "LOD2": 168,
+    "LOD3": 36
+  },
+  "params_sha256": "b69907bc8ac355f5",
+  "passed": true,
+  "warnings": [
+    "LOD0 432 tris below the DEC-084 guide minimum 20000 (too simple?)",
+    "LOD1: 336 tris > 75% of LOD0 (guide 1/2, 1/4, <= 1/10)"
+  ]
+}

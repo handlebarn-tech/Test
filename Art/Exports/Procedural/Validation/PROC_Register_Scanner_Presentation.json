@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Register_Scanner_Presentation",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "470e47cf1522d3ad",
+  "generator": "register_station",
+  "lod_tris": {
+    "LOD0": 520,
+    "LOD1": 360,
+    "LOD2": 148,
+    "LOD3": 24
+  },
+  "params_sha256": "19b15e86c9cf5a1a",
+  "passed": true,
+  "warnings": [
+    "LOD0 520 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Register_ReceiptPrinter",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "031b6ee15d67fb3a",
+  "generator": "register_station",
+  "lod_tris": {
+    "LOD0": 356,
+    "LOD1": 228,
+    "LOD2": 96,
+    "LOD3": 24
+  },
+  "params_sha256": "19b15e86c9cf5a1a",
+  "passed": true,
+  "warnings": [
+    "LOD0 356 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

@@ -56,18 +56,19 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [x] **C12 contact sheets:** every new family uses its own sheet (`own_sheet: true`, `contact_sheet <generator>`), or the default sheet breaks its 1 MB cap. [S2]
 
 ## 2. Every params file (all families)
-- [ ] **P1** `unity_dir` must start with `UnityProject/` (`UnityProject/Assets/_Game/Art/Procedural/...`). [A1, S1]
-- [ ] **P2** `own_sheet: true`. [A2, S2]
-- [ ] **P3** delete `validation_warnings` (free text); keep the GAP ids in `gaps`. [A3, S8]
-- [ ] **P4** `tri_budget` per DEC-084 (replaces the DEC-069 caps and audit S3). Budgets are LOD0 **guides**, not caps:
+**PROC-005:** P1–P6 are met by every params file written so far (§3–§11). They apply again to each family still to come. P5: GAP-PROC-13..21 are in KNOWN_GAPS and in the PP "Fixture families" table. P6: `require_collision` is dropped with C1a.
+- [x] **P1** `unity_dir` must start with `UnityProject/` (`UnityProject/Assets/_Game/Art/Procedural/...`). [A1, S1]
+- [x] **P2** `own_sheet: true`. [A2, S2]
+- [x] **P3** delete `validation_warnings` (free text); keep the GAP ids in `gaps`. [A3, S8]
+- [x] **P4** `tri_budget` per DEC-084 (replaces the DEC-069 caps and audit S3). Budgets are LOD0 **guides**, not caps:
   - props 5–20k, fixtures/furniture 20–80k, hero items 30–150k;
   - each LOD1–LOD3 ≈ ½, ¼, ≤ 1/10 of LOD0.
   Validation fails only above the guide's upper bound and **warns** below the lower bound (too simple). See §Q.
-- [ ] **P5** GAP ids:
+- [x] **P5** GAP ids:
   - register `GAP-PROC-13` (wire racks) and `GAP-PROC-14..22` (one per family) **only** for values with no RF/RI/TI source;
   - fold round 2's `GAP-R2-*` into `GAP-PROC-*`;
   - add each to the PP GAP table + KNOWN_GAPS pointer. [S9]
-- [ ] **P6** per-variant `require_collision` (or drop it with C1a). [B4]
+- [x] **P6** per-variant `require_collision` (or drop it with C1a). [B4]
 
 ## 3. Wire shelving: `generators/wire_shelving.py`, `params/wire_shelving.json` (+ janitor supply rack)
 **PROC-005 done:** new generator (drop 1 rewritten); 8 RF variants pass validation, byte-identical reruns. W1: no bracket in the new foot design. W5/W7: per-section `casters`; mixed runs are abutting units. W8: East Wall and West Run are modelled as 2 fixed sections, and the run lengths/section counts are left for the next REF pass (GAP-127). P1–P6 and Q0.1/Q0.5 are met for this family; Q1 wire-rack detail is done except bins/trays (moved to §16 X5). Unity import is not checked yet.
@@ -97,59 +98,75 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [x] **W8 REF follow-up for the PROC worker (do not guess; Hub-confirmed open item):** RF `Rack_East_Wall` is 8.7 ft and `Rack_West_Run` 8.0 ft (2-bay). In 4-ft sections that is 2 sections, which leaves no "middle" section to roll, and 8.7 is not a multiple of 4. Model 2 fixed sections for now and list the run lengths/section counts for the next REF pass (GAP-127).
 
 ## 4. Register station: `generators/register_station.py`, `params/register_station.json`
-- [ ] **R1 remove `CashDrawer`** (variant + `_cash_drawer`): no cash-handling equipment (DEC-051, RI REF-009 rule). [C1]
-- [ ] **R2 scale stand per RI §2.2:**
+**PROC-005 done:** rewritten generator with 7 variants (ScaleStand, POSMonitor + VESA stand, Scanner_Presentation, Scanner_Barcode handheld in its stand, Keyboard, ReceiptPrinter, CardTerminal); no cash drawer. All pass validation with byte-identical reruns. LOD0 is below the DEC-084 lower guide on every variant except the keyboard: ScaleStand 3.8k (guide 20k), monitor 2.0k, terminal 1.1k, scanners 0.5k, printer 0.4k. Validation warns on these; see the PROC-005 handoff question. Q1 register detail is done for the scale stand, monitor and scanner.
+- [x] **R1 remove `CashDrawer`** (variant + `_cash_drawer`): no cash-handling equipment (DEC-051, RI REF-009 rule). [C1]
+- [x] **R2 scale stand per RI §2.2:**
   - footprint 1.6 × 1.3 ft; top 2.5 ft;
   - **one** wire shelf at 0.5–0.8 ft (not two);
   - black top tray with a raised lip;
   - acrylic panel full width on the **counter-side edge**, 0.8–1.2 ft tall (not a 0.54 m back + side panel);
   - **white** scale body, blue LCD, clear round draft-shield bowl; one scale.
-- [ ] **R3** scanner variant: a presentation block is fine for the registers. The BOH `Scanner_Barcode` is a **handheld in a stand** (RF 0.4 × 0.7 × 0.6 ft); add it as a variant.
-- [ ] **R4** add keyboard (17.5 in convention, RI §2.2) and receipt-printer props. **Card terminal included** as a realistic unbranded prop (DEC-086, DEC-084).
-- [ ] **R5** monitor/stand sizes: GAP-PROC-14.
+- [x] **R3** scanner variant: a presentation block is fine for the registers. The BOH `Scanner_Barcode` is a **handheld in a stand** (RF 0.4 × 0.7 × 0.6 ft); add it as a variant.
+- [x] **R4** add keyboard (17.5 in convention, RI §2.2) and receipt-printer props. **Card terminal included** as a realistic unbranded prop (DEC-086, DEC-084).
+- [x] **R5** monitor/stand sizes: GAP-PROC-14.
 
 ## 5. Register counter run (round 2): `generators/register_counter_run.py`, `params/register_counter_run.json`
-- [ ] **RC1 L layout:** sides from DEC-039 (south 7,2,3,4,5,6; east 12,11; north 10,9,8 = 11 stations), plan bbox 20.0–42.0 × 7.0–19.0 ft (RI §1.5). Generate L segments + a corner. `station_anchors` carry the DEC-039 register numbers.
-- [ ] **RC2 counter per TI §6.4:** top ≤ **34 in (0.864)**, top depth **2'-6" (0.762)**, 2 in edge, **4 in base**; white quartz QZ-2 top, walnut veneer WD-1 front, ML-1 black accents; **open black shelves underneath** (R2C3). Currently 0.96 / 0.74, brown, closed.
-- [ ] **RC3** station components:
+**PROC-005 done:** rewritten as two L legs: `LegA_Run` 22.0 ft and `LegB_Return` 9.5 ft, butting the run, with `plan_rect_ft` from RI §1.5. Built to TI §6.4: QZ-2 top, waterfall ends, walnut front with ML-1 reveals, staff-side two-drawer cabinets with HW-2 pulls and open black shelves, a grommet per station. `station_anchors` carry the DEC-039 numbers and component slots (monitor, keyboard, printer, scanner, card terminal, floor scale-stand slot with yaw). **Draft mapping:** LegA 7,2,3,4,5,6,12,11 and LegB 10,9,8. This is ART's call (DEC-039, GAP-106), and it is flagged in the handoff. RC4: `display_case_slot` on LegA. LOD0 is 4.5k / 1.8k tris against the hero guide of 30k (warning).
+- [x] **RC1 L layout:** sides from DEC-039 (south 7,2,3,4,5,6; east 12,11; north 10,9,8 = 11 stations), plan bbox 20.0–42.0 × 7.0–19.0 ft (RI §1.5). Generate L segments + a corner. `station_anchors` carry the DEC-039 register numbers.
+- [x] **RC2 counter per TI §6.4:** top ≤ **34 in (0.864)**, top depth **2'-6" (0.762)**, 2 in edge, **4 in base**; white quartz QZ-2 top, walnut veneer WD-1 front, ML-1 black accents; **open black shelves underneath** (R2C3). Currently 0.96 / 0.74, brown, closed.
+- [x] **RC3** station components:
   - remove `cash_drawer`;
   - `scale_stand_slot` on the **floor, staff side, to the staff's right of the monitor** (RI §2.2), not at `y = h`;
   - add keyboard, receipt-printer and **card-terminal** slots (DEC-086).
-- [ ] **RC4** countertop display case slot on the run (plan 1.4 × 1.4 ft at x 38–39.4, RI §1.5; "lit black glass", R3C2), using §15.
-- [ ] **RC5** per-station width: GAP.
+- [x] **RC4** countertop display case slot on the run (plan 1.4 × 1.4 ft at x 38–39.4, RI §1.5; "lit black glass", R3C2), using §15.
+- [x] **RC5** per-station width: GAP.
 
 ## 6. Deli jar wall + deli counter (round 2): `generators/deli_counter_jar_wall.py`, `params/deli_counter_jar_wall.json`
-- [ ] **D1 jar wall runs** per RI §1.5: north 26.0 × 1.2 ft, south (between arches) 21.2 × 1.2 ft, east 1.4 × 14.0 ft. Run width and sections are params; shelves are **dark-grey metal** (DEC-043) on a teal leaf-pattern backlit back (R2C3, photo 11).
-- [ ] **D2 shelf heights:** default to the store display family, a 34 in base then 1'-2" shelf pitch (TI §6.4, Med), instead of an even spread. Wall height: GAP.
-- [ ] **D3 slot count from data, not a fixed 7 × 4:** one jar per strain, house deli ×2 (DEC-079); ~77 jars (PP). Expose the slot grid as params; the game assigns strains.
-- [ ] **D4** keep slot size = `PROC_DeliJar` (6.0 × 10.25 × 5.5 in, REF-007) and bottom-centre anchors (already correct).
-- [ ] **D5 deli counter is an L** (bbox 14.0–34.2 × 18.0–25.2 ft, RI §1.5), "DELI STYLE" front = **plywood with a decorative wrap** (DEC-090, Med); the teal/white checker in R2C1/R2C2 is the **wrap print** (a texture on the plywood front, not real tile), with globe pendants at the west end. Replace the clear acrylic front. **No glass case on top is stated**: keep it as an optional placeholder param (GAP-PROC-14). Height/depth: GAP (not in TI, GAP-113).
+**PROC-005 done:** rewritten. Jar walls North 26.0 × 1.2 ft, South 21.2 × 1.2 ft and East 14.0 × 1.4 ft: black-top base cabinet with walnut two-row drawers and silver cup pulls; lipped dark-grey sheet shelves on black standards and brackets at 34 in + 1'-2" pitch; teal backlit panel with LED strips; checker band. Jar slots on 3 tiers of PROC_DeliJar size: 123 / 99 / 63 slots, filled by the game. Deli counter in two L legs: plywood sheets with seams and ply edges carrying the `Wrap_DeliChecker` material, black top, open staff shelves; `case_on_top` placeholder, default off. Its GAP id is GAP-PROC-16, not 14, because 14 is the register station's. Not modelled: tong cups (DEC-043); arches and globe pendants (architecture/lighting kit); the leaf and checker patterns, which are textures (Q0.3). Wall height 7 ft and counter depth 2.5 ft / height 34 in are GAP-PROC-16/GAP-113. LOD0 is below the guide (warnings): walls 2.6–4.6k, counter 0.2–0.3k.
+- [x] **D1 jar wall runs** per RI §1.5: north 26.0 × 1.2 ft, south (between arches) 21.2 × 1.2 ft, east 1.4 × 14.0 ft. Run width and sections are params; shelves are **dark-grey metal** (DEC-043) on a teal leaf-pattern backlit back (R2C3, photo 11).
+- [x] **D2 shelf heights:** default to the store display family, a 34 in base then 1'-2" shelf pitch (TI §6.4, Med), instead of an even spread. Wall height: GAP.
+- [x] **D3 slot count from data, not a fixed 7 × 4:** one jar per strain, house deli ×2 (DEC-079); ~77 jars (PP). Expose the slot grid as params; the game assigns strains.
+- [x] **D4** keep slot size = `PROC_DeliJar` (6.0 × 10.25 × 5.5 in, REF-007) and bottom-centre anchors (already correct).
+- [x] **D5 deli counter is an L** (bbox 14.0–34.2 × 18.0–25.2 ft, RI §1.5), "DELI STYLE" front = **plywood with a decorative wrap** (DEC-090, Med); the teal/white checker in R2C1/R2C2 is the **wrap print** (a texture on the plywood front, not real tile), with globe pendants at the west end. Replace the clear acrylic front. **No glass case on top is stated**: keep it as an optional placeholder param (GAP-PROC-14). Height/depth: GAP (not in TI, GAP-113).
 
 ## 7. Glass-door cooler + fridges: `generators/glass_door_cooler.py`, `params/glass_door_cooler.json`
-- [ ] **K1** 2-door = RF `Cooler_GlassDoor_2Door` **4.0 × 2.5 × 6.5 ft**, black frame, lit. Drop or keep SingleDoor as a demo only.
-- [ ] **K2** handles float 46 mm off the door: use `add_handle_pull` (C8) from the door face. [cooler]
-- [ ] **K3** moving parts: group `DoorFrame_nn` + `Glass_nn` + `Handle_nn` per door (or merge them into one door object); `hinge_side` per door via C10. [S6]
-- [ ] **K4** add a top-freezer fridge variant: RF `Fridge_TopFreezer` 2.2 × 2.3 × 5.5 ft, white (FOH); `Fridge_Magnets` 2.8 × 2.4 × 5.8 ft (break room, magnet-covered side).
-- [ ] **K5** shelf anchors exist; contents per DEC-050 (cooler: concentrates + perishable edibles; fridge: drinks).
+**PROC-005 done:** new generator with 3 RF variants; the SingleDoor demo is dropped.
+- **Cooler:** black frame, lit interior with LED strips, wire shelves with clips and tag rails, louvred grille, blank plate, door closers. Each door is `DoorFrame_nn` + `Glass_nn` + `Handle_nn` + `Gasket_nn`, with a `moving_parts` hinge and a `group` list. Handles stand off the face (8 sides, C11).
+- **Fridges:** freezer/fresh doors with seals, pulls and hinge caps. `Fridge_Magnets` has a seeded magnet layer on the right side (GAP-PROC-17).
+- **Contents:** per DEC-050, recorded as text only.
+- **Tris:** LOD0 7.8k cooler / 0.9k / 1.6k fridges, below the guide (warning).
+- [x] **K1** 2-door = RF `Cooler_GlassDoor_2Door` **4.0 × 2.5 × 6.5 ft**, black frame, lit. Drop or keep SingleDoor as a demo only.
+- [x] **K2** handles float 46 mm off the door: use `add_handle_pull` (C8) from the door face. [cooler]
+- [x] **K3** moving parts: group `DoorFrame_nn` + `Glass_nn` + `Handle_nn` per door (or merge them into one door object); `hinge_side` per door via C10. [S6]
+- [x] **K4** add a top-freezer fridge variant: RF `Fridge_TopFreezer` 2.2 × 2.3 × 5.5 ft, white (FOH); `Fridge_Magnets` 2.8 × 2.4 × 5.8 ft (break room, magnet-covered side).
+- [x] **K5** shelf anchors exist; contents per DEC-050 (cooler: concentrates + perishable edibles; fridge: drinks).
 
 ## 8. Office: `generators/office_fixtures.py`, `params/office_fixtures.json`
-- [ ] **O1 handles z-fight** (inside door/drawer fronts, coplanar) on TallStorageCabinet and FilingCabinet: use `add_handle_pull` / proud handles. [S5]
-- [ ] **O2** TallStorageCabinet = RF `Cabinet_Tall_Black_A/B` **2.4 × 2.0 × 5.0 ft, black, plain closed box, no hardware** (DEC-051 Q9): add `doors: false`.
-- [ ] **O3** FilingCabinet = RF `FileCabinets_UnderDesk`: several **black** cabinets under the standing desk, run 3.4 × 1.8 × **2.4 ft**, so each is ≤ 0.73 m tall with ~2 drawers.
-- [ ] **O4** StandingDesk = RF `Desk_Standing_East` 3.6 × 2.0 × 3.5 ft.
-- [ ] **O5** Desk:
+**PROC-005 done:** new generator with 10 RF assets. Tall black cabinet: plain box, `doors: false`. Under-desk file run: 3 black 2-drawer units with standoff pulls, label holders, a lock and slide axes. Standing desk on T-legs. West arm and corner piece: black laminate; the corner piece is straight and forms the L when placed against the west arm. Ex-register-1 desk: white top. Stainless worktable with folding braces. Mesh task chair: 5-star base, twin wheels, gas lift, arms. Stainless deli prep cart: 2 shelves, push handle, blank rail label. Black wire basket cart. DrawerCart removed. O1: pulls are proud, so no z-fight. Sizes are GAP-PROC-18. LOD0 is 0.1–3.2k (warning; the plain cabinet is 104 tris by design, DEC-051 Q9).
+- [x] **O1 handles z-fight** (inside door/drawer fronts, coplanar) on TallStorageCabinet and FilingCabinet: use `add_handle_pull` / proud handles. [S5]
+- [x] **O2** TallStorageCabinet = RF `Cabinet_Tall_Black_A/B` **2.4 × 2.0 × 5.0 ft, black, plain closed box, no hardware** (DEC-051 Q9): add `doors: false`.
+- [x] **O3** FilingCabinet = RF `FileCabinets_UnderDesk`: several **black** cabinets under the standing desk, run 3.4 × 1.8 × **2.4 ft**, so each is ≤ 0.73 m tall with ~2 drawers.
+- [x] **O4** StandingDesk = RF `Desk_Standing_East` 3.6 × 2.0 × 3.5 ft.
+- [x] **O5** Desk:
   - add an L/corner variant: `Desk_West_Arm` 4.8 × 2.5 × 2.5 + `Desk_Corner_Dual_Monitor` 4.3 × 2.5 × 2.5, **black laminate**;
   - BOH `Desk_ExRegister1` 4.0 × 2.0 × 2.5, **white top**.
-- [ ] **O6** Worktable = RF `Worktable_Stainless` 5.3 × 2.5 × 2.5 ft, stainless top, folding legs.
-- [ ] **O7** OfficeChair = RF `Chair_Task_1/2` 2.0 × 2.0 × 3.2 ft, black mesh, 5-star base.
-- [ ] **O8** remove DrawerCart (no store evidence). Add the **deli prep cart** instead: RF `Cart_Deli_Prep` 2.5 × 1.6 × 2.9 ft, stainless 2-shelf utility cart; the only certified refill spot (DEC-079). Also `Cart_WireBasket` 1.5 × 1.5 × 2.5, black wire.
+- [x] **O6** Worktable = RF `Worktable_Stainless` 5.3 × 2.5 × 2.5 ft, stainless top, folding legs.
+- [x] **O7** OfficeChair = RF `Chair_Task_1/2` 2.0 × 2.0 × 3.2 ft, black mesh, 5-star base.
+- [x] **O8** remove DrawerCart (no store evidence). Add the **deli prep cart** instead: RF `Cart_Deli_Prep` 2.5 × 1.6 × 2.9 ft, stainless 2-shelf utility cart; the only certified refill spot (DEC-079). Also `Cart_WireBasket` 1.5 × 1.5 × 2.5, black wire.
 
 ## 9. Break room: `generators/break_room.py`, `params/break_room.json`
-- [ ] **B1** lockers = RF `Lockers_Staff` **one unit 2.0 × 1.5 × 6.0 ft** (DEC-047/051 Q5, High), grey top. Door grid **2 columns × 6 rows = 12 small doors** (DEC-088, Med; narrows GAP-126): `columns: 2`, `rows: 6`, each door ≈ 0.30 × 0.30 m in the 2.0 × 6.0 ft unit. Hinge metadata must be LOD-independent (claimed fix, not delivered).
-- [ ] **B2** bench = RF `Bench_Wood` 5.0 × 1.3 × 1.5 ft, wood plank on **black steel legs**.
-- [ ] **B3** board variants: `Board_Bulletin_West` 3.0 × 2.5 ft; `Board_Cork` (hall, wood frame) 1.8 × 2.6; `Whiteboard_West` 4.0 × 3.0 (red/white frame); office `Board_West_BlackFrame` 2.5 × 2.0; `Board_North_Fabric` 5.0 × 3.0 (grey fabric).
-- [ ] **B4** LunchTable and FirstAidBox: sizes already match RF; keep them.
-- [ ] **B5 missing:**
+**PROC-005 done:** new generator with 17 RF assets.
+- **Lockers:** one 2.0 × 1.5 × 6.0 ft unit with 2 × 6 doors. Louvres are real slat gaps onto the dark interior. Latch, blank plate, hinge knuckles; hinge metadata on every LOD.
+- **Furniture and boards:** wood bench on black steel legs; 5 boards; lunch table; first-aid kit.
+- **Counters:** North run and East return in light wood with a black 34 in top and backsplash; the return has the sink cut-out. North uppers.
+- **Fittings and props:** stainless double sink with gooseneck faucet, microwave, pod coffee maker, mini hoop over a hamper, coat-hook rail.
+- **Size notes:** the backsplash and faucet add to the RF height (`_note`). The hook rail excludes the coats. Uppers_East is skipped: the RF row is Low and CCTV shows none.
+- **Tris:** LOD0 0.1–2.3k (warning).
+- [x] **B1** lockers = RF `Lockers_Staff` **one unit 2.0 × 1.5 × 6.0 ft** (DEC-047/051 Q5, High), grey top. Door grid **2 columns × 6 rows = 12 small doors** (DEC-088, Med; narrows GAP-126): `columns: 2`, `rows: 6`, each door ≈ 0.30 × 0.30 m in the 2.0 × 6.0 ft unit. Hinge metadata must be LOD-independent (claimed fix, not delivered).
+- [x] **B2** bench = RF `Bench_Wood` 5.0 × 1.3 × 1.5 ft, wood plank on **black steel legs**.
+- [x] **B3** board variants: `Board_Bulletin_West` 3.0 × 2.5 ft; `Board_Cork` (hall, wood frame) 1.8 × 2.6; `Whiteboard_West` 4.0 × 3.0 (red/white frame); office `Board_West_BlackFrame` 2.5 × 2.0; `Board_North_Fabric` 5.0 × 3.0 (grey fabric).
+- [x] **B4** LunchTable and FirstAidBox: sizes already match RF; keep them.
+- [x] **B5 missing:**
   - base cabinets + black counter (34 in, TI) `Counter_North_Run` 4.4 × 2.0 and `Counter_East_Return` 5.9 × 2.0;
   - uppers 4.4 × 1.1 × 2.5;
   - double sink 2.7 × 1.6;
@@ -157,21 +174,31 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
   - mini hoop, coat hooks (RF BreakRoom rows).
 
 ## 10. Restroom: `generators/restroom.py`, `params/restroom.json`
-- [ ] **T1 sink:**
+**PROC-005 done:** new generator with 13 assets.
+- **Lavatory:** wall-hung, with an open lofted basin: no top cap, so no z-fight. Overflow, drain, faucet, brackets, exposed P-trap and supplies.
+- **Mirror:** TI 1'-8" × 3'-6" with a stainless frame, `mount_z_m` 3'-4".
+- **Toilet:** bowl cavity, seat + lid, hinges, tank, lever.
+- **Cabinets:** flat-black tool chest with 2 swing doors and proud pulls; large storage cabinet at the RF rev6 width of 3.2 ft, not 4.0.
+- **Grab bars:** 42 / 36 / 18V in, with flanges.
+- **Accessories:** silver manual towel dispenser, TP, soap, napkin disposal, L6 sconce.
+- **Mounting:** wall items carry `mount_z_m`. Accessory sizes, mount heights and the 1.5 in bar clearance (ADA convention) are GAP-PROC-20.
+- **Tris:** LOD0 0.1–0.8k (warning).
+- [x] **T1 sink:**
   - **wall-hung**, no pedestal (27 in knee clearance, TI §6.4/6.6);
   - RF `Lavatory_WallHung` 1.7 × 1.5 ft, rim 34 in;
   - **fix the bowl**: the lofted bowl is a capped solid whose top is coplanar with `BasinTop`, so it shows no basin and z-fights. Make an open recessed loft with no top cap.
-- [ ] **T2** mirror = TI **1'-8" × 3'-6"**, bottom 3'-4" AFF (High).
-- [ ] **T3** toilet = RF 1.6 × 2.4 × 2.5 ft.
-- [ ] **T4** paper-towel dispenser: **silver/stainless**, old manual (DEC-062); RF `Accessories` 1.1 × 0.4 × 1.5.
-- [ ] **T5** tool chest = RF `ToolChest_Black` 2.2 × 1.5 × **2.75 ft**, kept below the 33 in grab bar; handles fixed as O1.
-- [ ] **T6** large storage cabinet: its own params variant of the office cabinet kind, RF `Cabinet_Storage_Large` 4.0 × 1.5 × 7.0 ft (GAP-109).
-- [ ] **T7** add grab bars: 42 in, 36 in and 18 in vertical at 33–36 in AFF (TI, High). Add TP + soap dispensers and the sconce (TI types).
+- [x] **T2** mirror = TI **1'-8" × 3'-6"**, bottom 3'-4" AFF (High).
+- [x] **T3** toilet = RF 1.6 × 2.4 × 2.5 ft.
+- [x] **T4** paper-towel dispenser: **silver/stainless**, old manual (DEC-062); RF `Accessories` 1.1 × 0.4 × 1.5.
+- [x] **T5** tool chest = RF `ToolChest_Black` 2.2 × 1.5 × **2.75 ft**, kept below the 33 in grab bar; handles fixed as O1.
+- [x] **T6** large storage cabinet: its own params variant of the office cabinet kind, RF `Cabinet_Storage_Large` 4.0 × 1.5 × 7.0 ft (GAP-109).
+- [x] **T7** add grab bars: 42 in, 36 in and 18 in vertical at 33–36 in AFF (TI, High). Add TP + soap dispensers and the sconce (TI types).
 
 ## 11. Janitor closet: `generators/janitor_props.py`, `params/janitor_props.json`, `params/janitor_supply_rack.json`
-- [ ] **J1** mop sink = RF `MopSink_JC` **1.6 × 1.5 × 1.0 ft**.
+**PROC-005 done:** rewritten. MopSink_JC is RF 1.6 × 1.5 × 1.0 ft: open moulded basin, drain grate, stainless splash guards (+0.3 m, `_note`). Mops_Brooms_JC: string mop with strands, broom with bristle tufts, wall holder rail. Mop bucket with wringer and casters, hollow. Every asset has collision boxes (J3). The supply rack is the `wire_shelving` variant (J2), so no separate params file. Rack contents (bottles, rags) belong to §16 clutter. LOD0 0.3–1.0k (warning).
+- [x] **J1** mop sink = RF `MopSink_JC` **1.6 × 1.5 × 1.0 ft**.
 - [x] **J2** supply rack = RF `Rack_CleaningSupplies_JC` 2.0 × 1.2 × 5.0 ft: done as a `wire_shelving` variant (PROC-005).
-- [ ] **J3** collision on mop/broom/bucket (claimed fix, not delivered): add per C1, or set `require_collision: false` for those variants.
+- [x] **J3** collision on mop/broom/bucket (claimed fix, not delivered): add per C1, or set `require_collision: false` for those variants.
 
 ## 12. Architecture kit: `generators/architecture_kit.py`, `params/architecture_kit.json`
 - [ ] **A1 door size:** `width_m`/`height_m` are the **leaf**, **3'-0" × 7'-0" × 1¾"** (TI §6.2); add the frame outside. The current leaf comes out 0.816 × 2.08. JC door 2'-8".

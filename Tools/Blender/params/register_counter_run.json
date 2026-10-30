@@ -1,0 +1,182 @@
+{
+  "generator": "register_counter_run",
+  "asset_prefix": "PROC_RegisterCounter_",
+  "seed": 22001,
+  "own_sheet": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Register",
+  "gaps": [
+    "GAP-106",
+    "GAP-107",
+    "GAP-PROC-15"
+  ],
+  "_sources": "TI 6.4 POS cabinet (34 in top, 2'-6\" top depth, 2 in edge, 4 in base with 2 in recess, 2'-1\" cabinet depth, QZ-2/WD-1/ML-1/HW-2, waterfall outside); RI 1.5 L bbox 20.0-42.0 x 7.0-19.0 ft; DEC-039 register numbers; RI 2.2 component set and scale-stand placement. GAP-PROC-15: per-station width, front overhang side, grommet, reveal and band sizes, component offsets. Leg-to-compass mapping is ART's (DEC-039, GAP-106).",
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 16
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 12
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8
+    }
+  },
+  "tri_budget": {
+    "LOD0": 150000,
+    "LOD1": 75000,
+    "LOD2": 37500,
+    "LOD3": 15000
+  },
+  "tri_guide": {
+    "lod0_min": 30000
+  },
+  "depth_m": 0.762,
+  "height_m": 0.8636,
+  "top_t_m": 0.0508,
+  "toe_h_m": 0.1016,
+  "toe_recess_m": 0.0508,
+  "front_overhang_m": 0.127,
+  "accent_band_h_m": 0.025,
+  "reveal_m": 0.006,
+  "grommet_d_m": 0.06,
+  "grommet_inset_m": 0.12,
+  "grommet_lip_m": 0.0015,
+  "wear": {
+    "edge_wear": 0.2,
+    "scuffs": 0.3,
+    "fingerprints": 0.2
+  },
+  "colors": {
+    "Quartz_QZ2": [
+      0.92,
+      0.92,
+      0.9,
+      1.0
+    ],
+    "Walnut_WD1": [
+      0.3,
+      0.19,
+      0.11,
+      1.0
+    ],
+    "Black_ML1": [
+      0.035,
+      0.035,
+      0.04,
+      1.0
+    ],
+    "Brass_HW2": [
+      0.72,
+      0.58,
+      0.32,
+      1.0
+    ],
+    "Plastic_Black": [
+      0.02,
+      0.02,
+      0.02,
+      1.0
+    ]
+  },
+  "components": {
+    "pos_monitor": {
+      "asset_id": "PROC_Register_POSMonitor",
+      "dx_m": 0.0,
+      "dy_m": -0.15,
+      "yaw_deg": 180
+    },
+    "keyboard": {
+      "asset_id": "PROC_Register_Keyboard",
+      "dx_m": 0.0,
+      "dy_m": 0.17,
+      "yaw_deg": 180
+    },
+    "receipt_printer": {
+      "asset_id": "PROC_Register_ReceiptPrinter",
+      "dx_m": 0.33,
+      "dy_m": 0.1,
+      "yaw_deg": 180
+    },
+    "scanner": {
+      "asset_id": "PROC_Register_Scanner_Presentation",
+      "dx_m": -0.3,
+      "dy_m": 0.05,
+      "yaw_deg": 180
+    },
+    "card_terminal": {
+      "asset_id": "PROC_Register_CardTerminal",
+      "dx_m": 0.25,
+      "dy_m": -0.28,
+      "yaw_deg": 0
+    },
+    "scale_stand_slot": {
+      "asset_id": "PROC_Register_ScaleStand",
+      "dx_m": -0.35,
+      "dy_m": 0.56388,
+      "z_m": 0.0,
+      "yaw_deg": 180,
+      "_note": "floor, staff side, pushed against the counter, to the staff's right of the monitor (RI 2.2)"
+    }
+  },
+  "variants": [
+    {
+      "id": "LegA_Run",
+      "length_m": 6.7056,
+      "waterfall": [
+        true,
+        true
+      ],
+      "registers": [
+        7,
+        2,
+        3,
+        4,
+        5,
+        6,
+        12,
+        11
+      ],
+      "plan_rect_ft": [
+        20.0,
+        42.0,
+        7.0,
+        9.5
+      ],
+      "display_case_slot_x_m": 2.34696,
+      "display_case_asset_id": "PROC_DisplayCase_Countertop",
+      "_note": "long run; DEC-039 south side (7,2,3,4,5,6) then east side (12,11) toward the outer corner: draft mapping, GAP-106"
+    },
+    {
+      "id": "LegB_Return",
+      "length_m": 2.8956,
+      "waterfall": [
+        false,
+        true
+      ],
+      "registers": [
+        10,
+        9,
+        8
+      ],
+      "plan_rect_ft": [
+        39.5,
+        42.0,
+        9.5,
+        19.0
+      ],
+      "_note": "return leg butting the run's staff side; DEC-039 north side 10 (furthest from the door), 9, 8 (closest): draft mapping, GAP-106"
+    }
+  ]
+}

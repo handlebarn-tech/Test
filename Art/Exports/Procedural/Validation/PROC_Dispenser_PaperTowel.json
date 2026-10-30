@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Dispenser_PaperTowel",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "ec491a6d14d51f15",
+  "generator": "restroom",
+  "lod_tris": {
+    "LOD0": 160,
+    "LOD1": 96,
+    "LOD2": 48,
+    "LOD3": 12
+  },
+  "params_sha256": "30eb24be4ca5149d",
+  "passed": true,
+  "warnings": [
+    "LOD0 160 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}
