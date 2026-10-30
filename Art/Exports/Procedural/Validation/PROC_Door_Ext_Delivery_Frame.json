@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Door_Ext_Delivery_Frame",
+  "collision_boxes": 3,
+  "errors": [],
+  "export_sha256": "1414e0e7f5e8e9fe",
+  "generator": "doors",
+  "lod_tris": {
+    "LOD0": 212,
+    "LOD1": 84,
+    "LOD2": 60,
+    "LOD3": 28
+  },
+  "params_sha256": "4f161a8f40e7763e",
+  "passed": true,
+  "warnings": []
+}

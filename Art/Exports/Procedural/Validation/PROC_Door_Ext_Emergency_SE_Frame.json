@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Door_Ext_Emergency_SE_Frame",
+  "collision_boxes": 3,
+  "errors": [],
+  "export_sha256": "b453094839e5593c",
+  "generator": "doors",
+  "lod_tris": {
+    "LOD0": 212,
+    "LOD1": 84,
+    "LOD2": 60,
+    "LOD3": 28
+  },
+  "params_sha256": "4f161a8f40e7763e",
+  "passed": true,
+  "warnings": []
+}

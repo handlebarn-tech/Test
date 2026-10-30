@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Door_Arch_E_Frame",
+  "collision_boxes": 3,
+  "errors": [],
+  "export_sha256": "0812301f844250b4",
+  "generator": "doors",
+  "lod_tris": {
+    "LOD0": 484,
+    "LOD1": 196,
+    "LOD2": 100,
+    "LOD3": 36
+  },
+  "params_sha256": "4f161a8f40e7763e",
+  "passed": true,
+  "warnings": []
+}

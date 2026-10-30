@@ -6,7 +6,7 @@ Merged main (REF-013, 75b05e6) and re-fitted every value to the current ROOM_FIX
   - North 20.49 × 2.2 ft (centre x 30.25);
   - EastReturn 2.5 × 10.8 ft, with both ends butting;
   - South 25.75 × 2.5 ft (centre 28.16), with stations at the REF-013 POS_07..06 x 36.4/33.2/30.0/26.8/23.6/20.4;
-  - **SouthWestReturn** 2.5 × 4.5 ft replaces the dropped SouthReturn. Its exports and manifest entry are removed, and its face is GAP-PROC-24 grey;
+  - **SouthWestReturn** 2.5 × 4.5 ft replaces the dropped SouthReturn. Its exports and manifest entry are removed, and its face is GAP-PROC-42 grey;
   - GAP-129 is closed and no longer cited;
   - the display-case slot is re-based on x 30.25.
 - **`deli_counter_jar_wall`:** South is now 19.23 × 2.0 ft and East is 2.0 ft deep (REF-013).
@@ -30,7 +30,7 @@ Per-family worker notes are in `Docs/Handoffs/PROC-005-fixwave/`. Each one holds
 | 4 jar-wall depth/fittings | Depth is RF 2.1 ft (0.64 m); `rf` = RF ids; the TI showcase pitch is gone (GAP-113). South wall: open bins (GAP-PROC-25). Walnut drawers on North only. East: arched bays + backlit teal (GAP-PROC-26). |
 | 5 mop bucket | DEC-079 citation removed. The bucket is a labelled GAP-PROC-30 placeholder, and every janitor colour and material is GAP neutral grey. |
 | 6 GAP-106 mis-cite | Removed from params and from GAP-PROC-15. The stray GAP-107 citation is gone too. |
-| 7/8 minor cites | Every size, count, colour and finish now has an `_src` or GAP, covered by new rows GAP-PROC-22..39 in KNOWN_GAPS. The backsplash height is GAP-PROC-19. Grab-bar depth stays 3 in, with a `_note`. Wire-shelving counts are cited or GAP-PROC-29; their FBX are byte-identical. |
+| 7/8 minor cites | Every size, count, colour and finish now has an `_src` or GAP, covered by new rows GAP-PROC-25..42 (22..24 renumbered to 40..42 after PROC-009 took 23/24) in KNOWN_GAPS. The backsplash height is GAP-PROC-19. Grab-bar depth stays 3 in, with a `_note`. Wire-shelving counts are cited or GAP-PROC-29; their FBX are byte-identical. |
 
 **Validation:**
 - All manifest assets pass (92 at the time, 108 after merging main in round 3) (`blender.ps1 <gen>` for all 9 families), and `tests/test_validation.py` passes.
@@ -65,9 +65,9 @@ Per-family worker notes are in `Docs/Handoffs/PROC-005-fixwave/`. Each one holds
 
 ### Questions for Nolan (through the Hub); full DEC-047 detail is in the fixwave notes
 1. **Registers:**
-   - counter-top colour (TI white quartz vs black stone in the stills, GAP-PROC-23);
+   - counter-top colour (TI white quartz vs black stone in the stills, GAP-PROC-41);
    - the keyboard has no room in front of the monitor at the RF slot;
-   - the finish of the East/South return faces (GAP-PROC-24).
+   - the finish of the East/South return faces (GAP-PROC-42).
 2. **Deli walls:**
    - is there a third shelf board on South?
    - East tier count (GAP-133);

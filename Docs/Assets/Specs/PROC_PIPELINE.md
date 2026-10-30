@@ -146,8 +146,8 @@ Each family has one generator, one params file with one asset per ROOM_FIXTURES 
 | Generator | Assets | GAP | LOD0 tris |
 |---|---|---|---|
 | `wire_shelving` | 8 racks (incl. JC supply rack, black desk unit) | GAP-PROC-13, GAP-PROC-29, GAP-127 | 27.9–71.2k |
-| `register_station` | scale stand, monitor, 2 scanners, keyboard, printer, card terminal | GAP-PROC-14, GAP-PROC-22, GAP-108 | 0.5–7.3k |
-| `register_counter_run` | RF `Counter_Register_North` (10/9/8), `_EastReturn` (12/11), `_South` (7,2–6), `_SouthWestReturn` (RI §1.5 rows 98/101; REF-013 sizes) | GAP-PROC-15, GAP-PROC-22..24, GAP-130/131 | 1.2–11.0k |
+| `register_station` | scale stand, monitor, 2 scanners, keyboard, printer, card terminal | GAP-PROC-14, GAP-PROC-40, GAP-108 | 0.5–7.3k |
+| `register_counter_run` | RF `Counter_Register_North` (10/9/8), `_EastReturn` (12/11), `_South` (7,2–6), `_SouthWestReturn` (RI §1.5 rows 98/101; REF-013 sizes) | GAP-PROC-15, GAP-PROC-40..24, GAP-130/131 | 1.2–11.0k |
 | `deli_counter_jar_wall` | jar walls N/S/E (RF `DeliJarWall_*`, 2.1 / 2.0 / 2.0 ft deep, REF-013); the deli counter was dropped (it is the south register run) | GAP-PROC-16, GAP-PROC-25..27, GAP-113 | 8.1–64.1k |
 | `glass_door_cooler` | 2-door cooler, top-freezer fridge, magnet fridge | GAP-PROC-17, GAP-PROC-28, GAP-111 | 3.7–15.2k |
 | `office_fixtures` | 10 office/BOH furniture rows | GAP-PROC-18, GAP-PROC-31..33 | 3.5–10.6k |
@@ -156,3 +156,20 @@ Each family has one generator, one params file with one asset per ROOM_FIXTURES 
 | `janitor_props` | mop sink, mops/brooms, mop bucket (GAP placeholder) | GAP-PROC-21, GAP-PROC-30, GAP-109 | 1.5–8.7k |
 
 Several assets are still below the DEC-084 lower guide and validation warns. Under DEC-114 the guide is not a cap, and the visual read on the contact sheet is the pass criterion. UVs keep the current layout until PROC-007 (DEC-097).
+## Parked vehicles (PROC-009)
+```powershell
+Tools/Blender/blender.ps1 parked_vehicles Tools/Blender/params/parked_vehicles.json   # 3 FBX, also copied to Unity
+blender -b --factory-startup --python-exit-code 10 -P Tools/Blender/generators/parked_vehicles_sheet.py   # labelled review sheet
+```
+- Review sheet (DEC-114/DEC-122): `Docs/Assets/Previews/PROC_parked_vehicles_contact_sheet.png`. One row per class. Tiles: LOD0 front 3/4, rear 3/4 and side, then LOD1, LOD2, LOD3. Each tile is labelled with the asset, LOD/view, tris and the true frame width.
+- Replaces the rejected IMP-003 R3b vehicles (DEC-111, checklist R3b.7) with a scripted rebuild: Poly Haven has no vehicle category, and no other DEC-023 CC0 source met DEC-084. Assets `PROC_Vehicle_Sedan|Hatchback|SUV.fbx`, Unity copy `Assets/_Game/Art/Procedural/Exterior/Vehicles/`. Generic unbranded classes only (CCTV R1C1 SUV, R1C2 cars; RG3-4). No plate characters, no badges (DEC-071).
+- Body: one closed loft of cross-sections (side tuck-under, shoulder radius, crowned deck). The bottom edge follows the wheel-arch circle. Shut lines are recessed V grooves: doors, rocker, hood, trunk. Greenhouse: a second closed loft on the deck. Windows are faces of that surface, so the glazing is flush. Wheels sit inside the arches, with well liners behind them.
+- Per class: `lamps` (head/tail size, corner and `*_wrap_m`: the lens is swept round the fender corner), `grille` (`slats`/`mesh`/`bars`), `bumper.lower_band_m` (black intake/diffuser band recessed into the cover's own plan curve), `crease` (door feature line). `rake` shears the nose and tail back with height: the bumper fronts stay put, and `front_m`/`rear_m` must be below `zone_m`, so the shear cannot fold the mesh.
+- Profiles (`deck`, `greenhouse.profile`) are `[y from the front bumper, z]` control points, joined by a monotone cubic. A new body style is a new `classes` entry. Sizes are exact: width includes mirrors, height is the roof peak (SUV: the rails), length is bumper to bumper.
+- Collision: manifest boxes for the body, cabin and 4 wheels (R3b.0.5). The manifest also carries `materials_pbr` (metallic/smoothness per slot) and `paint_variants` (colour swaps).
+- LOD0 ≈ 91–92k tris (DEC-084 hero guide 30–150k). LOD1 ≈ 29–30k, LOD2 ≈ 7–8k, LOD3 ≈ 1.4–1.6k. Rear plate only: A.R.S. 28-2354(A)(1).
+
+| GAP | What |
+|---|---|
+| GAP-PROC-23 | every vehicle dimension and proportion is a generic class value (midsize sedan, compact hatch, compact SUV), not a measured store vehicle. Tyre sizes are standard ISO designations. |
+| GAP-PROC-24 | paint mix (the CCTV cannot resolve colour, RG3-4). Texture maps (tread/sidewall normal, dust/grime masks) wait for the shared Q0.2/Q0.3 unwrap + texture pipeline. |

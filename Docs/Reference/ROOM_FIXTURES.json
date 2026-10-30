@@ -1,6 +1,6 @@
 {
- "_about": "REF-008 back-room fixture map for ART. Plan frame = REFERENCES_INDEX 1.2 (feet, origin Retail NW outer corner, +x east, +y south). Positions are mapped into the Working Plan V5 / graybox room shells (A011 interior dims do not sum to the building width, GAP-125). pos_ft = footprint centre [x, y]; null = not placeable, see gap. size_ft = [w, d, h]: w along +x when rot = 0, along +y when rot = 90. faces = compass direction the front/opening faces. Doors: pos is the centre of the opening on the wall line, size = [width, leaf thickness, height]. Confidence High/Med/Low as REFERENCES_INDEX. Sources: wall2_/wall1_RrCc = CCTV Camera Wall 2 / Camera Wall tiles; FOH_still / BOH_still = the 2026-10-29 desk stills; chat_* = CCTV views Nolan pasted into the REF-008 session 2026-10-29 (not in the repo); A011 = References/TI A011 vector; TI = REFERENCES_INDEX 6. contents = what a fixture holds (store facts only, e.g. DEC-050); never inventory data. propsDoor = DOORS.json id of the door this fixture props open (it stands inside that leaf's closing sweep on purpose; swing checks skip it while the door is proppedOpen). FOH is staff-only: customers never enter, the budtender fetches (DEC-050). Excluded by rule: camera positions, access-control hardware, alarm items, safe interiors, screen contents, one office wall screen, the hall keypad (a blank panel only, DEC-062), and (DEC-051) any safe, cash-equipment or camera-system specifics: generic props only.",
- "version": "REF-013 2026-10-30 rev8 (GAP-129/130 measured from A901/A011/A012, HUB positions DEC-110 W3 with sizes Low under a narrowed GAP-132 (DEC-115); break-room table group and FOH trash moved for JC reach / FOH prop (REVIEW-ART7 m3), entry/ID stand per A011; rev7 = REF-011 sales floor)",
+ "_about": "REF-008 back-room fixture map for ART. Plan frame = REFERENCES_INDEX 1.2 (feet, origin Retail NW outer corner, +x east, +y south). Positions are mapped into the Working Plan V5 / graybox room shells (A011 interior dims do not sum to the building width, GAP-125). pos_ft = footprint centre [x, y]; null = not placeable, see gap. size_ft = [w, d, h]: w along +x when rot = 0, along +y when rot = 90. faces = compass direction the front/opening faces. Doors: pos is the centre of the opening on the wall line, size = [width, leaf thickness, height]. Confidence High/Med/Low as REFERENCES_INDEX. Sources: wall2_/wall1_RrCc = CCTV Camera Wall 2 / Camera Wall tiles; FOH_still / BOH_still = the 2026-10-29 desk stills; chat_* = CCTV views Nolan pasted into the REF-008 session 2026-10-29 (not in the repo); A011 = References/TI A011 vector; TI = REFERENCES_INDEX 6. contents = what a fixture holds (store facts only, e.g. DEC-050); never inventory data. propsDoor = DOORS.json id of the door this fixture props open (it stands inside that leaf's closing sweep on purpose; swing checks skip it while the door is proppedOpen). FOH is staff-only: customers never enter, the budtender fetches (DEC-050). Excluded by rule: camera positions, access-control hardware, alarm items, safe interiors, screen contents, one office wall screen, the hall keypad (a blank panel only, DEC-062), and (DEC-051) any safe, cash-equipment or camera-system specifics: generic props only. matrix (REF-016, DEC-120 store-evidence matrix; answers REVIEW-REF013b m1) = one record per row: src_primary = the strongest source in the DEC-120 order (TI/architectural -> CCTV -> store photos -> audited mapping -> public refs) with its locator; conf = per-field confidence {size, position, orientation} (the row-level confidence is kept unchanged for old consumers; read conf when fields differ); served_side = staff | customer | both (who stands at / uses the fixture; registers give both sides); implemented = the item as built today, read from UnityProject/Assets/_Game/Art/Graybox/graybox_layout.json (GrayboxBuilder input; ART-007 build from rev7) with status matches | differs | missing | see DOORS.json and a detail (built rect vs matrix rect, tolerance 0.15 ft unless stated); gaps = GAP/DEC ids the row still depends on. kit_rule rows (POS_StationKit) carry a placement rule, not a footprint. REFERENCES_INDEX 9 lists every row whose implemented status is differs or missing: that is the ART-013 work list.",
+ "version": "REF-016 2026-10-30 rev9 (store-evidence matrix on every row; south side settled: R7 on the west-end block facing W, R2..R6 W->E at 3.8 ft on the straight run (PT2 #3/#4/#6, TI E101 5 POS, wall2_R2C1); hand-wash sink, east rack, display case, queue field, station-kit side rule added; small-bin size, big-bin position; rev8 = REF-013)",
  "fixtures": [
   {
    "room": "Office",
@@ -24,7 +24,22 @@
     "wall1_R3C4",
     "wall2_R3C3"
    ],
-   "notes": "black flush HM door at the east end of the office north wall (A011 opening x 10.2-13.3); hinge on the east jamb, swings into the office; cannabis-leaf poster on the office face. Graybox DOOR_Hall_Office 8.9-11.9 is 1.3 ft too far west; door contract (hinge, swing, lock, closer) in Docs/Reference/DOORS.json (REF-012)"
+   "notes": "black flush HM door at the east end of the office north wall (A011 opening x 10.2-13.3); hinge on the east jamb, swings into the office; cannabis-leaf poster on the office face. Graybox DOOR_Hall_Office 8.9-11.9 is 1.3 ft too far west; door contract (hinge, swing, lock, closer) in Docs/Reference/DOORS.json (REF-012)",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "High",
+     "position": "High",
+     "orientation": "High"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "see DOORS.json",
+     "graybox": "doors[]",
+     "detail": "leaf, hinge and opening audited per door in DOORS.json implemented"
+    }
+   }
   },
   {
    "room": "Office",
@@ -46,7 +61,22 @@
     "A011",
     "chat_office_L"
    ],
-   "notes": "white painted door, south wall (A011 x 7.2-10.2), hinge on the west jamb, swings into the office; coat-hook rail with a tote bag on its office face. Graybox 7.5-10.5 is within 0.3 ft; door contract (hinge, swing, lock, closer) in Docs/Reference/DOORS.json (REF-012)"
+   "notes": "white painted door, south wall (A011 x 7.2-10.2), hinge on the west jamb, swings into the office; coat-hook rail with a tote bag on its office face. Graybox 7.5-10.5 is within 0.3 ft; door contract (hinge, swing, lock, closer) in Docs/Reference/DOORS.json (REF-012)",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "High",
+     "position": "High",
+     "orientation": "High"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "see DOORS.json",
+     "graybox": "doors[]",
+     "detail": "leaf, hinge and opening audited per door in DOORS.json implemented"
+    }
+   }
   },
   {
    "room": "Office",
@@ -69,7 +99,22 @@
     "wall2_R3C3",
     "wall2_R4C5"
    ],
-   "notes": "black laminate desk arm along the west wall under the neon; one monitor, paper, green crate at its south end"
+   "notes": "black laminate desk arm along the west wall under the neon; one monitor, paper, green crate at its south end",
+   "matrix": {
+    "src_primary": "chat_office_L",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Desk_West_Arm",
+     "detail": "built x 0.20-2.70, y 39.20-44.00 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -92,7 +137,22 @@
     "wall1_R3C3",
     "chat_office_R"
    ],
-   "notes": "black corner piece joining the west arm and the north worktable (L); keyboard, label printer, red desk mat, sorting trays"
+   "notes": "black corner piece joining the west arm and the north worktable (L); keyboard, label printer, red desk mat, sorting trays",
+   "matrix": {
+    "src_primary": "wall2_R3C3",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Desk_Corner_Dual_Monitor",
+     "detail": "built x 0.20-4.50, y 36.70-39.20 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -114,7 +174,22 @@
     "wall2_R3C3",
     "chat_office_R"
    ],
-   "notes": "two ~24 in monitors on the corner desk (base = desk top); screen content not recorded"
+   "notes": "two ~24 in monitors on the corner desk (base = desk top); screen content not recorded",
+   "matrix": {
+    "src_primary": "wall2_R3C3",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Monitors_Dual",
+     "detail": "built x 0.20-3.80, y 37.00-37.80 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -137,7 +212,22 @@
     "wall1_R3C3",
     "chat_office_R"
    ],
-   "notes": "stainless top on folding legs along the north wall, ending ~0.4 ft short of the hall door; carries generic desktop office machines incl. a laminator (DEC-051 Q10), paper trays, a pen cup"
+   "notes": "stainless top on folding legs along the north wall, ending ~0.4 ft short of the hall door; carries generic desktop office machines incl. a laminator (DEC-051 Q10), paper trays, a pen cup",
+   "matrix": {
+    "src_primary": "wall2_R3C3",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Worktable_Stainless",
+     "detail": "built x 4.50-9.80, y 36.70-39.20 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -161,7 +251,24 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "generic black desktop office machines on the worktable, one a laminator (DEC-051 Q10); base = table top"
+   "notes": "generic black desktop office machines on the worktable, one a laminator (DEC-051 Q10); base = table top",
+   "matrix": {
+    "src_primary": "wall2_R3C3",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Machines_Desktop",
+     "detail": "built x 5.65-8.65, y 37.20-38.70 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -184,7 +291,24 @@
     "wall1_R3C3"
    ],
    "notes": "black mesh task chair at the west arm; REF-012 (DEC-096 office walkability): y 39.8-41.8 so it stays out of the cabinet reach zone (was 40.0-42.0)",
-   "gap": "GAP-135"
+   "gap": "GAP-135",
+   "matrix": {
+    "src_primary": "chat_office_L",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-135"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Chair_Task_1",
+     "detail": "built x 2.70-4.70, y 39.80-41.80 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -206,7 +330,25 @@
     "wall1_R3C3",
     "wall2_R4C5"
    ],
-   "notes": "second black task chair at the worktable"
+   "notes": "second black task chair at the worktable",
+   "matrix": {
+    "src_primary": "wall1_R3C3",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Chair_Task_2",
+     "detail": "built x 5.50-7.50, y 39.30-41.30 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "Office",
@@ -228,7 +370,22 @@
     "chat_office_L",
     "wall2_R3C3"
    ],
-   "notes": "green 'THE FLOWER SHOP' neon on the west wall, bottom ~5.5-6 ft AFF (TI retail neon rule is 72 in; office height Low); casts the green glow seen at the left edge of R3C3"
+   "notes": "green 'THE FLOWER SHOP' neon on the west wall, bottom ~5.5-6 ft AFF (TI retail neon rule is 72 in; office height Low); casts the green glow seen at the left edge of R3C3",
+   "matrix": {
+    "src_primary": "chat_office_L",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Neon_TheFlowerShop",
+     "detail": "built x 0.15-0.35, y 39.30-42.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -249,7 +406,25 @@
    "source_tiles": [
     "chat_office_L"
    ],
-   "notes": "black-framed bulletin board with posted papers below the neon; wall file pockets beside it; content not recorded"
+   "notes": "black-framed bulletin board with posted papers below the neon; wall file pockets beside it; content not recorded",
+   "matrix": {
+    "src_primary": "chat_office_L",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Board_West_BlackFrame",
+     "detail": "built x 0.10-0.20, y 42.05-44.55 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "Office",
@@ -272,7 +447,22 @@
     "wall1_R3C3",
     "chat_office_R"
    ],
-   "notes": "grey fabric pin board above the corner desk, ~3.5-6.5 ft AFF; posted procedures (not recorded), clipboard, leaf decal to its right"
+   "notes": "grey fabric pin board above the corner desk, ~3.5-6.5 ft AFF; posted procedures (not recorded), clipboard, leaf decal to its right",
+   "matrix": {
+    "src_primary": "wall2_R3C3",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Board_North_Fabric",
+     "detail": "built x 1.00-6.00, y 36.55-36.65 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -295,7 +485,25 @@
     "wall1_R3C3",
     "chat_office_R"
    ],
-   "notes": "three dark-grey floating shelves, staggered at ~5.0 / 5.7 / 6.3 ft AFF, holding small jars, mugs, decor"
+   "notes": "three dark-grey floating shelves, staggered at ~5.0 / 5.7 / 6.3 ft AFF, holding small jars, mugs, decor",
+   "matrix": {
+    "src_primary": "wall2_R3C3",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Shelves_Floating_x3_0",
+     "detail": "built x 6.80-8.80, y 36.50-37.20 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "Office",
@@ -317,7 +525,22 @@
     "chat_office_L",
     "BAND_04"
    ],
-   "notes": "plain tall black cabinet, right (west) of the HUB 2 door; closed box, no interior, no hardware detail (DEC-051 Q9). Height Low; REF-012 (DEC-096 office walkability): x 4.6-7.0 against the south wall face: clears the open HUB 2 leaf (hinge x 7.2; was x 4.9-7.3, 0.1 ft into the opening). Stated: south wall, west of and beside the HUB 2 door (DEC-051 Q9) - kept"
+   "notes": "plain tall black cabinet, right (west) of the HUB 2 door; closed box, no interior, no hardware detail (DEC-051 Q9). Height Low; REF-012 (DEC-096 office walkability): x 4.6-7.0 against the south wall face: clears the open HUB 2 leaf (hinge x 7.2; was x 4.9-7.3, 0.1 ft into the opening). Stated: south wall, west of and beside the HUB 2 door (DEC-051 Q9) - kept",
+   "matrix": {
+    "src_primary": "chat_office_L",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Cabinet_Tall_Black_A",
+     "detail": "built x 4.60-7.00, y 44.30-46.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -338,7 +561,22 @@
    "source_tiles": [
     "chat_office_L"
    ],
-   "notes": "plain tall black cabinet, beside A; closed box, no interior, no hardware detail (DEC-051 Q9). Height Low; REF-012 (DEC-096 office walkability): x 2.2-4.6 beside A, against the south wall face. Front reach zone y 41.8-44.3 kept clear"
+   "notes": "plain tall black cabinet, beside A; closed box, no interior, no hardware detail (DEC-051 Q9). Height Low; REF-012 (DEC-096 office walkability): x 2.2-4.6 beside A, against the south wall face. Front reach zone y 41.8-44.3 kept clear",
+   "matrix": {
+    "src_primary": "chat_office_L",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Cabinet_Tall_Black_B",
+     "detail": "built x 2.20-4.60, y 44.30-46.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -363,7 +601,24 @@
     "Photo_Deli_Jars_Scale_Office"
    ],
    "notes": "stainless 2-shelf utility cart 'FOR DELI USE ONLY' (REFERENCES_INDEX 2.4) with deli scale and glass bowl on top, spray bottles hung on the rail; REF-012 (DEC-096 office walkability): x 10.3-12.8 against the south wall, 0.1 ft east of the HUB 2 opening, still under the canister shelf. Front reach only 1.4 ft wide (x 10.3-11.7) because of the east-wall stack (GAP-136)",
-   "gap": "GAP-136"
+   "gap": "GAP-136",
+   "matrix": {
+    "src_primary": "chat_office_L",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-136"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Cart_Deli_Prep",
+     "detail": "built x 10.30-12.80, y 44.70-46.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -384,7 +639,22 @@
    "source_tiles": [
     "chat_office_L"
    ],
-   "notes": "wood board on black brackets above the cart at ~4.8 ft AFF, holding ~5 empty deli canisters; two brand decals below it (decor only)"
+   "notes": "wood board on black brackets above the cart at ~4.8 ft AFF, holding ~5 empty deli canisters; two brand decals below it (decor only)",
+   "matrix": {
+    "src_primary": "chat_office_L",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Shelf_Deli_Canisters",
+     "detail": "built x 10.25-13.75, y 45.40-46.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -406,7 +676,25 @@
     "wall2_R3C3",
     "wall1_R3C4"
    ],
-   "notes": "stainless step can by the hall door; placed just south of the door swing; REF-012 (DEC-096 office walkability): pushed to the east wall, y 39.6-40.6, just south of the hall-door swing (y <= 39.5)"
+   "notes": "stainless step can by the hall door; placed just south of the door swing; REF-012 (DEC-096 office walkability): pushed to the east wall, y 39.6-40.6, just south of the hall-door swing (y <= 39.5)",
+   "matrix": {
+    "src_primary": "wall2_R3C3",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Trash_StepCan",
+     "detail": "built x 12.70-13.70, y 39.60-40.60 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "Office",
@@ -431,7 +719,24 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "standing desk on the east wall used as a shelf for misc items (DEC-051 Q13); the IT rack box and a computer sit on it. Fits between the step can and the deli cart (y 40.8-44.4); size Low; REF-012 (DEC-096 office walkability): pushed to the east wall face (x 11.7-13.7; was 0.4 ft off it), y 40.8-44.4 unchanged. Front reach zone x 9.2-11.7 clear. A real standing desk is likely 4 ft (GAP-127)"
+   "notes": "standing desk on the east wall used as a shelf for misc items (DEC-051 Q13); the IT rack box and a computer sit on it. Fits between the step can and the deli cart (y 40.8-44.4); size Low; REF-012 (DEC-096 office walkability): pushed to the east wall face (x 11.7-13.7; was 0.4 ft off it), y 40.8-44.4 unchanged. Front reach zone x 9.2-11.7 clear. A real standing desk is likely 4 ft (GAP-127)",
+   "matrix": {
+    "src_primary": "wall2_R3C3",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Desk_Standing_East",
+     "detail": "built x 11.70-13.70, y 40.80-44.40 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -454,7 +759,24 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "several black file cabinets under the standing desk (DEC-051 Q13; was the black multi-drawer unit, REF-008 Q13). Count Low; the portable fan sits on them (R3C3); REF-012 (DEC-096 office walkability): moved with the standing desk (+0.4 ft east); drawers open west into the clear zone"
+   "notes": "several black file cabinets under the standing desk (DEC-051 Q13; was the black multi-drawer unit, REF-008 Q13). Count Low; the portable fan sits on them (R3C3); REF-012 (DEC-096 office walkability): moved with the standing desk (+0.4 ft east); drawers open west into the clear zone",
+   "matrix": {
+    "src_primary": "wall2_R3C3",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_FileCabinets_UnderDesk",
+     "detail": "built x 11.80-13.60, y 40.90-44.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -477,7 +799,24 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "white portable fan (DEC-051 Q12) on the black file cabinets, as in R3C3: under the standing desk on the cabinet top (base 2.4 ft AFF; 1.0 ft tall so it clears the 3.5 ft desk top); size and placement Low; REF-012 (DEC-096 office walkability): moved with the standing desk (+0.4 ft east)"
+   "notes": "white portable fan (DEC-051 Q12) on the black file cabinets, as in R3C3: under the standing desk on the cabinet top (base 2.4 ft AFF; 1.0 ft tall so it clears the 3.5 ft desk top); size and placement Low; REF-012 (DEC-096 office walkability): moved with the standing desk (+0.4 ft east)",
+   "matrix": {
+    "src_primary": "wall2_R3C3",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Fan_Portable",
+     "detail": "built x 12.40-13.20, y 43.30-44.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -500,7 +839,24 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "generic desktop computer and monitor on the standing desk (DEC-051 Q13); screen content not recorded; REF-012 (DEC-096 office walkability): moved with the standing desk (+0.4 ft east)"
+   "notes": "generic desktop computer and monitor on the standing desk (DEC-051 Q13); screen content not recorded; REF-012 (DEC-096 office walkability): moved with the standing desk (+0.4 ft east)",
+   "matrix": {
+    "src_primary": "chat_office_L",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Computer_Desktop",
+     "detail": "built x 12.40-13.40, y 43.10-44.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -525,7 +881,24 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "IT rack, modelled as a plain black box only (DEC-051 Q15), sitting on the standing desk (Q13). Height 3 ft Low. V5/graybox puts it on the WEST wall (GAP-121); REF-012 (DEC-096 office walkability): moved with the standing desk (x 11.7-13.7)"
+   "notes": "IT rack, modelled as a plain black box only (DEC-051 Q15), sitting on the standing desk (Q13). Height 3 ft Low. V5/graybox puts it on the WEST wall (GAP-121); REF-012 (DEC-096 office walkability): moved with the standing desk (x 11.7-13.7)",
+   "matrix": {
+    "src_primary": "chat_office_L",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Rack_IT_Box",
+     "detail": "built x 11.70-13.70, y 41.00-43.00 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -546,7 +919,25 @@
    "source_tiles": [
     "chat_office_L"
    ],
-   "notes": "black logo mat inside the HUB 2 door"
+   "notes": "black logo mat inside the HUB 2 door",
+   "matrix": {
+    "src_primary": "chat_office_L",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Mat_Door",
+     "detail": "built x 7.20-10.20, y 44.30-46.30 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "Office",
@@ -570,7 +961,24 @@
     "wall1_R3C3"
    ],
    "notes": "small kit with two cymbals and a pad in the R3C3 foreground; position Low; REF-012 (DEC-096 office walkability): moved to the SW corner pocket south of the desk arm, west of cabinet B (x 0.2-2.2, y 44.05-46.25), rot 90; footprint cut from 2.5 x 2.0 (a guess) to fit. Still unconfirmed (REF-008 Q11 unanswered). A real compact kit is ~3 x 3 ft (GAP-135)",
-   "gap": "GAP-135"
+   "gap": "GAP-135",
+   "matrix": {
+    "src_primary": "wall2_R3C3",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-135"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_DrumKit_Small",
+     "detail": "built x 0.20-2.20, y 44.05-46.25 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -593,7 +1001,24 @@
     "wall1_R3C3"
    ],
    "notes": "leafy potted plant, R3C3 foreground right of the drum kit; REF-012 (DEC-096 office walkability): moved to the strip east of the deli cart (x 12.8-13.7, y 44.5-45.4); pot cut from 1.2 to 0.9 ft (a guess). Was x 7.2-8.4, y 42.8-44.0, inside the HUB 2 door swing (GAP-135)",
-   "gap": "GAP-135"
+   "gap": "GAP-135",
+   "matrix": {
+    "src_primary": "wall2_R3C3",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-135"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Plant_Potted",
+     "detail": "built x 12.80-13.70, y 44.50-45.40 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Office",
@@ -616,7 +1041,24 @@
     "chat_office_R"
    ],
    "notes": "black wire basket cart with bags, R3C3 foreground left; REF-012 (DEC-096 office walkability): moved out of the cabinet reach zone to the free east end of the worktable front (x 8.2-9.7, y 39.2-40.7); leaves 3.0 ft to the step can for the main path. Was x 2.85-4.35, y 42.55-44.05 (blocked both cabinets)",
-   "gap": "GAP-135"
+   "gap": "GAP-135",
+   "matrix": {
+    "src_primary": "wall2_R3C3",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-135"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Office_Cart_WireBasket",
+     "detail": "built x 8.20-9.70, y 39.20-40.70 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Hall",
@@ -639,7 +1081,22 @@
     "wall2_R3C4",
     "wall1_R3C4"
    ],
-   "notes": "black door 'EMPLOYEES ONLY' with a fire-door label, north end of the hall east wall (A011 y 29.9-33.0), swings into the break room. Graybox 30.9-33.9 is ~1 ft too far south"
+   "notes": "black door 'EMPLOYEES ONLY' with a fire-door label, north end of the hall east wall (A011 y 29.9-33.0), swings into the break room. Graybox 30.9-33.9 is ~1 ft too far south",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "High",
+     "position": "High",
+     "orientation": "High"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "see DOORS.json",
+     "graybox": "doors[]",
+     "detail": "leaf, hinge and opening audited per door in DOORS.json implemented"
+    }
+   }
   },
   {
    "room": "Hall",
@@ -660,7 +1117,22 @@
    "source_tiles": [
     "A011"
    ],
-   "notes": "south end of the restroom east wall (A011 y 33.1-36.1), swings into the restroom; not visible on any CCTV. Graybox 30.9-33.9 is ~2.2 ft too far north"
+   "notes": "south end of the restroom east wall (A011 y 33.1-36.1), swings into the restroom; not visible on any CCTV. Graybox 30.9-33.9 is ~2.2 ft too far north",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "see DOORS.json",
+     "graybox": "doors[]",
+     "detail": "leaf, hinge and opening audited per door in DOORS.json implemented"
+    }
+   }
   },
   {
    "room": "Hall",
@@ -682,7 +1154,22 @@
     "wall2_R3C4",
     "wall1_R3C4"
    ],
-   "notes": "wood-framed corkboard between the break door and the SE corner, centre ~5 ft AFF; taped notices hang below it to ~3 ft; content not recorded"
+   "notes": "wood-framed corkboard between the break door and the SE corner, centre ~5 ft AFF; taped notices hang below it to ~3 ft; content not recorded",
+   "matrix": {
+    "src_primary": "wall2_R3C4",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Hall_Board_Cork",
+     "detail": "built x 13.60-13.70, y 33.40-35.20 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Hall",
@@ -704,7 +1191,25 @@
     "A011",
     "DEC-062"
    ],
-   "notes": "plain blank wall panel on the hall side of the restroom wall (A011 position); security hardware per DEC-062, so no detail is modelled (DEC-006/031)"
+   "notes": "plain blank wall panel on the hall side of the restroom wall (A011 position); security hardware per DEC-062, so no detail is modelled (DEC-006/031)",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Hall_Panel_Blank",
+     "detail": "built x 8.40-8.50, y 29.95-30.95 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BreakRoom",
@@ -727,7 +1232,22 @@
     "wall2_R3C5",
     "wall1_R3C5"
    ],
-   "notes": "white pilaster/chase off the north wall; the counter run starts on its east side; paper-towel dispenser on its west face"
+   "notes": "white pilaster/chase off the north wall; the counter run starts on its east side; paper-towel dispenser on its west face",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_Pilaster_Chase",
+     "detail": "built x 18.30-18.90, y 29.50-32.20 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -751,7 +1271,22 @@
     "wall1_R3C5",
     "BAND_03"
    ],
-   "notes": "light-wood base cabinets, black counter (34 in, TI 6.4); pod coffee maker and microwave on top. Graybox kitchen L starts at x 14.7; CCTV + A011 start it at the pilaster (x 18.9)"
+   "notes": "light-wood base cabinets, black counter (34 in, TI 6.4); pod coffee maker and microwave on top. Graybox kitchen L starts at x 14.7; CCTV + A011 start it at the pilaster (x 18.9)",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_Counter_North_Run",
+     "detail": "built x 18.90-23.30, y 29.50-31.50 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -773,7 +1308,22 @@
     "wall2_R3C5",
     "wall1_R3C5"
    ],
-   "notes": "light-wood upper cabinets ~4.5-7.0 ft AFF; a box stored on top"
+   "notes": "light-wood upper cabinets ~4.5-7.0 ft AFF; a box stored on top",
+   "matrix": {
+    "src_primary": "wall2_R3C5",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_Uppers_North",
+     "detail": "built x 18.90-23.30, y 29.50-30.60 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -796,7 +1346,22 @@
     "wall2_R3C5",
     "wall1_R3C5"
    ],
-   "notes": "return along the east wall to y 37.4 (graybox ends at 33.8)"
+   "notes": "return along the east wall to y 37.4 (graybox ends at 33.8)",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_Counter_East_Return",
+     "detail": "built x 21.30-23.30, y 31.50-37.40 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -819,7 +1384,22 @@
     "wall2_R3C5",
     "BAND_03"
    ],
-   "notes": "double bowl in the return (A011), stainless with gooseneck faucet (BAND 03); rim 34 in max (TI OS3)"
+   "notes": "double bowl in the return (A011), stainless with gooseneck faucet (BAND 03); rim 34 in max (TI OS3)",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_Sink_Double",
+     "detail": "built x 21.70-23.30, y 33.05-35.75 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -840,7 +1420,22 @@
    "source_tiles": [
     "A011"
    ],
-   "notes": "dashed uppers along the return on A011; CCTV shows uppers on the north run only, so Low on whether these exist today"
+   "notes": "dashed uppers along the return on A011; CCTV shows uppers on the north run only, so Low on whether these exist today",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_Uppers_East",
+     "detail": "built x 22.30-23.30, y 31.60-37.40 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -863,7 +1458,22 @@
     "wall2_R3C5",
     "wall1_R3C5"
    ],
-   "notes": "full-size fridge right after the counter end, side covered in magnets/stickers (A011 unit with door swing at y 38.0-41.0). Not in the graybox"
+   "notes": "full-size fridge right after the counter end, side covered in magnets/stickers (A011 unit with door swing at y 38.0-41.0). Not in the graybox",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_Fridge_Magnets",
+     "detail": "built x 20.90-23.30, y 37.70-40.50 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -885,7 +1495,22 @@
     "A011",
     "wall2_R3C5"
    ],
-   "notes": "janitor closet in the break room SE corner, x 19.3-23.31, y 41.3-46.3 (A011; 4.0 x 4.9 interior ~ printed 19.19 SF). Closes GAP-103. Graybox 3x3 at 19.9-22.9 x 42.9-45.9"
+   "notes": "janitor closet in the break room SE corner, x 19.3-23.31, y 41.3-46.3 (A011; 4.0 x 4.9 interior ~ printed 19.19 SF). Closes GAP-103. Graybox 3x3 at 19.9-22.9 x 42.9-45.9",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "walls W_JC_W + W_JC_N",
+     "detail": "partition built at x 19.30-23.31, y 41.30-46.30 = matrix"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -908,7 +1533,22 @@
     "wall2_R3C5",
     "wall1_R3C5"
    ],
-   "notes": "black 2'-8\" door on the JC west face, south end (A011 y 43.1-45.8), swings out into the break room; taped paper note on it"
+   "notes": "black 2'-8\" door on the JC west face, south end (A011 y 43.1-45.8), swings out into the break room; taped paper note on it",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "see DOORS.json",
+     "graybox": "doors[]",
+     "detail": "leaf, hinge and opening audited per door in DOORS.json implemented"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -929,7 +1569,22 @@
    "source_tiles": [
     "A011"
    ],
-   "notes": "square mop sink in the JC SE corner, A011 only (no imagery, GAP-109); FRP to 4 ft (TI)"
+   "notes": "square mop sink in the JC SE corner, A011 only (no imagery, GAP-109); FRP to 4 ft (TI)",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_MopSink_JC",
+     "detail": "built x 21.70-23.30, y 44.45-45.95 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -951,7 +1606,24 @@
     "DEC-062"
    ],
    "gap": "GAP-127",
-   "notes": "mops and brooms standing on the JC east wall north of the mop sink (DEC-062); position Low"
+   "notes": "mops and brooms standing on the JC east wall north of the mop sink (DEC-062); position Low",
+   "matrix": {
+    "src_primary": "DEC-062",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "BreakRoom_Mops_Brooms_JC",
+     "detail": "built x 21.90-22.90, y 43.00-43.80 vs matrix x 22.40-23.40, y 43.00-43.80 (max edge offset 0.50 ft)"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -973,7 +1645,24 @@
     "DEC-062"
    ],
    "gap": "GAP-127",
-   "notes": "small rack of cleaning supplies on the JC north wall (DEC-062); size and position Low"
+   "notes": "small rack of cleaning supplies on the JC north wall (DEC-062); size and position Low",
+   "matrix": {
+    "src_primary": "DEC-062",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_Rack_CleaningSupplies_JC",
+     "detail": "built x 20.20-22.20, y 41.30-42.50 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -996,7 +1685,24 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "whiteboard in a red/white frame on the west wall (DEC-051 Q6), ~3.5-6.5 ft AFF above the lunch table; size Low; content not recorded. REVIEW-ART7 m3 (REF-013 fix): moved 3.5 ft north with the table group so a 1.5 ft-wide person can pass between the bench SE corner and the JC NW corner (1.7 ft) to reach the JC door (was centred y 40.5)"
+   "notes": "whiteboard in a red/white frame on the west wall (DEC-051 Q6), ~3.5-6.5 ft AFF above the lunch table; size Low; content not recorded. REVIEW-ART7 m3 (REF-013 fix): moved 3.5 ft north with the table group so a 1.5 ft-wide person can pass between the bench SE corner and the JC NW corner (1.7 ft) to reach the JC door (was centred y 40.5)",
+   "matrix": {
+    "src_primary": "wall2_R3C5",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "BreakRoom_Whiteboard_West",
+     "detail": "built x 14.45-14.55, y 38.50-42.50 vs matrix x 14.45-14.55, y 35.00-39.00 (max edge offset 3.50 ft)"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -1018,7 +1724,24 @@
     "DEC-062"
    ],
    "gap": "GAP-127",
-   "notes": "bulletin board on the hallway (west) wall of the break room (DEC-062): staff schedule, events, updates; contents not modelled. Placed between the hall door (y 33.0) and the whiteboard; position and size Low. REVIEW-ART7 m3: moved south of the moved whiteboard to y 39.75-42.75, still on the hallway (west) wall per DEC-062 (was y 35.75, now the whiteboard spot)"
+   "notes": "bulletin board on the hallway (west) wall of the break room (DEC-062): staff schedule, events, updates; contents not modelled. Placed on the west wall south of the whiteboard, y 39.75-42.75 (REF-013 fix round, REVIEW-ART7 m3: the table group moved north, the board took the space south of the whiteboard; it was at y 35.75). Position and size Low (GAP-127)",
+   "matrix": {
+    "src_primary": "DEC-062",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "BreakRoom_Board_Bulletin_West",
+     "detail": "built x 14.45-14.55, y 34.25-37.25 vs matrix x 14.45-14.55, y 39.75-42.75 (max edge offset 5.50 ft)"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -1040,7 +1763,24 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "lunch table pushed against the whiteboard (west) wall (DEC-051 Q7); size is a convention placeholder, shorter than the bench. REVIEW-ART7 m3 (REF-013 fix): moved 3.5 ft north with the table group so a 1.5 ft-wide person can pass between the bench SE corner and the JC NW corner (1.7 ft) to reach the JC door (was centred y 40.5)"
+   "notes": "lunch table pushed against the whiteboard (west) wall (DEC-051 Q7); size is a convention placeholder, shorter than the bench. REVIEW-ART7 m3 (REF-013 fix): moved 3.5 ft north with the table group so a 1.5 ft-wide person can pass between the bench SE corner and the JC NW corner (1.7 ft) to reach the JC door (was centred y 40.5)",
+   "matrix": {
+    "src_primary": "DEC-051",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "BreakRoom_Table_Lunch",
+     "detail": "built x 14.55-17.05, y 38.50-42.50 vs matrix x 14.55-17.05, y 35.00-39.00 (max edge offset 3.50 ft)"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -1064,7 +1804,24 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "wood plank top on black steel legs alongside the lunch table on its east side; longer than the table so it does not fit under it; kept north of the JC door swing (y 43.1) (DEC-051 Q7). 5 ft length kept from REF-008 (Low). REVIEW-ART7 m3 (REF-013 fix): moved 3.5 ft north with the table group so a 1.5 ft-wide person can pass between the bench SE corner and the JC NW corner (1.7 ft) to reach the JC door (was centred y 40.5)"
+   "notes": "wood plank top on black steel legs alongside the lunch table on its east side; longer than the table so it does not fit under it; kept north of the JC door swing (y 43.1) (DEC-051 Q7). 5 ft length kept from REF-008 (Low). REVIEW-ART7 m3 (REF-013 fix): moved 3.5 ft north with the table group so a 1.5 ft-wide person can pass between the bench SE corner and the JC NW corner (1.7 ft) to reach the JC door (was centred y 40.5)",
+   "matrix": {
+    "src_primary": "wall2_R3C5",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "BreakRoom_Bench_Wood",
+     "detail": "built x 17.10-18.40, y 38.00-43.00 vs matrix x 17.10-18.40, y 34.50-39.50 (max edge offset 3.50 ft)"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -1086,7 +1843,25 @@
     "wall2_R3C5",
     "wall1_R3C5"
    ],
-   "notes": "mini basketball hoop over a hamper with a basketball, south of the bench"
+   "notes": "mini basketball hoop over a hamper with a basketball, south of the bench",
+   "matrix": {
+    "src_primary": "wall2_R3C5",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_Hoop_Mini",
+     "detail": "built x 14.15-15.65, y 44.15-45.65 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BreakRoom",
@@ -1108,7 +1883,25 @@
     "wall2_R3C5",
     "wall1_R3C5"
    ],
-   "notes": "wall hooks with coats and bags on the west wall near the SW corner"
+   "notes": "wall hooks with coats and bags on the west wall near the SW corner",
+   "matrix": {
+    "src_primary": "wall2_R3C5",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_Hooks_Coats",
+     "detail": "built x 14.10-14.90, y 43.75-46.25 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BreakRoom",
@@ -1130,7 +1923,22 @@
     "wall2_R3C5",
     "wall1_R3C5"
    ],
-   "notes": "framed labour-law poster on the plain north wall west of the pilaster, ~3.5-6.5 ft AFF"
+   "notes": "framed labour-law poster on the plain north wall west of the pilaster, ~3.5-6.5 ft AFF",
+   "matrix": {
+    "src_primary": "wall2_R3C5",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_Poster_LaborLaw",
+     "detail": "built x 15.00-17.00, y 29.52-29.57 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -1153,7 +1961,22 @@
     "wall1_R3C5",
     "DEC-051"
    ],
-   "notes": "white wall-mounted first-aid kit on the pilaster, ~4.5 ft AFF (DEC-051 Q8)"
+   "notes": "white wall-mounted first-aid kit on the pilaster, ~4.5 ft AFF (DEC-051 Q8)",
+   "matrix": {
+    "src_primary": "wall2_R3C5",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_FirstAid_Kit",
+     "detail": "built x 18.05-18.45, y 30.50-31.50 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BreakRoom",
@@ -1175,7 +1998,25 @@
     "wall2_R3C5",
     "wall1_R3C5"
    ],
-   "notes": "two dark anti-fatigue mats, one at the inside counter corner (this pos) and one in front of the fridge (~[20.3, 39.0])"
+   "notes": "two dark anti-fatigue mats, one at the inside counter corner (this pos) and one in front of the fridge (~[20.3, 39.0])",
+   "matrix": {
+    "src_primary": "wall2_R3C5",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BreakRoom_Mats_Floor_x2",
+     "detail": "built x 18.50-21.50, y 31.40-33.40 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BreakRoom",
@@ -1195,7 +2036,24 @@
     "wall1_R3C5"
    ],
    "gap": "GAP-126",
-   "notes": "Store fact (DEC-047): one locker unit, about 2 x 6 ft (DEC-051 Q5), read as 2 ft wide x 6 ft tall (depth 1.5 ft convention); if Nolan meant a 6 ft wide footprint, swap w. R3C5 shows its grey top (cap and strap on it) in the foreground near the camera, i.e. the south part of the room. Wall still unknown (position null); the JC door swing (x 16.6-19.3, y 43.1-45.8) limits the south wall"
+   "notes": "Store fact (DEC-047): one locker unit, about 2 x 6 ft (DEC-051 Q5), read as 2 ft wide x 6 ft tall (depth 1.5 ft convention); if Nolan meant a 6 ft wide footprint, swap w. R3C5 shows its grey top (cap and strap on it) in the foreground near the camera, i.e. the south part of the room. Wall still unknown (position null); the JC door swing (x 16.6-19.3, y 43.1-45.8) limits the south wall",
+   "matrix": {
+    "src_primary": "wall2_R3C5",
+    "conf": {
+     "size": "High",
+     "position": "High",
+     "orientation": "High"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-126"
+    ],
+    "implemented": {
+     "status": "missing",
+     "graybox": null,
+     "detail": "not placeable (pos null), see gap"
+    }
+   }
   },
   {
    "room": "Restroom",
@@ -1216,7 +2074,22 @@
    "source_tiles": [
     "A011"
    ],
-   "notes": "standard white toilet, far right on entering (DEC-062); tank on the west wall, NW corner (A011 drawn)"
+   "notes": "standard white toilet, far right on entering (DEC-062); tank on the west wall, NW corner (A011 drawn)",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Restroom_Toilet",
+     "detail": "built x 0.70-3.10, y 29.95-31.55 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Restroom",
@@ -1238,7 +2111,22 @@
     "A011",
     "TI"
    ],
-   "notes": "white full-size sink straight ahead on entering (DEC-062), on the west wall at the SW corner (A011); rim 34 in, knee clearance 27 in (TI)"
+   "notes": "white full-size sink straight ahead on entering (DEC-062), on the west wall at the SW corner (A011); rim 34 in, knee clearance 27 in (TI)",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Restroom_Lavatory_WallHung",
+     "detail": "built x 0.85-2.35, y 34.45-36.15 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Restroom",
@@ -1260,7 +2148,24 @@
     "DEC-062"
    ],
    "gap": "GAP-127",
-   "notes": "flat-black storage tool chest between the sink and the toilet (DEC-062): swing-out doors, 2 shelves; kept below the 33 in grab bar; size Low"
+   "notes": "flat-black storage tool chest between the sink and the toilet (DEC-062): swing-out doors, 2 shelves; kept below the 33 in grab bar; size Low",
+   "matrix": {
+    "src_primary": "DEC-062",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Restroom_ToolChest_Black",
+     "detail": "built x 0.00-1.50, y 32.20-34.40 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Restroom",
@@ -1284,7 +2189,24 @@
     "A011"
    ],
    "gap": "GAP-109",
-   "notes": "one large storage cabinet of bathroom and cleaning supplies (DEC-062). Placed per DEC-068 (supersedes DEC-064 \"back wall\"): next to the restroom door, against the door (east) wall, on the north side, the only free side that clears the door span y 33.1-36.1 (side not stated by Nolan). Footprint x 6.5-8.0, y 29.7-32.9 as built by ART-006; width 3.2 ft (was 4.0: only 3.2 ft of wall with 0.2 ft clearances). Size and side Low"
+   "notes": "one large storage cabinet of bathroom and cleaning supplies (DEC-062). Placed per DEC-068 (supersedes DEC-064 \"back wall\"): next to the restroom door, against the door (east) wall, on the north side, the only free side that clears the door span y 33.1-36.1 (side not stated by Nolan). Footprint x 6.5-8.0, y 29.7-32.9 as built by ART-006; width 3.2 ft (was 4.0: only 3.2 ft of wall with 0.2 ft clearances). Size and side Low",
+   "matrix": {
+    "src_primary": "DEC-062",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-109"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Restroom_Cabinet_Storage_Large",
+     "detail": "built x 6.50-8.00, y 29.70-32.90 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Restroom",
@@ -1306,7 +2228,22 @@
     "TI",
     "A011"
    ],
-   "notes": "full-size mirror over the sink (DEC-062); TI 6.6 size 1'-8\" x 3'-6\", bottom 3'-4\" AFF kept, so the size is Low"
+   "notes": "full-size mirror over the sink (DEC-062); TI 6.6 size 1'-8\" x 3'-6\", bottom 3'-4\" AFF kept, so the size is Low",
+   "matrix": {
+    "src_primary": "TI",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Restroom_Mirror",
+     "detail": "built x 0.03-0.07, y 34.47-36.13 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Restroom",
@@ -1328,7 +2265,22 @@
     "A011",
     "TI"
    ],
-   "notes": "42 in bar behind/beside the toilet at 33-36 in AFF (TI)"
+   "notes": "42 in bar behind/beside the toilet at 33-36 in AFF (TI)",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Restroom_GrabBar_North",
+     "detail": "built x 1.25-4.75, y 29.52-29.68 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Restroom",
@@ -1350,7 +2302,22 @@
     "A011",
     "TI"
    ],
-   "notes": "36 in side bar at 33-36 in AFF plus an 18 in vertical bar (TI)"
+   "notes": "36 in side bar at 33-36 in AFF plus an 18 in vertical bar (TI)",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Restroom_GrabBar_West",
+     "detail": "built x 0.03-0.17, y 30.00-33.00 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Restroom",
@@ -1372,7 +2339,25 @@
     "A011",
     "TI"
    ],
-   "notes": "old silver manual paper-towel dispenser to the sink's left (DEC-062), at the A011 south-wall item x 2.7-3.8; TP dispenser by the toilet, soap dispenser, napkin disposal, wall sconce L6 per TI 6.6 (positions Low)"
+   "notes": "old silver manual paper-towel dispenser to the sink's left (DEC-062), at the A011 south-wall item x 2.7-3.8; TP dispenser by the toilet, soap dispenser, napkin disposal, wall sconce L6 per TI 6.6 (positions Low)",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Restroom_Accessories",
+     "detail": "built x 2.65-3.75, y 35.70-36.10 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "Vestibule",
@@ -1396,7 +2381,22 @@
     "wall2_R4C1",
     "wall2_R4C2"
    ],
-   "notes": "A011 'HALL 35.16 SF': lobby x 31.4-39.8, y 29.5-34.3 straddling the FOH/BOH partition, open to retail through the east arch (A011 x 34.5-37.6), angled corners at the doors. Graybox vestibule is 3.0 x 2.2 (6.6 SF, does not match the printed 35.16 SF). GAP-122"
+   "notes": "A011 'HALL 35.16 SF': lobby x 31.4-39.8, y 29.5-34.3 straddling the FOH/BOH partition, open to retail through the east arch (A011 x 34.5-37.6), angled corners at the doors. Graybox vestibule is 3.0 x 2.2 (6.6 SF, does not match the printed 35.16 SF). GAP-122",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "High",
+     "position": "High",
+     "orientation": "High"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "rooms Vestibule",
+     "detail": "built x 31.40-39.80, y 29.50-34.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Vestibule",
@@ -1420,7 +2420,22 @@
     "wall2_R4C1",
     "chat_FOH_L"
    ],
-   "notes": "black door on the vestibule west face, north end (A011), hinge at the north, swings into FOH; red/white floor tape at its FOH side"
+   "notes": "black door on the vestibule west face, north end (A011), hinge at the north, swings into FOH; red/white floor tape at its FOH side",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "High",
+     "position": "High",
+     "orientation": "High"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "see DOORS.json",
+     "graybox": "doors[]",
+     "detail": "leaf, hinge and opening audited per door in DOORS.json implemented"
+    }
+   }
   },
   {
    "room": "Vestibule",
@@ -1444,7 +2459,22 @@
     "chat_BOH_L",
     "BOH_still"
    ],
-   "notes": "black door on the vestibule east face, north end (A011), swings into BOH"
+   "notes": "black door on the vestibule east face, north end (A011), swings into BOH",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "High",
+     "position": "High",
+     "orientation": "High"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "see DOORS.json",
+     "graybox": "doors[]",
+     "detail": "leaf, hinge and opening audited per door in DOORS.json implemented"
+    }
+   }
   },
   {
    "room": "Vestibule",
@@ -1469,7 +2499,25 @@
     "wall2_R4C2",
     "chat_BOH_L"
    ],
-   "notes": "light-wood shelves in a black metal frame, 3 tiers, with tape, labels and supplies; seen through both doors, so placed on the vestibule south wall. Floor TL-2 white/grey patterned 8x8 tile (High)"
+   "notes": "light-wood shelves in a black metal frame, 3 tiers, with tape, labels and supplies; seen through both doors, so placed on the vestibule south wall. Floor TL-2 white/grey patterned 8x8 tile (High)",
+   "matrix": {
+    "src_primary": "FOH_still",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Vestibule_Shelf_Supplies",
+     "detail": "built x 34.35-36.85, y 33.00-34.20 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "FOH",
@@ -1495,7 +2543,22 @@
     "chat_FOH_R",
     "DEC-051"
    ],
-   "notes": "black wire shelving unit used as a desk: monitor on an upper shelf, keyboard shelf at desk height, bins below. DEC-040/041. Wall = east, shared with BOH (DEC-051 Q1, GAP-124 closed). Order along the wall from the NE corner: ladder, desk, fridge, cooler (DEC-062); corner end read from R4C1 (cooler right of fridge looking south)"
+   "notes": "black wire shelving unit used as a desk: monitor on an upper shelf, keyboard shelf at desk height, bins below. DEC-040/041. Wall = east, shared with BOH (DEC-051 Q1, GAP-124 closed). Order along the wall from the NE corner: ladder, desk, fridge, cooler (DEC-062); corner end read from R4C1 (cooler right of fridge looking south)",
+   "matrix": {
+    "src_primary": "FOH_still",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "FOH_Desk_WireRack_Computer",
+     "detail": "built x 34.60-36.10, y 35.90-39.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "FOH",
@@ -1516,7 +2579,22 @@
    "source_tiles": [
     "DEC-062"
    ],
-   "notes": "black fire-escape ladder in the NE corner of the BOH-shared wall, before the desk (DEC-062); fixed to the wall, full height; width and height Low"
+   "notes": "black fire-escape ladder in the NE corner of the BOH-shared wall, before the desk (DEC-062); fixed to the wall, full height; width and height Low",
+   "matrix": {
+    "src_primary": "DEC-062",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "FOH_Ladder_FireEscape",
+     "detail": "built x 35.50-36.10, y 34.30-35.80 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "FOH",
@@ -1535,7 +2613,25 @@
    "faces": "E",
    "confidence": "Low",
    "source_tiles": [],
-   "notes": "DEC-040: Nolan says each desk has a chair; none visible on CCTV"
+   "notes": "DEC-040: Nolan says each desk has a chair; none visible on CCTV",
+   "matrix": {
+    "src_primary": "DEC-040 (row notes; no CCTV view)",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "FOH_Chair_Desk",
+     "detail": "built x 32.40-34.40, y 36.60-38.60 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "FOH",
@@ -1561,7 +2657,22 @@
     "DEC-051"
    ],
    "notes": "white top-freezer apartment fridge, black bins/bags stored on top; on the BOH-shared east wall with the desk and cooler (DEC-051 Q1). Graybox FX_FOH_Fridge sits on the west wall at 24.3-25.9 x 42-45.6. Order along the wall from the NE corner: ladder, desk, fridge, cooler (DEC-062); corner end read from R4C1 (cooler right of fridge looking south)",
-   "contents": "drinks: cannabis colas and other beverages (DEC-050)"
+   "contents": "drinks: cannabis colas and other beverages (DEC-050)",
+   "matrix": {
+    "src_primary": "FOH_still",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "FOH_Fridge_TopFreezer",
+     "detail": "built x 33.80-36.10, y 39.40-41.60 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "FOH",
@@ -1587,7 +2698,22 @@
     "DEC-051"
    ],
    "notes": "black-frame lit merchandiser with two glass doors next to the fridge (GAP-111); on the BOH-shared east wall (DEC-051 Q1). Not in the graybox. Order along the wall from the NE corner: ladder, desk, fridge, cooler (DEC-062); corner end read from R4C1 (cooler right of fridge looking south)",
-   "contents": "all concentrates and perishable edibles (DEC-050)"
+   "contents": "all concentrates and perishable edibles (DEC-050)",
+   "matrix": {
+    "src_primary": "FOH_still",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "FOH_Cooler_GlassDoor_2Door",
+     "detail": "built x 33.60-36.10, y 41.70-45.70 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "FOH",
@@ -1614,7 +2740,24 @@
    ],
    "gap": "GAP-127",
    "notes": "chrome wire rack on rollers, clear sorted bins and black trays (R4C1). The 4 rolling racks are the only FOH product racks (DEC-051 Q3, DEC-062); they slide forward and back to open a working aisle; drawn packed together (y 37.3-45.3) with the open aisle at the north. Length unknown: 6 ft sized from the room and photos (DEC-062, Low)",
-   "contents": "vapes, edibles, some infused prerolls (DEC-050)"
+   "contents": "vapes, edibles, some infused prerolls (DEC-050)",
+   "matrix": {
+    "src_primary": "FOH_still",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "FOH_Rack_Rolling_1",
+     "detail": "built x 24.80-30.80, y 37.30-39.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "FOH",
@@ -1641,7 +2784,24 @@
    ],
    "gap": "GAP-127",
    "notes": "chrome wire rack on rollers, clear sorted bins and black trays (R4C1). The 4 rolling racks are the only FOH product racks (DEC-051 Q3, DEC-062); they slide forward and back to open a working aisle; drawn packed together (y 37.3-45.3) with the open aisle at the north. Length unknown: 6 ft sized from the room and photos (DEC-062, Low)",
-   "contents": "vapes, edibles, some infused prerolls (DEC-050)"
+   "contents": "vapes, edibles, some infused prerolls (DEC-050)",
+   "matrix": {
+    "src_primary": "FOH_still",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "FOH_Rack_Rolling_2",
+     "detail": "built x 24.80-30.80, y 39.30-41.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "FOH",
@@ -1668,7 +2828,24 @@
    ],
    "gap": "GAP-127",
    "notes": "chrome wire rack on rollers, clear sorted bins and black trays (R4C1). The 4 rolling racks are the only FOH product racks (DEC-051 Q3, DEC-062); they slide forward and back to open a working aisle; drawn packed together (y 37.3-45.3) with the open aisle at the north. Length unknown: 6 ft sized from the room and photos (DEC-062, Low)",
-   "contents": "vapes, edibles, some infused prerolls (DEC-050)"
+   "contents": "vapes, edibles, some infused prerolls (DEC-050)",
+   "matrix": {
+    "src_primary": "FOH_still",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "FOH_Rack_Rolling_3",
+     "detail": "built x 24.80-30.80, y 41.30-43.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "FOH",
@@ -1695,7 +2872,24 @@
    ],
    "gap": "GAP-127",
    "notes": "chrome wire rack on rollers, clear sorted bins and black trays (R4C1). The 4 rolling racks are the only FOH product racks (DEC-051 Q3, DEC-062); they slide forward and back to open a working aisle; drawn packed together (y 37.3-45.3) with the open aisle at the north. Length unknown: 6 ft sized from the room and photos (DEC-062, Low)",
-   "contents": "vapes, edibles, some infused prerolls (DEC-050)"
+   "contents": "vapes, edibles, some infused prerolls (DEC-050)",
+   "matrix": {
+    "src_primary": "FOH_still",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "FOH_Rack_Rolling_4",
+     "detail": "built x 24.80-30.80, y 43.30-45.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "FOH",
@@ -1717,7 +2911,24 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "small rack straight ahead on entering FOH (west wall): deli bags, exit bags, misc tools, vape batteries (DEC-051 Q2). Size is a convention placeholder"
+   "notes": "small rack straight ahead on entering FOH (west wall): deli bags, exit bags, misc tools, vape batteries (DEC-051 Q2). Size is a convention placeholder",
+   "matrix": {
+    "src_primary": "DEC-051",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "FOH_Rack_Bags_Tools",
+     "detail": "built x 23.80-25.30, y 30.10-33.10 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "FOH",
@@ -1741,7 +2952,24 @@
    ],
    "gap": "GAP-127",
    "notes": "aluminium trash can on the right (north) on entering, usually propping the FOH door open (DEC-051 Q2); placed at the open leaf end. REVIEW-ART7 m3 (REF-013 fix): x 28.4-29.9, y 29.95-31.45, against the south face of the propped-open leaf at its latch end (was x 27.45-28.95, y 29.55-31.05, through the open leaf). It is the prop, so it sits inside the closing sweep by definition; propsDoor names the door it holds open",
-   "propsDoor": "Vest_FOH"
+   "propsDoor": "Vest_FOH",
+   "matrix": {
+    "src_primary": "DEC-051",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "FOH_Trash_Aluminium",
+     "detail": "built x 27.45-28.95, y 29.55-31.05 vs matrix x 28.40-29.90, y 29.95-31.45 (max edge offset 0.95 ft)"
+    }
+   }
   },
   {
    "room": "FOH",
@@ -1763,7 +2991,24 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "electrical box against the north wall on the right as you enter (DEC-051 Q2); generic panel box. Colour not recorded; height (~4-7 ft AFF) and x are Low"
+   "notes": "electrical box against the north wall on the right as you enter (DEC-051 Q2); generic panel box. Colour not recorded; height (~4-7 ft AFF) and x are Low",
+   "matrix": {
+    "src_primary": "DEC-051",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "FOH_ElectricalBox_Wall",
+     "detail": "built x 25.50-27.50, y 29.50-29.90 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "FOH",
@@ -1783,7 +3028,25 @@
     "wall2_R4C1",
     "chat_FOH_R"
    ],
-   "notes": "loose yellow totes, cardboard cases, a folding step ladder; red/white floor tape lines on the sealed concrete. Scatter freely, no fixed position"
+   "notes": "loose yellow totes, cardboard cases, a folding step ladder; red/white floor tape lines on the sealed concrete. Scatter freely, no fixed position",
+   "matrix": {
+    "src_primary": "FOH_still",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "missing",
+     "graybox": null,
+     "detail": "not placeable (pos null), see gap"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BOH",
@@ -1809,7 +3072,22 @@
     "BOH_still",
     "chat_BOH_R"
    ],
-   "notes": "chrome wire shelving along the east wall from y 31.3 (A011) to the desk; black branded cases and white cartons on the upper shelves, kraft cases stacked on a lower section at the north end. Graybox FX_BOH_Racks_E starts at 33.0"
+   "notes": "chrome wire shelving along the east wall from y 31.3 (A011) to the desk; black branded cases and white cartons on the upper shelves, kraft cases stacked on a lower section at the north end. Graybox FX_BOH_Racks_E starts at 33.0",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BOH_Rack_East_Wall",
+     "detail": "built x 45.00-47.00, y 31.30-40.00 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BOH",
@@ -1834,7 +3112,22 @@
     "wall2_R4C2",
     "chat_BOH_L"
    ],
-   "notes": "2-bay chrome run near the west wall (A011 x 36.6-38.6, y 37.3-45.3), 4-5 shelves of green and navy case boxes. Graybox FX_BOH_Racks_W runs 33.0-45.6 and collides with the A011 vestibule/door swing"
+   "notes": "2-bay chrome run near the west wall (A011 x 36.6-38.6, y 37.3-45.3), 4-5 shelves of green and navy case boxes. Graybox FX_BOH_Racks_W runs 33.0-45.6 and collides with the A011 vestibule/door swing",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BOH_Rack_West_Run",
+     "detail": "built x 37.10-39.10, y 37.30-45.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BOH",
@@ -1856,7 +3149,25 @@
     "A011",
     "wall2_R4C2"
    ],
-   "notes": "A011 shelving along the south wall (originally to x 47.0); shortened to clear the ex-register-1 desk"
+   "notes": "A011 shelving along the south wall (originally to x 47.0); shortened to clear the ex-register-1 desk",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BOH_Rack_South_Wall",
+     "detail": "built x 39.50-44.80, y 44.30-46.10 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BOH",
@@ -1878,7 +3189,22 @@
     "BOH_still",
     "chat_BOH_R"
    ],
-   "notes": "white-top desk with a black monitor, keyboard and a barcode scanner (DEC-040/041, DEC-062); matches graybox FX_BOH_Desk"
+   "notes": "white-top desk with a black monitor, keyboard and a barcode scanner (DEC-040/041, DEC-062); matches graybox FX_BOH_Desk",
+   "matrix": {
+    "src_primary": "BOH_still",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BOH_Desk_ExRegister1",
+     "detail": "built x 44.99-46.99, y 40.30-44.30 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BOH",
@@ -1900,7 +3226,22 @@
     "BOH_still",
     "DEC-062"
    ],
-   "notes": "handheld barcode scanner in its stand beside the keyboard on the ex-register-1 desk (DEC-062, REF-008 Q19); base = desk top; size Low"
+   "notes": "handheld barcode scanner in its stand beside the keyboard on the ex-register-1 desk (DEC-062, REF-008 Q19); base = desk top; size Low",
+   "matrix": {
+    "src_primary": "BOH_still",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BOH_Scanner_Barcode",
+     "detail": "built x 45.25-45.95, y 43.40-43.80 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BOH",
@@ -1919,7 +3260,25 @@
    "faces": "E",
    "confidence": "Low",
    "source_tiles": [],
-   "notes": "DEC-040 chair, not visible; matches graybox FX_BOH_Chair"
+   "notes": "DEC-040 chair, not visible; matches graybox FX_BOH_Chair",
+   "matrix": {
+    "src_primary": "DEC-040 (row notes; no CCTV view)",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BOH_Chair_Desk",
+     "detail": "built x 43.20-44.70, y 41.55-43.05 = matrix within 0.15 ft"
+    }
+   },
+   "gap": "GAP-127"
   },
   {
    "room": "BOH",
@@ -1944,7 +3303,24 @@
    ],
    "gap": "GAP-127",
    "notes": "chrome rack left of the vestibule door as seen from the SE (DEC-062, REF-008 Q18); placed against the vestibule south face (position Low)",
-   "contents": "drink cartons plus misc boxes; brand not modelled (DEC-062)"
+   "contents": "drink cartons plus misc boxes; brand not modelled (DEC-062)",
+   "matrix": {
+    "src_primary": "BOH_still",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BOH_Rack_Chrome_Cartons",
+     "detail": "built x 37.15-39.65, y 34.30-35.50 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "BOH",
@@ -1968,7 +3344,24 @@
     "chat_BOH_L"
    ],
    "gap": "GAP-127",
-   "notes": "white linear LED strip (TI L2 type) running along the aisle at ceiling height"
+   "notes": "white linear LED strip (TI L2 type) running along the aisle at ceiling height",
+   "matrix": {
+    "src_primary": "wall2_R4C2",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-127"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "BOH_Light_Strip_Pendant",
+     "detail": "built x 41.75-42.25, y 36.00-40.00 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -1993,7 +3386,23 @@
     "Register_Wide_still",
     "TI A940"
    ],
-   "notes": "north register run, registers 10/9/8 (DEC-039); staff on the north side, customers south. Plan y 7.0-9.2 kept; east end at 40.49 where it meets the east return (REF-013). Customer face carries the DELI STYLE checker wrap (DEC-090) seen from the south run cameras; lit display case on top near the east end (plan x 38-39.4)"
+   "notes": "north register run, registers 10/9/8 (DEC-039); staff on the north side, customers south. Plan y 7.0-9.2 kept; east end at 40.49 where it meets the east return (REF-013). Customer face carries the DELI STYLE checker wrap (DEC-090) seen from the south run cameras; lit display case on top near the east end (plan x 38-39.4)",
+   "matrix": {
+    "src_primary": "V5 plan vector (y 7.0-9.2) + wall2_R3C2/R2C4 + TI A940 (top 34 in)",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "High"
+    },
+    "served_side": "staff behind (N), customers in front (S)",
+    "gaps": [],
+    "note": "A012 draws a north POS box differently (out of scope since REF-013); not re-measured.",
+    "implemented": {
+     "status": "matches",
+     "detail": "built x 20.00-40.60, y 7.00-9.20 = matrix within 0.15 ft",
+     "graybox": "FX_RegisterCounter_L part0"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -2020,7 +3429,25 @@
     "BAND_11"
    ],
    "gap": "GAP-130",
-   "notes": "east return, registers 12/11; staff on the east side. REF-013 (GAP-130 narrowed): east jar-wall back counter is 2.0 ft deep by A011/A012 vector (front x 44.99 on this wall line). The A011/A012 'POS' boxes here are schematic white-filled label boxes (A011 x 42.21-43.99 1.78 wide, A012 x 41.12-43.62; the two sheets disagree by 1.1 ft) and leave 1.2-1.6 ft to the jar wall, which cannot hold a 1.3 ft scale stand plus an operator, so the counter line uses the measured south-run millwork: 4.5 ft counter to back counter (printed 9'-0\" - 2'-6\" and the 2'-0\" vector back counter), POS top 2'-6\" (A940). x 37.99-40.49, Med. y runs from the north run's face (9.2) to the south run's customer face (20.0), closing the staff L"
+   "notes": "east return, registers 12/11; staff on the east side. REF-013 (GAP-130 narrowed): east jar-wall back counter is 2.0 ft deep by A011/A012 vector (front x 44.99 on this wall line). The A011/A012 'POS' boxes here are schematic white-filled label boxes (A011 x 42.21-43.99 1.78 wide, A012 x 41.12-43.62; the two sheets disagree by 1.1 ft) and leave 1.2-1.6 ft to the jar wall, which cannot hold a 1.3 ft scale stand plus an operator, so the counter line uses the measured south-run millwork: 4.5 ft counter to back counter (printed 9'-0\" - 2'-6\" and the 2'-0\" vector back counter), POS top 2'-6\" (A940). x 37.99-40.49, Med. y runs from the north run's face (9.2) to the south run's customer face (20.0), closing the staff L",
+   "matrix": {
+    "src_primary": "A011/A012 vectors (east back counter 2744 x 45.19-47.19; POS label box 5020 x 42.21-43.99, y 5.96-15.80) + A901 aisle standard + wall2_R2C1/R2C3",
+    "conf": {
+     "size": "Med (depth) / Low (length)",
+     "position": "Low",
+     "orientation": "High"
+    },
+    "served_side": "staff behind (E), customers in front (W)",
+    "gaps": [
+     "GAP-130"
+    ],
+    "note": "REF-016 check: the A011 POS box ends at y 15.80 and leaves a 4.2-ft gap to the south run; REF-013 closed it (counter to y 20.0) because the box leaves only 1.2-1.6 ft to the jar wall. wall2_R2C3 shows the east return meeting the south run and the floor past the run's east end as staff (patterned) tile, which supports a closed staff L with the SE pocket (sink, emergency exit) on the staff side. Kept; the length/closure stays GAP-130.",
+    "implemented": {
+     "status": "differs",
+     "detail": "built x 38.40-40.60, y 9.20-19.00 vs matrix x 37.99-40.49, y 9.20-20.00 (max edge offset 1.00 ft)",
+     "graybox": "FX_RegisterCounter_L part1"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -2050,7 +3477,25 @@
     "Register_Wide_still",
     "Register_East_still"
    ],
-   "notes": "south register run, registers 7,2,3,4,5,6 (DEC-039); the plan's 'DELI COUNTER'. Staff on the SOUTH side facing north. REF-013 (GAP-129 closed): y is printed, High: customer face 9'-0\" from the south wall (y 20.0), POS top 2'-6\" deep (staff edge y 22.5); A011 and A012 vectors agree (19.99/22.49). x 15.28-41.03 is the A011/A012 vector (Med; the 2022 A901 run is 27'-9\", 2.0 ft longer). Straight run: no north return in A011/A012/A901; a 2'-6\" return at the west end closes the staff aisle (Counter_Register_SouthWestReturn). The V5 white columns (x 18.6-19.4 and 34.6-35.4, y 19.6-20.4, Med, not drawn in A011/A012/A101/S201, so non-structural) are centred on the customer-face line"
+   "notes": "south register run, registers 7,2,3,4,5,6 (DEC-039); the plan's 'DELI COUNTER'. Staff on the SOUTH side facing north. REF-013 (GAP-129 closed): y is printed, High: customer face 9'-0\" from the south wall (y 20.0), POS top 2'-6\" deep (staff edge y 22.5); A011 and A012 vectors agree (19.99/22.49). x 15.28-41.03 is the A011/A012 vector (Med; the 2022 A901 run is 27'-9\", 2.0 ft longer). Straight run: no north return in A011/A012/A901; a 2'-6\" return at the west end closes the staff aisle (Counter_Register_SouthWestReturn). The V5 white columns (x 18.6-19.4 and 34.6-35.4, y 19.6-20.4, Med, not drawn in A011/A012/A101/S201, so non-structural) are centred on the customer-face line",
+   "matrix": {
+    "src_primary": "A901 detail 17 (printed 9'-0\" wall->customer face, 2'-6\" top) + A011/A012 vectors 3017/3019 (x 15.28-41.02, y 19.99-22.49)",
+    "conf": {
+     "size": "High",
+     "position": "High (y) / Med (x)",
+     "orientation": "High"
+    },
+    "served_side": "staff behind (S), customers in front (N)",
+    "gaps": [
+     "GAP-129 closed"
+    ],
+    "note": "Measured REF-013; no change in REF-016. Carries R2..R6 (5 stations) and, at its west-end block, R7.",
+    "implemented": {
+     "status": "differs",
+     "detail": "built x 14.00-34.20, y 20.40-22.60 vs matrix x 15.29-41.03, y 20.00-22.50 (max edge offset 6.83 ft)",
+     "graybox": "FX_RegisterCounter_S part0"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -2073,7 +3518,25 @@
     "A011 vector (sheet 05/15/23, 18 pt/ft)",
     "A012 vector (5.20.26)"
    ],
-   "notes": "REF-013: 2'-6\" return at the west end of the south run (A901 printed width; A011/A012 vector x 15.28-17.78, y 22.49-26.99) running south to the back counter, so the south staff aisle is closed at its west end and opens east toward the east arch. Replaces REF-011's Counter_Register_SouthReturn (x 32.2-34.2 north arm), which no drawing shows"
+   "notes": "REF-013: 2'-6\" return at the west end of the south run (A901 printed width; A011/A012 vector x 15.28-17.78, y 22.49-26.99) running south to the back counter, so the south staff aisle is closed at its west end and opens east toward the east arch. Replaces REF-011's Counter_Register_SouthReturn (x 32.2-34.2 north arm), which no drawing shows",
+   "matrix": {
+    "src_primary": "A901 detail 17 printed 2'-6\" + A011 3017/3019 (x 15.28-17.78, y 22.49-26.99)",
+    "conf": {
+     "size": "High (w) / Med (l)",
+     "position": "Med",
+     "orientation": "High"
+    },
+    "served_side": "staff aisle closure; its west face is R7's customer face",
+    "gaps": [
+     "GAP-131"
+    ],
+    "note": "REF-016: together with the run end it forms the 7-ft west-end block that carries register 7 facing west (wall2_R2C1).",
+    "implemented": {
+     "status": "differs",
+     "graybox": "FX_RegisterCounter_S part1",
+     "detail": "missing as built; the build has instead a north arm x 32.20-34.20, y 18.00-20.40 standing on the CUSTOMER floor (rev7 Counter_Register_SouthReturn, no drawing shows it): remove it"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -2100,7 +3563,25 @@
    ],
    "gap": "GAP-133",
    "contents": "deli flower canisters (DEC-042b/043), kraft bags at one end; stocking note REFERENCES_INDEX 8.4",
-   "notes": "deli wall 1 of 3. Behind the north run. Black back counter (TI base cabinet depth 2'-1\", Low) with 2 dark-grey metal shelf tiers above on the teal leaf wall (DEC-043). Plan footprint 1.2 ft deep (y 0.2-1.4) does not include the back counter. The retail jar-wall photo (walnut drawers) is probably this wall (Low)"
+   "notes": "deli wall 1 of 3. Behind the north run. Black back counter (TI base cabinet depth 2'-1\", Low) with 2 dark-grey metal shelf tiers above on the teal leaf wall (DEC-043). Plan footprint 1.2 ft deep (y 0.2-1.4) does not include the back counter. The retail jar-wall photo (walnut drawers) is probably this wall (Low)",
+   "matrix": {
+    "src_primary": "V5 plan vector (north deli flower jar wall x 19.0-45.0) + wall2_R2C3/R2C4 + Register_Wide_still",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "High"
+    },
+    "served_side": "staff (budtenders fetch; faces the staff aisle behind each run)",
+    "gaps": [
+     "GAP-133",
+     "DEC-121"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "jarSlots N_Counter/_Mid/_Top + FX_DeliJarWall_S_Back",
+     "detail": "built x 19.00-44.90, y 0.20-2.30 = matrix within 0.35 ft; jar density: DEC-121 (PT2 #5) restores full shelves, the build's seeded fill shares (top 0.9, mid 0.5-0.55, counter 0.35, from REFERENCES_INDEX 8.4) and the slice's stocked count are ART-013's check (never thinned)"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -2129,7 +3610,25 @@
    ],
    "gap": "GAP-133",
    "contents": "deli flower canisters on the upper tiers; small jars/packaged on the counter row",
-   "notes": "deli wall 2 of 3. Behind the east return. Backlit teal shelves in arched wood frames over a black counter (BAND_11); upper tiers hold tall deli canisters, the counter row holds small jars. Plan labels it 'jar wall'; depth with counter 2.0 ft by A011/A012 vector (x 45.19-47.19, Med; REF-013)"
+   "notes": "deli wall 2 of 3. Behind the east return. Backlit teal shelves in arched wood frames over a black counter (BAND_11); upper tiers hold tall deli canisters, the counter row holds small jars. Plan labels it 'jar wall'; depth with counter 2.0 ft by A011/A012 vector (x 45.19-47.19, Med; REF-013)",
+   "matrix": {
+    "src_primary": "A011/A012 vector 2744 (back counter x 45.19-47.19, y 2.08-14.24) + BAND_11 + wall2_R2C3",
+    "conf": {
+     "size": "Med",
+     "position": "Med",
+     "orientation": "High"
+    },
+    "served_side": "staff (budtenders fetch; faces the staff aisle behind each run)",
+    "gaps": [
+     "GAP-133",
+     "DEC-121"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "jarSlots E_Counter/_Mid/_Top + FX_DeliJarWall_S_Back",
+     "detail": "built x 44.91-46.70, y 0.20-14.20 = matrix within 0.35 ft; jar density: DEC-121 (PT2 #5) restores full shelves, the build's seeded fill shares (top 0.9, mid 0.5-0.55, counter 0.35, from REFERENCES_INDEX 8.4) and the slice's stocked count are ART-013's check (never thinned)"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -2159,7 +3658,25 @@
    ],
    "gap": "GAP-133",
    "contents": "deli flower canisters, kraft bags; stocking note REFERENCES_INDEX 8.4",
-   "notes": "deli wall 3 of 3. Behind the south run, between the arches. Black back counter with open bins / wire bins under it, 2 shelf tiers of canisters with kraft bags hung at one end, a daily-deals sheet on the counter front (BAND_10). REF-013: back counter x 15.19-34.42, y 27.0-29.0 (2'-0\" deep) by A011/A012 vector; length 19.23 ft = A901 printed 19'-2 3/4\" (High)"
+   "notes": "deli wall 3 of 3. Behind the south run, between the arches. Black back counter with open bins / wire bins under it, 2 shelf tiers of canisters with kraft bags hung at one end, a daily-deals sheet on the counter front (BAND_10). REF-013: back counter x 15.19-34.42, y 27.0-29.0 (2'-0\" deep) by A011/A012 vector; length 19.23 ft = A901 printed 19'-2 3/4\" (High)",
+   "matrix": {
+    "src_primary": "A011/A012 vector (back counter x 15.19-34.42, y 27.0-29.0) + A901 printed 19'-2 3/4\" + BAND_10",
+    "conf": {
+     "size": "Med",
+     "position": "High (length) / Med",
+     "orientation": "High"
+    },
+    "served_side": "staff (budtenders fetch; faces the staff aisle behind each run)",
+    "gaps": [
+     "GAP-133",
+     "DEC-121"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "jarSlots S_Counter/_Mid/_Top + FX_DeliJarWall_S_Back",
+     "detail": "built x 13.50-34.70, y 26.90-28.70 vs matrix x 15.20-34.42, y 27.00-29.00 (max edge offset 1.70 ft); jar density: DEC-121 (PT2 #5) restores full shelves, the build's seeded fill shares (top 0.9, mid 0.5-0.55, counter 0.35, from REFERENCES_INDEX 8.4) and the slice's stocked count are ART-013's check (never thinned)"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -2201,7 +3718,25 @@
     "operator_zone_depth": 4.7,
     "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
    },
-   "notes": "north run; monitor x as graybox; operator zone back face = north jar wall back counter front y 2.3. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+   "notes": "north run; monitor x as graybox; operator zone back face = north jar wall back counter front y 2.3. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "matrix": {
+    "src_primary": "DEC-039 + wall2_R3C2 + Register_Wide_still (north run beyond the customers)",
+    "conf": {
+     "size": "Low-Med",
+     "position": "Med (y) / Low (x: graybox monitor x)",
+     "orientation": "High (staff N facing S)"
+    },
+    "served_side": "staff N, customer S",
+    "gaps": [
+     "GAP-108",
+     "GAP-134"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "stations.list reg 08",
+     "detail": "built (24.00, 7.00) staff N"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -2243,7 +3778,24 @@
     "operator_zone_depth": 4.7,
     "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
    },
-   "notes": "north run; monitor x as graybox; operator zone back face = north jar wall back counter front y 2.3. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+   "notes": "north run; monitor x as graybox; operator zone back face = north jar wall back counter front y 2.3. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "matrix": {
+    "src_primary": "DEC-039 + wall2_R3C2 + Register_Wide_still (north run beyond the customers)",
+    "conf": {
+     "size": "Low-Med",
+     "position": "Med (y) / Low (x: graybox monitor x)",
+     "orientation": "High (staff N facing S)"
+    },
+    "served_side": "staff N, customer S",
+    "gaps": [
+     "GAP-108"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "stations.list reg 09",
+     "detail": "built (30.00, 7.00) staff N"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -2285,7 +3837,24 @@
     "operator_zone_depth": 4.7,
     "source": "BAND_10 south staff aisle, TL-2 8\" grout lines counted (3.0-4.0 ft between stand back and back counter; 3.0 used, Low-Med); stand 1.6x1.3 REFERENCES_INDEX 2.2; back counter 2'-1\" TI A940 base cabinet"
    },
-   "notes": "north run; monitor x as graybox; operator zone back face = north jar wall back counter front y 2.3. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+   "notes": "north run; monitor x as graybox; operator zone back face = north jar wall back counter front y 2.3. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "matrix": {
+    "src_primary": "DEC-039 + wall2_R3C2 + Register_Wide_still (north run beyond the customers)",
+    "conf": {
+     "size": "Low-Med",
+     "position": "Med (y) / Low (x: graybox monitor x)",
+     "orientation": "High (staff N facing S)"
+    },
+    "served_side": "staff N, customer S",
+    "gaps": [
+     "GAP-108"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "stations.list reg 10",
+     "detail": "built (36.00, 7.00) staff N"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -2330,7 +3899,25 @@
     "operator_zone_depth": 4.5,
     "source": "east back counter 2.0 ft (A011/A012 vector); 4.5 ft counter to back counter as the measured south run (A901 det.17 + A011); stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
    },
-   "notes": "east return; y as graybox; back face = east jar wall counter front x 44.99 (REF-013). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+   "notes": "east return; y as graybox; back face = east jar wall counter front x 44.99 (REF-013). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "matrix": {
+    "src_primary": "DEC-039 + wall2_R2C1 + A011/A012 + REF-013 aisle standard",
+    "conf": {
+     "size": "Low-Med",
+     "position": "Med (x) / Low (y: graybox)",
+     "orientation": "High (staff E facing W)"
+    },
+    "served_side": "staff E, customer W",
+    "gaps": [
+     "GAP-130",
+     "GAP-108"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "stations.list reg 12",
+     "detail": "built (40.60, 12.00) staff E"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -2375,11 +3962,360 @@
     "operator_zone_depth": 4.5,
     "source": "east back counter 2.0 ft (A011/A012 vector); 4.5 ft counter to back counter as the measured south run (A901 det.17 + A011); stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
    },
-   "notes": "east return; y as graybox; back face = east jar wall counter front x 44.99 (REF-013). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+   "notes": "east return; y as graybox; back face = east jar wall counter front x 44.99 (REF-013). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "matrix": {
+    "src_primary": "DEC-039 + wall2_R2C1 + A011/A012 + REF-013 aisle standard",
+    "conf": {
+     "size": "Low-Med",
+     "position": "Med (x) / Low (y: graybox)",
+     "orientation": "High (staff E facing W)"
+    },
+    "served_side": "staff E, customer W",
+    "gaps": [
+     "GAP-130",
+     "GAP-108"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "stations.list reg 11",
+     "detail": "built (40.60, 16.00) staff E"
+    }
+   }
   },
   {
    "room": "Retail",
    "fixture": "POS_07",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    17.56,
+    23.2
+   ],
+   "rot": 90,
+   "faces": "W",
+   "confidence": "Med",
+   "source_tiles": [
+    "wall2_R2C1",
+    "DEC-039",
+    "PLAYTEST2 #4",
+    "A011",
+    "A901 detail 17"
+   ],
+   "gap": "GAP-131",
+   "reg": "07",
+   "staff_side": "E",
+   "stand_rect": {
+    "x0": 17.78,
+    "x1": 19.08,
+    "y0": 24.0,
+    "y1": 25.6
+   },
+   "operator_zone": {
+    "x0": 17.78,
+    "x1": 20.4,
+    "y0": 22.6,
+    "y1": 27.0
+   },
+   "clearance_ft": {
+    "behind_stand": 1.32,
+    "operator_zone_depth": 2.62,
+    "source": "west-end block x 15.28-17.78 (A011 3017/3019, A901 2'-6\" return); operator zone ends where POS_02's begins (x 20.4); the staff aisle behind is shared with POS_02 (REF-016, Low)"
+   },
+   "notes": "REF-016: register 7 is the POS on the west-end block of the south counter (x 15.28-17.78, y 20.0-27.0 = run end + 2'-6\" return), facing WEST: wall2_R2C1 shows its monitor and keyboard facing an operator on the east side (south staff aisle) and the card terminal on the west edge with the customer standing west of the block. That fits DEC-039 (7 is the leftmost south-side register, read west->east) and PT2 #4 (\"Register 7 is not where it should be\"; the build had it mid-run). Position along the block: monitor y 23.2 (Low: wall2_R2C1 shows the monitor in the NORTH part of the block, with the operator standing about level with the run's staff face, y ~22.5-24; REVIEW-REF016 m1). The operator's right (north) is the run's counter, so the stand goes to the operator's left (south), y 24.0-25.6 (Low, GAP-131). Customer stands at x ~14.1 on the floor between the queue exit and the ATM. DEC-104 kit variation applies",
+   "matrix": {
+    "src_primary": "wall2_R2C1 (camera in the SW looking N: a POS on the west-end block of the south counter, monitor and keyboard facing E to the operator, card terminal on the W edge, customer standing W of it on patterned tile)",
+    "conf": {
+     "size": "Med (stand/monitor sizes REFERENCES_INDEX 2.2)",
+     "position": "Med (on the west-end block) / Low (y along it)",
+     "orientation": "Med-High (faces W)"
+    },
+    "served_side": "staff E, customer W",
+    "gaps": [
+     "GAP-131",
+     "GAP-108"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "stations.list reg 07",
+     "detail": "built station point on the staff edge (31.00, 22.60), staff S; matrix (17.78, 23.20), staff E (wrong counter face / orientation)"
+    }
+   }
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_02",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    21.2,
+    22.28
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Med",
+   "source_tiles": [
+    "DEC-039",
+    "PLAYTEST2 #3/#4/#6",
+    "TI E101 POS circuits A-10..A-18",
+    "A901 detail 17",
+    "Register_Wide_still",
+    "wall2_R2C3",
+    "wall2_R2C4",
+    "A011",
+    "A012"
+   ],
+   "gap": "GAP-131",
+   "reg": "02",
+   "staff_side": "S",
+   "stand_rect": {
+    "x0": 22.2,
+    "x1": 23.8,
+    "y0": 22.5,
+    "y1": 23.8
+   },
+   "operator_zone": {
+    "x0": 20.4,
+    "x1": 23.8,
+    "y0": 22.5,
+    "y1": 27.0
+   },
+   "clearance_ft": {
+    "behind_stand": 3.2,
+    "operator_zone_depth": 4.5,
+    "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0 (x 15.19-34.42; east of it the wall at y 29.0); stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
+   },
+   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: even 3.8 ft pitch from CCTV (~4.0 ft, Low); the 2022 TI draws the 5 outlets as 2 + 3 with a 9.1 ft gap and is superseded for x because today's run (A011) is 2.0 ft shorter and the TI's fifth outlet would fall past the east-return face (matrix.src_primary). From 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "matrix": {
+    "src_primary": "2022 TI as drawn (count): E101 power plan (p.35) 5 POS circuits A-10/12/14/16/18 (words x 644/710/875/947/1021 pt at 18 pt/ft = gaps 3.67/9.17/4.00/4.11 ft) + 5 TV/RI outlets; A901 det.17 (p.13) the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end = gaps 3.75/9.08/4.08/4.08 ft: TWO outlets, a 9.1 ft blank run, then THREE (not an even pitch). x from CCTV (today's store), not the TI, because the store changed (DEC-120): A011 (2023/2026 update) gives today's run as x 15.28-41.03 = 25.75 ft, 2.0 ft shorter than A901's 27'-9\" (REFERENCES_INDEX 6.4: the 2022 run lengths describe the old layout, not positions); laid on today's run the TI outlets fall at x 19.06/22.81/31.89/35.97/40.05 (west-aligned) or 17.06/20.81/29.89/33.97/38.05 (east-aligned), so either way the fifth is past the east-return face x 37.99 where no customer can stand; CCTV shows the run evenly spaced: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; wall2_R2C5 4 monitors receding at an even spacing; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft -> even 3.8 ft pitch (Low). Count 5 = TI 5 circuits + DEC-039 numbers 2..6; wall2_R2C5 (from the SE, looking W) shows only 4 on the straight run, the fifth (POS_06, nearest that camera) not seen there: unresolved, GAP-131. PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\") puts 06 at the east end",
+    "conf": {
+     "size": "Low-Med (REFERENCES_INDEX 2.2)",
+     "position": "High (y) / Low (x: CCTV even pitch; TI 2+3 grouping superseded, see src_primary)",
+     "orientation": "High (staff S facing N)"
+    },
+    "served_side": "staff S, customer N",
+    "gaps": [
+     "GAP-131",
+     "GAP-108"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "stations.list reg 02",
+     "detail": "built station point on the staff edge (27.80, 22.60), staff S; matrix (21.20, 22.50), staff S"
+    }
+   }
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_03",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    25.0,
+    22.28
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Med",
+   "source_tiles": [
+    "DEC-039",
+    "PLAYTEST2 #3/#4/#6",
+    "TI E101 POS circuits A-10..A-18",
+    "A901 detail 17",
+    "Register_Wide_still",
+    "wall2_R2C3",
+    "wall2_R2C4",
+    "A011",
+    "A012"
+   ],
+   "gap": "GAP-131",
+   "reg": "03",
+   "staff_side": "S",
+   "stand_rect": {
+    "x0": 26.0,
+    "x1": 27.6,
+    "y0": 22.5,
+    "y1": 23.8
+   },
+   "operator_zone": {
+    "x0": 24.2,
+    "x1": 27.6,
+    "y0": 22.5,
+    "y1": 27.0
+   },
+   "clearance_ft": {
+    "behind_stand": 3.2,
+    "operator_zone_depth": 4.5,
+    "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0 (x 15.19-34.42; east of it the wall at y 29.0); stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
+   },
+   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: even 3.8 ft pitch from CCTV (~4.0 ft, Low); the 2022 TI draws the 5 outlets as 2 + 3 with a 9.1 ft gap and is superseded for x because today's run (A011) is 2.0 ft shorter and the TI's fifth outlet would fall past the east-return face (matrix.src_primary). From 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "matrix": {
+    "src_primary": "2022 TI as drawn (count): E101 power plan (p.35) 5 POS circuits A-10/12/14/16/18 (words x 644/710/875/947/1021 pt at 18 pt/ft = gaps 3.67/9.17/4.00/4.11 ft) + 5 TV/RI outlets; A901 det.17 (p.13) the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end = gaps 3.75/9.08/4.08/4.08 ft: TWO outlets, a 9.1 ft blank run, then THREE (not an even pitch). x from CCTV (today's store), not the TI, because the store changed (DEC-120): A011 (2023/2026 update) gives today's run as x 15.28-41.03 = 25.75 ft, 2.0 ft shorter than A901's 27'-9\" (REFERENCES_INDEX 6.4: the 2022 run lengths describe the old layout, not positions); laid on today's run the TI outlets fall at x 19.06/22.81/31.89/35.97/40.05 (west-aligned) or 17.06/20.81/29.89/33.97/38.05 (east-aligned), so either way the fifth is past the east-return face x 37.99 where no customer can stand; CCTV shows the run evenly spaced: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; wall2_R2C5 4 monitors receding at an even spacing; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft -> even 3.8 ft pitch (Low). Count 5 = TI 5 circuits + DEC-039 numbers 2..6; wall2_R2C5 (from the SE, looking W) shows only 4 on the straight run, the fifth (POS_06, nearest that camera) not seen there: unresolved, GAP-131. PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\") puts 06 at the east end",
+    "conf": {
+     "size": "Low-Med (REFERENCES_INDEX 2.2)",
+     "position": "High (y) / Low (x: CCTV even pitch; TI 2+3 grouping superseded, see src_primary)",
+     "orientation": "High (staff S facing N)"
+    },
+    "served_side": "staff S, customer N",
+    "gaps": [
+     "GAP-131",
+     "GAP-108"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "stations.list reg 03",
+     "detail": "built station point on the staff edge (24.60, 22.60), staff S; matrix (25.00, 22.50), staff S"
+    }
+   }
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_04",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    28.8,
+    22.28
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Med",
+   "source_tiles": [
+    "DEC-039",
+    "PLAYTEST2 #3/#4/#6",
+    "TI E101 POS circuits A-10..A-18",
+    "A901 detail 17",
+    "Register_Wide_still",
+    "wall2_R2C3",
+    "wall2_R2C4",
+    "A011",
+    "A012"
+   ],
+   "gap": "GAP-131",
+   "reg": "04",
+   "staff_side": "S",
+   "stand_rect": {
+    "x0": 29.8,
+    "x1": 31.4,
+    "y0": 22.5,
+    "y1": 23.8
+   },
+   "operator_zone": {
+    "x0": 28.0,
+    "x1": 31.4,
+    "y0": 22.5,
+    "y1": 27.0
+   },
+   "clearance_ft": {
+    "behind_stand": 3.2,
+    "operator_zone_depth": 4.5,
+    "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0 (x 15.19-34.42; east of it the wall at y 29.0); stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
+   },
+   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: even 3.8 ft pitch from CCTV (~4.0 ft, Low); the 2022 TI draws the 5 outlets as 2 + 3 with a 9.1 ft gap and is superseded for x because today's run (A011) is 2.0 ft shorter and the TI's fifth outlet would fall past the east-return face (matrix.src_primary). From 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "matrix": {
+    "src_primary": "2022 TI as drawn (count): E101 power plan (p.35) 5 POS circuits A-10/12/14/16/18 (words x 644/710/875/947/1021 pt at 18 pt/ft = gaps 3.67/9.17/4.00/4.11 ft) + 5 TV/RI outlets; A901 det.17 (p.13) the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end = gaps 3.75/9.08/4.08/4.08 ft: TWO outlets, a 9.1 ft blank run, then THREE (not an even pitch). x from CCTV (today's store), not the TI, because the store changed (DEC-120): A011 (2023/2026 update) gives today's run as x 15.28-41.03 = 25.75 ft, 2.0 ft shorter than A901's 27'-9\" (REFERENCES_INDEX 6.4: the 2022 run lengths describe the old layout, not positions); laid on today's run the TI outlets fall at x 19.06/22.81/31.89/35.97/40.05 (west-aligned) or 17.06/20.81/29.89/33.97/38.05 (east-aligned), so either way the fifth is past the east-return face x 37.99 where no customer can stand; CCTV shows the run evenly spaced: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; wall2_R2C5 4 monitors receding at an even spacing; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft -> even 3.8 ft pitch (Low). Count 5 = TI 5 circuits + DEC-039 numbers 2..6; wall2_R2C5 (from the SE, looking W) shows only 4 on the straight run, the fifth (POS_06, nearest that camera) not seen there: unresolved, GAP-131. PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\") puts 06 at the east end",
+    "conf": {
+     "size": "Low-Med (REFERENCES_INDEX 2.2)",
+     "position": "High (y) / Low (x: CCTV even pitch; TI 2+3 grouping superseded, see src_primary)",
+     "orientation": "High (staff S facing N)"
+    },
+    "served_side": "staff S, customer N",
+    "gaps": [
+     "GAP-131",
+     "GAP-108"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "stations.list reg 04",
+     "detail": "built station point on the staff edge (21.40, 22.60), staff S; matrix (28.80, 22.50), staff S"
+    }
+   }
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_05",
+   "type": "register_station",
+   "size_ft": [
+    1.6,
+    0.25,
+    1.1
+   ],
+   "pos_ft": [
+    32.6,
+    22.28
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Med",
+   "source_tiles": [
+    "DEC-039",
+    "PLAYTEST2 #3/#4/#6",
+    "TI E101 POS circuits A-10..A-18",
+    "A901 detail 17",
+    "Register_Wide_still",
+    "wall2_R2C3",
+    "wall2_R2C4",
+    "A011",
+    "A012"
+   ],
+   "gap": "GAP-131",
+   "reg": "05",
+   "staff_side": "S",
+   "stand_rect": {
+    "x0": 33.6,
+    "x1": 35.2,
+    "y0": 22.5,
+    "y1": 23.8
+   },
+   "operator_zone": {
+    "x0": 31.8,
+    "x1": 35.2,
+    "y0": 22.5,
+    "y1": 27.0
+   },
+   "clearance_ft": {
+    "behind_stand": 5.2,
+    "operator_zone_depth": 4.5,
+    "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0 (x 15.19-34.42; east of it the wall at y 29.0); stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
+   },
+   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: even 3.8 ft pitch from CCTV (~4.0 ft, Low); the 2022 TI draws the 5 outlets as 2 + 3 with a 9.1 ft gap and is superseded for x because today's run (A011) is 2.0 ft shorter and the TI's fifth outlet would fall past the east-return face (matrix.src_primary). From 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "matrix": {
+    "src_primary": "2022 TI as drawn (count): E101 power plan (p.35) 5 POS circuits A-10/12/14/16/18 (words x 644/710/875/947/1021 pt at 18 pt/ft = gaps 3.67/9.17/4.00/4.11 ft) + 5 TV/RI outlets; A901 det.17 (p.13) the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end = gaps 3.75/9.08/4.08/4.08 ft: TWO outlets, a 9.1 ft blank run, then THREE (not an even pitch). x from CCTV (today's store), not the TI, because the store changed (DEC-120): A011 (2023/2026 update) gives today's run as x 15.28-41.03 = 25.75 ft, 2.0 ft shorter than A901's 27'-9\" (REFERENCES_INDEX 6.4: the 2022 run lengths describe the old layout, not positions); laid on today's run the TI outlets fall at x 19.06/22.81/31.89/35.97/40.05 (west-aligned) or 17.06/20.81/29.89/33.97/38.05 (east-aligned), so either way the fifth is past the east-return face x 37.99 where no customer can stand; CCTV shows the run evenly spaced: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; wall2_R2C5 4 monitors receding at an even spacing; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft -> even 3.8 ft pitch (Low). Count 5 = TI 5 circuits + DEC-039 numbers 2..6; wall2_R2C5 (from the SE, looking W) shows only 4 on the straight run, the fifth (POS_06, nearest that camera) not seen there: unresolved, GAP-131. PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\") puts 06 at the east end",
+    "conf": {
+     "size": "Low-Med (REFERENCES_INDEX 2.2)",
+     "position": "High (y) / Low (x: CCTV even pitch; TI 2+3 grouping superseded, see src_primary)",
+     "orientation": "High (staff S facing N)"
+    },
+    "served_side": "staff S, customer N",
+    "gaps": [
+     "GAP-131",
+     "GAP-108"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "stations.list reg 05",
+     "detail": "built station point on the staff edge (17.80, 22.60), staff S; matrix (32.60, 22.50), staff S"
+    }
+   }
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_06",
    "type": "register_station",
    "size_ft": [
     1.6,
@@ -2395,16 +4331,17 @@
    "confidence": "Med",
    "source_tiles": [
     "DEC-039",
-    "BAND_10",
-    "Register_Wide_still",
-    "Register_East_still",
-    "wall2_R2C4",
+    "PLAYTEST2 #3/#4/#6",
+    "TI E101 POS circuits A-10..A-18",
     "A901 detail 17",
+    "Register_Wide_still",
+    "wall2_R2C3",
+    "wall2_R2C4",
     "A011",
     "A012"
    ],
    "gap": "GAP-131",
-   "reg": "07",
+   "reg": "06",
    "staff_side": "S",
    "stand_rect": {
     "x0": 37.4,
@@ -2421,249 +4358,27 @@
    "clearance_ft": {
     "behind_stand": 5.2,
     "operator_zone_depth": 4.5,
-    "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0; stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
+    "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0 (x 15.19-34.42; east of it the wall at y 29.0); stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
    },
-   "notes": "south run; DEC-039 'left to right 7,2,3,4,5,6' read as a customer facing the counter (7 east), as ART-003 (GAP-131). y measured (REF-013). x: pitch 3.2 ft (wide still 3-3.5 ft) from 06 at x 20.4 (2.6 ft east of the west return) to 07 at x 36.4; every customer spot is >= 1.0 ft from both white columns (Low-Med, GAP-131). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
-  },
-  {
-   "room": "Retail",
-   "fixture": "POS_02",
-   "type": "register_station",
-   "size_ft": [
-    1.6,
-    0.25,
-    1.1
-   ],
-   "pos_ft": [
-    33.2,
-    22.28
-   ],
-   "rot": 0,
-   "faces": "N",
-   "confidence": "Med",
-   "source_tiles": [
-    "DEC-039",
-    "BAND_10",
-    "Register_Wide_still",
-    "Register_East_still",
-    "wall2_R2C4",
-    "A901 detail 17",
-    "A011",
-    "A012"
-   ],
-   "gap": "GAP-131",
-   "reg": "02",
-   "staff_side": "S",
-   "stand_rect": {
-    "x0": 34.2,
-    "x1": 35.8,
-    "y0": 22.5,
-    "y1": 23.8
-   },
-   "operator_zone": {
-    "x0": 32.4,
-    "x1": 35.8,
-    "y0": 22.5,
-    "y1": 27.0
-   },
-   "clearance_ft": {
-    "behind_stand": 5.2,
-    "operator_zone_depth": 4.5,
-    "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0; stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
-   },
-   "notes": "south run; DEC-039 'left to right 7,2,3,4,5,6' read as a customer facing the counter (7 east), as ART-003 (GAP-131). y measured (REF-013). x: pitch 3.2 ft (wide still 3-3.5 ft) from 06 at x 20.4 (2.6 ft east of the west return) to 07 at x 36.4; every customer spot is >= 1.0 ft from both white columns (Low-Med, GAP-131). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
-  },
-  {
-   "room": "Retail",
-   "fixture": "POS_03",
-   "type": "register_station",
-   "size_ft": [
-    1.6,
-    0.25,
-    1.1
-   ],
-   "pos_ft": [
-    30.0,
-    22.28
-   ],
-   "rot": 0,
-   "faces": "N",
-   "confidence": "Med",
-   "source_tiles": [
-    "DEC-039",
-    "BAND_10",
-    "Register_Wide_still",
-    "Register_East_still",
-    "wall2_R2C4",
-    "A901 detail 17",
-    "A011",
-    "A012"
-   ],
-   "gap": "GAP-131",
-   "reg": "03",
-   "staff_side": "S",
-   "stand_rect": {
-    "x0": 31.0,
-    "x1": 32.6,
-    "y0": 22.5,
-    "y1": 23.8
-   },
-   "operator_zone": {
-    "x0": 29.2,
-    "x1": 32.6,
-    "y0": 22.5,
-    "y1": 27.0
-   },
-   "clearance_ft": {
-    "behind_stand": 3.2,
-    "operator_zone_depth": 4.5,
-    "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0; stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
-   },
-   "notes": "south run; DEC-039 'left to right 7,2,3,4,5,6' read as a customer facing the counter (7 east), as ART-003 (GAP-131). y measured (REF-013). x: pitch 3.2 ft (wide still 3-3.5 ft) from 06 at x 20.4 (2.6 ft east of the west return) to 07 at x 36.4; every customer spot is >= 1.0 ft from both white columns (Low-Med, GAP-131). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
-  },
-  {
-   "room": "Retail",
-   "fixture": "POS_04",
-   "type": "register_station",
-   "size_ft": [
-    1.6,
-    0.25,
-    1.1
-   ],
-   "pos_ft": [
-    26.8,
-    22.28
-   ],
-   "rot": 0,
-   "faces": "N",
-   "confidence": "Med",
-   "source_tiles": [
-    "DEC-039",
-    "BAND_10",
-    "Register_Wide_still",
-    "Register_East_still",
-    "wall2_R2C4",
-    "A901 detail 17",
-    "A011",
-    "A012"
-   ],
-   "gap": "GAP-131",
-   "reg": "04",
-   "staff_side": "S",
-   "stand_rect": {
-    "x0": 27.8,
-    "x1": 29.4,
-    "y0": 22.5,
-    "y1": 23.8
-   },
-   "operator_zone": {
-    "x0": 26.0,
-    "x1": 29.4,
-    "y0": 22.5,
-    "y1": 27.0
-   },
-   "clearance_ft": {
-    "behind_stand": 3.2,
-    "operator_zone_depth": 4.5,
-    "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0; stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
-   },
-   "notes": "south run; DEC-039 'left to right 7,2,3,4,5,6' read as a customer facing the counter (7 east), as ART-003 (GAP-131). y measured (REF-013). x: pitch 3.2 ft (wide still 3-3.5 ft) from 06 at x 20.4 (2.6 ft east of the west return) to 07 at x 36.4; every customer spot is >= 1.0 ft from both white columns (Low-Med, GAP-131). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
-  },
-  {
-   "room": "Retail",
-   "fixture": "POS_05",
-   "type": "register_station",
-   "size_ft": [
-    1.6,
-    0.25,
-    1.1
-   ],
-   "pos_ft": [
-    23.6,
-    22.28
-   ],
-   "rot": 0,
-   "faces": "N",
-   "confidence": "Med",
-   "source_tiles": [
-    "DEC-039",
-    "BAND_10",
-    "Register_Wide_still",
-    "Register_East_still",
-    "wall2_R2C4",
-    "A901 detail 17",
-    "A011",
-    "A012"
-   ],
-   "gap": "GAP-131",
-   "reg": "05",
-   "staff_side": "S",
-   "stand_rect": {
-    "x0": 24.6,
-    "x1": 26.2,
-    "y0": 22.5,
-    "y1": 23.8
-   },
-   "operator_zone": {
-    "x0": 22.8,
-    "x1": 26.2,
-    "y0": 22.5,
-    "y1": 27.0
-   },
-   "clearance_ft": {
-    "behind_stand": 3.2,
-    "operator_zone_depth": 4.5,
-    "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0; stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
-   },
-   "notes": "south run; DEC-039 'left to right 7,2,3,4,5,6' read as a customer facing the counter (7 east), as ART-003 (GAP-131). y measured (REF-013). x: pitch 3.2 ft (wide still 3-3.5 ft) from 06 at x 20.4 (2.6 ft east of the west return) to 07 at x 36.4; every customer spot is >= 1.0 ft from both white columns (Low-Med, GAP-131). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
-  },
-  {
-   "room": "Retail",
-   "fixture": "POS_06",
-   "type": "register_station",
-   "size_ft": [
-    1.6,
-    0.25,
-    1.1
-   ],
-   "pos_ft": [
-    20.4,
-    22.28
-   ],
-   "rot": 0,
-   "faces": "N",
-   "confidence": "Med",
-   "source_tiles": [
-    "DEC-039",
-    "BAND_10",
-    "Register_Wide_still",
-    "Register_East_still",
-    "wall2_R2C4",
-    "A901 detail 17",
-    "A011",
-    "A012"
-   ],
-   "gap": "GAP-131",
-   "reg": "06",
-   "staff_side": "S",
-   "stand_rect": {
-    "x0": 21.4,
-    "x1": 23.0,
-    "y0": 22.5,
-    "y1": 23.8
-   },
-   "operator_zone": {
-    "x0": 19.6,
-    "x1": 23.0,
-    "y0": 22.5,
-    "y1": 27.0
-   },
-   "clearance_ft": {
-    "behind_stand": 3.2,
-    "operator_zone_depth": 4.5,
-    "source": "A901 detail 17 printed 9'-0\" and 2'-6\"; A011/A012 vector back counter front y 27.0; stand 1.6x1.3 REFERENCES_INDEX 2.2 (REF-013)"
-   },
-   "notes": "south run; DEC-039 'left to right 7,2,3,4,5,6' read as a customer facing the counter (7 east), as ART-003 (GAP-131). y measured (REF-013). x: pitch 3.2 ft (wide still 3-3.5 ft) from 06 at x 20.4 (2.6 ft east of the west return) to 07 at x 36.4; every customer spot is >= 1.0 ft from both white columns (Low-Med, GAP-131). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)"
+   "notes": "REF-016 (PT2 #3/#4/#6, DEC-120): DEC-039 \"7, 2, 3, 4, 5, 6 left to right\" read west->east (staff facing north / north-up plan), not ART-003's customer-side reading: R6 is at the EAST end by the SE pocket with the hand-wash sink and the emergency exit (PT2 #6), R7 is the west-end block (wall2_R2C1). The straight run carries 5 stations, as the 2022 TI rough-ins (5 POS circuits/outlets) and PT2 #3 (\"reduce the count there\"). x: even 3.8 ft pitch from CCTV (~4.0 ft, Low); the 2022 TI draws the 5 outlets as 2 + 3 with a 9.1 ft gap and is superseded for x because today's run (A011) is 2.0 ft shorter and the TI's fifth outlet would fall past the east-return face (matrix.src_primary). From 02 at x 21.2 (clear of R7's operator zone) to 06 at x 36.4 (customer spot 1.6 ft west of the east return face x 37.99, 1.0 ft east of the column). Every customer spot >= 1.0 ft from both V5 columns. Monitor: pos_ft is the station reference on the staff edge (graybox convention); the real monitor stands on the customer half of the 2'-6\" top facing the operator (Register_Wide_still/Center_close, REF-016). DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one (DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, spray bottle on a stand, rag)",
+   "matrix": {
+    "src_primary": "2022 TI as drawn (count): E101 power plan (p.35) 5 POS circuits A-10/12/14/16/18 (words x 644/710/875/947/1021 pt at 18 pt/ft = gaps 3.67/9.17/4.00/4.11 ft) + 5 TV/RI outlets; A901 det.17 (p.13) the same 5 TV outlets at 3.78/7.53/16.61/20.69/24.77 ft from the 27'-9\" counter west end = gaps 3.75/9.08/4.08/4.08 ft: TWO outlets, a 9.1 ft blank run, then THREE (not an even pitch). x from CCTV (today's store), not the TI, because the store changed (DEC-120): A011 (2023/2026 update) gives today's run as x 15.28-41.03 = 25.75 ft, 2.0 ft shorter than A901's 27'-9\" (REFERENCES_INDEX 6.4: the 2022 run lengths describe the old layout, not positions); laid on today's run the TI outlets fall at x 19.06/22.81/31.89/35.97/40.05 (west-aligned) or 17.06/20.81/29.89/33.97/38.05 (east-aligned), so either way the fifth is past the east-return face x 37.99 where no customer can stand; CCTV shows the run evenly spaced: Register_Wide_still 287/295/190 px between monitor centres vs monitor widths 107-137/110/75 px = 2.05-2.39 monitor widths; wall2_R2C3 2.53-2.85 widths; wall2_R2C5 4 monitors receding at an even spacing; at a 1.6-1.75 ft monitor (convention) = 3.3-5.0 ft, central ~4.0 ft -> even 3.8 ft pitch (Low). Count 5 = TI 5 circuits + DEC-039 numbers 2..6; wall2_R2C5 (from the SE, looking W) shows only 4 on the straight run, the fifth (POS_06, nearest that camera) not seen there: unresolved, GAP-131. PLAYTEST2 #6 (Nolan: \"the emergency exit near the sink / Register 6\") puts 06 at the east end",
+    "conf": {
+     "size": "Low-Med (REFERENCES_INDEX 2.2)",
+     "position": "High (y) / Low (x: CCTV even pitch; TI 2+3 grouping superseded, see src_primary)",
+     "orientation": "High (staff S facing N)"
+    },
+    "served_side": "staff S, customer N",
+    "gaps": [
+     "GAP-131",
+     "GAP-108"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "stations.list reg 06",
+     "detail": "built station point on the staff edge (14.80, 22.60), staff S; matrix (36.40, 22.50), staff S"
+    }
+   }
   },
   {
    "room": "HUB",
@@ -2686,7 +4401,24 @@
     "DEC-110 W3"
    ],
    "notes": "light wood desk with keyboard + black office chair in the R1C4 foreground. R1C4 looks south (the green SE exit is at the far left), so the desk is at the NORTH end of HUB, not the plan raster strip at y 70-74.4. Kept clear of the HUB 2 door swing (x 19.2-22.2). Confirmed by Nolan (DEC-110 W3: desk + chair at the north end by the HUB 2 door). Position Med (DEC-110 W3); size_ft Low (GAP-132 narrowed, DEC-115 (4)): the 5.0 x 2.5 x 2.5 ft desk is a convention placeholder; no drawing or measurable view gives its size",
-   "gap": "GAP-132"
+   "gap": "GAP-132",
+   "matrix": {
+    "src_primary": "hub_R1C4",
+    "conf": {
+     "size": "Low",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-132"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "HUB_Desk_Computer",
+     "detail": "built x 23.00-28.00, y 47.20-49.70 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "HUB",
@@ -2710,7 +4442,24 @@
     "DEC-110 W3"
    ],
    "notes": "long dark counter/bench along the east wall, confirmed by Nolan (DEC-110 W3); blue and red rolling carts near its south end. Replaces the graybox FX_HUB_RackRun_W chrome run. Length: A011, A012 and A101 draw no HUB furniture (existing storage, 'no change'), so it is read from hub_R1C4: the counter runs from the north end to just short of the carts by the SE exit, about 20 ft (y 52-72, +-3 ft, CCTV perspective; REF-013). Position Med (DEC-110 W3); size_ft Low (GAP-132 narrowed, DEC-115 (4)): length ~20 ft is a CCTV perspective read (+-3 ft); depth 2.29 ft and height 2.833 ft are placeholders (the A940 34 in applies to the retail millwork, not this existing HUB bench)",
-   "gap": "GAP-132"
+   "gap": "GAP-132",
+   "matrix": {
+    "src_primary": "hub_R1C4",
+    "conf": {
+     "size": "Low",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-132"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "HUB_Counter_Long_EastWall",
+     "detail": "built x 44.70-46.98, y 52.00-72.00 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "HUB",
@@ -2734,7 +4483,24 @@
     "hub_R2C2"
    ],
    "gap": "GAP-110",
-   "notes": "central island about 4 bays x 3 deep of 4x2 ft chrome wire racks (count Low); graybox position kept, no evidence moves it"
+   "notes": "central island about 4 bays x 3 deep of 4x2 ft chrome wire racks (count Low); graybox position kept, no evidence moves it",
+   "matrix": {
+    "src_primary": "hub_R1C3",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-110"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "HUB_RackIsland_Chrome",
+     "detail": "built x 24.19-40.19, y 57.00-63.00 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "HUB",
@@ -2757,7 +4523,24 @@
     "hub_R1C3"
    ],
    "gap": "GAP-110",
-   "notes": "perimeter chrome run along the far (south) wall in R1C4, left of centre; stops west of the SE exit. Replaces the graybox FX_HUB_RackRun_N on the north wall, where R1C4 shows the desk"
+   "notes": "perimeter chrome run along the far (south) wall in R1C4, left of centre; stops west of the SE exit. Replaces the graybox FX_HUB_RackRun_N on the north wall, where R1C4 shows the desk",
+   "matrix": {
+    "src_primary": "hub_R1C4",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-110"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "HUB_RackRun_South",
+     "detail": "built x 24.00-40.00, y 73.83-75.83 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "HUB",
@@ -2781,7 +4564,24 @@
     "hub_R2C3"
    ],
    "gap": "GAP-110",
-   "notes": "2-3 shrink-wrapped pallets of blue cases on the right (west) side of R1C4; graybox positions agree (2 pallets 48x40 in)"
+   "notes": "2-3 shrink-wrapped pallets of blue cases on the right (west) side of R1C4; graybox positions agree (2 pallets 48x40 in)",
+   "matrix": {
+    "src_primary": "hub_R1C3",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-110"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "HUB_Pallets_BlueCases",
+     "detail": "built x 19.86-23.18, y 55.00-67.00 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "HUB",
@@ -2804,7 +4604,22 @@
     "hub_R1C4",
     "DEC-030"
    ],
-   "notes": "green emergency exit with round logo, SE corner, swings out (DEC-030/042c); graybox matches"
+   "notes": "green emergency exit with round logo, SE corner, swings out (DEC-030/042c); graybox matches",
+   "matrix": {
+    "src_primary": "A011",
+    "conf": {
+     "size": "High",
+     "position": "High",
+     "orientation": "High"
+    },
+    "served_side": "staff",
+    "gaps": [],
+    "implemented": {
+     "status": "see DOORS.json",
+     "graybox": "doors[]",
+     "detail": "leaf, hinge and opening audited per door in DOORS.json implemented"
+    }
+   }
   },
   {
    "room": "HUB2",
@@ -2828,7 +4643,24 @@
    ],
    "contents": "deli flower backstock, 1 lb bags (DEC-079)",
    "notes": "black storage cabinets against the office (north) wall, west of the office door; hold the deli backstock (1 lb bags, DEC-079). Nolan said 'HUB' (the HUB pair); by A011 only HUB 2 shares a wall with the office, so the room is settled by the drawing (REF-013). Room and wall Med (DEC-079 + A011); size_ft 6.0 x 1.5 x 7.0 ft Low (GAP-132 narrowed, DEC-115 (4)): copied from the graybox FX_HUB2_Cabinets placeholder, not a store measurement",
-   "gap": "GAP-132"
+   "gap": "GAP-132",
+   "matrix": {
+    "src_primary": "hub_R2C1",
+    "conf": {
+     "size": "Low",
+     "position": "Med",
+     "orientation": "Med"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-132"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "HUB2_Cabinets_Storage_OfficeWall",
+     "detail": "built x 1.19-7.19, y 47.00-48.50 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -2849,11 +4681,28 @@
    "source_tiles": [
     "DEC-048",
     "DEC-103",
-    "Register_Wide_still (left edge)",
+    "Register_Wide_still (top-left: guard at a dark podium just north of the entry door, licences further north, a white stool beside it)",
     "A011 vector (entry y 8.9-14.9)"
    ],
    "gap": "GAP-134",
-   "notes": "ID-check stand directly left inside the entrance (DEC-048); the guard stands behind it (north) facing arriving customers. REF-013: the A011 entry pair spans y 8.9-14.9, so the stand moves to y 7.15-8.65, just north of the north jamb. Size is a podium convention (GAP-134). No second buzzed door after it (DEC-103): check-in leads straight onto the sales floor"
+   "notes": "ID-check stand directly left inside the entrance (DEC-048: left of a customer walking in = north). REF-016: Register_Wide_still (top-left, magnified) shows the uniformed guard at a dark podium immediately north of the entry door with the framed licences further north on the west wall and a white stool beside it, so the stand sits between the door's north jamb (y 8.9, A011) and the licences (V5 y 3.0-8.0): y 7.15-8.65 kept (REF-013). The guard stands on the WEST side of the stand with his back to the wall, facing into the store (E) toward people coming through the door (orientation Low, one fisheye view; was \"north of the stand facing S\"). Size is a podium convention (GAP-134). No second buzzed door after it (DEC-103)",
+   "matrix": {
+    "src_primary": "Register_Wide_still (guard + podium north of the door) + DEC-048 + A011 entry y 8.9-14.9",
+    "conf": {
+     "size": "Low",
+     "position": "Med",
+     "orientation": "Low (guard faces E)"
+    },
+    "served_side": "customer-facing staff post",
+    "gaps": [
+     "GAP-134"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "Retail_IDCheck_Stand",
+     "detail": "built x 1.50-3.50, y 10.25-11.75 (rev7, beside the V5 door 12.5-18.5); matrix y 7.15-8.65 (north of the A011 door 8.9-14.9). No guard body in the build (PT2 #10; NPC-002/ASSET-008), only Anchor_Guard_Post"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -2876,20 +4725,37 @@
     "A011 vector (entry y 8.9-14.9)"
    ],
    "gap": "GAP-134",
-   "notes": "ID scanner with a green-light indicator on top of the ID-check stand (DEC-103), base at the stand top 3.5 ft; generic device, size Low"
+   "notes": "ID scanner with a green-light indicator on top of the ID-check stand (DEC-103), base at the stand top 3.5 ft; generic device, size Low",
+   "matrix": {
+    "src_primary": "DEC-103",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff (guard scans the back of the ID)",
+    "gaps": [
+     "GAP-134"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "Retail_IDCheck_Scanner",
+     "detail": "built x 2.25-2.75, y 10.80-11.20 vs matrix x 2.25-2.75, y 7.70-8.10 (max edge offset 3.10 ft)"
+    }
+   }
   },
   {
    "room": "Retail",
    "fixture": "Trash_Small_POS_08",
    "type": "trash_bin",
    "size_ft": [
-    0.9,
-    0.9,
-    1.5
+    1.15,
+    1.15,
+    1.18
    ],
    "pos_ft": [
     22.2,
-    5.25
+    5.125
    ],
    "rot": 0,
    "faces": "S",
@@ -2897,23 +4763,43 @@
    "source_tiles": [
     "DEC-104",
     "BAND_10",
-    "wide_stand_A"
+    "wide_stand_A",
+    "Register_Wide_still",
+    "REGISTER_KIT GAP-REG-10"
    ],
    "gap": "GAP-131",
-   "notes": "small trash bin at register 08 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+   "notes": "REF-016 size (PROC-006b World item 1): Register_Wide_still wire bin rim 78 px wide vs the adjacent stand top 108 px (1.6 ft) = 1.16 ft, vs the keyboard 87 px (17.5 in) = 1.31 ft, so rim ~1.15 ft (Low); height not measurable from an overhead view, kept at the GAP-REG-10 office-bin convention 14 in (1.18 ft). Replaces rev7 0.9 x 0.9 x 1.5 ft (no source for 1.5 ft). Placed against the back of the station's scale stand (BAND_10, wide_stand_A). DEC-104: small items are never uniform between stations: ART/Assets vary each station (some none, some beside the stand or under the counter)",
+   "matrix": {
+    "src_primary": "Register_Wide_still (bin rim vs stand top) + REGISTER_KIT GAP-REG-10",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "n/a"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-131",
+     "GAP-REG-10"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "Retail_Trash_Small_POS_08",
+     "detail": "built x 21.75-22.65, y 4.80-5.70 vs matrix x 21.62-22.77, y 4.55-5.70 (max edge offset 0.25 ft)"
+    }
+   }
   },
   {
    "room": "Retail",
    "fixture": "Trash_Small_POS_09",
    "type": "trash_bin",
    "size_ft": [
-    0.9,
-    0.9,
-    1.5
+    1.15,
+    1.15,
+    1.18
    ],
    "pos_ft": [
     28.2,
-    5.25
+    5.125
    ],
    "rot": 0,
    "faces": "S",
@@ -2921,23 +4807,43 @@
    "source_tiles": [
     "DEC-104",
     "BAND_10",
-    "wide_stand_A"
+    "wide_stand_A",
+    "Register_Wide_still",
+    "REGISTER_KIT GAP-REG-10"
    ],
    "gap": "GAP-131",
-   "notes": "small trash bin at register 09 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+   "notes": "REF-016 size (PROC-006b World item 1): Register_Wide_still wire bin rim 78 px wide vs the adjacent stand top 108 px (1.6 ft) = 1.16 ft, vs the keyboard 87 px (17.5 in) = 1.31 ft, so rim ~1.15 ft (Low); height not measurable from an overhead view, kept at the GAP-REG-10 office-bin convention 14 in (1.18 ft). Replaces rev7 0.9 x 0.9 x 1.5 ft (no source for 1.5 ft). Placed against the back of the station's scale stand (BAND_10, wide_stand_A). DEC-104: small items are never uniform between stations: ART/Assets vary each station (some none, some beside the stand or under the counter)",
+   "matrix": {
+    "src_primary": "Register_Wide_still (bin rim vs stand top) + REGISTER_KIT GAP-REG-10",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "n/a"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-131",
+     "GAP-REG-10"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "Retail_Trash_Small_POS_09",
+     "detail": "built x 27.75-28.65, y 4.80-5.70 vs matrix x 27.62-28.77, y 4.55-5.70 (max edge offset 0.25 ft)"
+    }
+   }
   },
   {
    "room": "Retail",
    "fixture": "Trash_Small_POS_10",
    "type": "trash_bin",
    "size_ft": [
-    0.9,
-    0.9,
-    1.5
+    1.15,
+    1.15,
+    1.18
    ],
    "pos_ft": [
     34.2,
-    5.25
+    5.125
    ],
    "rot": 0,
    "faces": "S",
@@ -2945,22 +4851,42 @@
    "source_tiles": [
     "DEC-104",
     "BAND_10",
-    "wide_stand_A"
+    "wide_stand_A",
+    "Register_Wide_still",
+    "REGISTER_KIT GAP-REG-10"
    ],
    "gap": "GAP-131",
-   "notes": "small trash bin at register 10 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.1 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+   "notes": "REF-016 size (PROC-006b World item 1): Register_Wide_still wire bin rim 78 px wide vs the adjacent stand top 108 px (1.6 ft) = 1.16 ft, vs the keyboard 87 px (17.5 in) = 1.31 ft, so rim ~1.15 ft (Low); height not measurable from an overhead view, kept at the GAP-REG-10 office-bin convention 14 in (1.18 ft). Replaces rev7 0.9 x 0.9 x 1.5 ft (no source for 1.5 ft). Placed against the back of the station's scale stand (BAND_10, wide_stand_A). DEC-104: small items are never uniform between stations: ART/Assets vary each station (some none, some beside the stand or under the counter)",
+   "matrix": {
+    "src_primary": "Register_Wide_still (bin rim vs stand top) + REGISTER_KIT GAP-REG-10",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "n/a"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-131",
+     "GAP-REG-10"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "Retail_Trash_Small_POS_10",
+     "detail": "built x 33.75-34.65, y 4.80-5.70 vs matrix x 33.62-34.77, y 4.55-5.70 (max edge offset 0.25 ft)"
+    }
+   }
   },
   {
    "room": "Retail",
    "fixture": "Trash_Small_POS_12",
    "type": "trash_bin",
    "size_ft": [
-    0.9,
-    0.9,
-    1.5
+    1.15,
+    1.15,
+    1.18
    ],
    "pos_ft": [
-    42.24,
+    42.365,
     10.2
    ],
    "rot": 0,
@@ -2969,22 +4895,42 @@
    "source_tiles": [
     "DEC-104",
     "BAND_10",
-    "wide_stand_A"
+    "wide_stand_A",
+    "Register_Wide_still",
+    "REGISTER_KIT GAP-REG-10"
    ],
    "gap": "GAP-131",
-   "notes": "small trash bin at register 12 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.3 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+   "notes": "REF-016 size (PROC-006b World item 1): Register_Wide_still wire bin rim 78 px wide vs the adjacent stand top 108 px (1.6 ft) = 1.16 ft, vs the keyboard 87 px (17.5 in) = 1.31 ft, so rim ~1.15 ft (Low); height not measurable from an overhead view, kept at the GAP-REG-10 office-bin convention 14 in (1.18 ft). Replaces rev7 0.9 x 0.9 x 1.5 ft (no source for 1.5 ft). Placed against the back of the station's scale stand (BAND_10, wide_stand_A). DEC-104: small items are never uniform between stations: ART/Assets vary each station (some none, some beside the stand or under the counter)",
+   "matrix": {
+    "src_primary": "Register_Wide_still (bin rim vs stand top) + REGISTER_KIT GAP-REG-10",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "n/a"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-131",
+     "GAP-REG-10"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Retail_Trash_Small_POS_12",
+     "detail": "built x 41.90-42.80, y 9.75-10.65 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Retail",
    "fixture": "Trash_Small_POS_11",
    "type": "trash_bin",
    "size_ft": [
-    0.9,
-    0.9,
-    1.5
+    1.15,
+    1.15,
+    1.18
    ],
    "pos_ft": [
-    42.24,
+    42.365,
     14.2
    ],
    "rot": 0,
@@ -2993,23 +4939,43 @@
    "source_tiles": [
     "DEC-104",
     "BAND_10",
-    "wide_stand_A"
+    "wide_stand_A",
+    "Register_Wide_still",
+    "REGISTER_KIT GAP-REG-10"
    ],
    "gap": "GAP-131",
-   "notes": "small trash bin at register 11 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.3 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+   "notes": "REF-016 size (PROC-006b World item 1): Register_Wide_still wire bin rim 78 px wide vs the adjacent stand top 108 px (1.6 ft) = 1.16 ft, vs the keyboard 87 px (17.5 in) = 1.31 ft, so rim ~1.15 ft (Low); height not measurable from an overhead view, kept at the GAP-REG-10 office-bin convention 14 in (1.18 ft). Replaces rev7 0.9 x 0.9 x 1.5 ft (no source for 1.5 ft). Placed against the back of the station's scale stand (BAND_10, wide_stand_A). DEC-104: small items are never uniform between stations: ART/Assets vary each station (some none, some beside the stand or under the counter)",
+   "matrix": {
+    "src_primary": "Register_Wide_still (bin rim vs stand top) + REGISTER_KIT GAP-REG-10",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "n/a"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-131",
+     "GAP-REG-10"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Retail_Trash_Small_POS_11",
+     "detail": "built x 41.90-42.80, y 13.75-14.65 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Retail",
    "fixture": "Trash_Small_POS_07",
    "type": "trash_bin",
    "size_ft": [
-    0.9,
-    0.9,
-    1.5
+    1.15,
+    1.15,
+    1.18
    ],
    "pos_ft": [
-    38.2,
-    24.25
+    19.655,
+    24.8
    ],
    "rot": 0,
    "faces": "N",
@@ -3017,23 +4983,43 @@
    "source_tiles": [
     "DEC-104",
     "BAND_10",
-    "wide_stand_A"
+    "wide_stand_A",
+    "Register_Wide_still",
+    "REGISTER_KIT GAP-REG-10"
    ],
    "gap": "GAP-131",
-   "notes": "small trash bin at register 07 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.3 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+   "notes": "REF-016 size (PROC-006b World item 1): Register_Wide_still wire bin rim 78 px wide vs the adjacent stand top 108 px (1.6 ft) = 1.16 ft, vs the keyboard 87 px (17.5 in) = 1.31 ft, so rim ~1.15 ft (Low); height not measurable from an overhead view, kept at the GAP-REG-10 office-bin convention 14 in (1.18 ft). Replaces rev7 0.9 x 0.9 x 1.5 ft (no source for 1.5 ft). Placed against the back of the station's scale stand (BAND_10, wide_stand_A). DEC-104: small items are never uniform between stations: ART/Assets vary each station (some none, some beside the stand or under the counter)",
+   "matrix": {
+    "src_primary": "Register_Wide_still (bin rim vs stand top) + REGISTER_KIT GAP-REG-10",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "n/a"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-131",
+     "GAP-REG-10"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "Retail_Trash_Small_POS_07",
+     "detail": "built x 32.35-33.25, y 23.90-24.80 vs matrix x 19.08-20.23, y 24.22-25.37 (max edge offset 13.27 ft)"
+    }
+   }
   },
   {
    "room": "Retail",
    "fixture": "Trash_Small_POS_02",
    "type": "trash_bin",
    "size_ft": [
-    0.9,
-    0.9,
-    1.5
+    1.15,
+    1.15,
+    1.18
    ],
    "pos_ft": [
-    35.0,
-    24.25
+    23.0,
+    24.375
    ],
    "rot": 0,
    "faces": "N",
@@ -3041,23 +5027,43 @@
    "source_tiles": [
     "DEC-104",
     "BAND_10",
-    "wide_stand_A"
+    "wide_stand_A",
+    "Register_Wide_still",
+    "REGISTER_KIT GAP-REG-10"
    ],
    "gap": "GAP-131",
-   "notes": "small trash bin at register 02 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.3 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+   "notes": "REF-016 size (PROC-006b World item 1): Register_Wide_still wire bin rim 78 px wide vs the adjacent stand top 108 px (1.6 ft) = 1.16 ft, vs the keyboard 87 px (17.5 in) = 1.31 ft, so rim ~1.15 ft (Low); height not measurable from an overhead view, kept at the GAP-REG-10 office-bin convention 14 in (1.18 ft). Replaces rev7 0.9 x 0.9 x 1.5 ft (no source for 1.5 ft). Placed against the back of the station's scale stand (BAND_10, wide_stand_A). DEC-104: small items are never uniform between stations: ART/Assets vary each station (some none, some beside the stand or under the counter)",
+   "matrix": {
+    "src_primary": "Register_Wide_still (bin rim vs stand top) + REGISTER_KIT GAP-REG-10",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "n/a"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-131",
+     "GAP-REG-10"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "Retail_Trash_Small_POS_02",
+     "detail": "built x 29.15-30.05, y 23.90-24.80 vs matrix x 22.43-23.57, y 23.80-24.95 (max edge offset 6.72 ft)"
+    }
+   }
   },
   {
    "room": "Retail",
    "fixture": "Trash_Small_POS_03",
    "type": "trash_bin",
    "size_ft": [
-    0.9,
-    0.9,
-    1.5
+    1.15,
+    1.15,
+    1.18
    ],
    "pos_ft": [
-    31.8,
-    24.25
+    26.8,
+    24.375
    ],
    "rot": 0,
    "faces": "N",
@@ -3065,23 +5071,43 @@
    "source_tiles": [
     "DEC-104",
     "BAND_10",
-    "wide_stand_A"
+    "wide_stand_A",
+    "Register_Wide_still",
+    "REGISTER_KIT GAP-REG-10"
    ],
    "gap": "GAP-131",
-   "notes": "small trash bin at register 03 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.3 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+   "notes": "REF-016 size (PROC-006b World item 1): Register_Wide_still wire bin rim 78 px wide vs the adjacent stand top 108 px (1.6 ft) = 1.16 ft, vs the keyboard 87 px (17.5 in) = 1.31 ft, so rim ~1.15 ft (Low); height not measurable from an overhead view, kept at the GAP-REG-10 office-bin convention 14 in (1.18 ft). Replaces rev7 0.9 x 0.9 x 1.5 ft (no source for 1.5 ft). Placed against the back of the station's scale stand (BAND_10, wide_stand_A). DEC-104: small items are never uniform between stations: ART/Assets vary each station (some none, some beside the stand or under the counter)",
+   "matrix": {
+    "src_primary": "Register_Wide_still (bin rim vs stand top) + REGISTER_KIT GAP-REG-10",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "n/a"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-131",
+     "GAP-REG-10"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "Retail_Trash_Small_POS_03",
+     "detail": "built x 25.95-26.85, y 23.90-24.80 vs matrix x 26.23-27.38, y 23.80-24.95 (max edge offset 0.52 ft)"
+    }
+   }
   },
   {
    "room": "Retail",
    "fixture": "Trash_Small_POS_04",
    "type": "trash_bin",
    "size_ft": [
-    0.9,
-    0.9,
-    1.5
+    1.15,
+    1.15,
+    1.18
    ],
    "pos_ft": [
-    28.6,
-    24.25
+    30.6,
+    24.375
    ],
    "rot": 0,
    "faces": "N",
@@ -3089,23 +5115,43 @@
    "source_tiles": [
     "DEC-104",
     "BAND_10",
-    "wide_stand_A"
+    "wide_stand_A",
+    "Register_Wide_still",
+    "REGISTER_KIT GAP-REG-10"
    ],
    "gap": "GAP-131",
-   "notes": "small trash bin at register 04 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.3 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+   "notes": "REF-016 size (PROC-006b World item 1): Register_Wide_still wire bin rim 78 px wide vs the adjacent stand top 108 px (1.6 ft) = 1.16 ft, vs the keyboard 87 px (17.5 in) = 1.31 ft, so rim ~1.15 ft (Low); height not measurable from an overhead view, kept at the GAP-REG-10 office-bin convention 14 in (1.18 ft). Replaces rev7 0.9 x 0.9 x 1.5 ft (no source for 1.5 ft). Placed against the back of the station's scale stand (BAND_10, wide_stand_A). DEC-104: small items are never uniform between stations: ART/Assets vary each station (some none, some beside the stand or under the counter)",
+   "matrix": {
+    "src_primary": "Register_Wide_still (bin rim vs stand top) + REGISTER_KIT GAP-REG-10",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "n/a"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-131",
+     "GAP-REG-10"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "Retail_Trash_Small_POS_04",
+     "detail": "built x 22.75-23.65, y 23.90-24.80 vs matrix x 30.02-31.18, y 23.80-24.95 (max edge offset 7.53 ft)"
+    }
+   }
   },
   {
    "room": "Retail",
    "fixture": "Trash_Small_POS_05",
    "type": "trash_bin",
    "size_ft": [
-    0.9,
-    0.9,
-    1.5
+    1.15,
+    1.15,
+    1.18
    ],
    "pos_ft": [
-    25.4,
-    24.25
+    34.4,
+    24.375
    ],
    "rot": 0,
    "faces": "N",
@@ -3113,23 +5159,43 @@
    "source_tiles": [
     "DEC-104",
     "BAND_10",
-    "wide_stand_A"
+    "wide_stand_A",
+    "Register_Wide_still",
+    "REGISTER_KIT GAP-REG-10"
    ],
    "gap": "GAP-131",
-   "notes": "small trash bin at register 05 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.3 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+   "notes": "REF-016 size (PROC-006b World item 1): Register_Wide_still wire bin rim 78 px wide vs the adjacent stand top 108 px (1.6 ft) = 1.16 ft, vs the keyboard 87 px (17.5 in) = 1.31 ft, so rim ~1.15 ft (Low); height not measurable from an overhead view, kept at the GAP-REG-10 office-bin convention 14 in (1.18 ft). Replaces rev7 0.9 x 0.9 x 1.5 ft (no source for 1.5 ft). Placed against the back of the station's scale stand (BAND_10, wide_stand_A). DEC-104: small items are never uniform between stations: ART/Assets vary each station (some none, some beside the stand or under the counter)",
+   "matrix": {
+    "src_primary": "Register_Wide_still (bin rim vs stand top) + REGISTER_KIT GAP-REG-10",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "n/a"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-131",
+     "GAP-REG-10"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "Retail_Trash_Small_POS_05",
+     "detail": "built x 19.15-20.05, y 23.90-24.80 vs matrix x 33.83-34.98, y 23.80-24.95 (max edge offset 14.93 ft)"
+    }
+   }
   },
   {
    "room": "Retail",
    "fixture": "Trash_Small_POS_06",
    "type": "trash_bin",
    "size_ft": [
-    0.9,
-    0.9,
-    1.5
+    1.15,
+    1.15,
+    1.18
    ],
    "pos_ft": [
-    22.2,
-    24.25
+    38.2,
+    24.375
    ],
    "rot": 0,
    "faces": "N",
@@ -3137,10 +5203,30 @@
    "source_tiles": [
     "DEC-104",
     "BAND_10",
-    "wide_stand_A"
+    "wide_stand_A",
+    "Register_Wide_still",
+    "REGISTER_KIT GAP-REG-10"
    ],
    "gap": "GAP-131",
-   "notes": "small trash bin at register 06 (DEC-104), placeholder against the back of the scale stand where BAND_10/wide_stand_A show one; it narrows the aisle behind the stand to about 2.3 ft at that spot. DEC-104: small items are never uniform between stations (presence, placement, condition): ART/Assets vary each station's kit instead of copying one: some stations have none, some sit beside the stand or under the counter"
+   "notes": "REF-016 size (PROC-006b World item 1): Register_Wide_still wire bin rim 78 px wide vs the adjacent stand top 108 px (1.6 ft) = 1.16 ft, vs the keyboard 87 px (17.5 in) = 1.31 ft, so rim ~1.15 ft (Low); height not measurable from an overhead view, kept at the GAP-REG-10 office-bin convention 14 in (1.18 ft). Replaces rev7 0.9 x 0.9 x 1.5 ft (no source for 1.5 ft). Placed against the back of the station's scale stand (BAND_10, wide_stand_A). DEC-104: small items are never uniform between stations: ART/Assets vary each station (some none, some beside the stand or under the counter)",
+   "matrix": {
+    "src_primary": "Register_Wide_still (bin rim vs stand top) + REGISTER_KIT GAP-REG-10",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "n/a"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-131",
+     "GAP-REG-10"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "Retail_Trash_Small_POS_06",
+     "detail": "built x 16.15-17.05, y 23.90-24.80 vs matrix x 37.62-38.77, y 23.80-24.95 (max edge offset 21.72 ft)"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -3152,18 +5238,36 @@
     3.0
    ],
    "pos_ft": [
-    33.3,
-    17.2
+    42.0,
+    23.0
    ],
    "rot": 0,
    "faces": "N",
    "confidence": "Low",
    "source_tiles": [
     "DEC-104",
-    "wall2_R2C5"
+    "wall2_R2C5",
+    "wall2_R2C3"
    ],
    "gap": "GAP-134",
-   "notes": "big trash bin (DEC-104), customer side of the south run near the east white column, where R2C5 shows a bin at a counter end. REF-013: the 'south return' is not in A011/A012/A901 (the run is straight); name kept for consumers"
+   "notes": "big trash bin (DEC-104). REF-016: wall2_R2C5 and wall2_R2C3 both show it on the patterned staff floor just past the EAST end of the south run (SE pocket), not on the customer floor; moved from (33.3, 17.2), where it also blocked POS_05's customer spot. 4.6 ft left to the east wall for the emergency-exit path. Position Low (GAP-134). Name kept for consumers (there is no south return)",
+   "matrix": {
+    "src_primary": "wall2_R2C5 + wall2_R2C3",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "n/a"
+    },
+    "served_side": "staff (SE pocket)",
+    "gaps": [
+     "GAP-134"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "Retail_Trash_Big_SouthReturnEnd",
+     "detail": "built x 32.70-33.90, y 16.60-17.80 vs matrix x 41.40-42.60, y 22.40-23.60 (max edge offset 8.70 ft)"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -3185,7 +5289,24 @@
     "DEC-104"
    ],
    "gap": "GAP-134",
-   "notes": "big trash bin (DEC-104) spread to the west half near the ATM and queue exit; position not in the evidence"
+   "notes": "big trash bin (DEC-104) spread to the west half near the ATM and queue exit; position not in the evidence",
+   "matrix": {
+    "src_primary": "DEC-104",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "customer",
+    "gaps": [
+     "GAP-134"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Retail_Trash_Big_West_ATM",
+     "detail": "built x 3.80-5.00, y 26.00-27.20 = matrix within 0.15 ft"
+    }
+   }
   },
   {
    "room": "Retail",
@@ -3207,7 +5328,231 @@
     "DEC-104"
    ],
    "gap": "GAP-134",
-   "notes": "big trash bin (DEC-104) by the east hand-wash sink, clear of the emergency exit (y 20.5-24); position not in the evidence"
+   "notes": "big trash bin (DEC-104) just east of the hand-wash sink, which A011 puts on the SOUTH wall of the SE pocket (x 43.67-45.56, ROOM_FIXTURES Sink_HandWash); clear of the emergency exit (A011 rough opening y 21.38-24.72 on the east wall). The SE pocket is staff floor under REF-013's kept closed L (GAP-130). Position not in the evidence (Low). Possibly the same bin as Trash_Big_SouthReturnEnd (wall2_R2C5/R2C3, at (42.0, 23.0), ~4 ft away): ART-013 keeps one of the two unless a still shows both (REF-016, GAP-134)",
+   "matrix": {
+    "src_primary": "DEC-104",
+    "conf": {
+     "size": "Low",
+     "position": "Low",
+     "orientation": "Low"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-134"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "Retail_Trash_Big_East_Sink",
+     "detail": "built x 45.60-46.80, y 27.00-28.20 = matrix within 0.15 ft"
+    }
+   }
+  },
+  {
+   "room": "Retail",
+   "fixture": "Sink_HandWash",
+   "type": "sink",
+   "size_ft": [
+    1.9,
+    1.6,
+    2.833
+   ],
+   "pos_ft": [
+    44.62,
+    28.2
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Med",
+   "source_tiles": [
+    "A011 vector (drawings 3843-3899: x 43.67-45.56, y 27.40-29.00 against the south wall; label \"HAND WASHING SINK\")"
+   ],
+   "notes": "REF-016: hand-wash sink on the SOUTH wall of the SE pocket (A011 vector, south-wall-anchored), not on the east wall where V5/graybox draw it (x 45.6-47.0, y 24.6-26.8, beside the exit). Staff sink in the staff zone past the south run's east end (R2C3 patterned floor). Rim height not in any source: 34 in counter convention (GAP-108 family)",
+   "gap": "GAP-108",
+   "matrix": {
+    "src_primary": "A011 vector (17.987 pt/ft, frame of REFERENCES_INDEX 8.5: x from the retail west face, y south-wall-anchored) drawings 3843-3899",
+    "conf": {
+     "size": "Med (footprint) / Low (h)",
+     "position": "Med",
+     "orientation": "High (against the south wall)"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-108"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "FX_Sink_E",
+     "detail": "built on the EAST wall x 45.60-46.99, y 24.60-26.80 (V5), right beside the exit opening; matrix: south wall x 43.67-45.57, y 27.40-29.00"
+    }
+   }
+  },
+  {
+   "room": "Retail",
+   "fixture": "Rack_EastWall",
+   "type": "rack",
+   "size_ft": [
+    3.81,
+    1.41,
+    6.0
+   ],
+   "pos_ft": [
+    46.475,
+    16.235
+   ],
+   "rot": 90,
+   "faces": "W",
+   "confidence": "Med",
+   "source_tiles": [
+    "A011 vector (drawings 3693-3705: x 45.77-47.18, y 14.33-18.14, shelf lines inside)",
+    "wall2_R2C3 (tall chrome rack with product right of the south run's east end)"
+   ],
+   "notes": "REF-016: wall shelving unit on the east wall directly south of the east jar-wall back counter (which ends y 14.24), in the east staff aisle. A011 puts it at y 14.33-18.14 (V5/graybox y 15.0-20.0). Height ~6 ft is a chrome-rack convention (GAP-002)",
+   "gap": "GAP-002",
+   "matrix": {
+    "src_primary": "A011 vector (17.987 pt/ft, frame of REFERENCES_INDEX 8.5: x from the retail west face, y south-wall-anchored) drawings 3693-3705",
+    "conf": {
+     "size": "Med (footprint) / Low (h)",
+     "position": "Med",
+     "orientation": "High"
+    },
+    "served_side": "staff",
+    "gaps": [
+     "GAP-002"
+    ],
+    "implemented": {
+     "status": "differs",
+     "detail": "built x 45.60-46.99, y 15.00-20.00 vs matrix x 45.77-47.18, y 14.33-18.14 (max edge offset 1.86 ft)",
+     "graybox": "FX_Rack_E"
+    }
+   }
+  },
+  {
+   "room": "Retail",
+   "fixture": "DisplayCase_Lit_NorthRun",
+   "type": "display_case",
+   "size_ft": [
+    1.4,
+    1.4,
+    1.5
+   ],
+   "pos_ft": [
+    38.7,
+    8.1
+   ],
+   "rot": 0,
+   "faces": "S",
+   "confidence": "Med",
+   "source_tiles": [
+    "V5 plan \"display case\" x 38.0-39.4, y 7.4-8.8",
+    "wall2_R3C2 (lit black glass display cabinet standing on the counter)"
+   ],
+   "notes": "REF-016: the lit glass display cabinet on the north run near its east end (the only cased display on the counters). Footprint Med (V5 vector, Med per its legend); height ~1.5 ft Low (GAP-002 \"case\"); R3C2 sees its lit glass from the staff side, the customer face is not seen, so which face is glazed is Low. Not a deli jar case: the deli canisters live only on the three jar walls (DEC-043, REFERENCES_INDEX 8.3)",
+   "gap": "GAP-002",
+   "matrix": {
+    "src_primary": "V5 vector + wall2_R3C2",
+    "conf": {
+     "size": "Med (footprint) / Low (h)",
+     "position": "Med",
+     "orientation": "Low"
+    },
+    "served_side": "both (on the counter; glazed face Low)",
+    "gaps": [
+     "GAP-002"
+    ],
+    "implemented": {
+     "status": "matches",
+     "detail": "built x 38.00-39.40, y 7.40-8.80 = matrix within 0.15 ft",
+     "graybox": "FX_DisplayCase"
+    }
+   }
+  },
+  {
+   "room": "Retail",
+   "fixture": "Queue_Stanchions",
+   "type": "stanchion_field",
+   "size_ft": [
+    9.0,
+    8.5,
+    3.0
+   ],
+   "pos_ft": [
+    10.5,
+    15.25
+   ],
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Low",
+   "source_tiles": [
+    "V5 plan dashed stanchion lines x 6/9/12/15, y 11-19.5 (raster-read, REFERENCES_INDEX 1.5)",
+    "Register_Wide_still",
+    "wall2_R2C1",
+    "wall2_R2C2",
+    "DEC-079",
+    "DEC-103"
+   ],
+   "notes": "REF-016: one-line queue (DEC-079/103) in a belt-stanchion field between the ID stand and the registers; CCTV shows black belt stanchions starting right next to the guard podium (wide still) and the field in front of the north run (R2C1/R2C2). Lane x positions Med-Low (V5 dashed lines); south end y 17.4 in the build (cut 3.0 ft clear of the old south counter, ART-007) is kept: the measured counter face is y 20.0, so 2.6 ft clear. The serpentine anchors are in SCENE_ANCHORS (Anchor_Queue_*). The A011 entry move (y 8.9-14.9) puts the door north of the field's north end (y 11): ART-013 checks the path door -> ID stand -> lane entry. Lane count and exact belt runs Low (GAP-134)",
+   "gap": "GAP-134",
+   "matrix": {
+    "src_primary": "V5 dashed lines + Register_Wide_still/wall2_R2C1/R2C2",
+    "conf": {
+     "size": "Low",
+     "position": "Med-Low (lanes) / Low (ends)",
+     "orientation": "Med"
+    },
+    "served_side": "customer",
+    "gaps": [
+     "GAP-134"
+    ],
+    "implemented": {
+     "status": "matches",
+     "graybox": "FX_QueueLane_1..4",
+     "detail": "lanes x 6/9/12/15, y 11.0-17.4 as built; the entry still sits at y 12.5-18.5 in the build (see DOORS Entry)"
+    }
+   }
+  },
+  {
+   "room": "Retail",
+   "fixture": "POS_StationKit",
+   "type": "kit_rule",
+   "size_ft": [
+    1.6,
+    2.5,
+    1.1
+   ],
+   "pos_ft": null,
+   "rot": 0,
+   "faces": "N",
+   "confidence": "Med",
+   "source_tiles": [
+    "Register_Wide_still",
+    "Register_Center_close + Register_East stills",
+    "wall2_R2C1",
+    "wall2_R2C3",
+    "REFERENCES_INDEX 2.2",
+    "DEC-096",
+    "DEC-104",
+    "REGISTER_KIT.md"
+   ],
+   "notes": "REF-016 side rule for every register (PT2 #9), from the back-of-register stills: STAFF side / staff half of the 2'-6\" top: keyboard, mouse, handheld scanner, receipt printer, label printer, rag, the scale stand on the staff floor to the operator's right with the spray bottle on it, the small trash bin on the staff floor, under-counter open shelves (bags, boxes, supplies) facing the staff. The MONITOR stands on the customer half of the top but faces the operator (customers see its back). CUSTOMER edge: only the card/PIN terminal (faces the customer) and the counter-front wrap. Nothing else stands on the customer floor except the big bins (DEC-104). Not placeable as one row (pos null); offsets inside the top are GAP-RK-LAYOUT",
+   "gap": "GAP-RK-LAYOUT",
+   "matrix": {
+    "src_primary": "Register_Wide_still + Center_close/East stills + wall2_R2C1/R2C3",
+    "conf": {
+     "size": "Low (offsets)",
+     "position": "Med (side)",
+     "orientation": "Med"
+    },
+    "served_side": "staff (card terminal: customer)",
+    "gaps": [
+     "GAP-RK-LAYOUT",
+     "GAP-REG-10"
+    ],
+    "implemented": {
+     "status": "differs",
+     "graybox": "POS_xx_* kit placeholders (graybox fixtures)",
+     "detail": "label/receipt printers sit on the CUSTOMER half of every top (south y 21.00-21.65 on a 20.40-22.60 top; north y 7.95-8.60 on 7.00-9.20; east x 39.05-39.65 on 38.40-40.60); POS_06_LabelPrinter sits on the customer edge (y 20.33-20.98); the monitor box is 0.10-0.35 ft inside the staff edge (real: customer half, facing staff); card terminals correctly on the customer edge; spray bottles on the stands correct"
+    }
+   }
   }
  ],
  "graybox_contradictions": [
@@ -3220,6 +5565,7 @@
   "GAP-129 South register run (REF-013, measured): graybox FX_DeliCounter_L long leg y 23.2-25.2 + stations y 25.2 leave 2.4 ft to FX_DeliJarWall_S. A901 det.17 + A011/A012: counter y 20.0-22.5 (2'-6\" top), x 15.28-41.03, a 2'-6\" west return to the back counter, back counter y 27.0-29.0, x 15.19-34.42; no north return arm",
   "GAP-130 East return: graybox x 39.8-42.0 leaves 2.3 ft to FX_JarWall_E; move to x 37.99-40.49 (y 9.2-20.0), stations 12/11 at the staff edge x 40.49, east jar wall 2.0 ft deep (x 44.99-46.99) (REF-013)",
   "GAP-133 Deli walls: graybox has three blocks but jarSlots only on N and E and FX_DeliJarWall_S is a solid block with no shelves or jars; all three are stocked deli walls with a back counter + 2 tiers",
-  "GAP-132 (closed REF-013, DEC-110 W3) HUB: FX_HUB_Desks (y 70-74.4) and FX_HUB_RackRun_N contradict R1C4 (desk at the north end); FX_HUB_RackRun_W (east wall) is a long dark counter in R1C4; graybox cameras R2C3/R2C4/R2C5 sit north of the counters looking south, but they are behind the south run looking north (REFERENCES_INDEX 8.1)"
+  "GAP-132 (closed REF-013, DEC-110 W3) HUB: FX_HUB_Desks (y 70-74.4) and FX_HUB_RackRun_N contradict R1C4 (desk at the north end); FX_HUB_RackRun_W (east wall) is a long dark counter in R1C4; graybox cameras R2C3/R2C4/R2C5 sit north of the counters looking south, but they are behind the south run looking north (REFERENCES_INDEX 8.1)",
+  "REF-016: superseded as a work list by the per-row matrix.implemented records and REFERENCES_INDEX 9 (ART-013); entries above are history"
  ]
 }

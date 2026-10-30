@@ -67,9 +67,9 @@ Other references to the old ids are outside my ownership and need a follow-up: `
 | PROC_Register_CardTerminal | 1496 | 1088 | 180 | 24 |
 
 ## New GAP rows (full text, for KNOWN_GAPS)
-- GAP-PROC-22 | asset | Register counter construction values not in RF/TI: 3/4 in carcass and plywood face thickness, 4 ft wrap-sheet width, ≤36 in open-bay width and shelf height, 15 in two-drawer POS cabinet width, 1 in top overhang past the staff-side drawer fronts, the SouthReturn carcass depth (22.5 in, so it fits the RF 2.0 ft row), the grommet colour, the walnut shade; DELI STYLE wrap shown as a flat teal average until a checker print texture exists (DEC-090) | params | REF/measure; texture task for the wrap print
-- GAP-PROC-23 | asset | Register counter top: TI §6.4 says QZ-2 white quartz on a 2'-6" deep POS top, but the REF-003 stills (RI §2.2) read the top as black stone-look with light veining, and RF rev7 rows are 2.2 ft deep. The generator uses RF depth and TI colour | Low | Nolan (top colour); REF (depth)
-- GAP-PROC-24 | asset | Customer-face finish of the two returns: EastReturn carries the North/South DELI STYLE wrap by continuity (no still shows its west face); SouthReturn is black ML-1 from R2C5 "black cabinet end" (Low) | Low | Nolan / a still of the returns
+- GAP-PROC-40 | asset | Register counter construction values not in RF/TI: 3/4 in carcass and plywood face thickness, 4 ft wrap-sheet width, ≤36 in open-bay width and shelf height, 15 in two-drawer POS cabinet width, 1 in top overhang past the staff-side drawer fronts, the SouthReturn carcass depth (22.5 in, so it fits the RF 2.0 ft row), the grommet colour, the walnut shade; DELI STYLE wrap shown as a flat teal average until a checker print texture exists (DEC-090) | params | REF/measure; texture task for the wrap print
+- GAP-PROC-41 | asset | Register counter top: TI §6.4 says QZ-2 white quartz on a 2'-6" deep POS top, but the REF-003 stills (RI §2.2) read the top as black stone-look with light veining, and RF rev7 rows are 2.2 ft deep. The generator uses RF depth and TI colour | Low | Nolan (top colour); REF (depth)
+- GAP-PROC-42 | asset | Customer-face finish of the two returns: EastReturn carries the North/South DELI STYLE wrap by continuity (no still shows its west face); SouthReturn is black ML-1 from R2C5 "black cabinet end" (Low) | Low | Nolan / a still of the returns
 
 Proposed replacement text for GAP-PROC-15 (drop the GAP-106 cite; review #6):
 - GAP-PROC-15 | asset | Register counter ML-1 band height, drawer reveal, pull width, grommet size/inset, and the countertop component offsets (keyboard, printer, scanner, card terminal, monitor dy); station x, monitor inset, scale-stand slot and operator/call anchors come from ROOM_FIXTURES POS_xx / SCENE_ANCHORS | draft params | ART/REF
@@ -83,7 +83,7 @@ Proposed replacement text for GAP-PROC-15 (drop the GAP-106 cite; review #6):
    - Source: TI A940 detail 11 (RI §6.4 "QZ-2 white quartz") vs REF-003 stills `References/Index/register/east_stand.jpg`, `wide_stand_A.jpg` (RI §2.2 "counter top is black stone-look with light veining").
    - What I see: the two sources disagree.
    - Candidates: (a) white quartz per TI (modelled now); (b) black veined stone-look (a later change).
-   - GAP-PROC-23.
+   - GAP-PROC-41.
 2. **Keyboard room in front of the monitor.**
    - Source: RF POS_08..POS_12 `pos_ft`, monitor centre 0.22 ft inside the staff edge (RI §8.1 "monitor centre on the staff edge").
    - What I see: a monitor base there leaves no counter-top for the keyboard on the staff side.
@@ -92,7 +92,7 @@ Proposed replacement text for GAP-PROC-15 (drop the GAP-106 cite; review #6):
 3. **East and south return faces.**
    - Source: R2C5 tile (`References/Index/cctv/wall2_R2C5.jpg`, "black cabinet end"); no still shows the east return's west (customer) face.
    - Candidates: (a) wrap continues on both returns; (b) the returns are plain black ML-1.
-   - GAP-PROC-24.
+   - GAP-PROC-42.
 
 ## Infra notes (not fixed, per the brief)
 - `contact_sheet <gen>` raises if a manifest entry's renders are missing (dropped or renamed assets). A skip-missing guard in `run_generator.contact_sheet` would avoid hand-pruning the manifest.

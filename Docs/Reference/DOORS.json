@@ -1,6 +1,6 @@
 {
- "_about": "REF-012 door contract, World -> Gameplay (DEC-096 playtest 1: doors). One row per door or opening. Plan frame = REFERENCES_INDEX 1.2 (feet, origin Retail NW outer corner, +x east, +y south); Unity X = x*0.3048, Z = -y*0.3048 (graybox_layout.json). Sources: TI A310 door schedule + hardware sets (read 2026-10-30, only closer/lock/lever-vs-push-bar recorded; no access-control hardware, DEC-051), A011, ROOM_FIXTURES.json, DECs. Fields: id; object = scene object 'Door_<id>'; type = swing | storefrontPair | opening (no leaf) | foldingGrille; ti_door = A310 number (2022 room numbers, REFERENCES_INDEX 6); rooms.A/B = the two sides; graybox_wall + graybox_opening = current graybox wall id and opening [from,to] along it (read-only here); target_opening = where A011 puts it when the graybox is still wrong (ART fixes; hinge and anchors use the target); pos_ft = opening centre on the wall line; hinge_jamb = compass jamb (N/S/E/W). DEC-110 W5 as amended by DEC-115 (1): doors hinge LEFT unless CCTV or the A011/TI vector drawing shows otherwise; 'left' = the hinge is on your left when you stand on the side the door swings AWAY from (the push side) and face the door; swing = in/out and which room; leafWidth_ft / leafHeight_ft = leaf size; clearOpening_ft = clear width at 90 deg, derived as leaf minus ~2.25 in (1.75 in leaf + 0.5 in stop; storefront 1.5 in leaves), never a store fact; leaves = 1 or 2 (0 for an opening, null when unknown). Single leaf: pivot 'Door_<id>_Hinge' at hinge_ft, the leaf mesh 'Door_<id>' is its child. Pair: leafObjects lists 'Door_<id>_L' and 'Door_<id>_R' (L/R as seen from side A facing side B), each with its own '<object>_Hinge' pivot. The hinge pivot is the parent and rotates about its local Y only; the leaf child extends along the pivot's local +X from hinge to latch. closedRotation = pivot Euler [0, yaw, 0] in Unity degrees, yaw = plan angle of hinge->latch (0 = east, +90 = south, 180 = west, -90 = north; Unity +Y yaw turns +X toward -Z = plan south). openAngle = signed degrees added to the closed yaw for fully open (90 deg max; + = clockwise seen from above); open yaw = closed yaw + openAngle. hinge_unity_m = pivot position in metres at floor level. anchors.A/B = trigger anchors 'Anchor_Door_<id>_A' / '_B', one per side on the opening centreline, 1.5 ft off the wall line on the non-swing side and 3.5 ft on the swing side (clear of a 3 ft leaf). selfClosing = true (A310 schedules a closer), false (no closer or no leaf) or 'unknown' (existing hardware not scheduled). lock = none (no staff gate; the restroom privacy lock is occupant-only), staffOnly (normally closed and locked, staff open it, free egress from inside), keyed (key only), entryTimeLock (customer entry: locked before Open doors and from 22:00, DEC-076). hardware = lever | pushBar | storefrontPull | none (DEC-110 W6: pushBar only on the emergency exits and the delivery entrance; DEC-115 (2): every other door follows its evidence (A310 lockset), the storefront entry pair keeps its pull handles, and a leaf with no scheduled hardware is a Low lever placeholder). npcUse = who may path through in normal play: 'customer' and/or 'staff'; empty = nobody (emergency-only exits, the unplaced grille). The player is staff. The ID-checking guard (DEC-086, DEC-096) is staff for door rights, but its routine post is the entry check-in; no source puts it in the back rooms. Consumers spawn door leaves only for leaves 1 or 2; rows with leaves 0 or null (the arches, the grille) are openings or non-doors. Rows with no pos_ft (not placed: Grille_101B) are skipped by consumers until their GAP closes. defaultState = closed | proppedOpen at shift start (null for openings); proppedOpen leaves keep their closer/lock values, which apply if the prop is removed. There is no second buzzed door after the ID stand (DEC-103): customers go entry -> ID stand -> sales floor with no inner door; none is modelled. staffOnly = customers must not pass. audit (REF-013) = one record per field: {conf High|Med|Low, src [exact sources: TI sheet + door number/schedule line, A011 vector, CCTV tile, DEC], gap}; audited fields: type, position, hinge, swing, leafWidth, leafHeight, clearOpening, leaves, lock, hardware, selfClosing, npcUse, defaultState (position = pos_ft/target_opening; hinge = hinge_jamb/hinge_ft/closedRotation/openAngle; npcUse includes staffOnly). A Low field is a labelled placeholder and carries a gap id; gap = the union of the row's field gaps. When the A310 schedule column and the hardware-set headers name different sets, a field is sourced only if every candidate set gives the same value (or a DEC settles it).",
- "version": "REF-013 2026-10-30 rev3 (DEC-115: A011 hinge overrides, storefront pull, absence-inferred defaultState Low; DEC-110 hinge/hardware/restroom; per-field audit; A101 tag mapping 104/E110/E111A/E111B; entry and east exit per A011; rev1 = REF-012)",
+ "_about": "REF-012 door contract, World -> Gameplay (DEC-096 playtest 1: doors). One row per door or opening. Plan frame = REFERENCES_INDEX 1.2 (feet, origin Retail NW outer corner, +x east, +y south); Unity X = x*0.3048, Z = -y*0.3048 (graybox_layout.json). Sources: TI A310 door schedule + hardware sets (read 2026-10-30, only closer/lock/lever-vs-push-bar recorded; no access-control hardware, DEC-051), A011, ROOM_FIXTURES.json, DECs. Fields: id; object = scene object 'Door_<id>'; type = swing | storefrontPair | opening (no leaf) | foldingGrille; ti_door = A310 number (2022 room numbers, REFERENCES_INDEX 6); rooms.A/B = the two sides; graybox_wall + graybox_opening = current graybox wall id and opening [from,to] along it (read-only here); target_opening = where A011 puts it when the graybox is still wrong (ART fixes; hinge and anchors use the target); pos_ft = opening centre on the wall line; hinge_jamb = compass jamb (N/S/E/W). DEC-110 W5 as amended by DEC-115 (1): doors hinge LEFT unless CCTV or the A011/TI vector drawing shows otherwise; 'left' = the hinge is on your left when you stand on the side the door swings AWAY from (the push side) and face the door; swing = in/out and which room; leafWidth_ft / leafHeight_ft = leaf size; clearOpening_ft = clear width at 90 deg, derived as leaf minus ~2.25 in (1.75 in leaf + 0.5 in stop; storefront 1.5 in leaves), never a store fact; leaves = 1 or 2 (0 for an opening, null when unknown). Single leaf: pivot 'Door_<id>_Hinge' at hinge_ft, the leaf mesh 'Door_<id>' is its child. Pair: leafObjects lists 'Door_<id>_L' and 'Door_<id>_R' (L/R as seen from side A facing side B), each with its own '<object>_Hinge' pivot. The hinge pivot is the parent and rotates about its local Y only; the leaf child extends along the pivot's local +X from hinge to latch. closedRotation = pivot Euler [0, yaw, 0] in Unity degrees, yaw = plan angle of hinge->latch (0 = east, +90 = south, 180 = west, -90 = north; Unity +Y yaw turns +X toward -Z = plan south). openAngle = signed degrees added to the closed yaw for fully open (90 deg max; + = clockwise seen from above); open yaw = closed yaw + openAngle. hinge_unity_m = pivot position in metres at floor level. anchors.A/B = trigger anchors 'Anchor_Door_<id>_A' / '_B', one per side on the opening centreline, 1.5 ft off the wall line on the non-swing side and 3.5 ft on the swing side (clear of a 3 ft leaf). selfClosing = true (A310 schedules a closer), false (no closer or no leaf) or 'unknown' (existing hardware not scheduled). lock = none (no staff gate; the restroom privacy lock is occupant-only), staffOnly (normally closed and locked, staff open it, free egress from inside), keyed (key only), entryTimeLock (customer entry: locked before Open doors and from 22:00, DEC-076). hardware = lever | pushBar | storefrontPull | none (DEC-110 W6: pushBar only on the emergency exits and the delivery entrance; DEC-115 (2): every other door follows its evidence (A310 lockset), the storefront entry pair keeps its pull handles, and a leaf with no scheduled hardware is a Low lever placeholder). npcUse = who may path through in normal play: 'customer' and/or 'staff'; empty = nobody (emergency-only exits, the unplaced grille). The player is staff. The ID-checking guard (DEC-086, DEC-096) is staff for door rights, but its routine post is the entry check-in; no source puts it in the back rooms. Consumers spawn door leaves only for leaves 1 or 2; rows with leaves 0 or null (the arches, the grille) are openings or non-doors. Rows with no pos_ft (not placed: Grille_101B) are skipped by consumers until their GAP closes. defaultState = closed | proppedOpen at shift start (null for openings); proppedOpen leaves keep their closer/lock values, which apply if the prop is removed. There is no second buzzed door after the ID stand (DEC-103): customers go entry -> ID stand -> sales floor with no inner door; none is modelled. staffOnly = customers must not pass. audit (REF-013) = one record per field: {conf High|Med|Low, src [exact sources: TI sheet + door number/schedule line, A011 vector, CCTV tile, DEC], gap}; audited fields: type, position, hinge, swing, leafWidth, leafHeight, clearOpening, leaves, lock, hardware, selfClosing, npcUse, defaultState (position = pos_ft/target_opening; hinge = hinge_jamb/hinge_ft/closedRotation/openAngle; npcUse includes staffOnly). A Low field is a labelled placeholder and carries a gap id; gap = the union of the row's field gaps. When the A310 schedule column and the hardware-set headers name different sets, a field is sourced only if every candidate set gives the same value (or a DEC settles it). rough_opening (REF-016) = the wall gap including the door frame, read from the A011 vector, with the jamb width frame_ft; where a door has both, rough_opening is the wall cut and target_opening is the clear leaf span inside it (target_opening.role says so); wall_recess (REF-016) = a step in the wall line around a door that the V5/graybox frame does not draw. implemented (REF-016) = the door as built today, read from graybox_layout.json doors[] / walls[].openings (GrayboxBuilder.BuildDoors/BuildWall): status matches | differs | missing, with every mismatch of hinge position, closed yaw, openAngle, default state and wall opening listed.",
+ "version": "REF-016 2026-10-30 rev4 (implemented per door; Emergency_RetailE rough_opening + wall_recess from A011, PT2 #6 gap diagnosed; Entry glass note; rev3 = REF-013)",
  "doors": [
   {
    "id": "Entry",
@@ -99,7 +99,7 @@
     "GAP-137",
     "GAP-138"
    ],
-   "notes": "TI E101: existing storefront pair, sign \"door to remain unlocked during business hours\". entryTimeLock: locked before \"Open doors\" (08:00) and from 22:00 on the dot (DEC-076); customers already inside are still served and may leave (free egress). REF-013: A011 puts the pair at y 8.9-14.9 (graybox 12.5-18.5, ART moves it; hinge and anchors use the target). hardware storefrontPull (DEC-115 (2)). L/R as seen from side A (inside) facing west: L = south leaf, R = north leaf.",
+   "notes": "TI E101: existing storefront pair, sign \"door to remain unlocked during business hours\". entryTimeLock: locked before \"Open doors\" (08:00) and from 22:00 on the dot (DEC-076); customers already inside are still served and may leave (free egress). REF-013: A011 puts the pair at y 8.9-14.9 (graybox 12.5-18.5, ART moves it; hinge and anchors use the target). hardware storefrontPull (DEC-115 (2)). L/R as seen from side A (inside) facing west: L = south leaf, R = north leaf. REF-016 (PT2 #1): leaves are full-glass aluminium storefront (A310 E101 \"existing aluminum full-glass storefront\", High), so they must read as transparent glass in clear-anodised frames; the build has two opaque boxes at the V5 y 12.5-18.5.",
    "target_opening": {
     "y": [
      8.9,
@@ -207,6 +207,10 @@
      ],
      "gap": "GAP-138"
     }
+   },
+   "implemented": {
+    "status": "differs",
+    "detail": "Door_Entry_L hinge built (0.10, 18.50) vs (0.10, 14.90); Door_Entry_R hinge built (0.10, 12.50) vs (0.10, 8.90); wall opening built y 12.50-18.50 vs target 8.90-14.90; no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors)"
    }
   },
   {
@@ -277,13 +281,14 @@
     "GAP-137",
     "GAP-138"
    ],
-   "notes": "Existence: a permit revision added a door on the east side of retail (OFFICE_FINDINGS B9); A011 draws it (REF-013) at y 21.65-24.65, hinge N, swinging out. npcUse empty: emergency only. Exit alarm unknown (DEC-103, GAP-138).",
+   "notes": "Existence: a permit revision added a door on the east side of retail (OFFICE_FINDINGS B9); A011 draws it (REF-013) at y 21.65-24.65, hinge N, swinging out. npcUse empty: emergency only. Exit alarm unknown (DEC-103, GAP-138). REF-016 (PT2 #6/#7): rough_opening and wall_recess from the A011 vector; the open slot in the build is the 3.5 ft V5 opening around a 3.0 ft leaf hinged on the wrong (S) jamb. Seal: cut the wall at rough_opening (y 21.38-24.72; target_opening y 21.65-24.65 is the leaf span inside it), two 0.17 ft jambs, hinge N; the 1.07 ft recess south of y 18.2 is optional (frame family GAP-125) but no gap may remain between wall, jambs and leaf. R6 and the hand-wash sink are the nearest store features (PT2 #6, ROOM_FIXTURES Sink_HandWash).",
    "target_opening": {
     "y": [
      21.65,
      24.65
     ],
-    "source": "A011 vector: wall gap y 21.52-24.78 (south-wall-anchored), 3'-0\" leaf centred (REF-013)"
+    "source": "A011 vector: wall gap y 21.52-24.78 (south-wall-anchored), 3'-0\" leaf centred (REF-013)",
+    "role": "clear leaf span only (3'-0\" leaf, REF-013): NOT the wall cut. The wall opening to cut is rough_opening"
    },
    "audit": {
     "type": {
@@ -379,6 +384,24 @@
      ],
      "gap": "GAP-138"
     }
+   },
+   "implemented": {
+    "status": "differs",
+    "detail": "PT2 #6 open wall gap explained: the built wall opening is y 20.50-24.00 (3.50 ft, V5) but the leaf is 3.0 ft hinged at the SOUTH end (y 24.0, yaw -90), so a 0.50 ft x 7 ft slot (y 20.50-21.00) stays open to the outside with no frame or infill; DOORS wants hinge N at y 21.65 and the opening at the A011 rough opening y 21.38-24.72 (leaf + 2 in jambs). Door_Emergency_RetailE hinge built (47.09, 24.00) vs (47.09, 21.65); Door_Emergency_RetailE closed yaw built -90 vs 90; Door_Emergency_RetailE openAngle built 90 vs -90; wall opening built y 20.50-24.00 vs rough_opening 21.38-24.72 (leaf span 21.65-24.65); no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors)"
+   },
+   "rough_opening": {
+    "y": [
+     21.38,
+     24.72
+    ],
+    "frame_ft": 0.17,
+    "source": "A011 vector: interior wall 3571 ends y 21.38, 3567 resumes y 24.72 (x 48.26-48.62); exterior CMU 121 gap 21.42-24.75; 3.34 ft = 3'-0\" leaf + 2 x 2\" HM jambs. Leaf 3610 hinged at (48.93, 21.59) N, swings out E (south-wall-anchored; REF-016)"
+   },
+   "wall_recess": {
+    "jog_y": 18.2,
+    "interior_face_x_north": 47.19,
+    "interior_face_x_south": 48.26,
+    "source": "A011 vector 3413/3420/3421/3571: the retail east interior face steps 1.07 ft east at y 18.13-18.31; the exit sits in the recessed segment (REF-016). The V5/graybox frame keeps one straight wall at 47.19 (GAP-125 family)"
    }
   },
   {
@@ -528,6 +551,10 @@
      ],
      "gap": null
     }
+   },
+   "implemented": {
+    "status": "matches",
+    "detail": "built opening 9.10-12.91 (no A011 target); cased opening, no frame modelled"
    }
   },
   {
@@ -686,6 +713,10 @@
      ],
      "gap": null
     }
+   },
+   "implemented": {
+    "status": "matches",
+    "detail": "built opening 34.50-37.60 vs target 34.50-37.60; cased opening, no frame modelled"
    }
   },
   {
@@ -853,6 +884,10 @@
      ],
      "gap": "GAP-138"
     }
+   },
+   "implemented": {
+    "status": "matches (leaf only)",
+    "detail": "no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors)"
    }
   },
   {
@@ -1024,6 +1059,10 @@
      ],
      "gap": null
     }
+   },
+   "implemented": {
+    "status": "matches (leaf only)",
+    "detail": "no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors)"
    }
   },
   {
@@ -1191,6 +1230,10 @@
      ],
      "gap": "GAP-138"
     }
+   },
+   "implemented": {
+    "status": "matches (leaf only)",
+    "detail": "no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors)"
    }
   },
   {
@@ -1358,6 +1401,10 @@
      ],
      "gap": "GAP-138"
     }
+   },
+   "implemented": {
+    "status": "matches (leaf only)",
+    "detail": "no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors)"
    }
   },
   {
@@ -1535,6 +1582,10 @@
      ],
      "gap": null
     }
+   },
+   "implemented": {
+    "status": "matches (leaf only)",
+    "detail": "no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors)"
    }
   },
   {
@@ -1711,6 +1762,10 @@
      ],
      "gap": null
     }
+   },
+   "implemented": {
+    "status": "matches (leaf only)",
+    "detail": "no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors)"
    }
   },
   {
@@ -1877,6 +1932,10 @@
      ],
      "gap": "GAP-138"
     }
+   },
+   "implemented": {
+    "status": "matches (leaf only)",
+    "detail": "no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors)"
    }
   },
   {
@@ -2046,6 +2105,10 @@
      ],
      "gap": null
     }
+   },
+   "implemented": {
+    "status": "differs",
+    "detail": "Door_HUB2_HUB hinge built (19.00, 48.10) vs (19.00, 51.10); Door_HUB2_HUB closed yaw built 90 vs -90; Door_HUB2_HUB openAngle built -90 vs 90; no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors)"
    }
   },
   {
@@ -2214,6 +2277,10 @@
      ],
      "gap": "GAP-138"
     }
+   },
+   "implemented": {
+    "status": "matches (leaf only)",
+    "detail": "no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors)"
    }
   },
   {
@@ -2380,6 +2447,10 @@
      ],
      "gap": "GAP-138"
     }
+   },
+   "implemented": {
+    "status": "matches (leaf only)",
+    "detail": "no frame/jambs/hardware/glazing modelled (graybox leaf = one opaque box, BuildDoors)"
    }
   },
   {
@@ -2506,6 +2577,10 @@
      ],
      "gap": "GAP-137"
     }
+   },
+   "implemented": {
+    "status": "missing",
+    "detail": "not placed (no pos_ft); not in the build"
    }
   }
  ]
