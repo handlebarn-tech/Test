@@ -147,7 +147,7 @@ stars = avgSatisfaction ≥ 80 ? 3 : ≥ 60 ? 2 : 1
 
 **API gaps, now GAME-002 sub-tasks.** `Code/Domain/` is GAME-001's, so the Hub routes each one: a small GAME-001 follow-up, or a scoped Domain edit granted to GAME-002.
 1. **Live stock.** `Catalog.Groups()` caches its in-stock-first ordering. Setting `Batch.InStock = false` at 0 g leaves a stale rep and can drop a strain that still has stock. Need `Catalog.SetInStock(batchId, bool)` (or `InvalidateGroups()`) that clears `_groups`. Test: sell out the rep batch of a multi-batch in-stock strain; the strain stays listed with the next batch as rep, and its profile is re-averaged.
-2. **Cluster label text.** `StrainResult.Cluster` is an int; the `CL` names (L15107-15115) are not exposed. Need the label table (engine table or `Scoring.ClusterLabel(int)`), copied from source, not invented.
+2. **Cluster and tier label text.** `StrainResult.Cluster` is an int; the `CL` names (L15107-15115) are not exposed. `StrainResult.Tier` is an id (`smalls`, `t3`…); the card's tier label needs the `tierLabels2` defaults (L16463). Need both tables (engine data, or `Scoring.ClusterLabel(int)` / a tier-label lookup), copied from source, not invented.
 3. Nice-to-have, not blocking: `StrainResult.RepBatchId` to skip the group lookup.
 
 ## 7. Needs from ART-001 (graybox anchors)
@@ -178,7 +178,7 @@ The register-run station is a [GDD] layout choice: which counter really weighs d
 | family weights sleep/insomnia/stress/anxiety/pain/energy | 20/10/15/15/20/20 | GDD |
 | weight odds 3.5/7/14/28 g | 50/30/15/5 | GDD (weights SRC L21010) |
 | `budgetPerGram` options | {4.00, 6.00} | GDD |
-| `resultCount` | 3 | SRC `_prefs.resultCount` L17517 |
+| `resultCount` | 3 | SRC `_prefs.resultCount` L17519 |
 | `fitRelaxedFactor` | 0.5 | GDD |
 | `fastSeconds` / `slowSeconds` | 30 / 120 | GDD |
 | `waitGraceSeconds` / `waitPenaltyPerSec` / `waitPenaltyCap` | 60 / 0.002 / 0.30 | GDD |

@@ -25,7 +25,7 @@ Do not touch `Code/Domain/` (GAME-001) unless the Hub grants the sub-tasks below
 
 ## Sub-tasks: API gaps (Hub routes them to GAME-001 or grants a scoped Domain edit)
 - **S1 Live stock (blocking):** `Catalog.Groups()` caches its in-stock-first order, so flipping `Batch.InStock` at 0 g leaves a stale rep. Add `Catalog.SetInStock(batchId, bool)` that invalidates the cache. Test: sell out the rep of a multi-batch strain → the strain stays listed with the next batch as rep, and its profile is re-averaged. Re-run all slice goldens after.
-- **S2 Cluster labels (blocking for cards):** expose the `CL` label strings (L15107-15115), copied from source, as engine data or `Scoring.ClusterLabel(int)`.
+- **S2 Cluster + tier labels (blocking for cards):** expose the `CL` label strings (L15107-15115) and the tier display names (`tierLabels2`, L16463), copied from source, as engine data or `Scoring.ClusterLabel(int)` / a tier-label lookup.
 - **S3 (optional):** `StrainResult.RepBatchId`.
 
 ## Deliverable
