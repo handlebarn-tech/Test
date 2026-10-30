@@ -23,3 +23,7 @@ UnityProject/*.slnx
 UnityProject/[Mm]emoryCaptures/
 UnityProject/[Rr]ecordings/
 UnityProject/.vscode/
+
+# Non-redistributable third-party imports (DEC-023), filled from the shared cache
+UnityProject/Assets/_LocalThirdParty/
+UnityProject/Assets/_LocalThirdParty.meta

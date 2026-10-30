@@ -36,3 +36,14 @@
 *.exe binary
 *.zip binary
 *.pdf binary
+
+# Git LFS for redistributable CC0/OFL third-party art only (DEC-023)
+UnityProject/Assets/_Game/Art/ThirdParty/**/*.png filter=lfs diff=lfs merge=lfs -text
+UnityProject/Assets/_Game/Art/ThirdParty/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+UnityProject/Assets/_Game/Art/ThirdParty/**/*.exr filter=lfs diff=lfs merge=lfs -text
+UnityProject/Assets/_Game/Art/ThirdParty/**/*.hdr filter=lfs diff=lfs merge=lfs -text
+UnityProject/Assets/_Game/Art/ThirdParty/**/*.fbx filter=lfs diff=lfs merge=lfs -text
+UnityProject/Assets/_Game/Art/ThirdParty/**/*.glb filter=lfs diff=lfs merge=lfs -text
+UnityProject/Assets/_Game/Art/ThirdParty/**/*.wav filter=lfs diff=lfs merge=lfs -text
+UnityProject/Assets/_Game/Art/ThirdParty/**/*.ogg filter=lfs diff=lfs merge=lfs -text
+UnityProject/Assets/_Game/Art/ThirdParty/**/*.ttf filter=lfs diff=lfs merge=lfs -text
