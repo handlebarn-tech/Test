@@ -40,6 +40,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…`; repor
    - **deli walls:** Nolan believes there are about three, not one; check references; shelving also looks unrealistically full (fill density with Assets' stocking arranger);
    - **doors:** geometry and swing so walking through the store feels natural (interaction with Gameplay).
 2b. **DEC-097 label UV cut-over:** Lookdev label shader reads UV channel 2 (lightmap UV on channel 1); agree timing with the Assets lead, then do it in ART-007 or a small ART task.
+2c. **Assets ask (low):** staff tee (DEC-089) logo chest side from BAND 05/12; reply to the Assets lead with side + crop, or "not shown → GAP". Read-only REF check when a worker slot frees.
 3. Lived-in pass once final assets are in (DEC-104: small items never uniform between stations; small bins per register, big bins spread out; main cleaning supplies in the restroom cabinet `Cabinet_Storage_Large`, note to add in ART-007/next REF): slight placement variation, partly used supplies, uneven stocking, cleaning and personal items in believable places.
 4. Later: livelier exterior and neighbourhood, occupied break room (with Gameplay/Assets).
 
