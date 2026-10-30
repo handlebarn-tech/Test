@@ -107,11 +107,16 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | BRAND-001 | P1 | Only approved brands ship (DEC-071) | DATA-002 | Done |
 | BRAND-001b | P1 | Fictional-brand collision pass (DEC-078) | BRAND-001 | Done |
 | BRAND-002 | P1 | Name search of all fictional names before any public build (DEC-078) | BRAND-001b | Later |
-| IMP-003 | P1 | Rolling ChatGPT toolkit audit (DEC-070/083/095): drops 1–5, rebuilt round 3, rounds 4–6 | — | Rounds 3b–6 merge-ready (`review/assets-2`, REVIEW-IMP3B GO); rolling for future drops |
+| IMP-003 | P1 | Rolling ChatGPT toolkit audit (DEC-070/083/095): drops 1–5, rebuilt round 3, rounds 4–6 | — | Rounds 3b–6 Done (e0fc82c, DEC-111 approved); rolling for future drops |
 | PROC-005 | P1 | Integrate the approved toolkit + fix every checklist item (DEC-092) | IMP-003 | Active |
 | PROC-006 | P1 | Register workstation kit: evidence spec, then generators (DEC-096) | — | Phase 1 Done (main 6af8906); phase 2 waits on ROOM_FIXTURES rev7 |
 | PROC-006b | P1 | Register kit generators + seeded per-station variation (DEC-104) | PROC-006 | Active |
 | PROC-007 | P1 | DEC-097 UV layout (lightmap ch1, label ch2) + re-export jars/packaged goods, with World's label-shader cut-over | PROC-005 | Ready |
+| PROC-008 | P2 | Studio-built cash-drawer tray (DEC-111; R3b.6 rejected). Reconcile with the DEC-051/086 cash-equipment exclusion first (asked of the Hub) | PROC-005 | Blocked (Hub: DEC-051 vs DEC-111) |
+| PROC-009 | P2 | Studio-built parked vehicles (DEC-111; R3b.7 rejected as built): CC0 source (DEC-023) or a rebuild per checklist R3b.7 | PROC-005 | Later |
+| ASSET-005 | P1 | Studio-built customer wardrobe (DEC-111; R4.1 rejected as built): MPFB2 CC0 clothes, or procedural shells per R4.1, keeping the drop's garment list and colourways | ASSET-004 | Later |
+| ASSET-006 | P1 | Studio-built hair (DEC-111; R4.2 rejected as built): MPFB2 CC0 hair or alpha card clumps per R4.2, keeping the 9-style list | ASSET-004 | Later |
+| ASSET-007 | P2 | Studio-built nitrile glove overlay (DEC-111; R4.7 rejected as built): hand vertex-group mask or a CC0 glove proxy | ASSET-004 | Later |
 | AUDIT-001 | P1 | Read-only .md audit + approval sheet (`Docs/Audits/`) | DES-003 | Done (DEC-064) |
 | DOC-001 | P1 | Apply AUDIT-001 batches A–C (DEC-064), 2 phases | AUDIT-001; phase 2 after IMP-002 | Done (W4X) |
 | DOC-002 | P2 | AUDIT-001 batch D (risky: ART renumber, CLAUDE.md read list, REFERENCES_INDEX split, branch naming) | DOC-001; between waves only | Later |
