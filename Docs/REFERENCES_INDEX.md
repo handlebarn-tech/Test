@@ -13,6 +13,8 @@ Staff are described by attire/role only.
 | `References/CCTV Camera Wall 2.png` | PNG 2696×1462, 5×5 tiles | Camera wall snapshot B, same tile layout, higher resolution (use this one first) | §2 |
 | `References/BAND_TFS Phoenix (NEW)_…/…_01..13.jpeg` | 13 JPEG 1280×960, body-cam style, EXIF 2026-03-16..20 | Eye-level store/staff snapshots | §3 |
 | `References/CCTV HUB Wall 2026-10-29.webp` | WEBP 2000×564, 2×4 tiles | HUB/HUB 2 camera wall supplied by Nolan 2026-10-29 (DEC-022). Nolan: "First room on left two pictures, the rest are in the bigger side of the hub... It's mostly misc storage." | §2.1 |
+| `References/CCTV Register Back Center East 2026-10-29.webp` | WEBP 1866×755, NVR playback, 2 feeds | "Back Of Register center" (close) + "Back Of Register East", 11:40:16, 1/21/2026. Supplied by Nolan for the scale stand (DEC-026) | §2.2 |
+| `References/CCTV Register Back Center Wide 2026-10-29.webp` | WEBP 1134×640, 1 feed | "Back Of Register center", 16:48:53, wide. **Same camera and framing as wall tile R2C4** (DEC-026) | §2.2 |
 | `References/LIVE_TFS_BUDTENDER_v7.11.4.md` | MD | Live budtender app behaviour (v7.11.4: Floor Mode, 6 effect domains, tier filters, accessibility). **No visual tokens** (colours/fonts/layout) are recorded in it | UI only (GAP-114) |
 | `References/Review_Budtender_Tool_Comprehensive_Chat_Record.md` | MD | Project history of the budtender tool (not in the REF-001 input list; not analysed here, MIG owns it) | — |
 
@@ -22,6 +24,7 @@ Derived files (`References/Index/`):
 - `floor_plan_grid_1ft.png` — stitched plan with a 1-ft grid (bold every 5 ft) in the §1.2 coordinate frame. **ART-001: start here.**
 - `cctv/wall1_RrCc.jpg`, `cctv/wall2_RrCc.jpg` — 50 tile crops (row r, column c).
 - `hub/hub_RrCc.jpg` — 8 tile crops of the HUB wall (REF-002), 500×282 each.
+- `register/` (REF-003, people cropped out): `east_stand.jpg` (East feed: stand + counter back + keyboard), `center_close_stand.jpg` (centre feed: stand with 2 scales + acrylic panel), `wide_stand_A.jpg` / `wide_stand_B.jpg` (wide feed, two stands), `wide_storefront_band.jpg` (video wall, living wall, jar walls above head height).
 
 ## 1. Floor plan
 
@@ -117,7 +120,7 @@ The plan text says the wall carries **17 distinct feeds: 6 exterior, 6 sales flo
 | R2C1 | Sales floor, from register end looking toward entry | glass entry doors + exit sign, queue stanchions (black belts), video-wall TV, living wall, "DELI STYLE" counter, POS monitors, card readers, scales on rolling carts; white marble-look tile + black/white geometric cement tile near counter | Retail (west half) | High |
 | R2C2 | Sales floor, high SW-ish view over queue | wall planters + wood bench, 3×3 video wall, "THE FLOWER SHOP" logo living wall, stanchion field, DELI STYLE counter with checker tile front, jar walls, globe pendant cluster | Retail | High |
 | R2C3 | Register run close | 3–4 POS stations, black counter with open shelves below, scale carts, jar wall with mint/teal backlit shelving on the side wall, yellow wet-floor sign, "HIGH TIDE" stool/seat back | Retail (registers) | High |
-| R2C4 | Register run, wider | 3 POS + spare monitor, kraft order bags, globe pendant clusters, DELI STYLE counter behind | Retail (registers) | High |
+| R2C4 | Register run, wider (camera name "Back Of Register center", REF-003) | 3 POS + spare monitor, kraft order bags, globe pendant clusters, DELI STYLE counter behind | Retail (registers) | High |
 | R2C5 | Elevated view along register L toward deli/queue | register L end with trash bin, black cabinet end, jar wall on right, entry/queue far left | Retail (NE register L) | Med |
 | R3C1 | Exterior sidewalk + hedge against building | narrow walk, hedge, wood fascia | Exterior | Med |
 | R3C2 | Register counter from behind, looking across the floor to the back wall | **lit black glass display cabinet on the counter** (matches plan "display case"), 2 POS, scales, arched niche through a vertical wood-slat wall, jar wall, ATM + queue at the far end, merch rack with white garments on the right | Retail | High |
@@ -181,14 +184,26 @@ Tile matching: each tile was compared with the 25 main-wall tiles (128×72 grays
 
 Contents: misc storage only (Nolan). Case/box labels are **not** inventory data.
 
-### 2.2 Register scale stand (DEC-021)
+### 2.2 Register scale stand (DEC-021, DEC-026; REF-003 spec)
 
-Found in the existing CCTV and photos. At each POS station, on the staff side, a free-standing **chrome wire-frame stand** is pushed against the back of the register counter:
-- **Top:** black tray/top just below the counter top, carrying one white bench scale with a blue display and a clear round weigh bowl/draft shield. Seen in R2C3 (stands at centre and left, a third at the right edge), R2C4 (2–3 stands, one per POS), R3C2 (2 stands flanking the lit display case), BAND 10 (rotated; chrome stand with scales, spray bottle on a lower shelf, black trash bin beside), BAND 07 (scale with clear shield, lower right). **Med.**
-- **Shelves:** 1–2 open wire shelves under the top, holding small items (bottles, wipes, papers). R2C3, R2C4, BAND 10. **Med** (contents per DEC-021; not readable).
-- **Clear shield:** a clear acrylic panel/box stands on the counter top in front of the scale, between scale and customer (R2C3 centre, R2C4 left). **Low-Med**: it could instead be the scale's own draft shield; Nolan's wording ("plastic clear shield blocking customers") fits the counter panel.
-- **Placement:** one stand per POS, beside the POS monitor; a black trash bin often sits next to or under it (R2C3, BAND 10). **Med.**
-- **Size:** footprint ≈1.5 × 1.5 ft; height ≈ counter height minus a few inches (relative to the counter and scale; no measurement). **Low.**
+Sources: REF-002 (wall R2C3, R2C4, R3C2, BAND 07/10) + REF-003 back-of-register stills (§0; crops in `References/Index/register/`). The wide still is the R2C4 camera zoomed in. Size reference: a full-size POS keyboard (≈17.5 in wide, **convention**, not measured) on the counter top in the same frames. Floor-tile size is unknown (GAP-113), so the tiles give no scale.
+
+**ART-002 graybox spec** (feet; +x along the counter, +y away from the counter toward staff):
+
+| Part | Spec | Evidence | Conf. |
+|---|---|---|---|
+| Type | free-standing chrome wire-frame stand (utility-cart style), 4 chrome corner posts, black top tray with a raised lip | `east_stand`, `center_close_stand`, `wide_stand_A/B` | Med |
+| Footprint | **≈1.6 W × 1.3 D ft** (range 1.4–1.8 × 1.1–1.5). Width ≈ 1.0–1.2× the keyboard width in East and wide frames | keyboard ratio, perspective-corrected by eye | Low-Med |
+| Top height | **≈2.5 ft** (range 2.2–2.8): the top tray sits clearly **below** the counter top, by ≈0.7–1.2 ft. Absolute value hangs on the 36–42 in counter convention (GAP-108) | all four crops | Low |
+| Levels | **2**: the black top tray + **1** open chrome wire shelf in the bottom third (≈0.5–0.8 ft above the floor). No middle shelf seen | `east_stand`, `wide_stand_A`, `wide_stand_B` | Med |
+| Top contents | 1 white bench scale (blue LCD, clear round draft-shield bowl with lid). The close centre stand carries **2** white scale bodies side by side (second may be a spare scale; Low). Small items: label/tape, wipes | all crops | Med (1 scale) / Low (2) |
+| Lower-shelf contents | white paper bags/boxes, spare supplies (not readable) | `east_stand`, `wide_stand_A/B` | Med (presence) |
+| Acrylic panel (DEC-026) | clear acrylic panel, **full stand width, on the counter-side edge of the top tray**, rising from the tray to about the counter top or a few inches above (**≈0.8–1.2 ft tall**). In the wide view it reads as a 3-sided clear box/riser (papers and bags are stacked on top of it). Thickness not visible | `center_close_stand`, `wide_stand_A`, `wide_stand_B` | Med (position) / Low (size, box vs panel) |
+| Placement | pushed against the staff side of the register counter, in front of the counter's open under-shelves; **one stand per POS, to the staff's right of that POS monitor** (wide: right of the dark monitor and right of the next one; centre close: right of the centre monitor). A black wire trash bin often sits next to it (`wide_stand_A`) | wide + centre stills, R2C4 | Med |
+| Count | 4 POS monitors in the wide/R2C4 view (left one dark/off); stands seen at 2 of them, a third at the frame edge, the fourth hidden behind a foreground seat back. One more stand in the East feed. **≥4 stands**; total = number of POS stations (GAP-107) | wide, East | Low-Med |
+| Finish | chrome wire + black top tray; counter top is black stone-look with light veining; staff floor is black/white geometric cement tile, customer floor white marble-look | crops | Med |
+
+Other counter facts in these stills: each POS has a monitor, keyboard, receipt printer and a customer-facing card terminal/tablet on the counter (Med). Open black shelves under the counter hold tape rolls, kraft bags and boxes (Med). Wide still, seen beyond the queue from left to right: video wall (showing a promo panel "HIGH VARIETY · 10 for $75 · 15 for $100"; units not shown, **not pricing data**), "THE FLOWER SHOP" logo living wall, "DELI STYLE FLOWER!!" counter with a teal/white checker front and globe pendant cluster, teal-backlit jar walls (High, same as R2C4; feeds GAP-106).
 
 ## 3. BAND photos (`…_NN.jpeg`)
 
@@ -214,7 +229,7 @@ Product names visible on jar cards or boxes are **not** inventory data and must 
 
 | Plan room | Plan | CCTV | BAND photo | Status |
 |---|---|---|---|---|
-| Retail | ✔ | R2C1–C5, R3C2 | 01, 05, 06, 07, 08, 10, 11, 12 | well covered |
+| Retail | ✔ | R2C1–C5, R3C2 + REF-003 register stills (§2.2) | 01, 05, 06, 07, 08, 10, 11, 12 | well covered |
 | Hall | ✔ | R3C4 | 06 (through the arch) | covered |
 | Office | ✔ | R3C3, R4C5 | 04, 09 (13?) | covered (safe/IT side only in notes + photos) |
 | Break room | ✔ | R3C5 | 03 | covered |
@@ -242,5 +257,5 @@ Product names visible on jar cards or boxes are **not** inventory data and must 
 | Floor tiles | white marble-look large-format (retail field), black/white or brown/white geometric cement tile (counter zones, hall, vestibule), concrete (FOH/BOH), dark gray large-format tile (rack rooms) | visual | Med (finish) / none (tile size) |
 | Wall thickness | 0.4–0.5 ft drawn gaps | vector | Low (drafting gap, not a spec) |
 | Pendant pitch | 3.0 ft, 6 over registers | vector | Med |
-| Register scale stand | ≈1.5 × 1.5 ft footprint, top just below the counter top | relative to the counter and scale in R2C3/R3C2 (§2.2) | Low |
+| Register scale stand | ≈1.6 × 1.3 ft footprint, top ≈2.5 ft (≈0.7–1.2 ft below the counter top), 2 levels, acrylic panel ≈0.8–1.2 ft tall on the counter-side edge | keyboard (≈17.5 in convention) in REF-003 stills (§2.2) | Low-Med |
 | HUB wire rack bay | ≈4 × 2 ft, ≈6–7 ft tall | about 4 bays span half the 28.3-ft HUB width in HUB R1C3; matches the common chrome-wire bay size | Low (convention) |
