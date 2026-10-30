@@ -7,3 +7,31 @@ Seeded from MASTER_PLAN §20–21; REF-001 and MIG-001 extend this file.
 - GAP-001 | building | exact ceiling height/grid | none | measure from CCTV/photos (REF-001) or ask user
 - GAP-002 | building | exact fixture dimensions not on floor plan | none | photo scale estimation (REF-001)
 - GAP-003 | game | original Three.js game loop/systems | n/a (source unavailable) | GAMEPLAY_SIMULATION_SPEC is authoritative
+
+## REF-001 (see `Docs/REFERENCES_INDEX.md`)
+- GAP-101 | building | floor plan is "Working Plan V5, not for construction"; fixtures/doors are "approximate"; original RSP A011/A013 sheets not in repo | Med (fixtures) / High (room shells) | obtain the A011/A013 PDFs or a site tape-measure pass
+- GAP-102 | building | which of FOH/BOH is 163 vs 180 SF (drawn 215 / 173 SF) | Low | user confirmation
+- GAP-103 | building | JC corner within break room and true size (drawn 3×3 = 9 SF vs printed 19.19 SF) | Low | user confirmation / photo
+- GAP-104 | building | wall thickness; interior door widths/heights (plan arcs 1.2–1.8 ft are schematic) | none (use 3'-0"×7'-0" labelled convention) | measure on site
+- GAP-105 | cctv | 7 tiles (R4C3, R4C4, R5C1–C5; R5C5 repeats R5C2) show large rack/storage rooms the plan does not map; the plan says HUB has no feed | Low (assigned HUB/HUB 2) | user names each camera
+- GAP-106 | building | north-wall order: CCTV R2C2/R2C4 show the video-wall TV west of the logo living wall; the plan puts the living wall west of the menu screen | Low | user confirmation; graybox follows the plan meanwhile
+- GAP-107 | building | register numbering (Register 1) and exact station positions; plan says "up to 12", CCTV shows 3–4 per view | Low | user confirmation
+- GAP-108 | building | counter heights (register, deli, display case) not measured anywhere | none (36–42" convention) | site measure
+- GAP-109 | building | Restroom and JC have no CCTV or photo coverage (blind) | none | user photo or generic fit-out
+- GAP-110 | building | HUB and HUB 2 interiors effectively blind (no photo, only unconfirmed CCTV); rack strips/desks are raster-read only | Low | resolve via GAP-105 + photos
+- GAP-111 | building | fixtures seen but not on the plan: two glass-door coolers (FOH, R4C1), "Fine Cannabis" neon and blue-lit counter fronts (photo 05), wood bench + planters by the entry (R2C2), merch garment rack (R3C2) | Low (position) | user to place on plan
+- GAP-112 | building | EXIT label and emergency-exit swing are drawn orange (= position not confirmed) | Low | user confirmation
+- GAP-113 | building | floor tile sizes, jar dimensions, arch height, pendant drop height not measurable from the sources | none | site measure / product spec
+- GAP-114 | ui | LIVE_TFS_BUDTENDER_v7.11.4.md has behaviour only, no visual tokens (colours, fonts, layout) | none | screenshots of the live app
+
+## MIG-001 (see `Docs/Reconstruction/`)
+- GAP-201 | engine | the About page lists an "Energy" domain (L2108), but the code has none: domains are sedation, uplift, anxiety_relief, pain_inflammation, focus_cognitive, antimicrobial (L15042) | High (code wins) | use the code ids; ask the user only if the game must show the About labels
+- GAP-202 | data | live per-store stock (Supabase `location_stock`) at any moment; golden cases use the master JSON `status` snapshot of 2026-10-29T19:13Z (77 in-stock batches) | Med | DATA-001 re-imports a newer master; regenerate goldens with the same harness
+- GAP-203 | engine | real-world validity of every DB weight, BA scalar and threshold; the tool's accuracy has never been measured (TRACKER SCI-8) | n/a (heuristic by design) | keep the "matching heuristic, not pharmacology" framing; satisfaction stays a game model
+- GAP-204 | pricing | tax rounding: code floors to $0.05 (`priceFloor` L21123), context doc says round; open with Nolan | Med (code = live) | follow the tool if Nolan decides
+- GAP-205 | engine | "multi-terpene synergy" / large interaction dataset (UNITY_MIGRATION_PLAN §7) does not exist in code; only clusters + CLUSTER_BONUS | High that it is absent | do not invent coefficients; design-only if ever wanted
+- GAP-206 | engine | NEW defect candidate: `_sleepAsk` (L16086) matches `sleep|insomnia` but not "sleeping", so "trouble sleeping but gotta work at 6" drops the sedation request (golden X-15) | High (reproduced) | the game fixes it; relayed to the TFS tool project hub session on 2026-10-29 (read-only for us)
+- GAP-207 | qa | goldens come from the engine's source lines run in a Node vm, not from the full page in a browser; DOM-free logic is verbatim, but the page's state setup is replicated by hand | Med-High | optional: compare against the tool's own `rank_compare.py` output when its hub next runs it on this inventory
+- GAP-208 | ui | domain display scores saturate at 99 (anxiety/pain on most in-stock strains), so bars do not separate strains; ranking uses unclamped raw | High (observed) | parity first; a later design task may choose relative bars
+- GAP-209 | engine | the About page claims "281 search patterns" (L2066); code has 287 INTENTS keys + 54 phrases + 10 negations + 8 fuzzy | High (code wins) | none needed
+- GAP-210 | engine | v7.11.5 (unreleased, `dev/v7115`) changes MC-7, V73-NT5 and Tier 2 14 g $77; not live, so not in the goldens | Med | re-run goldens on v7.11.5 once it is deployed

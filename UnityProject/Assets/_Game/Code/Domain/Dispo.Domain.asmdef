@@ -1,0 +1,7 @@
+{
+    "name": "Dispo.Domain",
+    "rootNamespace": "Dispo.Domain",
+    "references": [],
+    "autoReferenced": false,
+    "noEngineReferences": true
+}

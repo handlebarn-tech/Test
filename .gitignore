@@ -19,3 +19,7 @@ Tools/Studio/studio.config.json
 # Python
 __pycache__/
 *.pyc
+UnityProject/*.slnx
+UnityProject/[Mm]emoryCaptures/
+UnityProject/[Rr]ecordings/
+UnityProject/.vscode/

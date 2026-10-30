@@ -1,0 +1,13 @@
+{
+    "name": "Dispo.Editor",
+    "rootNamespace": "Dispo.Editor",
+    "references": [
+        "Dispo.Domain",
+        "Dispo.Simulation",
+        "Dispo.Presentation",
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.RenderPipelines.HighDefinition.Runtime"
+    ],
+    "includePlatforms": ["Editor"],
+    "autoReferenced": false
+}

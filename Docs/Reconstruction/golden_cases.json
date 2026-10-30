@@ -1,0 +1,5113 @@
+{
+ "meta": {
+  "htmlMd5": "228684e9f02d703cf3a36692baf10d18",
+  "invMd5": "09bfa4f00206b25f77fb2a49db2eea9c",
+  "invVersion": "tfs-3.3",
+  "invExported": "2026-10-29T19:13:36.534Z",
+  "records": 1207,
+  "kept": 1207,
+  "skipped": 0,
+  "clock": "2026-10-29T19:13:36.534Z (Thu, dow 4), TZ America/Phoenix",
+  "state": "local mode defaults: _prefs.resultCount 3, painFunctional true, _customerProfile null, _activeTiers empty, pricing = TIER_DEFAULTS + DEFAULT_DAY_DEALS, tax 25.1",
+  "inStockGroups": 67,
+  "groups": 366
+ },
+ "cases": [
+  {
+   "id": "RC-01",
+   "q": "something for sleep",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 38
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "sedation": 38
+     },
+     "neg": {},
+     "primary": "sedation",
+     "top": [
+      {
+       "key": "kush cake",
+       "name": "Kush Cake",
+       "ms": 1.347,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 72,
+        "uplift": 39,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 77
+       }
+      },
+      {
+       "key": "squid ink",
+       "name": "Squid Ink",
+       "ms": 1.343,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 2,
+       "cluster2": 3,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 78,
+        "uplift": 27,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 12,
+        "antimicrobial": 80
+       }
+      },
+      {
+       "key": "double og sour",
+       "name": "Double OG Sour",
+       "ms": 1.3187,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 71,
+        "uplift": 43,
+        "anxiety_relief": 99,
+        "pain_inflammation": 97,
+        "focus_cognitive": 21,
+        "antimicrobial": 64
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "squid ink",
+    "double og sour"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "lowest_anxiety"
+   ]
+  },
+  {
+   "id": "RC-02",
+   "q": "can't sleep",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 55,
+     "anxiety_relief": 40
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "insomnia"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "sedation": 55,
+      "anxiety_relief": 40
+     },
+     "neg": {},
+     "primary": "sedation",
+     "top": [
+      {
+       "key": "kush cake",
+       "name": "Kush Cake",
+       "ms": 1.467,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 72,
+        "uplift": 39,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 77
+       }
+      },
+      {
+       "key": "double og sour",
+       "name": "Double OG Sour",
+       "ms": 1.4387,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 71,
+        "uplift": 43,
+        "anxiety_relief": 99,
+        "pain_inflammation": 97,
+        "focus_cognitive": 21,
+        "antimicrobial": 64
+       }
+      },
+      {
+       "key": "peak og",
+       "name": "Peak OG",
+       "ms": 1.4178,
+       "batches": 2,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 69,
+        "uplift": 42,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 22,
+        "antimicrobial": 71
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "double og sour",
+    "peak og"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "gentle"
+   ]
+  },
+  {
+   "id": "RC-03",
+   "q": "stress relief",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 32
+    },
+    "neg": {},
+    "primary": "anxiety_relief",
+    "lbls": [
+     "stress relief"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "anxiety_relief": 32
+     },
+     "neg": {},
+     "primary": "anxiety_relief",
+     "top": [
+      {
+       "key": "rainbow drip",
+       "name": "Rainbow Drip",
+       "ms": 2.0382,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 65,
+        "uplift": 48,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 26,
+        "antimicrobial": 81
+       }
+      },
+      {
+       "key": "bubba verde",
+       "name": "Bubba Verde",
+       "ms": 2.0343,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 37,
+        "uplift": 78,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 62,
+        "antimicrobial": 99
+       }
+      },
+      {
+       "key": "kush cake",
+       "name": "Kush Cake",
+       "ms": 1.9667,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 72,
+        "uplift": 39,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 77
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "rainbow drip",
+    "bubba verde",
+    "kush cake"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_focus",
+    "most_sedating"
+   ]
+  },
+  {
+   "id": "RC-04",
+   "q": "pain",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "pain_inflammation": 38
+    },
+    "neg": {
+     "sedation": 55
+    },
+    "primary": "pain_inflammation",
+    "lbls": [
+     "pain relief"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "pain_inflammation": 38
+     },
+     "neg": {
+      "sedation": 55
+     },
+     "primary": "pain_inflammation",
+     "top": [
+      {
+       "key": "bubba verde",
+       "name": "Bubba Verde",
+       "ms": 1.7844,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 37,
+        "uplift": 78,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 62,
+        "antimicrobial": 99
+       }
+      },
+      {
+       "key": "honeycomb pave 4",
+       "name": "Honeycomb Pave #4",
+       "ms": 1.6624,
+       "batches": 2,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 34,
+        "uplift": 74,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 60,
+        "antimicrobial": 95
+       }
+      },
+      {
+       "key": "zero gravity",
+       "name": "Zero Gravity",
+       "ms": 1.5957,
+       "batches": 3,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 50,
+        "uplift": 48,
+        "anxiety_relief": 96,
+        "pain_inflammation": 99,
+        "focus_cognitive": 23,
+        "antimicrobial": 78
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "zero gravity"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_sedating"
+   ]
+  },
+  {
+   "id": "RC-05",
+   "q": "focus for work",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "focus_cognitive": 22
+    },
+    "neg": {},
+    "primary": "focus_cognitive",
+    "lbls": [
+     "focus"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "focus_cognitive": 22
+     },
+     "neg": {},
+     "primary": "focus_cognitive",
+     "top": [
+      {
+       "key": "bubba verde",
+       "name": "Bubba Verde",
+       "ms": 1.2666,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 37,
+        "uplift": 78,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 62,
+        "antimicrobial": 99
+       }
+      },
+      {
+       "key": "honeycomb pave 4",
+       "name": "Honeycomb Pave #4",
+       "ms": 1.2256,
+       "batches": 2,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 34,
+        "uplift": 74,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 60,
+        "antimicrobial": 95
+       }
+      },
+      {
+       "key": "peach wave",
+       "name": "Peach Wave",
+       "ms": 1.1665,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 1,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 47,
+        "uplift": 51,
+        "anxiety_relief": 87,
+        "pain_inflammation": 74,
+        "focus_cognitive": 56,
+        "antimicrobial": 58
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "peach wave"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_sedating"
+   ]
+  },
+  {
+   "id": "RC-06",
+   "q": "creative",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "focus_cognitive": 5,
+     "uplift": 18
+    },
+    "neg": {},
+    "primary": "uplift",
+    "lbls": [
+     "creative"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "focus_cognitive": 5,
+      "uplift": 18
+     },
+     "neg": {},
+     "primary": "uplift",
+     "top": [
+      {
+       "key": "bubba verde",
+       "name": "Bubba Verde",
+       "ms": 2.2101,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 37,
+        "uplift": 78,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 62,
+        "antimicrobial": 99
+       }
+      },
+      {
+       "key": "honeycomb pave 4",
+       "name": "Honeycomb Pave #4",
+       "ms": 2.1193,
+       "batches": 2,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 34,
+        "uplift": 74,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 60,
+        "antimicrobial": 95
+       }
+      },
+      {
+       "key": "scented marker",
+       "name": "Scented Marker",
+       "ms": 1.8628,
+       "batches": 1,
+       "tier": "t3",
+       "cluster": 5,
+       "cluster2": 2,
+       "anxietyRisk": 54,
+       "domains": {
+        "sedation": 4,
+        "uplift": 61,
+        "anxiety_relief": 61,
+        "pain_inflammation": 61,
+        "focus_cognitive": 39,
+        "antimicrobial": 56
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "scented marker"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ]
+  },
+  {
+   "id": "RC-07",
+   "q": "uplifting but no couch lock",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "uplift": 24
+    },
+    "neg": {
+     "sedation": 42
+    },
+    "primary": "uplift",
+    "lbls": [
+     "no couch lock",
+     "uplifting"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "uplift": 24
+     },
+     "neg": {
+      "sedation": 42
+     },
+     "primary": "uplift",
+     "top": [
+      {
+       "key": "scented marker",
+       "name": "Scented Marker",
+       "ms": 1.2534,
+       "batches": 1,
+       "tier": "t3",
+       "cluster": 5,
+       "cluster2": 2,
+       "anxietyRisk": 54,
+       "domains": {
+        "sedation": 4,
+        "uplift": 61,
+        "anxiety_relief": 61,
+        "pain_inflammation": 61,
+        "focus_cognitive": 39,
+        "antimicrobial": 56
+       }
+      },
+      {
+       "key": "bubba verde",
+       "name": "Bubba Verde",
+       "ms": 1.2155,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 37,
+        "uplift": 78,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 62,
+        "antimicrobial": 99
+       }
+      },
+      {
+       "key": "honeycomb pave 4",
+       "name": "Honeycomb Pave #4",
+       "ms": 1.1699,
+       "batches": 2,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 34,
+        "uplift": 74,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 60,
+        "antimicrobial": 95
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "scented marker",
+    "bubba verde",
+    "honeycomb pave 4"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_pain",
+    "most_sedating"
+   ]
+  },
+  {
+   "id": "RC-08",
+   "q": "need to drive",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {},
+    "neg": {
+     "sedation": 38
+    },
+    "primary": null,
+    "lbls": [],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {},
+     "neg": {
+      "sedation": 38
+     },
+     "primary": null,
+     "top": [
+      {
+       "key": "beaver cookies",
+       "name": "Beaver Cookies",
+       "ms": 0.0547,
+       "batches": 1,
+       "tier": "fttp",
+       "cluster": 2,
+       "cluster2": 3,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 16,
+        "uplift": 33,
+        "anxiety_relief": 62,
+        "pain_inflammation": 75,
+        "focus_cognitive": 24,
+        "antimicrobial": 54
+       }
+      },
+      {
+       "key": "papaya melonz",
+       "name": "Papaya Melonz",
+       "ms": 0.0482,
+       "batches": 1,
+       "tier": "fttp",
+       "cluster": 2,
+       "cluster2": null,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 17,
+        "uplift": 8,
+        "anxiety_relief": 36,
+        "pain_inflammation": 45,
+        "focus_cognitive": 5,
+        "antimicrobial": 26
+       }
+      },
+      {
+       "key": "mclaren",
+       "name": "McLaren",
+       "ms": 0.0071,
+       "batches": 1,
+       "tier": "t2",
+       "cluster": 3,
+       "cluster2": null,
+       "anxietyRisk": 42,
+       "domains": {
+        "sedation": 5,
+        "uplift": 32,
+        "anxiety_relief": 39,
+        "pain_inflammation": 36,
+        "focus_cognitive": 23,
+        "antimicrobial": 30
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "beaver cookies",
+    "papaya melonz",
+    "mclaren"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ]
+  },
+  {
+   "id": "RC-09",
+   "q": "anxiety",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 35
+    },
+    "neg": {},
+    "primary": "anxiety_relief",
+    "lbls": [
+     "anxiety relief"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "anxiety_relief": 35
+     },
+     "neg": {},
+     "primary": "anxiety_relief",
+     "top": [
+      {
+       "key": "rainbow drip",
+       "name": "Rainbow Drip",
+       "ms": 2.0382,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 65,
+        "uplift": 48,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 26,
+        "antimicrobial": 81
+       }
+      },
+      {
+       "key": "bubba verde",
+       "name": "Bubba Verde",
+       "ms": 2.0343,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 37,
+        "uplift": 78,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 62,
+        "antimicrobial": 99
+       }
+      },
+      {
+       "key": "kush cake",
+       "name": "Kush Cake",
+       "ms": 1.9667,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 72,
+        "uplift": 39,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 77
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "rainbow drip",
+    "bubba verde",
+    "kush cake"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_focus",
+    "most_sedating"
+   ]
+  },
+  {
+   "id": "RC-10",
+   "q": "energy",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "uplift": 28
+    },
+    "neg": {
+     "sedation": 36
+    },
+    "primary": "uplift",
+    "lbls": [
+     "energy"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "uplift": 28
+     },
+     "neg": {
+      "sedation": 36
+     },
+     "primary": "uplift",
+     "top": [
+      {
+       "key": "scented marker",
+       "name": "Scented Marker",
+       "ms": 1.2494,
+       "batches": 1,
+       "tier": "t3",
+       "cluster": 5,
+       "cluster2": 2,
+       "anxietyRisk": 54,
+       "domains": {
+        "sedation": 4,
+        "uplift": 61,
+        "anxiety_relief": 61,
+        "pain_inflammation": 61,
+        "focus_cognitive": 39,
+        "antimicrobial": 56
+       }
+      },
+      {
+       "key": "honeycomb pave 4",
+       "name": "Honeycomb Pave #4",
+       "ms": 1.1361,
+       "batches": 2,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 34,
+        "uplift": 74,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 60,
+        "antimicrobial": 95
+       }
+      },
+      {
+       "key": "saffire",
+       "name": "Saffire",
+       "ms": 1.0639,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 27,
+        "uplift": 66,
+        "anxiety_relief": 89,
+        "pain_inflammation": 80,
+        "focus_cognitive": 38,
+        "antimicrobial": 70
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "scented marker",
+    "honeycomb pave 4",
+    "saffire"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_pain",
+    "most_sedating"
+   ]
+  },
+  {
+   "id": "RC-11",
+   "q": "insomnia",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 55,
+     "anxiety_relief": 40
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "insomnia"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "sedation": 55,
+      "anxiety_relief": 40
+     },
+     "neg": {},
+     "primary": "sedation",
+     "top": [
+      {
+       "key": "kush cake",
+       "name": "Kush Cake",
+       "ms": 1.467,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 72,
+        "uplift": 39,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 77
+       }
+      },
+      {
+       "key": "double og sour",
+       "name": "Double OG Sour",
+       "ms": 1.4387,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 71,
+        "uplift": 43,
+        "anxiety_relief": 99,
+        "pain_inflammation": 97,
+        "focus_cognitive": 21,
+        "antimicrobial": 64
+       }
+      },
+      {
+       "key": "peak og",
+       "name": "Peak OG",
+       "ms": 1.4178,
+       "batches": 2,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 69,
+        "uplift": 42,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 22,
+        "antimicrobial": 71
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "double og sour",
+    "peak og"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "gentle"
+   ]
+  },
+  {
+   "id": "RC-12",
+   "q": "relaxing body high",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 35,
+     "pain_inflammation": 30,
+     "anxiety_relief": 30
+    },
+    "neg": {
+     "sedation": 55
+    },
+    "primary": "sedation",
+    "lbls": [
+     "body high",
+     "relaxing"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "sedation": 35,
+      "pain_inflammation": 30,
+      "anxiety_relief": 30
+     },
+     "neg": {
+      "sedation": 55
+     },
+     "primary": "sedation",
+     "top": [
+      {
+       "key": "wookie grease",
+       "name": "Wookie Grease",
+       "ms": 0.9352,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 2,
+       "cluster2": 3,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 55,
+        "uplift": 32,
+        "anxiety_relief": 80,
+        "pain_inflammation": 99,
+        "focus_cognitive": 14,
+        "antimicrobial": 59
+       }
+      },
+      {
+       "key": "t rekt",
+       "name": "T-Rekt",
+       "ms": 0.9184,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 2,
+       "cluster2": 3,
+       "anxietyRisk": 18,
+       "domains": {
+        "sedation": 53,
+        "uplift": 23,
+        "anxiety_relief": 69,
+        "pain_inflammation": 87,
+        "focus_cognitive": 8,
+        "antimicrobial": 48
+       }
+      },
+      {
+       "key": "double og chem 5",
+       "name": "Double OG Chem 5",
+       "ms": 0.8994,
+       "batches": 1,
+       "tier": "house",
+       "cluster": 2,
+       "cluster2": 3,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 51,
+        "uplift": 30,
+        "anxiety_relief": 69,
+        "pain_inflammation": 73,
+        "focus_cognitive": 12,
+        "antimicrobial": 44
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "wookie grease",
+    "t rekt",
+    "double og chem 5"
+   ],
+   "roleTags": [
+    "best_match",
+    "gentle",
+    "lowest_anxiety"
+   ]
+  },
+  {
+   "id": "RC-13",
+   "q": "happy social",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "uplift": 28,
+     "anxiety_relief": 30
+    },
+    "neg": {
+     "sedation": 40
+    },
+    "primary": "uplift",
+    "lbls": [
+     "social",
+     "mood elevation"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "uplift": 28,
+      "anxiety_relief": 30
+     },
+     "neg": {
+      "sedation": 40
+     },
+     "primary": "uplift",
+     "top": [
+      {
+       "key": "bubba verde",
+       "name": "Bubba Verde",
+       "ms": 2.4407,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 37,
+        "uplift": 78,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 62,
+        "antimicrobial": 99
+       }
+      },
+      {
+       "key": "honeycomb pave 4",
+       "name": "Honeycomb Pave #4",
+       "ms": 2.3176,
+       "batches": 2,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 34,
+        "uplift": 74,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 60,
+        "antimicrobial": 95
+       }
+      },
+      {
+       "key": "slurricane",
+       "name": "Slurricane",
+       "ms": 1.9983,
+       "batches": 1,
+       "tier": "fttp",
+       "cluster": 4,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 27,
+        "uplift": 60,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 56,
+        "antimicrobial": 85
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "slurricane"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ]
+  },
+  {
+   "id": "RC-14",
+   "q": "inflammation",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "pain_inflammation": 42
+    },
+    "neg": {
+     "sedation": 55
+    },
+    "primary": "pain_inflammation",
+    "lbls": [
+     "inflammation"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "pain_inflammation": 42
+     },
+     "neg": {
+      "sedation": 55
+     },
+     "primary": "pain_inflammation",
+     "top": [
+      {
+       "key": "bubba verde",
+       "name": "Bubba Verde",
+       "ms": 1.7844,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 37,
+        "uplift": 78,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 62,
+        "antimicrobial": 99
+       }
+      },
+      {
+       "key": "honeycomb pave 4",
+       "name": "Honeycomb Pave #4",
+       "ms": 1.6624,
+       "batches": 2,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 34,
+        "uplift": 74,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 60,
+        "antimicrobial": 95
+       }
+      },
+      {
+       "key": "zero gravity",
+       "name": "Zero Gravity",
+       "ms": 1.5957,
+       "batches": 3,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 50,
+        "uplift": 48,
+        "anxiety_relief": 96,
+        "pain_inflammation": 99,
+        "focus_cognitive": 23,
+        "antimicrobial": 78
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "zero gravity"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_sedating"
+   ]
+  },
+  {
+   "id": "RC-15",
+   "q": "calming",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 30
+    },
+    "neg": {},
+    "primary": "anxiety_relief",
+    "lbls": [
+     "calming"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "anxiety_relief": 30
+     },
+     "neg": {},
+     "primary": "anxiety_relief",
+     "top": [
+      {
+       "key": "rainbow drip",
+       "name": "Rainbow Drip",
+       "ms": 2.0382,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 65,
+        "uplift": 48,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 26,
+        "antimicrobial": 81
+       }
+      },
+      {
+       "key": "bubba verde",
+       "name": "Bubba Verde",
+       "ms": 2.0343,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 37,
+        "uplift": 78,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 62,
+        "antimicrobial": 99
+       }
+      },
+      {
+       "key": "kush cake",
+       "name": "Kush Cake",
+       "ms": 1.9667,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 72,
+        "uplift": 39,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 77
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "rainbow drip",
+    "bubba verde",
+    "kush cake"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_focus",
+    "most_sedating"
+   ]
+  },
+  {
+   "id": "RC-16",
+   "q": "something for the day",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "unknown",
+    "priceIntent": null
+   },
+   "outcome": "help",
+   "findStrainsCalls": [],
+   "shown": []
+  },
+  {
+   "id": "RC-17",
+   "q": "heavy indica",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 40
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "heavy body"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "sedation": 40
+     },
+     "neg": {},
+     "primary": "sedation",
+     "top": [
+      {
+       "key": "kush cake",
+       "name": "Kush Cake",
+       "ms": 1.347,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 72,
+        "uplift": 39,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 77
+       }
+      },
+      {
+       "key": "squid ink",
+       "name": "Squid Ink",
+       "ms": 1.343,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 2,
+       "cluster2": 3,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 78,
+        "uplift": 27,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 12,
+        "antimicrobial": 80
+       }
+      },
+      {
+       "key": "double og sour",
+       "name": "Double OG Sour",
+       "ms": 1.3187,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 71,
+        "uplift": 43,
+        "anxiety_relief": 99,
+        "pain_inflammation": 97,
+        "focus_cognitive": 21,
+        "antimicrobial": 64
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "squid ink",
+    "double og sour"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "lowest_anxiety"
+   ]
+  },
+  {
+   "id": "RC-18",
+   "q": "back pain without sedation",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "pain_inflammation": 50,
+     "sedation": 30
+    },
+    "neg": {
+     "sedation": 40
+    },
+    "primary": "pain_inflammation",
+    "lbls": [
+     "back pain"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "pain_inflammation": 50,
+      "sedation": 30
+     },
+     "neg": {
+      "sedation": 40
+     },
+     "primary": "pain_inflammation",
+     "top": [
+      {
+       "key": "bubba verde",
+       "name": "Bubba Verde",
+       "ms": 1.7214,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 37,
+        "uplift": 78,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 62,
+        "antimicrobial": 99
+       }
+      },
+      {
+       "key": "honeycomb pave 4",
+       "name": "Honeycomb Pave #4",
+       "ms": 1.6044,
+       "batches": 2,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 34,
+        "uplift": 74,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 60,
+        "antimicrobial": 95
+       }
+      },
+      {
+       "key": "goo lagoon",
+       "name": "Goo Lagoon",
+       "ms": 1.3699,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 2,
+       "cluster2": 3,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 36,
+        "uplift": 41,
+        "anxiety_relief": 74,
+        "pain_inflammation": 86,
+        "focus_cognitive": 25,
+        "antimicrobial": 58
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "goo lagoon"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "gentle"
+   ]
+  },
+  {
+   "id": "RC-19",
+   "q": "chill evening",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 25,
+     "anxiety_relief": 30
+    },
+    "neg": {},
+    "primary": "anxiety_relief",
+    "lbls": [
+     "chill"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "sedation": 25,
+      "anxiety_relief": 30
+     },
+     "neg": {},
+     "primary": "anxiety_relief",
+     "top": [
+      {
+       "key": "kush cake",
+       "name": "Kush Cake",
+       "ms": 2.7714,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 72,
+        "uplift": 39,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 77
+       }
+      },
+      {
+       "key": "rainbow drip",
+       "name": "Rainbow Drip",
+       "ms": 2.7706,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 65,
+        "uplift": 48,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 26,
+        "antimicrobial": 81
+       }
+      },
+      {
+       "key": "blue mamba 24",
+       "name": "Blue Mamba #24",
+       "ms": 2.7694,
+       "batches": 2,
+       "tier": "t3",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 77,
+        "uplift": 40,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 19,
+        "antimicrobial": 79
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "rainbow drip",
+    "blue mamba 24"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_uplifting",
+    "most_sedating"
+   ]
+  },
+  {
+   "id": "RC-20",
+   "q": "something cheap for sleep",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 38
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": {
+     "type": "budget"
+    }
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "sedation": 38
+     },
+     "neg": {},
+     "primary": "sedation",
+     "top": [
+      {
+       "key": "kush cake",
+       "name": "Kush Cake",
+       "ms": 1.347,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 72,
+        "uplift": 39,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 77
+       }
+      },
+      {
+       "key": "squid ink",
+       "name": "Squid Ink",
+       "ms": 1.343,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 2,
+       "cluster2": 3,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 78,
+        "uplift": 27,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 12,
+        "antimicrobial": 80
+       }
+      },
+      {
+       "key": "double og sour",
+       "name": "Double OG Sour",
+       "ms": 1.3187,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 71,
+        "uplift": 43,
+        "anxiety_relief": 99,
+        "pain_inflammation": 97,
+        "focus_cognitive": 21,
+        "antimicrobial": 64
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "squid ink",
+    "double og sour"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "lowest_anxiety"
+   ]
+  },
+  {
+   "id": "RC-21",
+   "q": "what has the most limonene",
+   "why": "rank_compare.py fixed question",
+   "parsed": {
+    "intent": "terpene_rank",
+    "terpene": "dl_limonene",
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [],
+   "shown": [],
+   "terpRank": [
+    [
+     "Scented Marker",
+     1.52
+    ],
+    [
+     "Bubba Verde",
+     1.2586
+    ],
+    [
+     "Honeycomb Pave #4",
+     0.9771
+    ],
+    [
+     "Saffire",
+     0.9073
+    ],
+    [
+     "Permafrost",
+     0.8553
+    ],
+    [
+     "Purple Chem",
+     0.8543
+    ],
+    [
+     "Rainbow Drip",
+     0.8152
+    ],
+    [
+     "Peach Tree",
+     0.752
+    ]
+   ]
+  },
+  {
+   "id": "X-01",
+   "q": "sleep without limonene",
+   "why": "hard terpene exclusion (EXCL_MAX_PCT, unknown = excluded)",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 38
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {
+     "excl": [
+      {
+       "name": "D-Limonene",
+       "ids": [
+        "dl_limonene"
+       ]
+      }
+     ]
+    },
+    "excl": [
+     "D-Limonene"
+    ],
+    "priceIntent": null
+   },
+   "outcome": "excluded-all",
+   "findStrainsCalls": [],
+   "shown": [],
+   "exclNote": "No in-stock strain is verified free of D-Limonene."
+  },
+  {
+   "id": "X-02",
+   "q": "no pinene, something for pain",
+   "why": "family exclusion (pinene -> alpha+beta)",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "pain_inflammation": 38
+    },
+    "neg": {
+     "sedation": 55
+    },
+    "primary": "pain_inflammation",
+    "lbls": [
+     "pain relief"
+    ],
+    "tf": null,
+    "opts": {
+     "excl": [
+      {
+       "name": "pinene",
+       "ids": [
+        "alpha_pinene",
+        "beta_pinene"
+       ]
+      }
+     ]
+    },
+    "excl": [
+     "pinene"
+    ],
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "pain_inflammation": 38
+     },
+     "neg": {
+      "sedation": 55
+     },
+     "primary": "pain_inflammation",
+     "top": [
+      {
+       "key": "limon catorce",
+       "name": "Limon Catorce",
+       "ms": 0.7798,
+       "batches": 1,
+       "tier": "t3",
+       "cluster": 2,
+       "cluster2": null,
+       "anxietyRisk": 33,
+       "domains": {
+        "sedation": 33,
+        "uplift": 9,
+        "anxiety_relief": 39,
+        "pain_inflammation": 53,
+        "focus_cognitive": 2,
+        "antimicrobial": 28
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "limon catorce"
+   ],
+   "roleTags": [
+    null
+   ],
+   "exclNote": "Without pinene: showing only strains whose lab results show under 0.01% or not detected in every in-stock batch."
+  },
+  {
+   "id": "X-03",
+   "q": "sleep",
+   "profile": "new",
+   "why": "new-customer profile: anxietyRisk<=60 filter + myrcene onset penalty",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 38
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "sedation": 38
+     },
+     "neg": {},
+     "primary": "sedation",
+     "top": [
+      {
+       "key": "kush cake",
+       "name": "Kush Cake",
+       "ms": 1.347,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 72,
+        "uplift": 39,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 77
+       }
+      },
+      {
+       "key": "neapolitan",
+       "name": "Neapolitan",
+       "ms": 1.2567,
+       "batches": 2,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 66,
+        "uplift": 40,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 75
+       }
+      },
+      {
+       "key": "blue mamba 24",
+       "name": "Blue Mamba #24",
+       "ms": 1.2507,
+       "batches": 2,
+       "tier": "t3",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 77,
+        "uplift": 40,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 19,
+        "antimicrobial": 79
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "neapolitan",
+    "blue mamba 24"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_functional",
+    "most_sedating"
+   ]
+  },
+  {
+   "id": "X-04",
+   "q": "sleep",
+   "why": "baseline for X-03",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 38
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "sedation": 38
+     },
+     "neg": {},
+     "primary": "sedation",
+     "top": [
+      {
+       "key": "kush cake",
+       "name": "Kush Cake",
+       "ms": 1.347,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 72,
+        "uplift": 39,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 77
+       }
+      },
+      {
+       "key": "squid ink",
+       "name": "Squid Ink",
+       "ms": 1.343,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 2,
+       "cluster2": 3,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 78,
+        "uplift": 27,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 12,
+        "antimicrobial": 80
+       }
+      },
+      {
+       "key": "double og sour",
+       "name": "Double OG Sour",
+       "ms": 1.3187,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 71,
+        "uplift": 43,
+        "anxiety_relief": 99,
+        "pain_inflammation": 97,
+        "focus_cognitive": 21,
+        "antimicrobial": 64
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "squid ink",
+    "double og sour"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "lowest_anxiety"
+   ]
+  },
+  {
+   "id": "X-05",
+   "q": "sleep",
+   "tiers": [
+    "t3"
+   ],
+   "why": "tier chip filter",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 38
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "sedation": 38
+     },
+     "neg": {},
+     "primary": "sedation",
+     "top": [
+      {
+       "key": "blue mamba 24",
+       "name": "Blue Mamba #24",
+       "ms": 1.2507,
+       "batches": 2,
+       "tier": "t3",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 77,
+        "uplift": 40,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 19,
+        "antimicrobial": 79
+       }
+      },
+      {
+       "key": "sfv og",
+       "name": "SFV OG",
+       "ms": 1.1258,
+       "batches": 1,
+       "tier": "t3",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 69,
+        "uplift": 38,
+        "anxiety_relief": 98,
+        "pain_inflammation": 94,
+        "focus_cognitive": 15,
+        "antimicrobial": 59
+       }
+      },
+      {
+       "key": "peach tree",
+       "name": "Peach Tree",
+       "ms": 0.9426,
+       "batches": 1,
+       "tier": "t3",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 19,
+       "domains": {
+        "sedation": 57,
+        "uplift": 42,
+        "anxiety_relief": 88,
+        "pain_inflammation": 82,
+        "focus_cognitive": 22,
+        "antimicrobial": 54
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "blue mamba 24",
+    "sfv og",
+    "peach tree"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_functional",
+    "gentle"
+   ]
+  },
+  {
+   "id": "X-06",
+   "q": "I only have $15 for sleep",
+   "why": "hasBudget -> opts.maxPrice post-tax",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 38
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "sleep"
+    ],
+    "tf": null,
+    "opts": {
+     "maxPrice": 15
+    },
+    "priceIntent": {
+     "type": "hasBudget",
+     "amount": 15
+    }
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "sedation": 38
+     },
+     "neg": {},
+     "primary": "sedation",
+     "top": [
+      {
+       "key": "kush cake",
+       "name": "Kush Cake",
+       "ms": 1.347,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 72,
+        "uplift": 39,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 77
+       }
+      },
+      {
+       "key": "squid ink",
+       "name": "Squid Ink",
+       "ms": 1.343,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 2,
+       "cluster2": 3,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 78,
+        "uplift": 27,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 12,
+        "antimicrobial": 80
+       }
+      },
+      {
+       "key": "double og sour",
+       "name": "Double OG Sour",
+       "ms": 1.3187,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 71,
+        "uplift": 43,
+        "anxiety_relief": 99,
+        "pain_inflammation": 97,
+        "focus_cognitive": 21,
+        "antimicrobial": 64
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "squid ink",
+    "double og sour"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "lowest_anxiety"
+   ]
+  },
+  {
+   "id": "X-07",
+   "q": "sinking",
+   "tiers": [
+    "t1"
+   ],
+   "why": "Tier 1 only: no strain meets sedation>=55, so the relaxed pass runs (crit x0.60 floored, caps +12)",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "sedation": 55
+    },
+    "neg": {},
+    "primary": "sedation",
+    "lbls": [
+     "deep sedation"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "fallback",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "sedation": 55
+     },
+     "neg": {},
+     "primary": "sedation",
+     "top": []
+    },
+    {
+     "crit": {
+      "sedation": 33
+     },
+     "neg": {},
+     "primary": "sedation",
+     "top": [
+      {
+       "key": "soho",
+       "name": "SoHo",
+       "ms": 0.9443,
+       "batches": 2,
+       "tier": "t1",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 52,
+        "uplift": 32,
+        "anxiety_relief": 91,
+        "pain_inflammation": 99,
+        "focus_cognitive": 15,
+        "antimicrobial": 69
+       }
+      },
+      {
+       "key": "citrus punch",
+       "name": "Citrus Punch",
+       "ms": 0.9192,
+       "batches": 1,
+       "tier": "t1",
+       "cluster": 1,
+       "cluster2": null,
+       "anxietyRisk": 18,
+       "domains": {
+        "sedation": 49,
+        "uplift": 7,
+        "anxiety_relief": 50,
+        "pain_inflammation": 50,
+        "focus_cognitive": 2,
+        "antimicrobial": 27
+       }
+      },
+      {
+       "key": "j 31",
+       "name": "J-31",
+       "ms": 0.6645,
+       "batches": 1,
+       "tier": "t1",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 34,
+        "uplift": 41,
+        "anxiety_relief": 84,
+        "pain_inflammation": 78,
+        "focus_cognitive": 26,
+        "antimicrobial": 59
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "soho",
+    "citrus punch",
+    "j 31"
+   ],
+   "roleTags": [
+    "best_match",
+    "gentle",
+    "most_focus"
+   ]
+  },
+  {
+   "id": "X-08",
+   "q": "first time, wont make me paranoid",
+   "why": "beginner: high anxiety_relief floor + uplift cap",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 55,
+     "sedation": 20
+    },
+    "neg": {
+     "uplift": 50
+    },
+    "primary": "anxiety_relief",
+    "lbls": [
+     "anxiety",
+     "first-time"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "anxiety_relief": 55,
+      "sedation": 20
+     },
+     "neg": {
+      "uplift": 50
+     },
+     "primary": "anxiety_relief",
+     "top": [
+      {
+       "key": "kush cake",
+       "name": "Kush Cake",
+       "ms": 2.5764,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 72,
+        "uplift": 39,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 20,
+        "antimicrobial": 77
+       }
+      },
+      {
+       "key": "blue mamba 24",
+       "name": "Blue Mamba #24",
+       "ms": 2.5694,
+       "batches": 2,
+       "tier": "t3",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 77,
+        "uplift": 40,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 19,
+        "antimicrobial": 79
+       }
+      },
+      {
+       "key": "rainbow drip",
+       "name": "Rainbow Drip",
+       "ms": 2.5306,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 6,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 65,
+        "uplift": 48,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 26,
+        "antimicrobial": 81
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "kush cake",
+    "blue mamba 24",
+    "rainbow drip"
+   ],
+   "roleTags": [
+    "best_match",
+    "most_sedating",
+    "most_uplifting"
+   ]
+  },
+  {
+   "id": "X-09",
+   "q": "compare Kush Cake vs Squid Ink",
+   "why": "compare intent: key difference domain",
+   "parsed": {
+    "intent": "compare",
+    "strains": [
+     "kush cake",
+     "squid ink"
+    ],
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [],
+   "shown": [
+    "kush cake",
+    "squid ink"
+   ],
+   "compareNote": [
+    "Uplift",
+    "Kush Cake scores notably higher (12 pts)"
+   ],
+   "cards": [
+    {
+     "key": "kush cake",
+     "name": "Kush Cake",
+     "batches": 1,
+     "tier": "smalls",
+     "cluster": 6,
+     "cluster2": 2,
+     "anxietyRisk": 15,
+     "domains": {
+      "sedation": 72,
+      "uplift": 39,
+      "anxiety_relief": 99,
+      "pain_inflammation": 99,
+      "focus_cognitive": 20,
+      "antimicrobial": 77
+     }
+    },
+    {
+     "key": "squid ink",
+     "name": "Squid Ink",
+     "batches": 1,
+     "tier": "smalls",
+     "cluster": 2,
+     "cluster2": 3,
+     "anxietyRisk": 15,
+     "domains": {
+      "sedation": 78,
+      "uplift": 27,
+      "anxiety_relief": 99,
+      "pain_inflammation": 99,
+      "focus_cognitive": 12,
+      "antimicrobial": 80
+     }
+    }
+   ]
+  },
+  {
+   "id": "X-10",
+   "q": "Kush Cake",
+   "why": "in-stock strain lookup",
+   "parsed": {
+    "intent": "strain",
+    "groupKey": "kush cake",
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [],
+   "shown": [
+    "kush cake"
+   ],
+   "cards": [
+    {
+     "key": "kush cake",
+     "name": "Kush Cake",
+     "batches": 1,
+     "tier": "smalls",
+     "cluster": 6,
+     "cluster2": 2,
+     "anxietyRisk": 15,
+     "domains": {
+      "sedation": 72,
+      "uplift": 39,
+      "anxiety_relief": 99,
+      "pain_inflammation": 99,
+      "focus_cognitive": 20,
+      "antimicrobial": 77
+     }
+    }
+   ]
+  },
+  {
+   "id": "X-11",
+   "q": "Amplified",
+   "why": "out-of-stock strain lookup -> \"in stock and close to it\" by cosine",
+   "parsed": {
+    "intent": "strain",
+    "groupKey": "amplified",
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [],
+   "shown": [
+    "amplified",
+    "baklava",
+    "permafrost",
+    "verzace"
+   ],
+   "cards": [
+    {
+     "key": "amplified",
+     "name": "Amplified",
+     "batches": 10,
+     "tier": "house",
+     "cluster": 6,
+     "cluster2": 2,
+     "anxietyRisk": 15,
+     "domains": {
+      "sedation": 66,
+      "uplift": 48,
+      "anxiety_relief": 99,
+      "pain_inflammation": 99,
+      "focus_cognitive": 26,
+      "antimicrobial": 80
+     }
+    },
+    {
+     "key": "baklava",
+     "name": "Baklava",
+     "batches": 1,
+     "tier": "t3",
+     "cluster": 2,
+     "cluster2": 3,
+     "anxietyRisk": 15,
+     "domains": {
+      "sedation": 37,
+      "uplift": 33,
+      "anxiety_relief": 66,
+      "pain_inflammation": 68,
+      "focus_cognitive": 20,
+      "antimicrobial": 45
+     }
+    },
+    {
+     "key": "permafrost",
+     "name": "Permafrost",
+     "batches": 1,
+     "tier": "smalls",
+     "cluster": 6,
+     "cluster2": 2,
+     "anxietyRisk": 15,
+     "domains": {
+      "sedation": 59,
+      "uplift": 48,
+      "anxiety_relief": 99,
+      "pain_inflammation": 99,
+      "focus_cognitive": 27,
+      "antimicrobial": 76
+     }
+    },
+    {
+     "key": "verzace",
+     "name": "Verzace",
+     "batches": 1,
+     "tier": "t3",
+     "cluster": 2,
+     "cluster2": 3,
+     "anxietyRisk": 17,
+     "domains": {
+      "sedation": 34,
+      "uplift": 36,
+      "anxiety_relief": 65,
+      "pain_inflammation": 68,
+      "focus_cognitive": 18,
+      "antimicrobial": 43
+     }
+    }
+   ]
+  },
+  {
+   "id": "X-12",
+   "q": "something like Kush Cake but more uplifting",
+   "why": "like-X-but: likeKey cosine bonus, X excluded",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "uplift": 24
+    },
+    "neg": {},
+    "primary": "uplift",
+    "lbls": [
+     "uplifting"
+    ],
+    "tf": null,
+    "opts": {
+     "exclude": [
+      "kush cake"
+     ],
+     "likeKey": "kush cake"
+    },
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "uplift": 24
+     },
+     "neg": {},
+     "primary": "uplift",
+     "top": [
+      {
+       "key": "bubba verde",
+       "name": "Bubba Verde",
+       "ms": 2.2245,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 37,
+        "uplift": 78,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 62,
+        "antimicrobial": 99
+       }
+      },
+      {
+       "key": "honeycomb pave 4",
+       "name": "Honeycomb Pave #4",
+       "ms": 2.1673,
+       "batches": 2,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 34,
+        "uplift": 74,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 60,
+        "antimicrobial": 95
+       }
+      },
+      {
+       "key": "saffire",
+       "name": "Saffire",
+       "ms": 1.9534,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 27,
+        "uplift": 66,
+        "anxiety_relief": 89,
+        "pain_inflammation": 80,
+        "focus_cognitive": 38,
+        "antimicrobial": 70
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "saffire"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ]
+  },
+  {
+   "id": "X-13",
+   "q": "squid inc",
+   "why": "fuzzy strain name (Levenshtein tolerance 1 for 5-7 letters)",
+   "parsed": {
+    "intent": "strain",
+    "groupKey": "squid ink",
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [],
+   "shown": [
+    "squid ink"
+   ],
+   "cards": [
+    {
+     "key": "squid ink",
+     "name": "Squid Ink",
+     "batches": 1,
+     "tier": "smalls",
+     "cluster": 2,
+     "cluster2": 3,
+     "anxietyRisk": 15,
+     "domains": {
+      "sedation": 78,
+      "uplift": 27,
+      "anxiety_relief": 99,
+      "pain_inflammation": 99,
+      "focus_cognitive": 12,
+      "antimicrobial": 80
+     }
+    }
+   ]
+  },
+  {
+   "id": "X-14",
+   "q": "hello there",
+   "why": "unknown intent -> help text",
+   "parsed": {
+    "intent": "unknown",
+    "priceIntent": null
+   },
+   "outcome": "help",
+   "findStrainsCalls": [],
+   "shown": []
+  },
+  {
+   "id": "X-15",
+   "q": "trouble sleeping but gotta work at 6",
+   "why": "sleep ask keeps sedation (work cap suppressed)",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "anxiety_relief": 40
+    },
+    "neg": {
+     "sedation": 38
+    },
+    "primary": "anxiety_relief",
+    "lbls": [
+     "insomnia"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "anxiety_relief": 40
+     },
+     "neg": {
+      "sedation": 38
+     },
+     "primary": "anxiety_relief",
+     "top": [
+      {
+       "key": "bubba verde",
+       "name": "Bubba Verde",
+       "ms": 1.7909,
+       "batches": 1,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 37,
+        "uplift": 78,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 62,
+        "antimicrobial": 99
+       }
+      },
+      {
+       "key": "honeycomb pave 4",
+       "name": "Honeycomb Pave #4",
+       "ms": 1.693,
+       "batches": 2,
+       "tier": "smalls",
+       "cluster": 4,
+       "cluster2": 5,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 34,
+        "uplift": 74,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 60,
+        "antimicrobial": 95
+       }
+      },
+      {
+       "key": "slurricane",
+       "name": "Slurricane",
+       "ms": 1.5316,
+       "batches": 1,
+       "tier": "fttp",
+       "cluster": 4,
+       "cluster2": 2,
+       "anxietyRisk": 15,
+       "domains": {
+        "sedation": 27,
+        "uplift": 60,
+        "anxiety_relief": 99,
+        "pain_inflammation": 99,
+        "focus_cognitive": 56,
+        "antimicrobial": 85
+       }
+      }
+     ]
+    }
+   ],
+   "shown": [
+    "bubba verde",
+    "honeycomb pave 4",
+    "slurricane"
+   ],
+   "roleTags": [
+    "best_match",
+    "lowest_anxiety",
+    "most_functional"
+   ]
+  },
+  {
+   "id": "X-16",
+   "q": "most myrcene without linalool",
+   "why": "terpene rank with exclusion",
+   "parsed": {
+    "intent": "terpene_rank",
+    "excl": [
+     "Linalool"
+    ],
+    "terpene": "beta_myrcene",
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [],
+   "shown": [],
+   "terpRank": [],
+   "exclNote": "Without Linalool: showing only strains whose lab results show under 0.01% or not detected in every in-stock batch."
+  },
+  {
+   "id": "X-18",
+   "q": "energy",
+   "tiers": [
+    "premium"
+   ],
+   "why": "TFS Premium only: nothing passes even relaxed -> \"Nothing matched\"",
+   "parsed": {
+    "intent": "recommend",
+    "crit": {
+     "uplift": 28
+    },
+    "neg": {
+     "sedation": 36
+    },
+    "primary": "uplift",
+    "lbls": [
+     "energy"
+    ],
+    "tf": null,
+    "opts": {},
+    "priceIntent": null
+   },
+   "outcome": "none",
+   "findStrainsCalls": [
+    {
+     "crit": {
+      "uplift": 28
+     },
+     "neg": {
+      "sedation": 36
+     },
+     "primary": "uplift",
+     "top": []
+    },
+    {
+     "crit": {
+      "uplift": 16
+     },
+     "neg": {
+      "sedation": 48
+     },
+     "primary": "uplift",
+     "top": []
+    }
+   ],
+   "shown": []
+  },
+  {
+   "id": "X-17",
+   "q": "Kush Cake without myrcene",
+   "why": "strain lookup keeps exclusion (MC-1) -> contains note",
+   "parsed": {
+    "intent": "strain",
+    "excl": [
+     "β-Myrcene"
+    ],
+    "groupKey": "kush cake",
+    "priceIntent": null
+   },
+   "outcome": "ok",
+   "findStrainsCalls": [],
+   "shown": [
+    "kush cake"
+   ],
+   "cards": [
+    {
+     "key": "kush cake",
+     "name": "Kush Cake",
+     "batches": 1,
+     "tier": "smalls",
+     "cluster": 6,
+     "cluster2": 2,
+     "anxietyRisk": 15,
+     "domains": {
+      "sedation": 72,
+      "uplift": 39,
+      "anxiety_relief": 99,
+      "pain_inflammation": 99,
+      "focus_cognitive": 20,
+      "antimicrobial": 77
+     }
+    }
+   ],
+   "exclNote": "Kush Cake contains β-Myrcene."
+  }
+ ],
+ "pricing": {
+  "smalls": [
+   {
+    "dow": 0,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      10.5,
+      13.1
+     ],
+     [
+      7,
+      21,
+      26.25
+     ],
+     [
+      14,
+      42,
+      52.5
+     ],
+     [
+      28,
+      56.99,
+      71.25
+     ]
+    ]
+   },
+   {
+    "dow": 1,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      10.5,
+      13.1
+     ],
+     [
+      7,
+      21,
+      26.25
+     ],
+     [
+      14,
+      42,
+      52.5
+     ],
+     [
+      28,
+      56.99,
+      71.25
+     ]
+    ]
+   },
+   {
+    "dow": 2,
+    "deal": "Tuesday: House Smalls $2/g",
+    "rows": [
+     [
+      3.5,
+      7,
+      8.75
+     ],
+     [
+      7,
+      14,
+      17.5
+     ],
+     [
+      14,
+      28,
+      35
+     ],
+     [
+      28,
+      49.99,
+      62.5
+     ]
+    ]
+   },
+   {
+    "dow": 3,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      10.5,
+      13.1
+     ],
+     [
+      7,
+      21,
+      26.25
+     ],
+     [
+      14,
+      42,
+      52.5
+     ],
+     [
+      28,
+      56.99,
+      71.25
+     ]
+    ]
+   },
+   {
+    "dow": 4,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      10.5,
+      13.1
+     ],
+     [
+      7,
+      21,
+      26.25
+     ],
+     [
+      14,
+      42,
+      52.5
+     ],
+     [
+      28,
+      56.99,
+      71.25
+     ]
+    ]
+   },
+   {
+    "dow": 5,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      10.5,
+      13.1
+     ],
+     [
+      7,
+      21,
+      26.25
+     ],
+     [
+      14,
+      42,
+      52.5
+     ],
+     [
+      28,
+      56.99,
+      71.25
+     ]
+    ]
+   },
+   {
+    "dow": 6,
+    "deal": "Saturday: House Smalls $2/g",
+    "rows": [
+     [
+      3.5,
+      7,
+      8.75
+     ],
+     [
+      7,
+      14,
+      17.5
+     ],
+     [
+      14,
+      28,
+      35
+     ],
+     [
+      28,
+      49.99,
+      62.5
+     ]
+    ]
+   }
+  ],
+  "house": [
+   {
+    "dow": 0,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      14,
+      17.5
+     ],
+     [
+      7,
+      28,
+      35
+     ],
+     [
+      14,
+      56,
+      70.05
+     ],
+     [
+      28,
+      66.99,
+      83.8
+     ]
+    ]
+   },
+   {
+    "dow": 1,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      14,
+      17.5
+     ],
+     [
+      7,
+      28,
+      35
+     ],
+     [
+      14,
+      56,
+      70.05
+     ],
+     [
+      28,
+      66.99,
+      83.8
+     ]
+    ]
+   },
+   {
+    "dow": 2,
+    "deal": "Tuesday: House Fresh $3/g",
+    "rows": [
+     [
+      3.5,
+      10.5,
+      13.1
+     ],
+     [
+      7,
+      21,
+      26.25
+     ],
+     [
+      14,
+      42,
+      52.5
+     ],
+     [
+      28,
+      56.99,
+      71.25
+     ]
+    ]
+   },
+   {
+    "dow": 3,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      14,
+      17.5
+     ],
+     [
+      7,
+      28,
+      35
+     ],
+     [
+      14,
+      56,
+      70.05
+     ],
+     [
+      28,
+      66.99,
+      83.8
+     ]
+    ]
+   },
+   {
+    "dow": 4,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      14,
+      17.5
+     ],
+     [
+      7,
+      28,
+      35
+     ],
+     [
+      14,
+      56,
+      70.05
+     ],
+     [
+      28,
+      66.99,
+      83.8
+     ]
+    ]
+   },
+   {
+    "dow": 5,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      14,
+      17.5
+     ],
+     [
+      7,
+      28,
+      35
+     ],
+     [
+      14,
+      56,
+      70.05
+     ],
+     [
+      28,
+      66.99,
+      83.8
+     ]
+    ]
+   },
+   {
+    "dow": 6,
+    "deal": "Saturday: House Fresh $3/g",
+    "rows": [
+     [
+      3.5,
+      10.5,
+      13.1
+     ],
+     [
+      7,
+      21,
+      26.25
+     ],
+     [
+      14,
+      42,
+      52.5
+     ],
+     [
+      28,
+      56.99,
+      71.25
+     ]
+    ]
+   }
+  ],
+  "premium": [
+   {
+    "dow": 0,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      17.5,
+      21.85
+     ],
+     [
+      7,
+      35,
+      43.75
+     ],
+     [
+      14,
+      70,
+      87.55
+     ],
+     [
+      28,
+      89.99,
+      112.55
+     ]
+    ]
+   },
+   {
+    "dow": 1,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      17.5,
+      21.85
+     ],
+     [
+      7,
+      35,
+      43.75
+     ],
+     [
+      14,
+      70,
+      87.55
+     ],
+     [
+      28,
+      89.99,
+      112.55
+     ]
+    ]
+   },
+   {
+    "dow": 2,
+    "deal": "Tuesday: TFS Premium $4/g",
+    "rows": [
+     [
+      3.5,
+      14,
+      17.5
+     ],
+     [
+      7,
+      28,
+      35
+     ],
+     [
+      14,
+      56,
+      70.05
+     ],
+     [
+      28,
+      66.99,
+      83.8
+     ]
+    ]
+   },
+   {
+    "dow": 3,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      17.5,
+      21.85
+     ],
+     [
+      7,
+      35,
+      43.75
+     ],
+     [
+      14,
+      70,
+      87.55
+     ],
+     [
+      28,
+      89.99,
+      112.55
+     ]
+    ]
+   },
+   {
+    "dow": 4,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      17.5,
+      21.85
+     ],
+     [
+      7,
+      35,
+      43.75
+     ],
+     [
+      14,
+      70,
+      87.55
+     ],
+     [
+      28,
+      89.99,
+      112.55
+     ]
+    ]
+   },
+   {
+    "dow": 5,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      17.5,
+      21.85
+     ],
+     [
+      7,
+      35,
+      43.75
+     ],
+     [
+      14,
+      70,
+      87.55
+     ],
+     [
+      28,
+      89.99,
+      112.55
+     ]
+    ]
+   },
+   {
+    "dow": 6,
+    "deal": "Saturday: TFS Premium $4/g",
+    "rows": [
+     [
+      3.5,
+      14,
+      17.5
+     ],
+     [
+      7,
+      28,
+      35
+     ],
+     [
+      14,
+      56,
+      70.05
+     ],
+     [
+      28,
+      66.99,
+      83.8
+     ]
+    ]
+   }
+  ],
+  "fttp": [
+   {
+    "dow": 0,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      7,
+      8.75
+     ],
+     [
+      7,
+      14,
+      17.5
+     ],
+     [
+      14,
+      28,
+      35
+     ],
+     [
+      28,
+      56.99,
+      71.25
+     ]
+    ]
+   },
+   {
+    "dow": 1,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      7,
+      8.75
+     ],
+     [
+      7,
+      14,
+      17.5
+     ],
+     [
+      14,
+      28,
+      35
+     ],
+     [
+      28,
+      56.99,
+      71.25
+     ]
+    ]
+   },
+   {
+    "dow": 2,
+    "deal": "Tuesday: FttP oz $49.99",
+    "rows": [
+     [
+      3.5,
+      7,
+      8.75
+     ],
+     [
+      7,
+      14,
+      17.5
+     ],
+     [
+      14,
+      28,
+      35
+     ],
+     [
+      28,
+      49.99,
+      62.5
+     ]
+    ]
+   },
+   {
+    "dow": 3,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      7,
+      8.75
+     ],
+     [
+      7,
+      14,
+      17.5
+     ],
+     [
+      14,
+      28,
+      35
+     ],
+     [
+      28,
+      56.99,
+      71.25
+     ]
+    ]
+   },
+   {
+    "dow": 4,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      7,
+      8.75
+     ],
+     [
+      7,
+      14,
+      17.5
+     ],
+     [
+      14,
+      28,
+      35
+     ],
+     [
+      28,
+      56.99,
+      71.25
+     ]
+    ]
+   },
+   {
+    "dow": 5,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      7,
+      8.75
+     ],
+     [
+      7,
+      14,
+      17.5
+     ],
+     [
+      14,
+      28,
+      35
+     ],
+     [
+      28,
+      56.99,
+      71.25
+     ]
+    ]
+   },
+   {
+    "dow": 6,
+    "deal": "Saturday: FttP oz $49.99",
+    "rows": [
+     [
+      3.5,
+      7,
+      8.75
+     ],
+     [
+      7,
+      14,
+      17.5
+     ],
+     [
+      14,
+      28,
+      35
+     ],
+     [
+      28,
+      49.99,
+      62.5
+     ]
+    ]
+   }
+  ],
+  "t1": [
+   {
+    "dow": 0,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      18,
+      22.5
+     ],
+     [
+      7,
+      33,
+      41.25
+     ],
+     [
+      14,
+      50,
+      62.55
+     ],
+     [
+      28,
+      80,
+      100.05
+     ]
+    ]
+   },
+   {
+    "dow": 1,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      18,
+      22.5
+     ],
+     [
+      7,
+      33,
+      41.25
+     ],
+     [
+      14,
+      50,
+      62.55
+     ],
+     [
+      28,
+      80,
+      100.05
+     ]
+    ]
+   },
+   {
+    "dow": 2,
+    "deal": "Tuesday: Tier 1 $4/g",
+    "rows": [
+     [
+      3.5,
+      14,
+      17.5
+     ],
+     [
+      7,
+      28,
+      35
+     ],
+     [
+      14,
+      40,
+      50
+     ],
+     [
+      28,
+      65,
+      81.3
+     ]
+    ]
+   },
+   {
+    "dow": 3,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      18,
+      22.5
+     ],
+     [
+      7,
+      33,
+      41.25
+     ],
+     [
+      14,
+      50,
+      62.55
+     ],
+     [
+      28,
+      80,
+      100.05
+     ]
+    ]
+   },
+   {
+    "dow": 4,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      18,
+      22.5
+     ],
+     [
+      7,
+      33,
+      41.25
+     ],
+     [
+      14,
+      50,
+      62.55
+     ],
+     [
+      28,
+      80,
+      100.05
+     ]
+    ]
+   },
+   {
+    "dow": 5,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      18,
+      22.5
+     ],
+     [
+      7,
+      33,
+      41.25
+     ],
+     [
+      14,
+      50,
+      62.55
+     ],
+     [
+      28,
+      80,
+      100.05
+     ]
+    ]
+   },
+   {
+    "dow": 6,
+    "deal": "Saturday: Tier 1 $4/g",
+    "rows": [
+     [
+      3.5,
+      14,
+      17.5
+     ],
+     [
+      7,
+      28,
+      35
+     ],
+     [
+      14,
+      40,
+      50
+     ],
+     [
+      28,
+      65,
+      81.3
+     ]
+    ]
+   }
+  ],
+  "t2": [
+   {
+    "dow": 0,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      24,
+      30
+     ],
+     [
+      7,
+      43,
+      53.75
+     ],
+     [
+      14,
+      75,
+      93.8
+     ],
+     [
+      28,
+      140,
+      175.1
+     ]
+    ]
+   },
+   {
+    "dow": 1,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      24,
+      30
+     ],
+     [
+      7,
+      43,
+      53.75
+     ],
+     [
+      14,
+      75,
+      93.8
+     ],
+     [
+      28,
+      140,
+      175.1
+     ]
+    ]
+   },
+   {
+    "dow": 2,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      24,
+      30
+     ],
+     [
+      7,
+      43,
+      53.75
+     ],
+     [
+      14,
+      75,
+      93.8
+     ],
+     [
+      28,
+      140,
+      175.1
+     ]
+    ]
+   },
+   {
+    "dow": 3,
+    "deal": "Wednesday: Tier 2 $5/g",
+    "rows": [
+     [
+      3.5,
+      17.5,
+      21.85
+     ],
+     [
+      7,
+      35,
+      43.75
+     ],
+     [
+      14,
+      60,
+      75.05
+     ],
+     [
+      28,
+      110,
+      137.6
+     ]
+    ]
+   },
+   {
+    "dow": 4,
+    "deal": "Thursday: Tier 2 $5/g",
+    "rows": [
+     [
+      3.5,
+      17.5,
+      21.85
+     ],
+     [
+      7,
+      35,
+      43.75
+     ],
+     [
+      14,
+      60,
+      75.05
+     ],
+     [
+      28,
+      110,
+      137.6
+     ]
+    ]
+   },
+   {
+    "dow": 5,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      24,
+      30
+     ],
+     [
+      7,
+      43,
+      53.75
+     ],
+     [
+      14,
+      75,
+      93.8
+     ],
+     [
+      28,
+      140,
+      175.1
+     ]
+    ]
+   },
+   {
+    "dow": 6,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      24,
+      30
+     ],
+     [
+      7,
+      43,
+      53.75
+     ],
+     [
+      14,
+      75,
+      93.8
+     ],
+     [
+      28,
+      140,
+      175.1
+     ]
+    ]
+   }
+  ],
+  "t3": [
+   {
+    "dow": 0,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      36,
+      45
+     ],
+     [
+      7,
+      64,
+      80.05
+     ],
+     [
+      14,
+      116,
+      145.1
+     ],
+     [
+      28,
+      200,
+      250.2
+     ]
+    ]
+   },
+   {
+    "dow": 1,
+    "deal": "Monday: Tier 3 eighth $19.99",
+    "rows": [
+     [
+      3.5,
+      19.99,
+      25
+     ],
+     [
+      7,
+      64,
+      80.05
+     ],
+     [
+      14,
+      116,
+      145.1
+     ],
+     [
+      28,
+      200,
+      250.2
+     ]
+    ]
+   },
+   {
+    "dow": 2,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      36,
+      45
+     ],
+     [
+      7,
+      64,
+      80.05
+     ],
+     [
+      14,
+      116,
+      145.1
+     ],
+     [
+      28,
+      200,
+      250.2
+     ]
+    ]
+   },
+   {
+    "dow": 3,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      36,
+      45
+     ],
+     [
+      7,
+      64,
+      80.05
+     ],
+     [
+      14,
+      116,
+      145.1
+     ],
+     [
+      28,
+      200,
+      250.2
+     ]
+    ]
+   },
+   {
+    "dow": 4,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      36,
+      45
+     ],
+     [
+      7,
+      64,
+      80.05
+     ],
+     [
+      14,
+      116,
+      145.1
+     ],
+     [
+      28,
+      200,
+      250.2
+     ]
+    ]
+   },
+   {
+    "dow": 5,
+    "deal": "Friday: Tier 3 $6/g",
+    "rows": [
+     [
+      3.5,
+      21,
+      26.25
+     ],
+     [
+      7,
+      42,
+      52.5
+     ],
+     [
+      14,
+      84,
+      105.05
+     ],
+     [
+      28,
+      160,
+      200.15
+     ]
+    ]
+   },
+   {
+    "dow": 6,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      36,
+      45
+     ],
+     [
+      7,
+      64,
+      80.05
+     ],
+     [
+      14,
+      116,
+      145.1
+     ],
+     [
+      28,
+      200,
+      250.2
+     ]
+    ]
+   }
+  ],
+  "t4": [
+   {
+    "dow": 0,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      47,
+      58.75
+     ],
+     [
+      7,
+      86,
+      107.55
+     ],
+     [
+      14,
+      154,
+      192.65
+     ],
+     [
+      28,
+      308,
+      385.3
+     ]
+    ]
+   },
+   {
+    "dow": 1,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      47,
+      58.75
+     ],
+     [
+      7,
+      86,
+      107.55
+     ],
+     [
+      14,
+      154,
+      192.65
+     ],
+     [
+      28,
+      308,
+      385.3
+     ]
+    ]
+   },
+   {
+    "dow": 2,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      47,
+      58.75
+     ],
+     [
+      7,
+      86,
+      107.55
+     ],
+     [
+      14,
+      154,
+      192.65
+     ],
+     [
+      28,
+      308,
+      385.3
+     ]
+    ]
+   },
+   {
+    "dow": 3,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      47,
+      58.75
+     ],
+     [
+      7,
+      86,
+      107.55
+     ],
+     [
+      14,
+      154,
+      192.65
+     ],
+     [
+      28,
+      308,
+      385.3
+     ]
+    ]
+   },
+   {
+    "dow": 4,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      47,
+      58.75
+     ],
+     [
+      7,
+      86,
+      107.55
+     ],
+     [
+      14,
+      154,
+      192.65
+     ],
+     [
+      28,
+      308,
+      385.3
+     ]
+    ]
+   },
+   {
+    "dow": 5,
+    "deal": "Friday: Tier 4 $10/g",
+    "rows": [
+     [
+      3.5,
+      30,
+      37.5
+     ],
+     [
+      7,
+      70,
+      87.55
+     ],
+     [
+      14,
+      140,
+      175.1
+     ],
+     [
+      28,
+      280,
+      350.25
+     ]
+    ]
+   },
+   {
+    "dow": 6,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      47,
+      58.75
+     ],
+     [
+      7,
+      86,
+      107.55
+     ],
+     [
+      14,
+      154,
+      192.65
+     ],
+     [
+      28,
+      308,
+      385.3
+     ]
+    ]
+   }
+  ],
+  "(none)": [
+   {
+    "dow": 0,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      0,
+      0
+     ],
+     [
+      7,
+      0,
+      0
+     ],
+     [
+      14,
+      0,
+      0
+     ],
+     [
+      28,
+      0,
+      0
+     ]
+    ]
+   },
+   {
+    "dow": 1,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      0,
+      0
+     ],
+     [
+      7,
+      0,
+      0
+     ],
+     [
+      14,
+      0,
+      0
+     ],
+     [
+      28,
+      0,
+      0
+     ]
+    ]
+   },
+   {
+    "dow": 2,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      0,
+      0
+     ],
+     [
+      7,
+      0,
+      0
+     ],
+     [
+      14,
+      0,
+      0
+     ],
+     [
+      28,
+      0,
+      0
+     ]
+    ]
+   },
+   {
+    "dow": 3,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      0,
+      0
+     ],
+     [
+      7,
+      0,
+      0
+     ],
+     [
+      14,
+      0,
+      0
+     ],
+     [
+      28,
+      0,
+      0
+     ]
+    ]
+   },
+   {
+    "dow": 4,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      0,
+      0
+     ],
+     [
+      7,
+      0,
+      0
+     ],
+     [
+      14,
+      0,
+      0
+     ],
+     [
+      28,
+      0,
+      0
+     ]
+    ]
+   },
+   {
+    "dow": 5,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      0,
+      0
+     ],
+     [
+      7,
+      0,
+      0
+     ],
+     [
+      14,
+      0,
+      0
+     ],
+     [
+      28,
+      0,
+      0
+     ]
+    ]
+   },
+   {
+    "dow": 6,
+    "deal": null,
+    "rows": [
+     [
+      3.5,
+      0,
+      0
+     ],
+     [
+      7,
+      0,
+      0
+     ],
+     [
+      14,
+      0,
+      0
+     ],
+     [
+      28,
+      0,
+      0
+     ]
+    ]
+   }
+  ]
+ },
+ "batchScores": [
+  {
+   "id": "custom_web_0437_flok020926",
+   "name": "Kush Cake",
+   "batch": "FLOK020926",
+   "date": "2026-02-24",
+   "p": {
+    "beta_myrcene": 0.5598,
+    "dl_limonene": 0.502,
+    "linalool": 0.2109,
+    "alpha_humulene": 0.1843,
+    "beta_pinene": 0.0933,
+    "beta_caryophyllene": 0.0643,
+    "fenchyl_alcohol": 0.0543,
+    "alpha_terpineol": 0.0528,
+    "alpha_pinene": 0.0467,
+    "trans_nerolidol": 0.0451,
+    "cedrol": 0.0327,
+    "alpha_bisabolol": 0.0301,
+    "cis_farnesol": 0.0209,
+    "camphene": 0.0135,
+    "caryophyllene_oxide": 0.008,
+    "dl_borneol": 0.0067,
+    "terpinolene": 0.0062,
+    "fenchone": 0.0024,
+    "sabinene_hydrate": 0.0016,
+    "nerolidol": 0,
+    "citronellol": 0,
+    "eucalyptol": 0,
+    "gamma_terpinene": 0,
+    "geraniol": 0,
+    "geranyl_acetate": 0,
+    "guaiol": 0,
+    "isoborneol": 0,
+    "isobornyl_acetate": 0,
+    "isopulegol": 0,
+    "m_cymene": 0,
+    "menthol": 0,
+    "l_menthone": 0,
+    "nerol": 0,
+    "nootkatone": 0,
+    "o_p_cymene": 0,
+    "octyl_acetate": 0,
+    "piperitone": 0,
+    "pulegone": 0,
+    "three_carene": 0,
+    "sabinene": 0,
+    "alpha_cedrene": 0,
+    "terpinen_4_ol": 0,
+    "alpha_phellandrene": 0,
+    "thymol": 0,
+    "alpha_terpinene": 0,
+    "trans_citral": 0,
+    "alpha_thujone": 0,
+    "camphor": 0,
+    "valencene": 0,
+    "carvone": 0
+   },
+   "domains": {
+    "sedation": 50,
+    "uplift": 31,
+    "anxiety_relief": 68,
+    "pain_inflammation": 59,
+    "focus_cognitive": 12,
+    "antimicrobial": 41
+   },
+   "raw": {
+    "sedation": 0.5021,
+    "uplift": 0.3124,
+    "anxiety_relief": 0.6759,
+    "pain_inflammation": 0.5916,
+    "focus_cognitive": 0.1194,
+    "antimicrobial": 0.4105
+   },
+   "cluster": {
+    "primary": 6,
+    "secondary": 1
+   },
+   "anxietyRisk": 24
+  },
+  {
+   "id": "custom_web_0596_hsmr260325a05011",
+   "name": "Scented Marker",
+   "batch": "H.SMR260325.A05.011",
+   "date": "2026-04-10",
+   "p": {
+    "dl_limonene": 0.658,
+    "beta_caryophyllene": 0.524,
+    "trans_beta_ocimene": 0.286,
+    "beta_myrcene": 0.236,
+    "linalool": 0.129,
+    "fenchyl_alcohol": 0.111,
+    "alpha_humulene": 0.089,
+    "alpha_terpineol": 0.085,
+    "alpha_pinene": 0.062,
+    "alpha_bisabolol": 0.059,
+    "beta_pinene": 0.058,
+    "camphene": 0.017,
+    "caryophyllene_oxide": 0.01,
+    "citronellol": 0,
+    "eucalyptol": 0,
+    "beta_farnesene": 0,
+    "fenchone": 0,
+    "gamma_terpinene": 0,
+    "geraniol": 0,
+    "geranyl_acetate": 0,
+    "guaiol": 0,
+    "isoborneol": 0,
+    "isopulegol": 0,
+    "menthol": 0,
+    "nerol": 0,
+    "pulegone": 0,
+    "three_carene": 0,
+    "o_p_cymene": 0,
+    "alpha_cedrene": 0,
+    "sabinene": 0,
+    "alpha_phellandrene": 0,
+    "sabinene_hydrate": 0,
+    "alpha_terpinene": 0,
+    "terpinolene": 0,
+    "trans_nerolidol": 0,
+    "dl_borneol": 0,
+    "camphor": 0,
+    "valencene": 0,
+    "cedrol": 0,
+    "nerolidol": 0
+   },
+   "domains": {
+    "sedation": 31,
+    "uplift": 54,
+    "anxiety_relief": 77,
+    "pain_inflammation": 80,
+    "focus_cognitive": 32,
+    "antimicrobial": 62
+   },
+   "raw": {
+    "sedation": 0.3144,
+    "uplift": 0.543,
+    "anxiety_relief": 0.7735,
+    "pain_inflammation": 0.7989,
+    "focus_cognitive": 0.315,
+    "antimicrobial": 0.625
+   },
+   "cluster": {
+    "primary": 2,
+    "secondary": 3
+   },
+   "anxietyRisk": 28
+  },
+  {
+   "id": "custom_1774052104805_lx7g",
+   "name": "Bubba Verde",
+   "batch": "HCP4122325",
+   "date": "2025-12-23",
+   "p": {
+    "beta_myrcene": 0.0912,
+    "dl_limonene": 1.1669,
+    "alpha_humulene": 0.2098,
+    "linalool": 0.4092,
+    "beta_pinene": 0.2702,
+    "alpha_pinene": 0.3103,
+    "trans_beta_ocimene": 0.3094,
+    "terpinolene": 0.0157,
+    "alpha_terpineol": 0.1428,
+    "fenchyl_alcohol": 0.1442,
+    "fenchone": 0.0215,
+    "camphene": 0.0341,
+    "caryophyllene_oxide": 0.0076,
+    "dl_borneol": 0.0156,
+    "citronellol": 0.0047,
+    "geraniol": 0.0055,
+    "terpinen_4_ol": 0.0024,
+    "gamma_terpinene": 0.0013,
+    "cis_farnesol": 0.0385,
+    "sabinene_hydrate": 0.0074,
+    "eucalyptol": 0.0037,
+    "cedrol": 0.0424
+   },
+   "domains": {
+    "sedation": 27,
+    "uplift": 71,
+    "anxiety_relief": 94,
+    "pain_inflammation": 77,
+    "focus_cognitive": 58,
+    "antimicrobial": 77
+   },
+   "raw": {
+    "sedation": 0.2684,
+    "uplift": 0.706,
+    "anxiety_relief": 0.9437,
+    "pain_inflammation": 0.7717,
+    "focus_cognitive": 0.5755,
+    "antimicrobial": 0.7737
+   },
+   "cluster": {
+    "primary": 4,
+    "secondary": 5
+   },
+   "anxietyRisk": 17
+  },
+  {
+   "id": "custom_1774052104570_qvxs",
+   "name": "Amplified",
+   "batch": "AMPD081825",
+   "date": "2025-08-18",
+   "p": {
+    "beta_myrcene": 0.4036,
+    "dl_limonene": 0.7739,
+    "beta_caryophyllene": 0.505,
+    "alpha_humulene": 0.2662,
+    "linalool": 0.2096,
+    "beta_pinene": 0.1282,
+    "alpha_pinene": 0.0829,
+    "trans_beta_ocimene": 0.0631,
+    "terpinolene": 0.0091,
+    "alpha_bisabolol": 0.0682,
+    "alpha_terpineol": 0.0825,
+    "fenchyl_alcohol": 0.0796,
+    "fenchone": 0.0037,
+    "camphene": 0.0195,
+    "caryophyllene_oxide": 0.0082,
+    "dl_borneol": 0.0062,
+    "guaiol": 0.0998,
+    "alpha_terpinene": 0.7732,
+    "sabinene_hydrate": 0.0027
+   },
+   "domains": {
+    "sedation": 61,
+    "uplift": 52,
+    "anxiety_relief": 99,
+    "pain_inflammation": 99,
+    "focus_cognitive": 33,
+    "antimicrobial": 91
+   },
+   "raw": {
+    "sedation": 0.609,
+    "uplift": 0.5218,
+    "anxiety_relief": 1.0693,
+    "pain_inflammation": 1.1875,
+    "focus_cognitive": 0.3345,
+    "antimicrobial": 0.9072
+   },
+   "cluster": {
+    "primary": 6,
+    "secondary": 2
+   },
+   "anxietyRisk": 15
+  }
+ ],
+ "averaging": {
+  "key": "zero gravity",
+  "batchesTotal": 25,
+  "liveBatches": [
+   {
+    "id": "custom_web_0679_zegr072026",
+    "batch": "ZEGR072026",
+    "date": "2026-08-04"
+   },
+   {
+    "id": "custom_web_0680_zegr081026",
+    "batch": "ZEGR081026",
+    "date": "2026-08-25"
+   },
+   {
+    "id": "custom_web_0702_zegr061526",
+    "batch": "ZEGR061526",
+    "date": "2026-07-01"
+   }
+  ],
+  "avgTop5": [
+   [
+    "beta_caryophyllene",
+    0.833411
+   ],
+   [
+    "dl_limonene",
+    0.465071
+   ],
+   [
+    "alpha_humulene",
+    0.419378
+   ],
+   [
+    "linalool",
+    0.287876
+   ],
+   [
+    "trans_beta_ocimene",
+    0.277476
+   ]
+  ]
+ }
+}
