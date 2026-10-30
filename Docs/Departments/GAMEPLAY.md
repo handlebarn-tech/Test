@@ -29,10 +29,11 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 ## In flight
 | Task | Worker | Branch | State |
 |---|---|---|---|
-| GAME-009 medical (+ W5N m2 queue strip) | session `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | `claude/task-game-009` | over DEC-102 ceiling (506k): told to finish if one run away, else WIP handoff; then archive, continue in a fresh worktree subagent if needed |
-| DES-006 recommendation depth audit | done | `worktree-agent-aad768800c956f13b` @ caebbd3 | in review (Docs 2) |
+| GAME-009 medical (+ W5N m2, W5S m1/m2) | done (session `local_7f8c95e9…`, ready to archive) | `claude/task-game-009` @ 26081fa | REVIEW-PS1 with Unity B2 |
+| DES-006 recommendation depth audit | done | `review/des6` @ 403ed1b | PASS with minors; merge-ready; after merge lead fixes m2/m3 in GAME-017, m1 into GAME-017a packet |
 | DATA-003 needs catalog + goldens | lead subagent | worktree | running |
 | UX-006 counter UX addendum | lead subagent | worktree | running |
+| DES-005b (+ DES-007) | lead subagent | worktree | running |
 
 ## Queue (lead re-orders within DEC-096)
 1. GAME-009 → REVIEW-PS1 → playtest build 2 for Nolan (BUILD).
