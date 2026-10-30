@@ -27,3 +27,7 @@ UnityProject/.vscode/
 # Non-redistributable third-party imports (DEC-023), filled from the shared cache
 UnityProject/Assets/_LocalThirdParty/
 UnityProject/Assets/_LocalThirdParty.meta
+
+# Session worktrees (nested checkouts); .claude/settings.json is tracked (DEC-045 hub guard)
+.claude/worktrees/
+.claude/settings.local.json
