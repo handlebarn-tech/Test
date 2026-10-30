@@ -1,0 +1,247 @@
+{
+ "station": "POS_06",
+ "reg": "06",
+ "seed": 6106,
+ "generator": "register_arranger",
+ "frame": {
+  "_note": "metres; origin = monitor position along the counter, on the counter's staff edge, at the floor; u = operator's right, v = toward the customer, z = up",
+  "origin": [
+   14.8,
+   22.6
+  ],
+  "right": [
+   1,
+   0
+  ],
+  "forward": [
+   0,
+   -1
+  ]
+ },
+ "top_half_width_m": 0.4572,
+ "stand_m": {
+  "u": [
+   0.3048,
+   0.7925
+  ],
+  "v": [
+   -0.3962,
+   0.0
+  ]
+ },
+ "anchors": {
+  "TOP": {
+   "fixture": "POS_06",
+   "z_m": 0.8636,
+   "_src": "34 in AFF and 2'-6\" POS top (REFERENCES_INDEX 6.4, High); u = half the distance to the neighbouring POS on the same run (rev7 pos_ft)"
+  },
+  "UNDER_UPPER": {
+   "fixture": "POS_06",
+   "z_m": 0.45,
+   "gap": "anchor id pending ROOM_FIXTURES rev7 (under-shelf heights/depth not in the TI set)"
+  },
+  "UNDER_LOWER": {
+   "fixture": "POS_06",
+   "z_m": 0.12,
+   "gap": "anchor id pending ROOM_FIXTURES rev7 (under-shelf heights/depth not in the TI set)"
+  },
+  "UNDER_UPPER_EDGE": {
+   "fixture": "POS_06",
+   "z_m": 0.45,
+   "gap": "anchor id pending ROOM_FIXTURES rev7 (under-shelf heights/depth not in the TI set)"
+  },
+  "STAND_LOWER": {
+   "fixture": "POS_06",
+   "z_m": 0.15,
+   "_src": "rev7 stand_rect (1.6 x 1.3 ft, REFERENCES_INDEX 2.2)",
+   "gap": "lower shelf height GAP-RK-LAYOUT"
+  },
+  "STAND_RAIL": {
+   "fixture": "POS_06",
+   "z_m": 0.762,
+   "_src": "stand top 2.5 ft (REFERENCES_INDEX 2.2, Low-Med), edge of rev7 stand_rect facing the operator (the stand is on the operator's right, REFERENCES_INDEX 2.2)"
+  },
+  "STAND_EDGE": {
+   "fixture": "POS_06",
+   "z_m": 0.762,
+   "_src": "as STAND_RAIL"
+  },
+  "FLOOR_STAND": {
+   "fixture": "Trash_Small_POS_06",
+   "z_m": 0.0,
+   "_src": "rev7 Trash_Small_POS_xx pos_ft (DEC-104 R7, Low)"
+  }
+ },
+ "items": [
+  {
+   "asset": "PROC_RK_Keyboard",
+   "rk": "RK-04",
+   "anchor": "TOP",
+   "pos_m": [
+    -0.0055,
+    0.1217,
+    0.8636
+   ],
+   "yaw_deg": 1.5,
+   "condition": {
+    "wear_scale": 0.63
+   }
+  },
+  {
+   "asset": "PROC_RK_Mouse",
+   "rk": "RK-05",
+   "anchor": "TOP",
+   "pos_m": [
+    0.3179,
+    0.1513,
+    0.8636
+   ],
+   "yaw_deg": 5.7,
+   "condition": {
+    "wear_scale": 1.17
+   }
+  },
+  {
+   "asset": "PROC_RK_Scanner",
+   "rk": "RK-03",
+   "anchor": "TOP",
+   "pos_m": [
+    -0.3365,
+    0.1302,
+    0.8636
+   ],
+   "yaw_deg": -1.4,
+   "condition": {
+    "wear_scale": 0.81
+   }
+  },
+  {
+   "asset": "PROC_RK_ReceiptPrinter",
+   "rk": "RK-01",
+   "anchor": "TOP",
+   "pos_m": [
+    0.1247,
+    0.4245,
+    0.8636
+   ],
+   "yaw_deg": -1.1,
+   "condition": {
+    "wear_scale": 0.87
+   }
+  },
+  {
+   "asset": "PROC_RK_LabelPrinter",
+   "rk": "RK-02",
+   "anchor": "TOP",
+   "pos_m": [
+    -0.3464,
+    0.4571,
+    0.8636
+   ],
+   "yaw_deg": 0.0,
+   "condition": {
+    "wear_scale": 1.08
+   }
+  },
+  {
+   "asset": "PROC_RK_BagBundle",
+   "rk": "RK-06a",
+   "anchor": "UNDER_UPPER",
+   "pos_m": [
+    -0.3434,
+    0.1912,
+    0.45
+   ],
+   "yaw_deg": 6.0,
+   "condition": {
+    "wear_scale": 0.72
+   }
+  },
+  {
+   "asset": "PROC_RK_BagBundle",
+   "rk": "RK-06a",
+   "anchor": "UNDER_UPPER",
+   "pos_m": [
+    0.099,
+    0.1949,
+    0.45
+   ],
+   "yaw_deg": 3.9,
+   "condition": {
+    "wear_scale": 0.94
+   }
+  },
+  {
+   "asset": "PROC_RK_BagBundle",
+   "rk": "RK-06a",
+   "anchor": "UNDER_LOWER",
+   "pos_m": [
+    -0.1766,
+    0.2076,
+    0.12
+   ],
+   "yaw_deg": -5.1,
+   "condition": {
+    "wear_scale": 1.28
+   }
+  },
+  {
+   "asset": "PROC_RK_BagBundle",
+   "rk": "RK-06a",
+   "anchor": "UNDER_LOWER",
+   "pos_m": [
+    0.212,
+    0.159,
+    0.12
+   ],
+   "yaw_deg": 3.3,
+   "condition": {
+    "wear_scale": 0.78
+   }
+  },
+  {
+   "asset": "PROC_RK_WipesPack",
+   "rk": "RK-06e",
+   "anchor": "STAND_LOWER",
+   "pos_m": [
+    0.4761,
+    -0.0872,
+    0.15
+   ],
+   "yaw_deg": 2.8,
+   "condition": {
+    "wear_scale": 0.81
+   }
+  },
+  {
+   "asset": "PROC_RK_Rag_Draped",
+   "rk": "RK-08",
+   "anchor": "UNDER_UPPER_EDGE",
+   "pos_m": [
+    -0.0924,
+    0.0,
+    0.45
+   ],
+   "yaw_deg": 12.1,
+   "condition": {
+    "wear_scale": 0.84
+   }
+  },
+  {
+   "asset": "PROC_RK_TrashBin_Solid",
+   "rk": "RK-09",
+   "anchor": "FLOOR_STAND",
+   "pos_m": [
+    0.5718,
+    -0.5726,
+    0.0
+   ],
+   "yaw_deg": 78.8,
+   "condition": {
+    "wear_scale": 0.77,
+    "fill_level": 0.96
+   }
+  }
+ ],
+ "not_fitted": []
+}

@@ -601,6 +601,7 @@ def build_tumbler(parts, p, lod):
     body = parts("Body", "RK_Stainless")
     if d >= 3:
         add_lathe(body, (0, 0, 0), (0, 0, 1), [(0, 0), (rb, 0), (rt, hb + 0.016), (0, hb + 0.016)], 8)
+        add_tube(parts("Straw", "RK_Straw"), [(0.019, 0.006, hb), (0.019, 0.006, hb + p["tu_straw_out_m"])], 0.0035, 6)
         return {}
     segs = ev(s * 2 if d == 0 else s)
     prof = [(0, 0), (rb - 0.003, 0), (rb, 0.003), (rb, 0.014), (rb - 0.0012, 0.017), (rb - 0.0005, 0.03),
@@ -900,7 +901,8 @@ def build(p, lod):
         raise ValueError(f"{p['id']} {lod}: outside the size_m envelope (tol {tol}): " + ", ".join(bad))
     w, dd, h = size
     extra = {"register_kit": {"rk": p["rk"], "kind": p["kind"], "anchors": p["anchors"],
-                              "anchor_id": None, "anchor_gap": "anchor id pending ROOM_FIXTURES rev7 (REF-011)",
+                              "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
+                              "placements": "Art/Exports/Procedural/RegisterStations/POS_xx.json (register_arranger.py)",
                               "fixed_every_register": p.get("fixed", False), "facing": "-Y Blender / +Z Unity faces the operator",
                               "materials": "preview colours; 2K PBR set pending PROC-005 Q0.2/Q0.3"},
              "seed": int(p["seed"]),

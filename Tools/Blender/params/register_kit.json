@@ -51,6 +51,43 @@
     "RK_Liner_Green": [0.3, 0.55, 0.35, 0.5],
     "RK_Paper_Crumple": [0.92, 0.91, 0.88, 1.0]
   },
+  "arranger": {
+    "_note": "DEC-104 non-uniform rule: one seed per station (seed*100 + reg). Frame per station (metres): origin = the POS monitor's position along the counter, on the counter's staff edge, at the floor; u = the operator's right, v = toward the customer, z = up. Anchors bind to ROOM_FIXTURES rev7 POS_xx (operator_zone, stand_rect) and Trash_Small_POS_xx. Values tagged GAP-RK-LAYOUT are arrangement placeholders: no still resolves cm-level positions (DEC-047).",
+    "seed": 61,
+    "out_dir": "Art/Exports/Procedural/RegisterStations",
+    "fixtures": "Docs/Reference/ROOM_FIXTURES.json",
+    "anchors": {
+      "TOP": {"z_m": 0.8636, "v_m": [0.0, 0.762], "_src": "34 in AFF and 2'-6\" POS top (REFERENCES_INDEX 6.4, High); u = half the distance to the neighbouring POS on the same run (rev7 pos_ft)"},
+      "UNDER_UPPER": {"z_m": 0.45, "v_m": [0.0, 0.5], "gap": "anchor id pending ROOM_FIXTURES rev7 (under-shelf heights/depth not in the TI set)"},
+      "UNDER_LOWER": {"z_m": 0.12, "v_m": [0.0, 0.5], "gap": "anchor id pending ROOM_FIXTURES rev7 (under-shelf heights/depth not in the TI set)"},
+      "UNDER_UPPER_EDGE": {"z_m": 0.45, "v_m": [0.0, 0.0], "edge": true, "gap": "anchor id pending ROOM_FIXTURES rev7 (under-shelf heights/depth not in the TI set)"},
+      "STAND_LOWER": {"z_m": 0.15, "_src": "rev7 stand_rect (1.6 x 1.3 ft, REFERENCES_INDEX 2.2)", "gap": "lower shelf height GAP-RK-LAYOUT"},
+      "STAND_RAIL": {"z_m": 0.762, "edge": true, "yaw_base_deg": 90, "_src": "stand top 2.5 ft (REFERENCES_INDEX 2.2, Low-Med), edge of rev7 stand_rect facing the operator (the stand is on the operator's right, REFERENCES_INDEX 2.2)"},
+      "STAND_EDGE": {"z_m": 0.762, "edge": true, "yaw_base_deg": 90, "_src": "as STAND_RAIL"},
+      "FLOOR_STAND": {"z_m": 0.0, "point": true, "jitter_m": 0.03, "_src": "rev7 Trash_Small_POS_xx pos_ft (DEC-104 R7, Low)"}
+    },
+    "monitor_keepout_m": {"u": [-0.245, 0.245], "v": [0.686, 0.762], "_src": "rev7 POS_xx size_ft 1.6 x 0.25 (monitor footprint)", "gap": "GAP-RK-LAYOUT: monitor placed at the back of the POS top; its depth position is not measured (rev7 y is graybox)"},
+    "fixed": [
+      {"id": "Keyboard", "u": 0.0, "v": 0.13, "jitter_m": [0.01, 0.01], "yaw_deg": 3, "_src": "in front of the monitor (spec RK-04); v GAP-RK-LAYOUT"},
+      {"id": "Mouse", "right_of": "Keyboard", "gap_m": [0.03, 0.07], "v": 0.13, "jitter_m": [0.0, 0.03], "yaw_deg": 12, "_src": "always right of the keyboard (DEC-104 R1); gap GAP-RK-LAYOUT"},
+      {"id": "Scanner", "left_of": "Keyboard", "gap_m": [0.02, 0.05], "v": 0.135, "jitter_m": [0.0, 0.005], "yaw_deg": 10, "_src": "left of the keyboard in CEN/WIDE (spec RK-03); gap GAP-RK-LAYOUT"},
+      {"id": "ReceiptPrinter", "slots": [[0.12, 0.41], [-0.1, 0.41]], "jitter_m": [0.02, 0.02], "yaw_deg": 4, "_src": "behind the keyboard beside the monitor (spec RK-01); slots GAP-RK-LAYOUT"},
+      {"id": "LabelPrinter", "slots": [[-0.35, 0.45], [0.35, 0.45], [-0.35, 0.5], [0.35, 0.5]], "jitter_m": [0.005, 0.01], "yaw_deg": 0, "_src": "placement varies per register (DEC-104 R2); slots GAP-RK-LAYOUT"}
+    ],
+    "optional": [
+      {"group": "bags", "assets": ["BagBundle"], "p": 1.0, "count": [2, 5], "yaw_deg": 6, "_src": "bags stocked at every station (OFFICE_FINDINGS F2, High); 2-5 bundles (spec RK-06a)"},
+      {"group": "tape", "assets": ["TapeRoll"], "p": 0.6, "count": [1, 3], "yaw_deg": 180, "_src": "count 1-3 (spec RK-06b); p GAP-RK-WEIGHTS"},
+      {"group": "paper_stock", "assets": ["PaperStock_Closed", "PaperStock_Open"], "p": 0.7, "count": [1, 2], "yaw_deg": 5, "_src": "DEC-104 R4; count 1-3 in spec, 2 max fits the shelves; p GAP-RK-WEIGHTS"},
+      {"group": "personal", "assets": ["Tumbler"], "p": 0.35, "count": [1, 1], "yaw_deg": 180, "_src": "0-2 per register (spec RK-06d, GAP-REG-6); p GAP-RK-WEIGHTS"},
+      {"group": "wipes", "assets": ["WipesPack"], "p": 0.25, "count": [1, 1], "yaw_deg": 10, "_src": "sparse (DEC-104 R5); p GAP-RK-WEIGHTS"},
+      {"group": "spray_iso", "assets": ["SprayBottle_ISO"], "p": 0.5, "count": [1, 1], "yaw_deg": 0, "_src": "only some stands (DEC-104 R3); p GAP-RK-WEIGHTS"},
+      {"group": "rag", "assets": ["Rag_Draped", "Rag_Folded"], "p": 0.8, "count": [1, 1], "yaw_deg": 15, "_src": "blue rag, form and place vary (DEC-104 R5, GAP-REG-9); p GAP-RK-WEIGHTS"},
+      {"group": "trash", "assets": ["TrashBin_Wire", "TrashBin_Solid"], "p": 1.0, "count": [1, 1], "yaw_deg": 180, "_src": "a small bin at every register (DEC-104 R7, rev7 Trash_Small_POS_xx); type varies"}
+    ],
+    "condition": {"wear_scale": [0.6, 1.4], "fill_level": [0.0, 1.0], "_src": "DEC-104: condition varies per station; ranges GAP-RK-WEIGHTS"},
+    "place_tries": 40,
+    "clearance_m": 0.01
+  },
   "items": [
     {"id": "ReceiptPrinter", "rk": "RK-01", "kind": "receipt_printer", "fixed": true, "anchors": ["TOP"], "seed": 6101,
      "gaps": ["GAP-REG-1"],
@@ -109,7 +146,7 @@
      "gaps": ["GAP-REG-7"],
      "_src": "wipes on the stand shelves (DEC-021, High); sparse because the main supplies live in restroom storage (DEC-104 R5); size GAP-REG-7",
      "wp_w_m": 0.2, "wp_d_m": 0.12, "wp_h_m": 0.065, "wp_lid_w_m": 0.09, "wp_lid_d_m": 0.05,
-     "size_m": [0.21, 0.12, 0.07], "size_tol_m": 0.008, "wear": {"crumple": 0.4, "dust": 0.2}},
+     "size_m": [0.21, 0.12, 0.07], "size_tol_m": 0.011, "wear": {"crumple": 0.4, "dust": 0.2}},
     {"id": "SprayBottle_ISO", "rk": "RK-07", "kind": "spray_bottle", "anchors": ["STAND_RAIL"], "seed": 6112,
      "gaps": ["GAP-REG-8"],
      "_src": "isopropyl cleaner, some stands only (DEC-104 R3); bottle type from the deli cart (CART, Med); size GAP-REG-8",
@@ -117,7 +154,7 @@
                     [0.086, 0.053, 0.115], [0.094, 0.06, 0.135], [0.092, 0.058, 0.16], [0.07, 0.046, 0.18],
                     [0.036, 0.032, 0.194], [0.031, 0.031, 0.205]],
      "sb_fill_z_m": 0.12, "sb_label_z_m": [0.02, 0.07],
-     "size_m": [0.096, 0.11, 0.282], "size_tol_m": 0.006, "wear": {"label_wear": 0.4, "grime": 0.2}},
+     "size_m": [0.094, 0.0985, 0.265], "size_tol_m": 0.009, "wear": {"label_wear": 0.4, "grime": 0.2}},
     {"id": "Rag_Draped", "rk": "RK-08", "kind": "rag", "anchors": ["UNDER_UPPER_EDGE", "STAND_EDGE"], "seed": 6113,
      "gaps": ["GAP-REG-9"],
      "_src": "blue rag (DEC-104 R5) draped over a shelf edge as in CEN (Low); size GAP-REG-9",
@@ -135,7 +172,7 @@
      "_src": "small bins at the registers (DEC-104 R7); black wire-mesh bin by the stand (WIDE, Med; h:w 83:74 px); office-bin convention 11.5 x 14 in (GAP-REG-10)",
      "tb_type": "wire_mesh", "tb_top_d_m": 0.29, "tb_bottom_d_m": 0.24, "tb_h_m": 0.36, "tb_rim_r_m": 0.005,
      "tb_wire_r_m": 0.0011, "tb_wires": 26, "tb_wire_pts": 20, "tb_twist_rad": 2.4, "tb_fill_count": 6,
-     "size_m": [0.30, 0.30, 0.36], "size_tol_m": 0.006, "wear": {"edge_wear": 0.3, "dust": 0.3}},
+     "size_m": [0.30, 0.30, 0.36], "size_tol_m": 0.011, "wear": {"edge_wear": 0.3, "dust": 0.3}},
     {"id": "TrashBin_Solid", "rk": "RK-09", "kind": "trash_bin", "anchors": ["UNDER_LOWER", "FLOOR_STAND"], "seed": 6116,
      "gaps": ["GAP-REG-10"],
      "_src": "small white wastebasket with a liner on the lowest under-shelf (CEN, Low); size GAP-REG-10",
