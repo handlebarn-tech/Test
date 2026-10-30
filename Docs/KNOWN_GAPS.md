@@ -124,3 +124,14 @@ These gaps are defined, with placeholders and owners, in the spec named; that sp
 - GAP-REG-11 | asset | keyboard depth, case and key heights (17.5 in width is the only cited value) | none (full-size keyboard convention) | closer still
 - GAP-RK-LAYOUT | store | cm-level arrangement on the POS top (keyboard/printer slots, monitor depth position) and the exact height/depth of the single mid-height under-counter shelf (DEC-124; placeholder z 0.43 m, 0.5 m deep) | Low | site measure or a still with a scale reference at shelf depth; World's monitor-depth answer
 - GAP-RK-WEIGHTS | store | per-station presence weights of the optional dressing items (DEC-104 non-uniform rule gives no rates) | none (designer weights) | playtest tuning
+
+## PROC-013 door family (values in `Tools/Blender/params/doors.json`; registered from the PROC-013 handoff, REVIEW-PROC013 m3)
+- GAP-DOOR-1 | asset | HM frame face/stop/rabbet/undercut, hinge layout, lever/rose/exit-device/closer sizes (only the 1-3/4 in leaf and the 3'-4"–3'-6" hardware band are on A310); closer mount side (Hall_Break closer is modelled on the push/hall face, but CCTV wall2 R3C4 shows no closer there, REVIEW-PROC013 m4) | none (commercial conventions) | site measure / closer still
+- GAP-DOOR-2 | asset | storefront stile/rail widths, frame section, glass thickness, pull size, threshold, hinge vs pivot type; frame finish dark bronze vs black anodized | Low | site photo of the entry
+- GAP-DOOR-3 | asset | arch: is 7'-0" the crown or the spring line (crown used); whether Arch_E also has a rounded head | Low | still of each arch with a scale reference
+- GAP-DOOR-4 | asset | 101B grille picket pitch/section, lattice, track; 18 in access door not modelled | none (convention) | site photo
+- GAP-DOOR-5 | asset | hardware/closer finishes (satin stainless, black lever, sprayed aluminium closer) | Low | closer stills
+- GAP-DOOR-6 | asset | leaf/frame colour of doors no still shows (Emergency_RetailE, Hall_Restroom, Office_HUB2 frame, HUB2_HUB, Ext_Delivery) and the SE green shade | Low | stills / site photo
+- GAP-DOOR-7 | asset | exterior side of the exterior doors (pull trim on Ext_Delivery, threshold type) | none | exterior photo
+- GAP-DOOR-8 | asset | door decals: fire labels, "EMPLOYEES ONLY", office leaf print, SE round logo | Med (seen, not modelled) | signage pass
+- GAP-DOOR-9 | asset | wear amounts (edge chip, low scuff, hand grime) | none | PROC-010 materials pass
