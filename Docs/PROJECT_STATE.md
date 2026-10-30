@@ -12,22 +12,23 @@
 
 ## Waves 1 and 2: DONE, all merged to main (latest 93f8b47). Every review GO with notes.
 
-## Wave 3 (started 2026-10-29)
-| Task | Session | Notes |
+## Wave 3 status (2026-10-29)
+| Task | Session | State |
 |---|---|---|
-| GAME-002 | dispo-game-002 | vertical-slice shift loop; scoped Domain grant (DEC-028); own additive scene (DEC-029) |
-| GAME-003 | dispo-game-003 | parser + full features port |
-| ART-002 | dispo-art-002 | HUB swap, scale stands, slice anchors, deterministic scenes |
-| REF-003 | dispo-ref-003 | back-of-register stills → stand spec; tell ART-002 when merged |
-| BUILD-002 | dispo-build-002 | studio.ps1 hardening, blender/assets commands, build manifest |
-| ASSET-002 | dispo-asset-002 | P0 asset fetch into shared cache (DEC-023) |
-Unity: max 2 editors (DEC-013), so Unity sessions queue on the gate.
+| GAME-002 | dispo-game-002 | building; got DEC-033..036 must-fixes |
+| ART-002 | dispo-art-002 | done; follow-up: REF-003 stand sizes + DEC-037 heights → then REVIEW-W3B |
+| REF-003 | dispo-ref-003 | done → REVIEW-W3B (with ART-002) |
+| GAME-003, BUILD-002 | — | done → REVIEW-W3A (dispo-review-w3a) |
+| COMP-001, RES-001, ASSET-002 | — | done → REVIEW-W3C (dispo-review-w3c) |
+| REF-004 | dispo-ref-004 | importing TI drawings (read-only M365) |
+Unity Warehouse/Office packs: still need a Unity editor Package Manager download (P1, later).
 
 ## NEXT ACTIONS (in order) — fresh Hub starts here
-1. As each wave-3 task finishes, start a review session for it (group small ones) and merge reviewed branches one at a time; Unity merges re-run compile + tests.
-2. REF-003 merged → message ART-002 to update stand sizes.
-3. After GAME-002 + ART-002 merge: the vertical slice is playable → PERF-001, then M5 hero retail lookdev (ART-003) from the ASSET-002 cache, PROC-002 jar fill/bud system, and a playtest/QA pass.
-4. Archive finished sessions.
+1. ART-002 follow-up done → start REVIEW-W3B (packet still to write: ART-002 + REF-003, Unity gates, overlay, anchors test).
+2. Merge W3A/W3B/W3C as they pass; Unity merges re-run compile + tests.
+3. GAME-002 done → REVIEW of the slice (play it via the PlayMode bot + captures) → merge → the vertical slice is playable; brief Nolan.
+4. Then: PERF-001; ART-003 hero retail lookdev (TI finishes DEC-037 + ASSET-002 cache, Montserrat/Crimson Pro brand fonts); PROC-002 jar fill/bud system; COMP later mechanics (limit meter, ID events, medical); packaged assortment (DEC-034).
+5. Archive finished sessions after merge.
 
 ## Cross-project
 - GAP-206 "sleeping" defect relayed to the TFS tool project hub session on 2026-10-29 (no reply needed).
