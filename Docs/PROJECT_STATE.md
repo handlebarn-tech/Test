@@ -13,8 +13,8 @@ Merged this session: W4K (GAME-005 real jars), W4Q (DES-003; DEC-052..059 ratifi
 | Work | Session | State | Next Hub step |
 |---|---|---|---|
 | REVIEW-W4P re-merge onto main (PROC-003 × GAME-005 clash) | `local_3bc3be53-eb4d-477e-8a99-02d950744ef4` | running | merge on GO → bud material pass |
-| REVIEW-W4J: PERF-001 | `local_fa1d4222-cd8c-4df7-b9ab-799c6519e8b9` | compile/EditMode running | merge on GO; ratify perf budgets |
-| REF-009: apply DEC-051 to ROOM_FIXTURES | `local_8bee29f0-46b7-4ee5-87bf-9792b70f6267` | running | review (docs), merge → ART back rooms |
+| (W4J PERF-001 merged; reviewer `local_fa1d4222…` free) | | | |
+| REVIEW-W4R: REF-009 (`task-ref-009` d3f3a02) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO → ART back rooms |
 | AUDIT-001: read-only .md audit | `local_b6a24c47-ab71-4d36-9df9-1eb188edc2b0` | go sent (main 04f7bc3) | report → Nolan approves before ANY doc change |
 | IMP-001: audit DISPO_GAME_DESIGN_V2 import | `local_ad2c683f-9022-4d82-8d3d-2cad5d63c888` | running | review → Nolan approval; no use before |
 | GAME-006 cart | `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | running | review → GAME-007 |
@@ -31,8 +31,7 @@ Merged this session: W4K (GAME-005 real jars), W4Q (DES-003; DEC-052..059 ratifi
 5. Whatever DES-003 creates for genuine gaps.
 
 ## Open questions for Nolan
-- DES-003 N1 (ship v7.11.5 fixes DEC-015/016 or pure v7.11.4 until the tool releases) and N2 (empty wall jar with BOH backstock: does the tool still list it? GAP-DP-01, placeholder DEC-055). Sent 2026-10-30.
-- REF-008 questions: Q1–15 answered (DEC-051; Q4 vestibule size unknown, Q11 skipped). **Still open: Q16–22** (FOH wall, rack runs, vestibule, lockers, bench, office items, BOH items, restroom/JC photos): full list in `Docs/Handoffs/REF-008.md` "Questions for Nolan". Sent 2026-10-30 02:15; answers go to the REF/ART tasks.
+- REF-008 questions: Q1–15 answered (DEC-051; Q4 vestibule size unknown, Q11 skipped). **Still open: Q16–22 + REF-009's 2 follow-ups; re-sent 2026-10-30 ~03:45** (FOH wall, rack runs, vestibule, lockers, bench, office items, BOH items, restroom/JC photos): full list in `Docs/Handoffs/REF-008.md` "Questions for Nolan". Sent 2026-10-30 02:15; answers go to the REF/ART tasks.
 - Brand names/IP before any public build (real brands in `batches.json` and the packaged catalog).
 - Phoenix TPT rate (OPEN-4): a receipt's tax lines would settle it; 25.1 % is kept (DEC-001).
 
