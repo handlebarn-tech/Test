@@ -1,4 +1,4 @@
-# REGISTER_KIT — register workstation props, evidence spec (PROC-006, phase 1)
+# REGISTER_KIT — register workstation props, evidence spec (PROC-006 phase 1; DEC-104 answers applied in PROC-006b)
 
 Source of the request: Nolan's playtest 1, "Register / Workstation Detail" (`GameFeedback10-30.txt`, DEC-096): every register gets a label printer, receipt printer, scanner, mouse, keyboard, under-counter storage (bags, boxes, personal items, cleaning supplies), a spray bottle hanging from a scale shelf, and a rag.
 
@@ -47,19 +47,25 @@ Rows: 13 (8 Nolan items, storage split into 5 sub-rows, plus RK-09 trash bin by 
 ### Seen but not in Nolan's list (flagged, not specified)
 - Stapler, papers, pens, small round tray with a blue item (EAST (1725,185)–(1835,275)): desk clutter for a lived-in pass (DEC-096).
 
-## GAP register
-| GAP | What is missing | Source checked | Candidates |
+## GAP register (phase 2: DEC-104 answers applied, PROC-006b)
+DEC-104 (Nolan, R1–R7) settles the identity and presence questions below. Sizes were measured first (DEC-110) against the 17.5 in keyboard convention in the same still; anything still open is a labelled `"gap"` param in `Tools/Blender/params/register_kit.json`. Searched before keeping any GAP open (DEC-105): `DECISIONS.md` (DEC-021/051/062/091/096/104), `KNOWN_GAPS.md` (GAP-107/108/131), `Handoffs/REF-008.md` (Q10, Q19), `Research/OFFICE_FINDINGS.md` (F2, F3, O6, O11), `REFERENCES_INDEX.md` §1.5, §2.2, §6.4.
+
+| GAP | DEC-104 answer (settled) | Measured / other sources (DEC-110) | Still open (labelled GAP param) |
 |---|---|---|---|
-| GAP-REG-1 | Receipt printer size and exact form (top-exit vs front-exit); also whether the orange-topped black box at EAST (1165,115)–(1245,160) is the receipt printer or a label printer | CEN/EAST/WIDE, all too low-res | (a) compact 80 mm thermal, top-load, front-exit; (b) same, top-exit. Size class only, no model |
-| GAP-REG-2 | Label printer present at every register? size; lid colour. The EAST orange-topped black box (1165,115)–(1245,160) may be a third sighting (black body, orange lid) rather than a receipt printer | R2C3, WIDE (2 sightings, Low), EAST (ambiguous) | (a) every register (Nolan directive); (b) some registers only, shared. White body, coloured lid |
-| GAP-REG-3 | Mouse: exists? type/colour | all stills, unresolved | (a) black wired mouse right of keyboard; (b) none (touchscreen) and add only by directive |
-| GAP-REG-4 | Folded bag and tape roll sizes | under-shelves, no scale object | reuse the exit-bag / deli-bag dims from DEC-091 R5 when PROC produces them |
-| GAP-REG-5 | What the white stacks and grey boxes are | EAST stand lower shelf, CEN/EAST under-shelf | (a) flat-packed boxes/mailers; (b) paper/receipt stock; (c) label rolls in a case |
-| GAP-REG-6 | Staff personal items under registers | none identifiable | water tumbler, phone, small bag/pouch, snack (unbranded, realistic detail per DEC-084) |
-| GAP-REG-7 | Cleaning supplies identity/size | EAST bottles and pack, DEC-021 "wipes" | wipes canister/soft pack, sanitiser pump bottle, surface spray |
-| GAP-REG-8 | Spray bottle at the registers: present? where on the stand? | no register still shows one; CART shows the type | hung from the stand's top-tray wire edge (staff side) as Nolan describes; same bottle as CART |
-| GAP-REG-9 | Rag colour/size/where | one grey cloth in CEN | grey bar towel draped on the under-shelf edge or the stand rail |
-| GAP-REG-10 | Trash bin size; one type per register or both | WIDE wire bin, CEN wastebasket, no scale object | (a) black wire-mesh office bin by the stand; (b) small white wastebasket under the counter |
+| GAP-REG-1 | **R6: the receipt printer feeds out the top** (top exit, tear bar on the lid) | Width ≈ 5.8 in (CEN 50 px vs keyboard 152 px = 17.5 in), Low. Paper 3⅛ in (80 mm) rolls (OFFICE_FINDINGS F3, Med). Black (CEN, Med) | depth/height: 80 mm thermal class convention, `rp_d`/`rp_h` keep `"gap": "GAP-REG-1"` |
+| GAP-REG-2 | **R2: a label printer at every register; placement varies** between registers | Width ≈ 7.4 in (WIDE 36 px vs keyboard 85 px), Low. Labels 2.25 × 2 in direct thermal (F3, Med) | depth/height and lid colour (orange per R2C3, Low): `lp_d`, `lp_h`, `lp_lid_colour` keep GAP-REG-2 |
+| GAP-REG-3 | **R1: a mouse at every register, on the right** of the keyboard | not resolvable in any still | type/colour/size: black wired optical, convention size; `ms_*` keep GAP-REG-3 |
+| GAP-REG-4 | not covered | bags: deli bags and exit bags are stocked at every station (F2, High); exit bags have handles (O6, High) | folded bag and tape-roll sizes until DEC-091 R5 bag dims land: `bag_*`, `tape_*` keep GAP-REG-4 |
+| GAP-REG-5 | **R4: the white/grey boxes are receipt and label paper stock** (Med) | rolls 2¼ in and 3⅛ in (F3) | box size: `box_*` keep GAP-REG-5 |
+| GAP-REG-6 | not covered | nothing identifiable beyond the CEN tumbler | personal items set: tumbler only, optional per station; `personal_set` keeps GAP-REG-6 |
+| GAP-REG-7 | **R5: main cleaning supplies live in restroom storage**, so under-counter cleaning items are **sparse** | DEC-021 "wipes" on the stand shelves (High) | wipes soft pack only, low weight per station; size keeps GAP-REG-7 |
+| GAP-REG-8 | **R3: the hanging bottle is isopropyl (ISO) cleaner; only some stands have one** | bottle type from CART (Med): translucent white body, red trigger | bottle size: `sb_*` keep GAP-REG-8 |
+| GAP-REG-9 | **R5: rags are blue** | one grey-looking cloth in CEN (camera colour, Low) | size and where it lies: draped on a shelf/stand edge or folded, varied per station; `rag_*` keep GAP-REG-9 |
+| GAP-REG-10 | **R7: small trash bins at the registers** (big bins spread apart across the floor; not this kit) | WIDE wire bin h:w ≈ 1.1 (83 × 74 px); CEN white wastebasket (Low). GAP-131 placeholder: at the back of the stand | size (office-bin convention 11.5 in × 14 in) and type per station (wire or solid, varied): `tb_*` keep GAP-REG-10 |
+
+**Non-uniform rule (DEC-104):** small items vary per station in presence, placement and condition. Fixed at every register: keyboard, mouse (always right), scanner, receipt printer, label printer. Everything else is optional per station with weights. A seeded arranger (`Tools/Blender/generators/register_arranger.py`) writes one placement JSON per station; same seed, same JSON.
+
+**Anchors (measured, DEC-110):** counter top 34 in AFF, POS top 2'-6" deep, 4 in toe base (REFERENCES_INDEX §6.4, High); station pitch ≈ 3.2 ft (GAP-131, Low), so the TOP zone is 0.95 m wide; scale stand ≈ 1.6 × 1.3 ft, top ≈ 2.5 ft, 2 levels (§2.2, Low-Med). Under-shelf heights are not in the TI set: `under_shelf_z_m` keeps `"gap": "anchor id pending ROOM_FIXTURES rev7"`.
 
 ## Proposed phase-2 packet outline (generator task)
 - **Build** `Tools/Blender/generators/register_kit.py` + `Tools/Blender/params/register_kit.json` (same pattern as `deli_jar.py`/`packaged_goods.py`, IMP-003/PROC-005 toolkit conventions): one prop per row RK-01..RK-09, with RK-06a–e as a seeded "under-counter fill" arranger (believable uneven fill, per-register seed so no two registers match).
