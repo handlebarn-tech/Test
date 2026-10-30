@@ -11,7 +11,7 @@ Hub-owned, project level only (`Docs/STUDIO_OS.md` §0). Department detail (work
 |---|---|---|---|---|
 | Hub | `local_c6267ff5-2acb-4b09-83a7-53541a088c66` | active | DOC/OPS/AUDIT tasks only | 0 |
 | Gameplay | `local_5bcd6ccf-64c1-464e-9fb9-40ad2e27afb4` | winding down (DEC-112) | 3 | 1 |
-| World | `local_d19eda58-a105-4379-aada-4bf61066f717` | winding down (DEC-112) | 2 | 1 (lends to Assets for imports) |
+| World | retired + archived; ART-007 in review (A2 → Hub) on `worktree-agent-a814e17bba4ec20c5`@404daee; REF-013 FAIL M1 on `worktree-agent-a2b65d251ee0f6ac2`@73e0e0c, fix after build (DEC-115) | 2 | 1 (lends to Assets for imports) |
 | Assets | retired + archived (Nolan: context too high); PROC-005 rework → `local_335db39d-0968-49fa-846c-808a2abb2158`; PROC-006b → direct worker `local_cab28702-140d-48df-963a-3cc4b318aa89`; PROC-005 in review (Unity A2 → Hub); ASSET-004 merged 18b66d1 | 3 | 0 (borrows World's) |
 | Reviewer pool | Unity A2 `local_4e865bb8-479c-41c5-8628-7f3e7cb2a4c3`, Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs 2 `local_99d7e5b7-ef60-4076-9821-58f16ce3bec0` | idle | — | Unity reviewers use the owning dept's slot |
 
