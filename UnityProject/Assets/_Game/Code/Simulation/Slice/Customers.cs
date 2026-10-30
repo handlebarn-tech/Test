@@ -4,8 +4,8 @@ using System.Linq;
 
 namespace Dispo.Simulation.Slice
 {
-    public enum CustomerState { NotArrived, Queued, Serving, Done }
-    public enum CustomerOutcome { None, Bought, Walkout, NoSale }
+    public enum CustomerState { NotArrived, AtStand, Queued, Serving, Done }   // AtStand: waiting at the ID stand (GAME-008)
+    public enum CustomerOutcome { None, Bought, Walkout, NoSale, Refused }      // Refused: a bad ID caught at the stand
     public enum PatienceState { Calm, Impatient, Leaving }
 
     /// <summary>One item the customer asks for (GAME-006): a family (hidden from the player) and a stated weight.</summary>
@@ -29,6 +29,9 @@ namespace Dispo.Simulation.Slice
         public double Grams { get => Asks[0].Grams; set => Asks[0].Grams = value; }
         public double Budget;             // post-tax $ for the whole cart, 0 = no budget
         public bool OverLimit;            // GAME-007: asked for more than the 1 oz cap (SPEC_COMP002 §2 shape)
+        public IdCard Id;                 // GAME-008: shown at the ID stand while the player covers it, else null
+        public bool IdChecked, IdRefusedValid;
+        public double CheckInDelay;       // GAME-008: extra wait (s) when the player declined to cover check-in [GDD]
         public string Line;
         public double PatienceMax, Patience;
 

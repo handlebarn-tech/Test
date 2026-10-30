@@ -27,6 +27,9 @@ namespace Dispo.Simulation.Slice
 
     public enum Response { Blocked, Accept, Reject, Leave }
 
+    /// <summary>GAME-008 "cover check-in" prompt state (SPEC_COMP002 §3).</summary>
+    public enum CoverState { None, Offered, Accepted, Declined }
+
     /// <summary>UX_PS1 §3 limit-meter states.</summary>
     public enum MeterState { Neutral, Amber, Red }
 
@@ -72,10 +75,16 @@ namespace Dispo.Simulation.Slice
         public bool IsOver => Customers.All(c => c.State == CustomerState.Done);
         public event Action<Customer> Left;
         public readonly StrikeLedger Strikes = new StrikeLedger();       // GAME-007; GAME-008/009 add strikes
+        public readonly List<Customer> Stand = new List<Customer>();     // GAME-008: arrivals waiting at the ID stand, in arrival order
+        public CoverState Cover { get; private set; }
+        public event Action CoverOffered;
+        public readonly DateTime Today;                                  // in-game date [GDD] (the ID panel shows it)
 
         readonly Dictionary<string, Batch> _batches;
         readonly HashSet<string> _seen = new HashSet<string>();
         double _speedFit;   // speedFit of the last accepted pick (§3.3: service start → card pick)
+        readonly Random _idRng;
+        bool _coverRolled;
 
         public ShiftSim(SliceData data)
         {
@@ -86,16 +95,29 @@ namespace Dispo.Simulation.Slice
             Inventory = new InventoryService(data.Catalog, Cfg, rng, bestsellers);
             Inventory.Sold += Sales.Add;
             _batches = data.Catalog.Batches.ToDictionary(b => b.Id);
+            _idRng = new Random(Cfg.seed + 11);   // GAME-008 prompt roll + ID cases, own stream so the slice draws stay put
+            Today = DateTime.ParseExact(Cfg.shiftDate, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
         }
 
         public void Tick(double dt)
         {
             Time += dt;
-            foreach (var c in Customers)
-                if (c.State == CustomerState.NotArrived && c.SpawnTime <= Time) { c.State = CustomerState.Queued; Queue.Add(c); }
-            foreach (var c in Queue.ToList())
+            // SPEC_COMP002 §3: at rush start, once per shift, check-in may back up and ask the player to cover it.
+            if (!_coverRolled && Customers.Any(c => c.Rush) && Time >= Customers.Where(c => c.Rush).Min(c => c.SpawnTime))
             {
-                c.Patience -= dt;   // §5: drains only while queued
+                _coverRolled = true;
+                if (_idRng.NextDouble() < Cfg.coverCheckInChance) { Cover = CoverState.Offered; CoverOffered?.Invoke(); }
+            }
+            foreach (var c in Customers)
+                if (c.State == CustomerState.NotArrived && c.SpawnTime <= Time)
+                {
+                    if (c.Id != null) { c.State = CustomerState.AtStand; Stand.Add(c); }
+                    else { c.State = CustomerState.Queued; Queue.Add(c); }
+                }
+            // An unanswered stand drains too, so the shift can always end.
+            foreach (var c in Queue.Concat(Stand).ToList())
+            {
+                c.Patience -= dt;   // §5: drains while queued (and while waiting at the ID stand)
                 if (c.Patience > 0) continue;
                 c.Patience = 0; c.QueueWait = Time - c.SpawnTime;
                 Finish(c, CustomerOutcome.Walkout);
@@ -211,7 +233,7 @@ namespace Dispo.Simulation.Slice
                 });
             }
             c.LastFit = CartFit(c);
-            c.LastSatisfaction = Satisfaction(Cfg, c.LastFit, PriceFit(total.PostTax, c.Budget), _speedFit, WaitPenalty(Cfg, c.QueueWait));
+            c.LastSatisfaction = Satisfaction(Cfg, c.LastFit, PriceFit(total.PostTax, c.Budget), _speedFit, WaitPenalty(Cfg, c.QueueWait + c.CheckInDelay));
             Finish(c, CustomerOutcome.Bought);
             return null;
         }
@@ -264,6 +286,54 @@ namespace Dispo.Simulation.Slice
         /// <summary>UX_PS1 §3: cart flower grams / the 1 oz cap.</summary>
         public double MeterFraction => CartGrams / Cfg.adultUseLimitGrams;
         public MeterState Meter => MeterFraction > 1 ? MeterState.Red : MeterFraction >= Cfg.meterAmberFraction ? MeterState.Amber : MeterState.Neutral;
+
+        // ---------- ID stand (GAME-008, SPEC_COMP002 §3) ----------
+
+        /// <summary>Cover check-in: the next coverCheckInCount arrivals show an ID at the stand before they queue.</summary>
+        public void AcceptCover()
+        {
+            Require(Cover == CoverState.Offered, "no cover prompt");
+            Cover = CoverState.Accepted;
+            foreach (var c in Upcoming())
+                c.Id = IdCardGenerator.Make(IdCardGenerator.PickCase(Cfg, _idRng), Today, Cfg, Data.Lines, _idRng);
+        }
+
+        /// <summary>Stay at the counter: the next arrivals waited longer at check-in, a small satisfaction hit [GDD].</summary>
+        public void DeclineCover()
+        {
+            Require(Cover == CoverState.Offered, "no cover prompt");
+            Cover = CoverState.Declined;
+            foreach (var c in Upcoming()) c.CheckInDelay = Cfg.declineCheckInDelaySec;
+        }
+
+        IEnumerable<Customer> Upcoming() => Customers.Where(c => c.State == CustomerState.NotArrived).Take(Cfg.coverCheckInCount);
+
+        /// <summary>Covered arrivals checked so far / total, for the HUD (◆ ID stand · {done}/{n}).</summary>
+        public int StandDone => Customers.Count(c => c.Id != null && c.State != CustomerState.NotArrived && c.State != CustomerState.AtStand);
+        public int StandTotal => Customers.Count(c => c.Id != null);
+        public bool Covering => Cover == CoverState.Accepted && StandDone < StandTotal;
+
+        public bool IdValid(Customer c) => IdRules.IsValid(c.Id, Today, Cfg);
+
+        /// <summary>Admit: they join the counter queue. An invalid ID that gets through is a strike (B4).</summary>
+        public void Admit(Customer c)
+        {
+            Require(c.State == CustomerState.AtStand, "not at the stand");
+            Stand.Remove(c);
+            c.IdChecked = true;
+            c.State = CustomerState.Queued; Queue.Add(c);
+            if (!IdValid(c)) Strikes.Add(Data.Lines.strikeBadId, c.Index, Time);
+        }
+
+        /// <summary>Refuse: a valid ID refused leaves as a walkout (satisfaction 0); a bad ID caught leaves as Refused.</summary>
+        public void Refuse(Customer c)
+        {
+            Require(c.State == CustomerState.AtStand, "not at the stand");
+            c.IdChecked = true;
+            c.QueueWait = Time - c.SpawnTime;
+            if (IdValid(c)) { c.IdRefusedValid = true; Finish(c, CustomerOutcome.Walkout); }
+            else Finish(c, CustomerOutcome.Refused);
+        }
 
         /// <summary>Record a strike for the customer at the counter (or 0) now. Never ends the shift (DEC-032).</summary>
         public Strike Strike(string reason) => Strikes.Add(reason, Serving?.Index ?? 0, Time);
@@ -341,7 +411,7 @@ namespace Dispo.Simulation.Slice
             double fit = Fit(ask.Family, card.Strain.Key);
             // DEC-044: the budget is checked against the POS total the customer pays (the cart with this line), not the card's priceFloor.
             double total = CartPrice(Cart.Append(line).ToList()).PostTax;
-            double priceFit = PriceFit(total, c.Budget), speedFit = SpeedFit(Cfg, t), wait = WaitPenalty(Cfg, c.QueueWait);
+            double priceFit = PriceFit(total, c.Budget), speedFit = SpeedFit(Cfg, t), wait = WaitPenalty(Cfg, c.QueueWait + c.CheckInDelay);
             return new PresentResult { Fit = fit, PriceFit = priceFit, SpeedFit = speedFit, WaitPenalty = wait,
                 Satisfaction = Satisfaction(Cfg, fit, priceFit, speedFit, wait) };
         }
@@ -390,6 +460,7 @@ namespace Dispo.Simulation.Slice
         public ShiftReport Report()
         {
             var cs = Customers;
+            var shoppers = cs.Where(c => c.Outcome != CustomerOutcome.Refused).ToList();   // bad IDs never shopped
             var served = cs.Where(c => c.ServiceStart >= 0 && c.EndTime >= 0).ToList();
             var sold = cs.Where(c => c.Outcome == CustomerOutcome.Bought).ToList();
             var chipped = cs.Where(c => !c.AutoFilled).SelectMany(c => c.Asks).Where(a => a.Chip != null).ToList();
@@ -402,13 +473,16 @@ namespace Dispo.Simulation.Slice
                 RevenuePreTax = Sales.Sum(s => s.PricePreTax),
                 GramsSold = Sales.Sum(s => s.Grams),
                 AvgServiceSeconds = served.Count > 0 ? served.Average(c => c.EndTime - c.ServiceStart) : 0,
-                AvgQueueWaitSeconds = cs.Average(c => c.QueueWait),
-                AvgSatisfaction = cs.Average(c => c.Outcome == CustomerOutcome.Walkout ? 0 : Math.Max(0, c.LastSatisfaction)),
+                AvgQueueWaitSeconds = shoppers.Average(c => c.QueueWait),
+                AvgSatisfaction = shoppers.Average(c => c.Outcome == CustomerOutcome.Walkout ? 0 : Math.Max(0, c.LastSatisfaction)),
                 AvgRecFit = sold.Count > 0 ? sold.Average(c => c.LastFit) : 0,
                 InterpretationAccuracy = chipped.Count > 0 ? 100.0 * chipped.Count(a => a.Chip == a.Family.id) / chipped.Count : 0,
                 UnitsPerSale = sold.Count > 0 ? (double)Sales.Count / sold.Count : 0,
                 Strikes = Strikes.Strikes.ToList(),
                 OverLimitTrims = sold.Count(c => c.OverLimit),
+                IdsChecked = cs.Count(c => c.IdChecked),
+                BadIdsCaught = cs.Count(c => c.Outcome == CustomerOutcome.Refused),
+                ValidIdsRefused = cs.Count(c => c.IdRefusedValid),
                 TopIntents = cs.SelectMany(c => c.Asks).GroupBy(a => a.Family.id).OrderByDescending(g => g.Count()).ToDictionary(g => g.Key, g => g.Count()),
                 SoldOut = Inventory.SoldOutIds.Select(Describe).ToList(),
                 LowStock = Inventory.JarBatchIds.Where(Inventory.IsLow).Select(Describe).ToList(),
@@ -451,7 +525,7 @@ namespace Dispo.Simulation.Slice
         void Finish(Customer c, CustomerOutcome outcome)
         {
             c.Outcome = outcome; c.State = CustomerState.Done; c.EndTime = Time;
-            Queue.Remove(c);
+            Queue.Remove(c); Stand.Remove(c);
             if (Serving == c) { Serving = null; Results = null; Cart.Clear(); RegisterOpen = false; }
             Left?.Invoke(c);
         }
@@ -469,6 +543,7 @@ namespace Dispo.Simulation.Slice
         public List<Strike> Strikes;  // GAME-007 compliance block (SPEC_COMP002 §7)
         public int OverLimitTrims;    // over-limit customers sold a trimmed, legal cart
         public bool ManagerReview;    // strikes ≥ strikeReviewThreshold
+        public int IdsChecked, BadIdsCaught, ValidIdsRefused;   // GAME-008 (SPEC_COMP002 §7)
         public Dictionary<string, int> TopIntents;
         public List<string> SoldOut, LowStock;
         public bool RoughShift;

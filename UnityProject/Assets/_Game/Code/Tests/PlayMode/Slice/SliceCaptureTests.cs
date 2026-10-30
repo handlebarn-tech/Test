@@ -73,9 +73,11 @@ namespace Dispo.Slice.PlayMode.Tests
             c1.Line = CustomerGenerator.Say(lines, lines.Openers(c1.Archetype.id)[0], spoken, 0);
             c1.OverLimit = true; c1.Budget = 0;
 
+            g.Sim.Cfg.coverCheckInChance = 1;   // GAME-008: shoot the cover prompt and the ID panel
+
             Time.timeScale = 10;
             var seen = new HashSet<SliceScreen>();
-            bool saleShot = false, jarShot = false, debugShot = false, cartShot = false;
+            bool saleShot = false, jarShot = false, debugShot = false, cartShot = false, standShot = false, verticalShot = false;
             float deadline = Time.realtimeSinceStartup + 600;
             while (g.FinalReport == null && Time.realtimeSinceStartup < deadline)
             {
@@ -131,6 +133,26 @@ namespace Dispo.Slice.PlayMode.Tests
                     cam.SetPositionAndRotation(keep.position, keep.rotation);
                     Time.timeScale = 10;
                 }
+                // GAME-008 (W5G m2): cover prompt and ID panel at 100/125/150 % text; the 2nd arrival gets a (valid) vertical card.
+                if (g.Screen == SliceScreen.IdCheck && standShot && !verticalShot && g.IdCustomer.Id.Format != IdFormat.Vertical)
+                {
+                    g.IdCustomer.Id = IdCardGenerator.Make(IdCase.AzVerticalRecent, g.Sim.Today, g.Sim.Cfg, g.Sim.Data.Lines, new System.Random(5));
+                    g.OpenIdPanel();
+                }
+                if (g.Screen == SliceScreen.CoverPrompt || (g.Screen == SliceScreen.IdCheck && (!standShot || !verticalShot && g.IdCustomer.Id.Format == IdFormat.Vertical)))
+                {
+                    var what = g.Screen == SliceScreen.CoverPrompt ? "CoverPrompt" : g.IdCustomer.Id.Format == IdFormat.Vertical ? "IdCard_Vertical" : "IdCard";
+                    if (g.Screen == SliceScreen.IdCheck) { standShot = true; verticalShot |= g.IdCustomer.Id.Format == IdFormat.Vertical; }
+                    Time.timeScale = 0;
+                    foreach (var pct in new[] { 100, 125, 150 })
+                    {
+                        g.SetTextScale(pct);
+                        yield return Shot($"{what}_{pct}");
+                        CheckStandPanels(g.Document.rootVisualElement, pct);
+                    }
+                    g.SetTextScale(100);
+                    Time.timeScale = 10;
+                }
                 if (!cartShot && g.Screen == SliceScreen.Pos && g.Sim.Serving == c1)
                 {
                     cartShot = true; Time.timeScale = 0;
@@ -161,7 +183,7 @@ namespace Dispo.Slice.PlayMode.Tests
             Assert.AreEqual(CustomerOutcome.Bought, c1.Outcome, "the bot trimmed the over-limit cart and sold it");
             Assert.AreEqual(1, g.FinalReport.OverLimitTrims);
             Assert.IsTrue(new[] { "Dialogue", "Query", "Results", "Detail", "Pos", "Report", "Sale_Toast", "Jars_SoldOut_Low", "Jars_Closeup",
-                    "Pos_Cart_Red_100", "Pos_Cart_Red_125", "Pos_Cart_Red_150" }
+                    "Pos_Cart_Red_100", "Pos_Cart_Red_125", "Pos_Cart_Red_150", "CoverPrompt_150", "IdCard_100", "IdCard_150", "IdCard_Vertical_150" }
                 .All(s => shots.Any(f => f.Contains(s))), string.Join(", ", shots));
         }
 
@@ -194,6 +216,49 @@ namespace Dispo.Slice.PlayMode.Tests
             foreach (var t in root.Query(className: "toast").ToList())
                 Assert.IsFalse(t.worldBound.Overlaps(title), $"{pct} %: toast {t.worldBound} covers the register title {title}");
             Debug.Log($"[SliceCapture] register {pct} %: panel {pos}, confirm {confirm}");
+        }
+
+        /// <summary>
+        /// W5G m2, UX_COUNTER_INTEL §10: the cover prompt keeps both buttons on screen; the ID panel stays in the safe area and DOB / EXP /
+        /// TYPE / FORMAT are never cut (one line, inside their box; at 125/150 % the readout column repeats them full size).
+        /// </summary>
+        static void CheckStandPanels(VisualElement root, int pct)
+        {
+            var safe = new Rect(96, 54, W - 192, H - 108);
+            bool Inside(Rect b, Rect o) => b.xMin >= o.xMin - 0.5f && b.yMin >= o.yMin - 0.5f && b.xMax <= o.xMax + 0.5f && b.yMax <= o.yMax + 0.5f;
+            var prompt = root.Q(className: "cover-prompt");
+            if (prompt != null)
+            {
+                Assert.IsTrue(Inside(prompt.worldBound, safe), $"{pct} %: prompt {prompt.worldBound} in the safe area");
+                foreach (var b in prompt.Query<Button>().ToList()) Assert.IsTrue(Inside(b.worldBound, prompt.worldBound), $"{pct} %: '{b.text}' inside the prompt");
+                return;
+            }
+            var panel = root.Q(className: "id-panel");
+            Assert.IsNotNull(panel, $"{pct} %: ID panel shown");
+            Assert.IsTrue(Inside(panel.worldBound, safe), $"{pct} %: ID panel {panel.worldBound} in the safe area");
+            var card = panel.Q(className: "id-card").worldBound;
+            Assert.IsTrue(Inside(card, panel.worldBound), $"{pct} %: card {card} inside the panel");
+            foreach (var b in panel.Query<Button>().ToList()) Assert.IsTrue(Inside(b.worldBound, panel.worldBound), $"{pct} %: '{b.text}' inside the panel");
+            var keep = new[] { card, panel.Q(className: "id-head").worldBound }.Concat(panel.Query<Button>().ToList().Select(b => b.worldBound))
+                .Concat(panel.Query<Label>(className: "id-value").ToList().Where(l => l.resolvedStyle.display == DisplayStyle.Flex && l.worldBound.width > 0).Select(l => l.worldBound));
+            foreach (var t in root.Query(className: "toast").ToList())
+                Assert.IsFalse(keep.Any(k => k.Overlaps(t.worldBound)), $"{pct} %: toast {t.worldBound} covers the ID panel's content");
+            var readout = panel.Q(className: "id-readout");
+            bool readoutOn = readout.resolvedStyle.display == DisplayStyle.Flex;
+            Assert.AreEqual(pct > 100, readoutOn, $"{pct} %: readout column only at 125/150 %");
+            foreach (var v in panel.Q(className: "id-fields").Query<Label>(className: "id-value").ToList())
+                Assert.IsTrue(Inside(v.worldBound, card), $"{pct} %: card value '{v.text}' {v.worldBound} stays on the card");
+            // The decision fields (DOB / EXP / TYPE / FORMAT) are whole where they are authoritative: on the card at 100 %, in the
+            // full-size readout at 125/150 % (a portrait card may ellipsize them there).
+            var decision = readoutOn ? readout : panel.Q(className: "id-fields");
+            foreach (var f in decision.Query(className: "id-field").ToList().Skip(readoutOn ? 0 : 1))   // NAME may ellipsize
+            {
+                var v = f.Q<Label>(className: "id-value");
+                Assert.Less(v.worldBound.height, 2 * v.resolvedStyle.fontSize, $"{pct} %: '{v.text}' one line");
+                Assert.IsTrue(Inside(v.worldBound, readoutOn ? panel.worldBound : card), $"{pct} %: '{v.text}' {v.worldBound} inside its box");
+                Assert.GreaterOrEqual(v.worldBound.width + 0.5f, v.MeasureTextSize(v.text, 0, VisualElement.MeasureMode.Undefined, 0, VisualElement.MeasureMode.Undefined).x,
+                    $"{pct} %: '{v.text}' not ellipsized");
+            }
         }
 
         /// <summary>World camera render with the UI panel texture alpha-blended on top.</summary>

@@ -29,6 +29,10 @@ namespace Dispo.Slice.PlayMode.Tests
 
         public static void Step(SliceGame g)
         {
+            // GAME-008: cover the stand when asked, and judge each ID correctly (a perfect bot); the stand comes before the counter.
+            if (g.Screen == SliceScreen.CoverPrompt) { g.AcceptCover(); return; }
+            if (g.Screen == SliceScreen.IdCheck) { if (g.Sim.IdValid(g.IdCustomer)) g.IdAdmit(); else g.IdRefuse(); return; }
+            if (g.Screen == SliceScreen.World && g.Sim.Stand.Count > 0) { g.OpenIdPanel(); return; }
             var c = g.Sim.Serving;
             if (c == null) return;
             switch (g.Screen)
@@ -69,6 +73,7 @@ namespace Dispo.Slice.PlayMode.Tests
             Assert.IsNotNull(g, "SliceGame missing from Gameplay_Slice");
             Assert.AreEqual(1, g.Sim.Cfg.seed);
             _backChecked = false;
+            g.Sim.Cfg.coverCheckInChance = 1;   // GAME-008: the rush always asks, so the bot covers the stand (read at rush start)
             Time.timeScale = 20;
             float deadline = Time.realtimeSinceStartup + 240;
             while (g.FinalReport == null)
@@ -101,6 +106,9 @@ namespace Dispo.Slice.PlayMode.Tests
             Assert.IsTrue(sim.Sales.GroupBy(s => s.CustomerIndex).All(s => s.Sum(x => x.Grams) <= sim.Cfg.adultUseLimitGrams), "M1 on each cart");
             Assert.IsTrue(sim.Sales.GroupBy(s => s.CustomerIndex).Any(s => s.Count() == 2), "GAME-006: the bot sells a 2-item cart");
             Assert.IsTrue(_backChecked, "DEC-065 Esc-keeps-cart path ran");
+            Assert.AreEqual(sim.Cfg.coverCheckInCount, r.IdsChecked, "GAME-008: the covered arrivals were all checked");
+            Assert.AreEqual(0, r.Strikes.Count, "a perfect bot gets no strike");
+            Assert.AreEqual(0, r.ValidIdsRefused);
         }
     }
 }
