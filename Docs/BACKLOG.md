@@ -94,7 +94,7 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | DES-005b | P0 | Fold DEC-103 into CONTROLS_FLOW_PS1 + GAME-025/026; REVIEW-W5U m1–m3 (KNOWN_GAPS GAP-CF rows, GAP-DAY-04 basis) | DES-005 | Done (REVIEW-DES5b, abede71) |
 | DES-007 | P2 | DEC-101: long-term rows into `ROADMAP_POST_SLICE.md` (Hub-delegated) + deadpan tone note for dialogue/event writers | DES-005 merge | Done (in DES-005b, abede71) |
 | GAME-017a | P0 | First playable recommendation depth (cut from GAME-017, DES-006 §5): needs, read-it-as picker, parser route, Q9, reject→re-search | DES-006, DATA-003, UX-006, GAME-009, GAME-025 (same Presentation/Slice files), QA-002b Gate A | Ready (waits: GAME-025 + DATA-003 merge) |
-| DATA-003 | P0 | Customer needs catalog + golden parses from the TFS tool (GAME-017a data) | DES-006 | Review (996c631, Unity A2) |
+| DATA-003 | P0 | Customer needs catalog + golden parses from the TFS tool (GAME-017a data) | DES-006 | Review (REVIEW-DATA3 PASS, `review/data3` merge-ready) |
 | UX-006 | P0 | Counter UX addendum: read-it-as picker, said cards, query preview | DES-006, DES-005 | Done (REVIEW-UX6, 5920ab2) |
 | BUILD-007 | P0 | Playtest build 2 (PS1 complete) into `Downloads/Dispo Game Builds/` | GAME-009 | On hold (Nolan: build after GAME-025, maybe GAME-026) |
 | GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction  | DES-005, GAME-009 merge, World REF-012 `DOORS.json` | Active |
