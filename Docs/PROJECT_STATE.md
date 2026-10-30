@@ -59,7 +59,6 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 
 ## Reminders for Nolan
 - **Remind Nolan** to send the PII-free Dutchie inventory export (SKU, category, brand, size, mg, price) for packaged goods (DEC-048 item 5). He said "yes but remind me later".
-- Still unanswered: which packaged categories sit in which FOH racks/coolers, and whether any are self-browse (GAP-PKG-02/03/06).
 
 ## Blockers
 - None.
