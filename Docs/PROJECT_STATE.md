@@ -42,7 +42,7 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 - Any ChatGPT-built mechanics he drops in Imports: audit → review → **his approval** before use.
 
 ## Open questions for Nolan
-- None open. (REF-008 Q1–15 answered, DEC-051/062. Phoenix TPT rate OPEN-4: 25.1 % kept until a receipt settles it.)
+- Sent 2026-10-30 (DES-005, customer flow; placeholders in use): Q1 how the next guest is called; Q2 where guests wait after check-in; Q3 second buzzed door after the ID stand?; Q4 check-in time per guest (10 s placeholder); Q5 who helps when check-in backs up; Q6 self-closing/propped interior doors, emergency exit alarm; Q7 which register a budtender normally works. Optional (DEC-101 long-term): parking space count/layout and dwell time, what the TV wall shows, neighbouring businesses/street. (REF-008 Q1–15 answered, DEC-051/062. Phoenix TPT rate OPEN-4: 25.1 % kept until a receipt settles it.)
 
 ## Builds
 - Last build Nolan played: `Downloads/Dispo Game Builds/slice-38b9e5c/` (feedback = playtest 1). New builds come from a Gameplay worker, never the Hub (DEC-045).
