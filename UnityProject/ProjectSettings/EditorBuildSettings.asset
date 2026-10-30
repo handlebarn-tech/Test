@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Game/Scenes/Bootstrap.unity
+    guid: e6de06885bb858546860c6d22059c45e
+  - enabled: 1
+    path: Assets/_Game/Scenes/Retail.unity
+    guid: cc57590196335024c876527199c5c00e
+  - enabled: 1
+    path: Assets/_Game/Scenes/BackRooms.unity
+    guid: dc06b0141ec46b74985f548bdcf90f38
+  - enabled: 1
+    path: Assets/_Game/Scenes/Hub.unity
+    guid: bb878ab779f24604791535e5b3d4dc75
+  - enabled: 1
+    path: Assets/_Game/Scenes/Exterior.unity
+    guid: bca262055ad2d3d4987b0b78a4e01b51
+  - enabled: 1
+    path: Assets/_Game/Scenes/GameplaySystems.unity
+    guid: 76a7c7c87562ea543bf2eae2d3d1cbc1
+  - enabled: 1
+    path: Assets/_Game/Scenes/NPCs.unity
+    guid: 176387eb8fa67c84a8d6b210e2df85f9
+  - enabled: 1
+    path: Assets/_Game/Scenes/Audio.unity
+    guid: 458eb4779a4380646bb812ea6032ecf2
+  - enabled: 1
+    path: Assets/_Game/Scenes/Lighting_Day.unity
+    guid: b3ac67fe8a0212d418e12bef664643c8
+  - enabled: 1
+    path: Assets/_Game/Scenes/Lighting_Night.unity
+    guid: 33ad9a22df38e194e94dbae43067d467
+  m_configObjects: {}

@@ -1,0 +1,6 @@
+{
+    "name": "Dispo.Presentation",
+    "rootNamespace": "Dispo.Presentation",
+    "references": ["Dispo.Domain", "Dispo.Simulation"],
+    "autoReferenced": false
+}
