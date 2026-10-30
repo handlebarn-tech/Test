@@ -30,7 +30,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 | Task | Worker | Branch | State |
 |---|---|---|---|
 | GAME-009 medical (+ W5N m2 queue strip) | session `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | `claude/task-game-009` | resumed: EditMode 217/217, capture re-run, handoff |
-| DES-005 playtest intake | lead subagent | worktree | running |
+| DES-005 playtest intake | done | `worktree-agent-afdc1983fe7bb696c` @ 5c8031b | in review (Docs 2); needs list sent to World; 7 Nolan Qs + proposal sent to Hub |
 | DES-006 recommendation depth audit | lead subagent | worktree | running |
 
 ## Queue (lead re-orders within DEC-096)

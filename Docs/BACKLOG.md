@@ -88,10 +88,10 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | GAME-014 | P1 | Packaged sales (ROADMAP, no packet yet) | GAME-007, DATA-002, ART-006 (ROADMAP ID, see DOC-002) | Later |
 | GAME-015 | P1 | Non-flower recommendation (ROADMAP, no packet yet) | GAME-014, DEC-054 | Later |
 | GAME-016 | P2 | Deals v1 (ROADMAP, no packet yet) | GAME-014 | Later |
-| DES-005 | P0 | Playtest 1 intake (DEC-096): controls + customer-flow spec, GAME-025/026 packets, World door/entry contract needs, long-term ideas proposal | — | Active |
+| DES-005 | P0 | Playtest 1 intake (DEC-096): controls + customer-flow spec, GAME-025/026 packets, World door/entry contract needs, long-term ideas proposal | — | Review (5c8031b, Docs 2) |
 | DES-006 | P0 | Recommendation depth audit: PS1b (GAME-017..020) vs the TFS tool, packet amendments | — | Active |
-| GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction (packet by DES-005) | DES-005, GAME-009 merge, World door contract | Draft |
-| GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next (packet by DES-005) | DES-005, GAME-025, World entry anchors | Draft |
+| GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction  | DES-005, GAME-009 merge, World door contract | Ready (waits) |
+| GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next  | DES-005, GAME-025, World entry anchors | Ready (waits) |
 | ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Done (W5A) |
 | IMP-002 | P1 | Integrate the approved DISPO_GAME_DESIGN_V2 pack (DEC-063) into `Docs/Design/DESIGN_V2/` | IMP-001 | Done (W4V, DEC-066) |
 | ASSET-003 | P1 | Customer characters + animations sourcing (CHARACTERS.md, DEC-084/087) | ASSET-001 | Done (W5P) |
