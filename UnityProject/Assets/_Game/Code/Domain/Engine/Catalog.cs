@@ -109,6 +109,14 @@ namespace Dispo.Domain.Engine
             return _groups = list;
         }
 
+        /// <summary>Live stock (GAME-002 S1): set a batch's in-stock flag and drop the cached groups so the
+        /// in-stock-first order (rep batch) and averaged profiles follow it (batchInStock L15472, averageProfile L15483).</summary>
+        public void SetInStock(string batchId, bool inStock)
+        {
+            Batches.Single(b => b.Id == batchId).InStock = inStock;
+            _groups = null;
+        }
+
         static DateTime? ParseDate(string s) =>
             s != null && DateTime.TryParseExact(s, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out var d) ? d : (DateTime?)null;
 
