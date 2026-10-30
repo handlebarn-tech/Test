@@ -276,3 +276,31 @@ Shared-library work only: no generator, params or asset.
 
 ### Drop 3 summary
 **Adapt.** The helpers are correct in Blender 5.2.3 and generic (no store dimensions, brands or security detail). Take them through the snapshot, with T2 as a Hub decision, and only alongside a refactor that makes the drop 2 families use them. Then add separate wire pitches and a hinge/slide metadata helper.
+
+---
+
+## Delta check 1 — ChatGPT "fixed" claims relayed by the Hub (2026-10-30 03:42)
+
+**Claimed fixes:**
+- ladder bounds; open-carton LOD mismatch; box-fan blade orientation; missing paper-stack collision;
+- incomplete moving-part groupings; janitor prop collisions; LOD-dependent locker metadata;
+- opt-in validation checks for non-manifold geometry, degenerate faces, material slots, aggregate bounds and bottom-centre origins.
+
+**Finding: none of it is in the Imports folder.**
+- **Folder contents:** still only `blender_proc_vNext/` (03:11), `Dispo_Game_Blender_Workstream_Master/` (03:27) and `Fixture_Toolkit_Full_Package/` (03:37). No file is newer than drop 3.
+- **Zip contents:** re-extracting all 11 zips gives a tree **identical** to the one audited in drop 2 (`diff -rq`, `.pyc` excluded). Drop 3's snapshot is unchanged too (867 lines).
+- **Nothing elsewhere:** nothing newer turned up in `Downloads/` (depth 2).
+
+So every claim is **unverified**, and the drop 1–3 findings stand as written. B1 (ladder), B2 (fan), B4 (paper stack), S6 (cooler moving parts) and the open-carton LOD pop are still present in the files we have.
+
+**Partial overlap with what exists:**
+- **Overlap:** the "validation layer upgrade" (non-manifold / degenerate / material slots / bounds) matches drop 3's undeclared `mesh_stats()` change (T2). That version is **not opt-in**: it adds fields to every asset's manifest entry and is report-only, not a check.
+- **Not in drop 3:** a bottom-centre origin check.
+
+**When the updated package arrives, verify:**
+1. **Behaviour:** each fix by a sandboxed run, re-running the four failing assets;
+2. **Opt-in:**
+   - the new checks are opt-in via params, with byte-identical manifest + FBX for an existing generator (`deli_jar`, as in drop 1);
+   - the checks actually fail on a planted bad mesh: an open quad, a zero-area face, an off-origin object.
+3. **Janitor collision:** janitor props gaining `COL_` (drop 2 S4 applies);
+4. **Locker metadata:** it no longer differs per LOD.
