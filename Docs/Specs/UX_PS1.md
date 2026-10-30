@@ -38,6 +38,7 @@ Each item is presented and answered on its own (REJECT reasons stay per item, SL
 
 - **Per transaction only** (DEC-049): no daily limit. The adult-use meter starts at 0 g for every new cart, including a customer who already bought the max and got back in line; a returning customer is allowed, never a strike, and gets no special UI.
 - Entering Red fires the existing `overLimit` toast once ("Over the 1 oz limit", GAME-002 M1). The hint never says which line to drop: that is the decision (CP§2).
+- **Packaged goods are out of PS1 scope** (deli only). DEC-050: they are never self-serve; the budtender fetches them from FOH (vapes, edibles, infused prerolls), the fridge (drinks) or the cooler (concentrates, perishable edibles) while the customer waits on the floor. When packaged lines arrive (GAME-004 / PS3), "Add to cart" for a packaged item should start a fetch step (walk or timer, patience keeps draining) before the line appears; the cart line then shows its source (`FOH` / `Fridge` / `Cooler`). Not wireframed here.
 - **Concentrate row** (`Concentrate {g} / 5 g`) is built but hidden until PS3 (GAME-014). DEC-048: packaged goods count toward the caps (an edible ≈ 0.1 g). For PS3 the line shows its counted grams under the name (`counts as 0.1 g`) so the meter always adds up; the per-category numbers come from DES/COMP (GAP-COMP-02).
 
 ## 4. ID stand (ps1_04, ps1_05) — GAME-008
