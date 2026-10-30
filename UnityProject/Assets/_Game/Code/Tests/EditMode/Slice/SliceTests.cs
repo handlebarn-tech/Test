@@ -321,6 +321,34 @@ namespace Dispo.Slice.Tests
             Assert.IsNotEmpty(Dispo.Domain.Engine.QueryParser.ExtractExclusions(cat, "no myrcene").Excl, "exclusion cache rebuilds");
         }
 
+        /// <summary>DEC-044: PriceFit uses the POS total (nearest $0.05), not the card's priceFloor.</summary>
+        [Test]
+        public void PriceFit_UsesPosTotal_NotCardFloor()
+        {
+            var sim = new ShiftSim(Load());
+            sim.Tick(0);
+            var c = sim.Serving;
+            c.Grams = 14;   // 14 g smalls Tue: $28 × 1.251 = $35.028 → card $35.00, POS $35.05
+            var cards = sim.Search(c.TrueFamily).Cards;
+            foreach (var k in cards) Assert.AreEqual(sim.Price(k.Rep, c.Grams).PostTax, k.CheckoutPostTax, 1e-9, "card carries the POS total");
+            var card = cards.FirstOrDefault(k => k.CheckoutPostTax > k.PricePostTax && sim.Inventory.Grams(k.Rep.Id) >= c.Grams);
+            Assume.That(card, Is.Not.Null, "needs a card whose POS total rounds up");
+            c.Budget = card.PricePostTax;   // affordable at the card price, 5 cents short at the register
+            var r = sim.Present(card);
+            Assert.AreEqual(ShiftSim.PriceFit(card.CheckoutPostTax, c.Budget), r.PriceFit, 1e-12);
+            Assert.Less(r.PriceFit, 1);
+        }
+
+        [Test]
+        public void MoreOptions_BlockedWhilePosOpen()
+        {
+            var (sim, _) = AcceptedSale();
+            Assert.IsNotNull(sim.Pending);
+            Assert.Throws<System.InvalidOperationException>(() => sim.MoreOptions());
+            sim.Cancel();
+            Assert.DoesNotThrow(() => sim.MoreOptions());
+        }
+
         [Test]
         public void Labels_ClusterAndTier_FromSource()
         {

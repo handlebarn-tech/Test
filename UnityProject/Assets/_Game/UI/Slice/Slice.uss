@@ -63,6 +63,7 @@
 .price { font-size: 36px; margin: 6px 0; }
 .chip { font-size: 18px; }
 .message { margin: 6px 0; }
+.more { align-self: flex-start; }
 .back { position: absolute; right: 20px; bottom: 16px; }
 .evidence { color: var(--t3); font-size: 18px; margin-top: 10px; }
 .bar { flex-direction: row; align-items: center; margin: 3px 0; }
