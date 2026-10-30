@@ -38,6 +38,10 @@ namespace Dispo.Simulation.Slice
         public int cartMaxLines;
         public double overLimitAskChance, meterAmberFraction, primaryTrimFitPenalty, strikeToastSeconds;
         public int strikeReviewThreshold;
+        public double coverCheckInChance, coverPromptSeconds, declineCheckInDelaySec;
+        public int coverCheckInCount, minAgeYears, verticalGraceDays;
+        public IdWeight[] idCaseWeights;
+        public string shiftDate;
 
         public static SliceConfig FromJson(string json) => JsonUtility.FromJson<SliceConfig>(json);
     }
@@ -83,6 +87,9 @@ namespace Dispo.Simulation.Slice
         public string[] patienceWords;
         public string andClause, secondClause, addToCart, cartChip, goToRegister, addItem, cartFull, removeLine;
         public string twoOunces, anotherOunce, meterFlower, meterValue, nearLimit, trimHint, strikeToast, overLimitLeave;
+        public string coverPromptTitle, coverPromptBody, coverPromptCost, coverAccept, coverDecline, standHud, standPrompt, idPanelTitle, idToday,
+            idAdmit, idRefuse, counterLine, standWaiting, idAdmitted, idRefusedBad, idRefusedValid, strikeBadId, fineFlavor;
+        public string[] idFirstNames, idLastNames, idOtherStates, idTypeNames, idReasons;
 
         public static SliceLines FromJson(string json) => JsonUtility.FromJson<SliceLines>(json);
         public string[] Openers(string archetype) => openers.Single(o => o.archetype == archetype).lines;

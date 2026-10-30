@@ -10,7 +10,7 @@ using UnityEngine.UIElements;
 
 namespace Dispo.Presentation.Slice
 {
-    public enum SliceScreen { World, Dialogue, Query, Results, Detail, Pos, Report }
+    public enum SliceScreen { World, Dialogue, Query, Results, Detail, Pos, Report, CoverPrompt, IdCheck }
 
     /// <summary>
     /// Lives in Gameplay_Slice.unity (DEC-029). Runs one shift (SLICE_DESIGN): finds ART anchors by name (TEMP_ fallbacks when
@@ -41,7 +41,10 @@ namespace Dispo.Presentation.Slice
         const float Ft = 0.3048f;
         SliceView _view;
         GrayboxTestPlayer _player;
-        Transform _terminal, _spawn, _exit, _service, _servicePlayer;
+        Transform _terminal, _spawn, _exit, _service, _servicePlayer, _stand;
+        GameObject _standMarker;
+        bool _promptPending;
+        float _promptLeft;
         Transform[] _slots;
         readonly Dictionary<string, Renderer[]> _jarFill = new Dictionary<string, Renderer[]>();
         readonly Dictionary<string, Vector3> _jarTop = new Dictionary<string, Vector3>();
@@ -70,7 +73,9 @@ namespace Dispo.Presentation.Slice
             Sim = new ShiftSim(data);
             Sim.Left += OnLeft;
             Sim.Inventory.Sold += OnSold;
-            Sim.Strikes.Added += s => _view?.Toast(string.Format(Sim.Data.Lines.strikeToast, s.Reason), "", "st-bad", Sim.Cfg.strikeToastSeconds);
+            Sim.Strikes.Added += s => _view?.Toast(string.Format(Sim.Data.Lines.strikeToast, s.Reason),
+                s.Reason == Sim.Data.Lines.strikeBadId ? Sim.Data.Lines.fineFlavor : "", "st-bad", Sim.Cfg.strikeToastSeconds);
+            Sim.CoverOffered += () => _promptPending = true;
             _snapshot = System.DateTime.Parse((string)((Dictionary<string, object>)((List<object>)((Dictionary<string, object>)Json.Parse(Manifest.text))["sources"])[1])["invExported"]).Date;
 
             FindAnchors();
@@ -104,6 +109,10 @@ namespace Dispo.Presentation.Slice
             _servicePlayer = Anchor("Anchor_ServicePlayer", 30f, 5.6f, 0);
             _terminal = Anchor("Interact_Terminal", 30f, 7.6f, 3.6f);
             Anchor("Interact_Scale", 32f, 6.2f, 3.6f);
+            // GAME-008 ID stand: "directly left inside the entrance" (DEC-048). No ART anchor yet (GAP-COMP-08): fallback beside the entry.
+            _stand = Anchor("Anchor_CheckInDesk", 3.0f, 13.0f, 0);
+            _standMarker = Prop(_stand, PrimitiveType.Cylinder, new Vector3(0.35f, 0.02f, 0.35f), JarShell);
+            _standMarker.SetActive(false);
             foreach (var n in new[] { "Interact_Terminal", "Interact_Scale" })
                 if (FallbackAnchors.Contains(n)) Prop(transform.Find("TEMP_" + n), PrimitiveType.Cube, new Vector3(0.35f, 0.25f, 0.06f), JarShell);
         }
@@ -224,6 +233,14 @@ namespace Dispo.Presentation.Slice
             if (!Sim.IsOver) Sim.Tick(Time.deltaTime);
             else if (FinalReport == null) { FinalReport = Sim.Report(); Show(SliceScreen.Report); }
 
+            // UX_PS1 §4: the cover prompt waits until no screen is open, then auto-declines after coverPromptSeconds (sim keeps running).
+            if (_promptPending && Screen == SliceScreen.World && Sim.Cover == CoverState.Offered)
+            {
+                _promptPending = false; _promptLeft = (float)Sim.Cfg.coverPromptSeconds; Show(SliceScreen.CoverPrompt);
+            }
+            if (Screen == SliceScreen.CoverPrompt && (_promptLeft -= Time.deltaTime) <= 0) DeclineCover();
+            _standMarker.SetActive(Sim.Covering);
+
             MoveNpcs();
             HandleInput();
             if (_holding)
@@ -239,7 +256,11 @@ namespace Dispo.Presentation.Slice
         {
             var kb = Keyboard.current;
             if (kb == null) return;
-            if (kb.eKey.wasPressedThisFrame && Screen == SliceScreen.World && CanTalk) Talk();
+            if (kb.eKey.wasPressedThisFrame && Screen == SliceScreen.World) { if (CanCheckId) OpenIdPanel(); else if (CanTalk) Talk(); }
+            if (Screen == SliceScreen.CoverPrompt && kb.yKey.wasPressedThisFrame) AcceptCover();
+            if (Screen == SliceScreen.CoverPrompt && kb.nKey.wasPressedThisFrame) DeclineCover();
+            if (Screen == SliceScreen.IdCheck && kb.aKey.wasPressedThisFrame) IdAdmit();
+            if (Screen == SliceScreen.IdCheck && kb.rKey.wasPressedThisFrame) IdRefuse();
             if (kb.escapeKey.wasPressedThisFrame) Back();
             if (kb.mKey.wasPressedThisFrame && Screen == SliceScreen.Results) More();
             if (kb.rKey.wasPressedThisFrame && (Screen == SliceScreen.Query || Screen == SliceScreen.Results || Screen == SliceScreen.Detail)) GoToRegister();
@@ -251,6 +272,7 @@ namespace Dispo.Presentation.Slice
         public bool PlayerInReach => !_player || Vector3.Distance(_player.transform.position, _terminal.position) <= InteractReach;
         public bool CustomerAtCounter => Sim.Serving != null && _npcs.TryGetValue(Sim.Serving, out var go) && Flat(go.transform.position - _service.position) < 0.3f;
         public bool CanTalk => CustomerAtCounter && PlayerInReach;
+        public bool CanCheckId => Sim.Stand.Count > 0 && (!_player || Vector3.Distance(_player.transform.position, _stand.position) <= InteractReach);
 
         void MoveNpcs()
         {
@@ -265,7 +287,8 @@ namespace Dispo.Presentation.Slice
                 }
                 if (!go) continue;
                 int qi = Sim.Queue.IndexOf(c);
-                var target = c.State == CustomerState.Serving ? _service.position
+                var target = c.State == CustomerState.AtStand ? _stand.position + new Vector3(0.8f * (Sim.Stand.IndexOf(c) + 1), 0, 0)
+                    : c.State == CustomerState.Serving ? _service.position
                     : c.State == CustomerState.Done ? _exit.position
                     : qi >= 0 && qi < _slots.Length ? _slots[qi].position : _spawn.position;
                 var p = go.transform.position;
@@ -413,10 +436,42 @@ namespace Dispo.Presentation.Slice
         }
 
         /// <summary>Esc / Back: one screen back.</summary>
+        // ---- ID stand (GAME-008, UX_PS1 §4) ----
+
+        public float PromptSecondsLeft => _promptLeft;
+        public Customer IdCustomer => Sim.Stand.Count > 0 ? Sim.Stand[0] : null;
+
+        public void AcceptCover() { if (Sim.Cover != CoverState.Offered) return; Sim.AcceptCover(); Show(SliceScreen.World); }
+        public void DeclineCover() { if (Sim.Cover != CoverState.Offered) return; Sim.DeclineCover(); Show(SliceScreen.World); }
+
+        /// <summary>E at the stand: the ID panel for the first arrival waiting there.</summary>
+        public void OpenIdPanel() { if (IdCustomer != null) Show(SliceScreen.IdCheck); }
+
+        public void IdAdmit() => IdDecide(true);
+        public void IdRefuse() => IdDecide(false);
+
+        void IdDecide(bool admit)
+        {
+            var c = IdCustomer;
+            if (Screen != SliceScreen.IdCheck || c == null) return;
+            var l = Sim.Data.Lines;
+            int why = IdRules.Reason(c.Id, Sim.Today, Sim.Cfg);
+            if (admit) { Sim.Admit(c); if (why < 0) _view.Toast(l.idAdmitted, "", false); }   // a bad admit raises the strike toast instead
+            else
+            {
+                Sim.Refuse(c);
+                if (why < 0) _view.Toast(l.idRefusedValid, "", true);
+                else _view.Toast(string.Format(l.idRefusedBad, l.idReasons[why]), "", false);
+            }
+            Show(IdCustomer != null ? SliceScreen.IdCheck : SliceScreen.World);
+        }
+
         public void Back()
         {
             switch (Screen)
             {
+                case SliceScreen.IdCheck: Show(SliceScreen.World); break;
+                case SliceScreen.CoverPrompt: DeclineCover(); break;
                 case SliceScreen.Dialogue: case SliceScreen.Query: case SliceScreen.Results: Show(SliceScreen.World); break;
                 case SliceScreen.Detail: Show(SliceScreen.Results); break;
                 case SliceScreen.Pos: PosBack(); break;
@@ -425,7 +480,8 @@ namespace Dispo.Presentation.Slice
 
         void Show(SliceScreen s)
         {
-            if (s != SliceScreen.Report && Sim.Serving == null && s != SliceScreen.World) s = SliceScreen.World;
+            bool standalone = s == SliceScreen.World || s == SliceScreen.Report || s == SliceScreen.CoverPrompt || s == SliceScreen.IdCheck;
+            if (!standalone && Sim.Serving == null) s = SliceScreen.World;
             if (FinalReport != null) s = SliceScreen.Report;
             Screen = s;
             _view?.Render();
@@ -446,9 +502,9 @@ namespace Dispo.Presentation.Slice
         void OnLeft(Customer c)
         {
             var l = Sim.Data.Lines;
-            if (c.Outcome == CustomerOutcome.Walkout) _view?.Toast(l.toastWalkout, "", true);
+            if (c.Outcome == CustomerOutcome.Walkout && !c.IdRefusedValid) _view?.Toast(l.toastWalkout, "", true);   // a refused ID has its own toast
             if (c.Outcome == CustomerOutcome.NoSale) _view?.Toast(l.toastLeave, _lastReject ?? "", true);
-            if (Screen != SliceScreen.World && Sim.Serving == null) Show(SliceScreen.World);
+            if (Screen != SliceScreen.World && Screen != SliceScreen.CoverPrompt && Screen != SliceScreen.IdCheck && Sim.Serving == null) Show(SliceScreen.World);
         }
 
         /// <summary>Batch age in whole weeks from the COA date to the catalog snapshot date (deterministic, §10).</summary>

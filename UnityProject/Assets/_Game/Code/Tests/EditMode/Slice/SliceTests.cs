@@ -359,13 +359,14 @@ namespace Dispo.Slice.Tests
 
         /// <summary>Pure-sim version of the PlayMode bot: per ask, true-family chip, card 1 (next card if the jar is short), stated weight;
         /// Add item while an ask is open (GAME-006), then confirm the cart.</summary>
-        public static ShiftSim RunBot(SliceData d, double step)
+        public static ShiftSim RunBot(SliceData d, double step, bool acceptCover = false)
         {
             var sim = new ShiftSim(d);
             for (int guard = 0; !sim.IsOver; guard++)
             {
                 Assert.Less(guard, 100000, "shift never ended");
                 sim.Tick(step);
+                if (acceptCover && sim.Cover == CoverState.Offered) sim.AcceptCover();   // GAME-008; the stand itself is never worked
                 var c = sim.Serving;
                 if (c == null) continue;
                 if (sim.RegisterOpen)
