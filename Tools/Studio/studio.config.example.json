@@ -9,5 +9,6 @@
   "renders": "Artifacts/Renders",
   "builds": "Builds",
   "referenceImages": "References",
-  "unitySlotTimeoutMinutes": 45
+  "unitySlotTimeoutMinutes": 45,
+  "unityRunTimeoutMinutes": 30
 }
