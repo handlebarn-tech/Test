@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Lavatory_WallHung",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "5a17ef1b79761f6d",
+  "generator": "restroom",
+  "lod_tris": {
+    "LOD0": 2572,
+    "LOD1": 1396,
+    "LOD2": 124,
+    "LOD3": 36
+  },
+  "params_sha256": "7ce35d46c0ce158d",
+  "passed": true,
+  "warnings": [
+    "LOD0 2572 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}

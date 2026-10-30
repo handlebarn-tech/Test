@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Deli_JarWall_East",
+  "collision_boxes": 5,
+  "errors": [],
+  "export_sha256": "7d530d84322313a1",
+  "generator": "deli_counter_jar_wall",
+  "lod_tris": {
+    "LOD0": 8062,
+    "LOD1": 4138,
+    "LOD2": 474,
+    "LOD3": 180
+  },
+  "params_sha256": "0b6c6e4a0fda3daa",
+  "passed": true,
+  "warnings": [
+    "LOD0 8062 tris below the DEC-084 guide minimum 30000 (too simple?)"
+  ]
+}

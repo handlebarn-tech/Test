@@ -114,6 +114,48 @@ Why: hundreds of SKUs on racks and in coolers, with GPU instancing. The silhouet
 - **GAP-PROC-12:** smalls jar lid/body split, corner radius, lid colour and label placement are not published (overall size is).
 - **Packing (W4E n1):** each layer gets a seeded offset (`layer_shift` × pitch), plus x/y/z jitter and a bud-size spread (`radius_jitter`), so full jars no longer stack as 3 columns. 6 layers fill the shorter cavity.
 
+## Fixture families (PROC-005, IMP-003 toolkit)
+Each family has one generator, one params file with one asset per ROOM_FIXTURES row (`variants`), and its own contact sheet (`own_sheet`): `Tools/Blender/blender.ps1 contact_sheet <generator>` writes `Docs/Assets/Specs/PROC_<generator>_contact_sheet.png` (`.jpg` for `pbr` families).
+
+**PBR finishes (Q0.3 / Q0.4, DEC-084; PROC-005 fix wave):**
+- `Tools/Blender/proctex.py` (`blender.ps1 textures`) generates 18 original, seeded, tileable 2K finish sets in `UnityProject/Assets/_Game/Art/Procedural/Textures/<finish>/` (Git LFS). Index: `finishes.json`.
+  - Each set has BaseColor (greyscale variation, mean 0.8), Normal (OpenGL) and Mask (HDRP: R metallic, G AO, B detail, A smoothness).
+  - Reruns are byte-identical.
+- Maps are per *finish*, not per colour. A params colour key maps to a finish by the name rules in `proctex.RULES`, or explicitly with `"finishes"`.
+  - Material tint = cited params colour / 0.8, so colours stay cited values or GAPs.
+  - Tiling = 1 / `tile_m` on `UVMap_Main` (1 UV = 1 m box projection until PROC-007).
+  - Texel density = 2048 / `tile_m` px/m, i.e. 2048–20480 px/m. That is at or above a unique 4K unwrap for every fixture-sized part.
+- Params `"pbr": true` does three things:
+  - Parts write a per-vertex `Wear` colour: R = convex-edge wear, G = crease grime, from dihedral angles. It is exported in the FBX for the Unity material builder, scaled by params `wear`.
+  - The manifest entry gets `finishes` (M_Proc name → finish + tint).
+  - Previews render in Eevee with these maps, 4 tiles per row: LOD0 3/4, LOD0 front, LOD0 close-up, LODn 3/4.
+- The FBX still carries material names only (M4). Unity builds the HDRP materials from `finishes` + `finishes.json`.
+- `Wear` is a vertex value, so it interpolates across a face whose corners all sit on edges. The preview keeps only R/G above 0.6 (hard corners); the Unity builder should do the same.
+- Not done (Unity slot needed): texture `.meta` import settings (Normal type, sRGB off for Mask) and the material builder.
+
+**Validation:**
+- Every params file turns on the opt-in checks (origin bottom-centre, degenerate faces, material slots).
+- The DEC-084 guide applies: `tri_budget` is the fail line and `tri_guide.lod0_min` the warning.
+- Collision is manifest `collision_boxes` (DEC-086), never `COL_` meshes.
+
+**Size and metadata conventions:**
+- Sizes are exact to the RF row. Where a part adds to the RF height, the params say so in `_note`: counter backsplash, sink faucet, mop-sink splash guards, grommet lips.
+- Wall-hung items carry `mount_z_m`, the origin height AFF.
+- Doors and drawers carry `moving_parts` (C10).
+
+| Generator | Assets | GAP | LOD0 tris |
+|---|---|---|---|
+| `wire_shelving` | 8 racks (incl. JC supply rack, black desk unit) | GAP-PROC-13, GAP-PROC-29, GAP-127 | 27.9–71.2k |
+| `register_station` | scale stand, monitor, 2 scanners, keyboard, printer, card terminal | GAP-PROC-14, GAP-PROC-40, GAP-108 | 0.5–7.3k |
+| `register_counter_run` | RF `Counter_Register_North` (10/9/8), `_EastReturn` (12/11), `_South` (7,2–6), `_SouthWestReturn` (RI §1.5 rows 98/101; REF-013 sizes) | GAP-PROC-15, GAP-PROC-40..24, GAP-130/131 | 1.2–11.0k |
+| `deli_counter_jar_wall` | jar walls N/S/E (RF `DeliJarWall_*`, 2.1 / 2.0 / 2.0 ft deep, REF-013); the deli counter was dropped (it is the south register run) | GAP-PROC-16, GAP-PROC-25..27, GAP-113 | 8.1–64.1k |
+| `glass_door_cooler` | 2-door cooler, top-freezer fridge, magnet fridge | GAP-PROC-17, GAP-PROC-28, GAP-111 | 3.7–15.2k |
+| `office_fixtures` | 10 office/BOH furniture rows | GAP-PROC-18, GAP-PROC-31..33 | 3.5–10.6k |
+| `break_room` | 17 break-room rows | GAP-PROC-19, GAP-PROC-34..36, GAP-126 | 0.14–15.0k |
+| `restroom` | 13 restroom items | GAP-PROC-20, GAP-PROC-37..39, GAP-109 | 0.7–4.3k |
+| `janitor_props` | mop sink, mops/brooms, mop bucket (GAP placeholder) | GAP-PROC-21, GAP-PROC-30, GAP-109 | 1.5–8.7k |
+
+Several assets are still below the DEC-084 lower guide and validation warns. Under DEC-114 the guide is not a cap, and the visual read on the contact sheet is the pass criterion. UVs keep the current layout until PROC-007 (DEC-097).
 ## Parked vehicles (PROC-009)
 ```powershell
 Tools/Blender/blender.ps1 parked_vehicles Tools/Blender/params/parked_vehicles.json   # 3 FBX, also copied to Unity

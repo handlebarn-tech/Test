@@ -1,0 +1,203 @@
+{
+  "generator": "janitor_props",
+  "asset_prefix": "PROC_",
+  "seed": 28001,
+  "own_sheet": true,
+  "pbr": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Janitor",
+  "gaps": [
+    "GAP-109",
+    "GAP-127",
+    "GAP-PROC-21",
+    "GAP-PROC-30"
+  ],
+  "_sources": {
+    "MopSink_JC width/depth/height": "RF MopSink_JC size_ft 1.6 x 1.5 x 1.0 ('square mop sink in the JC SE corner, A011 only'); existence DEC-062 ('a drainage (mop) sink')",
+    "Mops_Brooms_JC width/depth/height": "RF Mops_Brooms_JC size_ft 0.8 x 1.0 x 5.0 (DEC-062 'mops and brooms'; position/size Low, GAP-127)",
+    "MopBucket_Wringer (whole asset)": "GAP-PROC-30 placeholder: no bucket in DEC-062's closet list or RF; GAP-109 no imagery. Size is a generic placeholder",
+    "sink.guard_h_m / extra_h_m / sink.wall_m / basin rim profile": "GAP-PROC-21 (splash-guard height, basin wall); guards themselves GAP-PROC-30 (not in DEC-062/RF)",
+    "mops.handle_r_m / mops.rail_z_m / mop and broom part sizes": "GAP-PROC-21",
+    "bucket.bucket_h_m / bucket.caster_h_m": "GAP-PROC-30",
+    "colors.* (all keys)": "GAP-PROC-30 neutral grey placeholders: DEC-062 and RF give no colour or material for any janitor item; GAP-109 no imagery",
+    "finishes": "GAP-PROC-30 placeholders chosen only so the PBR preview reads (stone basin, brushed guards, cotton heads); not store facts"
+  },
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 16
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 12
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8
+    }
+  },
+  "wear": {
+    "edge_wear": 0.3,
+    "scuffs": 0.4,
+    "stains": 0.35
+  },
+  "colors": {
+    "Sink_Grey": [
+      0.62,
+      0.62,
+      0.626,
+      1.0
+    ],
+    "Guard_Grey": [
+      0.55,
+      0.55,
+      0.556,
+      1.0
+    ],
+    "Handle_Grey": [
+      0.5,
+      0.5,
+      0.505,
+      1.0
+    ],
+    "MopHead_Grey": [
+      0.72,
+      0.72,
+      0.727,
+      1.0
+    ],
+    "Bristle_Grey": [
+      0.32,
+      0.32,
+      0.323,
+      1.0
+    ],
+    "Holder_Grey": [
+      0.28,
+      0.28,
+      0.283,
+      1.0
+    ],
+    "Bucket_Grey": [
+      0.5,
+      0.5,
+      0.505,
+      1.0
+    ],
+    "Wringer_Grey": [
+      0.4,
+      0.4,
+      0.404,
+      1.0
+    ],
+    "Lever_Grey": [
+      0.6,
+      0.6,
+      0.606,
+      1.0
+    ],
+    "Caster_Grey": [
+      0.22,
+      0.22,
+      0.222,
+      1.0
+    ],
+    "Fastener_Grey": [
+      0.58,
+      0.58,
+      0.586,
+      1.0
+    ]
+  },
+  "variants": [
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "MopSink_JC",
+      "rf": "MopSink_JC",
+      "kind": "mop_sink",
+      "width_m": 0.48768,
+      "depth_m": 0.4572,
+      "height_m": 0.3048,
+      "extra_h_m": 0.3,
+      "sink": {
+        "basin_h_m": 0.3048,
+        "guard_h_m": 0.3,
+        "wall_m": 0.04
+      },
+      "_note": "RF h = basin; the 0.3 m splash guards (GAP-PROC-21 height, GAP-PROC-30 existence) add to the bound"
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Mops_Brooms_JC",
+      "rf": "Mops_Brooms_JC",
+      "kind": "mops_brooms",
+      "width_m": 0.24384,
+      "depth_m": 0.3048,
+      "height_m": 1.524,
+      "mops": {
+        "handle_r_m": 0.012,
+        "rail_z_m": 1.2
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "MopBucket_Wringer",
+      "rf": "none (GAP-PROC-30 placeholder; not in DEC-062 or RF)",
+      "kind": "bucket",
+      "width_m": 0.55,
+      "depth_m": 0.4,
+      "height_m": 0.9,
+      "bucket": {
+        "bucket_h_m": 0.3,
+        "caster_h_m": 0.06
+      },
+      "gap": "GAP-PROC-30",
+      "_note": "GAP-PROC-30: unsourced placeholder kept so the closet has a wringer bucket slot; neutral greys only; size 0.55 x 0.40 x 0.90 m generic"
+    }
+  ],
+  "finishes": {
+    "Sink_Grey": "stone",
+    "Guard_Grey": "brushed_metal",
+    "Handle_Grey": "plastic",
+    "MopHead_Grey": "cotton",
+    "Bristle_Grey": "cotton",
+    "Holder_Grey": "plastic",
+    "Bucket_Grey": "plastic",
+    "Wringer_Grey": "plastic",
+    "Lever_Grey": "brushed_metal",
+    "Caster_Grey": "rubber",
+    "Fastener_Grey": "brushed_metal"
+  }
+}

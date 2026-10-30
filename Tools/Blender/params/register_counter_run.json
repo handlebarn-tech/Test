@@ -1,0 +1,344 @@
+{
+  "generator": "register_counter_run",
+  "asset_prefix": "PROC_RegisterCounter_",
+  "seed": 22001,
+  "own_sheet": true,
+  "pbr": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Register",
+  "gaps": [
+    "GAP-PROC-15",
+    "GAP-PROC-40",
+    "GAP-PROC-41",
+    "GAP-PROC-42"
+  ],
+  "_about": "One asset per ROOM_FIXTURES (REF-013) register counter row (RI 1.5 rows 98/101, REF-011; RI 8.1; DEC-039). Local frame: staff side -Y (asset front, shows the cabinet construction), customer face +Y, run along X; ART yaws the asset so +Y points to the RF 'faces' direction, and plan_axis_x = the plan direction local +X then points along (faces S: -x west; W: -y north; N: +x east). Station local_x_m = RF POS_xx pos_ft minus the RF counter centre, measured along plan_axis_x. Every value below is cited in _sources.",
+  "_sources": {
+    "length_m / depth_m / height_m": "RF size_ft of the variant's `rf` row (ROOM_FIXTURES after REF-013): depth 2.2 ft North, 2.5 ft EastReturn/South/SouthWestReturn (= TI A940 POS top 2'-6\"); height 2.833 ft = TI 6.4 34 in max AFF (0.8636). North's 2.2 ft vs the TI 2'-6\" POS top: RF used, conflict GAP-PROC-41",
+    "top_t_m": "TI 6.4 POS cabinet quartz top with a 2 in edge",
+    "toe_h_m / toe_recess_m": "TI 6.4 4 in toe base, 2 in recess",
+    "carcass_depth_m": "TI 6.4 2'-1\" overall base-cabinet depth; the rest of the RF depth is top overhang on the customer side",
+    "gable_t_m": "GAP-PROC-40 (3/4 in carcass board, construction convention)",
+    "face_panel_t_m / face_sheet_w_m": "DEC-090 plywood front; 3/4 in thickness and 4 ft sheet width are GAP-PROC-40",
+    "seam_m": "construction detail (hairline seam between wrap sheets)",
+    "accent_band_h_m / reveal_m / pull_w_frac": "TI 6.4 ML-1 band, drawer reveals, HW-2 edge pulls exist; sizes GAP-PROC-15",
+    "staff_overhang_m": "GAP-PROC-40 (top overhang past the staff-side drawer fronts)",
+    "drawer_cabinet_w_m": "TI 6.4 detail 11 two-drawer POS cabinet (two equal drawers) under each monitor; width GAP-PROC-40",
+    "max_open_bay_m / open_shelf_z_frac": "open black under-shelves R2C3 + RI 2.2 'open black shelves under the counter'; bay width and shelf height GAP-PROC-40",
+    "grommet_d_m / grommet_inset_m / grommet_dx_m / grommet_lip_m": "GAP-PROC-15 (one cable grommet per station; the flange top is the 34 in bound, the slab top sits grommet_lip_m below it)",
+    "monitor_inset_m": "RF POS_xx pos_ft: monitor centre 0.22 ft inside the staff edge (y 7.22 vs edge 7.0); RI 8.1 'monitor centre on the staff edge'. Used for station_anchors position",
+    "anchor_offsets": "SCENE_ANCHORS Anchor_Register_NN_Operator 1.0 ft off the staff edge, _Call 1.2 ft off the customer face (RI 8.1)",
+    "components": "slot set RF POS_StationKit (REF-016): staff half = keyboard, receipt printer, scanner; monitor on the customer half facing the operator; customer edge = card/PIN terminal only (+ DEC-086); scale stand on the staff floor (RF POS_xx stand_rect 1.6 x 1.3 ft, RI 2.2). Offsets inside the top are GAP-RK-LAYOUT / GAP-PROC-15",
+    "display_case_slot_x_m": "RI 1.5 row 99 display case x 38.0-39.4 (centre 38.7) minus the North centre x 30.25 = 8.45 ft east = local -8.45 ft; 1.4 x 1.4 ft footprint",
+    "colors.Quartz_QZ2": "TI 6.4 QZ-2 white quartz top (CCTV RI 2.2 reads black stone-look: GAP-PROC-41)",
+    "colors.Wrap_DeliChecker": "DEC-090 decorative wrap on plywood; RF Counter_Register_North notes + RI 8.1 (both runs) 'DELI STYLE' teal/white checker; flat teal = average tone until the print texture exists (GAP-PROC-40)",
+    "colors.Black_ML1": "TI 6.4 ML-1 black-patina metal laminate (band, toe kicks, banding)",
+    "colors.Black_ML1_Interior": "TI 6.4 black melamine interiors; R2C3 black open shelves",
+    "colors.Walnut_WD1": "TI 6.4 WD-1 walnut veneer / PL-1 walnut laminate fronts; value = a typical dark walnut tone (linear), shade not measured (GAP-PROC-40)",
+    "colors.Brass_HW2": "TI 6.4 HW-2 brushed-brass edge pulls",
+    "colors.Plastic_Grommet": "GAP-PROC-40 neutral mid grey (grommet colour unsourced)",
+    "colors.Steel_Pins": "construction hardware (shelf pins, screws), neutral mid grey",
+    "finishes": "proctex RULES except Black_ML1_Interior -> laminate (melamine), Steel_Pins -> brushed_metal, Wrap_DeliChecker -> plastic (vinyl wrap)",
+    "wear": "PROC-005 wear defaults (shader params, not store facts)",
+    "colors.Face_GAP_Grey": "GAP-PROC-42 neutral mid grey: SouthWestReturn face finish, no source",
+    "customer_faces": "SouthWestReturn only: plan direction of the customer face where it differs from the RF row's 'faces' (see that variant's _note)"
+  },
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 16
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 12
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8
+    }
+  },
+  "tri_budget": {
+    "LOD0": 150000,
+    "LOD1": 75000,
+    "LOD2": 37500,
+    "LOD3": 15000
+  },
+  "tri_guide": {
+    "lod0_min": 30000
+  },
+  "depth_m": 0.67056,
+  "height_m": 0.8636,
+  "top_t_m": 0.0508,
+  "toe_h_m": 0.1016,
+  "toe_recess_m": 0.0508,
+  "carcass_depth_m": 0.635,
+  "gable_t_m": 0.019,
+  "face_panel_t_m": 0.019,
+  "face_sheet_w_m": 1.2192,
+  "seam_m": 0.003,
+  "accent_band_h_m": 0.025,
+  "reveal_m": 0.003,
+  "pull_w_frac": 0.4,
+  "staff_overhang_m": 0.025,
+  "drawer_cabinet_w_m": 0.381,
+  "max_open_bay_m": 0.9144,
+  "open_shelf_z_frac": 0.5,
+  "grommet_d_m": 0.06,
+  "grommet_inset_m": 0.12,
+  "grommet_dx_m": 0.0,
+  "grommet_lip_m": 0.0015,
+  "monitor_inset_m": 0.06706,
+  "anchor_offsets": {
+    "operator_off_staff_edge_m": 0.3048,
+    "call_off_face_m": 0.36576
+  },
+  "face_color": "Wrap_DeliChecker",
+  "wear": {
+    "edge_wear": 0.2,
+    "scuffs": 0.3,
+    "fingerprints": 0.2
+  },
+  "finishes": {
+    "Black_ML1_Interior": "laminate",
+    "Steel_Pins": "brushed_metal",
+    "Wrap_DeliChecker": "plastic"
+  },
+  "colors": {
+    "Quartz_QZ2": [
+      0.92,
+      0.92,
+      0.9,
+      1.0
+    ],
+    "Wrap_DeliChecker": [
+      0.35,
+      0.7,
+      0.68,
+      1.0
+    ],
+    "Black_ML1": [
+      0.035,
+      0.035,
+      0.04,
+      1.0
+    ],
+    "Black_ML1_Interior": [
+      0.03,
+      0.03,
+      0.032,
+      1.0
+    ],
+    "Walnut_WD1": [
+      0.12,
+      0.065,
+      0.035,
+      1.0
+    ],
+    "Brass_HW2": [
+      0.72,
+      0.58,
+      0.32,
+      1.0
+    ],
+    "Plastic_Grommet": [
+      0.2,
+      0.2,
+      0.2,
+      1.0
+    ],
+    "Steel_Pins": [
+      0.5,
+      0.5,
+      0.5,
+      1.0
+    ],
+    "Face_GAP_Grey": [
+      0.21,
+      0.21,
+      0.21,
+      1.0
+    ]
+  },
+  "components": {
+    "pos_monitor": {
+      "asset_id": "PROC_Register_POSMonitor",
+      "dx_m": 0.0,
+      "dy_from_staff_edge_m": -0.42,
+      "yaw_deg": 180,
+      "_note": "RF POS_StationKit (REF-016): monitor on the customer half of the 2'-6\" top, facing the operator (yaw 180 = screen to the staff); exact offset GAP-RK-LAYOUT"
+    },
+    "keyboard": {
+      "asset_id": "PROC_Register_Keyboard",
+      "dx_m": 0.0,
+      "dy_from_staff_edge_m": -0.12,
+      "yaw_deg": 180
+    },
+    "receipt_printer": {
+      "asset_id": "PROC_Register_ReceiptPrinter",
+      "dx_m": 0.33,
+      "dy_from_staff_edge_m": -0.25,
+      "yaw_deg": 180
+    },
+    "scanner": {
+      "asset_id": "PROC_Register_Scanner_Presentation",
+      "dx_m": -0.3,
+      "dy_from_staff_edge_m": -0.25,
+      "yaw_deg": 180
+    },
+    "card_terminal": {
+      "asset_id": "PROC_Register_CardTerminal",
+      "dx_m": 0.25,
+      "dy_from_staff_edge_m": -0.55,
+      "yaw_deg": 0
+    },
+    "scale_stand_slot": {
+      "asset_id": "PROC_Register_ScaleStand",
+      "dx_m": -0.54864,
+      "dy_from_staff_edge_m": 0.19812,
+      "z_m": 0.0,
+      "yaw_deg": 180,
+      "_note": "floor, staff side, against the staff edge, staff's right of the monitor: RF POS_xx stand_rect centre 1.8 ft from the monitor, 1.3 ft deep (RI 2.2)"
+    }
+  },
+  "variants": [
+    {
+      "id": "North",
+      "rf": "Counter_Register_North",
+      "length_m": 6.245352,
+      "plan_axis_x": "-x (west)",
+      "waterfall": [
+        true,
+        true
+      ],
+      "gaps": [
+        "GAP-PROC-15",
+        "GAP-PROC-40",
+        "GAP-PROC-41",
+        "GAP-130"
+      ],
+      "stations": [
+        {
+          "register": 10,
+          "local_x_m": -1.7526
+        },
+        {
+          "register": 9,
+          "local_x_m": 0.0762
+        },
+        {
+          "register": 8,
+          "local_x_m": 1.905
+        }
+      ],
+      "display_case_slot_x_m": -2.57556,
+      "display_case_asset_id": "PROC_DisplayCase_Countertop",
+      "_note": "RF Counter_Register_North 20.49 x 2.2 x 2.833 ft centred x 30.25 (x 20.0-40.49; east end meets the east return, REF-013); registers 10/9/8 at RF POS_10/09/08 x 36.0/30.0/24.0 (DEC-039, RI 1.5 row 98). Waterfall: west end + exposed east end (TI 6.4 'waterfall wraps the outside'). Display case slot: RI 1.5 row 99 centre x 38.7"
+    },
+    {
+      "id": "EastReturn",
+      "rf": "Counter_Register_EastReturn",
+      "length_m": 3.29184,
+      "plan_axis_x": "-y (north)",
+      "waterfall": [
+        false,
+        false
+      ],
+      "gaps": [
+        "GAP-PROC-15",
+        "GAP-PROC-40",
+        "GAP-PROC-41",
+        "GAP-PROC-42",
+        "GAP-130"
+      ],
+      "stations": [
+        {
+          "register": 12,
+          "local_x_m": 0.79248
+        },
+        {
+          "register": 11,
+          "local_x_m": -0.42672
+        }
+      ],
+      "_note": "RF Counter_Register_EastReturn 2.5 x 10.8 ft centred (39.24, 14.6): x 37.99-40.49, y 9.2-20.0, from the north run's customer face to the south run's customer face, so both ends butt (no waterfall; REF-013, GAP-130 narrowed). Depth 2.5 ft = TI A940 POS top 2'-6\". Registers 12/11 at RF POS_12/11 y 12.0/16.0 (DEC-039, RI 1.5 row 98). Customer-face wrap is GAP-PROC-42",
+      "depth_m": 0.762
+    },
+    {
+      "id": "South",
+      "rf": "Counter_Register_South",
+      "length_m": 7.8486,
+      "plan_axis_x": "+x (east)",
+      "waterfall": [
+        true,
+        true
+      ],
+      "gaps": [
+        "GAP-PROC-15",
+        "GAP-PROC-40",
+        "GAP-PROC-41",
+        "GAP-131"
+      ],
+      "stations": [
+        {
+          "register": 2,
+          "local_x_m": -2.121408
+        },
+        {
+          "register": 3,
+          "local_x_m": -0.963168
+        },
+        {
+          "register": 4,
+          "local_x_m": 0.195072
+        },
+        {
+          "register": 5,
+          "local_x_m": 1.353312
+        },
+        {
+          "register": 6,
+          "local_x_m": 2.511552
+        }
+      ],
+      "_note": "RF Counter_Register_South 25.75 x 2.5 ft centred (28.16, 21.25): x 15.28-41.03 (A011/A012 vector), customer face y 20.0, staff edge 22.5 (A901 printed, High; GAP-129 closed by REF-013) = the plan's 'DELI COUNTER' (RI 1.5 row 101). REF-016 (GAP-131 narrowed, DEC-039 read west->east): the straight run carries 5 stations, registers 2,3,4,5,6 at RF POS_02..06 x 21.2/25.0/28.8/32.6/36.4; register 7 is on the west-end block (SouthWestReturn variant). Wrap per DEC-090 + RI 8.1. Both ends exposed",
+      "depth_m": 0.762
+    },
+    {
+      "id": "SouthWestReturn",
+      "rf": "Counter_Register_SouthWestReturn",
+      "length_m": 1.3716,
+      "depth_m": 0.762,
+      "plan_axis_x": "-y (north)",
+      "waterfall": [
+        false,
+        false
+      ],
+      "face_color": "Face_GAP_Grey",
+      "tri_guide": {
+        "lod0_min": 1000
+      },
+      "gaps": [
+        "GAP-131",
+        "GAP-PROC-40",
+        "GAP-PROC-41",
+        "GAP-PROC-42"
+      ],
+      "stations": [
+        {
+          "register": 7,
+          "local_x_m": 0.47244
+        }
+      ],
+      "_note": "RF Counter_Register_SouthWestReturn 2.5 x 4.5 ft centred (16.53, 24.75): x 15.28-17.78, y 22.49-26.99 (REF-013, A901 printed 2'-6\" width + A011/A012 vectors); north end butts the south run's staff edge, south end the back counter (y 27.0): no waterfall. REF-016: carries register 7 = RF POS_07 at y 23.2 (Low), rot 90, faces W, operator on the east (staff aisle), customer west (wall2_R2C1). SOURCE CONFLICT: the SWR row says faces E, but its matrix ('its west face is R7's customer face') and POS_07 put the customer on the west, so the asset's customer face (+Y, wrap, card terminal) is modelled to point WEST and plan_axis_x follows (ART: yaw +Y to W, not to the row's E). Customer-face finish has no source: neutral grey GAP-PROC-42. Tri guide lowered (DEC-114)",
+      "customer_faces": "W"
+    }
+  ]
+}

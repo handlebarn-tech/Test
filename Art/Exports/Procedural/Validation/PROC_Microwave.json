@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Microwave",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "dc6d30f1eb6bdc6c",
+  "generator": "break_room",
+  "lod_tris": {
+    "LOD0": 2592,
+    "LOD1": 1296,
+    "LOD2": 188,
+    "LOD3": 12
+  },
+  "params_sha256": "e26ffa559c6e8ca0",
+  "passed": true,
+  "warnings": [
+    "LOD0 2592 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}
