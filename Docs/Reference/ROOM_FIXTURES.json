@@ -1,6 +1,6 @@
 {
- "_about": "REF-008 back-room fixture map for ART. Plan frame = REFERENCES_INDEX 1.2 (feet, origin Retail NW outer corner, +x east, +y south). Positions are mapped into the Working Plan V5 / graybox room shells (A011 interior dims do not sum to the building width, GAP-125). pos_ft = footprint centre [x, y]; null = not placeable, see gap. size_ft = [w, d, h]: w along +x when rot = 0, along +y when rot = 90. faces = compass direction the front/opening faces. Doors: pos is the centre of the opening on the wall line, size = [width, leaf thickness, height]. Confidence High/Med/Low as REFERENCES_INDEX. Sources: wall2_/wall1_RrCc = CCTV Camera Wall 2 / Camera Wall tiles; FOH_still / BOH_still = the 2026-10-29 desk stills; chat_* = CCTV views Nolan pasted into the REF-008 session 2026-10-29 (not in the repo); A011 = References/TI A011 vector; TI = REFERENCES_INDEX 6. contents = what a fixture holds (store facts only, e.g. DEC-050); never inventory data. FOH is staff-only: customers never enter, the budtender fetches (DEC-050). Excluded by rule: camera positions, access-control hardware, alarm items, safe interiors, screen contents, one office wall screen, the hall keypad (a blank panel only, DEC-062), and (DEC-051) any safe, cash-equipment or camera-system specifics: generic props only.",
- "version": "REF-013 2026-10-30 rev8 (GAP-129/130 measured from A901/A011/A012, GAP-132 closed DEC-110 W3, entry/ID stand per A011; rev7 = REF-011 sales floor)",
+ "_about": "REF-008 back-room fixture map for ART. Plan frame = REFERENCES_INDEX 1.2 (feet, origin Retail NW outer corner, +x east, +y south). Positions are mapped into the Working Plan V5 / graybox room shells (A011 interior dims do not sum to the building width, GAP-125). pos_ft = footprint centre [x, y]; null = not placeable, see gap. size_ft = [w, d, h]: w along +x when rot = 0, along +y when rot = 90. faces = compass direction the front/opening faces. Doors: pos is the centre of the opening on the wall line, size = [width, leaf thickness, height]. Confidence High/Med/Low as REFERENCES_INDEX. Sources: wall2_/wall1_RrCc = CCTV Camera Wall 2 / Camera Wall tiles; FOH_still / BOH_still = the 2026-10-29 desk stills; chat_* = CCTV views Nolan pasted into the REF-008 session 2026-10-29 (not in the repo); A011 = References/TI A011 vector; TI = REFERENCES_INDEX 6. contents = what a fixture holds (store facts only, e.g. DEC-050); never inventory data. propsDoor = DOORS.json id of the door this fixture props open (it stands inside that leaf's closing sweep on purpose; swing checks skip it while the door is proppedOpen). FOH is staff-only: customers never enter, the budtender fetches (DEC-050). Excluded by rule: camera positions, access-control hardware, alarm items, safe interiors, screen contents, one office wall screen, the hall keypad (a blank panel only, DEC-062), and (DEC-051) any safe, cash-equipment or camera-system specifics: generic props only.",
+ "version": "REF-013 2026-10-30 rev8 (GAP-129/130 measured from A901/A011/A012, HUB positions DEC-110 W3 with sizes Low under a narrowed GAP-132 (DEC-115); break-room table group and FOH trash moved for JC reach / FOH prop (REVIEW-ART7 m3), entry/ID stand per A011; rev7 = REF-011 sales floor)",
  "fixtures": [
   {
    "room": "Office",
@@ -986,7 +986,7 @@
    ],
    "pos_ft": [
     14.5,
-    40.5
+    37.0
    ],
    "rot": 90,
    "faces": "E",
@@ -996,7 +996,7 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "whiteboard in a red/white frame on the west wall (DEC-051 Q6), ~3.5-6.5 ft AFF above the lunch table; size Low; content not recorded"
+   "notes": "whiteboard in a red/white frame on the west wall (DEC-051 Q6), ~3.5-6.5 ft AFF above the lunch table; size Low; content not recorded. REVIEW-ART7 m3 (REF-013 fix): moved 3.5 ft north with the table group so a 1.5 ft-wide person can pass between the bench SE corner and the JC NW corner (1.7 ft) to reach the JC door (was centred y 40.5)"
   },
   {
    "room": "BreakRoom",
@@ -1009,7 +1009,7 @@
    ],
    "pos_ft": [
     14.5,
-    35.75
+    41.25
    ],
    "rot": 90,
    "faces": "E",
@@ -1018,7 +1018,7 @@
     "DEC-062"
    ],
    "gap": "GAP-127",
-   "notes": "bulletin board on the hallway (west) wall of the break room (DEC-062): staff schedule, events, updates; contents not modelled. Placed between the hall door (y 33.0) and the whiteboard; position and size Low"
+   "notes": "bulletin board on the hallway (west) wall of the break room (DEC-062): staff schedule, events, updates; contents not modelled. Placed between the hall door (y 33.0) and the whiteboard; position and size Low. REVIEW-ART7 m3: moved south of the moved whiteboard to y 39.75-42.75, still on the hallway (west) wall per DEC-062 (was y 35.75, now the whiteboard spot)"
   },
   {
    "room": "BreakRoom",
@@ -1031,7 +1031,7 @@
    ],
    "pos_ft": [
     15.8,
-    40.5
+    37.0
    ],
    "rot": 90,
    "faces": "E",
@@ -1040,7 +1040,7 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "lunch table pushed against the whiteboard (west) wall (DEC-051 Q7); size is a convention placeholder, shorter than the bench"
+   "notes": "lunch table pushed against the whiteboard (west) wall (DEC-051 Q7); size is a convention placeholder, shorter than the bench. REVIEW-ART7 m3 (REF-013 fix): moved 3.5 ft north with the table group so a 1.5 ft-wide person can pass between the bench SE corner and the JC NW corner (1.7 ft) to reach the JC door (was centred y 40.5)"
   },
   {
    "room": "BreakRoom",
@@ -1053,7 +1053,7 @@
    ],
    "pos_ft": [
     17.75,
-    40.5
+    37.0
    ],
    "rot": 90,
    "faces": "E",
@@ -1064,7 +1064,7 @@
     "DEC-051"
    ],
    "gap": "GAP-127",
-   "notes": "wood plank top on black steel legs alongside the lunch table on its east side; longer than the table so it does not fit under it; kept north of the JC door swing (y 43.1) (DEC-051 Q7). 5 ft length kept from REF-008 (Low)"
+   "notes": "wood plank top on black steel legs alongside the lunch table on its east side; longer than the table so it does not fit under it; kept north of the JC door swing (y 43.1) (DEC-051 Q7). 5 ft length kept from REF-008 (Low). REVIEW-ART7 m3 (REF-013 fix): moved 3.5 ft north with the table group so a 1.5 ft-wide person can pass between the bench SE corner and the JC NW corner (1.7 ft) to reach the JC door (was centred y 40.5)"
   },
   {
    "room": "BreakRoom",
@@ -1729,8 +1729,8 @@
     2.5
    ],
    "pos_ft": [
-    28.2,
-    30.3
+    29.15,
+    30.7
    ],
    "rot": 0,
    "faces": "S",
@@ -1740,7 +1740,8 @@
     "chat_FOH_R"
    ],
    "gap": "GAP-127",
-   "notes": "aluminium trash can on the right (north) on entering, usually propping the FOH door open (DEC-051 Q2); placed at the open leaf end"
+   "notes": "aluminium trash can on the right (north) on entering, usually propping the FOH door open (DEC-051 Q2); placed at the open leaf end. REVIEW-ART7 m3 (REF-013 fix): x 28.4-29.9, y 29.95-31.45, against the south face of the propped-open leaf at its latch end (was x 27.45-28.95, y 29.55-31.05, through the open leaf). It is the prop, so it sits inside the closing sweep by definition; propsDoor names the door it holds open",
+   "propsDoor": "Vest_FOH"
   },
   {
    "room": "FOH",
@@ -2684,7 +2685,8 @@
     "hub_R1C4",
     "DEC-110 W3"
    ],
-   "notes": "light wood desk with keyboard + black office chair in the R1C4 foreground. R1C4 looks south (the green SE exit is at the far left), so the desk is at the NORTH end of HUB, not the plan raster strip at y 70-74.4. Kept clear of the HUB 2 door swing (x 19.2-22.2). Confirmed by Nolan (DEC-110 W3: desk + chair at the north end by the HUB 2 door); GAP-132 closed (REF-013)"
+   "notes": "light wood desk with keyboard + black office chair in the R1C4 foreground. R1C4 looks south (the green SE exit is at the far left), so the desk is at the NORTH end of HUB, not the plan raster strip at y 70-74.4. Kept clear of the HUB 2 door swing (x 19.2-22.2). Confirmed by Nolan (DEC-110 W3: desk + chair at the north end by the HUB 2 door). Position Med (DEC-110 W3); size_ft Low (GAP-132 narrowed, DEC-115 (4)): the 5.0 x 2.5 x 2.5 ft desk is a convention placeholder; no drawing or measurable view gives its size",
+   "gap": "GAP-132"
   },
   {
    "room": "HUB",
@@ -2707,7 +2709,8 @@
     "hub_R2C3",
     "DEC-110 W3"
    ],
-   "notes": "long dark counter/bench along the east wall, confirmed by Nolan (DEC-110 W3); blue and red rolling carts near its south end. Replaces the graybox FX_HUB_RackRun_W chrome run. Length: A011, A012 and A101 draw no HUB furniture (existing storage, 'no change'), so it is read from hub_R1C4: the counter runs from the north end to just short of the carts by the SE exit, about 20 ft (y 52-72, +-3 ft, CCTV perspective; REF-013)"
+   "notes": "long dark counter/bench along the east wall, confirmed by Nolan (DEC-110 W3); blue and red rolling carts near its south end. Replaces the graybox FX_HUB_RackRun_W chrome run. Length: A011, A012 and A101 draw no HUB furniture (existing storage, 'no change'), so it is read from hub_R1C4: the counter runs from the north end to just short of the carts by the SE exit, about 20 ft (y 52-72, +-3 ft, CCTV perspective; REF-013). Position Med (DEC-110 W3); size_ft Low (GAP-132 narrowed, DEC-115 (4)): length ~20 ft is a CCTV perspective read (+-3 ft); depth 2.29 ft and height 2.833 ft are placeholders (the A940 34 in applies to the retail millwork, not this existing HUB bench)",
+   "gap": "GAP-132"
   },
   {
    "room": "HUB",
@@ -2824,7 +2827,8 @@
     "DEC-079"
    ],
    "contents": "deli flower backstock, 1 lb bags (DEC-079)",
-   "notes": "black storage cabinets against the office (north) wall, west of the office door; hold the deli backstock (1 lb bags, DEC-079). Nolan said 'HUB' (the HUB pair); by A011 only HUB 2 shares a wall with the office, so the room is settled by the drawing (REF-013, GAP-132 closed). Graybox FX_HUB2_Cabinets matches"
+   "notes": "black storage cabinets against the office (north) wall, west of the office door; hold the deli backstock (1 lb bags, DEC-079). Nolan said 'HUB' (the HUB pair); by A011 only HUB 2 shares a wall with the office, so the room is settled by the drawing (REF-013). Room and wall Med (DEC-079 + A011); size_ft 6.0 x 1.5 x 7.0 ft Low (GAP-132 narrowed, DEC-115 (4)): copied from the graybox FX_HUB2_Cabinets placeholder, not a store measurement",
+   "gap": "GAP-132"
   },
   {
    "room": "Retail",

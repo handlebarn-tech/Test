@@ -1,6 +1,6 @@
 {
- "_about": "REF-012 door contract, World -> Gameplay (DEC-096 playtest 1: doors). One row per door or opening. Plan frame = REFERENCES_INDEX 1.2 (feet, origin Retail NW outer corner, +x east, +y south); Unity X = x*0.3048, Z = -y*0.3048 (graybox_layout.json). Sources: TI A310 door schedule + hardware sets (read 2026-10-30, only closer/lock/lever-vs-push-bar recorded; no access-control hardware, DEC-051), A011, ROOM_FIXTURES.json, DECs. Fields: id; object = scene object 'Door_<id>'; type = swing | storefrontPair | opening (no leaf) | foldingGrille; ti_door = A310 number (2022 room numbers, REFERENCES_INDEX 6); rooms.A/B = the two sides; graybox_wall + graybox_opening = current graybox wall id and opening [from,to] along it (read-only here); target_opening = where A011 puts it when the graybox is still wrong (ART fixes; hinge and anchors use the target); pos_ft = opening centre on the wall line; hinge_jamb = compass jamb (N/S/E/W). DEC-110 W5: doors hinge LEFT unless CCTV shows otherwise; 'left' = the hinge is on your left when you stand on the side the door swings AWAY from (the push side) and face the door; swing = in/out and which room; leafWidth_ft / leafHeight_ft = leaf size; clearOpening_ft = clear width at 90 deg, derived as leaf minus ~2.25 in (1.75 in leaf + 0.5 in stop; storefront 1.5 in leaves), never a store fact; leaves = 1 or 2 (0 for an opening, null when unknown). Single leaf: pivot 'Door_<id>_Hinge' at hinge_ft, the leaf mesh 'Door_<id>' is its child. Pair: leafObjects lists 'Door_<id>_L' and 'Door_<id>_R' (L/R as seen from side A facing side B), each with its own '<object>_Hinge' pivot. The hinge pivot is the parent and rotates about its local Y only; the leaf child extends along the pivot's local +X from hinge to latch. closedRotation = pivot Euler [0, yaw, 0] in Unity degrees, yaw = plan angle of hinge->latch (0 = east, +90 = south, 180 = west, -90 = north; Unity +Y yaw turns +X toward -Z = plan south). openAngle = signed degrees added to the closed yaw for fully open (90 deg max; + = clockwise seen from above); open yaw = closed yaw + openAngle. hinge_unity_m = pivot position in metres at floor level. anchors.A/B = trigger anchors 'Anchor_Door_<id>_A' / '_B', one per side on the opening centreline, 1.5 ft off the wall line on the non-swing side and 3.5 ft on the swing side (clear of a 3 ft leaf). selfClosing = true (A310 schedules a closer), false (no closer or no leaf) or 'unknown' (existing hardware not scheduled). lock = none (no staff gate; the restroom privacy lock is occupant-only), staffOnly (normally closed and locked, staff open it, free egress from inside), keyed (key only), entryTimeLock (customer entry: locked before Open doors and from 22:00, DEC-076). hardware = lever | pushBar | none (DEC-110 W6: pushBar only on the emergency exits and the delivery entrance, lever elsewhere). npcUse = who may path through in normal play: 'customer' and/or 'staff'; empty = nobody (emergency-only exits, the unplaced grille). The player is staff. The ID-checking guard (DEC-086, DEC-096) is staff for door rights, but its routine post is the entry check-in; no source puts it in the back rooms. Consumers spawn door leaves only for leaves 1 or 2; rows with leaves 0 or null (the arches, the grille) are openings or non-doors. Rows with no pos_ft (not placed: Grille_101B) are skipped by consumers until their GAP closes. defaultState = closed | proppedOpen at shift start (null for openings); proppedOpen leaves keep their closer/lock values, which apply if the prop is removed. There is no second buzzed door after the ID stand (DEC-103): customers go entry -> ID stand -> sales floor with no inner door; none is modelled. staffOnly = customers must not pass. audit (REF-013) = one record per field: {conf High|Med|Low, src [exact sources: TI sheet + door number/schedule line, A011 vector, CCTV tile, DEC], gap}; audited fields: type, position, hinge, swing, leafWidth, leafHeight, clearOpening, leaves, lock, hardware, selfClosing, npcUse, defaultState (position = pos_ft/target_opening; hinge = hinge_jamb/hinge_ft/closedRotation/openAngle; npcUse includes staffOnly). A Low field is a labelled placeholder and carries a gap id; gap = the union of the row's field gaps. When the A310 schedule column and the hardware-set headers name different sets, a field is sourced only if every candidate set gives the same value (or a DEC settles it).",
- "version": "REF-013 2026-10-30 rev2 (DEC-110 hinge/hardware/restroom; per-field audit; A101 tag mapping 104/E110/E111A/E111B; entry and east exit per A011; rev1 = REF-012)",
+ "_about": "REF-012 door contract, World -> Gameplay (DEC-096 playtest 1: doors). One row per door or opening. Plan frame = REFERENCES_INDEX 1.2 (feet, origin Retail NW outer corner, +x east, +y south); Unity X = x*0.3048, Z = -y*0.3048 (graybox_layout.json). Sources: TI A310 door schedule + hardware sets (read 2026-10-30, only closer/lock/lever-vs-push-bar recorded; no access-control hardware, DEC-051), A011, ROOM_FIXTURES.json, DECs. Fields: id; object = scene object 'Door_<id>'; type = swing | storefrontPair | opening (no leaf) | foldingGrille; ti_door = A310 number (2022 room numbers, REFERENCES_INDEX 6); rooms.A/B = the two sides; graybox_wall + graybox_opening = current graybox wall id and opening [from,to] along it (read-only here); target_opening = where A011 puts it when the graybox is still wrong (ART fixes; hinge and anchors use the target); pos_ft = opening centre on the wall line; hinge_jamb = compass jamb (N/S/E/W). DEC-110 W5 as amended by DEC-115 (1): doors hinge LEFT unless CCTV or the A011/TI vector drawing shows otherwise; 'left' = the hinge is on your left when you stand on the side the door swings AWAY from (the push side) and face the door; swing = in/out and which room; leafWidth_ft / leafHeight_ft = leaf size; clearOpening_ft = clear width at 90 deg, derived as leaf minus ~2.25 in (1.75 in leaf + 0.5 in stop; storefront 1.5 in leaves), never a store fact; leaves = 1 or 2 (0 for an opening, null when unknown). Single leaf: pivot 'Door_<id>_Hinge' at hinge_ft, the leaf mesh 'Door_<id>' is its child. Pair: leafObjects lists 'Door_<id>_L' and 'Door_<id>_R' (L/R as seen from side A facing side B), each with its own '<object>_Hinge' pivot. The hinge pivot is the parent and rotates about its local Y only; the leaf child extends along the pivot's local +X from hinge to latch. closedRotation = pivot Euler [0, yaw, 0] in Unity degrees, yaw = plan angle of hinge->latch (0 = east, +90 = south, 180 = west, -90 = north; Unity +Y yaw turns +X toward -Z = plan south). openAngle = signed degrees added to the closed yaw for fully open (90 deg max; + = clockwise seen from above); open yaw = closed yaw + openAngle. hinge_unity_m = pivot position in metres at floor level. anchors.A/B = trigger anchors 'Anchor_Door_<id>_A' / '_B', one per side on the opening centreline, 1.5 ft off the wall line on the non-swing side and 3.5 ft on the swing side (clear of a 3 ft leaf). selfClosing = true (A310 schedules a closer), false (no closer or no leaf) or 'unknown' (existing hardware not scheduled). lock = none (no staff gate; the restroom privacy lock is occupant-only), staffOnly (normally closed and locked, staff open it, free egress from inside), keyed (key only), entryTimeLock (customer entry: locked before Open doors and from 22:00, DEC-076). hardware = lever | pushBar | storefrontPull | none (DEC-110 W6: pushBar only on the emergency exits and the delivery entrance; DEC-115 (2): every other door follows its evidence (A310 lockset), the storefront entry pair keeps its pull handles, and a leaf with no scheduled hardware is a Low lever placeholder). npcUse = who may path through in normal play: 'customer' and/or 'staff'; empty = nobody (emergency-only exits, the unplaced grille). The player is staff. The ID-checking guard (DEC-086, DEC-096) is staff for door rights, but its routine post is the entry check-in; no source puts it in the back rooms. Consumers spawn door leaves only for leaves 1 or 2; rows with leaves 0 or null (the arches, the grille) are openings or non-doors. Rows with no pos_ft (not placed: Grille_101B) are skipped by consumers until their GAP closes. defaultState = closed | proppedOpen at shift start (null for openings); proppedOpen leaves keep their closer/lock values, which apply if the prop is removed. There is no second buzzed door after the ID stand (DEC-103): customers go entry -> ID stand -> sales floor with no inner door; none is modelled. staffOnly = customers must not pass. audit (REF-013) = one record per field: {conf High|Med|Low, src [exact sources: TI sheet + door number/schedule line, A011 vector, CCTV tile, DEC], gap}; audited fields: type, position, hinge, swing, leafWidth, leafHeight, clearOpening, leaves, lock, hardware, selfClosing, npcUse, defaultState (position = pos_ft/target_opening; hinge = hinge_jamb/hinge_ft/closedRotation/openAngle; npcUse includes staffOnly). A Low field is a labelled placeholder and carries a gap id; gap = the union of the row's field gaps. When the A310 schedule column and the hardware-set headers name different sets, a field is sourced only if every candidate set gives the same value (or a DEC settles it).",
+ "version": "REF-013 2026-10-30 rev3 (DEC-115: A011 hinge overrides, storefront pull, absence-inferred defaultState Low; DEC-110 hinge/hardware/restroom; per-field audit; A101 tag mapping 104/E110/E111A/E111B; entry and east exit per A011; rev1 = REF-012)",
  "doors": [
   {
    "id": "Entry",
@@ -88,7 +88,7 @@
    },
    "selfClosing": "unknown",
    "lock": "entryTimeLock",
-   "hardware": "lever",
+   "hardware": "storefrontPull",
    "npcUse": [
     "customer",
     "staff"
@@ -99,7 +99,7 @@
     "GAP-137",
     "GAP-138"
    ],
-   "notes": "TI E101: existing storefront pair, sign \"door to remain unlocked during business hours\". entryTimeLock: locked before \"Open doors\" (08:00) and from 22:00 on the dot (DEC-076); customers already inside are still served and may leave (free egress). REF-013: A011 puts the pair at y 8.9-14.9 (graybox 12.5-18.5, ART moves it; hinge and anchors use the target). hardware lever per DEC-110 W6 (was the storefrontPull placeholder). L/R as seen from side A (inside) facing west: L = south leaf, R = north leaf.",
+   "notes": "TI E101: existing storefront pair, sign \"door to remain unlocked during business hours\". entryTimeLock: locked before \"Open doors\" (08:00) and from 22:00 on the dot (DEC-076); customers already inside are still served and may leave (free egress). REF-013: A011 puts the pair at y 8.9-14.9 (graybox 12.5-18.5, ART moves it; hinge and anchors use the target). hardware storefrontPull (DEC-115 (2)). L/R as seen from side A (inside) facing west: L = south leaf, R = north leaf.",
    "target_opening": {
     "y": [
      8.9,
@@ -177,9 +177,11 @@
      "gap": null
     },
     "hardware": {
-     "conf": "High",
+     "conf": "Med",
      "src": [
-      "DEC-110 W6 (push bar only on the emergency exits and the delivery entrance, lever elsewhere)"
+      "DEC-115 (2): the storefront entry pair keeps its pull handles",
+      "A310 E101 existing aluminium full-glass storefront pair (no hardware scheduled)",
+      "CONTROLS_FLOW_PS1 7.1 (DES-005b)"
      ],
      "gap": null
     },
@@ -199,11 +201,11 @@
      "gap": null
     },
     "defaultState": {
-     "conf": "Med",
+     "conf": "Low",
      "src": [
-      "DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector); this one is not listed"
+      "inferred from absence (working value): DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector) and this one is not listed; absence does not prove closed (DEC-115 (3))"
      ],
-     "gap": null
+     "gap": "GAP-138"
     }
    }
   },
@@ -301,7 +303,7 @@
     "hinge": {
      "conf": "Med",
      "src": [
-      "DEC-110 W5 (most doors hinge left; overrides only from CCTV): left as seen from the retail (push) side = N",
+      "DEC-110 W5 (most doors hinge left) as amended by DEC-115 (1) (overrides from CCTV or A011): left as seen from the retail (push) side = N",
       "A011 vector agrees (hinge N)"
      ],
      "gap": null
@@ -352,7 +354,7 @@
     "hardware": {
      "conf": "High",
      "src": [
-      "DEC-110 W6 (push bar only on the emergency exits and the delivery entrance, lever elsewhere)"
+      "DEC-110 W6 (Nolan: push bars only on the emergency exits and the delivery entrance)"
      ],
      "gap": null
     },
@@ -371,11 +373,11 @@
      "gap": null
     },
     "defaultState": {
-     "conf": "Med",
+     "conf": "Low",
      "src": [
-      "DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector); this one is not listed"
+      "inferred from absence (working value): DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector) and this one is not listed; absence does not prove closed (DEC-115 (3))"
      ],
-     "gap": null
+     "gap": "GAP-138"
     }
    }
   },
@@ -753,7 +755,8 @@
    "defaultState": "closed",
    "staffOnly": true,
    "gap": [
-    "GAP-137"
+    "GAP-137",
+    "GAP-138"
    ],
    "notes": "lock = none for the contract: set 3.0 is an occupant privacy lock (locked from inside while in use), not a staff gate; Gameplay may model \"occupied\". Hinge S (DEC-110 W5 left, A011 agrees) so the leaf parks against the restroom south wall; DEC-068 cabinet goes on the free (north) side. Staff only (DEC-110 W7, GAP-139 closed).",
    "audit": {
@@ -774,7 +777,7 @@
     "hinge": {
      "conf": "High",
      "src": [
-      "DEC-110 W5 (most doors hinge left; overrides only from CCTV): left from the hall (push) side = S",
+      "DEC-110 W5 (most doors hinge left) as amended by DEC-115 (1) (overrides from CCTV or A011): left from the hall (push) side = S",
       "A011 vector agrees (hinge S)"
      ],
      "gap": null
@@ -822,9 +825,10 @@
      "gap": null
     },
     "hardware": {
-     "conf": "High",
+     "conf": "Med",
      "src": [
-      "DEC-110 W6 (push bar only on the emergency exits and the delivery entrance, lever elsewhere)"
+      "A310 103 set 3.0 (schedule and header agree): mortise privacy lock ML2068 NSA (lever trim)",
+      "DEC-110 W6 (Nolan: push bars only on the emergency exits and the delivery entrance): not a push bar"
      ],
      "gap": null
     },
@@ -843,11 +847,11 @@
      "gap": null
     },
     "defaultState": {
-     "conf": "Med",
+     "conf": "Low",
      "src": [
-      "DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector); this one is not listed"
+      "inferred from absence (working value): DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector) and this one is not listed; absence does not prove closed (DEC-115 (3))"
      ],
-     "gap": null
+     "gap": "GAP-138"
     }
    }
   },
@@ -990,11 +994,13 @@
      "gap": null
     },
     "hardware": {
-     "conf": "High",
+     "conf": "Low",
      "src": [
-      "DEC-110 W6 (push bar only on the emergency exits and the delivery entrance, lever elsewhere)"
+      "placeholder lever: hall->office is a 2023 A011 door with no A310 schedule entry",
+      "DEC-110 W6 (Nolan: push bars only on the emergency exits and the delivery entrance): not a push bar",
+      "DEC-115 (2)"
      ],
-     "gap": null
+     "gap": "GAP-138"
     },
     "selfClosing": {
      "conf": "Low",
@@ -1087,7 +1093,8 @@
    "defaultState": "closed",
    "staffOnly": true,
    "gap": [
-    "GAP-137"
+    "GAP-137",
+    "GAP-138"
    ],
    "notes": "Hinge N (DEC-110 W5 left, A011 agrees): the leaf parks along the break-room north wall west of the kitchen run (which starts at x 18.9, REF-008).",
    "audit": {
@@ -1108,7 +1115,7 @@
     "hinge": {
      "conf": "High",
      "src": [
-      "DEC-110 W5 (most doors hinge left; overrides only from CCTV): left from the hall side = N",
+      "DEC-110 W5 (most doors hinge left) as amended by DEC-115 (1) (overrides from CCTV or A011): left from the hall side = N",
       "A011 vector agrees (hinge N)"
      ],
      "gap": null
@@ -1158,7 +1165,8 @@
     "hardware": {
      "conf": "High",
      "src": [
-      "DEC-110 W6 (push bar only on the emergency exits and the delivery entrance, lever elsewhere)"
+      "A310 105 set 2.0 (schedule and header agree): storeroom lever lock CLX3357",
+      "DEC-110 W6 (Nolan: push bars only on the emergency exits and the delivery entrance): not a push bar"
      ],
      "gap": null
     },
@@ -1177,11 +1185,11 @@
      "gap": null
     },
     "defaultState": {
-     "conf": "Med",
+     "conf": "Low",
      "src": [
-      "DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector); this one is not listed"
+      "inferred from absence (working value): DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector) and this one is not listed; absence does not prove closed (DEC-115 (3))"
      ],
-     "gap": null
+     "gap": "GAP-138"
     }
    }
   },
@@ -1252,9 +1260,10 @@
    "defaultState": "closed",
    "staffOnly": true,
    "gap": [
-    "GAP-137"
+    "GAP-137",
+    "GAP-138"
    ],
-   "notes": "REF-013: hardware lever per DEC-110 W6 (REF-012 pushBar was read from the A310 set 4.0 column, not a store fact). Hinge S (DEC-110 W5 left, A011 agrees).",
+   "notes": "REF-013: hardware lever per A310 set 2.0 + DEC-110 W6 (no push bar) (REF-012 pushBar was read from the A310 set 4.0 column, not a store fact). Hinge S (DEC-110 W5 left, A011 agrees).",
    "audit": {
     "type": {
      "conf": "High",
@@ -1273,7 +1282,7 @@
     "hinge": {
      "conf": "High",
      "src": [
-      "DEC-110 W5 (most doors hinge left; overrides only from CCTV): left from the JC (push) side = S",
+      "DEC-110 W5 (most doors hinge left) as amended by DEC-115 (1) (overrides from CCTV or A011): left from the JC (push) side = S",
       "A011 vector agrees (hinge S)"
      ],
      "gap": null
@@ -1323,7 +1332,8 @@
     "hardware": {
      "conf": "High",
      "src": [
-      "DEC-110 W6 (push bar only on the emergency exits and the delivery entrance, lever elsewhere); the REF-012 pushBar came from the schedule column (set 4.0) and was not a store fact"
+      "A310 106 header set 2.0: storeroom lever lock CLX3357; the schedule column's set 4.0 exit device is ruled out by DEC-110 W6 (Nolan: push bars only on the emergency exits and the delivery entrance)",
+      "the REF-012 pushBar came from that set 4.0 column and was not a store fact"
      ],
      "gap": null
     },
@@ -1342,11 +1352,11 @@
      "gap": null
     },
     "defaultState": {
-     "conf": "Med",
+     "conf": "Low",
      "src": [
-      "DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector); this one is not listed"
+      "inferred from absence (working value): DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector) and this one is not listed; absence does not prove closed (DEC-115 (3))"
      ],
-     "gap": null
+     "gap": "GAP-138"
     }
    }
   },
@@ -1448,7 +1458,7 @@
      "conf": "High",
      "src": [
       "CCTV FOH still / wall2_R4C1 / chat_FOH_L (hinge N)",
-      "A011 vector agrees (hinge N); right-hand from the vestibule side, kept because CCTV-backed (DEC-110 W5)"
+      "A011 vector agrees (hinge N); right-hand from the vestibule side, kept because CCTV-backed (DEC-110 W5, DEC-115 (1))"
      ],
      "gap": null
     },
@@ -1498,7 +1508,8 @@
     "hardware": {
      "conf": "High",
      "src": [
-      "DEC-110 W6 (push bar only on the emergency exits and the delivery entrance, lever elsewhere)"
+      "A310 107: both candidate sets (2.0, 1.0) are storeroom lever locks",
+      "DEC-110 W6 (Nolan: push bars only on the emergency exits and the delivery entrance): not a push bar"
      ],
      "gap": null
     },
@@ -1623,7 +1634,7 @@
     "hinge": {
      "conf": "High",
      "src": [
-      "DEC-110 W5 (most doors hinge left; overrides only from CCTV): left from the vestibule side = N",
+      "DEC-110 W5 (most doors hinge left) as amended by DEC-115 (1) (overrides from CCTV or A011): left from the vestibule side = N",
       "A011 vector agrees (hinge N)"
      ],
      "gap": null
@@ -1674,7 +1685,8 @@
     "hardware": {
      "conf": "High",
      "src": [
-      "DEC-110 W6 (push bar only on the emergency exits and the delivery entrance, lever elsewhere)"
+      "A310 108 set 1.0 (schedule and header agree): storeroom lever lock",
+      "DEC-110 W6 (Nolan: push bars only on the emergency exits and the delivery entrance): not a push bar"
      ],
      "gap": null
     },
@@ -1768,7 +1780,8 @@
    "defaultState": "closed",
    "staffOnly": true,
    "gap": [
-    "GAP-137"
+    "GAP-137",
+    "GAP-138"
    ],
    "notes": "REF-013: A101 places tag 104 on the lounge (office) south wall, and the A310 row 104 names the room STORAGE ('reinstall salvaged door'), so 104 is this door, not hall->office. Coat-hook rail on its office face.",
    "audit": {
@@ -1839,7 +1852,7 @@
     "hardware": {
      "conf": "High",
      "src": [
-      "DEC-110 W6 (push bar only on the emergency exits and the delivery entrance, lever elsewhere)"
+      "A310 104 schedule set 1.0: storeroom lever lock; the header set 4.0 exit device is ruled out by DEC-110 W6 (Nolan: push bars only on the emergency exits and the delivery entrance)"
      ],
      "gap": null
     },
@@ -1858,11 +1871,11 @@
      "gap": null
     },
     "defaultState": {
-     "conf": "Med",
+     "conf": "Low",
      "src": [
-      "DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector); this one is not listed"
+      "inferred from absence (working value): DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector) and this one is not listed; absence does not prove closed (DEC-115 (3))"
      ],
-     "gap": null
+     "gap": "GAP-138"
     }
    }
   },
@@ -1884,7 +1897,7 @@
     18.995,
     49.6
    ],
-   "hinge_jamb": "N",
+   "hinge_jamb": "S",
    "swing": "in (east, into HUB)",
    "leafWidth_ft": 3.0,
    "leafHeight_ft": 7.0,
@@ -1893,19 +1906,19 @@
    "pivot": "Door_HUB2_HUB_Hinge",
    "hinge_ft": [
     18.995,
-    48.1
+    51.1
    ],
    "hinge_unity_m": [
     5.79,
     0.0,
-    -14.661
+    -15.575
    ],
    "closedRotation": [
     0,
-    90,
+    -90,
     0
    ],
-   "openAngle": -90,
+   "openAngle": 90,
    "anchors": {
     "A": {
      "name": "Anchor_Door_HUB2_HUB_A",
@@ -1936,7 +1949,7 @@
     "GAP-137",
     "GAP-138"
    ],
-   "notes": "proppedOpen (DEC-103). Hinge N = DEC-110 W5 default left; A011 draws it on the S jamb (REF-013, noted for the Hub, not re-asked: DEC-105). A101 tag E111A. Existing hardware unknown.",
+   "notes": "proppedOpen (DEC-103). Hinge S per A011 (DEC-115 (1); was the DEC-110 W5 left default N). A101 tag E111A. Existing hardware unknown.",
    "audit": {
     "type": {
      "conf": "High",
@@ -1954,12 +1967,12 @@
      "gap": null
     },
     "hinge": {
-     "conf": "Low",
+     "conf": "Med",
      "src": [
-      "DEC-110 W5 (most doors hinge left; overrides only from CCTV): left from the HUB 2 (push) side = N",
-      "A011 vector draws the hinge on the S jamb (right-hand); no CCTV of the hinge"
+      "A011 vector: hinge on the S jamb, leaf swings into HUB (right-hand from the HUB 2 push side)",
+      "DEC-115 (1): A011 overrides the DEC-110 W5 left default (A011 matched CCTV on all 3 checkable doors)"
      ],
-     "gap": "GAP-137"
+     "gap": null
     },
     "swing": {
      "conf": "High",
@@ -2004,11 +2017,13 @@
      "gap": "GAP-138"
     },
     "hardware": {
-     "conf": "High",
+     "conf": "Low",
      "src": [
-      "DEC-110 W6 (push bar only on the emergency exits and the delivery entrance, lever elsewhere)"
+      "placeholder lever: A310 E111A existing, 'no hardware change', none scheduled",
+      "DEC-110 W6 (Nolan: push bars only on the emergency exits and the delivery entrance): not a push bar",
+      "DEC-115 (2)"
      ],
-     "gap": null
+     "gap": "GAP-138"
     },
     "selfClosing": {
      "conf": "Low",
@@ -2051,7 +2066,7 @@
     0.1,
     51.15
    ],
-   "hinge_jamb": "S",
+   "hinge_jamb": "N",
    "swing": "out (west, to the exterior)",
    "leafWidth_ft": 3.0,
    "leafHeight_ft": 7.0,
@@ -2060,19 +2075,19 @@
    "pivot": "Door_Ext_Delivery_Hinge",
    "hinge_ft": [
     0.1,
-    52.8
+    49.5
    ],
    "hinge_unity_m": [
     0.03,
     0.0,
-    -16.093
+    -15.088
    ],
    "closedRotation": [
     0,
-    -90,
+    90,
     0
    ],
-   "openAngle": -90,
+   "openAngle": 90,
    "anchors": {
     "A": {
      "name": "Anchor_Door_Ext_Delivery_A",
@@ -2103,7 +2118,7 @@
     "GAP-137",
     "GAP-138"
    ],
-   "notes": "REF-013: hardware pushBar per DEC-110 W6 (delivery entrance). Swing out (A011 vector). Hinge S = DEC-110 W5 default left; A011 draws it on the N jamb (noted, not re-asked). A101 tag E110. No access-control detail is recorded (DEC-051).",
+   "notes": "REF-013: hardware pushBar per DEC-110 W6 (delivery entrance). Swing out (A011 vector). Hinge N per A011 (DEC-115 (1); was the DEC-110 W5 left default S). A101 tag E110. No access-control detail is recorded (DEC-051).",
    "audit": {
     "type": {
      "conf": "High",
@@ -2121,12 +2136,12 @@
      "gap": null
     },
     "hinge": {
-     "conf": "Low",
+     "conf": "Med",
      "src": [
-      "DEC-110 W5 (most doors hinge left; overrides only from CCTV): left from the HUB 2 (push) side = S",
-      "A011 vector draws the hinge on the N jamb (right-hand); no CCTV of the hinge"
+      "A011 vector: hinge on the N jamb, leaf swings out (right-hand from the HUB 2 push side)",
+      "DEC-115 (1): A011 overrides the DEC-110 W5 left default"
      ],
-     "gap": "GAP-137"
+     "gap": null
     },
     "swing": {
      "conf": "High",
@@ -2173,7 +2188,7 @@
     "hardware": {
      "conf": "High",
      "src": [
-      "DEC-110 W6 (push bar only on the emergency exits and the delivery entrance, lever elsewhere): delivery entrance"
+      "DEC-110 W6 (Nolan: push bars only on the emergency exits and the delivery entrance)"
      ],
      "gap": null
     },
@@ -2193,11 +2208,11 @@
      "gap": null
     },
     "defaultState": {
-     "conf": "Med",
+     "conf": "Low",
      "src": [
-      "DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector); this one is not listed"
+      "inferred from absence (working value): DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector) and this one is not listed; absence does not prove closed (DEC-115 (3))"
      ],
-     "gap": null
+     "gap": "GAP-138"
     }
    }
   },
@@ -2289,7 +2304,7 @@
     "hinge": {
      "conf": "High",
      "src": [
-      "DEC-110 W5 (most doors hinge left; overrides only from CCTV): left from the HUB (push) side = E",
+      "DEC-110 W5 (most doors hinge left) as amended by DEC-115 (1) (overrides from CCTV or A011): left from the HUB (push) side = E",
       "A011 vector agrees (hinge E)"
      ],
      "gap": null
@@ -2340,7 +2355,7 @@
     "hardware": {
      "conf": "High",
      "src": [
-      "DEC-110 W6 (push bar only on the emergency exits and the delivery entrance, lever elsewhere): emergency exit"
+      "DEC-110 W6 (Nolan: push bars only on the emergency exits and the delivery entrance)"
      ],
      "gap": null
     },
@@ -2359,11 +2374,11 @@
      "gap": null
     },
     "defaultState": {
-     "conf": "Med",
+     "conf": "Low",
      "src": [
-      "DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector); this one is not listed"
+      "inferred from absence (working value): DEC-103 (6) lists the doors almost always propped open (FOH, BOH, north-facing office door, HUB connector) and this one is not listed; absence does not prove closed (DEC-115 (3))"
      ],
-     "gap": null
+     "gap": "GAP-138"
     }
    }
   },
