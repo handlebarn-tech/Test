@@ -37,7 +37,8 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 1. **Review queue, ready now (start sessions):**
    - REVIEW-W4B: BUILD-003 + BUILD-004 hub guard (`claude/task-build-003-0837ba`). Wait for BUILD-004's commit. **Before merging, delete the untracked prototype `.claude/settings.json` and `Tools/Studio/hub_guard.py` in the main checkout** (git won't overwrite untracked files).
    - BUILD-PLAY (`local_599eaab4-f54f-4421-bdf9-b3729caf654f`): Windows build of the slice for Nolan → `C:/Users/handl/Downloads/Dispo Game Builds/`.
-   - REVIEW-W4C: REF-006 + REF-007 (`claude/task-ref-006`, through cf527fe): FOH/BOH desk stills, jar spec (Amazon smalls + acrylic canister), crops (no people, network rack, thermostat or security drawer), SE exit from A011. Doc review. **Key finding: GAP-120, Working Plan V5 and the graybox have HUB and HUB 2 swapped east–west.** After merge ART fixes it (the SE exit goes on the furthest-east room, DEC-042c).
+   - **Running (started 23:40):** REVIEW-W4C `local_c8cbad4e-a459-40bf-8475-597c8ec94b75` (REF-006/007), REVIEW-W4D `local_fa1d4222-cd8c-4df7-b9ab-799c6519e8b9` (GAME-002b), REVIEW-W4E `local_c4b9cab4-e039-4ea5-b9d8-a90655ae6797` (PROC-002 at 8102f0d). Merge each on GO.
+   - (was queued) REVIEW-W4C: REF-006 + REF-007 (`claude/task-ref-006`, through cf527fe): FOH/BOH desk stills, jar spec (Amazon smalls + acrylic canister), crops (no people, network rack, thermostat or security drawer), SE exit from A011. Doc review. **Key finding: GAP-120, Working Plan V5 and the graybox have HUB and HUB 2 swapped east–west.** After merge ART fixes it (the SE exit goes on the furthest-east room, DEC-042c).
 2. **Still working at handover** (read their handoffs/branches when they finish; they report to whoever is Hub):
    - GAME-002b slice polish (session `local_e574024b-b42a-4f12-b5db-6b6d66ac34bc`, fresh branch from main)
    - ART-003 retail lookdev (`local_392adc04-9603-4cc9-959c-6e3e2d792743`): also DEC-039/040/041/043 registers, desks, jar wall, lighting
@@ -45,7 +46,7 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
    - REF session `local_8e643693-f039-47b6-8392-365947ed9efc` (REF-004..007), idle once REF-007 is done; archive after W4C merges.
    Each finished task → its own REVIEW session → merge → archive.
 3. Then: PERF-001 (unblocked; start once ≤2 Unity users), COMP-002, GAME-004 packaged assortment, a GAME task to hook PROC-002 fill into the slice jars, ART HUB/HUB 2 swap fix (GAP-120).
-4. Brief Nolan at milestones. The slice is playable on main (0032589).
+4. Nolan is away from the PC (23:40): contact him only if urgent. Otherwise brief him at milestones in the end-of-turn notes. The slice is playable on main (0032589).
 
 ## Cross-project
 - GAP-206 "sleeping" defect relayed to the TFS tool project hub session on 2026-10-29 (no reply needed).
