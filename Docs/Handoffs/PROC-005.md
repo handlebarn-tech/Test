@@ -1,5 +1,21 @@
 # PROC-005 handoff
 
+## Round 4: REVIEW-PROC005c (FAIL: South stations stale vs REF-016), 2026-10-30
+Merged main (REF-016, PROC-009, PROC-013 and the door kit). After the merge, `Docs/Reference/ROOM_FIXTURES.json` is the same as main's.
+- **South run:** 5 stations, registers 2,3,4,5,6 at RF POS_02..06 x 21.2/25.0/28.8/32.6/36.4 (local x −2.1214 … 2.5116 m). Drawer cabinets follow them.
+- **Register 7** is now on `SouthWestReturn`: RF POS_07 y 23.2, local x 0.4724 m on plan axis −y. The drawer cabinet slides inside the run end (generator: no sliver bay at a run end).
+- **Monitor:** on the customer half of the top, facing the operator (`components.pos_monitor` dy −0.42 m, RF POS_StationKit; offset GAP-RK-LAYOUT).
+- **GAP ids:** my register GAP-PROC-22/23/24 collided with PROC-009's vehicle GAP-PROC-23/24, so they are renumbered **GAP-PROC-40/41/42** in KNOWN_GAPS, params, checklist and notes.
+- **Determinism:** only South and SouthWestReturn changed, and two reruns gave byte-identical files.
+- **Unity EditMode:** queued via `studio.ps1 unity-test-edit` (both editor slots were busy). `.meta` files and the material builder are still owed.
+
+### FOR THE HUB: source conflict (resolve or forward to REF)
+- RF `Counter_Register_SouthWestReturn` says `faces: E`. Its own matrix ("its west face is R7's customer face") and RF `POS_07` (rot 90, faces W, customer west of the block, wall2_R2C1) disagree.
+- I modelled the customer face (+Y: wrap, card-terminal edge) **west**, and exported `customer_faces: "W"` plus `plan_axis_x: "-y (north)"` in the manifest. ART must yaw +Y to the west, not to the row's E.
+- The fix is a REF edit of the RF row `faces` (E → W), not a PROC change.
+
+The round-1 fix-wave table below (finding-2 row: `_South … GAP-129`, `_SouthReturn`) is superseded by rounds 3 and 4.
+
 ## Round 3: REVIEW-PROC005b (FAIL on a stale base), 2026-10-30
 Merged main (REF-013, 75b05e6) and re-fitted every value to the current ROOM_FIXTURES:
 - **`register_counter_run`:**

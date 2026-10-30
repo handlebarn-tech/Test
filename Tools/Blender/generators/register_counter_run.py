@@ -4,7 +4,8 @@ and Counter_Register_SouthWestReturn (no register; REF-013). RI §1.5 rows 98/10
 
 Local frame (exported): origin bottom centre, staff side = -Y (asset front: drawers, open shelves), customer face = +Y,
 run along X. `plan_axis_x` in params says which plan direction local +X points along once ART yaws the asset so its +Y
-customer face points to the RF `faces` direction (so station offsets map back to the plan).
+customer face points to the RF `faces` direction, or to `customer_faces` where params override it (so station offsets map
+back to the plan).
 Construction (TI §6.4 POS cabinet, detail 11): quartz slab top with an eased edge and waterfall ends; carcass 2'-1" deep
 on a 4 in toe base with a 2 in recess; staff side = one two-drawer POS cabinet under each monitor (walnut fronts,
 HW-2 brass edge pulls) and open black shelf bays elsewhere (R2C3, RI §2.2); customer face = plywood sheets carrying the
@@ -66,7 +67,9 @@ def build(p, lod):
     yb = D / 2 - p["staff_overhang_m"]  # staff face of the drawer fronts (the top overhangs it)
     yf, yg = yb - cd, yb - 0.019  # carcass customer face; gable fronts (drawer fronts overlay them)
     cw = p["drawer_cabinet_w_m"]
-    drawers = [(st["local_x_m"] - cw / 2, st["local_x_m"] + cw / 2) for st in stations]
+    # cabinet under each monitor, slid inside the run where the station sits near an end (SouthWestReturn R7)
+    snap = lambda a: xa if a - xa < 0.05 else (xb - cw if xb - cw - a < 0.05 else a)  # no sliver bay at a run end
+    drawers = [(a, a + cw) for a in (snap(min(max(st["local_x_m"] - cw / 2, xa), xb - cw)) for st in stations)]
 
     if d >= 3:
         add_box(top, (L, D, H - zt), (0, 0, zt + (H - zt) / 2))
@@ -170,6 +173,8 @@ def build(p, lod):
              "plan_axis_x": p["plan_axis_x"], "station_anchors": anchors,
              "collision_boxes": [collision_box("Top", (0, 0, zt + tt / 2), (L, D, tt)),
                                  collision_box("Body", (0, -(yf + yb) / 2, zt / 2), (L, cd, zt))]}
+    if p.get("customer_faces"):  # customer side differs from the RF row's 'faces' (SouthWestReturn, REF-016 POS_07)
+        extra["customer_faces"] = p["customer_faces"]
     if p.get("display_case_slot_x_m") is not None:  # RI §1.5 row 99 display case on the north run (x 38.0-39.4)
         extra["display_case_slot"] = {"asset_id": p["display_case_asset_id"], "position_unity_xyz": R(-p["display_case_slot_x_m"], 0, H - lip),
                                       "footprint_m": [ft(1.4), ft(1.4)]}

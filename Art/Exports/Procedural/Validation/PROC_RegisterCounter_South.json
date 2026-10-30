@@ -2,17 +2,17 @@
   "asset_id": "PROC_RegisterCounter_South",
   "collision_boxes": 2,
   "errors": [],
-  "export_sha256": "e0c84dea5c16c877",
+  "export_sha256": "df88778d86300b72",
   "generator": "register_counter_run",
   "lod_tris": {
-    "LOD0": 12672,
-    "LOD1": 4536,
-    "LOD2": 840,
-    "LOD3": 120
+    "LOD0": 11052,
+    "LOD1": 3984,
+    "LOD2": 732,
+    "LOD3": 108
   },
-  "params_sha256": "22f31d42f6eec650",
+  "params_sha256": "012c4806b4c996ae",
   "passed": true,
   "warnings": [
-    "LOD0 12672 tris below the DEC-084 guide minimum 30000 (too simple?)"
+    "LOD0 11052 tris below the DEC-084 guide minimum 30000 (too simple?)"
   ]
 }
