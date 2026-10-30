@@ -19,7 +19,7 @@
 | ART-002 | dispo-art-002 | done incl. follow-up 6788cca → REVIEW-W3B (dispo-review-w3b) |
 | REF-003 | dispo-ref-003 | done → REVIEW-W3B (with ART-002) |
 | GAME-003, BUILD-002 | — | done → REVIEW-W3A (dispo-review-w3a) |
-| COMP-001, RES-001, ASSET-002 | — | done → REVIEW-W3C (dispo-review-w3c) |
+| COMP-001, RES-001, ASSET-002 | — | REVIEW-W3C PASS; merged to main (32a1ad9) |
 | REF-004 | dispo-ref-004 | importing TI drawings (read-only M365) |
 Unity Warehouse/Office packs: still need a Unity editor Package Manager download (P1, later).
 
@@ -32,7 +32,7 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 
 ## NEXT ACTIONS (in order) — fresh Hub starts here
 1. ~~Start REVIEW-W3B~~ started 2026-10-29 by Hub session 3.
-2. Merge W3A/W3B/W3C as they pass; Unity merges re-run compile + tests.
+2. Merge W3A/W3B as they pass (W3C merged); Unity merges re-run compile + tests.
 3. GAME-002 done → REVIEW of the slice (play it via the PlayMode bot + captures) → merge → the vertical slice is playable; brief Nolan.
 4. Then: PERF-001; ART-003 hero retail lookdev (TI finishes DEC-037 + ASSET-002 cache, Montserrat/Crimson Pro brand fonts); PROC-002 jar fill/bud system; COMP later mechanics (limit meter, ID events, medical); packaged assortment (DEC-034).
 5. Archive finished sessions after merge.
@@ -49,3 +49,4 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 - Done 2026-10-29: Nolan signed in to Sketchfab and Unity in the built-in browser pane; Unity Warehouse + UnityJapanOffice are in My Assets (account handlebarn, Personal). ASSET-002 downloads still need one batch OK from Nolan (list with sizes). Nolan may also send a photo of the register scale stand.
 - Open (before any public build): real brand names (Cookies, Alien Labs, ...) ship in `batches.json`; allowed by DATA_SCHEMA §5 and not PII, but a trademark/IP call for Nolan (REVIEW-W2A m2).
 - Later: tax rounding (GAP-204), the TFS tool's open question.
+- Batch for Nolan (store fact): a photo of a real receipt's tax lines would settle Phoenix TPT rate (OPEN-4); game keeps 25.1 % (DEC-001) meanwhile.
