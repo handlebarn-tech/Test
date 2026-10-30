@@ -533,3 +533,63 @@ Replaces §R3 (drop 5 `…Round3_HQ/` is superseded, DEC-095). Integrate after r
 ### R4.9 Outfit arranger (`arrangers/outfit_variation.py` + baked tables)
 - [ ] **Adopt** the seeded, hashed pattern and the anti-stereotype rules. Re-bake after R4.1/R4.2/R4.5 so no outfit references a crashing or missing asset (today 17 `PROC_R3_Accessory_*` refs + all hair).
 - [ ] The "rougher neighborhood" weighting comes from ChatGPT chat, not our docs. Keep the weights as art direction; DEC-087(4): no behaviour or stats tied to appearance.
+
+## R5. Round 5 (`Dispo_Game_Blender_PROC_Round5_HQ/`): fix items (audit "Drop 8")
+Measured on core 87807ad: 18 assets; all build; deterministic; 0 inside-out.
+
+**Package verdicts:**
+
+| Package | Verdict |
+|---|---|
+| `round5_packaging` | adapt → port into `packaged_goods` |
+| `deli_supplies` | adapt |
+| `label_art.py` | adapt |
+| `stocking_arranger.py` | adapt (GAME-004 owner) |
+| textures | adapt |
+| UV2 patch | per R3b.0.4 |
+| `round5_common.py` as a module | reject (map onto `proclib`) |
+
+### R5.0 Shared
+- [ ] **R5.0.1 collision key** [X2]: emit `collision_boxes` (canonical C1), not `collision.boxes`. Today no collider reaches the manifest.
+- [ ] **R5.0.2 size** [X1]:
+  - return the authored size everywhere: drop `actual_d` in `deli_supplies._bag` and the bottle's `* 1.02`;
+  - keep the widest lathe ring at every LOD: can, jars, bottle, tube;
+  - fix the exit-bag depth (0.085 measured vs 0.1016 declared).
+- [ ] **R5.0.3 LOD chain** [X3]: LOD3 must drop below LOD2 (7/14 equal). Use per-LOD bevel/segment tables, not one `detail` float.
+- [ ] **R5.0.4 DEC-084 detail** [X3]:
+  - cartons: tuck flaps, glue seam, crease bevels, window/foil areas;
+  - pouches: crimped seals, tear notch, zipper bead;
+  - jars: threads, CR lid ribs;
+  - cart: mouthpiece, window and 510 thread;
+  - Tok: screen, button and USB-C.
+
+  Target: props 5–20k at LOD0.
+- [ ] **R5.0.5 port** (DEC-093): map each `upgrade_target` onto an existing `packaged_goods` variant and port the shape there. Never ship `PROC_R5_*` next to `PROC_Pkg_*` for the same slot. Params: `unity_dir`/`own_sheet`/`checks`, `GAP-R5-*` → `GAP-PROC-10`/`-*`.
+
+### R5.1 Brand / catalog data (`round5_packaging.json`, `label_templates.json`)
+- [ ] **Keep:** High Variety → 510 cart (catalog HIGH VARIETY / VAPE / 510 THREAD) and Tok → 2 g AIO (catalog ToK / VAPE / READY TO USE) ✓.
+- [ ] **Add:** a High Variety AIO 2G form (11 catalog READY TO USE rows).
+- [ ] **Spell** the brand as the catalog does ("ToK"), unless DEC-071 rules otherwise.
+- [ ] **No hard-coded label data** [X6]: strain, potency, weight and form come from a `packaged_catalog.json` row (DATA-002).
+  - Potency in **mg** (`thcMg`/`cbdMg`), never an invented %.
+  - Remove "LIQUID DIAMONDS", "CURED RESIN", "DUAL MODE" and the fictional edible's "72.6 %".
+  - Edibles follow ≤ 10 mg/serving, ≤ 100 mg/package (AZ_COMPLIANCE E1).
+- [ ] **AZ label fields** [X7, AZ_COMPLIANCE §D5]: add licence # (placeholder, not real), batch, form, weight, total THC/CBD, the warning, an ingredients line and a non-scannable QR placeholder. Check the universal-symbol requirement (RG5-4).
+
+### R5.2 Label renderer (`tools/label_art.py`)
+- [ ] Bundle an OFL font in the repo and record it in `LICENSE_LEDGER.md`. Never resolve `/usr/share/fonts` or `load_default`; the output must be byte-identical across machines.
+- [ ] Render at each label rect's aspect (e.g. 0.037 × 0.071 m → 2134 × 4096), not 4096² (round-2 B4).
+- [ ] Whitelist check ✓. Add "a real brand only on a catalog category it has" (REVIEW-W5T m1) as a hard check against `packaged_catalog.json`.
+
+### R5.3 Deli supplies (`deli_supplies`)
+- [ ] **1 lb backstock bag:** keep the full/partial states, but make "partial" actually lower the fill and slump the top. Size: GAP (RG5-2); the market reference is fine as a placeholder.
+- [ ] **Exit bag:** our evidence shows **kraft/paper bags** (RI §3 BAND 05; DEC-043 "branded paper bags"). Add a kraft paper exit bag (TFS-branded print OK, DEC-071). Keep the opaque pouch only if RG5-3 confirms a child-resistant exit bag.
+- [ ] **Receipt label:** fine; size from the printer stock (RG3-5).
+
+### R5.4 Stocking arranger (`tools/stocking_arranger.py`, with the GAME-004 owner)
+- [ ] **Replace** every synthetic `LIVE_*_REFERENCE` anchor with RF fixture anchors (rolling racks DEC-088 3 shelves; jar walls DEC-079 jars per strain, house deli doubled).
+- [ ] **Stock** from DATA-002 rows only (H3).
+- [ ] **Density** below "full": DEC-096 playtest feedback says over-full shelving. Expose a fill ratio per fixture.
+
+### R5.5 Textures
+- [ ] Register the ~80 PNGs (sha256 + CC0 self-authored) in `LICENSE_LEDGER.md` (DEC-023), or replace them with CC0 scans. Regenerate the label PNGs from data (R5.1).

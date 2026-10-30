@@ -854,3 +854,81 @@ It says it supersedes an earlier `…Round4_HQ.zip`, which is not in the Imports
 - **Adapt:** headwear (determinism, collision n/a); green tee + black pants (DEC-089; fix the decal side and UV); sunglasses and tote; the fit adapter (weights, per-region ease) and crowd baker; textures (ledger or replace).
 - **Reject as built:** wardrobe blocks, hair (crash), ribbon accessories and watch (crash), glove overlay, and staff black tee / blue polo as uniform presets.
 - **Counts:** adopt 1 (arranger pattern + rules) · adapt 6 · reject 5. Fix items: checklist §R4.
+
+---
+
+## Drop 8 — round 5 (`Dispo_Game_Blender_PROC_Round5_HQ/`, 2026-10-30)
+
+**Brief:** DEC-091 R5 (packaging families, 1 lb deli bags, exit bags, label art system, stocking arrangers).
+**Judged against:**
+- `packaged_catalog.json` (DATA-002);
+- DEC-071/079/081/084/093/096;
+- `Docs/Research/AZ_COMPLIANCE.md` §D5/E1;
+- canonical core 87807ad + `packaged_goods` on main.
+
+**Contents (106 files, 9 MB):**
+- 2 generators (`round5_packaging` 14 assets, `deli_supplies` 4) + `round5_common.py`;
+- tools: `label_art.py` (Pillow renderer), `stocking_arranger.py`, `generate_round5_textures.py`;
+- 3 label PNGs (4096²) and ~80 PBR PNGs;
+- a UV2 patch (the same as round 3/4);
+- `validation/static_audit.py` + outputs.
+
+The README says the stocking sample is synthetic and must not be read as store evidence ✓.
+
+### How it was checked
+- Static read; the Tok label and a bag render viewed.
+- Sandbox as for drops 6–7: 87807ad core + `Tools/Blender` + `Art/Source/Procedural/Round5` (textures load by relative path). All 18 assets × 4 LODs measured twice; sandbox deleted.
+- `label_art.py`, `stocking_arranger.py` and `static_audit.py` were read, not run.
+
+| Family (assets) | LOD0 tris | Budget | DEC-084 guide | Build | Verdict |
+|---|---|---|---|---|---|
+| `round5_packaging` (14) | 228–1,496 | 60k | props 5–20k (hero items) | all build; deterministic; 0 inside-out; size fail 6/14 at LOD1–3; LOD3 not lower on 7 | **adapt** (port into `packaged_goods`) |
+| `deli_supplies` (4) | 72–420 | 32k | props 5–20k | all build; deterministic | **adapt** |
+| `label_art.py` + label PNGs | — | — | 2K–4K | viewed | **adapt** (data from catalog, AZ fields) |
+| `stocking_arranger.py` | — | — | — | read | **adapt** (anchors from RF/arranger contract) |
+| PBR textures | — | — | 2K | listed | **adapt** (ledger, DEC-023) |
+
+### Findings
+- **X1 Size check is real again ✓, with one exception.** Generators return authored dimensions. Exceptions: `deli_supplies._bag` returns the measured profile depth `actual_d`, and the bottle returns `diameter * 1.02`, a fudge.
+  - Failures: can, concentrate jar and topical jar at LOD1–3; bottle at LOD2; preroll tube at LOD3. The lathe profiles lose their widest ring at low detail.
+  - Also: the exit bag's measured depth 0.085 m vs its `size_m` depth 0.1016 m passes only because of `actual_d`.
+- **X2 Collision key mismatch:** boxes are emitted under `extra["collision"]["boxes"]`. The canonical runner reads `collision_boxes` (DEC-086 C1), so **no collider reaches the manifest**. Rename the key.
+- **X3 Far below DEC-084:** LOD0 is 72–1,496 tris against a 60k budget. The cartons are 228-tri bevelled boxes with no glue flap or tuck detail, and the bags are gusseted boxes. The `detail` float scales segments only, so 7/14 LOD3 = LOD2 (cartons/pouches at 64 or 112 tris).
+- **X4 Bag states:**
+  - Full vs partial are different meshes ✓, but both keep the full 13 × 15 in envelope. "Partial" should drop the fill line and slump the top.
+  - The 1 lb size is a market reference (13 × 15 + 6 in gusset), flagged provisional ✓; DEC-079 gives no size (RG5-2).
+  - `contains_flower_geometry: false` ✓.
+- **X5 Brands/categories vs the catalog ✓** (better than every earlier round):
+  - High Variety 1 g 510 cart = catalog HIGH VARIETY / VAPE / 510 THREAD (14 rows);
+  - Tok 2 g AIO = catalog ToK / VAPE / READY TO USE (9 rows, all "… AIO 2G");
+  - everything else is fictional ("Copper Mesa Labs": not found in our docs or the catalog).
+  - The strain names on the labels ("ATHEN'S HAZE", "ATOMIC POP") **are real catalog rows**.
+  - But High Variety also has 11 READY TO USE (AIO 2G) rows that are not covered. Display spelling "TŌK" vs catalog "ToK" (use the catalog form unless DEC-071 says otherwise).
+- **X6 Invented label data** (CLAUDE.md: never invent inventory data):
+  - "THC 90.0 %", "THC 78.4 %", "LIQUID DIAMONDS", "CURED RESIN", "DUAL MODE" are not in the catalog. The catalog has `thcMg`/`cbdMg`/`sizeG`, not %.
+  - The fictional edible label prints "THC 72.6 %" on a "10 servings" edible. Edibles are labelled in mg, ≤ 10 mg/serving, ≤ 100 mg/package (AZ_COMPLIANCE E1).
+  - `label_art.py` must take every field from a catalog row (DATA-002); nothing hard-coded.
+- **X7 AZ label content:** AZ_COMPLIANCE §D5 (R9-18-310) lists licence #, strain, batch, form, weight, total THC/CBD, the warning, ingredients and a QR code. The template has strain, batch, form, weight and a warning, but **no licence #, CBD, ingredients or QR placeholder**, and its warning wording is its own. The universal symbol is not in §D5 as quoted (check the full row).
+- **X8 Label art:**
+  - DejaVu Sans via Pillow (system path `/usr/share/fonts/...`, else `load_default`), so the output depends on the machine's fonts and is not reproducible on Windows. Bundle an OFL font and record it (DEC-023).
+  - Labels are 4096² squares, while the label rects are 0.037 × 0.071 m etc.: stretched, unless rendered at the rect aspect (the round-2 B4 finding again).
+- **X9 Stocking arranger:**
+  - Placement-only ✓, seeded ✓, AABB clipping ✓.
+  - Anchors must come from RF fixtures and the per-room jar/shelf counts (DEC-079 jars per strain).
+  - Density must follow DEC-096 playtest feedback ("over-full shelving"), and stock must come from DATA-002 (arranger H3: no random fill as inventory).
+- **X10 Params/helpers:**
+  - no `unity_dir`/`own_sheet`/`checks`; `GAP-R5-*` ids;
+  - `round5_common.py` is the 4th helper module;
+  - `upgrade_target` names (`PROC_Pkg_VapeCartBox`, `…EdibleBag`, `…ExtractJar` …) must be checked against the canonical `packaged_goods` variants (DEC-093: port into it, one family).
+- **X11 Textures:** ~80 self-authored PNGs, 2K, CC0 claimed. As in round 4, register them in `LICENSE_LEDGER.md` with sha256 or replace them with CC0 scans. The label PNGs carry real brand names (approved) and must be regenerated from data anyway (X6).
+
+### Research gaps, round 5
+- **RG5-1 Product sizes:** the Tok 2 g AIO envelope 76 × 38 × 13 mm is marked "authoritative" by the drop, but our docs have no source for it. Verify on the ToK product page or a physical unit; likewise the HV cart and cartons (GAP-PROC-10).
+- **RG5-2 1 lb backstock bag:** type, size and closure (DEC-079 gives only "1 lb bags"). Look at RI §2.1 HUB 2 (black bags on shelves) and the office crop; or ask in the next batched question round.
+- **RG5-3 Exit bag:** RI §3 BAND 05 ("kraft bags hung on the shelf") and DEC-043 ("branded paper bags") say **paper/kraft**. The drop's exit bag is an opaque resealable pouch: check which bag is the exit bag (child-resistant exit bag vs kraft carry bag).
+- **RG5-4 AZ label layout:** the full R9-18-310 field list and the universal symbol; AZ_COMPLIANCE §D5 is the start.
+
+### Drop 8 summary
+**Adapt overall: the best-aligned drop on facts.** Real brands sit only on their catalog categories, real catalog strain names are used, the synthetic-anchor warning is explicit, and every asset builds deterministically.
+- **Open:** DEC-084 detail (72–1.5k tris); the collision key; low-LOD size failures; invented THC %/product-line text; missing AZ label fields; the system-font dependency; the exit-bag material.
+- **Counts:** adopt 0 · adapt 5 · reject 0. Fix items: checklist §R5.
