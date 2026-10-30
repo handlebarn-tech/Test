@@ -31,7 +31,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 |---|---|---|---|
 | GAME-009 medical (+ W5N m2, W5S m1/m2) | done (session `local_7f8c95e9…`, ready to archive) | `claude/task-game-009` @ 26081fa | REVIEW-PS1 with Unity B2 |
 | DATA-003 needs catalog + goldens | lead subagent | worktree | running |
-| UX-006 counter UX addendum | lead subagent | worktree | running |
+| UX-006 counter UX addendum | done | `worktree-agent-ab1c3cb58a8e71856` @ 6e0f00f | in review (Docs 2) |
 | DES-005b (+ DES-007) | lead subagent | worktree | running |
 
 ## Queue (lead re-orders within DEC-096)
@@ -48,6 +48,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 - Q3 New/Experienced toggle: include it in the TFS input snapshot hash if the tool's results depend on it (follow the tool).
 - Q4 the UX addendum belongs to Gameplay UX (UX-006).
 - Q5 yes: GAME-017a is split out now. Sequence: GAME-009 → GAME-025 → GAME-017a → GAME-026 (shared Slice files, one owner at a time).
+- UX-006 U1–U6: "The tool will" preview stays (route only); "as said" lock OK; soft gate on unread cards; card reorder → GAME-017; GAME-017a copies tool wording in; ASCII wireframes suffice.
 
 ## Blockers / Questions for Nolan
 - None open.
