@@ -548,7 +548,7 @@ Every round-1 file is byte-identical to the drop 2 audit, and no newer runner or
   - The wall pack matches exterior CCTV R1C3; generic housing only ✓.
 - **Interaction states:**
   - **CashDrawerTray rejected:** a till tray with bill/coin wells is cash-handling equipment (DEC-051/086), and the cash-drawer asset itself is rejected. Remove the `cash_drawer` state preset.
-  - Jar residue: OK; check the colour/look against R7.
+  - Jar residue: OK; check its colour and look against the real jar photos (DEC-042/043).
   - The cooler preset must use the cooler's real group names.
 - **Customer accessories:** sized to a 1.75 m reference. They must fit the **MPFB2** bodies (DEC-087) and belong with the R4 wardrobe library (DEC-091).
   - The ID card is blank ✓.
