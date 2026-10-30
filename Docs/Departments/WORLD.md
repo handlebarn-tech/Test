@@ -18,7 +18,11 @@ Rules for every department: `Docs/STUDIO_OS.md` §0. This file is the World lead
 No invented store facts: labelled placeholder + GAP id (DEC-047); quality bar DEC-084; real-store answers DEC-051/062/068/076/079/088/090.
 
 ## Status for Hub
-_Lead keeps this ≤15 lines._ 2026-10-30 (Hub, at handover): no worker running. Playtest 1 (DEC-096) found the store layout inaccurate in several places; layout accuracy is this department's top priority. No lead session yet.
+_Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…` live.
+- Reconciled: ART-006 (W5A) and REF-010 (W5C, DEC-068 restroom cabinet) are merged; BACKLOG rows fixed. Queue item "DEC-068 into ROOM_FIXTURES" was already done by REF-010.
+- Now: REF-011 sales-floor layout audit (registers DEC-039 L + operator access, HUB, deli walls, shelf fill) and REF-012 office walkability + door geometry audit, run in parallel (2 workers, no Unity). ART-007 graybox rebuild follows both (1 Unity slot).
+- Door contract with Gameplay: World proposes door object/pivot/swing names in REF-012; Gameplay builds interaction against the committed version.
+- Risks: ROOM_FIXTURES so far covers back rooms only; the sales floor lives in graybox_layout + REFERENCES_INDEX §1.5, so REF-011 adds sales-floor rows (contract change Assets consumes).
 
 ## In flight
 | Task | Worker | Branch | State |

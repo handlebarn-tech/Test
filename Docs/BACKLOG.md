@@ -53,7 +53,7 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | DATA-002 | P1 | Packaged catalog importer from Nolan's Dutchie export (whitelist, PII-free, DEC-048/050) | DES-002 | Done (W4O) |
 | DES-003 | P1 | Integrate Nolan's decision-pressure spec | — | Done (W4Q) |
 | QA-002 | P1 | Gate A TFS parity gate + DP scenario harness (EditMode, new `Tests/EditMode/Gates/`) | DES-003 | Done (W4T) |
-| QA-002b | P1 | Gate A pass with `ParserOptions.Game` + game003 defect queries (REVIEW-W4T m1, DEC-067) | QA-002 | Active |
+| QA-002b | P1 | Gate A pass with `ParserOptions.Game` + game003 defect queries (REVIEW-W4T m1, DEC-067) | QA-002 | Done |
 | UX-005 | P1 | PS1b UX extension of `UX_PS1.md` (doc-only) | UX-002 | Done (W4S) |
 | GAME-006 | P1 | Cart | GAME-005 | Done (W4W) |
 | GAME-017 | P1 | KNOWN profile, questions, query composer → QueryParser | GAME-006/007/010 | Ready (waits) |
@@ -63,9 +63,9 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | REVIEW-PS1b | P1 | Review of PS1b | GAME-017..020 | Later |
 | GAME-021 | P2 | Repeat-customer memory | PS1b | Ready (waits) |
 | GAME-022 | P2 | Difficulty profiles | PS1b | Ready (waits) |
-| GAME-023 | P2 | Spec §133 acceptance shift | GAME-011/012 (no packets) | Blocked (DEC-059) |
+| GAME-023 | P2 | Spec §133 acceptance shift | GAME-011/012 | Blocked (DEC-059) |
 | GAME-024 | P2 | Career + save v1 | PS1b | Ready (waits) |
-| DES-004 | P2 | PS2 design (was "DES-003" in ROADMAP) | PS1 | Later |
+| DES-004 | P2 | PS2 design (was "DES-003" in ROADMAP); 004b+c door lock + manager refill | PS1 | Review (W5L PASS, `review/wave-5l` merge-ready) |
 | IMP-001 | P1 | Audit DISPO_GAME_DESIGN_V2 import | — | Done (REVIEW-IMP1) |
 | UX-002 | P1 | PS1 UX spec (`UX_PS1.md`) | DES-002 | Done (W4L) |
 | ART-004 | P1 | HUB/HUB 2 mirror fix (with ART-003) | ART-003 | Done (W4F) |
@@ -74,17 +74,22 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | REF-007 | P1 | Deli jar spec / house-smalls jar dimensions | — | Done (W4C) |
 | REF-009 | P1 | Apply DEC-051 to `ROOM_FIXTURES.json` | REF-008 | Done (W4R) |
 | REF-009b | P1 | W4R m1–m5 + DEC-062 into `ROOM_FIXTURES.json` | REF-009 | Done (W4U) |
-| GAME-007 | P1 | Purchase-limit meter + over-limit asks + strike ledger (COMP-002 §2) | GAME-006 | Active |
-| GAME-008 | P1 | ID-check events (COMP-002 §3) | GAME-007 | Ready |
-| GAME-009 | P2 | Medical customers (COMP-002 §4) | GAME-007, **GAME-008** (same files; AUDIT-001 A3) | Ready |
-| GAME-010 | P1 | Retune for tension + QA bot personas | GAME-005 (merge after GAME-006: both edit SliceConfig and Slice tests) | Active |
-| GAME-011 | P1 | Shift phases + traffic curve + compressed clock (ROADMAP, no packet yet) | DES-004 | Later |
-| GAME-012 | P1 | Deli restock loop (ROADMAP, no packet yet) | DES-004, ART-005 (ROADMAP ID, see DOC-002), DEC-055 | Later |
+| REF-010 | P1 | Restroom storage cabinet placement (DEC-068) into `ROOM_FIXTURES` | ART-006 | Done (W5C) |
+| GAME-007 | P1 | Purchase-limit meter + over-limit asks + strike ledger (COMP-002 §2) | GAME-006 | Done |
+| GAME-008 | P1 | ID-check events (COMP-002 §3) | GAME-007 | Done (W5N) |
+| GAME-009 | P2 | Medical customers (COMP-002 §4) + W5N m2 queue strip | GAME-007, GAME-008 | Active (`claude/task-game-009`) |
+| GAME-010 | P1 | Retune for tension + QA bot personas | GAME-005 (merge after GAME-006: both edit SliceConfig and Slice tests) | Done (W5M; 010b W5S) |
+| GAME-011 | P1 | Shift phases + traffic curve + compressed clock | DES-004 | Ready (waits PS1b, DEC-096) |
+| GAME-012 | P1 | Deli restock loop (re-scoped DEC-080) | DES-004, ART-005 (ROADMAP ID, see DOC-002), DEC-055 | Ready (waits PS1b, DEC-096) |
 | GAME-013 | P2 | Opening/closing tasks + report v2 (ROADMAP, no packet yet) | GAME-011, GAME-020 | Later |
 | GAME-014 | P1 | Packaged sales (ROADMAP, no packet yet) | GAME-007, DATA-002, ART-006 (ROADMAP ID, see DOC-002) | Later |
 | GAME-015 | P1 | Non-flower recommendation (ROADMAP, no packet yet) | GAME-014, DEC-054 | Later |
 | GAME-016 | P2 | Deals v1 (ROADMAP, no packet yet) | GAME-014 | Later |
-| ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Active |
+| DES-005 | P0 | Playtest 1 intake (DEC-096): controls + customer-flow spec, GAME-025/026 packets, World door/entry contract needs, long-term ideas proposal | — | Active |
+| DES-006 | P0 | Recommendation depth audit: PS1b (GAME-017..020) vs the TFS tool, packet amendments | — | Active |
+| GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction (packet by DES-005) | DES-005, GAME-009 merge, World door contract | Draft |
+| GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next (packet by DES-005) | DES-005, GAME-025, World entry anchors | Draft |
+| ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Done (W5A) |
 | IMP-002 | P1 | Integrate the approved DISPO_GAME_DESIGN_V2 pack (DEC-063) into `Docs/Design/DESIGN_V2/` | IMP-001 | Done (W4V, DEC-066) |
 | AUDIT-001 | P1 | Read-only .md audit + approval sheet (`Docs/Audits/`) | DES-003 | Done (DEC-064) |
 | DOC-001 | P1 | Apply AUDIT-001 batches A–C (DEC-064), 2 phases | AUDIT-001; phase 2 after IMP-002 | Done (W4X) |
