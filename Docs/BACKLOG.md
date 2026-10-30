@@ -34,9 +34,9 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | BUILD-002 | P2 | Build manifest (TOOLCHAIN §14) + fuller result schema (§8) | BUILD-001 | Done |
 | REVIEW-W3D | P0 | Review GAME-002 slice (+ integrate GAME-003, ART-002 anchors) | GAME-002 | Active |
 | REVIEW-W3E | P1 | Review REF-004 | REF-004 | Done (PASS) |
-| REF-005 | P1 | Deli case/counter/jar sizes + import TI PDFs, render-check counter | REF-004 | Active |
+| REF-005 | P1 | Deli case/counter/jar sizes + import TI PDFs, render-check counter | REF-004 | Review (W4A) |
 | ART-003 | P1 | Hero retail lookdev: TI finishes (DEC-037, REFERENCES_INDEX §6), ASSET-002 cache, brand fonts | ART-002, REF-004, ASSET-002 | Active |
 | PROC-002 | P1 | Jar fill / bud system (Blender generators, 454 g jar, fill levels driving GAME-002 visuals) | PROC-001 | Active |
-| BUILD-003 | P2 | `studio.ps1`: SliceCapture in unity-capture; W3A n2 ms/PID stamp, n3 lock re-check, n5 dirtyPathCount | BUILD-002 merge | Later |
+| BUILD-003 | P2 | `studio.ps1`: SliceCapture in unity-capture; W3A n2 ms/PID stamp, n3 lock re-check, n5 dirtyPathCount | BUILD-002 merge | Active |
 | COMP-002 | P2 | Post-slice compliance mechanics: limit meter, ID-check events, medical customers (COMP-001 backlog) | slice merged | Later |
 | GAME-004 | P2 | Packaged assortment (DEC-034): prepacks, prerolls, vapes, edibles | slice merged, PROC package gen | Later |
