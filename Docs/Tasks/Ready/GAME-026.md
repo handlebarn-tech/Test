@@ -1,37 +1,40 @@
 # GAME-026 — Customer flow: entry check-in guard, one line, the player calls next (playtest 1)
 
-**Role:** GAME · **Priority:** P0 · **Branch:** `task/GAME-026` worktree off `main` (after GAME-009 merges — same `ShiftSim.cs`/`SliceGame.cs`; after GAME-025 merges — the E-priority and pause code; World anchors optional, see Dependencies)
+**Dept:** Gameplay · **Role:** GAME · **Owner:** worker subagent (id + branch once launched) · **Reviewer:** pool (lead assigns) · **Touches:** none · **Interfaces:** `Docs/Specs/CONTROLS_FLOW_PS1.md` §7 (CF§7), `Docs/Reference/SCENE_ANCHORS.json` (REF-011), `Docs/Reference/DOORS.json` (REF-012, pending merge) (header fields: REVIEW-W5U m2)
+**Priority:** P0 · **Branch:** `task/GAME-026` worktree off `main` (after GAME-009 merges — same `ShiftSim.cs`/`SliceGame.cs`; after GAME-025 merges — the E-priority and pause code; World anchors optional, see Dependencies)
 
 ## Goal
-Playtest 1 (DEC-096, `Docs/Design/PLAYTEST_2026-10-30.md`): customers must come through the entry, be ID-checked by a guard, wait in one line, and walk to the register **only when the player calls them**. Spec: `Docs/Specs/CONTROLS_FLOW_PS1.md` (cited **CF§n**).
+Playtest 1 (DEC-096, `Docs/Design/PLAYTEST_2026-10-30.md`): customers must come through the entry, have the back of their ID scanned by the guard, wait in one line, walk to the register **only when the player calls them**, and show the ID again there (DEC-103). Spec: `Docs/Specs/CONTROLS_FLOW_PS1.md` (cited **CF§n**).
 
 ## Read
-CF§4, §5, §6 (GAME-026 rows), §7.2–7.3, §8; `Docs/Design/SPEC_COMP002.md` §3 (cover check-in); `Docs/Specs/UX_PS1.md` §4 (ID stand, counter line strip); `Docs/Design/SPEC_SHIFT_DAY.md` §5–§6; `Docs/Handoffs/GAME-008.md`, `GAME-010.md`, `GAME-010b.md`; DEC-036 M2, DEC-048, DEC-076, DEC-086.
+CF§4 (incl. §4.4), §5 (incl. §5.0), §6 (GAME-026 rows), §7.2–7.3, §8; DEC-103, DEC-079 (one line, GM floor map); `Docs/Design/SPEC_COMP002.md` §3 (cover check-in); `Docs/Specs/UX_PS1.md` §4 (ID stand, counter line strip); `Docs/Design/SPEC_SHIFT_DAY.md` §5–§6; `Docs/Handoffs/GAME-008.md`, `GAME-010.md`, `GAME-010b.md`; DEC-036 M2 and DEC-086 (both corrected by DEC-103 (4): the ID is shown again at the register), DEC-048, DEC-076.
 
 ## Owns
-- `Assets/_Game/Code/Simulation/Slice/ShiftSim.cs`, `Customers.cs` (new states `Arriving`, `AtCheckIn`, `Called`; guard check queue; `CallNext()`, `ArriveAtCounter()`; remove auto-promotion; `CheckInDelay` out of `WaitPenalty` per CF§4.2)
-- `Assets/_Game/Code/Presentation/Slice/SliceGame.cs`, `SliceView.cs` (anchor lookup with fallbacks CF§7, `NPC_Guard`, NPC routing through check-in/line/call point, Call-next prompt/button/toast, `Auto-call next` assist)
-- `Data/Slice/SliceConfig.json` (new keys `guardCheckSeconds`, `callNextDelay`; new `_` comments), `SliceLines.json` (new key `callNext` only)
+- `Assets/_Game/Code/Simulation/Slice/ShiftSim.cs`, `Customers.cs` (new states `Arriving`, `AtCheckIn`, `Called`; one-at-a-time guard scan, no backlog/helper logic; register ID beat and the GAME-008 ID events moved to the register (CF§4.4); `RegisterAssignment` (CF§5.0); `CallNext()`, `ArriveAtCounter()`; remove auto-promotion; retire the cover prompt/decline path and take `CheckInDelay` out of `WaitPenalty` per CF§4.2)
+- `Assets/_Game/Code/Presentation/Slice/SliceGame.cs`, `SliceView.cs` (anchor lookup with fallbacks CF§7, `NPC_Guard` + scanner green light, NPC routing through check-in/line/call point, register ID beat, Call-next prompt/button/toast, floor-map toast, `Auto-call next` assist). **Never run concurrently with GAME-025**: both own `SliceGame.cs` and `SliceView.cs`; start only after GAME-025 merges (REVIEW-W5U m1, STUDIO_OS §0.5).
+- `Data/Slice/SliceConfig.json` (new keys `guardCheckSeconds` 3, `scanLightSeconds`, `registerIdSeconds`, `assignedStation` (optional), `callNextDelay`; `declineCheckInDelaySec` retired; new `_` comments), `SliceLines.json` (new keys: `callNext` = the two DEC-103 lines, `callOnlineOrder` (unused in PS1), the floor-map toast, `ID shown ✓`; the GAME-008 cover-prompt strings become unused)
 - `Tests/EditMode/Slice/`, `Tests/PlayMode/Slice/` and the GAME-010 persona bots (they must call next)
 No `Code/Domain/` edits (DEC-001); no World files.
 
 ## Deliverable
 1. State path and patience rules exactly as CF§4.1 (patience drains at check-in and in line, frozen once called; `QueueWait` ends at the call; `ServiceStart` at arrival at the counter).
-2. Guard check-in per CF§4.2: every customer passes the stand; guard checks one at a time for `guardCheckSeconds`; GAME-008 cover routes the covered arrivals to the player at the same stand, guard keeps checking the rest; decline = physical extra wait. The counter never re-checks.
+2. Check-in and ID (DEC-103):
+   a. Guard scan per CF§4.2: every customer passes the stand; the guard scans the back of the ID, one at a time, `guardCheckSeconds` 3 s; green light + `OnIdScanOk` hook, then the guest joins the line. No overflow series, no cover prompt, no helper logic; a mid-scan arrival waits at the single `Anchor_CheckIn_Wait`.
+   b. The ID again at the register per CF§4.4: every guest gets the `registerIdSeconds` ID beat on arrival at the counter; the GAME-008 ID events (cases, Admit/Refuse, strikes, report counters) fire there for the selected guests instead of at the stand. Placeholder pending the lead's ruling (DES-005b handoff Q-L1).
 3. One line per CF§4.3 (`queueSlots` = queue anchors found).
-4. Call next per CF§5: E / Ⓐ / HUD button at the player's register only, all feedback beats in CF§5.2 (audio = event hook only), assist off by default and tagged.
+4. Register assignment per CF§5.0 (GM floor map, DEC-079; `assignedStation` or a seeded pick among stations with anchors, fallback the `Interact_Terminal` station). Call next per CF§5: E / Ⓐ / HUD button at the assigned register only, call toast from DEC-103's lines, all feedback beats in CF§5.2 (audio = event hook only), assist off by default and tagged.
 5. DEC-076 entry lock behaviour (CF§5.4) only if the game-clock day mode is on `main`; otherwise note it in the handoff.
-6. Anchors by CF§7 names with old-name fallbacks (`Anchor_CheckInDesk`, `Anchor_QueueSlot_<n>`, `Anchor_ServiceCustomer`, `Anchor_ServicePlayer`) and `TEMP_` placeholders; warn once listing what fell back.
+6. Anchors by CF§7 names (incl. the single `Anchor_CheckIn_Wait`, optional `Anchor_IdScanner`, per-station `Interact_Terminal_<n>`) with old-name fallbacks (`Anchor_CheckInDesk`, `Anchor_QueueSlot_<n>`, `Anchor_ServiceCustomer`, `Anchor_ServicePlayer`) and `TEMP_` placeholders; warn once listing what fell back.
 
 ## Validation
 Compile / EditMode / PlayMode green; QA-002 gate and DEC-013 gate green. **Slice goldens will change** (guard time, call step, wait penalty): regenerate them in this branch, list old → new values in the handoff, and get QA sign-off through the lead before merge.
-- EditMode: nobody reaches `Serving` without `CallNext()`; `CallNext()` refused when not at the register / a customer is called or serving / line empty; called customers never walk out; patience drains at check-in and in line; covered arrivals go to the player, others to the guard; decline adds exactly `declineCheckInDelaySec` of check-in wait and no separate `CheckInDelay` penalty; seed determinism.
+- EditMode: nobody reaches `Serving` without `CallNext()`; `CallNext()` refused when not at the register / a customer is called or serving / line empty; called customers never walk out; patience drains at check-in and in line; every check-in takes exactly `guardCheckSeconds` (no backlog term); every served guest gets the register ID beat; selected guests get the ID panel at the register with CP§3 outcomes; no `CheckInDelay` in any wait penalty; `CallNext()` refused away from the assigned station; seed determinism (incl. the station pick).
 - PlayMode: the slice bot plays a full shift calling next each time; a scripted test leaves the player idle at the register and asserts the line waits and walkouts happen; every customer's NPC passes `Anchor_CheckIn` before `Anchor_Queue_0`.
 - Persona bots (GAME-010): perfect/slow/careless finish with the expected ordering; slow persona's call waits its 1.5× pacing (DEC-086).
-- Capture: `SliceCaptureTests` adds (a) the guard checking a customer at the stand with the line visible, (b) a called customer walking up with the `Called · walking up` HUD.
+- Capture: `SliceCaptureTests` adds (a) the guard scanning an ID at the stand (green light) with the line visible, (b) a called customer walking up with the `Called · walking up` HUD, (c) the ID panel at the register.
 
 ## Dependencies
-GAME-009 merged; GAME-025 merged (E priority, pause). World anchors CF§7.2–7.3 (`Anchor_Guard_Post`, `Anchor_CheckIn`, `Anchor_CheckIn_Wait_<n>`, `Anchor_Queue_<n>`, `Anchor_Register_<n>_Call/_Operator`, `Anchor_CustomerSpawn` moved outside): **not blocking** — fallbacks keep the slice playable; the final capture waits for them. Entry door use needs GAME-025's door runtime and World's entry `Door_<Id>`.
+GAME-009 merged; GAME-025 merged (E priority, pause). World anchors CF§7.2–7.3 (`Anchor_Guard_Post`, `Anchor_CheckIn`, `Anchor_CheckIn_Wait`, `Anchor_Queue_<n>`, `Anchor_Register_<n>_Call/_Operator`, `Anchor_CustomerSpawn` moved outside): **not blocking** — fallbacks keep the slice playable; the final capture waits for them. Entry door use needs GAME-025's door runtime and World's `Door_Entry_L/_R` (REF-012, pending merge). Amending SPEC_COMP002 §3 and UX_PS1 §4 to the register ID check is their owners' task (see the DES-005b handoff), not this packet's.
 
 ## Handoff
 `Docs/Handoffs/GAME-026.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).

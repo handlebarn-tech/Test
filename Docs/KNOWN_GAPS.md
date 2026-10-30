@@ -71,9 +71,19 @@ These gaps are defined, with placeholders and owners, in the spec named; that sp
 - GAP-DAY-01 | store | Typical opening deli backstock per strain in BOH and how it's packed (GAP-DAY-05 merged) | 0/1/2 × 454 g bags (20/50/30 %) | Nolan | CLOSED by DEC-079
 - GAP-DAY-02 | store | Where deli backstock is kept | labelled BOH rack slot (DEC-041) | Nolan | CLOSED by DEC-079
 - GAP-DAY-03 | store | Registers open by time of day | 4 / 2–3 / 5 / 3 | RES-002 (schedule, counts only)
-- GAP-DAY-04 | store | One shared line to the next free register, or a line per register | one shared line | Nolan | CLOSED by DEC-079
+- GAP-DAY-04 | store | One shared line to the next free register, or a line per register | one shared line | Nolan | CLOSED by DEC-096 (one line; confirmed DEC-103 (2); citation fixed DES-005b, REVIEW-W5U m3)
 - GAP-DAY-06 | store | People waiting at 08:00 open | 3 | Nolan | CLOSED by DEC-079
 - GAP-DAY-07 | store | Who refills deli jars mid-shift (the register budtender, a lead, a dedicated person) | the player | Nolan | CLOSED by DEC-079
 - GAP-DAY-08 | store | Do budtenders have a usual register | any free one | Nolan (low) | CLOSED by DEC-079
 - GAP-DAY-09 | store | Last call / door lock | CLOSED by DEC-076 (lock 22:00, inside customers served) | —
 - GAP-PROC-13 | asset | Chrome rack component sizes (post, wire, collar, caster, foot diameters); shelf count/casters answered by DEC-088 | toolkit defaults | REF/measure
+
+## DES-005 / DES-005b controls and customer flow (see `Docs/Specs/CONTROLS_FLOW_PS1.md` §8)
+- GAP-CF-01 | store | How a budtender calls the next guest | spoken call + walk-up | Nolan | CLOSED by DEC-103 (1): "Next in line!" / "Online order!" / "Next guest!"
+- GAP-CF-02 | store | Where/how guests wait after check-in | World's `Anchor_Queue_<n>` | Nolan | CLOSED by DEC-103 (2): in line, one line (DEC-079/096); floor position is World's from evidence (REF-011)
+- GAP-CF-03 | store | Which interior doors self-close / are propped open | A310 closers in REF-012 DOORS.json; `unknown` → self-closing | Nolan / World | CLOSED by DEC-103 (6) (FOH, BOH, north office door, HUB connector propped open) + REF-012 (A310); residual `selfClosing: unknown` rows are REF-012's own GAPs
+- GAP-CF-04 | store | Emergency exit alarm behaviour | not modelled | — | OPEN; unanswered in DEC-103, so the placeholder is the working answer and is not re-asked (DEC-105)
+- GAP-CF-05 | store | Guard check-in time per guest | 3 s [GDD] | Nolan | CLOSED by DEC-103 (5): a few seconds at most
+- GAP-CF-06 | store | Which register the player works | GM floor-map assignment, CF§5.0 | Nolan | CLOSED by DEC-079 (restated DEC-103 (7))
+- GAP-CF-07 | store | A second (buzzed) door after the ID stand | none | Nolan | CLOSED by DEC-103 (3): no
+- GAP-CF-08 | store | Who helps when check-in backs up | no helper logic | Nolan | CLOSED by DEC-103 (5): check-in never backs up

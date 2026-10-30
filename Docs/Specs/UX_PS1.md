@@ -84,6 +84,7 @@ Today's build: mouse + E / Esc / M / F3 (GAME-002). New keys avoid I, C, M, F3 a
 Focus order is the pink numbers in each frame. Default focus: register → line 1; prompt → Cover; ID panel → the card (no button) so a stray Enter cannot admit; Tab → Admit → Refuse. Keyboard focus nav is still unbuilt (GAME-002 open item); these keys work by direct binding meanwhile.
 
 ## 8. New strings (for `SliceLines.json`)
+Tone for every customer, toast-flavour, event and report line: `Docs/Design/TONE.md` (grounded deadpan, DEC-101 (8)).
 
 | Key | Text | Used by |
 |---|---|---|
