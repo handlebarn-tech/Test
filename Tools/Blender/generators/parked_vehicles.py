@@ -462,26 +462,27 @@ class Car:
         p, d = self.p, self.d
         b = p["bumper"]
         z0, z1 = b["z_m"]
-        zc, bh, bd = (z0 + z1) / 2, z1 - z0, self.bd
-        prof = rounded_rect(bd, bh, bd * 0.45 if d <= 2 else 0.0, 4 if d == 0 else (2 if d <= 2 else 0))
+        zc, bd = (z0 + z1) / 2, self.bd
+        r, seg = (bd * 0.45, 4 if d == 0 else 2) if d <= 2 else (0.0, 0)
         for sgn in (-1, 1):
+            # cover = painted upper band (sets the exact length) + black lower intake/diffuser band recessed 8 mm into
+            # the same plan curve, so the intake sits inside the bumper silhouette
+            lb = b["lower_band_m"][0 if sgn < 0 else 1]
+            zu = (z0 + lb + z1) / 2
             yp = sgn * (self.L / 2 - bd / 2)
             x0 = self.half_width(sgn * self.yr) - 0.12
             ye = yp - sgn * b["wrap_m"]
             zb, zst, _, _ = self.shoulder(ye)
             x1 = self.side_x(ye, min(1.0, max(0.0, (zc - zb) / (zst - zb)))) - bd / 2 + 0.004  # wrap end flush with the side
-            path = [(-x1, yp - sgn * b["wrap_m"], zc), (-x0, yp, zc), (x0, yp, zc), (x1, yp - sgn * b["wrap_m"], zc)]
+            path = [(-x1, yp - sgn * b["wrap_m"]), (-x0, yp), (x0, yp), (x1, yp - sgn * b["wrap_m"])]
+            path = [(x, y, 0.0) for x, y in path]
             if d <= 2:
                 path = fillet(path, 0.12, 6 if d == 0 else 2)
-            add_sweep(self.solid("Cladding" if p.get("cladding") else "Body"), path, prof)
-            iw, ih = b["intake_m"] if sgn < 0 else (2 * x0, 0.04)
-            if d <= 2:  # lower intake / diffuser band under the cover, set 1 cm back, with a lip below
-                dp = bd + 0.3  # runs back under the body as an undertray, so it does not float
-                add_beveled_box(self.solid("Trim"), (iw, dp, ih), (0, sgn * (self.L / 2 - 0.01 - dp / 2), z0 - ih / 2 + 0.01),
-                                0.02, 0.003, 2 if d == 0 else 1)
-            if d <= 1 and sgn < 0:
-                add_beveled_box(self.solid("Trim"), (iw * 0.9, 0.3, 0.025), (0, -self.L / 2 + 0.02 + 0.15, z0 - ih - 0.002),
-                                0.01, 0.003, 1)
+            at = lambda z: [(v[0], v[1], z) for v in path]
+            add_sweep(self.solid("Cladding" if p.get("cladding") else "Body"), at(zu),
+                      rounded_rect(bd, z1 - z0 - lb, r, seg))
+            add_sweep(self.solid("Trim"), at(z0 + (lb + 0.01) / 2),
+                      rounded_rect(bd - 0.016, lb + 0.01, min(r, (lb + 0.01) / 2 - 0.002), seg))
 
     def lamps(self):
         """Per-class fascia (params `lamps`, `grille`): lamp sizes/corners, grille style, tail-lamp shape."""
@@ -502,11 +503,23 @@ class Car:
             zc = zst - 0.008 - h / 2
             for side in (-1, 1):
                 xc = side * (hwe - w / 2 - lp["inset_m"])
-                box(self.solid("LampsClear" if sgn < 0 else "LampsRed"), (w, 0.03, h), (xc, ye + sgn * 0.003, zc), r)
+                lens = self.solid("LampsClear" if sgn < 0 else "LampsRed")
+                wrap = lp["head_wrap_m"] if sgn < 0 else lp["tail_wrap_m"]
+                if d > 2 or wrap <= 0:
+                    box(lens, (w, 0.03, h), (xc, ye + sgn * 0.003, zc), r)
+                else:  # lens swept along the plan outline: across the end face, round the corner, back along the fender
+                    zb_, zst_, _, _ = self.shoulder(ye)
+                    sl = (zc - zb_) / (zst_ - zb_)
+                    xe = self.side_x(ye, sl)
+                    path = [(side * (abs(xc) - w / 2), ye + sgn * 0.002, zc), (side * (xe - 0.012), ye + sgn * 0.002, zc)]
+                    n = 6 if d == 0 else 3
+                    path += [(side * (self.side_x(y, sl) + 0.002), y, zc)
+                             for y in (ye - sgn * wrap * k / n for k in range(1, n + 1))]
+                    add_sweep(lens, fillet(path, 0.02, 3 if d == 0 else 1), rounded_rect(0.024, h, min(r, h / 2 - 0.002), seg))
                 if d > 1:
                     continue
                 inner = self.solid("Reflectors")
-                add_box(inner, (w - 0.02, 0.008, h - 0.02), (xc, ye + sgn * 0.008, zc))
+                add_box(self.solid("Trim") if sgn < 0 else inner, (w - 0.012, 0.008, h - 0.012), (xc, ye + sgn * 0.008, zc))
                 if sgn < 0:
                     for k in (-1, 1):  # projector bulbs inside the lens
                         add_lathe(inner, (xc + k * w / 4, ye + 0.004, zc), (0, -1, 0),
@@ -534,9 +547,9 @@ class Car:
             for s_ in (-1, 1):  # surround
                 add_box(ch, (gw, 0.008, t), (0, ye - 0.0125, gc[2] + s_ * (gh / 2 - t / 2)))
                 add_box(ch, (t, 0.008, gh - 2 * t), (s_ * (gw / 2 - t / 2), ye - 0.0125, gc[2]))
-            if d == 0 and gp["style"] == "slats":
+            if d <= 1 and gp["style"] == "slats":
                 for k in range(1, 5):
-                    add_box(self.solid("Trim"), (gw - 0.03, 0.008, 0.008), (0, ye - 0.013, gc[2] - gh / 2 + gh * k / 5))
+                    add_box(self.solid("Chrome"), (gw - 0.03, 0.008, 0.012), (0, ye - 0.013, gc[2] - gh / 2 + gh * k / 5))
             elif d == 0 and gp["style"] == "mesh":  # staggered cells
                 nx, nz = int(gw / 0.035), max(2, int(gh / 0.03))
                 for iz in range(nz):
