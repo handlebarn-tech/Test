@@ -15,6 +15,8 @@ Staff are described by attire/role only.
 | `References/CCTV HUB Wall 2026-10-29.webp` | WEBP 2000×564, 2×4 tiles | HUB/HUB 2 camera wall supplied by Nolan 2026-10-29 (DEC-022). Nolan: "First room on left two pictures, the rest are in the bigger side of the hub... It's mostly misc storage." | §2.1 |
 | `References/CCTV Register Back Center East 2026-10-29.webp` | WEBP 1866×755, NVR playback, 2 feeds | "Back Of Register center" (close) + "Back Of Register East", 11:40:16, 1/21/2026. Supplied by Nolan for the scale stand (DEC-026) | §2.2 |
 | `References/CCTV Register Back Center Wide 2026-10-29.webp` | WEBP 1134×640, 1 feed | "Back Of Register center", 16:48:53, wide. **Same camera and framing as wall tile R2C4** (DEC-026) | §2.2 |
+| `References/CCTV BOH Desk Racks 2026-10-29.webp` | WEBP 2000×1022, 1 feed, no overlay text | BOH overhead still: chrome wire rack island of packaged stock, wall rack of black cases, the ex-register-1 computer on the right (DEC-041). Supplied by Nolan 2026-10-29 | §2.3 |
+| `References/CCTV FOH Desk Racks 2026-10-29.webp` | WEBP 2000×1101, 1 feed, no overlay text | FOH overhead still: computer on a black wire rack against the back wall, fridge, glass-door cooler, chrome racks, patterned-tile doorway (DEC-041). Supplied by Nolan 2026-10-29 | §2.3 |
 | `References/TI/Interior TI Approved Set - PHX.pdf` | PDF 37 pp (24"×36"-class sheets, vector + text layer), 9.15 MB, 2022-08/10, City-approved 2022-12 | Retail interior TI drawings: G010 mounting heights, A101 plan + RCP, A310 door/material schedules, A320 partitions, A901 elevations, A940 millwork, I101 finish plan, E-sheets luminaire schedule. Text-read in REF-004; Nolan supplied the file and it was imported in REF-005 (plain git, <10 MB). Every page was checked: no security plan, P&P or credential page (the security mentions are a grille, card-reader hardware lines and spec boilerplate) | §6 |
 | `References/TI/A011 Phoenix AZDHS Floor Plan - 2026 Update.pdf`, `References/TI/A012 AZDHS Floor Plan - Lighting - 5.20.26.pdf` | PDF 1 p each, vector, 1/4"=1'-0" (18 pt/ft), sheet date 05/15/23, revs 12/23/22 | Room areas and labels behind Working Plan V5; A012 lighting legend | §6.8 |
 | `References/LIVE_TFS_BUDTENDER_v7.11.4.md` | MD | Live budtender app behaviour (v7.11.4: Floor Mode, 6 effect domains, tier filters, accessibility). **No visual tokens** (colours/fonts/layout) are recorded in it | UI only (GAP-114) |
@@ -49,8 +51,8 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 | OFFICE | 131.82 | 0–13.70 | 36.5–46.3 | 13.70 × 9.80 | sheet says 13'-8¾" |
 | BREAK ROOM | 151.56 | 14.10–23.31 | 29.5–46.3 | 9.20 × 16.80 | contains JC |
 | JC (janitor closet, inside break room) | 19.19 | 19.9–22.9 | 42.9–45.9 | 3.0 × 3.0 (drawn) | drawn size and corner both unconfirmed. 3×3 = 9 SF, not 19.19 (GAP-103) |
-| FOH (floor restock) | "163 or 180" | 23.69–36.49 | 29.5–46.3 | 12.80 × 16.80 | 215 SF drawn. Which of 163/180 belongs to FOH vs BOH is open (GAP-102) |
-| BOH (backstock) | "163 or 180" | 36.90–47.19 | 29.5–46.3 | 10.29 × 16.80 | 173 SF drawn |
+| FOH (floor restock; A011 "FULFILLMENT") | 180.26 | 23.69–36.49 | 29.5–46.3 | 12.80 × 16.80 | 215 SF drawn. A011 (REF-006) puts FULFILLMENT 180.26 SF in the west room (next to Break), so FOH = 180.26 |
+| BOH (backstock; A011 "PRODUCT STORAGE") | 163.44 | 36.90–47.19 | 29.5–46.3 | 10.29 × 16.80 | 173 SF drawn |
 | HUB (sheet: Product Storage) | 818.53 | 0–28.29 | 46.8–76.03 | 28.29 × 29.24 | deliveries · general storage · entered from office |
 | HUB 2 (sheet: Product Storage) | 541.34 | 28.70–47.19 | 46.8–76.03 | 18.49 × 29.24 | only via HUB connecting door; no access from FOH/BOH |
 | *Arch vestibule (unnamed, "white wall")* | — | 35.2–38.2 | 29.5–31.7 | 3.0 × 2.2 | small lobby behind the east arch, with doors to FOH and BOH |
@@ -208,6 +210,24 @@ Sources: REF-002 (wall R2C3, R2C4, R3C2, BAND 07/10) + REF-003 back-of-register 
 
 Other counter facts in these stills: each POS has a monitor, keyboard, receipt printer and a customer-facing card terminal/tablet on the counter (Med). Open black shelves under the counter hold tape rolls, kraft bags and boxes (Med). Wide still, seen beyond the queue from left to right: video wall (showing a promo panel "HIGH VARIETY · 10 for $75 · 15 for $100"; units not shown, **not pricing data**), "THE FLOWER SHOP" logo living wall, "DELI STYLE FLOWER!!" counter with a teal/white checker front and globe pendant cluster, teal-backlit jar walls (High, same as R2C4; feeds GAP-106).
 
+### 2.3 FOH / BOH desk stills (REF-006, DEC-041)
+Both are single fisheye-ish overhead feeds with no timestamp overlay. **No people are visible in either still.** No chair is visible either, but per DEC-041 each desk gets one in the game. Sizes are Low (no scale object except doors, which are 3'-0" × 7'-0" per TI §6.2). Positions are relative to the frame; ART places them on the plan (§1.3 rooms, A011).
+
+| Still | Item | What is seen | Size / height | Conf. |
+|---|---|---|---|---|
+| FOH | doorway (left of frame) | black-framed door opening into the vestibule; the floor beyond is **white tile with a grey curved/quatrefoil pattern** (TL-2-type 8×8 patterned tile, §6.5), and FOH is concrete. A wall card reader sits beside the jamb, an outlet low on the jamb wall, and red/white floor tape on the concrete | door 3'-0" × 7'-0" (TI) | High (type) |
+| FOH | wood/black-metal open shelf unit | seen through the doorway, in the tiled vestibule, holding supplies | ≈2.5 ft wide, ≈4 ft tall | Low |
+| FOH | **computer desk** | "in the middle against the wall" (DEC-041): a black wire shelving unit used as a desk on the back wall, with a monitor on an upper shelf and a keyboard shelf at standing/desk height; a white apartment fridge is immediately to its right | ≈3–4 ft wide × ≈1.5 ft deep, ≈6 ft tall unit | Low |
+| FOH | fridge | white top-freezer apartment fridge, back wall | ≈2.0 × 2.3 ft, ≈5.5 ft tall | Low |
+| FOH | **glass-door cooler** | black-frame, internally lit merchandiser, right of the fridge on the back wall, two lit glass doors visible (matches R4C1 "two glass-door coolers") | ≈4 ft wide (2 doors), ≈6.5 ft tall | Low |
+| FOH | chrome wire racks | one free-standing chrome rack (4–5 shelves) in the room centre/right, loaded with clear and black bins of packaged product, mylar bags and cartons; a second chrome rack runs along the right/back wall with boxed product; a yellow tote is on the floor in the foreground | standard chrome-wire bays ≈2 × 4 ft (or 2 × 5), ≈6 ft tall | Low (convention) |
+| BOH | chrome wire rack island | large chrome rack of 4–5 shelves seen from above, carrying green "OGeez!" and navy "Baked Bros" case boxes, white cartons and loose product on the lower shelves | ≈2 × 5 ft bay, ≈6 ft tall | Low |
+| BOH | wall rack | chrome rack along the right wall, stacked black cases and white cartons on the upper shelves | ≈1.5–2 ft deep | Low |
+| BOH | **computer desk** | right edge of frame: a white counter/desk with a black monitor, keyboard and a small device. This is the old register-1 computer (DEC-041) | desk depth ≈2 ft; height not measurable | Low |
+| BOH | dark doorway / black panel | top centre of frame beyond the rack, with a small chrome rack above it holding cartons | — | Low |
+
+The HUB-style "wire rack bay ≈4 × 2 ft, ≈6–7 ft tall" in §5 applies here too.
+
 ## 3. BAND photos (`…_NN.jpeg`)
 
 | # | Room / zone | Fixtures | Materials / finishes | Clutter | Signage | Human-scale cues | Staff attire / vibe |
@@ -238,8 +258,8 @@ Product names visible on jar cards or boxes are **not** inventory data and must 
 | Break room | ✔ | R3C5 | 03 | covered |
 | JC | ✔ | — | — | **BLIND** |
 | Restroom | ✔ | — | — | **BLIND** |
-| FOH | ✔ | R4C1 | — | CCTV only |
-| BOH | ✔ | R4C2 | — | CCTV only |
+| FOH | ✔ | R4C1 + FOH still (§2.3) | — | CCTV only, two views |
+| BOH | ✔ | R4C2 + BOH still (§2.3) | — | CCTV only, two views |
 | Arch vestibule (unnamed) | ✔ | edges in R4C1/R4C2 | — | partial |
 | HUB | ✔ | R4C3, R4C4, R5C3, R5C4 + HUB wall R1C2–C4, R2C2, R2C3 (Med) | — | CCTV only (§2.1); no photo |
 | HUB 2 | ✔ | R5C1, R5C2, R5C5 = HUB wall R1C1, R2C1, R2C4 (Med) | — | CCTV only (§2.1); no photo |
