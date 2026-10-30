@@ -15,9 +15,14 @@ DAY = {
 }
 _v2_arrivals = v2.arrivals
 
+def lock_sec(prof):                               # doors lock at 22:00 = end of Late (DEC-076)
+    return sum(m for m, _ in prof['phases'][:-1]) * 60
+
 def arrivals(rng, prof):
-    out = _v2_arrivals(rng, prof)                 # V2 rule: renewal clock restarts at every phase start
-    t0 = prof['phases'][0][0] * 60                # doors open = end of Opening
+    out = _v2_arrivals(rng, dict(prof, specials=0))   # V2 rule: renewal clock restarts at every phase start
+    hi = min(1620, lock_sec(prof) - 60)               # V2 draws specials in U(300, 1620); never after the door lock
+    out += [float(rng.uniform(300, hi)) for _ in range(prof['specials'])]
+    t0 = prof['phases'][0][0] * 60                    # doors open = end of Opening
     out += [t0 + float(rng.uniform(0, 20)) for _ in range(prof['door'])]
     return sorted(out)
 

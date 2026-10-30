@@ -1,6 +1,6 @@
 # SPEC — PS2 "Full Shift Day" (DES-004)
 
-**Status:** design for the Studio Hub, 2026-10-30, DES-004. Doc-only. Packets: `Docs/Tasks/Ready/GAME-011.md`, `GAME-012.md`, `UX-003.md` (they run after PS1/PS1b).
+**Status:** design for the Studio Hub, 2026-10-30, DES-004; door-lock rule updated by DES-004b per DEC-076. Doc-only. Packets: `Docs/Tasks/Ready/GAME-011.md`, `GAME-012.md`, `UX-003.md` (they run after PS1/PS1b).
 **Precedence:** tool parity (DEC-001/002/006) > DP (`SPEC_DECISION_PRESSURE.md`) > V2 (`DESIGN_V2/`, DEC-063a) > this spec's [GDD] numbers. Store facts (RES-001, DECs) beat generic choices.
 **Citation key:** DP §n = `Design/SPEC_DECISION_PRESSURE.md`; V2 03 §n = `Design/DESIGN_V2/03_SHIFT_PACING_QUEUE_MODEL.md`; GSS §n = `GAMEPLAY_SIMULATION_SPEC.md`; O*n* = RES-001 `Docs/Research/OFFICE_FINDINGS.md` §3. Labels: **[SRC]** store fact/law (cited) · **[GDD]** game-design decision, tune in playtest · **GAP-DAY-nn** unknown store fact with a labelled placeholder (§14).
 **Validation script:** `Docs/Design/VALIDATION_DAY/shift_day_sim.py` runs V2's own queue harness, unchanged, on the tables in §3. Output: `shift_day_results.csv`.
@@ -26,16 +26,13 @@ DP §61 lists Opening → Steady → Rush 1 → Recovery → Rush 2 → Late →
 | 2 | Recovery | 4 | 09:30 → 12:00 | open | low arrivals; preparation window (DP §49) |
 | 3 | Steady Floor | 6 | 12:00 → 17:00 | open | normal traffic; contains the 14:00 checkpoint [SRC O12] |
 | 4 | Rush 2 (Pressure Event) | 6 | 17:00 → 20:00 | open | evening rush [SRC O12]; the shift's peak |
-| 5 | Late Shift | 5 | 20:00 → 21:45 | open | taper; doors lock at 21:45 = last entry (GAP-DAY-09 placeholder) |
-| 6 | Closing Summary | 4 (nominal) | 21:45 → 21:59 last call (≤ 180 s sim), then 22:00 → | locked | last call serves the queue; **sales lock at 22:00**; then closing-lite (§10), report v2 (§11) |
+| 5 | Late Shift | 5 | 20:00 → 22:00 | open | taper; doors lock at 22:00 on the dot [SRC DEC-076]; customers inside are still served |
+| 6 | Closing Summary | 4 (nominal) | from when the last customer leaves (≥ 22:00) | locked | closing-lite (§10), report v2 (§11) |
 
 - **Sim time** (shift seconds) drives everything; the **game clock** is a piecewise-linear display map of sim time per phase (structural compression, DP §63). Ratios vary from ≈ 15× (Opening) to ≈ 50× (Steady); nothing reads the clock for logic.
-- **No sale at or after 22:00** [SRC O1; DEC-036 M3; AZ window 07:00–22:00, `Research/AZ_COMPLIANCE.md` G1]. Mechanism [GDD, proposed DEC-DAY-F]:
-  1. **Last entry 21:45:** the doors lock at the end of Late. No arrivals after that (the §3 tables already end there). The real last-entry practice is GAP-DAY-09.
-  2. **Last call** (start of Closing): the queue is served for at most `lastCallSimSec` = 180 s of sim time. The clock maps 21:45 → 21:59 over that window and **never displays 22:00 while a sale is possible**. The segment ends early when the queue and counter are empty.
-  3. **Sales lock at 22:00** (window over): the POS refuses Confirm. Anyone still queued or mid-service leaves without a sale, outcome `closed_out`. That is logged as `structural_pressure`, not counted in the abandonment gate, never blamed on the player, and customers get a polite "we're closed" line.
-  4. Measured with V2's harness (`VALIDATION_DAY/shift_day_drain.py`, targeted bot): `closed_out` per shift is 0.024 Standard (1.9 % of shifts), 0.026 Expert and 0.137 Beginner. A 120 s window would give 0.11 Standard.
-  5. After 22:00 only closing tasks run (no POS). Closing ends when the player signs the report.
+- **Door lock at 22:00** [SRC DEC-076, O1]: the doors lock at 22:00 on the dot and nobody new can enter, so no arrival is scheduled at or after 22:00 (door line, phase draws and specials included). Customers already inside (queued or at the counter) are **served to completion** under the normal rules, and their patience still applies. DEC-036 M3 applies to entry, not to finishing service (DEC-076).
+  - After 22:00 the clock keeps running at Late's display ratio. Closing begins when the last in-store customer leaves (or at once if the store is empty).
+  - Measured with V2's harness (`VALIDATION_DAY/shift_day_drain.py`, targeted bot), service after 22:00 runs: Standard mean 45 s / p90 118 s / max 303 s (66 % of shifts have some); Expert 44 / 112 / 226 s; Beginner 31 / 85 / 205 s. That is inside the real-minute budget (§7).
 - After a Rush ≥ 5 min the next phase is low-rate (V2 03 §12): Rush 1 → Recovery holds. Rush 2 → Late is a taper, not a recovery: by design, the evening rush runs into close.
 - Shift start hour: the slice config's `shiftStartHour` 14 belongs to the Quick shift only.
 
@@ -57,7 +54,7 @@ Door-line size is GAP-DAY-06 (placeholder 2/3/3). Lengths match V2 26/32/35 and 
 | Standard targeted | **19.96** | **4.47** | 52 | **3.24** | **5** | 60.6 |
 | Standard ask-all | 19.96 | 19.36 | 101 | 4.19 | 6 | 93.3 |
 | Standard ask-none | 19.96 | 1.09 | 28 | 2.68 | 4 | 44.7 |
-| Beginner targeted | 13.75 | 0.25 | 26 | 1.87 | 3 | 56.8 |
+| Beginner targeted | 13.75 | 0.27 | 27 | 1.92 | 3 | 56.8 |
 | Expert targeted | 22.49 | 7.47 | 55 | 3.42 | 5 | 64.1 |
 
 Standard passes every V2 03 §17 gate (18–20 arrivals, 2–6 % abandonment, mean peak 2.5–3.5, p90 ≤ 5, service 55–70 s). Expert sits above 6 %, as in V2 (6.6 %), which is acceptable for Expert. Ask-none looks efficient on queue numbers alone; DecisionQuality (GAME-019/020) is what penalises it (V2 03 §16).
@@ -66,7 +63,7 @@ Standard passes every V2 03 §17 gate (18–20 arrivals, 2–6 % abandonment, me
 **Rule [GDD] = V2 harness behaviour, ported exactly:** within each phase, gaps are `Gamma(shape=k, scale=(60/λ)/k)` seconds and **the renewal clock restarts at the phase start** (the first gap is measured from the phase boundary; an arrival drawn past the phase end is discarded). Zero-rate phases produce nothing.
 - **Nominal ≠ realised.** Restarting loses about one partial gap per phase, so realised counts are below λ·T. Measured on V2's original Standard table (700 seeds): per phase 0.05 / 2.35 / 5.38 / 0.91 / 6.30 / 2.40 against nominal 0.24 / 2.70 / 5.76 / 1.20 / 6.48 / 2.70; total 19.4 with specials. V2's validated 19.3 already includes this loss, so **no retune is needed if the port restarts per phase**. A continuous (non-restarting) process would add ≈ 1.5 arrivals and fail the gates.
 - **Door line:** `door` customers arrive at doors-open + U(0, 20) s, drawn from `arrival_rng` after the phase draws.
-- **Special slots:** `specials` arrivals at U(300, 1620) s (V2), filled from the repeat / difficult-customer / event pool (GAME-021/022/023 provide content; until then they are ordinary customers tagged `special`).
+- **Special slots:** `specials` arrivals at U(300, min(1620, lockSec − 60)) s, where `lockSec` = end of Late = 22:00. V2's U(300, 1620) would put Beginner's special after its 1380 s lock in about 18 % of shifts (REVIEW-W5D m6). They are filled from the repeat / difficult-customer / event pool (GAME-021/022/023 provide content; until then they are ordinary customers tagged `special`).
 - **Pre-generated schedule:** the whole arrival list is generated at shift start from `arrival_rng`, so the schedule is the same whether or not the player fast-forwards (§7). Customer contents come from `customer_profile_rng`, patience from `patience_rng` (V2 01 §3 streams, `streamSeed = Hash64(shiftSeed, streamName)`). Quick shift keeps its single `Random(seed)` so its goldens stay valid.
 - **Abandonment and repeat visits:** an abandoned customer does not re-enter. DEC-049 "max buyer back in line" is a special-slot template, not an extra arrival.
 - **Service-time guard (V2 03 §17):** in play, service time is the player's own, not sampled. GAME-011 measures median service with the GAME-010/017 bot and in the first playtest. If it is above 70 s, scale all rates by `arrivalRateScale = 60 / medianService` (config) **before** touching patience. Real median transaction is 2.3 min [SRC O13]; the game's ≈ 60 s is deliberate compression.
@@ -166,7 +163,7 @@ Diagnostic: more than 2 emergencies in a Standard shift (V2 03 §13).
 ## 10. Opening-lite and closing-lite [GSS §7, §73; O11]
 **Opening** (2 sim min, ends early on "Open doors"; no customers): (a) walk the jars, where LOW/CRITICAL show; (b) read the shift note: today's day of week and "expect a line at open and an evening rush" (DP §52: expectation, not forecast); (c) proactive restock (§9a). Nothing to tick off: GSS §73 says no trivial switches.
 
-**Closing** (after last call; sales locked at 22:00), an O11 subset chosen for decisions [SRC O11, selection GDD]:
+**Closing** (after the last in-store customer leaves; doors locked since 22:00), an O11 subset chosen for decisions [SRC O11, selection GDD]:
 1. **Refill deli jars:** restock LOW jars for tomorrow from the backstock that's left (real choice: limited units). Proactive tag; no queue cost.
 2. **Deli BOH audit:** a summary of each batch's backstock used today vs left, feeding the report inventory section. Read-only in PS2; no discrepancies are generated (receiving/quarantine is PS4, O8).
 3. **Clean scale + wipe counter:** one 5 s interaction, flavour [SRC O11].
@@ -192,7 +189,7 @@ Section order follows the store's closing report. A section the build doesn't mo
 No TFS scores or ranks anywhere (DEC-052). Manager notes (O16 Daily Tracker) are out.
 
 ## 12. Telemetry and attribution [V2 03 §10–11]
-- Log per shift: per-phase arrivals/served/abandoned, `closed_out` count, peak waiting, mean/p90 wait, time-to-clear after each rush, PressureLevel at every player decision, restock jobs (start state, tag, duration, interrupted?), stock-state minutes, fast-forward seconds used, pause seconds. Extends GAME-020's log (DP §116–117); the schema is GAME-020's.
+- Log per shift: per-phase arrivals/served/abandoned, service seconds after 22:00 (`overtimeSimSec`), peak waiting, mean/p90 wait, time-to-clear after each rush, PressureLevel at every player decision, restock jobs (start state, tag, duration, interrupted?), stock-state minutes, fast-forward seconds used, pause seconds. Extends GAME-020's log (DP §116–117); the schema is GAME-020's.
 - **Abandonment attribution** is `player_attributable` only if one of these held during the abandoner's wait:
   - redundant consultation above allowance (GAME-019);
   - avoidable idle (the player at the counter, nobody served, ≥ 10 s while someone waits);
@@ -205,7 +202,7 @@ No TFS scores or ranks anywhere (DEC-052). Manager notes (O16 Daily Tracker) are
 - A Standard shift with the 3-phase arc (open → two rushes → close) plays in **25–40 real minutes** (DEC-056), measured over 3 human playtests.
 - Targeted bot over 200 seeds in EditMode (pure sim, bot service model): arrivals 18–20, abandonment 2–6 %, mean peak 2.5–3.5, p90 ≤ 5 (V2 03 §17). Ask-all is worse on FLOW; ask-none is worse on DecisionQuality (GAME-020).
 - In ≥ 80 % of Standard seeds at least one jar goes LOW and the bot restocks it from BOH. 2–4 meaningful restock decisions; ≤ 2 emergencies for the restocking bot.
-- **Store hours:** an EditMode assert that no sale timestamp maps to a clock time ≥ 22:00 (`salesHoursEnd`), across 200 seeds of every profile. It extends `SliceTests` store-hours coverage (GAME-011).
+- **Store hours (DEC-076):** EditMode asserts across 200 seeds of every profile: no arrival (phase, door line, special) at or after the 22:00 lock; every customer inside at 22:00 is served or leaves on their own patience, never cut off by the clock; Closing starts only once the store is empty. It extends `SliceTests` store-hours coverage (GAME-011).
 - DP-016 / 017 / 018 / 019 / 020 pass (GAME-012). The determinism test of §7 passes (GAME-011). Gate A parity green throughout. V2 exploit rows: EX-025/026 (GAME-011); EX-013/016/017/019/021–024 (GAME-012) — Critical/High need their test before the system is complete (DEC-066).
 - Report shows the §11 sections.
 
@@ -220,7 +217,6 @@ No TFS scores or ranks anywhere (DEC-052). Manager notes (O16 Daily Tracker) are
 | GAP-DAY-06 | how long the opening door line typically is | 2/3/3 customers by profile | Nolan |
 | GAP-DAY-07 | can a budtender restock their own jar mid-shift, or is it a dedicated role / lead job? | the player restocks (DEC-061 "somebody will need to stock it") | Nolan |
 | GAP-DAY-08 | which register is "the player's" in the real layout (any preferred station?) | the slice's existing player station | Nolan (low priority) |
-| GAP-DAY-09 | when the store stops letting customers in before 22:00, and what happens to people still inside at 22:00 | doors lock 21:45; last call ≤ 180 s sim; unserved at 22:00 leave without a sale | Nolan |
 | GAP-DP-02 | (existing) every [GDD] number here | the values above | playtests |
 
 ## 15. Packets (dependency order; all after PS1 + PS1b, i.e. after GAME-020)
