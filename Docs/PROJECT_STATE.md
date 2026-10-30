@@ -9,13 +9,13 @@ Hub-owned; the **only live state record** (DEC-117). A fresh Hub resumes from `D
 ## In flight
 | Session | Task | Branch @ sha | State → next Hub action |
 |---|---|---|---|
+| `dispo-rev-proc006c` `local_a19963f0-4342-49d1-ab7a-d746810628b7` | **REVIEW-PROC006c** | worker `claude/zealous-kalam-4192dd` @ d4c4bc3 (worker `local_796c7c2a`, idle, done) | In review → `review/proc006c`. |
 | `dispo-art008` `local_77fd945b-ecaf-4432-8c51-54b18ed9dc50` | **ART-008** graybox final pass (Unity slot) | `claude/festive-hamilton-c0ced4` @ 3890936 (no work yet; based on the REF-013 fix) | **Resumed** after REF-013 merged (REVIEW-REF013b PASS). Rebase/merge main first. |
 | `dispo-game026` `local_9bc94fb7-d677-4076-81be-83317f26bbf8` | **GAME-026** customer flow (Unity slot) | `task/GAME-026` @ 5d7e543 (WIP, 22 files, "uncompiled"; includes GAME-009 m3/m4 and the GAME-025 M1 SliceDoor fallback) | **Resumed 19:40.** compile, finish CF §4–5 deliverables, handoff, `ready for review`. Owns the Slice files until merged (GAME-017a waits). |
 | `dispo-proc-005-fixture-f` `local_335db39d-0968-49fa-846c-808a2abb2158` | **PROC-005** fixture families fix round (REVIEW-PROC5 FAIL: DEC-084 look, citation conflicts) | `claude/elated-satoshi-3a4844` @ 0adfba7 (PBR finish library, Eevee contact sheets, manifest lock) | **Resumed 19:40;** `ready for review` when the eight families pass the packet's own checklist. At review: the Hub decides whether the "Left, in order" list closes PROC-005 or moves to PROC-010 (registered Later). |
-| `dispo-asset005` `local_1bb17d9a-7584-4a8b-af68-d01479714d05` | **ASSET-005/006** wardrobe + hair (Blender) | `claude/sweet-shirley-002b17` @ 0f3fba5 (packet only, now also on main `Tasks/Active/ASSET-005.md`) | **Resumed (GO) 19:40;** uncommitted wardrobe WIP in worktree. |
-| `dispo-asset007` `local_d3aad36e-a494-47b7-a5c7-2cd0a58efe19` (idle, done) | **ASSET-007** glove overlay (Blender) | `claude/task-asset-007` @ dba3961 | **In review** (Agent reviewer → `REVIEW-ASSET007.md` on `review/asset007`). Gloves answered (DEC-126: black; on while weighing deli flower). At merge: tick IMP-003 checklist R4.7; after ASSET-005/006 merge add the staff-gloves line to CHARACTERS.md §9 (handoff Follow-ups). |
+| `dispo-asset005` `local_1bb17d9a-7584-4a8b-af68-d01479714d05` | **ASSET-005/006** wardrobe + hair (Blender) | `claude/sweet-shirley-002b17` @ 0f3fba5 (packet only, now also on main `Tasks/Active/ASSET-005.md`) | **Resumed (GO) 19:40;** uncommitted wardrobe WIP in worktree. At its merge: ASSET-007 (merged) also edits `customer_gen.py`, so its reviewer must re-run the C001 regression (REVIEW-ASSET007 m7); then add the staff-gloves line to CHARACTERS.md §9 (ASSET-007 handoff). |
 | `dispo-proc009` `local_738af4a0-c26e-49b9-bd35-43c6dacd5b3f` | **PROC-009** parked vehicles (Blender) | `claude/jovial-meninsky-908c0a` off main @ 3ab683b | First turn died on the plan usage limit (reset 12pm); re-sent 12:05. Await `ready for review`. |
-| `dispo-proc006c` `local_796c7c2a-33dc-4897-9a85-ec441c8a9961` | **PROC-006c** register kit review follow-ups (Blender) | `claude/zealous-kalam-4192dd` | Launched 12:05. |
+
 | Agent worker (Hub-spawned, worktree; dies if the Hub restarts: then relaunch as a session) | **REF-016** store-evidence matrix (docs/data) | worktree off main | Launched 12:30. Review = fresh **evidence** reviewer (DEC-120 (3)). |
 | Agent worker (Hub-spawned, worktree) | **PROC-013** door family incl. glass storefront (Blender) | worktree off main | Launched 12:30. Strong visual review (DEC-122). |
 | Agent worker (Hub-spawned, worktree) | **IMP-004** audit of `Bender & Asset new plan.md` (docs) | worktree off main | Launched 12:30. Hub applies the adoptions after review. |
@@ -39,7 +39,7 @@ Everything else registered in BACKLOG as Later with its dependencies; the Hub wr
 Controls (done) → store/layout accuracy → believable customer flow → recommendation depth → asset integration that unblocks these.
 
 ## Blocked / open with Nolan
-Questions go to the PO session `local_0e722850-d68d-43e0-85af-b280cf2337c4` (DEC-125); blockers by push notification.
+Questions go to the PO session `local_0e722850-d68d-43e0-85af-b280cf2337c4` (DEC-125); blockers and "please type so I can start session X" requests by push notification (DEC-129).
 - World follow-ups from PROC-006b (small-bin size, POS monitor y): in REF-016 deliverable 4.
 - **DATA-004** (PS3 gate): needs Nolan's Dutchie/LeafLogix catalog export (GAP-PKG-01). Asked before (RES-001 O14); ask once more only when PS2 is in sight, batched.
 - **DATA-005:** waits for TFS v7.11.5 to ship (GAP-210); external.

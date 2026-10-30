@@ -120,7 +120,8 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | PROC-009 | P2 | Studio-built parked vehicles (DEC-111; R3b.7 rejected as built): CC0 source (DEC-023) or a rebuild per checklist R3b.7 | PROC-005 core (merged) | Active (relaunched 2026-10-30) |
 | ASSET-005 | P1 | Studio-built customer wardrobe (DEC-111; R4.1 rejected as built): MPFB2 CC0 clothes, or procedural shells per R4.1, keeping the drop's garment list and colourways | ASSET-004 | Active (with ASSET-006, one session) |
 | ASSET-006 | P1 | Studio-built hair (DEC-111; R4.2 rejected as built): MPFB2 CC0 hair or alpha card clumps per R4.2, keeping the 9-style list | ASSET-004 | Active (in the ASSET-005 packet and session) |
-| ASSET-007 | P2 | Studio-built nitrile glove overlay (DEC-111; R4.7 rejected as built): hand vertex-group mask or a CC0 glove proxy | ASSET-004 | Active |
+| ASSET-007 | P2 | Studio-built nitrile glove overlay (DEC-111; R4.7 rejected as built): hand vertex-group mask or a CC0 glove proxy | ASSET-004 | Done (REVIEW-ASSET007 PASS, 8 minors → ASSET-007b; colour/wear DEC-126/127) |
+| ASSET-007b | P1 | Glove look follow-ups (REVIEW-ASSET007 m1–m6): fine nitrile micro-texture instead of mottling, LOD3 cuff, thumbnail read, posed-hand deformation proof, warn when `gloves` lacks `nitrile_gloves` in subdiv_parts, share the glove maps. Strong visual review (DEC-122: player-facing at the register) | ASSET-007, ASSET-005 | Later (before ASSET-008) |
 | AUDIT-001 | P1 | Read-only .md audit + approval sheet (`Docs/Audits/`) | DES-003 | Done (DEC-064) |
 | DOC-001 | P1 | Apply AUDIT-001 batches A–C (DEC-064), 2 phases | AUDIT-001; phase 2 after IMP-002 | Done (W4X) |
 | DOC-002 | P2 | AUDIT-001 batch D (risky: ART renumber, CLAUDE.md read list, REFERENCES_INDEX split, branch naming) | DOC-001; between waves only | Later |
@@ -132,7 +133,7 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | BUILD-008b | P0 | Playtest build 4 (PS1b exit) | GAME-020, NPC-001 | Later |
 | ART-009 | P1 | BOH/HUB stock dressing + restock anchors for the manager refill (racks per DEC-041, backstock GAP-DAY-02); was ROADMAP "ART-005" (renumbered, DOC-002) | ART-007, PROC-005 | Later (PS2, before GAME-012) |
 | NPC-002 | P1 | Ambient staff NPCs: guard at the stand, GM assigning registers (DEC-079), second budtender; SPEC_SHIFT_DAY §5 | ASSET-008, NPC-001, GAME-011 | Later (PS2) |
-| ASSET-008 | P1 | Staff characters: separate MPFB roster in the DEC-089/113 uniform (green tee, print wearer's left chest), guard set (CHARACTERS.md §9) | ASSET-005, ASSET-006 | Later (PS2) |
+| ASSET-008 | P1 | Staff characters: separate MPFB roster in the DEC-089/113 uniform (green tee, print wearer's left chest), guard set (CHARACTERS.md §9) | ASSET-005, ASSET-006, ASSET-007b | Later (PS2) |
 | AUDIO-002 | P1 | Unity integration of the AUDIO-001 plan: mixer groups, ducking, slice/PS1 cues, PS2 rush layers | AUDIO-001, GAME-011 | Later (PS2) |
 | UI-001 | P2 | Settings menu off the Esc pause: four mixer volumes, mouse sensitivity, invert, key hints (AUDIO_PLAN §1, GAME-025) | AUDIO-002 | Later (PS2) |
 | PERF-002 | P2 | Perf pass with a full-day NPC count against PERF_BASELINE budgets | GAME-011, NPC-002 | Later (PS2) |
