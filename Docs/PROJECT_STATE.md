@@ -3,7 +3,7 @@
 **Milestone:** M0/M1 done pending review → next M2 graybox + M3 domain engine (in parallel)
 **Known-good commit:** `main` (docs only). Wave 1 work is on branch `review/wave-1` (commit 667ebd1), unreviewed.
 **Build health:** on `review/wave-1`: Unity 6000.6.7f1 HDRP project compiles; 1/1 EditMode tests pass; Windows dev build + smoke launch OK (BUILD-001).
-**Updated:** 2026-10-29 by Hub (session 2, wave 3 launched)
+**Updated:** 2026-10-29 by Hub (session 2, end; handover for a cleared hub)
 
 ## Wave 1 results (all complete, awaiting REVIEW-W1)
 - **REF-001** (handoff `Docs/Handoffs/REF-001.md`): 10 rooms with high-confidence shells in feet from the vector PDF; 17 CCTV feeds mapped; 13 photos indexed. There are no heights anywhere. HUB/HUB2, restroom and JC are visually blind.
@@ -23,8 +23,14 @@
 | REF-004 | dispo-ref-004 | importing TI drawings (read-only M365) |
 Unity Warehouse/Office packs: still need a Unity editor Package Manager download (P1, later).
 
+### Live session ids (for SendMessage / archive)
+- dispo-game-002 `local_e574024b-b42a-4f12-b5db-6b6d66ac34bc` (working)
+- dispo-art-002 `local_6681ee58-dbed-4e39-adda-192aa4a576fb` (follow-up validation running)
+- dispo-review-w3a `local_d40fcd21-be35-4d84-bf4f-90fb27eac376` · dispo-review-w3c `local_819f11d1-8aac-40d4-b6d8-c2435445b1ee` · dispo-ref-004 `local_8e643693-f039-47b6-8392-365947ed9efc` (working)
+- Idle, archive after their reviews merge: game-003 `local_23577d66-0fd6-4bfb-831e-6950d9ff3e3d`, build-002 `local_e58e2c77-01ad-4ef6-b560-9da96488af50`, ref-003 `local_c3b522a0-283d-45c1-af1d-8e0ec1bfca4f`, res-001 `local_f19e4a49-5f05-4f20-a0ca-c56f31e4a50e`, comp-001 `local_7f7a77b4-e098-4fd1-b838-399ac35df20f`, asset-002 `local_4921e361-4a37-4b68-a853-961b622160da`.
+
 ## NEXT ACTIONS (in order) — fresh Hub starts here
-1. ART-002 follow-up done → start REVIEW-W3B (packet still to write: ART-002 + REF-003, Unity gates, overlay, anchors test).
+1. ART-002 follow-up commit lands → start REVIEW-W3B (packet ready in Active).
 2. Merge W3A/W3B/W3C as they pass; Unity merges re-run compile + tests.
 3. GAME-002 done → REVIEW of the slice (play it via the PlayMode bot + captures) → merge → the vertical slice is playable; brief Nolan.
 4. Then: PERF-001; ART-003 hero retail lookdev (TI finishes DEC-037 + ASSET-002 cache, Montserrat/Crimson Pro brand fonts); PROC-002 jar fill/bud system; COMP later mechanics (limit meter, ID events, medical); packaged assortment (DEC-034).

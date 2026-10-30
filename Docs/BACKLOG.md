@@ -28,7 +28,7 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | RES-001 | P1 | Read-only research in Nolan's M365 (Outlook, OneDrive) for store facts | — | Review |
 | COMP-001 | P0 | Arizona cannabis compliance review → gameplay changes (overselling etc.) | — | Review |
 | REVIEW-W3A | P0 | Review GAME-003 + BUILD-002 | — | Active |
-| REVIEW-W3B | P0 | Review ART-002 + REF-003 (after ART-002 height/stand follow-up) | — | Ready |
+| REVIEW-W3B | P0 | Review ART-002 + REF-003 (after ART-002 height/stand follow-up) | — | Ready (packet written) |
 | REVIEW-W3C | P0 | Review COMP-001 + RES-001 + ASSET-002 | — | Active |
 | REF-004 | P1 | Import TI drawing set + extract heights/counters (DEC-037) | RES-001 | Active |
 | BUILD-002 | P2 | Build manifest (TOOLCHAIN §14) + fuller result schema (§8) | BUILD-001 | Review |
