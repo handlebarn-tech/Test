@@ -13,7 +13,7 @@ Seeded from MASTER_PLAN §20–21; REF-001 and MIG-001 extend this file.
 - GAP-102 | building | which of FOH/BOH is 163 vs 180 SF (drawn 215 / 173 SF) | Low | user confirmation
 - GAP-103 | building | JC corner within break room and true size (drawn 3×3 = 9 SF vs printed 19.19 SF) | Low | user confirmation / photo
 - GAP-104 | building | wall thickness; interior door widths/heights (plan arcs 1.2–1.8 ft are schematic) | none (use 3'-0"×7'-0" labelled convention) | measure on site
-- GAP-105 | cctv | 8 tiles (R4C3, R4C4, R5C1–C5) show large rack/storage rooms the plan does not map; the plan says HUB has no feed | Low (assigned HUB/HUB 2) | user names each camera
+- GAP-105 | cctv | 7 tiles (R4C3, R4C4, R5C1–C5; R5C5 repeats R5C2) show large rack/storage rooms the plan does not map; the plan says HUB has no feed | Low (assigned HUB/HUB 2) | user names each camera
 - GAP-106 | building | north-wall order: CCTV R2C2/R2C4 show the video-wall TV west of the logo living wall; the plan puts the living wall west of the menu screen | Low | user confirmation; graybox follows the plan meanwhile
 - GAP-107 | building | register numbering (Register 1) and exact station positions; plan says "up to 12", CCTV shows 3–4 per view | Low | user confirmation
 - GAP-108 | building | counter heights (register, deli, display case) not measured anywhere | none (36–42" convention) | site measure
