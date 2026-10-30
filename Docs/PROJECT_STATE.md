@@ -16,9 +16,9 @@ Hub-owned; the **only live state record** (DEC-117). A fresh Hub resumes from `D
 | `dispo-asset007` `local_d3aad36e-a494-47b7-a5c7-2cd0a58efe19` | **ASSET-007** glove overlay (Blender) | `claude/elastic-kilby-04c2ca` @ 36be358 (no work yet) | **Resumed (GO) 19:40.** |
 | `dispo-proc009` `local_738af4a0-c26e-49b9-bd35-43c6dacd5b3f` | **PROC-009** parked vehicles (Blender) | `claude/jovial-meninsky-908c0a` off main @ 3ab683b | First turn died on the plan usage limit (reset 12pm); re-sent 12:05. Await `ready for review`. |
 | `dispo-proc006c` `local_796c7c2a-33dc-4897-9a85-ec441c8a9961` | **PROC-006c** register kit review follow-ups (Blender) | `claude/zealous-kalam-4192dd` | Launched 12:05. |
-| `dispo-ref016` (launching) | **REF-016** store-evidence matrix (docs/data) | worktree off main | Launched 12:30. Review = fresh **evidence** reviewer (DEC-120 (3)). |
-| `dispo-proc013` (launching) | **PROC-013** door family incl. glass storefront (Blender) | worktree off main | Launched 12:30. Strong visual review (DEC-122). |
-| `dispo-imp004` (launching) | **IMP-004** audit of `Bender & Asset new plan.md` (docs) | worktree off main | Launched 12:30. Hub applies the adoptions after review. |
+| Agent worker (Hub-spawned, worktree; dies if the Hub restarts: then relaunch as a session) | **REF-016** store-evidence matrix (docs/data) | worktree off main | Launched 12:30. Review = fresh **evidence** reviewer (DEC-120 (3)). |
+| Agent worker (Hub-spawned, worktree) | **PROC-013** door family incl. glass storefront (Blender) | worktree off main | Launched 12:30. Strong visual review (DEC-122). |
+| Agent worker (Hub-spawned, worktree) | **IMP-004** audit of `Bender & Asset new plan.md` (docs) | worktree off main | Launched 12:30. Hub applies the adoptions after review. |
 
 Dead Agent runs from the old Hub, nothing to recover: the REF-013 M1 fix on `worktree-agent-a8683a438ebc5cbe4` (superseded by 3890936), the first PROC-009 run, REVIEW-REF13-FIX and the first REVIEW-PROC006b (no verdicts). Worktrees/branches are retired only when positively identified as integrated or obsolete (DEC-123); no broad cleanup.
 
