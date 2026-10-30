@@ -5,6 +5,23 @@
 **Status keys:** IMPL = ALREADY_IMPLEMENTED · PLAN = ALREADY_PLANNED · PART = PARTIALLY_IMPLEMENTED · MISS = MISSING · CONFLICT = CONFLICTS_WITH_CURRENT_DESIGN.
 **New packets** (all in `Docs/Tasks/Ready/`): QA-002 TFS parity gate · GAME-017 customer knowledge + questions · GAME-018 TFS workflows at the counter · GAME-019 service evaluation + resolutions · GAME-020 decision telemetry + Service/Flow/Operations · GAME-021 repeat memory · GAME-022 difficulty profiles · GAME-023 decision-pressure acceptance shift · GAME-024 career competency + save v1 · UX-005 counter-intelligence UX. Milestone placement: ROADMAP §2b (new "PS1b Customer Intelligence") and PS2.
 
+## Ratified as (AUDIT-001 C11, DEC-064)
+This file is a frozen snapshot of the one-time intake (DES-003, merged in W4Q). Its proposed DECs were ratified as:
+
+| Proposed | Ratified | Topic |
+|---|---|---|
+| DEC-P1 | DEC-052 | TFS oracle in evaluation only (`ServiceEvaluator`) |
+| DEC-P2 | DEC-053 | GSS §40 learned adjustment withdrawn |
+| DEC-P3 | DEC-054 | `concentrateFitFactor` evaluation-only |
+| DEC-P4 | DEC-055 | eligibility = jar + backstock > 0 (confirmed by DEC-061) |
+| DEC-P5 | DEC-056 | representative shift 25–40 min |
+| DEC-P6 | DEC-057 | DP spec canonical; PS1b |
+| — | DEC-058 | Gate A parity tests green on every gameplay PR |
+| — | DEC-059 | W4Q minors (QA-002 ID, GAME-023 Blocked) |
+| N1 / N2 | DEC-060 / DEC-061 | v7.11.5 fixes ship; empty jar + backstock stays listed |
+
+**Citation key (AUDIT-001 C7, DEC-064):** "spec §n" / "GSS §n" = `GAMEPLAY_SIMULATION_SPEC.md`; "DP §n" = `Design/SPEC_DECISION_PRESSURE.md`. In DP, DP-001…032 are the §115 tests; the §123 workcells are cited as DP-WC-001…011.
+
 ## Key mapping of spec names to existing names (spec §0 rule 5)
 | Spec concept | Existing structure kept | Note |
 |---|---|---|
@@ -162,7 +179,7 @@
 | 120 | Save system persist list, versioned | PLAN | GSS §81, no task | GAME-024 save v1 |
 | 121 | Migration: missing field → safe default | MISS | — | GAME-024 |
 | 122 | Event-driven evaluation; memory indexed by id; demand on ticks | PART | slice scores on `Present` only | rule in each packet |
-| 123 | DP-001…011 workcells | — | — | DP-001→GAME-017; DP-002+003→GAME-019; DP-004→GAME-017/019; DP-005→GAME-012 (extended, no new packet); DP-006→GAME-021; DP-007→GAME-022; DP-008→GAME-020; DP-009→GAME-024; DP-010/011→PS4 (gated, no packet) |
+| 123 | DP-001…011 workcells (cited elsewhere as DP-WC-001…011; the IDs in this row are workcells, not the §115 tests) | — | — | DP-001→GAME-017; DP-002+003→GAME-019; DP-004→GAME-017/019; DP-005→GAME-012 (extended, no new packet); DP-006→GAME-021; DP-007→GAME-022; DP-008→GAME-020; DP-009→GAME-024; DP-010/011→PS4 (gated, no packet) |
 | 124 | Gate A TFS integrity regression | PART | engine goldens (DEC-014) | QA-002 adds the gameplay-level gate |
 | 125–129 | Gates B–F | MISS | — | GAME-017 (B), GAME-019 (C), GAME-012 + GAME-023 (D), GAME-021 (E), GAME-024 (F) |
 | 130 | Gate G management | PLAN | PS4 gate | none now |

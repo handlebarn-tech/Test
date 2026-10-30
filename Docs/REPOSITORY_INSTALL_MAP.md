@@ -1,5 +1,7 @@
 # REPOSITORY INSTALL MAP
 
+> **Historical (AUDIT-001 C4, DEC-064):** describes the one-time install of the original handoff files; it is done. Current layout: `Docs/STUDIO_OS.md` §48 "As built" note.
+
 The files in this handoff folder should be installed into a working repository approximately as follows:
 
 ```text

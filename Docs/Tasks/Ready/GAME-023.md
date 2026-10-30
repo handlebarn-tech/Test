@@ -1,5 +1,7 @@
 # GAME-023 — Decision-pressure acceptance shift (spec §133)
 
+**State:** **BLOCKED** (DEC-059 m2): needs GAME-011/012, which have no packets yet. Do not dispatch (AUDIT-001 A1, DEC-064).
+
 **Role:** GAME / QA · **Priority:** P0 · **Branch:** `task/GAME-023` worktree off `main` (GAME-011, GAME-012, GAME-018..022 merged)
 
 ## Goal

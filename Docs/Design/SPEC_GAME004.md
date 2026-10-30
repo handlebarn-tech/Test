@@ -1,6 +1,7 @@
 # SPEC — GAME-004 packaged assortment (DES-002)
 
 **Milestone:** PS3 "Packaged Floor" (`ROADMAP_POST_SLICE.md` §4). Implementation tasks: DATA-002, PROC-004, ART-006, UX-004, GAME-014, GAME-015, GAME-016.
+**Citation key (AUDIT-001 C7, DEC-064):** "spec §n" / "GSS §n" = `GAMEPLAY_SIMULATION_SPEC.md`; "DP §n" = `Design/SPEC_DECISION_PRESSURE.md`. In DP, DP-001…032 are the §115 tests; the §123 workcells are cited as DP-WC-001…011.
 **Labels:** [SRC] = store fact (RES-001 row in `Docs/Research/OFFICE_FINDINGS.md`), law (COMP-001 rule) or tool source · [GDD] = game-design decision · GAP-PKG-nn = unknown, placeholder in use.
 **Hard rule:** no packaged product, price or quantity is a store fact unless cited. There is **no packaged catalog** in the repo (the budtender tool is deli flower only, DEC-020/034), so every SKU below is a labelled placeholder until real data arrives (GAP-PKG-01).
 
@@ -21,14 +22,14 @@ The real store's Dutchie categories are BEVERAGE, EDIBLE, EXTRACT, Flower, MERCH
 Priority follows spec §53 (deli → packaged flower → preroll → vape → edible → concentrate → others). PS3 may ship categories 1–4 first and the rest as a follow-up if the wave runs long.
 
 ## 2. Where packaged stock lives (FOH = fulfillment room)
-Known [SRC]: A011 labels the west room **FOH FULFILLMENT 180.26 SF** (GAP-102 closed). FOH has chrome wire racks with clear sorted bins, a white fridge and **two glass-door coolers** (CCTV R4C1, REFERENCES_INDEX §2.3: FOH wire racks ×2 8.0 × 1.4 ft, fridge 1.6 × 3.6 ft; DEC-041 FOH still). BOH has chrome wire racks of packaged stock and stacked black cases (R4C2, DEC-041). HUB holds pallets/cases (bulk). On the **sales floor**: a refrigerated concentrate case in a corner (F6), a locked brand display case (F4), a merch garment rack (F5, R3C2). Register counter space is kept for deal sheets, EDLPs and in-house signs (F8). Fridge range 35.6–46.4 °F (O9).
+Known [SRC]: A011 labels the west room **FOH FULFILLMENT 180.26 SF** (GAP-102 closed). FOH has chrome wire racks with clear sorted bins, a white fridge and **two glass-door coolers** (corrected by DEC-050/062 and REF-009: one 2-door glass cooler; the product racks are the 4 rolling racks) (CCTV R4C1, REFERENCES_INDEX §2.3: FOH wire racks ×2 8.0 × 1.4 ft, fridge 1.6 × 3.6 ft; DEC-041 FOH still). BOH has chrome wire racks of packaged stock and stacked black cases (R4C2, DEC-041). HUB holds pallets/cases (bulk). On the **sales floor**: a refrigerated concentrate case in a corner (F6), a locked brand display case (F4), a merch garment rack (F5, R3C2). Register counter space is kept for deal sheets, EDLPs and in-house signs (F8). Fridge range 35.6–46.4 °F (O9).
 
 Game placement [GDD on SRC fixtures]:
 | Fixture | Holds (game) | Basis | Player action |
 |---|---|---|---|
 | FOH wire racks, sorted bins | PRE-PACK, PREROLL, VAPE, EDIBLE, TOPICAL (sell stock) | R4C1/DEC-041 show packaged stock in bins; **which category sits where is GAP-PKG-02** | walk to FOH, pick from the bin (spec §23 "retrieve FOH stock") |
-| FOH glass-door coolers (2) | BEVERAGE (+ chocolate edibles) | coolers exist (R4C1); contents unknown, **GAP-PKG-03** | pick from cooler |
-| FOH white fridge | none (staff fridge placeholder) | contents unknown, GAP-PKG-03 | — |
+| FOH 2-door glass cooler | CONCENTRATE + perishable EDIBLE | **DEC-050** (GAP-PKG-03 answered; was "coolers (2): BEVERAGE (+ chocolate edibles), contents unknown") | pick from cooler |
+| FOH white fridge | BEVERAGE (cannabis colas and other drinks; generic labels) | **DEC-050** (GAP-PKG-03 answered; was "staff fridge placeholder") | pick from fridge |
 | Sales-floor concentrate case | EXTRACT | F6 (High) | pick from the case (position GAP-111) |
 | Locked brand display case | display only (one brand, visual) | F4 | flavor |
 | Merch garment rack | MERCH | F5 (Med), R3C2 | pick from rack |
@@ -50,7 +51,7 @@ The budtender tool (v7.11.4) scores **strains/batches of deli flower** only. Any
 | Strain-less items (edibles, beverages, topicals, unlinked vapes/extracts) | **constraint match**: category, dose (mg), pack size, price vs budget, brand ask. No effect claim. | [GDD] |
 | MERCH | no recommendation; impulse add-on line from the customer generator | [GDD] |
 
-**TFS boundary note (DES-003, DP §0A; ruling pending as DEC-P3, decide before GAME-015):** the TFS tool has no non-flower model, so the game must not present one. (a) `concentrateFitFactor` may only scale the *evaluation* fit (satisfaction / GAME-019 ServiceUtility); it never reorders or filters the strain cards the player sees, and it is not shown as a fit score. (b) For strain-less items the "constraint match" is a catalog filter on stated format, dose, pack size, price and brand, sorted by a neutral key (price, then name); it is not a ranking and makes no effect claim.
+**TFS boundary note (DES-003, DP §0A; ratified as DEC-054 (was DEC-P3)):** the TFS tool has no non-flower model, so the game must not present one. (a) `concentrateFitFactor` may only scale the *evaluation* fit (satisfaction / GAME-019 ServiceUtility); it never reorders or filters the strain cards the player sees, and it is not shown as a fit score. (b) For strain-less items the "constraint match" is a catalog filter on stated format, dose, pack size, price and brand, sorted by a neutral key (price, then name); it is not a ranking and makes no effect claim.
 
 Design rules for the [GDD] parts:
 - Customer asks for strain-less items are about **format, dose, price or brand** ("a 100 mg pack of gummies", "a cheap disposable"), never about an effect the item would cause (COMP-001 H1 copy rule). Effect-family asks (sleep, pain…) still go to flower/prepack/preroll via the engine; a player who hands a strain-less item to an effect ask gets `nonStrainEffectFit` [GDD].
@@ -86,10 +87,10 @@ Reuse PROC-001 `package_base` (box / pouch) and add variants: can (prepack, beve
 
 ## 7. GAPs raised (proposed for `Docs/KNOWN_GAPS.md`)
 - GAP-PKG-01 | data | no packaged catalog (SKUs, strains, mg, sizes, stock) | placeholder catalog | Dutchie or LeafLogix inventory export from Nolan (O14), PII-free
-- GAP-PKG-02 | building | which category sits on which FOH/BOH rack/bin | §2 placeholder | Nolan / a closer FOH still
-- GAP-PKG-03 | building | contents of the two FOH glass-door coolers and the white fridge | §2 placeholder | Nolan
+- GAP-PKG-02 | building | (partly answered DEC-050: FOH stock is mostly vapes and edibles, some infused prerolls) which category sits on which FOH/BOH rack/bin | §2 placeholder | Nolan / a closer FOH still
+- GAP-PKG-03 | building | contents of the two FOH glass-door coolers and the white fridge | **answered DEC-050** (fridge = drinks, cooler = concentrates + perishable edibles; one 2-door cooler per REF-009) | was: §2 placeholder, Nolan
 - GAP-PKG-04 | pricing | every packaged price | §5 placeholders | the export above, or the weekday price sheets (P4 zip not read)
 - GAP-PKG-05 | pricing | deal values per weekday/category | none (deals off) | pre-shift briefs pattern (P7) or Nolan
-- GAP-PKG-06 | store | are any packaged goods on open sales-floor shelves (self-browse), or all fetched by staff? | placeholder: fetched (except merch, extract case) | Nolan
+- GAP-PKG-06 | store | are any packaged goods on open sales-floor shelves (self-browse), or all fetched by staff? | **answered DEC-050: none of FOH is self-serve; the budtender fetches packaged items**; was placeholder: fetched (except merch, extract case) | Nolan
 - GAP-PKG-07 | store | which brands to show, and real names or generic (trademark) | generic | Nolan (PROJECT_STATE open item)
 - GAP-PKG-08 | law | beverage mg caps (we assume edible caps E1 apply) | Low | COMP follow-up read of R9-18-313

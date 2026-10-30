@@ -4,6 +4,8 @@ Proposed by Nolan 2026-10-30; integration status in DES-003 handoff
 # DECISION PRESSURE, CUSTOMER INTELLIGENCE, PROGRESSION & MANAGEMENT INTEGRATION SPECIFICATION
 
 **Status:** Proposed canonical GAME-DESIGN DECISION extension  
+**Ratified:** DEC-057 (2026-10-30): canonical extension of `GAMEPLAY_SIMULATION_SPEC.md` (GSS). **Precedence on conflict:** `DECISIONS.md` > this spec > GSS > `Specs/SLICE_DESIGN.md` / `Design/ROADMAP_POST_SLICE.md`; the DISPO_GAME_DESIGN_V2 pack is an add-on below this spec (DEC-063a). Item status: `Design/DES-003_RECONCILIATION.md` (AUDIT-001 C6, DEC-064).  
+**Citation key (AUDIT-001 C7, DEC-064):** "spec §n" / "GSS §n" = `GAMEPLAY_SIMULATION_SPEC.md`; "DP §n" = `Design/SPEC_DECISION_PRESSURE.md`. In DP, DP-001…032 are the §115 tests; the §123 workcells are cited as DP-WC-001…011.  
 **Integration mode:** Merge into existing systems. Do not replace working architecture unless required.  
 **Historical status:** Everything introduced by this document is new game design unless it already exists in canonical project documentation or explicit `DECISIONS.md` entries.  
 **Primary objective:** Turn the existing technically strong transaction simulation into a game where expert play is defined by judgment, prioritization and operational foresight rather than repeatedly choosing the mathematically highest recommendation card.
@@ -4063,6 +4065,8 @@ not every Update()
 ---
 
 # 123. WORKCELL BREAKDOWN
+
+> Elsewhere in the repo these workcells are cited as **DP-WC-001…011**, so they are not confused with the §115 tests DP-001…032 (AUDIT-001 C7). Headings below are unchanged.
 
 The Hub may rename task IDs to align with the current roadmap.
 

@@ -6,6 +6,9 @@
 **Parent:** `MASTER_PLAN.md`  
 **Primary source basis:** `References/Review_Budtender_Tool_Comprehensive_Chat_Record.md`  
 **Status:** Canonical gameplay design for reconstruction unless later user decisions override it
+**Precedence on conflict (AUDIT-001 C6, DEC-057/063/064):** `DECISIONS.md` > `Design/SPEC_DECISION_PRESSURE.md` (ratified DEC-057) > this spec > `Design/DESIGN_V2/` add-on (DEC-063a) > `Specs/SLICE_DESIGN.md` / `Design/ROADMAP_POST_SLICE.md`.
+**Authority for recommendation logic (AUDIT-001 C1, DEC-001/002/009):** the local TFS tool source (v7.11.4 build) > DECISIONS > the live site > the chat record named above as "Primary source basis", which predates DEC-001.
+**Citation key (AUDIT-001 C7, DEC-064):** "spec §n" / "GSS §n" = `GAMEPLAY_SIMULATION_SPEC.md`; "DP §n" = `Design/SPEC_DECISION_PRESSURE.md`; "V2 <file> §n" = `Design/DESIGN_V2/`. In DP, DP-001…032 are the §115 tests; the §123 workcells are cited as DP-WC-001…011.
 **Extended:** 2026-10-30 by DES-003 with `Design/SPEC_DECISION_PRESSURE.md` (Nolan's decision-pressure spec, cited below as DP §n). Item-by-item status: `Design/DES-003_RECONCILIATION.md`.
 **Add-on:** 2026-10-30 by IMP-002 with `Design/DESIGN_V2/` (Nolan's V2 pack, cited as V2 `<file>` §n; audit `Imports/IMP-001_DESIGN_V2_AUDIT.md`, approval DEC-063). **Precedence:** DP wins over V2 where they differ (DEC-063a). REVIEW-IMP1 A1–A4 bind (oracle = shipped engine per DEC-060; TFS snapshot = parser input per DEC-057; no TFS scores/ranks in the report per DEC-052; EMPTY_WITH_BACKSTOCK per DEC-055/061). V2 numbers are [GDD] starting values (GAP-DP-02).
 
@@ -951,7 +954,7 @@ This creates gameplay around learning/feedback without recreating a surveillance
 
 Later milestone only.
 
-**Amended by DP §60 (DES-003, proposed DEC):** fictional outcomes never adjust the TFS recommendation score. The earlier `BaseRecommendationScore + LearnedOutcomeAdjustment` idea is withdrawn; it would alter the recommendation system and needs an explicit Nolan decision first.
+**Amended by DP §60 (DES-003; ratified as DEC-053, was DEC-P2):** fictional outcomes never adjust the TFS recommendation score. The earlier `BaseRecommendationScore + LearnedOutcomeAdjustment` idea is withdrawn; it would alter the recommendation system and needs an explicit Nolan decision first.
 
 Allowed uses of learned outcomes: customer memory, dialogue, player performance history, career scoring, a customer's willingness to repeat a purchase.
 

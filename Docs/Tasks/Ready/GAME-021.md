@@ -1,6 +1,6 @@
 # GAME-021 — Repeat customer memory
 
-**Role:** GAME · **Priority:** P1 · **Branch:** `task/GAME-021` worktree off `main` (GAME-017 and GAME-019 merged; GAME-018 for Similar recovery)
+**Role:** GAME · **Priority:** P1 · **Branch:** `task/GAME-021` worktree off `main` (GAME-017 and GAME-019 merged; GAME-018 for Similar recovery). **Runs before GAME-022**: both touch `Customers.cs` generator code (AUDIT-001 A3, DEC-064)
 
 ## Goal
 Spec DP-006 (`Docs/Design/SPEC_DECISION_PRESSURE.md` §53–60): returning fictional customers remember what they bought and how it went, so prior play matters. Memory gives the player legitimate facts for a new TFS query; it never adjusts TFS scores (§60, GSS §40 as amended).

@@ -6,7 +6,7 @@
 **Status:** Canonical production plan  
 **Third-party asset budget:** $0  
 **Required software cost:** $0  
-**Target engine:** Unity 6.3 LTS + HDRP  
+**Target engine:** Unity 6.3 LTS + HDRP *(superseded by DEC-003: the project uses Unity 6000.6.7f1 + HDRP 17.6.0)*  
 **Use case:** private, non-commercial, at-home project  
 **Execution model:** multi-agent Hub + disposable specialist workcells
 
@@ -66,6 +66,9 @@ The Unity project should not feel like a generic cannabis store with a recommend
 
 When sources disagree, use this order.
 
+## 3.0 Local budtender tool source (DEC-001, added by AUDIT-001 C1)
+For recommendation logic and existing implementation, the local TFS tool project at `C:/Users/handl/Downloads/tfs-budtender` is the **highest authority**, above the live site and the chat record (DEC-001); its v7.11.4 build is canonical (DEC-002) and equals the live site (DEC-009). Read-only, no PII (DEC-006). §3.1–3.3 below predate DEC-001 and are kept for context.
+
 ## 3.1 Live deployed budtender application
 For recommendation/tool behavior, the public **TFS Budtender Tool v7.11.4** deployment is the strongest currently available behavioral reference:
 
@@ -87,6 +90,7 @@ It is detailed enough to define the known product goals, features, constraints, 
 If the original source is added later, source inspection becomes a verification pass rather than a prerequisite to beginning the port.
 
 ## 3.4 Explicit current project decisions
+*(Same rule as §3.2, kept so section numbers stay stable; AUDIT-001 C1.)*
 User-approved decisions in the current repository override historical behavior.
 
 ## 3.5 Floor plan
@@ -470,6 +474,8 @@ Detailed operating rules are in `STUDIO_OS.md`.
 
 # 15. Repository memory model
 
+> **As built (AUDIT-001 C4, DEC-064):** the repo follows this layout with these differences: no `README.md` (entry docs are `README_FIRST.md`, `CLAUDE.md`, `AGENTS.md`); no `Docs/CHANGELOG.md` (history = git log + `Docs/Handoffs/`, `Docs/Reviews/`); no `Docs/QA_STATUS.md` (QA evidence = `Docs/BUILD_STATUS.md`, `Docs/PERF_BASELINE.md`, reviews); no `Docs/Assets/ASSET_REGISTRY.csv` or `ATTRIBUTION.md` (licenses = `Docs/Assets/LICENSE_LEDGER.md`, downloads = `Docs/Assets/ASSET_CACHE_MANIFEST.json`, DEC-023); no `Docs/Tasks/Review/` (review state lives in `Docs/BACKLOG.md` and `Docs/Reviews/`). Added since: `Docs/HUB_RESUME.md`, `Docs/Design/`, `Docs/Specs/`, `Docs/Research/`, `Docs/Reconstruction/`, `Docs/Reference/`, `Docs/Audits/`, `Docs/Imports/`.
+
 Conversation history is not project memory.
 
 The repository should contain:
@@ -506,6 +512,8 @@ This master document should change rarely.
 ---
 
 # 16. Context-routing rule
+
+> **Current routing:** the Hub's reading set is owned by `Docs/HUB_RESUME.md` ("Hub loop" step 1); `Docs/DOCS_INDEX.md` is the doc router. They win over the table below, which is the original plan kept for context (AUDIT-001 B5/C5, DEC-064).
 
 Default context by role:
 
@@ -573,7 +581,7 @@ Because the original Three.js/browser source is unavailable, Unity implementatio
 ## M1 — Repository and Unity foundation
 Outputs:
 
-- Unity 6.3 HDRP project;
+- Unity 6.3 HDRP project; *(superseded by DEC-003: the project uses Unity 6000.6.7f1 + HDRP 17.6.0)*
 - repository/doc structure;
 - AGENTS.md / CLAUDE.md;
 - build scripts;
@@ -869,7 +877,7 @@ The first Hub session using this document should:
 8. archive supplied references without alteration;
 9. read and index the supplied project-history record;
 10. generate the documented-behavior reconstruction contract;
-11. initialize Unity 6.3 HDRP;
+11. initialize Unity 6.3 HDRP; *(superseded by DEC-003: the project uses Unity 6000.6.7f1 + HDRP 17.6.0)*
 12. create the first dependency graph;
 13. dispatch only dependency-ready workcells.
 

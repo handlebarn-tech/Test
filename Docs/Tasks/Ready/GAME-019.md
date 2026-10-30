@@ -6,13 +6,13 @@
 Spec DP-002 + DP-003 + part of DP-004 (`Docs/Design/SPEC_DECISION_PRESSURE.md` §19–33, §38): grade how well the player handled the fictional customer, separately from customer satisfaction and from the TFS engine. A correct no-sale can earn credit; a lazy one can't.
 
 ## Read
-SPEC_DECISION_PRESSURE §0A (evaluation boundary), §2.4–2.6, §14, §19–33, §38, §115 (DP-004..009, 013..015), §126; `Docs/GAMEPLAY_SIMULATION_SPEC.md` §12, §15–17, §36, §58; `Docs/Specs/SLICE_DESIGN.md` §3; `Docs/Design/DES-003_RECONCILIATION.md` (name mapping, DEC-P1); `Docs/Handoffs/GAME-017.md`, `GAME-018.md`.
+SPEC_DECISION_PRESSURE §0A (evaluation boundary), §2.4–2.6, §14, §19–33, §38, §115 (DP-004..009, 013..015), §126; `Docs/GAMEPLAY_SIMULATION_SPEC.md` §12, §15–17, §36, §58; `Docs/Specs/SLICE_DESIGN.md` §3; `Docs/Design/DES-003_RECONCILIATION.md` (name mapping, DEC-052 (was DEC-P1)); `Docs/Handoffs/GAME-017.md`, `GAME-018.md`.
 
 ## Owns
 `Simulation/Slice/` new `ServiceEvaluator.cs` (+ moving `ShiftSim.Fit/Score` into it unchanged in behaviour), `Response`/outcome extensions, no-sale action; `Presentation/Slice/` no-sale button + ASK_* lines per UX-005; SliceConfig/SliceLines new keys; EditMode tests. No `Code/Domain/` edits.
 
 ## Deliverable
-1. `ServiceEvaluator` (evaluation layer, its own class and test file): `ServiceUtility` = TFS alignment (today's `Fit`: the engine's own ranking for the *true* intent, DEC-P1) + constraint, budget, quantity, similar-request, consultation and availability handling (§19). Hard vs soft constraints per §20. Evaluated on events only (§122). It may call the engine; it never changes what the player sees.
+1. `ServiceEvaluator` (evaluation layer, its own class and test file): `ServiceUtility` = TFS alignment (today's `Fit`: the engine's own ranking for the *true* intent, DEC-052 (was DEC-P1)) + constraint, budget, quantity, similar-request, consultation and availability handling (§19). Hard vs soft constraints per §20. Evaluated on events only (§122). It may call the engine; it never changes what the player sees.
 2. `BestAvailableResolution` over the service actions available at decision time (§21: sell ranked / other valid candidate, ask another question, Similar, Compare, cheaper valid alternative, informed no-sale; retrieve/restock once GAME-012 exists) → `DecisionRegret`, `DecisionQuality` (§22–23, `decisionRegretTolerance` [GDD] + the §23 bands).
 3. Per-customer purchase threshold drawn around `acceptThreshold` [GDD] (§25); `Response` extended in place with ASK_CHEAPER / ASK_STRONGER / ASK_LESS_SEDATING / ASK_SIMILAR / ASK_WHY / COMPARE (GSS §17); each ASK_* reveals a KNOWN field via GAME-017's hook (§27).
 4. Player action "Nothing fits right now" → `InformedNoSale` when no viable TFS-supported path meets the customer's stated willingness to buy, else `AvoidableNoSale` (§30–31). `ServiceResolution` enum (§32) beside the kept `CustomerOutcome`.

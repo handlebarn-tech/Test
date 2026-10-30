@@ -1,6 +1,6 @@
 # GAME-008 — ID-check events ("cover check-in")
 
-**Role:** GAME · **Priority:** P1 · **Branch:** `task/GAME-008` worktree off `main` (GAME-007 merged; can run in parallel with GAME-009)
+**Role:** GAME · **Priority:** P1 · **Branch:** `task/GAME-008` worktree off `main` (GAME-007 merged. **Runs before GAME-009**, not in parallel: both own Simulation/Slice, Presentation/Slice and SliceConfig/SliceLines keys; AUDIT-001 A3, DEC-064)
 
 ## Goal
 During a rush the player may cover the check-in door and admit or refuse arrivals by their ID (`Docs/Design/SPEC_COMP002.md` §3). Real flow: staff verify ID before the sales-floor door (RES-001 O2/O3), so the counter never re-checks (DEC-036 M2 stays).
