@@ -23,7 +23,21 @@ namespace Dispo.Editor.Graybox
         const string Lighting = "Lighting_Day scene + " + GrayboxBuilder.SunName + " 20000 lux, fixed exposure EV 13";
 
         [Serializable] sealed class Entry { public string cameraId, tile, room, scene, resolution, commit, timestamp, lighting, conf, note, file; }
-        [Serializable] sealed class Manifest { public List<Entry> captures = new List<Entry>(); public string topDown; public float topDownPxPerFt, topDownMarginFt, buildingWidthFt, buildingDepthFt; }
+        [Serializable] sealed class Manifest { public List<Entry> captures = new List<Entry>(), views = new List<Entry>(); public string topDown, topDownFixtures; public float topDownPxPerFt, topDownMarginFt, buildingWidthFt, buildingDepthFt; }
+
+        /// <summary>ART-007 room-sheet review views (not store cameras): plan ft x, y, eye height ft, yaw (0 = north), pitch, fov.</summary>
+        static readonly (string id, string zone, float x, float y, float h, float yaw, float pitch, float fov)[] Views =
+        {
+            ("VIEW_Registers_South", "Retail", 24f, 13f, 5.5f, 180, 15, 75),
+            ("VIEW_Registers_East", "Retail", 31f, 14f, 5.5f, 90, 12, 75),
+            ("VIEW_Registers_North", "Retail", 30f, 17.5f, 5.5f, 0, 12, 75),
+            ("VIEW_DeliWall_North", "Retail", 30f, 5.2f, 5f, 0, 5, 80),
+            ("VIEW_DeliWall_East", "Retail", 42.2f, 8f, 5f, 90, 5, 80),
+            ("VIEW_DeliWall_South", "Retail", 24f, 24.8f, 5f, 180, 5, 80),
+            ("VIEW_Entry", "Retail", 9f, 15.5f, 5.5f, 270, 10, 75),
+            ("VIEW_HUB", "Hub", 35f, 73.5f, 8f, 330, 25, 80),
+            ("VIEW_Office", "BackRooms", 12.8f, 37.2f, 7.5f, 225, 30, 85),
+        };
 
         public static void CaptureAll()
         {
@@ -81,8 +95,25 @@ namespace Dispo.Editor.Graybox
                         commit = commit, timestamp = stamp, lighting = interior ? $"{Lookdev.LookdevBuilder.SceneName} interior lights, fixed exposure EV {Lookdev.LookdevBuilder.InteriorEv}" : Lighting, conf = c.conf, note = c.note, file = file,
                     });
                 }
+                foreach (var v in Views)
+                {
+                    var go = new GameObject(v.id);
+                    try
+                    {
+                        go.transform.SetPositionAndRotation(L.ToWorld(v.x, v.y, v.h), Quaternion.Euler(v.pitch, v.yaw, 0));
+                        var cam = go.AddComponent<Camera>();
+                        cam.fieldOfView = v.fov;
+                        cam.nearClipPlane = 0.05f;
+                        var interior = lookdev.Length > 0 && v.zone == "Retail";
+                        exposure.fixedExposure.Override(interior ? Lookdev.LookdevBuilder.InteriorEv : FixedEv);
+                        Render(cam, Width, Height, Path.Combine(outDir, v.id + ".png"));
+                        manifest.views.Add(new Entry { cameraId = v.id, room = v.zone, resolution = $"{Width}x{Height}", commit = commit, timestamp = stamp, conf = "review view", file = v.id + ".png" });
+                    }
+                    finally { UnityEngine.Object.DestroyImmediate(go); }
+                }
                 foreach (var g in lookdev) g.SetActive(false); // the plan overlay QA needs an open roof
-                manifest.topDown = CaptureTopDown(outDir, manifest);
+                manifest.topDown = CaptureTopDown(outDir, manifest, true, "TOPDOWN_Plan.png");
+                manifest.topDownFixtures = CaptureTopDown(outDir, manifest, false, "TOPDOWN_Fixtures.png"); // ART-007 room sheet
                 foreach (var g in lookdev) g.SetActive(true);
             }
             finally
@@ -94,11 +125,11 @@ namespace Dispo.Editor.Graybox
             return manifest.captures.Count + 1;
         }
 
-        /// <summary>Orthographic, north-up, fixtures hidden: pixel (px, py) = plan ((px / ppf) - margin, (py / ppf) - margin) ft.</summary>
-        static string CaptureTopDown(string outDir, Manifest m)
+        /// <summary>Orthographic, north-up (fixtures hidden for the plan QA): pixel (px, py) = plan ((px / ppf) - margin, (py / ppf) - margin) ft.</summary>
+        static string CaptureTopDown(string outDir, Manifest m, bool hideFixtures, string file)
         {
             var hidden = UnityEngine.Object.FindObjectsByType<Transform>(FindObjectsInactive.Exclude)
-                .Where(t => t.name == "Fixtures" && t.parent && t.parent.name.StartsWith("Graybox_")).Select(t => t.gameObject).ToList();
+                .Where(t => hideFixtures && t.name == "Fixtures" && t.parent && t.parent.name.StartsWith("Graybox_")).Select(t => t.gameObject).ToList();
             hidden.ForEach(g => g.SetActive(false));
             var go = new GameObject("TOPDOWN_Plan");
             try
@@ -112,8 +143,8 @@ namespace Dispo.Editor.Graybox
                 cam.farClipPlane = 50f;
                 var centre = L.ToWorld(m.buildingWidthFt / 2, m.buildingDepthFt / 2);
                 go.transform.SetPositionAndRotation(centre + Vector3.up * 20f, Quaternion.Euler(90, 0, 0));
-                Render(cam, w, h, Path.Combine(outDir, "TOPDOWN_Plan.png"));
-                return "TOPDOWN_Plan.png";
+                Render(cam, w, h, Path.Combine(outDir, file));
+                return file;
             }
             finally
             {
