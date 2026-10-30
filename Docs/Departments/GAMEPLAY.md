@@ -32,7 +32,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 | GAME-025 controls + Esc pause + doors | lead subagent | worktree (merged DES-005b cf5d614) | running |
 | BUILD-007 | — | — | ON HOLD (Nolan via Hub): build once GAME-025 lands, ideally with GAME-026; aborting the started run |
 | DATA-003 needs catalog + goldens | done | `worktree-agent-afbc722989beda3b0` @ 996c631 | in review (Unity A2); 12 needs, 564 goldens, 0 C#/tool mismatches |
-| DES-005b (+ DES-007) | done | `worktree-agent-a3b6d4b4d43f54152` @ cf5d614 | in review (Docs 2) |
+| DES-005b (+ DES-007) | done | `review/des5b` @ 0c637b2 | PASS with minors; merge-ready; after merge lead fixes m1 (CF§4.4 cite DEC-109 ruling), m2 (GAME-026 `Anchor_Register_<NN>`), m3 (CF§3.2 npcUse "empty") |
 
 ## Queue (lead re-orders within DEC-096)
 1. GAME-009 → REVIEW-PS1 → playtest build 2 for Nolan (BUILD).
