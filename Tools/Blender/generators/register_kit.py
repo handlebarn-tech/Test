@@ -540,7 +540,7 @@ def build_paper_box(parts, p, lod):
     W, D, H, th = p["box_w_m"], p["box_d_m"], p["box_h_m"], p["box_wall_m"]
     rng = random.Random(p["seed"])
     body = parts("Box", "RK_Corrugated_White")
-    if d >= 3 or not p.get("box_open"):
+    if not p.get("box_open"):
         if d >= 3:
             add_box(body, (W, D, H), (0, 0, H / 2))
             return {}
@@ -571,6 +571,8 @@ def build_paper_box(parts, p, lod):
         lf = min(D / 2, 0.08)
         c = Vector((sx * (W / 2 - th / 2), 0, H)) + Vector((sx * math.sin(a), 0, math.cos(a))) * lf / 2
         box_rot(flaps, (th, D - 0.03, lf), c, ry=sx * a)
+    if d >= 3:  # walls and flaps keep the open silhouette; rolls drop out
+        return {}
     rolls, cores = parts("Rolls", "RK_Paper_White"), parts("RollCores", "RK_Cardboard")
     rr, rh = p["roll_od_m"] / 2, p["roll_w_m"]
     add_box(body, (W - 2 * th, D - 2 * th, 0.003), (0, 0, H - 0.01 - rh - 0.0015))  # layer divider
@@ -609,9 +611,9 @@ def build_tumbler(parts, p, lod):
     lid = parts("Lid", "RK_Lid_Clear")
     add_lathe(lid, (0, 0, 0), (0, 0, 1), [(0, hb - 0.005), (rt + 0.0016, hb - 0.005), (rt + 0.0016, hb + 0.008),
                                           (rt - 0.002, hb + 0.0145), (0, hb + 0.015)], segs)
+    straw = parts("Straw", "RK_Straw")  # kept at LOD2 so the silhouette matches size_m
+    add_tube(straw, [(0.014, 0.004, 0.03), (0.019, 0.006, hb + p["tu_straw_out_m"])], 0.0035, ev(s // 2))
     if d <= 1:
-        straw = parts("Straw", "RK_Straw")
-        add_tube(straw, [(0.014, 0.004, 0.03), (0.019, 0.006, hb + p["tu_straw_out_m"])], 0.0035, ev(s // 2))
         add_lathe(parts("Gasket", "RK_Rubber"), (0.0185, 0.006, hb + 0.012), (0, 0, 1),
                   [(0, 0), (0.0062, 0), (0.0062, 0.0035), (0, 0.0035)], ev(s // 2))
     return {}
