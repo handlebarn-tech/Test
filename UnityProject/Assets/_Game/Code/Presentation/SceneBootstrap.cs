@@ -12,7 +12,7 @@ namespace Dispo.Presentation
         // Lighting_Night is in the build but not loaded at boot; day/night swapping belongs to gameplay.
         public static readonly string[] AdditiveScenes =
         {
-            "Retail", "BackRooms", "Hub", "Exterior", "GameplaySystems", "NPCs", "Audio", "Lighting_Day",
+            "Retail", "BackRooms", "Hub", "Exterior", "GameplaySystems", "NPCs", "Audio", "Lighting_Day", "Gameplay_Slice",
         };
 
         // Marker the studio smoke launch waits for in Player.log.

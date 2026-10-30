@@ -1,0 +1,23 @@
+{
+  "_doc": "Six slice intent families (SLICE_DESIGN §2.2, DEC-017). crit/neg/primary = golden_cases.json parsed for the rc id. keyword = the only INTENTS key a line may contain (§2.6).",
+  "families": [
+    { "id": "sleep", "rc": "RC-01", "lbl": "sleep", "chip": "Sleep", "keyword": "sleep",
+      "crit": [ { "d": "sedation", "v": 38 } ], "neg": [], "primary": "sedation",
+      "cores": [ "something for sleep", "something to help me sleep", "something that helps with sleep" ] },
+    { "id": "insomnia", "rc": "RC-11", "lbl": "insomnia", "chip": "Can't sleep", "keyword": "insomnia",
+      "crit": [ { "d": "sedation", "v": 55 }, { "d": "anxiety_relief", "v": 40 } ], "neg": [], "primary": "sedation",
+      "cores": [ "something. I've got insomnia", "something for my insomnia", "something that helps with insomnia" ] },
+    { "id": "stress", "rc": "RC-03", "lbl": "stress relief", "chip": "Stress", "keyword": "stress",
+      "crit": [ { "d": "anxiety_relief", "v": 32 } ], "neg": [], "primary": "anxiety_relief",
+      "cores": [ "something for stress relief", "something for stress" ] },
+    { "id": "anxiety", "rc": "RC-09", "lbl": "anxiety relief", "chip": "Anxiety", "keyword": "anxiety",
+      "crit": [ { "d": "anxiety_relief", "v": 35 } ], "neg": [], "primary": "anxiety_relief",
+      "cores": [ "something for anxiety", "something that helps with anxiety" ] },
+    { "id": "pain", "rc": "RC-04", "lbl": "pain relief", "chip": "Pain", "keyword": "pain",
+      "crit": [ { "d": "pain_inflammation", "v": 38 } ], "neg": [ { "d": "sedation", "v": 55 } ], "primary": "pain_inflammation",
+      "cores": [ "something for pain", "something that helps with pain" ] },
+    { "id": "energy", "rc": "RC-10", "lbl": "energy", "chip": "Energy", "keyword": "energy",
+      "crit": [ { "d": "uplift", "v": 28 } ], "neg": [ { "d": "sedation", "v": 36 } ], "primary": "uplift",
+      "cores": [ "something for energy", "something that gives me energy" ] }
+  ]
+}

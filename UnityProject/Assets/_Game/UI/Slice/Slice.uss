@@ -1,0 +1,85 @@
+/* Slice UI (UX_SLICE §5-6 tokens). Reference 1920x1080, title-safe 96/54 px. */
+.slice-root {
+    --ok: #56B4E9; --warn: #E69F00; --bad: #D55E00; --accent: #009E73;
+    --bg: #15181c; --panel: #1d2127; --card: #262b33; --line: #3a414c;
+    --t1: #f2f4f7; --t2: #c3c9d2; --t3: #8f98a5;
+    flex-grow: 1;
+    color: var(--t1);
+    font-size: 22px;
+}
+.slice-root Label { color: var(--t1); white-space: normal; }
+.slice-root Button {
+    background-color: var(--card); color: var(--t1); border-color: var(--line); border-width: 2px; border-radius: 6px;
+    min-height: 56px; padding: 8px 18px; margin: 6px; font-size: 22px;
+}
+.slice-root Button:hover { border-color: var(--accent); }
+.slice-root Button:disabled { opacity: 0.35; }
+.slice-root .primary { background-color: var(--accent); border-color: var(--accent); }
+.st-ok { color: var(--ok); }
+.slice-root .st-warn { color: var(--warn); }
+.slice-root .st-bad { color: var(--bad); }
+
+.jar-layer, .screen, .toasts, .debug { position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+.jar-layer { }
+.jar-label { position: absolute; background-color: rgba(21,24,28,0.85); color: var(--warn); font-size: 18px; padding: 2px 6px; -unity-font-style: bold; }
+
+.hud { position: absolute; top: 54px; right: 96px; align-items: flex-end; background-color: rgba(21,24,28,0.6); padding: 10px 16px; border-radius: 6px; }
+.hud-clock { font-size: 26px; }
+.hud-sales, .hud-queue { font-size: 22px; color: var(--t2); }
+.prompt { position: absolute; bottom: 160px; left: 0; right: 0; -unity-text-align: middle-center; font-size: 26px; }
+
+.screen { align-items: center; justify-content: center; }
+.screen.dim { background-color: rgba(0,0,0,0.55); }
+
+.toasts { left: 96px; top: 54px; right: auto; bottom: auto; width: 560px; }
+.toast { background-color: var(--panel); border-left-width: 6px; border-color: var(--ok); padding: 10px 14px; margin-bottom: 8px; border-radius: 4px; }
+.toast.st-warn { border-color: var(--warn); }
+.toast-2 { color: var(--t2); font-size: 18px; }
+
+.dialogue { position: absolute; bottom: 54px; left: 96px; right: 96px; flex-direction: row; justify-content: center; }
+.dialogue-sub { width: 1200px; background-color: rgba(21,24,28,0.9); padding: 16px 20px; border-radius: 6px; }
+.speaker { font-size: 18px; color: var(--t3); }
+.line { font-size: 28px; }
+.dialogue-options { width: 320px; justify-content: flex-end; }
+
+.terminal { width: 1600px; height: 900px; background-color: var(--panel); border-radius: 8px; padding: 20px 28px; }
+.request-strip { flex-direction: row; background-color: var(--bg); padding: 10px 14px; border-radius: 6px; margin-bottom: 12px; }
+.archetype { color: var(--t3); font-size: 18px; margin-right: 14px; }
+.request { flex-shrink: 1; }
+.terminal-body { flex-grow: 1; }
+.h1 { font-size: 28px; -unity-font-style: bold; margin: 6px 0; }
+.row { flex-direction: row; align-items: center; flex-wrap: wrap; }
+.col { flex-grow: 1; flex-basis: 0; padding: 0 12px; }
+.tiles { flex-direction: row; flex-wrap: wrap; }
+.tile { width: 300px; height: 120px; font-size: 26px; }
+.tile.selected { border-color: var(--accent); border-width: 4px; }
+.banner { background-color: var(--bg); padding: 8px 12px; border-radius: 4px; margin: 6px 0; }
+.cards { flex-grow: 1; }
+.cards > .unity-scroll-view__content-viewport > .unity-scroll-view__content-container { flex-direction: row; }
+.card { width: 480px; background-color: var(--card); border-radius: 8px; padding: 14px 16px; margin: 8px; border-width: 2px; border-color: var(--line); }
+.card.is-top { border-left-width: 8px; border-left-color: var(--accent); }
+.card-name { font-size: 28px; -unity-font-style: bold; }
+.card-sub, .card-cluster, .card-grams { color: var(--t2); font-size: 18px; }
+.price { font-size: 36px; margin: 6px 0; }
+.chip { font-size: 18px; }
+.message { margin: 6px 0; }
+.back { position: absolute; right: 20px; bottom: 16px; }
+.evidence { color: var(--t3); font-size: 18px; margin-top: 10px; }
+.bar { flex-direction: row; align-items: center; margin: 3px 0; }
+.bar-name { width: 220px; font-size: 18px; color: var(--t2); }
+.bar-track { flex-grow: 1; height: 16px; background-color: var(--bg); }
+.bar-fill { height: 16px; background-color: var(--ok); }
+.bar-value { width: 48px; -unity-text-align: middle-right; font-size: 18px; }
+.caveat { color: var(--t3); font-size: 18px; margin-top: 10px; }
+
+.pos { width: 1000px; min-height: 840px; background-color: var(--panel); border-radius: 8px; padding: 20px 28px; }
+.price-line { flex-direction: row; justify-content: space-between; border-bottom-width: 1px; border-color: var(--line); padding: 4px 0; }
+.price-line.total Label { font-size: 36px; }
+.amount { -unity-text-align: middle-right; }
+.scale, .hint { color: var(--t2); font-size: 18px; margin: 6px 0; }
+
+.report { width: 900px; background-color: var(--panel); border-radius: 8px; padding: 20px 28px; }
+
+.debug { left: 96px; top: 300px; right: auto; bottom: auto; background-color: rgba(0,0,0,0.75); padding: 8px; }
+.debug-title { color: var(--warn); font-size: 18px; }
+.debug-line { font-size: 15px; color: var(--t2); white-space: nowrap; }

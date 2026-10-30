@@ -24,6 +24,8 @@ namespace Dispo.Domain.Engine
     public sealed class StrainResult
     {
         public string Key, Name, Tier;
+        /// <summary>Id of the group's representative batch, Batches[0] (L15464).</summary>
+        public string RepBatchId;
         public double Ms;
         public int Cluster, AnxietyRisk, BatchCount;
         public int? Cluster2;
@@ -88,7 +90,7 @@ namespace Dispo.Domain.Engine
             int live = g.Batches.Count(b => b.InStock); // profileIds L15475
             return new StrainResult
             {
-                Key = g.Key, Name = g.Name, Tier = rep.Tier, InStock = rep.InStock,
+                Key = g.Key, Name = g.Name, Tier = rep.Tier, RepBatchId = rep.Id, InStock = rep.InStock,
                 BatchCount = live > 0 ? live : g.Batches.Count,
                 Profile = p, Domains = Scoring.ScoreDomains(cat, p), Raw = Scoring.ScoreRaw(cat, p),
                 Cluster = cl.Primary, Cluster2 = cl.Secondary, AnxietyRisk = Scoring.CalcAnxietyRisk(p),
