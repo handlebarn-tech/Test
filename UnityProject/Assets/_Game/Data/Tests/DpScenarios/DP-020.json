@@ -1,0 +1,18 @@
+{
+  "_doc": "QA-002 scenario format (Code/Tests/EditMode/Gates/DpScenario.cs). seed = SliceConfig.seed; catalogMd5 = batches.json md5 in Data/Catalog/manifest.json; stock = grams per batch after setup (sell-down only); customer = true fields of the customer at the counter; actions = search{chip} | more | present{card} | confirm{grams?} | cancel; expect = optional checks.",
+  "id": "DP-020",
+  "title": "True sold out (SPEC_DECISION_PRESSURE DP-020): a 0 g batch is excluded per canonical TFS inventory behavior",
+  "seed": 1,
+  "catalogMd5": "6fdc553558ea651ac793ccb43af53167",
+  "stock": [ { "batch": "custom_web_0439_kake081026", "grams": 0 } ],
+  "customer": { "archetype": "regular", "openerIndex": 0, "trueFamily": "sleep", "grams": 3.5, "budget": 0 },
+  "actions": [ { "do": "search", "chip": "sleep" }, { "do": "present", "card": 0 }, { "do": "confirm" } ],
+  "expect": {
+    "query": "sleep|crit:sedation=38|neg:|primary:sedation",
+    "engineOutcome": "Ok",
+    "absentReps": [ "custom_web_0439_kake081026" ],
+    "absentStrains": [ "kush cake" ],
+    "cards": 3,
+    "outcome": "Bought"
+  }
+}
