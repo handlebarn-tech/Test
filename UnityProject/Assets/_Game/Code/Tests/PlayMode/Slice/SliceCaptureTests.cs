@@ -112,6 +112,11 @@ namespace Dispo.Slice.PlayMode.Tests
                     var want = new Vector2(vp.x * W, (1 - vp.y) * H);   // the camera RT and panel RT are both W×H
                     Assert.Less(Vector2.Distance(want, new Vector2(label.resolvedStyle.left + 30, label.resolvedStyle.top + 12)), 8f, "label sits over its jar (label is ~60 px wide)");
                     yield return Shot("Jars_SoldOut_Low");
+                    // GAME-005: close-up of the canisters (band colour, label, fill step) around the sold-out jar.
+                    var mid = jar - Vector3.up * 0.25f;
+                    cam.position = mid + toward * 0.7f;
+                    cam.rotation = Quaternion.LookRotation(mid - cam.position);
+                    yield return Shot("Jars_Closeup");
                     cam.SetPositionAndRotation(keep.position, keep.rotation);
                     Time.timeScale = 10;
                 }
@@ -122,7 +127,7 @@ namespace Dispo.Slice.PlayMode.Tests
             Assert.IsNotNull(g.FinalReport, "shift did not end");
             yield return Shot("Report");
             Debug.Log($"[SliceCapture] OK {shots.Count} shots in {dir}: {string.Join(", ", shots)}");
-            Assert.IsTrue(new[] { "Dialogue", "Query", "Results", "Detail", "Pos", "Report", "Sale_Toast", "Jars_SoldOut_Low" }
+            Assert.IsTrue(new[] { "Dialogue", "Query", "Results", "Detail", "Pos", "Report", "Sale_Toast", "Jars_SoldOut_Low", "Jars_Closeup" }
                 .All(s => shots.Any(f => f.Contains(s))), string.Join(", ", shots));
         }
 

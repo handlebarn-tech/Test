@@ -179,11 +179,12 @@
         }
       },
       "params": "Tools/Blender/params/deli_jar.json",
-      "params_sha256": "d8d1a9b014699b05",
+      "params_sha256": "ce023b6e24fc107b",
       "tri_budget": {
         "LOD0": 1000,
         "LOD1": 250
-      }
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/DeliJar/PROC_DeliJar.fbx"
     },
     "PROC_JarFill_DarkCompact": {
       "export": "Art/Exports/Procedural/PROC_JarFill_DarkCompact.fbx",

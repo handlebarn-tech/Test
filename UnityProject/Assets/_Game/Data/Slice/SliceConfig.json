@@ -39,6 +39,8 @@
   "startGramsPerBatch": 454,
   "startFillMin": 0.05,
   "startFillMax": 1.0,
+  "jarMinVisibleStepPct": 20,
+  "_jarMinVisibleStepPct": "GAME-005 / DEC-046 [GDD]: a jar above 0 g shows at least this PROC-002 fill step. 20 because the 55 mm base band hides F010 from the front; set 10 once PROC-003 raises F010 above the band.",
   "minLowStartJars": 3,
   "lowStockFraction": 0.25,
   "anxietyLowBelow": 38,

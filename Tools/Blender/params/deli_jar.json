@@ -1,6 +1,7 @@
 {
   "asset_id": "PROC_DeliJar",
   "generator": "deli_jar",
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/DeliJar",
   "_note": "Main deli canister (DEC-042b/043): tall square clear acrylic, white pop-top lid, coloured base band per brand, front label card + THC % tag. Shape from Nolan's 2026-10-29 photos (References/Incoming: deli jar wall (retail), deli jars + scale (office)). No measurement exists: sizes are estimated from the photos (height about 2x width, band about 1/5 of the body) and the 454 g capacity (DEC-019), each flagged by GAP id until REF-007. Band and label colours are per-brand runtime material params; these are neutral defaults.",
   "gaps": {
     "GAP-PROC-01": "deli canister width/depth/height/corner radius: photo estimate (~6 in square x 11 in body, ~5 L cavity for 454 g at ~0.09 g/cm3), awaiting REF-007",

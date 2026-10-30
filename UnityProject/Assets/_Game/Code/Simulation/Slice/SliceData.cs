@@ -27,6 +27,7 @@ namespace Dispo.Simulation.Slice
         public int roughShiftThreshold, queueSlots;
         public double impatientFraction;
         public double startGramsPerBatch, startFillMin, startFillMax;
+        public int jarMinVisibleStepPct;
         public int minLowStartJars;
         public double lowStockFraction;
         public int anxietyLowBelow, anxietyModerateBelow, moreOptionsN, moreOptionsStep;

@@ -69,8 +69,15 @@ namespace Dispo.Slice.PlayMode.Tests
             Assert.AreEqual(12, sim.Customers.Count);
             Assert.IsTrue(typeof(ShiftReport).GetFields().All(f => f.GetValue(r) != null), "no null report fields");
             Assert.AreEqual(sim.Sales.Sum(s => s.PricePostTax), r.RevenuePostTax, 1e-9, "revenue = Σ sale events");
+            // GAME-005 / W4E m2: sold jars show the nearest PROC-002 fill step (ties up), at least the min visible step above 0 g (DEC-046).
             foreach (var id in sim.Sales.Select(s => s.BatchId).Distinct())
-                Assert.AreEqual(sim.Inventory.Grams(id) / sim.Cfg.startGramsPerBatch, g.JarFillShown(id), 1e-4, $"jar fill for {id}");
+            {
+                double fill = sim.Inventory.Fill(id) * 100;
+                var visible = g.JarFillSteps(id).Where(s => s > 0 && s >= sim.Cfg.jarMinVisibleStepPct);
+                int expected = fill <= 0 ? 0 : visible.OrderBy(s => System.Math.Abs(s - fill)).ThenByDescending(s => s).First();
+                Assert.AreEqual(expected / 100f, g.JarFillShown(id), 1e-6, $"jar fill step for {id} ({fill:0.##} %)");
+            }
+            Assert.IsTrue(sim.Inventory.SoldOutIds.All(id => g.JarFillShown(id) == 0), "SOLD OUT jars show F000");
             CollectionAssert.IsNotEmpty(r.SoldOut, "at least one SOLD OUT (DEC-027)");
             Assert.LessOrEqual(sim.ClockHours, sim.Cfg.storeCloseHour, "clock inside store hours (DEC-036 M3)");
             Assert.IsTrue(sim.Sales.All(s => s.Grams <= sim.Cfg.adultUseLimitGrams));
