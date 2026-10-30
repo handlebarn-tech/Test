@@ -734,7 +734,7 @@ No `.pyc`. ChatGPT had our drop-5 audit this time (`ROUND3_REBUILD_CLAUDE_AUDIT_
   - **Measured (DEC-110):** graybox `FX_HUB2_Cabinets` = 2 black cabinets on the HUB 2 back wall, a 6.0 × 1.5 ft footprint (x 1.19–7.19, y 47.0–48.5) at the "tall" class of 7.0 ft (Low; GAP-110/120). So the placeholder per cabinet is **3.0 × 1.5 × 7.0 ft** (0.914 × 0.457 × 2.134 m), not the drop's 1.80 × 0.55 × 2.00 m single unit.
   - RF has no HUB entry. CCTV R2C1 (RI §2.1) gives colour and count only.
   - Still open: doors and shelves (R2C1 full resolution).
-- **RG3-2 Refill-cart supplies:** bottle, bin and tongs sizes and colours. Look at the lower shelf in `References/Index/photos/deli_jars_scale_cart_crop.webp`, or ask Nolan.
+- **RG3-2 Refill-cart supplies:** bottle, bin and tongs sizes and colours. Look at the lower shelf in `References/Index/photos/deli_jars_scale_cart_crop.webp`; otherwise through the lead/Hub, after the DEC-105/110 search.
 - **RG3-3 Stanchion model** (base Ø, post Ø).
   - **Measured (DEC-110):** graybox `stanchion` height class = **3.0 ft** (0.914 m, GAP-002) vs the drop's 1.05 m. The lanes (`FX_QueueLane_1..4`, RI §1.5 vector) run x ≈ 6/9/12/15 ft, so they are **3 ft apart**, each 8.71 ft long (y 11.0–19.71).
   - Use 3.0 ft posts and belt runs fitted to the 8.71 ft lanes, not the drop's fixed 2.0 m pair.
@@ -1004,10 +1004,11 @@ This time ChatGPT had **A012** and two camera stills. It adopts an "evidence-fir
   | Parking stall / stripe / curb | CCTV R1C2 "parked cars, striping"; R1C3 "**yellow curb**", dark-green privacy fence/gate (RI §2) |
   | Exit sign | ✓ already enabled (R2C1 exit sign) |
 
-- **Door kit vs DEC-110** (push bars only on emergency exits and the delivery door, levers everywhere else). The drop differs on both counts:
-  - **No push bar / exit device at all.** The graybox (`graybox_layout.json`) has 3 doors that need one: `EMERGENCY_EXIT` (retail east wall, y 20.5–), `EXT_EMERGENCY_HUB` (south wall, x 43.99–46.9) and `EXT_DELIVERY` (HUB west wall, y 49.5–52.8; RI §1.4).
-  - **`EntryDoor` has a `PullHandle`** (`exterior_site.py` l.24) instead of a lever.
+- **Door kit vs DEC-110** (World contract `Docs/Reference/DOORS.json` + CF §7.1):
+  - **No push bar / exit device at all.** Three doors need one: DOORS.json `Emergency_RetailE`, `Ext_Emergency_SE` and `Ext_Delivery`.
+  - **The entry door's `PullHandle`** (`exterior_site.py` l.24) is correct: DOORS.json `Entry` has `hardware: storefrontPull`.
   - The only lever is `DoorLever_Commercial`; its size misses its dims (X1).
+  - **Caution:** main's DOORS.json still has the `JC` and `Ext_Delivery` hardware swapped (the World fix is pending), so bind to the corrected ids.
 - **Missing TI lighting types:** L3 linear LED (recessed in millwork), L5 small flush mount, L6 bathroom sconce, L7 task, L8 18 in under-cabinet (TI §6.7). Also missing: the retail **CLG-1 suspended 4 × 8 ft dark-walnut acoustic panels** on stainless cable (RI §6.1), the "dark baffle ceiling" in BAND 01/05/10. Retail ceiling: painted gypsum at 9'-0", soffits at 7'-6" (RI §6.1).
 - **Pendants:** the globe-pendant cluster matches CCTV R2C2 "globe pendant cluster" ✓; checkout counter light is a plan type ✓ (A012). Counts and sizes are GAP.
 - **Baseboard:** 0.102 m (4 in) matches VB-1 **grey vinyl base 4 in** ✓; set the colour to grey (VB-1).

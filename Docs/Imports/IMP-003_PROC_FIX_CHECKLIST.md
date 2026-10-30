@@ -648,10 +648,12 @@ Measured on core 87807ad: 37 assets build; **0/37 pass the size check**.
 - [ ] **Ceiling grid:** **2 × 2** ACT-1 module (RI §6.1, rooms 102–107 at 8'-0"), not 2 × 4. Keep 2 × 4 disabled.
 - [ ] **Entry:** E101 is a **6'-0" × 7'-0" pair** (two 0.914 × 2.134 m aluminium full-glass leaves), not a 1.02 m single door (RI §6.2/§6.8, High). Exterior entry door per checklist §13 (no vestibule, DEC-086).
 - [ ] **Exterior:** add the dark-green privacy fence/gate (R1C3). Keep landscaping disabled until RG6-3.
-- [ ] **Door kit (DEC-110):**
-  - add a **push bar / exit device** asset, used only on `EMERGENCY_EXIT`, `EXT_EMERGENCY_HUB` and `EXT_DELIVERY` (graybox openings);
-  - **levers** on every other door (TI A310 heights): replace `EntryDoor`'s `PullHandle` with a lever per DEC-110, unless the Hub rules a storefront exception;
-  - no lock, reader or access-control detail (DEC-051/031).
+- [ ] **Door kit (DEC-110):** follow World's contract in `Docs/Reference/DOORS.json` (`hardware` field) and CF §7.1, which already apply DEC-110.
+  - **Push bar / exit device:** add the asset and use it only on DOORS.json `Emergency_RetailE`, `Ext_Emergency_SE` and `Ext_Delivery`.
+  - **Entry:** keeps its storefront pull (`Entry`, `hardware: storefrontPull`), so the drop's `EntryDoor` `PullHandle` stays.
+  - **Levers** on every other leaf door, per DOORS.json (TI A310 heights).
+  - **Caution:** main's DOORS.json still has the `JC` and `Ext_Delivery` hardware swapped (JC shows `pushBar`). The World fix is pending, so bind to the corrected ids: push bar on `Ext_Delivery`, lever on `JC`.
+  - No lock, reader or access-control detail (DEC-051/031).
 
 ### R6.2 Missing families (sourced)
 - [ ] **TI §6.7:** L3 recessed linear LED (millwork), L5 small flush mount, L6 bathroom sconce, L7 task light, L8 18 in under-cabinet; L4A/L4B 4½ in downlights (retail gypsum). The drop's downlight is 6 in: add a 4½ in size.
