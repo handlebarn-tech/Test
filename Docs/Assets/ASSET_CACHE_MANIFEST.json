@@ -1551,6 +1551,2496 @@
    "date": "2026-10-29"
   },
   {
+   "ledger_id": "ANM-QUA-UAL1",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/ANM-QUA-UAL1/UAL1_Standard.zip",
+   "source_url": "https://quaternius.itch.io/universal-animation-library",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "cc73fc4e495b82958207316596317a3f40b9fa38065bde1027937452da537724",
+   "bytes": 15904933,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-QUA-UAL2",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/ANM-QUA-UAL2/UAL2_Standard.zip",
+   "source_url": "https://quaternius.itch.io/universal-animation-library-2",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "4008ea208a604773a2b2177d965f0f5d3195498b5bf838c3f5785d68e95f2a68",
+   "bytes": 18735003,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AM/FBX/Male_Casual.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1nZiaTmwgBm9Aa-kikftzMW-2x3E7tPYm",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "50794f0a51c0ff15ae61c90196b9746f034bc8d459a832d6310c063a1190cf28",
+   "bytes": 1978540,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AM/FBX/Male_LongSleeve.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=18Rozxw_36TGCzUSbMcTTUZfns3ECetGU",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e33ec94a0507679b917a80cd8ecdef62582b1cf20136b9c6041d77ba570e26fc",
+   "bytes": 1981644,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AM/FBX/Male_Shirt.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=19ngmZDTZpNnmlkQ1HkSg2bXGAcY0WmSk",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "744a9414ed653865bb8aa8225ef568a79955f3b3467274ebb00acdd51576b589",
+   "bytes": 1980876,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AM/FBX/Male_Suit.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1wd0dj453AbrNsi6Aq0QvOYOkXrZkbtTw",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "40661b70631c107c08149ed980bced0ecba7e5b2911366d28e405b59e6d00ba6",
+   "bytes": 1993452,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AM/FBX/Smooth_Male_Casual.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1m46QkeqCFktuL5Vl3FR6_PtTKSN3WszF",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e744bfbd0cc9df86e5b69848017c8554690aeb256cecd63e88f77d28cda9ec43",
+   "bytes": 2122332,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AM/FBX/Smooth_Male_LongSleeve.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1-cESvRzJbzaAn-YTNjFh0746ZbZnc_Xx",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "4c7f17fcd8780fe927aefe10d4dd828597cd0fdd32971dd0d4f76ee499199392",
+   "bytes": 2136572,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AM/FBX/Smooth_Male_Shirt.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1aYn6xDBXZL-8n6bDqhtzjiBkVvjchLqD",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "6155ab6e63127b49daf6e808b9ca666628d951e18afbc3c45ec3ff5660fa3150",
+   "bytes": 2124908,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AM/FBX/Smooth_Male_Suit.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1fooYrXMABwPK2il3xV54d0gdxX1mqD_4",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "cb3a29f5e3c8a35ba16439b56054305d7890a4efb629e3668ea20912937f4508",
+   "bytes": 2158204,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AM/License.txt",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1xYqAAF2Mo_PvgJsHq-0To8AlZkiq_o7Y",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "83d8959f9fc56353ed571fbe2dc52e4bcd64508e2399501cd45ac2ce3df0bf8c",
+   "bytes": 364,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AM/Preview.jpg",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1ochqNbQ9uGbczEhTJmkReJa8mlSpZDwe",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "388d7172e7bb510280467a9b6452587cf2d542a2a539d93a9f19a2228965d656",
+   "bytes": 156955,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AW/FBX/Female_Alternative.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1FYhHn6SzQIJ2KlRuk8VL6wzAyL3PWdT7",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "6096fadc3b31007b1026aa9211560e89917b4b9a16a118629d44ccd269fa7f00",
+   "bytes": 1983292,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AW/FBX/Female_Casual.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1ud1WgZZTLwfbGS9SxzbGKGaC7FJHKeC6",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "caf4787b97aefcf53f94c44d15c4baf99808de6d6e806372235de587ddf6a6b0",
+   "bytes": 1992940,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AW/FBX/Female_Dress.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1gRJ6-3Jcm1aQdWlwaz-hhjrfcycdQsBu",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9d806915935520bbe8f70287a9aef465e10153e855e7d20f7242bb653b211480",
+   "bytes": 1971500,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AW/FBX/Female_TankTop.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=16Fu9JHM-d5KiU4nucjuWxuiGzwiOskdp",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "8825c86a1459a817e400b0ad1396ea3bf99c2d3aa234f5bec3a9e6f3af10746d",
+   "bytes": 1981036,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AW/FBX/Smooth_Female_Alternative.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1y_sBf76d5THtRYUIWn4EwDF1oD0Fnont",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "d41f0c8682cdb9f6253bad4df5f19c7b3177762d229206cfcd85f27d7b75dc96",
+   "bytes": 2107292,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AW/FBX/Smooth_Female_Casual.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1YHzjdOVvHnP4PefqqGwOq3vyiwty_2I9",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "a47c3ef6bf71d1e1d61ae91864c0dd0fd7bc52667f948e64d08c38f3b255e4a6",
+   "bytes": 2103836,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AW/FBX/Smooth_Female_Dress.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1XnKswX9iKE24CRStG3ASnHlxjMYaOJZu",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "eeee801d4ff014968c50ef0046c413a954d71cab8f15bc90e477b21323fc7f63",
+   "bytes": 2107308,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AW/FBX/Smooth_Female_TankTop.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1S8Q_-YwqjTUvAJegVwMYe6tjw5LlrtiX",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "3d1ce3d18012d200f93220a3f72147a005a5c594f5e9f4d18565cae4059cfee8",
+   "bytes": 2089916,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AW/License.txt",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1sUdm3LyKF5KL6DtnOsK0q0A9KAfjVG_3",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "83d8959f9fc56353ed571fbe2dc52e4bcd64508e2399501cd45ac2ce3df0bf8c",
+   "bytes": 364,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-AW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-AW/Preview.png",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1MhbGBYah0Ax2UGwnQaRxo-j5o-Bo58MI",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "01b0012c319ad1280f1aac66299e29353a6646ce02810d34803a3ce658078303",
+   "bytes": 737043,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/How To Use.txt",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1FOD3BMs7o0VzdgRrDwBRBUiwyt7syauC",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9b684add13cc5aa20e7671bd1f47202d762bae1839c00a247fcdd57e29a37439",
+   "bytes": 1224,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/AllTogether/Humans_Master.blend",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1lDSKTJX1CR15qo9JAFHFjRFGR7rp8K8D",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "1c4bd98437d0611be72498e8caf402adbd6f11002b244b35e8d9cc22e6a541bd",
+   "bytes": 9104132,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Adventurer.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1vsz2vSbVJZfAslf4sb2bEniMETzm0FiD",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2dd4bf1bc18968fdc5245863c25dfedcb572dbd63ae7581fe27ae4a8a063d6e3",
+   "bytes": 582604,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Beach.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1dyybNU-4EcLeZojgGrrjPjynr-HTy0K1",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2ab227a41c6a8a594c61828fd63beec69b0d5f3d23edc2fd5a938e5859322862",
+   "bytes": 447948,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Casual.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1yYfYKaOp-yPrpMQ_Am2bBIC-E7MTbffs",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "a4f84c2b788d2761a711cebd628c1770b7ae5a5a40e7a8faf09dd5c37a8eca7b",
+   "bytes": 439948,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Casual2.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1fd7_cf4Dvtt6kjxfsK7y-tWf7RK-gSfn",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "16087f97266eab15cbc154859dc9cb8c0dd068f7adcaa6ad4be685744bd61d49",
+   "bytes": 429964,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Farmer.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1dNGrC-iyiIf2wHDPZZfb_7MuZkFPHUq-",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "76d57bf99aa30146b9376ecfc903fefdef67f8a293d82de323e2dd660933a352",
+   "bytes": 426492,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/King.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1jQJCejZRC1LXqv6VTmyXxl4IkPPOUgrV",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2f428a56c253e01d48501c8d9a63b967b74357beeac9f830df65f7ba68f51c5b",
+   "bytes": 571196,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Punk.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1wj4CJOdDMZxUUO6IHQphqR7gKXBGBviD",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "59b0ee5aa13c02398e818abb6bb9011e2b95bd6b5ae0a8f8014c4a3553434993",
+   "bytes": 425484,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Spacesuit.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1VtyiU3aQDgFWlQSS_zCKo01wJhGkk2gw",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9b8f320e3ee853a928a4d3abf646690eeaac5b2918e0d5ef3a31a526c2953548",
+   "bytes": 537932,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Suit.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1cWnqDxminHIBU_7fYmPWErncEvjhHU6F",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "fea0cd877573ec24e8882f3165708a1c6e3ed1aff7b886b3d867820dee916413",
+   "bytes": 451980,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Swat.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1h01FE-j9sx-L2ff610SWQU2kS_mShXRK",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "3c5eda6fe78350350363cb1e2ff8be0c7d8a02d58fc60584992b471c04357fa0",
+   "bytes": 481820,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/HumanoidRig/Individual/FBX/Worker.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=10dPAOOrlH6m6ASa3hOcc-ElclT_cIQjU",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "000eb1269f39e0b10a77c9bd33181c790341480324d72708cc7c22be177c49d6",
+   "bytes": 420604,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/License.txt",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1TTvylHa1CsiJuHFWWiv6PFGhLM-aAH5z",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e8dbf915a2b82229913e301a0787696611241bdefec4832bc084f54161db1efe",
+   "bytes": 372,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMM",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMM/Preview.jpg",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1LDgugrHJIEWrc4o8EGIMu-sTRLBMXSqn",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "ccf065362f4035d5a62a7a18dcb092365670d1e0877e55c1de0b5cc184652e4b",
+   "bytes": 360869,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/How To Use.txt",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1-FqaGch58KXpO8GtWEFbKnO6ds763Hd5",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "9b684add13cc5aa20e7671bd1f47202d762bae1839c00a247fcdd57e29a37439",
+   "bytes": 1224,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/AllTogether/Humanoid Rig.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1BPy5CDVzHcmM0Ob-6huLZv9aomUIH_fV",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "db7612cd9d69ea816320ea5e77da6e9361e8c6c75311a02fac1f34c1e8c859aa",
+   "bytes": 3787612,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Adventurer.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=167P6xlB3Xbmgb_vCQdg_7XUmHKvNY6UY",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "511aff0d19dcae794e2c9e04c4cb50e3b1317a962cce75551a8aa2012819941d",
+   "bytes": 439148,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Casual.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1oeUCKrPzsKRv9t8gpe2kF0Ps_azVFRdf",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2009fc379bee9e3e01ddf440e7a7b4a375b6d9f6989cbb1d6ea79c64eb0714ab",
+   "bytes": 428380,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Formal.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1GfqxE7ZkoitlPueRj238MVAcf5-KYrw0",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "32baa84de3935c84d84ef9cb210850fefb548e3ae7ccb3d3ca29bc5a9c0204b7",
+   "bytes": 413996,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Medieval.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1PDwGeJ38quzn8L3fBUI_GZHGBAh5f753",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "3c46289eaaeb19719de8f08d7144b407a27c31bf97805445bfbc5d5e9c40c7cf",
+   "bytes": 430764,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Punk.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=11R3oFaijDKL6rWslVfadzK6I4S6jhwVx",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "499cd0eb9895c037fb5ef78444cafc5909899028781aca5ec487b2ce9c4386c1",
+   "bytes": 420124,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/SciFi.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1ebc8YJTFQZ9GZvLBhl7vGFJRl5sVjXUn",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "2ab53ed30dee4d7db84e6aab308604f6df2957113d21d661f52c74cddcefedb7",
+   "bytes": 445612,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Soldier.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1_JoVz8m1QGFIvZ7zAd8u4NWjExAu_cUe",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e6911062f42a3ee99ba1a48a75eabea6e3287c59c44d47607c4672080bd37269",
+   "bytes": 456508,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Suit.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1KfT8-WaxQQLDpHQlBsQFuhSXu80uO0vY",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "6f9a543c597379e13a16d070a72417713f07df826fbd98c154f0ea24d6a1c537",
+   "bytes": 430396,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Witch.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1tohNct1tGHAV89prDmSYOYtFDAad1KgV",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "c39e7c69405742ae05d1f30f4d268030d5971679c817426edc822b4a20c35373",
+   "bytes": 441788,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/HumanoidRig/Individual/FBX/Worker.fbx",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1m2-hgysb7xhh3dfECiRnf5IYlc2GfI5P",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "cac9cb16299b43e1ef8e0888f505bd77ce9bb82facacd10af5e84de743b22884",
+   "bytes": 420396,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/License.txt",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1lIFL16xEpoPbr0j_HUATgmcEnAmYoIK2",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "e8dbf915a2b82229913e301a0787696611241bdefec4832bc084f54161db1efe",
+   "bytes": 372,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-QUA-UMW",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/CHR-QUA-UMW/Preview.jpg",
+   "source_url": "https://drive.usercontent.google.com/download?export=download&confirm=t&id=1XDZ2F9UZ116O7PPWIaR7PBPiuTKt5qup",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "sha256": "80daa5b48791a014d356c5107e6d312672400b87d247472ee72437f66a18efd6",
+   "bytes": 286665,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xy/f_walk_neutral_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xy/f_walk_neutral_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "20238709c689d46f5864aebaa58918cc1233cb9045b24aa4d58cf2752786a73b",
+   "bytes": 993792,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xy/f_walk_slow_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xy/f_walk_slow_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "75a8083f0a1c324cef42aae08e3de6c46503ae2f6916956e571a2bb79ef350be",
+   "bytes": 1075504,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xy/f_walk_start.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xy/f_walk_start.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "509cb6486c0938bdc8ed000041c6c6be82bc7324b8b2ab68515a6bc143b3e24b",
+   "bytes": 922800,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xy/f_walk_stop.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xy/f_walk_stop.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "e2f7d8dd7b08f53e33befb5515095af54f87effc6491b0774e401c99f497256b",
+   "bytes": 1147184,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xy/m_walk_neutral_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xy/m_walk_neutral_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "e6805ae6b6b49fe10f06c1b17b14ddde90d09b9fea689ac34793df252f44dcd0",
+   "bytes": 994336,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xy/m_walk_slow_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xy/m_walk_slow_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "8c5e5ed18be9e1062a26d230677d2801a679c70fd67f8aa8de14ff37f6d20577",
+   "bytes": 1066224,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xy/m_walk_start.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xy/m_walk_start.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "05243edcc6712bbd526ac2d7022e6a8bd49debaadf012f96d4b81795fb169817",
+   "bytes": 931792,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xy/m_walk_stop.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xy/m_walk_stop.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "808f112c37c0db60fd1855fb2785749557ecdb9107e8028cd3f28b11aa9c62b1",
+   "bytes": 1209760,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xyz/f_turn_left_120_to_walk.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xyz/f_turn_left_120_to_walk.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "506dcb2e1de952e1bb8c2ec42e8fcbc6744fb299c0e83990932528560bc8b7c7",
+   "bytes": 1220496,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xyz/f_turn_left_60_to_walk.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xyz/f_turn_left_60_to_walk.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "02d5a897587b4be3a2c6e02c1ecb5e6248993404e7952ef2ed0097ab55466953",
+   "bytes": 1094400,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xyz/f_turn_right_120_to_walk.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xyz/f_turn_right_120_to_walk.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "ff2f335a17d2d177c07d5a2614bb3e2da563710c9d52ebc248e246ad81bee672",
+   "bytes": 950496,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xyz/f_turn_right_60_to_walk.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xyz/f_turn_right_60_to_walk.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "e77b9b1747b612e737480c4dab27a66d3146090fff28546ba95bf98a2c81413f",
+   "bytes": 878496,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xyz/f_waiting_walk.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xyz/f_waiting_walk.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "ab6c693c70b891269a971ff3233d8512a189bb327962054b6c3dda84439ee41a",
+   "bytes": 10017216,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xyz/m_turn_left_120_to_walk.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xyz/m_turn_left_120_to_walk.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "e7e54d690115d0fce7048e75e962c958a26560a8cc492d4c69c64324b2298ea2",
+   "bytes": 1085408,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xyz/m_turn_left_60_to_walk.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xyz/m_turn_left_60_to_walk.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "4d295ca6ed579e3cef820a2d06d7018f0b0a2e6a830ef436299310fc5113d35c",
+   "bytes": 725408,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xyz/m_turn_right_120_to_walk.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xyz/m_turn_right_120_to_walk.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "7add1c03dce7db76dac370a118a6ef2e8d39c8d56493dee0a4461315d2686a05",
+   "bytes": 932512,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xyz/m_turn_right_60_to_walk.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xyz/m_turn_right_60_to_walk.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "f5d8aa019550158a00ef319e3fe5b10bbba45aa5835b5feb1966abb2030a3073",
+   "bytes": 1022208,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-MOTION",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-MOTION/xyz/m_waiting_walk.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_xyz/m_waiting_walk.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "66a3ebb85c50a7640dcfc018aacef3f9557e260b69f8d69eace8bbaa2dcc12f2",
+   "bytes": 5651936,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_cell_phone_textmessage.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_cell_phone_textmessage.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "fec5b09446c1f097d87490005157979a49053cd2462547794b9bdeababdae97b",
+   "bytes": 3647440,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_documents_take.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_documents_take.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "751ba2c38b50cafc16da710cfb12647ba84450362de545a57ad79bee9292e1c2",
+   "bytes": 2260096,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_gestic_talk_neutral_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_gestic_talk_neutral_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "fee2c764dcfac6f2edd85e73e11b1a13aac305372cbd657207d4c947b21a2476",
+   "bytes": 4761664,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_gestic_talk_neutral_02.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_gestic_talk_neutral_02.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "56960ce78ac83305ee65982472c65fb89d2d65d161c8290b12a5453bf932d916",
+   "bytes": 4836720,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_hold_bag_idle_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_hold_bag_idle_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "4e4d36ebe8ba8e82b8f485a07670778110cf4c46a50b580dee3993f5155a5176",
+   "bytes": 4351872,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_idle_breathe_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_idle_breathe_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "e470ba984484149c8269772b7640b754bd996ba83b23ae75535128412997aa45",
+   "bytes": 1379504,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_idle_look_around_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_idle_look_around_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "61a70b35f08d5308c01fd1bce75ecbdb2cd320193ee900bbef26ad0e9d52261e",
+   "bytes": 1617760,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_idle_look_around_02.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_idle_look_around_02.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "d12287ec903f8fa09cf789b59cdc5be45fcd95d726b3178a5ba37c42513c8b38",
+   "bytes": 1646656,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_idle_move_leg_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_idle_move_leg_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "638998e9ff21f6bf2b6a739ceb92dbb27bcaca9909235e161169859db5fb544b",
+   "bytes": 2266304,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_idle_nervous_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_idle_nervous_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "b7fdc5f49608dbaf59f379d5e431baef8c565da9390f80af931fddc7691f7548",
+   "bytes": 7442016,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_idle_neutral_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_idle_neutral_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "fd68b33ea9e290dc734ca8c3a71ef5842bb2dfe719853ff84f6336d06d39fdcb",
+   "bytes": 2959360,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_idle_neutral_02.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_idle_neutral_02.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "0e7720884f3f4716c247dedb3467a07819ea52bc9169f9a1e1311152998c4ba3",
+   "bytes": 2335264,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_idle_neutral_03.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_idle_neutral_03.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "7411eae2d964067f62213e2c19b1ecb1dda36c9144a8d7a397ae366948f0cf58",
+   "bytes": 3058816,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_idle_shake_leg_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_idle_shake_leg_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "23d63f4d36f089d34c20be83bc989f6e2258aa9a528a477f43fcb48e3ff257bb",
+   "bytes": 2066704,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_idle_waiting_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_idle_waiting_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "4ef108e767de7fcfa5dca9677369118664fdcc7743bf02ff04be2748c72579c2",
+   "bytes": 7600640,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/f_wave_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/f_wave_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "1a7461a5b44f258ac75b89e4885e692837d052dfb0070dfd7e79af86a8054b94",
+   "bytes": 1839824,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_cell_phone_textmessage.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_cell_phone_textmessage.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "fe358efe720533691589b3f16d43bfb7719f51be7ae23abaa66459477fb4250b",
+   "bytes": 5693776,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_documents_take.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_documents_take.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "5e9cfcdf67c915089cb9e0277111c6f52073be90898ff13f4238a4eb9418bc8d",
+   "bytes": 1733056,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_gestic_talk_neutral_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_gestic_talk_neutral_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "4c2b9ff481a9538dafbbe7f6aa6ffd6b948b5d34bb16a1e2052e943bbbbd3cd8",
+   "bytes": 5977648,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_gestic_talk_neutral_02.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_gestic_talk_neutral_02.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "873aa94a71685fe97df66df916dc5f90af1fece3a8cc5f398cccc4402a4afd90",
+   "bytes": 7247408,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_hold_bag_idle.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_hold_bag_idle.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "1a34632061eaf8b9aa90c09615c722725014d6608d93482faf3ec280dc728994",
+   "bytes": 5760800,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_idle_breathe_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_idle_breathe_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "281735704260d96e882d13e3c77d0ede00ed5d2e40805cd305000b3e5cbb1090",
+   "bytes": 1397280,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_idle_look_around_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_idle_look_around_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "018b19ad26695c5ebbd4131e0506da69dc76f4001a8100a9e38fcdb9a202b7a4",
+   "bytes": 1651456,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_idle_look_around_02.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_idle_look_around_02.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "b43fc0964bd1f9b3cbe75390257875278d926a6a0cc0146cfdfbfa00225fafd4",
+   "bytes": 1624144,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_idle_nervous_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_idle_nervous_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "ae95b29b6039990dfe1fad3a612e4c87888f9bb14e89f197281acc771648d13a",
+   "bytes": 5227600,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_idle_neutral_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_idle_neutral_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "818cc185af21390575f7fbfdeb3012ba2ce5969fbcb220ea725a2617b339a6e2",
+   "bytes": 2418544,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_idle_neutral_02.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_idle_neutral_02.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "d6d13b12e1f8d677dfaffef342a5ffeacf5ee3b38036de83425ab68316cd4e5e",
+   "bytes": 2938656,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_idle_neutral_03.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_idle_neutral_03.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "1ccd908762597f0dfe61a0d167a97c6e6659c241ea314f61585f7d16245a322b",
+   "bytes": 5466800,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_idle_shake_leg_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_idle_shake_leg_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "b4698a459de2f8cd9b71527bcca77937c52427638acd462f95f40fed020f5f5b",
+   "bytes": 1617360,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_idle_waiting_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_idle_waiting_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "a287fdd909c26e66841e8982336a754d7765153e302793a7b744e45deeacf751",
+   "bytes": 7450000,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_idle_waiting_02.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_idle_waiting_02.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "76178c2bdaf5b9059c4aff5b347ad948d89dcfbd387cb983fb8c8dd45de87233",
+   "bytes": 5717376,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "ANM-RB-STATIC",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/ANM-RB-STATIC/m_wave_01.max.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Animations/all_animations_max_motextr_static/m_wave_01.max.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "42ec91d2f077fe02321b2e929d878b10ec86936c3c43d11310001050a4d79c73",
+   "bytes": 1424016,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-BUSINESS-FEMALE-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-BUSINESS-FEMALE-03/Business_Female_03.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Professions/Business_Female_03/Business_Female_03.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "8c6b6cfb356cc20beb1cbd80d75bb6b2e56d1596a4640164637edfe1f3dd36e7",
+   "bytes": 418711,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-BUSINESS-FEMALE-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-BUSINESS-FEMALE-03/Export/Business_Female_03.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Professions/Business_Female_03/Export/Business_Female_03.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "5ed65d8591d7117adde33fb6896af98840a7cc52f21db298ae71a1e8ac0cd090",
+   "bytes": 603024,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-BUSINESS-FEMALE-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-BUSINESS-FEMALE-03/Textures/f016_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Professions/Business_Female_03/Textures/f016_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "25876a06194932b7e36d5b10cf123e6f317e8055dd335690851d23812cf916ea",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-BUSINESS-FEMALE-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-BUSINESS-FEMALE-03/Textures/f016_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Professions/Business_Female_03/Textures/f016_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "5ae33c019ad8319ce69e67c8ad40c4e5d8a5a70681558c976e1450069d239f03",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-BUSINESS-FEMALE-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-BUSINESS-FEMALE-03/Textures/f016_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Professions/Business_Female_03/Textures/f016_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "22df1864ba1fa3b0ba915681c358f88bb3a83ccea4f942a5443ca6778e5dcbd4",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-BUSINESS-FEMALE-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-BUSINESS-FEMALE-03/Textures/f016_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Professions/Business_Female_03/Textures/f016_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "cd7b9b7fa318866143cb1c5b118455545e36b5ef3cd86155f4096bcacfe2f4e2",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-BUSINESS-FEMALE-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-BUSINESS-FEMALE-03/Textures/f016_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Professions/Business_Female_03/Textures/f016_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "4572172bff449872dd78854f243b1b441cab367732af9b313762cbf9a29dbdda",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-BUSINESS-FEMALE-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-BUSINESS-FEMALE-03/Textures/f016_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Professions/Business_Female_03/Textures/f016_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "8734f566067c1af6f68804627af36f6f2ba51eeeec07b50db28a9f6cc3e6f984",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-BUSINESS-FEMALE-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-BUSINESS-FEMALE-03/Textures/f016_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Professions/Business_Female_03/Textures/f016_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "b474fbbead89fbbecf6d05d152295c5fe9e1dab2cc0c76aa7ab49d5da70b24f8",
+   "bytes": 16777260,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-01/Export/Female_Adult_01.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_01/Export/Female_Adult_01.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "8cbaf86576004b96469bc80df123b97fef788f4a7bb3f3eaa616fcfaf55698a3",
+   "bytes": 609152,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-01/Female_Adult_01.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_01/Female_Adult_01.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "b380856dcfa982bdb178317530d1d7b8331b26a1f01cb9aa08d0b55ac2c502ce",
+   "bytes": 434013,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-01/Textures/f001_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_01/Textures/f001_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "c038b01c5d05831c3f4e8c6daa18394e8a4851372acd3fcbdf30e7ee53c56cae",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-01/Textures/f001_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_01/Textures/f001_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "86b9b5a5aa73bd97244b35f97f3799c31b3db70426d7d607cbdc2dd271ace346",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-01/Textures/f001_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_01/Textures/f001_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "9b813e68b243074f74c4bbfb26d41cce2a70361efa09fcabe1962b4267bedb90",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-01/Textures/f001_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_01/Textures/f001_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "0d3153c59c54908d5f5194ffe3a7d882351f0dd74f9ef44ab3a2f164a3bf9d8e",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-01/Textures/f001_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_01/Textures/f001_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "522f3372283ea4161ed56d85471be15e02628df73a966447e4456bc169d310b2",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-01/Textures/f001_head_normal_wrinkle.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_01/Textures/f001_head_normal_wrinkle.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "a61ff1f6e6b9b4723561152ebfa8509a8153138ee86f79643efc1feaf2bf0235",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-01/Textures/f001_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_01/Textures/f001_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "302c56927d1d032084fb4faca784591dd8ab42e8bafb1029db157f73608eb251",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-01/Textures/f001_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_01/Textures/f001_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "12c9c366814e665687fe64056421213686b50a972a5ad47295f247d6a8ff7369",
+   "bytes": 16777260,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-03/Export/Female_Adult_03.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_03/Export/Female_Adult_03.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "d8930ca41e72166310622c9ffacd752d93459518ca5e59c84a32b07a10acaebd",
+   "bytes": 791312,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-03/Female_Adult_03.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_03/Female_Adult_03.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "87f8bddf274657d1ac10c9e58ce906bfbe8648fa752eca34505ecaa1d8af434f",
+   "bytes": 400279,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-03/Textures/f003_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_03/Textures/f003_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "fc22fd6bd6686d5638bab7d24cdb435d180e6065325796b41b1966f047843e2c",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-03/Textures/f003_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_03/Textures/f003_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "32dcbdb41b263b0286313bb1ff3bce05dd45e177080aefe4da9f42aa64af4993",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-03/Textures/f003_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_03/Textures/f003_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "e00d7111fe7cad599a511c85335c4070a3a0e381b70b4cec3a2d72af3c772cf6",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-03/Textures/f003_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_03/Textures/f003_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "4c45609d3385a5358378424f72615637e061ff56c66343a71045adc04b7a27df",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-03/Textures/f003_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_03/Textures/f003_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "8b42537bb2d57cb5255b71072a424a0385e5c799af0e0fcfb5d8adefd7290aeb",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-03/Textures/f003_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_03/Textures/f003_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "cbf4fc752c09c94f326ac3611441c9b686d9028411b83e35577d348982bc44d2",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-03/Textures/f003_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_03/Textures/f003_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "31c5ae34c355c71aef8ec8c67ece37009f385a1081db378df5e7987158aec523",
+   "bytes": 16777260,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-04/Export/Female_Adult_04.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_04/Export/Female_Adult_04.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "a1a0debc6851d0ffe2079b5743d3255ad115139ccd6f8c8fccfd52c49bef6dfd",
+   "bytes": 635552,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-04/Female_Adult_04.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_04/Female_Adult_04.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "70690c367c531d38cf04d98c6705d9da5e530b5b5391002e47a9ace586fc2623",
+   "bytes": 430066,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-04/Textures/f004_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_04/Textures/f004_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "02c1362ed7daed6cb3aac33dc85f8e635c9be29265c7d96515c8ca7230c50781",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-04/Textures/f004_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_04/Textures/f004_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "01e3802e124c854ebfef58fd36f4dc188433e1d7a989a92cfd0699adaed0a947",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-04/Textures/f004_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_04/Textures/f004_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "3ad2a628cfffd6c097d3d512ef91866d0b2c82e54b16c6d17460ab98194e952e",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-04/Textures/f004_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_04/Textures/f004_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "61b418a825e85514541f28c5968e9e0a0d1897506f7c7bccd27eef336e1473ef",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-04/Textures/f004_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_04/Textures/f004_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "f9e94fcc0952d60fc86eef3d737f46d53473ffc9e306984bf64570306d900823",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-04/Textures/f004_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_04/Textures/f004_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "59e6049bed79f690cd35537ca781da5dfd123964c71bd6035c7a1b2015928ebe",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-04/Textures/f004_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_04/Textures/f004_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "cf9b868f3f2b9f48ee3d764d1b8f611df94167e393f6275c04779963b3ddd506",
+   "bytes": 16777260,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-08",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-08/Export/Female_Adult_08.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_08/Export/Female_Adult_08.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "cf857fe04595edee9174caaf3f0d18dd5d5cc4d0702c8851f2cc413dd8cfea9e",
+   "bytes": 594640,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-08",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-08/Female_Adult_08.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_08/Female_Adult_08.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "07d472a0676509e5c6c08913780be4bf99af9b5aad52f5de7b5ecf4e817c51cc",
+   "bytes": 407395,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-08",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-08/Textures/f008_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_08/Textures/f008_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "13fad57cdcfaee92264172ef076539d928bbc1ba86309f493cd7dae06137d4fa",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-08",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-08/Textures/f008_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_08/Textures/f008_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "f972d479856273160ea49b01e0e4f5a15fb557d9651053bbd530bc4e106c4791",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-08",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-08/Textures/f008_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_08/Textures/f008_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "2cef23f209fa396cde23fd5b38f84e9b9044e474ebcb6f20087b72ae93caf52a",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-08",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-08/Textures/f008_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_08/Textures/f008_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "17e73fd0e0fb4e769b2a29c85922bad356a55d1fa0d4628c906ead0403793d35",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-08",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-08/Textures/f008_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_08/Textures/f008_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "547c1ff67a6308f2a1396af71b9dfe30d133525cf0d2b632085302b51a800ca9",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-08",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-08/Textures/f008_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_08/Textures/f008_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "a9a7814d948b561335aa7812cf755eb3e21ce509f0a1e3dc0b9e83b1cd5f9fdc",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-08",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-08/Textures/f008_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_08/Textures/f008_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "9d2fdbbf9df2ecbb34082541c82bf1d464fbddc3b5f8683d0ea060a667cdeb8e",
+   "bytes": 16777260,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-12",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-12/Export/Female_Adult_12.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_12/Export/Female_Adult_12.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "e7f1d9af57cfbac0be76c2c31c9c695aec2204e09e6616abda61df71bf4a7f67",
+   "bytes": 610352,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-12",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-12/Female_Adult_12.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_12/Female_Adult_12.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "c3e8c9b48d7a3dc10b34ee4ac89554429128417267fadf326a1a3f09d15f07ed",
+   "bytes": 419481,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-12",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-12/Textures/f012_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_12/Textures/f012_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "7f517e4c12738bda2638786f8d6557920e3481a80a9b34d7af4f1c2f30e20dca",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-12",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-12/Textures/f012_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_12/Textures/f012_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "1b2fe57e964c1a8e3703105c1458cfc07937aa47d7604a927ec3ccbcedd8cf6d",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-12",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-12/Textures/f012_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_12/Textures/f012_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "cdd6fa6137390585023973d03cde4bda99d64a102c2a4368e4f56a43e8e7e6ce",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-12",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-12/Textures/f012_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_12/Textures/f012_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "1ae65738cd3660055236357a525c3dc8edda56e64a5275f5a083e8c7c356d941",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-12",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-12/Textures/f012_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_12/Textures/f012_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "1b0ccfdd8d3751e2906194fa630b8e440aa30b584a2126d98e42bfbb7c1c8c2e",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-12",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-12/Textures/f012_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_12/Textures/f012_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "8488d4209884beca93aafd9550e6d30f5b7dd0f5bf356586cc9bf8989162a3d9",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-12",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-12/Textures/f012_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_12/Textures/f012_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "6a8ef2b5554b504a298a17856de12bdee7fee5a87265726ee0b373f0752a95c7",
+   "bytes": 16777260,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-14",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-14/Export/Female_Adult_14.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_14/Export/Female_Adult_14.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "63d32ecd1fd6427050616fe3e2277011ea7442d019bb0b61dfdd5299587467f4",
+   "bytes": 608528,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-14",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-14/Female_Adult_14.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_14/Female_Adult_14.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "ff7e554df03edd66a77c4f684f0e807f25ace07cdce3da7fcaf084037eb808ff",
+   "bytes": 446721,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-14",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-14/Textures/f017_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_14/Textures/f017_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "feed2c59b6c4eb2f673cd37d92392686867b4507adf4862c2c3e579f0df51b94",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-14",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-14/Textures/f017_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_14/Textures/f017_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "7bf6a8d41d7453ec17a6fd744ecf9d3059bf657160c97bcdd30c7505d638b718",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-14",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-14/Textures/f017_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_14/Textures/f017_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "4aad81b133ad46ebafe59e4eba824091b4ca8c6a92d9c6320c7b7466e8aced2b",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-14",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-14/Textures/f017_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_14/Textures/f017_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "c5805bb8b3a1c1ddae011696ee742747c9efefa4be5db4a059251c452031023a",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-14",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-14/Textures/f017_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_14/Textures/f017_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "9205d45b4e7ae40050ea7f6587a264671eefe51dac0f43ea140ce6156400690d",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-14",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-14/Textures/f017_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_14/Textures/f017_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "6ea5e1cb8627900c2de29d6921d3183d060ad008f3172a0b84d7ede3fab0d0a1",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-14",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-14/Textures/f017_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_14/Textures/f017_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "2d72503c645408d279d691e2545eddb446b82db57a7519f537bb8fe33fde26aa",
+   "bytes": 16777260,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-17",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-17/Export/Female_Adult_17.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_17/Export/Female_Adult_17.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "777125303c2b4c493dce961b66cfc8c86ac69ee697c212ea9fe3107bfc45831f",
+   "bytes": 593440,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-17",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-17/Female_Adult_17.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_17/Female_Adult_17.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "50da109057b9c4408944d125c2efcab2504057e9824a98c96fb83340f194781d",
+   "bytes": 409100,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-17",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-17/Textures/f006_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_17/Textures/f006_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "d657c9113b23c72a58bca56bcfe7c0956caea976a6144c3f53c0181b9f2b746d",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-17",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-17/Textures/f006_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_17/Textures/f006_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "2ff583af536bd7b2e4de27242a37d6a2659c7274c835ea0f397d96256b62ba60",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-17",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-17/Textures/f006_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_17/Textures/f006_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "9f8e0cf9422a435e54700d57177da2a02f4f489359b33afd73a7274cdeaf121b",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-17",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-17/Textures/f006_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_17/Textures/f006_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "f23bfa861e036dc9a39ae8c6595bf0128f021eb762464e58f72907a9b49ecbfa",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-17",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-17/Textures/f006_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_17/Textures/f006_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "9388005b0d2a3b90c6d83c280fd603851a181f1ab2a4af02bbc348169a230c92",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-17",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-17/Textures/f006_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_17/Textures/f006_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "454745f143b6bff6ea1fabf6dde0993685b2ecf08595c2dfc5b873ab427bf671",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-FEMALE-ADULT-17",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-FEMALE-ADULT-17/Textures/f006_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Female_Adult_17/Textures/f006_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "2ce67c662cf20256c8bf0713e4aeff5f7be0ae3cee981df119dbc7d32111e3d0",
+   "bytes": 4194348,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-01/Export/Male_Adult_01.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_01/Export/Male_Adult_01.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "8d1edb51b4dc3427ae2456f4407fc105532c145dd019e53cd42bab31cc948a29",
+   "bytes": 521472,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-01/Male_Adult_01.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_01/Male_Adult_01.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "54c9b5a695881c3d8aea99fb23d234282a5642c3e96f966b441ab7893461d535",
+   "bytes": 450889,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-01/Textures/m002_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_01/Textures/m002_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "6a048a6b2140a1f5293798ca286be64fd0de6d79572e1273ff5765bd578f463f",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-01/Textures/m002_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_01/Textures/m002_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "c9892e80c56890f6f5365627835286c2d4d2cc34cc473f6788fe3d560a52fb69",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-01/Textures/m002_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_01/Textures/m002_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "c071a46bf86f2cc0062ccddae770a9bc21ebae325634439ac3cc1ed4d92fd684",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-01/Textures/m002_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_01/Textures/m002_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "f5b64e4894930d438f7c419c3c9d0bba1f95fa4de9af078b762ea55bfca1ab85",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-01/Textures/m002_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_01/Textures/m002_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "5ef5ae404c9276f17641e392d0d4bdbe5fb23e94f28238b23a381e6a357c42ea",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-01/Textures/m002_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_01/Textures/m002_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "c051336b12d443cbd0e04dc3f1ce4109d420f426198aa02a1a1451b87e9a7831",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-01",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-01/Textures/m002_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_01/Textures/m002_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "53818d3f45519451edd2bc60d6e59cd4057ecd381827463c5503da0439d0a5cf",
+   "bytes": 16777260,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-02/Export/Male_Adult_02.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_02/Export/Male_Adult_02.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "1c65e292e9057a23f7f70969f6971c631c1316fcaaf93e575a4557201c835018",
+   "bytes": 539920,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-02/Male_Adult_02.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_02/Male_Adult_02.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "2df56390d069f322e43eeebf2bdff6f0f911769805d29c6e9595cc19f3420f36",
+   "bytes": 478395,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-02/Textures/m003_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_02/Textures/m003_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "52ef8bad71600de972eabeab2845019cf8ce6e274f11b9c7fbd315566c51e232",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-02/Textures/m003_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_02/Textures/m003_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "531408d53eb369c8b546af69dac123ac8fb88e3238abb8e4cd7dd923580275eb",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-02/Textures/m003_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_02/Textures/m003_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "cba40ba56cb546ad28db07098583ed455b105d42c28b49db457880c90ef8b871",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-02/Textures/m003_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_02/Textures/m003_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "f7d7d06bc9e3bee73bb037a0c55ca2915593fa5ef7b08da3f6a59409ed5cfc8f",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-02/Textures/m003_head_normal - wr.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_02/Textures/m003_head_normal%20-%20wr.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "92c0dc60b1df8eec91a7528a5bde296ccc8f278c8c92945620c6d87435d67764",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-02/Textures/m003_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_02/Textures/m003_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "92c0dc60b1df8eec91a7528a5bde296ccc8f278c8c92945620c6d87435d67764",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-02/Textures/m003_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_02/Textures/m003_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "57456d659b7d8caf79bcbdf49389fc2699d514eb72b73c7beddbba4635537f19",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-02",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-02/Textures/m003_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_02/Textures/m003_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "2c0751e05d78587d3898ce60bbea8b3f23e78150b7e497b7e97fe8c66e91ee1e",
+   "bytes": 16777260,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-03/Export/Male_Adult_03.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_03/Export/Male_Adult_03.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "7064a9f50c95975c6d64ab0c5f5504364bad4ac987750728d0b5f1788fd59dcf",
+   "bytes": 513728,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-03/Male_Adult_03.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_03/Male_Adult_03.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "0a5cece1ce2bf7f44df7fab730d332c934a8f21ff4dda098b49e2ece6223936b",
+   "bytes": 515426,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-03/Textures/m004_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_03/Textures/m004_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "13686c52f5a8552a7263545f22d79aeef7269112f8b48fc1e7864a13de0b045b",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-03/Textures/m004_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_03/Textures/m004_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "27cba209d0091dc9865a08f0e5e8cf9521c673c68fddbdf9feca9a3dd2f14b05",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-03/Textures/m004_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_03/Textures/m004_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "8aaa39ab5c7dd4b55d456c3268996f62cbb929d1916ffdf6ae3ca0c43c9f3e05",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-03/Textures/m004_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_03/Textures/m004_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "96130ef4c94702d8ee6004ce7d1c48f4b5fb6383ad70410f7316ff4031b031e4",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-03/Textures/m004_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_03/Textures/m004_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "bd2b02627b56103f33e8c74b5ac1ac6f32fd396884869dcb6d3d2bcca5173a6a",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-03/Textures/m004_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_03/Textures/m004_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "5ef06d4323549e77c0d2e267d44e6ef9e2b83292d387d87eeb1c21500466c391",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-03",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-03/Textures/m004_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_03/Textures/m004_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "7b7255ae4042577edbf3dff253b2a32231db6fe281cd8781306d9e26fcf9d03a",
+   "bytes": 8388652,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-04/Export/Male_Adult_04.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_04/Export/Male_Adult_04.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "fe0d026bc59e7d7ea8f4049edf77ee8040e050224b44a10fb4727b9b3d6efba0",
+   "bytes": 571296,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-04/Male_Adult_04.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_04/Male_Adult_04.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "df86a37938030b23701a3e00daa39c7e1b965f0a1d79c338ac8b56eb4f64efc9",
+   "bytes": 511910,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-04/Textures/m006_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_04/Textures/m006_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "8dd7a0a1de383bd295f9f6f42b4ab484b2afa4ab920521a161bd18b18c3aae0f",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-04/Textures/m006_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_04/Textures/m006_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "1d5062e2c5012bca62c2090cf064c8e2d335daafb0ab62b431e47c628ad781a7",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-04/Textures/m006_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_04/Textures/m006_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "f3b693a9e7a6090f01a6e6f199eb9d53ba0b3f236ca596074fcb915d5bcfbc1f",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-04/Textures/m006_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_04/Textures/m006_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "e889edd96192a396efec0bf0baed370fdff4a8d3b2efdc3809722eb19cd21941",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-04/Textures/m006_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_04/Textures/m006_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "ca51b8fd271751dd5b58493038c0ac4496c3c51a986d69541723a680ccbcf91b",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-04/Textures/m006_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_04/Textures/m006_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "dd4ca495955bab36c599030b880f78e8bb6f20d4112353298cdd8800d15a50ff",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-04",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-04/Textures/m006_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_04/Textures/m006_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "3c5656dbad4872676c9469f6da09690c0e891148394165dda11b265cb2b014c0",
+   "bytes": 16777260,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-05/Export/Male_Adult_05.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_05/Export/Male_Adult_05.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "cd0e17505d7b4148cf3b19ccdec9a90f063671f841b60d193d3527a0980052d0",
+   "bytes": 536496,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-05/Male_Adult_05.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_05/Male_Adult_05.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "48a9600b2e8651c46fe1fbb741fefdd1c4087afd10137d1704227abee37a439f",
+   "bytes": 488838,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-05/Textures/m009_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_05/Textures/m009_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "cf5704a0c083d57dab9b7cfdb797d8440fffd0128c7b560b8daad15c5dbcaad7",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-05/Textures/m009_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_05/Textures/m009_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "17fe756165fb9d39ee0c1bbae956bcc01360fd2a333c258b95bbe4002975458d",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-05/Textures/m009_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_05/Textures/m009_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "9c2240291c1c3bddac51036a894fb47b8c5d4fd3ff8fc9f448183ace34669b61",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-05/Textures/m009_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_05/Textures/m009_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "2ff27ddb9b4b63ec75ab121813890c34be569c26de99687cbf29e84cb814a22e",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-05/Textures/m009_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_05/Textures/m009_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "c7077420b31c5146ce30d2ead43d530d7ceeb432ead7f56db185f64496e26b6c",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-05/Textures/m009_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_05/Textures/m009_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "0ca98624af25a348b71715ca187be77c399def7cb47464979b4cad614b7d7871",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-05",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-05/Textures/m009_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_05/Textures/m009_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "959801169cfd2274b72d8c7a052d4b83029c5f9a8afddf8d69837361fd411cf2",
+   "bytes": 16777260,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-06",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-06/Export/Male_Adult_06.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_06/Export/Male_Adult_06.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "537284add0fb8bd3bf9dd9459cba2c6d4d34de50b86dfdfef09c2c57cbf1a878",
+   "bytes": 548576,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-06",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-06/Male_Adult_06.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_06/Male_Adult_06.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "b914d4979afbf2c7b5eb8ad970117bb03587f56e4116140143d6dff6d432f511",
+   "bytes": 485364,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-06",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-06/Textures/m011_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_06/Textures/m011_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "f92110adc6f33c8802652e4c2f5282226e3fbee672f510b3fb765a1599dd3f91",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-06",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-06/Textures/m011_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_06/Textures/m011_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "7416e297789e42ce3f23af46a3dea9d372046034e2b18c0bf4a3b18569a97c72",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-06",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-06/Textures/m011_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_06/Textures/m011_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "ea260e6d6464b5deac4ab187e046472fd0ef27141b56eccec861bbc3d454fde7",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-06",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-06/Textures/m011_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_06/Textures/m011_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "b3f7731c506ae105bead54cb558c366ed9e72463565f78727365e52a90b841c5",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-06",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-06/Textures/m011_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_06/Textures/m011_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "1710343a59dfb60f8369772aebfafbb3c507f2b1f62f4341effe7ed07ee431b9",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-06",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-06/Textures/m011_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_06/Textures/m011_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "75ff79448342413273d4ce225887fa46d98671bb0a97460134a1c2971b4e2719",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-06",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-06/Textures/m011_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_06/Textures/m011_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "7cb2146e511c1bd207f5e7f061c8b66915db1bbc15c3748c6d98469630fd346d",
+   "bytes": 16777260,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-09",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-09/Export/Male_Adult_09.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_09/Export/Male_Adult_09.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "ebb89800dbad28b4352369c7149314e010806268a28d7f5bb954a4393bba3d00",
+   "bytes": 522176,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-09",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-09/Male_Adult_09.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_09/Male_Adult_09.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "67493d2ce72857cb3b93b313c7e582c4631a0b5b5222b43b8e1725e80a5a2ce6",
+   "bytes": 472224,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-09",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-09/Textures/m017_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_09/Textures/m017_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "6959a7dca441963ac10b0f86df4b3191ad5da839c16a1fc972da8464b6807b65",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-09",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-09/Textures/m017_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_09/Textures/m017_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "f537feb3af08b044db6fcff7f64f80b1d5b0f6ca754165bb1534e6e6aa7d2f7c",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-09",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-09/Textures/m017_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_09/Textures/m017_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "48f7aa4547e0a1188c4cbfbffe146a5bbff2d55d7c96905f5be8db684e98b5b6",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-09",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-09/Textures/m017_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_09/Textures/m017_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "5e4b4af1dc24660607fb96cebdafacae649f36d4a7bc8af99178634126664cb8",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-09",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-09/Textures/m017_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_09/Textures/m017_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "0198600cca68ce2fd7390593d547bb4b7c51cbbaaaca7f33599ba4750d351e53",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-09",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-09/Textures/m017_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_09/Textures/m017_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "9887bb81d471d166d74f3c98cd91d4e3c07b1a40f256dd77eec901e1c210ccc2",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-09",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-09/Textures/m017_opacity_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_09/Textures/m017_opacity_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "510c4b20b534a1b3d488638a33319968c4108f1aac887ab50188a77980cf1bc0",
+   "bytes": 8388652,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-13",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-13/Export/Male_Adult_13.fbx",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_13/Export/Male_Adult_13.fbx",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "2898a6ff32144aed2fa57f383dfb9401580ad8b6f2c2857d06a7efdfe94b3f9a",
+   "bytes": 494816,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-13",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-13/Male_Adult_13.png",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_13/Male_Adult_13.png",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "e859bc8b5c1583fe39d9f234d2431edb8571ce30a3f7c6ff770c75070712bcae",
+   "bytes": 473462,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-13",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-13/Textures/m010_body_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_13/Textures/m010_body_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "af8d799127f243c9db2134de1fe1b93d99eacee4affadf27d5af77bb57b1db89",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-13",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-13/Textures/m010_body_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_13/Textures/m010_body_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "aa410f558a30a5ceecabfde7ecfc6504d33f5bb7060a0629d20d1a81ebca7328",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-13",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-13/Textures/m010_body_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_13/Textures/m010_body_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "fb9c26af298dd0d623ce979a5519f027e3b73ca2fecda222b9645aec76119367",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-13",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-13/Textures/m010_head_color.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_13/Textures/m010_head_color.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "101064ec2886fc74a20e1c6e2b81b0c2596f25614fb5d9aa2d01cab7337e2b09",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-13",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-13/Textures/m010_head_normal.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_13/Textures/m010_head_normal.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "726279842b9927e31f0e52f96c953a77346180cf1d733f1a23b5418d6843050d",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "CHR-RB-MALE-ADULT-13",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/CHR-RB-MALE-ADULT-13/Textures/m010_head_specular.tga",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Avatars/Adults/Male_Adult_13/Textures/m010_head_specular.tga",
+   "license": "MIT",
+   "redistributable": false,
+   "sha256": "e7c2ac1ce2a7e05fbe90025b546d86e25f7413626e7147311c641ddc7e63c7f1",
+   "bytes": 12582956,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "LIC-RB-MIT",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/LIC-RB-MIT/Editor/FixRocketboxMaxImport.cs",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/Assets/Editor/FixRocketboxMaxImport.cs",
+   "license": "MIT",
+   "redistributable": true,
+   "sha256": "05c24fc37c760a2221e3ff1ec30910ad420a12e79484711a79b35ab31ffdf82b",
+   "bytes": 3398,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "LIC-RB-MIT",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/LIC-RB-MIT/LICENSE.md",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/LICENSE.md",
+   "license": "MIT",
+   "redistributable": true,
+   "sha256": "17474e386e0b9e1a700cc3d06b2b0882a2c376d9c6b49c7f8274409b8f8d2352",
+   "bytes": 1066,
+   "date": "2026-10-30"
+  },
+  {
+   "ledger_id": "LIC-RB-MIT",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/rocketbox/LIC-RB-MIT/README.md",
+   "source_url": "https://raw.githubusercontent.com/microsoft/Microsoft-Rocketbox/master/README.md",
+   "license": "MIT",
+   "redistributable": true,
+   "sha256": "bcf8013e3d5817a5dee5d1770b9943278189cd76b2d9b2abc243db99b703ecd6",
+   "bytes": 5345,
+   "date": "2026-10-30"
+  },
+  {
    "ledger_id": "SK-2273be",
    "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-2273be/license.txt",
    "source_url": "https://sketchfab.com/3d-models/tv-cctv-monitor-2273be0837bc453b982dfb19d82c9cc0",
