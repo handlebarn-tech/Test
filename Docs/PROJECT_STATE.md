@@ -16,8 +16,8 @@
 | Task | Session | State |
 |---|---|---|
 | ART-001 | dispo-art-001 | working (Unity) |
-| GAME-001 | dispo-game-001 | done → REVIEW-W2A (branch claude/task-game-001-b68d0f) |
-| PROC-001 | dispo-proc-001 | done → REVIEW-W2A (claude/task-proc-001-38ca78) |
+| GAME-001 | dispo-game-001 | MERGED to main (6f8eafe) |
+| PROC-001 | dispo-proc-001 | MERGED to main (6f8eafe) |
 | DES-001 | dispo-des-001 | done; reconciling UX-001 questions + ENGINE.md names (claude/task-des-001-635c15) |
 | UX-001 | dispo-ux-001 | done → REVIEW-W2B (claude/task-ux-001-1115a2) |
 | ASSET-001 | dispo-asset-001 | done → REVIEW-W2B (claude/task-asset-001-9856c0) |
@@ -41,4 +41,5 @@
 ## Decisions requiring user input
 - Answered 2026-10-29: jars 454 g (DEC-019), deli only (DEC-020), weighed at a register stand (DEC-021), HUB CCTV image supplied (DEC-022).
 - Open: human-only sign-ins for ASSET-002 (Unity Asset Store claims for Warehouse/Office; Sketchfab login). Nolan may also send a photo of the register scale stand.
+- Open (before any public build): real brand names (Cookies, Alien Labs, ...) ship in `batches.json`; allowed by DATA_SCHEMA §5 and not PII, but a trademark/IP call for Nolan (REVIEW-W2A m2).
 - Later: tax rounding (GAP-204), the TFS tool's open question.
