@@ -1,0 +1,21 @@
+# Unity generated
+UnityProject/[Ll]ibrary/
+UnityProject/[Tt]emp/
+UnityProject/[Oo]bj/
+UnityProject/[Ll]ogs/
+UnityProject/[Uu]ser[Ss]ettings/
+UnityProject/[Bb]uild/
+UnityProject/*.csproj
+UnityProject/*.sln
+UnityProject/.vs/
+UnityProject/.idea/
+# Studio outputs
+Artifacts/
+Builds/
+Tools/Studio/studio.config.json
+# Blender
+*.blend1
+*.blend2
+# Python
+__pycache__/
+*.pyc

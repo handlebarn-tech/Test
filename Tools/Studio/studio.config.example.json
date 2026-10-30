@@ -1,0 +1,12 @@
+{
+  "unityExecutable": "C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Unity.exe",
+  "blenderExecutable": "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe",
+  "unityProject": "UnityProject",
+  "budtenderToolRoot": "C:/Users/handl/Downloads/tfs-budtender",
+  "logs": "Artifacts/Logs",
+  "testResults": "Artifacts/TestResults",
+  "screenshots": "Artifacts/Screenshots",
+  "renders": "Artifacts/Renders",
+  "builds": "Builds",
+  "referenceImages": "References"
+}

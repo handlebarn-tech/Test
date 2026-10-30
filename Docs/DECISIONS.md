@@ -1,0 +1,12 @@
+# DECISIONS (append-only)
+
+Format: `DEC-### | date | decision | rationale | affected areas`
+
+- DEC-001 | 2026-10-29 | The local TFS Budtender Tool project at `C:/Users/handl/Downloads/tfs-budtender` is the **highest authority** for recommendation logic and existing implementation, above the live site and the chat record. The "no source" rule still applies to the old Three.js *game*, which remains unavailable. | User directive. | MIG-*, GAME-* domain work
+- DEC-002 | 2026-10-29 | Within the local tool, the build matching the live deployment is canonical: v7.11.4, baked page in `deploy/2026-10-30-v7114/site/` (served md5 228684e9), source `dev/v7114/tool.html` (md5 7df5054d). The tool has its own active hub/sessions (`HUB.md`, `TRACKER.md`): game workers are strictly read-only there. `dev/v7115` is an unreleased candidate: read it but do not treat it as shipped behavior. | Live = what is actually in use; v7.11.5 is in-flight. | MIG-*
+- DEC-003 | 2026-10-29 | Use the installed **Unity 6000.6.7f1 + HDRP 17.6.0** instead of downloading 6.3 LTS. | Already installed, licensed, HDRP is built in; saves a multi-GB install. Revisit only if a 6000.6-specific blocker appears. | BUILD-*, all Unity work
+- DEC-004 | 2026-10-29 | Repository root = `Dispo Game/`; Unity project at `UnityProject/`; layout per STUDIO_OS §48. | Matches the documented structure. | all
+- DEC-005 | 2026-10-29 | Doc-only workcells run in the main checkout and own disjoint files. Code/Unity workcells use git worktrees (`task/<ID>` branches). | Avoids worktree overhead for docs; isolates Unity Library and code. | Studio process
+- DEC-006 | 2026-10-29 | The budtender source is **not copied** into the game repo. Workers read it in place, read-only. Only derived, PII-free data (terpene definitions, batch chemistry, price tiers) enters the repo through deterministic import tools. | That folder and `Downloads` hold customer/transaction exports (PII) and Supabase material; the game must not carry PII. | MIG-*, GAME-*, data tools
+- DEC-007 | 2026-10-29 | Blender 5.2.3 LTS is the DCC; all asset generation runs headless (`blender -b -P`). | Installed, free. | ART-*, PROC-*
+- DEC-008 | 2026-10-29 | Vertical slice first: a single playable shift loop (customer → intent → recommend real batch → sale → inventory/visual change) in the graybox, before management features. | User priority. | Backlog ordering
