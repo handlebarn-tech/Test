@@ -48,3 +48,6 @@ None.
 
 ## Doc changes on this branch
 - `Docs/KNOWN_GAPS.md`: registered GAP-PROC-01…06 from `PROC_PIPELINE.md`.
+
+### Note m5 (wave-1 project, not these branches)
+Every batchmode `unity-compile` rewrites `Assets/HDRPDefaultResources/HDRenderPipelineGlobalSettings.asset`, emptying `m_RuntimeSettings.m_List` (20 rids → `[]`). Reverted here, not committed. Workers running Unity will keep seeing this dirty file; BUILD/ART should decide whether the committed list or the batchmode result is canonical and commit that once.
