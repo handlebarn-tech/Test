@@ -12,14 +12,13 @@ Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, 
 
 | Work | Session | State | Next Hub step |
 |---|---|---|---|
-| GAME-007 limit meter + strikes (+ W4W m1/m2/m4) | `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | running | Unity review → GAME-008 |
+| GAME-007 done (a6ab1dc+5cc916a) → REVIEW-W5G queued after W5A | `local_0dd63bac…` reviewer; worker `local_7f8c95e9…` idle | queued | merge on GO → GAME-008 |
 | GAME-010 tuning + personas (merging cart; W4W m3) | `local_0d166a8e-87b1-40bb-9594-be389c549875` | grid 3 | review |
 | REVIEW-W5A: ART-006 (c1ad023) | `local_0dd63bac-df1d-448d-9203-641ead6b6837` (worker `local_392adc04…` idle) | running | merge on GO → playable build session; REF pass for DEC-068 cabinet |
 | REVIEW-W5C: OPS-001 run time limit (08e017c) + REF-010 (1c3a9d8) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO; archive OPS session `local_7eefd4c8…` |
-| **IMP-003**: rolling audit of ChatGPT Blender toolkit (first drop `blender_proc_vNext/`) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | running | after each audit: review → Nolan approval; message it when Nolan adds drops |
-| DES-004: PS2 shift-day design + UX-003/GAME-011/012 packets (doc) | `local_82d327a2-5b67-4cff-b481-5854a94f6f31` | running | docs review; ratify DECs |
+| **IMP-003**: rolling audit of ChatGPT Blender toolkit (drop 1 audited, adapt) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | running | after each audit: review → Nolan approval; message it when Nolan adds drops |
+| Docs reviews W5D DES-004 (a693cef), W5E AUDIO-001 (5fbf03e), W5F IMP-003 drop 1 (1d13112) | `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7` | running | merge on GO; ratify DEC-DAY-A..E; W5F summary → Nolan approval; archive DES-004 `local_82d327a2…` + AUDIO-001 `local_8bddd8f7…` after merge |
 | BRAND-001: approved brands only (DEC-071) | `local_a7e0b8da-ae2d-4dbb-ac46-8194e642ec35` | running | review (parity-sensitive) |
-| AUDIO-001: audio plan + CC0 sourcing (no Unity) | `local_8bddd8f7-b99c-4c0e-80d7-d89dd3359dd4` | running | review |
 
 ## Next tasks to start (dependency order)
 0. DOC-002 (AUDIT batch D) in the next gap between waves; DOC-003 (batch E) low priority. Merged this session also: W4U (REF-009b), W4V (IMP-002), W4T (QA-002; DEC-067), W4X (DOC-001). Free reviewer: `local_c94488d7…`.
