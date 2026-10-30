@@ -159,7 +159,7 @@
     "age": 0.433,
     "weight": 0.292,
     "muscle": 0.516,
-    "height": 0.569,
+    "height": 0.518,
     "proportions": 0.744,
     "cupsize": 0.551,
     "firmness": 0.564,
@@ -423,7 +423,7 @@
     "age": 0.471,
     "weight": 0.735,
     "muscle": 0.488,
-    "height": 0.537,
+    "height": 0.495,
     "proportions": 0.582,
     "cupsize": 0.59,
     "firmness": 0.552,
@@ -687,7 +687,7 @@
     "age": 0.835,
     "weight": 0.297,
     "muscle": 0.439,
-    "height": 0.614,
+    "height": 0.551,
     "proportions": 0.491,
     "cupsize": 0.399,
     "firmness": 0.505,
@@ -952,7 +952,7 @@
     "age": 0.901,
     "weight": 0.744,
     "muscle": 0.481,
-    "height": 0.466,
+    "height": 0.443,
     "proportions": 0.497,
     "cupsize": 0.474,
     "firmness": 0.597,
@@ -1217,7 +1217,7 @@
     "age": 0.821,
     "weight": 0.338,
     "muscle": 0.492,
-    "height": 0.639,
+    "height": 0.569,
     "proportions": 0.481,
     "cupsize": 0.43,
     "firmness": 0.627,
@@ -1482,7 +1482,7 @@
     "age": 0.426,
     "weight": 0.35,
     "muscle": 0.458,
-    "height": 0.638,
+    "height": 0.568,
     "proportions": 0.474,
     "cupsize": 0.388,
     "firmness": 0.357,
@@ -1604,7 +1604,7 @@
    "items": [
     "toigo_keyhole_tank_top",
     "toigo_wool_pants",
-    "toigo_flats"
+    "toigo_ballet_flats"
    ],
    "glasses": null,
    "beard": null,
@@ -1747,7 +1747,7 @@
     "age": 0.552,
     "weight": 0.678,
     "muscle": 0.353,
-    "height": 0.463,
+    "height": 0.441,
     "proportions": 0.649,
     "cupsize": 0.539,
     "firmness": 0.413,
@@ -1868,7 +1868,7 @@
    "outfit": "f_suit02",
    "items": [
     "toigo_female_suit_2",
-    "toigo_flats"
+    "toigo_ballet_flats"
    ],
    "glasses": "spamrakuen_sagerfrogs_glasses_02",
    "beard": null,
@@ -2012,7 +2012,7 @@
     "age": 0.428,
     "weight": 0.797,
     "muscle": 0.453,
-    "height": 0.473,
+    "height": 0.448,
     "proportions": 0.549,
     "cupsize": 0.534,
     "firmness": 0.569,
@@ -2133,7 +2133,7 @@
    "outfit": "f_elegant01",
    "items": [
     "female_elegantsuit01",
-    "toigo_flats"
+    "toigo_ballet_flats"
    ],
    "glasses": null,
    "beard": null,
@@ -2276,7 +2276,7 @@
     "age": 0.424,
     "weight": 0.831,
     "muscle": 0.553,
-    "height": 0.639,
+    "height": 0.569,
     "proportions": 0.597,
     "cupsize": 0.442,
     "firmness": 0.622,
@@ -2398,7 +2398,7 @@
    "items": [
     "toigo_keyhole_tank_top",
     "toigo_wool_pants",
-    "toigo_flats"
+    "toigo_ballet_flats"
    ],
    "glasses": null,
    "beard": null,
@@ -2541,7 +2541,7 @@
     "age": 0.703,
     "weight": 0.798,
     "muscle": 0.417,
-    "height": 0.579,
+    "height": 0.525,
     "proportions": 0.641,
     "cupsize": 0.384,
     "firmness": 0.567,
@@ -2806,7 +2806,7 @@
     "age": 0.83,
     "weight": 0.47,
     "muscle": 0.506,
-    "height": 0.47,
+    "height": 0.445,
     "proportions": 0.525,
     "cupsize": 0.604,
     "firmness": 0.609,
@@ -3071,7 +3071,7 @@
     "age": 0.642,
     "weight": 0.54,
     "muscle": 0.563,
-    "height": 0.703,
+    "height": 0.615,
     "proportions": 0.503,
     "cupsize": 0.46,
     "firmness": 0.374,
@@ -3336,7 +3336,7 @@
     "age": 0.682,
     "weight": 0.575,
     "muscle": 0.568,
-    "height": 0.584,
+    "height": 0.529,
     "proportions": 0.733,
     "cupsize": 0.508,
     "firmness": 0.442,
@@ -3458,7 +3458,7 @@
    "items": [
     "toigo_keyhole_tank_top",
     "toigo_wool_pants",
-    "toigo_flats"
+    "toigo_ballet_flats"
    ],
    "glasses": "spamrakuen_sagerfrogs_glasses_01",
    "beard": null,
@@ -3601,7 +3601,7 @@
     "age": 0.564,
     "weight": 0.346,
     "muscle": 0.502,
-    "height": 0.417,
+    "height": 0.407,
     "proportions": 0.597,
     "cupsize": 0.454,
     "firmness": 0.361,
@@ -3722,7 +3722,7 @@
    "outfit": "f_casual01",
    "items": [
     "female_casualsuit01",
-    "toigo_flats"
+    "toigo_ballet_flats"
    ],
    "glasses": null,
    "beard": null,
@@ -3865,7 +3865,7 @@
     "age": 0.825,
     "weight": 0.662,
     "muscle": 0.358,
-    "height": 0.4,
+    "height": 0.395,
     "proportions": 0.488,
     "cupsize": 0.634,
     "firmness": 0.495,
@@ -4130,7 +4130,7 @@
     "age": 0.622,
     "weight": 0.402,
     "muscle": 0.516,
-    "height": 0.61,
+    "height": 0.548,
     "proportions": 0.629,
     "cupsize": 0.571,
     "firmness": 0.496,
@@ -4394,7 +4394,7 @@
     "age": 0.552,
     "weight": 0.254,
     "muscle": 0.545,
-    "height": 0.661,
+    "height": 0.585,
     "proportions": 0.574,
     "cupsize": 0.388,
     "firmness": 0.405,
@@ -4658,7 +4658,7 @@
     "age": 0.764,
     "weight": 0.582,
     "muscle": 0.511,
-    "height": 0.592,
+    "height": 0.535,
     "proportions": 0.451,
     "cupsize": 0.555,
     "firmness": 0.523,
@@ -4779,7 +4779,7 @@
    "outfit": "f_casual01",
    "items": [
     "female_casualsuit01",
-    "toigo_flats"
+    "toigo_ballet_flats"
    ],
    "glasses": null,
    "beard": null,
@@ -4922,7 +4922,7 @@
     "age": 0.488,
     "weight": 0.553,
     "muscle": 0.549,
-    "height": 0.503,
+    "height": 0.47,
     "proportions": 0.683,
     "cupsize": 0.472,
     "firmness": 0.379,
@@ -5044,7 +5044,7 @@
    "items": [
     "toigo_keyhole_tank_top",
     "toigo_wool_pants",
-    "toigo_flats"
+    "toigo_ballet_flats"
    ],
    "glasses": null,
    "beard": null,
@@ -5187,7 +5187,7 @@
     "age": 0.445,
     "weight": 0.359,
     "muscle": 0.524,
-    "height": 0.713,
+    "height": 0.623,
     "proportions": 0.627,
     "cupsize": 0.643,
     "firmness": 0.361,
@@ -5309,7 +5309,7 @@
    "items": [
     "toigo_keyhole_tank_top",
     "toigo_wool_pants",
-    "toigo_flats"
+    "toigo_ballet_flats"
    ],
    "glasses": "spamrakuen_sagerfrogs_glasses_01",
    "beard": null,
@@ -5452,7 +5452,7 @@
     "age": 0.429,
     "weight": 0.319,
     "muscle": 0.484,
-    "height": 0.486,
+    "height": 0.457,
     "proportions": 0.539,
     "cupsize": 0.635,
     "firmness": 0.569,
@@ -5573,7 +5573,7 @@
    "outfit": "f_elegant01",
    "items": [
     "female_elegantsuit01",
-    "toigo_flats"
+    "toigo_ballet_flats"
    ],
    "glasses": null,
    "beard": null,
@@ -5717,7 +5717,7 @@
     "age": 0.635,
     "weight": 0.845,
     "muscle": 0.42,
-    "height": 0.536,
+    "height": 0.494,
     "proportions": 0.632,
     "cupsize": 0.497,
     "firmness": 0.455,
@@ -5838,7 +5838,7 @@
    "outfit": "f_casual01",
    "items": [
     "female_casualsuit01",
-    "toigo_flats"
+    "toigo_ballet_flats"
    ],
    "glasses": "spamrakuen_tbm_glasses_frames_01",
    "beard": null,
@@ -5981,7 +5981,7 @@
     "age": 0.453,
     "weight": 0.378,
     "muscle": 0.49,
-    "height": 0.559,
+    "height": 0.511,
     "proportions": 0.624,
     "cupsize": 0.384,
     "firmness": 0.448,
@@ -6103,7 +6103,7 @@
    "items": [
     "toigo_keyhole_tank_top",
     "toigo_wool_pants",
-    "toigo_flats"
+    "toigo_ballet_flats"
    ],
    "glasses": "spamrakuen_tbm_glasses_frames_01",
    "beard": null,
@@ -6246,7 +6246,7 @@
     "age": 0.714,
     "weight": 0.68,
     "muscle": 0.533,
-    "height": 0.634,
+    "height": 0.566,
     "proportions": 0.673,
     "cupsize": 0.623,
     "firmness": 0.468,
@@ -6510,7 +6510,7 @@
     "age": 0.585,
     "weight": 0.699,
     "muscle": 0.354,
-    "height": 0.674,
+    "height": 0.594,
     "proportions": 0.621,
     "cupsize": 0.496,
     "firmness": 0.541,
@@ -6775,7 +6775,7 @@
     "age": 0.889,
     "weight": 0.557,
     "muscle": 0.488,
-    "height": 0.562,
+    "height": 0.513,
     "proportions": 0.634,
     "cupsize": 0.421,
     "firmness": 0.643,
@@ -7040,7 +7040,7 @@
     "age": 0.529,
     "weight": 0.532,
     "muscle": 0.596,
-    "height": 0.416,
+    "height": 0.407,
     "proportions": 0.665,
     "cupsize": 0.512,
     "firmness": 0.583,
@@ -7305,7 +7305,7 @@
     "age": 0.754,
     "weight": 0.639,
     "muscle": 0.531,
-    "height": 0.413,
+    "height": 0.404,
     "proportions": 0.458,
     "cupsize": 0.64,
     "firmness": 0.514,
@@ -7570,7 +7570,7 @@
     "age": 0.614,
     "weight": 0.562,
     "muscle": 0.494,
-    "height": 0.544,
+    "height": 0.5,
     "proportions": 0.457,
     "cupsize": 0.365,
     "firmness": 0.476,
@@ -7835,7 +7835,7 @@
     "age": 0.633,
     "weight": 0.451,
     "muscle": 0.534,
-    "height": 0.748,
+    "height": 0.649,
     "proportions": 0.5,
     "cupsize": 0.429,
     "firmness": 0.617,

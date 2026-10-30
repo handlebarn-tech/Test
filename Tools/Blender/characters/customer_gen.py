@@ -270,6 +270,9 @@ def export(c, p):
     if missing:
         errors.append(f"rig lacks Humanoid bones {missing}")
 
+    # body + clothes without hair/hat (clothing masks delete covered body verts, so the body alone is not enough)
+    zs = [v.co.z for o in meshes if o.name.split(".")[-1] not in (c["hair"], c["hat"]) for v in o.data.vertices]
+    height = round(max(zs) - min(zs), 3)
     parts_lod1 = {("body" if o == basemesh else o.name.split(".")[-1]): tris(o) for o in meshes}
     lods = {name: make_lod(meshes, rig, cid, name, lod, basemesh) for name, lod in p["lods"].items()}
     for o in meshes:
@@ -278,7 +281,6 @@ def export(c, p):
     for k, n in lod_tris.items():
         if n > p["tri_budget"][k]:
             errors.append(f"{k}: {n} tris > budget {p['tri_budget'][k]}")
-    height = round(max(v.co.z for v in lods["LOD1"].data.vertices) - min(v.co.z for v in lods["LOD1"].data.vertices), 3)
     lo, hi = p["height_m_range"][c["sex"]]
     if not lo <= height <= hi:
         errors.append(f"height {height} m outside {lo}-{hi} m")

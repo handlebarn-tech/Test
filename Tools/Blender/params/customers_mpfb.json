@@ -450,7 +450,7 @@
     "id": "f_casual01",
     "items": [
      "female_casualsuit01",
-     "toigo_flats"
+     "toigo_ballet_flats"
     ]
    },
    {
@@ -488,7 +488,7 @@
     "items": [
      "toigo_keyhole_tank_top",
      "toigo_wool_pants",
-     "toigo_flats"
+     "toigo_ballet_flats"
     ]
    },
    {
@@ -511,7 +511,7 @@
     "id": "f_elegant01",
     "items": [
      "female_elegantsuit01",
-     "toigo_flats"
+     "toigo_ballet_flats"
     ],
     "formal": true
    },
@@ -527,7 +527,7 @@
     "id": "f_suit02",
     "items": [
      "toigo_female_suit_2",
-     "toigo_flats"
+     "toigo_ballet_flats"
     ],
     "formal": true
    }
@@ -667,7 +667,7 @@
   ],
   "m": [
    0.38,
-   0.75
+   0.65
   ]
  },
  "proportions": [
@@ -692,7 +692,7 @@
   },
   "LOD2": {
    "subdiv": 0,
-   "ratio": 0.35,
+   "ratio": 0.32,
    "drop": [
     "eyelashes",
     "eyebrow",
@@ -749,5 +749,5 @@
    1.95
   ]
  },
- "licence_pruning_note": "toigo_stiletto_booties (44.7k tris, breaks the LOD1 budget) replaced by toigo_ankle_boots_female. ASSET-004 resume: install_mpfb.py now also refuses MakeClothes-style '# license AGPL3' / 'CC BY' headers. 7 hairstyles, 2 glasses, the newsboy cap, both beards and the cortu cargo pants / jeans shorts left the pools (shorts outfits dropped, cargo swapped for toigo_wool_pants). No CC0 beard remains (GAP-CHR-9)."
+ "licence_pruning_note": "toigo_flats (57.6k tris) replaced by toigo_ballet_flats; men's height macro capped at 0.65 (0.66-0.75 gave 2.04-2.10 m). toigo_stiletto_booties (44.7k tris, breaks the LOD1 budget) replaced by toigo_ankle_boots_female. ASSET-004 resume: install_mpfb.py now also refuses MakeClothes-style '# license AGPL3' / 'CC BY' headers. 7 hairstyles, 2 glasses, the newsboy cap, both beards and the cortu cargo pants / jeans shorts left the pools (shorts outfits dropped, cargo swapped for toigo_wool_pants). No CC0 beard remains (GAP-CHR-9)."
 }

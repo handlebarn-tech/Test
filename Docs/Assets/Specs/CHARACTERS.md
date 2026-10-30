@@ -11,7 +11,7 @@
 - **Tool:** MPFB 2.0.18 (Blender extension, GPL; a tool only, nothing GPL ships). sha256 matches extensions.blender.org. Installed into an **isolated Blender profile** at `<cache>/mpfb/blender_user` (`BLENDER_USER_RESOURCES`, set by `blender.ps1 character`). The user's own Blender profile is never touched.
 - **Assets:** 17 MakeHuman CC0 packs (base mesh, targets, skins, eyes, brows, lashes, teeth, hair, clothes, proxies) listed in `fetch_list_mpfb.json`.
 - **Per-asset licence index:** `install_mpfb.py` extracts the packs and reads every unit's own licence header (`.mhclo`/`.mhmat`/`.mhskel`/`.target` "license" lines). A unit is **allowed only if every file in it is CC0**. Result: **106 units refused**, because several packs labelled `_cc0` contain AGPL- or CC-BY-headed files (some skins, alternative hair and suit materials, and community hair, beards, glasses, a cap and pants whose MakeClothes header says `# license AGPL3`; the first audit missed that header form and was fixed on the ASSET-004 resume). Refused units stay refused; the roster self-check and every export re-audit against the index (`dispo_licence_index.json` in the profile's data dir).
-- **Curated pools** (`Tools/Blender/params/customers_mpfb.json`): realistic modern adults only (DEC-084). Costume, novelty, political, historical and "crude" items are left out on purpose. 34 skins, 12 men's and 11 women's outfits, 5 men's hairstyles + shaved and 9 women's hairstyles, 1 hat (fedora), 4 glasses, **no beards** (both CC0-labelled beards are AGPL-headed, GAP-CHR-9). `toigo_stiletto_booties` (44.7k tris) is out of every outfit for the tri budget.
+- **Curated pools** (`Tools/Blender/params/customers_mpfb.json`): realistic modern adults only (DEC-084). Costume, novelty, political, historical and "crude" items are left out on purpose. 34 skins, 12 men's and 11 women's outfits, 5 men's hairstyles + shaved and 9 women's hairstyles, 1 hat (fedora), 4 glasses, **no beards** (both CC0-labelled beards are AGPL-headed, GAP-CHR-9). `toigo_stiletto_booties` (44.7k tris) and `toigo_flats` (57.6k) are out of every outfit for the tri budget (replaced by ankle boots / ballet flats). The men's height macro is capped at 0.65 (0.66–0.75 gave 2.04–2.10 m bodies). Height is measured over the body and clothes, without hair or hat (clothing masks delete the covered body vertices, so the body alone is not measurable).
 
 ## 2. Pipeline
 | Step | Tool | Output |
@@ -51,7 +51,7 @@ Register cues: sex, age band, skin, head (hair or hat), top outfit, glasses, bea
 |---|---|---|
 | LOD0 (served customer, ≤ 3 m) | ≤ 150k tris; body subdivided once, all parts | @@LOD0@@ |
 | LOD1 (3–8 m) | ≤ 60k; MPFB base resolution, teeth dropped | @@LOD1@@ |
-| LOD2 (8–15 m) | ≤ 20k; Decimate 0.35, brows/lashes/teeth dropped | @@LOD2@@ |
+| LOD2 (8–15 m) | ≤ 20k; Decimate 0.32, brows/lashes/teeth dropped | @@LOD2@@ |
 | LOD3 (> 15 m) | ≤ 6k; Decimate 0.10, eyes/glasses/mouth parts dropped | @@LOD3@@ |
 | Rig | MPFB `game_engine`, 53 bones, Unity Humanoid-compatible names (`pelvis`, `spine_01…`, `upperarm_l…`) | 53 bones each; all 17 Humanoid-required bones present |
 | Height | f 1.45–1.85 m, m 1.60–1.95 m | @@HEIGHT@@ |
@@ -104,6 +104,7 @@ Idles, talk and props come from `all_animations_max_motextr_static` (ANM-RB-STAT
 - **Budtenders/managers (DEC-089):** black pants and a green t-shirt with "The Flower Shop" printed at the top right of the chest. Built with the same MPFB pipeline from a separate staff roster: a CC0 tee and trousers recoloured, plus a chest print decal made by us from the approved brand (DEC-071). Not built yet.
 - **Security / door:** MPFB or Rocketbox `Security_*` (MIT), later.
 
-## 10. Open questions (through the Hub; see `Docs/Handoffs/ASSET-004.md`)
-- GAP-CHR-8: is a derived (hue-shifted) CC0 skin acceptable for South-Asian men, or should the roster stay as it is?
-- Do MPFB customers go into git (all CC0, ~15–40 MB each with textures) or stay local like Rocketbox?
+## 10. Open questions (lead/Hub, within DEC-087 authority; see `Docs/Handoffs/ASSET-004.md`)
+- Licence reading of MakeClothes `# license AGPL3` headers on assets whose pack pages say CC0 (refused for now).
+- GAP-CHR-8: is a derived (hue-shifted) CC0 skin acceptable for South-Asian men?
+- Derived customers in git or local: CC0 is allowed in git (DEC-023), so this is a size call for GAME-CHR-002.
