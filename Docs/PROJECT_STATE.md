@@ -13,11 +13,13 @@ Hub-owned. A fresh Hub resumes from this file + `Docs/HUB_RESUME.md` + recent `D
 | `dispo-proc-005-fixture-f` `local_335db39d-0968-49fa-846c-808a2abb2158` | PROC-005 fixture families rework (REVIEW-PROC5 FAIL findings) | Resumed 15:45. |
 | `dispo-proc006b` `local_cab28702-140d-48df-963a-3cc4b318aa89` | PROC-006b register kit generators (from WIP d30bb73) | Resumed 15:45. |
 
+| `dispo-art008` `local_77fd945b-ecaf-4432-8c51-54b18ed9dc50` | ART-008 graybox final pass on REF-013 fix (Unity slot 2) | Started ~16:30. |
+| `dispo-asset007` `local_d3aad36e-a494-47b7-a5c7-2cd0a58efe19` | ASSET-007 glove overlay (Blender) | Started ~16:30. |
 | `dispo-asset005` `local_1bb17d9a-7584-4a8b-af68-d01479714d05` | ASSET-005/006 wardrobe + hair (Blender, no Unity) | GO sent 15:45. |
 
 Workers' original briefs name long-lived reviewers (now archived). Tell each to report "ready for review" to the Hub; the Hub spawns a fresh reviewer (Agent tool with worktree isolation, or a fresh session).
 
-`dispo-build007` archived. Background Agent workers (worktree): REF-013 M1 + ART7 m3 fix (from `worktree-agent-a8683a438ebc5cbe4`), PROC-009 vehicles (packet `Docs/Tasks/Active/PROC-009.md`). On "ready for review": spawn a fresh reviewer (Agent, worktree).
+Control is back with the retired Hub; dispo-hub-2 only forwards notices. Reviewers running (Agent, worktree): REF-013 fix 3890936 → REVIEW-REF13-FIX; PROC-006b 9728334 → REVIEW-PROC006b. GAME-017a waits for GAME-026 (shared Slice files). `dispo-build007` archived. Background Agent workers (worktree): REF-013 M1 + ART7 m3 fix (from `worktree-agent-a8683a438ebc5cbe4`), PROC-009 vehicles (packet `Docs/Tasks/Active/PROC-009.md`). On "ready for review": spawn a fresh reviewer (Agent, worktree).
 
 ## Queue (after the above)
 1. **Launch now** (Agent tool, worktree, background; stopped at the Hub reset, may have partial work on a `worktree-agent-*` branch off REF-013) REF-013 M1 fix, plus REVIEW-ART7 m3 (JC door blocked, Vest_FOH trash can in a door swing: settle from evidence, or GAP + NPCs avoid the JC anchors) (DEC-115: HUB desk/counter/cabinet sizes Low + narrowed GAP-132; hinge overrides from A011; storefront keeps pulls; 8 absence-inferred rows Low). Branch `worktree-agent-a2b65d251ee0f6ac2`@73e0e0c; verdict REVIEW-REF13 on `review/ref13`.
