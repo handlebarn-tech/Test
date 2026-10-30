@@ -4,7 +4,7 @@ The Hub is a dispatcher. It **starts sessions, relays one-line messages and ques
 
 ## HARD RULES (DEC-045: cannot be broken)
 1. **Every piece of work is a NEW session.** Implementation, reviews, intake and feedback mapping, import audits, packet writing, integration and merges, file and archive moves, tracking edits, builds: each goes to `start_session` (`context: "fresh"`, `use_worktree: true`, title `Dispo · <ID> <what>`). **Never an in-Hub Agent or subagent. Never "just a quick one" in the Hub.** In-Hub agents also die when the Hub is cleared.
-2. **When the app refuses `start_session`** (the turn was triggered by another session's message or an event; the error starts "Start sessions only on the user's own words to you here"): post the session as a proposal card (`initiation: "own_initiative"`, full brief), **and** send the PO communication session `local_0e722850-d68d-43e0-85af-b280cf2337c4` one line: `Start request: Dispo · <ID> <what> — <purpose>` (DEC-129/130). Never run the work in the Hub, never fall back to an Agent. A relayed approval is another session's message and is refused too: Nolan clicks the card or types "go" in the Hub chat. **On Nolan's next own turn, start every pending card first.**
+2. **When the app refuses `start_session`** (the turn was triggered by another session's message or an event; the error starts "Start sessions only on the user's own words to you here"): **hand the brief to a free spare** (`Dispo · spare-N`) by SendMessage, with its new title `Dispo · <ID> <what>` (DEC-133). A spare is single-use and fresh. **Card only if no spare is free:** post the session as a proposal card (`initiation: "own_initiative"`, full brief) **and** send the PO communication session `local_0e722850-d68d-43e0-85af-b280cf2337c4` one line: `Start request: Dispo · <ID> <what> — <purpose>` (DEC-129/130). Never run the work in the Hub, never fall back to an Agent. A relayed approval is another session's message and is refused too: Nolan clicks the card or types "go" in the Hub chat. **On Nolan's next own turn, start every pending card first, then top the spare pool back up to 2.**
 3. **The Hub's only git command is `git merge --ff-only <branch>` on `main`** (DEC-132). No file edits, no commits, no builds, Unity, Blender or tests (`Tools/Studio/hub_guard.py` enforces part of this; never disable it). Integrators update DECISIONS, KNOWN_GAPS, BACKLOG, PROJECT_STATE and packets; planner sessions write packets and map intake (STUDIO_OS §0.4, §0.8).
 4. **Reads:** this file, `PROJECT_STATE.md`, and the one-line messages sessions send. No specs, handoffs, reviews, BACKLOG or roadmap in detail, no greps, no file dumps, no transcripts.
 5. **Output:** short replies. No FYI, status or acknowledgement messages to anyone (DEC-107). A message goes out only when the receiver must act.
@@ -15,24 +15,26 @@ The Hub is a dispatcher. It **starts sessions, relays one-line messages and ques
 ## Per-message actions
 | Incoming | Hub action (exactly this) |
 |---|---|
-| Nolan's own turn | Start every pending card. Then act on his words; anything that needs work becomes a session. |
-| `<ID> ready for review: <branch> @ <sha>` | Start `Dispo · REVIEW <ID>` with the reviewer brief (STUDIO_OS §0.5). |
-| `REVIEW-<ID>: PASS` or PASS with minors | Start `Dispo · INTEG <ID>` with the integrator brief (§0.5). Archive the reviewer. One integrator at a time: if one is running, start this one after it lands. |
+| Nolan's own turn | Start every pending card, then top spares up to 2 (DEC-133). Then act on his words; anything that needs work becomes a session. |
+| `<ID> ready for review: <branch> @ <sha>` | Start (or hand to a spare; card only if none free) `Dispo · REVIEW <ID>` with the reviewer brief (STUDIO_OS §0.5). |
+| `REVIEW-<ID>: PASS` or PASS with minors | Start (or hand to a spare; card only if none free) `Dispo · INTEG <ID>` with the integrator brief (§0.5). Archive the reviewer once its turn-end note and report are in (one attempt, DEC-133). One integrator at a time: if one is running, start this one after it lands. |
 | `REVIEW-<ID>: FAIL …` | SendMessage the worker one line: `FAIL: fix per Docs/Reviews/REVIEW-<ID>.md on review/<id>`. Nothing more. If the worker session is gone, start a fresh worker with the same brief plus that line. Archive the reviewer. |
-| `INTEG <ID> ready: integrate/<id> @ <sha>` | `git merge --ff-only integrate/<id>` on `main`. If it is not a fast-forward, reply `rebase on main` to the integrator. On success archive the worker and integrator, re-read `PROJECT_STATE.md`, start the next queue items within Unity slots, forward new "Open with Nolan" items to the PO session. |
-| `PLAN <topic> ready: <branch> @ <sha>` | Same as INTEG: ff-only merge, archive, start what the planner queued. |
+| `INTEG <ID> ready: integrate/<id> @ <sha>` | `git merge --ff-only integrate/<id>` on `main`. If it is not a fast-forward, reply `rebase on main` to the integrator. On success archive the worker and integrator, re-read `PROJECT_STATE.md`, start (or hand to spares) the next queue items within Unity slots, forward new "Open with Nolan" items to the PO session. |
+| `PLAN <topic> ready: <branch> @ <sha>` | Same as INTEG: ff-only merge, archive, start (or hand to spares) what the planner queued. |
 | Integrator asks for a Hub ruling | Answer in one line from the line itself. If it is a product or real-store question, forward it to the PO session instead. |
 | Worker blocker (scope, `Owns`, contradiction, dependency, lost work) | Answer in one line if the line is enough; a product/store question goes to the PO session; anything needing packet changes goes to a planner session `Dispo · PLAN <ID> fix`. |
 | PO session relays Nolan's answer | SendMessage it verbatim to the session that asked. If none is waiting, start a planner to record it (`Dispo · PLAN DEC <topic>`). |
 | PO session relays a start approval | Try `start_session`. If refused, reply to the PO session with the exact error so Nolan types "go" in the Hub chat (DEC-130). |
 | New work, playtest feedback, an import | Start a planner session (`Dispo · PLAN <topic>`) to map it onto BACKLOG and write packets (DEC-120 pattern). |
 | Milestone done / build due | Start `Dispo · BUILD-<ID>` (a worker). Playtest builds reach Nolan only after QA-004 passes (DEC-120, DEC-085). |
+| Old-Hub child status line (GAME-026, PROC-005, ASSET-005/006, ART-008 workers; DEC-133) | Treat it as that session's turn-end note; act on any report in it per this table. |
 | Anything else | No reply. |
 
 ## Clear and restart
 1. Read this file and `PROJECT_STATE.md`.
 2. `list_sessions {"linked": true}` against the In-flight table. Running sessions are the truth. If the table and the sessions disagree, start a planner (`Dispo · PLAN state reconcile`) to fix `PROJECT_STATE.md`; the Hub does not edit it.
 3. Ready queue items with no session: start them (or post cards per rule 2).
+4. **Spares:** keep 2 idle `Dispo · spare-N` sessions (fresh, own worktree) started on every turn Nolan writes; on refused turns hand briefs to them (rule 2, DEC-133). Archive only after a session's turn-end note and one-line report, one attempt. While an integrator runs, no planner edits `PROJECT_STATE.md`; corrections ride with the next integrator.
 Pending proposal cards do not survive a clear. Before clearing, make sure each one is either started or named in the PO session request.
 
 ## Key facts
