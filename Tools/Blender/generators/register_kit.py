@@ -669,8 +669,8 @@ def build_spray(parts, p, lod):
     prof = p["sb_profile"]
     if d >= 3:
         add_box(body, (prof[2][0], prof[2][1], prof[-1][2]), (0, 0, prof[-1][2] / 2))
-        add_box(parts("Trigger", "RK_Trigger_Red"), (0.03, 0.08, 0.06), (0, -0.02, prof[-1][2] + 0.03))
-        return {"attach_blender": (0, 0, prof[-1][2])}
+        add_box(parts("Trigger", "RK_Trigger_Red"), (0.03, 0.0885, 0.06), (0, -0.02425, prof[-1][2] + 0.03))  # to the LOD0 nozzle tip
+        return {"attach_blender": hook(parts, p, prof[-1][2], lod), "hangs": HANGS}
     n = ev(s * 2 if d == 0 else s)
     n += (4 - n % 4) % 4
 
@@ -712,7 +712,30 @@ def build_spray(parts, p, lod):
             inner = ring(w0 + 0.0002, d0 + 0.0002, z, arc=arc)
             rings.append(outer + inner[::-1])
         loft(lab, rings)
-    return {"attach_blender": (0, 0, top), "optional_parts": ["Liquid"]}
+    return {"attach_blender": hook(parts, p, top, lod), "hangs": HANGS, "optional_parts": ["Liquid"]}
+
+
+HANGS = "S-hook over the stand-top edge (DEC-104 R3, spec RK-07); attach point = inside top of the hook, on the edge"
+
+
+def hook(parts, p, top, lod):
+    """Wire S-hook: a ring round the trigger neck, an arm up behind the head, a hook (+Y) over the rail. Returns the
+    attach point (inside top of the hook) so the bottle hangs on the -Y side of the edge it is placed on."""
+    r, rise, throat = p["sb_hook_wire_r_m"], p["sb_hook_rise_m"], p["sb_hook_throat_m"]
+    bm = parts("Hook", "RK_Metal")
+    nr = 0.0172 + r + 0.0005  # neck radius (lathe above) + wire
+    zr, ya, zt = top + 0.006, nr + 0.006, top + rise
+    if lod["d"] >= 3:
+        add_box(bm, (2 * r, 2 * r, zt - zr), (0, ya, (zr + zt) / 2))
+        add_box(bm, (2 * r, throat, 2 * r), (0, ya + throat / 2, zt))
+    else:
+        seg = 8 if lod["d"] == 0 else 6
+        n = ev(lod["s"])
+        add_tube(bm, [(nr * math.cos(2 * math.pi * i / n), nr * math.sin(2 * math.pi * i / n), zr) for i in range(n)],
+                 r, seg, closed=True)
+        add_tube(bm, [(0, nr, zr), (0, ya, zr + 0.03), (0, ya, zt), (0, ya + throat, zt), (0, ya + throat, zt - 0.025)],
+                 r, seg, bend_radius=throat * 0.45, bend_steps=max(1, lod["cs"]))
+    return (0, ya + throat / 2, zt - r)
 
 
 # --- RK-08 blue rag (DEC-104 R5) ----------------------------------------------------------------------------------
@@ -907,7 +930,7 @@ def build(p, lod):
                               "materials": "preview colours; 2K PBR set pending PROC-005 Q0.2/Q0.3"},
              "seed": int(p["seed"]),
              "collision_boxes": [collision_box("Body", (0, 0, h / 2), (w, dd, h))]}
-    for k in ("liftable_parts", "optional_parts"):
+    for k in ("liftable_parts", "optional_parts", "hangs"):
         if k in info:
             extra["register_kit"][k] = info[k]
     if info.get("attach_blender") is not None:
