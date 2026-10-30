@@ -15,7 +15,7 @@
 ## Wave 3 status (2026-10-29)
 | Task | Session | State |
 |---|---|---|
-| GAME-002 | dispo-game-002 | building; got DEC-033..036 must-fixes |
+| GAME-002 | dispo-game-002 | done (8df0a82, 41/41 EditMode, bot 12/12) → REVIEW-W3D (packet in Active; proposed, waiting on start) |
 | ART-002 | dispo-art-002 | done incl. follow-up 6788cca → REVIEW-W3B (dispo-review-w3b) |
 | REF-003 | dispo-ref-003 | done → REVIEW-W3B (with ART-002) |
 | GAME-003, BUILD-002 | — | done → REVIEW-W3A (dispo-review-w3a) |
@@ -49,4 +49,5 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 - Done 2026-10-29: Nolan signed in to Sketchfab and Unity in the built-in browser pane; Unity Warehouse + UnityJapanOffice are in My Assets (account handlebarn, Personal). ASSET-002 downloads still need one batch OK from Nolan (list with sizes). Nolan may also send a photo of the register scale stand.
 - Open (before any public build): real brand names (Cookies, Alien Labs, ...) ship in `batches.json`; allowed by DATA_SCHEMA §5 and not PII, but a trademark/IP call for Nolan (REVIEW-W2A m2).
 - Later: tax rounding (GAP-204), the TFS tool's open question.
+- Follow-up for BUILD: add the SliceCapture test to `studio.ps1 unity-capture` (GAME-002 open item).
 - Batch for Nolan (store fact): a photo of a real receipt's tax lines would settle Phoenix TPT rate (OPEN-4); game keeps 25.1 % (DEC-001) meanwhile.
