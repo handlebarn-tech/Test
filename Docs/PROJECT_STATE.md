@@ -32,7 +32,6 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 
 ## Blockers / risks
 - `review/wave-5t` (old IMP-003 round-3 partial PASS) is superseded by the from-scratch round-3 re-audit (DEC-095); never merge it, delete it once the new review lands.
-- Plan usage: weekly all-models limit 67 % used at 2026-10-30 14:15 (resets 2026-11-01 02:00); leads keep worker counts to what they can review.
 - DEC-094 rollout under validation (DEC-099): Hub-only merges until lead-run subagent workers/worktrees prove stable; then reassess lead merges for domain-local work.
 - ChatGPT toolkit drops lack our research and room evidence (DEC-095): every round needs fixes; round 3 must be re-audited.
 - Several BACKLOG rows are stale; each lead reconciles its prefixes first.

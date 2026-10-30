@@ -23,7 +23,7 @@ Everything a fresh Hub session needs; no chat history is required. Roles, author
 
 ## Standing directives from Nolan (2026-10-29/30)
 - Full autonomy (DEC-025): no permission asks for downloads, asset-store clicks, merges, starting or archiving sessions. Ask Nolan only for real-store facts and product decisions.
-- Run as a studio, but add sessions only where they raise useful throughput (DEC-094).
+- Run as a studio, but add sessions only where they raise useful throughput (DEC-094). **Plan usage is Nolan's call (DEC-100):** never cut scope, pause work or shrink capacity because of usage limits; mention limits to him if relevant, nothing more.
 - Realism vs fun (DEC-032); asset quality bar (DEC-084) in every asset brief; Microsoft 365 read-only research (DEC-031).
 - Imports (DEC-070): `Downloads/Dispo Game Imports/` holds only Nolan's fresh imports; after audit + integration a session moves each to `Downloads/Dispo Game Imports Archive/<date>_<name>/`. ChatGPT drops never get our full context (DEC-095).
 - Nolan: batch questions per milestone unless blocking; playtest build after each milestone (DEC-085). Nolan is signed in to Sketchfab and the Unity Asset Store in the built-in browser pane.
