@@ -1,0 +1,257 @@
+{
+ "note": "ASSET-004 MPFB2 customer pipeline: tool + CC0-only MakeHuman asset packs (licence per pack page section 'shared under CC0' and the _cc0 file suffix). IDs = LICENSE_LEDGER.md section 1d.",
+ "entries": [
+  {
+   "ledger_id": "TOOL-MPFB2",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://extensions.blender.org/add-ons/mpfb/versions/",
+   "license": "GPL-3.0-or-later (tool only; not shipped)",
+   "redistributable": false,
+   "files": [
+    {
+     "url": "https://extensions.blender.org/download/sha256:c075b3e9b94b8e5556a5f03f4653602d02ea306de08126e8f55ed6dee28a2dad/add-on-mpfb-v2.0.18.zip?repository=%2Fapi%2Fv1%2Fextensions%2F&blender_version_min=4.2.0",
+     "name": "add-on-mpfb-v2.0.18.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-MAKEHUMAN-SYSTEM-ASSETS",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/makehuman_system_assets/makehuman_system_assets_cc0.zip",
+     "name": "makehuman_system_assets_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-SYSTEM-CLOTHES-MATERIALS01",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/system_clothes_materials01.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/system_clothes_materials01/system_clothes_materials01_cc0.zip",
+     "name": "system_clothes_materials01_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-SYSTEM-HAIR-MATERIALS01",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/system_hair_materials01.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/system_hair_materials01/system_hair_materials01_cc0.zip",
+     "name": "system_hair_materials01_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-SKINS01",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/skins01.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/skins01/skins01_cc0.zip",
+     "name": "skins01_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-SKINS02",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/skins02.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/skins02/skins02_cc0.zip",
+     "name": "skins02_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-EYEBROWS01",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/eyebrows01.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/eyebrows01/eyebrows01_cc0.zip",
+     "name": "eyebrows01_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-EYELASHES01",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/eyelashes01.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/eyelashes01/eyelashes01_cc0.zip",
+     "name": "eyelashes01_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-HAIR01",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/hair01.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/hair01/hair01_cc0.zip",
+     "name": "hair01_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-SHIRTS01",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/shirts01.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/shirts01/shirts01_cc0.zip",
+     "name": "shirts01_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-PANTS01",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/pants01.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/pants01/pants01_cc0.zip",
+     "name": "pants01_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-SHOES01",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/shoes01.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/shoes01/shoes01_cc0.zip",
+     "name": "shoes01_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-SUITS01",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/suits01.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/suits01/suits01_cc0.zip",
+     "name": "suits01_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-SKIRTS01",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/skirts01.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/skirts01/skirts01_cc0.zip",
+     "name": "skirts01_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-HATS01",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/hats01.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/hats01/hats01_cc0.zip",
+     "name": "hats01_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-GLASSES01",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/glasses01.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/glasses01/glasses01_cc0.zip",
+     "name": "glasses01_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-UNDERWEAR04",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/underwear04.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/underwear04/underwear04_cc0.zip",
+     "name": "underwear04_cc0.zip"
+    }
+   ]
+  },
+  {
+   "ledger_id": "MPFB-BODYPARTS05",
+   "source": "url",
+   "source_dir": "mpfb",
+   "source_url": "https://static.makehumancommunity.org/assets/assetpacks/bodyparts05.html",
+   "license": "CC0-1.0",
+   "redistributable": true,
+   "files": [
+    {
+     "url": "https://files.makehumancommunity.org/asset_packs/bodyparts05/bodyparts05_cc0.zip",
+     "name": "bodyparts05_cc0.zip"
+    }
+   ]
+  }
+ ]
+}
