@@ -28,4 +28,4 @@ V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). 
 - Bot benchmark reference: V2's Standard harness (targeted ≈ 4 % abandonment, ask-all ≈ 19 %, ask-none ≈ 1 %) shows ask-none wins on queue alone by construction (audit C11b). The expert must win on DQ via the GAME-019 counterfactual, not on queue.
 
 ## Handoff
-`Docs/Handoffs/GAME-023.md` (≤40 lines) with the results table. Questions go to the Studio Hub (DEC-033).
+`Docs/Handoffs/GAME-023.md` (≤40 lines) with the results table. Questions go to your department lead (DEC-033, DEC-094).

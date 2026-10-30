@@ -1,22 +1,13 @@
 # Dispensary Game — Agent Instructions
 
-This repository is operated as a Hub-and-Workcell game studio.
+This repository is operated as a game studio: Nolan → Studio Hub → Department Leads → Workers. Roles, authority and reporting: `Docs/STUDIO_OS.md` §0 (DEC-094).
 
-## Start here
-Read:
-1. `Docs/PROJECT_STATE.md`
-2. your assigned task file under `Docs/Tasks/Active/`
-3. only the Master/Migration/Asset/Studio-OS sections referenced by that task.
+## Start here (by role)
+- **Studio Hub:** `Docs/HUB_RESUME.md`.
+- **Department lead:** `Docs/STUDIO_OS.md` §0, then `Docs/Departments/<DEPT>.md`.
+- **Worker:** your packet `Docs/Tasks/Active/<TASK_ID>.md`, then only the docs and sections it cites.
 
-Do not preload all project documents.
-
-## Canonical docs
-- `Docs/MASTER_PLAN.md` — project direction
-- `Docs/UNITY_MIGRATION_PLAN.md` — legacy/browser → Unity/C# port
-- `Docs/ASSET_PRODUCTION_PLAN.md` — free/custom asset work
-- `Docs/STUDIO_OS.md` — agent/worktree/review process
-- `Docs/TOOLCHAIN_EXECUTION.md` — Unity/Blender/build/test automation
-- `Docs/GAMEPLAY_SIMULATION_SPEC.md` — customer/shift/transaction game design
+Do not preload all project documents. The doc router is `Docs/DOCS_INDEX.md`.
 
 ## Non-negotiable rules
 Mirrors the rules block in `CLAUDE.md`, which is canonical (keep both in sync; AUDIT-001 B6, DEC-064).
@@ -34,9 +25,9 @@ Mirrors the rules block in `CLAUDE.md`, which is canonical (keep both in sync; A
 - Do not perform unrelated refactors.
 - Validate before handoff.
 - Record durable decisions in repository docs, not chat history.
-- Write `Docs/Handoffs/<TASK_ID>.md` before finishing.
-- **Chain of command (DEC-033): never ask the user (Nolan) anything.** No AskUserQuestion, no questions in your messages, no "want me to…?" buttons. Put every question, decision request or blocker in your handoff and end-of-turn summary for the Studio Hub, use a labelled placeholder meanwhile, and keep working. The Hub decides or escalates to Nolan. If the user writes to you directly, answer and record what they said in your handoff for the Hub.
-- **Raise uncertainty, don't guess (DEC-047).** If you can't identify something about a room, fixture or item, or you're unsure what it is (e.g. a single camera shows only the tops of what turn out to be lockers), list it under `## Questions for Nolan (through the Hub)` in your handoff. For each one give the source (file + tile/crop), what you see, and your best candidates. Mark it with a GAP placeholder meanwhile. The Hub forwards these to Nolan. One honest question beats a confident wrong model.
+- Write `Docs/Handoffs/<TASK_ID>.md` before finishing and report to whoever dispatched you (workers → their lead, leads → the Hub).
+- **Chain of command (DEC-033): below the Hub, never ask the user (Nolan) anything.** No AskUserQuestion, no questions in your messages, no "want me to…?" buttons. Put every question, decision request or blocker in your handoff and end-of-turn summary for your lead (leads: for the Hub), use a labelled placeholder meanwhile, and keep working. The lead decides or escalates to the Hub, which decides or asks Nolan. If the user writes to you directly, answer and record what they said in your handoff for the Hub.
+- **Raise uncertainty, don't guess (DEC-047).** If you can't identify something about a room, fixture or item, or you're unsure what it is (e.g. a single camera shows only the tops of what turn out to be lockers), list it under `## Questions for Nolan (through the Hub)` in your handoff. For each one give the source (file + tile/crop), what you see, and your best candidates. Mark it with a GAP placeholder meanwhile. Your lead answers what the evidence answers; the Hub forwards the rest to Nolan. One honest question beats a confident wrong model.
 
 ## Context discipline
 One workcell = one bounded deliverable.

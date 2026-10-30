@@ -1,68 +1,52 @@
 # PROJECT STATE
 
-**Milestone:** vertical slice PLAYABLE on main (2026-10-29). Wave 4 (lookdev, real jars, packaged goods, perf) is landing. Next milestone: **PS1** (cart, limit meter, ID checks, medical, tuning; `Docs/Design/ROADMAP_POST_SLICE.md`), extended by Nolan's decision-pressure spec (DES-003).
-**Main:** see `git log`; every merge is a reviewed `review/wave-*` branch.
-**Updated:** 2026-10-30 03:55 MST by Hub (session 4), handover for the 07:00 scheduled resume (usage limit).
+Hub-owned, project level only (`Docs/STUDIO_OS.md` §0). Department detail (workers, packets, domain queue) lives in `Docs/Departments/<DEPT>.md`. Workers do not need this file.
 
-## ⏸ PAUSED (2026-10-30 ~07:xx MST, Nolan)
-All workcells paused; the Hub chat was cleared at Nolan's request. The 07:00 scheduled Hub (`local_3dbae2f5…`) was stopped before takeover, so **the Hub remains `local_c6267ff5-2acb-4b09-83a7-53541a088c66`** (same session, cleared). Where each item stood:
-- GAME-009 medical: unfinished on `claude/task-game-009` @ a4806d6 (EditMode 215/217, PlayMode pass; capture timeout fix not re-run; no handoff or reviewer message yet). Worker `local_7f8c95e9…`.
-- PROC-005 toolkit integration: hit usage limit mid-task on `claude/clever-lamport-837e7f`. Worker `local_6c216f80…`.
-- ASSET-004 MPFB2 customers: hit usage limit, branch `claude/objective-archimedes-e3d973`. Worker `local_d31ad4c5…`.
-- IMP-003 round 3: audited (cc0fac5 + 165fa3d DEC-093 diff). REVIEW-W5T on `review/wave-5t` (79568f8) is a **partial** PASS: needs a follow-up pass (inside-out vehicles, tri counts, §R3 items, DEC-093 wording) plus m1 (a real brand only on a category it has in the catalog; TFS EdibleTub and TFS prepack pouch are wrong). Not merged. Then a round-3 summary to Nolan for approval.
-- Docs reviewer `local_b073ffa0…` hit its limit; Unity A/B2 reviewers idle. DES worker idle.
-- Nolan playtest of `slice-38b9e5c` still pending.
+**Milestone:** vertical slice playable on `main` (2026-10-29). **PS1** (cart, limit meter, ID checks, medical, tuning; `Design/ROADMAP_POST_SLICE.md`) is one task from done (GAME-009). Next: PS1b, re-prioritised by playtest 1 (DEC-096).
+**Main:** see `git log`; every code/asset merge is a reviewed `review/*` branch.
+**Updated:** 2026-10-30 by Hub `local_c6267ff5-2acb-4b09-83a7-53541a088c66`: studio reorganised into departments (DEC-094); all old workcells idle, adopted by their leads.
 
-## Read with this
-**Hub:** `Docs/HUB_RESUME.md` (HARD RULES first, then its reading list) + the newest DECs. **Workers:** `CLAUDE.md` → this file → your packet only.
+## Studio roster
+| Dept | Lead session | Status | Max workers | Unity slots |
+|---|---|---|---|---|
+| Hub | `local_c6267ff5-2acb-4b09-83a7-53541a088c66` | active | DOC/OPS/AUDIT tasks only | 0 |
+| Gameplay | _to start_ | active | 3 | 1 |
+| World | _to start_ | active | 2 | 1 (lends to Assets for imports) |
+| Assets | _to start_ | active | 3 | 0 (borrows World's) |
+| Reviewer pool | Unity A `local_0dd63bac-df1d-448d-9203-641ead6b6837`, Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7` | idle | — | Unity reviewers use the owning dept's slot |
 
-## In flight (as of main 38b9e5c, 2026-10-30 ~04:40 MST; verify with `list_sessions {"linked": true}`)
-Merged in Hub session 4 (latest): W5K RES-002 (squashed), W5N GAME-008, W5M GAME-010, W5F IMP-003 audit (drops 1–4 + PROC checklist), W5O OPS-003, W5P ASSET-003, W5Q BUILD-006, W5R IMP-003 deltas, W5S GAME-010b. DECs through 092.
+Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME-009 `local_7f8c95e9…`, DES `local_82d327a2…`; Assets ← PROC-005 `local_6c216f80…`, ASSET-004 `local_d31ad4c5…`, IMP-003 `local_13653ae5…`. Leads may reuse or retire them.
 
-| Work | Session | State | Next Hub step |
-|---|---|---|---|
-| GAME-009 medical (+ W5N m2 queue strip at scale) | `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | running | B2 reviews → PS1 done → REVIEW-PS1 + playtest |
-| Playtest: Nolan to play `Downloads/Dispo Game Builds/slice-38b9e5c/DispoGame.exe` (script in `Docs/Handoffs/BUILD-006.md`) | Nolan | waiting | his notes → tasks |
-| REVIEW-W5L DES-004b+c | Docs reviewer `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7` | running/queued | merge on GO |
-| **PROC-005**: integrate approved toolkit + fix every checklist item (DEC-092/084) | `local_6c216f80-4744-4711-9081-d99ed58eba4f` | running | Unity A reviews slices; after integration archive the drops (DEC-070) |
-| IMP-003 auditing **round 3** (dropped) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | running | Docs review → Nolan approval → PROC checklist |
-| ASSET-003 merged (W5P); next: MPFB2 high-quality customer path + GAME-CHR packets (DEC-087) | worker `local_d31ad4c5…` idle | waiting | dispatch ASSET-004 (MPFB2) after the toolkit approval |
-| Standing reviewers: Unity A `local_0dd63bac…` (idle), Unity B2 `local_041172fa-72b8-4943-b69e-72fc7a83b9fd`, Docs `local_b073ffa0…`. DES worker `local_82d327a2…` idle. | | | |
+## Priorities (DEC-096, from Nolan's playtest 1)
+1. **Controls** (camera/look feel, Esc pause menu, doors): Gameplay (+ World for door geometry).
+2. **Store/layout accuracy** (registers, HUB, office walkability, deli walls): World.
+3. **Believable customer flow** (entry ID check with a guard, one line, player calls the next customer): Gameplay.
+4. **Recommendation depth** (keep the TFS tool's depth; interpret needs, follow-up questions): Gameplay, PS1b.
+5. Asset integration that unblocks the above (PROC-005, register workstation kit): Assets.
 
-## Resume checklist (07:00)
-**Hub handover:** the 07:00 scheduled run becomes the new Hub; the old Hub chat `local_c6267ff5-2acb-4b09-83a7-53541a088c66` gets archived by Nolan (cost). The new Hub announces its id to every workcell and updates HUB_RESUME/this file.
-0. Process (DEC-085): standing reviewers Unity A `local_0dd63bac…`, Unity B2 `local_041172fa…` (B retiring), Docs `local_b073ffa0…`; workers message them directly. OPS-003 slot monitor running on `local_0d166a8e…`.
-1. `list_sessions {"linked": true}`; merge any review/* with GO (W5I BRAND-001b on `review/wave-5j`, W5K RES-002, GAME-010 review once its sweep commits, DES-004b+c review).
-2. GAME-010 → Unity review (`local_0dd63bac…`), then the **playable build session** for Nolan.
-3. IMP-003 round 2 audit → docs review → one plain summary to Nolan for approval → PROC-005 integrates + fixes findings (DEC-083). Round 3 drops arrive in Imports; message IMP-003.
-4. GAME-008 (running) → review → GAME-009. ASSET-003 → review. Archive finished workers.
+## Cross-department dependencies
+- Assets PROC-005 → World final-asset placement and the lived-in pass.
+- World `ROOM_FIXTURES` corrections → Assets generator sizes (registers, deli walls, office).
+- World door geometry ↔ Gameplay door interaction: agree the contract first (§0.5).
+- World entry/check-in area ↔ Gameplay customer flow (guard post, queue line anchors).
 
-## Next tasks to start (dependency order)
-0. DOC-002 (AUDIT batch D, fresh session; AUDIT-001 session archived) in the next gap between waves, incl. SLICE_DESIGN → TUNING_PS1 pointer (DEC-082); DOC-003 (batch E) low priority. Merged this session also: W4U (REF-009b), W4V (IMP-002), W4T (QA-002; DEC-067), W4X (DOC-001). Free reviewer: `local_c94488d7…`.
-1. PS1 chain: GAME-007 (running) → GAME-008 → GAME-009 (serialised, DEC-064 A3); then PS1b GAME-017 after GAME-007/010 + QA-002b.
-2. REF pass: ROOM_FIXTURES restroom cabinet → by the door (DEC-068).
-3. GAME-004 packaged goods into play: needs DATA-002 + PROC-004 (merged) + UX-002 + DES-003's integration.
-4. **Playable build for Nolan** (cart, limits, real jars, coloured buds, back rooms) once GAME-010 merges, to keep Unity slots free; a session builds it, never the Hub.
-5. Whatever DES-003 creates for genuine gaps.
-
-## Open questions for Nolan
-- REF-008 questions: Q1–15 answered (DEC-051; Q4 vestibule size unknown, Q11 skipped). **All answered (DEC-062, 2026-10-30); no more CCTV/photos available** (FOH wall, rack runs, vestibule, lockers, bench, office items, BOH items, restroom/JC photos): full list in `Docs/Handoffs/REF-008.md` "Questions for Nolan". Sent 2026-10-30 02:15; answers go to the REF/ART tasks.
-- Phoenix TPT rate (OPEN-4): a receipt's tax lines would settle it; 25.1 % is kept (DEC-001).
+## Blockers / risks
+- ChatGPT toolkit drops lack our research and room evidence (DEC-095): every round needs fixes; round 3 must be re-audited.
+- Several BACKLOG rows are stale; each lead reconciles its prefixes first.
 
 ## Pending from Nolan
-- ChatGPT Blender toolkit (DEC-069; rounds 4–7 briefed DEC-091; round 2 approved DEC-074: retail floor, materials, labels, exterior, hands): arriving in drops; IMP-003 audits each, re-checking the folder after each audit.
-- ~~"Fully built systems" file~~: arrived 2026-10-30 as `Downloads/Dispo Game Imports Archive/2026-10-30_DISPO_GAME_DESIGN_V2/`; IMP-001 auditing.
-- V2 design pack approved 2026-10-30 (DEC-063); IMP-002 integrates.
-- ChatGPT-built mechanics: he will drop them in `C:/Users/handl/Downloads/Dispo Game Imports/`. Process: audit → review → **Nolan's approval** before any use.
-- Imports always go to `Downloads/Dispo Game Imports/` (outside the repo). `Imports/` in the repo root is git-excluded locally; the Dutchie export was moved out of it on 2026-10-30.
+- Approval of each audited ChatGPT round (3 rebuilt, 4, 5, 6) after IMP-003 + review. Round 7 is the studio's (DEC-095).
+- Playtest of the next build after PS1 completes.
+- Any ChatGPT-built mechanics he drops in Imports: audit → review → **his approval** before use.
+
+## Open questions for Nolan
+- None open. (REF-008 Q1–15 answered, DEC-051/062. Phoenix TPT rate OPEN-4: 25.1 % kept until a receipt settles it.)
 
 ## Builds
-- Playable exe for Nolan: `C:/Users/handl/Downloads/Dispo Game Builds/slice-c867cd5/DispoGame.exe` (pre-lookdev). New builds always come from a session (DEC-045), never the Hub.
+- Last build Nolan played: `Downloads/Dispo Game Builds/slice-38b9e5c/` (feedback = playtest 1). New builds come from a Gameplay worker, never the Hub (DEC-045).
 
 ## Cross-project
 - GAP-206 relayed to the TFS tool hub. When TFS ships v7.11.5: re-import, regenerate goldens and diff (GAP-210, DEC-014/038).
 
-## Standing notes
-- Reference graybox objects by name/anchor only (fileIDs churn on rebuild).
-- Raw CCTV stills and photos never ship in a build.
-- Unity Warehouse/Office packs still need a Package Manager download (P1, later).
+## Hub-direct backlog
+- DOC-002 (AUDIT-001 batch D) in a gap between waves; DOC-003 (batch E, in review W4Z); DOC-004 (GSS §28 "fast recommendation").

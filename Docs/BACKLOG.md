@@ -2,6 +2,8 @@
 
 Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Done / Blocked.
 
+The only task registry (DEC-094). **The ID prefix names the owning department** (`STUDIO_OS.md` §0.2); each lead edits only its own rows and packets, the Hub edits DOC/OPS/AUDIT/REVIEW rows. Some rows below are stale as of 2026-10-30; each lead reconciles its prefixes first.
+
 | ID | P | Title | Depends on | State |
 |---|---|---|---|---|
 | REF-001 | P0 | Canonical reference index | — | Done |

@@ -27,4 +27,4 @@ V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). 
 - History is context, never current truth: a changed-preference repeat must need a current question (EX-056). Prior satisfaction never reaches TFS (EX-057, DEC-053; V2 `02_CUSTOMER_GENERATION_BIBLE.md` §19–20; rows 23–24).
 
 ## Handoff
-`Docs/Handoffs/GAME-021.md` (≤40 lines). Questions go to the Studio Hub (DEC-033).
+`Docs/Handoffs/GAME-021.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).

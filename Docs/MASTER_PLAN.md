@@ -8,7 +8,7 @@
 **Required software cost:** $0  
 **Target engine:** Unity 6.3 LTS + HDRP *(superseded by DEC-003: the project uses Unity 6000.6.7f1 + HDRP 17.6.0)*  
 **Use case:** private, non-commercial, at-home project  
-**Execution model:** multi-agent Hub + disposable specialist workcells
+**Execution model:** Hub → department leads → disposable workers (`STUDIO_OS.md` §0, DEC-094)
 
 ---
 
@@ -436,39 +436,7 @@ Detailed sourcing belongs only in `ASSET_PRODUCTION_PLAN.md`.
 
 # 14. Multi-agent studio model
 
-The project is run as a **Hub-and-Workcell studio**.
-
-## Hub
-The Hub is the persistent executive producer/project manager.
-
-It:
-
-- communicates with the user;
-- owns priorities;
-- decomposes milestones;
-- creates task packets;
-- controls dependencies;
-- reviews worker handoffs;
-- routes work to independent review;
-- updates project state;
-- retires completed/stale sessions;
-- keeps the project moving.
-
-The Hub is not the main labor pool.
-
-## Workcells
-Specialist sessions do the actual work.
-
-Each workcell:
-
-- gets one bounded deliverable;
-- receives only relevant context;
-- owns a limited set of files;
-- validates its work;
-- writes a concise handoff;
-- stops when the deliverable is done or blocked.
-
-Detailed operating rules are in `STUDIO_OS.md`.
+The studio runs as Nolan → Hub → Department Leads → Workers. The operating model (roles, authority, escalation, session lifecycle, ownership, context and reporting) is defined only in `STUDIO_OS.md` §0 (DEC-094); it replaced the Hub-and-Workcell text that was here.
 
 ---
 

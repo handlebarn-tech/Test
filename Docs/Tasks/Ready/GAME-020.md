@@ -32,4 +32,4 @@ V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). 
 - **Acceptance (A3, DEC-052):** the report section "questions that would have mattered" names the question only, with no TFS scores, ranks or result lists.
 
 ## Handoff
-`Docs/Handoffs/GAME-020.md` (≤40 lines). Questions go to the Studio Hub (DEC-033).
+`Docs/Handoffs/GAME-020.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).

@@ -31,4 +31,4 @@ V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). 
 - QA-091 (weigh tolerance parity) joins DP-028 (V2 `11_MASTER_QA_SCENARIOS.md`; row 46).
 
 ## Handoff
-`Docs/Handoffs/GAME-022.md` (≤40 lines). Questions go to the Studio Hub (DEC-033).
+`Docs/Handoffs/GAME-022.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).

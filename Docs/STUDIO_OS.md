@@ -8,6 +8,71 @@
 
 ---
 
+# 0. OPERATING MODEL: Hub → Department Leads → Workers (DEC-094, current)
+
+> **This section is the one authority** for roles, authority, escalation, session lifecycle, task ownership, context loading and reporting. Where a later section (§3, §50–53, §55, §58, §61, §71, §94–97, "Session rotation") says otherwise, §0 wins; those sections are background only. Do not restate these rules in other docs: point here.
+
+## 0.1 Chain and principle
+Nolan → **Hub** (product manager, overall authority under Nolan) → **Department Leads** → **Workers**. Reviewers are a shared pool staffed by the Hub. Context gets narrower going down and more compressed going up. **Roles live in files; conversations are disposable:** any Hub or lead session can be killed and rebuilt from its role file plus its state file.
+
+## 0.2 Departments (elastic)
+A department exists only while it has substantial ongoing work, room for parallel workers, specialist context the Hub should not carry, and a clear ownership boundary. The Hub creates, merges, suspends and retires departments. The live roster (lead sessions, status, capacity, Unity slots) is in `Docs/PROJECT_STATE.md` → "Studio roster". Each department's charter and domain state is `Docs/Departments/<DEPT>.md`, written by its lead; owned paths and contracts are listed there.
+
+| Dept | Task prefixes | Scope (detail in the dept file) |
+|---|---|---|
+| Gameplay | GAME, UX, DES, QA, DATA, COMP, BUILD, PERF | simulation/domain/presentation code, controls, customer flow, recommendation gameplay, gameplay design specs, UX, test gates, catalog data, playtest builds |
+| World | REF, ART | store reference evidence + `ROOM_FIXTURES.json`, graybox/lookdev scenes, room/layout accuracy, set dressing |
+| Assets | PROC, ASSET, IMP, BRAND, AUDIO | Blender generators and the ChatGPT toolkit intake, characters, licenses, brands/labels, audio |
+| Hub (no lead) | DOC, OPS, AUDIT, REVIEW | studio docs and rules, studio tooling, audits, the reviewer pool |
+
+The task prefix names the owning department unless the packet says otherwise. A new prefix is assigned by the Hub.
+
+## 0.3 Authority
+**Hub** owns product direction, priorities and sequencing, scope, roadmap, major architecture/product decisions, cross-department coordination, final integration (only the Hub merges to `main`), escalation to Nolan, staffing (which departments exist, lead sessions, capacity per department), rule and source-of-truth discipline. It may override any lead or worker. It does **not** write department packets, launch routine workers or read worker handoffs.
+
+**Lead** has real delegated authority in its domain: sequence work, write packets, launch/redirect/replace/retire workers within its capacity, answer routine questions from the docs, make implementation decisions inside approved scope, review worker output, reject or return incomplete work, require or run validation, handle internal dependencies, accept domain work and send it to review, keep its dept file accurate, and report upward. Leads coordinate **directly with each other** on normal interface and implementation issues (SendMessage) and record what they agreed in the packets' "Interfaces" line.
+
+**Worker** executes one packet: decides implementation details inside it, edits only its "Owns" paths, validates, writes the handoff, reports to the lead that launched it.
+
+**A lead escalates to the Hub only for:** scope change; priority conflict; a decision outside its authority or a material deviation from an approved spec/DEC; an unresolved cross-department conflict or unclear ownership; needing more capacity than allotted; information no doc holds (every question for Nolan); architectural or product decisions that affect other departments. Anything else the lead decides and, if durable, records.
+
+## 0.4 Sessions and lifecycle
+- **Hub session:** started by Nolan or a scheduled resume; reads `Docs/HUB_RESUME.md`. Starts, replaces and retires lead sessions and reviewers; removes stale or duplicate sessions.
+- **Lead session:** one per active department, titled `Dispo · Lead <Dept>`, runs in the **main checkout** and does no hands-on work (the DEC-045 hub guard applies to it too): it reads, plans, reviews and edits its own state docs. Standard brief from the Hub: *"You are the <Dept> lead of the Dispo Game studio. Read `CLAUDE.md`, `Docs/STUDIO_OS.md` §0 and `Docs/Departments/<DEPT>.md`, reconcile with `list_sessions {"linked": true}` and git branches, then run your queue. You report to the Hub `<id>`."*
+- **Workers:** a lead launches workers with the **Agent tool** (background; `isolation: "worktree"` for anything that edits code/assets or runs Unity/Blender; no isolation for read-only research). Leads are driven by messages, and the app refuses `start_session` on message-triggered turns, so subagents are the normal worker; they also keep worker transcripts out of every other context. A lead may also hand work to an existing idle worker session of its department with SendMessage. A full worker session (visible to Nolan, outliving the lead) is started only by the Hub on a Nolan-typed turn, then belongs to the lead.
+- **Brief = packet path.** "Read `CLAUDE.md`, then `Docs/Tasks/Active/<ID>.md`; report to me (your lead) with a ≤15-line summary; commit as `git -c user.name=Nolan_Bradford -c user.email=handlebarn@gmail.com commit`." Never paste canonical docs into a brief.
+- **Capacity:** the Hub sets each department's max concurrent workers and Unity slots in the roster. Studio-wide limit: 2 Unity editors (DEC-013). A lead stays inside its allotment and asks the Hub to exceed it.
+- **Launch a worker only when** the task is bounded with acceptance criteria, its dependencies are merged or its interface is fixed, its Owns overlaps no active task, and the lead can review and integrate the result soon. Otherwise don't: more agents is not more throughput.
+- **Retire a worker** once its output is reviewed, validation passed, the handoff is accepted and its decisions are persisted.
+- **Replace a lead (or Hub) session** when it re-reads old history to remember state, carries mostly finished work, has been compacted, or costs more than it helps. Before ending, it brings its state file up to date (in-flight workers with branch and id, queue, blockers, questions). The Hub then starts a fresh lead with the standard brief and archives the old one. Ending a session never loses knowledge if the state file is current.
+
+## 0.5 Task ownership, overlap and integration
+- **One registry:** `Docs/BACKLOG.md` + packets in `Docs/Tasks/{Ready,Active,Done}`. A lead edits only its own department's rows and packets, and allocates IDs only in its prefixes (check BACKLOG first). Move a packet and its BACKLOG row in the same commit (DEC-064).
+- **Packet header** (§56) adds: `Dept`, `Owner` (worker id + branch once launched), `Touches` (paths owned by another department, with that lead's OK), `Interfaces` (contract files both sides build against), `Reviewer`.
+- **No overlapping edits:** the Owns sets of active tasks never overlap. The lead checks its own active packets; for another department's paths it gets that lead's OK first. Shared Unity scenes and serialized assets have one owner at a time.
+- **Contracts first:** when two sides would build against an interface (schema, anchor/object names, params/manifest, asset spec), the owning side commits it first as a small task; the other side builds against the committed version, never an assumption. Contract owners: `ROOM_FIXTURES.json` + `REFERENCES_INDEX.md` (World); generator params, FBX/prefab names and the asset manifest (Assets); scene anchor/object names that code uses (World); catalog/data schema and `Reconstruction/` (Gameplay).
+- **Hub-owned files** (leads propose, the Hub edits): `CLAUDE.md`, `AGENTS.md`, `README_FIRST.md`, `Docs/MASTER_PLAN.md`, this file, `HUB_RESUME.md`, `PROJECT_STATE.md`, `DOCS_INDEX.md`, `Design/ROADMAP_POST_SLICE.md` (scope). `DECISIONS.md` and `KNOWN_GAPS.md` are shared registries: leads append their domain entries (department in the "Affects" column); cross-department entries are the Hub's.
+- **State commits:** leads and the Hub commit state docs straight to `main` from the main checkout, staging only their own paths (`git commit -- <paths>`); retry if `index.lock` is held. Everything else goes through review.
+- **Integration path:** worker branch → lead accepts → reviewer from the pool (lead sends branch + commit + handoff path; verdict comes back to the lead) → lead merges accepted branches onto `review/<dept>-<n>` → lead tells the Hub "merge-ready" → the Hub merges into `main` (`--no-ff`, git identity above) without re-reviewing detail. Cross-department integration is the Hub's.
+
+## 0.6 Context loading
+| Role | Reads at start | On demand | Not by default |
+|---|---|---|---|
+| Hub | `HUB_RESUME.md`, `PROJECT_STATE.md`, newest cross-department DECs, lead messages | a dept file's "Status for Hub" section; a full dept file only to settle an escalation | packets, handoffs, code, assets, worker transcripts, large plan docs |
+| Lead | `CLAUDE.md`, §0, its dept file, its Active/Ready packets | its workers' handoffs and diffs; the domain docs its dept file lists; another dept file's "Contracts" section | other departments' state, large plan docs in full |
+| Worker | `CLAUDE.md`, its packet, the exact § the packet cites | repo files the task needs | `PROJECT_STATE.md`, dept files, BACKLOG, DECISIONS beyond the cited entries |
+| Reviewer | packet, handoff, diff, the acceptance sources cited | — | everything else |
+
+Packets reference authoritative files by path + §; they never copy canonical text.
+
+## 0.7 Reporting (compress at every step up)
+- **Worker → lead:** `Docs/Handoffs/<ID>.md` (§57) + a ≤15-line final message: result, files changed, validation, decisions, deviations from spec, blockers, dependencies created/changed, integration notes, questions.
+- **Lead → Hub:** a SendMessage of ≤12 lines, only when something matters: merge-ready branches, decisions needed, blockers/risks, cross-department dependencies, material deviations, major status change. The lead also keeps its dept file's "Status for Hub" (≤15 lines) current. Never forward transcripts or routine progress.
+- **Hub → Nolan:** only what he needs to know or decide, batched per milestone unless blocking (DEC-085).
+- **Questions for Nolan:** workers list them in their handoff (DEC-047) → the lead answers what the evidence answers and keeps the rest in its dept file → the Hub batches them to Nolan. Nobody below the Hub asks Nolan (DEC-033); if Nolan writes to a lead or worker directly, it answers and records what he said for the Hub.
+
+---
+
 # 1. Purpose
 
 This document defines **how agents work**, not what the dispensary looks like or how recommendation math works.
@@ -51,7 +116,7 @@ Official references for future maintainers:
 
 # 3. Document-loading policy
 
-> **Current Hub reading set:** `Docs/HUB_RESUME.md` → "Hub loop" step 1 owns it and wins over the list below (AUDIT-001 B5, DEC-064). Workers: `CLAUDE.md` → `PROJECT_STATE.md` → their packet. The list below is the original policy, kept for context.
+> **Current reading sets: §0.6 (DEC-094).** The list below is the original policy, kept for context.
 
 Hub default:
 - Master Plan
@@ -221,6 +286,9 @@ Every worker returns a handoff. No exceptions.
 
 # 50. MULTI-AGENT GAME STUDIO OPERATING SYSTEM
 
+> **Superseded by §0 (DEC-094)** where it differs; kept as background.
+
+
 ## 50.1 Philosophy
 
 The project operates as a **hub-and-workcell studio**.
@@ -282,6 +350,9 @@ Detailed exploration remains inside disposable specialist contexts.
 
 # 52. SESSION LIFECYCLE POLICY
 
+> **Superseded by §0 (DEC-094)** where it differs; kept as background.
+
+
 A specialist session is created for a **deliverable**, not a department indefinitely.
 
 ## Start a fresh session when:
@@ -312,6 +383,9 @@ Project knowledge belongs in files.
 ---
 
 # 53. CONCURRENCY POLICY
+
+> **Superseded by §0 (DEC-094)** where it differs; kept as background.
+
 
 Default:
 - **1 Hub**
@@ -362,6 +436,9 @@ After review:
 ---
 
 # 55. STUDIO ROLES
+
+> **Superseded by §0 (DEC-094)** where it differs; kept as background.
+
 
 These are **session archetypes**, not permanent agents. Spawn them when work exists.
 
@@ -510,13 +587,14 @@ Template:
 ```markdown
 # <TASK_ID> — <one-line title>
 
-**Role:** <ROLE> · **Priority:** P<n> · **Branch:** worktree off `main` (<dependencies merged>)
+**Dept:** <Gameplay|World|Assets|Hub> · **Role:** <ROLE> · **Priority:** P<n> · **Branch:** worktree off `main` (<dependencies merged>)
+**Owner:** <worker id + branch, set at launch> · **Reviewer:** <pool reviewer> · **Touches:** <other-dept paths + that lead's OK, or none> · **Interfaces:** <contract files built against, or none>
 
 ## Goal
 <one deliverable, one paragraph>
 
 ## Read
-`CLAUDE.md` → `Docs/PROJECT_STATE.md` → this packet, then only: <exact doc + § list>
+`CLAUDE.md` → this packet, then only: <exact doc + § list> (§0.6)
 
 ## Owns
 <files/folders this task may change; nothing else>
@@ -528,7 +606,7 @@ Template:
 <commands/tests/evidence that prove the deliverable>
 
 ## Handoff
-`Docs/Handoffs/<TASK_ID>.md` (≤N lines) + ≤15-line summary for the Hub. Questions go to the Studio Hub, never to Nolan (DEC-033); unsure facts get a GAP placeholder (DEC-047).
+`Docs/Handoffs/<TASK_ID>.md` (≤N lines) + ≤15-line summary for your lead (§0.7). Questions go to your lead, never to Nolan (DEC-033); unsure facts get a GAP placeholder (DEC-047).
 ```
 
 # 57. WORKER HANDOFF FORMAT
@@ -554,11 +632,14 @@ Every worker must write:
 ## Questions for Nolan (through the Hub)
 - <source file + tile/crop, what you see, best candidates; GAP id used meanwhile> (DEC-047)
 
-## For the Hub
-- <proposed DEC/GAP entries, follow-up tasks, files the Hub must update>
+## For the lead
+- <proposed DEC/GAP entries, follow-up tasks, dependencies/contracts changed, integration notes>
 ```
 
 # 58. HUB OPERATING LOOP
+
+> **Superseded by §0 (DEC-094)** where it differs; kept as background.
+
 
 The Hub repeats this loop.
 
@@ -629,6 +710,9 @@ It is not copied here, so the two cannot drift (DOC-001, AUDIT-001 B7).
 ```
 
 # 61. AGENT DELEGATION RULES
+
+> **Superseded by §0 (DEC-094)** where it differs; kept as background.
+
 
 The Hub delegates when:
 - work can be isolated;
@@ -985,6 +1069,9 @@ Example:
 
 # 71. USER COMMUNICATION POLICY
 
+> **Superseded by §0 (DEC-094)** where it differs; kept as background.
+
+
 The Hub is the only default communicator with the user.
 
 Hub reports:
@@ -1172,6 +1259,9 @@ Recommended first workcells:
 
 # 94. HUB SYSTEM PROMPT — READY-TO-USE TEMPLATE
 
+> **Superseded by §0 (DEC-094)** where it differs; kept as background.
+
+
 ```markdown
 You are the STUDIO HUB for the Dispensary Game project.
 
@@ -1238,6 +1328,9 @@ Keep the studio moving.
 ---
 
 # 95. SPECIALIST WORKER SYSTEM PROMPT — READY-TO-USE TEMPLATE
+
+> **Superseded by §0 (DEC-094)** where it differs; kept as background.
+
 
 ```markdown
 You are a specialist workcell inside the Dispensary Game studio.
@@ -1385,6 +1478,9 @@ Large specialized docs are acceptable because they are **on-demand**, not automa
 ---
 
 # Session rotation policy
+
+> **Superseded by §0 (DEC-094)** where it differs; kept as background.
+
 
 ### Keep a session
 when the next action is a direct continuation of the same bounded deliverable and the existing context materially helps.

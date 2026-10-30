@@ -40,4 +40,4 @@ V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). 
 - Exploits: EX-001, 003, 012, 055, 056, 059 (V2 `10_EXPLOIT_FAILURE_ANALYSIS.md`; row 45).
 
 ## Handoff
-`Docs/Handoffs/GAME-017.md` (≤40 lines). Questions go to the Studio Hub (DEC-033).
+`Docs/Handoffs/GAME-017.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).

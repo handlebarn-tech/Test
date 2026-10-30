@@ -47,4 +47,4 @@ Exploit tests (Critical/High before completion, DEC-066):
 Standard restocking bot over 200 seeds: ≥ 1 LOW→restock in ≥ 80 % of seeds, 2–4 meaningful restock decisions, ≤ 2 emergencies (V2 03 §13). Conservation test: Σ(jar + back + carried + sold) is constant per batch across a whole shift. DEC-013 gate.
 
 ## Handoff
-`Docs/Handoffs/GAME-012.md` (≤40 lines): measured round trip, restock decision counts, any placeholder you had to add. Questions go to the Studio Hub (DEC-033).
+`Docs/Handoffs/GAME-012.md` (≤40 lines): measured round trip, restock decision counts, any placeholder you had to add. Questions go to your department lead (DEC-033, DEC-094).

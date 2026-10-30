@@ -1,19 +1,11 @@
 # Dispensary Game — Claude Code Instructions
 
-You are a specialist inside a multi-agent game studio unless your task explicitly identifies you as the Studio Hub. **If you are the Studio Hub, read `Docs/HUB_RESUME.md` first.**
+You work in a multi-agent game studio: Nolan → Studio Hub → Department Leads → Workers. Roles, authority and reporting: `Docs/STUDIO_OS.md` §0 (DEC-094).
 
-## Read first
-1. `Docs/PROJECT_STATE.md`
-2. your assigned `Docs/Tasks/Active/<TASK_ID>.md`
-3. only the referenced sections of:
-   - `Docs/MASTER_PLAN.md`
-   - `Docs/UNITY_MIGRATION_PLAN.md`
-   - `Docs/ASSET_PRODUCTION_PLAN.md`
-   - `Docs/STUDIO_OS.md`
-   - `Docs/TOOLCHAIN_EXECUTION.md`
-   - `Docs/GAMEPLAY_SIMULATION_SPEC.md`
-
-Do not read the entire documentation tree by default.
+## Read first (by role)
+- **Studio Hub:** `Docs/HUB_RESUME.md`.
+- **Department lead** (your brief names the department): `Docs/STUDIO_OS.md` §0, then `Docs/Departments/<DEPT>.md`.
+- **Worker** (everyone else): your packet `Docs/Tasks/Active/<TASK_ID>.md`, then only the docs and sections it cites. Do not load `PROJECT_STATE.md`, `BACKLOG.md`, department files or the documentation tree.
 
 ## Rules
 This is the canonical rules block; `AGENTS.md` mirrors it for other agents (keep both in sync; AUDIT-001 B6, DEC-064).
@@ -30,8 +22,8 @@ This is the canonical rules block; `AGENTS.md` mirrors it for other agents (keep
 - Stay within task/file ownership.
 - Avoid unrelated refactors.
 - Run task-specific validation.
-- Write a concise handoff at `Docs/Handoffs/<TASK_ID>.md`, and record durable decisions in repository docs, not chat history.
+- Write a concise handoff at `Docs/Handoffs/<TASK_ID>.md`, report to whoever dispatched you (workers → their lead, leads → the Hub), and record durable decisions in repository docs, not chat history.
 - If blocked, externalize the blocker instead of guessing.
-- **Chain of command (DEC-033): never ask the user (Nolan) anything.** No AskUserQuestion, no questions in your messages, no "want me to…?" buttons. Put every question, decision request or blocker in your handoff and end-of-turn summary for the Studio Hub, use a labelled placeholder meanwhile, and keep working. The Hub decides or escalates to Nolan. If the user writes to you directly, answer and record what they said in your handoff for the Hub.
-- **Raise uncertainty, don't guess (DEC-047).** If you can't identify something about a room, fixture or item, or you're unsure what it is (e.g. a single camera shows only the tops of what turn out to be lockers), list it under `## Questions for Nolan (through the Hub)` in your handoff. For each one give the source (file + tile/crop), what you see, and your best candidates. Mark it with a GAP placeholder meanwhile. The Hub forwards these to Nolan. One honest question beats a confident wrong model.
+- **Chain of command (DEC-033): below the Hub, never ask the user (Nolan) anything.** No AskUserQuestion, no questions in your messages, no "want me to…?" buttons. Put every question, decision request or blocker in your handoff and end-of-turn summary for your lead (leads: for the Hub), use a labelled placeholder meanwhile, and keep working. The lead decides or escalates to the Hub, which decides or asks Nolan. If the user writes to you directly, answer and record what they said in your handoff for the Hub.
+- **Raise uncertainty, don't guess (DEC-047).** If you can't identify something about a room, fixture or item, or you're unsure what it is (e.g. a single camera shows only the tops of what turn out to be lockers), list it under `## Questions for Nolan (through the Hub)` in your handoff. For each one give the source (file + tile/crop), what you see, and your best candidates. Mark it with a GAP placeholder meanwhile. Your lead answers what the evidence answers; the Hub forwards the rest to Nolan. One honest question beats a confident wrong model.
 - When the deliverable is complete, stop; a new task should normally use a fresh context.
