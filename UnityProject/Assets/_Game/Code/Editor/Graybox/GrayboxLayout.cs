@@ -19,6 +19,9 @@ namespace Dispo.Editor.Graybox
         public Wall[] walls;
         public Fixture[] fixtures;
         public RefCam[] cameras;
+        public Anchor[] anchors;
+        public Stations stations;
+        public JarSlots jarSlots;
 
         [Serializable] public sealed class Rect { public float x0, x1, y0, y1; }
         [Serializable] public sealed class Height { public string key; public float ft; public string gap; public string note; }
@@ -29,6 +32,32 @@ namespace Dispo.Editor.Graybox
         [Serializable] public sealed class Wall { public string id, zone, conf, gap; public float ax, ay, bx, by, t; public Opening[] openings; }
         [Serializable] public sealed class Fixture { public string id, zone, h, conf, shape, note; public string @base; public bool solid; public Rect[] rects; }
         [Serializable] public sealed class RefCam { public string tile, zone, room, h, conf, note; public float x, y, yaw, pitch, fov; public string Id => $"REF_{tile}_{room}"; }
+
+        [Serializable] public sealed class Anchor { public string id, zone, conf, note; public float x, y, h, yaw; }
+        /// <summary>POS stations on the register north leg; each gets a monitor and a DEC-021/026 scale stand. The slice station also gets the SLICE_DESIGN §7 anchors.</summary>
+        [Serializable] public sealed class Stations
+        {
+            public string zone, conf, gap, note;
+            public float[] xs;
+            public int sliceStation;
+            public float staffEdgeY, customerY, playerY, monitorW, monitorD, monitorH;
+            public Stand stand;
+        }
+        [Serializable] public sealed class Stand
+        {
+            public string conf, gap, note;
+            public float w, d, offsetX, topFt, post, board, scaleW, scaleD, scaleH, panelW, panelH, panelT;
+            public float[] shelvesFt;
+        }
+        /// <summary>Jar slots on open shelves; numbered run by run, row by row (bottom first), then along the run.</summary>
+        [Serializable] public sealed class JarSlots
+        {
+            public string zone, conf, gap, note;
+            public float pitch, shelfT;
+            public float[] rowsFt;
+            public JarRun[] runs;
+        }
+        [Serializable] public sealed class JarRun { public string id; public bool alongX; public float yaw; public Rect r; }
 
         public static GrayboxLayout Load()
         {
