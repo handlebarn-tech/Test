@@ -554,7 +554,7 @@ def check(ok, what):
 
 # --- review sheets (DEC-122): `-- sheets [ids]` -----------------------------------------------------------------------
 # Each door is rebuilt per LOD with build(), its leaves hung on the frame pivots and opened OPEN_FRAC of openAngle, in a
-# grey wall stub cut to the manifest rough opening. EEVEE so GL-1 reads as glass. Labels are text objects on the camera.
+# grey wall stub cut to the manifest rough opening (the "closed" tile hangs them at 0 %, REVIEW-PROC013 m5). EEVEE so GL-1 reads as glass. Labels are text objects on the camera.
 
 SPECS = os.path.join(ROOT, "Docs", "Assets", "Specs")
 RENDERS = os.path.join(ROOT, "Artifacts", "Renders", "Doors")
@@ -602,8 +602,8 @@ def _slab(name, x0, x1, y0, y1, z0, z1, mat):
     bpy.context.scene.collection.objects.link(o)
 
 
-def assemble(door, lod):
-    """Build every part of one door at lod, hang the leaves, add the wall stub. Returns (tris, rough opening)."""
+def assemble(door, lod, frac=OPEN_FRAC):
+    """Build every part of one door at lod, hang the leaves frac open, add the wall stub. Returns (tris, rough opening)."""
     tris, ro, wt = 0, None, None
     for q in door:
         objs, _, extra = build(q, q["lods"][lod])
@@ -613,7 +613,7 @@ def assemble(door, lod):
             g, i = geom(q), 1 if q["part"] == "LeafR" else 0
             lf = leaves(q)[i][1]
             rel = lf["closedRotation"][1] - leaves(q)[0][1]["closedRotation"][1]
-            M = Matrix.Translation(g["piv"][i]) @ Matrix.Rotation(-math.radians(rel + lf["openAngle"] * OPEN_FRAC), 4, "Z")
+            M = Matrix.Translation(g["piv"][i]) @ Matrix.Rotation(-math.radians(rel + lf["openAngle"] * frac), 4, "Z")
             for o in objs.values():
                 o.matrix_world = M  # Unity yaw +a = Blender z rotation -a (see the module docstring axes)
         elif "rough_opening_m" in info:
@@ -655,7 +655,7 @@ def _label(s, cam, half, lines):
         t.location = (-half * 0.95, half * (0.87 - 0.065 * i - (0.02 if i else 0)), -1.0)
 
 
-def door_lines(door, lod, tris, ro):
+def door_lines(door, lod, tris, ro, frac=OPEN_FRAC):
     q, row = door[0], door[0]["row"]
     head = f"Door_{row['id']}   {lod}  {tris} tris"
     gaps = "GAPs: " + " ".join(q["gaps"]) if q["gaps"] else ""
@@ -668,25 +668,27 @@ def door_lines(door, lod, tris, ro):
     lf = leaves(q)[0][1]
     return [head, f"{row['type']}  {row['leaves']} x {lf['leafWidth_ft']}' x {row['leafHeight_ft']}'  {rot}",
             f"hinge {row['hinge_jamb'][:34]}  swing {row['swing'][:30]}",
-            f"open {lf['openAngle']} deg (drawn at {OPEN_FRAC:.0%})  {row['hardware']}  closer {row['selfClosing']}",
+            f"open {lf['openAngle']} deg (drawn {f'at {frac:.0%}' if frac else 'CLOSED'})  {row['hardware']}  closer {row['selfClosing']}",
             f"lock {row['lock']}  default {row['defaultState']}", gaps]
 
 
 def render_door(door, lod, view, path, res):
-    """view: 'push' / 'swing' = 3/4 perspective from that side; 'elev' = ortho elevation from the push side."""
+    """view: 'push' / 'swing' = 3/4 perspective from that side; 'elev' / 'closed' = ortho elevation from the push side,
+    leaves at OPEN_FRAC / shut."""
     s = _scene(res)
-    tris, ro = assemble(door, lod)
+    frac = 0.0 if view == "closed" else OPEN_FRAC
+    tris, ro = assemble(door, lod, frac)
     q = door[0]
     sw = geom(q)["sw"] if q["part"] != "Grille" and q["row"]["type"] != "opening" else -1
     w = ro[0] if ro else q["row"]["leafWidth_ft"] * FT
     push = 0 if sw > 0 else 180  # the push side is the one the leaf swings away from: Blender -y when sw > 0
-    if view == "elev":
+    if view in ("elev", "closed"):
         o = max(w + 1.0, 3.6)
         cam, half = _camera(s, push, (0, 0, o / 2 - 0.12), 8, ortho=o)  # floor at the bottom, labels above the head
     else:
         az = push + 35 * sw if view == "push" else push + 145  # push: look past the latch side into the open leaf
         cam, half = _camera(s, az, (0, 0, 1.2), max(w + 0.9, 2.6) * 1.75)
-    _label(s, cam, half, door_lines(door, lod, tris, ro))
+    _label(s, cam, half, door_lines(door, lod, tris, ro, frac))
     s.render.filepath = path
     bpy.ops.render.render(write_still=True)
 
@@ -747,7 +749,7 @@ def tiles_to_png(rows, out_path):
 
 
 def sheets(only=None):
-    """Per door: PROC_doors_<id>.png (push 3/4, swing 3/4, elevation, evidence). All doors: the LOD0 contact sheet
+    """Per door: PROC_doors_<id>.png (push 3/4, swing 3/4, elevation, closed elevation, evidence). All doors: the LOD0 contact sheet
     (5 per row) and the LOD chain sheet (row per door, LOD0..LOD3, push 3/4)."""
     P = _load("Tools/Blender/params/doors.json")
     doors = {}
@@ -759,10 +761,10 @@ def sheets(only=None):
         if only and did not in only:
             continue
         t = lambda n: os.path.join(RENDERS, f"{did}_{n}.png")  # noqa: E731
-        for view in ("push", "swing", "elev"):
+        for view in ("push", "swing", "elev", "closed"):
             render_door(door, "LOD0", view, t(view), 560)
         render_evidence(door[0].get("evidence"), t("evidence"), 560)
-        tiles_to_png([[t("push"), t("swing"), t("elev"), t("evidence")]], os.path.join(SPECS, f"PROC_doors_{did}.png"))
+        tiles_to_png([[t("push"), t("swing"), t("elev"), t("closed"), t("evidence")]], os.path.join(SPECS, f"PROC_doors_{did}.png"))
         for lod in LODS:
             render_door(door, lod, "push", t(f"{lod}_s"), 300)
         hero.append(t("push"))
