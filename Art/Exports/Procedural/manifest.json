@@ -1558,6 +1558,495 @@
         "sticker_residue": 0.15
       }
     },
+    "PROC_Cabinet_Storage_Large": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            1.0668,
+            0.0
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            0.97536,
+            2.1336,
+            0.4572
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_Cabinet_Storage_Large.fbx",
+      "export_sha256": "bd0e534c8a8a4ac1",
+      "fixture_family": "restroom",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-20"
+      ],
+      "generator": "restroom",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Cabinet_Storage_Large_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.48768,
+                  0.2286,
+                  2.1336
+                ],
+                "min": [
+                  -0.48768,
+                  -0.1776,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b28bf469fe50907e",
+              "material_slots": [
+                "M_Proc_Cabinet_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.97536,
+                2.1336,
+                0.4062
+              ],
+              "tris": 124,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 64
+            },
+            "PROC_Cabinet_Storage_Large_Door_0_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.002,
+                  -0.1776,
+                  2.1306
+                ],
+                "min": [
+                  -0.48568,
+                  -0.2286,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "bc1f3e9c94ea26fc",
+              "material_slots": [
+                "M_Proc_Cabinet_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.48368,
+                2.1276,
+                0.051
+              ],
+              "tris": 312,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 164
+            },
+            "PROC_Cabinet_Storage_Large_Door_1_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.48568,
+                  -0.1776,
+                  2.1306
+                ],
+                "min": [
+                  0.002,
+                  -0.2286,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a29d2bb7d3291366",
+              "material_slots": [
+                "M_Proc_Cabinet_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.48368,
+                2.1276,
+                0.051
+              ],
+              "tris": 312,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 164
+            }
+          },
+          "size_m_unity_xyz": [
+            0.97536,
+            2.1336,
+            0.4572
+          ],
+          "tris": 748
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Cabinet_Storage_Large_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.48768,
+                  0.2286,
+                  2.1336
+                ],
+                "min": [
+                  -0.48768,
+                  -0.1776,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b348e51c932a029f",
+              "material_slots": [
+                "M_Proc_Cabinet_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.97536,
+                2.1336,
+                0.4062
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Cabinet_Storage_Large_Door_0_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.002,
+                  -0.1776,
+                  2.1306
+                ],
+                "min": [
+                  -0.48568,
+                  -0.2286,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d2e4518d47081796",
+              "material_slots": [
+                "M_Proc_Cabinet_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.48368,
+                2.1276,
+                0.051
+              ],
+              "tris": 248,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 132
+            },
+            "PROC_Cabinet_Storage_Large_Door_1_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.48568,
+                  -0.1776,
+                  2.1306
+                ],
+                "min": [
+                  0.002,
+                  -0.2286,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ed302ffcdcf7e954",
+              "material_slots": [
+                "M_Proc_Cabinet_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.48368,
+                2.1276,
+                0.051
+              ],
+              "tris": 248,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 132
+            }
+          },
+          "size_m_unity_xyz": [
+            0.97536,
+            2.1336,
+            0.4572
+          ],
+          "tris": 556
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Cabinet_Storage_Large_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.48768,
+                  0.2286,
+                  2.1336
+                ],
+                "min": [
+                  -0.48768,
+                  -0.1776,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "12b5e4830f8dd6d3",
+              "material_slots": [
+                "M_Proc_Cabinet_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.97536,
+                2.1336,
+                0.4062
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cabinet_Storage_Large_Door_0_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.002,
+                  -0.1776,
+                  2.1306
+                ],
+                "min": [
+                  -0.48568,
+                  -0.2286,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "828ee768282f840f",
+              "material_slots": [
+                "M_Proc_Cabinet_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.48368,
+                2.1276,
+                0.051
+              ],
+              "tris": 136,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 76
+            },
+            "PROC_Cabinet_Storage_Large_Door_1_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.48568,
+                  -0.1776,
+                  2.1306
+                ],
+                "min": [
+                  0.002,
+                  -0.2286,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ad22b5e2844d3315",
+              "material_slots": [
+                "M_Proc_Cabinet_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.48368,
+                2.1276,
+                0.051
+              ],
+              "tris": 136,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 76
+            }
+          },
+          "size_m_unity_xyz": [
+            0.97536,
+            2.1336,
+            0.4572
+          ],
+          "tris": 284
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Cabinet_Storage_Large_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.48768,
+                  0.2286,
+                  2.1336
+                ],
+                "min": [
+                  -0.48768,
+                  -0.1976,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6ec52c5fa3e676fe",
+              "material_slots": [
+                "M_Proc_Cabinet_Grey"
+              ],
+              "size_m_unity_xyz": [
+                0.97536,
+                2.1336,
+                0.4262
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Cabinet_Storage_Large_Pulls_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  -0.1976,
+                  1.35516
+                ],
+                "min": [
+                  -0.05,
+                  -0.2286,
+                  1.20516
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e34a71f529208fe6",
+              "material_slots": [
+                "M_Proc_Brushed_Steel"
+              ],
+              "size_m_unity_xyz": [
+                0.1,
+                0.15,
+                0.031
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.97536,
+            2.1336,
+            0.4572
+          ],
+          "tris": 24
+        }
+      },
+      "moving_parts": [
+        {
+          "axis_unity_xyz": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "open_deg": 110,
+          "part": "Door_0",
+          "pivot_unity_xyz": [
+            0.48768,
+            1.0668,
+            0.1876
+          ],
+          "side": "left",
+          "type": "hinge"
+        },
+        {
+          "axis_unity_xyz": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "open_deg": 110,
+          "part": "Door_1",
+          "pivot_unity_xyz": [
+            -0.48768,
+            1.0668,
+            0.1876
+          ],
+          "side": "right",
+          "type": "hinge"
+        }
+      ],
+      "own_sheet": true,
+      "params": "Tools/Blender/params/restroom.json",
+      "params_sha256": "30eb24be4ca5149d",
+      "rf": "Cabinet_Storage_Large",
+      "seed": 27001,
+      "shelf_heights_m": [
+        0.42672,
+        0.85344,
+        1.28016,
+        1.70688
+      ],
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom/PROC_Cabinet_Storage_Large.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.3,
+        "scuffs": 0.25,
+        "seed": 27001,
+        "water_spots": 0.3
+      }
+    },
     "PROC_Cabinet_Tall_Black": {
       "collision_boxes": [
         {
@@ -16755,6 +17244,1212 @@
         "seed": 4101
       }
     },
+    "PROC_Dispenser_PaperTowel": {
+      "export": "Art/Exports/Procedural/PROC_Dispenser_PaperTowel.fbx",
+      "export_sha256": "ec491a6d14d51f15",
+      "fixture_family": "restroom",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-20"
+      ],
+      "generator": "restroom",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Dispenser_PaperTowel_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.16764,
+                  0.06096,
+                  0.4572
+                ],
+                "min": [
+                  -0.16764,
+                  -0.06096,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c734387f959d3d2e",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.33528,
+                0.4572,
+                0.12192
+              ],
+              "tris": 124,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 64
+            },
+            "PROC_Dispenser_PaperTowel_Lever_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.16764,
+                  0.03048,
+                  0.25146
+                ],
+                "min": [
+                  0.15764,
+                  -0.03048,
+                  0.1143
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "fe129cab00053cfb",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.01,
+                0.13716,
+                0.06096
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Dispenser_PaperTowel_Slot_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.117348,
+                  -0.02096,
+                  0.006
+                ],
+                "min": [
+                  -0.117348,
+                  -0.04096,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "513b655a22f46432",
+              "material_slots": [
+                "M_Proc_Black_Trim"
+              ],
+              "size_m_unity_xyz": [
+                0.2347,
+                0.006,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Dispenser_PaperTowel_Window_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.050292,
+                  -0.05796,
+                  0.33147
+                ],
+                "min": [
+                  -0.050292,
+                  -0.06096,
+                  0.21717
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e85d24271707536a",
+              "material_slots": [
+                "M_Proc_Glass_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.10058,
+                0.1143,
+                0.003
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.33528,
+            0.4572,
+            0.12192
+          ],
+          "tris": 160
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Dispenser_PaperTowel_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.16764,
+                  0.06096,
+                  0.4572
+                ],
+                "min": [
+                  -0.16764,
+                  -0.06096,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7c023742b0f6f19c",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.33528,
+                0.4572,
+                0.12192
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Dispenser_PaperTowel_Lever_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.16764,
+                  0.03048,
+                  0.25146
+                ],
+                "min": [
+                  0.15764,
+                  -0.03048,
+                  0.1143
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "fe129cab00053cfb",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.01,
+                0.13716,
+                0.06096
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Dispenser_PaperTowel_Slot_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.117348,
+                  -0.02096,
+                  0.006
+                ],
+                "min": [
+                  -0.117348,
+                  -0.04096,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "513b655a22f46432",
+              "material_slots": [
+                "M_Proc_Black_Trim"
+              ],
+              "size_m_unity_xyz": [
+                0.2347,
+                0.006,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Dispenser_PaperTowel_Window_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.050292,
+                  -0.05796,
+                  0.33147
+                ],
+                "min": [
+                  -0.050292,
+                  -0.06096,
+                  0.21717
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e85d24271707536a",
+              "material_slots": [
+                "M_Proc_Glass_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.10058,
+                0.1143,
+                0.003
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.33528,
+            0.4572,
+            0.12192
+          ],
+          "tris": 96
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Dispenser_PaperTowel_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.16764,
+                  0.06096,
+                  0.4572
+                ],
+                "min": [
+                  -0.16764,
+                  -0.06096,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7d2b6b2742217360",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.33528,
+                0.4572,
+                0.12192
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Dispenser_PaperTowel_Lever_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.16764,
+                  0.03048,
+                  0.25146
+                ],
+                "min": [
+                  0.15764,
+                  -0.03048,
+                  0.1143
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "fe129cab00053cfb",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.01,
+                0.13716,
+                0.06096
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Dispenser_PaperTowel_Slot_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.117348,
+                  -0.02096,
+                  0.006
+                ],
+                "min": [
+                  -0.117348,
+                  -0.04096,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "513b655a22f46432",
+              "material_slots": [
+                "M_Proc_Black_Trim"
+              ],
+              "size_m_unity_xyz": [
+                0.2347,
+                0.006,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Dispenser_PaperTowel_Window_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.050292,
+                  -0.05796,
+                  0.33147
+                ],
+                "min": [
+                  -0.050292,
+                  -0.06096,
+                  0.21717
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e85d24271707536a",
+              "material_slots": [
+                "M_Proc_Glass_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.10058,
+                0.1143,
+                0.003
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.33528,
+            0.4572,
+            0.12192
+          ],
+          "tris": 48
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Dispenser_PaperTowel_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.16764,
+                  0.06096,
+                  0.4572
+                ],
+                "min": [
+                  -0.16764,
+                  -0.06096,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "7d2b6b2742217360",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.33528,
+                0.4572,
+                0.12192
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.33528,
+            0.4572,
+            0.12192
+          ],
+          "tris": 12
+        }
+      },
+      "mount_z_m": 0.762,
+      "own_sheet": true,
+      "params": "Tools/Blender/params/restroom.json",
+      "params_sha256": "30eb24be4ca5149d",
+      "rf": "Accessories",
+      "seed": 27001,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom/PROC_Dispenser_PaperTowel.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.3,
+        "scuffs": 0.25,
+        "seed": 27001,
+        "water_spots": 0.3
+      }
+    },
+    "PROC_Dispenser_Soap": {
+      "export": "Art/Exports/Procedural/PROC_Dispenser_Soap.fbx",
+      "export_sha256": "1a43afd0429b9b90",
+      "fixture_family": "restroom",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-20"
+      ],
+      "generator": "restroom",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Dispenser_Soap_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.055,
+                  0.055,
+                  0.2
+                ],
+                "min": [
+                  -0.055,
+                  -0.055,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f3bb2c90875a00b6",
+              "material_slots": [
+                "M_Proc_Plastic_White"
+              ],
+              "size_m_unity_xyz": [
+                0.11,
+                0.2,
+                0.11
+              ],
+              "tris": 124,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 64
+            },
+            "PROC_Dispenser_Soap_Lever_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.033,
+                  -0.04,
+                  0.0525
+                ],
+                "min": [
+                  -0.033,
+                  -0.055,
+                  0.0275
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "377b74d095568f2d",
+              "material_slots": [
+                "M_Proc_Black_Trim"
+              ],
+              "size_m_unity_xyz": [
+                0.066,
+                0.025,
+                0.015
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Dispenser_Soap_Window_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0275,
+                  -0.053,
+                  0.14
+                ],
+                "min": [
+                  -0.0275,
+                  -0.055,
+                  0.08
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b96034f41cf1b41a",
+              "material_slots": [
+                "M_Proc_Glass_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.055,
+                0.06,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.11,
+            0.2,
+            0.11
+          ],
+          "tris": 148
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Dispenser_Soap_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.055,
+                  0.055,
+                  0.2
+                ],
+                "min": [
+                  -0.055,
+                  -0.055,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b4c39b0578b52221",
+              "material_slots": [
+                "M_Proc_Plastic_White"
+              ],
+              "size_m_unity_xyz": [
+                0.11,
+                0.2,
+                0.11
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Dispenser_Soap_Lever_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.033,
+                  -0.04,
+                  0.0525
+                ],
+                "min": [
+                  -0.033,
+                  -0.055,
+                  0.0275
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "377b74d095568f2d",
+              "material_slots": [
+                "M_Proc_Black_Trim"
+              ],
+              "size_m_unity_xyz": [
+                0.066,
+                0.025,
+                0.015
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Dispenser_Soap_Window_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0275,
+                  -0.053,
+                  0.14
+                ],
+                "min": [
+                  -0.0275,
+                  -0.055,
+                  0.08
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b96034f41cf1b41a",
+              "material_slots": [
+                "M_Proc_Glass_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.055,
+                0.06,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.11,
+            0.2,
+            0.11
+          ],
+          "tris": 84
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Dispenser_Soap_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.055,
+                  0.055,
+                  0.2
+                ],
+                "min": [
+                  -0.055,
+                  -0.055,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "02603460081d8400",
+              "material_slots": [
+                "M_Proc_Plastic_White"
+              ],
+              "size_m_unity_xyz": [
+                0.11,
+                0.2,
+                0.11
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Dispenser_Soap_Lever_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.033,
+                  -0.04,
+                  0.0525
+                ],
+                "min": [
+                  -0.033,
+                  -0.055,
+                  0.0275
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "377b74d095568f2d",
+              "material_slots": [
+                "M_Proc_Black_Trim"
+              ],
+              "size_m_unity_xyz": [
+                0.066,
+                0.025,
+                0.015
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Dispenser_Soap_Window_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0275,
+                  -0.053,
+                  0.14
+                ],
+                "min": [
+                  -0.0275,
+                  -0.055,
+                  0.08
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b96034f41cf1b41a",
+              "material_slots": [
+                "M_Proc_Glass_Dark"
+              ],
+              "size_m_unity_xyz": [
+                0.055,
+                0.06,
+                0.002
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.11,
+            0.2,
+            0.11
+          ],
+          "tris": 36
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Dispenser_Soap_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.055,
+                  0.055,
+                  0.2
+                ],
+                "min": [
+                  -0.055,
+                  -0.055,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "02603460081d8400",
+              "material_slots": [
+                "M_Proc_Plastic_White"
+              ],
+              "size_m_unity_xyz": [
+                0.11,
+                0.2,
+                0.11
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.11,
+            0.2,
+            0.11
+          ],
+          "tris": 12
+        }
+      },
+      "mount_z_m": 1.0,
+      "own_sheet": true,
+      "params": "Tools/Blender/params/restroom.json",
+      "params_sha256": "30eb24be4ca5149d",
+      "rf": "Accessories",
+      "seed": 27001,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom/PROC_Dispenser_Soap.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.3,
+        "scuffs": 0.25,
+        "seed": 27001,
+        "water_spots": 0.3
+      }
+    },
+    "PROC_Dispenser_TP": {
+      "export": "Art/Exports/Procedural/PROC_Dispenser_TP.fbx",
+      "export_sha256": "d89cc68b3985ad99",
+      "fixture_family": "restroom",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-20"
+      ],
+      "generator": "restroom",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Dispenser_TP_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.15,
+                  0.07,
+                  0.15
+                ],
+                "min": [
+                  -0.15,
+                  -0.07,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "fda308ac4d20457e",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.3,
+                0.15,
+                0.14
+              ],
+              "tris": 124,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 64
+            },
+            "PROC_Dispenser_TP_Roll_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.127,
+                  0.045,
+                  0.1
+                ],
+                "min": [
+                  -0.127,
+                  -0.065,
+                  0.004
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "0df46f0f0700c57a",
+              "material_slots": [
+                "M_Proc_Paper_White"
+              ],
+              "size_m_unity_xyz": [
+                0.254,
+                0.096,
+                0.11
+              ],
+              "tris": 128,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 68
+            }
+          },
+          "size_m_unity_xyz": [
+            0.3,
+            0.15,
+            0.14
+          ],
+          "tris": 252
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Dispenser_TP_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.15,
+                  0.07,
+                  0.15
+                ],
+                "min": [
+                  -0.15,
+                  -0.07,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "9ed991af21e21a69",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.3,
+                0.15,
+                0.14
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Dispenser_TP_Roll_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.127,
+                  0.045,
+                  0.1
+                ],
+                "min": [
+                  -0.127,
+                  -0.065,
+                  0.004
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c99d7a06ba41572d",
+              "material_slots": [
+                "M_Proc_Paper_White"
+              ],
+              "size_m_unity_xyz": [
+                0.254,
+                0.096,
+                0.11
+              ],
+              "tris": 96,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 52
+            }
+          },
+          "size_m_unity_xyz": [
+            0.3,
+            0.15,
+            0.14
+          ],
+          "tris": 156
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Dispenser_TP_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.15,
+                  0.07,
+                  0.15
+                ],
+                "min": [
+                  -0.15,
+                  -0.07,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "aabab329c87312fd",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.3,
+                0.15,
+                0.14
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Dispenser_TP_Roll_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.127,
+                  0.045,
+                  0.1
+                ],
+                "min": [
+                  -0.127,
+                  -0.065,
+                  0.004
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "fda7ade4ef199205",
+              "material_slots": [
+                "M_Proc_Paper_White"
+              ],
+              "size_m_unity_xyz": [
+                0.254,
+                0.096,
+                0.11
+              ],
+              "tris": 64,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            }
+          },
+          "size_m_unity_xyz": [
+            0.3,
+            0.15,
+            0.14
+          ],
+          "tris": 76
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Dispenser_TP_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.15,
+                  0.07,
+                  0.15
+                ],
+                "min": [
+                  -0.15,
+                  -0.07,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "aabab329c87312fd",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.3,
+                0.15,
+                0.14
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.3,
+            0.15,
+            0.14
+          ],
+          "tris": 12
+        }
+      },
+      "mount_z_m": 0.5,
+      "own_sheet": true,
+      "params": "Tools/Blender/params/restroom.json",
+      "params_sha256": "30eb24be4ca5149d",
+      "rf": "Accessories",
+      "seed": 27001,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom/PROC_Dispenser_TP.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.3,
+        "scuffs": 0.25,
+        "seed": 27001,
+        "water_spots": 0.3
+      }
+    },
     "PROC_FileCabinets_UnderDesk": {
       "collision_boxes": [
         {
@@ -20087,6 +21782,618 @@
         "scuffs": 0.25,
         "seed": 24001,
         "sticker_residue": 0.1
+      }
+    },
+    "PROC_GrabBar_18V": {
+      "export": "Art/Exports/Procedural/PROC_GrabBar_18V.fbx",
+      "export_sha256": "ac03ea58673f96e8",
+      "fixture_family": "restroom",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-20"
+      ],
+      "generator": "restroom",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_GrabBar_18V_Bar_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0381,
+                  0.0381,
+                  0.4572
+                ],
+                "min": [
+                  -0.0381,
+                  -0.0381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "74a21103389bec16",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.0762,
+                0.4572,
+                0.0762
+              ],
+              "tris": 384,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 200
+            }
+          },
+          "size_m_unity_xyz": [
+            0.0762,
+            0.4572,
+            0.0762
+          ],
+          "tris": 384
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_GrabBar_18V_Bar_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0381,
+                  0.0381,
+                  0.4572
+                ],
+                "min": [
+                  -0.0381,
+                  -0.0381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d8d2b991eaeff871",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.0762,
+                0.4572,
+                0.0762
+              ],
+              "tris": 288,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 152
+            }
+          },
+          "size_m_unity_xyz": [
+            0.0762,
+            0.4572,
+            0.0762
+          ],
+          "tris": 288
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_GrabBar_18V_Bar_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0381,
+                  0.0381,
+                  0.4572
+                ],
+                "min": [
+                  -0.0381,
+                  -0.0381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "5cf3b4fd838b0f68",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.0762,
+                0.4572,
+                0.0762
+              ],
+              "tris": 192,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 104
+            }
+          },
+          "size_m_unity_xyz": [
+            0.0762,
+            0.4572,
+            0.0762
+          ],
+          "tris": 192
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_GrabBar_18V_Bar_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0381,
+                  0.0381,
+                  0.4572
+                ],
+                "min": [
+                  -0.0381,
+                  -0.0381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "193065e301267294",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.0762,
+                0.4572,
+                0.0762
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.0762,
+            0.4572,
+            0.0762
+          ],
+          "tris": 12
+        }
+      },
+      "mount_z_m": 0.8382,
+      "own_sheet": true,
+      "params": "Tools/Blender/params/restroom.json",
+      "params_sha256": "30eb24be4ca5149d",
+      "rf": "GrabBar_West (vertical)",
+      "seed": 27001,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom/PROC_GrabBar_18V.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.3,
+        "scuffs": 0.25,
+        "seed": 27001,
+        "water_spots": 0.3
+      }
+    },
+    "PROC_GrabBar_36": {
+      "export": "Art/Exports/Procedural/PROC_GrabBar_36.fbx",
+      "export_sha256": "57a05b5d4aedfbec",
+      "fixture_family": "restroom",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-20"
+      ],
+      "generator": "restroom",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_GrabBar_36_Bar_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.4572,
+                  0.0381,
+                  0.0762
+                ],
+                "min": [
+                  -0.4572,
+                  -0.0381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "e307712e378c5094",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.9144,
+                0.0762,
+                0.0762
+              ],
+              "tris": 384,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 200
+            }
+          },
+          "size_m_unity_xyz": [
+            0.9144,
+            0.0762,
+            0.0762
+          ],
+          "tris": 384
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_GrabBar_36_Bar_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.4572,
+                  0.0381,
+                  0.0762
+                ],
+                "min": [
+                  -0.4572,
+                  -0.0381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "ee112e0b80f2e8e0",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.9144,
+                0.0762,
+                0.0762
+              ],
+              "tris": 288,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 152
+            }
+          },
+          "size_m_unity_xyz": [
+            0.9144,
+            0.0762,
+            0.0762
+          ],
+          "tris": 288
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_GrabBar_36_Bar_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.4572,
+                  0.0381,
+                  0.0762
+                ],
+                "min": [
+                  -0.4572,
+                  -0.0381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f12466c43a60d113",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.9144,
+                0.0762,
+                0.0762
+              ],
+              "tris": 192,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 104
+            }
+          },
+          "size_m_unity_xyz": [
+            0.9144,
+            0.0762,
+            0.0762
+          ],
+          "tris": 192
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_GrabBar_36_Bar_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.4572,
+                  0.0381,
+                  0.0762
+                ],
+                "min": [
+                  -0.4572,
+                  -0.0381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "bf4fd3cf94f158a7",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.9144,
+                0.0762,
+                0.0762
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.9144,
+            0.0762,
+            0.0762
+          ],
+          "tris": 12
+        }
+      },
+      "mount_z_m": 0.8382,
+      "own_sheet": true,
+      "params": "Tools/Blender/params/restroom.json",
+      "params_sha256": "30eb24be4ca5149d",
+      "rf": "GrabBar_West",
+      "seed": 27001,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom/PROC_GrabBar_36.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.3,
+        "scuffs": 0.25,
+        "seed": 27001,
+        "water_spots": 0.3
+      }
+    },
+    "PROC_GrabBar_42": {
+      "export": "Art/Exports/Procedural/PROC_GrabBar_42.fbx",
+      "export_sha256": "4fa0ccefe4322d3f",
+      "fixture_family": "restroom",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-20"
+      ],
+      "generator": "restroom",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_GrabBar_42_Bar_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5334,
+                  0.0381,
+                  0.0762
+                ],
+                "min": [
+                  -0.5334,
+                  -0.0381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "da949b609d91fdd7",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                1.0668,
+                0.0762,
+                0.0762
+              ],
+              "tris": 384,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 200
+            }
+          },
+          "size_m_unity_xyz": [
+            1.0668,
+            0.0762,
+            0.0762
+          ],
+          "tris": 384
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_GrabBar_42_Bar_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5334,
+                  0.0381,
+                  0.0762
+                ],
+                "min": [
+                  -0.5334,
+                  -0.0381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "275b487968535df7",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                1.0668,
+                0.0762,
+                0.0762
+              ],
+              "tris": 288,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 152
+            }
+          },
+          "size_m_unity_xyz": [
+            1.0668,
+            0.0762,
+            0.0762
+          ],
+          "tris": 288
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_GrabBar_42_Bar_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5334,
+                  0.0381,
+                  0.0762
+                ],
+                "min": [
+                  -0.5334,
+                  -0.0381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1a1f29eb94174ebe",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                1.0668,
+                0.0762,
+                0.0762
+              ],
+              "tris": 192,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 104
+            }
+          },
+          "size_m_unity_xyz": [
+            1.0668,
+            0.0762,
+            0.0762
+          ],
+          "tris": 192
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_GrabBar_42_Bar_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.5334,
+                  0.0381,
+                  0.0762
+                ],
+                "min": [
+                  -0.5334,
+                  -0.0381,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "94b6575c539ad748",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                1.0668,
+                0.0762,
+                0.0762
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            1.0668,
+            0.0762,
+            0.0762
+          ],
+          "tris": 12
+        }
+      },
+      "mount_z_m": 0.8382,
+      "own_sheet": true,
+      "params": "Tools/Blender/params/restroom.json",
+      "params_sha256": "30eb24be4ca5149d",
+      "rf": "GrabBar_North",
+      "seed": 27001,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom/PROC_GrabBar_42.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.3,
+        "scuffs": 0.25,
+        "seed": 27001,
+        "water_spots": 0.3
       }
     },
     "PROC_Hooks_Coats": {
@@ -24923,6 +27230,489 @@
       },
       "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/JarFill/PROC_JarFill_PurpleHeavy.fbx"
     },
+    "PROC_Lavatory_WallHung": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.3389,
+            0.0
+          ],
+          "name": "Basin",
+          "size_unity_xyz": [
+            0.51816,
+            0.1778,
+            0.4572
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_Lavatory_WallHung.fbx",
+      "export_sha256": "49b7c0ea1c4b3ee5",
+      "fixture_family": "restroom",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-20"
+      ],
+      "generator": "restroom",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Lavatory_WallHung_Basin_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.25908,
+                  0.2286,
+                  0.4278
+                ],
+                "min": [
+                  -0.25908,
+                  -0.2286,
+                  0.25
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "738f0f17067d64da",
+              "material_slots": [
+                "M_Proc_Vitreous_White"
+              ],
+              "size_m_unity_xyz": [
+                0.51816,
+                0.1778,
+                0.4572
+              ],
+              "tris": 236,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_Lavatory_WallHung_Brackets_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.19408,
+                  0.2286,
+                  0.27
+                ],
+                "min": [
+                  -0.19408,
+                  0.0486,
+                  0.25
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b07f9525fded7032",
+              "material_slots": [
+                "M_Proc_Black_Trim"
+              ],
+              "size_m_unity_xyz": [
+                0.38816,
+                0.02,
+                0.18
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Lavatory_WallHung_Faucet_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.090356,
+                  0.218938,
+                  0.5778
+                ],
+                "min": [
+                  -0.084,
+                  -0.022,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c518a0fcacd92e71",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.17436,
+                0.5778,
+                0.24094
+              ],
+              "tris": 560,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 296
+            },
+            "PROC_Lavatory_WallHung_Overflow_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.015,
+                  0.0956,
+                  0.4018
+                ],
+                "min": [
+                  -0.015,
+                  0.0916,
+                  0.3938
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b91d137db1be3400",
+              "material_slots": [
+                "M_Proc_Black_Trim"
+              ],
+              "size_m_unity_xyz": [
+                0.03,
+                0.008,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.51816,
+            0.5778,
+            0.4572
+          ],
+          "tris": 832
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Lavatory_WallHung_Basin_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.25908,
+                  0.2286,
+                  0.4278
+                ],
+                "min": [
+                  -0.25908,
+                  -0.2286,
+                  0.25
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "5729b7f0dff1762c",
+              "material_slots": [
+                "M_Proc_Vitreous_White"
+              ],
+              "size_m_unity_xyz": [
+                0.51816,
+                0.1778,
+                0.4572
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_Lavatory_WallHung_Brackets_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.19408,
+                  0.2286,
+                  0.27
+                ],
+                "min": [
+                  -0.19408,
+                  0.0486,
+                  0.25
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b07f9525fded7032",
+              "material_slots": [
+                "M_Proc_Black_Trim"
+              ],
+              "size_m_unity_xyz": [
+                0.38816,
+                0.02,
+                0.18
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Lavatory_WallHung_Faucet_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.090356,
+                  0.218938,
+                  0.5778
+                ],
+                "min": [
+                  -0.084,
+                  -0.022,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "bbdbde1291e1219a",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.17436,
+                0.5778,
+                0.24094
+              ],
+              "tris": 456,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 244
+            },
+            "PROC_Lavatory_WallHung_Overflow_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.015,
+                  0.0956,
+                  0.4018
+                ],
+                "min": [
+                  -0.015,
+                  0.0916,
+                  0.3938
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b91d137db1be3400",
+              "material_slots": [
+                "M_Proc_Black_Trim"
+              ],
+              "size_m_unity_xyz": [
+                0.03,
+                0.008,
+                0.004
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.51816,
+            0.5778,
+            0.4572
+          ],
+          "tris": 632
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Lavatory_WallHung_Basin_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.25908,
+                  0.2286,
+                  0.4278
+                ],
+                "min": [
+                  -0.25908,
+                  -0.2286,
+                  0.25
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "16c7aa396ebe176e",
+              "material_slots": [
+                "M_Proc_Vitreous_White"
+              ],
+              "size_m_unity_xyz": [
+                0.51816,
+                0.1778,
+                0.4572
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_Lavatory_WallHung_Faucet_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.025,
+                  0.1936,
+                  0.5778
+                ],
+                "min": [
+                  -0.025,
+                  -0.016,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "247d98928163454b",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.05,
+                0.5778,
+                0.2096
+              ],
+              "tris": 64,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            }
+          },
+          "size_m_unity_xyz": [
+            0.51816,
+            0.5778,
+            0.4572
+          ],
+          "tris": 124
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Lavatory_WallHung_Basin_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.25908,
+                  0.2286,
+                  0.4278
+                ],
+                "min": [
+                  -0.25908,
+                  -0.2286,
+                  0.25
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "4c472a87821cb739",
+              "material_slots": [
+                "M_Proc_Vitreous_White"
+              ],
+              "size_m_unity_xyz": [
+                0.51816,
+                0.1778,
+                0.4572
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Lavatory_WallHung_Faucet_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.025,
+                  0.1936,
+                  0.5778
+                ],
+                "min": [
+                  -0.025,
+                  -0.015,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b041450c8477741c",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.05,
+                0.5778,
+                0.2086
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.51816,
+            0.5778,
+            0.4572
+          ],
+          "tris": 36
+        }
+      },
+      "mount_z_m": 0.43579999999999997,
+      "own_sheet": true,
+      "params": "Tools/Blender/params/restroom.json",
+      "params_sha256": "30eb24be4ca5149d",
+      "rf": "Lavatory_WallHung",
+      "seed": 27001,
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom/PROC_Lavatory_WallHung.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.3,
+        "scuffs": 0.25,
+        "seed": 27001,
+        "water_spots": 0.3
+      }
+    },
     "PROC_Lockers_Staff": {
       "collision_boxes": [
         {
@@ -27597,6 +30387,612 @@
         "scuffs": 0.35,
         "seed": 26001,
         "sticker_residue": 0.15
+      }
+    },
+    "PROC_Mirror": {
+      "export": "Art/Exports/Procedural/PROC_Mirror.fbx",
+      "export_sha256": "0e36ba85d16be9b0",
+      "fixture_family": "restroom",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-20"
+      ],
+      "generator": "restroom",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Mirror_Frame_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.254,
+                  0.00762,
+                  1.0668
+                ],
+                "min": [
+                  -0.254,
+                  -0.00762,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 28
+              },
+              "geometry_sha256": "f2218d05848aefb6",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.508,
+                1.0668,
+                0.01524
+              ],
+              "tris": 496,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 224
+            },
+            "PROC_Mirror_Glass_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.234,
+                  0.00138,
+                  1.0468
+                ],
+                "min": [
+                  -0.234,
+                  -0.00462,
+                  0.02
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d1ac063d189085cb",
+              "material_slots": [
+                "M_Proc_Mirror"
+              ],
+              "size_m_unity_xyz": [
+                0.468,
+                1.0268,
+                0.006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.508,
+            1.0668,
+            0.01524
+          ],
+          "tris": 508
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Mirror_Frame_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.254,
+                  0.00762,
+                  1.0668
+                ],
+                "min": [
+                  -0.254,
+                  -0.00762,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 12
+              },
+              "geometry_sha256": "314c0a96c7c8235d",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.508,
+                1.0668,
+                0.01524
+              ],
+              "tris": 112,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Mirror_Glass_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.234,
+                  0.00138,
+                  1.0468
+                ],
+                "min": [
+                  -0.234,
+                  -0.00462,
+                  0.02
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d1ac063d189085cb",
+              "material_slots": [
+                "M_Proc_Mirror"
+              ],
+              "size_m_unity_xyz": [
+                0.468,
+                1.0268,
+                0.006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.508,
+            1.0668,
+            0.01524
+          ],
+          "tris": 124
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Mirror_Frame_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.254,
+                  0.00762,
+                  1.0668
+                ],
+                "min": [
+                  -0.254,
+                  -0.00762,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
+              "geometry_sha256": "3cb723d408c34eb3",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.508,
+                1.0668,
+                0.01524
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            },
+            "PROC_Mirror_Glass_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.234,
+                  0.00138,
+                  1.0468
+                ],
+                "min": [
+                  -0.234,
+                  -0.00462,
+                  0.02
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d1ac063d189085cb",
+              "material_slots": [
+                "M_Proc_Mirror"
+              ],
+              "size_m_unity_xyz": [
+                0.468,
+                1.0268,
+                0.006
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.508,
+            1.0668,
+            0.01524
+          ],
+          "tris": 60
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Mirror_Frame_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.254,
+                  0.00762,
+                  1.0668
+                ],
+                "min": [
+                  -0.254,
+                  -0.00762,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "68978deb06b121e2",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.508,
+                1.0668,
+                0.01524
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.508,
+            1.0668,
+            0.01524
+          ],
+          "tris": 12
+        }
+      },
+      "mount_z_m": 1.016,
+      "own_sheet": true,
+      "params": "Tools/Blender/params/restroom.json",
+      "params_sha256": "30eb24be4ca5149d",
+      "rf": "Mirror",
+      "seed": 27001,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom/PROC_Mirror.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.3,
+        "scuffs": 0.25,
+        "seed": 27001,
+        "water_spots": 0.3
+      }
+    },
+    "PROC_NapkinDisposal": {
+      "export": "Art/Exports/Procedural/PROC_NapkinDisposal.fbx",
+      "export_sha256": "77d1e4b56d3db6ed",
+      "fixture_family": "restroom",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-20"
+      ],
+      "generator": "restroom",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_NapkinDisposal_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.125,
+                  0.05,
+                  0.28
+                ],
+                "min": [
+                  -0.125,
+                  -0.05,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "2a05a491b7befe94",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.25,
+                0.28,
+                0.1
+              ],
+              "tris": 124,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 64
+            },
+            "PROC_NapkinDisposal_Lever_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1,
+                  -0.047,
+                  0.257
+                ],
+                "min": [
+                  -0.1,
+                  -0.05,
+                  0.247
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f5d1661d790726d1",
+              "material_slots": [
+                "M_Proc_Black_Trim"
+              ],
+              "size_m_unity_xyz": [
+                0.2,
+                0.01,
+                0.003
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.25,
+            0.28,
+            0.1
+          ],
+          "tris": 136
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_NapkinDisposal_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.125,
+                  0.05,
+                  0.28
+                ],
+                "min": [
+                  -0.125,
+                  -0.05,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "342aaeb4783b92b8",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.25,
+                0.28,
+                0.1
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_NapkinDisposal_Lever_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1,
+                  -0.047,
+                  0.257
+                ],
+                "min": [
+                  -0.1,
+                  -0.05,
+                  0.247
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f5d1661d790726d1",
+              "material_slots": [
+                "M_Proc_Black_Trim"
+              ],
+              "size_m_unity_xyz": [
+                0.2,
+                0.01,
+                0.003
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.25,
+            0.28,
+            0.1
+          ],
+          "tris": 72
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_NapkinDisposal_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.125,
+                  0.05,
+                  0.28
+                ],
+                "min": [
+                  -0.125,
+                  -0.05,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "704d7a45efb07f8a",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.25,
+                0.28,
+                0.1
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_NapkinDisposal_Lever_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.1,
+                  -0.047,
+                  0.257
+                ],
+                "min": [
+                  -0.1,
+                  -0.05,
+                  0.247
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f5d1661d790726d1",
+              "material_slots": [
+                "M_Proc_Black_Trim"
+              ],
+              "size_m_unity_xyz": [
+                0.2,
+                0.01,
+                0.003
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.25,
+            0.28,
+            0.1
+          ],
+          "tris": 24
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_NapkinDisposal_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.125,
+                  0.05,
+                  0.28
+                ],
+                "min": [
+                  -0.125,
+                  -0.05,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "704d7a45efb07f8a",
+              "material_slots": [
+                "M_Proc_Stainless"
+              ],
+              "size_m_unity_xyz": [
+                0.25,
+                0.28,
+                0.1
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.25,
+            0.28,
+            0.1
+          ],
+          "tris": 12
+        }
+      },
+      "mount_z_m": 0.7,
+      "own_sheet": true,
+      "params": "Tools/Blender/params/restroom.json",
+      "params_sha256": "30eb24be4ca5149d",
+      "rf": "Accessories",
+      "seed": 27001,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom/PROC_NapkinDisposal.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.3,
+        "scuffs": 0.25,
+        "seed": 27001,
+        "water_spots": 0.3
       }
     },
     "PROC_PackageBox": {
@@ -43938,6 +47334,312 @@
         "seed": 5201
       }
     },
+    "PROC_Sconce_L6": {
+      "emissive_parts": [
+        "Shade"
+      ],
+      "export": "Art/Exports/Procedural/PROC_Sconce_L6.fbx",
+      "export_sha256": "6b1bedcc2ca79a89",
+      "fixture_family": "restroom",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-20"
+      ],
+      "generator": "restroom",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Sconce_L6_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.075,
+                  0.06,
+                  0.3
+                ],
+                "min": [
+                  -0.075,
+                  0.04,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c6f13dfd8da84b8c",
+              "material_slots": [
+                "M_Proc_Brushed_Steel"
+              ],
+              "size_m_unity_xyz": [
+                0.15,
+                0.3,
+                0.02
+              ],
+              "tris": 116,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            },
+            "PROC_Sconce_L6_Shade_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  0.04,
+                  0.28
+                ],
+                "min": [
+                  -0.05,
+                  -0.06,
+                  0.02
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "3e5014caffae473a",
+              "material_slots": [
+                "M_Proc_Glass_Frosted"
+              ],
+              "size_m_unity_xyz": [
+                0.1,
+                0.26,
+                0.1
+              ],
+              "tris": 64,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 34
+            }
+          },
+          "size_m_unity_xyz": [
+            0.15,
+            0.3,
+            0.12
+          ],
+          "tris": 180
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Sconce_L6_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.075,
+                  0.06,
+                  0.3
+                ],
+                "min": [
+                  -0.075,
+                  0.04,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6774125bd9608c46",
+              "material_slots": [
+                "M_Proc_Brushed_Steel"
+              ],
+              "size_m_unity_xyz": [
+                0.15,
+                0.3,
+                0.02
+              ],
+              "tris": 52,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 28
+            },
+            "PROC_Sconce_L6_Shade_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  0.04,
+                  0.28
+                ],
+                "min": [
+                  -0.05,
+                  -0.06,
+                  0.02
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "249438604835e094",
+              "material_slots": [
+                "M_Proc_Glass_Frosted"
+              ],
+              "size_m_unity_xyz": [
+                0.1,
+                0.26,
+                0.1
+              ],
+              "tris": 48,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 26
+            }
+          },
+          "size_m_unity_xyz": [
+            0.15,
+            0.3,
+            0.12
+          ],
+          "tris": 100
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Sconce_L6_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.075,
+                  0.06,
+                  0.3
+                ],
+                "min": [
+                  -0.075,
+                  0.04,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "eea412abb4ea4981",
+              "material_slots": [
+                "M_Proc_Brushed_Steel"
+              ],
+              "size_m_unity_xyz": [
+                0.15,
+                0.3,
+                0.02
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_Sconce_L6_Shade_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  0.04,
+                  0.28
+                ],
+                "min": [
+                  -0.05,
+                  -0.06,
+                  0.02
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "1b2bb31dff811e76",
+              "material_slots": [
+                "M_Proc_Glass_Frosted"
+              ],
+              "size_m_unity_xyz": [
+                0.1,
+                0.26,
+                0.1
+              ],
+              "tris": 32,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 18
+            }
+          },
+          "size_m_unity_xyz": [
+            0.15,
+            0.3,
+            0.12
+          ],
+          "tris": 44
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Sconce_L6_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.075,
+                  0.06,
+                  0.3
+                ],
+                "min": [
+                  -0.075,
+                  -0.06,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "0e7f9b58a8ed4497",
+              "material_slots": [
+                "M_Proc_Brushed_Steel"
+              ],
+              "size_m_unity_xyz": [
+                0.15,
+                0.3,
+                0.12
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.15,
+            0.3,
+            0.12
+          ],
+          "tris": 12
+        }
+      },
+      "mount_z_m": 1.8,
+      "own_sheet": true,
+      "params": "Tools/Blender/params/restroom.json",
+      "params_sha256": "30eb24be4ca5149d",
+      "rf": "Accessories (TI L6)",
+      "seed": 27001,
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom/PROC_Sconce_L6.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.3,
+        "scuffs": 0.25,
+        "seed": 27001,
+        "water_spots": 0.3
+      }
+    },
     "PROC_Sink_Double": {
       "export": "Art/Exports/Procedural/PROC_Sink_Double.fbx",
       "export_sha256": "6be0158bfae14948",
@@ -44720,6 +48422,883 @@
         "scuffs": 0.35,
         "seed": 26001,
         "sticker_residue": 0.15
+      }
+    },
+    "PROC_Toilet": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.381,
+            0.0
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            0.48768,
+            0.762,
+            0.73152
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_Toilet.fbx",
+      "export_sha256": "127b1f787e44981e",
+      "fixture_family": "restroom",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-20"
+      ],
+      "generator": "restroom",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Toilet_China_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.36576,
+                  0.762
+                ],
+                "min": [
+                  -0.24384,
+                  -0.36576,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "a48bb45446c85e7e",
+              "material_slots": [
+                "M_Proc_Vitreous_White"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.762,
+                0.73152
+              ],
+              "tris": 524,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 268
+            },
+            "PROC_Toilet_Hinges_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.07,
+                  0.13576,
+                  0.694
+                ],
+                "min": [
+                  -0.19584,
+                  0.10576,
+                  0.4418
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8bcb89e61fd7029e",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.26584,
+                0.2522,
+                0.03
+              ],
+              "tris": 108,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 62
+            },
+            "PROC_Toilet_Seat_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.175,
+                  0.12424,
+                  0.4718
+                ],
+                "min": [
+                  -0.175,
+                  -0.34576,
+                  0.4338
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "6d139932d9d795c4",
+              "material_slots": [
+                "M_Proc_Plastic_White"
+              ],
+              "size_m_unity_xyz": [
+                0.35,
+                0.038,
+                0.47
+              ],
+              "tris": 152,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 80
+            }
+          },
+          "size_m_unity_xyz": [
+            0.48768,
+            0.762,
+            0.73152
+          ],
+          "tris": 784
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Toilet_China_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.36576,
+                  0.762
+                ],
+                "min": [
+                  -0.24384,
+                  -0.36576,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d396f9f04c934ace",
+              "material_slots": [
+                "M_Proc_Vitreous_White"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.762,
+                0.73152
+              ],
+              "tris": 284,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 148
+            },
+            "PROC_Toilet_Hinges_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.07,
+                  0.13576,
+                  0.694
+                ],
+                "min": [
+                  -0.19584,
+                  0.10576,
+                  0.4418
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "8bcb89e61fd7029e",
+              "material_slots": [
+                "M_Proc_Chrome"
+              ],
+              "size_m_unity_xyz": [
+                0.26584,
+                0.2522,
+                0.03
+              ],
+              "tris": 108,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 62
+            },
+            "PROC_Toilet_Seat_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.175,
+                  0.12424,
+                  0.4718
+                ],
+                "min": [
+                  -0.175,
+                  -0.34576,
+                  0.4338
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b2616ae8efdda6d2",
+              "material_slots": [
+                "M_Proc_Plastic_White"
+              ],
+              "size_m_unity_xyz": [
+                0.35,
+                0.038,
+                0.47
+              ],
+              "tris": 88,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            }
+          },
+          "size_m_unity_xyz": [
+            0.48768,
+            0.762,
+            0.73152
+          ],
+          "tris": 480
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Toilet_China_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.36576,
+                  0.762
+                ],
+                "min": [
+                  -0.24384,
+                  -0.36576,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 4
+              },
+              "geometry_sha256": "66d8caaadb8c5ff0",
+              "material_slots": [
+                "M_Proc_Vitreous_White"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.762,
+                0.73152
+              ],
+              "tris": 66,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            },
+            "PROC_Toilet_Seat_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.17,
+                  0.12424,
+                  0.4718
+                ],
+                "min": [
+                  -0.17,
+                  -0.33576,
+                  0.4318
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c443333187f2d0b2",
+              "material_slots": [
+                "M_Proc_Plastic_White"
+              ],
+              "size_m_unity_xyz": [
+                0.34,
+                0.04,
+                0.46
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.48768,
+            0.762,
+            0.73152
+          ],
+          "tris": 94
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_Toilet_China_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.24384,
+                  0.36576,
+                  0.762
+                ],
+                "min": [
+                  -0.24384,
+                  -0.36576,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "f70836485f8f9c4e",
+              "material_slots": [
+                "M_Proc_Vitreous_White"
+              ],
+              "size_m_unity_xyz": [
+                0.48768,
+                0.762,
+                0.73152
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.48768,
+            0.762,
+            0.73152
+          ],
+          "tris": 24
+        }
+      },
+      "moving_parts": [
+        {
+          "axis": "x",
+          "part": "Seat",
+          "type": "hinge"
+        }
+      ],
+      "own_sheet": true,
+      "params": "Tools/Blender/params/restroom.json",
+      "params_sha256": "30eb24be4ca5149d",
+      "rf": "Toilet",
+      "seed": 27001,
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom/PROC_Toilet.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.3,
+        "scuffs": 0.25,
+        "seed": 27001,
+        "water_spots": 0.3
+      }
+    },
+    "PROC_ToolChest_Black": {
+      "collision_boxes": [
+        {
+          "center_unity_xyz": [
+            0.0,
+            0.4191,
+            0.0
+          ],
+          "name": "Body",
+          "size_unity_xyz": [
+            0.67056,
+            0.8382,
+            0.4572
+          ]
+        }
+      ],
+      "export": "Art/Exports/Procedural/PROC_ToolChest_Black.fbx",
+      "export_sha256": "7d1d71bceb9bfc2a",
+      "fixture_family": "restroom",
+      "gaps": [
+        "GAP-109",
+        "GAP-PROC-20"
+      ],
+      "generator": "restroom",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_ToolChest_Black_Body_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33528,
+                  0.2286,
+                  0.8382
+                ],
+                "min": [
+                  -0.33528,
+                  -0.1776,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "272abde76f71f286",
+              "material_slots": [
+                "M_Proc_Flat_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.67056,
+                0.8382,
+                0.4062
+              ],
+              "tris": 124,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 64
+            },
+            "PROC_ToolChest_Black_Door_0_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.002,
+                  -0.1776,
+                  0.8352
+                ],
+                "min": [
+                  -0.33328,
+                  -0.2286,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "b6ec0f04477c6093",
+              "material_slots": [
+                "M_Proc_Flat_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.33128,
+                0.8322,
+                0.051
+              ],
+              "tris": 312,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 164
+            },
+            "PROC_ToolChest_Black_Door_1_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33328,
+                  -0.1776,
+                  0.8352
+                ],
+                "min": [
+                  0.002,
+                  -0.2286,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "3ce3c2a08009df05",
+              "material_slots": [
+                "M_Proc_Flat_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.33128,
+                0.8322,
+                0.051
+              ],
+              "tris": 312,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 164
+            }
+          },
+          "size_m_unity_xyz": [
+            0.67056,
+            0.8382,
+            0.4572
+          ],
+          "tris": 748
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_ToolChest_Black_Body_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33528,
+                  0.2286,
+                  0.8382
+                ],
+                "min": [
+                  -0.33528,
+                  -0.1776,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "04d38d3ac2ea9f16",
+              "material_slots": [
+                "M_Proc_Flat_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.67056,
+                0.8382,
+                0.4062
+              ],
+              "tris": 60,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 32
+            },
+            "PROC_ToolChest_Black_Door_0_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.002,
+                  -0.1776,
+                  0.8352
+                ],
+                "min": [
+                  -0.33328,
+                  -0.2286,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d3ab51f6b49b70a8",
+              "material_slots": [
+                "M_Proc_Flat_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.33128,
+                0.8322,
+                0.051
+              ],
+              "tris": 248,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 132
+            },
+            "PROC_ToolChest_Black_Door_1_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33328,
+                  -0.1776,
+                  0.8352
+                ],
+                "min": [
+                  0.002,
+                  -0.2286,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "806206eb94d8d627",
+              "material_slots": [
+                "M_Proc_Flat_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.33128,
+                0.8322,
+                0.051
+              ],
+              "tris": 248,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 132
+            }
+          },
+          "size_m_unity_xyz": [
+            0.67056,
+            0.8382,
+            0.4572
+          ],
+          "tris": 556
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_ToolChest_Black_Body_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33528,
+                  0.2286,
+                  0.8382
+                ],
+                "min": [
+                  -0.33528,
+                  -0.1776,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "3f8e9349fb5fbb07",
+              "material_slots": [
+                "M_Proc_Flat_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.67056,
+                0.8382,
+                0.4062
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_ToolChest_Black_Door_0_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  -0.002,
+                  -0.1776,
+                  0.8352
+                ],
+                "min": [
+                  -0.33328,
+                  -0.2286,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "229e52952a6878a0",
+              "material_slots": [
+                "M_Proc_Flat_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.33128,
+                0.8322,
+                0.051
+              ],
+              "tris": 136,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 76
+            },
+            "PROC_ToolChest_Black_Door_1_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33328,
+                  -0.1776,
+                  0.8352
+                ],
+                "min": [
+                  0.002,
+                  -0.2286,
+                  0.003
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "bb8d3e244b4b9f27",
+              "material_slots": [
+                "M_Proc_Flat_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.33128,
+                0.8322,
+                0.051
+              ],
+              "tris": 136,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 76
+            }
+          },
+          "size_m_unity_xyz": [
+            0.67056,
+            0.8382,
+            0.4572
+          ],
+          "tris": 284
+        },
+        "LOD3": {
+          "objects": {
+            "PROC_ToolChest_Black_Body_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.33528,
+                  0.2286,
+                  0.8382
+                ],
+                "min": [
+                  -0.33528,
+                  -0.1976,
+                  0.0
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "d0624d1578d14517",
+              "material_slots": [
+                "M_Proc_Flat_Black"
+              ],
+              "size_m_unity_xyz": [
+                0.67056,
+                0.8382,
+                0.4262
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            },
+            "PROC_ToolChest_Black_Pulls_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.05,
+                  -0.1976,
+                  0.57792
+                ],
+                "min": [
+                  -0.05,
+                  -0.2286,
+                  0.42792
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "52bc3fec537fc7be",
+              "material_slots": [
+                "M_Proc_Brushed_Steel"
+              ],
+              "size_m_unity_xyz": [
+                0.1,
+                0.15,
+                0.031
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.67056,
+            0.8382,
+            0.4572
+          ],
+          "tris": 24
+        }
+      },
+      "moving_parts": [
+        {
+          "axis_unity_xyz": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "open_deg": 110,
+          "part": "Door_0",
+          "pivot_unity_xyz": [
+            0.33528,
+            0.4191,
+            0.1876
+          ],
+          "side": "left",
+          "type": "hinge"
+        },
+        {
+          "axis_unity_xyz": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "open_deg": 110,
+          "part": "Door_1",
+          "pivot_unity_xyz": [
+            -0.33528,
+            0.4191,
+            0.1876
+          ],
+          "side": "right",
+          "type": "hinge"
+        }
+      ],
+      "own_sheet": true,
+      "params": "Tools/Blender/params/restroom.json",
+      "params_sha256": "30eb24be4ca5149d",
+      "rf": "ToolChest_Black",
+      "seed": 27001,
+      "shelf_heights_m": [
+        0.2794,
+        0.5588
+      ],
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Restroom/PROC_ToolChest_Black.fbx",
+      "wear": {
+        "edge_wear": 0.2,
+        "fingerprints": 0.3,
+        "scuffs": 0.25,
+        "seed": 27001,
+        "water_spots": 0.3
       }
     },
     "PROC_Uppers_North": {

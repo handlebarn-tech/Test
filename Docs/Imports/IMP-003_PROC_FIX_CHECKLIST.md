@@ -173,16 +173,25 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
   - mini hoop, coat hooks (RF BreakRoom rows).
 
 ## 10. Restroom: `generators/restroom.py`, `params/restroom.json`
-- [ ] **T1 sink:**
+**PROC-005 done:** new generator with 13 assets.
+- **Lavatory:** wall-hung, with an open lofted basin: no top cap, so no z-fight. Overflow, drain, faucet, brackets, exposed P-trap and supplies.
+- **Mirror:** TI 1'-8" × 3'-6" with a stainless frame, `mount_z_m` 3'-4".
+- **Toilet:** bowl cavity, seat + lid, hinges, tank, lever.
+- **Cabinets:** flat-black tool chest with 2 swing doors and proud pulls; large storage cabinet at the RF rev6 width of 3.2 ft, not 4.0.
+- **Grab bars:** 42 / 36 / 18V in, with flanges.
+- **Accessories:** silver manual towel dispenser, TP, soap, napkin disposal, L6 sconce.
+- **Mounting:** wall items carry `mount_z_m`. Accessory sizes, mount heights and the 1.5 in bar clearance (ADA convention) are GAP-PROC-20.
+- **Tris:** LOD0 0.1–0.8k (warning).
+- [x] **T1 sink:**
   - **wall-hung**, no pedestal (27 in knee clearance, TI §6.4/6.6);
   - RF `Lavatory_WallHung` 1.7 × 1.5 ft, rim 34 in;
   - **fix the bowl**: the lofted bowl is a capped solid whose top is coplanar with `BasinTop`, so it shows no basin and z-fights. Make an open recessed loft with no top cap.
-- [ ] **T2** mirror = TI **1'-8" × 3'-6"**, bottom 3'-4" AFF (High).
-- [ ] **T3** toilet = RF 1.6 × 2.4 × 2.5 ft.
-- [ ] **T4** paper-towel dispenser: **silver/stainless**, old manual (DEC-062); RF `Accessories` 1.1 × 0.4 × 1.5.
-- [ ] **T5** tool chest = RF `ToolChest_Black` 2.2 × 1.5 × **2.75 ft**, kept below the 33 in grab bar; handles fixed as O1.
-- [ ] **T6** large storage cabinet: its own params variant of the office cabinet kind, RF `Cabinet_Storage_Large` 4.0 × 1.5 × 7.0 ft (GAP-109).
-- [ ] **T7** add grab bars: 42 in, 36 in and 18 in vertical at 33–36 in AFF (TI, High). Add TP + soap dispensers and the sconce (TI types).
+- [x] **T2** mirror = TI **1'-8" × 3'-6"**, bottom 3'-4" AFF (High).
+- [x] **T3** toilet = RF 1.6 × 2.4 × 2.5 ft.
+- [x] **T4** paper-towel dispenser: **silver/stainless**, old manual (DEC-062); RF `Accessories` 1.1 × 0.4 × 1.5.
+- [x] **T5** tool chest = RF `ToolChest_Black` 2.2 × 1.5 × **2.75 ft**, kept below the 33 in grab bar; handles fixed as O1.
+- [x] **T6** large storage cabinet: its own params variant of the office cabinet kind, RF `Cabinet_Storage_Large` 4.0 × 1.5 × 7.0 ft (GAP-109).
+- [x] **T7** add grab bars: 42 in, 36 in and 18 in vertical at 33–36 in AFF (TI, High). Add TP + soap dispensers and the sconce (TI types).
 
 ## 11. Janitor closet: `generators/janitor_props.py`, `params/janitor_props.json`, `params/janitor_supply_rack.json`
 - [ ] **J1** mop sink = RF `MopSink_JC` **1.6 × 1.5 × 1.0 ft**.

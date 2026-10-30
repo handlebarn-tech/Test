@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Cabinet_Storage_Large",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "bd0e534c8a8a4ac1",
+  "generator": "restroom",
+  "lod_tris": {
+    "LOD0": 748,
+    "LOD1": 556,
+    "LOD2": 284,
+    "LOD3": 24
+  },
+  "params_sha256": "30eb24be4ca5149d",
+  "passed": true,
+  "warnings": [
+    "LOD0 748 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}

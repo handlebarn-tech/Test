@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Mirror",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "0e36ba85d16be9b0",
+  "generator": "restroom",
+  "lod_tris": {
+    "LOD0": 508,
+    "LOD1": 124,
+    "LOD2": 60,
+    "LOD3": 12
+  },
+  "params_sha256": "30eb24be4ca5149d",
+  "passed": true,
+  "warnings": [
+    "LOD0 508 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

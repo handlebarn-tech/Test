@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Sconce_L6",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "6b1bedcc2ca79a89",
+  "generator": "restroom",
+  "lod_tris": {
+    "LOD0": 180,
+    "LOD1": 100,
+    "LOD2": 44,
+    "LOD3": 12
+  },
+  "params_sha256": "30eb24be4ca5149d",
+  "passed": true,
+  "warnings": [
+    "LOD0 180 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Dispenser_Soap",
+  "collision_boxes": 0,
+  "errors": [],
+  "export_sha256": "1a43afd0429b9b90",
+  "generator": "restroom",
+  "lod_tris": {
+    "LOD0": 148,
+    "LOD1": 84,
+    "LOD2": 36,
+    "LOD3": 12
+  },
+  "params_sha256": "30eb24be4ca5149d",
+  "passed": true,
+  "warnings": [
+    "LOD0 148 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}
