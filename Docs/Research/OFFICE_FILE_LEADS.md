@@ -26,4 +26,4 @@ Many of these files are confidential company documents. RSP's copyright notice l
 | 3 | Compliance drive `…/Real Estate/Building Plans & Permits/Blueprints/05-23_Site Plan Submittal.pdf` | PDF 12.6 MB | 2023-05 | may contain exterior elevations; not read | no |
 | 4 | Mail "September Transaction Data / Wait Times — TFS PHX" (2026-10-01) | PDF | 2026-09 | traffic curves (O13). **Drop the per-budtender table** | no |
 
-**Never import:** the Phoenix `Security` folder, the security-plan sheet, the Policies & Procedures manual as a whole (it contains license numbers and staff contacts), and a credential spreadsheet in the Arizona marketing folder that was seen by name and not opened.
+**Never import:** the Phoenix `Security` folder, the security-plan sheet, the Policies & Procedures manual as a whole (it contains license numbers and staff contacts), and any credential spreadsheet (one was seen by name and not opened).

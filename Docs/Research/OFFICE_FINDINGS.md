@@ -47,7 +47,7 @@ Conf uses the REFERENCES_INDEX scale (High/Med/Low).
 
 | # | Fact | Source | As of | Status | Conf | Affects |
 |---|---|---|---|---|---|---|
-| F1 | The Dutchie closing report lists **12 registers**, each with a fixed cash bank. This matches the plan's "up to 12". | "PHX EOS + EOD" closing report | 2026-06 | Current | High (count of POS stations) | **GAP-107** |
+| F1 | The Dutchie closing report lists **12 registers**. This matches the plan's "up to 12". | "PHX EOS + EOD" closing report | 2026-06 | Current | High (count of POS stations) | **GAP-107** |
 | F2 | Each budtender station has a register receipt printer, a debit reader and a scale. Deli bags and exit bags are stocked at the station. | Closing checklist ("Cleaning check list" thread) | 2026-03 | Current | High | ART POS, GAME weigh |
 | F3 | Labels are Zebra 2.25"×2" direct-thermal stock. Receipt rolls are 2¼" and 3⅛". The label printer model is not stated (Zebra assumed). | Supply-order mails; label quote | 2026-09/10 | Current | Med | ART props |
 | F4 | A locked, keyed **brand display case** on the floor was the Green Dot Labs case and is being handed to Shango. A photo is attached to the mail. | "Shango Display at Phoenix" | 2026-10-28 | Current | High | ART floor case |
