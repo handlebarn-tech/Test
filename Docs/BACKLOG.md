@@ -65,7 +65,7 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | GAME-022 | P2 | Difficulty profiles | PS1b | Ready (waits) |
 | GAME-023 | P2 | Spec §133 acceptance shift | GAME-011/012 | Blocked (DEC-059) |
 | GAME-024 | P2 | Career + save v1 | PS1b | Ready (waits) |
-| DES-004 | P2 | PS2 design (was "DES-003" in ROADMAP); 004b+c door lock + manager refill | PS1 | Review (W5L PASS, `review/wave-5l` merge-ready) |
+| DES-004 | P2 | PS2 design (was "DES-003" in ROADMAP); 004b+c door lock + manager refill | PS1 | Done (W5L, merged d79e103) |
 | IMP-001 | P1 | Audit DISPO_GAME_DESIGN_V2 import | — | Done (REVIEW-IMP1) |
 | UX-002 | P1 | PS1 UX spec (`UX_PS1.md`) | DES-002 | Done (W4L) |
 | ART-004 | P1 | HUB/HUB 2 mirror fix (with ART-003) | ART-003 | Done (W4F) |

@@ -20,7 +20,7 @@ Gate A on every gameplay PR (DEC-067); V2 Critical/High exploit tests before a s
 ## Status for Hub
 _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 - BACKLOG reconciled: GAME-007/008/010, QA-002b Done; GAME-011/012 Ready (wait for PS1b, DEC-096); new rows DES-005/006, GAME-025/026.
-- **Merge-ready:** `review/wave-5l` (DES-004b+c, REVIEW-W5L PASS with minors).
+- DES-004b+c merged (W5L, d79e103).
 - GAME-009 resumed in its own session (Gameplay's Unity slot); then REVIEW-PS1 → playtest build 2.
 - DES-005 (playtest intake, controls + customer-flow spec, GAME-025/026 packets) and DES-006 (PS1b vs TFS depth audit) run as doc-only subagents.
 - Next code after GAME-009: GAME-025 controls, then GAME-026 flow and the DES-006 "first playable depth" cut.
@@ -30,7 +30,6 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 | Task | Worker | Branch | State |
 |---|---|---|---|
 | GAME-009 medical (+ W5N m2 queue strip) | session `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | `claude/task-game-009` | resumed: EditMode 217/217, capture re-run, handoff |
-| DES-004b+c | — | `review/wave-5l` | REVIEW-W5L PASS with minors; merge-ready. DES session `local_82d327a2…` retired (no open work) |
 | DES-005 playtest intake | lead subagent | worktree | running |
 | DES-006 recommendation depth audit | lead subagent | worktree | running |
 
