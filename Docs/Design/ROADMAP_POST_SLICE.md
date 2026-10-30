@@ -35,7 +35,7 @@
 
 **Build/QA/Perf.** BUILD-008 closes M-B, BUILD-008b closes PS1b (one BUILD row per milestone build). PERF-002 with full-day NPC counts (PS2); PERF-003 + QA-003 + BUILD-009 in M-G.
 
-**Critical path today:** REVIEW of the REF-013 fix → ART-008 → BUILD-008 (store) and GAME-026 → GAME-017a → 017 → 018 → 019 → 020 (fun). Characters join at GAME-CHR-002 once ASSET-005/006 pass. Everything in PS3 waits on Nolan's catalog export.
+**Critical path today (DEC-120):** REF-016 evidence matrix (+ PROC-013 doors, ART-008) → ART-013 layout overhaul → BUILD-008 candidate → QA-004 PT1+PT2 gate → playtest 3 (store), and GAME-026 → GAME-017a → 017 → 018 → 019 → 020 (fun). Characters join at GAME-CHR-002 once ASSET-005/006 pass. Everything in PS3 waits on Nolan's catalog export.
 
 ## 4. Cross-cutting rules
 - **Tool parity is the top rule** (DEC-001/002/006): nothing changes engine scoring; new logic is [GDD] and lives in Simulation. Gate A (DP §124) from QA-002 on. The parity oracle is the shipped engine (v7.11.4, DEC-060); DATA-005 re-baselines on v7.11.5.
