@@ -24,13 +24,13 @@ _Lead keeps this ≤15 lines._ 2026-10-30 (Assets lead `local_172b2109-6384-4914
 | Task | Worker | Branch | State |
 |---|---|---|---|
 | PROC-005 toolkit integration + checklist fixes (DEC-092) | Agent subagent (lead) | new worktree; base `claude/clever-lamport-837e7f` | resumed 2026-10-30: wire shelving fix → remaining families |
-| IMP-003 rolling toolkit audit | Agent subagent (lead) | new worktree; base `claude/brave-brattain-30c797` | rebuilt round 3 from scratch, then rounds 4–6; old §R3 (REVIEW-W5T partial PASS) superseded |
+| IMP-003 rolling toolkit audit | Agent subagent (lead) | new worktree; base `claude/brave-brattain-30c797` | rebuilt round 3 from scratch, then rounds 4–6; old §R3 and `review/wave-5t` superseded (Hub: not merged); capped at round 3 this pass (weekly limit 67% used) |
 | PROC-006 register kit spec (phase 1) | Agent subagent (lead) | new worktree off `main` | evidence spec `Docs/Assets/Specs/REGISTER_KIT.md` |
 | ASSET-004 MPFB2 customers | Agent subagent (lead) | new worktree; base `claude/task-asset-004` | resumed 2026-10-30; Docs reviewer `local_99d7e5b7…` |
 
 ## Queue (lead re-orders within DEC-096)
 0. PROC-007 (DEC-097 UV layout + re-export) right after PROC-005 merges; agree the cut-over commit with the World lead.
-1. Review/merge path for the three in-flight tasks (Docs reviewer `local_99d7e5b7-ef60-4076-9821-58f16ce3bec0` for IMP-003/PROC-006/ASSET-004; Unity A for PROC-005 with a borrowed World Unity slot).
+1. Review/merge path for the three in-flight tasks (Docs reviewer `local_99d7e5b7-ef60-4076-9821-58f16ce3bec0` for IMP-003/PROC-006/ASSET-004; Unity A2 `local_4e865bb8-479c-41c5-8628-7f3e7cb2a4c3` (or B2 `local_041172fa…`) for PROC-005/007 with a borrowed World Unity slot).
 2. Each toolkit round after audit: Docs review → Hub → Nolan approval → PROC integration (DEC-095). After rounds 3–6, a research pass of our own where ChatGPT lacked evidence (IMP-003 lists the gaps).
 3. PROC-006 phase 2: generators for the register kit once the spec and World's ROOM_FIXTURES rev7 (REF-011: registers + operator zones, deli walls, HUB) land — size from rev7 rows, not the current graybox; World messages when rev7 is on main; then stocking arranger with believable uneven fill; buds/nugs look (low).
 4. After ASSET-004: GAME-CHR-002 import with Gameplay (Unity), return the extra slot.
