@@ -134,8 +134,9 @@ function build(src, deliMd5, strains) {
     const pipe = key.indexOf(' | '), name = pipe >= 0 ? key.slice(pipe + 3).trim() : key;
     const brand = r['Brand Name'] || (pipe >= 0 ? key.slice(0, pipe).trim() : '');
     const N = name.toUpperCase();
-    const sizeG = num(/(\d+(?:\.\d+)?)\s?G\b/, N), packCount = num(/(\d+)\s?PK\b/, N), totalMg = num(/(\d+(?:\.\d+)?)\s?MG\b/, N);
-    let thcMg = num(/(\d+(?:\.\d+)?)\s?MG\s+THC/, N), cbdMg = num(/(\d+(?:\.\d+)?)\s?MG\s+CBD/, N);
+    // \d*\.?\d+ also reads leading-dot sizes (".5G" = 0.5, not 5; REVIEW-W4O).
+    const sizeG = num(/(\d*\.?\d+)\s?G\b/, N), packCount = num(/(\d+)\s?PK\b/, N), totalMg = num(/(\d*\.?\d+)\s?MG\b/, N);
+    let thcMg = num(/(\d*\.?\d+)\s?MG\s+THC/, N), cbdMg = num(/(\d*\.?\d+)\s?MG\s+CBD/, N);
     if (thcMg == null && cbdMg == null && totalMg != null) { if (/\bCBD\b/.test(N) && !/\bTHC\b/.test(N)) cbdMg = totalMg; else thcMg = totalMg; }
     const infused = /INFUSED/i.test(sub) || /\bINFUSED\b/.test(N) || sub === 'Infused Flower';
     const strainKey = STRAIN_CATS.includes(category) ? normName(r['Strain Name'].replace(/\s+-\s+.*$/, '')) : '';
@@ -194,6 +195,7 @@ function selftest() {
   assert.deepStrictEqual(limitOf('EDIBLE', false, null), { pool: 'concentrate', grams: 0.1, gap: 'GAP-COMP-02' });
   assert.strictEqual(limitOf('VAPE', false, null).gap, 'GAP-COMP-02');
   assert.deepStrictEqual(limitOf('EXTRACT', false, 1), { pool: 'concentrate', grams: 1, gap: null });
+  assert.strictEqual(num(/(\d*\.?\d+)\s?G\b/, 'DAB PEN .75G'), 0.75);
   console.log('selftest OK');
 }
 

@@ -1988,7 +1988,7 @@
    "brand": "BUDBROS",
    "category": "VAPE",
    "subcategory": "READY TO USE",
-   "sizeG": 75,
+   "sizeG": 0.75,
    "packCount": null,
    "thcMg": null,
    "cbdMg": null,
@@ -1998,7 +1998,7 @@
    "strainKey": null,
    "limit": {
     "pool": "concentrate",
-    "grams": 75,
+    "grams": 0.75,
     "gap": null
    },
    "storage": "FOH"
@@ -2009,7 +2009,7 @@
    "brand": "BUDBROS",
    "category": "VAPE",
    "subcategory": "READY TO USE",
-   "sizeG": 75,
+   "sizeG": 0.75,
    "packCount": null,
    "thcMg": null,
    "cbdMg": null,
@@ -2019,7 +2019,7 @@
    "strainKey": null,
    "limit": {
     "pool": "concentrate",
-    "grams": 75,
+    "grams": 0.75,
     "gap": null
    },
    "storage": "FOH"
@@ -2030,7 +2030,7 @@
    "brand": "BUDBROS",
    "category": "VAPE",
    "subcategory": "READY TO USE",
-   "sizeG": 75,
+   "sizeG": 0.75,
    "packCount": null,
    "thcMg": null,
    "cbdMg": null,
@@ -2040,7 +2040,7 @@
    "strainKey": null,
    "limit": {
     "pool": "concentrate",
-    "grams": 75,
+    "grams": 0.75,
     "gap": null
    },
    "storage": "FOH"
@@ -4949,7 +4949,7 @@
    "brand": "GREEN DOT LABS",
    "category": "VAPE",
    "subcategory": "READY TO USE",
-   "sizeG": 5,
+   "sizeG": 0.5,
    "packCount": null,
    "thcMg": null,
    "cbdMg": null,
@@ -4959,7 +4959,7 @@
    "strainKey": null,
    "limit": {
     "pool": "concentrate",
-    "grams": 5,
+    "grams": 0.5,
     "gap": null
    },
    "storage": "FOH"
@@ -5306,7 +5306,7 @@
    "brand": "GREEN DOT LABS",
    "category": "VAPE",
    "subcategory": "READY TO USE",
-   "sizeG": 5,
+   "sizeG": 0.5,
    "packCount": null,
    "thcMg": null,
    "cbdMg": null,
@@ -5316,7 +5316,7 @@
    "strainKey": null,
    "limit": {
     "pool": "concentrate",
-    "grams": 5,
+    "grams": 0.5,
     "gap": null
    },
    "storage": "FOH"
@@ -5411,7 +5411,7 @@
    "brand": "GREEN DOT LABS",
    "category": "VAPE",
    "subcategory": "READY TO USE",
-   "sizeG": 5,
+   "sizeG": 0.5,
    "packCount": null,
    "thcMg": null,
    "cbdMg": null,
@@ -5421,7 +5421,7 @@
    "strainKey": null,
    "limit": {
     "pool": "concentrate",
-    "grams": 5,
+    "grams": 0.5,
     "gap": null
    },
    "storage": "FOH"
@@ -5516,7 +5516,7 @@
    "brand": "GREEN DOT LABS",
    "category": "VAPE",
    "subcategory": "READY TO USE",
-   "sizeG": 5,
+   "sizeG": 0.5,
    "packCount": null,
    "thcMg": null,
    "cbdMg": null,
@@ -5526,7 +5526,7 @@
    "strainKey": null,
    "limit": {
     "pool": "concentrate",
-    "grams": 5,
+    "grams": 0.5,
     "gap": null
    },
    "storage": "FOH"
@@ -7217,7 +7217,7 @@
    "brand": "HOT ROD",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll",
-   "sizeG": 5,
+   "sizeG": 0.5,
    "packCount": null,
    "thcMg": null,
    "cbdMg": null,
@@ -7227,7 +7227,7 @@
    "strainKey": null,
    "limit": {
     "pool": "flower",
-    "grams": 5,
+    "grams": 0.5,
     "gap": "GAP-COMP-02"
    },
    "storage": "FOH"
@@ -7238,7 +7238,7 @@
    "brand": "HOT ROD",
    "category": "PREROLL",
    "subcategory": "INFUSED Preroll",
-   "sizeG": 5,
+   "sizeG": 0.5,
    "packCount": null,
    "thcMg": null,
    "cbdMg": null,
@@ -7248,7 +7248,7 @@
    "strainKey": null,
    "limit": {
     "pool": "flower",
-    "grams": 5,
+    "grams": 0.5,
     "gap": "GAP-COMP-02"
    },
    "storage": "FOH"
