@@ -1,5 +1,7 @@
 # BUILD STATUS
 
+> **Snapshot (AUDIT-001 E10):** gate results as of BUILD-002 on 2026-10-29. For current health re-run `Tools/Studio/studio.ps1 doctor` and the gates; newer evidence is in reviews and `Docs/PERF_BASELINE.md`.
+
 **Updated:** 2026-10-29 by BUILD-002 · **Unity:** 6000.6.7f1 · **HDRP:** 17.6.0 · **Target:** StandaloneWindows64 (dev)
 
 | Gate | Command | Result | Duration | Evidence |

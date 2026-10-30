@@ -1,6 +1,8 @@
 # LICENSE LEDGER — ASSET-001
 
-**Verified:** 2026-10-29 by ART-SOURCING (ASSET-001). **No assets downloaded.** Scope: M5 hero retail + M6 stock/BOH, plus audio, fonts, HDRIs, animation, libraries.
+> **Records (AUDIT-001 E4, DEC-064):** this ledger is the **license** record. What was actually downloaded (URL, license, sha256, size, date) is `Docs/Assets/ASSET_CACHE_MANIFEST.json` (ASSET-002 onwards, DEC-023). The header and rows below are the ASSET-001 snapshot of 2026-10-29.
+
+**Verified:** 2026-10-29 by ART-SOURCING (ASSET-001). **No assets downloaded** (as of ASSET-001; see the manifest). Scope: M5 hero retail + M6 stock/BOH, plus audio, fonts, HDRIs, animation, libraries.
 Companion: `ACQUISITION_LIST.md` (priority order), `Docs/Handoffs/ASSET-001.md`.
 
 ## How rows were verified

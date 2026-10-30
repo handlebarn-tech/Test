@@ -1,5 +1,7 @@
 # Budtender engine reconstruction contract (MIG-001)
 
+> **Pinned sources (AUDIT-001 E5, DEC-064):** the source hashes and counts below are as of the import pinned in `Docs/Reconstruction/DATA_SCHEMA.md` ("Pinned sources" block above §1). That block is the one place to update them; on a re-import (DEC-014/038) update it first, then regenerate the goldens.
+
 **Source of truth:** `C:/Users/handl/Downloads/tfs-budtender/deploy/2026-10-30-v7114/site/index.html`, v7.11.4, md5 `228684e9f02d703cf3a36692baf10d18` (DEC-001/002). All `L#####` references are 1-based lines in that file. Inventory: `inventory/tfs-inventory-master.json` md5 `09bfa4f00206b25f77fb2a49db2eea9c` (export `2026-10-29T19:13:36.534Z`).
 
 **Status tags:** **OBS** = observed in source; **OBS+RUN** = observed and executed headlessly (see `GOLDEN_CASES.md`); **DOC** = only in docs (HUB/TRACKER/references), not in code; **UNK** = unknown; **DEAD** = defined in source, never called.

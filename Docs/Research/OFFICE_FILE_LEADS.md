@@ -1,6 +1,6 @@
 # OFFICE FILE LEADS (RES-001)
 
-These are files in Nolan's M365 account worth importing. Nothing has been downloaded; the Hub routes imports separately. Prefixes are the same as in OFFICE_FINDINGS:
+These are files in Nolan's M365 account worth importing. Nothing has been downloaded; the Hub routes imports separately. *(Amended: the approved TI drawing set was imported later, REF-004 / DEC-037; see `REFERENCES_INDEX.md` §0. AUDIT-001 E6.)* Prefixes are the same as in OFFICE_FINDINGS:
 - "Compliance drive" = a compliance staff OneDrive, under `Compliance (Master Folder)/03 Nature's Healing Center - Phoenix (dual)/`.
 - "Mkt site" = SharePoint `MarketingDepartment/Shared Documents/`.
 

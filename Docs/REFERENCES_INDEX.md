@@ -6,6 +6,8 @@ Staff are described by attire/role only.
 
 ## 0. File inventory
 
+> **Moved images (AUDIT-001 E10, DEC-064):** DEC-041..043 cite the `References/Incoming/` names. The files now are: `CCTV BOH desk + racks 2026-10-29.webp` → `References/CCTV BOH Desk Racks 2026-10-29.webp` (and the FOH still → `CCTV FOH Desk Racks 2026-10-29.webp`); `Photo deli jars + scale (office) 2026-10-29.webp` → `References/Photo Deli Jars Scale Office 2026-10-29.webp`; `Photo deli jar wall (retail) 2026-10-29.jpg` → `References/Photo Deli Jar Wall Retail 2026-10-29.jpg`.
+
 | File | Type | What it is | Index section |
 |---|---|---|---|
 | `References/Floor Plan.pdf` | PDF, 6 pp (pp5–6 blank), Print-to-PDF, no text layer, vector shapes | "The Flower Shop Phoenix · Floor Plan", **Working Plan V5, not for construction**. Built from the RSP Architects A011 (floor plan) / A012 (lighting plan) sheets, 2026 AZDHS update (read as text only; "A013" was a mislabel, fixed REF-004), cameras and a walkthrough | §1 |
