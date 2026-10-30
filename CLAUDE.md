@@ -28,4 +28,5 @@ Do not read the entire documentation tree by default.
 - Run task-specific validation.
 - Write a concise handoff.
 - If blocked, externalize the blocker instead of guessing.
+- **Chain of command (DEC-033): never ask the user (Nolan) anything.** No AskUserQuestion, no questions in your messages, no "want me to…?" buttons. Put every question, decision request or blocker in your handoff and end-of-turn summary for the Studio Hub, use a labelled placeholder meanwhile, and keep working. The Hub decides or escalates to Nolan. If the user writes to you directly, answer and record what they said in your handoff for the Hub.
 - When the deliverable is complete, stop; a new task should normally use a fresh context.
