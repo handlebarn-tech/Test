@@ -7,7 +7,7 @@ Merged main (REF-016, PROC-009, PROC-013 and the door kit). After the merge, `Do
 - **Monitor:** on the customer half of the top, facing the operator (`components.pos_monitor` dy −0.42 m, RF POS_StationKit; offset GAP-RK-LAYOUT).
 - **GAP ids:** my register GAP-PROC-22/23/24 collided with PROC-009's vehicle GAP-PROC-23/24, so they are renumbered **GAP-PROC-40/41/42** in KNOWN_GAPS, params, checklist and notes.
 - **Determinism:** only South and SouthWestReturn changed, and two reruns gave byte-identical files.
-- **Unity EditMode:** queued via `studio.ps1 unity-test-edit` (both editor slots were busy). `.meta` files and the material builder are still owed.
+- **Unity EditMode:** `studio.ps1 unity-test-edit` on c3fed40 (the round-4 merge; round 4 itself changes only Blender params/FBX) passes: 790 tests, 788 passed, 0 failed, 2 skipped (`Artifacts/Results/20261030-131300-756-25460-unity-test-edit.json`). The editor imported every Fixtures FBX and texture with no errors in the log, and their `.meta` files (WireShelving included) are now committed. Still owed: the texture import settings (Normal type for `_Normal`, sRGB off for `_Mask`), the HDRP material builder, and the `to_unity`/BoxCollider test. The metas for other tasks' assets (vehicles, register kit, doors) are left untracked.
 
 ### FOR THE HUB: source conflict (resolve or forward to REF)
 - RF `Counter_Register_SouthWestReturn` says `faces: E`. Its own matrix ("its west face is R7's customer face") and RF `POS_07` (rot 90, faces W, customer west of the block, wall2_R2C1) disagree.
