@@ -85,9 +85,10 @@ namespace Dispo.Presentation.Perf
                     if (card != null) g.Choose(card);
                     break;
                 case SliceScreen.Pos:   // GAME-006 cart; GAME-007: trim an over-limit cart, add only what fits
-                    if (g.Sim.Meter == Dispo.Simulation.Slice.MeterState.Red) g.PosRemove(g.Sim.Cart.Count - 1);
-                    else if (g.Sim.CanAddItem && g.Sim.CartGrams + g.Sim.CurrentAsk.Grams <= g.Sim.Cfg.adultUseLimitGrams) g.AddItem();
-                    else g.PosConfirm();
+                    if (g.Sim.Meter == Dispo.Simulation.Slice.MeterState.Red)   // drop the last line; a lone medical line over the allotment rings adult-use
+                    { if (g.Sim.Cart.Count > 1) g.PosRemove(g.Sim.Cart.Count - 1); else if (g.Sim.MedicalSale) g.ToggleSaleType(); else g.PosCancel(); }
+                    else if (g.Sim.CanAddItem && g.Sim.CartGrams + g.Sim.CurrentAsk.Grams <= g.Sim.CartCap) g.AddItem();
+                    else { if (g.Sim.MedicalSale && g.Sim.Serving.OutOfStateCard) g.ToggleSaleType(); g.PosConfirm(); }   // GAME-009
                     break;
             }
         }

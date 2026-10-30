@@ -43,7 +43,7 @@ and the house tier meet almost every budget, so the budget is inert in the slice
 | careless | **63.1** | < 60 (accepted for PS1, DEC-082) | 0.2 | 5.9 | 1.43 |
 | slow | **68.8** | 60–80 ✅ (1.5×, DEC-086) | 1.8 | 0.1 | 1.48 |
 
-Seed 1 (default suite, `PerfectBot_Seed1_Below100_BeatsCarelessAndSlow`): perfect 83.7, careless 62.4, slow 43.1. Seed 1 has 1 over-limit customer: perfect trims it to a legal sale, careless loses it (no sale).
+Seed 1 (default suite, `PerfectBot_Seed1_Below100_BeatsCarelessAndSlow`): perfect 83.7, careless 61.6, slow 59.9. Seed 1 has 1 over-limit customer: perfect trims it to a legal sale, careless loses it (no sale).
 Shift length ≈ 32–36 sim min (= real min at timeScale 1). Seed-1 card-1 bot (`SimBot_Seed1…`): 16/16 served, sat 97.6, SOLD OUT Rainbow Drip.
 
 ## Gaps (for the Hub)

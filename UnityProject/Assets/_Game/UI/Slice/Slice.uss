@@ -173,6 +173,14 @@
 .id-readout .id-key { color: var(--t3); }
 .slice-root .id-readout .id-value { color: var(--t1); }
 .counter-line { white-space: normal; }
+/* REVIEW-W5N m2: compact Counter line in the ID panel header, only where the panel hides the HUD strip (125/150 %). */
+.id-counter { display: none; }
+.text-125 .id-counter, .text-150 .id-counter { display: flex; color: var(--t2); white-space: nowrap; flex-shrink: 1; margin: 0 16px; }
+/* GAME-009 medical register (UX_PS1 §5). */
+.badge { margin-right: 16px; }
+.meter-caption { color: var(--t2); font-size: 18px; }
+.text-125 .pos .meter-caption { font-size: 22px; }
+.text-150 .pos .meter-caption { font-size: 27px; }
 /* Toasts never cover the ID card: bottom-right beside the panel at 100 %, the empty top of the side column at 125/150 %. */
 .id-open .toasts { left: auto; right: 96px; top: auto; bottom: 54px; width: 500px; }
 .text-125.id-open .toasts, .text-150.id-open .toasts { right: 130px; top: 160px; bottom: auto; width: 540px; }
