@@ -15,7 +15,8 @@ Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, 
 | GAME-008 cover the door / ID checks (+W5G m1/m2) | `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | running | Unity review → GAME-009 |
 | GAME-010 tuning + personas (merging cart; W4W m3) | `local_0d166a8e-87b1-40bb-9594-be389c549875` | grid 3 | review |
 | **IMP-003**: rolling audit of ChatGPT Blender toolkit (drop 1 audited, adapt) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | running | after each audit: review → Nolan approval; message it when Nolan adds drops |
-| DES-004 fixing REVIEW-W5D M1 (no sales after 22:00) | `local_82d327a2-5b67-4cff-b481-5854a94f6f31` | running | re-review (docs reviewer `local_b073ffa0…`) → merge, ratify DEC-DAY-A..E |
+| REVIEW-W5D re-review of DES-004 fix f23dcbd | `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7` (worker `local_82d327a2…` idle) | running | merge on GO; ratify DEC-DAY-A..E; GAP-DAY questions → Nolan |
+| ASSET-003: CC0 customer characters + animations (sourcing, no Unity) | `local_d31ad4c5-232b-4628-986c-5d276e71a2a2` | running | review |
 | W5F IMP-003 drop 1 PASS w/ minors (`review/wave-5f`) | reviewer `local_b073ffa0…` | held | wait for IMP-003 delta audit of ChatGPT's fixes, then one approval summary to Nolan |
 | REVIEW-W5H: BRAND-001 (71e3732+98ce92c) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` (worker `local_a7e0b8da…` idle) | running | merge on GO |
 
@@ -32,7 +33,7 @@ Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, 
 - Phoenix TPT rate (OPEN-4): a receipt's tax lines would settle it; 25.1 % is kept (DEC-001).
 
 ## Pending from Nolan
-- ChatGPT Blender toolkit (DEC-069): arriving in drops; IMP-003 audits each, re-checking the folder after each audit.
+- ChatGPT Blender toolkit (DEC-069; round 2 approved DEC-074: retail floor, materials, labels, exterior, hands): arriving in drops; IMP-003 audits each, re-checking the folder after each audit.
 - ~~"Fully built systems" file~~: arrived 2026-10-30 as `Downloads/Dispo Game Imports Archive/2026-10-30_DISPO_GAME_DESIGN_V2/`; IMP-001 auditing.
 - V2 design pack approved 2026-10-30 (DEC-063); IMP-002 integrates.
 - ChatGPT-built mechanics: he will drop them in `C:/Users/handl/Downloads/Dispo Game Imports/`. Process: audit → review → **Nolan's approval** before any use.
