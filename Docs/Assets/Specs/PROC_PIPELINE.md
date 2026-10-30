@@ -82,3 +82,28 @@ Why: ~77 jars on the wall; buds are procedural stand-ins for the §22 scan-baked
 |---|---|
 | GAP-PROC-07 | bud size/shape/colour per look: procedural placeholders; the catalog has no per-strain look data |
 | GAP-PROC-08 | fill height is linear in grams (full = 7 layers ≈ 0.25 m); no measured fill height of a real 1 lb jar |
+
+## Packaged goods (PROC-004)
+```powershell
+Tools/Blender/blender.ps1 packaged_goods Tools/Blender/params/packaged_goods.json   # 14 FBX, also copied to Unity
+Tools/Blender/blender.ps1 contact_sheet packaged_goods                               # Docs/Assets/Specs/PROC_packaged_goods_contact_sheet.png
+```
+- DEC-034 categories, post-slice. Assets `PROC_Pkg_<Item>.fbx`, Unity copy `Assets/_Game/Art/Procedural/Packaged/`: PrepackJar, FlowerPouch (prepack flower); PrerollTube, PrerollMultipack; VapeCartBox; EdibleBox, EdibleBag; ExtractJar; BevCan, BevBottle; TopicalTube; MerchTee, MerchLighter, MerchGrinder.
+- An item is a list of parts; each part is a loft of rings `[width, depth, z]` bottom to top. `round` rings are superellipses (`squareness` 1 = ellipse, 0.6 = pouch); `rrect` rings are rounded rectangles (`corner_m`). Origin is bottom centre, front is -Y in Blender (+Z in Unity). A new SKU shape is a new `items` entry, not new code.
+- `brand_rgb` colours the brand parts. `label` (`part`, `bottom_m`, `height_m`, `width_m`): the generator cuts rings at the label edges. Front faces inside the rectangle get a second material slot `M_Proc_PkgLabel` (neutral placeholder) and map to 0..1 in `UVMap_Label`. On round bodies the label is a planar front projection, so faces at the label's side edges can run slightly past 0..1. MerchTee and MerchGrinder have no label.
+- LOD0: 24-sided rounds, 2-segment corners. LOD1: 12 sides, square corners. LOD2 (`far`): one block at the item's full extents in the brand colour (§20 "Far").
+- No label art ships. Logos, brand names and text wait for the IP decision with Nolan (GAP-PROC-11). Texture/atlas work goes through `UVMap_Label`.
+- Contact sheet rows (top→bottom, alphabetical): BevBottle, BevCan, EdibleBag, EdibleBox, ExtractJar, FlowerPouch, MerchGrinder, MerchLighter, MerchTee, PrepackJar, PrerollMultipack, PrerollTube, TopicalTube, VapeCartBox. Columns: LOD0 front, LOD0 side, LOD2 front. Tiles at half size; the grey cube is 10 cm. Assets carrying `own_sheet` stay off the default sheet.
+
+| Budget (whole item) | LOD0 | LOD1 | LOD2 |
+|---|---|---|---|
+| round jar/pouch/tube/can/grinder: budget / worst | 400 / 380 | 200 / 188 | 40 / 28 |
+| BevBottle, TopicalTube | 600 / 520 | 300 / 256 | 40 / 28 |
+| cartons (multipack, cart box, edible box) | 120 / 92 | 40 / 28 | 20 / 12 |
+| MerchTee, MerchLighter | 160 / 136 | 60 / 40 | 20 / 12 |
+Why: hundreds of SKUs on racks and in coolers, with GPU instancing. The silhouette is the whole read at shelf distance.
+
+| GAP | What |
+|---|---|
+| GAP-PROC-10 | every packaged-goods size: placeholders of common retail forms, no measured SKUs |
+| GAP-PROC-11 | label/brand art: neutral slot only; brand names and logos are an open IP question with Nolan |
