@@ -26,5 +26,13 @@
   "anxietyHigh": "✗ High anxiety",
   "overLimit": "Over the 1 oz limit",
   "idVerified": "21+ ID verified",
-  "patienceWords": [ "Relaxed", "Waiting", "Impatient" ]
+  "patienceWords": [ "Relaxed", "Waiting", "Impatient" ],
+  "andClause": " and {0}",
+  "secondClause": "{0} of {1}",
+  "addToCart": "Add to cart",
+  "cartChip": "🛒 Cart {0} / 3 · {1} g",
+  "goToRegister": "Go to register",
+  "addItem": "+ Add item",
+  "cartFull": "Cart full (3)",
+  "removeLine": "Remove"
 }

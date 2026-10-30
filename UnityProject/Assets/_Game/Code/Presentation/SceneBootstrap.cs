@@ -12,7 +12,7 @@ namespace Dispo.Presentation
         // Lighting_Night is in the build but not loaded at boot; day/night swapping belongs to gameplay.
         public static readonly string[] AdditiveScenes =
         {
-            "Retail", "BackRooms", "Hub", "Exterior", "GameplaySystems", "NPCs", "Audio", "Lighting_Day", "Gameplay_Slice",
+            "Retail", "Retail_Lookdev", "BackRooms", "Hub", "Exterior", "GameplaySystems", "NPCs", "Audio", "Lighting_Day", "Gameplay_Slice",
         };
 
         // Marker the studio smoke launch waits for in Player.log.
@@ -20,12 +20,17 @@ namespace Dispo.Presentation
 
         private System.Collections.IEnumerator Start()
         {
+            // An unfocused player pauses while loading (runInBackground is off), which stalled a -perf run (REVIEW-W4J).
+            if (Perf.PerfCapture.Arg() != null) Application.runInBackground = true;
             foreach (var scene in AdditiveScenes)
             {
                 if (!SceneManager.GetSceneByName(scene).isLoaded)
                     yield return SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
             }
             Debug.Log($"{ReadyMarker} scenes={SceneManager.sceneCount}");
+
+            var perfOut = Perf.PerfCapture.Arg();  // PERF-001: `-perf <json>` plays the bot shift, writes metrics, quits
+            if (perfOut != null) gameObject.AddComponent<Perf.PerfCapture>().Begin(perfOut, Time.realtimeSinceStartup);
         }
     }
 }

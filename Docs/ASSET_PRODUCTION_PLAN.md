@@ -368,6 +368,8 @@ That means a believable sales floor needs **multiple package form factors**, not
 
 # 4. Engine choice: Unity 6.3 LTS + HDRP
 
+> *(superseded by DEC-003: the project uses Unity 6000.6.7f1 + HDRP 17.6.0)*
+
 For this specific project, moving away from a browser-first Three.js scene is recommended.
 
 Unity opens:
@@ -387,7 +389,7 @@ Unity opens:
 
 ### Recommended rendering baseline
 
-- Unity 6.3 LTS
+- Unity 6.3 LTS *(superseded by DEC-003: the project uses Unity 6000.6.7f1 + HDRP 17.6.0)*
 - HDRP
 - Linear color space
 - physical light units
@@ -2611,7 +2613,31 @@ Every custom asset task must have a file in:
 
 Template:
 
+*(Template written by DOC-001, AUDIT-001 B7/DEC-064: the original handoff left this block empty. It follows the packets and handoffs actually used in `Docs/Tasks/` and `Docs/Handoffs/`.)*
+
 ```markdown
+# <ASSET_ID> — <name>
+
+**Owner task:** <TASK_ID> · **Source type:** custom | generator | CC0 third-party (ledger row)
+
+## References
+<reference files + tiles/crops; confidence High/Med/Low; GAP ids for unknowns (never invent)>
+
+## Dimensions
+<w × d × h with units and source; Low-confidence values marked>
+
+## Materials
+<surface list, HDRP material notes>
+
+## Build
+<Blender generator/params or source file; LODs; colliders; pivot; scale 1 unit = 1 m>
+
+## License / provenance
+<LICENSE_LEDGER row or "custom"; ASSET_CACHE_MANIFEST entry if downloaded>
+
+## Acceptance
+<preview render / in-engine capture required; asset acceptance gate per STUDIO_OS §63>
+```
 
 # 45. PHOTOGRAMMETRY PLAN
 

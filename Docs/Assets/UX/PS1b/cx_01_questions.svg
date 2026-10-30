@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1230" viewBox="0 0 1920 1230" font-family="Segoe UI, Arial, sans-serif">
+<title>CX-01 Dialogue: question menu + KNOWN strip</title>
+<rect width="1920" height="1080" fill="#15181c"/>
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="#2b3038" stroke="none" stroke-width="2"/>
+<text x="960.0" y="470" font-size="28" font-weight="400" fill="#4a525e" text-anchor="middle">customer at the counter (world, not dimmed)</text>
+<rect x="96" y="70" width="1290" height="120" rx="10" fill="#0f1215cc" stroke="none" stroke-width="2"/>
+<rect x="112" y="86" width="1258" height="56" rx="8" fill="#11141a" stroke="none" stroke-width="2"/>
+<text x="128" y="122" font-size="16" font-weight="700" fill="#8f98a5" text-anchor="start">KNOWN</text>
+<rect x="208" y="97" width="195" height="32" rx="16" fill="none" stroke="#c3c9d2" stroke-width="2"/>
+<text x="222" y="116" font-size="16" font-weight="600" fill="#c3c9d2" text-anchor="start">Effect: relaxing 💬</text>
+<rect x="413" y="97" width="232" height="32" rx="16" fill="none" stroke="#c3c9d2" stroke-width="2"/>
+<text x="427" y="116" font-size="16" font-weight="600" fill="#c3c9d2" text-anchor="start">Stay functional: yes ❓</text>
+<rect x="1098" y="95" width="260" height="38" rx="2" fill="none" stroke="#c3c9d2" stroke-width="2"/>
+<text x="1116" y="121" font-size="16" font-weight="700" fill="#c3c9d2" text-anchor="start">◐ CUSTOMER INFO PARTIAL</text>
+<text x="112" y="172" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="start">glyphs: 💬 said it  ❓ you asked  ↩ follow-up  ✋ after a rejection  ↺ remembered  🧾 history</text>
+<rect x="360" y="820" width="1200" height="150" rx="10" fill="#0f1215e6" stroke="none" stroke-width="2"/>
+<text x="390" y="856" font-size="18" font-weight="600" fill="#8f98a5" text-anchor="start">Customer · Normal</text>
+<text x="390" y="900" font-size="28" font-weight="400" fill="#f2f4f7" text-anchor="start">“Yeah, I've got stuff to do after.”</text>
+<rect x="1500" y="250" width="380" height="540" rx="12" fill="#1d2127" stroke="#3a414c" stroke-width="2"/>
+<text x="1524" y="290" font-size="18" font-weight="600" fill="#8f98a5" text-anchor="start">Ask… (Backspace: back)</text>
+<rect x="1516" y="310" width="348" height="56" rx="8" fill="#262b33" stroke="#009E73" stroke-width="4"/>
+<text x="1532" y="346" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">1  What are you looking for?</text>
+<rect x="1516" y="376" width="348" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1532" y="412" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">2  Anything you don't want?</text>
+<rect x="1516" y="442" width="348" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1532" y="478" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">3  Need to stay functional?</text>
+<rect x="1516" y="508" width="348" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1532" y="544" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">4  Trying to stay under anything?</text>
+<rect x="1516" y="574" width="348" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1532" y="610" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">5  Had anything you liked?</text>
+<rect x="1516" y="640" width="348" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1532" y="676" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">6  Anything you didn't like?</text>
+<rect x="1516" y="706" width="348" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1532" y="742" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">7  When will you use it?</text>
+<g class="note"><circle cx="1506" cy="310" r="17" fill="#CC79A7"/><text x="1506" y="317" font-size="18" font-weight="700" fill="#000" text-anchor="middle">1</text></g>
+<rect x="96" y="54" width="1728" height="972" fill="none" stroke="#CC79A7" stroke-width="1.5" stroke-dasharray="10 8" class="note"/>
+<rect x="0" y="1080" width="1920" height="150" fill="#ffffff"/>
+<text x="24" y="1116" font-size="24" font-weight="700" fill="#111">CX-01 Dialogue: question menu + KNOWN strip  ·  1920×1080 @100% text  ·  pink = annotation (focus order, safe area)</text>
+<text x="24" y="1150" font-size="19" fill="#222">Dialogue options: 1 Look it up · 2 Ask… (opens this list) · 3 Nothing fits right now (after a search). The list replaces the options column; 1–7 ask; Backspace/Ⓑ returns.</text>
+<text x="24" y="1176" font-size="19" fill="#222">Every question stays askable and looks the same before and after it is answered: no grey-out, no tick, no 'already known' hint (DP §10). Q5 (product type) waits for PS3.</text>
+<text x="24" y="1202" font-size="19" fill="#222">The answer plays as a subtitle; a new fact drops into KNOWN with its source glyph. A known field asked again: customer restates it, KNOWN unchanged. Too many: DP §12 deflection lines.</text>
+</svg>

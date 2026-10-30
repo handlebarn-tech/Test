@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1230" viewBox="0 0 1920 1230" font-family="Segoe UI, Arial, sans-serif">
+<title>CX-04 Informed no-sale confirm</title>
+<rect width="1920" height="1080" fill="#15181c"/>
+<rect width="1920" height="1080" fill="#000" opacity="0.55"/>
+<rect x="560" y="340" width="800" height="340" rx="16" fill="#1d2127" stroke="#3a414c" stroke-width="2"/>
+<text x="600" y="400" font-size="28" font-weight="700" fill="#f2f4f7" text-anchor="start">Tell them nothing fits right now?</text>
+<text x="600" y="450" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">“I don't really have anything that fits what</text>
+<text x="600" y="482" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">you're asking for right now.”</text>
+<text x="600" y="530" font-size="20" font-weight="400" fill="#8f98a5" text-anchor="start">They'll leave without buying.</text>
+<rect x="600" y="580" width="340" height="56" rx="8" fill="#009E73" stroke="#009E73" stroke-width="2"/>
+<text x="770.0" y="616" font-size="22" font-weight="700" fill="#0b0d10" text-anchor="middle">Keep helping</text>
+<text x="770.0" y="660" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">Esc / Ⓑ</text>
+<rect x="980" y="580" width="340" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="1150.0" y="616" font-size="22" font-weight="700" fill="#f2f4f7" text-anchor="middle">Tell them</text>
+<text x="1150.0" y="660" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">Enter on focus / Ⓐ</text>
+<g class="note"><circle cx="590" cy="575" r="17" fill="#CC79A7"/><text x="590" y="582" font-size="18" font-weight="700" fill="#000" text-anchor="middle">1</text></g>
+<g class="note"><circle cx="970" cy="575" r="17" fill="#CC79A7"/><text x="970" y="582" font-size="18" font-weight="700" fill="#000" text-anchor="middle">2</text></g>
+<rect x="96" y="54" width="1728" height="972" fill="none" stroke="#CC79A7" stroke-width="1.5" stroke-dasharray="10 8" class="note"/>
+<rect x="0" y="1080" width="1920" height="150" fill="#ffffff"/>
+<text x="24" y="1116" font-size="24" font-weight="700" fill="#111">CX-04 Informed no-sale confirm  ·  1920×1080 @100% text  ·  pink = annotation (focus order, safe area)</text>
+<text x="24" y="1150" font-size="19" fill="#222">Default focus = Keep helping, so a stray Enter or a double press of N never ends the service. 'Tell them' needs focus first (Tab / → / click), then Enter.</text>
+<text x="24" y="1176" font-size="19" fill="#222">No hint whether the no-sale is informed or avoidable: GAME-019 grades it afterwards (DP §30–31); the result shows only in the report and the debug panel.</text>
+<text x="24" y="1202" font-size="19" fill="#222">After 'Tell them' the customer answers with a no-sale line and leaves; toast '↩ No sale · {reason they gave}' in neutral style (4 s).</text>
+</svg>

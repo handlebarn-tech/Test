@@ -1,0 +1,22 @@
+# REVIEW-W4S — UX-005 (PS1b counter-intelligence UX) + REVIEW-W4L M1
+
+**Verdict: PASS with minors (GO to merge).** Docs only. `claude/brave-tu-ecb9f6` @ 9b6cf35 merged `--no-ff` into `review/wave-4s` off main cab9abf; clean. Reviewed `Docs/Specs/UX_COUNTER_INTEL.md`, 8 SVGs (all parse, each < 10 KB) plus `gen_ps1b.py`, and the handoff. No blockers or majors. Two items need a Hub ruling (m1, m2) and the GAME-017/019 packets need small edits (m3, m4).
+
+## Checks
+1. **Against SPEC_DECISION_PRESSURE — PASS.** The question wording matches DP§9 (Q1–Q4, Q6–Q8; Q5 correctly held to PS3). The deflection lines match DP§12 and are escalating, with no anger icon. CUSTOMER INFO COMPLETE/PARTIAL/NEED MORE is DP§17 wording, styled square and neutral so it cannot be read as a fit label, and it never sits on a card. The no-sale line is DP§30 verbatim. Queue cost is diegetic with no bars (DP§39). The star gate and reason line follow DP§106–107. The report detail rows follow DP§109–112, and the debug panel has the two labelled columns plus `[TFS]`/`[GAME]` rejection lines (DP§113–114).
+2. **DEC-057 — PASS.** The query preview shows the exact composer string passed to `QueryParser`, and chip-only equals the DEC-017 golden parse. There is no free text in PS1b. Unknown KNOWN fields are not shown, so "Budget ?" does not leak relevance. Good call.
+3. **DEC-052 — PASS with m1.** No oracle value is drawn on or in a card (cx_03). Utilities, regret, the true-intent rank and per-customer DQ appear only in the F3 panel (cx_05). That panel is dev-only, with a labelled evaluation sub-block.
+4. **Packet UX-005 deliverables 1–8 — PASS.** Each has a home (spec §12), and all strings are in the §11 table. H1 holds: no effect claims. The input map (§9) avoids I/M/F3 and the PS1 keys; S, N, 2/3 and 1–7 are scoped to their screens.
+5. **REVIEW-W4L M1 — covered, with m5/m6.** §10 states 125/150 % behaviour for the cart line, register, meter, ID card, counter line strip, cover prompt and new panels. The register goes two-column inside the safe area and never scrolls, answering W4L's scroll-or-move question. DOB/EXP/TYPE/FORMAT never ellipsize (readout column), and NAME may. cx_08 draws the register and the ID readout; the other panels are text rules only.
+
+## Findings
+- **m1 DEC-052 vs report (Hub ruling).** DEC-052 says evaluation values "stay out of player UI", but DP§108–109 puts Average decision quality and the Informed / Avoidable no-sale counts in the shift report. UX-005 shows DQ as a band word and the counts as plain counts, and §0 says oracle values never reach player UI. That is a shift-level aggregate of oracle-derived classification. The handoff's Q2 asks the same. Recommend the Hub state that DEC-052 allows shift-level bands/counts (not per-customer values), or drop those rows. GAME-020 builds this report, so settle before it starts.
+- **m2 Packet drift: GAME-017.** The packet omits things UX-005 now specifies: the CUSTOMER INFO tag (it lists completeness only as a "gameplay/debug value"), droppable query tokens (a per-search drop of a known fact, which changes what the composer may omit), and retiring `dialogue.questionsLeft` / the 3-question cap (US§3.2). Add these to GAME-017 so the builder and the DEC-057 input gate agree. The dropped-token case should be added to the QA-002 gate.
+- **m3 GAME-019.** UX gates "Nothing fits right now" to after the first search; the packet says it is available when no viable path exists. Align (the UX placeholder is reasonable).
+- **m4 GAME-018.** Similar is also shown on the Query screen (cx_02), not only Results; the packet's entry point is silent. Minor.
+- **m5 Controller overlap.** W4L m1 is still open: on Results, Ⓨ is Details (and US Inspect), while P1 uses `Ⓨ hold` for "Go to register". UX-005 adds `Ⓧ hold` for Compare n without saying whether the "Hold actions ↔ Press" assist (US§7) covers it. Pick a free button or state the assist rule.
+- **m6 M1 gaps (small).** §10 omits the P1 strike toast, the "Go to register" cart chip, the medical badge/14-day meter/out-of-state notice, and the compliance report tab. All can follow the register's rules. UX_PS1.md was not edited; add a one-line pointer to §10 (or tell GAME-006/008 to read it).
+- n1 The handoff's questions (CUSTOMER INFO tag per difficulty; DQ band in the report; no-sale before any search) are sound placeholders. Q2 is m1. I did not check every frame render at full size.
+
+## Hub actions
+Rule on m1; amend GAME-017/018/019 packets (m2-m4); resolve the Ⓨ/hold collision (m5); add the UX_PS1 pointer (m6).

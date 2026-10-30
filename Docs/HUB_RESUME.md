@@ -26,10 +26,10 @@ If a request conflicts with a rule, route it so the rule holds (e.g. start a ses
 - Nolan is signed in to Sketchfab and the Unity Asset Store in the built-in browser pane; Warehouse/Office are claimed.
 
 ## Hub loop
-1. Read `Docs/PROJECT_STATE.md`, `Docs/BACKLOG.md`, the last ~10 entries of `Docs/DECISIONS.md`.
+1. Read `Docs/PROJECT_STATE.md`, `Docs/BACKLOG.md`, the newest ~15 entries of `Docs/DECISIONS.md`. **This list is the Hub's reading set** (it supersedes `STUDIO_OS.md` §3 and `MASTER_PLAN.md` §16 "Hub" rows, which point here). Workers read only `CLAUDE.md` → `PROJECT_STATE.md` → their packet and the sections it cites.
 2. Check new handoffs in `Docs/Handoffs/`.
 3. Send finished work to a REVIEW session; commit only reviewed work.
-4. Move task packets `Docs/Tasks/Active` → `Done`; update BACKLOG and PROJECT_STATE.
+4. Move task packets `Docs/Tasks/Active` → `Done`; update BACKLOG and PROJECT_STATE. **Move a packet and edit its BACKLOG row in the same commit** (Ready → Active on dispatch, Active → Done on merge), so folders and BACKLOG never disagree (AUDIT-001 B2, DEC-064).
 5. Write packets for the next dependency-ready tasks; start sessions for them, grouped sensibly (code/Unity work in its own worktree, doc-only work may share the checkout on disjoint files, per DEC-005).
 6. Brief the user.
 
@@ -41,7 +41,7 @@ If a request conflicts with a rule, route it so the rule holds (e.g. start a ses
 - Packet format: see the existing `Docs/Tasks/*/REF-001.md`, `MIG-001.md`, `BUILD-001.md` (goal, inputs, owns, deliverable, validation, handoff).
 
 ## Where things stand
-See `Docs/PROJECT_STATE.md` → "NEXT ACTIONS". Wave 1 is complete and sits on branch `review/wave-1` awaiting REVIEW-W1. Packets for the next sessions are in `Docs/Tasks/Ready/`.
+See `Docs/PROJECT_STATE.md` → "In flight" and "Next tasks to start". Packets for the next sessions are in `Docs/Tasks/Ready/`.
 
 ## Session notes
 - **Remote Control limit:** while Nolan uses Remote Control (phone), `start_session` works only on messages typed in the desktop app; his permission does not change that. Hand work to idle sessions with SendMessage, and leave new sessions for a desktop message or the scheduled resume.

@@ -1,16 +1,17 @@
 {
   "asset_id": "PROC_DeliJar",
   "generator": "deli_jar",
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/DeliJar",
   "_note": "Main deli canister (DEC-042b/043): tall square clear acrylic, white pop-top lid, coloured base band per brand, front label card + THC % tag. Shape from Nolan's 2026-10-29 photos (References/Incoming: deli jar wall (retail), deli jars + scale (office)). No measurement exists: sizes are estimated from the photos (height about 2x width, band about 1/5 of the body) and the 454 g capacity (DEC-019), each flagged by GAP id until REF-007. Band and label colours are per-brand runtime material params; these are neutral defaults.",
   "gaps": {
-    "GAP-PROC-01": "deli canister width/depth/height/corner radius: photo estimate (~6 in square x 11 in body, ~5 L cavity for 454 g at ~0.09 g/cm3), awaiting REF-007",
+    "GAP-PROC-01": "deli canister size: REF-007 estimate (REFERENCES_INDEX 2.4, Low-Med) ~6 x 5-6 in footprint x ~10-10.5 in tall, same size class as the published POP 4 L jar; modelled 6.0 x 5.5 in, 10.25 in overall (9.25 in body + 1 in lid), ~4.3 L cavity. Corner radius is a photo estimate",
     "GAP-PROC-02": "pop-top lid height/overhang/button size: photo estimate (white, flush, round-cornered square button)",
     "GAP-PROC-03": "label card + THC % tag size/position: photo estimate (white card centred on the front above the band, % tag on it)",
     "GAP-PROC-09": "base band height/offset: photo estimate (~1/5 of the body height); colour is per brand (DEC-043), default green from the retail photo"
   },
-  "body": {"width_m": 0.15, "depth_m": 0.15, "height_m": 0.28, "corner_radius_m": 0.018,
+  "body": {"width_m": 0.1524, "depth_m": 0.1397, "height_m": 0.2350, "corner_radius_m": 0.018,
            "wall_m": 0.004, "floor_m": 0.008, "base_chamfer_m": 0.003},
-  "lid": {"enabled": true, "height_m": 0.035, "overhang_m": 0.002, "top_bevel_m": 0.006,
+  "lid": {"enabled": true, "height_m": 0.0254, "overhang_m": 0.002, "top_bevel_m": 0.006,
           "button_inset_m": 0.03, "button_depth_m": 0.003, "button_corner_m": 0.012, "rgba": [0.92, 0.92, 0.9]},
   "band": {"enabled": true, "height_m": 0.055, "offset_m": 0.0025, "rgba": [0.12, 0.45, 0.2]},
   "label": {"enabled": true, "center_x_m": 0.0, "width_m": 0.10, "height_m": 0.08, "bottom_m": 0.065, "offset_m": 0.0008,

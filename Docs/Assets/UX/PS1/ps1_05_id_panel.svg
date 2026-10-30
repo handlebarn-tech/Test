@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1230" viewBox="0 0 1920 1230" font-family="Segoe UI, Arial, sans-serif">
+<title>PS1-05 ID stand: card inspect, Admit / Refuse; counter queue stays visible</title>
+<rect width="1920" height="1080" fill="#15181c"/>
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="#2b3038" stroke="none" stroke-width="2"/>
+<text x="960.0" y="470" font-size="28" font-weight="400" fill="#4a525e" text-anchor="middle">entry vestibule, arrival at the stand</text>
+<rect width="1340" height="1080" fill="#000" opacity="0.55"/>
+<rect x="120" y="90" width="1200" height="900" rx="16" fill="#1d2127" stroke="#3a414c" stroke-width="2"/>
+<text x="160" y="148" font-size="28" font-weight="700" fill="#f2f4f7" text-anchor="start">ID stand · arrival 1 of 3</text>
+<text x="1280" y="148" font-size="24" font-weight="700" fill="#f2f4f7" text-anchor="end">Today: Tue 10/27/2026</text>
+<rect x="160" y="190" width="770" height="486" rx="24" fill="#e9edf2" stroke="#9aa3ae" stroke-width="2"/>
+<rect x="160" y="190" width="770" height="60" rx="24" fill="#2f5d8a" stroke="none" stroke-width="2"/>
+<text x="190" y="232" font-size="24" font-weight="700" fill="#ffffff" text-anchor="start">ARIZONA · DRIVER LICENSE</text>
+<rect x="190" y="280" width="220" height="280" rx="8" fill="#c7ccd3" stroke="#9aa3ae" stroke-width="2"/>
+<text x="300" y="430" font-size="20" font-weight="400" fill="#5b636e" text-anchor="middle">photo</text>
+<text x="440" y="300" font-size="16" font-weight="700" fill="#5b636e" text-anchor="start">NAME</text>
+<text x="440" y="324" font-size="24" font-weight="700" fill="#111" text-anchor="start">‹generated›</text>
+<text x="440" y="356" font-size="16" font-weight="700" fill="#5b636e" text-anchor="start">DOB</text>
+<text x="440" y="380" font-size="24" font-weight="700" fill="#111" text-anchor="start">11/14/2005</text>
+<text x="440" y="412" font-size="16" font-weight="700" fill="#5b636e" text-anchor="start">EXP</text>
+<text x="440" y="436" font-size="24" font-weight="700" fill="#111" text-anchor="start">11/14/2030</text>
+<text x="440" y="468" font-size="16" font-weight="700" fill="#5b636e" text-anchor="start">TYPE</text>
+<text x="440" y="492" font-size="24" font-weight="700" fill="#111" text-anchor="start">Driver license</text>
+<text x="440" y="524" font-size="16" font-weight="700" fill="#5b636e" text-anchor="start">FORMAT</text>
+<text x="440" y="548" font-size="24" font-weight="700" fill="#111" text-anchor="start">Horizontal</text>
+<rect x="960" y="190" width="320" height="486" rx="10" fill="#262b33" stroke="#3a414c" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="1120" y="400" font-size="20" font-weight="400" fill="#8f98a5" text-anchor="middle">Vertical cards</text>
+<text x="1120" y="428" font-size="20" font-weight="400" fill="#8f98a5" text-anchor="middle">render portrait</text>
+<text x="1120" y="456" font-size="20" font-weight="400" fill="#8f98a5" text-anchor="middle">(540×856) here</text>
+<text x="160" y="720" font-size="18" font-weight="400" fill="#8f98a5" text-anchor="start">Assist 'ID age helper' (off): shows 'Age 20 · expires in 4 y'.</text>
+<g class="note"><circle cx="150" cy="185" r="17" fill="#CC79A7"/><text x="150" y="192" font-size="18" font-weight="700" fill="#000" text-anchor="middle">1</text></g>
+<rect x="160" y="860" width="360" height="56" rx="8" fill="#262b33" stroke="#3a414c" stroke-width="2"/>
+<text x="340.0" y="896" font-size="22" font-weight="700" fill="#f2f4f7" text-anchor="middle">Refuse</text>
+<text x="340.0" y="940" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">R / Ⓧ</text>
+<g class="note"><circle cx="150" cy="855" r="17" fill="#CC79A7"/><text x="150" y="862" font-size="18" font-weight="700" fill="#000" text-anchor="middle">3</text></g>
+<rect x="900" y="860" width="380" height="56" rx="8" fill="#009E73" stroke="#009E73" stroke-width="2"/>
+<text x="1090.0" y="896" font-size="22" font-weight="700" fill="#0b0d10" text-anchor="middle">Admit</text>
+<text x="1090.0" y="940" font-size="16" font-weight="400" fill="#8f98a5" text-anchor="middle">A / Ⓐ</text>
+<g class="note"><circle cx="890" cy="855" r="17" fill="#CC79A7"/><text x="890" y="862" font-size="18" font-weight="700" fill="#000" text-anchor="middle">2</text></g>
+<rect x="1380" y="90" width="440" height="420" rx="12" fill="#0f1215e6" stroke="#3a414c" stroke-width="2"/>
+<text x="1404" y="132" font-size="22" font-weight="700" fill="#f2f4f7" text-anchor="start">Counter line (4)</text>
+<text x="1404" y="180" font-size="22" font-weight="400" fill="#8f98a5" text-anchor="start">1.</text>
+<rect x="1440" y="156" width="121" height="34" rx="17" fill="none" stroke="#56B4E9" stroke-width="2"/>
+<text x="1454" y="177" font-size="18" font-weight="600" fill="#56B4E9" text-anchor="start">● Relaxed</text>
+<text x="1404" y="228" font-size="22" font-weight="400" fill="#8f98a5" text-anchor="start">2.</text>
+<rect x="1440" y="204" width="121" height="34" rx="17" fill="none" stroke="#E69F00" stroke-width="2"/>
+<text x="1454" y="225" font-size="18" font-weight="600" fill="#E69F00" text-anchor="start">◐ Waiting</text>
+<text x="1404" y="276" font-size="22" font-weight="400" fill="#8f98a5" text-anchor="start">3.</text>
+<rect x="1440" y="252" width="121" height="34" rx="17" fill="none" stroke="#E69F00" stroke-width="2"/>
+<text x="1454" y="273" font-size="18" font-weight="600" fill="#E69F00" text-anchor="start">◐ Waiting</text>
+<text x="1404" y="324" font-size="22" font-weight="400" fill="#8f98a5" text-anchor="start">4.</text>
+<rect x="1440" y="300" width="142" height="34" rx="17" fill="none" stroke="#D55E00" stroke-width="2"/>
+<text x="1454" y="321" font-size="18" font-weight="600" fill="#D55E00" text-anchor="start">▲ Impatient</text>
+<text x="1404" y="380" font-size="22" font-weight="400" fill="#c3c9d2" text-anchor="start">◆ Stand: 2 waiting</text>
+<text x="1404" y="420" font-size="20" font-weight="400" fill="#8f98a5" text-anchor="start">◷ 2:52 PM · $ 412.35</text>
+<rect x="1380" y="540" width="440" height="120" rx="10" fill="#0f1215e6" stroke="#56B4E9" stroke-width="2"/>
+<text x="1404" y="584" font-size="22" font-weight="700" fill="#f2f4f7" text-anchor="start">✓ Refused: under 21</text>
+<text x="1404" y="620" font-size="18" font-weight="400" fill="#8f98a5" text-anchor="start">result toast (4 s)</text>
+<rect x="96" y="54" width="1728" height="972" fill="none" stroke="#CC79A7" stroke-width="1.5" stroke-dasharray="10 8" class="note"/>
+<rect x="0" y="1080" width="1920" height="150" fill="#ffffff"/>
+<text x="24" y="1116" font-size="24" font-weight="700" fill="#111">PS1-05 ID stand: card inspect, Admit / Refuse; counter queue stays visible  ·  1920×1080 @100% text  ·  pink = annotation (focus order, safe area)</text>
+<text x="24" y="1150" font-size="19" fill="#222">Card shows photo, DOB, expiry, state, type, format (horizontal/vertical); the in-game date sits top-right of the panel. No verdict is shown: reading it is the decision.</text>
+<text x="24" y="1176" font-size="19" fill="#222">While covering, the HUD becomes the 'Counter line' strip: one patience word+icon per queued customer (forced on, not the assist) + arrivals waiting at the stand.</text>
+<text x="24" y="1202" font-size="19" fill="#222">Esc closes the panel; walking away leaves the remaining arrivals at the stand. Example: DOB 11/14/2005 on 10/27/2026 = age 20 → Refuse is correct.</text>
+</svg>

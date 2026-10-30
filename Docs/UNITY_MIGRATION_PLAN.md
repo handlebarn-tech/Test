@@ -849,6 +849,8 @@ Do not port enterprise-style reporting merely because it existed.
 
 Recommended work breakdown:
 
+> **Historical plan IDs (AUDIT-001 C2, DEC-059/064):** the IDs below are the original work breakdown. Live task IDs are in `Docs/BACKLOG.md` and several reuse these numbers for different work (e.g. live DATA-002 = Dutchie catalog importer, GAME-006 = cart, QA-002 = Gate A parity gate). Do not cite these headings as task IDs.
+
 ### MIG-001 Current source audit
 ### MIG-002 Legacy runtime capture / golden cases
 ### DATA-001 Canonical cannabis data schema

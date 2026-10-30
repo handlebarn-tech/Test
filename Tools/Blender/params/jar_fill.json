@@ -5,13 +5,16 @@
   "gaps": {
     "GAP-PROC-01": "jar cavity inherits the placeholder deli jar body (see deli_jar.json)",
     "GAP-PROC-07": "bud size/shape/colour per look: procedural placeholders until scan-based buds (§22) exist; no per-strain look data in the catalog",
-    "GAP-PROC-08": "fill height vs grams is linear (full jar = 7 layers to ~0.25 m); no measured fill height of a real 1 lb jar"
+    "GAP-PROC-08": "fill height vs grams is linear (full jar = 6 layers to ~0.23 m); no measured fill height of a real 1 lb jar",
+    "DEC-046": "every step above 0 g shows a pile at least min_visible_above_band_m above the base band (the front mound fills first); only F000 (SOLD OUT) looks empty"
   },
   "jar_params": "Tools/Blender/params/deli_jar.json",
   "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/JarFill",
   "seed": 2026,
   "fill_steps_pct": [0, 10, 20, 40, 70, 100],
-  "buds": {"grid": 3, "layers": 7, "radius_m": 0.022, "layer_pitch_m": 0.033, "jitter_m": 0.010},
+  "buds": {"grid": 3, "layers": 6, "radius_m": 0.022, "radius_jitter": [0.8, 1.15], "layer_pitch_m": 0.034,
+           "jitter_m": 0.014, "jitter_z_m": 0.006, "layer_shift": 0.25,
+           "mound": [[0, 1, 0], [0, 0, 0], [0, 2, 0], [0, 1, 1], [1, 1, 0]], "min_visible_above_band_m": 0.012},
   "shake": {"count": 10, "radius_m": [0.002, 0.004]},
   "families": [
     {"id": "GreenDense",   "body": [0.16, 0.30, 0.09], "accent": [0.60, 0.30, 0.08], "accent_frac": 0.12, "scale": 0.95, "elong": 1.15, "bump": 0.16},

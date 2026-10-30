@@ -357,7 +357,8 @@ namespace Dispo.Slice.Tests
             Assert.AreEqual("", Labels.TierLabel(null));
         }
 
-        /// <summary>Pure-sim version of the PlayMode bot: true-family chip, card 1 (next card if the jar is short), stated weight.</summary>
+        /// <summary>Pure-sim version of the PlayMode bot: per ask, true-family chip, card 1 (next card if the jar is short), stated weight;
+        /// Add item while an ask is open (GAME-006), then confirm the cart.</summary>
         public static ShiftSim RunBot(SliceData d, double step)
         {
             var sim = new ShiftSim(d);
@@ -367,10 +368,16 @@ namespace Dispo.Slice.Tests
                 sim.Tick(step);
                 var c = sim.Serving;
                 if (c == null) continue;
-                var r = sim.Results ?? sim.Search(c.TrueFamily);
-                var card = r.Cards.FirstOrDefault(x => sim.Inventory.Grams(x.Rep.Id) >= c.Grams);
-                Assert.IsNotNull(card, $"customer {c.Index}: no card can fill {c.Grams} g");
-                if (sim.Present(card).Response == Response.Accept) Assert.IsNull(sim.Confirm(c.Grams));
+                if (sim.RegisterOpen)
+                {
+                    if (sim.CanAddItem) sim.AddItem();
+                    else { Assert.IsNull(sim.Confirm()); continue; }
+                }
+                var ask = sim.CurrentAsk;
+                var r = sim.Results ?? sim.Search(ask.Family);
+                var card = r.Cards.FirstOrDefault(x => sim.Free(x.Rep.Id) >= ask.Grams);
+                Assert.IsNotNull(card, $"customer {c.Index}: no card can fill {ask.Grams} g");
+                sim.Present(card);
             }
             return sim;
         }
@@ -387,6 +394,19 @@ namespace Dispo.Slice.Tests
             Assert.AreEqual(sim.Sales.Sum(s => s.PricePostTax), r.RevenuePostTax, 1e-9);
             Assert.IsTrue(typeof(ShiftReport).GetFields().All(f => f.GetValue(r) != null), "no null report fields");
             CollectionAssert.IsNotEmpty(r.SoldOut, "DEC-027: the seed-1 bot shift shows at least one SOLD OUT");
+        }
+
+        [Test]
+        public void JarFillStep_NearestStep_TiesUp_MinVisible()
+        {
+            var steps = new[] { 0, 10, 20, 40, 70, 100 };
+            Assert.AreEqual(0, JarFillStep.For(0, steps, 20), "0 g = SOLD OUT");
+            Assert.AreEqual(20, JarFillStep.For(0.01, steps, 20), "DEC-046: above 0 g shows the min visible step");
+            Assert.AreEqual(10, JarFillStep.For(0.01, steps, 10));
+            Assert.AreEqual(20, JarFillStep.For(0.15, steps, 10), "tie 10/20 goes up");
+            Assert.AreEqual(70, JarFillStep.For(0.55, steps, 20), "tie 40/70 goes up");
+            Assert.AreEqual(40, JarFillStep.For(0.5, steps, 20));
+            Assert.AreEqual(100, JarFillStep.For(451.5 / 454, steps, 20), "a 451.5 g jar reads full");
         }
     }
 }

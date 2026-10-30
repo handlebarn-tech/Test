@@ -1,0 +1,30 @@
+version: 2.0
+contracts:
+  KnownCustomerFact:
+    required: [fact_id, value, source, revealed_at, confidence]
+  TFSInputSnapshot:
+    required: [snapshot_id, customer_id, known_fact_ids, inventory_snapshot_id, mode, tfs_version, hash]
+  InventoryEvent:
+    required: [event_id, type, item_id, quantity, timestamp]
+    types: [RECEIVE, TRANSFER, RESERVE, RELEASE, SELL, WASTE, ADJUST]
+  Transaction:
+    states: [DRAFT, RESERVING, READY, COMPLETED, CANCELED]
+    terminal: [COMPLETED, CANCELED]
+  StaffState:
+    states: [OFF_SHIFT, AVAILABLE, ASSIGNED, BUSY, BREAK_PENDING, ON_BREAK, ESCALATION, UNAVAILABLE]
+  Task:
+    states: [CREATED, AVAILABLE, ASSIGNED, IN_PROGRESS, COMPLETED, CANCELED, BLOCKED, FAILED, ESCALATED]
+  PurchaseOrder:
+    states: [DRAFT, SUBMITTED, COMMITTED, IN_TRANSIT, RECEIVING, PARTIAL_FILL, DELAYED, DISCREPANCY, CLOSED, CANCELED_BY_SUPPLIER]
+  DecisionRecord:
+    required: [decision_id, customer_id, known_profile_snapshot_id, tfs_input_hash, tfs_result_snapshot_id, questions_asked, result]
+  ShiftState:
+    required: [shift_id, seed, difficulty_profile, phase, rng_stream_states, inventory_snapshot_id]
+invariants:
+  - identical_tfs_input_and_inventory_implies_identical_tfs_output
+  - hidden_customer_truth_never_enters_recommendation_service
+  - inventory_never_negative
+  - transaction_completion_idempotent
+  - reservation_released_exactly_once_on_cancel
+  - report_metrics_derive_from_authoritative_events
+  - reload_preserves_committed_rng_future

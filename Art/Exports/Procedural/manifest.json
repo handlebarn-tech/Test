@@ -2,7 +2,7 @@
   "assets": {
     "PROC_DeliJar": {
       "export": "Art/Exports/Procedural/PROC_DeliJar.fbx",
-      "export_sha256": "b3dd10433c3c6606",
+      "export_sha256": "9ff98e35c811348d",
       "gaps": [
         "GAP-PROC-01",
         "GAP-PROC-02",
@@ -12,19 +12,19 @@
       "generator": "deli_jar",
       "interior": {
         "floor_y_m": 0.008,
-        "size_x_m": 0.142,
-        "size_z_m": 0.142,
-        "top_y_m": 0.28
+        "size_x_m": 0.1444,
+        "size_z_m": 0.13169999999999998,
+        "top_y_m": 0.235
       },
       "lods": {
         "LOD0": {
           "objects": {
             "PROC_DeliJar_Band_LOD0": {
-              "geometry_sha256": "7fce5f438ca27951",
+              "geometry_sha256": "0ec6f05013aeb90e",
               "size_m_unity_xyz": [
-                0.155,
+                0.1574,
                 0.055,
-                0.155
+                0.1447
               ],
               "tris": 220,
               "uv_maps": [
@@ -34,11 +34,11 @@
               "verts": 112
             },
             "PROC_DeliJar_Glass_LOD0": {
-              "geometry_sha256": "608ed963f5bfca0c",
+              "geometry_sha256": "f7586cc066e84ee9",
               "size_m_unity_xyz": [
-                0.15,
-                0.28,
-                0.15
+                0.1524,
+                0.235,
+                0.1397
               ],
               "tris": 276,
               "uv_maps": [
@@ -48,7 +48,7 @@
               "verts": 140
             },
             "PROC_DeliJar_Label_LOD0": {
-              "geometry_sha256": "eb9e16b1a326c00d",
+              "geometry_sha256": "171e00c175bf2746",
               "size_m_unity_xyz": [
                 0.1,
                 0.08,
@@ -62,11 +62,11 @@
               "verts": 4
             },
             "PROC_DeliJar_Lid_LOD0": {
-              "geometry_sha256": "0d486d62ef3cb136",
+              "geometry_sha256": "611b3b35266f0630",
               "size_m_unity_xyz": [
-                0.154,
-                0.035,
-                0.154
+                0.1564,
+                0.0254,
+                0.1437
               ],
               "tris": 276,
               "uv_maps": [
@@ -76,7 +76,7 @@
               "verts": 140
             },
             "PROC_DeliJar_ThcTag_LOD0": {
-              "geometry_sha256": "cf19392b6f7e4a01",
+              "geometry_sha256": "f7f348ad357fb8ce",
               "size_m_unity_xyz": [
                 0.045,
                 0.028,
@@ -91,20 +91,20 @@
             }
           },
           "size_m_unity_xyz": [
-            0.155,
-            0.315,
-            0.155
+            0.1574,
+            0.2604,
+            0.1447
           ],
           "tris": 776
         },
         "LOD1": {
           "objects": {
             "PROC_DeliJar_Band_LOD1": {
-              "geometry_sha256": "e969d7a449d004ff",
+              "geometry_sha256": "290110633079395c",
               "size_m_unity_xyz": [
-                0.155,
+                0.1574,
                 0.055,
-                0.155
+                0.1447
               ],
               "tris": 60,
               "uv_maps": [
@@ -114,11 +114,11 @@
               "verts": 32
             },
             "PROC_DeliJar_Glass_LOD1": {
-              "geometry_sha256": "46d5baf41792f739",
+              "geometry_sha256": "f87d65135c7f2a07",
               "size_m_unity_xyz": [
-                0.15,
-                0.28,
-                0.15
+                0.1524,
+                0.235,
+                0.1397
               ],
               "tris": 76,
               "uv_maps": [
@@ -128,7 +128,7 @@
               "verts": 40
             },
             "PROC_DeliJar_Label_LOD1": {
-              "geometry_sha256": "eb9e16b1a326c00d",
+              "geometry_sha256": "171e00c175bf2746",
               "size_m_unity_xyz": [
                 0.1,
                 0.08,
@@ -142,11 +142,11 @@
               "verts": 4
             },
             "PROC_DeliJar_Lid_LOD1": {
-              "geometry_sha256": "a054ff76e7571d90",
+              "geometry_sha256": "0678b6bfae7f583a",
               "size_m_unity_xyz": [
-                0.154,
-                0.035,
-                0.154
+                0.1564,
+                0.0254,
+                0.1437
               ],
               "tris": 76,
               "uv_maps": [
@@ -156,7 +156,7 @@
               "verts": 40
             },
             "PROC_DeliJar_ThcTag_LOD1": {
-              "geometry_sha256": "cf19392b6f7e4a01",
+              "geometry_sha256": "f7f348ad357fb8ce",
               "size_m_unity_xyz": [
                 0.045,
                 0.028,
@@ -171,23 +171,180 @@
             }
           },
           "size_m_unity_xyz": [
-            0.155,
-            0.315,
-            0.155
+            0.1574,
+            0.2604,
+            0.1447
           ],
           "tris": 216
         }
       },
       "params": "Tools/Blender/params/deli_jar.json",
-      "params_sha256": "d8d1a9b014699b05",
+      "params_sha256": "ea9d92463204a171",
       "tri_budget": {
         "LOD0": 1000,
         "LOD1": 250
-      }
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/DeliJar/PROC_DeliJar.fbx"
+    },
+    "PROC_DeliJar_Smalls": {
+      "export": "Art/Exports/Procedural/PROC_DeliJar_Smalls.fbx",
+      "export_sha256": "2e19cda23a82915b",
+      "gaps": [
+        "GAP-PROC-03",
+        "GAP-PROC-12"
+      ],
+      "generator": "deli_jar",
+      "interior": {
+        "floor_y_m": 0.008,
+        "size_x_m": 0.1469,
+        "size_z_m": 0.1266,
+        "top_y_m": 0.2388
+      },
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_DeliJar_Smalls_Glass_LOD0": {
+              "geometry_sha256": "1d42ae886516f5b3",
+              "size_m_unity_xyz": [
+                0.1549,
+                0.2388,
+                0.1346
+              ],
+              "tris": 276,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 140
+            },
+            "PROC_DeliJar_Smalls_Label_LOD0": {
+              "geometry_sha256": "f0a232141292c5f1",
+              "size_m_unity_xyz": [
+                0.1,
+                0.08,
+                0.0
+              ],
+              "tris": 2,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 4
+            },
+            "PROC_DeliJar_Smalls_Lid_LOD0": {
+              "geometry_sha256": "df2900c052dd81c6",
+              "size_m_unity_xyz": [
+                0.1589,
+                0.0254,
+                0.1386
+              ],
+              "tris": 276,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 140
+            },
+            "PROC_DeliJar_Smalls_ThcTag_LOD0": {
+              "geometry_sha256": "1d8b1d352d7f4a2d",
+              "size_m_unity_xyz": [
+                0.045,
+                0.028,
+                0.0
+              ],
+              "tris": 2,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 4
+            }
+          },
+          "size_m_unity_xyz": [
+            0.1589,
+            0.2642,
+            0.1386
+          ],
+          "tris": 556
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_DeliJar_Smalls_Glass_LOD1": {
+              "geometry_sha256": "627c58db986a3519",
+              "size_m_unity_xyz": [
+                0.1549,
+                0.2388,
+                0.1346
+              ],
+              "tris": 76,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 40
+            },
+            "PROC_DeliJar_Smalls_Label_LOD1": {
+              "geometry_sha256": "f0a232141292c5f1",
+              "size_m_unity_xyz": [
+                0.1,
+                0.08,
+                0.0
+              ],
+              "tris": 2,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 4
+            },
+            "PROC_DeliJar_Smalls_Lid_LOD1": {
+              "geometry_sha256": "a7048bbdae010a39",
+              "size_m_unity_xyz": [
+                0.1589,
+                0.0254,
+                0.1386
+              ],
+              "tris": 76,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 40
+            },
+            "PROC_DeliJar_Smalls_ThcTag_LOD1": {
+              "geometry_sha256": "1d8b1d352d7f4a2d",
+              "size_m_unity_xyz": [
+                0.045,
+                0.028,
+                0.0
+              ],
+              "tris": 2,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 4
+            }
+          },
+          "size_m_unity_xyz": [
+            0.1589,
+            0.2642,
+            0.1386
+          ],
+          "tris": 156
+        }
+      },
+      "params": "Tools/Blender/params/deli_jar_smalls.json",
+      "params_sha256": "b75aba6bac0e3a3d",
+      "tri_budget": {
+        "LOD0": 1000,
+        "LOD1": 250
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/DeliJar/PROC_DeliJar_Smalls.fbx"
     },
     "PROC_JarFill_DarkCompact": {
       "export": "Art/Exports/Procedural/PROC_JarFill_DarkCompact.fbx",
-      "export_sha256": "32c73f3cf39610ff",
+      "export_sha256": "36d931daa1d99750",
       "family": "DarkCompact",
       "fill_steps_pct": [
         0,
@@ -198,27 +355,29 @@
         100
       ],
       "gaps": [
+        "DEC-046",
         "GAP-PROC-01",
         "GAP-PROC-07",
         "GAP-PROC-08"
       ],
       "generator": "jar_fill",
       "interior": {
+        "band": 0.055,
         "corner_r": 0.013999999999999999,
         "floor": 0.008,
-        "half_x": 0.071,
-        "half_y": 0.071,
-        "top": 0.28
+        "half_x": 0.0722,
+        "half_y": 0.06584999999999999,
+        "top": 0.235
       },
       "lods": {
         "LOD0": {
           "objects": {
             "PROC_JarFill_DarkCompact_F000_LOD0": {
-              "geometry_sha256": "933535191b85a422",
+              "geometry_sha256": "3b5898c1ae29041c",
               "size_m_unity_xyz": [
-                0.08308,
+                0.0844,
                 0.00671,
-                0.10933
+                0.10178
               ],
               "tris": 200,
               "uv_maps": [
@@ -228,171 +387,171 @@
               "verts": 120
             },
             "PROC_JarFill_DarkCompact_F010_LOD0": {
-              "geometry_sha256": "e9bf5548f8c93d5c",
+              "geometry_sha256": "6f337131343a3647",
               "size_m_unity_xyz": [
-                0.12868,
-                0.04236,
-                0.13675
+                0.12827,
+                0.06765,
+                0.1089
               ],
-              "tris": 680,
+              "tris": 600,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 372
+              "verts": 330
             },
             "PROC_JarFill_DarkCompact_F020_LOD0": {
-              "geometry_sha256": "b62b621f8b314f76",
+              "geometry_sha256": "a0cde9674f3edd5f",
               "size_m_unity_xyz": [
-                0.13281,
-                0.06928,
-                0.13727
+                0.14139,
+                0.06842,
+                0.11604
               ],
-              "tris": 1040,
+              "tris": 880,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 546
+              "verts": 462
             },
             "PROC_JarFill_DarkCompact_F040_LOD0": {
-              "geometry_sha256": "791142c6dc12fcc7",
+              "geometry_sha256": "f2029ecf59df4fff",
               "size_m_unity_xyz": [
-                0.13753,
-                0.09669,
-                0.13781
+                0.14143,
+                0.10187,
+                0.12944
               ],
-              "tris": 1840,
+              "tris": 1680,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 966
+              "verts": 882
             },
             "PROC_JarFill_DarkCompact_F070_LOD0": {
-              "geometry_sha256": "b024b725ccdcb314",
+              "geometry_sha256": "d610378d7930682a",
               "size_m_unity_xyz": [
-                0.13895,
-                0.15616,
-                0.13922
+                0.14143,
+                0.15805,
+                0.12944
               ],
-              "tris": 3200,
+              "tris": 2800,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 1680
+              "verts": 1470
             },
             "PROC_JarFill_DarkCompact_F100_LOD0": {
-              "geometry_sha256": "0d39ea33ef76b886",
+              "geometry_sha256": "7f4cffecaf1df597",
               "size_m_unity_xyz": [
-                0.13895,
-                0.21621,
-                0.13922
+                0.14143,
+                0.19476,
+                0.12944
               ],
-              "tris": 4560,
+              "tris": 3920,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 2394
+              "verts": 2058
             }
           },
           "size_m_unity_xyz": [
-            0.13895,
-            0.21621,
-            0.13922
+            0.14143,
+            0.19476,
+            0.12944
           ],
-          "tris": 11520
+          "tris": 10080
         },
         "LOD1": {
           "objects": {
             "PROC_JarFill_DarkCompact_F010_LOD1": {
-              "geometry_sha256": "003030fc14b8db47",
+              "geometry_sha256": "8d835997c0a3627e",
               "size_m_unity_xyz": [
-                0.13061,
-                0.03931,
-                0.13699
+                0.12783,
+                0.06695,
+                0.0783
               ],
-              "tris": 120,
+              "tris": 100,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 72
+              "verts": 60
             },
             "PROC_JarFill_DarkCompact_F020_LOD1": {
-              "geometry_sha256": "4b2e406fe7e06f77",
+              "geometry_sha256": "71a7d3d920f1e2b4",
               "size_m_unity_xyz": [
-                0.13168,
-                0.06865,
-                0.13699
+                0.1421,
+                0.06842,
+                0.11586
               ],
-              "tris": 260,
+              "tris": 220,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 156
+              "verts": 132
             },
             "PROC_JarFill_DarkCompact_F040_LOD1": {
-              "geometry_sha256": "8bd135e39dada2a2",
+              "geometry_sha256": "322615f009478727",
               "size_m_unity_xyz": [
-                0.13801,
-                0.09669,
-                0.13847
+                0.1421,
+                0.10142,
+                0.12893
               ],
-              "tris": 460,
+              "tris": 420,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 276
+              "verts": 252
             },
             "PROC_JarFill_DarkCompact_F070_LOD1": {
-              "geometry_sha256": "86f5e97241950760",
+              "geometry_sha256": "2ef90dd43d9d4edf",
               "size_m_unity_xyz": [
-                0.13881,
-                0.15468,
-                0.13868
+                0.1421,
+                0.15674,
+                0.12893
               ],
-              "tris": 800,
+              "tris": 700,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 480
+              "verts": 420
             },
             "PROC_JarFill_DarkCompact_F100_LOD1": {
-              "geometry_sha256": "f71da9d4c53e961b",
+              "geometry_sha256": "ecacff5406d9cfd6",
               "size_m_unity_xyz": [
-                0.13953,
-                0.21552,
-                0.13882
+                0.1421,
+                0.19364,
+                0.12926
               ],
-              "tris": 1140,
+              "tris": 980,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 684
+              "verts": 588
             }
           },
           "size_m_unity_xyz": [
-            0.13953,
-            0.21552,
-            0.13882
+            0.1421,
+            0.19364,
+            0.12926
           ],
-          "tris": 2780
+          "tris": 2420
         },
         "LOD2": {
           "objects": {
             "PROC_JarFill_DarkCompact_F010_LOD2": {
-              "geometry_sha256": "05a1bde97fac4371",
+              "geometry_sha256": "8cb93523d3be1bc2",
               "size_m_unity_xyz": [
-                0.136,
-                0.0277,
-                0.136
+                0.1384,
+                0.057,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -402,11 +561,11 @@
               "verts": 16
             },
             "PROC_JarFill_DarkCompact_F020_LOD2": {
-              "geometry_sha256": "b58388a8044681f6",
+              "geometry_sha256": "8cb93523d3be1bc2",
               "size_m_unity_xyz": [
-                0.136,
-                0.0508,
-                0.136
+                0.1384,
+                0.057,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -416,11 +575,11 @@
               "verts": 16
             },
             "PROC_JarFill_DarkCompact_F040_LOD2": {
-              "geometry_sha256": "30820c17d7ba331f",
+              "geometry_sha256": "56fe3781854239bd",
               "size_m_unity_xyz": [
-                0.136,
-                0.0904,
-                0.136
+                0.1384,
+                0.0827,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -430,11 +589,11 @@
               "verts": 16
             },
             "PROC_JarFill_DarkCompact_F070_LOD2": {
-              "geometry_sha256": "5700a3b94ba6788b",
+              "geometry_sha256": "145ca3232aa61ecc",
               "size_m_unity_xyz": [
-                0.136,
-                0.1531,
-                0.136
+                0.1384,
+                0.1371,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -444,11 +603,11 @@
               "verts": 16
             },
             "PROC_JarFill_DarkCompact_F100_LOD2": {
-              "geometry_sha256": "f2d8cd326ab03fc4",
+              "geometry_sha256": "c41c721425e1ed2b",
               "size_m_unity_xyz": [
-                0.136,
-                0.2158,
-                0.136
+                0.1384,
+                0.1915,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -459,15 +618,15 @@
             }
           },
           "size_m_unity_xyz": [
-            0.136,
-            0.2158,
-            0.136
+            0.1384,
+            0.1915,
+            0.1257
           ],
           "tris": 140
         }
       },
       "params": "Tools/Blender/params/jar_fill.json",
-      "params_sha256": "c437ad7c52421dd8",
+      "params_sha256": "c024995a99d42b80",
       "preview_groups": [
         "F000",
         "F010",
@@ -485,7 +644,7 @@
     },
     "PROC_JarFill_Frosty": {
       "export": "Art/Exports/Procedural/PROC_JarFill_Frosty.fbx",
-      "export_sha256": "31960aff2aa74db6",
+      "export_sha256": "e910f74bde142c20",
       "family": "Frosty",
       "fill_steps_pct": [
         0,
@@ -496,27 +655,29 @@
         100
       ],
       "gaps": [
+        "DEC-046",
         "GAP-PROC-01",
         "GAP-PROC-07",
         "GAP-PROC-08"
       ],
       "generator": "jar_fill",
       "interior": {
+        "band": 0.055,
         "corner_r": 0.013999999999999999,
         "floor": 0.008,
-        "half_x": 0.071,
-        "half_y": 0.071,
-        "top": 0.28
+        "half_x": 0.0722,
+        "half_y": 0.06584999999999999,
+        "top": 0.235
       },
       "lods": {
         "LOD0": {
           "objects": {
             "PROC_JarFill_Frosty_F000_LOD0": {
-              "geometry_sha256": "f640960b949cd0a7",
+              "geometry_sha256": "4d4eb1adda710781",
               "size_m_unity_xyz": [
-                0.09545,
+                0.09696,
                 0.00671,
-                0.07814
+                0.0729
               ],
               "tris": 200,
               "uv_maps": [
@@ -526,171 +687,171 @@
               "verts": 120
             },
             "PROC_JarFill_Frosty_F010_LOD0": {
-              "geometry_sha256": "b8f0a39ff3a3581f",
+              "geometry_sha256": "aa3a80bfd547ef46",
               "size_m_unity_xyz": [
-                0.13709,
-                0.06058,
-                0.1366
+                0.11121,
+                0.07384,
+                0.11127
               ],
-              "tris": 680,
+              "tris": 600,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 372
+              "verts": 330
             },
             "PROC_JarFill_Frosty_F020_LOD0": {
-              "geometry_sha256": "df95f1796aa8e060",
+              "geometry_sha256": "b3b057e871aefc7b",
               "size_m_unity_xyz": [
-                0.13914,
-                0.08608,
-                0.13836
+                0.14057,
+                0.07384,
+                0.11747
               ],
-              "tris": 1040,
+              "tris": 880,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 546
+              "verts": 462
             },
             "PROC_JarFill_Frosty_F040_LOD0": {
-              "geometry_sha256": "9f5bd40a596c32b6",
+              "geometry_sha256": "bdf56ece7dc21c54",
               "size_m_unity_xyz": [
-                0.13914,
-                0.11669,
-                0.13942
+                0.14083,
+                0.12358,
+                0.12797
               ],
-              "tris": 1840,
+              "tris": 1680,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 966
+              "verts": 882
             },
             "PROC_JarFill_Frosty_F070_LOD0": {
-              "geometry_sha256": "667077e7f7dc330b",
+              "geometry_sha256": "637fb5bdd6c6525f",
               "size_m_unity_xyz": [
-                0.1395,
-                0.18636,
-                0.13942
+                0.14111,
+                0.19121,
+                0.12824
               ],
-              "tris": 3200,
+              "tris": 2800,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 1680
+              "verts": 1470
             },
             "PROC_JarFill_Frosty_F100_LOD0": {
-              "geometry_sha256": "6e44c2f47e0be9e6",
+              "geometry_sha256": "fac20746167a8cfa",
               "size_m_unity_xyz": [
-                0.1395,
-                0.24799,
-                0.13942
+                0.14187,
+                0.223,
+                0.12962
               ],
-              "tris": 4560,
+              "tris": 3920,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 2394
+              "verts": 2058
             }
           },
           "size_m_unity_xyz": [
-            0.1395,
-            0.24799,
-            0.13942
+            0.14187,
+            0.223,
+            0.12962
           ],
-          "tris": 11520
+          "tris": 10080
         },
         "LOD1": {
           "objects": {
             "PROC_JarFill_Frosty_F010_LOD1": {
-              "geometry_sha256": "36f3dcb4158db583",
+              "geometry_sha256": "d28e5569a04bb6b3",
               "size_m_unity_xyz": [
-                0.13709,
-                0.05449,
-                0.13794
+                0.10141,
+                0.07384,
+                0.0748
               ],
-              "tris": 120,
+              "tris": 100,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 72
+              "verts": 60
             },
             "PROC_JarFill_Frosty_F020_LOD1": {
-              "geometry_sha256": "321e4a87dee5b1b9",
+              "geometry_sha256": "40693d9a5f984451",
               "size_m_unity_xyz": [
-                0.13806,
-                0.08241,
-                0.13794
+                0.14052,
+                0.07384,
+                0.11914
               ],
-              "tris": 260,
+              "tris": 220,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 156
+              "verts": 132
             },
             "PROC_JarFill_Frosty_F040_LOD1": {
-              "geometry_sha256": "e0df87fc7727b792",
+              "geometry_sha256": "b52e50337f9ca981",
               "size_m_unity_xyz": [
-                0.13855,
-                0.11669,
-                0.13899
+                0.14083,
+                0.1182,
+                0.12852
               ],
-              "tris": 460,
+              "tris": 420,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 276
+              "verts": 252
             },
             "PROC_JarFill_Frosty_F070_LOD1": {
-              "geometry_sha256": "404f1df76da2ad9f",
+              "geometry_sha256": "d31528eaa605361f",
               "size_m_unity_xyz": [
-                0.13879,
-                0.18636,
-                0.13908
+                0.14166,
+                0.19121,
+                0.12916
               ],
-              "tris": 800,
+              "tris": 700,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 480
+              "verts": 420
             },
             "PROC_JarFill_Frosty_F100_LOD1": {
-              "geometry_sha256": "5a5883a2b24a4698",
+              "geometry_sha256": "9a1c5f5c77550826",
               "size_m_unity_xyz": [
-                0.13911,
-                0.2461,
-                0.13934
+                0.14228,
+                0.22076,
+                0.12945
               ],
-              "tris": 1140,
+              "tris": 980,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 684
+              "verts": 588
             }
           },
           "size_m_unity_xyz": [
-            0.13911,
-            0.2461,
-            0.13934
+            0.14228,
+            0.22076,
+            0.12945
           ],
-          "tris": 2780
+          "tris": 2420
         },
         "LOD2": {
           "objects": {
             "PROC_JarFill_Frosty_F010_LOD2": {
-              "geometry_sha256": "1a15997503e4e302",
+              "geometry_sha256": "8cb93523d3be1bc2",
               "size_m_unity_xyz": [
-                0.136,
-                0.031,
-                0.136
+                0.1384,
+                0.057,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -700,11 +861,11 @@
               "verts": 16
             },
             "PROC_JarFill_Frosty_F020_LOD2": {
-              "geometry_sha256": "6a7433d7b3ec4fec",
+              "geometry_sha256": "8cb93523d3be1bc2",
               "size_m_unity_xyz": [
-                0.136,
-                0.05667,
-                0.136
+                0.1384,
+                0.057,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -714,11 +875,11 @@
               "verts": 16
             },
             "PROC_JarFill_Frosty_F040_LOD2": {
-              "geometry_sha256": "3c8bb195dd7e8fa2",
+              "geometry_sha256": "703ef9bb27934cd3",
               "size_m_unity_xyz": [
-                0.136,
-                0.10067,
-                0.136
+                0.1384,
+                0.09211,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -728,11 +889,11 @@
               "verts": 16
             },
             "PROC_JarFill_Frosty_F070_LOD2": {
-              "geometry_sha256": "59dfad8496546bac",
+              "geometry_sha256": "36822889aad6356b",
               "size_m_unity_xyz": [
-                0.136,
-                0.17033,
-                0.136
+                0.1384,
+                0.15256,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -742,11 +903,11 @@
               "verts": 16
             },
             "PROC_JarFill_Frosty_F100_LOD2": {
-              "geometry_sha256": "26d4a49214573df5",
+              "geometry_sha256": "6f5473e63f069824",
               "size_m_unity_xyz": [
-                0.136,
-                0.24,
-                0.136
+                0.1384,
+                0.213,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -757,15 +918,15 @@
             }
           },
           "size_m_unity_xyz": [
-            0.136,
-            0.24,
-            0.136
+            0.1384,
+            0.213,
+            0.1257
           ],
           "tris": 140
         }
       },
       "params": "Tools/Blender/params/jar_fill.json",
-      "params_sha256": "c437ad7c52421dd8",
+      "params_sha256": "c024995a99d42b80",
       "preview_groups": [
         "F000",
         "F010",
@@ -783,7 +944,7 @@
     },
     "PROC_JarFill_GreenAiry": {
       "export": "Art/Exports/Procedural/PROC_JarFill_GreenAiry.fbx",
-      "export_sha256": "afc4fc2607f416ba",
+      "export_sha256": "e4b019a571a72727",
       "family": "GreenAiry",
       "fill_steps_pct": [
         0,
@@ -794,27 +955,29 @@
         100
       ],
       "gaps": [
+        "DEC-046",
         "GAP-PROC-01",
         "GAP-PROC-07",
         "GAP-PROC-08"
       ],
       "generator": "jar_fill",
       "interior": {
+        "band": 0.055,
         "corner_r": 0.013999999999999999,
         "floor": 0.008,
-        "half_x": 0.071,
-        "half_y": 0.071,
-        "top": 0.28
+        "half_x": 0.0722,
+        "half_y": 0.06584999999999999,
+        "top": 0.235
       },
       "lods": {
         "LOD0": {
           "objects": {
             "PROC_JarFill_GreenAiry_F000_LOD0": {
-              "geometry_sha256": "bc26a2672b512699",
+              "geometry_sha256": "4421798e9f256857",
               "size_m_unity_xyz": [
-                0.10419,
+                0.10588,
                 0.00656,
-                0.10841
+                0.10091
               ],
               "tris": 200,
               "uv_maps": [
@@ -824,171 +987,171 @@
               "verts": 120
             },
             "PROC_JarFill_GreenAiry_F010_LOD0": {
-              "geometry_sha256": "ce876e857fd644d5",
+              "geometry_sha256": "8246fb076f2eeaef",
               "size_m_unity_xyz": [
-                0.13135,
-                0.06776,
-                0.13886
+                0.13984,
+                0.0926,
+                0.11725
               ],
-              "tris": 680,
+              "tris": 600,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 372
+              "verts": 330
             },
             "PROC_JarFill_GreenAiry_F020_LOD0": {
-              "geometry_sha256": "52956663d895b10e",
+              "geometry_sha256": "6436c637a4133159",
               "size_m_unity_xyz": [
-                0.13881,
-                0.09583,
-                0.13914
+                0.14167,
+                0.09827,
+                0.12931
               ],
-              "tris": 960,
+              "tris": 880,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 504
+              "verts": 462
             },
             "PROC_JarFill_GreenAiry_F040_LOD0": {
-              "geometry_sha256": "0f62c71a974619de",
+              "geometry_sha256": "51ee6f30f3fa779e",
               "size_m_unity_xyz": [
-                0.13901,
-                0.12741,
-                0.13914
+                0.14167,
+                0.12363,
+                0.12931
               ],
-              "tris": 1840,
+              "tris": 1600,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 966
+              "verts": 840
             },
             "PROC_JarFill_GreenAiry_F070_LOD0": {
-              "geometry_sha256": "56e1b3336d57e7a9",
+              "geometry_sha256": "2e768d1a1117b6e8",
               "size_m_unity_xyz": [
-                0.13959,
-                0.19852,
-                0.13931
+                0.14167,
+                0.20752,
+                0.12956
               ],
-              "tris": 3200,
+              "tris": 2800,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 1680
+              "verts": 1470
             },
             "PROC_JarFill_GreenAiry_F100_LOD0": {
-              "geometry_sha256": "9b2e1f0cda75fee0",
+              "geometry_sha256": "25b5cb81d3d564ab",
               "size_m_unity_xyz": [
-                0.1397,
-                0.26765,
-                0.13958
+                0.14167,
+                0.223,
+                0.12956
               ],
-              "tris": 4560,
+              "tris": 3920,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 2394
+              "verts": 2058
             }
           },
           "size_m_unity_xyz": [
-            0.1397,
-            0.26765,
-            0.13958
+            0.14167,
+            0.223,
+            0.12956
           ],
-          "tris": 11440
+          "tris": 10000
         },
         "LOD1": {
           "objects": {
             "PROC_JarFill_GreenAiry_F010_LOD1": {
-              "geometry_sha256": "9b235d42226e923a",
+              "geometry_sha256": "439f4bc628c20959",
               "size_m_unity_xyz": [
-                0.13335,
-                0.06284,
-                0.13862
+                0.13971,
+                0.08939,
+                0.08228
               ],
-              "tris": 120,
+              "tris": 100,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 72
+              "verts": 60
             },
             "PROC_JarFill_GreenAiry_F020_LOD1": {
-              "geometry_sha256": "a90dd64451a60cd7",
+              "geometry_sha256": "1a871f24b9983763",
               "size_m_unity_xyz": [
-                0.1373,
-                0.09203,
-                0.13862
+                0.14226,
+                0.09737,
+                0.12926
               ],
-              "tris": 240,
+              "tris": 220,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 144
+              "verts": 132
             },
             "PROC_JarFill_GreenAiry_F040_LOD1": {
-              "geometry_sha256": "ec4c393c8149b774",
+              "geometry_sha256": "64168c78dda70a60",
               "size_m_unity_xyz": [
-                0.13928,
-                0.12741,
-                0.13934
+                0.14226,
+                0.12348,
+                0.12926
               ],
-              "tris": 460,
+              "tris": 400,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 276
+              "verts": 240
             },
             "PROC_JarFill_GreenAiry_F070_LOD1": {
-              "geometry_sha256": "96886f60ecf3d1d3",
+              "geometry_sha256": "c5f15201a2fedf1a",
               "size_m_unity_xyz": [
-                0.13949,
-                0.19852,
-                0.1395
+                0.14226,
+                0.20752,
+                0.12926
               ],
-              "tris": 800,
+              "tris": 700,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 480
+              "verts": 420
             },
             "PROC_JarFill_GreenAiry_F100_LOD1": {
-              "geometry_sha256": "78809765f1c12d66",
+              "geometry_sha256": "4b51937377bca423",
               "size_m_unity_xyz": [
-                0.13995,
-                0.26765,
-                0.1396
+                0.14226,
+                0.223,
+                0.12926
               ],
-              "tris": 1140,
+              "tris": 980,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 684
+              "verts": 588
             }
           },
           "size_m_unity_xyz": [
-            0.13995,
-            0.26765,
-            0.1396
+            0.14226,
+            0.223,
+            0.12926
           ],
-          "tris": 2760
+          "tris": 2400
         },
         "LOD2": {
           "objects": {
             "PROC_JarFill_GreenAiry_F010_LOD2": {
-              "geometry_sha256": "a4b613af2449e1eb",
+              "geometry_sha256": "8cb93523d3be1bc2",
               "size_m_unity_xyz": [
-                0.136,
-                0.03265,
-                0.136
+                0.1384,
+                0.057,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -998,11 +1161,11 @@
               "verts": 16
             },
             "PROC_JarFill_GreenAiry_F020_LOD2": {
-              "geometry_sha256": "8ee2edf429e9febb",
+              "geometry_sha256": "8cb93523d3be1bc2",
               "size_m_unity_xyz": [
-                0.136,
-                0.0596,
-                0.136
+                0.1384,
+                0.057,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1012,11 +1175,11 @@
               "verts": 16
             },
             "PROC_JarFill_GreenAiry_F040_LOD2": {
-              "geometry_sha256": "6574229585fbff04",
+              "geometry_sha256": "1f0ee210d1dfc20d",
               "size_m_unity_xyz": [
-                0.136,
-                0.1058,
-                0.136
+                0.1384,
+                0.09682,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1026,11 +1189,11 @@
               "verts": 16
             },
             "PROC_JarFill_GreenAiry_F070_LOD2": {
-              "geometry_sha256": "b7967fa4e400fc53",
+              "geometry_sha256": "42c145623ed2c505",
               "size_m_unity_xyz": [
-                0.136,
-                0.17895,
-                0.136
+                0.1384,
+                0.16028,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1040,11 +1203,11 @@
               "verts": 16
             },
             "PROC_JarFill_GreenAiry_F100_LOD2": {
-              "geometry_sha256": "f8d3742ff787f791",
+              "geometry_sha256": "6ebd4ff8de2559fc",
               "size_m_unity_xyz": [
-                0.136,
-                0.2521,
-                0.136
+                0.1384,
+                0.223,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1055,15 +1218,15 @@
             }
           },
           "size_m_unity_xyz": [
-            0.136,
-            0.2521,
-            0.136
+            0.1384,
+            0.223,
+            0.1257
           ],
           "tris": 140
         }
       },
       "params": "Tools/Blender/params/jar_fill.json",
-      "params_sha256": "c437ad7c52421dd8",
+      "params_sha256": "c024995a99d42b80",
       "preview_groups": [
         "F000",
         "F010",
@@ -1081,7 +1244,7 @@
     },
     "PROC_JarFill_GreenDense": {
       "export": "Art/Exports/Procedural/PROC_JarFill_GreenDense.fbx",
-      "export_sha256": "f4dd37b825dad838",
+      "export_sha256": "cac2777dcb7a1d0f",
       "family": "GreenDense",
       "fill_steps_pct": [
         0,
@@ -1092,27 +1255,29 @@
         100
       ],
       "gaps": [
+        "DEC-046",
         "GAP-PROC-01",
         "GAP-PROC-07",
         "GAP-PROC-08"
       ],
       "generator": "jar_fill",
       "interior": {
+        "band": 0.055,
         "corner_r": 0.013999999999999999,
         "floor": 0.008,
-        "half_x": 0.071,
-        "half_y": 0.071,
-        "top": 0.28
+        "half_x": 0.0722,
+        "half_y": 0.06584999999999999,
+        "top": 0.235
       },
       "lods": {
         "LOD0": {
           "objects": {
             "PROC_JarFill_GreenDense_F000_LOD0": {
-              "geometry_sha256": "5cb441daf1269948",
+              "geometry_sha256": "dfb0d097dcd73267",
               "size_m_unity_xyz": [
-                0.08778,
+                0.08916,
                 0.00733,
-                0.10279
+                0.09577
               ],
               "tris": 200,
               "uv_maps": [
@@ -1122,171 +1287,171 @@
               "verts": 120
             },
             "PROC_JarFill_GreenDense_F010_LOD0": {
-              "geometry_sha256": "abc10acbc57071ab",
+              "geometry_sha256": "acc4c913e39e67e3",
               "size_m_unity_xyz": [
-                0.13588,
-                0.04788,
-                0.13584
+                0.13197,
+                0.07193,
+                0.09975
               ],
-              "tris": 680,
+              "tris": 600,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 372
+              "verts": 330
             },
             "PROC_JarFill_GreenDense_F020_LOD0": {
-              "geometry_sha256": "1c32edf04f616502",
+              "geometry_sha256": "7c7498f621a159a1",
               "size_m_unity_xyz": [
-                0.13772,
-                0.0789,
-                0.13584
+                0.14075,
+                0.07825,
+                0.12175
               ],
-              "tris": 1040,
+              "tris": 880,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 546
+              "verts": 462
             },
             "PROC_JarFill_GreenDense_F040_LOD0": {
-              "geometry_sha256": "d0b217e39e617ab5",
+              "geometry_sha256": "a7a03c5e1bc758bc",
               "size_m_unity_xyz": [
-                0.13772,
-                0.10647,
-                0.1389
+                0.14193,
+                0.11121,
+                0.1286
               ],
-              "tris": 1920,
+              "tris": 1600,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 1008
+              "verts": 840
             },
             "PROC_JarFill_GreenDense_F070_LOD0": {
-              "geometry_sha256": "294d0505c158511e",
+              "geometry_sha256": "21742f2bdf30dd23",
               "size_m_unity_xyz": [
-                0.13901,
-                0.17029,
-                0.1389
+                0.14193,
+                0.17431,
+                0.1286
               ],
-              "tris": 3200,
+              "tris": 2800,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 1680
+              "verts": 1470
             },
             "PROC_JarFill_GreenDense_F100_LOD0": {
-              "geometry_sha256": "15f5f7d4462384f1",
+              "geometry_sha256": "7b200e05291c49a8",
               "size_m_unity_xyz": [
-                0.13951,
-                0.23569,
-                0.13971
+                0.14195,
+                0.21089,
+                0.12933
               ],
-              "tris": 4560,
+              "tris": 3920,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 2394
+              "verts": 2058
             }
           },
           "size_m_unity_xyz": [
-            0.13951,
-            0.23569,
-            0.13971
+            0.14195,
+            0.21089,
+            0.12933
           ],
-          "tris": 11600
+          "tris": 10000
         },
         "LOD1": {
           "objects": {
             "PROC_JarFill_GreenDense_F010_LOD1": {
-              "geometry_sha256": "0553357430e97efc",
+              "geometry_sha256": "66c6fc778c9ae84e",
               "size_m_unity_xyz": [
-                0.13588,
-                0.04442,
-                0.13584
+                0.13171,
+                0.07029,
+                0.07571
               ],
-              "tris": 120,
+              "tris": 100,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 72
+              "verts": 60
             },
             "PROC_JarFill_GreenDense_F020_LOD1": {
-              "geometry_sha256": "c2da488b8965adea",
+              "geometry_sha256": "3fa90408faee690d",
               "size_m_unity_xyz": [
-                0.13772,
-                0.07653,
-                0.13584
+                0.14068,
+                0.07825,
+                0.12143
               ],
-              "tris": 260,
+              "tris": 220,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 156
+              "verts": 132
             },
             "PROC_JarFill_GreenDense_F040_LOD1": {
-              "geometry_sha256": "4f88eb0d727fd546",
+              "geometry_sha256": "d18f08d7b2926611",
               "size_m_unity_xyz": [
-                0.13772,
-                0.10465,
-                0.13815
+                0.14105,
+                0.1106,
+                0.12672
               ],
-              "tris": 480,
+              "tris": 400,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 288
+              "verts": 240
             },
             "PROC_JarFill_GreenDense_F070_LOD1": {
-              "geometry_sha256": "3d217227576b1056",
+              "geometry_sha256": "03dc794c68ab0da0",
               "size_m_unity_xyz": [
-                0.13919,
-                0.16724,
-                0.13815
+                0.14105,
+                0.17425,
+                0.12726
               ],
-              "tris": 800,
+              "tris": 700,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 480
+              "verts": 420
             },
             "PROC_JarFill_GreenDense_F100_LOD1": {
-              "geometry_sha256": "0b341c5ff802bd99",
+              "geometry_sha256": "4a291b0c1793b92c",
               "size_m_unity_xyz": [
-                0.13929,
-                0.23428,
-                0.13916
+                0.14105,
+                0.20766,
+                0.1289
               ],
-              "tris": 1140,
+              "tris": 980,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 684
+              "verts": 588
             }
           },
           "size_m_unity_xyz": [
-            0.13929,
-            0.23428,
-            0.13916
+            0.14105,
+            0.20766,
+            0.1289
           ],
-          "tris": 2800
+          "tris": 2400
         },
         "LOD2": {
           "objects": {
             "PROC_JarFill_GreenDense_F010_LOD2": {
-              "geometry_sha256": "4abf29207b430dd0",
+              "geometry_sha256": "8cb93523d3be1bc2",
               "size_m_unity_xyz": [
-                0.136,
-                0.02935,
-                0.136
+                0.1384,
+                0.057,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1296,11 +1461,11 @@
               "verts": 16
             },
             "PROC_JarFill_GreenDense_F020_LOD2": {
-              "geometry_sha256": "4c6c9134417f7a7b",
+              "geometry_sha256": "8cb93523d3be1bc2",
               "size_m_unity_xyz": [
-                0.136,
-                0.05373,
-                0.136
+                0.1384,
+                0.057,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1310,11 +1475,11 @@
               "verts": 16
             },
             "PROC_JarFill_GreenDense_F040_LOD2": {
-              "geometry_sha256": "b66356032b6fb430",
+              "geometry_sha256": "718d56661d7e3d38",
               "size_m_unity_xyz": [
-                0.136,
-                0.09553,
-                0.136
+                0.1384,
+                0.08741,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1324,11 +1489,11 @@
               "verts": 16
             },
             "PROC_JarFill_GreenDense_F070_LOD2": {
-              "geometry_sha256": "f4b99e9b22d5816f",
+              "geometry_sha256": "9f7df707d939cf8a",
               "size_m_unity_xyz": [
-                0.136,
-                0.16172,
-                0.136
+                0.1384,
+                0.14483,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1338,11 +1503,11 @@
               "verts": 16
             },
             "PROC_JarFill_GreenDense_F100_LOD2": {
-              "geometry_sha256": "9093022ab126f516",
+              "geometry_sha256": "098d2161b3905520",
               "size_m_unity_xyz": [
-                0.136,
-                0.2279,
-                0.136
+                0.1384,
+                0.20225,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1353,15 +1518,15 @@
             }
           },
           "size_m_unity_xyz": [
-            0.136,
-            0.2279,
-            0.136
+            0.1384,
+            0.20225,
+            0.1257
           ],
           "tris": 140
         }
       },
       "params": "Tools/Blender/params/jar_fill.json",
-      "params_sha256": "c437ad7c52421dd8",
+      "params_sha256": "c024995a99d42b80",
       "preview_groups": [
         "F000",
         "F010",
@@ -1379,7 +1544,7 @@
     },
     "PROC_JarFill_OrangePistil": {
       "export": "Art/Exports/Procedural/PROC_JarFill_OrangePistil.fbx",
-      "export_sha256": "dfd37b8af97c8f29",
+      "export_sha256": "e492b92fd9a2a8e8",
       "family": "OrangePistil",
       "fill_steps_pct": [
         0,
@@ -1390,27 +1555,29 @@
         100
       ],
       "gaps": [
+        "DEC-046",
         "GAP-PROC-01",
         "GAP-PROC-07",
         "GAP-PROC-08"
       ],
       "generator": "jar_fill",
       "interior": {
+        "band": 0.055,
         "corner_r": 0.013999999999999999,
         "floor": 0.008,
-        "half_x": 0.071,
-        "half_y": 0.071,
-        "top": 0.28
+        "half_x": 0.0722,
+        "half_y": 0.06584999999999999,
+        "top": 0.235
       },
       "lods": {
         "LOD0": {
           "objects": {
             "PROC_JarFill_OrangePistil_F000_LOD0": {
-              "geometry_sha256": "cb8f900947c4bf39",
+              "geometry_sha256": "c3ab13c06e4a4343",
               "size_m_unity_xyz": [
-                0.08576,
+                0.08712,
                 0.00545,
-                0.09676
+                0.09
               ],
               "tris": 200,
               "uv_maps": [
@@ -1420,171 +1587,171 @@
               "verts": 120
             },
             "PROC_JarFill_OrangePistil_F010_LOD0": {
-              "geometry_sha256": "962f927f7b1806c2",
+              "geometry_sha256": "0312ee7c8ceebd54",
               "size_m_unity_xyz": [
-                0.13683,
-                0.06107,
-                0.13854
+                0.11968,
+                0.08634,
+                0.10176
               ],
-              "tris": 680,
+              "tris": 600,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 372
+              "verts": 330
             },
             "PROC_JarFill_OrangePistil_F020_LOD0": {
-              "geometry_sha256": "dfb3cc8125d8a38d",
+              "geometry_sha256": "1430ae837b12daa3",
               "size_m_unity_xyz": [
-                0.13899,
-                0.08546,
-                0.13854
-              ],
-              "tris": 960,
-              "uv_maps": [
-                "UVMap_Main",
-                "UVMap_Label"
-              ],
-              "verts": 504
-            },
-            "PROC_JarFill_OrangePistil_F040_LOD0": {
-              "geometry_sha256": "873268746c02acd4",
-              "size_m_unity_xyz": [
-                0.13911,
-                0.11809,
-                0.13894
-              ],
-              "tris": 1840,
-              "uv_maps": [
-                "UVMap_Main",
-                "UVMap_Label"
-              ],
-              "verts": 966
-            },
-            "PROC_JarFill_OrangePistil_F070_LOD0": {
-              "geometry_sha256": "647eacd05aa925a6",
-              "size_m_unity_xyz": [
-                0.13969,
-                0.18697,
-                0.13951
-              ],
-              "tris": 3200,
-              "uv_maps": [
-                "UVMap_Main",
-                "UVMap_Label"
-              ],
-              "verts": 1680
-            },
-            "PROC_JarFill_OrangePistil_F100_LOD0": {
-              "geometry_sha256": "74364e898211889c",
-              "size_m_unity_xyz": [
-                0.13976,
-                0.25133,
-                0.13973
-              ],
-              "tris": 4560,
-              "uv_maps": [
-                "UVMap_Main",
-                "UVMap_Label"
-              ],
-              "verts": 2394
-            }
-          },
-          "size_m_unity_xyz": [
-            0.13976,
-            0.25133,
-            0.13973
-          ],
-          "tris": 11440
-        },
-        "LOD1": {
-          "objects": {
-            "PROC_JarFill_OrangePistil_F010_LOD1": {
-              "geometry_sha256": "5de1aaf6423ef58d",
-              "size_m_unity_xyz": [
-                0.1352,
-                0.0549,
-                0.13853
-              ],
-              "tris": 120,
-              "uv_maps": [
-                "UVMap_Main",
-                "UVMap_Label"
-              ],
-              "verts": 72
-            },
-            "PROC_JarFill_OrangePistil_F020_LOD1": {
-              "geometry_sha256": "de5b7799161bf5b7",
-              "size_m_unity_xyz": [
-                0.136,
-                0.08546,
-                0.13853
-              ],
-              "tris": 240,
-              "uv_maps": [
-                "UVMap_Main",
-                "UVMap_Label"
-              ],
-              "verts": 144
-            },
-            "PROC_JarFill_OrangePistil_F040_LOD1": {
-              "geometry_sha256": "260fed2699c143f6",
-              "size_m_unity_xyz": [
-                0.13724,
-                0.11805,
-                0.13891
-              ],
-              "tris": 460,
-              "uv_maps": [
-                "UVMap_Main",
-                "UVMap_Label"
-              ],
-              "verts": 276
-            },
-            "PROC_JarFill_OrangePistil_F070_LOD1": {
-              "geometry_sha256": "d567ddbf197d20aa",
-              "size_m_unity_xyz": [
-                0.13759,
-                0.18697,
-                0.1396
+                0.14057,
+                0.08634,
+                0.12948
               ],
               "tris": 800,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 480
+              "verts": 420
             },
-            "PROC_JarFill_OrangePistil_F100_LOD1": {
-              "geometry_sha256": "f2ac028783745d79",
+            "PROC_JarFill_OrangePistil_F040_LOD0": {
+              "geometry_sha256": "7e9774c6798b8d55",
               "size_m_unity_xyz": [
-                0.13827,
-                0.25133,
-                0.1397
+                0.14174,
+                0.12746,
+                0.12948
               ],
-              "tris": 1140,
+              "tris": 1680,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 684
+              "verts": 882
+            },
+            "PROC_JarFill_OrangePistil_F070_LOD0": {
+              "geometry_sha256": "75332f98daf6eed1",
+              "size_m_unity_xyz": [
+                0.14174,
+                0.19989,
+                0.12948
+              ],
+              "tris": 2720,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 1428
+            },
+            "PROC_JarFill_OrangePistil_F100_LOD0": {
+              "geometry_sha256": "b1d6d3614ffab097",
+              "size_m_unity_xyz": [
+                0.14174,
+                0.223,
+                0.12948
+              ],
+              "tris": 3920,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 2058
             }
           },
           "size_m_unity_xyz": [
-            0.13827,
-            0.25133,
-            0.1397
+            0.14174,
+            0.223,
+            0.12948
           ],
-          "tris": 2760
+          "tris": 9920
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_JarFill_OrangePistil_F010_LOD1": {
+              "geometry_sha256": "9c120c94e2123c07",
+              "size_m_unity_xyz": [
+                0.12219,
+                0.08634,
+                0.06012
+              ],
+              "tris": 100,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            },
+            "PROC_JarFill_OrangePistil_F020_LOD1": {
+              "geometry_sha256": "6ab176f1bf7d56ea",
+              "size_m_unity_xyz": [
+                0.13989,
+                0.08634,
+                0.12852
+              ],
+              "tris": 200,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_JarFill_OrangePistil_F040_LOD1": {
+              "geometry_sha256": "b63a92ed1ec6535d",
+              "size_m_unity_xyz": [
+                0.14134,
+                0.12746,
+                0.12852
+              ],
+              "tris": 420,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 252
+            },
+            "PROC_JarFill_OrangePistil_F070_LOD1": {
+              "geometry_sha256": "5e169f1e271dfa0e",
+              "size_m_unity_xyz": [
+                0.14176,
+                0.19989,
+                0.12852
+              ],
+              "tris": 680,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 408
+            },
+            "PROC_JarFill_OrangePistil_F100_LOD1": {
+              "geometry_sha256": "1e1bb9cbdc20fcfe",
+              "size_m_unity_xyz": [
+                0.14176,
+                0.223,
+                0.1289
+              ],
+              "tris": 980,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 588
+            }
+          },
+          "size_m_unity_xyz": [
+            0.14176,
+            0.223,
+            0.1289
+          ],
+          "tris": 2380
         },
         "LOD2": {
           "objects": {
             "PROC_JarFill_OrangePistil_F010_LOD2": {
-              "geometry_sha256": "1a15997503e4e302",
+              "geometry_sha256": "8cb93523d3be1bc2",
               "size_m_unity_xyz": [
-                0.136,
-                0.031,
-                0.136
+                0.1384,
+                0.057,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1594,11 +1761,11 @@
               "verts": 16
             },
             "PROC_JarFill_OrangePistil_F020_LOD2": {
-              "geometry_sha256": "6a7433d7b3ec4fec",
+              "geometry_sha256": "8cb93523d3be1bc2",
               "size_m_unity_xyz": [
-                0.136,
-                0.05667,
-                0.136
+                0.1384,
+                0.057,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1608,11 +1775,11 @@
               "verts": 16
             },
             "PROC_JarFill_OrangePistil_F040_LOD2": {
-              "geometry_sha256": "3c8bb195dd7e8fa2",
+              "geometry_sha256": "703ef9bb27934cd3",
               "size_m_unity_xyz": [
-                0.136,
-                0.10067,
-                0.136
+                0.1384,
+                0.09211,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1622,11 +1789,11 @@
               "verts": 16
             },
             "PROC_JarFill_OrangePistil_F070_LOD2": {
-              "geometry_sha256": "59dfad8496546bac",
+              "geometry_sha256": "36822889aad6356b",
               "size_m_unity_xyz": [
-                0.136,
-                0.17033,
-                0.136
+                0.1384,
+                0.15256,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1636,11 +1803,11 @@
               "verts": 16
             },
             "PROC_JarFill_OrangePistil_F100_LOD2": {
-              "geometry_sha256": "26d4a49214573df5",
+              "geometry_sha256": "6f5473e63f069824",
               "size_m_unity_xyz": [
-                0.136,
-                0.24,
-                0.136
+                0.1384,
+                0.213,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1651,15 +1818,15 @@
             }
           },
           "size_m_unity_xyz": [
-            0.136,
-            0.24,
-            0.136
+            0.1384,
+            0.213,
+            0.1257
           ],
           "tris": 140
         }
       },
       "params": "Tools/Blender/params/jar_fill.json",
-      "params_sha256": "c437ad7c52421dd8",
+      "params_sha256": "c024995a99d42b80",
       "preview_groups": [
         "F000",
         "F010",
@@ -1677,7 +1844,7 @@
     },
     "PROC_JarFill_PurpleHeavy": {
       "export": "Art/Exports/Procedural/PROC_JarFill_PurpleHeavy.fbx",
-      "export_sha256": "0a04b7a78a023c89",
+      "export_sha256": "6014bd3943617ae1",
       "family": "PurpleHeavy",
       "fill_steps_pct": [
         0,
@@ -1688,27 +1855,29 @@
         100
       ],
       "gaps": [
+        "DEC-046",
         "GAP-PROC-01",
         "GAP-PROC-07",
         "GAP-PROC-08"
       ],
       "generator": "jar_fill",
       "interior": {
+        "band": 0.055,
         "corner_r": 0.013999999999999999,
         "floor": 0.008,
-        "half_x": 0.071,
-        "half_y": 0.071,
-        "top": 0.28
+        "half_x": 0.0722,
+        "half_y": 0.06584999999999999,
+        "top": 0.235
       },
       "lods": {
         "LOD0": {
           "objects": {
             "PROC_JarFill_PurpleHeavy_F000_LOD0": {
-              "geometry_sha256": "38c26bb8146d0235",
+              "geometry_sha256": "7e8f78e425f83c55",
               "size_m_unity_xyz": [
-                0.11354,
+                0.11537,
                 0.00556,
-                0.11579
+                0.10764
               ],
               "tris": 200,
               "uv_maps": [
@@ -1718,171 +1887,171 @@
               "verts": 120
             },
             "PROC_JarFill_PurpleHeavy_F010_LOD0": {
-              "geometry_sha256": "a87a1abefcd9e666",
+              "geometry_sha256": "f8a3db28d456d3c9",
               "size_m_unity_xyz": [
-                0.1387,
-                0.05898,
-                0.13886
+                0.11744,
+                0.08071,
+                0.11835
               ],
-              "tris": 680,
+              "tris": 600,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 372
+              "verts": 330
             },
             "PROC_JarFill_PurpleHeavy_F020_LOD0": {
-              "geometry_sha256": "39502271dca19725",
+              "geometry_sha256": "05477c0a57ba6e35",
               "size_m_unity_xyz": [
-                0.139,
-                0.0878,
-                0.13886
+                0.14184,
+                0.08071,
+                0.12847
               ],
-              "tris": 960,
+              "tris": 880,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 504
+              "verts": 462
             },
             "PROC_JarFill_PurpleHeavy_F040_LOD0": {
-              "geometry_sha256": "a749adf2c6df32c6",
+              "geometry_sha256": "fefda0f16b818792",
               "size_m_unity_xyz": [
-                0.139,
-                0.11713,
-                0.13886
+                0.14184,
+                0.12094,
+                0.12892
               ],
-              "tris": 1840,
+              "tris": 1600,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 966
+              "verts": 840
             },
             "PROC_JarFill_PurpleHeavy_F070_LOD0": {
-              "geometry_sha256": "e16f0de3f6bac72c",
+              "geometry_sha256": "2b4868441ed7b08f",
               "size_m_unity_xyz": [
-                0.13954,
-                0.18202,
-                0.13965
+                0.14184,
+                0.18258,
+                0.12909
               ],
-              "tris": 3200,
+              "tris": 2800,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 1680
+              "verts": 1470
             },
             "PROC_JarFill_PurpleHeavy_F100_LOD0": {
-              "geometry_sha256": "4fcf612f1a5387c9",
+              "geometry_sha256": "1390abe828b7a831",
               "size_m_unity_xyz": [
-                0.13968,
-                0.2509,
-                0.1398
+                0.14184,
+                0.223,
+                0.12952
               ],
-              "tris": 4560,
+              "tris": 3920,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 2394
+              "verts": 2058
             }
           },
           "size_m_unity_xyz": [
-            0.13968,
-            0.2509,
-            0.1398
+            0.14184,
+            0.223,
+            0.12952
           ],
-          "tris": 11440
+          "tris": 10000
         },
         "LOD1": {
           "objects": {
             "PROC_JarFill_PurpleHeavy_F010_LOD1": {
-              "geometry_sha256": "eff59c8711de2cfc",
+              "geometry_sha256": "831576a2c2a7a062",
               "size_m_unity_xyz": [
-                0.13768,
-                0.05443,
-                0.13366
+                0.11239,
+                0.07275,
+                0.08399
               ],
-              "tris": 120,
+              "tris": 100,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 72
+              "verts": 60
             },
             "PROC_JarFill_PurpleHeavy_F020_LOD1": {
-              "geometry_sha256": "3002e4045e61fcc3",
+              "geometry_sha256": "13d7ce50f946495c",
               "size_m_unity_xyz": [
-                0.13895,
-                0.0878,
-                0.13799
+                0.1403,
+                0.07948,
+                0.12811
               ],
-              "tris": 240,
+              "tris": 220,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 144
+              "verts": 132
             },
             "PROC_JarFill_PurpleHeavy_F040_LOD1": {
-              "geometry_sha256": "61cdb8099f962861",
+              "geometry_sha256": "2da685d9c0f9a593",
               "size_m_unity_xyz": [
-                0.13895,
-                0.11713,
-                0.139
+                0.14225,
+                0.11718,
+                0.12858
               ],
-              "tris": 460,
+              "tris": 400,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 276
+              "verts": 240
             },
             "PROC_JarFill_PurpleHeavy_F070_LOD1": {
-              "geometry_sha256": "cc54b1e52752b1e1",
+              "geometry_sha256": "6cd135636915a74c",
               "size_m_unity_xyz": [
-                0.13943,
-                0.17899,
-                0.139
+                0.14225,
+                0.18111,
+                0.12932
               ],
-              "tris": 800,
+              "tris": 700,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 480
+              "verts": 420
             },
             "PROC_JarFill_PurpleHeavy_F100_LOD1": {
-              "geometry_sha256": "8f0a4d9c048199b2",
+              "geometry_sha256": "6b521d5ebf6174a7",
               "size_m_unity_xyz": [
-                0.13943,
-                0.24819,
-                0.13972
+                0.14225,
+                0.223,
+                0.12932
               ],
-              "tris": 1140,
+              "tris": 980,
               "uv_maps": [
                 "UVMap_Main",
                 "UVMap_Label"
               ],
-              "verts": 684
+              "verts": 588
             }
           },
           "size_m_unity_xyz": [
-            0.13943,
-            0.24819,
-            0.13972
+            0.14225,
+            0.223,
+            0.12932
           ],
-          "tris": 2760
+          "tris": 2400
         },
         "LOD2": {
           "objects": {
             "PROC_JarFill_PurpleHeavy_F010_LOD2": {
-              "geometry_sha256": "1a15997503e4e302",
+              "geometry_sha256": "8cb93523d3be1bc2",
               "size_m_unity_xyz": [
-                0.136,
-                0.031,
-                0.136
+                0.1384,
+                0.057,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1892,11 +2061,11 @@
               "verts": 16
             },
             "PROC_JarFill_PurpleHeavy_F020_LOD2": {
-              "geometry_sha256": "6a7433d7b3ec4fec",
+              "geometry_sha256": "8cb93523d3be1bc2",
               "size_m_unity_xyz": [
-                0.136,
-                0.05667,
-                0.136
+                0.1384,
+                0.057,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1906,11 +2075,11 @@
               "verts": 16
             },
             "PROC_JarFill_PurpleHeavy_F040_LOD2": {
-              "geometry_sha256": "3c8bb195dd7e8fa2",
+              "geometry_sha256": "703ef9bb27934cd3",
               "size_m_unity_xyz": [
-                0.136,
-                0.10067,
-                0.136
+                0.1384,
+                0.09211,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1920,11 +2089,11 @@
               "verts": 16
             },
             "PROC_JarFill_PurpleHeavy_F070_LOD2": {
-              "geometry_sha256": "59dfad8496546bac",
+              "geometry_sha256": "36822889aad6356b",
               "size_m_unity_xyz": [
-                0.136,
-                0.17033,
-                0.136
+                0.1384,
+                0.15256,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1934,11 +2103,11 @@
               "verts": 16
             },
             "PROC_JarFill_PurpleHeavy_F100_LOD2": {
-              "geometry_sha256": "26d4a49214573df5",
+              "geometry_sha256": "6f5473e63f069824",
               "size_m_unity_xyz": [
-                0.136,
-                0.24,
-                0.136
+                0.1384,
+                0.213,
+                0.1257
               ],
               "tris": 28,
               "uv_maps": [
@@ -1949,15 +2118,15 @@
             }
           },
           "size_m_unity_xyz": [
-            0.136,
-            0.24,
-            0.136
+            0.1384,
+            0.213,
+            0.1257
           ],
           "tris": 140
         }
       },
       "params": "Tools/Blender/params/jar_fill.json",
-      "params_sha256": "c437ad7c52421dd8",
+      "params_sha256": "c024995a99d42b80",
       "preview_groups": [
         "F000",
         "F010",
@@ -2132,6 +2301,1504 @@
         "LOD0": 500,
         "LOD1": 120
       }
+    },
+    "PROC_Pkg_BevBottle": {
+      "category": "beverage",
+      "export": "Art/Exports/Procedural/PROC_Pkg_BevBottle.fbx",
+      "export_sha256": "39fc20bb215b750c",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_BevBottle_Body_LOD0": {
+              "geometry_sha256": "a0d8325d74f4b793",
+              "size_m_unity_xyz": [
+                0.06,
+                0.185,
+                0.06
+              ],
+              "tris": 380,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            },
+            "PROC_Pkg_BevBottle_Cap_LOD0": {
+              "geometry_sha256": "4797f280f95b42e7",
+              "size_m_unity_xyz": [
+                0.03,
+                0.022,
+                0.03
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            }
+          },
+          "size_m_unity_xyz": [
+            0.06,
+            0.2,
+            0.06
+          ],
+          "tris": 520
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_BevBottle_Body_LOD1": {
+              "geometry_sha256": "be74947c93e86603",
+              "size_m_unity_xyz": [
+                0.06,
+                0.185,
+                0.06
+              ],
+              "tris": 188,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            },
+            "PROC_Pkg_BevBottle_Cap_LOD1": {
+              "geometry_sha256": "89d10fc4710191d2",
+              "size_m_unity_xyz": [
+                0.03,
+                0.022,
+                0.03
+              ],
+              "tris": 68,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            }
+          },
+          "size_m_unity_xyz": [
+            0.06,
+            0.2,
+            0.06
+          ],
+          "tris": 256
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_BevBottle_Body_LOD2": {
+              "geometry_sha256": "04c00de6de9130f2",
+              "size_m_unity_xyz": [
+                0.06,
+                0.2,
+                0.06
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.06,
+            0.2,
+            0.06
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 600,
+        "LOD1": 300,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_BevBottle.fbx"
+    },
+    "PROC_Pkg_BevCan": {
+      "category": "beverage",
+      "export": "Art/Exports/Procedural/PROC_Pkg_BevCan.fbx",
+      "export_sha256": "4acb8febbb0cb4b1",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_BevCan_Body_LOD0": {
+              "geometry_sha256": "f0f9dfbb3ed3836b",
+              "size_m_unity_xyz": [
+                0.066,
+                0.122,
+                0.066
+              ],
+              "tris": 332,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 168
+            }
+          },
+          "size_m_unity_xyz": [
+            0.066,
+            0.122,
+            0.066
+          ],
+          "tris": 332
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_BevCan_Body_LOD1": {
+              "geometry_sha256": "1422d466681df351",
+              "size_m_unity_xyz": [
+                0.066,
+                0.122,
+                0.066
+              ],
+              "tris": 164,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 84
+            }
+          },
+          "size_m_unity_xyz": [
+            0.066,
+            0.122,
+            0.066
+          ],
+          "tris": 164
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_BevCan_Body_LOD2": {
+              "geometry_sha256": "010fd21e50ae68aa",
+              "size_m_unity_xyz": [
+                0.066,
+                0.122,
+                0.066
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.066,
+            0.122,
+            0.066
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_BevCan.fbx"
+    },
+    "PROC_Pkg_EdibleBag": {
+      "category": "edible",
+      "export": "Art/Exports/Procedural/PROC_Pkg_EdibleBag.fbx",
+      "export_sha256": "4541750e9fd87fe8",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_EdibleBag_Body_LOD0": {
+              "geometry_sha256": "6eebc52d7fa4fbe6",
+              "size_m_unity_xyz": [
+                0.09,
+                0.125,
+                0.03
+              ],
+              "tris": 380,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            }
+          },
+          "size_m_unity_xyz": [
+            0.09,
+            0.125,
+            0.03
+          ],
+          "tris": 380
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_EdibleBag_Body_LOD1": {
+              "geometry_sha256": "bd224f983271765a",
+              "size_m_unity_xyz": [
+                0.09,
+                0.125,
+                0.03
+              ],
+              "tris": 188,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            }
+          },
+          "size_m_unity_xyz": [
+            0.09,
+            0.125,
+            0.03
+          ],
+          "tris": 188
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_EdibleBag_Body_LOD2": {
+              "geometry_sha256": "a57e9d271b9c8574",
+              "size_m_unity_xyz": [
+                0.09,
+                0.125,
+                0.03
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.09,
+            0.125,
+            0.03
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_EdibleBag.fbx"
+    },
+    "PROC_Pkg_EdibleBox": {
+      "category": "edible",
+      "export": "Art/Exports/Procedural/PROC_Pkg_EdibleBox.fbx",
+      "export_sha256": "808e20f2012b2525",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_EdibleBox_Body_LOD0": {
+              "geometry_sha256": "02a5dbf629f0e903",
+              "size_m_unity_xyz": [
+                0.085,
+                0.11,
+                0.025
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            }
+          },
+          "size_m_unity_xyz": [
+            0.085,
+            0.11,
+            0.025
+          ],
+          "tris": 92
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_EdibleBox_Body_LOD1": {
+              "geometry_sha256": "206d321f508d344b",
+              "size_m_unity_xyz": [
+                0.085,
+                0.11,
+                0.025
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.085,
+            0.11,
+            0.025
+          ],
+          "tris": 28
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_EdibleBox_Body_LOD2": {
+              "geometry_sha256": "e6f8c1417a275982",
+              "size_m_unity_xyz": [
+                0.085,
+                0.11,
+                0.025
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.085,
+            0.11,
+            0.025
+          ],
+          "tris": 12
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 120,
+        "LOD1": 40,
+        "LOD2": 20
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_EdibleBox.fbx"
+    },
+    "PROC_Pkg_ExtractJar": {
+      "category": "extract",
+      "export": "Art/Exports/Procedural/PROC_Pkg_ExtractJar.fbx",
+      "export_sha256": "4233aad889022055",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_ExtractJar_Body_LOD0": {
+              "geometry_sha256": "66df197f2e1b4f5c",
+              "size_m_unity_xyz": [
+                0.035,
+                0.022,
+                0.035
+              ],
+              "tris": 236,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_Pkg_ExtractJar_Cap_LOD0": {
+              "geometry_sha256": "f383ae0c790926f3",
+              "size_m_unity_xyz": [
+                0.038,
+                0.013,
+                0.038
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            }
+          },
+          "size_m_unity_xyz": [
+            0.038,
+            0.033,
+            0.038
+          ],
+          "tris": 376
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_ExtractJar_Body_LOD1": {
+              "geometry_sha256": "f08939b15f3e5c76",
+              "size_m_unity_xyz": [
+                0.035,
+                0.022,
+                0.035
+              ],
+              "tris": 116,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            },
+            "PROC_Pkg_ExtractJar_Cap_LOD1": {
+              "geometry_sha256": "e266ab4d3d462e25",
+              "size_m_unity_xyz": [
+                0.038,
+                0.013,
+                0.038
+              ],
+              "tris": 68,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            }
+          },
+          "size_m_unity_xyz": [
+            0.038,
+            0.033,
+            0.038
+          ],
+          "tris": 184
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_ExtractJar_Body_LOD2": {
+              "geometry_sha256": "962a377f4e346a83",
+              "size_m_unity_xyz": [
+                0.038,
+                0.033,
+                0.038
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.038,
+            0.033,
+            0.038
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_ExtractJar.fbx"
+    },
+    "PROC_Pkg_FlowerPouch": {
+      "category": "prepack_flower",
+      "export": "Art/Exports/Procedural/PROC_Pkg_FlowerPouch.fbx",
+      "export_sha256": "7484989f1fcaaceb",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_FlowerPouch_Body_LOD0": {
+              "geometry_sha256": "c9639b748ba33b42",
+              "size_m_unity_xyz": [
+                0.1,
+                0.13,
+                0.035
+              ],
+              "tris": 380,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            }
+          },
+          "size_m_unity_xyz": [
+            0.1,
+            0.13,
+            0.035
+          ],
+          "tris": 380
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_FlowerPouch_Body_LOD1": {
+              "geometry_sha256": "6654e6e9adb7de0b",
+              "size_m_unity_xyz": [
+                0.1,
+                0.13,
+                0.035
+              ],
+              "tris": 188,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            }
+          },
+          "size_m_unity_xyz": [
+            0.1,
+            0.13,
+            0.035
+          ],
+          "tris": 188
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_FlowerPouch_Body_LOD2": {
+              "geometry_sha256": "e89071a2da82c74a",
+              "size_m_unity_xyz": [
+                0.1,
+                0.13,
+                0.035
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.1,
+            0.13,
+            0.035
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_FlowerPouch.fbx"
+    },
+    "PROC_Pkg_MerchGrinder": {
+      "category": "merch",
+      "export": "Art/Exports/Procedural/PROC_Pkg_MerchGrinder.fbx",
+      "export_sha256": "666b7b08b1652e98",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_MerchGrinder_Body_LOD0": {
+              "geometry_sha256": "9c17686309a81c83",
+              "size_m_unity_xyz": [
+                0.055,
+                0.03,
+                0.055
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            },
+            "PROC_Pkg_MerchGrinder_Lid_LOD0": {
+              "geometry_sha256": "7f58aa9f8271adca",
+              "size_m_unity_xyz": [
+                0.055,
+                0.015,
+                0.055
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            }
+          },
+          "size_m_unity_xyz": [
+            0.055,
+            0.045,
+            0.055
+          ],
+          "tris": 280
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_MerchGrinder_Body_LOD1": {
+              "geometry_sha256": "c1d28434b4d94b20",
+              "size_m_unity_xyz": [
+                0.055,
+                0.03,
+                0.055
+              ],
+              "tris": 68,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            },
+            "PROC_Pkg_MerchGrinder_Lid_LOD1": {
+              "geometry_sha256": "cf53a542444c0ad7",
+              "size_m_unity_xyz": [
+                0.055,
+                0.015,
+                0.055
+              ],
+              "tris": 68,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            }
+          },
+          "size_m_unity_xyz": [
+            0.055,
+            0.045,
+            0.055
+          ],
+          "tris": 136
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_MerchGrinder_Body_LOD2": {
+              "geometry_sha256": "8f36b09335cc8eda",
+              "size_m_unity_xyz": [
+                0.055,
+                0.045,
+                0.055
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.055,
+            0.045,
+            0.055
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_MerchGrinder.fbx"
+    },
+    "PROC_Pkg_MerchLighter": {
+      "category": "merch",
+      "export": "Art/Exports/Procedural/PROC_Pkg_MerchLighter.fbx",
+      "export_sha256": "237c23e26ac03f2b",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_MerchLighter_Body_LOD0": {
+              "geometry_sha256": "f7516a38ca5bc434",
+              "size_m_unity_xyz": [
+                0.025,
+                0.072,
+                0.012
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            },
+            "PROC_Pkg_MerchLighter_Hood_LOD0": {
+              "geometry_sha256": "2963bfa25ee6d684",
+              "size_m_unity_xyz": [
+                0.023,
+                0.012,
+                0.011
+              ],
+              "tris": 44,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            }
+          },
+          "size_m_unity_xyz": [
+            0.025,
+            0.082,
+            0.012
+          ],
+          "tris": 136
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_MerchLighter_Body_LOD1": {
+              "geometry_sha256": "f9d5177821c40751",
+              "size_m_unity_xyz": [
+                0.025,
+                0.072,
+                0.012
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
+            "PROC_Pkg_MerchLighter_Hood_LOD1": {
+              "geometry_sha256": "ee704eba3949671f",
+              "size_m_unity_xyz": [
+                0.023,
+                0.012,
+                0.011
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.025,
+            0.082,
+            0.012
+          ],
+          "tris": 40
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_MerchLighter_Body_LOD2": {
+              "geometry_sha256": "b17b68778e8994a4",
+              "size_m_unity_xyz": [
+                0.025,
+                0.082,
+                0.012
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.025,
+            0.082,
+            0.012
+          ],
+          "tris": 12
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 160,
+        "LOD1": 60,
+        "LOD2": 20
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_MerchLighter.fbx"
+    },
+    "PROC_Pkg_MerchTee": {
+      "category": "merch",
+      "export": "Art/Exports/Procedural/PROC_Pkg_MerchTee.fbx",
+      "export_sha256": "3fe5eb8445543001",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_MerchTee_Body_LOD0": {
+              "geometry_sha256": "2ef9856197cb8058",
+              "size_m_unity_xyz": [
+                0.22,
+                0.03,
+                0.28
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            }
+          },
+          "size_m_unity_xyz": [
+            0.22,
+            0.03,
+            0.28
+          ],
+          "tris": 92
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_MerchTee_Body_LOD1": {
+              "geometry_sha256": "b2027d887af63660",
+              "size_m_unity_xyz": [
+                0.22,
+                0.03,
+                0.28
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.22,
+            0.03,
+            0.28
+          ],
+          "tris": 28
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_MerchTee_Body_LOD2": {
+              "geometry_sha256": "932aec71361aa99f",
+              "size_m_unity_xyz": [
+                0.22,
+                0.03,
+                0.28
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.22,
+            0.03,
+            0.28
+          ],
+          "tris": 12
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 160,
+        "LOD1": 60,
+        "LOD2": 20
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_MerchTee.fbx"
+    },
+    "PROC_Pkg_PrepackJar": {
+      "category": "prepack_flower",
+      "export": "Art/Exports/Procedural/PROC_Pkg_PrepackJar.fbx",
+      "export_sha256": "d4057e5c71b2f4d4",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_PrepackJar_Body_LOD0": {
+              "geometry_sha256": "a3343cbd73f8d215",
+              "size_m_unity_xyz": [
+                0.06,
+                0.06,
+                0.06
+              ],
+              "tris": 236,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_Pkg_PrepackJar_Cap_LOD0": {
+              "geometry_sha256": "724396531cdd82fc",
+              "size_m_unity_xyz": [
+                0.064,
+                0.021,
+                0.064
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            }
+          },
+          "size_m_unity_xyz": [
+            0.064,
+            0.077,
+            0.064
+          ],
+          "tris": 376
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_PrepackJar_Body_LOD1": {
+              "geometry_sha256": "a80092b64d40758b",
+              "size_m_unity_xyz": [
+                0.06,
+                0.06,
+                0.06
+              ],
+              "tris": 116,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            },
+            "PROC_Pkg_PrepackJar_Cap_LOD1": {
+              "geometry_sha256": "7f0a357d4a0dd35e",
+              "size_m_unity_xyz": [
+                0.064,
+                0.021,
+                0.064
+              ],
+              "tris": 68,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            }
+          },
+          "size_m_unity_xyz": [
+            0.064,
+            0.077,
+            0.064
+          ],
+          "tris": 184
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_PrepackJar_Body_LOD2": {
+              "geometry_sha256": "a87ffed959bfb782",
+              "size_m_unity_xyz": [
+                0.064,
+                0.077,
+                0.064
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.064,
+            0.077,
+            0.064
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_PrepackJar.fbx"
+    },
+    "PROC_Pkg_PrerollMultipack": {
+      "category": "preroll",
+      "export": "Art/Exports/Procedural/PROC_Pkg_PrerollMultipack.fbx",
+      "export_sha256": "2f5e532edff44def",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_PrerollMultipack_Body_LOD0": {
+              "geometry_sha256": "6d80218826c99ed5",
+              "size_m_unity_xyz": [
+                0.075,
+                0.115,
+                0.026
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            }
+          },
+          "size_m_unity_xyz": [
+            0.075,
+            0.115,
+            0.026
+          ],
+          "tris": 92
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_PrerollMultipack_Body_LOD1": {
+              "geometry_sha256": "e65adc6a2e5b3b41",
+              "size_m_unity_xyz": [
+                0.075,
+                0.115,
+                0.026
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.075,
+            0.115,
+            0.026
+          ],
+          "tris": 28
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_PrerollMultipack_Body_LOD2": {
+              "geometry_sha256": "94e4ed5b99db6719",
+              "size_m_unity_xyz": [
+                0.075,
+                0.115,
+                0.026
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.075,
+            0.115,
+            0.026
+          ],
+          "tris": 12
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 120,
+        "LOD1": 40,
+        "LOD2": 20
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_PrerollMultipack.fbx"
+    },
+    "PROC_Pkg_PrerollTube": {
+      "category": "preroll",
+      "export": "Art/Exports/Procedural/PROC_Pkg_PrerollTube.fbx",
+      "export_sha256": "56bfa035f4dbb8e7",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_PrerollTube_Body_LOD0": {
+              "geometry_sha256": "2eb8190220da49c0",
+              "size_m_unity_xyz": [
+                0.022,
+                0.1,
+                0.022
+              ],
+              "tris": 236,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
+            "PROC_Pkg_PrerollTube_Cap_LOD0": {
+              "geometry_sha256": "00bd244ee630700e",
+              "size_m_unity_xyz": [
+                0.024,
+                0.025,
+                0.024
+              ],
+              "tris": 140,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 72
+            }
+          },
+          "size_m_unity_xyz": [
+            0.024,
+            0.12,
+            0.024
+          ],
+          "tris": 376
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_PrerollTube_Body_LOD1": {
+              "geometry_sha256": "c7e4aa48d19d4f5f",
+              "size_m_unity_xyz": [
+                0.022,
+                0.1,
+                0.022
+              ],
+              "tris": 116,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 60
+            },
+            "PROC_Pkg_PrerollTube_Cap_LOD1": {
+              "geometry_sha256": "f60fbf903f954f43",
+              "size_m_unity_xyz": [
+                0.024,
+                0.025,
+                0.024
+              ],
+              "tris": 68,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 36
+            }
+          },
+          "size_m_unity_xyz": [
+            0.024,
+            0.12,
+            0.024
+          ],
+          "tris": 184
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_PrerollTube_Body_LOD2": {
+              "geometry_sha256": "83381c26894391e1",
+              "size_m_unity_xyz": [
+                0.024,
+                0.12,
+                0.024
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.024,
+            0.12,
+            0.024
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 400,
+        "LOD1": 200,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_PrerollTube.fbx"
+    },
+    "PROC_Pkg_TopicalTube": {
+      "category": "topical",
+      "export": "Art/Exports/Procedural/PROC_Pkg_TopicalTube.fbx",
+      "export_sha256": "17d17fc1f16f47af",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_TopicalTube_Body_LOD0": {
+              "geometry_sha256": "eda7204bd58f4b61",
+              "size_m_unity_xyz": [
+                0.045,
+                0.137,
+                0.034
+              ],
+              "tris": 380,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 192
+            },
+            "PROC_Pkg_TopicalTube_Cap_LOD0": {
+              "geometry_sha256": "664d103b05997c51",
+              "size_m_unity_xyz": [
+                0.03,
+                0.02,
+                0.03
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            }
+          },
+          "size_m_unity_xyz": [
+            0.045,
+            0.155,
+            0.034
+          ],
+          "tris": 472
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_TopicalTube_Body_LOD1": {
+              "geometry_sha256": "b4e3e7b99e5472aa",
+              "size_m_unity_xyz": [
+                0.045,
+                0.137,
+                0.034
+              ],
+              "tris": 188,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 96
+            },
+            "PROC_Pkg_TopicalTube_Cap_LOD1": {
+              "geometry_sha256": "17d6ca0c678080da",
+              "size_m_unity_xyz": [
+                0.03,
+                0.02,
+                0.03
+              ],
+              "tris": 44,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 24
+            }
+          },
+          "size_m_unity_xyz": [
+            0.045,
+            0.155,
+            0.034
+          ],
+          "tris": 232
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_TopicalTube_Body_LOD2": {
+              "geometry_sha256": "811185c654f95aff",
+              "size_m_unity_xyz": [
+                0.045,
+                0.155,
+                0.034
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.045,
+            0.155,
+            0.034
+          ],
+          "tris": 28
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 600,
+        "LOD1": 300,
+        "LOD2": 40
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_TopicalTube.fbx"
+    },
+    "PROC_Pkg_VapeCartBox": {
+      "category": "vape",
+      "export": "Art/Exports/Procedural/PROC_Pkg_VapeCartBox.fbx",
+      "export_sha256": "c6a185c1c4fbbcdd",
+      "gaps": [
+        "GAP-PROC-10",
+        "GAP-PROC-11"
+      ],
+      "generator": "packaged_goods",
+      "lods": {
+        "LOD0": {
+          "objects": {
+            "PROC_Pkg_VapeCartBox_Body_LOD0": {
+              "geometry_sha256": "738ba456ab3bd6a1",
+              "size_m_unity_xyz": [
+                0.035,
+                0.11,
+                0.035
+              ],
+              "tris": 92,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 48
+            }
+          },
+          "size_m_unity_xyz": [
+            0.035,
+            0.11,
+            0.035
+          ],
+          "tris": 92
+        },
+        "LOD1": {
+          "objects": {
+            "PROC_Pkg_VapeCartBox_Body_LOD1": {
+              "geometry_sha256": "1cb8bfa74cb7d8ca",
+              "size_m_unity_xyz": [
+                0.035,
+                0.11,
+                0.035
+              ],
+              "tris": 28,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            }
+          },
+          "size_m_unity_xyz": [
+            0.035,
+            0.11,
+            0.035
+          ],
+          "tris": 28
+        },
+        "LOD2": {
+          "objects": {
+            "PROC_Pkg_VapeCartBox_Body_LOD2": {
+              "geometry_sha256": "1ac2ad903a448722",
+              "size_m_unity_xyz": [
+                0.035,
+                0.11,
+                0.035
+              ],
+              "tris": 12,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 8
+            }
+          },
+          "size_m_unity_xyz": [
+            0.035,
+            0.11,
+            0.035
+          ],
+          "tris": 12
+        }
+      },
+      "own_sheet": true,
+      "params": "Tools/Blender/params/packaged_goods.json",
+      "params_sha256": "d8a49587443a9a1d",
+      "tri_budget": {
+        "LOD0": 120,
+        "LOD1": 40,
+        "LOD2": 20
+      },
+      "unity_copy": "UnityProject/Assets/_Game/Art/Procedural/Packaged/PROC_Pkg_VapeCartBox.fbx"
     }
   },
   "label_faces": "+Z (Unity forward)",

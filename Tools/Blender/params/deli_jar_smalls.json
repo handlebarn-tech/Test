@@ -1,0 +1,81 @@
+{
+  "asset_id": "PROC_DeliJar_Smalls",
+  "generator": "deli_jar",
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/DeliJar",
+  "_note": "House deli smalls jar (DEC-042a): Amazon B0GX12Q9G8 'USYOGO POP' airtight container, published 6.1 x 5.3 x 10.4 in, 4 L (REFERENCES_INDEX 2.4, High; fetched by REF-007). Clear plastic, one-press pop lid. Same generator as the flower canister; no brand base band (house product). Label card and THC % tag kept as the shop's flower-label convention (Low).",
+  "gaps": {
+    "GAP-PROC-12": "smalls jar lid/body split, corner radius, lid colour and label placement: not published; lid 1 in white like the canister (Low). Overall size is the published value (High)",
+    "GAP-PROC-03": "label card + THC % tag: canister convention reused (Low)"
+  },
+  "body": {
+    "width_m": 0.1549,
+    "depth_m": 0.1346,
+    "height_m": 0.2388,
+    "corner_radius_m": 0.022,
+    "wall_m": 0.004,
+    "floor_m": 0.008,
+    "base_chamfer_m": 0.003
+  },
+  "lid": {
+    "enabled": true,
+    "height_m": 0.0254,
+    "overhang_m": 0.002,
+    "top_bevel_m": 0.006,
+    "button_inset_m": 0.03,
+    "button_depth_m": 0.003,
+    "button_corner_m": 0.012,
+    "rgba": [
+      0.92,
+      0.92,
+      0.9
+    ]
+  },
+  "band": {
+    "enabled": false,
+    "height_m": 0.055,
+    "offset_m": 0.0025,
+    "rgba": [
+      0.12,
+      0.45,
+      0.2
+    ]
+  },
+  "label": {
+    "enabled": true,
+    "center_x_m": 0.0,
+    "width_m": 0.1,
+    "height_m": 0.08,
+    "bottom_m": 0.06,
+    "offset_m": 0.0008,
+    "rgba": [
+      0.95,
+      0.95,
+      0.95
+    ]
+  },
+  "thc_tag": {
+    "enabled": true,
+    "center_x_m": 0.025,
+    "width_m": 0.045,
+    "height_m": 0.028,
+    "bottom_m": 0.115,
+    "offset_m": 0.0016,
+    "rgba": [
+      0.98,
+      0.98,
+      0.98
+    ]
+  },
+  "lods": {
+    "LOD0": {
+      "corner_segments": 6
+    },
+    "LOD1": {
+      "corner_segments": 1
+    }
+  },
+  "tri_budget": {
+    "LOD0": 1000,
+    "LOD1": 250
+  }
+}

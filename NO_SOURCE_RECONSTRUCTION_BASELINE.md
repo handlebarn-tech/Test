@@ -8,6 +8,8 @@
 
 # 1. Situation
 
+> **Authority (DEC-001/002/009; AUDIT-001 C1, DEC-064):** for recommendation logic the order is (1) the local TFS tool source, v7.11.4 build, at `C:/Users/handl/Downloads/tfs-budtender` (read-only, no PII); (2) `Docs/DECISIONS.md`; (3) the live site (identical to the local build, DEC-009); (4) the historical chat record. Text below that ranks the live site or the chat record first predates DEC-001 and is kept for context.
+
 Claude Code will receive this folder but **will not receive the original Three.js/browser source project**.
 
 Therefore the studio must not block on a source-code audit.
@@ -132,6 +134,8 @@ When exact historical code is unavailable:
 ---
 
 # 7. First instruction to Claude Code
+
+> **Historical (AUDIT-001 B4, DEC-064):** this was the first-boot instruction and is done. Today: workers read `CLAUDE.md` → `Docs/PROJECT_STATE.md` → their packet; the Hub reads `Docs/HUB_RESUME.md`. "Do not ask where the browser source is" still holds.
 
 Do not ask where the browser source is.
 

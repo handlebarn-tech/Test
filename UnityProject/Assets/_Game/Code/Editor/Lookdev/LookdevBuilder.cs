@@ -45,7 +45,7 @@ namespace Dispo.Editor.Lookdev
         }
         [Serializable] sealed class Ceiling { public string key, conf; public float t; }
         [Serializable] sealed class Soffit { public string key, conf, gap; public float depth; public string[] walls; }
-        [Serializable] sealed class Panels { public float w, d, t, bottomFt, cable, x0, y0, pitchX, pitchY; public int nx, ny; public string conf, gap; }
+        [Serializable] sealed class Panels { public float w, d, t, bottomFt, cable, cameraClear, x0, y0, pitchX, pitchY; public int nx, ny; public string conf, gap; }
         [Serializable] sealed class Floor { public string id, mat, conf; public float t; public L.Rect rect; }
         [Serializable] sealed class Millwork { public string[] fixtures; public string key, conf; public float toe, top, overhang; }
         [Serializable] sealed class Neon { public string text, wall, conf, gap; public float faceX, y0, y1, bottomFt, heightFt, nits; }
@@ -88,12 +88,9 @@ namespace Dispo.Editor.Lookdev
             // CLG-1 walnut panels on stainless cables
             var p = d.panels;
             var panels = G.Child(root, "AccentPanels_CLG1");
-            for (var j = 0; j < p.ny; j++)
-                for (var i = 0; i < p.nx; i++)
+            var panelRects = PanelRects(p, layout, d.room);
+            foreach (var (j, i, r) in panelRects)
                 {
-                    var r = new L.Rect { x0 = p.x0 + i * p.pitchX, y0 = p.y0 + j * p.pitchY };
-                    r.x1 = r.x0 + p.w;
-                    r.y1 = r.y0 + p.d;
                     var name = $"CLG1_Panel_{j}_{i} [4x8 walnut, drop+grid {p.gap}, conf {p.conf}]";
                     G.Box(panels, name, r, p.bottomFt, p.t, m.walnut, false);
                     foreach (var (cx, cy) in new[] { (r.x0 + 0.5f, r.y0 + 0.5f), (r.x1 - 0.5f, r.y0 + 0.5f), (r.x0 + 0.5f, r.y1 - 0.5f), (r.x1 - 0.5f, r.y1 - 0.5f) })
@@ -159,7 +156,7 @@ namespace Dispo.Editor.Lookdev
             for (var y = dl.y0; y <= dl.y1 + 0.001f; y += dl.pitch)
                 for (var x = dl.x0; x <= dl.x1 + 0.001f; x += dl.pitch)
                 {
-                    if (UnderPanel(p, x, y)) continue;
+                    if (panelRects.Any(q => Inside(q.r, x, y))) continue;
                     var inSoffit = d.soffit.walls.Any(w => Inside(SoffitRect(room, w, d.soffit.depth), x, y));
                     var h = (inSoffit ? soffitFt : ceilFt) - 0.05f;
                     Lamp(lights, $"L4_Downlight_{k++:00} [type TI §6.7] [grid {dl.gap}, conf {dl.conf}]", LightType.Spot, L.ToWorld(x, y, h), dl.lumens, dl.kelvin, dl.angle, 0);
@@ -202,17 +199,27 @@ namespace Dispo.Editor.Lookdev
 
             EditorSceneManager.MarkSceneDirty(scene);
             if (!EditorSceneManager.SaveScene(scene, ScenePath)) throw new IOException($"could not save {ScenePath}");
-            return $"lookdev built: lights={lights.childCount} millwork={mill.childCount} panels={p.nx * p.ny}";
+            return $"lookdev built: lights={lights.childCount} millwork={mill.childCount} panels={panelRects.Count}";
         }
 
         public static float InteriorEv => JsonUtility.FromJson<Data>(File.ReadAllText(DataPath)).interiorEv;
 
-        static bool UnderPanel(Panels p, float x, float y)
+        /// <summary>The CLG-1 grid minus any panel over a CCTV camera of the room (REVIEW-W4F m2: a panel blinded R2C3).</summary>
+        static System.Collections.Generic.List<(int j, int i, L.Rect r)> PanelRects(Panels p, L layout, string room)
         {
+            var cams = layout.cameras.Where(c => c.room == room).ToList();
+            var list = new System.Collections.Generic.List<(int, int, L.Rect)>();
             for (var j = 0; j < p.ny; j++)
                 for (var i = 0; i < p.nx; i++)
-                    if (x >= p.x0 + i * p.pitchX && x <= p.x0 + i * p.pitchX + p.w && y >= p.y0 + j * p.pitchY && y <= p.y0 + j * p.pitchY + p.d) return true;
-            return false;
+                {
+                    var r = new L.Rect { x0 = p.x0 + i * p.pitchX, y0 = p.y0 + j * p.pitchY };
+                    r.x1 = r.x0 + p.w;
+                    r.y1 = r.y0 + p.d;
+                    var clear = Grow(r, p.cameraClear);
+                    if (cams.Any(c => Inside(clear, c.x, c.y))) continue;
+                    list.Add((j, i, r));
+                }
+            return list;
         }
 
         static L.Rect SoffitRect(L.Rect room, string wall, float depth)

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Dispo.Domain.Engine;
 using Dispo.Presentation.Graybox;
 using Dispo.Simulation.Slice;
@@ -23,7 +24,11 @@ namespace Dispo.Presentation.Slice
         [Header("Presentation")]
         public UIDocument Document;
         public StyleSheet Style;
-        public Material JarShell, JarFill, Npc, Bag;
+        public Material JarShell, Npc, Bag;
+        [Header("Jars (GAME-005)")]
+        public GameObject JarModel;          // PROC_DeliJar.fbx
+        public GameObject[] FillModels;      // PROC_JarFill_<Look>.fbx, one per bud look
+        public Material JarGlass, LabelText;
 
         public ShiftSim Sim { get; private set; }
         public SliceScreen Screen { get; private set; } = SliceScreen.World;
@@ -37,12 +42,19 @@ namespace Dispo.Presentation.Slice
         GrayboxTestPlayer _player;
         Transform _terminal, _spawn, _exit, _service, _servicePlayer;
         Transform[] _slots;
-        readonly Dictionary<string, Transform> _jarFill = new Dictionary<string, Transform>();
+        readonly Dictionary<string, Renderer[]> _jarFill = new Dictionary<string, Renderer[]>();
         readonly Dictionary<string, Vector3> _jarTop = new Dictionary<string, Vector3>();
         readonly Dictionary<Customer, GameObject> _npcs = new Dictionary<Customer, GameObject>();
         MaterialPropertyBlock _mpb;  // Unity forbids creating it in a field initializer
+        Material _label;
+        static readonly Regex FillStepName = new Regex(@"_F(\d+)_");
+        // [GDD] placeholder: each brand has its own band colour (DEC-043) but none are recorded, so brands hash into generic hues.
+        static readonly Color[] BandPalette =
+        {
+            new Color(0.12f, 0.45f, 0.20f), new Color(0.15f, 0.30f, 0.65f), new Color(0.70f, 0.15f, 0.15f), new Color(0.85f, 0.55f, 0.10f),
+            new Color(0.45f, 0.20f, 0.55f), new Color(0.10f, 0.55f, 0.55f), new Color(0.15f, 0.15f, 0.15f), new Color(0.80f, 0.35f, 0.55f),
+        };
         Card _detail;
-        double _posGrams;
         float _hold;
         bool _holding;
         string _lastReject;
@@ -106,7 +118,9 @@ namespace Dispo.Presentation.Slice
 
         void SpawnJars()
         {
-            const float h = 0.2f, d = 0.15f;
+            var batches = Sim.Data.Catalog.Batches.ToDictionary(b => b.Id);
+            var font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            _label = new Material(LabelText);
             var ids = Sim.Inventory.JarBatchIds;
             for (int i = 0; i < ids.Count; i++)
             {
@@ -114,29 +128,82 @@ namespace Dispo.Presentation.Slice
                 int row = i / 26, col = i % 26, e = i - 78;
                 var slot = i < 78 ? Anchor($"Anchor_JarSlot_{i:000}", 19.5f + col, 1.6f, 3f + row)
                                   : Anchor($"Anchor_JarSlot_{i:000}", 45.4f, 2f + e % 13, 3f + e / 13);
-                var jar = new GameObject($"Jar_{ids[i]}").transform;
-                jar.SetParent(slot, false);
-                Prop(jar, PrimitiveType.Cylinder, new Vector3(d, 0.005f, d), JarShell).transform.localPosition = Vector3.zero;
-                Prop(jar, PrimitiveType.Cylinder, new Vector3(d * 1.05f, 0.01f, d * 1.05f), JarShell).transform.localPosition = new Vector3(0, h, 0);
-                var fill = Prop(jar, PrimitiveType.Cylinder, new Vector3(d * 0.9f, 0, d * 0.9f), JarFill).transform;
-                _jarFill[ids[i]] = fill;
-                _jarTop[ids[i]] = jar.position + Vector3.up * (h + 0.05f);
+                // The canister's label face is +Z; ART's slot anchors face into the room.
+                var jar = Instantiate(JarModel, slot, false).transform;
+                jar.name = $"Jar_{ids[i]}";
+                var b = batches[ids[i]];
+                _mpb.Clear();
+                _mpb.SetColor("_BaseColor", BandPalette[Hash(b.Brand) % BandPalette.Length]);
+                foreach (var r in jar.GetComponentsInChildren<Renderer>())
+                {
+                    if (r.name.Contains("_Glass_")) r.sharedMaterial = JarGlass;
+                    if (r.name.Contains("_Band_")) r.SetPropertyBlock(_mpb);
+                }
+                float top = jar.GetComponentsInChildren<Renderer>().Max(r => r.bounds.max.y);
+                // Look per batch: [GDD] placeholder until art data exists (PROC-002 handoff); no per-strain looks invented.
+                _jarFill[ids[i]] = Instantiate(FillModels[Hash(ids[i]) % FillModels.Length], jar, false).GetComponentsInChildren<Renderer>();
+                JarLabel(jar, $"{Wrap(b.StrainName, 14)}\n{b.Brand}", font);
+                _jarTop[ids[i]] = new Vector3(jar.position.x, top + 0.05f, jar.position.z);
                 SetFill(ids[i]);
             }
+            _label.SetTexture("_UnlitColorMap", font.material.mainTexture);
+            Font.textureRebuilt += OnFontRebuilt;
         }
 
-        /// <summary>§4: fill = grams / startGrams, linear; 0 = empty jar.</summary>
+        void OnFontRebuilt(Font f) { if (_label && f.material) _label.SetTexture("_UnlitColorMap", f.material.mainTexture); }
+        void OnDestroy() => Font.textureRebuilt -= OnFontRebuilt;
+
+        /// <summary>Generic text on the front label card (strain + brand from batches.json, no logos). The THC % tag stays blank: no THC data.</summary>
+        void JarLabel(Transform jar, string text, Font font)
+        {
+            // Text box inside the PROC_DeliJar label card (deli_jar.json label: 0.10 x 0.08 m from 0.065 m), below the THC tag.
+            // faceZ = body depth 0.1397 / 2 + label offset 0.0008 + 0.0007 clearance (PROC-003 jar size, REVIEW-W4P).
+            const float faceZ = 0.0714f, centreY = 0.092f, maxW = 0.088f, maxH = 0.042f;
+            var tm = new GameObject("Label_Text").AddComponent<TextMesh>();
+            tm.transform.SetParent(jar, false);
+            tm.transform.SetLocalPositionAndRotation(new Vector3(0, centreY, faceZ), Quaternion.Euler(0, 180, 0)); // TextMesh reads from -Z
+            tm.font = font;
+            tm.fontSize = 48;
+            tm.anchor = TextAnchor.MiddleCenter;
+            tm.alignment = TextAlignment.Center;
+            tm.color = Color.black;
+            tm.text = text;
+            tm.GetComponent<MeshRenderer>().sharedMaterial = _label;
+            var size = tm.GetComponent<MeshRenderer>().localBounds.size;
+            tm.characterSize = size.x > 0 && size.y > 0 ? Mathf.Min(maxW / size.x, maxH / size.y) : 0.0015f;
+        }
+
+        static string Wrap(string s, int width)
+        {
+            var lines = new List<string> { "" };
+            foreach (var w in s.Split(' '))
+                if (lines[lines.Count - 1].Length == 0) lines[lines.Count - 1] = w;
+                else if (lines[lines.Count - 1].Length + 1 + w.Length <= width) lines[lines.Count - 1] += " " + w;
+                else lines.Add(w);
+            return string.Join("\n", lines);
+        }
+
+        /// <summary>Stable FNV-1a (string.GetHashCode is salted per run).</summary>
+        static int Hash(string s)
+        {
+            uint h = 2166136261;
+            foreach (var c in s ?? "") h = (h ^ c) * 16777619;
+            return (int)(h & 0x7fffffff);
+        }
+
+        /// <summary>GAME-005: show the one PROC-002 fill step for grams / startGrams (JarFillStep); the steps come from the mesh names.</summary>
         void SetFill(string id)
         {
-            const float h = 0.2f;
-            var f = _jarFill[id];
-            float fill = (float)Sim.Inventory.Fill(id);
-            f.gameObject.SetActive(fill > 0);
-            f.localScale = new Vector3(f.localScale.x, h * fill / 2, f.localScale.z);   // a Unity cylinder is 2 units tall
-            f.localPosition = new Vector3(0, h * fill / 2, 0);
+            var rs = _jarFill[id];
+            int step = JarFillStep.For(Sim.Inventory.Fill(id), rs.Select(StepOf).Distinct(), Sim.Cfg.jarMinVisibleStepPct);
+            foreach (var r in rs) r.enabled = StepOf(r) == step;
         }
 
-        public float JarFillShown(string id) => _jarFill[id].gameObject.activeSelf ? _jarFill[id].localScale.y * 2 / 0.2f : 0;
+        static int StepOf(Renderer r) => int.Parse(FillStepName.Match(r.name).Groups[1].Value);
+
+        /// <summary>The fill step the jar's enabled renderers show, as a fraction (0 = SOLD OUT crumbs). Throws if two steps are on.</summary>
+        public float JarFillShown(string id) => _jarFill[id].Where(r => r.enabled).Select(StepOf).Distinct().DefaultIfEmpty(-1).Single() / 100f;
+        public int[] JarFillSteps(string id) => _jarFill[id].Select(StepOf).Distinct().OrderBy(s => s).ToArray();
         public IEnumerable<KeyValuePair<string, Vector3>> JarTops => _jarTop;
 
         void PlacePlayer()
@@ -173,6 +240,7 @@ namespace Dispo.Presentation.Slice
             if (kb.eKey.wasPressedThisFrame && Screen == SliceScreen.World && CanTalk) Talk();
             if (kb.escapeKey.wasPressedThisFrame) Back();
             if (kb.mKey.wasPressedThisFrame && Screen == SliceScreen.Results) More();
+            if (kb.rKey.wasPressedThisFrame && (Screen == SliceScreen.Query || Screen == SliceScreen.Results || Screen == SliceScreen.Detail)) GoToRegister();
             if (kb.f3Key.wasPressedThisFrame) _view.ToggleDebug();
         }
 
@@ -236,8 +304,9 @@ namespace Dispo.Presentation.Slice
         public void LookItUp()
         {
             if (Sim.Serving == null) return;
-            if (Sim.Results != null) Show(SliceScreen.Results);
-            else if (AutoFillIntent) ChooseChip(Sim.Serving.TrueFamily, true);
+            if (Sim.CurrentAsk == null) GoToRegister();   // every ask is in the cart
+            else if (Sim.Results != null) Show(SliceScreen.Results);
+            else if (AutoFillIntent) ChooseChip(Sim.CurrentAsk.Family, true);
             else Show(SliceScreen.Query);
         }
 
@@ -245,6 +314,7 @@ namespace Dispo.Presentation.Slice
 
         public void ChooseChip(IntentFamily f, bool autoFilled = false)
         {
+            if (Sim.CurrentAsk == null) { GoToRegister(); return; }   // every ask is in the cart
             Sim.Search(f, autoFilled);
             _view.Message = "";
             Show(SliceScreen.Results);
@@ -258,12 +328,12 @@ namespace Dispo.Presentation.Slice
         /// <summary>Choose a card: present it to the customer (§3.1 steps 5-7).</summary>
         public PresentResult Choose(Card card)
         {
-            var c = Sim.Serving;
+            if (Sim.CurrentAsk == null) { GoToRegister(); return null; }   // every ask is in the cart
             var r = Sim.Present(card);
             switch (r.Response)
             {
                 case Response.Blocked: _view.Message = r.Line; Show(SliceScreen.Results); break;
-                case Response.Accept: _posGrams = c.Grams; _view.Message = ""; Show(SliceScreen.Pos); break;
+                case Response.Accept: _view.Message = ""; Show(SliceScreen.Pos); break;
                 case Response.Reject:
                     _lastReject = r.Line;
                     _view.Toast(Sim.Data.Lines.toastReject, r.Line, true);
@@ -275,9 +345,29 @@ namespace Dispo.Presentation.Slice
         }
 
         public string LastReject => _lastReject;
-        public double PosGrams => _posGrams;
 
-        public void PosSelectWeight(double g) { _posGrams = g; _view.Message = ""; Show(SliceScreen.Pos); }
+        // ---- cart (GAME-006, UX_PS1 §2) ----
+
+        /// <summary>"+ Add item": keep the cart, search for the next ask.</summary>
+        public void AddItem()
+        {
+            if (!Sim.CanAddItem) return;
+            Sim.AddItem();
+            _view.Message = "";
+            if (AutoFillIntent) ChooseChip(Sim.CurrentAsk.Family, true); else Show(SliceScreen.Query);
+        }
+
+        /// <summary>Cart chip / R: the register without adding.</summary>
+        public void GoToRegister() { if (Sim.Serving != null && Sim.Cart.Count > 0) { Sim.OpenRegister(); Show(SliceScreen.Pos); } }
+
+        public void PosStep(int line, int dir) { if (Sim.StepLine(line, dir)) { _view.Message = ""; Show(SliceScreen.Pos); } }
+
+        public void PosRemove(int line)
+        {
+            Sim.RemoveLine(line);
+            _view.Message = "";
+            Show(Sim.RegisterOpen ? SliceScreen.Pos : Sim.Results != null ? SliceScreen.Results : SliceScreen.Query);
+        }
 
         public void PosHold(bool down) { _holding = down && Screen == SliceScreen.Pos; if (!down) _hold = 0; }
         public float HoldProgress => _holding ? Mathf.Clamp01(_hold / (float)Sim.Cfg.holdConfirmSeconds) : 0;
@@ -285,15 +375,24 @@ namespace Dispo.Presentation.Slice
         /// <summary>POS Confirm (after the hold). Blocked → message; sale → toast via OnSold.</summary>
         public string PosConfirm()
         {
-            if (Screen != SliceScreen.Pos || Sim.Pending == null) return "no open sale";
-            var blocked = Sim.Confirm(_posGrams);
+            if (Screen != SliceScreen.Pos || !Sim.RegisterOpen) return "no open sale";
+            var blocked = Sim.Confirm();
             if (blocked == Sim.Data.Lines.overLimit) _view.Toast("⚠ " + blocked, "", true);
             if (blocked != null) { _view.Message = blocked; Show(SliceScreen.Pos); return blocked; }
             Show(SliceScreen.World);
             return null;
         }
 
-        public void PosCancel() { Sim.Cancel(); _view.Message = ""; Show(SliceScreen.Results); }
+        public void PosCancel() { Sim.Cancel(); _view.Message = ""; Show(Sim.Results != null ? SliceScreen.Results : SliceScreen.Query); }
+
+        /// <summary>DEC-065: Esc on a multi-line cart goes back to the cards and keeps the cart; a single line keeps US§4 (Cancel).</summary>
+        public void PosBack()
+        {
+            if (Sim.Cart.Count <= 1) { PosCancel(); return; }
+            Sim.LeaveRegister();
+            _view.Message = "";
+            Show(Sim.Results != null ? SliceScreen.Results : SliceScreen.Query);
+        }
 
         /// <summary>Esc / Back: one screen back.</summary>
         public void Back()
@@ -302,7 +401,7 @@ namespace Dispo.Presentation.Slice
             {
                 case SliceScreen.Dialogue: case SliceScreen.Query: case SliceScreen.Results: Show(SliceScreen.World); break;
                 case SliceScreen.Detail: Show(SliceScreen.Results); break;
-                case SliceScreen.Pos: PosCancel(); break;
+                case SliceScreen.Pos: PosBack(); break;
             }
         }
 

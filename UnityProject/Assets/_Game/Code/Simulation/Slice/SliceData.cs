@@ -27,12 +27,15 @@ namespace Dispo.Simulation.Slice
         public int roughShiftThreshold, queueSlots;
         public double impatientFraction;
         public double startGramsPerBatch, startFillMin, startFillMax;
+        public int jarMinVisibleStepPct;
         public int minLowStartJars;
         public double lowStockFraction;
         public int anxietyLowBelow, anxietyModerateBelow, moreOptionsN, moreOptionsStep;
         public double toastSeconds, holdConfirmSeconds, npcWalkSpeed;
         public double adultUseLimitGrams;
         public int storeOpenHour, storeCloseHour, shiftStartHour;
+        public double twoItemAskChance;
+        public int cartMaxLines;
 
         public static SliceConfig FromJson(string json) => JsonUtility.FromJson<SliceConfig>(json);
     }
@@ -76,6 +79,7 @@ namespace Dispo.Simulation.Slice
         public string toastSale, toastSaleDetail, toastReject, toastLeave, toastWalkout;
         public string anxietyLow, anxietyModerate, anxietyHigh;
         public string[] patienceWords;
+        public string andClause, secondClause, addToCart, cartChip, goToRegister, addItem, cartFull, removeLine;
 
         public static SliceLines FromJson(string json) => JsonUtility.FromJson<SliceLines>(json);
         public string[] Openers(string archetype) => openers.Single(o => o.archetype == archetype).lines;

@@ -1,0 +1,3247 @@
+{
+  "schema_version": "2.0",
+  "tfs_oracle_version": "v7.11.4",
+  "fixtures": {
+    "inventory": {
+      "INV_BASE": {
+        "description": "Healthy mixed inventory",
+        "batches": [
+          {
+            "id": "BAT-A",
+            "family": "A",
+            "location": "FOH",
+            "qty": 120
+          },
+          {
+            "id": "BAT-B",
+            "family": "B",
+            "location": "FOH",
+            "qty": 80
+          },
+          {
+            "id": "BAT-C",
+            "family": "C",
+            "location": "BOH",
+            "qty": 200
+          }
+        ],
+        "packaged": [
+          {
+            "id": "PKG-1",
+            "location": "FOH",
+            "qty": 8
+          },
+          {
+            "id": "PKG-2",
+            "location": "BOH",
+            "qty": 12
+          }
+        ]
+      },
+      "INV_LOW_A": {
+        "description": "A low on floor with backstock",
+        "batches": [
+          {
+            "id": "BAT-A",
+            "family": "A",
+            "location": "FOH",
+            "qty": 4
+          },
+          {
+            "id": "BAT-A-BACK",
+            "family": "A",
+            "location": "BOH",
+            "qty": 120
+          },
+          {
+            "id": "BAT-B",
+            "family": "B",
+            "location": "FOH",
+            "qty": 80
+          }
+        ]
+      },
+      "INV_EMPTY_BACK": {
+        "description": "A empty FOH but backstock exists",
+        "batches": [
+          {
+            "id": "BAT-A",
+            "family": "A",
+            "location": "FOH",
+            "qty": 0
+          },
+          {
+            "id": "BAT-A-BACK",
+            "family": "A",
+            "location": "BOH",
+            "qty": 120
+          }
+        ]
+      },
+      "INV_SOLDOUT_A": {
+        "description": "A fully sold out",
+        "batches": [
+          {
+            "id": "BAT-A",
+            "family": "A",
+            "location": "FOH",
+            "qty": 0
+          },
+          {
+            "id": "BAT-A-BACK",
+            "family": "A",
+            "location": "BOH",
+            "qty": 0
+          },
+          {
+            "id": "BAT-B",
+            "family": "B",
+            "location": "FOH",
+            "qty": 80
+          }
+        ]
+      },
+      "INV_ONE_UNIT": {
+        "description": "One packaged unit left",
+        "packaged": [
+          {
+            "id": "PKG-1",
+            "location": "FOH",
+            "qty": 1
+          }
+        ]
+      },
+      "INV_SAME_NAME_BATCH": {
+        "description": "Two distinct batches of same named family",
+        "batches": [
+          {
+            "id": "SAME-OLD",
+            "family": "SameName",
+            "location": "FOH",
+            "qty": 0
+          },
+          {
+            "id": "SAME-NEW",
+            "family": "SameName",
+            "location": "FOH",
+            "qty": 100
+          }
+        ]
+      },
+      "INV_PACKAGED": {
+        "description": "Packaged FOH/BOH mix",
+        "packaged": [
+          {
+            "id": "PKG-1",
+            "location": "FOH",
+            "qty": 3
+          },
+          {
+            "id": "PKG-2",
+            "location": "FOH",
+            "qty": 0
+          },
+          {
+            "id": "PKG-2-BACK",
+            "location": "BOH",
+            "qty": 10
+          }
+        ]
+      },
+      "INV_SCARCE": {
+        "description": "Narrow, low-depth inventory",
+        "batches": [
+          {
+            "id": "BAT-A",
+            "location": "FOH",
+            "qty": 8
+          },
+          {
+            "id": "BAT-B",
+            "location": "FOH",
+            "qty": 5
+          }
+        ],
+        "packaged": [
+          {
+            "id": "PKG-1",
+            "location": "FOH",
+            "qty": 1
+          }
+        ]
+      },
+      "INV_MANAGER": {
+        "description": "Mixed risk state for manager testing",
+        "risk_states": [
+          "LOW:A",
+          "CRITICAL:PKG-2",
+          "OVERSTOCK:PKG-3"
+        ],
+        "storage_pct": 82,
+        "open_po": "PO-1"
+      }
+    },
+    "customers": {
+      "C_EXPLICIT": {
+        "archetype": "REGULAR",
+        "ambiguity": 0,
+        "known": [
+          "primary_intent",
+          "avoidance",
+          "budget"
+        ],
+        "hidden_critical": [],
+        "consultation": "NORMAL"
+      },
+      "C_AMB1": {
+        "archetype": "REGULAR",
+        "ambiguity": 1,
+        "known": [
+          "primary_intent"
+        ],
+        "hidden_critical": [
+          "avoidance"
+        ],
+        "reveal_question": "Q_AVOID",
+        "consultation": "NORMAL"
+      },
+      "C_AMB3": {
+        "archetype": "NOVICE",
+        "ambiguity": 3,
+        "known": [
+          "context_phrase"
+        ],
+        "hidden_critical": [
+          "primary_intent",
+          "avoidance"
+        ],
+        "reveal_questions": [
+          "Q_EFFECT",
+          "Q_AVOID"
+        ],
+        "consultation": "DEEP"
+      },
+      "C_PRICE": {
+        "archetype": "PRICE_SHOPPER",
+        "ambiguity": 1,
+        "known": [
+          "category"
+        ],
+        "hidden_critical": [
+          "hard_budget"
+        ],
+        "reveal_question": "Q_BUDGET",
+        "consultation": "QUICK"
+      },
+      "C_NO_SALE": {
+        "archetype": "REGULAR",
+        "ambiguity": 1,
+        "known": [
+          "primary_intent"
+        ],
+        "hidden_critical": [
+          "hard_budget"
+        ],
+        "viability": "NO_VIABLE_CURRENT_PATH",
+        "consultation": "NORMAL"
+      },
+      "C_REPEAT": {
+        "archetype": "DECISIVE_REPEAT",
+        "ambiguity": 0,
+        "known": [
+          "prior_purchase"
+        ],
+        "repeat_memory": "SAME-OLD",
+        "consultation": "QUICK"
+      },
+      "C_REPEAT_CHANGED": {
+        "archetype": "DECISIVE_REPEAT",
+        "ambiguity": 2,
+        "known": [
+          "prior_purchase"
+        ],
+        "hidden_critical": [
+          "changed_use_context"
+        ],
+        "consultation": "NORMAL"
+      },
+      "C_ENTHUSIAST": {
+        "archetype": "ENTHUSIAST",
+        "ambiguity": 1,
+        "known": [
+          "primary_intent"
+        ],
+        "hidden_critical": [
+          "comparison_priority"
+        ],
+        "consultation": "DEEP"
+      },
+      "C_INDECISIVE": {
+        "archetype": "INDECISIVE",
+        "ambiguity": 2,
+        "known": [
+          "primary_intent"
+        ],
+        "hidden_critical": [
+          "budget"
+        ],
+        "consultation": "DEEP"
+      }
+    },
+    "staff": {
+      "STAFF_STANDARD": {
+        "members": [
+          {
+            "id": "S1",
+            "service": 75,
+            "speed": 70,
+            "inventory": 55,
+            "ops": 55
+          },
+          {
+            "id": "S2",
+            "service": 62,
+            "speed": 65,
+            "inventory": 80,
+            "ops": 68
+          }
+        ]
+      },
+      "STAFF_TIGHT": {
+        "members": [
+          {
+            "id": "S1",
+            "service": 70,
+            "speed": 65,
+            "inventory": 55,
+            "ops": 55
+          }
+        ],
+        "break_due": true
+      },
+      "STAFF_MANAGER": {
+        "members": [
+          {
+            "id": "S1",
+            "service": 82,
+            "speed": 75,
+            "inventory": 60,
+            "ops": 55
+          },
+          {
+            "id": "S2",
+            "service": 65,
+            "speed": 62,
+            "inventory": 85,
+            "ops": 72
+          },
+          {
+            "id": "S3",
+            "service": 70,
+            "speed": 70,
+            "inventory": 68,
+            "ops": 80
+          }
+        ]
+      }
+    }
+  },
+  "scenarios": [
+    {
+      "id": "QA-001",
+      "category": "service",
+      "purpose": "Regression: Blind top-result click",
+      "seed": 91001,
+      "linked_exploit": "EX-001",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Skip interpretation",
+        "Exercise state path that would make exploit succeed: Many explicit customers make top canonical result viable"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Ambiguity mix + InformationSufficiency counterfactuals",
+      "expected_analytics": [
+        "Exploit EX-001 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Blind top-result click",
+        "Fix over-corrects in prohibited way: Do not punish genuinely sufficient explicit cases"
+      ]
+    },
+    {
+      "id": "QA-002",
+      "category": "service",
+      "purpose": "Regression: Ask every question",
+      "seed": 91002,
+      "linked_exploit": "EX-002",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Exhaust dialogue tree",
+        "Exercise state path that would make exploit succeed: More information appears free"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Time/redundancy cost + consultation mismatch + QE",
+      "expected_analytics": [
+        "Exploit EX-002 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Ask every question",
+        "Fix over-corrects in prohibited way: Do not discourage critical clarification"
+      ]
+    },
+    {
+      "id": "QA-003",
+      "category": "service",
+      "purpose": "Regression: Ask no questions",
+      "seed": 91003,
+      "linked_exploit": "EX-003",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Speedrun all customers",
+        "Exercise state path that would make exploit succeed: Throughput improves dramatically"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Critical unanswered facts lower IS/DQ when TFS counterfactual proves material",
+      "expected_analytics": [
+        "Exploit EX-003 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Ask no questions",
+        "Fix over-corrects in prohibited way: Do not force questions on explicit cases"
+      ]
+    },
+    {
+      "id": "QA-004",
+      "category": "service",
+      "purpose": "Regression: Refuse difficult customers",
+      "seed": 91004,
+      "linked_exploit": "EX-004",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Cherry-pick easy customers",
+        "Exercise state path that would make exploit succeed: Avoids low satisfaction/time cost"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "AvoidableNoSale classification + service obligation analytics",
+      "expected_analytics": [
+        "Exploit EX-004 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Refuse difficult customers",
+        "Fix over-corrects in prohibited way: Preserve valid informed no-sale"
+      ]
+    },
+    {
+      "id": "QA-005",
+      "category": "service",
+      "purpose": "Regression: Let hard customers abandon",
+      "seed": 91005,
+      "linked_exploit": "EX-005",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Passive cherry-pick",
+        "Exercise state path that would make exploit succeed: Abandonment removes decision"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Player-attributable wait classification",
+      "expected_analytics": [
+        "Exploit EX-005 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Let hard customers abandon",
+        "Fix over-corrects in prohibited way: Do not blame structural overload"
+      ]
+    },
+    {
+      "id": "QA-006",
+      "category": "economy",
+      "purpose": "Regression: Sell cheapest item always",
+      "seed": 91006,
+      "linked_exploit": "EX-006",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_MANAGER",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Ignore fit",
+        "Exercise state path that would make exploit succeed: Price shoppers accept"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "RQ/TFS position + repeat satisfaction + coverage",
+      "expected_analytics": [
+        "Exploit EX-006 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Sell cheapest item always",
+        "Fix over-corrects in prohibited way: Keep price genuinely important"
+      ]
+    },
+    {
+      "id": "QA-007",
+      "category": "economy",
+      "purpose": "Regression: Sell highest-margin item always",
+      "seed": 91007,
+      "linked_exploit": "EX-007",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_MANAGER",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Ignore service",
+        "Exercise state path that would make exploit succeed: Revenue can dominate score"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Revenue absent from promotion gates; DQ and repeats matter",
+      "expected_analytics": [
+        "Exploit EX-007 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Sell highest-margin item always",
+        "Fix over-corrects in prohibited way: Do not create anti-profit hidden penalty"
+      ]
+    },
+    {
+      "id": "QA-008",
+      "category": "service",
+      "purpose": "Regression: Always force a sale",
+      "seed": 91008,
+      "linked_exploit": "EX-008",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Bad substitutions",
+        "Exercise state path that would make exploit succeed: Conversion looks good"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Informed no-sale can score 100; hard constraint violations crush RQ",
+      "expected_analytics": [
+        "Exploit EX-008 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Always force a sale",
+        "Fix over-corrects in prohibited way: Do not reward refusal too easily"
+      ]
+    },
+    {
+      "id": "QA-009",
+      "category": "service",
+      "purpose": "Regression: Farm informed no-sale",
+      "seed": 91009,
+      "linked_exploit": "EX-009",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Refuse everyone",
+        "Exercise state path that would make exploit succeed: No-sale can score well"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "NoSaleQuality verifies no feasible path existed",
+      "expected_analytics": [
+        "Exploit EX-009 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Farm informed no-sale",
+        "Fix over-corrects in prohibited way: Must use canonical feasibility, not hidden chemistry"
+      ]
+    },
+    {
+      "id": "QA-010",
+      "category": "service",
+      "purpose": "Regression: Infinite Compare",
+      "seed": 91010,
+      "linked_exploit": "EX-010",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Freeze active customer",
+        "Exercise state path that would make exploit succeed: Useful engagement stabilizes patience"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Engagement relief capped; service time continues",
+      "expected_analytics": [
+        "Exploit EX-010 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Infinite Compare",
+        "Fix over-corrects in prohibited way: Allow true enthusiast comparison"
+      ]
+    },
+    {
+      "id": "QA-011",
+      "category": "service",
+      "purpose": "Regression: Repeated Similar loop",
+      "seed": 91011,
+      "linked_exploit": "EX-011",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Delay without cost",
+        "Exercise state path that would make exploit succeed: Reruns appear productive"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Same-input rerun flagged redundant",
+      "expected_analytics": [
+        "Exploit EX-011 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Repeated Similar loop",
+        "Fix over-corrects in prohibited way: Do not block new-input rerun"
+      ]
+    },
+    {
+      "id": "QA-012",
+      "category": "service",
+      "purpose": "Regression: Question-menu fishing",
+      "seed": 91012,
+      "linked_exploit": "EX-012",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Infer unknown constraints from options",
+        "Exercise state path that would make exploit succeed: Question list may reveal hidden fields"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Only context-valid generic questions; absence/presence cannot imply fact",
+      "expected_analytics": [
+        "Exploit EX-012 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Question-menu fishing",
+        "Fix over-corrects in prohibited way: Avoid too-generic useless menu"
+      ]
+    },
+    {
+      "id": "QA-013",
+      "category": "inventory",
+      "purpose": "Regression: Stock duplication via reserve",
+      "seed": 91013,
+      "linked_exploit": "EX-013",
+      "severity": "Critical",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Oversell/duplicate",
+        "Exercise state path that would make exploit succeed: Two sessions reserve same quantity"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Atomic reservation ledger",
+      "expected_analytics": [
+        "Exploit EX-013 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Stock duplication via reserve",
+        "Fix over-corrects in prohibited way: Do not prevent legitimate split if stock sufficient"
+      ]
+    },
+    {
+      "id": "QA-014",
+      "category": "service",
+      "purpose": "Regression: Cancel-after-complete rollback",
+      "seed": 91014,
+      "linked_exploit": "EX-014",
+      "severity": "Critical",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Duplicate sold stock",
+        "Exercise state path that would make exploit succeed: Release path fires after sale"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Terminal idempotent transaction state",
+      "expected_analytics": [
+        "Exploit EX-014 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Cancel-after-complete rollback",
+        "Fix over-corrects in prohibited way: Allow corrections through explicit adjustment only"
+      ]
+    },
+    {
+      "id": "QA-015",
+      "category": "service",
+      "purpose": "Regression: Double transaction completion",
+      "seed": 91015,
+      "linked_exploit": "EX-015",
+      "severity": "Critical",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Duplicate sale",
+        "Exercise state path that would make exploit succeed: Repeated input/event"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Idempotency key per transaction",
+      "expected_analytics": [
+        "Exploit EX-015 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Double transaction completion",
+        "Fix over-corrects in prohibited way: None"
+      ]
+    },
+    {
+      "id": "QA-016",
+      "category": "inventory",
+      "purpose": "Regression: Deli scoop cancel duplication",
+      "seed": 91016,
+      "linked_exploit": "EX-016",
+      "severity": "Critical",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Create grams",
+        "Exercise state path that would make exploit succeed: Temporary handled amount reconciled twice"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Single handling allocation + idempotent release",
+      "expected_analytics": [
+        "Exploit EX-016 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Deli scoop cancel duplication",
+        "Fix over-corrects in prohibited way: None"
+      ]
+    },
+    {
+      "id": "QA-017",
+      "category": "inventory",
+      "purpose": "Regression: Deli scoop permanent loss",
+      "seed": 91017,
+      "linked_exploit": "EX-017",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Waste stock accidentally",
+        "Exercise state path that would make exploit succeed: Stock decremented per motion"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Commit SOLD at transaction completion; temporary handling state",
+      "expected_analytics": [
+        "Exploit EX-017 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Deli scoop permanent loss",
+        "Fix over-corrects in prohibited way: Physical handling should still feel responsive"
+      ]
+    },
+    {
+      "id": "QA-018",
+      "category": "inventory",
+      "purpose": "Regression: Wrong batch equivalence",
+      "seed": 91018,
+      "linked_exploit": "EX-018",
+      "severity": "Critical",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Ignore batch truth",
+        "Exercise state path that would make exploit succeed: Same strain name collapses IDs"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Batch ID mandatory through TFS intent/reserve/sale/memory",
+      "expected_analytics": [
+        "Exploit EX-018 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Wrong batch equivalence",
+        "Fix over-corrects in prohibited way: UI must remain readable"
+      ]
+    },
+    {
+      "id": "QA-019",
+      "category": "inventory",
+      "purpose": "Regression: Sell EMPTY_WITH_BACKSTOCK from menu",
+      "seed": 91019,
+      "linked_exploit": "EX-019",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Skip physical restock",
+        "Exercise state path that would make exploit succeed: Total stock exists"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Location availability gates physical sale path",
+      "expected_analytics": [
+        "Exploit EX-019 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Sell EMPTY_WITH_BACKSTOCK from menu",
+        "Fix over-corrects in prohibited way: Avoid tedious transfers when staff can do them"
+      ]
+    },
+    {
+      "id": "QA-020",
+      "category": "service",
+      "purpose": "Regression: Sell SOLD_OUT stale TFS result",
+      "seed": 91020,
+      "linked_exploit": "EX-020",
+      "severity": "Critical",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Oversell",
+        "Exercise state path that would make exploit succeed: Result snapshot outlives inventory"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Stale snapshot validation before commit",
+      "expected_analytics": [
+        "Exploit EX-020 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Sell SOLD_OUT stale TFS result",
+        "Fix over-corrects in prohibited way: Do not constantly refresh harmlessly"
+      ]
+    },
+    {
+      "id": "QA-021",
+      "category": "inventory",
+      "purpose": "Regression: Restock constantly",
+      "seed": 91021,
+      "linked_exploit": "EX-021",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Chore-optimal prefill",
+        "Exercise state path that would make exploit succeed: Future stockouts vanish"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Capacity + time opportunity cost + low value if healthy",
+      "expected_analytics": [
+        "Exploit EX-021 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Restock constantly",
+        "Fix over-corrects in prohibited way: Avoid making restock never worthwhile"
+      ]
+    },
+    {
+      "id": "QA-022",
+      "category": "inventory",
+      "purpose": "Regression: Never restock",
+      "seed": 91022,
+      "linked_exploit": "EX-022",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Camp counter",
+        "Exercise state path that would make exploit succeed: BOH treated as available"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "FOH/location truth blocks retrieval",
+      "expected_analytics": [
+        "Exploit EX-022 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Never restock",
+        "Fix over-corrects in prohibited way: Provide clear risk cues"
+      ]
+    },
+    {
+      "id": "QA-023",
+      "category": "inventory",
+      "purpose": "Regression: Restock tiny amounts repeatedly",
+      "seed": 91023,
+      "linked_exploit": "EX-023",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Micro-optimize movement",
+        "Exercise state path that would make exploit succeed: Avoid long restock duration"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "minimum meaningful transfer interaction/batch handling cost",
+      "expected_analytics": [
+        "Exploit EX-023 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Restock tiny amounts repeatedly",
+        "Fix over-corrects in prohibited way: Allow emergency partial refill"
+      ]
+    },
+    {
+      "id": "QA-024",
+      "category": "inventory",
+      "purpose": "Regression: Waste/adjust stock to manipulate demand",
+      "seed": 91024,
+      "linked_exploit": "EX-024",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Game coverage",
+        "Exercise state path that would make exploit succeed: Artificial stockouts affect metrics"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Adjustments require reason + progression attribution",
+      "expected_analytics": [
+        "Exploit EX-024 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Waste/adjust stock to manipulate demand",
+        "Fix over-corrects in prohibited way: Do not overburden legitimate corrections"
+      ]
+    },
+    {
+      "id": "QA-025",
+      "category": "ux",
+      "purpose": "Regression: Pause while continuing actions",
+      "seed": 91025,
+      "linked_exploit": "EX-025",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Free throughput",
+        "Exercise state path that would make exploit succeed: Clock stopped but work occurs"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Pause freezes all sim-affecting actions",
+      "expected_analytics": [
+        "Exploit EX-025 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Pause while continuing actions",
+        "Fix over-corrects in prohibited way: Accessibility menus need safe behavior"
+      ]
+    },
+    {
+      "id": "QA-026",
+      "category": "ux",
+      "purpose": "Regression: Detail-panel slow-time abuse",
+      "seed": 91026,
+      "linked_exploit": "EX-026",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Camp menus",
+        "Exercise state path that would make exploit succeed: UI slowdown becomes free time"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Only explicit assist slows clock; analytics baseline adjusts",
+      "expected_analytics": [
+        "Exploit EX-026 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Detail-panel slow-time abuse",
+        "Fix over-corrects in prohibited way: Do not punish accessibility use"
+      ]
+    },
+    {
+      "id": "QA-027",
+      "category": "service",
+      "purpose": "Regression: Save/reload customer reroll",
+      "seed": 91027,
+      "linked_exploit": "EX-027",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Fish easy customers",
+        "Exercise state path that would make exploit succeed: Future RNG not persisted"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Independent persistent RNG streams",
+      "expected_analytics": [
+        "Exploit EX-027 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Save/reload customer reroll",
+        "Fix over-corrects in prohibited way: Allow restart as practice without evidence"
+      ]
+    },
+    {
+      "id": "QA-028",
+      "category": "service",
+      "purpose": "Regression: Save/reload fictional outcome reroll",
+      "seed": 91028,
+      "linked_exploit": "EX-028",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Fish satisfaction",
+        "Exercise state path that would make exploit succeed: Outcome seed changes"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Outcome RNG bound to visit/purchase ID",
+      "expected_analytics": [
+        "Exploit EX-028 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Save/reload fictional outcome reroll",
+        "Fix over-corrects in prohibited way: Do not make bug recovery impossible"
+      ]
+    },
+    {
+      "id": "QA-029",
+      "category": "progression",
+      "purpose": "Regression: Shift-reset promotion farming",
+      "seed": 91029,
+      "linked_exploit": "EX-029",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Reset until favorable",
+        "Exercise state path that would make exploit succeed: Bad shift discarded"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Same seed; aborted shift no evidence",
+      "expected_analytics": [
+        "Exploit EX-029 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Shift-reset promotion farming",
+        "Fix over-corrects in prohibited way: Do not trap player in unwinnable scenario"
+      ]
+    },
+    {
+      "id": "QA-030",
+      "category": "progression",
+      "purpose": "Regression: Tutorial/easy scenario farming",
+      "seed": 91030,
+      "linked_exploit": "EX-030",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Grind mastery",
+        "Exercise state path that would make exploit succeed: Low-risk metrics count"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Eligibility + repeated-seed evidence cap",
+      "expected_analytics": [
+        "Exploit EX-030 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Tutorial/easy scenario farming",
+        "Fix over-corrects in prohibited way: Practice remains available"
+      ]
+    },
+    {
+      "id": "QA-031",
+      "category": "progression",
+      "purpose": "Regression: One-metric promotion",
+      "seed": 91031,
+      "linked_exploit": "EX-031",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Max throughput only",
+        "Exercise state path that would make exploit succeed: Aggregate score compensates weakness"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Per-competency hard gates + stability rule",
+      "expected_analytics": [
+        "Exploit EX-031 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: One-metric promotion",
+        "Fix over-corrects in prohibited way: Do not demand perfection"
+      ]
+    },
+    {
+      "id": "QA-032",
+      "category": "progression",
+      "purpose": "Regression: Recent hot-streak promotion",
+      "seed": 91032,
+      "linked_exploit": "EX-032",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Reset poor history",
+        "Exercise state path that would make exploit succeed: EWMA can spike"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Median six-shift evidence + stability",
+      "expected_analytics": [
+        "Exploit EX-032 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Recent hot-streak promotion",
+        "Fix over-corrects in prohibited way: Avoid overly long grind"
+      ]
+    },
+    {
+      "id": "QA-033",
+      "category": "manager",
+      "purpose": "Regression: Leadership command spam",
+      "seed": 91033,
+      "linked_exploit": "EX-033",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Micromanage",
+        "Exercise state path that would make exploit succeed: More assignments might score"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Leadership scores outcome/fit, not command count",
+      "expected_analytics": [
+        "Exploit EX-033 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Leadership command spam",
+        "Fix over-corrects in prohibited way: Allow necessary active triage"
+      ]
+    },
+    {
+      "id": "QA-034",
+      "category": "manager",
+      "purpose": "Regression: Instant role-toggle staff",
+      "seed": 91034,
+      "linked_exploit": "EX-034",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Toggle each second",
+        "Exercise state path that would make exploit succeed: Assignments have no transition cost"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Finish noninterruptible tasks/handoff delay",
+      "expected_analytics": [
+        "Exploit EX-034 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Instant role-toggle staff",
+        "Fix over-corrects in prohibited way: Keep controls responsive"
+      ]
+    },
+    {
+      "id": "QA-035",
+      "category": "manager",
+      "purpose": "Regression: One staff member in multiple roles",
+      "seed": 91035,
+      "linked_exploit": "EX-035",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Clone labor",
+        "Exercise state path that would make exploit succeed: Flex logic double-counts capacity"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "One primary BUSY state; bounded flex only while idle",
+      "expected_analytics": [
+        "Exploit EX-035 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: One staff member in multiple roles",
+        "Fix over-corrects in prohibited way: Do not make staff rigid"
+      ]
+    },
+    {
+      "id": "QA-036",
+      "category": "manager",
+      "purpose": "Regression: Understaff then superhero manager",
+      "seed": 91036,
+      "linked_exploit": "EX-036",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Save labor",
+        "Exercise state path that would make exploit succeed: Player can cover all stations"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Manager strategic/task opportunity cost + realistic capacity",
+      "expected_analytics": [
+        "Exploit EX-036 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Understaff then superhero manager",
+        "Fix over-corrects in prohibited way: Hands-on rescue must remain viable"
+      ]
+    },
+    {
+      "id": "QA-037",
+      "category": "manager",
+      "purpose": "Regression: Overstaff every shift",
+      "seed": 91037,
+      "linked_exploit": "EX-037",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Buy safety",
+        "Exercise state path that would make exploit succeed: Pressure disappears"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Labor cost/headroom + diminishing coverage benefit",
+      "expected_analytics": [
+        "Exploit EX-037 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Overstaff every shift",
+        "Fix over-corrects in prohibited way: Do not make lean staffing mandatory"
+      ]
+    },
+    {
+      "id": "QA-038",
+      "category": "manager",
+      "purpose": "Regression: Skip breaks forever",
+      "seed": 91038,
+      "linked_exploit": "EX-038",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Exploit staff",
+        "Exercise state path that would make exploit succeed: More labor capacity"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "bounded fatigue/reliability cost",
+      "expected_analytics": [
+        "Exploit EX-038 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Skip breaks forever",
+        "Fix over-corrects in prohibited way: Avoid break micromanagement"
+      ]
+    },
+    {
+      "id": "QA-039",
+      "category": "manager",
+      "purpose": "Regression: Break all staff in quiet exploit",
+      "seed": 91039,
+      "linked_exploit": "EX-039",
+      "severity": "Low",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Perfectly time breaks",
+        "Exercise state path that would make exploit succeed: Known deterministic arrivals"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "forecast/phase is bounded not exact; specials vary",
+      "expected_analytics": [
+        "Exploit EX-039 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Break all staff in quiet exploit",
+        "Fix over-corrects in prohibited way: Keep learnable rhythm"
+      ]
+    },
+    {
+      "id": "QA-040",
+      "category": "economy",
+      "purpose": "Regression: Order everything",
+      "seed": 91040,
+      "linked_exploit": "EX-040",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_MANAGER",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Erase scarcity",
+        "Exercise state path that would make exploit succeed: Perfect coverage"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "cash/storage/receiving/expiry burden",
+      "expected_analytics": [
+        "Exploit EX-040 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Order everything",
+        "Fix over-corrects in prohibited way: Do not create arbitrary stock caps"
+      ]
+    },
+    {
+      "id": "QA-041",
+      "category": "economy",
+      "purpose": "Regression: Order highest margin only",
+      "seed": 91041,
+      "linked_exploit": "EX-041",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_MANAGER",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Ignore coverage",
+        "Exercise state path that would make exploit succeed: Contribution can look strong"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Coverage/lost-sale/repeat consequences",
+      "expected_analytics": [
+        "Exploit EX-041 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Order highest margin only",
+        "Fix over-corrects in prohibited way: Profit remains valid objective"
+      ]
+    },
+    {
+      "id": "QA-042",
+      "category": "economy",
+      "purpose": "Regression: Order cheapest only",
+      "seed": 91042,
+      "linked_exploit": "EX-042",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_MANAGER",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Ignore demand",
+        "Exercise state path that would make exploit succeed: More units per cash"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "Demand/coverage + holding",
+      "expected_analytics": [
+        "Exploit EX-042 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Order cheapest only",
+        "Fix over-corrects in prohibited way: Do not hard-code premium preference"
+      ]
+    },
+    {
+      "id": "QA-043",
+      "category": "inventory",
+      "purpose": "Regression: Zero safety stock + emergency orders",
+      "seed": 91043,
+      "linked_exploit": "EX-043",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Avoid tied cash",
+        "Exercise state path that would make exploit succeed: Emergency is fallback"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "premium + lead delay + supplier limits",
+      "expected_analytics": [
+        "Exploit EX-043 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Zero safety stock + emergency orders",
+        "Fix over-corrects in prohibited way: Maintain recovery path"
+      ]
+    },
+    {
+      "id": "QA-044",
+      "category": "inventory",
+      "purpose": "Regression: Extreme safety stock",
+      "seed": 91044,
+      "linked_exploit": "EX-044",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Hoard",
+        "Exercise state path that would make exploit succeed: Never stock out"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "cash/storage/expiry/receiving cost",
+      "expected_analytics": [
+        "Exploit EX-044 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Extreme safety stock",
+        "Fix over-corrects in prohibited way: Buffers must still be rational"
+      ]
+    },
+    {
+      "id": "QA-045",
+      "category": "economy",
+      "purpose": "Regression: Forecast omniscience",
+      "seed": 91045,
+      "linked_exploit": "EX-045",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_MANAGER",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Script perfect plan",
+        "Exercise state path that would make exploit succeed: Exact future list solves orders/staffing"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "bands/uncertainty only",
+      "expected_analytics": [
+        "Exploit EX-045 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Forecast omniscience",
+        "Fix over-corrects in prohibited way: Forecast should still be useful"
+      ]
+    },
+    {
+      "id": "QA-046",
+      "category": "economy",
+      "purpose": "Regression: Deal spam",
+      "seed": 91046,
+      "linked_exploit": "EX-046",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_MANAGER",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Permanent discount",
+        "Exercise state path that would make exploit succeed: Demand boost always good"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "margin + stock/load + cooldown/eligibility",
+      "expected_analytics": [
+        "Exploit EX-046 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Deal spam",
+        "Fix over-corrects in prohibited way: Deals should remain viable strategically"
+      ]
+    },
+    {
+      "id": "QA-047",
+      "category": "economy",
+      "purpose": "Regression: Deal at expiry always",
+      "seed": 91047,
+      "linked_exploit": "EX-047",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_MANAGER",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: One solved rule",
+        "Exercise state path that would make exploit succeed: Clear all risk stock"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "demand lift uncertain; opportunity cost; limited deal slots",
+      "expected_analytics": [
+        "Exploit EX-047 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Deal at expiry always",
+        "Fix over-corrects in prohibited way: Do not punish smart clearance"
+      ]
+    },
+    {
+      "id": "QA-048",
+      "category": "service",
+      "purpose": "Regression: Cancel PO after seeing future demand",
+      "seed": 91048,
+      "linked_exploit": "EX-048",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Free option",
+        "Exercise state path that would make exploit succeed: Information arrives before commitment cost"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "commitment locks/cancel cost/status",
+      "expected_analytics": [
+        "Exploit EX-048 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Cancel PO after seeing future demand",
+        "Fix over-corrects in prohibited way: Allow supplier-authored cancel cases"
+      ]
+    },
+    {
+      "id": "QA-049",
+      "category": "inventory",
+      "purpose": "Regression: Receive quantity without space",
+      "seed": 91049,
+      "linked_exploit": "EX-049",
+      "severity": "Critical",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Overflow storage",
+        "Exercise state path that would make exploit succeed: PO creates inventory magically"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "receipt limited by physical capacity/staging",
+      "expected_analytics": [
+        "Exploit EX-049 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Receive quantity without space",
+        "Fix over-corrects in prohibited way: Avoid tedious box placement"
+      ]
+    },
+    {
+      "id": "QA-050",
+      "category": "inventory",
+      "purpose": "Regression: Duplicate receiving event",
+      "seed": 91050,
+      "linked_exploit": "EX-050",
+      "severity": "Critical",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Create stock",
+        "Exercise state path that would make exploit succeed: Rescan line"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "receipt line idempotency",
+      "expected_analytics": [
+        "Exploit EX-050 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Duplicate receiving event",
+        "Fix over-corrects in prohibited way: None"
+      ]
+    },
+    {
+      "id": "QA-051",
+      "category": "service",
+      "purpose": "Regression: Merchandising teleport",
+      "seed": 91051,
+      "linked_exploit": "EX-051",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Skip transfer",
+        "Exercise state path that would make exploit succeed: Changing facing moves stock instantly"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "layout change requires real stock movement/task",
+      "expected_analytics": [
+        "Exploit EX-051 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Merchandising teleport",
+        "Fix over-corrects in prohibited way: Avoid decoration chore"
+      ]
+    },
+    {
+      "id": "QA-052",
+      "category": "manager",
+      "purpose": "Regression: Hide in manager screen while floor pauses",
+      "seed": 91052,
+      "linked_exploit": "EX-052",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Remove floor pressure",
+        "Exercise state path that would make exploit succeed: Management UI freezes world"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "world continues unless explicit pause assist",
+      "expected_analytics": [
+        "Exploit EX-052 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Hide in manager screen while floor pauses",
+        "Fix over-corrects in prohibited way: Allow accessible pause mode with adjusted benchmark"
+      ]
+    },
+    {
+      "id": "QA-053",
+      "category": "manager",
+      "purpose": "Regression: Manager delegates all meaningful choices",
+      "seed": 91053,
+      "linked_exploit": "EX-053",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Watch simulation",
+        "Exercise state path that would make exploit succeed: AI solves floor and strategy"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "high-impact choices require player; staff handles routine only",
+      "expected_analytics": [
+        "Exploit EX-053 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Manager delegates all meaningful choices",
+        "Fix over-corrects in prohibited way: Do not make AI deliberately dumb"
+      ]
+    },
+    {
+      "id": "QA-054",
+      "category": "manager",
+      "purpose": "Regression: Manager personally does everything",
+      "seed": 91054,
+      "linked_exploit": "EX-054",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Ignore management",
+        "Exercise state path that would make exploit succeed: Hands-on skill bypasses staff system"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "future planning/tasks age while on floor",
+      "expected_analytics": [
+        "Exploit EX-054 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Manager personally does everything",
+        "Fix over-corrects in prohibited way: Floor intervention must remain rewarding"
+      ]
+    },
+    {
+      "id": "QA-055",
+      "category": "service",
+      "purpose": "Regression: Customer archetype streak farm",
+      "seed": 91055,
+      "linked_exploit": "EX-055",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Exploit seeds",
+        "Exercise state path that would make exploit succeed: Generator RNG creates easy sequence"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "anti-repetition + fixed seed; progression eligibility",
+      "expected_analytics": [
+        "Exploit EX-055 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Customer archetype streak farm",
+        "Fix over-corrects in prohibited way: Do not make generator visibly artificial"
+      ]
+    },
+    {
+      "id": "QA-056",
+      "category": "service",
+      "purpose": "Regression: Repeat-history auto-answer",
+      "seed": 91056,
+      "linked_exploit": "EX-056",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Skip current customer",
+        "Exercise state path that would make exploit succeed: History treated as current truth"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "history is context; changed-preference cases require current info",
+      "expected_analytics": [
+        "Exploit EX-056 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Repeat-history auto-answer",
+        "Fix over-corrects in prohibited way: Reward legitimate exact repeats"
+      ]
+    },
+    {
+      "id": "QA-057",
+      "category": "service",
+      "purpose": "Regression: Prior satisfaction treated as TFS weight",
+      "seed": 91057,
+      "linked_exploit": "EX-057",
+      "severity": "Critical",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Create shadow engine",
+        "Exercise state path that would make exploit succeed: Feedback feeds recommendation ranking"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "OutcomeService prohibited from RecommendationService",
+      "expected_analytics": [
+        "Exploit EX-057 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Prior satisfaction treated as TFS weight",
+        "Fix over-corrects in prohibited way: None"
+      ]
+    },
+    {
+      "id": "QA-058",
+      "category": "service",
+      "purpose": "Regression: Difficulty modifies TFS",
+      "seed": 91058,
+      "linked_exploit": "EX-058",
+      "severity": "Critical",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Fake difficulty",
+        "Exercise state path that would make exploit succeed: Hard mode tweaks scores"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "parity fixtures across presets",
+      "expected_analytics": [
+        "Exploit EX-058 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Difficulty modifies TFS",
+        "Fix over-corrects in prohibited way: None"
+      ]
+    },
+    {
+      "id": "QA-059",
+      "category": "ux",
+      "purpose": "Regression: Hidden truth leaks through UI",
+      "seed": 91059,
+      "linked_exploit": "EX-059",
+      "severity": "Critical",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Metagame customers",
+        "Exercise state path that would make exploit succeed: Unknown fields/options reveal facts"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "unknown fields absent; generic question menu",
+      "expected_analytics": [
+        "Exploit EX-059 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Hidden truth leaks through UI",
+        "Fix over-corrects in prohibited way: UI still needs clarity"
+      ]
+    },
+    {
+      "id": "QA-060",
+      "category": "service",
+      "purpose": "Regression: Analytics counter drift",
+      "seed": 91060,
+      "linked_exploit": "EX-060",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Score manipulation/bugs",
+        "Exercise state path that would make exploit succeed: report counters independent"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "reports derive from ledgers/events",
+      "expected_analytics": [
+        "Exploit EX-060 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Analytics counter drift",
+        "Fix over-corrects in prohibited way: Performance cost of recompute mitigated via projections"
+      ]
+    },
+    {
+      "id": "QA-061",
+      "category": "service",
+      "purpose": "Regression: Queue abandonment blamed on impossible scenario",
+      "seed": 91061,
+      "linked_exploit": "EX-061",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Unfair progression",
+        "Exercise state path that would make exploit succeed: all abandonment hurts score"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "benchmark attribution/structural pressure",
+      "expected_analytics": [
+        "Exploit EX-061 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Queue abandonment blamed on impossible scenario",
+        "Fix over-corrects in prohibited way: Do not excuse player-caused delay"
+      ]
+    },
+    {
+      "id": "QA-062",
+      "category": "service",
+      "purpose": "Regression: Station outage reroll",
+      "seed": 91062,
+      "linked_exploit": "EX-062",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Avoid event",
+        "Exercise state path that would make exploit succeed: reload changes event timing"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "event RNG persisted",
+      "expected_analytics": [
+        "Exploit EX-062 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Station outage reroll",
+        "Fix over-corrects in prohibited way: Allow authored random mode intentionally"
+      ]
+    },
+    {
+      "id": "QA-063",
+      "category": "service",
+      "purpose": "Regression: Quantity split bypasses transaction limit",
+      "seed": 91063,
+      "linked_exploit": "EX-063",
+      "severity": "Critical",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Invalid sale",
+        "Exercise state path that would make exploit succeed: multiple basket lines avoid aggregate check"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "limit validator aggregates category equivalents",
+      "expected_analytics": [
+        "Exploit EX-063 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Quantity split bypasses transaction limit",
+        "Fix over-corrects in prohibited way: Do not invent unsupported legal rules"
+      ]
+    },
+    {
+      "id": "QA-064",
+      "category": "service",
+      "purpose": "Regression: Same-customer same-day limit invented",
+      "seed": 91064,
+      "linked_exploit": "EX-064",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: False failure",
+        "Exercise state path that would make exploit succeed: daily tracker blocks legal modeled return"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "follow canonical modeled rule: transaction-level behavior in handoff",
+      "expected_analytics": [
+        "Exploit EX-064 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Same-customer same-day limit invented",
+        "Fix over-corrects in prohibited way: Future canonical legal update can supersede"
+      ]
+    },
+    {
+      "id": "QA-065",
+      "category": "service",
+      "purpose": "Regression: Discount stacking loophole",
+      "seed": 91065,
+      "linked_exploit": "EX-065",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Free product",
+        "Exercise state path that would make exploit succeed: multiple deal paths apply"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "PricingService single eligibility/stacking contract",
+      "expected_analytics": [
+        "Exploit EX-065 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Discount stacking loophole",
+        "Fix over-corrects in prohibited way: Support intended stack rules later"
+      ]
+    },
+    {
+      "id": "QA-066",
+      "category": "service",
+      "purpose": "Regression: Free infinite comparison explanation",
+      "seed": 91066,
+      "linked_exploit": "EX-066",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: menu minmax",
+        "Exercise state path that would make exploit succeed: no time cost"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "all active consultation consumes time",
+      "expected_analytics": [
+        "Exploit EX-066 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Free infinite comparison explanation",
+        "Fix over-corrects in prohibited way: Accessibility read-time assist is explicit"
+      ]
+    },
+    {
+      "id": "QA-067",
+      "category": "ux",
+      "purpose": "Regression: UI shortcut auto-retrieves",
+      "seed": 91067,
+      "linked_exploit": "EX-067",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Menu-only play",
+        "Exercise state path that would make exploit succeed: shortcut changes inventory location"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "shortcuts select/highlight only",
+      "expected_analytics": [
+        "Exploit EX-067 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: UI shortcut auto-retrieves",
+        "Fix over-corrects in prohibited way: Avoid excessive walking"
+      ]
+    },
+    {
+      "id": "QA-068",
+      "category": "service",
+      "purpose": "Regression: Unbounded event stacking",
+      "seed": 91068,
+      "linked_exploit": "EX-068",
+      "severity": "High",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Impossible shift",
+        "Exercise state path that would make exploit succeed: generator spends no pressure budget"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "PressureBudget compatibility checks",
+      "expected_analytics": [
+        "Exploit EX-068 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Unbounded event stacking",
+        "Fix over-corrects in prohibited way: Expert chaos scenarios may override explicitly"
+      ]
+    },
+    {
+      "id": "QA-069",
+      "category": "economy",
+      "purpose": "Regression: Supplier fill seed fishing",
+      "seed": 91069,
+      "linked_exploit": "EX-069",
+      "severity": "Medium",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "MANAGER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_MANAGER",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt exploit behavior: Perfect inventory",
+        "Exercise state path that would make exploit succeed: reload changes partial fill"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "supplier RNG persisted at commit",
+      "expected_analytics": [
+        "Exploit EX-069 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Supplier fill seed fishing",
+        "Fix over-corrects in prohibited way: Allow new order cycle to create new seed"
+      ]
+    },
+    {
+      "id": "QA-070",
+      "category": "service",
+      "purpose": "Regression: Expiry risk changes recommendation chemistry",
+      "seed": 91070,
+      "linked_exploit": "EX-070",
+      "severity": "Critical",
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 2,
+        "shift_phase": "RUSH_1"
+      },
+      "actions": [
+        "Attempt exploit behavior: Shadow science",
+        "Exercise state path that would make exploit succeed: aging mechanic mutates TFS fit"
+      ],
+      "expected_tfs": "Canonical v7.11.4 behavior must remain unchanged unless legitimate KnownCustomerProfile or authoritative inventory changes.",
+      "expected_gameplay": "expiry only economic/availability unless canonical data changes",
+      "expected_analytics": [
+        "Exploit EX-070 is blocked/detected",
+        "No authoritative invariant violation"
+      ],
+      "failure_conditions": [
+        "Exploit succeeds: Expiry risk changes recommendation chemistry",
+        "Fix over-corrects in prohibited way: None"
+      ]
+    },
+    {
+      "id": "QA-071",
+      "category": "customer",
+      "purpose": "Explicit customer parity",
+      "seed": 90071,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Open TFS with all stated facts",
+        "Select canonical viable result",
+        "Complete sale"
+      ],
+      "expected_tfs": "Capture exact v7.11.4 output for fixture; identical across difficulty",
+      "expected_gameplay": "Sale completes with no clarification required",
+      "expected_analytics": [
+        "DQ>=90",
+        "QE=100"
+      ],
+      "failure_conditions": [
+        "Any hidden fact changes ranking; preset changes output"
+      ]
+    },
+    {
+      "id": "QA-072",
+      "category": "customer",
+      "purpose": "One critical question changes input",
+      "seed": 90072,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Run initial TFS",
+        "Ask Q_AVOID",
+        "Rerun TFS"
+      ],
+      "expected_tfs": "Second output may differ only because known input changed; both outputs captured from v7.11.4",
+      "expected_gameplay": "Updated recommendation snapshot is used",
+      "expected_analytics": [
+        "IS=100 after reveal"
+      ],
+      "failure_conditions": [
+        "TFS changed before reveal or hidden truth reranked"
+      ]
+    },
+    {
+      "id": "QA-073",
+      "category": "customer",
+      "purpose": "High ambiguity targeted questioning",
+      "seed": 90073,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB3",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Ask Q_EFFECT",
+        "Ask Q_AVOID",
+        "Run TFS"
+      ],
+      "expected_tfs": "Canonical output from fully known legitimate input",
+      "expected_gameplay": "Customer reaches recommendation without ask-all loop",
+      "expected_analytics": [
+        "QE>=80",
+        "IS=100"
+      ],
+      "failure_conditions": [
+        "Unrelated questions required"
+      ]
+    },
+    {
+      "id": "QA-074",
+      "category": "customer",
+      "purpose": "Explicit quick customer over-questioned",
+      "seed": 90074,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Ask every available question",
+        "Run TFS"
+      ],
+      "expected_tfs": "Same canonical result as explicit input",
+      "expected_gameplay": "Sale possible but service time/queue cost rises",
+      "expected_analytics": [
+        "QE<=50"
+      ],
+      "failure_conditions": [
+        "No cost for redundancy"
+      ]
+    },
+    {
+      "id": "QA-075",
+      "category": "customer",
+      "purpose": "Ambiguous customer no-question path",
+      "seed": 90075,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Run TFS immediately",
+        "Recommend without clarification"
+      ],
+      "expected_tfs": "Canonical incomplete-input output only",
+      "expected_gameplay": "Outcome can reject/underperform; post-hoc counterfactual identifies missed critical fact",
+      "expected_analytics": [
+        "IS<100"
+      ],
+      "failure_conditions": [
+        "Hidden answer inserted automatically"
+      ]
+    },
+    {
+      "id": "QA-076",
+      "category": "nosale",
+      "purpose": "Correct informed no-sale",
+      "seed": 90076,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_NO_SALE",
+        "inventory_fixture": "INV_SCARCE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Reveal hard budget",
+        "Run TFS/availability",
+        "Decline forced mismatch"
+      ],
+      "expected_tfs": "Canonical output remains canonical; feasibility layer finds no valid hard-constraint path",
+      "expected_gameplay": "INFORMED_NO_SALE",
+      "expected_analytics": [
+        "NSJ=100"
+      ],
+      "failure_conditions": [
+        "Forced sale scores higher"
+      ]
+    },
+    {
+      "id": "QA-077",
+      "category": "nosale",
+      "purpose": "Avoidable no-sale",
+      "seed": 90077,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Refuse service without checking viable stock"
+      ],
+      "expected_tfs": "Canonical fixture contains viable path",
+      "expected_gameplay": "AVOIDABLE_NO_SALE",
+      "expected_analytics": [
+        "NSJ<=40"
+      ],
+      "failure_conditions": [
+        "Refusal classified informed"
+      ]
+    },
+    {
+      "id": "QA-078",
+      "category": "repeat",
+      "purpose": "Exact repeat current stock",
+      "seed": 90078,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_REPEAT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Use legitimate prior history",
+        "Run Similar/exact flow"
+      ],
+      "expected_tfs": "Canonical current result/Similar captured",
+      "expected_gameplay": "Fast sale possible",
+      "expected_analytics": [
+        "service_time below regular target"
+      ],
+      "failure_conditions": [
+        "History bypasses canonical TFS"
+      ]
+    },
+    {
+      "id": "QA-079",
+      "category": "repeat",
+      "purpose": "Same name new batch",
+      "seed": 90079,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_REPEAT",
+        "inventory_fixture": "INV_SAME_NAME_BATCH",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Reference prior SAME-OLD",
+        "Inspect current SAME-NEW",
+        "Run canonical current workflow"
+      ],
+      "expected_tfs": "Batch IDs remain distinct",
+      "expected_gameplay": "Customer may accept new batch or request alternate",
+      "expected_analytics": [
+        "batch_mismatch_noted=1"
+      ],
+      "failure_conditions": [
+        "Strain/family name merges batches"
+      ]
+    },
+    {
+      "id": "QA-080",
+      "category": "repeat",
+      "purpose": "Changed repeat preference",
+      "seed": 90080,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_REPEAT_CHANGED",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Ask current use-context question",
+        "Run TFS with new context"
+      ],
+      "expected_tfs": "Current legitimate input overrides old context",
+      "expected_gameplay": "New recommendation path",
+      "expected_analytics": [
+        "IS=100"
+      ],
+      "failure_conditions": [
+        "Prior purchase silently anchors ranking"
+      ]
+    },
+    {
+      "id": "QA-081",
+      "category": "queue",
+      "purpose": "Standard benchmark targeted",
+      "seed": 90081,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Run benchmark targeted policy over full seeded Standard shift"
+      ],
+      "expected_tfs": "Per-interaction oracle fixtures as captured",
+      "expected_gameplay": "18\u201320-ish arrivals; queue recovers",
+      "expected_analytics": [
+        "abandonment within benchmark band",
+        "peak_queue within band"
+      ],
+      "failure_conditions": [
+        "Traffic exceeds configured validation bounds"
+      ]
+    },
+    {
+      "id": "QA-082",
+      "category": "queue",
+      "purpose": "Ask-all throughput stress",
+      "seed": 90082,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Run ASK_ALL policy on same seed as QA-081"
+      ],
+      "expected_tfs": "Per-customer TFS unchanged for identical final known inputs",
+      "expected_gameplay": "Higher wait/abandonment than targeted",
+      "expected_analytics": [
+        "abandonment materially higher"
+      ],
+      "failure_conditions": [
+        "Ask-all has no throughput cost"
+      ]
+    },
+    {
+      "id": "QA-083",
+      "category": "queue",
+      "purpose": "Ask-none quality stress",
+      "seed": 90083,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Run ASK_NONE on same seed"
+      ],
+      "expected_tfs": "Incomplete inputs remain canonical",
+      "expected_gameplay": "Lower waits but lower IS/DQ on critical cases",
+      "expected_analytics": [
+        "TP higher; SJ lower"
+      ],
+      "failure_conditions": [
+        "Ask-none dominates both metrics"
+      ]
+    },
+    {
+      "id": "QA-084",
+      "category": "inventory",
+      "purpose": "LOW proactive restock",
+      "seed": 90084,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Restock A during recovery",
+        "Serve later A request"
+      ],
+      "expected_tfs": "No TFS change except authoritative inventory snapshot if eligibility changes",
+      "expected_gameplay": "Later rush avoids emergency interruption",
+      "expected_analytics": [
+        "proactive_restock=1"
+      ],
+      "failure_conditions": [
+        "Restock has no downstream effect"
+      ]
+    },
+    {
+      "id": "QA-085",
+      "category": "inventory",
+      "purpose": "EMPTY_WITH_BACKSTOCK physical gate",
+      "seed": 90085,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_EMPTY_BACK",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Attempt direct sale",
+        "Perform transfer/retrieval",
+        "Complete sale"
+      ],
+      "expected_tfs": "No invented recommendation change",
+      "expected_gameplay": "Sale blocked until physical availability restored",
+      "expected_analytics": [
+        "transfer_event=1"
+      ],
+      "failure_conditions": [
+        "Menu sells empty FOH directly"
+      ]
+    },
+    {
+      "id": "QA-086",
+      "category": "inventory",
+      "purpose": "SOLD_OUT substitution",
+      "seed": 90086,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_SOLDOUT_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Request A",
+        "Use Similar/alternate if appropriate"
+      ],
+      "expected_tfs": "Canonical eligible current inventory only",
+      "expected_gameplay": "Alternate or no-sale",
+      "expected_analytics": [
+        "stockout_attribution recorded"
+      ],
+      "failure_conditions": [
+        "Sold-out A can be sold"
+      ]
+    },
+    {
+      "id": "QA-087",
+      "category": "inventory",
+      "purpose": "Atomic one-unit reserve",
+      "seed": 90087,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_ONE_UNIT",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Open two transaction sessions",
+        "Reserve PKG-1 in both"
+      ],
+      "expected_tfs": "TFS may show based on snapshot; commit validation authoritative",
+      "expected_gameplay": "Only one reservation succeeds",
+      "expected_analytics": [
+        "negative_stock=0"
+      ],
+      "failure_conditions": [
+        "Both sessions reserve same unit"
+      ]
+    },
+    {
+      "id": "QA-088",
+      "category": "transaction",
+      "purpose": "Cancel reserved transaction",
+      "seed": 90088,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_ONE_UNIT",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Reserve unit",
+        "Cancel transaction",
+        "Start new transaction"
+      ],
+      "expected_tfs": "n/a",
+      "expected_gameplay": "Unit available exactly once",
+      "expected_analytics": [
+        "available_qty returns to 1"
+      ],
+      "failure_conditions": [
+        "Duplicate or lost stock"
+      ]
+    },
+    {
+      "id": "QA-089",
+      "category": "transaction",
+      "purpose": "Idempotent completion",
+      "seed": 90089,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_ONE_UNIT",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Reserve",
+        "Complete",
+        "Replay completion event"
+      ],
+      "expected_tfs": "n/a",
+      "expected_gameplay": "One sale only",
+      "expected_analytics": [
+        "sales_count=1"
+      ],
+      "failure_conditions": [
+        "Second completion decrements again"
+      ]
+    },
+    {
+      "id": "QA-090",
+      "category": "weighing",
+      "purpose": "Deli cancel handling",
+      "seed": 90090,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Handle temporary deli quantity",
+        "Cancel before POS"
+      ],
+      "expected_tfs": "n/a",
+      "expected_gameplay": "Temporary quantity reconciles once",
+      "expected_analytics": [
+        "sold_qty=0"
+      ],
+      "failure_conditions": [
+        "Permanent loss or duplication"
+      ]
+    },
+    {
+      "id": "QA-091",
+      "category": "weighing",
+      "purpose": "Difficulty tolerance parity",
+      "seed": 90091,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Run same TFS on Beginner and Expert",
+        "Perform weighing under each tolerance"
+      ],
+      "expected_tfs": "Exact TFS output identical",
+      "expected_gameplay": "Only physical confirm tolerance differs",
+      "expected_analytics": [
+        "tfs_hash_equal=true"
+      ],
+      "failure_conditions": [
+        "Difficulty changes recommendation"
+      ]
+    },
+    {
+      "id": "QA-092",
+      "category": "staff",
+      "purpose": "Lead reassignment tradeoff",
+      "seed": 90092,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_LOW_A",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Assign inventory-skilled staff to restock",
+        "Reassign to queue during rush"
+      ],
+      "expected_tfs": "n/a",
+      "expected_gameplay": "Queue improves but restock delayed",
+      "expected_analytics": [
+        "leadership outcome reflects tradeoff"
+      ],
+      "failure_conditions": [
+        "Staff performs both roles simultaneously"
+      ]
+    },
+    {
+      "id": "QA-093",
+      "category": "staff",
+      "purpose": "Break window",
+      "seed": 90093,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Delay break within allowed window",
+        "Cover rush",
+        "Send break in recovery"
+      ],
+      "expected_tfs": "n/a",
+      "expected_gameplay": "Coverage stable; break satisfied",
+      "expected_analytics": [
+        "missed_break=0"
+      ],
+      "failure_conditions": [
+        "Break has no state consequence"
+      ]
+    },
+    {
+      "id": "QA-094",
+      "category": "manager",
+      "purpose": "Manager floor intervention",
+      "seed": 90094,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB3",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Observe queue spike",
+        "Step onto floor",
+        "Serve/escalation",
+        "Return to planning"
+      ],
+      "expected_tfs": "Canonical for handled customer",
+      "expected_gameplay": "Queue benefit; planning task delay",
+      "expected_analytics": [
+        "intervention_value>0",
+        "planning_delay>0"
+      ],
+      "failure_conditions": [
+        "Intervention has no opportunity cost"
+      ]
+    },
+    {
+      "id": "QA-095",
+      "category": "manager",
+      "purpose": "Receiving discrepancy",
+      "seed": 90095,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_MANAGER",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Receive PO",
+        "Detect short line",
+        "Close matching lines",
+        "Resolve discrepancy"
+      ],
+      "expected_tfs": "n/a",
+      "expected_gameplay": "Only received qty enters inventory",
+      "expected_analytics": [
+        "receive_events match accepted qty"
+      ],
+      "failure_conditions": [
+        "PO quantity auto-becomes stock"
+      ]
+    },
+    {
+      "id": "QA-096",
+      "category": "economy",
+      "purpose": "Breadth vs depth consequence",
+      "seed": 90096,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_MANAGER",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Place breadth-oriented order in seed A",
+        "Simulate 3 shifts",
+        "Compare depth policy same demand seed"
+      ],
+      "expected_tfs": "n/a",
+      "expected_gameplay": "Different coverage/stockout/cash outcomes",
+      "expected_analytics": [
+        "policy metrics differ"
+      ],
+      "failure_conditions": [
+        "Orders produce identical future state"
+      ]
+    },
+    {
+      "id": "QA-097",
+      "category": "economy",
+      "purpose": "Safety stock reacts to uncertainty",
+      "seed": 90097,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_MANAGER",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Hold mean demand constant",
+        "Increase demand SD",
+        "Recompute target"
+      ],
+      "expected_tfs": "n/a",
+      "expected_gameplay": "SafetyStock increases",
+      "expected_analytics": [
+        "ss_high_variance>ss_low_variance"
+      ],
+      "failure_conditions": [
+        "Fixed buffer unchanged"
+      ]
+    },
+    {
+      "id": "QA-098",
+      "category": "economy",
+      "purpose": "Lead-time risk",
+      "seed": 90098,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_MANAGER",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Hold demand constant",
+        "Increase lead-time SD",
+        "Recompute target"
+      ],
+      "expected_tfs": "n/a",
+      "expected_gameplay": "SafetyStock increases",
+      "expected_analytics": [
+        "ss_high_leadvar>baseline"
+      ],
+      "failure_conditions": [
+        "Lead uncertainty ignored"
+      ]
+    },
+    {
+      "id": "QA-099",
+      "category": "progression",
+      "purpose": "Balanced gate",
+      "seed": 90099,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_EXPLICIT",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Load six eligible balanced evidence shifts",
+        "Evaluate Senior gate"
+      ],
+      "expected_tfs": "n/a",
+      "expected_gameplay": "Promotion available if all gates/stability pass",
+      "expected_analytics": [
+        "promotion_ready=true"
+      ],
+      "failure_conditions": [
+        "Aggregate unrelated score blocks/allows incorrectly"
+      ]
+    },
+    {
+      "id": "QA-100",
+      "category": "progression",
+      "purpose": "Speedrunner blocked",
+      "seed": 90100,
+      "initial_state": {
+        "difficulty": "STANDARD",
+        "career_rank": "BUDTENDER",
+        "customer_fixture": "C_AMB1",
+        "inventory_fixture": "INV_BASE",
+        "queue_count": 0,
+        "shift_phase": "STEADY_A"
+      },
+      "actions": [
+        "Load high TP but low SJ/OA evidence",
+        "Evaluate gate"
+      ],
+      "expected_tfs": "n/a",
+      "expected_gameplay": "Promotion blocked with exact missing competencies",
+      "expected_analytics": [
+        "promotion_ready=false"
+      ],
+      "failure_conditions": [
+        "Throughput compensates for accuracy/judgment"
+      ]
+    }
+  ]
+}
