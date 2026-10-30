@@ -1,0 +1,20 @@
+{
+  "asset_id": "PROC_Hoop_Mini",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "98261aeedce772e7",
+  "generator": "break_room",
+  "lod_tris": {
+    "LOD0": 676,
+    "LOD1": 580,
+    "LOD2": 452,
+    "LOD3": 24
+  },
+  "params_sha256": "b69907bc8ac355f5",
+  "passed": true,
+  "warnings": [
+    "LOD0 676 tris below the DEC-084 guide minimum 5000 (too simple?)",
+    "LOD1: 580 tris > 75% of LOD0 (guide 1/2, 1/4, <= 1/10)",
+    "LOD2: 452 tris > 40% of LOD0 (guide 1/2, 1/4, <= 1/10)"
+  ]
+}

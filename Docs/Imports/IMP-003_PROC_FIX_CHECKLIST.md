@@ -154,11 +154,18 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [x] **O8** remove DrawerCart (no store evidence). Add the **deli prep cart** instead: RF `Cart_Deli_Prep` 2.5 × 1.6 × 2.9 ft, stainless 2-shelf utility cart; the only certified refill spot (DEC-079). Also `Cart_WireBasket` 1.5 × 1.5 × 2.5, black wire.
 
 ## 9. Break room: `generators/break_room.py`, `params/break_room.json`
-- [ ] **B1** lockers = RF `Lockers_Staff` **one unit 2.0 × 1.5 × 6.0 ft** (DEC-047/051 Q5, High), grey top. Door grid **2 columns × 6 rows = 12 small doors** (DEC-088, Med; narrows GAP-126): `columns: 2`, `rows: 6`, each door ≈ 0.30 × 0.30 m in the 2.0 × 6.0 ft unit. Hinge metadata must be LOD-independent (claimed fix, not delivered).
-- [ ] **B2** bench = RF `Bench_Wood` 5.0 × 1.3 × 1.5 ft, wood plank on **black steel legs**.
-- [ ] **B3** board variants: `Board_Bulletin_West` 3.0 × 2.5 ft; `Board_Cork` (hall, wood frame) 1.8 × 2.6; `Whiteboard_West` 4.0 × 3.0 (red/white frame); office `Board_West_BlackFrame` 2.5 × 2.0; `Board_North_Fabric` 5.0 × 3.0 (grey fabric).
-- [ ] **B4** LunchTable and FirstAidBox: sizes already match RF; keep them.
-- [ ] **B5 missing:**
+**PROC-005 done:** new generator with 17 RF assets.
+- **Lockers:** one 2.0 × 1.5 × 6.0 ft unit with 2 × 6 doors. Louvres are real slat gaps onto the dark interior. Latch, blank plate, hinge knuckles; hinge metadata on every LOD.
+- **Furniture and boards:** wood bench on black steel legs; 5 boards; lunch table; first-aid kit.
+- **Counters:** North run and East return in light wood with a black 34 in top and backsplash; the return has the sink cut-out. North uppers.
+- **Fittings and props:** stainless double sink with gooseneck faucet, microwave, pod coffee maker, mini hoop over a hamper, coat-hook rail.
+- **Size notes:** the backsplash and faucet add to the RF height (`_note`). The hook rail excludes the coats. Uppers_East is skipped: the RF row is Low and CCTV shows none.
+- **Tris:** LOD0 0.1–2.3k (warning).
+- [x] **B1** lockers = RF `Lockers_Staff` **one unit 2.0 × 1.5 × 6.0 ft** (DEC-047/051 Q5, High), grey top. Door grid **2 columns × 6 rows = 12 small doors** (DEC-088, Med; narrows GAP-126): `columns: 2`, `rows: 6`, each door ≈ 0.30 × 0.30 m in the 2.0 × 6.0 ft unit. Hinge metadata must be LOD-independent (claimed fix, not delivered).
+- [x] **B2** bench = RF `Bench_Wood` 5.0 × 1.3 × 1.5 ft, wood plank on **black steel legs**.
+- [x] **B3** board variants: `Board_Bulletin_West` 3.0 × 2.5 ft; `Board_Cork` (hall, wood frame) 1.8 × 2.6; `Whiteboard_West` 4.0 × 3.0 (red/white frame); office `Board_West_BlackFrame` 2.5 × 2.0; `Board_North_Fabric` 5.0 × 3.0 (grey fabric).
+- [x] **B4** LunchTable and FirstAidBox: sizes already match RF; keep them.
+- [x] **B5 missing:**
   - base cabinets + black counter (34 in, TI) `Counter_North_Run` 4.4 × 2.0 and `Counter_East_Return` 5.9 × 2.0;
   - uppers 4.4 × 1.1 × 2.5;
   - double sink 2.7 × 1.6;

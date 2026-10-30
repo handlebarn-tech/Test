@@ -1,0 +1,594 @@
+{
+  "generator": "break_room",
+  "asset_prefix": "PROC_",
+  "seed": 26001,
+  "own_sheet": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/BreakRoom",
+  "gaps": [
+    "GAP-126",
+    "GAP-PROC-19"
+  ],
+  "_sources": "Sizes = ROOM_FIXTURES rows; lockers DEC-047/051 Q5/DEC-088 (2 x 6 doors); counters 34 in + 1-1/2 in top with backsplash TI 6.4; finishes from RF notes. GAP-PROC-19: locker parts, splash height, door widths, sink bowl/faucet, microwave and coffee-maker sizes, hook rail size, sink cut-out position.",
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 16
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 12
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8
+    }
+  },
+  "wear": {
+    "edge_wear": 0.25,
+    "scuffs": 0.35,
+    "fingerprints": 0.2,
+    "sticker_residue": 0.15
+  },
+  "colors": {
+    "Locker_Grey": [
+      0.55,
+      0.57,
+      0.6,
+      1.0
+    ],
+    "Grey_Top": [
+      0.42,
+      0.43,
+      0.45,
+      1.0
+    ],
+    "Black_Interior": [
+      0.03,
+      0.03,
+      0.035,
+      1.0
+    ],
+    "Chrome": [
+      0.76,
+      0.77,
+      0.79,
+      1.0
+    ],
+    "Plate_Blank": [
+      0.8,
+      0.8,
+      0.78,
+      1.0
+    ],
+    "Wood_Plank": [
+      0.55,
+      0.38,
+      0.22,
+      1.0
+    ],
+    "Black_Steel": [
+      0.04,
+      0.04,
+      0.045,
+      1.0
+    ],
+    "Wood_Frame": [
+      0.5,
+      0.34,
+      0.2,
+      1.0
+    ],
+    "Cork": [
+      0.68,
+      0.5,
+      0.32,
+      1.0
+    ],
+    "Frame_Red": [
+      0.7,
+      0.08,
+      0.08,
+      1.0
+    ],
+    "White_Board": [
+      0.96,
+      0.96,
+      0.96,
+      1.0
+    ],
+    "Aluminium": [
+      0.7,
+      0.71,
+      0.72,
+      1.0
+    ],
+    "Fabric_Grey": [
+      0.45,
+      0.46,
+      0.48,
+      1.0
+    ],
+    "Table_Top": [
+      0.8,
+      0.78,
+      0.74,
+      1.0
+    ],
+    "Black_Plastic": [
+      0.03,
+      0.03,
+      0.035,
+      1.0
+    ],
+    "White_Plastic": [
+      0.92,
+      0.92,
+      0.9,
+      1.0
+    ],
+    "Cross_Red": [
+      0.8,
+      0.1,
+      0.1,
+      1.0
+    ],
+    "Grey_Plastic": [
+      0.45,
+      0.46,
+      0.48,
+      1.0
+    ],
+    "Black_Top": [
+      0.03,
+      0.03,
+      0.032,
+      1.0
+    ],
+    "Light_Wood": [
+      0.78,
+      0.64,
+      0.45,
+      1.0
+    ],
+    "Brushed_Steel": [
+      0.62,
+      0.63,
+      0.64,
+      1.0
+    ],
+    "Stainless": [
+      0.66,
+      0.67,
+      0.68,
+      1.0
+    ],
+    "Glass_Dark": [
+      0.05,
+      0.06,
+      0.07,
+      1.0
+    ],
+    "Panel_Dark": [
+      0.1,
+      0.1,
+      0.11,
+      1.0
+    ],
+    "Black_Appliance": [
+      0.05,
+      0.05,
+      0.055,
+      1.0
+    ],
+    "Hamper_Grey": [
+      0.3,
+      0.3,
+      0.32,
+      1.0
+    ],
+    "Hamper_Fabric": [
+      0.35,
+      0.4,
+      0.45,
+      1.0
+    ],
+    "Rim_Orange": [
+      0.85,
+      0.35,
+      0.08,
+      1.0
+    ],
+    "Net_White": [
+      0.95,
+      0.95,
+      0.95,
+      1.0
+    ]
+  },
+  "variants": [
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Lockers_Staff",
+      "rf": "Lockers_Staff",
+      "kind": "lockers",
+      "width_m": 0.6096,
+      "depth_m": 0.4572,
+      "height_m": 1.8288,
+      "lockers": {
+        "columns": 2,
+        "rows": 6,
+        "kick_h_m": 0.1,
+        "top_h_m": 0.03,
+        "frame_m": 0.02,
+        "handle_d_m": 0.02
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Bench_Wood",
+      "rf": "Bench_Wood",
+      "kind": "bench",
+      "width_m": 1.524,
+      "depth_m": 0.39624,
+      "height_m": 0.4572
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Board_Bulletin_West",
+      "rf": "Board_Bulletin_West",
+      "kind": "board",
+      "width_m": 0.9144,
+      "depth_m": 0.03048,
+      "height_m": 0.762,
+      "board": {
+        "frame_w_m": 0.025,
+        "frame": "Wood_Frame",
+        "face": "Cork",
+        "tray": false
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Board_Cork",
+      "rf": "Board_Cork",
+      "kind": "board",
+      "width_m": 0.54864,
+      "depth_m": 0.03048,
+      "height_m": 0.79248,
+      "board": {
+        "frame_w_m": 0.025,
+        "frame": "Wood_Frame",
+        "face": "Cork",
+        "tray": false
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Whiteboard_West",
+      "rf": "Whiteboard_West",
+      "kind": "board",
+      "width_m": 1.2192,
+      "depth_m": 0.03048,
+      "height_m": 0.9144,
+      "board": {
+        "frame_w_m": 0.025,
+        "frame": "Frame_Red",
+        "face": "White_Board",
+        "tray": true
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Board_West_BlackFrame",
+      "rf": "Board_West_BlackFrame",
+      "kind": "board",
+      "width_m": 0.762,
+      "depth_m": 0.03048,
+      "height_m": 0.6096,
+      "board": {
+        "frame_w_m": 0.025,
+        "frame": "Black_Steel",
+        "face": "Cork",
+        "tray": false
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Board_North_Fabric",
+      "rf": "Board_North_Fabric",
+      "kind": "board",
+      "width_m": 1.524,
+      "depth_m": 0.03048,
+      "height_m": 0.9144,
+      "board": {
+        "frame_w_m": 0.025,
+        "frame": "Aluminium",
+        "face": "Fabric_Grey",
+        "tray": false
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Table_Lunch",
+      "rf": "Table_Lunch",
+      "kind": "table",
+      "width_m": 1.2192,
+      "depth_m": 0.762,
+      "height_m": 0.762
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "FirstAid_Kit",
+      "rf": "FirstAid_Kit",
+      "kind": "first_aid",
+      "width_m": 0.3048,
+      "depth_m": 0.12192,
+      "height_m": 0.39624
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Counter_North_Run",
+      "rf": "Counter_North_Run",
+      "kind": "base_cabinets",
+      "width_m": 1.34112,
+      "depth_m": 0.6096,
+      "height_m": 0.8635,
+      "counter": {
+        "top_t_m": 0.0381,
+        "splash_h_m": 0.1016,
+        "kick_h_m": 0.1016,
+        "pull_standoff_m": 0.03,
+        "door_w_m": 0.6
+      },
+      "extra_h_m": 0.1016,
+      "_note": "RF h = 34 in top; the 4 in backsplash (TI 6.4) adds to the bound"
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Counter_East_Return",
+      "rf": "Counter_East_Return",
+      "kind": "base_cabinets",
+      "width_m": 1.79832,
+      "depth_m": 0.6096,
+      "height_m": 0.8635,
+      "extra_h_m": 0.1016,
+      "counter": {
+        "top_t_m": 0.0381,
+        "splash_h_m": 0.1016,
+        "kick_h_m": 0.1016,
+        "pull_standoff_m": 0.03,
+        "door_w_m": 0.6,
+        "sink_cutout": [
+          0.0,
+          0.78296,
+          0.44768
+        ]
+      },
+      "_note": "sink cut-out centred (position GAP-PROC-19); backsplash adds 4 in"
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Uppers_North",
+      "rf": "Uppers_North",
+      "kind": "uppers",
+      "width_m": 1.34112,
+      "depth_m": 0.33528,
+      "height_m": 0.762,
+      "counter": {
+        "top_t_m": 0.0381,
+        "splash_h_m": 0.1016,
+        "kick_h_m": 0.1016,
+        "pull_standoff_m": 0.03,
+        "door_w_m": 0.6
+      },
+      "_note": "Uppers_East (RF Low: CCTV shows none) not generated"
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Sink_Double",
+      "rf": "Sink_Double",
+      "kind": "double_sink",
+      "width_m": 0.82296,
+      "depth_m": 0.48768,
+      "height_m": 0.24384,
+      "extra_h_m": 0.35,
+      "sink": {
+        "bowl_depth_m": 0.23984,
+        "rim_t_m": 0.004,
+        "faucet_h_m": 0.35
+      },
+      "_note": "RF h = basin; the gooseneck faucet (0.35 m, GAP-PROC-19) adds to the bound"
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Microwave",
+      "rf": "Counter_North_Run (on top)",
+      "kind": "appliance",
+      "width_m": 0.49,
+      "depth_m": 0.38,
+      "height_m": 0.29,
+      "appliance": {
+        "type": "microwave",
+        "body": "Black_Appliance"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "CoffeeMaker_Pod",
+      "rf": "Counter_North_Run (on top)",
+      "kind": "appliance",
+      "width_m": 0.2,
+      "depth_m": 0.33,
+      "height_m": 0.33,
+      "appliance": {
+        "type": "coffee",
+        "body": "Black_Appliance"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Hoop_Mini",
+      "rf": "Hoop_Mini",
+      "kind": "mini_hoop",
+      "width_m": 0.4572,
+      "depth_m": 0.4572,
+      "height_m": 1.3716
+    },
+    {
+      "tri_budget": {
+        "LOD0": 20000,
+        "LOD1": 10000,
+        "LOD2": 5000,
+        "LOD3": 2000
+      },
+      "tri_guide": {
+        "lod0_min": 5000
+      },
+      "id": "Hooks_Coats",
+      "rf": "Hooks_Coats",
+      "kind": "coat_hooks",
+      "width_m": 0.762,
+      "depth_m": 0.08,
+      "height_m": 0.12,
+      "hooks": 5,
+      "_note": "hook rail only; RF 2.5 x 0.8 x 5.5 ft includes hanging coats/bags (soft goods, not modelled)"
+    }
+  ]
+}
