@@ -39,7 +39,7 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 
 ## Pending from Nolan
 - ChatGPT rounds 3b–6 approved (DEC-111): rejected-but-needed assets get studio-built later.
-- Playtest build 2 once GAME-025 controls land (Nolan 2026-10-30: no build for PS1 alone).
+- **TOP PRIORITY (Nolan 15:05):** playtest build 2 before his usage limit. GAME-025 → B2 review → merge → BUILD-007; ART-007 only if merge-ready in time. PROC-005 rework + PROC-006b PAUSED (sessions stopped) until the build ships.
 - Any ChatGPT-built mechanics he drops in Imports: audit → review → **his approval** before use.
 
 ## Open questions for Nolan
