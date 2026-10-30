@@ -22,7 +22,7 @@ namespace Dispo.Presentation.Slice
         readonly Dictionary<string, Label> _jarLabels = new Dictionary<string, Label>();
         readonly List<(VisualElement el, float until)> _toastList = new List<(VisualElement, float)>();
         Button _confirm;
-        bool _debugOn;
+        bool _debugOn, _wasRed;
 
         public string Message = "";
 
@@ -122,14 +122,17 @@ namespace Dispo.Presentation.Slice
             if (_g.FallbackAnchors.Count > 0) AddLabel(_debug, $"TEMP anchors: {_g.FallbackAnchors.Count} (ART-002 pending)", "debug-line");
         }
 
-        public void Toast(string line1, string line2, bool warn)
+        public void Toast(string line1, string line2, bool warn) => Toast(line1, line2, warn ? "st-warn" : null, _g.Sim.Cfg.toastSeconds);
+
+        /// <summary>UX_PS1 §6: a strike toast has the --bad border and stays strikeToastSeconds.</summary>
+        public void Toast(string line1, string line2, string state, double seconds)
         {
             if (_g.Screen == SliceScreen.Report) return;
             var t = Add(_toasts, "toast");
-            t.EnableInClassList("st-warn", warn);
+            if (state != null) t.AddToClassList(state);
             AddLabel(t, line1, "toast-1");
             if (!string.IsNullOrEmpty(line2)) AddLabel(t, line2, "toast-2");
-            _toastList.Add((t, Time.unscaledTime + (float)_g.Sim.Cfg.toastSeconds));
+            _toastList.Add((t, Time.unscaledTime + (float)seconds));
         }
 
         // ---------------- screens ----------------
@@ -137,6 +140,10 @@ namespace Dispo.Presentation.Slice
         public void Render()
         {
             _screen.Clear();
+            // UX_SLICE §5 / UX_COUNTER_INTEL §10 text scale (the register and limit meter honour it, GAME-007).
+            _root.EnableInClassList("text-125", _g.TextScale == 125);
+            _root.EnableInClassList("text-150", _g.TextScale == 150);
+            _root.EnableInClassList("register-open", _g.Screen == SliceScreen.Pos);
             if (_g.Screen == SliceScreen.Report) { _toasts.Clear(); _toastList.Clear(); }   // nothing on top of the report
             _confirm = null;
             var s = _g.Screen;
@@ -178,7 +185,7 @@ namespace Dispo.Presentation.Slice
                 for (int i = 0; i < c.Asks.Count; i++)
                     AddLabel(strip, (sim.Cart.Any(x => x.Ask == i) ? "✓ " : "○ ") + c.Asks[i].Clause, "hint");
             if (sim.Cart.Count > 0)
-                AddButton(strip, string.Format(sim.Data.Lines.cartChip, sim.Cart.Count, sim.CartGrams.ToString("0.#")), _g.GoToRegister).tooltip = sim.Data.Lines.goToRegister;
+                AddButton(strip, string.Format(sim.Data.Lines.cartChip, sim.Cart.Count, sim.Cfg.cartMaxLines, sim.CartGrams.ToString("0.#")), _g.GoToRegister).tooltip = sim.Data.Lines.goToRegister;
             body(Add(term, "terminal-body"));
             if (!string.IsNullOrEmpty(Message)) AddLabel(term, "⚠ " + Message, "message st-bad");
             AddButton(term, "Back (Esc)", _g.Back, "back");
@@ -278,24 +285,31 @@ namespace Dispo.Presentation.Slice
             var sim = _g.Sim;
             var c = sim.Serving;
             var l = sim.Data.Lines;
-            var pos = Add(_screen, "pos");
+            // UX_PS1 §2-3: lines + Add item, then meter / totals / payment / Confirm. At ≥125 % text the two columns sit side by
+            // side in the safe area so Confirm never scrolls off (UX_COUNTER_INTEL §10); at 100 % they stack.
+            var panel = Add(_screen, "pos");
+            var pos = Add(panel, "pos-col");
             AddLabel(pos, "POS", "h1");
             AddLabel(pos, "✓ " + l.idVerified, "st-ok");   // DEC-036 M2: checked at the check-in desk
-            // UX_PS1 §2 cart lines: name, batch · tier, − weight +, line pre-tax, ✕.
+            // Cart lines: name and batch · tier ellipsize; − g + / price / ✕ are fixed columns (REVIEW-W4W m1).
             for (int i = 0; i < sim.Cart.Count; i++)
             {
                 int n = i;
                 var x = sim.Cart[i];
-                var lineRow = Add(pos, "price-line");
-                AddLabel(lineRow, $"{x.Card.Strain.Name} · batch {x.Card.Rep.BatchCode} · {x.Card.TierLabel}");
-                AddButton(lineRow, "−", () => _g.PosStep(n, -1));
-                AddLabel(lineRow, $"{x.Grams} g");
-                AddButton(lineRow, "+", () => _g.PosStep(n, 1));
-                AddLabel(lineRow, double.IsNaN(x.PreTax) ? "—" : $"${x.PreTax:0.00}", "amount");
-                AddButton(lineRow, "✕", () => _g.PosRemove(n)).tooltip = l.removeLine;
+                var lineRow = Add(pos, "cart-line");
+                var info = Add(lineRow, "cart-info");
+                AddLabel(info, x.Card.Strain.Name, "cart-name").tooltip = x.Card.Strain.Name;
+                AddLabel(info, $"batch {x.Card.Rep.BatchCode} · {x.Card.TierLabel}", "cart-sub");
+                AddButton(lineRow, "−", () => _g.PosStep(n, -1), "cart-step");
+                AddLabel(lineRow, $"{x.Grams} g", "cart-grams");
+                AddButton(lineRow, "+", () => _g.PosStep(n, 1), "cart-step");
+                AddLabel(lineRow, double.IsNaN(x.PreTax) ? "—" : $"${x.PreTax:0.00}", "cart-price");
+                AddButton(lineRow, "✕", () => _g.PosRemove(n), "cart-step").tooltip = l.removeLine;
             }
-            var add = AddButton(pos, sim.Cart.Count >= sim.Cfg.cartMaxLines ? l.cartFull : l.addItem, _g.AddItem);
+            var add = AddButton(pos, sim.Cart.Count >= sim.Cfg.cartMaxLines ? string.Format(l.cartFull, sim.Cfg.cartMaxLines) : l.addItem, _g.AddItem);
             add.SetEnabled(sim.CanAddItem);
+            pos = Add(panel, "pos-col");
+            Meter(pos);
             var p = sim.CartPrice();
             if (!double.IsNaN(p.PreTax))
             {
@@ -306,17 +320,42 @@ namespace Dispo.Presentation.Slice
                 Line(pos, "Total", p.PostTax, "total");
             }
             AddLabel(pos, $"Scale: {sim.CartGrams:0.00} g (assisted)", "scale");
-            var pay = Add(pos, "row");
-            AddButton(pay, "Cash", () => { });
-            AddButton(pay, "Card", () => { });
             if (!string.IsNullOrEmpty(Message)) AddLabel(pos, "⚠ " + Message, "message st-bad");
+            // Payment and Confirm share a row so a red 3-line cart fits the 972 px safe height at 100 % (GAME-007 capture check).
             var row = Add(pos, "row");
+            AddButton(row, "Cash", () => { });
+            AddButton(row, "Card", () => { });
             _confirm = AddButton(row, "Hold to confirm", () => { }, "primary");
+            _confirm.SetEnabled(sim.Meter != MeterState.Red);   // UX_PS1 §3: red disables Confirm (the POS blocks it anyway, DEC-036 M1)
             _confirm.RegisterCallback<PointerDownEvent>(_ => _g.PosHold(true), TrickleDown.TrickleDown);
             _confirm.RegisterCallback<PointerUpEvent>(_ => _g.PosHold(false));
             _confirm.RegisterCallback<PointerLeaveEvent>(_ => _g.PosHold(false));
             AddButton(row, "Cancel", _g.PosCancel);
             AddLabel(pos, $"Customer asked for {string.Join(" + ", c.Asks.Select(a => l.Weight(a.Grams)))}", "hint");
+        }
+
+        /// <summary>UX_PS1 §3 limit meter: Flower {g} / 28 g, 75 % tick, amber/red state words (never colour only).</summary>
+        void Meter(VisualElement parent)
+        {
+            var sim = _g.Sim;
+            var l = sim.Data.Lines;
+            var state = sim.Meter;
+            var meter = Add(parent, "meter meter-" + state.ToString().ToLowerInvariant());
+            var head = Add(meter, "meter-head");
+            AddLabel(head, l.meterFlower, "meter-label");
+            AddLabel(head, string.Format(l.meterValue, sim.CartGrams.ToString("0.#"), sim.Cfg.adultUseLimitGrams.ToString("0.#")), "meter-value");
+            var track = Add(meter, "meter-track");
+            Add(track, "meter-fill").style.width = Length.Percent((float)System.Math.Min(100, sim.MeterFraction * 100));
+            Add(track, "meter-tick").style.left = Length.Percent((float)(sim.Cfg.meterAmberFraction * 100));
+            if (state == MeterState.Amber) AddLabel(meter, l.nearLimit, "meter-state st-warn");
+            if (state == MeterState.Red)
+            {
+                AddLabel(meter, "✗ " + l.overLimit, "meter-state st-bad");
+                AddLabel(meter, l.trimHint, "meter-hint");
+            }
+            // Entering red fires the existing overLimit toast once (UX_PS1 §3).
+            if (state == MeterState.Red && !_wasRed) Toast("⚠ " + l.overLimit, "", true);
+            _wasRed = state == MeterState.Red;
         }
 
         void Line(VisualElement parent, string name, double v, string cls = null)
@@ -348,6 +387,11 @@ namespace Dispo.Presentation.Slice
             Row("Top intents", string.Join(", ", r.TopIntents.Select(kv => $"{kv.Key} {kv.Value}")));
             Row("Sold out", r.SoldOut.Count == 0 ? "—" : string.Join(", ", r.SoldOut));
             Row("Low stock", $"{r.LowStock.Count} jars");
+            // UX_PS1 §6 Compliance block (GAME-008/009 add ID and medical rows).
+            AddLabel(box, "Compliance", "h1");
+            Row("Strikes", r.Strikes.Count + (r.ManagerReview ? "  ⚠ Manager review" : ""));
+            foreach (var s in r.Strikes) Row($"    {_g.ClockText(s.Time)} · {s.Reason}", "");
+            Row("Over-limit trims", r.OverLimitTrims.ToString());
         }
 
         // ---------------- helpers ----------------

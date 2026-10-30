@@ -23,7 +23,8 @@ namespace Dispo.Slice.PlayMode.Tests
         [UnityTearDown]
         public IEnumerator Reset() { Time.timeScale = 1; yield return null; }
 
-        /// <summary>One bot step: talk → look it up → true-family chip → card 1 (next if the jar is short) → Add item while an ask is open (GAME-006) → confirm.</summary>
+        /// <summary>One bot step: talk → look it up → true-family chip → card 1 (next if the jar is short) → Add item while an ask is open
+        /// and fits under the cap (GAME-006/007) → trim if red → confirm.</summary>
         static bool _backChecked;
 
         public static void Step(SliceGame g)
@@ -42,7 +43,9 @@ namespace Dispo.Slice.PlayMode.Tests
                     g.Choose(card);
                     break;
                 case SliceScreen.Pos:
-                    if (g.Sim.CanAddItem) g.AddItem();
+                    // GAME-007: trim an over-limit cart (drop the last line), add the next ask only if it fits under the cap.
+                    if (g.Sim.Meter == MeterState.Red) g.PosRemove(g.Sim.Cart.Count - 1);
+                    else if (g.Sim.CanAddItem && g.Sim.CartGrams + g.Sim.CurrentAsk.Grams <= g.Sim.Cfg.adultUseLimitGrams) g.AddItem();
                     else if (g.Sim.Cart.Count > 1 && !_backChecked)
                     {
                         // DEC-065: Esc on a multi-line cart goes back to the cards and keeps the cart.

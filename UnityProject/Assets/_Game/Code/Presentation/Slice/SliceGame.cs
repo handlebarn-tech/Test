@@ -35,6 +35,7 @@ namespace Dispo.Presentation.Slice
         public ShiftReport FinalReport { get; private set; }
         public readonly List<string> FallbackAnchors = new List<string>();
         public bool AutoFillIntent;        // UX assist, off by default (SLICE_DESIGN §10 #2)
+        public int TextScale = 100;        // UX_SLICE §5 accessibility: 100 / 125 / 150 (%)
         public float InteractReach = 3f;
 
         const float Ft = 0.3048f;
@@ -69,6 +70,7 @@ namespace Dispo.Presentation.Slice
             Sim = new ShiftSim(data);
             Sim.Left += OnLeft;
             Sim.Inventory.Sold += OnSold;
+            Sim.Strikes.Added += s => _view?.Toast(string.Format(Sim.Data.Lines.strikeToast, s.Reason), "", "st-bad", Sim.Cfg.strikeToastSeconds);
             _snapshot = System.DateTime.Parse((string)((Dictionary<string, object>)((List<object>)((Dictionary<string, object>)Json.Parse(Manifest.text))["sources"])[1])["invExported"]).Date;
 
             FindAnchors();
@@ -383,7 +385,23 @@ namespace Dispo.Presentation.Slice
             return null;
         }
 
-        public void PosCancel() { Sim.Cancel(); _view.Message = ""; Show(Sim.Results != null ? SliceScreen.Results : SliceScreen.Query); }
+        /// <summary>Cancel button. An over-limit customer whose cart is still over the cap leaves with no sale (SPEC_COMP002 §2).</summary>
+        public void PosCancel()
+        {
+            if (Sim.Serving != null && Sim.Serving.OverLimit && Sim.Meter == MeterState.Red) _lastReject = Sim.Data.Lines.overLimitLeave;   // OnLeft's toast
+            if (Sim.Cancel()) return;   // OnLeft returns to the world
+            _view.Message = "";
+            Show(Sim.Results != null ? SliceScreen.Results : SliceScreen.Query);
+        }
+
+        public void SetTextScale(int pct) { TextScale = pct; _view?.Render(); }
+
+        /// <summary>hh:mm store clock for a sim time (DEC-036 M3).</summary>
+        public string ClockText(double simTime)
+        {
+            double h = Sim.Cfg.shiftStartHour + simTime / 3600;
+            return $"{(int)h:00}:{(int)((h - (int)h) * 60):00}";
+        }
 
         /// <summary>DEC-065: Esc on a multi-line cart goes back to the cards and keeps the cart; a single line keeps US§4 (Cancel).</summary>
         public void PosBack()

@@ -36,6 +36,8 @@ namespace Dispo.Simulation.Slice
         public int storeOpenHour, storeCloseHour, shiftStartHour;
         public double twoItemAskChance;
         public int cartMaxLines;
+        public double overLimitAskChance, meterAmberFraction, primaryTrimFitPenalty, strikeToastSeconds;
+        public int strikeReviewThreshold;
 
         public static SliceConfig FromJson(string json) => JsonUtility.FromJson<SliceConfig>(json);
     }
@@ -80,6 +82,7 @@ namespace Dispo.Simulation.Slice
         public string anxietyLow, anxietyModerate, anxietyHigh;
         public string[] patienceWords;
         public string andClause, secondClause, addToCart, cartChip, goToRegister, addItem, cartFull, removeLine;
+        public string twoOunces, anotherOunce, meterFlower, meterValue, nearLimit, trimHint, strikeToast, overLimitLeave;
 
         public static SliceLines FromJson(string json) => JsonUtility.FromJson<SliceLines>(json);
         public string[] Openers(string archetype) => openers.Single(o => o.archetype == archetype).lines;
