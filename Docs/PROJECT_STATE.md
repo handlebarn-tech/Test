@@ -17,7 +17,7 @@ Hub-owned. A fresh Hub resumes from this file + `Docs/HUB_RESUME.md` + recent `D
 
 Workers' original briefs name long-lived reviewers (now archived). Tell each to report "ready for review" to the Hub; the Hub spawns a fresh reviewer (Agent tool with worktree isolation, or a fresh session).
 
-Open item: `dispo-build007` (BUILD-007, done) still had a turn running at handover. Archive it once idle.
+`dispo-build007` archived. Background Agent workers (worktree): REF-013 M1 + ART7 m3 fix (from `worktree-agent-a8683a438ebc5cbe4`), PROC-009 vehicles (packet `Docs/Tasks/Active/PROC-009.md`). On "ready for review": spawn a fresh reviewer (Agent, worktree).
 
 ## Queue (after the above)
 1. **Launch now** (Agent tool, worktree, background; stopped at the Hub reset, may have partial work on a `worktree-agent-*` branch off REF-013) REF-013 M1 fix, plus REVIEW-ART7 m3 (JC door blocked, Vest_FOH trash can in a door swing: settle from evidence, or GAP + NPCs avoid the JC anchors) (DEC-115: HUB desk/counter/cabinet sizes Low + narrowed GAP-132; hinge overrides from A011; storefront keeps pulls; 8 absence-inferred rows Low). Branch `worktree-agent-a2b65d251ee0f6ac2`@73e0e0c; verdict REVIEW-REF13 on `review/ref13`.
