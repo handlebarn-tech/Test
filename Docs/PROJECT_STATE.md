@@ -3,7 +3,7 @@
 Hub-owned. A fresh Hub resumes from this file + `Docs/HUB_RESUME.md` + recent `Docs/DECISIONS.md` (DEC-116). Workers do not read this file.
 
 **Updated:** 2026-10-30 ~15:35. **Milestone:** PS1 complete on `main` (GAME-009 + GAME-025 controls merged 08758c1). Next: playtest build 2, then the PS1b work below.
-**Hub session:** `local_c6267ff5-2acb-4b09-83a7-53541a088c66` ("Dispo · Studio Hub"). Nolan resets it himself if it gets expensive.
+**Hub session:** reset 2026-10-30 ~15:55 (Nolan). The new Hub is the session titled "Dispo · Studio Hub"; the old `local_c6267ff5` was renamed "(retired)". Workers address the Hub by that name.
 **Structure (DEC-116):** Hub → narrow workers → fresh per-review reviewers → Hub merges. No leads (DEC-112). Nolan is cost-sensitive: no FYI messages, lean briefs.
 
 ## In flight (session name → task)
@@ -17,10 +17,12 @@ Hub-owned. A fresh Hub resumes from this file + `Docs/HUB_RESUME.md` + recent `D
 
 Workers' original briefs name long-lived reviewers (now archived). Tell each to report "ready for review" to the Hub; the Hub spawns a fresh reviewer (Agent tool with worktree isolation, or a fresh session).
 
+Open item: `dispo-build007` (BUILD-007, done) still had a turn running at handover. Archive it once idle.
+
 ## Queue (after the above)
-1. (RUNNING as a Hub background agent in a worktree) REF-013 M1 fix, plus REVIEW-ART7 m3 (JC door blocked, Vest_FOH trash can in a door swing: settle from evidence, or GAP + NPCs avoid the JC anchors) (DEC-115: HUB desk/counter/cabinet sizes Low + narrowed GAP-132; hinge overrides from A011; storefront keeps pulls; 8 absence-inferred rows Low). Branch `worktree-agent-a2b65d251ee0f6ac2`@73e0e0c; verdict REVIEW-REF13 on `review/ref13`.
+1. **Launch now** (Agent tool, worktree, background; stopped at the Hub reset, may have partial work on a `worktree-agent-*` branch off REF-013) REF-013 M1 fix, plus REVIEW-ART7 m3 (JC door blocked, Vest_FOH trash can in a door swing: settle from evidence, or GAP + NPCs avoid the JC anchors) (DEC-115: HUB desk/counter/cabinet sizes Low + narrowed GAP-132; hinge overrides from A011; storefront keeps pulls; 8 absence-inferred rows Low). Branch `worktree-agent-a2b65d251ee0f6ac2`@73e0e0c; verdict REVIEW-REF13 on `review/ref13`.
 2. PROC-007 UV layout (DEC-097) after PROC-005 merges; the label-shader cut-over comes with it.
-3. DEC-111 replacements: PROC-009 vehicles (RUNNING as a Hub background agent), ASSET-005/006/007 wardrobe/hair/gloves (PROC-008 cash tray rejected, DEC-051).
+3. DEC-111 replacements: PROC-009 vehicles (**launch now** via Agent; stopped at the Hub reset, may have a partial worktree-agent branch), ASSET-005/006/007 wardrobe/hair/gloves (PROC-008 cash tray rejected, DEC-051).
 4. PS1b recommendation depth (GAME-017a packet notes in `Docs/Departments/GAMEPLAY.md` queue), GAME-021/022/024.
 5. World lived-in pass after final assets; PROC-005 WireShelving FBX `.meta` files missing on main.
 Dept files (`Docs/Departments/*.md`) are reference queues only.
