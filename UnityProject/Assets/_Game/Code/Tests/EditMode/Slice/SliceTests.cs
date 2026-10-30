@@ -357,7 +357,8 @@ namespace Dispo.Slice.Tests
             Assert.AreEqual("", Labels.TierLabel(null));
         }
 
-        /// <summary>Pure-sim version of the PlayMode bot: true-family chip, card 1 (next card if the jar is short), stated weight.</summary>
+        /// <summary>Pure-sim version of the PlayMode bot: per ask, true-family chip, card 1 (next card if the jar is short), stated weight;
+        /// Add item while an ask is open (GAME-006), then confirm the cart.</summary>
         public static ShiftSim RunBot(SliceData d, double step)
         {
             var sim = new ShiftSim(d);
@@ -367,10 +368,16 @@ namespace Dispo.Slice.Tests
                 sim.Tick(step);
                 var c = sim.Serving;
                 if (c == null) continue;
-                var r = sim.Results ?? sim.Search(c.TrueFamily);
-                var card = r.Cards.FirstOrDefault(x => sim.Inventory.Grams(x.Rep.Id) >= c.Grams);
-                Assert.IsNotNull(card, $"customer {c.Index}: no card can fill {c.Grams} g");
-                if (sim.Present(card).Response == Response.Accept) Assert.IsNull(sim.Confirm(c.Grams));
+                if (sim.RegisterOpen)
+                {
+                    if (sim.CanAddItem) sim.AddItem();
+                    else { Assert.IsNull(sim.Confirm()); continue; }
+                }
+                var ask = sim.CurrentAsk;
+                var r = sim.Results ?? sim.Search(ask.Family);
+                var card = r.Cards.FirstOrDefault(x => sim.Free(x.Rep.Id) >= ask.Grams);
+                Assert.IsNotNull(card, $"customer {c.Index}: no card can fill {ask.Grams} g");
+                sim.Present(card);
             }
             return sim;
         }

@@ -23,7 +23,9 @@ namespace Dispo.Slice.PlayMode.Tests
         [UnityTearDown]
         public IEnumerator Reset() { Time.timeScale = 1; yield return null; }
 
-        /// <summary>One bot step: talk → look it up → true-family chip → card 1 (next if the jar is short) → stated weight → confirm.</summary>
+        /// <summary>One bot step: talk → look it up → true-family chip → card 1 (next if the jar is short) → Add item while an ask is open (GAME-006) → confirm.</summary>
+        static bool _backChecked;
+
         public static void Step(SliceGame g)
         {
             var c = g.Sim.Serving;
@@ -32,15 +34,27 @@ namespace Dispo.Slice.PlayMode.Tests
             {
                 case SliceScreen.World: if (g.CustomerAtCounter) g.Talk(); break;
                 case SliceScreen.Dialogue: g.LookItUp(); break;
-                case SliceScreen.Query: g.ChooseChip(c.TrueFamily); break;
+                case SliceScreen.Query: g.ChooseChip(g.Sim.CurrentAsk.Family); break;
                 case SliceScreen.Results:
-                    var card = g.Sim.Results.Cards.FirstOrDefault(k => g.Sim.Inventory.Grams(k.Rep.Id) >= c.Grams);
-                    Assert.IsNotNull(card, $"customer {c.Index}: no card can fill {c.Grams} g");
+                    var ask = g.Sim.CurrentAsk;
+                    var card = g.Sim.Results.Cards.FirstOrDefault(k => g.Sim.Free(k.Rep.Id) >= ask.Grams);
+                    Assert.IsNotNull(card, $"customer {c.Index}: no card can fill {ask.Grams} g");
                     g.Choose(card);
                     break;
                 case SliceScreen.Pos:
-                    g.PosSelectWeight(c.Grams);
-                    Assert.IsNull(g.PosConfirm());
+                    if (g.Sim.CanAddItem) g.AddItem();
+                    else if (g.Sim.Cart.Count > 1 && !_backChecked)
+                    {
+                        // DEC-065: Esc on a multi-line cart goes back to the cards and keeps the cart.
+                        int n = g.Sim.Cart.Count;
+                        g.Back();
+                        Assert.AreEqual(SliceScreen.Results, g.Screen);
+                        Assert.AreEqual(n, g.Sim.Cart.Count);
+                        g.GoToRegister();
+                        Assert.AreEqual(SliceScreen.Pos, g.Screen);
+                        _backChecked = true;
+                    }
+                    else Assert.IsNull(g.PosConfirm());
                     break;
             }
         }
@@ -51,6 +65,7 @@ namespace Dispo.Slice.PlayMode.Tests
             var g = Object.FindAnyObjectByType<SliceGame>();
             Assert.IsNotNull(g, "SliceGame missing from Gameplay_Slice");
             Assert.AreEqual(1, g.Sim.Cfg.seed);
+            _backChecked = false;
             Time.timeScale = 20;
             float deadline = Time.realtimeSinceStartup + 240;
             while (g.FinalReport == null)
@@ -80,7 +95,9 @@ namespace Dispo.Slice.PlayMode.Tests
             Assert.IsTrue(sim.Inventory.SoldOutIds.All(id => g.JarFillShown(id) == 0), "SOLD OUT jars show F000");
             CollectionAssert.IsNotEmpty(r.SoldOut, "at least one SOLD OUT (DEC-027)");
             Assert.LessOrEqual(sim.ClockHours, sim.Cfg.storeCloseHour, "clock inside store hours (DEC-036 M3)");
-            Assert.IsTrue(sim.Sales.All(s => s.Grams <= sim.Cfg.adultUseLimitGrams));
+            Assert.IsTrue(sim.Sales.GroupBy(s => s.CustomerIndex).All(s => s.Sum(x => x.Grams) <= sim.Cfg.adultUseLimitGrams), "M1 on each cart");
+            Assert.IsTrue(sim.Sales.GroupBy(s => s.CustomerIndex).Any(s => s.Count() == 2), "GAME-006: the bot sells a 2-item cart");
+            Assert.IsTrue(_backChecked, "DEC-065 Esc-keeps-cart path ran");
         }
     }
 }

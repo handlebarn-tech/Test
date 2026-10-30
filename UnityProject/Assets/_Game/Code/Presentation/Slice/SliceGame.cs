@@ -55,7 +55,6 @@ namespace Dispo.Presentation.Slice
             new Color(0.45f, 0.20f, 0.55f), new Color(0.10f, 0.55f, 0.55f), new Color(0.15f, 0.15f, 0.15f), new Color(0.80f, 0.35f, 0.55f),
         };
         Card _detail;
-        double _posGrams;
         float _hold;
         bool _holding;
         string _lastReject;
@@ -241,6 +240,7 @@ namespace Dispo.Presentation.Slice
             if (kb.eKey.wasPressedThisFrame && Screen == SliceScreen.World && CanTalk) Talk();
             if (kb.escapeKey.wasPressedThisFrame) Back();
             if (kb.mKey.wasPressedThisFrame && Screen == SliceScreen.Results) More();
+            if (kb.rKey.wasPressedThisFrame && (Screen == SliceScreen.Query || Screen == SliceScreen.Results || Screen == SliceScreen.Detail)) GoToRegister();
             if (kb.f3Key.wasPressedThisFrame) _view.ToggleDebug();
         }
 
@@ -304,8 +304,9 @@ namespace Dispo.Presentation.Slice
         public void LookItUp()
         {
             if (Sim.Serving == null) return;
-            if (Sim.Results != null) Show(SliceScreen.Results);
-            else if (AutoFillIntent) ChooseChip(Sim.Serving.TrueFamily, true);
+            if (Sim.CurrentAsk == null) GoToRegister();   // every ask is in the cart
+            else if (Sim.Results != null) Show(SliceScreen.Results);
+            else if (AutoFillIntent) ChooseChip(Sim.CurrentAsk.Family, true);
             else Show(SliceScreen.Query);
         }
 
@@ -313,6 +314,7 @@ namespace Dispo.Presentation.Slice
 
         public void ChooseChip(IntentFamily f, bool autoFilled = false)
         {
+            if (Sim.CurrentAsk == null) { GoToRegister(); return; }   // every ask is in the cart
             Sim.Search(f, autoFilled);
             _view.Message = "";
             Show(SliceScreen.Results);
@@ -326,12 +328,12 @@ namespace Dispo.Presentation.Slice
         /// <summary>Choose a card: present it to the customer (§3.1 steps 5-7).</summary>
         public PresentResult Choose(Card card)
         {
-            var c = Sim.Serving;
+            if (Sim.CurrentAsk == null) { GoToRegister(); return null; }   // every ask is in the cart
             var r = Sim.Present(card);
             switch (r.Response)
             {
                 case Response.Blocked: _view.Message = r.Line; Show(SliceScreen.Results); break;
-                case Response.Accept: _posGrams = c.Grams; _view.Message = ""; Show(SliceScreen.Pos); break;
+                case Response.Accept: _view.Message = ""; Show(SliceScreen.Pos); break;
                 case Response.Reject:
                     _lastReject = r.Line;
                     _view.Toast(Sim.Data.Lines.toastReject, r.Line, true);
@@ -343,9 +345,29 @@ namespace Dispo.Presentation.Slice
         }
 
         public string LastReject => _lastReject;
-        public double PosGrams => _posGrams;
 
-        public void PosSelectWeight(double g) { _posGrams = g; _view.Message = ""; Show(SliceScreen.Pos); }
+        // ---- cart (GAME-006, UX_PS1 §2) ----
+
+        /// <summary>"+ Add item": keep the cart, search for the next ask.</summary>
+        public void AddItem()
+        {
+            if (!Sim.CanAddItem) return;
+            Sim.AddItem();
+            _view.Message = "";
+            if (AutoFillIntent) ChooseChip(Sim.CurrentAsk.Family, true); else Show(SliceScreen.Query);
+        }
+
+        /// <summary>Cart chip / R: the register without adding.</summary>
+        public void GoToRegister() { if (Sim.Serving != null && Sim.Cart.Count > 0) { Sim.OpenRegister(); Show(SliceScreen.Pos); } }
+
+        public void PosStep(int line, int dir) { if (Sim.StepLine(line, dir)) { _view.Message = ""; Show(SliceScreen.Pos); } }
+
+        public void PosRemove(int line)
+        {
+            Sim.RemoveLine(line);
+            _view.Message = "";
+            Show(Sim.RegisterOpen ? SliceScreen.Pos : Sim.Results != null ? SliceScreen.Results : SliceScreen.Query);
+        }
 
         public void PosHold(bool down) { _holding = down && Screen == SliceScreen.Pos; if (!down) _hold = 0; }
         public float HoldProgress => _holding ? Mathf.Clamp01(_hold / (float)Sim.Cfg.holdConfirmSeconds) : 0;
@@ -353,15 +375,24 @@ namespace Dispo.Presentation.Slice
         /// <summary>POS Confirm (after the hold). Blocked → message; sale → toast via OnSold.</summary>
         public string PosConfirm()
         {
-            if (Screen != SliceScreen.Pos || Sim.Pending == null) return "no open sale";
-            var blocked = Sim.Confirm(_posGrams);
+            if (Screen != SliceScreen.Pos || !Sim.RegisterOpen) return "no open sale";
+            var blocked = Sim.Confirm();
             if (blocked == Sim.Data.Lines.overLimit) _view.Toast("⚠ " + blocked, "", true);
             if (blocked != null) { _view.Message = blocked; Show(SliceScreen.Pos); return blocked; }
             Show(SliceScreen.World);
             return null;
         }
 
-        public void PosCancel() { Sim.Cancel(); _view.Message = ""; Show(SliceScreen.Results); }
+        public void PosCancel() { Sim.Cancel(); _view.Message = ""; Show(Sim.Results != null ? SliceScreen.Results : SliceScreen.Query); }
+
+        /// <summary>DEC-065: Esc on a multi-line cart goes back to the cards and keeps the cart; a single line keeps US§4 (Cancel).</summary>
+        public void PosBack()
+        {
+            if (Sim.Cart.Count <= 1) { PosCancel(); return; }
+            Sim.LeaveRegister();
+            _view.Message = "";
+            Show(Sim.Results != null ? SliceScreen.Results : SliceScreen.Query);
+        }
 
         /// <summary>Esc / Back: one screen back.</summary>
         public void Back()
@@ -370,7 +401,7 @@ namespace Dispo.Presentation.Slice
             {
                 case SliceScreen.Dialogue: case SliceScreen.Query: case SliceScreen.Results: Show(SliceScreen.World); break;
                 case SliceScreen.Detail: Show(SliceScreen.Results); break;
-                case SliceScreen.Pos: PosCancel(); break;
+                case SliceScreen.Pos: PosBack(); break;
             }
         }
 

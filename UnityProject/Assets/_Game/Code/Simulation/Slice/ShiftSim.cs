@@ -18,6 +18,7 @@ namespace Dispo.Simulation.Slice
 
     public sealed class SearchResult
     {
+        public int Ask;                  // index of the customer's ask the cards are priced for
         public IntentFamily Chip;
         public Outcome Outcome;
         public List<Card> Cards = new List<Card>();
@@ -36,6 +37,17 @@ namespace Dispo.Simulation.Slice
     /// <summary>PostTax = checkout total, nearest $0.05 (DEC-035); CardPostTax = the tool's priceFloor display (v7.11.4) for cards.</summary>
     public sealed class PriceLines { public double Msrp, PreTax, Tax, PostTax, CardPostTax; public string DealName; }
 
+    /// <summary>One register line (GAME-006): the accepted card for one ask, at a weight the player can step.</summary>
+    public sealed class CartLine
+    {
+        public int Ask;
+        public Card Card;
+        public double Grams, Fit;
+        public PriceLines Price;         // null when the tier has no price at this weight
+        public string BatchId => Card.Rep.Id;
+        public double PreTax => Price?.PreTax ?? double.NaN;
+    }
+
     /// <summary>
     /// The slice shift (SLICE_DESIGN §1-§5): arrivals, queue + patience, service flow, scoring, POS and the report.
     /// Unity-free; the presentation layer calls Tick() and the terminal/POS methods.
@@ -50,13 +62,16 @@ namespace Dispo.Simulation.Slice
         public readonly List<SaleEvent> Sales = new List<SaleEvent>();
         public Customer Serving { get; private set; }
         public SearchResult Results { get; private set; }
-        public Card Pending { get; private set; }                       // accepted, waiting for POS confirm
+        public readonly List<CartLine> Cart = new List<CartLine>();     // GAME-006: 1-cartMaxLines accepted lines, sold together
+        public bool RegisterOpen { get; private set; }                  // the POS is up (search/present wait until Add item)
+        public Card Pending => RegisterOpen ? Cart[Cart.Count - 1].Card : null;   // the slice's single accepted card (last line)
         public double Time { get; private set; }
         public bool IsOver => Customers.All(c => c.State == CustomerState.Done);
         public event Action<Customer> Left;
 
         readonly Dictionary<string, Batch> _batches;
         readonly HashSet<string> _seen = new HashSet<string>();
+        double _speedFit;   // speedFit of the last accepted pick (§3.3: service start → card pick)
 
         public ShiftSim(SliceData data)
         {
@@ -85,7 +100,7 @@ namespace Dispo.Simulation.Slice
             {
                 Serving = Queue[0]; Queue.RemoveAt(0);
                 Serving.State = CustomerState.Serving; Serving.ServiceStart = Time; Serving.QueueWait = Time - Serving.SpawnTime;
-                Results = null; Pending = null; _seen.Clear();
+                Results = null; Cart.Clear(); RegisterOpen = false; _seen.Clear();
             }
         }
 
@@ -94,11 +109,11 @@ namespace Dispo.Simulation.Slice
         /// <summary>§3.1 step 3: engine on live stock for the chosen chip.</summary>
         public SearchResult Search(IntentFamily chip, bool autoFilled = false)
         {
-            Require(Serving != null && Pending == null, "search needs a customer at the counter and no open POS");
-            Serving.Chip = chip.id; Serving.AutoFilled = autoFilled;
+            Require(Serving != null && !RegisterOpen && CurrentAsk != null, "search needs a customer at the counter, an open ask and no open POS");
+            Serving.Chip = CurrentAsk.Chip = chip.id; Serving.AutoFilled = autoFilled;
             _seen.Clear();
             var r = Recommend(chip, Cfg.resultCount);
-            Results = new SearchResult { Chip = chip, Outcome = r.Outcome };
+            Results = new SearchResult { Ask = CurrentAskIndex, Chip = chip, Outcome = r.Outcome };
             Append(r.Strains);
             Results.MoreAvailable = Recommend(chip, Cfg.moreOptionsN).Strains.Any(s => !_seen.Contains(s.Key));
             return Results;
@@ -107,23 +122,32 @@ namespace Dispo.Simulation.Slice
         /// <summary>§10 More options: rerun with n = moreOptionsN, append the next moreOptionsStep unseen.</summary>
         public SearchResult MoreOptions()
         {
-            Require(Results != null && Pending == null, "more options needs a search and no open POS");
+            Require(Results != null && !RegisterOpen, "more options needs a search and no open POS");
             var unseen = Recommend(Results.Chip, Cfg.moreOptionsN).Strains.Where(s => !_seen.Contains(s.Key)).ToList();
             Append(unseen.Take(Cfg.moreOptionsStep));
             Results.MoreAvailable = unseen.Count > Cfg.moreOptionsStep;
             return Results;
         }
 
-        /// <summary>§3.1 steps 5-7 and §3.2-3.5.</summary>
+        /// <summary>§3.1 steps 5-7 and §3.2-3.5, for the current ask. ACCEPT adds a cart line and opens the register (UX_PS1 §1).</summary>
         public PresentResult Present(Card card)
         {
-            Require(Serving != null && Pending == null, "present needs a customer at the counter and no open POS");
+            Require(Serving != null && !RegisterOpen && CurrentAsk != null, "present needs a customer at the counter, an open ask and no open POS");
             var c = Serving;
-            if (Inventory.Grams(card.Rep.Id) < c.Grams || !card.HasPrice) return new PresentResult { Response = Response.Blocked, Line = Data.Lines.notEnough };
+            var ask = CurrentAsk;
+            var price = Price(card.Rep, ask.Grams);
+            if (Free(card.Rep.Id) < ask.Grams || price == null) return new PresentResult { Response = Response.Blocked, Line = Data.Lines.notEnough };
 
-            var p = Score(c, card, Time - c.ServiceStart);
+            var line = new CartLine { Ask = CurrentAskIndex, Card = card, Grams = ask.Grams, Price = price };
+            var p = Score(c, ask, card, line, Time - c.ServiceStart);
             c.LastFit = p.Fit; c.LastSatisfaction = p.Satisfaction;
-            if (p.Satisfaction >= Cfg.acceptThreshold) { p.Response = Response.Accept; p.Line = ""; Pending = card; return p; }
+            if (p.Satisfaction >= Cfg.acceptThreshold)
+            {
+                p.Response = Response.Accept; p.Line = "";
+                line.Fit = p.Fit; _speedFit = p.SpeedFit;
+                Cart.Add(line); RegisterOpen = true;
+                return p;
+            }
 
             c.Rejections++;
             p.Line = p.PriceFit < 0.5 ? Data.Lines.rejectPrice : p.Fit < 0.5 ? Data.Lines.rejectFit : Data.Lines.rejectOther;
@@ -153,34 +177,126 @@ namespace Dispo.Simulation.Slice
         /// <summary>DEC-036 M3: store clock (hours) for a sim time.</summary>
         public double ClockHours => Cfg.shiftStartHour + Time / 3600;
 
-        /// <summary>§10 #6: the weight must be the stated one and the jar must hold it. Returns the blocking line, or null on sale.</summary>
-        public string Confirm(double grams)
+        /// <summary>
+        /// §10 #6 per line: each weight must be the stated one and the jars must hold the cart (lines on one batch add up);
+        /// DEC-036 M1 on the cart's summed flower grams. On sale: one SaleEvent per line, the after-tax total rounded once on the
+        /// cart (DEC-035), the last line taking the rounding so Σ events = the register total. Returns the blocking line, or null.
+        /// </summary>
+        public string Confirm()
         {
-            Require(Pending != null, "nothing accepted");
+            Require(RegisterOpen, "nothing accepted");
             var c = Serving;
-            if (grams > Cfg.adultUseLimitGrams) return Data.Lines.overLimit;   // DEC-036 M1, A.R.S. 36-2858(A)(1)(c)
-            if (grams != c.Grams) return string.Format(Data.Lines.wrongWeight, Data.Lines.Weight(c.Grams));
-            if (Inventory.Grams(Pending.Rep.Id) < grams) return Data.Lines.notEnough;
-            var price = Price(Pending.Rep, grams);
-            Inventory.Sell(new SaleEvent
+            var l = Data.Lines;
+            if (CartGrams > Cfg.adultUseLimitGrams) return l.overLimit;   // DEC-036 M1, A.R.S. 36-2858(A)(1)(c)
+            var wrong = Cart.FirstOrDefault(x => x.Grams != c.Asks[x.Ask].Grams);
+            if (wrong != null) return string.Format(l.wrongWeight, l.Weight(c.Asks[wrong.Ask].Grams));
+            if (Cart.GroupBy(x => x.BatchId).Any(g => Inventory.Grams(g.Key) < g.Sum(x => x.Grams))) return l.notEnough;
+
+            var total = CartPrice();
+            double rate = 1 + Data.Catalog.Pricing.TaxRate / 100, paid = 0;
+            for (int i = 0; i < Cart.Count; i++)
             {
-                BatchId = Pending.Rep.Id, StrainName = Pending.Strain.Name, CustomerIndex = c.Index, Grams = grams,
-                PricePreTax = price.PreTax, PricePostTax = price.PostTax,
-            });
+                var x = Cart[i];
+                double post = i == Cart.Count - 1 ? total.PostTax - paid : x.PreTax * rate;
+                paid += post;
+                Inventory.Sell(new SaleEvent
+                {
+                    BatchId = x.BatchId, StrainName = x.Card.Strain.Name, CustomerIndex = c.Index, Grams = x.Grams,
+                    PricePreTax = x.PreTax, PricePostTax = post,
+                });
+            }
+            // §3.4 with the mean item fit; an ask left out of the cart counts 0 [GDD].
+            c.LastFit = c.Asks.Select((a, i) => Cart.Where(x => x.Ask == i).Select(x => x.Fit).DefaultIfEmpty(0).Max()).Average();
+            c.LastSatisfaction = Satisfaction(Cfg, c.LastFit, PriceFit(total.PostTax, c.Budget), _speedFit, WaitPenalty(Cfg, c.QueueWait));
             Finish(c, CustomerOutcome.Bought);
             return null;
         }
 
-        /// <summary>POS Cancel: back to the cards; no inventory change (no reservation, §4).</summary>
-        public void Cancel() => Pending = null;
+        /// <summary>The slice's single-line POS: set the last line's weight, then <see cref="Confirm()"/>.</summary>
+        public string Confirm(double grams)
+        {
+            Require(RegisterOpen, "nothing accepted");
+            SetLineGrams(Cart.Count - 1, grams);
+            return Confirm();
+        }
+
+        /// <summary>POS Cancel: empties the cart, back to the cards; no inventory change (no reservation, §4).</summary>
+        public void Cancel() { Cart.Clear(); CloseRegister(); }
+
+        // ---------- cart (GAME-006) ----------
+
+        /// <summary>First ask with no cart line, or null when every ask is in the cart.</summary>
+        public Ask CurrentAsk => CurrentAskIndex < 0 ? null : Serving.Asks[CurrentAskIndex];
+        public int CurrentAskIndex => Serving == null ? -1 : Enumerable.Range(0, Serving.Asks.Count).Where(i => Cart.All(x => x.Ask != i)).DefaultIfEmpty(-1).First();
+        public double CartGrams => Cart.Sum(x => x.Grams);
+        public bool CanAddItem => RegisterOpen && CurrentAsk != null && Cart.Count < Cfg.cartMaxLines;
+
+        /// <summary>Jar grams not already in the cart.</summary>
+        public double Free(string batchId) => Inventory.Grams(batchId) - Cart.Where(x => x.BatchId == batchId).Sum(x => x.Grams);
+
+        /// <summary>Register totals: Σ line pre-tax, tax, after-tax total rounded once on the cart (DEC-035).</summary>
+        public PriceLines CartPrice() => CartPrice(Cart);
+
+        PriceLines CartPrice(IReadOnlyCollection<CartLine> lines)
+        {
+            double pre = lines.Sum(x => x.PreTax), post = CheckoutRound(pre * (1 + Data.Catalog.Pricing.TaxRate / 100));
+            return new PriceLines { Msrp = lines.Sum(x => x.Price?.Msrp ?? double.NaN), PreTax = pre, PostTax = post, Tax = post - pre,
+                CardPostTax = double.NaN, DealName = lines.Select(x => x.Price?.DealName).FirstOrDefault(n => n != null) };
+        }
+
+        /// <summary>"+ Add item": close the register, keep the cart, search for the next ask.</summary>
+        public void AddItem()
+        {
+            Require(CanAddItem, "add item needs an open register, an open ask and a free line");
+            RegisterOpen = false; Results = null; _seen.Clear();
+        }
+
+        /// <summary>DEC-065: Esc/Back on a multi-line cart closes the register and keeps the cart (only Cancel empties it).</summary>
+        public void LeaveRegister() { Require(RegisterOpen, "no open POS"); CloseRegister(); }
+
+        /// <summary>Cart chip / R: back to the register without adding.</summary>
+        public void OpenRegister() { Require(Serving != null && Cart.Count > 0, "the cart is empty"); RegisterOpen = true; }
+
+        /// <summary>The ✕ on a line. The emptied cart closes the register (UX_PS1 §2).</summary>
+        public void RemoveLine(int i)
+        {
+            Require(RegisterOpen, "no open POS");
+            Cart.RemoveAt(i);
+            if (Cart.Count == 0) CloseRegister();
+        }
+
+        public void SetLineGrams(int i, double grams)
+        {
+            Require(RegisterOpen, "no open POS");
+            Cart[i].Grams = grams;
+            Cart[i].Price = Price(Cart[i].Card.Rep, grams);
+        }
+
+        /// <summary>Line stepper −/+ through the price weights; a weight the jar can't hold is skipped. False when there is no step.</summary>
+        public bool StepLine(int i, int dir)
+        {
+            var x = Cart[i];
+            double room = Free(x.BatchId) + x.Grams;
+            foreach (var w in Data.Catalog.Pricing.Weights.Where(w => dir * w > dir * x.Grams).OrderBy(w => dir * w))
+                if (w <= room && Price(x.Card.Rep, w) != null) { SetLineGrams(i, w); return true; }
+            return false;
+        }
+
+        void CloseRegister()
+        {
+            RegisterOpen = false;
+            // Cards priced for another open ask's weight go; with every ask in the cart they stay to look at (Present needs an open ask).
+            if (Results != null && CurrentAskIndex >= 0 && Results.Ask != CurrentAskIndex) Results = null;
+        }
 
         // ---------- scoring ----------
 
-        PresentResult Score(Customer c, Card card, double t)
+        PresentResult Score(Customer c, Ask ask, Card card, CartLine line, double t)
         {
-            double fit = Fit(c.TrueFamily, card.Strain.Key);
-            // DEC-044: the budget is checked against the POS total the customer pays, not the card's priceFloor.
-            double priceFit = PriceFit(card.CheckoutPostTax, c.Budget), speedFit = SpeedFit(Cfg, t), wait = WaitPenalty(Cfg, c.QueueWait);
+            double fit = Fit(ask.Family, card.Strain.Key);
+            // DEC-044: the budget is checked against the POS total the customer pays (the cart with this line), not the card's priceFloor.
+            double total = CartPrice(Cart.Append(line).ToList()).PostTax;
+            double priceFit = PriceFit(total, c.Budget), speedFit = SpeedFit(Cfg, t), wait = WaitPenalty(Cfg, c.QueueWait);
             return new PresentResult { Fit = fit, PriceFit = priceFit, SpeedFit = speedFit, WaitPenalty = wait,
                 Satisfaction = Satisfaction(Cfg, fit, priceFit, speedFit, wait) };
         }
@@ -231,7 +347,7 @@ namespace Dispo.Simulation.Slice
             var cs = Customers;
             var served = cs.Where(c => c.ServiceStart >= 0 && c.EndTime >= 0).ToList();
             var sold = cs.Where(c => c.Outcome == CustomerOutcome.Bought).ToList();
-            var chipped = cs.Where(c => c.Chip != null && !c.AutoFilled).ToList();
+            var chipped = cs.Where(c => !c.AutoFilled).SelectMany(c => c.Asks).Where(a => a.Chip != null).ToList();
             var r = new ShiftReport
             {
                 CustomersServed = sold.Count,
@@ -244,8 +360,9 @@ namespace Dispo.Simulation.Slice
                 AvgQueueWaitSeconds = cs.Average(c => c.QueueWait),
                 AvgSatisfaction = cs.Average(c => c.Outcome == CustomerOutcome.Walkout ? 0 : Math.Max(0, c.LastSatisfaction)),
                 AvgRecFit = sold.Count > 0 ? sold.Average(c => c.LastFit) : 0,
-                InterpretationAccuracy = chipped.Count > 0 ? 100.0 * chipped.Count(c => c.Chip == c.TrueFamily.id) / chipped.Count : 0,
-                TopIntents = cs.GroupBy(c => c.TrueFamily.id).OrderByDescending(g => g.Count()).ToDictionary(g => g.Key, g => g.Count()),
+                InterpretationAccuracy = chipped.Count > 0 ? 100.0 * chipped.Count(a => a.Chip == a.Family.id) / chipped.Count : 0,
+                UnitsPerSale = sold.Count > 0 ? (double)Sales.Count / sold.Count : 0,
+                TopIntents = cs.SelectMany(c => c.Asks).GroupBy(a => a.Family.id).OrderByDescending(g => g.Count()).ToDictionary(g => g.Key, g => g.Count()),
                 SoldOut = Inventory.SoldOutIds.Select(Describe).ToList(),
                 LowStock = Inventory.JarBatchIds.Where(Inventory.IsLow).Select(Describe).ToList(),
             };
@@ -272,7 +389,7 @@ namespace Dispo.Simulation.Slice
             {
                 _seen.Add(s.Key);
                 var rep = _batches[s.RepBatchId];
-                var price = Price(rep, Serving.Grams);
+                var price = Price(rep, Serving.Asks[Results.Ask].Grams);
                 Results.Cards.Add(new Card
                 {
                     Strain = s, Rep = rep,
@@ -287,7 +404,7 @@ namespace Dispo.Simulation.Slice
         {
             c.Outcome = outcome; c.State = CustomerState.Done; c.EndTime = Time;
             Queue.Remove(c);
-            if (Serving == c) { Serving = null; Results = null; Pending = null; }
+            if (Serving == c) { Serving = null; Results = null; Cart.Clear(); RegisterOpen = false; }
             Left?.Invoke(c);
         }
 
@@ -300,6 +417,7 @@ namespace Dispo.Simulation.Slice
     {
         public int CustomersServed, Walkouts, NoSales, Stars;
         public double RevenuePostTax, RevenuePreTax, GramsSold, AvgServiceSeconds, AvgQueueWaitSeconds, AvgSatisfaction, AvgRecFit, InterpretationAccuracy;
+        public double UnitsPerSale;   // GAME-006: sale lines per buying customer (real store ≈ 2, RES-001 O13)
         public Dictionary<string, int> TopIntents;
         public List<string> SoldOut, LowStock;
         public bool RoughShift;
