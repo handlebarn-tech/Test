@@ -85,3 +85,147 @@ ROOM_FIXTURES = `Docs/Reference/ROOM_FIXTURES.json` (REF-009b rev5); sizes there
 - G1–G4 for a believable rack.
 
 The proclib helpers can be adopted now.
+
+---
+
+## Drop 2 — `Dispo_Game_Blender_Workstream_Master/` (files dated 2026-10-30 03:27)
+
+`README_FIRST.md` plus 11 zips in `packages/`. I extracted them to my scratchpad, deleted the `.pyc` files unread, and read every `.py` and `.json`.
+
+| # | Package | Assets | Verdict |
+|---|---|---|---|
+| 1 | `Blender_PROC_vNext_WireShelving` | = drop 1, byte-identical (6 files compared) | see drop 1 |
+| 2 | `Register_Station` | POSMonitor, MonitorStand, CashDrawer, BarcodeScanner, ScaleStand + `add_beveled_box` | **adapt**; **reject CashDrawer** (C1) |
+| 3 | `Glass_Door_Cooler` | Cooler_SingleDoor, Cooler_DoubleDoor | **adapt** |
+| 4 | `Office_Fixtures` | Desk, OfficeChair, StandingDesk, FilingCabinet, TallStorageCabinet, DrawerCart, Worktable | **adapt** (DrawerCart: no store evidence, drop) |
+| 5 | `Break_Room` | LockerBank, WoodBench, LunchTable, BulletinBoard, FirstAidBox | **adapt** |
+| 6 | `Restroom` | Sink, Mirror, Toilet, PaperTowelDispenser, ToolChest | **adapt** |
+| 7 | `Janitor_Closet` | MopSink, Mop, Broom, Bucket + `janitor_supply_rack.json` (reuses `wire_shelving`) | **adapt**; the supply rack crashes (B3) |
+| 8 | `Architecture_Kit` | InteriorDoor_3x7, EmergencyExitDoor, DoorFrameKit, ArchOpening, CeilingTile_2x2, SoffitTrim, LEDTroffer_2x2, StripLight, Baseboard, CornerGuard, BlankWallPlate, AccessPanel | **adapt** (SoffitTrim, CornerGuard: no source, optional) |
+| 9 | `Fixed_Ladder` | FixedLadder_BlackSteel | **adapt** (B1); dimensions already match ROOM_FIXTURES |
+| 10 | `Clutter_Kit` | 3 cartons, PlasticTote, PlasticBin, PaperStack, AluminiumTrashCan, BoxFan | **adapt** (B2, B4) |
+| 11 | `Arrangement_Helpers_v2` | `arrangers/placement.py`: `shelf_fill()`, `carton_stack()`, overlap check; 2 params; `tests/TEST_RESULT.json` | **adapt** (H1–H3) |
+
+### How it was checked
+- Sandbox as in drop 1: copies only, `ROOT` redirected, Blender 5.2.3 `--factory-startup`, `PYTHONDONTWRITEBYTECODE=1`, deleted afterwards. `proclib.py` = package 2's `proclib_reference_after_patch.py`, which is drop 1's `proclib.py` + `add_beveled_box` (diffed). Package 2's `patches/proclib_add_beveled_box.patch` is **0 bytes**, so the reference file is the only copy of the helper.
+- Every generator and param file was run. A clutter re-run used a sandbox-only copy of the params with `require_collision: false` on PaperStack, so BoxFan could be reached.
+- Winding/normal check (my own script, run on the exported FBX): signed volume plus inconsistent-edge count on all **146 LOD0 meshes**, including the hand-built arch faces. **All outward, no inconsistent edges.**
+- Determinism: a second run of 7 generators + clutter gave **47/47 FBX byte-identical**. Seeded `random.Random` in the clutter kit is per asset and per LOD, so carton dimensions match across LODs.
+- `placement.py` (pure Python, no bpy) was **read, not executed**. `TEST_RESULT.json` is a result file with no test code, so it is unverifiable.
+
+| Result | Assets |
+|---|---|
+| **pass** (validation, budget, size) | 46 of 50 as shipped, 47 with PaperStack relaxed: every register, cooler, office, break-room, restroom, janitor-prop and architecture asset; 3 cartons, tote, bin, trash can; PaperStack once its collision flag was relaxed |
+| **fail B1** | `FixedLadder` LOD1: size x 0.4783 ≠ 0.48. With 5 cylinder segments no vertex reaches −x, so the rails fall short of the declared width. The same hazard exists wherever a cylinder defines an extent with an odd segment count |
+| **fail B2** | `Clutter_BoxFan` LOD0: depth 0.202 ≠ 0.12. Blades are rotated in the XY plane, so they stick out of the front and back of the frame. The comment in the code admits it |
+| **fail B3** | `Janitor_SupplyRack`: `ValueError: cylinder endpoints must differ`. With `foot_radius_m` = `collar_outer_diameter_m`/2, the foot-to-post bracket has zero length. That is a `wire_shelving._feet` bug, so skip a zero-length bracket |
+| **fail B4** | `Clutter_PaperStack`: `require_collision: true` is set for the whole family, but paper stack emits no `COL_`. Set it per variant |
+| Tris | all far below their params budgets (largest: Cooler_DoubleDoor 2996 LOD0, LockerBank 1948, ScaleStand 1192; props ≤ 260) |
+
+### Shared fixes (all packages)
+- **S1 `unity_dir`**: every params file lacks the `UnityProject/` prefix (drop 1 A1). In the sandbox, 47 FBX copies landed in `<root>/Assets/…`.
+- **S2 `own_sheet`**: absent everywhere. All 50 new assets would join the default `PROC_contact_sheet.png`, and at 3 tiles × 320 px per row the sheet passes the 1 MB limit, so `contact_sheet` raises. Set `own_sheet: true`, or render one sheet per generator.
+- **S3 prop budgets**: DEC-069 caps props at ≤~1k tris, but params budget mop/broom 1200, bucket 1400, carton up to 2200, tote 1800, trash 1800, fan 2600, cash drawer 1100. Actuals are ≤ 260, so set prop budgets to ≤ 1000. The fixture budgets (≤ 5000) are fine.
+- **S4 collision**: same decision as drop 1 R1. Every family emits `COL_*` meshes with UVs and a material, and the repo has no Unity postprocessor. If the Hub picks R1a (manifest boxes), every `COL_*` builder becomes a box list; they are all boxes already.
+- **S5 handles inside doors (z-fighting)**:
+  - Affected: `Office_TallStorageCabinet`, `Office_FilingCabinet` and `Restroom_ToolChest`. The handle box spans `-d/2 … -d/2 + handle_depth`, which lies entirely inside the door or drawer front (`-d/2 … -d/2 + door_t`). The front faces are coplanar, so handles flicker or vanish.
+  - Lockers do it right: the door is recessed by `handle_d`. Do the same.
+- **S6 moving parts**: the cooler lists only `DoorFrame_nn` as moving, but `Glass_nn` and `Handle_nn` must swing with it. Group them, or merge glass + handle into the door object. Every hinge is `left`; give a `hinge_side` param per door.
+- **S7 wall-mount origin**: keep our bottom-centre rule (PROC_PIPELINE outranks the brief). ChatGPT kept it and flagged the conflict; no change needed.
+- **S8 `validation_warnings`** free text in every params file: drop (drop 1 A3).
+- **S9 GAP ids**: GAP-PROC-14..22 are ChatGPT's proposals, free in our repo (highest used is GAP-PROC-13 from drop 1). Register them only for values with no source; the table below assigns the sourced ones.
+
+### Package fixes and guessed dimensions → source
+ROOM_FIXTURES sizes are `[w, d, h]` ft; RI = `Docs/REFERENCES_INDEX.md`. Anything not listed keeps the package's GAP.
+
+**2 Register station (GAP-PROC-14)**
+- **C1 reject `CashDrawer`**: REF rules (RI back-room section "Excluded by rule", DEC-051) say no cash-handling equipment, generic props only.
+- **Scale stand vs RI §2.2:**
+  - Footprint 0.62 × 0.46 m → **0.49 × 0.40 m** (1.6 × 1.3 ft, Low-Med).
+  - Top 0.91 m → **0.76 m** (2.5 ft, Low).
+  - Levels: two wire shelves (0.28/0.52 m) → **one** wire shelf at **0.15–0.24 m** (0.5–0.8 ft, Med).
+  - Top: grey painted slab → **black tray with a raised lip** (Med).
+  - Acrylic: tall 0.54 m back panel + side panel → **full-width panel on the counter-side edge, 0.24–0.37 m** (0.8–1.2 ft; Med position, Low size). In the wide view it may be a 3-sided riser.
+  - Scale: black → **white body, blue LCD, clear round draft-shield bowl** (Med). One scale (a second is Low).
+- Monitor/stand/scanner: generic sizes, no measurement (GAP-PROC-14). The BOH `Scanner_Barcode` is a **handheld scanner in its stand**, 0.4 × 0.7 × 0.6 ft; ChatGPT's scanner is a presentation-style block, which is a different object.
+- Missing vs the brief: the POS counter itself. The TI gives it (RI §6.4: 34 in max, 2'-6" deep quartz top, 4 in base, walnut front). Also keyboard, receipt printer and card terminal (RI §2.2 "Other counter facts", Med presence). Whether a card terminal counts as cash equipment is a Hub call.
+
+**3 Cooler (GAP-PROC-15)**
+- `Cooler_GlassDoor_2Door` = **4.0 × 2.5 × 6.5 ft → 1.22 × 0.76 × 1.98 m**, black frame, lit (Med; RI §2.3 Low). Theirs: 1.38 × 0.76 × 2.02. Use ROOM_FIXTURES.
+- The SingleDoor variant has no store instance; keep it as the param demo or drop it.
+- Handles float 46 mm in front of the door with no standoffs (`handle_y = -d/2 + r` vs door at `-d/2 + 0.055`). Add standoffs or move the handle to the door.
+- Glass sits behind the frame bars, which is fine.
+- The FOH `Fridge_TopFreezer` (white apartment fridge, 2.2 × 2.3 × 5.5 ft) and the break-room `Fridge_Magnets` (2.8 × 2.4 × 5.8 ft) are **not covered**; a top-freezer variant is missing.
+- Shelf contents are DEC-050 facts: the cooler holds concentrates and perishable edibles, the fridge drinks (see H3).
+
+**4 Office (GAP-PROC-16)**, against ROOM_FIXTURES Office rows:
+
+| Asset | Theirs (m) | Store | Fix |
+|---|---|---|---|
+| Desk | 1.45 × 0.72 × 0.75, wood straight | `Desk_West_Arm` 4.8 × 2.5 × 2.5 ft + `Desk_Corner_Dual_Monitor` 4.3 × 2.5 × 2.5, **black laminate L**; BOH `Desk_ExRegister1` **white top** 4.0 × 2.0 × 2.5 | L/corner variant, colours black/white, sizes from ROOM_FIXTURES |
+| StandingDesk | 1.35 × 0.70 × 1.12 | `Desk_Standing_East` 3.6 × 2.0 × 3.5 ft (Low) | 1.10 × 0.61 × 1.07 |
+| FilingCabinet | 0.47 × 0.62 × **1.32**, 4 drawers | `FileCabinets_UnderDesk` **several black** cabinets under the standing desk, run 3.4 × 1.8 × **2.4 ft** (count Low) | must fit under the desk: ≤ 0.73 m tall, black, ~2 drawers |
+| TallStorageCabinet | 0.92 × 0.46 × 1.85, grey, 2 doors + chrome handles | `Cabinet_Tall_Black_A/B` 2.4 × 2.0 × 5.0 ft, **plain black closed box, no hardware detail** (DEC-051 Q9) | 0.73 × 0.61 × 1.52, black, a `doors: false` option |
+| Worktable | 1.52 × 0.76 × **0.91**, grey | `Worktable_Stainless` 5.3 × 2.5 × 2.5 ft, **stainless top, folding legs** | 1.62 × 0.76 × 0.76 |
+| OfficeChair | 0.68 × 0.68 × 1.08, 4-arm base | `Chair_Task_1/2` 2.0 × 2.0 × 3.2 ft, **black mesh** task chair | 0.61 × 0.61 × 0.98; a 5-star base is the commercial norm (visual, not a store fact) |
+| DrawerCart | 0.52 cube-ish | no store row; the office has `Cart_Deli_Prep` (stainless 2-shelf utility cart) and `Cart_WireBasket` (black wire) | drop; the deli prep cart is the needed one |
+
+**5 Break room (GAP-PROC-17)**
+- **LockerBank: store fact (DEC-047/051 Q5, High) = one unit about 2 × 6 ft** (`Lockers_Staff` 2.0 × 1.5 × 6.0 ft, GAP-126). Theirs is a 4 × 2 bank of 8, 1.22 m wide, so it is **wrong**. Use `columns`/`rows` to fit 0.61 × 0.46 × 1.83 m, grey top. The locker count per unit is a Nolan question (below).
+- WoodBench: `Bench_Wood` 5.0 × 1.3 × 1.5 ft = **1.52 × 0.40 × 0.46** with **black steel legs** (theirs 1.22 wide, wood legs). Note: RI §1.5 vector says bench 1.0 × 7.0 ft; ROOM_FIXTURES (REF-009b) is the newer source.
+- LunchTable 1.22 × 0.76 × 0.75 ≈ `Table_Lunch` 4.0 × 2.5 × 2.5 ft (Low): ok.
+- BulletinBoard 0.91 × 0.61: `Board_Bulletin_West` 3.0 × 2.5 ft → **0.91 × 0.76**. The same generator covers `Board_Cork` (hall, wood frame, 1.8 × 2.6 ft), the office boards and `Whiteboard_West` (4.0 × 3.0 ft, red/white frame) as params variants.
+- FirstAidBox 0.33 × 0.12 × 0.45 ≈ `FirstAid_Kit` 1.0 × 0.4 × 1.3 ft (Med): ok. The green ISO cross is fine (no red-cross emblem).
+- Missing vs the room: base cabinets + black counter (34 in, TI), uppers, double sink, magnet fridge, whiteboard, microwave, coffee maker, mini hoop, coat hooks (ROOM_FIXTURES BreakRoom rows).
+
+**6 Restroom (GAP-PROC-18)**
+- Sink: **pedestal** sink, but the store has `Lavatory_WallHung` with **27 in knee clearance** (TI §6.4/§6.6, High). Remove the pedestal and use brackets or none. 1.7 × 1.5 ft → **0.52 × 0.46 m**, rim 0.864 (theirs matches). **Bowl bug:** the lofted "bowl" is a capped solid whose top cap is coplanar with `BasinTop` at z = h, so there is no visible basin and the faces z-fight. Use an open loft (no top cap), recessed.
+- Mirror 0.61 × 0.81 → TI **1'-8" × 3'-6" = 0.51 × 1.07 m**, bottom 3'-4" AFF (High; ROOM_FIXTURES keeps it).
+- Toilet 0.39 × 0.72 × 0.78 vs `Toilet` 1.6 × 2.4 × 2.5 ft (0.49 × 0.73 × 0.76, Med): widen.
+- PaperTowelDispenser: **white plastic**, but DEC-062 says **old silver manual**. Use a chrome/stainless colour. Size ≈ `Accessories` 1.1 × 0.4 × 1.5 ft: ok.
+- ToolChest 0.82 × 0.46 × **0.91**: `ToolChest_Black` 2.2 × 1.5 × 2.75 ft = 0.67 × 0.46 × **0.84**, which must stay **below the 33 in grab bar**. Theirs is too tall. Two shelves inside are not modelled (closed doors, fine).
+- Reusing `PROC_Office_TallStorageCabinet` for `Cabinet_Storage_Large` (4.0 × 1.5 × 7.0 ft, GAP-109) needs its **own params variant**; the office cabinet is 2.4 × 2.0 × 5.0.
+- Missing: grab bars 42 / 36 / 18 in at 33–36 in AFF (TI, High), TP and soap dispensers, sconce (TI types).
+
+**7 Janitor closet (GAP-PROC-19)**
+- MopSink 0.61 × 0.61 × 0.30 → `MopSink_JC` 1.6 × 1.5 × 1.0 ft = **0.49 × 0.46 × 0.30** (A011, Med). FRP to 4 ft is wall finish, not this asset.
+- Supply rack 0.76 × 0.36 × 1.22 → `Rack_CleaningSupplies_JC` 2.0 × 1.2 × 5.0 ft = **0.61 × 0.37 × 1.52** (Low), plus B3.
+- Mop/broom 1.45/1.40 m ≈ `Mops_Brooms_JC` 5.0 ft (1.52): ok. The bucket is a closed top; fine at this distance.
+
+**8 Architecture kit (GAP-PROC-20)**
+- **Doors:** the TI door is a **3'-0" × 7'-0" × 1¾" leaf** (RI §6.2, High). The generator puts the frame *inside* `width_m`/`height_m`, so the leaf comes out **0.816 × 2.08 m**. Make `width_m`/`height_m` the leaf (or opening) and add the frame outside; the 1¾" leaf thickness (0.044) is right.
+- Door finishes/colours per ROOM_FIXTURES: black HM (hall/office, break, JC, vestibule) and white (office→HUB 2). JC is **2'-8"**. The SE exit door is green with a round logo (DEC-030). The logo is store branding, so leave it blank for the brand/IP question.
+- Push bar + closer only: OK under DEC-051/062 (no access-control hardware).
+- **Arch:** retail arches are **3'-0" × 7'-0" gypsum cased openings** (RI §6.2/§6.4, High; vestibule arch A011 ≈ 3.1 ft). Theirs: 1.52 × 2.44, painted metal trim. Use width 0.914 clear, top 2.134, gypsum/slat finish.
+- CeilingTile 2 × 2 and LEDTroffer 2 × 2: **match TI** (ACT-1 at 8'-0"/9'-0", L1 troffer, High). StripLight 1.2 m ≈ L2 4 ft (1.219); use 1.2192, and the 2 ft too. `Light_Strip_Pendant` is Low.
+- Baseboard: TI **VB-1 grey vinyl 4 in** → height 0.1016 (theirs 0.1).
+- Wall plate 70 × 115 mm = standard single-gang: ok. White or matte black per TI §6.5.
+- AccessPanel: no source, but it can serve as the hall `Panel_Blank` (1.0 × 1.5 ft, DEC-062) via params.
+- SoffitTrim, CornerGuard: no source; optional.
+
+**9 Fixed ladder (GAP-PROC-21)**
+- Matches `Ladder_FireEscape` (1.5 × 0.6 × 9.0 ft = 0.46 × 0.18 × 2.74; theirs 0.48 × 0.197 × 2.75), black. Use the ROOM_FIXTURES values, so no new GAP is needed (ROOM_FIXTURES Low/Med).
+- Fix B1: even segment counts (≥ 6), or compute the extent from the vertices.
+- Note for REF, not ChatGPT: TI gives FOH (107 Fulfillment) an ACT ceiling at 8'-0", but the ladder row is 9 ft "full height". Check whether it passes a ceiling hatch.
+
+**10 Clutter kit (GAP-PROC-22)**
+- B2 fan blades: rotate them in the XZ plane inside the frame. The store fan is `Fan_Portable` **white, 1.0 × 0.8 × 1.0 ft (0.30 × 0.24 × 0.30)**, not a 0.52 box fan.
+- Trash can 0.42 Ø × 0.58 → `Trash_Aluminium` 1.5 × 1.5 × 2.5 ft = **0.46 × 0.76 tall**. The office `Trash_StepCan` (stainless, 1.0 × 1.0 × 2.0 ft) is a second variant. The rim is a rounded-square bevel box on a round body; make it a ring.
+- Tote: FOH totes are **yellow** (`Props_Floor`, R4C1); theirs is blue-grey.
+- Bin: FOH racks use **clear** sorted bins and **black** trays (`Rack_Rolling_*`); add both variants.
+- Open-carton LOD0 includes flaps (wider than LOD1), so the silhouette pops at the LOD switch. Acceptable, or keep the flaps in LOD1.
+- B4: per-variant `require_collision`.
+
+**11 Arrangement helpers**
+- **H1 origin bug:** placements set `y = shelf_y + item_h/2` (and `layer_bottom + h/2` for cartons), i.e. the item *centre*. Our assets' origin is the **bottom centre** (PROC_PIPELINE), so every item floats by half its height. Use `y = shelf_y` / `layer_bottom`.
+- **H2 anchor size:** wire-shelf anchors give the outer `w × d`, so items can sit over the rails/posts. Use the inner usable area, or keep `gap` ≥ post inset.
+- **H3 product truth:** a random `category_mix` fill is decor only. The FOH racks, fridge and cooler hold DEC-050 categories (racks: vapes, edibles, some infused prerolls; fridge: drinks; cooler: concentrates + perishable edibles). Real stock must come from inventory data (DATA-002 / GAME-004), never invented. Use the arranger only for non-interactive dressing (BOH cases, decor), with `category_mix` from DEC-050.
+- `category` exists on our packaged-goods manifest entries, so the mix does work. There is no runner hook, as ChatGPT says; it belongs with whoever owns population (GAME-004).
+
+### Drop 2 summary
+**Adapt overall.** The code is clean, deterministic and correctly wound, and almost everything fits our contract.
+- **Bugs:** 4 crash/validation bugs (B1–B4), handles buried in doors (S5), a bowl-less sink, and floating cooler handles.
+- **Params:** `unity_dir`/`own_sheet` are wrong in every params file.
+- **Accuracy:** most sizes are generic guesses where ROOM_FIXTURES/TI already had the answer. The worst: the lockers (1 unit, not 8), the office cabinets (black plain boxes), the file cabinets (under-desk), the scale stand (RI §2.2 spec), the pedestal vs wall-hung sink, the mirror (TI), the door leaf (3'-0" × 7'-0") and the arch (3'-0" × 7'-0").
+- **Reject:** CashDrawer (DEC-051). DrawerCart, SoffitTrim and CornerGuard have no store evidence (optional).
+- **Not covered:** POS counter, top-freezer/magnet fridges, break-room millwork, grab bars, deli prep cart.
