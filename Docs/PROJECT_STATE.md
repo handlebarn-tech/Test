@@ -14,15 +14,15 @@ Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, 
 |---|---|---|---|
 | GAME-008 cover the door / ID checks (+W5G m1/m2) | `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | running | Unity review → GAME-009 |
 | GAME-010 tuning + personas (merging cart; W4W m3) | `local_0d166a8e-87b1-40bb-9594-be389c549875` | grid 3 | review |
-| **IMP-003**: rolling toolkit audit; round 2 landed (3 new packages) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | auditing round 2 | review → one approval summary to Nolan → PROC integration |
+| **IMP-003**: rolling toolkit audit; round 2 landed (3 new packages) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | auditing round 2 | review → one approval summary to Nolan → PROC-005 integrates + fixes findings (DEC-083) |
 | DES-004b+c: DEC-076 door lock + DEC-079/080 restock facts & manager-refill ruling | `local_82d327a2-5b67-4cff-b481-5854a94f6f31` | running | docs review → merge |
 | RES-002: staffing counts from OneDrive schedule (read-only, counts only) | `local_7f53cf19-16d8-4ba4-b186-9c03960e8906` | running | review (PII check) → GAP-DAY-03 |
 | ASSET-003: CC0 customer characters + animations (sourcing, no Unity) | `local_d31ad4c5-232b-4628-986c-5d276e71a2a2` | running | review |
 | W5F IMP-003 drop 1 PASS w/ minors (`review/wave-5f`) | reviewer `local_b073ffa0…` | held | wait for IMP-003 delta audit of ChatGPT's fixes, then one approval summary to Nolan |
-| BRAND-001b: renames + The Flower Mine approved (DEC-078/081) | `local_a7e0b8da-ae2d-4dbb-ac46-8194e642ec35` | running | review |
+| REVIEW-W5I: BRAND-001b (on `review/wave-5j`) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` (worker `local_a7e0b8da…` idle) | running | merge on GO; archive BRAND worker |
 
 ## Next tasks to start (dependency order)
-0. DOC-002 (AUDIT batch D) in the next gap between waves; DOC-003 (batch E) low priority. Merged this session also: W4U (REF-009b), W4V (IMP-002), W4T (QA-002; DEC-067), W4X (DOC-001). Free reviewer: `local_c94488d7…`.
+0. DOC-002 (AUDIT batch D, fresh session; AUDIT-001 session archived) in the next gap between waves, incl. SLICE_DESIGN → TUNING_PS1 pointer (DEC-082); DOC-003 (batch E) low priority. Merged this session also: W4U (REF-009b), W4V (IMP-002), W4T (QA-002; DEC-067), W4X (DOC-001). Free reviewer: `local_c94488d7…`.
 1. PS1 chain: GAME-007 (running) → GAME-008 → GAME-009 (serialised, DEC-064 A3); then PS1b GAME-017 after GAME-007/010 + QA-002b.
 2. REF pass: ROOM_FIXTURES restroom cabinet → by the door (DEC-068).
 3. GAME-004 packaged goods into play: needs DATA-002 + PROC-004 (merged) + UX-002 + DES-003's integration.
