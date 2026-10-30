@@ -30,7 +30,6 @@ _Lead keeps this ≤15 lines._ 2026-10-30, lead session started.
 | Task | Worker | Branch | State |
 |---|---|---|---|
 | GAME-009 medical (+ W5N m2, W5S m1/m2) | done (session `local_7f8c95e9…`, ready to archive) | `claude/task-game-009` @ 26081fa | REVIEW-PS1 with Unity B2 |
-| DES-006 recommendation depth audit | done | `review/des6` @ 403ed1b | PASS with minors; merge-ready; after merge lead fixes m2/m3 in GAME-017, m1 into GAME-017a packet |
 | DATA-003 needs catalog + goldens | lead subagent | worktree | running |
 | UX-006 counter UX addendum | lead subagent | worktree | running |
 | DES-005b (+ DES-007) | lead subagent | worktree | running |
