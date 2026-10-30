@@ -27,6 +27,9 @@ namespace Dispo.Simulation.Slice
 
     public enum Response { Blocked, Accept, Reject, Leave }
 
+    /// <summary>UX_PS1 §3 limit-meter states.</summary>
+    public enum MeterState { Neutral, Amber, Red }
+
     public sealed class PresentResult
     {
         public Response Response;
@@ -68,6 +71,7 @@ namespace Dispo.Simulation.Slice
         public double Time { get; private set; }
         public bool IsOver => Customers.All(c => c.State == CustomerState.Done);
         public event Action<Customer> Left;
+        public readonly StrikeLedger Strikes = new StrikeLedger();       // GAME-007; GAME-008/009 add strikes
 
         readonly Dictionary<string, Batch> _batches;
         readonly HashSet<string> _seen = new HashSet<string>();
@@ -144,7 +148,7 @@ namespace Dispo.Simulation.Slice
             if (p.Satisfaction >= Cfg.acceptThreshold)
             {
                 p.Response = Response.Accept; p.Line = "";
-                line.Fit = p.Fit; _speedFit = p.SpeedFit;
+                line.Fit = ask.Fit = p.Fit; _speedFit = p.SpeedFit;
                 Cart.Add(line); RegisterOpen = true;
                 return p;
             }
@@ -188,7 +192,8 @@ namespace Dispo.Simulation.Slice
             var c = Serving;
             var l = Data.Lines;
             if (CartGrams > Cfg.adultUseLimitGrams) return l.overLimit;   // DEC-036 M1, A.R.S. 36-2858(A)(1)(c)
-            var wrong = Cart.FirstOrDefault(x => x.Grams != c.Asks[x.Ask].Grams);
+            // An over-limit customer takes a trimmed weight (SPEC_COMP002 §2), never more than asked.
+            var wrong = Cart.FirstOrDefault(x => c.OverLimit ? x.Grams > c.Asks[x.Ask].Grams : x.Grams != c.Asks[x.Ask].Grams);
             if (wrong != null) return string.Format(l.wrongWeight, l.Weight(c.Asks[wrong.Ask].Grams));
             if (Cart.GroupBy(x => x.BatchId).Any(g => Inventory.Grams(g.Key) < g.Sum(x => x.Grams))) return l.notEnough;
 
@@ -205,8 +210,7 @@ namespace Dispo.Simulation.Slice
                     PricePreTax = x.PreTax, PricePostTax = post,
                 });
             }
-            // §3.4 with the mean item fit; an ask left out of the cart counts 0 [GDD].
-            c.LastFit = c.Asks.Select((a, i) => Cart.Where(x => x.Ask == i).Select(x => x.Fit).DefaultIfEmpty(0).Max()).Average();
+            c.LastFit = CartFit(c);
             c.LastSatisfaction = Satisfaction(Cfg, c.LastFit, PriceFit(total.PostTax, c.Budget), _speedFit, WaitPenalty(Cfg, c.QueueWait));
             Finish(c, CustomerOutcome.Bought);
             return null;
@@ -220,8 +224,49 @@ namespace Dispo.Simulation.Slice
             return Confirm();
         }
 
-        /// <summary>POS Cancel: empties the cart, back to the cards; no inventory change (no reservation, §4).</summary>
-        public void Cancel() { Cart.Clear(); CloseRegister(); }
+        /// <summary>
+        /// POS Cancel: empties the cart, back to the cards; no inventory change (no reservation, §4). An over-limit customer whose
+        /// cart is still over the cap takes Cancel as a refusal and leaves with no sale (SPEC_COMP002 §2). True when they left.
+        /// </summary>
+        public bool Cancel()
+        {
+            var c = Serving;
+            bool refused = c != null && c.OverLimit && CartGrams > Cfg.adultUseLimitGrams;
+            Cart.Clear(); CloseRegister();
+            if (refused) Finish(c, CustomerOutcome.NoSale);
+            return refused;
+        }
+
+        /// <summary>
+        /// §3.4 fit of the cart: the mean item fit, an ask never put in the cart counting 0 (DEC-065). For an over-limit customer
+        /// an item trimmed out after acceptance doesn't count, and trimming the primary item (ask 0: removed or stepped down)
+        /// costs primaryTrimFitPenalty × its fit (SPEC_COMP002 §2).
+        /// </summary>
+        public double CartFit(Customer c)
+        {
+            var fits = new List<double>();
+            for (int i = 0; i < c.Asks.Count; i++)
+            {
+                var line = Cart.FirstOrDefault(x => x.Ask == i);
+                if (line != null) fits.Add(line.Fit);
+                else if (!(c.OverLimit && c.Asks[i].Fit >= 0)) fits.Add(0);
+            }
+            double fit = fits.Count > 0 ? fits.Average() : 0;
+            var primary = c.Asks[0];
+            var kept = Cart.FirstOrDefault(x => x.Ask == 0);
+            if (c.OverLimit && primary.Fit >= 0 && (kept == null || kept.Grams < primary.Grams))
+                fit = Math.Max(0, fit - Cfg.primaryTrimFitPenalty * primary.Fit);
+            return fit;
+        }
+
+        // ---------- limit meter + strikes (GAME-007) ----------
+
+        /// <summary>UX_PS1 §3: cart flower grams / the 1 oz cap.</summary>
+        public double MeterFraction => CartGrams / Cfg.adultUseLimitGrams;
+        public MeterState Meter => MeterFraction > 1 ? MeterState.Red : MeterFraction >= Cfg.meterAmberFraction ? MeterState.Amber : MeterState.Neutral;
+
+        /// <summary>Record a strike for the customer at the counter (or 0) now. Never ends the shift (DEC-032).</summary>
+        public Strike Strike(string reason) => Strikes.Add(reason, Serving?.Index ?? 0, Time);
 
         // ---------- cart (GAME-006) ----------
 
@@ -362,12 +407,15 @@ namespace Dispo.Simulation.Slice
                 AvgRecFit = sold.Count > 0 ? sold.Average(c => c.LastFit) : 0,
                 InterpretationAccuracy = chipped.Count > 0 ? 100.0 * chipped.Count(a => a.Chip == a.Family.id) / chipped.Count : 0,
                 UnitsPerSale = sold.Count > 0 ? (double)Sales.Count / sold.Count : 0,
+                Strikes = Strikes.Strikes.ToList(),
+                OverLimitTrims = sold.Count(c => c.OverLimit),
                 TopIntents = cs.SelectMany(c => c.Asks).GroupBy(a => a.Family.id).OrderByDescending(g => g.Count()).ToDictionary(g => g.Key, g => g.Count()),
                 SoldOut = Inventory.SoldOutIds.Select(Describe).ToList(),
                 LowStock = Inventory.JarBatchIds.Where(Inventory.IsLow).Select(Describe).ToList(),
             };
             r.Stars = r.AvgSatisfaction >= Cfg.starCutoff3 ? 3 : r.AvgSatisfaction >= Cfg.starCutoff2 ? 2 : 1;
             r.RoughShift = r.Walkouts + r.NoSales >= Cfg.roughShiftThreshold;
+            r.ManagerReview = r.Strikes.Count >= Cfg.strikeReviewThreshold;
             return r;
         }
 
@@ -418,6 +466,9 @@ namespace Dispo.Simulation.Slice
         public int CustomersServed, Walkouts, NoSales, Stars;
         public double RevenuePostTax, RevenuePreTax, GramsSold, AvgServiceSeconds, AvgQueueWaitSeconds, AvgSatisfaction, AvgRecFit, InterpretationAccuracy;
         public double UnitsPerSale;   // GAME-006: sale lines per buying customer (real store ≈ 2, RES-001 O13)
+        public List<Strike> Strikes;  // GAME-007 compliance block (SPEC_COMP002 §7)
+        public int OverLimitTrims;    // over-limit customers sold a trimmed, legal cart
+        public bool ManagerReview;    // strikes ≥ strikeReviewThreshold
         public Dictionary<string, int> TopIntents;
         public List<string> SoldOut, LowStock;
         public bool RoughShift;
