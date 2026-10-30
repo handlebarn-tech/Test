@@ -12,7 +12,7 @@ Seeded from MASTER_PLAN §20–21; REF-001 and MIG-001 extend this file.
 - GAP-101 | building | floor plan is "Working Plan V5, not for construction"; fixtures/doors are "approximate"; original RSP A011/A013 sheets not in repo | Med (fixtures) / High (room shells) | obtain the A011/A013 PDFs or a site tape-measure pass
 - GAP-102 | building | which of FOH/BOH is 163 vs 180 SF (drawn 215 / 173 SF) | Low | user confirmation
 - GAP-103 | building | JC corner within break room and true size (drawn 3×3 = 9 SF vs printed 19.19 SF) | Low | user confirmation / photo
-- GAP-104 | building | wall thickness; interior door widths/heights (plan arcs 1.2–1.8 ft are schematic) | none (use 3'-0"×7'-0" labelled convention) | measure on site
+- GAP-104 | building | wall thickness; interior door widths/heights (plan arcs 1.2–1.8 ft are schematic) | none (use 3'-0"×7'-0" labelled convention; exception, ART-001: the two vestibule doors (to FOH, BOH) use the full 2.2 ft vestibule side because 3'-0" does not fit the drawn 3.0 × 2.2 vestibule) | measure on site
 - GAP-105 | cctv | 7 tiles (R4C3, R4C4, R5C1–C5; R5C5 repeats R5C2) show large rack/storage rooms the plan does not map; the plan says HUB has no feed | Low (assigned HUB/HUB 2) | user names each camera
 - GAP-106 | building | north-wall order: CCTV R2C2/R2C4 show the video-wall TV west of the logo living wall; the plan puts the living wall west of the menu screen | Low | user confirmation; graybox follows the plan meanwhile
 - GAP-107 | building | register numbering (Register 1) and exact station positions; plan says "up to 12", CCTV shows 3–4 per view | Low | user confirmation
