@@ -95,15 +95,15 @@ Origin is the NW outer corner of Retail. **+x = east, +y = south** (plan is nort
 | "N.E Corner" cam | ≈46.6, 0.5 | — | camera dot |
 | licenses (west wall) | 0.2–1.0 | 3.0–8.0 | 0.8 × 5.0 |
 | merch (rack, rounded) | 4.0–8.6 | 2.6–4.0 | 4.6 × 1.4 |
-| REGISTERS (up to 12) — L counter | 20.0–42.0 | 7.0–19.0 (bbox) | L: north run along y≈7–8.x, return leg down the east side to y=19 |
+| REGISTERS (up to 12) — L counter | 20.0–42.0 | 7.0–19.0 (bbox) | L: north run along y≈7–8.x, return leg down the east side to y=19. **REF-011:** holds registers 10/9/8 (north) and 12/11 (east) only; the east return sits too close to the east jar wall (§8.1, GAP-130) |
 | display case (on register counter) | 38.0–39.4 | 7.4–8.8 | 1.4 × 1.4 |
 | globe pendants over register run | 6 circles, centres x 23.0, 26.0, 29.0, 32.0, 35.0, 38.0; y 11.0 | Ø0.8 | 3.0 ft pitch |
-| DELI COUNTER — L counter | 14.0–34.2 | 18.0–25.2 (bbox) | L |
+| DELI COUNTER — L counter | 14.0–34.2 | 18.0–25.2 (bbox) | L. **REF-011: this is the south register run (registers 7,2,3,4,5,6, staff on its south side), not a separate deli counter**; drawn ≈2.6 ft too far south (§8.1, GAP-129) |
 | globe pendants, deli west end | centres (15.0, 26.2), (17.0, 26.2) | Ø0.8 | |
 | two white columns | x≈19.0 and x≈35.0 | y 19.6–20.4 | ≈0.8 sq |
 | queue stanchion lines (dashed, raster-read) | x ≈ 6, 9, 12, 15 | y ≈ 11–19.5 | 4 lanes, Low-Med |
 | ATM | 1.2–3.4 | 25.8–27.6 | 2.2 × 1.8 |
-| deli flower jar wall (south, between arches) | 13.5–34.7 | 27.6–28.8 | 21.2 × 1.2 |
+| deli flower jar wall (south, between arches) | 13.5–34.7 | 27.6–28.8 | 21.2 × 1.2. **REF-011:** it has a back counter under the shelves (BAND 10); real depth runs to the wall, ≈2.1 ft (§8.3) |
 | rack (east wall) | 45.6–47.0 | 15.0–20.0 | 1.4 × 5.0 |
 | sink (hand wash, east wall) | 45.6–47.0 | 24.6–26.8 | 1.4 × 2.2 |
 | Office: IT rack | 0.6–2.0 | 38.0–42.0 | 1.4 × 4.0 |
@@ -131,9 +131,9 @@ The plan text says the wall carries **17 distinct feeds: 6 exterior, 6 sales flo
 | R1C5 | Exterior front/side parking | sidewalk approach, building edge, street | Exterior | Med |
 | R2C1 | Sales floor, from register end looking toward entry | glass entry doors + exit sign, queue stanchions (black belts), video-wall TV, living wall, "DELI STYLE" counter, POS monitors, card readers, scales on rolling carts; white marble-look tile + black/white geometric cement tile near counter | Retail (west half) | High |
 | R2C2 | Sales floor, high SW-ish view over queue | wall planters + wood bench, 3×3 video wall, "THE FLOWER SHOP" logo living wall, stanchion field, DELI STYLE counter with checker tile front, jar walls, globe pendant cluster | Retail | High |
-| R2C3 | Register run close | 3–4 POS stations, black counter with open shelves below, scale carts, jar wall with mint/teal backlit shelving on the side wall, yellow wet-floor sign, "HIGH TIDE" stool/seat back | Retail (registers) | High |
-| R2C4 | Register run, wider (camera name "Back Of Register center", REF-003) | 3 POS + spare monitor, kraft order bags, globe pendant clusters, DELI STYLE counter behind | Retail (registers) | High |
-| R2C5 | Elevated view along register L toward deli/queue | register L end with trash bin, black cabinet end, jar wall on right, entry/queue far left | Retail (NE register L) | Med |
+| R2C3 | Register run close (**REF-011: camera behind the south run, looking north** at the north run) | 3–4 POS stations, black counter with open shelves below, scale carts, jar wall with mint/teal backlit shelving on the side wall, yellow wet-floor sign, "HIGH TIDE" stool/seat back | Retail (registers) | High |
+| R2C4 | Register run, wider (camera name "Back Of Register center", REF-003; **REF-011: behind the south run, looking north**) | 3 POS + spare monitor, kraft order bags, globe pendant clusters, DELI STYLE counter behind | Retail (registers) | High |
+| R2C5 | Elevated view along register L toward deli/queue (**REF-011: from the SE behind the south run's east end, looking NW**; not the plan's "N.E Corner" cam) | register L end with trash bin, black cabinet end, jar wall on right, entry/queue far left | Retail (NE register L) | Med |
 | R3C1 | Exterior sidewalk + hedge against building | narrow walk, hedge, wood fascia | Exterior | Med |
 | R3C2 | Register counter from behind, looking across the floor to the back wall | **lit black glass display cabinet on the counter** (matches plan "display case"), 2 POS, scales, arched niche through a vertical wood-slat wall, jar wall, ATM + queue at the far end, merch rack with white garments on the right | Retail | High |
 | R3C3 | Office | L desk with 2 monitors, stainless worktable, paper trays, money counter, black file cabinet, trash/recycling cans, wall shelves, posted procedures, green neon glow, black door with cannabis-leaf print, utility cart, plant | Office | High |
@@ -431,3 +431,54 @@ R4C1/still/chat_FOH_L look south from beside the door; chat_FOH_R looks toward t
 R4C2/chat_BOH_L look SW from the NE; the still/chat_BOH_R look NW from the SE. East-wall chrome run from y 31.3 to the desk. 2-bay west run at x 37–39, y 37.3–45.3. South shelving (A011, Low). Left of the vestibule door (seen from the SE), a chrome rack of drink cartons and misc boxes (DEC-062). Ex-register-1 desk on the east wall at y 40.3–44.3 (matches the graybox), with a barcode scanner beside the keyboard (DEC-062). LED strip over the aisle. Graybox `FX_BOH_Racks_W` starts at y 33, which collides with the vestibule.
 
 Box and case brand names are not inventory data.
+
+## 8. Sales floor (REF-011)
+
+Playtest 1 (DEC-096) audit of the graybox against the evidence. Rows are in `Docs/Reference/ROOM_FIXTURES.json` rev7 (rooms Retail, HUB and HUB2) and anchors are in `Docs/Reference/SCENE_ANCHORS.json`. The mismatch table is in `Docs/Research/LAYOUT_AUDIT_SALES_FLOOR.md`. Gaps: GAP-129..134.
+
+### 8.1 Register runs (DEC-039/040)
+- **Which counter is which (Med-High).** "Back Of Register center/East" (= R2C4), R2C3 and R2C5 sit **behind the south run, looking north**. Beyond the customers they show the north run (DELI STYLE checker wrap, its own jar wall), with the logo living wall and video wall on its left (west), the entry at the far left and the east jar wall on the right. R3C2 sits behind the north run (it has the lit display case) and looks south at the south run, with its jar wall and the east arch on the left. So the plan's "DELI COUNTER" L is the **south register run**. Both runs carry a DELI STYLE wrap. The graybox cameras R2C3/R2C4/R2C5 point the wrong way.
+- **Staff aisle (Low-Med).** BAND 10 (rotate 90° clockwise) looks east along the south staff aisle. On the left is the register counter with POS monitors and chrome scale stands (a spray bottle hangs from one stand: DEC-096 kit). On the right is the south jar wall: a back counter with open bins, 2 shelf tiers, kraft bags and a deals sheet. TL-2 8" grout lines give **3.0–4.0 ft clear between the back of the stands and the back counter**, enough for two staff to pass. 3.0 ft is used.
+- **South run unusable: cause and fix.** The graybox has 2.4 ft from the south counter's staff edge to the jar-wall front, which leaves 1.1 ft behind the 1.3 ft stands. Fix (Low, GAP-129):
+  - Move the long leg to y 20.4–22.6 and put the stations at the staff edge, y 22.6.
+  - That gives the stand at y 22.6–23.9, a 3.0 ft aisle at 23.9–26.9 and the back counter at 26.9–29.0.
+  - The customer face becomes flush with the two white columns (y 20.4).
+  - Side effect: the plan's queue stanchion field (x 6–15, y 11–19.7) now ends 0.7 ft from the counter, and station 06's customer spot falls inside it (question).
+- **East return (Low, GAP-130).** It is tight in the plan: 2.3 ft to the jar-wall front, or 1.6 ft once the back counter is counted. It moves west to x 38.4–40.6 for 3.0 ft. The north run keeps the plan position and has 3.4 ft.
+- **Stations.** Each has the monitor centre on the staff edge and the stand to the staff's right. The operator anchor is 1.0 ft off the edge, and the customer 1.2 ft off the counter face.
+
+| Run | Reg | x, y | Operator faces | Clear behind stand | Conf. |
+|---|---|---|---|---|---|
+| North (staff N) | 08, 09, 10 | x 24.0 / 30.0 / 36.0, y 7.0 | S | 3.4 ft (to back-counter front y 2.3) | Med |
+| East (staff E) | 12, 11 | x 40.6, y 12.0 / 16.0 | W | 3.0 ft (to x 44.9) | Low |
+| South (staff S) | 07, 02, 03, 04, 05, 06 | x 31.0 / 27.8 / 24.6 / 21.4 / 17.8 / 14.8, y 22.6 | N | 3.0 ft (to y 26.9) | Low |
+
+South order follows ART-003's reading of "left to right": a customer facing the counter, so 7 is east (GAP-131). Pitch is ≈3.2 ft (monitor pitch in the wide still is 3–3.5 ft), skipping the west column.
+
+- **Station kit and trash (DEC-103/104).** Every station gets a small trash bin (placeholder: against the back of the stand, as in BAND 10 and wide_stand_A; Low, GAP-131). Three big bins are spread across the floor (rows `Trash_Big_*`). Only the one at the south return end has CCTV support (R2C5); the rest are Low (GAP-134). **Rule (DEC-104): small items are never uniform between stations** (presence, placement, condition), so ART and Assets vary each station's kit rather than copying one. The DEC-096 kit: label/receipt printer, scanner, mouse, keyboard, under-counter storage, a spray bottle on a stand, a rag. The ID-check stand directly left inside the entry (DEC-048) carries an ID scanner with a green light (DEC-103). There is no second door after it, so check-in leads straight onto the floor.
+
+### 8.2 HUB / HUB 2 (DEC-022, §2.1)
+- **Naming holds (A011).** HUB is the east room and HUB 2 the west room.
+- **HUB.** R1C4 looks **south**: the green SE exit (DEC-030) is in its far-left corner. So the desk and chair (foreground) are at the **north** end of HUB, a long dark counter runs along the **east** wall and the pallets are on the west side. The graybox has the desks at the south (y 70–74.4, from the V5 raster strip) and chrome runs on the north and east walls (GAP-132).
+- **HUB 2.** It matches: copier, totes, pallets, work table, merch rack, and cabinets on the office wall. One pose is off: R1C1 looks east, not NNE, since the connecting door is at the far left.
+- **Open question.** DEC-079 puts the deli backstock cabinets "in the HUB against the office wall", but by A011 only HUB 2 shares the office wall (GAP-132).
+
+### 8.3 Deli walls: three (Med)
+The evidence supports **three** stocked deli jar walls, one behind each register run:
+- **North**, x 19–44.9: seen in R2C3, R2C4 and the wide still, behind the north run.
+- **East**, y 0.2–14.2: backlit teal shelves in arched wood frames over a counter (BAND 11, R2C3, wide still).
+- **South**, between the arches: BAND 10, BAND 01/06 beside an arch, R3C2.
+
+The plan already draws all three: "deli flower jar wall" north and south, "jar wall" east. The graybox does not show them as three: the south wall is a solid block, and jarSlots fill only the north and east walls. Each wall is a back counter (TI base cabinet 2'-1", Low) with 2 shelf tiers, and jars also stand on the counter. The DEC-043 retail photo (walnut drawers) is probably the north wall (Low).
+
+### 8.4 Stocking note (for Assets' stocking arranger; generator params unchanged)
+Sources: the DEC-043 retail jar-wall photo, BAND 10, BAND 11 and BAND 01. All values are estimates by eye (Low).
+
+| Row | Jar positions occupied | Gaps | Product level inside jars |
+|---|---|---|---|
+| Top tier | ≈85–95 % (shoulder to shoulder) | kraft bags fill the last 1–2 ft at one end | mostly 50–80 % |
+| Middle tier | ≈50–60 % | clusters of 2–3 jars with 1–2 jar-width gaps (the tong cups there were temporary, DEC-043) | 40–70 % |
+| Counter row | ≈30–40 % | irregular; some shorter jars, smalls jars and bags | 30–60 % |
+| East (arched bays) | ≈1 jar per bay with ≈1 jar-width gaps (≈50 % linear) | lower counter row dense with small packaged jars | 50–80 % |
+
+No shelf is uniformly full, and almost no jar is brim-full. Levels vary jar to jar because each 1 lb jar per strain sells down at its own rate, and house strains are doubled (DEC-079). Jars stay upright with labels facing out.
