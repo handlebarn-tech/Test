@@ -100,6 +100,7 @@
 - **Look:** the front fascia is a near-vertical face with lamps and grille on it, so it reads more 2000s than current. The next pass would rake the nose and wrap the lamps. Interior: none; the dark glass hides that.
 
 ## For the Hub
+- **Proposed DEC (Nolan, relayed by the Hub 2026-10-30, answers GAP-PROC-VEH-2):** "depends on how busy. 1 car per customer". The number of parked cars follows the customers currently in the store, one car each. Nolan gave no direction on types or colours, so the class mix and paint stay labelled GAPs (GAP-PROC-23/24, RG3-4). The packet does not make the lot population mine, so no code change: the spawner owner places one `PROC_Vehicle_*` per in-store customer, picking class and `paint_variants` swap. Lot capacity is 15 striped spaces, 1 of them accessible (OFFICE_FINDINGS B20).
 - **GAP-PROC-23 (register):** vehicle class dimensions and proportions are generic (midsize sedan 4.88 × 1.84 × 1.44 m, compact hatch 4.37 × 1.80 × 1.45 m, compact SUV 4.60 × 1.86 × 1.70 m). They are not measured. Searched: RI/CCTV (classes only, RG3-4), OFFICE_FINDINGS B20 (15 spaces, 1 accessible; no vehicles), KNOWN_GAPS GAP-134.
 - **GAP-PROC-24 (register):** parked-car paint mix (CCTV cannot resolve colour) and the vehicle texture maps.
 - "Rear plate only" uses the Arizona rule (A.R.S. 28-2354, Med from memory, not looked up here); the plate is blank.
