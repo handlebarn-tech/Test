@@ -39,8 +39,8 @@ Everything else registered in BACKLOG as Later with its dependencies; the Hub wr
 Controls (done) → store/layout accuracy → believable customer flow → recommendation depth → asset integration that unblocks these.
 
 ## Blocked / open with Nolan
-- **Asked 2026-10-30 (PROC-006b handoff Q1, DEC-105 search listed):** what is under the register counter on the staff side (open shelves vs drawers, how many levels)? Placeholder: two open shelves. Answer → DEC + PROC-006c/PROC-010 params.
-- **Asked 2026-10-30 (ASSET-007 handoff, DEC-105 search done, no DEC/GAP/REF-008 hit):** glove colour (GAP-GLV-1, black placeholder; blue/purple?) and who wears them (GAP-GLV-2: all floor staff / deli handling only / per person).
+Questions go to the PO session `local_0e722850-d68d-43e0-85af-b280cf2337c4` (DEC-125); blockers by push notification.
+- **Sent to the PO session 2026-10-30 (DEC-125; ASSET-007 handoff, DEC-105 search done, no DEC/GAP/REF-008 hit):** glove colour (GAP-GLV-1, black placeholder; blue/purple?) and who wears them (GAP-GLV-2: all floor staff / deli handling only / per person).
 - World follow-ups from PROC-006b (small-bin size, POS monitor y): in REF-016 deliverable 4.
 - **DATA-004** (PS3 gate): needs Nolan's Dutchie/LeafLogix catalog export (GAP-PKG-01). Asked before (RES-001 O14); ask once more only when PS2 is in sight, batched.
 - **DATA-005:** waits for TFS v7.11.5 to ship (GAP-210); external.
