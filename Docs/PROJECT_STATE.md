@@ -17,7 +17,6 @@ Hub-owned; the **only live state record** (DEC-117). A fresh Hub resumes from `D
 | worker `local_77fd945b-ecaf-4432-8c51-54b18ed9dc50`; reviewer `local_f6623b7b-9a38-4980-a8c3-e8b2f2277967` (running) | **ART-008** graybox final pass (Unity slot) | `claude/festive-hamilton-c0ced4` @ 1440ff6 | Under review: 108/114 clearance; the 6 failures come from GAP-131 data. On PASS: INTEG session. |
 | `dispo-proc013` `local_6b501011-a377-4a18-8f78-90c75f433ede` (running) | **PROC-013** door family incl. glass storefront (Blender) | continues `worktree-agent-a83016d0b10c940eb` @ 4e1b088 + uncommitted files (locked worktree) | Relaunch running. When ready: strong visual review (DEC-122). |
 | `dispo-asset005` `local_1bb17d9a-7584-4a8b-af68-d01479714d05` (running) | **ASSET-005/006** wardrobe + hair (Blender) | `claude/sweet-shirley-002b17` @ 0f3fba5 | Generators running; no commit/handoff yet. At merge the reviewer re-runs the C001 regression (ASSET-007 also edits `customer_gen.py`); then add the staff-gloves line to CHARACTERS.md §9. |
-| reviewer card posted | **ASSET-007** staff gloves | `claude/task-asset-007` @ dba3961 | Reviewer checks glove colour/wearer questions against the docs. On PASS: INTEG session. |
 
 Worktrees/branches are retired only when positively identified as integrated or obsolete (DEC-123); no broad cleanup.
 
