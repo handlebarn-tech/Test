@@ -18,7 +18,7 @@ Seeded from MASTER_PLAN §20–21; REF-001 and MIG-001 extend this file.
 - GAP-107 | building | register numbering (Register 1) and exact station positions; plan says "up to 12", CCTV shows 3–4 per view. REF-002: the DEC-021 scale stand is found (one chrome wire stand per POS, staff side, REFERENCES_INDEX §2.2), so the fixture is resolved; numbering, station count and stand size stay open | Med (stand type) / Low (count, size) | user confirmation / a stand photo from Nolan
 - GAP-108 | building | counter heights (register, deli, display case) not measured anywhere | none (36–42" convention) | site measure
 - GAP-109 | building | Restroom and JC have no CCTV or photo coverage (blind) | none | user photo or generic fit-out
-- GAP-110 | building | HUB and HUB 2 interiors effectively blind (no photo, only unconfirmed CCTV); rack strips/desks are raster-read only | Low | resolve via GAP-105 + photos
+- GAP-110 | building | HUB and HUB 2 interiors: CCTV only (8 HUB-wall tiles, 7 distinct views, REFERENCES_INDEX §2.1); no photo; plan positions of racks/desks are raster-read only | Med | photos or Nolan confirmation of rack layout
 - GAP-111 | building | fixtures seen but not on the plan: two glass-door coolers (FOH, R4C1), "Fine Cannabis" neon and blue-lit counter fronts (photo 05), wood bench + planters by the entry (R2C2), merch garment rack (R3C2) | Low (position) | user to place on plan
 - GAP-112 | building | EXIT label and emergency-exit swing are drawn orange (= position not confirmed) | Low | user confirmation
 - GAP-113 | building | floor tile sizes, jar dimensions, arch height, pendant drop height not measurable from the sources | none | site measure / product spec
