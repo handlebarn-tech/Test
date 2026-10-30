@@ -10,7 +10,7 @@
     "LOD2": 348,
     "LOD3": 32
   },
-  "params_sha256": "caf200c1e8cef438",
+  "params_sha256": "094fff8bb7aa9189",
   "passed": true,
   "warnings": [
     "LOD0 3936 tris below the DEC-084 guide minimum 5000 (too simple?)"

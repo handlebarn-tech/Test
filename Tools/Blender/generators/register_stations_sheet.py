@@ -1,5 +1,9 @@
-"""PROC-006b preview: 4 differently dressed register stations from the arranger JSONs, as one 2x2 PNG.
+"""Register kit preview sheets (PROC-006b/c), workbench + cavity, preview colours.
+Stations: 4 differently dressed register stations from the arranger JSONs, as one 2x2 PNG.
   blender -b --factory-startup --python-exit-code 10 -P Tools/Blender/generators/register_stations_sheet.py -- POS_02 POS_06 POS_07 POS_09
+Contact (DEC-114 judgement): one row per prop, tiles LOD0 3/4, LOD0 side, LOD1, LOD2, LOD3, each labelled with prop, LOD
+and tri count and framed to that prop (orthographic, so the scale bar in the label is true).
+  blender -b --factory-startup --python-exit-code 10 -P Tools/Blender/generators/register_stations_sheet.py -- contact
 Props are rebuilt at LOD0 with register_kit.build(); the counter, under-shelves and stand are grey context slabs at the
 anchor heights in params (preview only, World owns that geometry). Station frame: x = u, y = v, so -Y faces the operator."""
 import json
@@ -17,8 +21,10 @@ from generators import register_kit as rk  # noqa: E402
 ROOT = os.path.normpath(os.path.join(HERE, "..", "..", ".."))
 P = json.load(open(os.path.join(ROOT, "Tools", "Blender", "params", "register_kit.json"), encoding="utf-8"))
 AR = P["arranger"]
-OUT = os.path.join(ROOT, "Docs", "Assets", "Specs", "PROC_register_kit_stations_sheet.png")
+OUT = os.path.join(ROOT, "Docs", "Assets", "Previews", "PROC_register_kit_stations_sheet.png")
+CONTACT = os.path.join(ROOT, "Docs", "Assets", "Previews", "PROC_register_kit_contact_sheet.png")
 TILE = (560, 420)
+CTILE = 300
 
 
 def slab(name, u0, u1, v0, v1, z, t=0.02):
@@ -61,14 +67,7 @@ def render_station(st, path):
             o.hide_render = o.hide_viewport = False
             o.location = (it["pos_m"][0] - ox, it["pos_m"][1] - oy, it["pos_m"][2] - off[2])
             o.rotation_euler = (0, 0, yaw)
-    s.render.engine = "BLENDER_WORKBENCH"
-    s.display.shading.light, s.display.shading.color_type = "STUDIO", "MATERIAL"
-    s.display.shading.show_cavity = True
-    s.render.resolution_x, s.render.resolution_y = TILE
-    s.view_settings.view_transform = "Standard"
-    w = bpy.data.worlds.new("W")
-    w.color = (0.55, 0.55, 0.55)
-    s.world = w
+    shading(s, TILE)
     cam = bpy.data.objects.new("Cam", bpy.data.cameras.new("Cam"))
     s.collection.objects.link(cam)
     s.camera = cam
@@ -80,25 +79,101 @@ def render_station(st, path):
     bpy.ops.render.render(write_still=True)
 
 
-def main(names):
-    tiles = []
-    for n in names:
-        st = json.load(open(os.path.join(ROOT, AR["out_dir"], f"{n}.json"), encoding="utf-8"))
-        path = os.path.join(ROOT, "Artifacts", "Renders", f"RK_Station_{n}.png")
-        render_station(st, path)
-        img = bpy.data.images.load(path)
-        px = np.empty(img.size[0] * img.size[1] * 4, dtype=np.float32)
-        img.pixels.foreach_get(px)
-        tiles.append(px.reshape(img.size[1], img.size[0], 4))
-    top, bottom = np.concatenate(tiles[:2], axis=1), np.concatenate(tiles[2:4], axis=1)
-    sheet = np.concatenate([bottom, top], axis=0)  # Blender images are bottom-up
+def shading(s, res):
+    s.render.engine = "BLENDER_WORKBENCH"
+    s.display.shading.light, s.display.shading.color_type = "STUDIO", "MATERIAL"
+    s.display.shading.show_cavity = True
+    s.render.resolution_x, s.render.resolution_y = res
+    s.view_settings.view_transform = "Standard"
+    w = bpy.data.worlds.new("W")
+    w.color = (0.55, 0.55, 0.55)
+    s.world = w
+
+
+def render_tile(iid, lod_name, view, path):
+    """One prop at one LOD, orthographic, framed to its size_m; the label is a text object on the camera."""
+    bpy.ops.wm.read_factory_settings(use_empty=True)
+    s = bpy.context.scene
+    q = {k: v for k, v in P.items() if k != "items"}
+    q.update(next(i for i in P["items"] if i["id"] == iid))
+    objs, _, _ = rk.build(q, q["lods"][lod_name])
+    tris = sum(len(f.vertices) - 2 for o in objs.values() for f in o.data.polygons)
+    w, d, h = q["size_m"]
+    shading(s, (CTILE, CTILE))
+    cam = bpy.data.objects.new("Cam", bpy.data.cameras.new("Cam"))
+    s.collection.objects.link(cam)
+    s.camera = cam
+    cam.data.type = "ORTHO"
+    span = max(math.hypot(w, d), h) * 1.3
+    cam.data.ortho_scale = span * 1.18  # headroom for the label
+    az, el = (math.radians(-35), math.radians(22)) if view == "34" else (math.radians(90), math.radians(8))
+    tgt = np.array([0.0, 0.0, h / 2 + span * 0.07])
+    dirv = np.array([math.sin(az) * math.cos(el), -math.cos(az) * math.cos(el), math.sin(el)])
+    cam.location = tuple(tgt + dirv * 3.0)
+    cam.rotation_euler = (math.pi / 2 - el, 0, az)
+    os_ = cam.data.ortho_scale
+    mat = bpy.data.materials.new("Label")
+    mat.diffuse_color = (0.02, 0.02, 0.02, 1)
+    lines = [f"{iid}", f"{lod_name}{' side' if view == 'side' else ''}  {tris} tris  [{os_ * 100:.0f} cm frame]"]
+    for i, text in enumerate(lines):
+        cu = bpy.data.curves.new(f"L{i}", "FONT")
+        cu.body, cu.size = text, os_ * (0.075 if i == 0 else 0.058)
+        t = bpy.data.objects.new(f"L{i}", cu)
+        t.data.materials.append(mat)
+        s.collection.objects.link(t)
+        t.parent = cam
+        t.location = (-os_ * 0.47, os_ * (0.41 - 0.075 * i), -1.0)
+    s.render.filepath = path
+    bpy.ops.render.render(write_still=True)
+
+
+def tiles_to_png(rows, out_path):
+    """rows: list of rows of PNG paths (top row first) -> one PNG."""
+    strips = []
+    for row in rows:
+        tiles = []
+        for path in row:
+            img = bpy.data.images.load(path)
+            px = np.empty(img.size[0] * img.size[1] * 4, dtype=np.float32)
+            img.pixels.foreach_get(px)
+            tiles.append(px.reshape(img.size[1], img.size[0], 4))
+        strips.append(np.concatenate(tiles, axis=1))
+    sheet = np.concatenate(strips[::-1], axis=0)  # Blender images are bottom-up
+    sheet = np.floor(sheet * 255 / 8) * 8 / 255  # 32 levels per channel: ~1/7 the PNG size, no visible banding on grey
     out = bpy.data.images.new("sheet", sheet.shape[1], sheet.shape[0])
     out.pixels.foreach_set(sheet.ravel())
-    out.filepath_raw, out.file_format = OUT, "PNG"
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    out.filepath_raw, out.file_format = out_path, "PNG"
     out.save()
-    print(f"[RK] station sheet {OUT} ({os.path.getsize(OUT)} bytes): {names}")
+    print(f"[RK] sheet {out_path} ({os.path.getsize(out_path)} bytes)")
+
+
+def contact():
+    d = os.path.join(ROOT, "Artifacts", "Renders", "RK_Contact")
+    rows = []
+    for it in P["items"]:
+        row = []
+        for lod, view in (("LOD0", "34"), ("LOD0", "side"), ("LOD1", "34"), ("LOD2", "34"), ("LOD3", "34")):
+            path = os.path.join(d, f"{it['id']}_{lod}_{view}.png")
+            render_tile(it["id"], lod, view, path)
+            row.append(path)
+        rows.append(row)
+    tiles_to_png(rows, CONTACT)
+
+
+def main(names):
+    paths = []
+    for n in names:
+        st = json.load(open(os.path.join(ROOT, AR["out_dir"], f"{n}.json"), encoding="utf-8"))
+        paths.append(os.path.join(ROOT, "Artifacts", "Renders", f"RK_Station_{n}.png"))
+        render_station(st, paths[-1])
+    tiles_to_png([paths[:2], paths[2:4]], OUT)
+    print(f"[RK] stations: {names}")
 
 
 if __name__ == "__main__":
     argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
-    main(argv or ["POS_02", "POS_06", "POS_07", "POS_09"])
+    if argv[:1] == ["contact"]:
+        contact()
+    else:
+        main(argv or ["POS_02", "POS_06", "POS_07", "POS_09"])

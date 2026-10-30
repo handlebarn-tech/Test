@@ -38,17 +38,17 @@
   "UNDER_UPPER": {
    "fixture": "POS_09",
    "z_m": 0.45,
-   "gap": "anchor id pending ROOM_FIXTURES rev7 (under-shelf heights/depth not in the TI set)"
+   "gap": "GAP-RK-LAYOUT: under-counter shelf heights and depth are not in the TI set (TI A940 det. 11 says a two-drawer POS cabinet; CCTV shows open shelves); open with Nolan via the Hub (PROC-006b handoff Q1)"
   },
   "UNDER_LOWER": {
    "fixture": "POS_09",
    "z_m": 0.12,
-   "gap": "anchor id pending ROOM_FIXTURES rev7 (under-shelf heights/depth not in the TI set)"
+   "gap": "GAP-RK-LAYOUT: under-counter shelf heights and depth are not in the TI set (TI A940 det. 11 says a two-drawer POS cabinet; CCTV shows open shelves); open with Nolan via the Hub (PROC-006b handoff Q1)"
   },
   "UNDER_UPPER_EDGE": {
    "fixture": "POS_09",
    "z_m": 0.45,
-   "gap": "anchor id pending ROOM_FIXTURES rev7 (under-shelf heights/depth not in the TI set)"
+   "gap": "GAP-RK-LAYOUT: under-counter shelf heights and depth are not in the TI set (TI A940 det. 11 says a two-drawer POS cabinet; CCTV shows open shelves); open with Nolan via the Hub (PROC-006b handoff Q1)"
   },
   "STAND_LOWER": {
    "fixture": "POS_09",
@@ -59,12 +59,13 @@
   "STAND_RAIL": {
    "fixture": "POS_09",
    "z_m": 0.762,
-   "_src": "stand top 2.5 ft (REFERENCES_INDEX 2.2, Low-Med), edge of rev7 stand_rect facing the operator (the stand is on the operator's right, REFERENCES_INDEX 2.2)"
+   "_src": "stand top 2.5 ft (REFERENCES_INDEX 2.2, Low-Med), edge of rev7 stand_rect facing the operator (the stand is on the operator's right, REFERENCES_INDEX 2.2). Hanging items: pos_m is the item's attach point (inside top of its hook) on this edge; yaw -90 puts the hook over the edge and the bottle on the operator side (spec RK-07)",
+   "gap": "GAP-REG-8: rail/edge section of the stand top not measured; hook throat sized for a <= 25 mm edge"
   },
   "STAND_EDGE": {
    "fixture": "POS_09",
    "z_m": 0.762,
-   "_src": "as STAND_RAIL"
+   "_src": "stand top 2.5 ft (REFERENCES_INDEX 2.2, Low-Med), edge of rev7 stand_rect facing the operator; draped items hang over it"
   },
   "FLOOR_STAND": {
    "fixture": "Trash_Small_POS_09",
@@ -264,7 +265,7 @@
     -0.1246,
     0.762
    ],
-   "yaw_deg": 90.0,
+   "yaw_deg": -90.0,
    "condition": {
     "wear_scale": 1.19,
     "fill_level": 0.03

@@ -8595,7 +8595,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -8641,7 +8641,9 @@
       ],
       "export": "Art/Exports/Procedural/PROC_RK_Keyboard.fbx",
       "export_sha256": "b12505f48e44b9f5",
-      "gaps": [],
+      "gaps": [
+        "GAP-REG-11"
+      ],
       "generator": "register_kit",
       "lods": {
         "LOD0": {
@@ -9017,7 +9019,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -10168,7 +10170,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -10758,7 +10760,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -11182,7 +11184,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -11706,7 +11708,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -11933,7 +11935,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -12164,7 +12166,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -13018,7 +13020,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -13705,7 +13707,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -13742,19 +13744,19 @@
         {
           "center_unity_xyz": [
             0.0,
-            0.1325,
+            0.1459,
             0.0
           ],
           "name": "Body",
           "size_unity_xyz": [
             0.094,
-            0.265,
-            0.09
+            0.2918,
+            0.124
           ]
         }
       ],
       "export": "Art/Exports/Procedural/PROC_RK_SprayBottle_ISO.fbx",
-      "export_sha256": "feb64ee76ffe8ba3",
+      "export_sha256": "dc680f44381ed4da",
       "gaps": [
         "GAP-REG-8"
       ],
@@ -13766,12 +13768,12 @@
               "bounds_m_blender_xyz": {
                 "max": [
                   0.047,
-                  0.04925,
+                  0.0356,
                   0.205
                 ],
                 "min": [
                   -0.047,
-                  -0.01075,
+                  -0.0244,
                   0.0
                 ]
               },
@@ -13779,7 +13781,7 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "152a1653d98dec69",
+              "geometry_sha256": "1a8ad638d6ea7f9a",
               "material_slots": [
                 "M_Proc_RK_Bottle_White"
               ],
@@ -13799,12 +13801,12 @@
               "bounds_m_blender_xyz": {
                 "max": [
                   0.013895,
-                  0.027449,
+                  0.013799,
                   0.210059
                 ],
                 "min": [
                   0.002095,
-                  0.017051,
+                  0.003401,
                   0.004754
                 ]
               },
@@ -13812,7 +13814,7 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "17dd1e4798613294",
+              "geometry_sha256": "db888cd71ef518d1",
               "material_slots": [
                 "M_Proc_RK_Straw"
               ],
@@ -13828,16 +13830,49 @@
               ],
               "verts": 36
             },
+            "PROC_RK_SprayBottle_ISO_Hook_LOD0": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.021304,
+                  0.0629,
+                  0.2918
+                ],
+                "min": [
+                  -0.021304,
+                  -0.015704,
+                  0.2092
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "c37bc49dc55cc86a",
+              "material_slots": [
+                "M_Proc_RK_Metal"
+              ],
+              "size_m_unity_xyz": [
+                0.04261,
+                0.0826,
+                0.0786
+              ],
+              "tris": 1036,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 520
+            },
             "PROC_RK_SprayBottle_ISO_Label_LOD0": {
               "bounds_m_blender_xyz": {
                 "max": [
                   0.045856,
-                  0.003438,
+                  -0.010212,
                   0.07
                 ],
                 "min": [
                   -0.045856,
-                  -0.01135,
+                  -0.025,
                   0.02
                 ]
               },
@@ -13845,7 +13880,7 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "419c719838e492f4",
+              "geometry_sha256": "8dc755c396fe7768",
               "material_slots": [
                 "M_Proc_RK_Label_White"
               ],
@@ -13865,12 +13900,12 @@
               "bounds_m_blender_xyz": {
                 "max": [
                   0.045,
-                  0.04725,
+                  0.0336,
                   0.12
                 ],
                 "min": [
                   -0.045,
-                  -0.00875,
+                  -0.0224,
                   0.002
                 ]
               },
@@ -13878,7 +13913,7 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "e11c557b5c58847d",
+              "geometry_sha256": "3a430b72ada219fb",
               "material_slots": [
                 "M_Proc_RK_Liquid"
               ],
@@ -13898,12 +13933,12 @@
               "bounds_m_blender_xyz": {
                 "max": [
                   0.0172,
-                  0.03645,
+                  0.0228,
                   0.265
                 ],
                 "min": [
                   -0.0172,
-                  -0.04925,
+                  -0.0629,
                   0.169488
                 ]
               },
@@ -13911,7 +13946,7 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "a1cdc830298f406a",
+              "geometry_sha256": "5ac71a3a3368c730",
               "material_slots": [
                 "M_Proc_RK_Trigger_Red"
               ],
@@ -13930,10 +13965,10 @@
           },
           "size_m_unity_xyz": [
             0.094,
-            0.265,
-            0.0985
+            0.2918,
+            0.1258
           ],
-          "tris": 4124
+          "tris": 5160
         },
         "LOD1": {
           "objects": {
@@ -13941,12 +13976,12 @@
               "bounds_m_blender_xyz": {
                 "max": [
                   0.047,
-                  0.04925,
+                  0.0356,
                   0.205
                 ],
                 "min": [
                   -0.047,
-                  -0.01075,
+                  -0.0244,
                   0.0
                 ]
               },
@@ -13954,7 +13989,7 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "6a5132b987cad735",
+              "geometry_sha256": "7a430aa1b210f6bb",
               "material_slots": [
                 "M_Proc_RK_Bottle_White"
               ],
@@ -13974,12 +14009,12 @@
               "bounds_m_blender_xyz": {
                 "max": [
                   0.013895,
-                  0.027449,
+                  0.013799,
                   0.210059
                 ],
                 "min": [
                   0.002095,
-                  0.017051,
+                  0.003401,
                   0.004754
                 ]
               },
@@ -13987,7 +14022,7 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "17dd1e4798613294",
+              "geometry_sha256": "db888cd71ef518d1",
               "material_slots": [
                 "M_Proc_RK_Straw"
               ],
@@ -14003,16 +14038,49 @@
               ],
               "verts": 36
             },
+            "PROC_RK_SprayBottle_ISO_Hook_LOD1": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.021316,
+                  0.0629,
+                  0.2918
+                ],
+                "min": [
+                  -0.021316,
+                  -0.015716,
+                  0.209441
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "bc90f8f279fe28fb",
+              "material_slots": [
+                "M_Proc_RK_Metal"
+              ],
+              "size_m_unity_xyz": [
+                0.04263,
+                0.08236,
+                0.07862
+              ],
+              "tris": 416,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 210
+            },
             "PROC_RK_SprayBottle_ISO_Label_LOD1": {
               "bounds_m_blender_xyz": {
                 "max": [
                   0.045856,
-                  0.003438,
+                  -0.010212,
                   0.07
                 ],
                 "min": [
                   -0.045856,
-                  -0.01135,
+                  -0.025,
                   0.02
                 ]
               },
@@ -14020,7 +14088,7 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "50bc467332ad77af",
+              "geometry_sha256": "d57606adce71626a",
               "material_slots": [
                 "M_Proc_RK_Label_White"
               ],
@@ -14040,12 +14108,12 @@
               "bounds_m_blender_xyz": {
                 "max": [
                   0.045,
-                  0.04725,
+                  0.0336,
                   0.12
                 ],
                 "min": [
                   -0.045,
-                  -0.00875,
+                  -0.0224,
                   0.002
                 ]
               },
@@ -14053,7 +14121,7 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "0638e2895c94c244",
+              "geometry_sha256": "3280baeba51b472c",
               "material_slots": [
                 "M_Proc_RK_Liquid"
               ],
@@ -14073,12 +14141,12 @@
               "bounds_m_blender_xyz": {
                 "max": [
                   0.0172,
-                  0.03645,
+                  0.0228,
                   0.265
                 ],
                 "min": [
                   -0.0172,
-                  -0.04925,
+                  -0.0629,
                   0.169488
                 ]
               },
@@ -14086,7 +14154,7 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "db4b9af3b9358f35",
+              "geometry_sha256": "a7eb120ea3ddc3f6",
               "material_slots": [
                 "M_Proc_RK_Trigger_Red"
               ],
@@ -14105,10 +14173,10 @@
           },
           "size_m_unity_xyz": [
             0.094,
-            0.265,
-            0.0985
+            0.2918,
+            0.1258
           ],
-          "tris": 964
+          "tris": 1380
         },
         "LOD2": {
           "objects": {
@@ -14116,12 +14184,12 @@
               "bounds_m_blender_xyz": {
                 "max": [
                   0.047,
-                  0.04925,
+                  0.0356,
                   0.205
                 ],
                 "min": [
                   -0.047,
-                  -0.01075,
+                  -0.0244,
                   0.0
                 ]
               },
@@ -14129,7 +14197,7 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "73254aaa34f177fe",
+              "geometry_sha256": "54f45cc976ace79e",
               "material_slots": [
                 "M_Proc_RK_Bottle_White"
               ],
@@ -14145,16 +14213,49 @@
               ],
               "verts": 72
             },
+            "PROC_RK_SprayBottle_ISO_Hook_LOD2": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.021363,
+                  0.0629,
+                  0.2918
+                ],
+                "min": [
+                  -0.021363,
+                  -0.015763,
+                  0.209441
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "35850594ce3b2152",
+              "material_slots": [
+                "M_Proc_RK_Metal"
+              ],
+              "size_m_unity_xyz": [
+                0.04273,
+                0.08236,
+                0.07866
+              ],
+              "tris": 236,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 120
+            },
             "PROC_RK_SprayBottle_ISO_Trigger_LOD2": {
               "bounds_m_blender_xyz": {
                 "max": [
                   0.015,
-                  0.03645,
+                  0.0228,
                   0.265
                 ],
                 "min": [
                   -0.015,
-                  -0.04925,
+                  -0.0629,
                   0.201
                 ]
               },
@@ -14162,7 +14263,7 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "224472967b185b4b",
+              "geometry_sha256": "949734dfb971861a",
               "material_slots": [
                 "M_Proc_RK_Trigger_Red"
               ],
@@ -14181,10 +14282,10 @@
           },
           "size_m_unity_xyz": [
             0.094,
-            0.265,
-            0.0985
+            0.2918,
+            0.1258
           ],
-          "tris": 240
+          "tris": 476
         },
         "LOD3": {
           "objects": {
@@ -14192,12 +14293,12 @@
               "bounds_m_blender_xyz": {
                 "max": [
                   0.047,
-                  0.045,
+                  0.0365,
                   0.205
                 ],
                 "min": [
                   -0.047,
-                  -0.015,
+                  -0.0235,
                   0.0
                 ]
               },
@@ -14205,7 +14306,7 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "5702ebc458ee6995",
+              "geometry_sha256": "436f2285afd079db",
               "material_slots": [
                 "M_Proc_RK_Bottle_White"
               ],
@@ -14221,16 +14322,49 @@
               ],
               "verts": 8
             },
+            "PROC_RK_SprayBottle_ISO_Hook_LOD3": {
+              "bounds_m_blender_xyz": {
+                "max": [
+                  0.0018,
+                  0.062,
+                  0.2918
+                ],
+                "min": [
+                  -0.0018,
+                  0.0302,
+                  0.211
+                ]
+              },
+              "geometry": {
+                "degenerate_faces": 0,
+                "non_manifold_edges": 0
+              },
+              "geometry_sha256": "732c88bb3ffcbe70",
+              "material_slots": [
+                "M_Proc_RK_Metal"
+              ],
+              "size_m_unity_xyz": [
+                0.0036,
+                0.0808,
+                0.0318
+              ],
+              "tris": 24,
+              "uv_maps": [
+                "UVMap_Main",
+                "UVMap_Label"
+              ],
+              "verts": 16
+            },
             "PROC_RK_SprayBottle_ISO_Trigger_LOD3": {
               "bounds_m_blender_xyz": {
                 "max": [
                   0.015,
-                  0.035,
+                  0.0265,
                   0.265
                 ],
                 "min": [
                   -0.015,
-                  -0.045,
+                  -0.062,
                   0.205
                 ]
               },
@@ -14238,14 +14372,14 @@
                 "degenerate_faces": 0,
                 "non_manifold_edges": 0
               },
-              "geometry_sha256": "573cbdd1e4366b33",
+              "geometry_sha256": "60934d53e8456ad9",
               "material_slots": [
                 "M_Proc_RK_Trigger_Red"
               ],
               "size_m_unity_xyz": [
                 0.03,
                 0.06,
-                0.08
+                0.0885
               ],
               "tris": 12,
               "uv_maps": [
@@ -14257,15 +14391,15 @@
           },
           "size_m_unity_xyz": [
             0.094,
-            0.265,
-            0.09
+            0.2918,
+            0.124
           ],
-          "tris": 24
+          "tris": 48
         }
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -14273,11 +14407,12 @@
         ],
         "attach_point_unity_xyz": [
           0.0,
-          0.205,
-          -0.015
+          0.2882,
+          -0.047
         ],
         "facing": "-Y Blender / +Z Unity faces the operator",
         "fixed_every_register": false,
+        "hangs": "S-hook over the stand-top edge (DEC-104 R3, spec RK-07); attach point = inside top of the hook, on the edge",
         "kind": "spray_bottle",
         "materials": "preview colours; 2K PBR set pending PROC-005 Q0.2/Q0.3",
         "placements": "Art/Exports/Procedural/RegisterStations/POS_xx.json (register_arranger.py)",
@@ -14660,7 +14795,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -15084,7 +15219,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -15476,7 +15611,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -15999,7 +16134,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
@@ -16456,7 +16591,7 @@
       },
       "own_sheet": true,
       "params": "Tools/Blender/params/register_kit.json",
-      "params_sha256": "caf200c1e8cef438",
+      "params_sha256": "094fff8bb7aa9189",
       "register_kit": {
         "anchor_id": "per station: ROOM_FIXTURES rev7 POS_xx / Trash_Small_POS_xx",
         "anchors": [
