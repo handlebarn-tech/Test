@@ -2,17 +2,15 @@
   "asset_id": "PROC_RK_SprayBottle_ISO",
   "collision_boxes": 1,
   "errors": [],
-  "export_sha256": "feb64ee76ffe8ba3",
+  "export_sha256": "dc680f44381ed4da",
   "generator": "register_kit",
   "lod_tris": {
-    "LOD0": 4124,
-    "LOD1": 964,
-    "LOD2": 240,
-    "LOD3": 24
+    "LOD0": 5160,
+    "LOD1": 1380,
+    "LOD2": 476,
+    "LOD3": 48
   },
-  "params_sha256": "caf200c1e8cef438",
+  "params_sha256": "6eb5104cb77c87e3",
   "passed": true,
-  "warnings": [
-    "LOD0 4124 tris below the DEC-084 guide minimum 5000 (too simple?)"
-  ]
+  "warnings": []
 }

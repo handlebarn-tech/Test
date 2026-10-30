@@ -77,7 +77,7 @@ def arrange(st, p, seed):
         r = (u - w / 2, u + w / 2, v - d / 2, v + d / 2)
         if not edge_or_point and (r[0] < zn[0] - 1e-6 or r[1] > zn[1] + 1e-6 or r[2] < zn[2] - 1e-6 or r[3] > zn[3] + 1e-6):
             return None
-        if not edge_or_point and anchor in ("UNDER_UPPER", "UNDER_LOWER") and r[2] > zn[2] + 0.06:
+        if not edge_or_point and anchor == "UNDER_SHELF" and r[2] > zn[2] + 0.06:
             return None  # shelf stock sits at the open front, not pushed to the back
         for t in taken.get(anchor, []):
             if r[0] < t[1] + clr and t[0] < r[1] + clr and r[2] < t[3] + clr and t[2] < r[3] + clr:
