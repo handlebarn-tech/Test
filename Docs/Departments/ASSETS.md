@@ -25,7 +25,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30 (Assets lead `local_172b2109-6384-4914
 |---|---|---|---|
 | PROC-005 toolkit integration + checklist fixes (DEC-092) | Agent subagent (lead) | new worktree; base `claude/clever-lamport-837e7f` | resumed 2026-10-30: wire shelving fix → remaining families |
 | IMP-003 rolling toolkit audit | Agent subagent (lead) | new worktree; base `claude/brave-brattain-30c797` | rebuilt round 3 from scratch, then rounds 4–6; old §R3 and `review/wave-5t` superseded (Hub: not merged); capped at round 3 this pass (weekly limit 67% used) |
-| PROC-006 register kit spec (phase 1) | Agent subagent (lead) | new worktree off `main` | evidence spec `Docs/Assets/Specs/REGISTER_KIT.md` |
+| PROC-006 register kit spec (phase 1) | done (subagent retired) | `worktree-agent-a5f8a932c9a5f07a9` @ 1070e9c | lead accepted; in review with Docs 2. 12 items, 10 evidenced (4 low-confidence), GAP-REG-1..9. Lead decision: the evidenced trash bin joins phase 2 |
 | ASSET-004 MPFB2 customers | Agent subagent (lead) | new worktree; base `claude/task-asset-004` | resumed 2026-10-30; Docs reviewer `local_99d7e5b7…` |
 
 ## Queue (lead re-orders within DEC-096)
@@ -39,4 +39,10 @@ _Lead keeps this ≤15 lines._ 2026-10-30 (Assets lead `local_172b2109-6384-4914
 
 ## Blockers / Questions for Nolan
 - None open (UV layout settled by DEC-097).
-- No questions for Nolan.
+- Questions for Nolan (FOR NOLAN, via the Hub; from PROC-006, GAP-REG placeholders until answered):
+  1. Is there a mouse at each register, and on which side?
+  2. Is there a label printer at every register?
+  3. Which spray bottle hangs from the scale stand, and where on it?
+  4. What are the white and grey boxes under the counter?
+  5. Which cleaning supplies are kept there, and what colour is the rag?
+  6. Does the receipt printer feed out the top or the front?
