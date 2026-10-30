@@ -107,3 +107,18 @@ These gaps are defined, with placeholders and owners, in the spec named; that sp
 - GAP-CF-06 | store | Which register the player works | GM floor-map assignment, CF§5.0 | Nolan | CLOSED by DEC-079 (restated DEC-103 (7))
 - GAP-CF-07 | store | A second (buzzed) door after the ID stand | none | Nolan | CLOSED by DEC-103 (3): no
 - GAP-CF-08 | store | Who helps when check-in backs up | no helper logic | Nolan | CLOSED by DEC-103 (5): check-in never backs up
+
+## PROC-006 register kit (see `Docs/Assets/Specs/REGISTER_KIT.md` GAP register; values in `Tools/Blender/params/register_kit.json`; registered from the PROC-006c handoff, REVIEW-PROC006b m6)
+- GAP-REG-1 | asset | receipt printer depth/height (width ≈ 5.8 in measured in CEN, Low; top exit per DEC-104 R6; 80 mm paper per OFFICE_FINDINGS F3) | Low (80 mm thermal class convention) | closer register still / site measure
+- GAP-REG-2 | asset | label printer depth/height and lid colour (width ≈ 7.4 in measured in WIDE; orange lid per R2C3; at every register, placement varies per DEC-104 R2) | Low | closer still / site measure
+- GAP-REG-3 | asset | mouse type/colour/size (right of the keyboard at every register, DEC-104 R1; not visible in any still) | none (black wired optical, convention size) | closer still
+- GAP-REG-4 | asset | folded bag bundle and tape roll sizes | Low | DEC-091 R5 bag dimensions
+- GAP-REG-5 | asset | paper-stock box sizes (contents: receipt/label stock per DEC-104 R4, Med) | Low | site measure
+- GAP-REG-6 | asset | personal items set at registers (only a CEN tumbler identifiable) | Low | more stills
+- GAP-REG-7 | asset | wipes pack size (sparse at registers per DEC-104 R5; DEC-021 wipes on stand shelves) | Low | site measure
+- GAP-REG-8 | asset | ISO spray bottle and S-hook size, and the section of the stand-top edge it hangs on (bottle type from the deli cart, Med; hanging per DEC-104 R3) | Low | site measure / closer still of a scale stand
+- GAP-REG-9 | asset | rag size and where it lies (blue per DEC-104 R5) | Low | more stills
+- GAP-REG-10 | asset | small register bin size and type per station (DEC-104 R7; office-bin convention 11.5 × 14 in vs rev7 `Trash_Small_POS_xx` 0.9 × 0.9 × 1.5 ft; see the PROC-006b World item 1) | Low | World picks one / site measure
+- GAP-REG-11 | asset | keyboard depth, case and key heights (17.5 in width is the only cited value) | none (full-size keyboard convention) | closer still
+- GAP-RK-LAYOUT | store | cm-level arrangement on the POS top (keyboard/printer slots, monitor depth position) and the exact height/depth of the single mid-height under-counter shelf (DEC-124; placeholder z 0.43 m, 0.5 m deep) | Low | site measure or a still with a scale reference at shelf depth; World's monitor-depth answer
+- GAP-RK-WEIGHTS | store | per-station presence weights of the optional dressing items (DEC-104 non-uniform rule gives no rates) | none (designer weights) | playtest tuning

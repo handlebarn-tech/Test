@@ -10,7 +10,6 @@ Hub-owned; the **only live state record** (DEC-117). A fresh Hub resumes from `D
 ## In flight
 | Session | Task | Branch @ sha | State → next Hub action |
 |---|---|---|---|
-| `dispo-rev-proc006c` `local_a19963f0-4342-49d1-ab7a-d746810628b7` | **REVIEW-PROC006c** | worker `claude/zealous-kalam-4192dd` @ d4c4bc3 (worker `local_796c7c2a`, idle, done) | In review → `review/proc006c`. |
 | `dispo-art008` `local_77fd945b-ecaf-4432-8c51-54b18ed9dc50` | **ART-008** graybox final pass (Unity slot) | `claude/festive-hamilton-c0ced4` @ 3890936 (no work yet; based on the REF-013 fix) | **Resumed** after REF-013 merged (REVIEW-REF013b PASS). Rebase/merge main first. |
 | `dispo-game026` `local_9bc94fb7-d677-4076-81be-83317f26bbf8` | **GAME-026** customer flow (Unity slot) | `task/GAME-026` @ 5d7e543 (WIP, 22 files, "uncompiled"; includes GAME-009 m3/m4 and the GAME-025 M1 SliceDoor fallback) | **Resumed 19:40.** compile, finish CF §4–5 deliverables, handoff, `ready for review`. Owns the Slice files until merged (GAME-017a waits). |
 | `dispo-proc-005-fixture-f` `local_335db39d-0968-49fa-846c-808a2abb2158` | **PROC-005** fixture families fix round (REVIEW-PROC5 FAIL: DEC-084 look, citation conflicts) | `claude/elated-satoshi-3a4844` @ 0adfba7 (PBR finish library, Eevee contact sheets, manifest lock) | **Resumed 19:40;** `ready for review` when the eight families pass the packet's own checklist. At review: the Hub decides whether the "Left, in order" list closes PROC-005 or moves to PROC-010 (registered Later). |
