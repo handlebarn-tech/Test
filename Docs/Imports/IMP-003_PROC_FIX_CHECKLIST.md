@@ -38,13 +38,13 @@ Round 3 will arrive as more deltas; IMP-003 will append items here.
 ## 1. Core: `Tools/Blender/run_generator.py`, `Tools/Blender/proclib.py`
 Start from drop 1's copies; they are ours plus additions only. Do **not** use any `.patch` file: they are whole-file CRLF→LF rewrites, drop 2's is 0 bytes, and drop 3's don't apply to `main`. [R5, T1]
 
-- [ ] **C1 collision** (`run_generator.py`, every generator's `COL_*`). Unity has no postprocessor, so `COL_` meshes would render as blue boxes. Implement the Hub's choice (decision pending):
+- [ ] **C1 collision** (`run_generator.py`, every generator's `COL_*`). Unity has no postprocessor, so `COL_` meshes would render as blue boxes. **Decided (DEC-086): option (a), manifest boxes.** No `COL_*` render meshes in the FBX:
   - **(a) recommended:** generators return `collision_boxes` (Unity centre + size) in `extra`; the Unity builder adds `BoxCollider`s; delete the `COL_` meshes and `require_collision`;
   - **(b)** keep `COL_` and add a Unity `AssetPostprocessor` (`*_COL_*` → MeshCollider, renderer removed; non-convex, so not on moving rigidbodies).
   - [R1, S4]
 - [ ] **C2 manifest churn** (`run_generator.py`). Add `collision` to the entry only when non-empty, and don't add a `validation` key to existing assets. Check: rerun `deli_jar` and expect a byte-identical manifest entry. [R2]
-- [ ] **C3 validation JSON.** It is written only after a pass, so `errors` is always empty. Implement the Hub's choice: write it before the `raise` with the error list, or remove it. [R3]
-- [ ] **C4 `mesh_stats()`** (drop 3 / round-2 snapshot change). Take the empty-mesh `raise`. Bounds, material slots and non-manifold/degenerate counts only on the Hub's OK, and **never gate on non-manifold**: touching boxes and the jar's open label quads trip it. Make it one deliberate manifest re-baseline commit. [T2]
+- [ ] **C3 validation JSON.** It is written only after a pass, so `errors` is always empty. **Decided (DEC-086):** write it **on failure** too, before the `raise`, with the error list; keep it as the PROC gate. [R3]
+- [ ] **C4 `mesh_stats()`** (drop 3 / round-2 snapshot change). Take the empty-mesh `raise`. Bounds, material slots and non-manifold/degenerate counts are **accepted as diagnostics (DEC-086)**; **never gate on non-manifold**: touching boxes and the jar's open label quads trip it. Make it one deliberate manifest re-baseline commit. [T2]
 - [ ] **C5 opt-in checks** (claimed by ChatGPT, not delivered). If wanted, add params-flagged checks in `generate_asset`: `check_origin_bottom_centre` (min Blender z = 0, x/y bbox centred), `fail_on_degenerate`, `check_material_slots`. Default off, with the existing generators' output unchanged. Test them on planted bad meshes: an open quad, a zero-area face, an off-origin object. [A2]
 - [ ] **C6 helpers:** add `add_box`, `add_cylinder_between`, `add_vertical_cylinder` (drop 1) and `add_beveled_box` (drop 3 snapshot). Move `from mathutils import …` to the top imports. Fix the missing blank lines at the function seams. Remove the "existing PROC helpers unchanged" comment if C4 lands. [P1, T1]
 - [ ] **C7 alpha patch:** apply `Round2/patches/proclib_preserve_rgba_alpha.patch` (`material()` alpha defaults to `rgba[3]`). Verified: no existing caller changes.
@@ -88,7 +88,11 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
   | `Rack_CleaningSupplies_JC` | 2.0 × 1.2 × 5.0 | janitor supply rack |
 
   [dimension table drop 1; janitor §7]
-- [ ] **W7** shelf count, post/wire/collar/caster/foot sizes: GAP-PROC-13 until Nolan answers (handoff Q1/Q2).
+- [ ] **W7 real values (DEC-088, closes GAP-PROC-13 for these):**
+  - **FOH rolling racks** (`Rack_Rolling_1–4`): **3 shelves including the top**; **small wheels**, **4 casters**, 2 per side at the ends.
+  - **BOH chrome runs**: **4-ft sections** (`bays`, W5). The **middle sections also roll** (casters); end sections are fixed (feet). This needs per-section `caster_enabled`.
+  - Post, wire, collar and caster/foot dimensions stay GAP-PROC-13.
+- [ ] **W8 REF follow-up for the PROC worker (do not guess; Hub-confirmed open item):** RF `Rack_East_Wall` is 8.7 ft and `Rack_West_Run` 8.0 ft (2-bay). In 4-ft sections that is 2 sections, which leaves no "middle" section to roll, and 8.7 is not a multiple of 4. Model 2 fixed sections for now and list the run lengths/section counts for the next REF pass (GAP-127).
 
 ## 4. Register station: `generators/register_station.py`, `params/register_station.json`
 - [ ] **R1 remove `CashDrawer`** (variant + `_cash_drawer`): no cash-handling equipment (DEC-051, RI REF-009 rule). [C1]
@@ -99,7 +103,7 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
   - acrylic panel full width on the **counter-side edge**, 0.8–1.2 ft tall (not a 0.54 m back + side panel);
   - **white** scale body, blue LCD, clear round draft-shield bowl; one scale.
 - [ ] **R3** scanner variant: a presentation block is fine for the registers. The BOH `Scanner_Barcode` is a **handheld in a stand** (RF 0.4 × 0.7 × 0.6 ft); add it as a variant.
-- [ ] **R4** add keyboard (17.5 in convention, RI §2.2) and receipt-printer props. Card terminal: only if the Hub rules it a generic prop.
+- [ ] **R4** add keyboard (17.5 in convention, RI §2.2) and receipt-printer props. **Card terminal included** as a realistic unbranded prop (DEC-086, DEC-084).
 - [ ] **R5** monitor/stand sizes: GAP-PROC-14.
 
 ## 5. Register counter run (round 2): `generators/register_counter_run.py`, `params/register_counter_run.json`
@@ -108,7 +112,7 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [ ] **RC3** station components:
   - remove `cash_drawer`;
   - `scale_stand_slot` on the **floor, staff side, to the staff's right of the monitor** (RI §2.2), not at `y = h`;
-  - add keyboard/printer slots (card terminal per the Hub ruling).
+  - add keyboard, receipt-printer and **card-terminal** slots (DEC-086).
 - [ ] **RC4** countertop display case slot on the run (plan 1.4 × 1.4 ft at x 38–39.4, RI §1.5; "lit black glass", R3C2), using §15.
 - [ ] **RC5** per-station width: GAP.
 
@@ -117,7 +121,7 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [ ] **D2 shelf heights:** default to the store display family, a 34 in base then 1'-2" shelf pitch (TI §6.4, Med), instead of an even spread. Wall height: GAP.
 - [ ] **D3 slot count from data, not a fixed 7 × 4:** one jar per strain, house deli ×2 (DEC-079); ~77 jars (PP). Expose the slot grid as params; the game assigns strains.
 - [ ] **D4** keep slot size = `PROC_DeliJar` (6.0 × 10.25 × 5.5 in, REF-007) and bottom-centre anchors (already correct).
-- [ ] **D5 deli counter is an L** (bbox 14.0–34.2 × 18.0–25.2 ft, RI §1.5), "DELI STYLE" **teal/white checker tile front** (R2C1/R2C2; confirm with handoff Q5), with globe pendants at the west end. Replace the clear acrylic front. Height/depth: GAP (not in TI, GAP-113).
+- [ ] **D5 deli counter is an L** (bbox 14.0–34.2 × 18.0–25.2 ft, RI §1.5), "DELI STYLE" front = **plywood with a decorative wrap** (DEC-090, Med); the teal/white checker in R2C1/R2C2 is the **wrap print** (a texture on the plywood front, not real tile), with globe pendants at the west end. Replace the clear acrylic front. **No glass case on top is stated**: keep it as an optional placeholder param (GAP-PROC-14). Height/depth: GAP (not in TI, GAP-113).
 
 ## 7. Glass-door cooler + fridges: `generators/glass_door_cooler.py`, `params/glass_door_cooler.json`
 - [ ] **K1** 2-door = RF `Cooler_GlassDoor_2Door` **4.0 × 2.5 × 6.5 ft**, black frame, lit. Drop or keep SingleDoor as a demo only.
@@ -139,7 +143,7 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [ ] **O8** remove DrawerCart (no store evidence). Add the **deli prep cart** instead: RF `Cart_Deli_Prep` 2.5 × 1.6 × 2.9 ft, stainless 2-shelf utility cart; the only certified refill spot (DEC-079). Also `Cart_WireBasket` 1.5 × 1.5 × 2.5, black wire.
 
 ## 9. Break room: `generators/break_room.py`, `params/break_room.json`
-- [ ] **B1** lockers = RF `Lockers_Staff` **one unit 2.0 × 1.5 × 6.0 ft** (DEC-047/051 Q5, High), grey top. Door grid: GAP-126 until Nolan answers (handoff Q3). Hinge metadata must be LOD-independent (claimed fix, not delivered).
+- [ ] **B1** lockers = RF `Lockers_Staff` **one unit 2.0 × 1.5 × 6.0 ft** (DEC-047/051 Q5, High), grey top. Door grid **2 columns × 6 rows = 12 small doors** (DEC-088, Med; narrows GAP-126): `columns: 2`, `rows: 6`, each door ≈ 0.30 × 0.30 m in the 2.0 × 6.0 ft unit. Hinge metadata must be LOD-independent (claimed fix, not delivered).
 - [ ] **B2** bench = RF `Bench_Wood` 5.0 × 1.3 × 1.5 ft, wood plank on **black steel legs**.
 - [ ] **B3** board variants: `Board_Bulletin_West` 3.0 × 2.5 ft; `Board_Cork` (hall, wood frame) 1.8 × 2.6; `Whiteboard_West` 4.0 × 3.0 (red/white frame); office `Board_West_BlackFrame` 2.5 × 2.0; `Board_North_Fabric` 5.0 × 3.0 (grey fabric).
 - [ ] **B4** LunchTable and FirstAidBox: sizes already match RF; keep them.
@@ -219,7 +223,7 @@ Start from drop 1's copies; they are ours plus additions only. Do **not** use an
 - [ ] **M4** keep the `M_Proc_*` names as the Unity naming contract. Real HDRP materials are built in Unity, since the FBX carries names only.
 
 ## 20. ID-check stand, bag racks, sign blanks (round 2; low priority)
-- [ ] **I1** `id_check_stand`: validation fails (height 1.119 ≠ 1.08). Declare `height_m` as the top including the scanner, or exclude the scanner from the expected size. Location/size: GAP (handoff Q4).
+- [ ] **I1** `id_check_stand`: validation fails (height 1.119 ≠ 1.08). Declare `height_m` as the top including the scanner, or exclude the scanner from the expected size. Location: **entrance check-in ID stand** (DEC-086, from canon DEC-036 M2 / RES-001 O2/O3); the counter never re-checks. Size: GAP.
 - [ ] **I2** `bag_racks` ToolCaddy fails (handle tube radius above `h + handle_h`): add `handle_radius` to the expected height. The wall bag rack / exit dispenser have no store evidence; keep them optional. The real fixture is RF `Rack_Bags_Tools` (§3).
 - [ ] **I3** `sign_blanks` AFrame fails (legs splay past depth and height): clamp the leg endpoints inside `d/2` and `h`. The store uses a 3 × 3 video wall + menu screen 6.6 × 1.0 ft (RI §1.5); screen content is out of scope.
 
