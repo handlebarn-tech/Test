@@ -4,7 +4,7 @@ Hub-owned; the **only live state record** (DEC-117). A fresh Hub resumes from `D
 
 **Updated:** 2026-10-30 12:30 (playtest-2 intake, DEC-120..123). **Milestone:** PS1 done; Nolan has played `playtest2-741bb43` (findings `Docs/Design/PLAYTEST2_2026-10-30.md`). **Current milestone: M-B Believable store** (roadmap §2), now including the PT2 overhaul (REF-016 → ART-013, PROC-013, GAME-027). Exit = BUILD-008 candidate **plus QA-004 PASS on every PT1 + PT2 requirement in the build before Nolan gets it** (DEC-120). PS1b starts as soon as GAME-026 merges (GAME-017a).
 **Hub session:** the Hub Nolan started 2026-10-30 ~19:30 (main checkout; workers reply to it via the "From" link of its resume message). Earlier Hubs `local_c6267ff5`, `local_5c45166e`, `local_3dbae2f5` are idle and superseded (archive when convenient). Workers below were started by `local_c6267ff5`, so SendMessage by name fails: use `send_message` with the `local_…` id.
-**Structure:** Nolan → Hub → workers → fresh per-review reviewers → Hub merges (DEC-116/117). Nolan is cost-sensitive: no FYI messages, lean briefs (DEC-107).
+**Structure (DEC-128: lean Hub, all task work in sessions):** Nolan → Hub → workers → fresh per-review reviewers → Hub merges (DEC-116/117). Nolan is cost-sensitive: no FYI messages, lean briefs (DEC-107).
 
 ## In flight
 | Session | Task | Branch @ sha | State → next Hub action |
