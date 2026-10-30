@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1230" viewBox="0 0 1920 1230" font-family="Segoe UI, Arial, sans-serif">
+<title>CX-05 Dev debug panel (F3, debug builds only)</title>
+<rect width="1920" height="1080" fill="#15181c"/>
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="#2b3038" stroke="none" stroke-width="2"/>
+<text x="960.0" y="470" font-size="28" font-weight="400" fill="#4a525e" text-anchor="middle">first-person store view (graybox)</text>
+<rect x="120" y="70" width="1680" height="940" rx="8" fill="#0b0d10ee" stroke="#CC79A7" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="144" y="108" font-size="20" font-weight="700" fill="#CC79A7" text-anchor="start">DEBUG · dev build only · customer #07 · seed 4411</text>
+<text x="144" y="160" font-size="18" font-weight="700" fill="#56B4E9" text-anchor="start">TFS VALUES · engine output (what the tool was given and returned)</text>
+<rect x="144" y="172" width="776" height="4" rx="2" fill="#56B4E9" stroke="none" stroke-width="2"/>
+<text x="144" y="214" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">Query sent: “something relaxing”</text>
+<text x="144" y="254" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">Parsed: crit relax ≥ ‹n› · neg — · primary relax</text>
+<text x="144" y="294" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">Outcome: Ok</text>
+<text x="144" y="334" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">Candidates (TFS order):</text>
+<text x="144" y="374" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">  1 Strain A  ✓ Good fit</text>
+<text x="144" y="414" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">  2 Strain B  ✓ Good fit</text>
+<text x="144" y="454" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">  3 Strain C  ✓ Good fit</text>
+<text x="144" y="494" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">Workflows used: Details ×1, Compare ×0, Similar ×0</text>
+<text x="144" y="534" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">Player selected: Strain A (TFS #1)</text>
+<text x="980" y="160" font-size="18" font-weight="700" fill="#E69F00" text-anchor="start">GAMEPLAY VALUES · simulation + evaluation</text>
+<rect x="980" y="172" width="776" height="4" rx="2" fill="#E69F00" stroke="none" stroke-width="2"/>
+<text x="980" y="214" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">TRUE: relax · avoid sedation · budget $20 · tier 2</text>
+<text x="980" y="254" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">KNOWN: effect relaxing 💬</text>
+<text x="980" y="294" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">InformationCompleteness 0.30 · InformationRisk high</text>
+<text x="980" y="334" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">QuestionTolerance 0.60 · Depth desired 0.50 / actual 0.10</text>
+<text x="980" y="374" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">QueueCost ‹n› · Satisfaction ‹n›</text>
+<text x="980" y="414" font-size="18" font-weight="400" fill="#CC79A7" text-anchor="start">EVALUATION (uses true intent, DEC-052):</text>
+<text x="980" y="454" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">  BestAvailableResolution: ask Q3, then sell</text>
+<text x="980" y="494" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">  Utility best ‹n› / chosen ‹n› · Regret ‹n›</text>
+<text x="980" y="534" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">  DecisionQuality 0.41 (gameplay, not a fit)</text>
+<rect x="956" y="150" width="2" height="560" rx="1" fill="#3a414c" stroke="none" stroke-width="2"/>
+<text x="144" y="760" font-size="18" font-weight="700" fill="#CC79A7" text-anchor="start">REJECTION EXPLANATION (DP §114)</text>
+<text x="144" y="800" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">[TFS]  query used: “something relaxing” · card chosen: Strain A (TFS #1)</text>
+<text x="144" y="840" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">[GAME] not yet learned: stay functional (avoid sedation)</text>
+<text x="144" y="880" font-size="18" font-weight="400" fill="#f2f4f7" text-anchor="start">[GAME] outcome: ASK_LESS_SEDATING · cause: functional need had not been discovered</text>
+<rect x="96" y="54" width="1728" height="972" fill="none" stroke="#CC79A7" stroke-width="1.5" stroke-dasharray="10 8" class="note"/>
+<rect x="0" y="1080" width="1920" height="150" fill="#ffffff"/>
+<text x="24" y="1116" font-size="24" font-weight="700" fill="#111">CX-05 Dev debug panel (F3, debug builds only)  ·  1920×1080 @100% text  ·  pink = annotation (focus order, safe area)</text>
+<text x="24" y="1150" font-size="19" fill="#222">Two fixed columns with their own header colour and rule: TFS left, GAMEPLAY right; a value never moves between them. Evaluation oracle values are a labelled sub-block of GAMEPLAY.</text>
+<text x="24" y="1176" font-size="19" fill="#222">Rejection explanation: each line tagged [TFS] or [GAME]. Never 'the game knew the card was wrong'. Panel is non-modal, never takes focus, fixed 100 % text, F3 toggles (exists today).</text>
+<text x="24" y="1202" font-size="19" fill="#222">Shows the serving customer, else the last served. Hidden in release builds (Debug.isDebugBuild || editor, as today); none of these values exist in player UI.</text>
+</svg>
