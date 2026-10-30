@@ -42,6 +42,8 @@ Each item is presented and answered on its own (REJECT reasons stay per item, SL
 - **Concentrate row** (`Concentrate {g} / 5 g`) is built but hidden until PS3 (GAME-014). DEC-048: packaged goods count toward the caps (an edible ≈ 0.1 g). For PS3 the line shows its counted grams under the name (`counts as 0.1 g`) so the meter always adds up; the per-category numbers come from DES/COMP (GAP-COMP-02).
 
 ## 4. ID stand (ps1_04, ps1_05) — GAME-008
+> **DEC-103 / DEC-109 note (DES-005b):** the guest shows the ID again at the register, replacing "the counter never re-checks"; the ID panel below opens at the counter, and the cover prompt and stand walk are retired (`Specs/CONTROLS_FLOW_PS1.md` §4.4).
+
 DEC-048: a guard scans IDs at a stand directly **left inside the entrance**. CP§3's "check-in" is this stand; the UI calls it **ID stand** (see Q1).
 - **Prompt** (ps1_04): centred 800×300 card on rush start at `coverCheckInChance`: "⚠ The ID stand is backed up" / "Cover it for the next 3 arrivals?" / "Your counter line keeps waiting while you're away." Buttons **Cover the stand** (Y) and **Stay at counter** (N). The sim does not pause; it auto-declines after 8 s [GDD]. If it fires while a screen is open it waits until that screen closes.
 - **Getting there:** accept → world marker on the stand anchor + HUD line `◆ ID stand · {done}/3`. Interact (E) at the stand opens the panel. GAME-008 uses an entry anchor by name or `TEMP_CheckInDesk` (GAP-COMP-08).
@@ -84,6 +86,7 @@ Today's build: mouse + E / Esc / M / F3 (GAME-002). New keys avoid I, C, M, F3 a
 Focus order is the pink numbers in each frame. Default focus: register → line 1; prompt → Cover; ID panel → the card (no button) so a stray Enter cannot admit; Tab → Admit → Refuse. Keyboard focus nav is still unbuilt (GAME-002 open item); these keys work by direct binding meanwhile.
 
 ## 8. New strings (for `SliceLines.json`)
+Tone for every customer, toast-flavour, event and report line: `Docs/Design/TONE.md` (grounded deadpan, DEC-101 (8)).
 
 | Key | Text | Used by |
 |---|---|---|
@@ -97,6 +100,7 @@ Focus order is the pink numbers in each frame. Default focus: register → line 
 | `meterConcentrate` | Concentrate | GAME-014 (PS3) |
 | `meterValue` | {0} g / {1} g | GAME-007/009 |
 | `nearLimit` | ⚠ Near the 1 oz limit | GAME-007 |
+| `nearMedLimit` | ⚠ Near the 14-day limit | GAME-026 (REVIEW-PS1 m4; medical amber meter, [GDD]; DEC-106: patients may arrive with the allotment used) |
 | `overLimit` | Over the 1 oz limit (exists; red row adds ✗) | GAME-007 |
 | `trimHint` | Remove a line or step a weight down | GAME-007 |
 | `countsAs` | counts as {0} g | GAME-014 (PS3) |
