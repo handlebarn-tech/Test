@@ -93,17 +93,19 @@ namespace Dispo.Editor.Graybox
                     var h = string.IsNullOrEmpty(f.h) ? new L.Height { ft = f.hFt, gap = "ROOM_FIXTURES" } : layout.H(f.h);
                     var baseFt = string.IsNullOrEmpty(f.@base) ? f.baseFt : layout.H(f.@base).ft;
                     var mat = f.conf == "Low" ? mats["fixtureLow"] : mats["fixture"];
-                    var name = $"{f.id} [conf {f.conf}] [h={h.ft}ft {h.gap}]";
+                    var name = $"{f.id} [conf {f.conf}] [h={h.ft}ft {h.gap}]" + (string.IsNullOrEmpty(f.tag) ? "" : $" [{f.tag}]");
                     for (var i = 0; i < f.rects.Length; i++)
                     {
                         var partName = f.rects.Length == 1 ? name : $"{name} part{i}";
                         if (f.shape == "sphere") Sphere(fixParent, partName, f.rects[i], h.ft, mat);
-                        else Box(fixParent, partName, f.rects[i], baseFt, h.ft, mat, f.solid);
+                        else Box(fixParent, partName, f.rects[i], baseFt, h.ft, mat, f.solid).transform.rotation = Quaternion.Euler(0, f.yaw, 0);
                     }
                     fixtures++;
                 }
                 if (layout.stations?.zone == zone) fixtures += BuildStations(layout.stations, layout.H("counter").ft, fixParent, mats);
                 if (layout.jarSlots?.zone == zone) BuildJarShelves(layout.jarSlots, fixParent, mats["fixture"]);
+                var doors = (layout.doors ?? Array.Empty<L.Door>()).Where(d => d.zone == zone).ToList();
+                if (doors.Count > 0) BuildDoors(doors, Child(root, "Doors"), mats);
 
                 var anchorParent = Child(root, "Anchors");
                 foreach (var a in layout.anchors.Where(a => a.zone == zone)) Anchor(anchorParent, a.id, a.x, a.y, a.h, a.yaw);
@@ -199,7 +201,8 @@ namespace Dispo.Editor.Graybox
             return new L.Rect { x0 = cx - st.stand.scaleW / 2, x1 = cx + st.stand.scaleW / 2, y0 = cy - st.stand.scaleD / 2, y1 = cy + st.stand.scaleD / 2 };
         }
 
-        /// <summary>Anchor_POS_&lt;reg&gt; (budtender spot, facing the counter) for every station; SLICE_DESIGN §7 anchors at the slice station only (names must be unique).</summary>
+        /// <summary>Anchor_POS_&lt;reg&gt; (budtender spot, facing the counter) for every station; the slice station's Interact_* anchors (names must be unique).
+        /// ART-007: Anchor_ServiceCustomer / _ServicePlayer are SCENE_ANCHORS aliases now (layout anchors).</summary>
         static void StationAnchors(L.Stations st, float counterFt, Transform parent)
         {
             foreach (var p in st.list)
@@ -207,9 +210,6 @@ namespace Dispo.Editor.Graybox
                 var player = Point(p, st.playerOff);
                 Anchor(parent, $"Anchor_POS_{p.reg}", player.x, player.y, 0, Yaw(-StaffDir(p)));
                 if (p.reg != st.slice) continue;
-                var customer = Point(p, -st.customerOff);
-                Anchor(parent, "Anchor_ServiceCustomer", customer.x, customer.y, 0, Yaw(StaffDir(p)));
-                Anchor(parent, "Anchor_ServicePlayer", player.x, player.y, 0, Yaw(-StaffDir(p)));
                 var m = MonitorRect(st, p);
                 Anchor(parent, "Interact_Terminal", (m.x0 + m.x1) / 2, (m.y0 + m.y1) / 2, counterFt + st.monitorH / 2, Yaw(StaffDir(p)));
                 var sc = ScaleRect(st, p);
@@ -218,20 +218,36 @@ namespace Dispo.Editor.Graybox
             if (st.list.All(p => p.reg != st.slice)) throw new InvalidDataException($"stations.slice '{st.slice}' is not in stations.list");
         }
 
+        public static float[] Rows(L.JarSlots js, L.JarRun run) => run.rowsFt != null && run.rowsFt.Length > 0 ? run.rowsFt : js.rowsFt;
+
+        /// <summary>Slot positions, numbered by a seeded weighted draw without replacement (key u^(1/fill), highest first): whatever
+        /// count gameplay stocks from slot 0, each run ends up about as full as its fill share says (REFERENCES_INDEX 8.4).</summary>
         static IEnumerable<(float x, float y, float h, float yaw)> JarSlotPoints(L.JarSlots js)
         {
+            var all = new List<(double key, (float, float, float, float) p)>();
             foreach (var run in js.runs)
             {
                 float a0 = run.alongX ? run.r.x0 : run.r.y0, a1 = run.alongX ? run.r.x1 : run.r.y1;
                 var n = Mathf.FloorToInt((a1 - a0) / js.pitch + 0.001f);
                 var depth = run.alongX ? (run.r.y0 + run.r.y1) / 2 : (run.r.x0 + run.r.x1) / 2;
-                foreach (var row in js.rowsFt)
+                var fill = run.fill > 0 ? run.fill : 1f;
+                foreach (var row in Rows(js, run))
                     for (var i = 0; i < n; i++)
                     {
                         var along = a0 + js.pitch * (i + 0.5f);
-                        yield return run.alongX ? (along, depth, row, run.yaw) : (depth, along, row, run.yaw);
+                        var u = (Fnv($"{js.seed}/{run.id}/{row}/{i}") % 1000000 + 0.5) / 1000000.0;
+                        all.Add((Math.Pow(u, 1.0 / fill), run.alongX ? (along, depth, row, run.yaw) : (depth, along, row, run.yaw)));
                     }
             }
+            return all.OrderByDescending(s => s.key).Select(s => s.p);
+        }
+
+        /// <summary>FNV-1a, stable across runtimes (string.GetHashCode is not).</summary>
+        static uint Fnv(string s)
+        {
+            var h = 2166136261u;
+            foreach (var c in s) h = (h ^ c) * 16777619u;
+            return h;
         }
 
         static void JarSlotAnchors(L.JarSlots js, Transform parent)
@@ -243,8 +259,34 @@ namespace Dispo.Editor.Graybox
         static void BuildJarShelves(L.JarSlots js, Transform parent, Material mat)
         {
             foreach (var run in js.runs)
-                for (var k = 0; k < js.rowsFt.Length; k++)
-                    Box(parent, $"FX_JarShelf_{run.id}_row{k} [conf {js.conf}] [h={js.rowsFt[k]}ft {js.gap}]", run.r, js.rowsFt[k] - js.shelfT, js.shelfT, mat, true);
+            {
+                var rows = Rows(js, run);
+                for (var k = 0; k < rows.Length; k++)
+                    if (run.counter) Box(parent, $"FX_DeliBackCounter_{run.id} [conf {js.conf}] [h={rows[k]}ft {js.gap}]", run.r, 0, rows[k], mat, true);
+                    else Box(parent, $"FX_JarShelf_{run.id}_row{k} [conf {js.conf}] [h={rows[k]}ft {js.gap}]", run.r, rows[k] - js.shelfT, js.shelfT, mat, true);
+            }
+        }
+
+        /// <summary>DOORS.json leaves (REF-012 contract): Door_&lt;Id&gt;[_L|_R]_Hinge pivot at the hinge with the Door_&lt;Id&gt;[_L|_R] leaf child along
+        /// its local +X; a pair groups both pivots under Door_&lt;Id&gt;. Propped-open doors are built at closed yaw + openAngle. No interaction code (Gameplay).</summary>
+        static void BuildDoors(List<L.Door> doors, Transform parent, Dictionary<string, Material> mats)
+        {
+            foreach (var d in doors)
+            {
+                var group = d.pair ? Child(parent, d.id) : parent;
+                foreach (var l in d.leaves)
+                {
+                    var pivot = Child(group, l.pivot);
+                    pivot.position = L.ToWorld(l.x, l.y);
+                    pivot.rotation = Quaternion.Euler(0, l.yaw + (d.open ? l.openAngle : 0), 0);
+                    var leaf = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    leaf.name = l.name;
+                    leaf.transform.SetParent(pivot, false);
+                    leaf.transform.localPosition = new Vector3(l.w / 2, d.h / 2, 0) * L.Ft;
+                    leaf.transform.localScale = new Vector3(l.w, d.h, d.t) * L.Ft;
+                    leaf.GetComponent<MeshRenderer>().sharedMaterial = d.conf == "Low" ? mats["fixtureLow"] : mats["fixture"];
+                }
+            }
         }
 
         static void Anchor(Transform parent, string name, float x, float y, float hFt, float yaw)

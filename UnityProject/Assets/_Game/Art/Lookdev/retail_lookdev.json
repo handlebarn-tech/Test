@@ -13,27 +13,27 @@
   },
   "floors": [
     { "id": "TL1_Field", "mat": "tl1", "t": 0.031, "conf": "High", "rect": { "x0": 0.2, "x1": 46.99, "y0": 0.2, "y1": 29.0 }, "note": "TL-1 Statuario-look porcelain 12x24 x 3/8\", retail field (TI §6.5)" },
-    { "id": "TL2_RegisterStaff", "mat": "tl2", "t": 0.035, "conf": "Low", "rect": { "x0": 19.0, "x1": 45.6, "y0": 1.4, "y1": 7.0 }, "note": "TL-2 8x8 patterned tile in the counter zones (TI §6.5); zone extent = staff side of the register run, layout choice" },
-    { "id": "TL2_RegisterReturn", "mat": "tl2", "t": 0.035, "conf": "Low", "rect": { "x0": 42.0, "x1": 45.6, "y0": 7.0, "y1": 14.2 }, "note": "staff side of the register L return, layout choice" },
-    { "id": "TL2_DeliStaff", "mat": "tl2", "t": 0.035, "conf": "Low", "rect": { "x0": 13.5, "x1": 34.7, "y0": 25.2, "y1": 27.6 }, "note": "staff side of the deli counter, layout choice" }
+    { "id": "TL2_RegisterStaff", "mat": "tl2", "t": 0.035, "conf": "Low", "rect": { "x0": 19.0, "x1": 44.9, "y0": 2.3, "y1": 7.0 }, "note": "TL-2 8x8 patterned tile in the counter zones (TI §6.5); zone extent = staff aisle of the north run up to its deli back counter (ROOM_FIXTURES rev7), layout choice" },
+    { "id": "TL2_RegisterReturn", "mat": "tl2", "t": 0.035, "conf": "Low", "rect": { "x0": 40.6, "x1": 44.9, "y0": 7.0, "y1": 19.0 }, "note": "staff aisle of the east return (rev7, GAP-130), layout choice" },
+    { "id": "TL2_SouthStaff", "mat": "tl2", "t": 0.035, "conf": "Low", "rect": { "x0": 13.5, "x1": 34.7, "y0": 22.6, "y1": 26.9 }, "note": "staff aisle of the south register run (rev7, GAP-129; BAND 10 shows TL-2 there), layout choice" }
   ],
   "millwork": {
-    "fixtures": ["FX_RegisterCounter_L", "FX_DeliCounter_L"],
+    "fixtures": ["FX_RegisterCounter_L", "FX_RegisterCounter_S"],
     "key": "counter", "toe": 0.333, "top": 0.167, "overhang": 0.083,
     "conf": "Med",
-    "note": "A940 base cabinets: top 2'-10\" (34\") max AFF, 4\" toe, 2\" QZ-2 white quartz top (A940 detail 11, the POS cabinet, REFERENCES_INDEX §6.4; the 1-1/2\" edge is detail 12 / 4D, REVIEW-W4F m1), WD-1/PL-1 walnut fronts, black toe (TI §6.4). Footprints are the graybox fixtures (current plan). The deli counter is not in the TI set (GAP-113); it gets the same build as a labelled convention."
+    "note": "A940 base cabinets: top 2'-10\" (34\") max AFF, 4\" toe, 2\" QZ-2 white quartz top (A940 detail 11, the POS cabinet, REFERENCES_INDEX §6.4; the 1-1/2\" edge is detail 12 / 4D, REVIEW-W4F m1), WD-1/PL-1 walnut fronts, black toe (TI §6.4). Footprints are the graybox fixtures (current plan). The south run (the plan's DELI COUNTER, REF-011) gets the same build as the north run."
   },
   "jarWalls": {
-    "backs": ["FX_DeliJarWall_N_Back", "FX_JarWall_E_Back", "FX_DeliJarWall_S"],
+    "backs": ["FX_DeliJarWall_N_Back", "FX_DeliJarWall_E_Back", "FX_DeliJarWall_S_Back"],
     "conf": "Med",
-    "note": "DEC-043 photo: teal curved-leaf wall behind dark-gray metal shelves; the lowest jar row is a black counter top over walnut drawer fronts. Shelf rows/rects come from graybox jarSlots (positions unchanged); every jar stays on a shelf anchor. Stainless tong cups are not modelled (Nolan)"
+    "note": "DEC-043 photo: teal curved-leaf wall behind dark-gray metal shelves; the lowest jar row is a black counter top over walnut drawer fronts. Shelf rows/rects come from graybox jarSlots: per deli wall (N/E/S, REF-011) a back-counter run (black top over walnut) and two metal tiers; every jar stays on a shelf anchor. Stainless tong cups are not modelled (Nolan)"
   },
   "wallWash": {
     "lumens": 800, "angle": 80, "tilt": 72, "kelvin": 3500, "pitch": 3.0,
     "runs": [
-      { "id": "N", "x0": 20.0, "y0": 2.0, "x1": 44.0, "y1": 2.0, "key": "soffit", "yaw": 0 },
-      { "id": "E", "x0": 45.0, "y0": 2.0, "x1": 45.0, "y1": 14.0, "key": "soffit", "yaw": 90 },
-      { "id": "S", "x0": 14.5, "y0": 26.2, "x1": 33.5, "y1": 26.2, "key": "ceiling", "yaw": 180 }
+      { "id": "N", "x0": 20.0, "y0": 2.6, "x1": 44.0, "y1": 2.6, "key": "soffit", "yaw": 0 },
+      { "id": "E", "x0": 44.6, "y0": 2.0, "x1": 44.6, "y1": 14.0, "key": "soffit", "yaw": 90 },
+      { "id": "S", "x0": 14.5, "y0": 26.6, "x1": 33.5, "y1": 26.6, "key": "ceiling", "yaw": 180 }
     ],
     "conf": "Low", "gap": "GAP-113",
     "note": "REVIEW-W3D: the jar walls read too dark. Adjustable LED accents aimed at the jar walls (TI L4 type family, 3500 K); positions and aim are layout choices"
