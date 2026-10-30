@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Door_Entry_LeafR",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "88925e2d0b715b55",
+  "generator": "doors",
+  "lod_tris": {
+    "LOD0": 3252,
+    "LOD1": 692,
+    "LOD2": 120,
+    "LOD3": 60
+  },
+  "params_sha256": "4f161a8f40e7763e",
+  "passed": true,
+  "warnings": [
+    "LOD0 3252 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

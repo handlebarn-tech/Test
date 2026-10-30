@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Door_Vest_BOH_Frame",
+  "collision_boxes": 3,
+  "errors": [],
+  "export_sha256": "8281afbad17f4f0c",
+  "generator": "doors",
+  "lod_tris": {
+    "LOD0": 200,
+    "LOD1": 72,
+    "LOD2": 60,
+    "LOD3": 28
+  },
+  "params_sha256": "4f161a8f40e7763e",
+  "passed": true,
+  "warnings": []
+}
