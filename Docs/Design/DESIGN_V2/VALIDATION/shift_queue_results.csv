@@ -1,0 +1,7 @@
+difficulty,policy,arrivals_mean,served_mean,abandon_pct,mean_wait_s,p90_wait_s,median_service_s,max_queue_mean,max_queue_p90,seeds
+beginner,targeted,12.95,12.94,0.1,20.69,56.98,56.64,1.75,3.0,350
+standard,targeted,19.32,18.47,4.08,45.05,108.04,59.95,3.07,5.0,700
+standard,all,19.32,15.48,19.0,97.22,189.3,92.77,4.4,6.0,700
+standard,none,19.32,19.13,0.89,21.95,62.07,44.33,2.29,4.0,700
+expert,targeted,21.83,20.27,6.6,50.34,116.83,63.82,3.4,5.0,350
+

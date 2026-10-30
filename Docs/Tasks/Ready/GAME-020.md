@@ -22,5 +22,14 @@ SPEC_DECISION_PRESSURE §2.6, §34–35, §101–117; `Docs/GAMEPLAY_SIMULATION_
 ## Validation
 Compile / EditMode / PlayMode green; QA-002 gate green. Tests: every DP scenario from GAME-017/019 produces a complete record and an explanation; a speed-only and a detail-only bot each lose at least one category (pre-check for DP-029/030); revenue does not move the star gate. DEC-013 gate.
 
+## V2 additions (IMP-002, DEC-063)
+V2 = `Docs/Design/DESIGN_V2/` (Nolan's add-on; DP wins on conflicts, DEC-063a). Row n = `Docs/Imports/IMP-001_DESIGN_V2_AUDIT.md` §2 row. All V2 numbers are [GDD] starting values (GAP-DP-02). Exploit tests: `DESIGN_V2/QA_TEST_PLAN.md`.
+- The per-customer record stores the **parser input** (query text + chip + inventory snapshot id) and its hash, not a fact-ID path (REVIEW-IMP1 A2, DEC-057; V2 `01_SYSTEM_CONTRACTS.md` §5 DecisionRecord adapted; row 5).
+- Reports are projections of recorded events; no separate counters that can drift. Event names start from V2's 24-event list (V2 `16_CROSS_SYSTEM_INTEGRATION.md` §17–18; row 47; EX-060).
+- Abandonment attribution player vs structural: an abandonment counts against the player only for redundant consultation, avoidable idle, rework or preventable stock interruptions (V2 `03_SHIFT_PACING_QUEUE_MODEL.md` §11; row 27; EX-005, EX-061).
+- Repetition telemetry flags: any opener family > 12 %, same intent > 25 %, same top product > 30 % (V2 `09_CONTENT_LONGEVITY.md` §10; row 20).
+- Failure output: seed, fixture ids, input/output hashes, ledger diffs (V2 `11_MASTER_QA_SCENARIOS.md` "Failure reporting"; row 46).
+- **Acceptance (A3, DEC-052):** the report section "questions that would have mattered" names the question only, with no TFS scores, ranks or result lists.
+
 ## Handoff
 `Docs/Handoffs/GAME-020.md` (≤40 lines). Questions go to the Studio Hub (DEC-033).
