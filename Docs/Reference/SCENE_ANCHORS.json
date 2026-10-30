@@ -1,11 +1,11 @@
 {
- "_about": "REF-011 World->Gameplay anchor contract for the sales floor; ART-007 builds the anchors from it. Gameplay finds anchors by NAME (GameObject.Find), never by position or order in this file. pos_ft = [x, y] in the ROOM_FIXTURES / REFERENCES_INDEX 1.2 frame (feet, origin Retail NW outer corner, +x east, +y south; Unity X = x*0.3048, Z = -y*0.3048). facing = compass direction the person at the anchor looks; yaw_deg 0 = plan north, 90 = east (graybox convention). aliases = older names already used in code (SLICE_DESIGN 7, GAME-008, GrayboxBuilder): ART-007 creates each alias as an extra empty at the same pose so existing lookups keep working until Gameplay migrates. Anchor_QueueSlot_0..3 = Anchor_Queue_0..3; Anchor_CheckInDesk = Anchor_CheckIn; Anchor_ServiceCustomer / Anchor_ServicePlayer = the player station's _Call / _Operator (station 08 today, GAP-134). Positions that are guesses are Low with a GAP id (GAP-129..134, Docs/KNOWN_GAPS.md).",
+ "_about": "REF-011 World->Gameplay anchor contract for the sales floor; ART-007 builds the anchors from it. Gameplay finds anchors by NAME (GameObject.Find), never by position or order in this file. pos_ft = [x, y] in the ROOM_FIXTURES / REFERENCES_INDEX 1.2 frame (feet, origin Retail NW outer corner, +x east, +y south; Unity X = x*0.3048, Z = -y*0.3048). facing = compass direction the person at the anchor looks; yaw_deg 0 = plan north, 90 = east (graybox convention). aliases = older names already used in code (SLICE_DESIGN 7, GAME-008, GrayboxBuilder): ART-007 creates each alias as an extra empty at the same pose so existing lookups keep working until Gameplay migrates. Anchor_QueueSlot_0..3 = Anchor_Queue_0..3; Anchor_CheckInDesk = Anchor_CheckIn; Anchor_ServiceCustomer / Anchor_ServicePlayer = the player station's _Call / _Operator (station 08 today, GAP-134). Positions that are guesses are Low with a GAP id (GAP-129..134, Docs/KNOWN_GAPS.md). Station numbers are zero-padded to 2 digits (Anchor_Register_02_Call ... Anchor_Register_12_Operator).",
  "version": "REF-011 2026-10-30 v1",
  "player_station": {
   "reg": "08",
   "confidence": "Low",
   "gap": "GAP-134",
-  "note": "graybox stations.slice = 08 (north run) holds Interact_Terminal / Interact_Scale today; the real station the player should use is a question for Nolan"
+  "note": "[GDD] placeholder: station 08 (graybox stations.slice) holds Interact_Terminal / Interact_Scale. In the real store the GM assigns registers on a floor map (DEC-079, DEC-103 (7)), so no single real station exists; Gameplay may assign it per shift"
  },
  "anchors": [
   {
@@ -70,7 +70,7 @@
    ],
    "facing": "N",
    "yaw_deg": 0,
-   "source": "DEC-048; no evidence of a line outside, so it forms inside between the door and the stanchion field (x < 6)",
+   "source": "DEC-048; DEC-103 (5): check-in never backs up, so a few wait points inside between the door and the stanchion field (x < 6) are enough",
    "confidence": "Low",
    "gap": "GAP-134",
    "note": "0 = next to be checked. No second buzzed door after the stand (DEC-103): once checked, the customer walks straight onto the floor to the Anchor_Queue tail"
@@ -83,7 +83,7 @@
    ],
    "facing": "N",
    "yaw_deg": 0,
-   "source": "DEC-048; no evidence of a line outside, so it forms inside between the door and the stanchion field (x < 6)",
+   "source": "DEC-048; DEC-103 (5): check-in never backs up, so a few wait points inside between the door and the stanchion field (x < 6) are enough",
    "confidence": "Low",
    "gap": "GAP-134",
    "note": "0 = next to be checked. No second buzzed door after the stand (DEC-103): once checked, the customer walks straight onto the floor to the Anchor_Queue tail"
@@ -96,7 +96,7 @@
    ],
    "facing": "N",
    "yaw_deg": 0,
-   "source": "DEC-048; no evidence of a line outside, so it forms inside between the door and the stanchion field (x < 6)",
+   "source": "DEC-048; DEC-103 (5): check-in never backs up, so a few wait points inside between the door and the stanchion field (x < 6) are enough",
    "confidence": "Low",
    "gap": "GAP-134",
    "note": "0 = next to be checked. No second buzzed door after the stand (DEC-103): once checked, the customer walks straight onto the floor to the Anchor_Queue tail"
@@ -109,7 +109,7 @@
    ],
    "facing": "N",
    "yaw_deg": 0,
-   "source": "DEC-048; no evidence of a line outside, so it forms inside between the door and the stanchion field (x < 6)",
+   "source": "DEC-048; DEC-103 (5): check-in never backs up, so a few wait points inside between the door and the stanchion field (x < 6) are enough",
    "confidence": "Low",
    "gap": "GAP-134",
    "note": "0 = next to be checked. No second buzzed door after the stand (DEC-103): once checked, the customer walks straight onto the floor to the Anchor_Queue tail"
@@ -423,13 +423,12 @@
    ],
    "facing": "N",
    "yaw_deg": 0,
-   "source": "ROOM_FIXTURES POS_08; customer 1.2 ft off the counter face",
+   "source": "ROOM_FIXTURES POS_08; customer 1.2 ft off the counter face; player station = [GDD] placeholder, GM assigns registers on a floor map (DEC-079, DEC-103 (7))",
    "confidence": "Med",
    "gap": "GAP-134",
    "aliases": [
     "Anchor_ServiceCustomer"
-   ],
-   "note": "player station today (graybox stations.slice = 08 holds Interact_Terminal/Interact_Scale); which real station it should be is Nolan's call (GAP-134)"
+   ]
   },
   {
    "name": "Anchor_Register_08_Operator",
@@ -439,7 +438,7 @@
    ],
    "facing": "S",
    "yaw_deg": 180,
-   "source": "ROOM_FIXTURES POS_08 operator_zone; 1.0 ft off the staff edge in front of the monitor (graybox playerOff)",
+   "source": "ROOM_FIXTURES POS_08 operator_zone; 1.0 ft off the staff edge in front of the monitor (graybox playerOff); player station = [GDD] placeholder, GM assigns registers on a floor map (DEC-079, DEC-103 (7))",
    "confidence": "Med",
    "gap": "GAP-134",
    "aliases": [
