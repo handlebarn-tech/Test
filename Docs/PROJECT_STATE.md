@@ -15,7 +15,7 @@
 ## Wave 3 status (2026-10-29)
 | Task | Session | State |
 |---|---|---|
-| GAME-002 | dispo-game-002 | done (8df0a82, 41/41 EditMode, bot 12/12) → REVIEW-W3D (packet in Active; proposed, waiting on start) |
+| GAME-002 | dispo-game-002 | done (8df0a82, 41/41 EditMode, bot 12/12) → REVIEW-W3D (dispo-review-w3d `local_57aeb17a-1d55-496c-8328-51721cfc125a`) |
 | ART-002 | dispo-art-002 | done incl. follow-up 6788cca → REVIEW-W3B (dispo-review-w3b) |
 | REF-003 | dispo-ref-003 | done → REVIEW-W3B (with ART-002) |
 | GAME-003, BUILD-002 | — | done → REVIEW-W3A (dispo-review-w3a) |
