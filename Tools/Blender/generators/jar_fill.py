@@ -136,12 +136,14 @@ def build(p, lod):
 
 
 def preview_context(p):
-    """Jar glass + lid behind the fill in the preview renders only (never exported)."""
+    """Jar glass, lid and band around the fill in the preview renders only (never exported)."""
     from generators import deli_jar
     with open(os.path.join(ROOT, p["jar_params"])) as f:
         jp = json.load(f)
     objs, _, _ = deli_jar.build(jp, next(iter(jp["lods"].values())))
     import bpy
-    bpy.data.objects.remove(objs.pop("Label"))
+    for part in ("Label", "ThcTag"):  # keep the fill readable; band, lid and glass stay
+        if part in objs:
+            bpy.data.objects.remove(objs.pop(part))
     for part, o in objs.items():
         o.name = "Context_" + part
