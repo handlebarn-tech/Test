@@ -8,7 +8,7 @@
 `Docs/HUB_RESUME.md` (HARD RULES first) · `Docs/BACKLOG.md` · last ~15 entries of `Docs/DECISIONS.md` (through DEC-050) · `Docs/Handoffs/*`.
 
 ## In flight (2026-10-30 ~04:15, Hub session 4)
-Merged this session: W4K (GAME-005), W4Q (DES-003; DEC-052..059), W4J (PERF-001), W4P (PROC-003), W4R (REF-009). Nolan answered N1/N2 (DEC-060/061) and the remaining room questions (DEC-062).
+Merged this session: W4K (GAME-005), W4Q (DES-003; DEC-052..059), W4J (PERF-001), W4P (PROC-003), W4R (REF-009), W4S (UX-005), IMP-001 audit. Nolan answered N1/N2 (DEC-060/061) and the remaining room questions (DEC-062).
 
 | Work | Session | State | Next Hub step |
 |---|---|---|---|
@@ -17,9 +17,9 @@ Merged this session: W4K (GAME-005), W4Q (DES-003; DEC-052..059), W4J (PERF-001)
 | GAME-010 tuning + personas | `local_0d166a8e-87b1-40bb-9594-be389c549875` | grid 2 running | review |
 | ART-006 bud HDRP materials, then back rooms | `local_392adc04-9603-4cc9-959c-6e3e2d792743` | running | review; rooms after REF-009b |
 | REF-009b W4R m1–m5 + DEC-062 into ROOM_FIXTURES | `local_8bee29f0-46b7-4ee5-87bf-9792b70f6267` | running | docs review, merge |
-| REVIEW-W4S: UX-005 | `local_0dd63bac-df1d-448d-9203-641ead6b6837` | running | merge on GO |
-| REVIEW-IMP1: IMP-001 audit of Nolan's design pack | `local_fa1d4222-cd8c-4df7-b9ab-799c6519e8b9` | running | → Nolan approval; no use before |
-| AUDIT-001 report (6 Critical/11 High/13 Med/9 Low) | `local_b6a24c47-ab71-4d36-9df9-1eb188edc2b0` | saving report + Nolan summary | → Nolan approves before ANY doc change |
+| REVIEW-W4T: QA-002 | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO |
+| IMP-001 audit merged (REVIEW-IMP1 PASS, amendments A1–A4) | — | **awaiting Nolan: approve summary + Q0 precedence** | on approval: IMP-002 integration packet applying A1–A4 |
+| AUDIT-001 approval sheet (Nolan asked for one) | `local_b6a24c47-ab71-4d36-9df9-1eb188edc2b0` | drafting `Docs/Audits/AUDIT-001_APPROVAL.md` | → Nolan approves before ANY doc change |
 | Idle, reusable/archivable: PROC-004 `local_ffb38222…`, GAME-005 `local_65e98573…`, DES-003 `local_afc2a299…`, W4Q/W4R reviewer `local_c94488d7…`, W4P reviewer `local_3bc3be53…`, IMP-001 `local_ad2c683f…`, UX-005 `local_802b992e…` | | | |
 
 ## Next tasks to start (dependency order)
