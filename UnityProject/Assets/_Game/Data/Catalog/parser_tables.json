@@ -1,0 +1,653 @@
+{
+ "negPatterns": [
+  {
+   "r": "\\b(without|no|not|won'?t|doesn'?t|don'?t|avoid)\\b.{0,25}\\b(sleep|sleepy|sleeping|knock|sedation|sedated|sedating|couch.?lock(ed)?|heavy|stone[d]?|tired|grog(gy)?|drowsy|out cold|falling asleep|knock.?out)\\b",
+   "d": "sedation",
+   "v": 42
+  },
+  {
+   "r": "\\b(stay|remain|still|keep|be) (functional|function|awake|alert|active|working|produc|conscious)\\b",
+   "d": "sedation",
+   "v": 42
+  },
+  {
+   "r": "\\b(have to|gotta|got to|need to|going to|has to|needs to)\\b.{0,20}\\b(work|drive|function|focus|study|run)\\b",
+   "d": "sedation",
+   "v": 38,
+   "work": true
+  },
+  {
+   "r": "\\b(need to|needs to|has to|have to|gotta) drive\\b",
+   "d": "sedation",
+   "v": 38,
+   "raw": true
+  },
+  {
+   "r": "\\bdriving (after|later|afterwards|home|back)\\b",
+   "d": "sedation",
+   "v": 38,
+   "raw": true
+  },
+  {
+   "r": "\\bwithout (getting )?too (heavy|sedated|sleepy|tired|stoned)\\b",
+   "d": "sedation",
+   "v": 50
+  },
+  {
+   "r": "\\bnot too (heavy|sedated|sleepy|tired)\\b",
+   "d": "sedation",
+   "v": 50
+  },
+  {
+   "r": "\\b(without|no|not|won'?t)\\b.{0,25}\\b(anxiety|anxious|paranoi[ad]|paranoid|panic|scared)\\b",
+   "d": "anxiety_relief",
+   "v": 50,
+   "positive": true
+  },
+  {
+   "r": "\\bwon'?t (make|get) (me|them|him|her).{0,15}(paranoid|anxious|anxiet)\\b",
+   "d": "anxiety_relief",
+   "v": 55,
+   "positive": true
+  },
+  {
+   "r": "\\b(without|no|not)\\b.{0,20}\\b(too (rac|wired|jitter|stimulat|uplifting|heady|cerebral))\\b",
+   "d": "uplift",
+   "v": 55
+  }
+ ],
+ "phraseMap": [
+  {
+   "r": "\\b(back (pain|ache|hurt)|hurts? (my |in the )?back|back is (killing|hurting))\\b",
+   "d": {
+    "pain_inflammation": 50,
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "back pain",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(hurts?|aching|is sore|in pain|has pain)\\b",
+   "d": {
+    "pain_inflammation": 45
+   },
+   "neg": {},
+   "lbl": "pain relief",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(neck (pain|ache|tension)|shoulder (pain|tension))\\b",
+   "d": {
+    "pain_inflammation": 45
+   },
+   "neg": {},
+   "lbl": "muscle pain",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(knee|joint) (pain|ache|hurt)\\b",
+   "d": {
+    "pain_inflammation": 50
+   },
+   "neg": {},
+   "lbl": "joint pain",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(period|menstrual|pms) (cramps?|pain)\\b",
+   "d": {
+    "pain_inflammation": 50,
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "cramps",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(whole body (ache|pain)|body is (sore|aching))\\b",
+   "d": {
+    "pain_inflammation": 50,
+    "sedation": 35
+   },
+   "neg": {},
+   "lbl": "body pain",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(can'?t sleep|trouble sleeping|having trouble sleeping|can'?t fall asleep|insomnia)\\b",
+   "d": {
+    "sedation": 55,
+    "anxiety_relief": 40
+   },
+   "neg": {},
+   "lbl": "insomnia",
+   "pri": "sedation"
+  },
+  {
+   "r": "\\b(knocks? (me|them|him|her) out|just want to (sleep|pass out|crash))\\b",
+   "d": {
+    "sedation": 60
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  {
+   "r": "\\b(help.{0,10}(sleep|sleeping|get some (rest|sleep)))\\b",
+   "d": {
+    "sedation": 50
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  {
+   "r": "\\b(racing (thoughts?|mind))\\b",
+   "d": {
+    "anxiety_relief": 50,
+    "sedation": 40
+   },
+   "neg": {},
+   "lbl": "racing thoughts",
+   "pri": "anxiety_relief"
+  },
+  {
+   "r": "\\b(gets? (paranoid|anxious|panicky)|makes? (me|them) (paranoid|anxious))\\b",
+   "d": {
+    "anxiety_relief": 55
+   },
+   "neg": {},
+   "lbl": "anxiety",
+   "pri": "anxiety_relief"
+  },
+  {
+   "r": "\\b(freaks? (me|them) out|too (much|intense) (in the head|mental))\\b",
+   "d": {
+    "anxiety_relief": 50
+   },
+   "neg": {},
+   "lbl": "anxiety-friendly",
+   "pri": "anxiety_relief"
+  },
+  {
+   "r": "\\b(overthink|over.?think|spiral|spiraling)\\b",
+   "d": {
+    "anxiety_relief": 50,
+    "sedation": 30
+   },
+   "neg": {},
+   "lbl": "racing thoughts",
+   "pri": "anxiety_relief"
+  },
+  {
+   "r": "\\b(wake (me|them|him|her) up|get (going|moving|started)|morning (strain|pick.?me.?up))\\b",
+   "d": {
+    "uplift": 32,
+    "focus_cognitive": 18
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "morning",
+   "pri": "uplift"
+  },
+  {
+   "r": "\\b(pick.?me.?up|pick her up|pick him up)\\b",
+   "d": {
+    "uplift": 35
+   },
+   "neg": {
+    "sedation": 42
+   },
+   "lbl": "energy",
+   "pri": "uplift"
+  },
+  {
+   "r": "\\b(before (working out|the gym|exercise|a hike|a run))\\b",
+   "d": {
+    "uplift": 35,
+    "pain_inflammation": 30
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "pre-workout",
+   "pri": "uplift"
+  },
+  {
+   "r": "\\b(still (be able to|can) (drive|function|work|think))\\b",
+   "d": {
+    "focus_cognitive": 20
+   },
+   "neg": {
+    "sedation": 50
+   },
+   "lbl": "functional",
+   "pri": "focus_cognitive"
+  },
+  {
+   "r": "\\b(going out|out tonight|going to a (party|show|concert|event|bar))\\b",
+   "d": {
+    "uplift": 32,
+    "anxiety_relief": 28
+   },
+   "neg": {
+    "sedation": 42
+   },
+   "lbl": "social",
+   "pri": "uplift"
+  },
+  {
+   "r": "\\b(be social|talk(ing)? to people|hanging? (out|with friends))\\b",
+   "d": {
+    "uplift": 28,
+    "anxiety_relief": 30
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "social",
+   "pri": "uplift"
+  },
+  {
+   "r": "\\b(get creative|be creative|art (project|night)|creating|making (music|art))\\b",
+   "d": {
+    "focus_cognitive": 5,
+    "uplift": 18
+   },
+   "neg": {},
+   "lbl": "creative",
+   "pri": "uplift"
+  },
+  {
+   "r": "\\b(lost (my |their |his |her )?appetite|can'?t eat|not hungry|nausea|nauseated)\\b",
+   "d": {
+    "sedation": 30,
+    "pain_inflammation": 30
+   },
+   "neg": {},
+   "lbl": "appetite",
+   "pri": "sedation"
+  },
+  {
+   "r": "\\b(never (tried|smoked|used)|first (time|timer|experience)|brand new to)\\b",
+   "d": {
+    "anxiety_relief": 55,
+    "sedation": 20
+   },
+   "neg": {
+    "uplift": 50
+   },
+   "lbl": "first-time",
+   "pri": "anxiety_relief"
+  },
+  {
+   "r": "\\b(low (tolerance|thc|potency)|sensitive to (thc|cannabis|weed))\\b",
+   "d": {
+    "anxiety_relief": 55
+   },
+   "neg": {
+    "uplift": 45
+   },
+   "lbl": "sensitive",
+   "pri": "anxiety_relief"
+  },
+  {
+   "r": "\\b(achy|aching|aches and pains|body aches|whole body)\\b",
+   "d": {
+    "pain_inflammation": 42
+   },
+   "neg": {},
+   "lbl": "pain relief",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(stiff (neck|back|joints?|muscles?)|feels? stiff|woke up stiff)\\b",
+   "d": {
+    "pain_inflammation": 45,
+    "sedation": 25
+   },
+   "neg": {},
+   "lbl": "stiffness",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(tension (headache|in (my|the) (neck|shoulders?|back))|neck tension|shoulder tension)\\b",
+   "d": {
+    "pain_inflammation": 45,
+    "anxiety_relief": 38
+   },
+   "neg": {
+    "sedation": 55
+   },
+   "lbl": "tension",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(muscle knots?|knots? in (my|the) (back|neck|shoulders?))\\b",
+   "d": {
+    "pain_inflammation": 45,
+    "sedation": 28
+   },
+   "neg": {},
+   "lbl": "muscle knots",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(stomach (cramps?|pain|ache|hurt)|stomach is (hurting|killing)|gut pain|digestive)\\b",
+   "d": {
+    "pain_inflammation": 45,
+    "sedation": 22
+   },
+   "neg": {},
+   "lbl": "stomach pain",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(sciatica|nerve (pain|damage)|pinched nerve|neuropath)\\b",
+   "d": {
+    "pain_inflammation": 55
+   },
+   "neg": {},
+   "lbl": "nerve pain",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(throbbing|pounding (head|pain))\\b",
+   "d": {
+    "pain_inflammation": 50,
+    "sedation": 28
+   },
+   "neg": {},
+   "lbl": "pain relief",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(bummed( out)?|feeling (down|blah|flat|low)|in a funk|not (feeling|doing) (great|well|good))\\b",
+   "d": {
+    "uplift": 30,
+    "anxiety_relief": 25
+   },
+   "neg": {},
+   "lbl": "mood lift",
+   "pri": "uplift"
+  },
+  {
+   "r": "\\b(no motivation|can'?t get motivated|unmotivated|low motivation|no drive)\\b",
+   "d": {
+    "uplift": 24,
+    "focus_cognitive": 18
+   },
+   "neg": {
+    "sedation": 50
+   },
+   "lbl": "motivation",
+   "pri": "uplift"
+  },
+  {
+   "r": "\\b(burned? out|burnt out|running on (empty|fumes)|completely drained|totally wiped)\\b",
+   "d": {
+    "sedation": 35,
+    "anxiety_relief": 35
+   },
+   "neg": {},
+   "lbl": "burnout",
+   "pri": "anxiety_relief"
+  },
+  {
+   "r": "\\b(wired but tired|tired but (can'?t|wont?) sleep|exhausted but (can'?t|wont?) (sleep|rest))\\b",
+   "d": {
+    "sedation": 48,
+    "anxiety_relief": 42
+   },
+   "neg": {},
+   "lbl": "sleep + anxiety",
+   "pri": "sedation"
+  },
+  {
+   "r": "\\b(brain fog|foggy (brain|head|minded?)|can'?t (think|focus|concentrate)|hard to (think|focus))\\b",
+   "d": {
+    "focus_cognitive": 25
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "brain fog",
+   "pri": "focus_cognitive"
+  },
+  {
+   "r": "\\b(scatter.?brained?|all over the place mentally|can'?t stay on task)\\b",
+   "d": {
+    "focus_cognitive": 25
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "focus",
+   "pri": "focus_cognitive"
+  },
+  {
+   "r": "\\b(in the zone|flow state|locked (in|on)|get stuff done|knock out (work|tasks))\\b",
+   "d": {
+    "focus_cognitive": 28,
+    "uplift": 22
+   },
+   "neg": {
+    "sedation": 38
+   },
+   "lbl": "focus",
+   "pri": "focus_cognitive"
+  },
+  {
+   "r": "\\b(toss(ing)? and turn(ing)?|can'?t (stay|fall) asleep|wak(ing|e) up (at night|all night))\\b",
+   "d": {
+    "sedation": 52,
+    "anxiety_relief": 38
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  {
+   "r": "\\b(mind racing (at night|when|before)|racing (at night|thoughts? at night|mind at night))\\b",
+   "d": {
+    "sedation": 45,
+    "anxiety_relief": 50
+   },
+   "neg": {},
+   "lbl": "sleep + anxiety",
+   "pri": "anxiety_relief"
+  },
+  {
+   "r": "\\b(jet.?lag(ged)?|time zone|shift work|night shift)\\b",
+   "d": {
+    "sedation": 45
+   },
+   "neg": {},
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  {
+   "r": "\\b(can'?t wind (down|up)|won'?t (turn off|shut off|quiet(en)?)|brain won'?t (stop|shut))\\b",
+   "d": {
+    "anxiety_relief": 48,
+    "sedation": 38
+   },
+   "neg": {},
+   "lbl": "racing thoughts",
+   "pri": "anxiety_relief"
+  },
+  {
+   "r": "\\b(be (chatty|talkative|sociable|outgoing|bubbly)|make (me|them|him|her) (talkative|chatty|sociable))\\b",
+   "d": {
+    "uplift": 32,
+    "anxiety_relief": 28
+   },
+   "neg": {
+    "sedation": 40
+   },
+   "lbl": "social",
+   "pri": "uplift"
+  },
+  {
+   "r": "\\b(get (creative|inspired|into a flow)|art(istic)? (mood|vibe|feeling))\\b",
+   "d": {
+    "focus_cognitive": 5,
+    "uplift": 18
+   },
+   "neg": {},
+   "lbl": "creative",
+   "pri": "uplift"
+  },
+  {
+   "r": "\\b(philosophical|introspective|deep (thoughts?|thinking)|existential)\\b",
+   "d": {
+    "focus_cognitive": 18,
+    "anxiety_relief": 22
+   },
+   "neg": {},
+   "lbl": "introspective"
+  },
+  {
+   "r": "\\b(micro.?dos(e|ing)|just a little|very (light|mild|subtle|small|low)|light(weight)? (user|tolerance|experience))\\b",
+   "d": {
+    "anxiety_relief": 38
+   },
+   "neg": {
+    "uplift": 45,
+    "sedation": 48
+   },
+   "lbl": "micro-dose",
+   "pri": "anxiety_relief"
+  },
+  {
+   "r": "\\b(low.?key|laid.?back (high|experience|vibe)|nothing (crazy|too intense|too strong|too much))\\b",
+   "d": {
+    "anxiety_relief": 35,
+    "sedation": 28
+   },
+   "neg": {
+    "uplift": 45
+   },
+   "lbl": "low-key",
+   "pri": "anxiety_relief"
+  }
+ ],
+ "fuzzy": [
+  {
+   "r": "\\b(indica|body|relax|chill|mellow|laid.?back|kick.?back)\\b",
+   "d": {
+    "sedation": 35,
+    "anxiety_relief": 30
+   },
+   "lbl": "relaxing",
+   "pri": "anxiety_relief"
+  },
+  {
+   "r": "\\b(sativa|uplifting|energet|electric|peppy|perky|lively)\\b",
+   "d": {
+    "uplift": 30
+   },
+   "lbl": "energizing",
+   "pri": "uplift"
+  },
+  {
+   "r": "\\b(hybrid|balance|both|middle|not too (much|strong))\\b",
+   "d": {
+    "anxiety_relief": 35,
+    "uplift": 25
+   },
+   "lbl": "balanced",
+   "pri": "anxiety_relief"
+  },
+  {
+   "r": "\\b(hurt|ache|sore|pain|inflam|tender|stiff)\\b",
+   "d": {
+    "pain_inflammation": 45
+   },
+   "lbl": "pain relief",
+   "pri": "pain_inflammation"
+  },
+  {
+   "r": "\\b(stress|anxious|anxiety|nervous|edge|tense)\\b",
+   "d": {
+    "anxiety_relief": 40
+   },
+   "lbl": "stress relief",
+   "pri": "anxiety_relief"
+  },
+  {
+   "r": "\\b(tired|exhaust|sleep|rest|night|bed)\\b",
+   "d": {
+    "sedation": 40
+   },
+   "lbl": "sleep",
+   "pri": "sedation"
+  },
+  {
+   "r": "\\b(focus|concentrat|work|study|think|brain|sharp|clear)\\b",
+   "d": {
+    "focus_cognitive": 20
+   },
+   "lbl": "focus",
+   "pri": "focus_cognitive"
+  },
+  {
+   "r": "\\b(happy|mood|good|great|fun|enjoy|celebrat)\\b",
+   "d": {
+    "uplift": 28,
+    "anxiety_relief": 25
+   },
+   "lbl": "mood boost",
+   "pri": "uplift"
+  }
+ ],
+ "priceIntents": {
+  "noPrice": [
+   "\\b(price (isn'?t?|is not|don'?t? care about|doesn'?t? matter) (a )?(concern|issue|factor|object|problem))\\b",
+   "\\b(money (isn'?t?|is not) (an? )?(issue|concern|object|problem))\\b",
+   "\\b(don'?t? (care|worry) (about )?(the )?price)\\b",
+   "\\b(cost (doesn'?t?|don'?t?) matter)\\b",
+   "\\b(money no object|price no object)\\b",
+   "\\b(whatever.{0,8}best|just (get|find) (me |us |them |the )?best)\\b",
+   "\\b(not (worried|concerned) about (price|cost|money))\\b",
+   "\\b(no budget( limit)?|unlimited budget|spare no expense)\\b"
+  ],
+  "hasBudget": [
+   "\\bhave\\b.{0,15}\\$(\\d+)",
+   "\\bhas\\b.{0,15}\\$(\\d+)",
+   "\\bgot\\b.{0,12}\\$(\\d+)",
+   "\\bonly\\b.{0,10}\\$(\\d+)",
+   "\\bjust\\b.{0,10}\\$(\\d+)",
+   "\\$(\\d+)\\b.{0,20}\\b(budget|to spend|is all|limit|max|left|only|tops)\\b",
+   "\\b(budget (of|is|around|about)) \\$?(\\d+)",
+   "\\bonly (got|have|has) \\$?(\\d+)",
+   "\\bspend(ing)? (around |about |up to |no more than )?\\$?(\\d+)",
+   "\\b(under|below|less than|no more than|at most) \\$?(\\d+)",
+   "\\$(\\d+) (or less|max|maximum|tops|is my budget|is what (i|they) have)\\b",
+   "\\bcan('?t| only) (afford|spend) \\$?(\\d+)",
+   "\\bhow (much|far) (will|does|can) \\$?(\\d+) get\\b",
+   "\\bwhat (can|does) \\$?(\\d+) get\\b",
+   "\\b(\\d+) bucks?\\b.{0,20}\\b(budget|spend|afford|max|limit)\\b",
+   "\\bbudget.{0,8}\\$?(\\d+)",
+   "\\b\\$(\\d+) (budget|to spend|is (all|my limit|what they have))\\b",
+   "\\b(working with|got) \\$?(\\d+)\\b",
+   "\\b(\\d+) dollar(s)? (budget|max|limit|to spend)\\b"
+  ],
+  "budget": [
+   "\\b(cheap|cheapest|most affordable|best value|best deal|best bang)\\b",
+   "\\b(on a (tight )?budget|budget.?friendly|wallet.?friendly)\\b",
+   "\\b(don'?t? want to spend (much|a lot|too much))\\b",
+   "\\b(save (some )?money|cost.?effective|economical|inexpensive)\\b",
+   "\\b(lowest price|most for (my |the )?money|bang for (my |the )?buck)\\b",
+   "\\b(affordable|value (option|pick|strain)|good deal)\\b",
+   "\\b(doesn'?t? break the bank|not (too )?expensive|low.?cost)\\b",
+   "\\bsomething (cheap|affordable|inexpensive|on (the )?sale)\\b",
+   "\\b(tight (on )?(cash|money)|short on cash)\\b",
+   "\\bwhat'?s (on sale|the cheapest|the most affordable|the best deal)\\b",
+   "\\b(price.?conscious|price.?sensitive|watching (my|the|their) budget)\\b",
+   "\\b(can'?t spend (much|a lot)|limited budget)\\b"
+  ]
+ }
+}
