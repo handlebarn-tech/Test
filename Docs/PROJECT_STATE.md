@@ -19,7 +19,7 @@ Hub-owned. A fresh Hub resumes from this file + `Docs/HUB_RESUME.md` + recent `D
 Workers' original briefs name long-lived reviewers (now archived). Tell each to report "ready for review" to the Hub; the Hub spawns a fresh reviewer (Agent tool with worktree isolation, or a fresh session).
 
 ## Queue (after the above)
-1. REF-013 M1 fix (DEC-115: HUB desk/counter/cabinet sizes Low + narrowed GAP-132; hinge overrides from A011; storefront keeps pulls; 8 absence-inferred rows Low). Branch `worktree-agent-a2b65d251ee0f6ac2`@73e0e0c; verdict REVIEW-REF13 on `review/ref13`.
+1. REF-013 M1 fix, plus REVIEW-ART7 m3 (JC door blocked, Vest_FOH trash can in a door swing: settle from evidence, or GAP + NPCs avoid the JC anchors) (DEC-115: HUB desk/counter/cabinet sizes Low + narrowed GAP-132; hinge overrides from A011; storefront keeps pulls; 8 absence-inferred rows Low). Branch `worktree-agent-a2b65d251ee0f6ac2`@73e0e0c; verdict REVIEW-REF13 on `review/ref13`.
 2. PROC-007 UV layout (DEC-097) after PROC-005 merges; the label-shader cut-over comes with it.
 3. DEC-111 replacements: PROC-009 vehicles, ASSET-005/006/007 wardrobe/hair/gloves (PROC-008 cash tray rejected, DEC-051).
 4. PS1b recommendation depth (GAME-017a packet notes in `Docs/Departments/GAMEPLAY.md` queue), GAME-021/022/024.
