@@ -1,6 +1,6 @@
 # BACKLOG
 
-Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Done / Blocked.
+Priority P0 = critical path of the current milestone (`Design/ROADMAP_POST_SLICE.md` §2). States: **Ready** (packet in `Tasks/Ready`, prerequisites met) · **Active** (packet in `Tasks/Active`, worker launched) · **Done** (merged; packet in `Tasks/Done`) · **Blocked** (named blocker) · **Later** (registered, planned, no packet yet; the Hub writes the packet when its dependencies are Done) · **Dropped/Rejected** (reason). Milestone of each row: the roadmap §2 table. New legitimate work found in a handoff or review gets a row here (Later or Ready) before anything else happens to it.
 
 The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's state is its packet folder** (`Docs/Tasks/Ready|Active|Done`); the State column mirrors it and changes only in the same commit as the packet move. Live in-flight detail (session, branch, next step) is in `PROJECT_STATE.md`, not here. The ID prefix is a role label (REF, ART, GAME, PROC, …), not an owner.
 
@@ -63,7 +63,7 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | REVIEW-PS1b | P1 | Review of PS1b | GAME-017..020 | Later |
 | GAME-021 | P2 | Repeat-customer memory | PS1b | Ready (waits) |
 | GAME-022 | P2 | Difficulty profiles | PS1b | Ready (waits) |
-| GAME-023 | P2 | Spec §133 acceptance shift | GAME-011/012 | Blocked (DEC-059) |
+| GAME-023 | P2 | Spec §133 acceptance shift | GAME-011/012 | Blocked (DEC-059: needs GAME-011/012 on main) |
 | GAME-024 | P2 | Career + save v1 | PS1b | Ready (waits) |
 | DES-004 | P2 | PS2 design (was "DES-003" in ROADMAP); 004b+c door lock + manager refill | PS1 | Done (W5L, merged d79e103) |
 | IMP-001 | P1 | Audit DISPO_GAME_DESIGN_V2 import | — | Done (REVIEW-IMP1) |
@@ -77,24 +77,25 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | REF-010 | P1 | Restroom storage cabinet placement (DEC-068) into `ROOM_FIXTURES` | ART-006 | Done (W5C) |
 | REF-011 | P0 | Sales-floor layout audit: registers + operator access, HUB, deli walls, shelf fill (DEC-096) | — | Done (115292c) |
 | REF-012 | P0 | Office walkability + door geometry audit; DOORS.json contract for Gameplay (DEC-096) | — | Done (115292c) |
-| REF-013 | P0 | Settle GAP-129/130/132/134 from TI/floor-plan vectors; apply DEC-110 to DOORS | REF-011, REF-012 | Active |
+| REF-013 | P0 | Settle GAP-129/130/132/134 from TI/floor-plan vectors; apply DEC-110 to DOORS | REF-011, REF-012 | Active (REVIEW-REF13 FAIL; fix 3890936 awaits a fresh review) |
 | ART-007 | P0 | Graybox/lookdev rebuild from REF-011/012 (registers, HUB, deli walls, office, doors) | REF-011, REF-012 | Done (741bb43) |
 | ART-008 | P0 | Graybox final pass on the REF-013 fix (rev8, DEC-115 hinges, clearance failures) | REF-013 fix | Active |
 | GAME-007 | P1 | Purchase-limit meter + over-limit asks + strike ledger (COMP-002 §2) | GAME-006 | Done |
 | GAME-008 | P1 | ID-check events (COMP-002 §3) | GAME-007 | Done (W5N) |
 | GAME-009 | P2 | Medical customers (COMP-002 §4) + W5N m2 queue strip | GAME-007, GAME-008 | Done (REVIEW-PS1, 054e159) |
 | GAME-010 | P1 | Retune for tension + QA bot personas | GAME-005 (merge after GAME-006: both edit SliceConfig and Slice tests) | Done (W5M; 010b W5S) |
+| UX-003 | P2 | Shift-day UX: phase banners, opening/closing task list, restock prompts, report v2 layout (SPEC_SHIFT_DAY) | DES-004 | Ready (waits PS1b, DEC-096) |
 | GAME-011 | P1 | Shift phases + traffic curve + compressed clock | DES-004 | Ready (waits PS1b, DEC-096) |
 | GAME-012 | P1 | Deli restock loop (re-scoped DEC-080) | DES-004, ART-005 (ROADMAP ID, see DOC-002), DEC-055 | Ready (waits PS1b, DEC-096) |
-| GAME-013 | P2 | Opening/closing tasks + report v2 (ROADMAP, no packet yet) | GAME-011, GAME-020 | Later |
-| GAME-014 | P1 | Packaged sales (ROADMAP, no packet yet) | GAME-007, DATA-002, ART-006 (ROADMAP ID, see DOC-002) | Later |
-| GAME-015 | P1 | Non-flower recommendation (ROADMAP, no packet yet) | GAME-014, DEC-054 | Later |
-| GAME-016 | P2 | Deals v1 (ROADMAP, no packet yet) | GAME-014 | Later |
+| GAME-013 | P2 | Opening/closing tasks + report v2 (GSS, SPEC_SHIFT_DAY §10; Income/Tax/Category/Rec-Med sections) | GAME-011, GAME-020 | Later |
+| GAME-014 | P1 | Packaged sales: shelf stock authority, FOH fetch, cart lines, 5 g concentrate sub-cap + edible validator (SPEC_GAME004, COMP-002 §5) | GAME-007, DATA-004, ART-006 | Later (PS3) |
+| GAME-015 | P1 | Non-flower recommendation: strain-linked items via the engine (parity), constraint match for the rest [GDD] (SPEC_GAME004 §4) | GAME-014, DEC-054 | Later (PS3) |
+| GAME-016 | P2 | Deals v1: weekday category deals excluding deli (RES-001 P7/P8), values GAP; DP-025/026 acceptance | GAME-014 | Later (PS3) |
 | DES-005 | P0 | Playtest 1 intake (DEC-096): controls + customer-flow spec, GAME-025/026 packets, World door/entry contract needs, long-term ideas proposal | — | Done (W5U, 5ab7aeb) |
 | DES-006 | P0 | Recommendation depth audit: PS1b (GAME-017..020) vs the TFS tool, packet amendments | — | Done (REVIEW-DES6, 97ee06f) |
 | DES-005b | P0 | Fold DEC-103 into CONTROLS_FLOW_PS1 + GAME-025/026; REVIEW-W5U m1–m3 (KNOWN_GAPS GAP-CF rows, GAP-DAY-04 basis) | DES-005 | Done (REVIEW-DES5b, abede71) |
 | DES-007 | P2 | DEC-101: long-term rows into `ROADMAP_POST_SLICE.md` (Hub-delegated) + deadpan tone note for dialogue/event writers | DES-005 merge | Done (in DES-005b, abede71) |
-| GAME-017a | P0 | First playable recommendation depth (cut from GAME-017, DES-006 §5): needs, read-it-as picker, parser route, Q9, reject→re-search | DES-006, DATA-003, UX-006, GAME-009, GAME-025 (same Presentation/Slice files), QA-002b Gate A | Ready (waits: GAME-025 + DATA-003 merge) |
+| GAME-017a | P0 | First playable recommendation depth (cut from GAME-017, DES-006 §5): needs, read-it-as picker, parser route, Q9, reject→re-search | DES-006, DATA-003, UX-006, GAME-009, GAME-025 (same Presentation/Slice files), QA-002b Gate A | Ready (waits: GAME-026 merge; shared Slice files) |
 | DATA-003 | P0 | Customer needs catalog + golden parses from the TFS tool (GAME-017a data) | DES-006 | Done (db43b6d) |
 | UX-006 | P0 | Counter UX addendum: read-it-as picker, said cards, query preview | DES-006, DES-005 | Done (REVIEW-UX6, 5920ab2) |
 | BUILD-007 | P0 | Playtest build 2 (PS1 complete) into `Downloads/Dispo Game Builds/` | GAME-009 | Done (playtest2-741bb43) |
@@ -114,12 +115,46 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | PROC-006b | P1 | Register kit generators + seeded per-station variation (DEC-104) | PROC-006 | Active |
 | PROC-007 | P1 | DEC-097 UV layout (lightmap ch1, label ch2) + re-export jars/packaged goods, with World's label-shader cut-over | PROC-005 | Ready |
 | PROC-008 | P2 | Cash-drawer tray (R3b.6) | — | Rejected (Hub ruling: DEC-051/086 win; cash equipment is never modelled) |
-| PROC-009 | P2 | Studio-built parked vehicles (DEC-111; R3b.7 rejected as built): CC0 source (DEC-023) or a rebuild per checklist R3b.7 | PROC-005 | Active |
+| PROC-009 | P2 | Studio-built parked vehicles (DEC-111; R3b.7 rejected as built): CC0 source (DEC-023) or a rebuild per checklist R3b.7 | PROC-005 core (merged) | Ready (packet in `Tasks/Ready`; its Agent worker died at the Hub reset, no branch) |
 | ASSET-005 | P1 | Studio-built customer wardrobe (DEC-111; R4.1 rejected as built): MPFB2 CC0 clothes, or procedural shells per R4.1, keeping the drop's garment list and colourways | ASSET-004 | Active (with ASSET-006, one session) |
-| ASSET-006 | P1 | Studio-built hair (DEC-111; R4.2 rejected as built): MPFB2 CC0 hair or alpha card clumps per R4.2, keeping the 9-style list | ASSET-004 | Later |
+| ASSET-006 | P1 | Studio-built hair (DEC-111; R4.2 rejected as built): MPFB2 CC0 hair or alpha card clumps per R4.2, keeping the 9-style list | ASSET-004 | Active (in the ASSET-005 packet and session) |
 | ASSET-007 | P2 | Studio-built nitrile glove overlay (DEC-111; R4.7 rejected as built): hand vertex-group mask or a CC0 glove proxy | ASSET-004 | Active |
 | AUDIT-001 | P1 | Read-only .md audit + approval sheet (`Docs/Audits/`) | DES-003 | Done (DEC-064) |
 | DOC-001 | P1 | Apply AUDIT-001 batches A–C (DEC-064), 2 phases | AUDIT-001; phase 2 after IMP-002 | Done (W4X) |
 | DOC-002 | P2 | AUDIT-001 batch D (risky: ART renumber, CLAUDE.md read list, REFERENCES_INDEX split, branch naming) | DOC-001; between waves only | Later |
-| DOC-003 | P3 | AUDIT-001 batch E (Medium/Low cleanup) | DOC-001 | Review (W4Z) |
+| DOC-003 | P3 | AUDIT-001 batch E (Medium/Low cleanup) | DOC-001 | Done (W4Z) |
+| BUILD-008 | P0 | Playtest build 3 (M-B exit: GAME-026 flow, REF-013/ART-008 layout, PROC-005/006b fixtures) | GAME-026, ART-008, PROC-006b | Later (packet when those merge) |
+| ART-011 | P1 | Lookdev label shader reads Unity `uv3` (DEC-097); lands in the same wave as PROC-007 | PROC-007 | Later |
+| GAME-CHR-002 | P1 | Import the 60 MPFB customers into Unity: prefabs, LODs, Humanoid retarget of the Rocketbox animation map (CHARACTERS.md §6–7) | ASSET-005, ASSET-006, ASSET-007 | Later (PS1b) |
+| NPC-001 | P1 | Customers walk the GAME-026 flow with bodies: NavMesh (AI Navigation), entry → guard → queue → counter → exit, idle/wait/talk animation states | GAME-026, GAME-CHR-002 | Later (PS1b) |
+| BUILD-008b | P0 | Playtest build 4 (PS1b exit) | GAME-020, NPC-001 | Later |
+| ART-009 | P1 | BOH/HUB stock dressing + restock anchors for the manager refill (racks per DEC-041, backstock GAP-DAY-02); was ROADMAP "ART-005" (renumbered, DOC-002) | ART-007, PROC-005 | Later (PS2, before GAME-012) |
+| NPC-002 | P1 | Ambient staff NPCs: guard at the stand, GM assigning registers (DEC-079), second budtender; SPEC_SHIFT_DAY §5 | ASSET-008, NPC-001, GAME-011 | Later (PS2) |
+| ASSET-008 | P1 | Staff characters: separate MPFB roster in the DEC-089/113 uniform (green tee, print wearer's left chest), guard set (CHARACTERS.md §9) | ASSET-005, ASSET-006 | Later (PS2) |
+| AUDIO-002 | P1 | Unity integration of the AUDIO-001 plan: mixer groups, ducking, slice/PS1 cues, PS2 rush layers | AUDIO-001, GAME-011 | Later (PS2) |
+| UI-001 | P2 | Settings menu off the Esc pause: four mixer volumes, mouse sensitivity, invert, key hints (AUDIO_PLAN §1, GAME-025) | AUDIO-002 | Later (PS2) |
+| PERF-002 | P2 | Perf pass with a full-day NPC count against PERF_BASELINE budgets | GAME-011, NPC-002 | Later (PS2) |
+| DATA-004 | P1 | Real packaged catalog from Nolan's Dutchie/LeafLogix export through the DATA-002 importer (PII-free, DEC-048/050); replaces every PLACEHOLDER SKU (GAP-PKG-01) | Nolan provides the export | Blocked (FOR NOLAN, asked once; PS3 gate) |
+| UX-004 | P2 | Packaged UX: category tabs, format/dose filter, packaged cards, cart lines (SPEC_GAME004) | DATA-004 | Later (PS3) |
+| PROC-010 | P1 | Toolkit families phase 2 = PROC-005 handoff "Left, in order": architecture kit, exterior, ladder, display cases, clutter (incl. playtest-1 register details: spray bottle, rag, bins), stocking arranger with uneven fill, labels, materials, ID stand/bags/signs | PROC-005 PASS, PROC-007 | Later (split into packets at PROC-005 review) |
+| PROC-012 | P2 | Bud/nug look pass (playtest 1: "nugs still look off"): PROC-003 follow-up at DEC-084 | PROC-007 | Later (M-F) |
+| REF-015 | P2 | Exterior envelope, parking, fence and approach evidence from A011/A012, CCTV R1C1–C5/R3C1 and BAND photos → REFERENCES_INDEX §9 + ROOM_FIXTURES exterior rows; GAPs for what no source shows | — | Later (M-F) |
+| ART-012 | P2 | Exterior and parking lot from REF-015: façade, lot striping, fence/gate, HVAC, vegetation, night wall packs (M-9) | REF-015, PROC-009, PROC-010 | Later (M-F) |
+| ART-010 | P1 | Lived-in pass (DEC-096/104, playtest 1): placement variation, partly used supplies, uneven stocking, cleaning and personal items in believable places, restroom-cabinet supplies | PROC-010, ART-008 | Later (M-F) |
+| LIGHT-001 | P1 | Final lighting/lookdev: day and night looks, BOH look, glass/reflections/decals, material consistency (M-7) | ART-010, ART-012 | Later (M-F) |
+| PERF-003 | P1 | Final optimisation pass: LODs, batching, lightmaps, memory; performance report (M-10) | LIGHT-001 | Later (M-G) |
+| QA-003 | P1 | Final regression: every gate, every DP test, scene load, no missing references; final issue list (M-10) | PERF-003 | Later (M-G) |
+| BUILD-009 | P1 | Release packaging: build settings, version, clean state docs (M-10) | QA-003, BRAND-002 | Later (M-G) |
+| DATA-005 | P2 | Re-import the TFS tool at v7.11.5, regenerate goldens, diff parity (GAP-210) | TFS ships v7.11.5 | Blocked (external) |
+| LT-1a | P3 | Presentation-only parking lot: cars come and go with arrivals (LT §1) | ART-012, PROC-009, GAME-011 | Later (M-F) |
+| LT-1b | P3 | Parking-lot throughput as pressure (LT §1) | LT-1a, PS4 | Later (PS4) |
+| LT-2a | P2 | Start screen: difficulty select (LT §2) | GAME-022 | Later (PS2) |
+| LT-2b | P3 | Start screen: character customisation / role select (LT §2) | GAME-CHR-002, ASSET-008 | Later (M-F) |
+| LT-3 | P2 | Store condition over the day: per-zone mess state, closing looks different from opening (LT §3) | GAME-011, GAME-013, PROC-010 | Later (PS2) |
+| LT-4 | P3 | Coworker personality traits (LT §4) | NPC-002, PS4 | Later (PS4) |
+| LT-5 | P2 | TV ad wall: render-texture slideshow, approved/fictional brands, no effect claims (LT §5) | TV-wall fixture (PROC-010) | Later (M-F) |
+| LT-6a | P3 | Break room ambient props (LT §6) | ART-010 | Later (M-F) |
+| LT-6b | P3 | Break room NPC use and breaks (LT §6) | NPC-002, PS4 | Later (PS4) |
+| LT-7 | P3 | Neighbourhood activity: traffic, pedestrians, deliveries, weather (LT §7) | ART-012, LT-1a | Later (M-F) |
+| LT-8 | — | Tone pillar adopted (`Design/TONE.md`, DEC-101) | — | Done (DES-005b) |
 | DOC-004 | P3 | Put "fast recommendation" back in GSS §28 (DEC-059 n1, REVIEW-W4Q); rides with the next GSS edit | — | Ready |

@@ -23,7 +23,8 @@
 | Need | Authority |
 |---|---|
 | Live studio state: in flight (session/agent + branch), queue, open Nolan items, builds | `Docs/PROJECT_STATE.md` (Hub-owned, the only live record) |
-| Task lifecycle | packet location: `Docs/Tasks/Ready` → `Active` → `Done`; `Docs/BACKLOG.md` is the ID/title/dependency registry, its State column mirrors the folder and changes only in the same commit as the move |
+| The plan: milestones to the finished game, their task IDs, dependencies, critical path | `Docs/Design/ROADMAP_POST_SLICE.md` (Hub-owned; no task state) |
+| Task registry and lifecycle | `Docs/BACKLOG.md` holds every known work item (ID, title, priority, dependencies, state incl. Later/Blocked/Dropped); packet location `Docs/Tasks/Ready` → `Active` → `Done` is the executable state and the BACKLOG State column mirrors it in the same commit |
 | Ratified decisions | `Docs/DECISIONS.md` (append-only; newest wins on conflict) |
 | Unknowns / placeholders | `Docs/KNOWN_GAPS.md` |
 | Real-store facts and dimensions | `Docs/REFERENCES_INDEX.md`, `Docs/Reference/*.json`, `References/` (floor plan, TI, CCTV), `Docs/Research/`, Nolan's answers in `Docs/Handoffs/REF-008.md` and DECs |
@@ -67,8 +68,9 @@ A packet is the worker's whole brief. It carries only what no canonical file hol
 1. Merge the reviewed branch (or the reviewer's `review/<id>`) into `main` with `--no-ff` and the git identity above.
 2. Move the packet `Active/` → `Done/`; set the BACKLOG row to Done.
 3. Append DEC/GAP entries proposed in the handoff's `## For the Hub`; forward `FOR NOLAN` items.
-4. Update `PROJECT_STATE.md`: remove the in-flight row, pull the next queue item, note the build if one is due.
-5. Archive the worker and reviewer sessions.
+4. **Track:** any new legitimate work the handoff or review surfaced gets a BACKLOG row (ID, deps, Later or Ready) now; obsolete rows become `Dropped (reason)`; every BACKLOG row whose dependencies are all Done moves to Ready (write its packet from the roadmap and the cited specs) and into the PROJECT_STATE queue. If a milestone's P0/P1 rows are all Done, close it (§91, build) and open the next in the roadmap.
+5. Update `PROJECT_STATE.md`: remove the in-flight row, pull the next queue item, note the build if one is due.
+6. Archive the worker and reviewer sessions.
 Handoffs and reviews are never edited afterwards; corrections are new entries in the registries. If a fact appears in two places, the registry in §0.2 wins and the other copy is deleted, not updated.
 
 ## 0.9 Hub restart

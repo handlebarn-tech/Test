@@ -17,3 +17,12 @@ Exporter change + validation check; re-exported FBX (LFS) + manifest; updated te
 
 ## Validation
 Blender validation passes for every family; ProcArt EditMode tests green via `studio.ps1` (needs one Unity slot, borrowed from World).
+
+## Read
+`CLAUDE.md` → this packet, then only: `Docs/DECISIONS.md` DEC-084/097; `Docs/Assets/Specs/PROC_PIPELINE.md` (export path, validation layer); `Docs/Imports/IMP-003_PROC_FIX_CHECKLIST.md` R3b.0.4; `Docs/Handoffs/PROC-005.md` (families and manifest on main).
+
+## Owns
+`Tools/Blender/` runner/proclib export + validation code and params; `Art/Exports/Procedural/**` re-exports + manifest; `UnityProject/Assets/_Game/Art/Procedural/**/*.meta` (`generateSecondaryUV` only); `Code/Tests/EditMode/ProcArt/`; `Docs/Handoffs/PROC-007.md`. Not the Lookdev shader (ART-011).
+
+## Handoff
+`Docs/Handoffs/PROC-007.md` (≤40 lines): the commit ART-011 must land with, per-family vertex/bounds diff result, validation output paths. Uncertainty: STUDIO_OS §0.6 first; one line to the Hub when done.

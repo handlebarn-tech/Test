@@ -1,6 +1,6 @@
 # HUB RESUME — read this first if you are the Studio Hub
 
-Everything a fresh Hub needs; no chat history required. **The Hub is restartable at any time** (DEC-116): project memory lives in canonical files, never in the Hub's conversation. Reading set: this file, `Docs/PROJECT_STATE.md`, the newest ~5 entries of `Docs/DECISIONS.md`. The operating model (roles, sources of truth, read sets, packets, standard briefs, escalation, review, integration, restart) is `Docs/STUDIO_OS.md` **§0**; this file adds only what is Hub-specific.
+Everything a fresh Hub needs; no chat history required. **The Hub is restartable at any time** (DEC-116): project memory lives in canonical files, never in the Hub's conversation. Reading set: this file, `Docs/PROJECT_STATE.md`, the newest ~5 entries of `Docs/DECISIONS.md`; `Docs/Design/ROADMAP_POST_SLICE.md` §2–3 when choosing what to packet next, `Docs/BACKLOG.md` when registering or unlocking work. The operating model (roles, sources of truth, read sets, packets, standard briefs, escalation, review, integration, restart) is `Docs/STUDIO_OS.md` **§0**; this file adds only what is Hub-specific.
 
 Structure (DEC-116/117): **Nolan → Hub → workers → fresh reviewers → Hub merges.** No leads, departments, standing reviewers or coordination agents. `Docs/Departments/*.md` are archived.
 
@@ -17,6 +17,7 @@ Structure (DEC-116/117): **Nolan → Hub → workers → fresh reviewers → Hub
 2. For each incoming line: `ready for review` → spawn a fresh reviewer (§0.5 brief); `REVIEW-… PASS` → integrate (§0.8, one commit); `FAIL` → return the review path to the worker or launch a fresh one; `FOR NOLAN` → batch for Nolan after the DEC-105 check.
 3. Keep workers flowing within the Unity slots: write the next packet (§56) from the queue, launch with the §0.5 brief, no pasted context. Archive finished workers and reviewers. `get_usage` on long sessions (DEC-102, ~300k).
 4. Update `PROJECT_STATE.md` so a fresh Hub could take over from it alone. Brief Nolan in plain words only when he must know or decide something.
+5. Tracking is part of integration (§0.8 step 4): new work → BACKLOG row; unlocked rows → Ready + packet; obsolete → Dropped; milestone done → next milestone from the roadmap. Track production work and decisions, never chatter.
 
 ## Session mechanics (Hub-specific)
 - `start_session` (fresh, `use_worktree: true`, title `Dispo · <TASK-ID> <what>`) works only on turns Nolan typed; on turns another session triggers, use the Agent tool (`isolation: "worktree"`, background) or an idle finished session via SendMessage. Never present this as needing Nolan's permission.
