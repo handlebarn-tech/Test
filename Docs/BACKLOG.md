@@ -75,9 +75,9 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | REF-009 | P1 | Apply DEC-051 to `ROOM_FIXTURES.json` | REF-008 | Done (W4R) |
 | REF-009b | P1 | W4R m1–m5 + DEC-062 into `ROOM_FIXTURES.json` | REF-009 | Done (W4U) |
 | REF-010 | P1 | Restroom storage cabinet placement (DEC-068) into `ROOM_FIXTURES` | ART-006 | Done (W5C) |
-| REF-011 | P0 | Sales-floor layout audit: registers + operator access, HUB, deli walls, shelf fill (DEC-096) | — | Active |
-| REF-012 | P0 | Office walkability + door geometry audit; DOORS.json contract for Gameplay (DEC-096) | — | Active |
-| ART-007 | P0 | Graybox/lookdev rebuild from REF-011/012 (registers, HUB, deli walls, office, doors) | REF-011, REF-012 | Ready |
+| REF-011 | P0 | Sales-floor layout audit: registers + operator access, HUB, deli walls, shelf fill (DEC-096) | — | Review (review/world-1) |
+| REF-012 | P0 | Office walkability + door geometry audit; DOORS.json contract for Gameplay (DEC-096) | — | Review (review/world-1) |
+| ART-007 | P0 | Graybox/lookdev rebuild from REF-011/012 (registers, HUB, deli walls, office, doors) | REF-011, REF-012 | Active |
 | GAME-007 | P1 | Purchase-limit meter + over-limit asks + strike ledger (COMP-002 §2) | GAME-006 | Done |
 | GAME-008 | P1 | ID-check events (COMP-002 §3) | GAME-007 | Done (W5N) |
 | GAME-009 | P2 | Medical customers (COMP-002 §4) + W5N m2 queue strip | GAME-007, GAME-008 | Review (REVIEW-PS1, Unity B2; 26081fa) |
