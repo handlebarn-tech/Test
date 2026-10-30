@@ -79,12 +79,12 @@ namespace Dispo.Presentation.Perf
             {
                 case SliceScreen.World: if (g.CustomerAtCounter) g.Talk(); break;
                 case SliceScreen.Dialogue: g.LookItUp(); break;
-                case SliceScreen.Query: g.ChooseChip(c.TrueFamily); break;
+                case SliceScreen.Query: g.ChooseChip(g.Sim.CurrentAsk.Family); break;
                 case SliceScreen.Results:
-                    var card = g.Sim.Results.Cards.FirstOrDefault(k => g.Sim.Inventory.Grams(k.Rep.Id) >= c.Grams);
+                    var card = g.Sim.Results.Cards.FirstOrDefault(k => g.Sim.Free(k.Rep.Id) >= g.Sim.CurrentAsk.Grams);
                     if (card != null) g.Choose(card);
                     break;
-                case SliceScreen.Pos: g.PosSelectWeight(c.Grams); g.PosConfirm(); break;
+                case SliceScreen.Pos: if (g.Sim.CanAddItem) g.AddItem(); else g.PosConfirm(); break;   // GAME-006 cart
             }
         }
 
