@@ -8,17 +8,17 @@
 **Hub:** `Docs/HUB_RESUME.md` (HARD RULES first, then its reading list) + the newest DECs. **Workers:** `CLAUDE.md` → this file → your packet only.
 
 ## In flight (as of main 0fca821, 2026-10-30 ~05:30; verify with `list_sessions {"linked": true}`)
-Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, W4R REF-009, W4S UX-005, IMP-001, W4U REF-009b, W4V IMP-002, W4T QA-002, W4X DOC-001, W4W GAME-006, W4Y QA-002b, W4Z DOC-003. DECs 052–069.
+Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, W4R REF-009, W4S UX-005, IMP-001, W4U REF-009b, W4V IMP-002, W4T QA-002, W4X DOC-001, W4W GAME-006, W4Y QA-002b, W4Z DOC-003, W5B OPS-002, W5C OPS-001+REF-010, W5E AUDIO-001 (ledger author fixes m1/m2 → AUDIO-002). DECs 052–073.
 
 | Work | Session | State | Next Hub step |
 |---|---|---|---|
 | GAME-007 done (a6ab1dc+5cc916a) → REVIEW-W5G queued after W5A | `local_0dd63bac…` reviewer; worker `local_7f8c95e9…` idle | queued | merge on GO → GAME-008 |
 | GAME-010 tuning + personas (merging cart; W4W m3) | `local_0d166a8e-87b1-40bb-9594-be389c549875` | grid 3 | review |
 | REVIEW-W5A: ART-006 (c1ad023) | `local_0dd63bac-df1d-448d-9203-641ead6b6837` (worker `local_392adc04…` idle) | running | merge on GO → playable build session; REF pass for DEC-068 cabinet |
-| REVIEW-W5C: OPS-001 run time limit (08e017c) + REF-010 (1c3a9d8) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO; archive OPS session `local_7eefd4c8…` |
 | **IMP-003**: rolling audit of ChatGPT Blender toolkit (drop 1 audited, adapt) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | running | after each audit: review → Nolan approval; message it when Nolan adds drops |
-| Docs reviews W5D DES-004 (a693cef), W5E AUDIO-001 (5fbf03e), W5F IMP-003 drop 1 (1d13112) | `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7` | running | merge on GO; ratify DEC-DAY-A..E; W5F summary → Nolan approval; archive DES-004 `local_82d327a2…` + AUDIO-001 `local_8bddd8f7…` after merge |
-| BRAND-001: approved brands only (DEC-071) | `local_a7e0b8da-ae2d-4dbb-ac46-8194e642ec35` | running | review (parity-sensitive) |
+| DES-004 fixing REVIEW-W5D M1 (no sales after 22:00) | `local_82d327a2-5b67-4cff-b481-5854a94f6f31` | running | re-review (docs reviewer `local_b073ffa0…`) → merge, ratify DEC-DAY-A..E |
+| W5F IMP-003 drop 1 PASS w/ minors (`review/wave-5f`) | reviewer `local_b073ffa0…` | held | wait for IMP-003 delta audit of ChatGPT's fixes, then one approval summary to Nolan |
+| REVIEW-W5H: BRAND-001 (71e3732+98ce92c) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` (worker `local_a7e0b8da…` idle) | running | merge on GO |
 
 ## Next tasks to start (dependency order)
 0. DOC-002 (AUDIT batch D) in the next gap between waves; DOC-003 (batch E) low priority. Merged this session also: W4U (REF-009b), W4V (IMP-002), W4T (QA-002; DEC-067), W4X (DOC-001). Free reviewer: `local_c94488d7…`.
