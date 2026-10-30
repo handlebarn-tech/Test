@@ -58,7 +58,8 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 - When TFS ships v7.11.5, regenerate the goldens and diff them (GAP-210).
 
 ## Reminders for Nolan
-- Nolan was told (01:30) to drop the export in `C:/Users/handl/Downloads/Dispo Game Imports/` (outside the repo; a DATA worker writes a column-whitelisting importer per DEC-006: name/SKU, category, brand, size, THC/CBD, price; it drops cost/vendor/notes/any PII). **Remind Nolan** if it hasn't arrived: the PII-free Dutchie inventory export (SKU, category, brand, size, mg, price) for packaged goods (DEC-048 item 5). He said "yes but remind me later".
+- **Export received 01:35** → DATA-002 importer `local_8bee29f0-46b7-4ee5-87bf-9792b70f6267` (no more reminder needed). PERF-001 done (da1a4a3; 1% lows 14–24 FPS hitches) → REVIEW-W4J in session `local_fa1d4222…`.
+- (old) Nolan was told (01:30) to drop the export in `C:/Users/handl/Downloads/Dispo Game Imports/` (outside the repo; a DATA worker writes a column-whitelisting importer per DEC-006: name/SKU, category, brand, size, THC/CBD, price; it drops cost/vendor/notes/any PII). (arrived): the PII-free Dutchie inventory export (SKU, category, brand, size, mg, price) for packaged goods (DEC-048 item 5). He said "yes but remind me later".
 
 ## Blockers
 - None.
