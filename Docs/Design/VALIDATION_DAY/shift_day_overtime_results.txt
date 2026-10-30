@@ -1,0 +1,3 @@
+beginner overtime_s mean 30.6 p90 84.8 max 205.1 shifts_with_overtime_% 58.3 arrivals_after_lock 0
+standard overtime_s mean 44.5 p90 117.7 max 303.2 shifts_with_overtime_% 66.1 arrivals_after_lock 0
+expert overtime_s mean 43.8 p90 112.3 max 226.0 shifts_with_overtime_% 63.7 arrivals_after_lock 0

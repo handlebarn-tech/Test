@@ -1,9 +1,0 @@
-beginner W 60 closed_out/shift 0.463 shifts with any 36.3 %
-beginner W 120 closed_out/shift 0.226 shifts with any 21.4 %
-beginner W 180 closed_out/shift 0.137 shifts with any 13.7 %
-standard W 60 closed_out/shift 0.419 shifts with any 31.9 %
-standard W 120 closed_out/shift 0.114 shifts with any 9.6 %
-standard W 180 closed_out/shift 0.024 shifts with any 1.9 %
-expert W 60 closed_out/shift 0.38 shifts with any 29.7 %
-expert W 120 closed_out/shift 0.103 shifts with any 9.4 %
-expert W 180 closed_out/shift 0.026 shifts with any 2.3 %
