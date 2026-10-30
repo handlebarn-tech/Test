@@ -1,42 +1,51 @@
 # Handoff — ASSET-003 (2026-10-30): customer characters + animations sourcing
 
-**Deliverables:** `Docs/Assets/Specs/CHARACTERS.md` (variation plan, tri budget, crowd LOD, Unity import steps), `Docs/Assets/fetch_list_characters.json`, ledger §1c (9 rows), 51 new manifest rows. No Unity work, no binaries in git.
+**Deliverables:** `Docs/Assets/Specs/CHARACTERS.md` (sources, 60-customer variation system, readability rule, budget, crowd LOD, Unity import steps), `Docs/Assets/fetch_list_characters.json`, ledger §1c, manifest (515 rows, 0 bad). No Unity work, no binaries in git. Commits: be746d4 (v1), a320a38 (DEC-075 scaling), this one (DEC-084 realism).
 
-## Scope change (DEC-075, Hub message 2026-10-30)
-Nolan wants ≥ 10 distinct customers at first and **≥ 50 by the end**. The spec now designs for a 60-identity roster (headroom to 100+). It adds a register-distance readability rule (Rule D, spec §3.4), the combinatorics (354 shape-distinct head-silhouette × top pairs before any colour), and a seeded roster generator with a pairwise self-check. To widen the everyday garments it also fetches **CHR-QUA-AM / CHR-QUA-AW** (Quaternius Animated Men/Women, CC0): tees, long-sleeve, dress, tank top, and an older man.
+## History of scope (from the Hub)
+1. v1: CC0 stylised packs (Quaternius) → fetched.
+2. DEC-075: ≥ 10 distinct customers at first, ≥ 50 by the end → variation system for 60.
+3. **DEC-084: realistic humans, never low-poly or stylised; performance via LODs.** The primary source is now **Microsoft Rocketbox (MIT)**. All Quaternius rows are marked SUPERSEDED in the ledger (files stay in the cache, unused).
 
-## Fetched (cache `C:/Users/handl/Downloads/Dispo Game Assets Cache/quaternius/`, 91 MB)
-- **CHR-QUA-UMM** Ultimate Modular Men (11 outfits, Humanoid-Rig FBX each + master .blend) and **CHR-QUA-UMW** Ultimate Modular Women (10 outfits + modular master FBX). Source: the pack page's Google Drive "Just give me the Download" links.
-- **ANM-QUA-UAL1 / UAL2** Universal Animation Library 1 + 2, free Standard tiers (43 clips each, FBX + GLB, RM and non-RM). Source: itch's anonymous "No thanks, just take me to the downloads" flow. The link is signed and expiring, so these are `local` entries in the fetch list.
-- **CHR-QUA-AM / AW** Animated Men (4) / Women (4), flat + Smooth FBX each (Drive links from the pack pages).
-- Measured in Blender 5.2 (headless): men 5.2k–11.1k tris (modern outfits 5.2k–6.6k), 62 bones. Women 6.0k–7.9k tris, 51 bones. 4 meshes and 4–11 flat-colour materials per outfit. AM/AW: single mesh, 42 bones, one material per garment, flat 1.8k–2.8k / smooth 6.4k–8.8k tris. UAL: 65-joint UE-style skeleton. No pack has shape keys, so body types use per-bone scale (spec §3.3, GAP-CHR-3). Every model has Humanoid-mappable bone names. Archives contain `License.txt` = CC0 1.0.
-- 22 modern top garments (12 men, 10 women) across 4 families. Hair, hats, beards and earrings split out of the head meshes. First 16 identities hand-picked for PS2; 60 generated later (spec §3).
+## Fetched for DEC-084 (cache `…/Dispo Game Assets Cache/rocketbox/`, 1.5 GB)
+- **16 Rocketbox avatars** (8 women, 8 men; everyday clothes; one older man): FBX + 2K TGA colour/normal/specular (head, body) + 2K RGBA hair opacity. Measured in Blender 5.2: 1 mesh, **6.7k–9.3k tris**, 3 materials, 80-bone 3ds Max Biped (facial bones included), real scale 1.73–1.87 m. All FBX are binary and import cleanly; 112 TGA are present at full size.
+- **50 Rocketbox mocap clips** (MIT): 32 in-place (idles, weight shift, look-around, waiting, nervous, phone, talk, `documents_take` for hand-over/receive, hold-bag, wave) + 18 motion-extracted (walk neutral/slow, start/stop, waiting-walk, turns). Every P0 animation need is covered; the old GAP-ANM-1 (weight shift) is closed.
+- **LIC-RB-MIT:** the repo's LICENSE.md, README.md and `FixRocketboxMaxImport.cs`.
+- The other **64 usable Rocketbox adults** are in the fetch list as `blocked: P1` entries. Drop the key and re-run to fetch (~93 MB each). Excluded for good: Children, Fire, Military, Pilot, Police, swimwear. Security_* is reserved for staff.
 
-## Mixamo verdict
-The Adobe FAQ (updated 2021-09-14) says it is royalty-free for commercial video games, but it is **not CC0**. Raw redistribution is barred under Adobe's terms, and download needs an **Adobe ID**, which this task forbids. Under DEC-023 it would be `_LocalThirdParty/`-only, like the Unity EULA rows. **Not used**: ledger ANM-MIXAMO = REJECT for now. The CC0 UAL clips cover the P0 list.
+## Realistic-source findings (exact licences in ledger §1c)
+- **Rocketbox (MIT):** the only free source with 50+ distinct, realistic, rigged, modern adults (80 usable). Not CC0: MIT requires the notice in shipped copies. Under DEC-023 it stays out of git (local import).
+- **MPFB2 / MakeHuman:** system assets CC0 (base mesh, targets, skins, hair); some community packs CC-BY. This is the best **CC0** realistic route: our own generator with real age and weight morphs. It needs clothing work. P1.
+- **CharMorph Vitruvian:** CC0 base, unclothed; P2. MB-Lab is AGPL, which propagates to outputs → never use.
+- **Sketchfab CC BY modelled heroes:** "Just man" (vrimen, 44.8k tris), "Joe" (plan §16). These are P1 hero candidates with credits.
+- **Rejected:** photogrammetry scans (Renderpeople free, in3D, a self-scan) and a model the author says resembles a named real person. They break the no-likeness rule.
+- **Gap:** no CC0 source gives realistic, clothed, rigged modern adults at scale. Rocketbox geometry is last-gen (~8k tris) next to DEC-084's detail bar; its 2K textures and faces are realistic. The spec §5 close-up upgrade covers the register: facial blendshapes variant, skin detail normal, SSS, eyes, optional hero subdivision.
+
+## Variation (spec §3)
+78 customer bases → 60 customers from ≥ 50 distinct people, each base reused at most once. Layers on top: clothing colourways via Blender clothing masks, realistic project-made headwear and accessories, bone-scale builds, height, behaviour. Rule D: a different base = distinct. A same-base pair must differ in colourway family plus headwear or accessory, and is never in the store together. PS2 uses the 16 fetched bases, one person each.
 
 ## Validation
-- `python -I Tools/Assets/fetch_assets.py --list Docs/Assets/fetch_list_characters.json` → 6 entries fetched (2 added after DEC-075).
-- `python -I Tools/Assets/fetch_assets.py --verify` → 317 rows, 0 bad.
-- FBX headers checked (`Kaydara FBX Binary`, `.blend` header). All 37 FBX import cleanly in Blender 5.2. Part and material names for the hair split were read from the modular masters.
+- `python -I Tools/Assets/fetch_assets.py --list Docs/Assets/fetch_list_characters.json` → `{'cached': 24, 'fetched': 1, 'blocked': 64, 'failed': 0}` on the last run (all P0 fetched).
+- `python -I Tools/Assets/fetch_assets.py --verify` → 515 rows, 0 bad.
+- Blender 5.2 headless import of all 16 avatars plus a sample clip: mesh, rig, tris and height recorded above.
 
 ## Gaps (placeholders in the spec)
-- GAP-ANM-1: there is no weight-shift idle in the free tiers. Recommendation: a tiny project-original additive pelvis-sway clip authored in Blender.
-- Look-around is done procedurally with Humanoid look-at IK. Hand-over/receive = `Interact` / `PickUp_Table` + hand IK. No clip gap.
-- Hats are baked into the Head meshes. Hat-less Worker/Farmer heads need a Blender delete pass.
-- GAP-CHR-3: bone-scale builds need a visual check on the first prefab; fallback is a Blender broad-body variant.
-- GAP-CHR-1: no visual cue for medical vs adult-use customers. Keep it UI-only.
+- GAP-ANM-2: `_xy`/`_xyz` walk clips. How their extracted root motion maps into Unity has to be checked at import.
+- GAP-CHR-3: bone-scale builds need a visual check on the first prefab.
+- GAP-CHR-1: no visual medical cue (UI-only MED badge).
+- Library thumbnails were only 200 px, so the outfit descriptions in spec §3.4 need confirming from the models at import.
 
 ## Questions for Nolan (through the Hub)
-1. **Quaternius licence.** Source: `quaternius.com/license.html` (QAL v1.0, "regardless of the specific site or platform") vs each pack page, itch "License" field and bundled `License.txt` (all CC0 1.0). Options: (a) treat as CC0, so the files may enter git via LFS; (b) treat as QAL, import into `_LocalThirdParty/` only. The ledger and spec assume (b) for now. It is safe either way.
-2. **Art direction** (now also: smooth or flat shading for F3/F4). Source: `CHR-QUA-UMM/Preview.jpg`, `CHR-QUA-UMW/Preview.jpg` in the cache. The people are low-poly and flat-shaded, which is stylised next to HDRP lookdev. Options: (a) accept for customers; (b) UBC realistic bodies (CC0, free tier unclothed) plus our own modern clothes in Blender (P1); (c) MPFB2/MakeHuman pipeline (P2, licence check needed).
-3. **Staff uniform (GAP-CHR-2).** No reference shows what budtenders wear. Candidates: black/dark store tee, logo polo, lanyard. Placeholder: plain black top + dark trousers.
+1. **MIT into git?** DEC-023 admits only CC0/OFL; Rocketbox is MIT (redistributable with notice). Options: (a) keep it local-only (current plan, works); (b) extend the allow-list to MIT with the notice file.
+2. **Geometry gap.** Source: any `rocketbox/CHR-RB-*/Export/*.fbx` (6.7k–9.3k tris, 2K maps). Is Rocketbox plus the close-up upgrade acceptable for customers, or should MPFB2 (CC0, our generator, higher-poly bodies, real age/weight morphs) start now as the main path, with Rocketbox as crowd/background? Recommendation: Rocketbox for PS2 (it exists today, 50+ people); run MPFB2 as a P1 R&D packet and compare at the register.
+3. **Staff uniform (GAP-CHR-2):** no reference shows what budtenders wear. Placeholder: plain black top.
+4. **Cultural garments:** the Rocketbox pool includes women in hijab/niqab/burqa and men in thobe/keffiyeh (Female_Adult_06/10/16, Male_Adult_15/19/21). Plan: they are in the pool as ordinary customers, with no behaviour or stats tied to appearance. The Hub may remove them if it disagrees.
 
 ## Proposed packets
-- **PROC-CHR-001 (Blender, no Unity slot):** batch script in `Tools/Blender/` (spec §3.2). It splits hair, headwear, beard and earrings out of every head and remaps all named materials to palette-strip UVs. It builds the Blender-made accessories (cap, beanie, bucket hat, glasses, sunglasses, tote, shoulder bag, women's earrings; ≤ 400 tris each), Decimate LOD1/LOD2 for F1/F2, the cross-family hair fit table, and the GAP-ANM-1 sway clip. Output goes to `quaternius/derived/` with manifest rows. Validation: per-part tri/material counts vs spec §5, plus a parts contact sheet.
-- **DATA-CHR-001 (Python, no Unity slot; can run in parallel):** the seeded roster generator (spec §3.4) → `customer_roster.json` with 60 identities, the PS2 16 as a fixed prefix, and a Rule D pairwise self-check.
-- **GAME-CHR-002 (Unity, 1 editor slot, after PROC-CHR-001):** spec §8 steps 1–7: the cache→`_LocalThirdParty` copy script, Humanoid import, `AC_Customer` with look-at/hand IK, 4 family prefabs + `CustomerIdentity` assets from the roster, the spawner wired to the existing `CustomerState`/`PatienceState` (view only, no duplicate identity in the store), the EditMode budget + Rule D test, a 12-customer perf capture vs PERF-001, and colour/greyscale register contact sheets.
+- **PROC-CHR-001 (Blender, no Unity slot):** batch script in `Tools/Blender/` over the cached Rocketbox bases. It paints clothing masks and skin masks per base from UV islands/colour (for colourways and SSS), builds LOD1 (~4k) / LOD2 (~1.5k) by Decimate, and makes realistic headwear/accessory props (2K PBR) with a per-base socket-offset table. Output: `rocketbox/derived/` + manifest rows. Validation: per-base LOD tris, mask contact sheet.
+- **DATA-CHR-001 (Python, parallel):** seeded roster generator → `customer_roster.json` (60), with Rule D and quota self-check; the PS2 16 as its prefix.
+- **GAME-CHR-002 (Unity, 1 editor slot, after PROC-CHR-001):** spec §8 steps 1–7: cache→`_LocalThirdParty` copy, HDRP Rocketbox import script (port of the MIT fix script), Humanoid avatars, `AC_Customer`, `PF_Customer` + `CustomerIdentity` assets, spawner hookup (view only), EditMode tests, perf capture vs PERF-001, register contact sheets, MIT notice in third-party notices.
+- **R&D-CHR-003 (Blender, P1):** MPFB2 CC0-only pilot: 4 customers with our own modern clothes, compared at register distance against Rocketbox.
 
 ## Notes
-- Itch anonymous download recipe (no account): GET the page → POST `/<slug>/download_url` (csrf) → GET the returned page → POST `/<slug>/file/<upload_id>?source=game_download` (csrf from that page, **no key param**) → JSON `url` (signed R2 link).
-- The ledger's older LIB-QUA row (DEFER, QAL) is left as written. §1c explains the conflict.
+- The itch anonymous download recipe and the Quaternius licence conflict are kept in ledger §1c for the superseded rows.
