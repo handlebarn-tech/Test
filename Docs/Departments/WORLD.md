@@ -27,17 +27,16 @@ _Lead keeps this ≤15 lines._ 2026-10-30, World lead `local_d19eda58…` live.
 ## In flight
 | Task | Worker | Branch | State |
 |---|---|---|---|
-| — | — | — | — |
+| REF-011 sales-floor audit | subagent (worktree) | worktree branch, set on handoff | running |
+| REF-012 office + doors audit | subagent (worktree) | worktree branch, set on handoff | running |
 
 ## Queue (lead re-orders within DEC-096)
-1. **Reconcile BACKLOG rows** for REF/ART (ART-006 shows Active but has a handoff).
 2. Playtest 1 layout audit against the references, room by room, before more dressing:
    - **register run:** the south-side registers can't be reached or worked; re-audit the whole layout against TI + CCTV (DEC-039 L shape);
    - **HUB** mapped wrong in places;
    - **office** almost unwalkable at current placeholder density: plan real walking/work space before final assets land;
    - **deli walls:** Nolan believes there are about three, not one; check references; shelving also looks unrealistically full (fill density with Assets' stocking arranger);
    - **doors:** geometry and swing so walking through the store feels natural (interaction with Gameplay).
-   - DEC-068 restroom cabinet (by the door) into `ROOM_FIXTURES`.
 3. Lived-in pass once final assets are in: slight placement variation, partly used supplies, uneven stocking, cleaning and personal items in believable places.
 4. Later: livelier exterior and neighbourhood, occupied break room (with Gameplay/Assets).
 
