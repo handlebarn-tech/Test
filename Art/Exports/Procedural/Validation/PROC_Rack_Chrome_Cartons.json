@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Rack_Chrome_Cartons",
+  "collision_boxes": 5,
+  "errors": [],
+  "export_sha256": "550d009f21123569",
+  "generator": "wire_shelving",
+  "lod_tris": {
+    "LOD0": 35240,
+    "LOD1": 12936,
+    "LOD2": 4816,
+    "LOD3": 156
+  },
+  "params_sha256": "69dd09971ea62805",
+  "passed": true,
+  "warnings": []
+}
