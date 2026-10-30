@@ -2,7 +2,7 @@
 
 # Round 3 (fix round 2)
 
-**Reviewed:** `claude/jovial-meninsky-908c0a` @ `34bf6c2` · **Review branch:** `review/proc009-r3` (`review/proc009-r2` @ `01ce8ea` + worker branch, `--no-ff` merge `2cfbdcb`) · **Reviewer:** fresh, Hub-spawned (STUDIO_OS §0.7)
+**Reviewed:** `claude/jovial-meninsky-908c0a` @ `4b905e3` (asset checks ran at `34bf6c2`; `4b905e3` adds one handoff line only) · **Review branch:** `review/proc009-r3` (`review/proc009-r2` @ `01ce8ea` + worker branch, `--no-ff` merge `2cfbdcb`) · **Reviewer:** fresh, Hub-spawned (STUDIO_OS §0.7)
 **Sources read:** the packet; the diff `429872f..34bf6c2` (and the full branch stat against main); `Docs/Handoffs/PROC-009.md` (fix round 2, Validation, Not done); round 2 of this review.
 
 ## Verdict: PASS with minors
@@ -26,6 +26,8 @@ None found. Body, greenhouse, wheels, mirrors, rear lamps and plate unchanged fr
 2. **The lamp wrap barely reads at 3/4.** The lens sweep round the fender corner is there in code but the wrap portion is hard to see in the renders; the lamps read mostly as end-face units. Not a blocker.
 3. **Hatchback mesh grille reads as a solid black rectangle** at LOD0 (cells too fine to resolve at sheet scale). Observation.
 4. Carried over: round-1 minor 4 (`run_generator.py` 2-line change) is still the Hub's call; texture maps and lightmap UV remain the blocked dependency the handoff raised (round-1 minor 1/2). The late-1990s/2000s read observation stands; texture maps are the remaining lever.
+
+5. **`4b905e3` (handoff-only).** It adds a proposed DEC under `## For the Hub`: one parked car per in-store customer (Nolan's answer to GAP-PROC-VEH-2, relayed by the Hub). Class mix and paint stay GAP-PROC-23/24; capacity cited to OFFICE_FINDINGS B20. No code or asset change, so the checks above stand. Hub, when you register the DEC: say what happens when more than 15 customers are in the store (the lot has 15 spaces), e.g. cap at 15. Also, the older `For the Hub` bullet on the plate rule ("from memory, not looked up here") is stale; fix round 1 cited A.R.S. 28-2354(A)(1).
 
 ## Not checked
 - Unity import (packet: not needed); in-scene placement in the lot.
