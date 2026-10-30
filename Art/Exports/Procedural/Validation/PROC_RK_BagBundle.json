@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_RK_BagBundle",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "b0a5703ab0d755ff",
+  "generator": "register_kit",
+  "lod_tris": {
+    "LOD0": 3332,
+    "LOD1": 212,
+    "LOD2": 80,
+    "LOD3": 12
+  },
+  "params_sha256": "7fe377490abe1086",
+  "passed": true,
+  "warnings": [
+    "LOD0 3332 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

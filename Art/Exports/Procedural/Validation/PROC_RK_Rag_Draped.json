@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_RK_Rag_Draped",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "17671dd881e92b01",
+  "generator": "register_kit",
+  "lod_tris": {
+    "LOD0": 5980,
+    "LOD1": 1492,
+    "LOD2": 156,
+    "LOD3": 24
+  },
+  "params_sha256": "7fe377490abe1086",
+  "passed": true,
+  "warnings": []
+}

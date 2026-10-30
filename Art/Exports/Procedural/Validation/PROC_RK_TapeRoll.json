@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_RK_TapeRoll",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "7f4386cb84cf1e1d",
+  "generator": "register_kit",
+  "lod_tris": {
+    "LOD0": 1948,
+    "LOD1": 508,
+    "LOD2": 240,
+    "LOD3": 32
+  },
+  "params_sha256": "7fe377490abe1086",
+  "passed": true,
+  "warnings": [
+    "LOD0 1948 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}
