@@ -35,7 +35,8 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 
 ## NEXT ACTIONS (in order) — fresh Hub starts here (handover 2026-10-29 23:20, usage limit; auto-resume 02:00)
 1. **Review queue, ready now (start sessions):**
-   - REVIEW-W4B: BUILD-003 (`claude/task-build-003-0837ba`, 9b4df6e; all gates green per its handoff). Unity review; merge after GO.
+   - REVIEW-W4B: BUILD-003 + BUILD-004 hub guard (`claude/task-build-003-0837ba`). Wait for BUILD-004's commit. **Before merging, delete the untracked prototype `.claude/settings.json` and `Tools/Studio/hub_guard.py` in the main checkout** (git won't overwrite untracked files).
+   - BUILD-PLAY (`local_599eaab4-f54f-4421-bdf9-b3729caf654f`): Windows build of the slice for Nolan → `C:/Users/handl/Downloads/Dispo Game Builds/`.
    - REVIEW-W4C: REF-006 + REF-007 (`claude/task-ref-006`, through cf527fe): FOH/BOH desk stills, jar spec (Amazon smalls + acrylic canister), crops (no people, network rack, thermostat or security drawer), SE exit from A011. Doc review. **Key finding: GAP-120, Working Plan V5 and the graybox have HUB and HUB 2 swapped east–west.** After merge ART fixes it (the SE exit goes on the furthest-east room, DEC-042c).
 2. **Still working at handover** (read their handoffs/branches when they finish; they report to whoever is Hub):
    - GAME-002b slice polish (session `local_e574024b-b42a-4f12-b5db-6b6d66ac34bc`, fresh branch from main)
