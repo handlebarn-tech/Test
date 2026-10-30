@@ -23,6 +23,7 @@ Staff are described by attire/role only.
 | `References/Index/photos/deli_jar_wall_retail_crop.jpg` | JPEG 590×481, derived crop (0,0)–(590,481) | People-free crop of the jar wall (the shopper is cut off) | §2.4 |
 | `References/TI/Interior TI Approved Set - PHX.pdf` | PDF 37 pp (24"×36"-class sheets, vector + text layer), 9.15 MB, 2022-08/10, City-approved 2022-12 | Retail interior TI drawings: G010 mounting heights, A101 plan + RCP, A310 door/material schedules, A320 partitions, A901 elevations, A940 millwork, I101 finish plan, E-sheets luminaire schedule. Text-read in REF-004; Nolan supplied the file and it was imported in REF-005 (plain git, <10 MB). Every page was checked: no security plan, P&P or credential page (the security mentions are a grille, card-reader hardware lines and spec boilerplate) | §6 |
 | `References/TI/A011 Phoenix AZDHS Floor Plan - 2026 Update.pdf`, `References/TI/A012 AZDHS Floor Plan - Lighting - 5.20.26.pdf` | PDF 1 p each, vector, 1/4"=1'-0" (18 pt/ft), sheet date 05/15/23, revs 12/23/22 | Room areas and labels behind Working Plan V5; A012 lighting legend | §6.8 |
+| (chat only) 3 CCTV pairs Nolan pasted into the REF-008 session, 2026-10-29 | images in chat, not files | Office (2 views, one new), BOH (= R4C2 + BOH still), FOH (2 views, one new) | §7 |
 | `References/LIVE_TFS_BUDTENDER_v7.11.4.md` | MD | Live budtender app behaviour (v7.11.4: Floor Mode, 6 effect domains, tier filters, accessibility). **No visual tokens** (colours/fonts/layout) are recorded in it | UI only (GAP-114) |
 | `References/Review_Budtender_Tool_Comprehensive_Chat_Record.md` | MD | Project history of the budtender tool (not in the REF-001 input list; not analysed here, MIG owns it) | — |
 
@@ -278,8 +279,8 @@ Product names visible on jar cards or boxes are **not** inventory data and must 
 | Hall | ✔ | R3C4 | 06 (through the arch) | covered |
 | Office | ✔ | R3C3, R4C5 | 04, 09 (13?) | covered (safe/IT side only in notes + photos) |
 | Break room | ✔ | R3C5 | 03 | covered |
-| JC | ✔ | — | — | **BLIND** |
-| Restroom | ✔ | — | — | **BLIND** |
+| JC | ✔ | door only (R3C5) | — | location and size from A011 (§7.3); interior blind |
+| Restroom | ✔ | — | — | **BLIND** on camera; fixtures from A011 (§7.4) |
 | FOH | ✔ | R4C1 + FOH still (§2.3) | — | CCTV only, two views |
 | BOH | ✔ | R4C2 + BOH still (§2.3) | — | CCTV only, two views |
 | Arch vestibule (unnamed) | ✔ | edges in R4C1/R4C2 | — | partial |
@@ -412,7 +413,7 @@ Views: R3C3/R4C5 (looking N), chat_office_L (looking S), R3C4 (through the open 
 R3C4 looks SE from the NW. Break door (black, "EMPLOYEES ONLY", fire label) is on the east wall, y 29.9–33.0. Office door is at the SE corner. Restroom door is on the west wall, y 33.1–36.1 (A011 only). Wood corkboard ≈1.8×2.6 ft with taped notices. Small recessed wall box near the arch (A011, Low). TL-2 black/white tile (High). **GAP-123:** graybox doors are off by 1–2.2 ft.
 
 ### 7.3 Break room + JC
-R3C5 (from the SW, looking N/NE) and A011 agree (Med). A pilaster at x 18.3–18.9. Plain north wall west of it (poster, towel dispenser). Wood/black-top cabinets east of it, returning down the east wall to y 37.4, with a double sink at y≈34.4. A magnet-covered **fridge** at y 37.7–40.5. Bench, mini hoop and coat hooks on the west side. **JC (GAP-103 closed):** SE corner, x 19.3–23.31, y 41.3–46.3 (≈19.2 SF), with its 2'-8" door on the west face at the south end (the black door with a note in R3C5) and a mop sink inside (A011). A foreground grey table can't be placed (GAP-126).
+R3C5 (from the SW, looking N/NE) and A011 agree (Med). A pilaster at x 18.3–18.9. Plain north wall west of it (poster, towel dispenser). Wood/black-top cabinets east of it, returning down the east wall to y 37.4, with a double sink at y≈34.4. A magnet-covered **fridge** at y 37.7–40.5. Bench, mini hoop and coat hooks on the west side. **JC (GAP-103 closed):** SE corner, x 19.3–23.31, y 41.3–46.3 (≈19.2 SF), with its 2'-8" door on the west face at the south end (the black door with a note in R3C5) and a mop sink inside (A011). **Staff lockers (store fact, DEC-047):** the grey surface in the R3C5 foreground is the top of a locker bank (a cap and a strap sit on it). Count, size and wall are unknown (GAP-126, position null in the JSON).
 
 ### 7.4 Restroom (blind on camera)
 A011: toilet in the NW corner (tank on the west wall), grab bars on the north and west walls, wall-hung lav in the SW corner, door at the south end of the east wall. Looks are per TI §6.6.
@@ -421,7 +422,7 @@ A011: toilet in the NW corner (tank on the west wall), grab bars on the north an
 **≈8.4×4.8 ft** at x 31.4–39.8, y 29.5–34.3 (High). The FOH door is on its west face and the BOH door on its east face, both at the north end, both 3'-0". The arch is x≈34.5–37.6. Supply shelf on the south wall (Low). TL-2 tile. **GAP-122:** the graybox draws it 3.0×2.2. The GAP-104 2.2 ft door exception lapses if ART adopts A011.
 
 ### 7.6 FOH
-R4C1/still/chat_FOH_L look south from beside the door; chat_FOH_R looks toward the door. Seen: a contiguous wire-rack **computer desk + white fridge + 2-door glass cooler**, two free-standing chrome runs with bins, a west-wall rack (A011 + R4C1), east-wall shelving (A011 only), sealed concrete with red/white tape. **GAP-124:** the frames read best with the group on the south wall (as in the JSON and the graybox desk); the east wall is not ruled out.
+R4C1/still/chat_FOH_L look south from beside the door; chat_FOH_R looks toward the door. Seen: a contiguous wire-rack **computer desk + white fridge + 2-door glass cooler**, two free-standing chrome runs with bins, a west-wall rack (A011 + R4C1), east-wall shelving (A011 only), sealed concrete with red/white tape. **Contents (DEC-050, store fact):** the racks hold mostly vapes and edibles plus some infused prerolls; the fridge holds drinks (cannabis colas and other beverages); the cooler holds all concentrates and perishable edibles. FOH is staff-only: customers never enter, the budtender fetches. **GAP-124:** the frames read best with the group on the south wall (as in the JSON and the graybox desk); the east wall is not ruled out.
 
 ### 7.7 BOH
 R4C2/chat_BOH_L look SW from the NE; the still/chat_BOH_R look NW from the SE. East-wall chrome run from y 31.3 to the desk. 2-bay west run at x 37–39, y 37.3–45.3. South shelving (A011, Low). Ex-register-1 desk on the east wall at y 40.3–44.3 (matches the graybox). LED strip over the aisle. Graybox `FX_BOH_Racks_W` starts at y 33, which collides with the vestibule.
