@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Door_Hall_Break_Leaf",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "29986b7921a9f95e",
+  "generator": "doors",
+  "lod_tris": {
+    "LOD0": 3572,
+    "LOD1": 600,
+    "LOD2": 108,
+    "LOD3": 12
+  },
+  "params_sha256": "4f161a8f40e7763e",
+  "passed": true,
+  "warnings": [
+    "LOD0 3572 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

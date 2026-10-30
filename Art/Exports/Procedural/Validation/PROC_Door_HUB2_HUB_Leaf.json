@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Door_HUB2_HUB_Leaf",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "be6484fb6b42a77a",
+  "generator": "doors",
+  "lod_tris": {
+    "LOD0": 3572,
+    "LOD1": 600,
+    "LOD2": 108,
+    "LOD3": 12
+  },
+  "params_sha256": "4f161a8f40e7763e",
+  "passed": true,
+  "warnings": [
+    "LOD0 3572 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

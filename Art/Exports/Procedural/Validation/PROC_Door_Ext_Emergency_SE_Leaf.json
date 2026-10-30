@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Door_Ext_Emergency_SE_Leaf",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "993d8438a9495913",
+  "generator": "doors",
+  "lod_tris": {
+    "LOD0": 2892,
+    "LOD1": 516,
+    "LOD2": 72,
+    "LOD3": 12
+  },
+  "params_sha256": "4f161a8f40e7763e",
+  "passed": true,
+  "warnings": [
+    "LOD0 2892 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}
