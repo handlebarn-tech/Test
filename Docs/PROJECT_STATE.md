@@ -4,6 +4,15 @@
 **Main:** see `git log`; every merge is a reviewed `review/wave-*` branch.
 **Updated:** 2026-10-30 03:55 MST by Hub (session 4), handover for the 07:00 scheduled resume (usage limit).
 
+## ⏸ PAUSED (2026-10-30 ~07:xx MST, Nolan)
+All workcells paused; the Hub chat was cleared at Nolan's request. The 07:00 scheduled Hub (`local_3dbae2f5…`) was stopped before takeover, so **the Hub remains `local_c6267ff5-2acb-4b09-83a7-53541a088c66`** (same session, cleared). Where each item stood:
+- GAME-009 medical: unfinished on `claude/task-game-009` @ a4806d6 (EditMode 215/217, PlayMode pass; capture timeout fix not re-run; no handoff or reviewer message yet). Worker `local_7f8c95e9…`.
+- PROC-005 toolkit integration: hit usage limit mid-task on `claude/clever-lamport-837e7f`. Worker `local_6c216f80…`.
+- ASSET-004 MPFB2 customers: hit usage limit, branch `claude/objective-archimedes-e3d973`. Worker `local_d31ad4c5…`.
+- IMP-003 round 3: audited (cc0fac5 + 165fa3d DEC-093 diff). REVIEW-W5T on `review/wave-5t` (79568f8) is a **partial** PASS: needs a follow-up pass (inside-out vehicles, tri counts, §R3 items, DEC-093 wording) plus m1 (a real brand only on a category it has in the catalog; TFS EdibleTub and TFS prepack pouch are wrong). Not merged. Then a round-3 summary to Nolan for approval.
+- Docs reviewer `local_b073ffa0…` hit its limit; Unity A/B2 reviewers idle. DES worker idle.
+- Nolan playtest of `slice-38b9e5c` still pending.
+
 ## Read with this
 **Hub:** `Docs/HUB_RESUME.md` (HARD RULES first, then its reading list) + the newest DECs. **Workers:** `CLAUDE.md` → this file → your packet only.
 
