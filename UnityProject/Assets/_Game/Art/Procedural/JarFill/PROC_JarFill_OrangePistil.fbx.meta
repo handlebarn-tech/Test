@@ -3,7 +3,17 @@ guid: 2f1a085dcd96c644fba236a0546df7a1
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Proc_BudAccent_OrangePistil
+    second: {fileID: 2100000, guid: 022bbfc32baa16846b7177c2d0f59d8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Proc_Bud_OrangePistil
+    second: {fileID: 2100000, guid: 6964c37504b80df40a6f07b3100b8038, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

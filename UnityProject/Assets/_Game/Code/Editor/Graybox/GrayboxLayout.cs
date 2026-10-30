@@ -30,7 +30,8 @@ namespace Dispo.Editor.Graybox
         [Serializable] public sealed class Room { public string id, zone, conf; public Rect r; }
         [Serializable] public sealed class Opening { public string id, h, conf, note; public float from, to; }
         [Serializable] public sealed class Wall { public string id, zone, conf, gap; public float ax, ay, bx, by, t; public Opening[] openings; }
-        [Serializable] public sealed class Fixture { public string id, zone, h, conf, shape, note; public string @base; public bool solid; public Rect[] rects; }
+        /// <summary>h/@base name a height key; hFt/baseFt (ART-006, ROOM_FIXTURES rows) give feet directly when h is empty.</summary>
+        [Serializable] public sealed class Fixture { public string id, zone, h, conf, shape, note; public string @base; public float hFt, baseFt; public bool solid; public Rect[] rects; }
         [Serializable] public sealed class RefCam { public string tile, zone, room, h, conf, note; public float x, y, yaw, pitch, fov; public string Id => $"REF_{tile}_{room}"; }
 
         [Serializable] public sealed class Anchor { public string id, zone, conf, note; public float x, y, h, yaw; }
