@@ -339,7 +339,7 @@ Replaces §R3 (drop 5 `…Round3_HQ/` is superseded, DEC-095). Integrate after r
 | `cash_drawer_tray` | **reject** |
 | `parked_vehicles` | **reject as built** |
 | `round3_common.py` | reject as a module; map onto `proclib` |
-| runner UV patch | adopt only with the R3b.0.4 decision |
+| runner UV patch | adapt to the DEC-097 channel order (PROC-007; R3b.0.4) |
 
 **Status of the drop-5 items (§R3, item by item):**
 | §R3 item | Status in the rebuild |
@@ -371,11 +371,16 @@ Replaces §R3 (drop 5 `…Round3_HQ/` is superseded, DEC-095). Integrate after r
   - Source: canonical runner size check (C5).
 - [ ] **R3b.0.2 LOD chains (18/30 non-decreasing)** [X2]: give LOD1 and LOD2 different `detail` levels, or reduce segments on flat parts. Target ½ / ¼ / ≤ 1⁄10 (Q0.5 `check_lod_chain`).
 - [ ] **R3b.0.3 DEC-084 detail** [X3]: LOD0 is 56–8,816 tris; every family needs its real construction (per family below) and the Q0 items (unwrapped UVs/trim sheets, 2K–4K PBR via DEC-023, seeded `wear(p)`). Replace `quality_floor_lod0` with `tri_guide.lod0_min` (Q0.5).
-- [ ] **R3b.0.4 lightmap UV** [X4, X5]: per-triangle atlas cells are unusable. **Decide once in PROC:**
-  - (a) Unity "Generate Lightmap UVs" on import, and keep 2 UV maps; or
-  - (b) a Blender UV2 (`smart_project` + pack) plus the runner `required_uv_maps` patch.
+- [ ] **R3b.0.4 lightmap UV** [X4, X5]: **settled by DEC-097; implement via PROC-007.** The layout is:
+  - channel 0 = `UVMap_Main`;
+  - **channel 1 = a dedicated lightmap UV exported from Blender**;
+  - **channel 2 = `UVMap_Label`**;
+  - Unity "Generate Lightmap UVs" stays **off**.
 
-  Do not port `_assign_uvs`'s lightmap part. Coordinate with the round-6 UV2 item (DEC-091 R6).
+  Fixes against the drops:
+  - **Do not port** `_assign_uvs`/`add_lightmap_uv`'s per-triangle cells: they do not overlap, but every edge is a seam. Build the lightmap UV with a real unwrap + pack per PROC-007.
+  - **Channel order:** every round-3–6 drop creates `[Main, Label, Lightmap]`, which puts the label on channel 1 and the lightmap on channel 2: the reverse of DEC-097.
+  - The drops' `required_uv_maps` runner patch is only a candidate. The runner check must enforce the DEC-097 order (PROC-007).
 - [ ] **R3b.0.5 collision** [X8]: add manifest boxes for `parked_vehicles` (body + wheels), the counter props and product shapes (one box each, or let Unity skip pickups by rule). Source: DEC-086 C1.
 - [ ] **R3b.0.6 params** [X9]: `unity_dir: UnityProject/Assets/_Game/Art/Procedural/...` (P1); `own_sheet: true` for multi-variant families (P2); a canonical `checks` block (`fail_on_degenerate`, `material_slots`, `origin_bottom_centre: true`); `GAP-R3-*` → `GAP-PROC-*` (P5); `M_R3_*` → M4 names.
 - [ ] **R3b.0.7 helpers** [X10]: do not add `round3_common.py`. Map `finish`→`finish_object`, `box`→`add_box`, `cylinder`/`tube`→`add_vertical_cylinder`/`add_cylinder_between`, `rounded_prism`→`rounded_rect`+`loft` or `add_beveled_box`, `pbr`→`material`. Port `torus` into `proclib` only if a kept family uses it (wheels, wreath, tape). Hinges/slides via `hinge_axis()`/`slide_axis()` (C10). Source: DEC-093, R3.11.
@@ -402,10 +407,12 @@ Replaces §R3 (drop 5 `…Round3_HQ/` is superseded, DEC-095). Integrate after r
 - [ ] **Colour black** (RI §2.1 HUB 2 R2C1 "black cabinets, 2+", Med), not grey steel.
 - [ ] **Size:** **2 cabinets, 3.0 × 1.5 × 7.0 ft each** (graybox `FX_HUB2_Cabinets`, a 6.0 × 1.5 ft footprint on the HUB 2 back wall, "tall" 7.0 ft; Low, GAP-110), not one 1.80 × 0.55 × 2.00 m unit.
 - [ ] **Evidence text:** placement "HUB against the office wall" (DEC-079) = HUB 2, which shares the office door (RI §1.4). The `evidence` and GAP text must say presence is sourced. Type, size and shelves stay GAP (RG3-1).
-- [ ] **Security precedent (DEC-051 Q9):** the office's secure-storage cabinets are modelled only as plain tall black closed boxes, with no interior or hardware detail. Until the Hub rules whether that covers these HUB backstock cabinets (handoff Q6), build them as **plain black closed boxes**, and keep the interior shelves and stock anchors behind a params switch that is off by default.
-- [ ] **Doors:** keep closed + hinge, via canonical `hinge_axis()` (only if the Hub allows openable doors).
-- [ ] **Detail:** at 836 tris it is plain boxes. Add folded-steel returns, door reveals, a real handle/latch shape (no lock detail, DEC-051), shelf lips and levelling feet.
-- [ ] **Stock anchors:** fill with the 1 lb bag asset once it exists (round 5 → audit first); never as inventory data (H3).
+- [ ] **Lead ruling (Q6, following the DEC-051 Q9 precedent):** build them as **plain black closed cabinets**:
+  - **remove** the interior shelves (`shelf_count`), the `stock_anchors` and the door/hinge `moving_parts`;
+  - no openable doors; no lock or hardware detail.
+
+  If Gameplay later needs restocking from these cabinets, Gameplay files it and this item is reopened.
+- [ ] **Detail (exterior only):** folded-steel edges, door-panel reveal lines, plinth/levelling feet, and seeded `wear(p)` on the black finish. No interior.
 
 ### R3b.3 Queue stanchions (`queue_stanchions`)
 - [ ] **Keep:** black ✓ (R2C1), no layout ✓ (RI §1.5 4 lanes, DEC-079 one line).
@@ -458,10 +465,10 @@ Replaces §R3 (drop 5 `…Round3_HQ/` is superseded, DEC-095). Integrate after r
 - the `expected_from_dims` pattern;
 - `recalc_face_normals` in finishing;
 - `torus`;
-- the closed-door + hinge HUB cabinet;
+- the separate-door-part construction (useful elsewhere; the HUB cabinet itself stays closed per Q6);
 - the stanchion form;
 - the catalog-matching product shapes;
-- the params-driven `required_uv_maps` patch (only with R3b.0.4 option b).
+- the params-driven `required_uv_maps` patch idea, enforcing the DEC-097 channel order (PROC-007).
 
 ## R4. Round 4 v2 (`Dispo_Game_Blender_PROC_Round4_HQ_v2_EvidenceDriven/`): fix items (audit "Drop 7")
 **Owner split:** ASSET-004 owns the MPFB2 bodies and the rig (DEC-093). PROC integrates the wearables on top, after ASSET-004 delivers a body. Measured on core 87807ad: 36 assets, **13 crash**, 23 build (always-pass size check).
@@ -513,7 +520,7 @@ Replaces §R3 (drop 5 `…Round3_HQ/` is superseded, DEC-095). Integrate after r
 ### R4.4 Staff uniform (`staff_uniform`; DEC-089)
 - [ ] **Keep only** BriefGreenTee + BlackPants as the staff uniform (DEC-089, also for managers). Rename them `PROC_Chr_Staff_Tee_Green` / `_Pants_Black`, and drop "brief-directed, not footage-confirmed": DEC-089 is the decision.
 - [ ] **Remove** ObservedBlackTee and ObservedLightBluePolo from the staff set. Move them to the customer/off-shift wardrobe only if wanted; the polo is teal per RI §3 BAND 01 (RG4-4). Rewrite `STAFF_STYLE_VARIATIONS_12.json`: today 10/12 presets use them.
-- [ ] **Decal side:** the code puts it at +X = **wearer's left** while the metadata says "wearer right". Pick one per the Hub's answer (handoff question 8). Placeholder: wearer's left chest, i.e. the viewer's top-right, the usual left-chest print.
+- [ ] **Decal side:** the code puts it at +X = **wearer's left** while the metadata says "wearer right". **Pending a World REF look at BAND 05/12** (handoff Q8). Placeholder `GAP-CHR-PRINT-SIDE`: wearer's left chest, i.e. the viewer's top-right, the usual left-chest print.
 - [ ] **Decal UVs:** give the decal patch a `label_rect` so `UVMap_Label` maps the texture. Crop the decal to the text's aspect (it is 4096² with the text at ~10 % height). Record the font licence, or use an OFL font (RG4-3).
 - [ ] **Gloves** (DEC-079: managers refill and clean jars; RI §3 nitrile gloves) are fine as an optional staff accessory once R4.7 is fixed.
 

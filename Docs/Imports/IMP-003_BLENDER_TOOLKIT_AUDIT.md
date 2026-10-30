@@ -650,10 +650,9 @@ No `.pyc`. ChatGPT had our drop-5 audit this time (`ROUND3_REBUILD_CLAUDE_AUDIT_
   - The README's "manufacturing/construction detail at LOD0" is not met: the 2 × 2 troffer is 164 tris and the rolling papers 56.
   - Nothing reads `quality_floor_lod0`; the canonical key is `tri_guide.lod0_min`.
   - Budgets (18k–150k) are guide maxima only.
-- **X4 Runner patch:** the canonical runner (87807ad) still requires exactly `[UVMap_Main, UVMap_Label]`, so 30/30 fail unpatched. The patch (params-driven `required_uv_maps`) is small and correct. **Adopt** it as a PROC core change only if PROC-005 chooses Blender-side lightmap UVs (X5).
+- **X4 Runner patch:** the canonical runner (87807ad) still requires exactly `[UVMap_Main, UVMap_Label]`, so 30/30 fail unpatched. The patch (params-driven `required_uv_maps`) is small and correct, but it accepts the drops' order `[Main, Label, Lightmap]`. **DEC-097** fixes the order as channel 0 = Main, **1 = Blender lightmap UV**, **2 = Label**, so the label currently lands where the lightmap should be. Adapt the patch to enforce the DEC-097 order (PROC-007).
 - **X5 Lightmap UV is unusable as built:** `_assign_uvs` gives **every triangle its own grid cell** (n = ⌈√faces⌉, 8 % padding). The UVs do not overlap, but every edge is a seam and texel use is tiny, so lightmaps will bleed and show seams.
-  - Use Unity "Generate Lightmap UVs" on import, or a Blender `smart_project`/pack per object.
-  - DEC-091 R6 lists UV2 readiness for round 6, so settle it once in PROC.
+  - Per DEC-097, Blender exports a dedicated lightmap UV (a real unwrap + pack, PROC-007), and Unity's "Generate Lightmap UVs" stays off.
 - **X6 Winding:** **0 inside-out** closed parts across 30 assets × 4 LODs (`recalc_face_normals` in `finish`). The drop-5 vehicle inside-out defect is fixed. One open part remains: `ScaleBowl` (a single surface with a hole in the bottom).
 - **X7 Determinism:** geometry hashes are identical across two runs for 30/30 assets × 4 LODs. FBX byte-identity was checked only for the 2 assets the runner exported (hub cabinet, stanchion pair); the canonical exporter pins time and UUIDs.
 - **X8 Collision:** no `COL_*` meshes ✓ (DEC-086); boxes come from params. But `parked_vehicles`, `counter_workstation_props`, `customer_held_props` and `product_variety` declare **none**. Vehicles need at least a body box.
@@ -688,10 +687,10 @@ No `.pyc`. ChatGPT had our drop-5 audit this time (`ROUND3_REBUILD_CLAUDE_AUDIT_
   - The casters float 6 cm below the legs (render). Cart and wall shelf are again one asset.
   - Supplies are 3 identical bottles. DEC-079 lists isopropyl, rags, scraper, bins and tongs, kept *under* the cart.
 - **HUB storage:**
-  - **Doors:** closed, with hinge metadata ✓ (drop-5 fix delivered). The metadata is a local dict, not the canonical `hinge_axis()` (C10).
+  - **Doors:** closed, with hinge metadata (the drop-5 fix was delivered). The hinge metadata is now moot under the Q6 ruling below.
   - **Colour wrong:** grey steel, but RI §2.1 (HUB 2, R2C1) shows **black cabinets, 2+**, Med.
   - **Presence is sourced:** DEC-079 puts them "in the HUB against the office wall", and HUB 2 is the room that shares the office door (RI §1.4). The drop's GAP says presence is not established; only type, size and shelf count are GAPs.
-  - **Security precedent:** DEC-051 Q9 models the office's secure-storage cabinets only as plain tall black closed boxes. Whether that also covers these backstock cabinets (interior, stock anchors, openable doors) is a Hub call (handoff Q6).
+  - **Lead ruling (Q6):** the backstock cabinets follow the DEC-051 Q9 precedent: **plain black closed cabinets**, with no interior, no stock anchors and no openable doors. So the drop's shelves, anchors and hinge metadata are dropped. Reopen only if Gameplay files a restocking need.
   - **Detail:** 836 tris of plain boxes.
 - **Queue stanchions:** black ✓ (R2C1); layout left to placement ✓ (RI §1.5 4 lanes; DEC-079 one line). Sizes are commercial defaults (GAP). Missing detail: no cassette, end clip or rubber foot, and the belt is a plain slab.
 - **Back-room lighting:**
@@ -837,7 +836,7 @@ It says it supersedes an earlier `…Round4_HQ.zip`, which is not in the Imports
   - RI §3 says BAND 01's polo is **teal**, not light blue.
 - **Decal side:**
   - `staff_uniform._add_decal(side='right')` puts the decal at +X. With the asset facing −Y (label faces −Y, PROC contract), +X is the **wearer's left** (the viewer's right), while the metadata says `decal_side_wearer: right`. One of the two is wrong.
-  - DEC-089's "top right of the chest" does not say whose right (handoff question 8).
+  - DEC-089's "top right of the chest" does not say whose right. **Pending a World REF look at BAND 05/12** (handoff Q8). Placeholder `GAP-CHR-PRINT-SIDE`: wearer's left chest.
   - The decal box also gets no `UVMap_Label` mapping (no `label_rect`), so the 4096² texture would not land on it.
   - The decal is white DejaVu-style bold text on a square canvas, with the text filling ~10 % of the height. The font licence is not recorded; DEC-023 allows OFL/CC0/MIT.
 - **Brands:** the only real brand is The Flower Shop text on staff tees (DEC-071/089 ✓). Headwear and other wear are unbranded ✓ (fictional patch carriers).
