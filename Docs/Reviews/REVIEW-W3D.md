@@ -1,7 +1,7 @@
 # REVIEW-W3D — GAME-002 (playable vertical-slice shift)
 
 **Branch:** `review/wave-3d` = `main` (64ac3ee) + `--no-ff` merge of `claude/task-game-002-7f57d6` (tip 8df0a82). Merge was clean.
-**Verdict (GAME-002 alone): GO with notes.** Integration with W3A/W3B (check 7) is pending the Hub's message; one must-fix for that merge is recorded below (I1).
+**Final verdict: GO with notes.** GAME-002 is integrated with W3A + W3B and the I1/n1 fix is in (§7). Notes N1-N3 and the nits do not block.
 
 ## 1. Studio gates (DEC-013 respected: queued behind two other review editors)
 | Gate | Result |
@@ -55,11 +55,13 @@ No graybox scene in the diff. Only `Scenes/Gameplay_Slice.unity` is added (built
 |---|---|---|---|---|
 | + main c704d37 (W3B / ART-002 anchors), c0183d8 | OK | 41/41 | 4 pass, 1 skip (GPU capture) | 12/12, $265.20, Kush Cake SOLD OUT, **fallbacks=0** |
 | + main a6e230c (W3A / GAME-003), a9bc8a6 | OK | **140/140** | 4 pass, 1 skip | same; fallbacks=0 |
+| + GAME-002 5eb99d2 (n1 fix 4005577) + main 65000ff, 051e1d5 | OK | **141/141** | 4 pass, 1 skip | same; fallbacks=0 |
 
 - Both merges were text-clean. With ART-002's real anchors, all 87 TEMP_ fallbacks switch off. ART-002's layout has 78 north and about 36 east jar slots, more than the 77 jars. No graybox fileIDs are referenced: the slice looks anchors up by name only (W3B m1).
-- I1 is confirmed in the integrated tree: `Catalog.SetInStock` still clears only `_groups`. The fix belongs to GAME-002 (W3A n1: `_byKey`, `QueryParser.NameCache`, `QueryParser.ExclCache`). It is checked below.
+- I1 is confirmed in the integrated tree: `Catalog.SetInStock` still clears only `_groups`. The fix belongs to GAME-002 (W3A n1: `_byKey`, `QueryParser.NameCache`, `QueryParser.ExclCache`). **Fixed at 4005577:** the parser caches moved from static dictionaries to `Catalog` instance fields, and `SetInStock` clears `_groups`, `_byKey`, `ParserNameIndex`, `ParserExcl` and `ParserTerps`. `SellOut_ResetsGroupLookupAndParserCaches` passes: `Group(key)` is rebuilt, the rep moves to an in-stock batch, and the parser name lookup and exclusions rebuild. Nit: `lock (cat)` locks on a public object, and `SetInStock` itself takes no lock. That is fine while the sim is single-threaded.
 - DEC-039 (11 numbered registers): the slice uses one service station and never counts registers, so there's no conflict.
 
 ## Open for the Hub
-- Check 7 is waiting: send the GO for W3A + W3B. I'll then merge both here, apply I1, re-run the gates and confirm `FallbackAnchors.Count == 0`. ART-002's `GrayboxBuilder` emits `Anchor_CustomerSpawn/Exit`, `Anchor_QueueSlot_0..3`, `Anchor_ServiceCustomer/Player`, `Interact_Terminal/Scale` and `Anchor_JarSlot_###`, the same names GAME-002 looks up. The jar slot count is still to be checked.
-- Who owns N1 (GAME-002 follow-up or a fix-up during integration)?
+- Who owns N1 (jar-label placement / capture evidence)? Suggest a GAME-002 follow-up, checked in a windowed run.
+- N2: add the SliceCapture run to `studio.ps1` (BUILD).
+- N3: DES ruling on PriceFit using the card price or the POS total.
