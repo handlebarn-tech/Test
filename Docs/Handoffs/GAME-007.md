@@ -10,32 +10,16 @@
 - **Meter:** `MeterFraction`, `Meter` (Neutral / Amber ≥ 0.75 / Red > 1). The view shows `Flower {g} / 28 g`, a 75 % tick, state words and the trim hint. Confirm is disabled on red, and entering red fires the `overLimit` toast once. The concentrate row is not built (PS3).
 - **`StrikeLedger`** (`Strike {Reason, CustomerIndex, Time}`, `Added` event) via `sim.Strike(reason)`. The strike toast has a --bad border and lasts 6 s (`strikeToastSeconds`).
 - **Report:** `Strikes`, `OverLimitTrims`, `ManagerReview` (≥ `strikeReviewThreshold` 2), shown in the report's Compliance block. GAME-007 has no strike source (an over-limit sale is impossible); GAME-008/009 add sources. Strikes never end the shift.
-- **W4W m1:** cart lines are `cart-line`. Name and batch·tier ellipsize (name tooltip); − / g / + / price / ✕ are fixed-width columns.
-- **W4W m2:** `cartChip` = `🛒 Cart {0} / {1} · {2} g` and `cartFull` = `Cart full ({0})`, both from `cartMaxLines`.
+- **W4W m1/m2:** cart lines ellipsize name and batch·tier (name tooltip); − / g / + / price / ✕ are fixed-width columns. `cartChip` and `cartFull` read `cartMaxLines`.
 - **W4W m4:** `SliceGame.TextScale` (100/125/150) and `SetTextScale` set the root `.text-125/.text-150` classes.
-  - The register at 125/150 % is two columns in the full 1728×972 safe area and never scrolls (UX_COUNTER_INTEL §10). Fonts, cart rows and the meter scale with it.
-  - Payment and Confirm now share one row, so a red 3-line cart fits at 100 % (it was 982 px, over 972).
-  - Register toasts no longer cover the register: at 100 % they sit in the strip to its left; at 125/150 % they drop to the bottom-left.
+  - At 125/150 % the register is two columns in the 1728×972 safe area and never scrolls (UX_COUNTER_INTEL §10). Payment and Confirm share a row, so a red 3-line cart fits at 100 % (was 982 px). Register toasts never cover the register.
 - **Bots:** the EditMode `RunBot`, PlayMode `Step` and `PerfCapture` bots all trim red carts (drop the last line) and add the next ask only if it fits. **`PerfCapture.cs` is outside my Owns:** without this change it would hang on a blocked over-limit cart.
 
 ## Validation (studio.ps1, DEC-013 waits honoured)
 - **Compile and tests:** compile OK. EditMode **194/194**, including Gate A (DEC-067): 11 `TfsParityGateTests` plus the Engine/Parser goldens, all passing. PlayMode 8 passed + 1 skipped (GPU).
-- **New `OverLimitTests` (9):**
-  - each shape is over the cap, and all 3 appear at chance 1;
-  - over-limit lines pass intent-key safety;
-  - meter states;
-  - 31.5 g cannot be confirmed, with no stock change, and Cancel = no-sale;
-  - every SPEC trim option sells;
-  - stepping above an ask is blocked;
-  - the primary-trim penalty;
-  - the ledger reaches the report, with Manager review at 2;
-  - the bot trims at chance 0.5.
+- **New `OverLimitTests` (9):** each shape is over the cap (all 3 appear at chance 1); line keyword safety; meter states; 31.5 g cannot be confirmed (no stock change; Cancel = no-sale); every SPEC trim option sells; stepping above an ask is blocked; the primary-trim penalty; the ledger reaches the report (Manager review at 2); the bot trims at chance 0.5.
 - **`unity-capture` PASS, 14 shots.** The last customer is forced into a 35 g ask, and its red 3-line register is shot at 100/125/150 %. Asserted at each scale:
-  - the stepper, grams and price columns are aligned (< 1 px);
-  - the panel and Confirm are inside the safe area;
-  - the meter value and line cells are one line;
-  - no toast covers the title.
-  - Shots: `Docs/Assets/Specs/GAME-007_Pos_Red_{100,125,150}.png`.
+  columns aligned (< 1 px), panel and Confirm inside the safe area, meter value and line cells one line, no toast over the title. Shots: `Docs/Assets/Specs/GAME-007_Pos_Red_{100,125,150}.png`.
 - Seed 1 is unchanged: 12/12, $364.00, Kush Cake sold out; no natural over-limit customer this seed.
 
 ## Overlap
