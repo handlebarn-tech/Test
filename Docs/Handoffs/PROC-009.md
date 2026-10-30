@@ -1,5 +1,28 @@
 # PROC-009 handoff: studio-built parked vehicles
 
+## Fix round 2 (REVIEW-PROC009 round 2, FAIL: 1 MAJOR, front end)
+- **a. Undertray brick, removed.** The square undertray box and lip are gone. The bumper cover is now two sweeps along the same plan curve:
+  - a painted upper band, which still sets the exact length;
+  - a black lower intake/diffuser band (`bumper.lower_band_m`), recessed 8 mm inside the cover.
+
+  The intake now sits inside the bumper silhouette and follows its curve and wraps; nothing hangs below the car.
+- **b. Sedan fascia.** The headlamps had read as dots because the light lens sat on light paint with a chrome inner box behind it. Changes:
+  - Headlamps now have a black housing behind the clear lens, with chrome projectors and a DRL strip.
+  - Every lamp lens is swept along the body's plan outline round the fender corner (`lamps.head_wrap_m`/`tail_wrap_m`: sedan 0.16/0.12 m, hatch 0.14/0.10 m, SUV 0.10/0.08 m).
+  - Sedan headlamp is 0.46 × 0.12 m.
+  - Grille slats are chrome, 12 mm, at LOD0–1, so they read.
+  - I also fixed a sign bug: lens paths sat 2 mm inside the end face; they are now 2 mm proud.
+- **Sheet:** `Docs/Assets/Previews/PROC_parked_vehicles_contact_sheet.png` re-rendered and checked by eye at 2× crops. All three front 3/4 views show wrapped lamps, a visible grille and a black lower band inside the bumper, with no block underneath.
+- **Validation:** 3/3 assets pass with 0 warnings; a rerun gives byte-identical FBX; `[SELFTEST] all passed`.
+
+  | LOD | Sedan | Hatchback | SUV |
+  |---|---|---|---|
+  | LOD0 | 91,790 | 91,064 | 92,382 |
+  | LOD1 | 29,394 | 29,024 | 30,144 |
+  | LOD2 | 7,252 | 7,344 | 7,814 |
+  | LOD3 | 1,438 | 1,456 | 1,592 |
+- **Reviewer observation (late-1990s/2000s read), not addressed further:** wrapped lamps help; rounder plan corners and texture maps (blocked dependency) are the remaining levers.
+
 ## Fix round 1 (REVIEW-PROC009, FAIL: 2 MAJOR, 4 minor)
 - **MAJOR 1 (visual read):**
   - **Raked ends:** a `rake` shear pulls each nose and tail back with height. The fascias now slope (hood edge about 10 cm back) and the SUV tailgate leans. Bumper fronts (shear 0) keep the exact length; the shear is monotone (`front_m`/`rear_m` < `zone_m`), so the mesh cannot fold.
