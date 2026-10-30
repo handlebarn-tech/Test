@@ -103,7 +103,7 @@ The only task registry (DEC-094). **The ID prefix names the owning department** 
 | BRAND-002 | P1 | Name search of all fictional names before any public build (DEC-078) | BRAND-001b | Later |
 | IMP-003 | P1 | Rolling ChatGPT toolkit audit (DEC-070/083/095): drops 1–5 done; rebuilt round 3, then rounds 4–6 | — | Active |
 | PROC-005 | P1 | Integrate the approved toolkit + fix every checklist item (DEC-092) | IMP-003 | Active |
-| PROC-006 | P1 | Register workstation kit: evidence spec, then generators (DEC-096) | — | Phase 1 merge-ready (`review/assets-1`, REVIEW-PROC6 GO); phase 2 waits on ROOM_FIXTURES rev7 |
+| PROC-006 | P1 | Register workstation kit: evidence spec, then generators (DEC-096) | — | Phase 1 Done (main 6af8906); phase 2 waits on ROOM_FIXTURES rev7 |
 | PROC-007 | P1 | DEC-097 UV layout (lightmap ch1, label ch2) + re-export jars/packaged goods, with World's label-shader cut-over | PROC-005 | Ready |
 | AUDIT-001 | P1 | Read-only .md audit + approval sheet (`Docs/Audits/`) | DES-003 | Done (DEC-064) |
 | DOC-001 | P1 | Apply AUDIT-001 batches A–C (DEC-064), 2 phases | AUDIT-001; phase 2 after IMP-002 | Done (W4X) |

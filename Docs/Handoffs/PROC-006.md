@@ -22,3 +22,6 @@
 5. **Cleaning supplies + rag** (GAP-REG-7/9): which products sit at the registers (wipes, sanitiser pump, surface spray)? Rag colour (one grey cloth seen, CEN (52,522)–(100,590))?
 6. **Receipt printer** (GAP-REG-1): paper exits top or front? (black unit, CEN (220,330)–(270,390)). Is the black box with an orange top at EAST (1165,115)–(1245,160) the receipt printer or a label printer?
 7. **Trash bin** (GAP-REG-10): wire bin by the stand (WIDE (198,527)–(272,610)) or wastebasket under the counter (CEN (215,540)–(290,605)), or both, at each register?
+
+## Machine note (lead, for MACHINE_PROFILE)
+- Pillow was installed into the system Python to zoom the reference crops (free; Hub OK 2026-10-30).
