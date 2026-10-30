@@ -24,6 +24,7 @@ import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+import glove_overlay  # noqa: E402
 import roster as roster_mod  # noqa: E402
 
 from bl_ext.user_default.mpfb.services.exportservice import ExportService  # noqa: E402
@@ -267,12 +268,18 @@ def export(c, p):
     tex_report = {}
     for o in meshes:
         export_material(o, c, basemesh, tex_dir, tex_report, p)
+    gloves_check = []
+    if c.get("gloves"):  # staff accessory (ASSET-007): own material, so added after the MPFB material pass
+        g = glove_overlay.add_gloves(basemesh, rig, cid, tex_dir, tex_report)
+        gloves_check = glove_overlay._check(g, rig)
+        errors += [f"gloves: {e}" for e in gloves_check]
+        meshes.append(g)
     missing = humanoid_check(rig, p)
     if missing:
         errors.append(f"rig lacks Humanoid bones {missing}")
 
     # body + clothes without hair/hat (clothing masks delete covered body verts, so the body alone is not enough)
-    zs = [v.co.z for o in meshes if o.name.split(".")[-1] not in (c["hair"], c["hat"]) for v in o.data.vertices]
+    zs = [v.co.z for o in meshes if o.name.split(".")[-1] not in (c["hair"], c["hat"], glove_overlay.PART) for v in o.data.vertices]
     height = round(max(zs) - min(zs), 3)
     parts_lod1 = {("body" if o == basemesh else o.name.split(".")[-1]): tris(o) for o in meshes}
     lods = {name: make_lod(meshes, rig, cid, name, lod, basemesh) for name, lod in p["lods"].items()}
@@ -304,7 +311,7 @@ def export(c, p):
 
     report = {
         "id": cid, "identity": {k: c[k] for k in ("sex", "age_band", "ancestry", "skin", "hair", "hair_tint", "hat", "outfit",
-                                                  "items", "glasses", "beard", "eyes", "build")},
+                                                  "items", "glasses", "beard", "eyes", "build")}, "gloves": bool(c.get("gloves")), "gloves_check": gloves_check,
         "phenotype": c["phenotype"], "face_targets": len(c["face_targets"]),
         "licence_audit": audit, "tris": lod_tris, "tris_parts_lod1": parts_lod1, "tri_budget": p["tri_budget"], "height_m": height,
         "rig": {"name": p["rig"], "bones": len(rig.data.bones), "humanoid_missing": missing},
@@ -347,7 +354,8 @@ def main(argv):
         raise RuntimeError(f"{len(failed)} customer(s) failed: {sorted(failed)}")
 
 
-argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
-if not argv:
-    raise SystemExit("usage: customer_gen.py -- <params.json> [C001,C002]")
-main(argv)
+if __name__ == "__main__":  # glove_overlay.py imports this module for its demo build
+    argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
+    if not argv:
+        raise SystemExit("usage: customer_gen.py -- <params.json> [C001,C002]")
+    main(argv)
