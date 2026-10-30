@@ -20,7 +20,13 @@ namespace Dispo.PlayMode.Tests
 
         // Spawn in Retail -> east arch -> vestibule -> BOH door -> BOH aisle, steering with real collisions.
         // ART-007: y 31.3 = the A011 vestibule doors' centreline (DOORS.json anchors); the propped BOH leaf lies along y 29.8.
-        static readonly Vector2[] RouteFt = { new Vector2(36.7f, 15.5f), new Vector2(36.7f, 31.3f), new Vector2(41.5f, 31.3f), new Vector2(41.5f, 38f) };
+        // ART-008: the rev8 counters (south run to x 41.03 + SW return) close the floor off from the staff aisles, so the route goes
+        // round the north run's west end, along the north staff aisle (y 3.5), down the east aisle (x 43.8) and the south aisle (y 25.8) to the arch.
+        static readonly Vector2[] RouteFt =
+        {
+            new Vector2(36.7f, 15.5f), new Vector2(36.7f, 11f), new Vector2(4.5f, 11f), new Vector2(4.5f, 5.5f), new Vector2(12f, 5.5f), new Vector2(12f, 3.5f),
+            new Vector2(43.8f, 3.5f), new Vector2(43.8f, 25.8f), new Vector2(36.05f, 25.8f), new Vector2(36.05f, 31.3f), new Vector2(41.5f, 31.3f), new Vector2(41.5f, 38f)
+        };
 
         [UnityTest]
         public IEnumerator Player_SpawnsInRetail_WalksToBoh_StaysOnFloor()

@@ -173,7 +173,7 @@ RETIRED = {"FX_DeliCounter_L", "FX_DeliJarWall_N_Back", "FX_JarWall_E_Back", "FX
 GEN_PREFIX = ("Retail_", "HUB_", "HUB2_", "POS_", "FX_RegisterCounter_", "FX_DeliJarWall_")
 # Register runs merged per id so the lookdev millwork keeps one entry per run.
 COUNTERS = {"FX_RegisterCounter_L": ("Counter_Register_North", "Counter_Register_EastReturn"),
-            "FX_RegisterCounter_S": ("Counter_Register_South", "Counter_Register_SouthReturn")}
+            "FX_RegisterCounter_S": ("Counter_Register_South", "Counter_Register_SouthWestReturn")}
 YAW = {"N": 0, "E": 90, "S": 180, "W": 270}
 # Deli wall build (REFERENCES_INDEX 8.3: back counter + 2 tiers, jars on the counter too). Layout choices, Low (GAP-133/GAP-002):
 # back panel 0.3 ft, tier depth 1.0 ft, tiers at the old 4.25 / 5.5 ft placeholders, 1 ft jar pitch, kraft bags 1.5 ft.
@@ -462,7 +462,7 @@ def clearance(report_path=None):
     import numpy as np
     layout = json.load(open(LAYOUT, encoding="utf-8"))
     src = json.load(open(SRC, encoding="utf-8"))
-    G, X0, Y0, X1, Y1 = 0.1, -8.0, -8.0, 52.0, 82.0
+    G, X0, Y0, X1, Y1 = 0.1, -40.0, -8.0, 52.0, 82.0  # REF-013: the spawn is in the west parking row (x -32.7)
     shape = (int(round((Y1 - Y0) / G)), int(round((X1 - X0) / G)))
     lines, fails = [], []
 
@@ -513,7 +513,7 @@ def clearance(report_path=None):
         return g
 
     def cell(x, y):
-        return int((y - Y0) / G), int((x - X0) / G)
+        return int((y - Y0) / G + 1e-6), int((x - X0) / G + 1e-6)  # +eps: a point on a cell edge lands in one cell whatever the grid origin
 
     def reach(start, radius):
         blocked = blocked_for(radius)
@@ -569,10 +569,12 @@ def clearance(report_path=None):
     staff = reach(anchors["Anchor_Door_Arch_W_A"], 0.75)
     for n, (x, y) in sorted(anchors.items()):
         if n.startswith(("Anchor_Door_", "Anchor_POS_", "Anchor_Guard", "Anchor_FOH_Desk", "Anchor_BOH_Desk")) or n.endswith("_Operator"):
-            seat = next((s for s, r in solids if r["x0"] < x < r["x1"] and r["y0"] < y < r["y1"]), None)
-            # door anchors are trigger points and seat anchors sit on a chair: reached when a person gets within 1-1.5 ft
-            snap = 1.5 if seat else 1.0 if n.startswith("Anchor_Door_") else 0.5
-            log(staff(x, y, snap), f"staff reaches {n} ({x}, {y})" + (f" (seat on {seat}, within {snap} ft)" if seat else ""))
+            seat = next(((s, r) for s, r in solids if r["x0"] < x < r["x1"] and r["y0"] < y < r["y1"]), None)
+            # door anchors are trigger points (within 1 ft); a seat anchor is reached when a person can stand against the chair
+            # (half its larger side + 0.75 ft + a cell; ART-008: a flat 1.5 ft can't reach the centre of a 2 ft chair from any side)
+            snap = max(1.5, max(seat[1]["x1"] - seat[1]["x0"], seat[1]["y1"] - seat[1]["y0"]) / 2 + 0.75 + G) if seat else 1.0 if n.startswith("Anchor_Door_") else 0.5
+            seat = seat and seat[0]
+            log(staff(x, y, snap), f"staff reaches {n} ({x}, {y})" + (f" (seat on {seat}, within {snap:.2f} ft)" if seat else ""))
 
     # 3. REF-012 office main path >= 3.0 ft: hall door -> HUB 2 door
     office = reach(anchors["Anchor_Door_Hall_Office_B"], 1.5 - G / 2)  # half a cell: the 0.1 ft grid cannot resolve an exact 3.0 ft gap
@@ -580,13 +582,14 @@ def clearance(report_path=None):
 
     # 4. door swings: the leaf sweeps from closed to open without hitting a fixture (walls excluded)
     fx_only = [(n, r) for n, r in solids if not n.endswith("(propped open)")]
+    props = {f"{r['room']}_{r['fixture']}": "Door_" + r["propsDoor"] for r in src["fixtures"] if r.get("propsDoor")}  # the prop stands in the sweep on purpose
     for d, l in leaves:
         hits = set()
         for k in range(0, 19):
             a = math.radians(l["yaw"] + l["openAngle"] * k / 18)
             for s in np.arange(0.3, l["w"] + 0.01, 0.2):
                 px, py = l["x"] + s * math.cos(a), l["y"] + s * math.sin(a)
-                hits |= {n for n, r in fx_only if r["x0"] < px < r["x1"] and r["y0"] < py < r["y1"]}
+                hits |= {n for n, r in fx_only if r["x0"] < px < r["x1"] and r["y0"] < py < r["y1"] and not (d["open"] and props.get(n) == d["id"])}
         log(not hits, f"{l['name']} swing clear" + (f": {sorted(hits)}" if hits else ""))
 
     # 5. queue stanchions clear the south counter by >= 3 ft; no register call spot inside the stanchion field
