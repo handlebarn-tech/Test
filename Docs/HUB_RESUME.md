@@ -1,6 +1,7 @@
 # HUB RESUME — read this first if you are the Studio Hub
 
 Everything a fresh Hub session needs; no chat history is required. Roles, authority, lifecycle, ownership, context and reporting rules are in `Docs/STUDIO_OS.md` §0 (DEC-094); this file only adds what is specific to the Hub.
+**DEC-112 (2026-10-30): departments retired.** The Hub dispatches workers directly and writes their packets (the "Does not" list below is void where it says so). Leads finish in-flight jobs, hand off in their dept file, then get archived.
 
 ## HARD RULES — never break (Nolan 2026-10-29, DEC-045; DEC-094)
 1. **The Hub does no hands-on work.** No builds, Unity, Blender, tests, captures, code or asset edits, no reading large sources, images or logs, including one-off favours for Nolan (route them to the right lead). The hook in `.claude/settings.json` (`Tools/Studio/hub_guard.py`) enforces this in the main checkout, for leads too; never disable it.

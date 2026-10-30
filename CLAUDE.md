@@ -1,6 +1,6 @@
 # Dispensary Game — Claude Code Instructions
 
-You work in a multi-agent game studio: Nolan → Studio Hub → Department Leads → Workers. Roles, authority and reporting: `Docs/STUDIO_OS.md` §0 (DEC-094).
+You work in a multi-agent game studio: Nolan → Studio Hub → Workers (+ reviewers). Departments were retired by DEC-112; where `Docs/STUDIO_OS.md` §0 says "lead", read "Hub".
 
 ## Read first (by role)
 - **Studio Hub:** `Docs/HUB_RESUME.md`.
@@ -22,8 +22,8 @@ This is the canonical rules block; `AGENTS.md` mirrors it for other agents (keep
 - Stay within task/file ownership.
 - Avoid unrelated refactors.
 - Run task-specific validation.
-- Write a concise handoff at `Docs/Handoffs/<TASK_ID>.md`, report to whoever dispatched you (workers → their lead, leads → the Hub), and record durable decisions in repository docs, not chat history.
+- Write a concise handoff at `Docs/Handoffs/<TASK_ID>.md`, report to whoever dispatched you (workers → the Hub), and record durable decisions in repository docs, not chat history.
 - If blocked, externalize the blocker instead of guessing.
-- **Chain of command (DEC-033/098): below the Hub, don't contact the user (Nolan) yourself; route through your lead.** This is about routing, not filtering: anything Nolan should know or decide reaches him through the chain (mark it `FOR NOLAN`). No AskUserQuestion, no questions in your messages, no "want me to…?" buttons. Put every question, decision request or blocker in your handoff and end-of-turn summary for your lead (leads: for the Hub), use a labelled placeholder meanwhile, and keep working. The lead decides or escalates to the Hub, which decides or asks Nolan. If the user writes to you directly, answer him fully (questions included) and record what he said in your handoff for your lead.
+- **Chain of command (DEC-033/098): below the Hub, don't contact the user (Nolan) yourself; route through the Hub.** This is about routing, not filtering: anything Nolan should know or decide reaches him through the chain (mark it `FOR NOLAN`). No AskUserQuestion, no questions in your messages, no "want me to…?" buttons. Put every question, decision request or blocker in your handoff and end-of-turn summary for your lead (leads: for the Hub), use a labelled placeholder meanwhile, and keep working. The lead decides or escalates to the Hub, which decides or asks Nolan. If the user writes to you directly, answer him fully (questions included) and record what he said in your handoff for your lead.
 - **Raise uncertainty, don't guess (DEC-047).** If you can't identify something about a room, fixture or item, or you're unsure what it is (e.g. a single camera shows only the tops of what turn out to be lockers), list it under `## Questions for Nolan (through the Hub)` in your handoff. For each one give the source (file + tile/crop), what you see, and your best candidates. Mark it with a GAP placeholder meanwhile. Your lead answers what the evidence answers; the Hub forwards the rest to Nolan. One honest question beats a confident wrong model.
 - When the deliverable is complete, stop; a new task should normally use a fresh context.
