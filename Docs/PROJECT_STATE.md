@@ -43,7 +43,7 @@ Unity editors studio-wide: 2 (DEC-013). Old workcells adopted: Gameplay ← GAME
 - Any ChatGPT-built mechanics he drops in Imports: audit → review → **his approval** before use.
 
 ## Open questions for Nolan
-- REF-011/012 W5–W7 answered (DEC-110; W6 self-closing unanswered → placeholder, never re-ask). W1–W4 rejected: World settles them from the floor plan/TI (DEC-110).
+- REF-011/012 W5–W7 answered (DEC-110; W6 self-closing unanswered → placeholder, never re-ask). W3, W4 answered too; W1, W2 rejected: World settles them from the floor plan/TI (DEC-110). PS1 complete (review/ps1 merged); playtest build 2 next.
 - Customer flow Q1–7 answered (DEC-103). Emergency exit alarm: left unanswered → placeholder stands, never re-ask (DEC-105).
 - Medical allotment answered (DEC-106).
 - Register kit R1–R7 answered (DEC-104). Optional (DEC-101 long-term): parking space count/layout and dwell time, what the TV wall shows, neighbouring businesses/street. (REF-008 Q1–15 answered, DEC-051/062. Phoenix TPT rate OPEN-4: 25.1 % kept until a receipt settles it.)
