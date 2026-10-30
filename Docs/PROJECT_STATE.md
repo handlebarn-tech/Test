@@ -36,7 +36,7 @@ Merged in Hub session 4 (latest): W5K RES-002 (squashed), W5N GAME-008, W5M GAME
 5. Whatever DES-003 creates for genuine gaps.
 
 ## Open questions for Nolan
-- Toolkit: approve IMP-003 "adapt" (W5F summary) + Q1 rolling-rack shelves/wheels, Q2 BOH racks one unit vs 4-ft bays, Q3 locker doors, Q5 deli counter front/case. Staff uniform (GAP-CHR-2).
+- Toolkit: approve IMP-003 "adapt" (W5F summary) + Q5 deli counter front/case (Q1–Q3 answered DEC-088). Staff uniform (GAP-CHR-2).
 - REF-008 questions: Q1–15 answered (DEC-051; Q4 vestibule size unknown, Q11 skipped). **All answered (DEC-062, 2026-10-30); no more CCTV/photos available** (FOH wall, rack runs, vestibule, lockers, bench, office items, BOH items, restroom/JC photos): full list in `Docs/Handoffs/REF-008.md` "Questions for Nolan". Sent 2026-10-30 02:15; answers go to the REF/ART tasks.
 - Phoenix TPT rate (OPEN-4): a receipt's tax lines would settle it; 25.1 % is kept (DEC-001).
 
