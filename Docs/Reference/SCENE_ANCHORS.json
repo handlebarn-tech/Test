@@ -1,6 +1,6 @@
 {
- "_about": "REF-011 World->Gameplay anchor contract for the sales floor; ART-007 builds the anchors from it. Gameplay finds anchors by NAME (GameObject.Find), never by position or order in this file. pos_ft = [x, y] in the ROOM_FIXTURES / REFERENCES_INDEX 1.2 frame (feet, origin Retail NW outer corner, +x east, +y south; Unity X = x*0.3048, Z = -y*0.3048). facing = compass direction the person at the anchor looks; yaw_deg 0 = plan north, 90 = east (graybox convention). aliases = older names already used in code (SLICE_DESIGN 7, GAME-008, GrayboxBuilder): ART-007 creates each alias as an extra empty at the same pose so existing lookups keep working until Gameplay migrates. Anchor_QueueSlot_0..3 = Anchor_Queue_0..3; Anchor_CheckInDesk = Anchor_CheckIn; Anchor_ServiceCustomer / Anchor_ServicePlayer = the player station's _Call / _Operator (station 08 today, GAP-134). Positions that are guesses are Low with a GAP id (GAP-129..134, Docs/KNOWN_GAPS.md). Station numbers are zero-padded to 2 digits (Anchor_Register_02_Call ... Anchor_Register_12_Operator).",
- "version": "REF-011 2026-10-30 v1",
+ "_about": "REF-011 World->Gameplay anchor contract for the sales floor; ART-007 builds the anchors from it. Gameplay finds anchors by NAME (GameObject.Find), never by position or order in this file. pos_ft = [x, y] in the ROOM_FIXTURES / REFERENCES_INDEX 1.2 frame (feet, origin Retail NW outer corner, +x east, +y south; Unity X = x*0.3048, Z = -y*0.3048). facing = compass direction the person at the anchor looks; yaw_deg 0 = plan north, 90 = east (graybox convention). aliases = older names already used in code (SLICE_DESIGN 7, GAME-008, GrayboxBuilder): ART-007 creates each alias as an extra empty at the same pose so existing lookups keep working until Gameplay migrates. Anchor_QueueSlot_0..3 = Anchor_Queue_0..3; Anchor_CheckInDesk = Anchor_CheckIn; Anchor_ServiceCustomer / Anchor_ServicePlayer = the player station's _Call / _Operator (station 08 today, GAP-134). Positions that are guesses are Low with a GAP id (GAP-130/131/134, Docs/KNOWN_GAPS.md). REF-013 frame note: A011 prints the retail interior 30'-6\" deep vs the V5 frame's 29.0 (GAP-125 family); south-run and south-wall features are placed by their A011/A901 distance from the south wall (y 29.0), west-wall features (entry, ID stand) by their distance from the north wall (y 0), which matches the V5 ATM to 0.3 ft. Station numbers are zero-padded to 2 digits (Anchor_Register_02_Call ... Anchor_Register_12_Operator).",
+ "version": "REF-013 2026-10-30 v2 (spawn/exit on the parking side per G000 + DEC-110 W4; entry/check-in per A011; south and east register anchors measured; v1 = REF-011)",
  "player_station": {
   "reg": "08",
   "confidence": "Low",
@@ -11,37 +11,37 @@
   {
    "name": "Anchor_CustomerSpawn",
    "pos_ft": [
-    -4.0,
-    14.0
+    -32.7,
+    11.9
    ],
    "facing": "E",
    "yaw_deg": 90,
-   "source": "entry W wall y 12.5-18.5 (graybox ENTRY, TI E101); outside on the parking side",
-   "confidence": "Low",
-   "gap": "GAP-134",
-   "note": "which lot/sidewalk the entry faces is not in the evidence"
+   "source": "G000 key plan (TI set p.1) vector, scaled 3.75 pt/ft from the building outline and checked by its 18.2 ft stalls at 9.1 ft pitch and 24.3 ft drive aisle: west parking row with stall heads 32.3 ft west of the building face, drive aisle, 8.0 ft walk along the building; DEC-110 W4: customers mostly walk straight from the parking lot to the west door; door centre y 11.9 (A011)",
+   "confidence": "Med",
+   "gap": null,
+   "note": "parking-side stall heads opposite the entry; the walk crosses the drive aisle and the 8 ft walk. Sometimes from the sidewalk (DEC-110 W4): the McDowell sidewalk (north, about y -10.4 to -3.5) joins the building walk at the NW corner; Gameplay may add that variant"
   },
   {
    "name": "Anchor_CustomerExit",
    "pos_ft": [
-    -4.0,
-    17.0
+    -32.7,
+    14.9
    ],
    "facing": "W",
    "yaw_deg": 270,
-   "source": "as spawn; south leaf",
-   "confidence": "Low",
-   "gap": "GAP-134"
+   "source": "G000 key plan (TI set p.1) vector, scaled 3.75 pt/ft from the building outline and checked by its 18.2 ft stalls at 9.1 ft pitch and 24.3 ft drive aisle: west parking row with stall heads 32.3 ft west of the building face, drive aisle, 8.0 ft walk along the building; DEC-110 W4; 3 ft south of the spawn, in line with the south leaf",
+   "confidence": "Med",
+   "gap": null
   },
   {
    "name": "Anchor_CheckIn",
    "pos_ft": [
     2.5,
-    11.0
+    7.9
    ],
    "facing": "S",
    "yaw_deg": 180,
-   "source": "DEC-048 (4): ID stand directly LEFT inside the entrance (entering east, left = north of the door)",
+   "source": "DEC-048 (4): ID stand directly LEFT inside the entrance (entering east, left = north of the door); A011 vector entry y 8.9-14.9 (REF-013)",
    "confidence": "Med",
    "gap": "GAP-134",
    "aliases": [
@@ -53,7 +53,7 @@
    "name": "Anchor_Guard_Post",
    "pos_ft": [
     2.5,
-    9.8
+    6.7
    ],
    "facing": "S",
    "yaw_deg": 180,
@@ -66,7 +66,7 @@
    "name": "Anchor_CheckIn_Wait_0",
    "pos_ft": [
     2.5,
-    13.0
+    9.9
    ],
    "facing": "N",
    "yaw_deg": 0,
@@ -79,7 +79,7 @@
    "name": "Anchor_CheckIn_Wait_1",
    "pos_ft": [
     4.0,
-    14.6
+    11.5
    ],
    "facing": "N",
    "yaw_deg": 0,
@@ -92,7 +92,7 @@
    "name": "Anchor_CheckIn_Wait_2",
    "pos_ft": [
     4.0,
-    16.6
+    13.5
    ],
    "facing": "N",
    "yaw_deg": 0,
@@ -105,7 +105,7 @@
    "name": "Anchor_CheckIn_Wait_3",
    "pos_ft": [
     4.0,
-    18.6
+    15.5
    ],
    "facing": "N",
    "yaw_deg": 0,
@@ -274,145 +274,145 @@
   {
    "name": "Anchor_Register_02_Call",
    "pos_ft": [
-    27.8,
-    19.2
+    33.2,
+    18.8
    ],
    "facing": "S",
    "yaw_deg": 180,
    "source": "ROOM_FIXTURES POS_02; customer 1.2 ft off the counter face",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-131"
   },
   {
    "name": "Anchor_Register_02_Operator",
    "pos_ft": [
-    27.8,
-    23.6
+    33.2,
+    23.5
    ],
    "facing": "N",
    "yaw_deg": 0,
    "source": "ROOM_FIXTURES POS_02 operator_zone; 1.0 ft off the staff edge in front of the monitor (graybox playerOff)",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-131"
   },
   {
    "name": "Anchor_Register_03_Call",
    "pos_ft": [
-    24.6,
-    19.2
+    30.0,
+    18.8
    ],
    "facing": "S",
    "yaw_deg": 180,
    "source": "ROOM_FIXTURES POS_03; customer 1.2 ft off the counter face",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-131"
   },
   {
    "name": "Anchor_Register_03_Operator",
    "pos_ft": [
-    24.6,
-    23.6
+    30.0,
+    23.5
    ],
    "facing": "N",
    "yaw_deg": 0,
    "source": "ROOM_FIXTURES POS_03 operator_zone; 1.0 ft off the staff edge in front of the monitor (graybox playerOff)",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-131"
   },
   {
    "name": "Anchor_Register_04_Call",
    "pos_ft": [
-    21.4,
-    19.2
+    26.8,
+    18.8
    ],
    "facing": "S",
    "yaw_deg": 180,
    "source": "ROOM_FIXTURES POS_04; customer 1.2 ft off the counter face",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-131"
   },
   {
    "name": "Anchor_Register_04_Operator",
    "pos_ft": [
-    21.4,
-    23.6
+    26.8,
+    23.5
    ],
    "facing": "N",
    "yaw_deg": 0,
    "source": "ROOM_FIXTURES POS_04 operator_zone; 1.0 ft off the staff edge in front of the monitor (graybox playerOff)",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-131"
   },
   {
    "name": "Anchor_Register_05_Call",
    "pos_ft": [
-    17.8,
-    19.2
+    23.6,
+    18.8
    ],
    "facing": "S",
    "yaw_deg": 180,
    "source": "ROOM_FIXTURES POS_05; customer 1.2 ft off the counter face",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-131"
   },
   {
    "name": "Anchor_Register_05_Operator",
    "pos_ft": [
-    17.8,
-    23.6
+    23.6,
+    23.5
    ],
    "facing": "N",
    "yaw_deg": 0,
    "source": "ROOM_FIXTURES POS_05 operator_zone; 1.0 ft off the staff edge in front of the monitor (graybox playerOff)",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-131"
   },
   {
    "name": "Anchor_Register_06_Call",
    "pos_ft": [
-    14.8,
-    19.2
+    20.4,
+    18.8
    ],
    "facing": "S",
    "yaw_deg": 180,
    "source": "ROOM_FIXTURES POS_06; customer 1.2 ft off the counter face",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-131"
   },
   {
    "name": "Anchor_Register_06_Operator",
    "pos_ft": [
-    14.8,
-    23.6
+    20.4,
+    23.5
    ],
    "facing": "N",
    "yaw_deg": 0,
    "source": "ROOM_FIXTURES POS_06 operator_zone; 1.0 ft off the staff edge in front of the monitor (graybox playerOff)",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-131"
   },
   {
    "name": "Anchor_Register_07_Call",
    "pos_ft": [
-    31.0,
-    19.2
+    36.4,
+    18.8
    ],
    "facing": "S",
    "yaw_deg": 180,
    "source": "ROOM_FIXTURES POS_07; customer 1.2 ft off the counter face",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-131"
   },
   {
    "name": "Anchor_Register_07_Operator",
    "pos_ft": [
-    31.0,
-    23.6
+    36.4,
+    23.5
    ],
    "facing": "N",
    "yaw_deg": 0,
    "source": "ROOM_FIXTURES POS_07 operator_zone; 1.0 ft off the staff edge in front of the monitor (graybox playerOff)",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-131"
   },
   {
@@ -496,49 +496,49 @@
   {
    "name": "Anchor_Register_11_Call",
    "pos_ft": [
-    37.2,
+    36.79,
     16.0
    ],
    "facing": "E",
    "yaw_deg": 90,
    "source": "ROOM_FIXTURES POS_11; customer 1.2 ft off the counter face",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-130"
   },
   {
    "name": "Anchor_Register_11_Operator",
    "pos_ft": [
-    41.6,
+    41.49,
     16.0
    ],
    "facing": "W",
    "yaw_deg": 270,
    "source": "ROOM_FIXTURES POS_11 operator_zone; 1.0 ft off the staff edge in front of the monitor (graybox playerOff)",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-130"
   },
   {
    "name": "Anchor_Register_12_Call",
    "pos_ft": [
-    37.2,
+    36.79,
     12.0
    ],
    "facing": "E",
    "yaw_deg": 90,
    "source": "ROOM_FIXTURES POS_12; customer 1.2 ft off the counter face",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-130"
   },
   {
    "name": "Anchor_Register_12_Operator",
    "pos_ft": [
-    41.6,
+    41.49,
     12.0
    ],
    "facing": "W",
    "yaw_deg": 270,
    "source": "ROOM_FIXTURES POS_12 operator_zone; 1.0 ft off the staff edge in front of the monitor (graybox playerOff)",
-   "confidence": "Low",
+   "confidence": "Med",
    "gap": "GAP-130"
   }
  ]
