@@ -2,7 +2,7 @@
 
 **Milestone:** vertical slice PLAYABLE on main (2026-10-29). Wave 4 (lookdev, real jars, packaged goods, perf) is landing. Next milestone: **PS1** (cart, limit meter, ID checks, medical, tuning; `Docs/Design/ROADMAP_POST_SLICE.md`), extended by Nolan's decision-pressure spec (DES-003).
 **Main:** see `git log`; every merge is a reviewed `review/wave-*` branch.
-**Updated:** 2026-10-30 ~05:30 by Hub (session 4), main 0fca821.
+**Updated:** 2026-10-30 03:55 MST by Hub (session 4), handover for the 07:00 scheduled resume (usage limit).
 
 ## Read with this
 **Hub:** `Docs/HUB_RESUME.md` (HARD RULES first, then its reading list) + the newest DECs. **Workers:** `CLAUDE.md` → this file → your packet only.
@@ -17,9 +17,16 @@ Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, 
 | **IMP-003**: rolling toolkit audit; round 2 landed (3 new packages) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | auditing round 2 | review → one approval summary to Nolan → PROC-005 integrates + fixes findings (DEC-083) |
 | DES-004b+c: DEC-076 door lock + DEC-079/080 restock facts & manager-refill ruling | `local_82d327a2-5b67-4cff-b481-5854a94f6f31` | running | docs review → merge |
 | RES-002: staffing counts from OneDrive schedule (read-only, counts only) | `local_7f53cf19-16d8-4ba4-b186-9c03960e8906` | running | review (PII check) → GAP-DAY-03 |
+| REVIEW-W5K: RES-002 staffing counts (c133df3), PII-critical | `local_b073ffa0-2129-4b65-9193-95f27fcfc0f7` (worker `local_7f53cf19…` idle) | running | merge on GO → feed counts to DES-004 (GAP-DAY-03; off-register question) |
 | ASSET-003: CC0 customer characters + animations (sourcing, no Unity) | `local_d31ad4c5-232b-4628-986c-5d276e71a2a2` | running | review |
 | W5F IMP-003 drop 1 PASS w/ minors (`review/wave-5f`) | reviewer `local_b073ffa0…` | held | wait for IMP-003 delta audit of ChatGPT's fixes, then one approval summary to Nolan |
 | REVIEW-W5I: BRAND-001b (on `review/wave-5j`) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` (worker `local_a7e0b8da…` idle) | running | merge on GO; archive BRAND worker |
+
+## Resume checklist (07:00)
+1. `list_sessions {"linked": true}`; merge any review/* with GO (W5I BRAND-001b on `review/wave-5j`, W5K RES-002, GAME-010 review once its sweep commits, DES-004b+c review).
+2. GAME-010 → Unity review (`local_0dd63bac…`), then the **playable build session** for Nolan.
+3. IMP-003 round 2 audit → docs review → one plain summary to Nolan for approval → PROC-005 integrates + fixes findings (DEC-083). Round 3 drops arrive in Imports; message IMP-003.
+4. GAME-008 (running) → review → GAME-009. ASSET-003 → review. Archive finished workers.
 
 ## Next tasks to start (dependency order)
 0. DOC-002 (AUDIT batch D, fresh session; AUDIT-001 session archived) in the next gap between waves, incl. SLICE_DESIGN → TUNING_PS1 pointer (DEC-082); DOC-003 (batch E) low priority. Merged this session also: W4U (REF-009b), W4V (IMP-002), W4T (QA-002; DEC-067), W4X (DOC-001). Free reviewer: `local_c94488d7…`.
