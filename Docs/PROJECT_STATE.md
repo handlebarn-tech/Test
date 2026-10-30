@@ -8,13 +8,12 @@
 **Hub:** `Docs/HUB_RESUME.md` (HARD RULES first, then its reading list) + the newest DECs. **Workers:** `CLAUDE.md` → this file → your packet only.
 
 ## In flight (as of main 0fca821, 2026-10-30 ~05:30; verify with `list_sessions {"linked": true}`)
-Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, W4R REF-009, W4S UX-005, IMP-001, W4U REF-009b, W4V IMP-002, W4T QA-002, W4X DOC-001, W4W GAME-006, W4Y QA-002b, W4Z DOC-003, W5B OPS-002, W5C OPS-001+REF-010, W5E AUDIO-001 (ledger author fixes m1/m2 → AUDIO-002). DECs 052–073.
+Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, W4R REF-009, W4S UX-005, IMP-001, W4U REF-009b, W4V IMP-002, W4T QA-002, W4X DOC-001, W4W GAME-006, W4Y QA-002b, W4Z DOC-003, W5B OPS-002, W5C OPS-001+REF-010, W5E AUDIO-001 (ledger author fixes m1/m2 → AUDIO-002), W5A ART-006 (minors: back-room lighting, mop x → later ART/REF), W5G GAME-007. DECs 052–073.
 
 | Work | Session | State | Next Hub step |
 |---|---|---|---|
-| GAME-007 done (a6ab1dc+5cc916a) → REVIEW-W5G queued after W5A | `local_0dd63bac…` reviewer; worker `local_7f8c95e9…` idle | queued | merge on GO → GAME-008 |
+| GAME-008 cover the door / ID checks (+W5G m1/m2) | `local_7f8c95e9-933b-4ca0-8d51-0ecbe3d5688a` | running | Unity review → GAME-009 |
 | GAME-010 tuning + personas (merging cart; W4W m3) | `local_0d166a8e-87b1-40bb-9594-be389c549875` | grid 3 | review |
-| REVIEW-W5A: ART-006 (c1ad023) | `local_0dd63bac-df1d-448d-9203-641ead6b6837` (worker `local_392adc04…` idle) | running | merge on GO → playable build session; REF pass for DEC-068 cabinet |
 | **IMP-003**: rolling audit of ChatGPT Blender toolkit (drop 1 audited, adapt) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | running | after each audit: review → Nolan approval; message it when Nolan adds drops |
 | DES-004 fixing REVIEW-W5D M1 (no sales after 22:00) | `local_82d327a2-5b67-4cff-b481-5854a94f6f31` | running | re-review (docs reviewer `local_b073ffa0…`) → merge, ratify DEC-DAY-A..E |
 | W5F IMP-003 drop 1 PASS w/ minors (`review/wave-5f`) | reviewer `local_b073ffa0…` | held | wait for IMP-003 delta audit of ChatGPT's fixes, then one approval summary to Nolan |
@@ -25,7 +24,7 @@ Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, 
 1. PS1 chain: GAME-007 (running) → GAME-008 → GAME-009 (serialised, DEC-064 A3); then PS1b GAME-017 after GAME-007/010 + QA-002b.
 2. REF pass: ROOM_FIXTURES restroom cabinet → by the door (DEC-068).
 3. GAME-004 packaged goods into play: needs DATA-002 + PROC-004 (merged) + UX-002 + DES-003's integration.
-4. A playable build for Nolan after GAME-006/ART-006 (session, never the Hub).
+4. **Playable build for Nolan** (cart, limits, real jars, coloured buds, back rooms) once GAME-010 merges, to keep Unity slots free; a session builds it, never the Hub.
 5. Whatever DES-003 creates for genuine gaps.
 
 ## Open questions for Nolan
