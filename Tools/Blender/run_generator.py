@@ -71,7 +71,7 @@ def generate(gen_name, params_path):
     entry.update({
         "generator": gen_name,
         "params": os.path.relpath(params_path, ROOT).replace("\\", "/"),
-        "params_sha256": hashlib.sha256(raw).hexdigest()[:16],
+        "params_sha256": hashlib.sha256(raw.replace(b"\r\n", b"\n")).hexdigest()[:16],  # stable across autocrlf
         "export": os.path.relpath(fbx, ROOT).replace("\\", "/"),
         "export_sha256": fbx_sha,
         "tri_budget": p["tri_budget"],
