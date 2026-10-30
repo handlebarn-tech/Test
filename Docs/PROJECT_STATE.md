@@ -38,10 +38,7 @@
 ## Blockers
 - None.
 
-## Decisions requiring user input (asked 2026-10-29, open)
-1. Jar quantities: source has stock status only. Placeholder 28 g per in-stock batch.
-2. Are all tool batches sold as deli flower (vs packaged)? Assumed yes.
-3. Where are deli orders weighed: register run or deli counter (GAP-107)? Assumed register run, north leg.
-4. Human-only steps for ASSET-002: claim Unity Warehouse/Office in Unity Asset Store (EULA), Sketchfab login for downloads.
-5. HUB interior camera mapping is unconfirmed (DEC-018): what does the HUB look like?
-6. Later: tax rounding (GAP-204), the TFS tool's open question.
+## Decisions requiring user input
+- Answered 2026-10-29: jars 454 g (DEC-019), deli only (DEC-020), weighed at a register stand (DEC-021), HUB CCTV image supplied (DEC-022).
+- Open: human-only sign-ins for ASSET-002 (Unity Asset Store claims for Warehouse/Office; Sketchfab login). Nolan may also send a photo of the register scale stand.
+- Later: tax rounding (GAP-204), the TFS tool's open question.

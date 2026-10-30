@@ -21,4 +21,6 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | REVIEW-W2B | P0 | Review DES-001 + UX-001 + ASSET-001 | DES/UX reconcile | Active |
 | REVIEW-W2C | P0 | Review ART-001 + commit HDRP-normalized ProjectSettings | ART-001 | Active |
 | ASSET-002 | P1 | Fetch P0 CC0 assets + normalize (after Nolan's human-only steps) | ASSET-001 | Later |
+| REF-002 | P0 | HUB CCTV evidence + register scale stand (DEC-019..022) | — | Active |
+| ART-002 | P1 | Graybox update: HUB rooms + register scale stands from REF-002 | REF-002, ART-001 merge | Later |
 | BUILD-002 | P2 | Build manifest (TOOLCHAIN §14) + fuller result schema (§8) | BUILD-001 | Later |
