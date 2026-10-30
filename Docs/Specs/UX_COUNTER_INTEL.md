@@ -187,3 +187,205 @@ Debug-panel labels are dev-only and stay in code (not localised). All strings ar
 - GAME-017: question list, answer flow, friction lines → cx_01; KNOWN strip + info tag → cx_01–03; preview + tokens + chips → cx_02. GAME-018: Details, Compare marks/button, Similar → cx_02/03 (Detail and Compare screens reuse ux_05/ux_06). GAME-019: no-sale button + confirm → cx_03/04; ASK_* follow-ups → §2 (dialogue frame ux_07 unchanged). GAME-020: debug panel + explanation → cx_05; report v2 + details → cx_06/07. M1 → §10 + cx_08. ✔
 - No gameplay value inside a TFS card (cx_03 note; §0). Oracle values only in cx_05. ✔
 - Every new string is in §11. ✔ Each SVG < 10 KB. ✔
+
+---
+
+## 13. PS1b-a addendum — said cards, "Note it as…", query preview, tool outcomes (UX-006, for GAME-017a)
+
+**Owner:** UX-006 · **Consumer:** GAME-017a (first playable depth) · **Status:** draft for review · 2026-10-30
+**Inputs:** `Design/RECOMMENDATION_DEPTH_AUDIT.md` (**RDA§n**) §3–5; `Specs/CONTROLS_FLOW_PS1.md` (**CF§n**) §2.4, §3.3; DEC-103; §0–§11 above; today's screens in `Presentation/Slice/SliceView.cs` (Dialogue, Query, Results, Detail, Pos).
+
+§0–§12 stand. This section adds the GAME-017a frames and overrides only the lines named in §13.9. Every size, timing and copy value here is **[GDD]** unless it cites the tool (`T:<line>`, RDA) or an existing key. Copy rule H1 holds: no string claims an effect. No product or strain name appears in any string; `{strain}` is filled at runtime from the catalog (RDA§3.2).
+
+### 13.1 Flow (GAME-017a)
+```
+World ─E Talk─► Dialogue ──1 Look it up──► Query ──Enter Search──► Results ──Choose──► Pos ─► customer reacts
+                  │  ▲                       ▲  │                     │                              │
+                  │  └──Backspace────────────┘  └── Q Ask… ───┐       └─Backspace─► Query            │
+                  └──2 Ask… ──► Questions ◄────────────────────┘                                     │
+                                  (answer → new said card)          REJECT + follow-up line ◄────────┘
+                                                                    → new said card ✋ → Query (re-read, re-search)
+```
+- The counter ID re-show (DEC-103) belongs to the counter/POS flow (GAME-026); these frames start once the dialogue opens and are unchanged by it.
+- Esc opens the pause menu everywhere (CF§2.1); **Backspace / Back / Ⓑ** is Back on every frame below (CF§2.4).
+
+### 13.2 Said cards (all frames) — GAME-017a deliverable 3
+A **said card** is one customer statement: an opener clause, a question answer, or a follow-up line after a rejection (RDA§3.3). It replaces the field chips of §3 for GAME-017a (`CustomerKnowledge` minimal; GAME-017 adds field chips later, §13.9).
+
+```
+┌──────────────────────────────────────────────┐   ┌───────────────────────────────┐
+│ 💬 "Something chill."                       │   │ ❓ "Under forty, if I can."    │
+│ → Note it as…   (not noted yet ●)            │   │ → under $40          (term)    │
+└──────────────────────────────────────────────┘   └───────────────────────────────┘
+┌──────────────────────────────────────────────┐   ┌───────────────────────────────┐
+│ ✋ "That one's gonna knock me out."          │   │ 💬 "Something for sleep."      │
+│ → their words                                │   │ → as said            (locked)  │
+└──────────────────────────────────────────────┘   └───────────────────────────────┘
+   example lines are [GDD] placeholders from RDA§3.2 style, not data
+```
+- **Face:** line 1 = source glyph (§3: 💬 opener, ❓ asked, ✋ after a rejection, ↩ follow-up) + the verbatim words in quotes, wrapping to 2 lines, never ellipsized. Line 2 = the reading: `→ Note it as…` + an unread dot, `→ their words`, `→ {term}`, or `→ as said` for a direct phrase (already tool wording, RDA§3.3; no picker, card shows a lock glyph 🔒 and tooltip `Already how the tool says it`).
+- **No component name** (effect, budget…) on the card: naming the component would do the interpretation for the player (RDA§3.3 point 4).
+- **Size:** 300 × 64 px at 100 % [GDD]; 8 px gap; cards in the order said, oldest first, 2 rows then `+{n}` (as §3 overflow). Text scale: card grows to 2 lines of quote at 125/150 %; reading line never truncates.
+- **Placement:** dialogue = the KNOWN panel top-left (§3, 1290 wide); Query/Results = second row of the request strip (§3, 1520 wide). Same component, same order.
+- **New card:** fades in ≤150 ms [GDD] (instant under reduced motion), plus a one-time `New` tag until the card is first focused. Screen reader name: `{source word}: "{words}", noted as {reading}`.
+- **Excluded from this search** (Del, §13.4): card dims to `--t3`, reading line `→ left out of this search`.
+
+### 13.3 "Note it as…" picker (Query) — GAME-017a deliverable 3
+Opens on a focused, non-locked card (Enter / click / Ⓐ). A popover anchored under the card, 360 wide [GDD], focus trapped inside.
+
+```
+            ┌──────────────────────────────────────┐
+            │ "Something chill."                   │
+            │ Note it as…                          │
+            │  1 ◉ Their words   "something chill" │  ← always first, default focus
+            │  2 ○ {term A}                        │
+            │  3 ○ {term B}                        │
+            │  4 ○ {term C}            (if a 3rd)  │
+            │  ──────────────────────────────────  │
+            │  Leave it out of this search   Del   │
+            └──────────────────────────────────────┘
+```
+- **Options:** `Their words` (the verbatim phrase goes to the parser) then the component's 2–3 terms from `SliceNeeds.json` (RDA§3.1), shown exactly as the composer will write them. Terms are listed **alphabetically** so position never tells which term reproduces the need. No term carries a hint, colour or score.
+- **Choose:** number key 1–4 or ↑↓ + Enter / click / D-pad + Ⓐ → sets the reading, closes the popover, preview updates at once, focus moves to the next unread card (else back to the card).
+- **Re-reading** is always allowed: reopen and pick another. It costs no sim time in GAME-017a [GDD] (searching does, §13.4).
+- **Close without change:** Backspace / Ⓑ / click outside.
+
+### 13.4 Query frame: preview, "the tool will", New-customer toggle — GAME-017a deliverable 3
+```
+┌─ request strip ────────────────────────────────────────────────────────────────────────────┐
+│ Customer · {archetype}   "{opener line verbatim}"                                         │
+│ [said card][said card][said card]  +1                                                      │
+├────────────────────────────────────────────────────────────────────────────────────────────┤
+│ What are they looking for?                                                                 │
+│ [tile][tile][tile][tile][tile][tile]          ← quick path, unchanged                      │
+│                                                                                            │
+│ You'll search for                                                                          │
+│ "something chill, under $40"                  ← exact Parse() input, never ellipsized      │
+│ The tool will: recommend strains · price cap $40   ← route line (§ below)                  │
+│                                                                                            │
+│ Customer: ( Experienced | New customer )   P       ← only after Q9 has an answer          │
+│                                                                                            │
+│ [Ask… Q]                                   [Search  Enter]                                 │
+└────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+- **Preview** (`previewLabel`, §4): the exact string passed to `QueryParser.Parse(ParserOptions.Game)` = the readings of the included cards, in card order, joined by the GAME-017a composer (separator and casing are the composer's, golden-captured, RDA§5 item 7). Wraps to 3 lines at 150 %. The debug panel shows the same string.
+- **Unread cards:** Search is not blocked, but pressing Search while any card is unread opens the picker on the first unread card instead (default focus `Their words`, so Enter, Enter is the fast path). Every searched word is therefore a reading the player chose (RDA§3.3 point 2).
+- **Tiles:** a tile still means a chip-only search (= the DEC-017 golden, DEC-057). While a tile is active the preview shows the tile's canonical wording only, the cards dim with `Tile search: cards not used`, and pressing the tile again (or Del on it) returns to the composed query.
+- **Empty** (no included card, no tile): Search disabled, `previewEmpty`.
+- **"The tool will"** (`toolWill`): one line from the parsed query, naming only the route and the values the tool itself echoes in its result: `recommend strains` / `look up {strain}` / `find strains like {strain}` / `show lowest prices` / `compare` ; plus `· price cap ${n}` when a max price parsed (`T:16632`), `· leaving out {terpene}` per exclusion (`T:16633-16635`), `· new-customer filter on` when the toggle is on. When the parse has no intent and no price, the line reads `not sure what to search; it will suggest wording` (the Help route, `T:16677`). It **never** shows intent keys or domains: that would reveal how their words parse, which is the player's call.
+- **New / Experienced toggle** (tool `T:1585-1589`; sets `ShopState.NewCustomer`, default off as the engine): a two-state segmented control, shown only once Q9 has been answered (RDA§3.4 loop 1). P / click / LB toggles. Label `Customer:` then `Experienced` / `New customer`. It is a tool input, not wording, so it never appears in the quoted preview, only in the route line.
+- **Ask…** button (Q / click / Ⓨ): opens the question list (§13.5) straight from Query, so the follow-up loop never needs a trip back to the dialogue. Backspace from the list returns to the frame it came from.
+- **Search** (Enter / click / Ⓐ on Search): runs `QueryParser.Parse(Game)` → `Responder.Respond`, costs a flat search time [GDD] (GAME-017a config key; none is shown), opens Results.
+
+### 13.5 Question list (GAME-017a cut) — GAME-017a deliverable 4
+Same panel, rules and friction-free behaviour as §2, with **Q9** added as item 8. GAME-017a lists only Q1–Q4, Q8, Q9; items 5–6 (Q6/Q7) are hidden until GAME-017 and their keys do nothing, so numbers never change when they arrive.
+
+```
+┌ Ask… ─────────────────────────────┐
+│ 1  What are you looking for?      │
+│ 2  Anything you don't want?       │
+│ 3  Need to stay functional?       │
+│ 4  Trying to stay under anything? │
+│ 7  When will you use it?          │
+│ 8  Ever gotten anxious from it?   │  ← Q9, new
+│                       Back ⌫ / Ⓑ │
+└───────────────────────────────────┘
+```
+- Asking plays `You` line → customer answer line (subtitle) → a new **❓ said card** (§13.2). A restated or `noConstraint` answer adds no card (§2).
+- Time cost: one flat [GDD] value per question in GAME-017a (no tolerance/deflection, RDA§5 item 4). Shown nowhere as a number (DP§39).
+- Q9's answer card is a normal said card; answering also reveals the New/Experienced toggle (§13.4).
+
+### 13.6 Results by tool outcome — GAME-017a deliverable 3
+Header: `Search: "{query}"` (the preview string; replaces `Search: {chip}`), `Edit search` (Backspace). Card face is today's (§0); role tags and the why line stay GAME-018 (slot reserved under the fit label, hidden in GAME-017a). Every Responder outcome has a frame; texts the tool already has come **from the tool** (key cites the line, GAME-017a copies the wording; UX does not write it):
+
+| Outcome (`ResponseKind` / `ResponseOutcome`) | Frame | Text source |
+|---|---|---|
+| Recommend · Ok | cards as today | — |
+| Recommend · Fallback | `◐` banner + cards (exists) | `fallbackBanner` (exists) |
+| Recommend · None | heading, no cards, `Edit search` focused | `noneMatched` (exists) |
+| Recommend · ExcludedAll | as None + the exclusion note | tool's ExclusionNote text (`T:16633-16635`) |
+| Recommend + `AskEffectForBudget` | prompt line above cards: the tool's "what effect" ask (`T:16662-16667`); focus on `Ask… Q` | tool line, key `askEffectForBudget` |
+| PriceOnly | list rows `{strain} · {g} g · ${post}` in the tool's order, no fit label | tool order `T:16595-16612` |
+| Strain lookup · found | one card (same face) + `Choose` / `Details` | — |
+| Strain lookup · out of stock / excluded | the card dimmed `Out of stock` / exclusion note, then `Close to it, in stock:` + Near cards | tool `T:16541-16554`; key `nearLabel` [GDD copy] |
+| NotFound | heading `Not on the menu.` + `Edit search` | [GDD] copy, key `notFound` |
+| Help | heading + the tool's `Try: …` suggestions as plain text (not buttons: the player must re-read, not click a fix) | tool line `T:16677`, key `helpTry` |
+| Drive notice (any outcome) | neutral line under the header | tool line `T:19557`, key `driveNotice` |
+| Compare (if parsed) | GAME-018 frame; in GAME-017a shows as Help-style heading `Compare comes later.` [GDD] | — |
+
+```
+ Ok / Fallback                         Help                                   Lookup, out of stock
+┌──────────────────────────────┐      ┌──────────────────────────────┐       ┌──────────────────────────────┐
+│ Search: "something chill"    │      │ Search: "your heaviest one"  │       │ Search: "do you have {strain}"│
+│ ◐ {fallbackBanner}           │      │ {tool help heading}          │       │ [card dimmed · Out of stock] │
+│ [card][card][card]           │      │ Try: {tool suggestions}      │       │ Close to it, in stock:       │
+│ More options (M)             │      │                              │       │ [card][card][card]           │
+│ Edit search ⌫   Choose Enter │      │ Edit search ⌫   Ask… Q       │       │ Edit search ⌫   Choose Enter │
+└──────────────────────────────┘      └──────────────────────────────┘       └──────────────────────────────┘
+```
+Default focus: Ok/Fallback/lookup → card 1 Choose (§9); None/ExcludedAll/NotFound/Help → `Edit search`.
+
+### 13.7 Reject → follow-up → re-search — GAME-017a deliverable 5
+```
+Results ─Choose─► Pos ─present─► customer REJECTS
+   → subtitle: follow-up line naming the unmet component (ASK_LESS_SEDATING / ASK_CHEAPER / ASK_STRONGER as lines only)
+   → new ✋ said card, unread, `New` tag
+   → screen: Query (not Dialogue), focus on the new card, picker closed
+   → player: Enter → Note it as… → (optionally Q Ask…, Del to drop a card, re-read older cards) → Search
+   → Results with the new query
+```
+- Landing on Query with the new card focused replaces today's "back to dialogue with `LastReject`" (`SliceView` dialogue line); the line still plays as a subtitle (2 s min, [GDD]) and stays readable as the card.
+- Older cards keep their readings; nothing resets.
+- No icon, score or colour marks the misread (DEC-052: misread regret is evaluation-only).
+
+### 13.8 Input map (adds to §9; Esc = pause, Backspace = back per CF§2.4)
+| Control | Keyboard / mouse | Controller |
+|---|---|---|
+| Move between said cards | ← → / Tab (Query, Results strip) / hover | D-pad ← → |
+| Open Note it as… | Enter on a card / click | Ⓐ |
+| Pick reading | 1–4 / ↑↓ + Enter / click | D-pad ↑↓ + Ⓐ |
+| Leave card out / back in | Del on card or in picker / click `Leave it out…` | Ⓧ |
+| Close picker | Backspace / click outside | Ⓑ |
+| Ask… from Query or Results | Q / click | Ⓨ (Query) · Ⓨ stays Details on Results, so Ask… is the footer button there |
+| Ask question n | 1–4, 7, 8 while the list is open | D-pad + Ⓐ |
+| New / Experienced toggle | P / click | LB |
+| Search | Enter on Search / click | Ⓐ on Search |
+| Edit search (Results → Query) | Backspace / click | Ⓑ |
+| Pause | Esc | Start |
+New keys Q and P avoid every bound key (§9, CF§3.3, today's E/Y/N/A/R/M/F3). Number keys are scoped to the open list or picker. Focus order on Query: first unread card (else first card) → tiles → toggle → Ask… → Search.
+
+### 13.9 Overrides of earlier text (for review)
+1. §2 "Esc closes dialogue as today" and §9 "No-sale confirm … Esc = Keep helping" → Backspace / Ⓑ (CF§2.4); Esc is pause.
+2. §3 field chips → said cards in GAME-017a; GAME-017 may add field chips later beside them (RDA§3.5 `"{said}" → {term}`).
+3. §4 tokens per known fact → per-card include/exclude (Del); the composer joins the player's readings, not fields (RDA§3.3). Tile = chip-only search, not "replace the effect token".
+4. §4 "No free typing in PS1b" stands (DES-006 Q2).
+5. §2 list numbering: Q9 is item 8.
+
+### 13.10 New strings (add to §11; all [GDD] unless a tool line is cited)
+| Key | Text | Used by |
+|---|---|---|
+| `noteAs` | Note it as… | GAME-017a |
+| `readTheirWords` | Their words | GAME-017a |
+| `readAsSaid` / `readAsSaidTip` | as said / Already how the tool says it | GAME-017a |
+| `readUnread` | not noted yet | GAME-017a (screen reader + tooltip) |
+| `readLeaveOut` / `readLeftOut` | Leave it out of this search / left out of this search | GAME-017a |
+| `cardNew` | New | GAME-017a |
+| `tileOnly` | Tile search: cards not used | GAME-017a |
+| `toolWill` | The tool will: {0} | GAME-017a |
+| `toolRoutes` | recommend strains / look up {0} / find strains like {0} / show lowest prices / compare / not sure what to search; it will suggest wording | GAME-017a |
+| `toolMods` | price cap ${0} / leaving out {0} / new-customer filter on | GAME-017a |
+| `profileLabel` / `profileExp` / `profileNew` | Customer: / Experienced / New customer | GAME-017a |
+| `q9Menu` / `q9Say` | Ever gotten anxious from it? / Have you ever gotten anxious from it? | GAME-017a (RDA§3.4) |
+| `searchHeader` | Search: "{0}" | GAME-017a |
+| `askEffectForBudget` | (tool line `T:16662-16667`) | GAME-017a |
+| `helpTry` | (tool line `T:16677`) | GAME-017a |
+| `driveNotice` | (tool line `T:19557`) | GAME-017a |
+| `nearLabel` | Close to it, in stock: | GAME-017a |
+| `outOfStock` | Out of stock | GAME-017a |
+| `notFound` | Not on the menu. | GAME-017a |
+| `compareLater` | Compare comes later. | GAME-017a |
+
+### 13.11 Validation
+- Each frame maps to RDA§5 "In": said cards + picker + preview + Search route + outcome texts → item 3 (§13.2–13.4, §13.6); Q1–Q4/Q8/Q9 + flat cost → item 4 (§13.5); reject loop → item 5 (§13.7); toggle → RDA§3.4 / row 13. ✔
+- Consistent with §0 (no gameplay value on a card; misread never shown) and CF§2 (Esc pause, Backspace back). DEC-103 only touches the counter ID/call flow, outside these frames. ✔
+- No product data: example lines are labelled placeholders; `{strain}` is runtime; tool texts are cited, not written here. ✔
