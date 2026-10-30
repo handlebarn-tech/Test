@@ -6,6 +6,7 @@
 Every generated mesh exports UV0 = base, UV1 = a dedicated non-overlapping lightmap UV (DEC-084 "UV2"), UV2 = `UVMap_Label` where it exists. Re-export jars, jar fill and packaged goods in the same wave.
 
 ## Rules
+- The ChatGPT drops (rounds 3–6) order UV maps base, label, lightmap, which is the reverse of DEC-097. The runner check must enforce the DEC-097 order and fail anything else (IMP-003 R3b.0.4).
 - Change the shared export path once (`Tools/Blender/` runner/proclib), not per generator. Lightmap UV: no overlaps, padding suited to 1–2K lightmaps; add a validation check (exists, in 0–1, no overlap).
 - Unity import keeps "Generate Lightmap UVs" off (`generateSecondaryUV: 0` in the `.meta` files under `_Game/Art/Procedural/`).
 - Only the UV layout and the export hashes may change; geometry, materials and names stay the same (diff vertex counts and bounds against the old FBX).

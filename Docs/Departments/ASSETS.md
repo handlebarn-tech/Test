@@ -24,7 +24,7 @@ _Lead keeps this ≤15 lines._ 2026-10-30 (Assets lead `local_172b2109-6384-4914
 | Task | Worker | Branch | State |
 |---|---|---|---|
 | PROC-005 toolkit integration + checklist fixes (DEC-092) | Agent subagent (lead) | new worktree; base `claude/clever-lamport-837e7f` | resumed 2026-10-30: wire shelving fix → remaining families |
-| IMP-003 rolling toolkit audit | Agent subagent (lead) | `worktree-agent-aa0d2341e0f4619cc` (4a615d6, 289019d, 02573db, a976d0d) | rounds 3–6 audited (R3b 1/7/2, R4 1/6/5, R5 0/5/0, R6 1/6/0 adopt/adapt/reject); applying the lead's Q6–Q8 rulings, then Docs 2 review |
+| IMP-003 rolling toolkit audit | Agent subagent (lead) | `worktree-agent-aa0d2341e0f4619cc` (4a615d6, 289019d, 02573db, a976d0d) | rounds 3–6 audited (R3b 1/7/2, R4 1/6/5, R5 0/5/0, R6 1/6/0 adopt/adapt/reject); rulings folded in (ecb8132); in review with Docs 2 |
 | PROC-006 register kit spec (phase 1) | done (subagent retired) | `worktree-agent-a5f8a932c9a5f07a9` @ 1070e9c | **merged to main (6af8906)**; Nolan answered (DEC-104) → PROC-006b. 13 items, 11 evidenced, GAP-REG-1..10; trash bin RK-09 added |
 | ASSET-004 MPFB2 customers | Agent subagent (lead) | new worktree; base `claude/task-asset-004` | resumed 2026-10-30; Docs reviewer `local_99d7e5b7…` |
 
