@@ -1,7 +1,9 @@
 """Deli-jar fill levels (PROC-002): seeded low-poly buds piled in the PROC_DeliJar cavity, one mesh per fill step.
-Cavity comes from the deli_jar params so fill and jar stay in sync. Buds sit on a grid x grid lattice per layer; a step
-holds round(fill * cells) buds filled bottom-up in a seeded cell order, so the top layer is ragged and every lower
-step is a subset of the higher ones. Shapes/colours are [GDD] art placeholders, not store facts.
+Cavity comes from the deli_jar params so fill and jar stay in sync. Buds sit on a grid x grid lattice per layer; each
+layer is shifted by a seeded offset and every bud jittered in x/y/z so full jars don't read as columns (PROC-003). A step
+holds round(fill * cells) buds: first the "mound" cells (a front heap that rises above the base band, DEC-046), then
+bottom-up in a seeded cell order, so the top layer is ragged and every lower step is a subset of the higher ones.
+Shapes/colours are [GDD] art placeholders, not store facts.
 See Docs/Assets/Specs/PROC_PIPELINE.md (PROC-002)."""
 import hashlib
 import json
@@ -26,10 +28,10 @@ def variants(p):
 
 def cavity(p):
     with open(os.path.join(ROOT, p["jar_params"])) as f:
-        b = json.load(f)["body"]
-    t = b["wall_m"]
+        jp = json.load(f)
+    b, t = jp["body"], jp["body"]["wall_m"]
     return {"half_x": b["width_m"] / 2 - t, "half_y": b["depth_m"] / 2 - t, "corner_r": b["corner_radius_m"] - t,
-            "floor": b["floor_m"], "top": b["height_m"]}
+            "floor": b["floor_m"], "top": b["height_m"], "band": jp["band"]["height_m"] if jp["band"]["enabled"] else 0.0}
 
 
 def inside(cv, co):
@@ -74,16 +76,20 @@ def plan_buds(p, cv):
     g, rng = b["grid"], seeded(p["seed"], fam["id"], "plan")
     pitch_x, pitch_y = 2 * cv["half_x"] / g, 2 * cv["half_y"] / g
     r0 = b["radius_m"] * fam["scale"]
-    out = []
+    lo, hi = b["radius_jitter"]
+    plan = {}
     for layer in range(b["layers"]):
+        ox, oy = (rng.uniform(-1, 1) * b["layer_shift"] * pitch_x, rng.uniform(-1, 1) * b["layer_shift"] * pitch_y)
         cells = [(i, j) for i in range(g) for j in range(g)]
         rng.shuffle(cells)
         for i, j in cells:
-            c = (-cv["half_x"] + pitch_x * (i + 0.5) + rng.uniform(-1, 1) * b["jitter_m"],
-                 -cv["half_y"] + pitch_y * (j + 0.5) + rng.uniform(-1, 1) * b["jitter_m"],
-                 cv["floor"] + r0 * fam["elong"] + layer * b["layer_pitch_m"] * fam["scale"])
-            out.append(((layer, i, j), c, r0 * rng.uniform(0.85, 1.1), rng.getrandbits(32)))
-    return out
+            c = (-cv["half_x"] + pitch_x * (i + 0.5) + ox + rng.uniform(-1, 1) * b["jitter_m"],
+                 -cv["half_y"] + pitch_y * (j + 0.5) + oy + rng.uniform(-1, 1) * b["jitter_m"],
+                 cv["floor"] + r0 * fam["elong"] + layer * b["layer_pitch_m"] * fam["scale"] + rng.uniform(-1, 1) * b["jitter_z_m"])
+            plan[(layer, i, j)] = (c, r0 * rng.uniform(lo, hi), rng.getrandbits(32))
+    # DEC-046: the mound comes first (j = 0 is the front row), then everything else in plan order
+    order = [tuple(k) for k in b["mound"]] + [k for k in plan if list(k) not in b["mound"]]
+    return [(k, *plan[k]) for k in order]
 
 
 def build(p, lod):
@@ -111,7 +117,7 @@ def build(p, lod):
                     blob(bm, srng, cv, c, srng.uniform(*sh["radius_m"]), 0.5, 0.3, 1, fam["accent_frac"])
         elif n:  # "block": one rounded column up to the mean bud top, for the far LOD
             top = cv["floor"] + (n / (g * g)) * b["layer_pitch_m"] * fam["scale"] + b["radius_m"] * fam["scale"] * 0.5
-            top = min(top, cv["top"] - 2 * MARGIN)
+            top = min(max(top, cv["band"] + b["min_visible_above_band_m"]), cv["top"] - 2 * MARGIN)  # DEC-046
             ring = lambda z: [(x, y, z) for x, y in rounded_rect(2 * cv["half_x"], 2 * cv["half_y"], cv["corner_r"], 1, 0.003)]
             loft(bm, [ring(cv["floor"] + 2 * MARGIN), ring(top)])
         if not bm.faces:
@@ -127,6 +133,9 @@ def build(p, lod):
         bad = [v.co for v in obj.data.vertices if not inside(cv, v.co)]
         if bad:
             raise ValueError(f"{fam['id']} {part}: {len(bad)} vertices outside the jar cavity, e.g. {tuple(bad[0])}")
+        top = max(v.co.z for v in obj.data.vertices)
+        if pct and top < cv["band"] + b["min_visible_above_band_m"]:  # DEC-046: only SOLD OUT may look empty
+            raise ValueError(f"{fam['id']} {part}: pile top {top:.3f} m is not {b['min_visible_above_band_m']} m above the band")
         objs[part] = obj
     xs, ys, zs = zip(*(v.co for o in objs.values() for v in o.data.vertices))
     expected = (max(xs) - min(xs), max(zs) - min(zs), max(ys) - min(ys))  # containment is the real check, above
