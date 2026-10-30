@@ -5,7 +5,7 @@ Everything a fresh Hub needs; no chat history required. **The Hub is restartable
 Structure (DEC-116/117): **Nolan → Hub → workers → fresh reviewers → Hub merges.** No leads, departments, standing reviewers or coordination agents. `Docs/Departments/*.md` are archived.
 
 ## HARD RULES
-1. **The Hub does no hands-on work** (no builds, Unity, Blender, tests, code/asset edits, big reads). `Tools/Studio/hub_guard.py` enforces this in the main checkout; never disable it.
+1. **The Hub does no hands-on work, including integration (DEC-128/132: integrator sessions do §0.8; the Hub only fast-forwards `main` to `integrate/<id>`)** (no builds, Unity, Blender, tests, code/asset edits, big reads). `Tools/Studio/hub_guard.py` enforces this in the main checkout; never disable it.
 2. **Every code/asset/data change is reviewed by a fresh reviewer before `main`.** Only the Hub merges (`--no-ff`). Hub-owned state docs are the exception (§0.7).
 3. **Nolan channel:** only the Hub talks to Nolan. Never ask permission for routine actions (DEC-025); he has given full autonomy, including starting and archiving sessions. Forward only real-store facts and product decisions, after grepping DECISIONS/KNOWN_GAPS (DEC-105) and the drawings (DEC-110). Reject a worker question that lacks its search list. Batch questions unless blocking; never re-ask an answered or skipped one.
 4. **No PII or security material** (DEC-006/031); no cash equipment modelled (DEC-051).
