@@ -1,5 +1,37 @@
 # REVIEW-PROC009: studio-built parked vehicles
 
+# Round 3 (fix round 2)
+
+**Reviewed:** `claude/jovial-meninsky-908c0a` @ `34bf6c2` · **Review branch:** `review/proc009-r3` (`review/proc009-r2` @ `01ce8ea` + worker branch, `--no-ff` merge `2cfbdcb`) · **Reviewer:** fresh, Hub-spawned (STUDIO_OS §0.7)
+**Sources read:** the packet; the diff `429872f..34bf6c2` (and the full branch stat against main); `Docs/Handoffs/PROC-009.md` (fix round 2, Validation, Not done); round 2 of this review.
+
+## Verdict: PASS with minors
+
+## Checks
+1. **Blender validation.** `blender.ps1 parked_vehicles Tools/Blender/params/parked_vehicles.json` exited 0. All 3 validation JSONs: `passed: true`, no errors, no warnings. Tris match the handoff (Sedan 91,790 / 29,394 / 7,252 / 1,438; Hatchback 91,064 / 29,024 / 7,344 / 1,456; SUV 92,382 / 30,144 / 7,814 / 1,592). LOD0 is inside the DEC-084 30–150k guide.
+2. **Determinism.** After my rerun all 3 FBX are sha256-identical to the commit; each Unity copy is byte-identical to its Art export. JSON/manifest differ only in line endings. Rerunning `parked_vehicles_sheet.py` reproduced the committed sheet byte for byte.
+3. **Toolkit self-test.** `[SELFTEST] all passed`.
+4. **Code.** `bumpers()` now sweeps two profiles along the same plan path: the painted upper band (`z0+lb..z1`) and a Trim band (`z0..z0+lb+0.01`) 16 mm thinner, so recessed 8 mm. Nothing is placed below `z0` and nothing runs back under the body. The undertray box and lip are deleted. Headlamp lens is a sweep round the plan corner (LOD0–2), with a Trim (black) housing behind it at LOD0–1; slats are Chrome, 12 mm, LOD0–1. Params replace `intake_m` with `lower_band_m` and add `*_wrap_m`; PROC_PIPELINE is updated to match. No other files touched.
+5. **Visual review (DEC-122/DEC-114), judged myself.** The committed sheet, plus LOD0 front 3/4, low front 3/4 (az −25°, el 6°) and rear 3/4, and LOD1/LOD2 front 3/4, re-rendered at 1500 × 1000 with the worker's own sheet code (scratch only, not committed).
+
+## Round-2 findings
+- **MAJOR 1a (undertray brick): FIXED.** No block hangs under the front or rear bumper on any class, at any LOD, including the low-angle view where it was most visible. The lower band is a thin dark strip inside the bumper silhouette that follows the cover's curve and wraps.
+- **MAJOR 1b (sedan fascia): FIXED.** At LOD0 and LOD1 the sedan headlamps read as wide lamp units with an amber marker either side of a grille whose chrome slats are clearly visible. The front no longer reads as a blank slab. Hatch and SUV fronts also read better (lamps distinct from paint).
+
+## Regressions
+None found. Body, greenhouse, wheels, mirrors, rear lamps and plate unchanged from round 2; LOD chain steps hold.
+
+## minor
+1. **Sedan LOD2 headlamps fade.** The dark housing stops at LOD1 (`if d > 1: continue`), so at LOD2 the clear lens sits on silver paint and reads as faint corner patches. Acceptable at LOD2 distance; carrying the Trim housing to LOD2 would fix it cheaply.
+2. **The lamp wrap barely reads at 3/4.** The lens sweep round the fender corner is there in code but the wrap portion is hard to see in the renders; the lamps read mostly as end-face units. Not a blocker.
+3. **Hatchback mesh grille reads as a solid black rectangle** at LOD0 (cells too fine to resolve at sheet scale). Observation.
+4. Carried over: round-1 minor 4 (`run_generator.py` 2-line change) is still the Hub's call; texture maps and lightmap UV remain the blocked dependency the handoff raised (round-1 minor 1/2). The late-1990s/2000s read observation stands; texture maps are the remaining lever.
+
+## Not checked
+- Unity import (packet: not needed); in-scene placement in the lot.
+
+---
+
 # Round 2 (fix round 1)
 
 **Reviewed:** `claude/jovial-meninsky-908c0a` @ `429872f` · **Review branch:** `review/proc009-r2` (`review/proc009` @ `a8cfb3d` + worker branch, `--no-ff` merge `dbbaf57`) · **Reviewer:** fresh, Hub-spawned (STUDIO_OS §0.7)
