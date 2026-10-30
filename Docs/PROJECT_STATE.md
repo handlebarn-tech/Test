@@ -37,6 +37,7 @@ Unity Warehouse/Office packs: still need a Unity editor Package Manager download
 1. **Review queue, ready now (start sessions):**
    - REVIEW-W4B: BUILD-003 + BUILD-004 hub guard (`claude/task-build-003-0837ba`). Wait for BUILD-004's commit. **Before merging, delete the untracked prototype `.claude/settings.json` and `Tools/Studio/hub_guard.py` in the main checkout** (git won't overwrite untracked files).
    - BUILD-PLAY (`local_599eaab4-f54f-4421-bdf9-b3729caf654f`): Windows build of the slice for Nolan → `C:/Users/handl/Downloads/Dispo Game Builds/`.
+   - **Merged 00:10:** W4E (PROC-002) cb1f8f5; W4B (BUILD-003/004, hardened hub guard live) 489ea33. **Running:** REVIEW-W4F (ART-003+004) in session `local_c8cbad4e…`. **Next to start (needs a user/scheduled turn):** GAME-005, PROC-003, BUILD-005 (BACKLOG), PERF-001.
    - **Merged 23:55:** W4C (REF-006/007, GAP-120 confirmed) d186fea; W4D (GAME-002b) dc4f83c. BUILD-PLAY done: `C:/Users/handl/Downloads/Dispo Game Builds/slice-c867cd5/DispoGame.exe`.
    - **Dispatched by message (notice turn):** REVIEW-W4B (BUILD-003+004) → idle W4D session `local_fa1d4222…`; ART-004 GAP-120 fix → ART-003 session `local_392adc04…`; then the W4C session `local_c8cbad4e…` reviews ART-003+004 together (W4F). W4E (PROC-002) is still finishing.
    - **Earlier:** REVIEW-W4C `local_c8cbad4e-a459-40bf-8475-597c8ec94b75` (REF-006/007), REVIEW-W4D `local_fa1d4222-cd8c-4df7-b9ab-799c6519e8b9` (GAME-002b), REVIEW-W4E `local_c4b9cab4-e039-4ea5-b9d8-a90655ae6797` (PROC-002 at 8102f0d). Merge each on GO.
