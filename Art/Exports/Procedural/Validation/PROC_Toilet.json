@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Toilet",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "b47b6b0ae01fda94",
+  "generator": "restroom",
+  "lod_tris": {
+    "LOD0": 2156,
+    "LOD1": 920,
+    "LOD2": 96,
+    "LOD3": 24
+  },
+  "params_sha256": "7ce35d46c0ce158d",
+  "passed": true,
+  "warnings": [
+    "LOD0 2156 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}

@@ -3511,14 +3511,14 @@
     24.75
    ],
    "rot": 0,
-   "faces": "E",
+   "faces": "W",
    "confidence": "Med",
    "source_tiles": [
     "A901 detail 17 'POS enlarged plan' (printed 9'-0\" wall->customer face, 2'-6\" POS top, 27'-9\" run, 19'-2 3/4\" back counter)",
     "A011 vector (sheet 05/15/23, 18 pt/ft)",
     "A012 vector (5.20.26)"
    ],
-   "notes": "REF-013: 2'-6\" return at the west end of the south run (A901 printed width; A011/A012 vector x 15.28-17.78, y 22.49-26.99) running south to the back counter, so the south staff aisle is closed at its west end and opens east toward the east arch. Replaces REF-011's Counter_Register_SouthReturn (x 32.2-34.2 north arm), which no drawing shows",
+   "notes": "REF-013: 2'-6\" return at the west end of the south run (A901 printed width; A011/A012 vector x 15.28-17.78, y 22.49-26.99) running south to the back counter, so the south staff aisle is closed at its west end and opens east toward the east arch. Replaces REF-011's Counter_Register_SouthReturn (x 32.2-34.2 north arm), which no drawing shows. faces E->W per REVIEW-PROC005d (RF POS_07 faces W, wall2_R2C1, this row's matrix; GAP-131/REF-016)",
    "matrix": {
     "src_primary": "A901 detail 17 printed 2'-6\" + A011 3017/3019 (x 15.28-17.78, y 22.49-26.99)",
     "conf": {

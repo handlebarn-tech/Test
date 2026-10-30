@@ -1,0 +1,292 @@
+{
+  "generator": "deli_counter_jar_wall",
+  "asset_prefix": "PROC_Deli_",
+  "seed": 23001,
+  "own_sheet": true,
+  "pbr": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Deli",
+  "gaps": [
+    "GAP-113",
+    "GAP-133",
+    "GAP-PROC-16",
+    "GAP-PROC-25",
+    "GAP-PROC-26",
+    "GAP-PROC-27"
+  ],
+  "_note": "Three deli jar walls only (RI §8.3; RF DeliJarWall_North/_East/_South). The plan's 'DELI COUNTER' L is the south register run (RI §1.5 row 101, §8.1), modelled by register_counter_run; the DeliCounter_LegA/LegB assets were dropped (REVIEW-PROC5 #3). The jar wall is not in the TI set (GAP-113, RI §6.4 last para), so no TI showcase value is used for shelving.",
+  "_src": {
+    "height_m": "RF DeliJarWall_North/_East/_South size_ft z = 7.0 ft",
+    "counter_h_m": "34 in: RF North/South notes 'TI base cabinet' + TI §6.4 base cabinets 2'-10\" max AFF (RI §8.3 'back counter (TI base cabinet 2'-1\", Low)')",
+    "counter_top_t_m": "1.5 in: TI §6.4 base cabinets '1½\" countertop' (TI convention per RF notes, Low)",
+    "counter_overhang_m": "GAP-PROC-27 (top overhang over the carcass; construction)",
+    "toe_h_m": "4 in: TI §6.4 '4\" toe base'",
+    "toe_recess_m": "2 in: TI §6.4 '(2\" recess)'",
+    "back_panel_t_m": "GAP-PROC-27 (backlit panel build-up thickness)",
+    "shelf_depth_m": "11 in: RI §2.4 'Jar-wall shelves' one jar deep ≈10–12\" (Low); GAP-PROC-16",
+    "shelf_pitch_m": "14 in: RI §2.4 'Jar-wall shelves' ≈14–16\" apart (Low, lower bound so the East top board clears the arch spring); GAP-PROC-16",
+    "jar_tiers": "2 jar shelf tiers: RI §8.3 'each wall ... 2 shelf tiers'; RF North '2 dark-grey metal shelf tiers', RF South '2 shelf tiers'",
+    "shelf_t_m": "GAP-PROC-16 (sheet gauge, construction)",
+    "shelf_lip_m": "front lip: RI §2.4 'sheet-metal shelves with a front lip'; height GAP-PROC-16",
+    "standard_pitch_m": "GAP-PROC-16 (standard spacing; black standards/brackets RI §2.4)",
+    "standard_w_m": "GAP-PROC-16 (standard size)",
+    "jar_asset_id": "DEC-042b/043, PROC_DeliJar",
+    "jar_slot_m": "PROC_DeliJar 6.0 x 10.25 x 5.5 in (RI §2.4 canister ≈6 × 5–6 × 10–10.5\")",
+    "jar_pitch_m": "GAP-PROC-16 (jar pitch)",
+    "jar_end_margin_m": "GAP-PROC-16",
+    "counter_slot_depth_m": "GAP-PROC-16 (counter-row jar line, one shelf depth from the back)",
+    "drawer_w_m": "GAP-PROC-27 (drawer module width; walnut fronts DEC-043)",
+    "drawer_rows": "2: RI §2.4 Counter 'two drawer rows' (DEC-043 photo)",
+    "pull_w_m": "GAP-PROC-16 (pull size; silver cup pulls DEC-043)",
+    "base_module_w_m": "GAP-PROC-25 (South open-bin bay width) / GAP-PROC-26 (East cubbies follow the arch bays)",
+    "bins_per_module": "GAP-PROC-25 (South open bins, BAND_10)",
+    "checker_band_h_m": "GAP-PROC-27 (green/black checker band above the top shelf: RI §2.4; height unmeasured)",
+    "checker_tile_m": "GAP-PROC-27 (checker tile size)",
+    "frame_w_m": "GAP-PROC-26 (East arched wood frame member width, BAND_11 ≈3–4 in post read by eye)",
+    "arch_r_m": "GAP-PROC-26 (East arch corner radius, BAND_11)",
+    "bays": "GAP-PROC-26 (East: 4 arched bays; BAND_11 bay clear ≈6 jar widths ≈36 in + frame → ≈3.5 ft, 14.0 / 3.5 = 4)",
+    "board_t_m": "GAP-PROC-26 (East shelf board thickness)",
+    "shelf_color": "per variant, see _src_colors (Grey_Metal North, Black_ShelfMetal South)",
+    "panel_color": "per variant, see _src_colors (Teal_Wall North/South, Teal_Backlit East)",
+    "finishes": "Tile_* porcelain (tile), Board_EastShelf laminate, Teal_Wall paper (WC-1 wallcovering, RI §6.5)",
+    "colors": "see _src_colors"
+  },
+  "_src_colors": {
+    "Black_Top": "black counter top: DEC-043; RF North/South 'black back counter', RF East 'black counter'",
+    "Black_ML1": "black carcass, toe kick, standards and brackets: RF North/South 'black back counter'; RI §2.4 'black standards/brackets'; TI §6.4 black melamine interiors. Panel trim and checker grout reuse it (GAP-PROC-27)",
+    "Walnut_WD1": "walnut drawer fronts, North only (tint ≈ median sRGB 147/113/85 of the drawer fronts in the DEC-043 crop x470-540 y330-380): DEC-043 photo, probably the north wall (RF North note, RI §8.3, Low)",
+    "Silver": "silver cup pulls: DEC-043",
+    "Teal_Backlit": "East backlit teal panels: RF DeliJarWall_East 'backlit teal shelves' (BAND_11); emissive tint hue from BAND_11, intensity is the engine's",
+    "Teal_Wall": "North/South teal leaf-pattern wallcovering: RI §2.4 'Wall behind' (WC-1); tint = median sRGB 55/82/78 of the teal wall in the DEC-043 photo crop (deli_jar_wall_retail_crop.jpg x130-240 y150-240). Not emissive: the photo shows no backlight; RI §2.2 'teal-backlit jar walls' is question 3",
+    "Grey_Metal": "North shelves dark-grey sheet metal: DEC-043, RI §2.4",
+    "Black_ShelfMetal": "South shelves black: RI §3 BAND 01 'black shelves' (south wall beside the arch, RF South source_tiles)",
+    "Tile_Checker": "green checker tile: RI §2.4 'green-and-black checker tile band'",
+    "Tile_Black": "black checker tile: RI §2.4",
+    "Wood_ArchFrame": "East arched wood frames: RF DeliJarWall_East (BAND_11); tone by eye from BAND_11 (Low)",
+    "Board_EastShelf": "East shelf boards read light/white under the backlight in BAND_11 (Low); colour GAP-PROC-26",
+    "LED_Emissive": "East warm LED strips: RI §3 BAND 11 'warm LED strips'",
+    "Plastic_Bin": "South open bins: RF South 'open bins / wire bins'; grey-blue translucent bins by eye in BAND_10 (Low); size/colour GAP-PROC-25"
+  },
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 16
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 12
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8
+    }
+  },
+  "tri_budget": {
+    "LOD0": 150000,
+    "LOD1": 75000,
+    "LOD2": 37500,
+    "LOD3": 15000
+  },
+  "tri_guide": {
+    "lod0_min": 30000
+  },
+  "wear": {
+    "edge_wear": 0.2,
+    "scuffs": 0.3,
+    "fingerprints": 0.15,
+    "sticker_residue": 0.1
+  },
+  "height_m": 2.1336,
+  "counter_h_m": 0.8636,
+  "counter_top_t_m": 0.0381,
+  "counter_overhang_m": 0.0254,
+  "toe_h_m": 0.1016,
+  "toe_recess_m": 0.0508,
+  "back_panel_t_m": 0.02,
+  "shelf_depth_m": 0.2794,
+  "shelf_pitch_m": 0.3556,
+  "jar_tiers": 2,
+  "shelf_t_m": 0.0015,
+  "shelf_lip_m": 0.025,
+  "standard_pitch_m": 0.8128,
+  "standard_w_m": 0.0254,
+  "jar_asset_id": "PROC_DeliJar",
+  "jar_slot_m": [
+    0.1524,
+    0.26035,
+    0.1397
+  ],
+  "jar_pitch_m": 0.19,
+  "jar_end_margin_m": 0.05,
+  "counter_slot_depth_m": 0.2794,
+  "drawer_w_m": 0.6096,
+  "drawer_rows": 2,
+  "pull_w_m": 0.076,
+  "base_module_w_m": 0.6096,
+  "bins_per_module": 2,
+  "checker_band_h_m": 0.1524,
+  "checker_tile_m": 0.0508,
+  "frame_w_m": 0.05,
+  "arch_r_m": 0.14,
+  "bays": 4,
+  "board_t_m": 0.019,
+  "finishes": {
+    "Tile_Checker": "porcelain",
+    "Tile_Black": "porcelain",
+    "Board_EastShelf": "laminate",
+    "Teal_Wall": "paper"
+  },
+  "colors": {
+    "Black_Top": [
+      0.03,
+      0.03,
+      0.032,
+      1.0
+    ],
+    "Black_ML1": [
+      0.035,
+      0.035,
+      0.04,
+      1.0
+    ],
+    "Walnut_WD1": [
+      0.3,
+      0.19,
+      0.11,
+      1.0
+    ],
+    "Silver": [
+      0.75,
+      0.76,
+      0.78,
+      1.0
+    ],
+    "Teal_Backlit": [
+      0.05,
+      0.45,
+      0.45,
+      1.0
+    ],
+    "Teal_Wall": [
+      0.038,
+      0.084,
+      0.076,
+      1.0
+    ],
+    "Grey_Metal": [
+      0.22,
+      0.23,
+      0.24,
+      1.0
+    ],
+    "Black_ShelfMetal": [
+      0.04,
+      0.04,
+      0.045,
+      1.0
+    ],
+    "Tile_Checker": [
+      0.1,
+      0.3,
+      0.15,
+      1.0
+    ],
+    "Tile_Black": [
+      0.02,
+      0.02,
+      0.022,
+      1.0
+    ],
+    "Wood_ArchFrame": [
+      0.42,
+      0.27,
+      0.16,
+      1.0
+    ],
+    "Board_EastShelf": [
+      0.85,
+      0.85,
+      0.83,
+      1.0
+    ],
+    "LED_Emissive": [
+      1.0,
+      0.86,
+      0.66,
+      1.0
+    ],
+    "Plastic_Bin": [
+      0.45,
+      0.5,
+      0.55,
+      1.0
+    ]
+  },
+  "variants": [
+    {
+      "id": "JarWall_North",
+      "rf": "DeliJarWall_North",
+      "length_m": 7.89432,
+      "depth_m": 0.64008,
+      "base": "drawers",
+      "shelves": "bracket",
+      "shelf_color": "Grey_Metal",
+      "panel_color": "Teal_Wall",
+      "boards": 2,
+      "checker_band": true,
+      "_src": {
+        "length_m": "RF DeliJarWall_North 25.9 ft",
+        "depth_m": "RF DeliJarWall_North 2.1 ft (includes the back counter; plan footprint 1.2 ft does not)",
+        "base": "walnut drawers + silver cup pulls: DEC-043 photo, 'probably this wall' (RF North note, Low)",
+        "boards": "2 dark-grey metal shelf tiers: RF DeliJarWall_North",
+        "checker_band": "RI §2.4 (DEC-043 photo: top shelf runs under a green/black checker band)"
+      }
+    },
+    {
+      "id": "JarWall_South",
+      "rf": "DeliJarWall_South",
+      "length_m": 5.861304,
+      "depth_m": 0.6096,
+      "base": "bins",
+      "shelves": "bracket",
+      "shelf_color": "Black_ShelfMetal",
+      "panel_color": "Teal_Wall",
+      "boards": 3,
+      "checker_band": false,
+      "_src": {
+        "length_m": "RF DeliJarWall_South 19.23 ft (= A901 printed 19'-2 3/4\", High; REF-013)",
+        "depth_m": "RF DeliJarWall_South 2.0 ft (A011/A012 vector back counter y 27.0-29.0; REF-013)",
+        "base": "black back counter with open bins / wire bins under it: RF DeliJarWall_South (BAND_10)",
+        "boards": "2 jar tiers (RF South) + 1 top display board with no jar slots: BAND_01 shows a third black shelf above the top jar tier holding decor (Low; question 1)",
+        "checker_band": "none seen: BAND_01 shows the teal leaf panel up to the top of the wall"
+      }
+    },
+    {
+      "id": "JarWall_East",
+      "rf": "DeliJarWall_East",
+      "length_m": 4.2672,
+      "depth_m": 0.6096,
+      "base": "cubbies",
+      "shelves": "arched",
+      "panel_color": "Teal_Backlit",
+      "boards": 3,
+      "checker_band": false,
+      "_src": {
+        "length_m": "RF DeliJarWall_East 14.0 ft",
+        "depth_m": "RF DeliJarWall_East 2.0 ft (A011/A012 vector x 45.19-47.19; REF-013)",
+        "base": "black counter (RF East, BAND_11) with black open shelving of packaged product under it (BAND_11 lower third, Low)",
+        "shelves": "backlit teal shelves in arched wood frames: RF DeliJarWall_East (BAND_11)",
+        "boards": "2 jar tiers + 1 top lit board with no jar slots: BAND_11 shows three lit boards per bay (GAP-133 east tier count open; question 2)",
+        "checker_band": "none seen in BAND_11"
+      }
+    }
+  ]
+}

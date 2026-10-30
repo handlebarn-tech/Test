@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Mops_Brooms_JC",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "304598427e44796f",
+  "generator": "janitor_props",
+  "lod_tris": {
+    "LOD0": 8712,
+    "LOD1": 2728,
+    "LOD2": 396,
+    "LOD3": 12
+  },
+  "params_sha256": "4142b0a4112e1224",
+  "passed": true,
+  "warnings": []
+}

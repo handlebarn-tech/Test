@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Worktable_Stainless",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "78c047d8067f4193",
+  "generator": "office_fixtures",
+  "lod_tris": {
+    "LOD0": 3484,
+    "LOD1": 1948,
+    "LOD2": 316,
+    "LOD3": 24
+  },
+  "params_sha256": "d06038e518e4961e",
+  "passed": true,
+  "warnings": [
+    "LOD0 3484 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}

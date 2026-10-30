@@ -1,0 +1,473 @@
+{
+  "generator": "break_room",
+  "asset_prefix": "PROC_",
+  "seed": 26001,
+  "own_sheet": true,
+  "pbr": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/BreakRoom",
+  "gaps": [
+    "GAP-126",
+    "GAP-127",
+    "GAP-PROC-19",
+    "GAP-PROC-34",
+    "GAP-PROC-35",
+    "GAP-PROC-36"
+  ],
+  "_sources": {
+    "width_m/depth_m/height_m": "each variant's RF row size_ft (ROOM_FIXTURES.json rev7), converted at 0.3048 m/ft; see the variant _src",
+    "RF": "Docs/Reference/ROOM_FIXTURES.json fixture ids",
+    "RI": "Docs/REFERENCES_INDEX.md: §2 row R3C5 (break-room tile), §3 BAND row 03 (break-room photo), §6.4 millwork rows (TI A940), §7.3 break room",
+    "BAND_03": "References/BAND_TFS Phoenix (NEW)_2026-09-18-21-38-18/..._03.jpeg (RF source_tiles of Counter_North_Run and Sink_Double; RI §3 row 03)",
+    "wall2_R3C5": "References/Index/cctv/wall2_R3C5.jpg (RF source_tiles of Bench_Wood, Hoop_Mini, Hooks_Coats, Lockers_Staff; RI §2 row R3C5)",
+    "construction": "bevels, reveals (3 mm), sheet thickness, hems, screws/rivets, glides, seams, louvre fin shape are generic manufacturing detail (PROC-005 brief): no store fact, no outer size or count changed",
+    "lods": "pipeline LOD ladder (PROC_PIPELINE), not a store fact",
+    "wear": "pipeline wear defaults (Q0.4), not a store fact",
+    "tri_budget/tri_guide": "DEC-084 / DEC-114 guides"
+  },
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 16
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 12
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8
+    }
+  },
+  "wear": {
+    "edge_wear": 0.25,
+    "scuffs": 0.35,
+    "fingerprints": 0.2,
+    "sticker_residue": 0.15
+  },
+  "colors": {
+    "Locker_Grey": [0.5, 0.51, 0.53, 1.0],
+    "Grey_Top": [0.42, 0.43, 0.45, 1.0],
+    "Locker_Hardware": [0.6, 0.6, 0.6, 1.0],
+    "Wood_Plank": [0.55, 0.38, 0.22, 1.0],
+    "Black_Steel": [0.04, 0.04, 0.045, 1.0],
+    "Wood_Frame": [0.5, 0.34, 0.2, 1.0],
+    "Cork": [0.68, 0.5, 0.32, 1.0],
+    "Frame_Red": [0.7, 0.08, 0.08, 1.0],
+    "White_Board": [0.96, 0.96, 0.96, 1.0],
+    "Frame_Black": [0.04, 0.04, 0.045, 1.0],
+    "Fabric_Grey": [0.45, 0.46, 0.48, 1.0],
+    "Board_Frame_GAP": [0.5, 0.5, 0.5, 1.0],
+    "Board_Face_GAP": [0.55, 0.55, 0.55, 1.0],
+    "Table_Top": [0.62, 0.45, 0.26, 1.0],
+    "Table_Frame": [0.05, 0.05, 0.055, 1.0],
+    "White_Plastic": [0.92, 0.92, 0.9, 1.0],
+    "FirstAid_Trim_GAP": [0.5, 0.5, 0.5, 1.0],
+    "Light_Wood": [0.5, 0.3, 0.15, 1.0],
+    "Black_Top": [0.03, 0.03, 0.032, 1.0],
+    "Black_Interior": [0.03, 0.03, 0.035, 1.0],
+    "Kick_GAP": [0.4, 0.4, 0.4, 1.0],
+    "Pull_Black": [0.03, 0.03, 0.03, 1.0],
+    "Stainless": [0.66, 0.67, 0.68, 1.0],
+    "Chrome": [0.76, 0.77, 0.79, 1.0],
+    "Black_Appliance": [0.04, 0.04, 0.045, 1.0],
+    "Appliance_Glass": [0.05, 0.06, 0.07, 1.0],
+    "Appliance_Trim": [0.45, 0.45, 0.45, 1.0],
+    "Ball_Orange": [0.85, 0.35, 0.08, 1.0],
+    "Rim_White": [0.9, 0.9, 0.9, 1.0],
+    "Hoop_Frame_GAP": [0.35, 0.35, 0.35, 1.0],
+    "Backboard_GAP": [0.6, 0.6, 0.6, 1.0],
+    "Hamper_GAP": [0.45, 0.45, 0.45, 1.0],
+    "Net_GAP": [0.65, 0.65, 0.65, 1.0],
+    "Hook_Rail_GAP": [0.55, 0.55, 0.55, 1.0],
+    "Hook_Metal_GAP": [0.35, 0.35, 0.35, 1.0]
+  },
+  "_colors_src": {
+    "Locker_Grey": "GAP-PROC-34: locker body/doors are not visible (R3C5 shows only the top, RF Lockers_Staff); neutral mid grey, finish powder_coat GAP",
+    "Grey_Top": "RF Lockers_Staff notes 'grey top' (wall2_R3C5, RI §7.3); finish powder_coat GAP-PROC-34",
+    "Locker_Hardware": "GAP-PROC-34: latch/handle/hasp/plate/hinge finish not visible; neutral grey, brushed_metal GAP",
+    "Wood_Plank": "RF Bench_Wood 'wood plank top' (wall2_R3C5)",
+    "Black_Steel": "RF Bench_Wood 'black steel legs' (wall2_R3C5); also the bench screws/glides (construction)",
+    "Wood_Frame": "RF Board_Cork 'wood-framed corkboard' (wall2_R3C4)",
+    "Cork": "RF Board_Cork 'corkboard'",
+    "Frame_Red": "RF Whiteboard_West 'red/white frame' (wall2_R3C5, DEC-051 Q6); finish powder_coat GAP-PROC-34; tray = generic whiteboard part in the frame colour (GAP-PROC-35)",
+    "White_Board": "RF Whiteboard_West whiteboard (DEC-051 Q6) and the white half of its 'red/white frame' (inner trim)",
+    "Frame_Black": "RF Board_West_BlackFrame 'black-framed bulletin board' (chat_office_L); frame material (metal vs wood) GAP-PROC-34, finish powder_coat",
+    "Fabric_Grey": "RF Board_North_Fabric 'grey fabric pin board' (wall2_R3C3)",
+    "Board_Frame_GAP": "GAP-PROC-34: frame of Board_Bulletin_West (DEC-062 says only 'bulletin board') and of Board_North_Fabric (RF names the fabric only); neutral grey",
+    "Board_Face_GAP": "GAP-PROC-34: face of Board_Bulletin_West (DEC-062, no imagery) and Board_West_BlackFrame (RF: papers cover it; cork vs fabric not stated); neutral grey, fabric finish GAP",
+    "Table_Top": "GAP-PROC-36: PROC-005 worker read of a wall2_R3C5 crop (wood-tone top under the hoop); Table_Lunch RF sources DEC-051 only, so Low until confirmed",
+    "Table_Frame": "GAP-PROC-36: same wall2_R3C5 crop read (dark legs); Low",
+    "White_Plastic": "RF FirstAid_Kit 'white wall-mounted first-aid kit' (DEC-051 Q8)",
+    "FirstAid_Trim_GAP": "GAP-PROC-34: cross emblem, latch and hinge colour not recorded (a red vs green/white first-aid mark is not sourced); neutral grey",
+    "Light_Wood": "RF Counter_North_Run / Uppers_North 'light-wood' cabinets; value = honey/medium wood between BAND_03 (warm cast, sampled linear ~0.55-0.70/0.13-0.20/0.05-0.09) and wall2_R3C5 (lighter), white balance uncertain; BAND_03 'wood-grain laminate' (RI §3 row 03); TI §6.4 PL-1 laminate fronts",
+    "Black_Top": "RF Counter_North_Run 'black counter' (TI 6.4); BAND_03 black speckled top; finish stone per TI §6.4 OS3 'QZ-1 quartz'",
+    "Black_Interior": "TI §6.4 (RI §6.4 base-cabinet row) 'black melamine interiors'",
+    "Kick_GAP": "GAP-PROC-34: toe-kick face finish not recorded; neutral grey",
+    "Pull_Black": "BAND_03: black bar (D) pulls on the break-room doors and drawers",
+    "Stainless": "RF Sink_Double 'stainless' (BAND_03); also the strainer baskets",
+    "Chrome": "BAND_03: chrome high-arc pull-down gooseneck faucet (RF Sink_Double 'gooseneck faucet')",
+    "Black_Appliance": "BAND_03: black pod coffee maker and black microwave (RI §3 row 03 lists both; RF Counter_North_Run 'pod coffee maker and microwave on top')",
+    "Appliance_Glass": "BAND_03: dark microwave door window; coffee-maker reservoir uses the same dark glass key (reservoir colour GAP-PROC-34)",
+    "Appliance_Trim": "GAP-PROC-34: keypad, feet, drip tray/grate, spout, buttons colour not resolvable; neutral grey",
+    "Ball_Orange": "GAP-PROC-36: wall2_R3C5 crop shows an orange basketball (RF Hoop_Mini 'with a basketball'); confirm",
+    "Rim_White": "GAP-PROC-36: wall2_R3C5 crop shows a light/white rim ring; Low",
+    "Hoop_Frame_GAP": "GAP-PROC-34: hamper wire frame, uprights, ball seams; neutral dark grey",
+    "Backboard_GAP": "GAP-PROC-34: backboard not resolvable in R3C5; neutral grey",
+    "Hamper_GAP": "GAP-PROC-34: hamper bag colour; neutral grey",
+    "Net_GAP": "GAP-PROC-34: net colour; neutral light grey",
+    "Hook_Rail_GAP": "GAP-PROC-34: coat-hook rail hidden behind coats (R3C5); neutral grey",
+    "Hook_Metal_GAP": "GAP-PROC-34: hook finish; neutral dark grey"
+  },
+  "finishes": {
+    "Grey_Top": "powder_coat",
+    "Locker_Hardware": "brushed_metal",
+    "Frame_Red": "powder_coat",
+    "Frame_Black": "powder_coat",
+    "Board_Frame_GAP": "powder_coat",
+    "Board_Face_GAP": "fabric",
+    "Table_Top": "wood_light",
+    "FirstAid_Trim_GAP": "plastic",
+    "Black_Top": "stone",
+    "Black_Interior": "laminate",
+    "Kick_GAP": "laminate",
+    "Black_Appliance": "plastic",
+    "Appliance_Trim": "plastic",
+    "Ball_Orange": "rubber",
+    "Rim_White": "powder_coat",
+    "Backboard_GAP": "plastic",
+    "Hook_Rail_GAP": "enamel"
+  },
+  "variants": [
+    {
+      "tri_budget": {"LOD0": 80000, "LOD1": 40000, "LOD2": 20000, "LOD3": 8000},
+      "tri_guide": {"lod0_min": 20000},
+      "id": "Lockers_Staff",
+      "rf": "Lockers_Staff",
+      "kind": "lockers",
+      "width_m": 0.6096,
+      "depth_m": 0.4572,
+      "height_m": 1.8288,
+      "lockers": {
+        "columns": 2,
+        "rows": 6,
+        "kick_h_m": 0.1,
+        "top_h_m": 0.03,
+        "frame_m": 0.02,
+        "handle_d_m": 0.02,
+        "louvres_lod0": 5
+      },
+      "_src": {
+        "width_m/height_m": "RF Lockers_Staff size_ft [2.0, 1.5, 6.0]: DEC-051 Q5 '2 x 6 ft' read as 2 ft wide x 6 ft tall (GAP-126 for the wall + w/h reading)",
+        "depth_m": "RF Lockers_Staff 1.5 ft 'depth convention' (GAP-126)",
+        "columns/rows": "DEC-088 (3): 2 x 6 small doors, Med",
+        "kick_h_m/top_h_m/frame_m/handle_d_m": "GAP-PROC-19 (locker parts)",
+        "louvres_lod0": "GAP-PROC-35 (louvre fin count per door; generic stamped louvre)",
+        "number plates": "blank (no numbering recorded); plate existence GAP-PROC-35"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 80000, "LOD1": 40000, "LOD2": 20000, "LOD3": 8000},
+      "tri_guide": {"lod0_min": 20000},
+      "id": "Bench_Wood",
+      "rf": "Bench_Wood",
+      "kind": "bench",
+      "width_m": 1.524,
+      "depth_m": 0.39624,
+      "height_m": 0.4572,
+      "bench": {
+        "planks": 3,
+        "plank_t_m": 0.038
+      },
+      "_src": {
+        "width_m/depth_m/height_m": "RF Bench_Wood size_ft [5.0, 1.3, 1.5] (Low, GAP-127)",
+        "planks/plank_t_m": "GAP-PROC-35 (plank count and thickness not resolvable in R3C5)",
+        "leg frames": "RF 'black steel legs'; tube 30 mm and frame inset GAP-PROC-35"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 20000, "LOD1": 10000, "LOD2": 5000, "LOD3": 2000},
+      "tri_guide": {"lod0_min": 5000},
+      "id": "Board_Bulletin_West",
+      "rf": "Board_Bulletin_West",
+      "kind": "board",
+      "width_m": 0.9144,
+      "depth_m": 0.03048,
+      "height_m": 0.762,
+      "board": {"frame_w_m": 0.025, "face_recess_m": 0.008, "frame": "Board_Frame_GAP", "face": "Board_Face_GAP", "tray": false},
+      "_src": {
+        "width_m/depth_m/height_m": "RF Board_Bulletin_West size_ft [3.0, 0.1, 2.5] (DEC-062; size Low, GAP-127)",
+        "frame_w_m/face_recess_m": "GAP-PROC-35 (board frame section)",
+        "frame/face": "GAP-PROC-34 (DEC-062 gives no finish)"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 20000, "LOD1": 10000, "LOD2": 5000, "LOD3": 2000},
+      "tri_guide": {"lod0_min": 5000},
+      "id": "Board_Cork",
+      "rf": "Board_Cork",
+      "kind": "board",
+      "width_m": 0.54864,
+      "depth_m": 0.03048,
+      "height_m": 0.79248,
+      "board": {"frame_w_m": 0.025, "face_recess_m": 0.008, "frame": "Wood_Frame", "face": "Cork", "tray": false},
+      "_src": {
+        "width_m/depth_m/height_m": "RF Board_Cork size_ft [1.8, 0.1, 2.6] (wall2_R3C4, Med)",
+        "frame_w_m/face_recess_m": "GAP-PROC-35",
+        "frame/face": "RF Board_Cork 'wood-framed corkboard'"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 20000, "LOD1": 10000, "LOD2": 5000, "LOD3": 2000},
+      "tri_guide": {"lod0_min": 5000},
+      "id": "Whiteboard_West",
+      "rf": "Whiteboard_West",
+      "kind": "board",
+      "width_m": 1.2192,
+      "depth_m": 0.03048,
+      "height_m": 0.9144,
+      "board": {"frame_w_m": 0.025, "face_recess_m": 0.004, "frame": "Frame_Red", "face": "White_Board", "trim": "White_Board", "tray": true},
+      "_src": {
+        "width_m/depth_m/height_m": "RF Whiteboard_West size_ft [4.0, 0.1, 3.0] (size Low, GAP-127)",
+        "frame_w_m/face_recess_m": "GAP-PROC-35",
+        "frame/trim/face": "RF Whiteboard_West 'whiteboard in a red/white frame' (DEC-051 Q6): red outer frame, white inner trim",
+        "tray": "GAP-PROC-35: marker tray is a generic whiteboard part, not seen; kept inside the RF depth"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 20000, "LOD1": 10000, "LOD2": 5000, "LOD3": 2000},
+      "tri_guide": {"lod0_min": 5000},
+      "id": "Board_West_BlackFrame",
+      "rf": "Board_West_BlackFrame",
+      "kind": "board",
+      "width_m": 0.762,
+      "depth_m": 0.03048,
+      "height_m": 0.6096,
+      "board": {"frame_w_m": 0.025, "face_recess_m": 0.008, "frame": "Frame_Black", "face": "Board_Face_GAP", "tray": false},
+      "_src": {
+        "width_m/depth_m/height_m": "RF Board_West_BlackFrame size_ft [2.5, 0.1, 2.0] (Office, chat_office_L, Low)",
+        "frame_w_m/face_recess_m": "GAP-PROC-35",
+        "frame": "RF 'black-framed bulletin board'",
+        "face": "GAP-PROC-34 (posted papers hide it; content not recorded)"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 20000, "LOD1": 10000, "LOD2": 5000, "LOD3": 2000},
+      "tri_guide": {"lod0_min": 5000},
+      "id": "Board_North_Fabric",
+      "rf": "Board_North_Fabric",
+      "kind": "board",
+      "width_m": 1.524,
+      "depth_m": 0.03048,
+      "height_m": 0.9144,
+      "board": {"frame_w_m": 0.025, "face_recess_m": 0.008, "frame": "Board_Frame_GAP", "face": "Fabric_Grey", "tray": false},
+      "_src": {
+        "width_m/depth_m/height_m": "RF Board_North_Fabric size_ft [5.0, 0.1, 3.0] (Office, Med)",
+        "frame_w_m/face_recess_m": "GAP-PROC-35",
+        "face": "RF 'grey fabric pin board'",
+        "frame": "GAP-PROC-34 (RF names no frame; was an uncited aluminium)"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 80000, "LOD1": 40000, "LOD2": 20000, "LOD3": 8000},
+      "tri_guide": {"lod0_min": 20000},
+      "id": "Table_Lunch",
+      "rf": "Table_Lunch",
+      "kind": "table",
+      "width_m": 1.2192,
+      "depth_m": 0.762,
+      "height_m": 0.762,
+      "table": {"top_t_m": 0.025, "leg_m": 0.04, "apron_h_m": 0.07, "leg_inset_m": 0.06},
+      "_src": {
+        "width_m/depth_m/height_m": "RF Table_Lunch size_ft [4.0, 2.5, 2.5] (convention placeholder, GAP-127)",
+        "top_t_m/leg_m/apron_h_m/leg_inset_m": "GAP-PROC-35 (table construction sizes)",
+        "colours": "Table_Top / Table_Frame: GAP-PROC-36 (worker crop read)"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 20000, "LOD1": 10000, "LOD2": 5000, "LOD3": 2000},
+      "tri_guide": {"lod0_min": 5000},
+      "id": "FirstAid_Kit",
+      "rf": "FirstAid_Kit",
+      "kind": "first_aid",
+      "width_m": 0.3048,
+      "depth_m": 0.12192,
+      "height_m": 0.39624,
+      "first_aid": {"door_d_m": 0.022},
+      "_src": {
+        "width_m/depth_m/height_m": "RF FirstAid_Kit size_ft [1.0, 0.4, 1.3] (DEC-051 Q8, Med)",
+        "door_d_m": "GAP-PROC-35 (cabinet door depth); cross emblem generic, no brand, colour GAP-PROC-34"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 80000, "LOD1": 40000, "LOD2": 20000, "LOD3": 8000},
+      "tri_guide": {"lod0_min": 20000},
+      "id": "Counter_North_Run",
+      "rf": "Counter_North_Run",
+      "kind": "base_cabinets",
+      "width_m": 1.34112,
+      "depth_m": 0.6096,
+      "height_m": 0.8635,
+      "extra_h_m": 0.1016,
+      "counter": {
+        "top_t_m": 0.0381,
+        "splash_h_m": 0.1016,
+        "kick_h_m": 0.1016,
+        "kick_recess_m": 0.0508,
+        "overhang_m": 0.025,
+        "drawer_h_m": 0.15,
+        "pull_standoff_m": 0.03,
+        "door_w_m": 0.6
+      },
+      "_src": {
+        "width_m/depth_m": "RF Counter_North_Run size_ft [4.4, 2.0, 2.833]",
+        "height_m": "RF 2.833 ft = 34 in top (TI §6.4 34 in max AFF)",
+        "top_t_m": "TI §6.4 (RI §6.4 base-cabinet row): 1-1/2 in countertop with backsplash on the breakroom cabinets",
+        "splash_h_m/extra_h_m": "GAP-PROC-19: TI §6.4 says only 'with backsplash'; the 4 in height is a placeholder (REVIEW-PROC5 finding 8) and adds to the bound",
+        "kick_h_m/kick_recess_m": "TI §6.4: 4 in toe base, 2 in recess",
+        "overhang_m/drawer_h_m/door_w_m": "GAP-PROC-19 (door widths); drawer-over-door bays as in BAND_03 / wall2_R3C5",
+        "pull_standoff_m": "GAP-PROC-19; pull type black bar pull per BAND_03"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 80000, "LOD1": 40000, "LOD2": 20000, "LOD3": 8000},
+      "tri_guide": {"lod0_min": 20000},
+      "id": "Counter_East_Return",
+      "rf": "Counter_East_Return",
+      "kind": "base_cabinets",
+      "width_m": 1.79832,
+      "depth_m": 0.6096,
+      "height_m": 0.8635,
+      "extra_h_m": 0.1016,
+      "counter": {
+        "top_t_m": 0.0381,
+        "splash_h_m": 0.1016,
+        "kick_h_m": 0.1016,
+        "kick_recess_m": 0.0508,
+        "overhang_m": 0.025,
+        "drawer_h_m": 0.15,
+        "pull_standoff_m": 0.03,
+        "door_w_m": 0.6,
+        "sink_cutout": [0.0, 0.78296, 0.44768]
+      },
+      "_src": {
+        "width_m/depth_m": "RF Counter_East_Return size_ft [5.9, 2.0, 2.833]",
+        "height_m": "RF 2.833 ft = 34 in top (TI §6.4)",
+        "top_t_m/kick_h_m/kick_recess_m": "TI §6.4 as Counter_North_Run",
+        "splash_h_m/extra_h_m/overhang_m/drawer_h_m/door_w_m/pull_standoff_m": "GAP-PROC-19 as Counter_North_Run",
+        "sink_cutout": "x centre GAP-PROC-19 (cut-out position); width/depth = RF Sink_Double 2.7 x 1.6 ft minus a 0.02 m rim each side"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 80000, "LOD1": 40000, "LOD2": 20000, "LOD3": 8000},
+      "tri_guide": {"lod0_min": 20000},
+      "id": "Uppers_North",
+      "rf": "Uppers_North",
+      "kind": "uppers",
+      "width_m": 1.34112,
+      "depth_m": 0.33528,
+      "height_m": 0.762,
+      "counter": {
+        "pull_standoff_m": 0.03,
+        "door_w_m": 0.33
+      },
+      "_src": {
+        "width_m/depth_m/height_m": "RF Uppers_North size_ft [4.4, 1.1, 2.5]",
+        "door_w_m": "BAND_03 shows narrow paired upper doors with the pulls at the meeting edges (4 doors over the run, Low); exact width GAP-PROC-19",
+        "pull_standoff_m": "GAP-PROC-19; black bar pulls near the door bottoms per BAND_03",
+        "Uppers_East": "not generated: RF Uppers_East is Low (CCTV shows uppers on the north run only)"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 20000, "LOD1": 10000, "LOD2": 5000, "LOD3": 2000},
+      "tri_guide": {"lod0_min": 5000},
+      "id": "Sink_Double",
+      "rf": "Sink_Double",
+      "kind": "double_sink",
+      "width_m": 0.82296,
+      "depth_m": 0.48768,
+      "height_m": 0.24384,
+      "extra_h_m": 0.35,
+      "sink": {
+        "bowl_depth_m": 0.23984,
+        "rim_t_m": 0.004,
+        "faucet_h_m": 0.35
+      },
+      "_src": {
+        "width_m/depth_m/height_m": "RF Sink_Double size_ft [2.7, 1.6, 0.8] (A011 double bowl, BAND_03)",
+        "bowl_depth_m/rim_t_m": "RF h minus a 4 mm rim; split GAP-PROC-19 (sink)",
+        "faucet_h_m/extra_h_m": "GAP-PROC-19 (faucet height); type 'gooseneck' RF, pull-down chrome BAND_03; adds to the bound",
+        "bowls": "two equal bowls (RF 'double bowl', A011); bowl split GAP-PROC-19"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 20000, "LOD1": 10000, "LOD2": 5000, "LOD3": 2000},
+      "tri_guide": {"lod0_min": 5000},
+      "id": "Microwave",
+      "rf": "Counter_North_Run (on top)",
+      "kind": "appliance",
+      "width_m": 0.49,
+      "depth_m": 0.38,
+      "height_m": 0.29,
+      "appliance": {"type": "microwave"},
+      "_src": {
+        "width_m/depth_m/height_m": "GAP-PROC-19 (appliance sizes); existence RF Counter_North_Run notes + RI R3C5 / BAND 03",
+        "layout": "door left + keypad panel right, no handle (BAND_03 shows a black microwave with the panel on the right); keypad 3 x 4 generic, key count GAP-PROC-35"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 20000, "LOD1": 10000, "LOD2": 5000, "LOD3": 2000},
+      "tri_guide": {"lod0_min": 5000},
+      "id": "CoffeeMaker_Pod",
+      "rf": "Counter_North_Run (on top)",
+      "kind": "appliance",
+      "width_m": 0.2,
+      "depth_m": 0.33,
+      "height_m": 0.33,
+      "appliance": {"type": "coffee"},
+      "_src": {
+        "width_m/depth_m/height_m": "GAP-PROC-19 (appliance sizes); existence RF Counter_North_Run 'pod coffee maker'",
+        "layout": "generic pod brewer (base + drip tray, tower, head + lid, rear reservoir, 3 buttons); no brand; button count / reservoir position GAP-PROC-35"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 20000, "LOD1": 10000, "LOD2": 5000, "LOD3": 2000},
+      "tri_guide": {"lod0_min": 5000},
+      "id": "Hoop_Mini",
+      "rf": "Hoop_Mini",
+      "kind": "mini_hoop",
+      "width_m": 0.4572,
+      "depth_m": 0.4572,
+      "height_m": 1.3716,
+      "hoop": {"hamper_h_m": 0.6, "board_h_m": 0.32, "rim_r_m": 0.12, "ball_r_m": 0.09},
+      "_src": {
+        "width_m/depth_m/height_m": "RF Hoop_Mini size_ft [1.5, 1.5, 4.5] (Low)",
+        "hamper_h_m/board_h_m/rim_r_m/ball_r_m": "GAP-PROC-35 (hoop part sizes); 'mini hoop over a hamper with a basketball' RF Hoop_Mini"
+      }
+    },
+    {
+      "tri_budget": {"LOD0": 20000, "LOD1": 10000, "LOD2": 5000, "LOD3": 2000},
+      "tri_guide": {"lod0_min": 5000},
+      "id": "Hooks_Coats",
+      "rf": "Hooks_Coats",
+      "kind": "coat_hooks",
+      "width_m": 0.762,
+      "depth_m": 0.08,
+      "height_m": 0.12,
+      "hooks": 5,
+      "_src": {
+        "width_m": "RF Hooks_Coats 2.5 ft",
+        "depth_m/height_m": "GAP-PROC-19 (hook rail): RF 2.5 x 0.8 x 5.5 ft includes the hanging coats/bags (soft goods, not modelled); rail-only model",
+        "hooks": "GAP-PROC-35: hook count not visible under the coats (REVIEW-PROC5 finding 7); 5 is a placeholder"
+      }
+    }
+  ]
+}

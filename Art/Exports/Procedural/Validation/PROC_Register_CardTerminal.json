@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Register_CardTerminal",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "8171e1a3285fc9dc",
+  "generator": "register_station",
+  "lod_tris": {
+    "LOD0": 1496,
+    "LOD1": 1088,
+    "LOD2": 180,
+    "LOD3": 24
+  },
+  "params_sha256": "4fd7a24258cfcf1b",
+  "passed": true,
+  "warnings": [
+    "LOD0 1496 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}
