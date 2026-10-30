@@ -9,8 +9,7 @@ Hub-owned. A fresh Hub resumes from this file + `Docs/HUB_RESUME.md` + recent `D
 ## In flight (session name → task)
 | Session | Task | State / next step |
 |---|---|---|
-| `dispo-build007` `local_01655dfb-07f0-4706-a2a3-156d273999b0` | BUILD-007 playtest build 2 from main 08758c1 | Building → `Downloads/Dispo Game Builds/playtest2-08758c1/`. When it reports: give Nolan the path, then reuse this session for the REF-013 M1 fix. |
-| Unity A2 `local_4e865bb8-479c-41c5-8628-7f3e7cb2a4c3` | Reviewing ART-007 graybox rebuild (`worktree-agent-a814e17bba4ec20c5`@404daee) | Verdict → Hub. GO: merge. Then archive A2 (last long-lived reviewer, DEC-116). |
+| `dispo-build007` `local_01655dfb-07f0-4706-a2a3-156d273999b0` | BUILD-007 playtest build 2 from main 741bb43 (incl. ART-007) | Building → `Downloads/Dispo Game Builds/playtest2-741bb43/`. When it reports: give Nolan the path, then reuse this session for the REF-013 M1 fix. |
 | `dispo-game026` `local_9bc94fb7-d677-4076-81be-83317f26bbf8` | GAME-026 customer flow (Unity) | Read packet, waits for GO. Send GO after the build is out, plus: fix REVIEW-GAME025 M1 (SliceDoor 3 ft width fallback: log a placeholder + GAP tag), and on finish report to the Hub, not to a named reviewer. |
 | `dispo-proc-005-fixture-f` `local_335db39d-0968-49fa-846c-808a2abb2158` | PROC-005 fixture families rework (REVIEW-PROC5 FAIL findings) | PAUSED for the build. Resume after: merge `worktree-agent-ac7414483b9f8bb4a` + main, fix all findings, report to the Hub. |
 | `dispo-proc006b` `local_cab28702-140d-48df-963a-3cc4b318aa89` | PROC-006b register kit generators (from WIP d30bb73) | PAUSED for the build. Resume after: merge main, finish, report to the Hub. |
