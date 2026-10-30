@@ -35,8 +35,6 @@
 - REVIEW-W4L **M1** (text scale at 125/150 % for the cart rows and the register) has not landed in UX_PS1. I reused the existing USS classes (USS is not in my Owns), so the cart rows are not yet checked at 150 %.
 
 ## DEC-065 follow-up (Hub rulings)
-- (1) A left-out ask counts fit 0: kept. (3) `+ Add item` is disabled once every ask is in the cart: kept.
-- (2) Done. `ShiftSim.LeaveRegister()` and `SliceGame.PosBack()`: Esc/Back on a cart of 2+ lines goes back to the cards and keeps the cart. Only the Cancel button empties it. A single line still cancels (US§4).
+- (1) fit 0 for a left-out ask and (3) `+ Add item` disabled once every ask is in the cart: both kept. (2) Done. `ShiftSim.LeaveRegister()` and `SliceGame.PosBack()`: Esc/Back on a cart of 2+ lines goes back to the cards and keeps the cart. Only the Cancel button empties it. A single line still cancels (US§4).
 - When every ask is in the cart, the cards stay up to look at: Choose/Add to cart is disabled, and `Choose`/`ChooseChip` send the player to the register. Cards priced for another open ask's weight are dropped (back to Query).
-- Tests: EditMode `LeaveRegister_KeepsCart_CancelEmpties`. The PlayMode bot presses Esc once on a 2-line cart and asserts Results + cart kept, then R → register.
-- Re-run: compile OK, EditMode **174/174**, PlayMode 8 + 1 skipped.
+- Tests: EditMode `LeaveRegister_KeepsCart_CancelEmpties`; the PlayMode bot presses Esc on a 2-line cart (Results + cart kept, then R). Re-run: compile OK, EditMode **174/174**, PlayMode 8 + 1 skipped.
