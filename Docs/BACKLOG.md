@@ -25,4 +25,5 @@ Priority P0 = vertical-slice critical path. State: Ready / Active / Review / Don
 | REVIEW-W2D | P0 | Review REF-002 | REF-002 | Done (GO with notes) |
 | REF-003 | P0 | Index back-of-register CCTV stills (scale stand) | — | Active |
 | ART-002 | P1 | Graybox update: HUB rooms + register scale stands from REF-002 | REF-002, ART-001 merge | Active |
+| RES-001 | P1 | Read-only research in Nolan's M365 (Outlook, OneDrive) for store facts | — | Active |
 | BUILD-002 | P2 | Build manifest (TOOLCHAIN §14) + fuller result schema (§8) | BUILD-001 | Active |
