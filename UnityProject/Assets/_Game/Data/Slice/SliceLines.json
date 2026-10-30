@@ -66,5 +66,15 @@
   "idFirstNames": [ "Alex", "Jordan", "Sam", "Casey", "Riley", "Morgan", "Taylor", "Jamie", "Avery", "Drew", "Quinn", "Reese" ],
   "idLastNames": [ "Lane", "Reyes", "Brooks", "Hale", "Ortiz", "Marsh", "Vance", "Cole", "Pratt", "Dunn", "Sloan", "Webb" ],
   "idOtherStates": [ "CALIFORNIA", "NEVADA", "NEW MEXICO", "UTAH", "COLORADO", "TEXAS" ],
-  "idTypeNames": [ "DRIVER LICENSE", "ID CARD", "PASSPORT", "MILITARY ID" ]
+  "idTypeNames": [ "DRIVER LICENSE", "ID CARD", "PASSPORT", "MILITARY ID" ],
+  "medVerified": "✓ MED card verified",
+  "medOutOfState": "⚠ Card: out-of-state",
+  "med14d": "14-day remaining",
+  "medAllotmentCaption": "Allotment {0} g · {1} g bought in the last 14 days",
+  "overMedLimit": "✗ Over the 14-day allotment",
+  "saleTypeMed": "● Medical / ○ Adult-use (T)",
+  "saleTypeAdult": "○ Medical / ● Adult-use (T)",
+  "medTaxLabel": "Tax {0}% (medical)",
+  "outOfStateMedHint": "Out-of-state card: ring it as adult-use",
+  "strikeOutOfStateMed": "An out-of-state card was rung as medical"
 }

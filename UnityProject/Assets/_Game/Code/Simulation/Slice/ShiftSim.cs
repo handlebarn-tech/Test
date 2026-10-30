@@ -85,6 +85,7 @@ namespace Dispo.Simulation.Slice
         double _speedFit;   // speedFit of the last accepted pick (§3.3: service start → card pick)
         readonly Random _idRng;
         bool _coverRolled;
+        bool _medicalSale = true;   // GAME-009: a MED customer's sale type (the player may switch it to adult-use)
 
         public ShiftSim(SliceData data)
         {
@@ -126,6 +127,7 @@ namespace Dispo.Simulation.Slice
             {
                 Serving = Queue[0]; Queue.RemoveAt(0);
                 Serving.State = CustomerState.Serving; Serving.ServiceStart = Time; Serving.QueueWait = Time - Serving.SpawnTime;
+                _medicalSale = true;
                 Results = null; Cart.Clear(); RegisterOpen = false; _seen.Clear();
             }
         }
@@ -191,9 +193,9 @@ namespace Dispo.Simulation.Slice
             var q = Pricing.GetEffectivePrices(pc, rep.Tier, Cfg.shiftDayOfWeek);
             if (!q.Prices.TryGetValue(grams, out var pre)) return null;
             pc.Tiers.TryGetValue(rep.Tier ?? "", out var msrp);
-            double post = CheckoutRound(pre * (1 + pc.TaxRate / 100));
+            double post = CheckoutRound(pre * (1 + TaxRate / 100));
             return new PriceLines { Msrp = msrp != null && msrp.TryGetValue(grams, out var m) ? m : pre, PreTax = pre, PostTax = post, Tax = post - pre,
-                CardPostTax = Pricing.ApplyTax(pre, pc.TaxRate), DealName = q.DealName };
+                CardPostTax = Pricing.ApplyTax(pre, TaxRate), DealName = q.DealName };
         }
 
         /// <summary>DEC-035: the real register rounds the after-tax total to the nearest $0.05 (same 4-dp pre-round as priceFloor).</summary>
@@ -213,14 +215,21 @@ namespace Dispo.Simulation.Slice
             Require(RegisterOpen, "nothing accepted");
             var c = Serving;
             var l = Data.Lines;
-            if (CartGrams > Cfg.adultUseLimitGrams) return l.overLimit;   // DEC-036 M1, A.R.S. 36-2858(A)(1)(c)
-            // An over-limit customer takes a trimmed weight (SPEC_COMP002 §2), never more than asked.
-            var wrong = Cart.FirstOrDefault(x => c.OverLimit ? x.Grams > c.Asks[x.Ask].Grams : x.Grams != c.Asks[x.Ask].Grams);
+            // GAME-009 (SPEC_COMP002 §4, GAP-COMP-04 [GDD]): an out-of-state card can't buy medical; 1st try blocked + hint, later + strike.
+            if (MedicalSale && c.OutOfStateCard)
+            {
+                if (++c.OutOfStateMedAttempts > 1) Strikes.Add(l.strikeOutOfStateMed, c.Index, Time);
+                return l.outOfStateMedHint;
+            }
+            // DEC-036 M1 (A.R.S. 36-2858(A)(1)(c)) for adult-use; the remaining 14-day allotment for a medical sale (A5).
+            if (CartGrams > CartCap) return MedicalSale ? l.overMedLimit : l.overLimit;
+            var wrong = Cart.FirstOrDefault(x => c.CanTrim ? x.Grams > c.Asks[x.Ask].Grams : x.Grams != c.Asks[x.Ask].Grams);
             if (wrong != null) return string.Format(l.wrongWeight, l.Weight(c.Asks[wrong.Ask].Grams));
             if (Cart.GroupBy(x => x.BatchId).Any(g => Inventory.Grams(g.Key) < g.Sum(x => x.Grams))) return l.notEnough;
 
             var total = CartPrice();
-            double rate = 1 + Data.Catalog.Pricing.TaxRate / 100, paid = 0;
+            double rate = 1 + TaxRate / 100, paid = 0;
+            bool medical = MedicalSale;
             for (int i = 0; i < Cart.Count; i++)
             {
                 var x = Cart[i];
@@ -229,7 +238,7 @@ namespace Dispo.Simulation.Slice
                 Inventory.Sell(new SaleEvent
                 {
                     BatchId = x.BatchId, StrainName = x.Card.Strain.Name, CustomerIndex = c.Index, Grams = x.Grams,
-                    PricePreTax = x.PreTax, PricePostTax = post,
+                    PricePreTax = x.PreTax, PricePostTax = post, Medical = medical,
                 });
             }
             c.LastFit = CartFit(c);
@@ -253,7 +262,7 @@ namespace Dispo.Simulation.Slice
         public bool Cancel()
         {
             var c = Serving;
-            bool refused = c != null && c.OverLimit && CartGrams > Cfg.adultUseLimitGrams;
+            bool refused = c != null && c.CanTrim && CartGrams > CartCap;
             Cart.Clear(); CloseRegister();
             if (refused) Finish(c, CustomerOutcome.NoSale);
             return refused;
@@ -271,12 +280,12 @@ namespace Dispo.Simulation.Slice
             {
                 var line = Cart.FirstOrDefault(x => x.Ask == i);
                 if (line != null) fits.Add(line.Fit);
-                else if (!(c.OverLimit && c.Asks[i].Fit >= 0)) fits.Add(0);
+                else if (!(c.CanTrim && c.Asks[i].Fit >= 0)) fits.Add(0);
             }
             double fit = fits.Count > 0 ? fits.Average() : 0;
             var primary = c.Asks[0];
             var kept = Cart.FirstOrDefault(x => x.Ask == 0);
-            if (c.OverLimit && primary.Fit >= 0 && (kept == null || kept.Grams < primary.Grams))
+            if (c.CanTrim && primary.Fit >= 0 && (kept == null || kept.Grams < primary.Grams))
                 fit = Math.Max(0, fit - Cfg.primaryTrimFitPenalty * primary.Fit);
             return fit;
         }
@@ -284,7 +293,22 @@ namespace Dispo.Simulation.Slice
         // ---------- limit meter + strikes (GAME-007) ----------
 
         /// <summary>UX_PS1 §3: cart flower grams / the 1 oz cap.</summary>
-        public double MeterFraction => CartGrams / Cfg.adultUseLimitGrams;
+        public double MeterFraction => CartCap > 0 ? CartGrams / CartCap : CartGrams > 0 ? double.PositiveInfinity : 0;
+
+        // ---------- medical (GAME-009, SPEC_COMP002 §4) ----------
+
+        /// <summary>The serving customer is a MED patient and the sale is rung as medical (the default for them).</summary>
+        public bool MedicalSale => Serving != null && Serving.Medical && _medicalSale;
+
+        /// <summary>UX_PS1 §5 sale-type switch, MED customers only: medical ↔ adult-use (tax and cap follow).</summary>
+        public void ToggleSaleType() { Require(Serving != null && Serving.Medical, "only for a MED customer"); _medicalSale = !_medicalSale; }
+
+        /// <summary>The cart's limit: the 14-day medical allotment left (A5), or the 28 g adult-use cap (A1).</summary>
+        public double CartCap => MedicalSale ? MedicalRemaining(Serving) : Cfg.adultUseLimitGrams;
+        public double MedicalRemaining(Customer c) => Math.Max(0, Cfg.medicalLimitGrams14d - c.History14d);
+
+        /// <summary>Tax rate (%) of the sale at the counter: medicalTaxRate (F4, TPT only) or the adult-use rate from pricing.json.</summary>
+        public double TaxRate => MedicalSale ? Cfg.medicalTaxRate * 100 : Data.Catalog.Pricing.TaxRate;
         public MeterState Meter => MeterFraction > 1 ? MeterState.Red : MeterFraction >= Cfg.meterAmberFraction ? MeterState.Amber : MeterState.Neutral;
 
         // ---------- ID stand (GAME-008, SPEC_COMP002 §3) ----------
@@ -354,7 +378,7 @@ namespace Dispo.Simulation.Slice
 
         PriceLines CartPrice(IReadOnlyCollection<CartLine> lines)
         {
-            double pre = lines.Sum(x => x.PreTax), post = CheckoutRound(pre * (1 + Data.Catalog.Pricing.TaxRate / 100));
+            double pre = lines.Sum(x => x.PreTax), post = CheckoutRound(pre * (1 + TaxRate / 100));
             return new PriceLines { Msrp = lines.Sum(x => x.Price?.Msrp ?? double.NaN), PreTax = pre, PostTax = post, Tax = post - pre,
                 CardPostTax = double.NaN, DealName = lines.Select(x => x.Price?.DealName).FirstOrDefault(n => n != null) };
         }
@@ -483,6 +507,10 @@ namespace Dispo.Simulation.Slice
                 IdsChecked = cs.Count(c => c.IdChecked),
                 BadIdsCaught = cs.Count(c => c.Outcome == CustomerOutcome.Refused),
                 ValidIdsRefused = cs.Count(c => c.IdRefusedValid),
+                MedCustomers = cs.Count(c => c.Medical),
+                MedSales = Sales.Where(s => s.Medical).Select(s => s.CustomerIndex).Distinct().Count(),
+                MedTaxCollected = Sales.Where(s => s.Medical).Sum(s => s.PricePostTax - s.PricePreTax),
+                AdultUseTaxCollected = Sales.Where(s => !s.Medical).Sum(s => s.PricePostTax - s.PricePreTax),
                 TopIntents = cs.SelectMany(c => c.Asks).GroupBy(a => a.Family.id).OrderByDescending(g => g.Count()).ToDictionary(g => g.Key, g => g.Count()),
                 SoldOut = Inventory.SoldOutIds.Select(Describe).ToList(),
                 LowStock = Inventory.JarBatchIds.Where(Inventory.IsLow).Select(Describe).ToList(),
@@ -544,6 +572,8 @@ namespace Dispo.Simulation.Slice
         public int OverLimitTrims;    // over-limit customers sold a trimmed, legal cart
         public bool ManagerReview;    // strikes ≥ strikeReviewThreshold
         public int IdsChecked, BadIdsCaught, ValidIdsRefused;   // GAME-008 (SPEC_COMP002 §7)
+        public int MedCustomers, MedSales;                      // GAME-009: MED patients this shift; carts rung as medical
+        public double MedTaxCollected, AdultUseTaxCollected;
         public Dictionary<string, int> TopIntents;
         public List<string> SoldOut, LowStock;
         public bool RoughShift;

@@ -85,5 +85,11 @@
     { "id": "Expired", "w": 10 }, { "id": "Under21", "w": 5 }
   ],
   "_shiftDate": "GAME-008 [GDD]: in-game date the ID panel shows; a Tuesday to match shiftDayOfWeek 2",
-  "shiftDate": "2026-10-27"
+  "shiftDate": "2026-10-27",
+  "_medical": "GAME-009 / SPEC_COMP002 §4: medicalCustomerShare [GDD] 0.04 (DEC-048: medical is under 5 %); outOfStateMedChance [GDD] of MED customers; medicalLimitGrams14d [SRC] A5 2.5 oz x 28.35 (GAP-COMP-06); medicalTaxRate [SRC] F4 9.1 % TPT only (provisional, OPEN-4); seeded 14-day history = 0..medicalHistoryMaxBuys prior buys of a weightOdds weight [GDD]",
+  "medicalCustomerShare": 0.04,
+  "outOfStateMedChance": 0.2,
+  "medicalLimitGrams14d": 70.87,
+  "medicalTaxRate": 0.091,
+  "medicalHistoryMaxBuys": 3
 }

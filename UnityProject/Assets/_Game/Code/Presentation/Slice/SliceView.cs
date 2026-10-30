@@ -95,6 +95,25 @@ namespace Dispo.Presentation.Slice
             return string.Join("\n", rows);
         }
 
+        /// <summary>
+        /// REVIEW-W5N m2: the Counter line in one line for the ID panel header (shown at 125/150 %, where the panel covers the HUD):
+        /// queue size, one shape per patience state with its count, and the stand count.
+        /// </summary>
+        string CompactCounterLine()
+        {
+            var sim = _g.Sim;
+            var l = sim.Data.Lines;
+            string[] icons = { "●", "◐", "▲" };
+            var n = new int[3];
+            foreach (var c in sim.Queue)
+            {
+                double f = c.Patience / c.PatienceMax;
+                n[f > 0.75 ? 0 : f > sim.Cfg.impatientFraction ? 1 : 2]++;
+            }
+            var parts = Enumerable.Range(0, 3).Where(i => n[i] > 0).Select(i => $"{icons[i]} {n[i]}");
+            return string.Join("  ", new[] { string.Format(l.counterLine, sim.Queue.Count) }.Concat(parts).Concat(new[] { string.Format(l.standWaiting, sim.Stand.Count) }));
+        }
+
         /// <summary>§4: LOW / SOLD OUT labels over the jars, projected into the panel.</summary>
         void JarLabels()
         {
@@ -316,7 +335,10 @@ namespace Dispo.Presentation.Slice
             var panel = Add(_screen, "pos");
             var pos = Add(panel, "pos-col");
             AddLabel(pos, "POS", "h1");
-            AddLabel(pos, "✓ " + l.idVerified, "st-ok");   // DEC-036 M2: checked at the check-in desk
+            // DEC-036 M2: checked at the check-in desk; a MED patient's card was checked there too (UX_PS1 §5).
+            var badges = Add(pos, "row");
+            AddLabel(badges, c.Medical ? l.medVerified : "✓ " + l.idVerified, "st-ok badge");
+            if (c.OutOfStateCard) AddLabel(badges, l.medOutOfState, "st-warn badge");
             // Cart lines: name and batch · tier ellipsize; − g + / price / ✕ are fixed columns (REVIEW-W4W m1).
             for (int i = 0; i < sim.Cart.Count; i++)
             {
@@ -342,7 +364,7 @@ namespace Dispo.Presentation.Slice
                 if (sim.Cart.Count == 1) Line(pos, "MSRP", p.Msrp);
                 if (sim.Cart.Count == 1 && p.DealName != null) Line(pos, p.DealName, p.PreTax - p.Msrp);
                 Line(pos, "Subtotal", p.PreTax);
-                Line(pos, $"Tax {sim.Data.Catalog.Pricing.TaxRate}%", p.Tax);
+                Line(pos, sim.MedicalSale ? string.Format(l.medTaxLabel, sim.TaxRate) : $"Tax {sim.TaxRate}%", p.Tax);
                 Line(pos, "Total", p.PostTax, "total");
             }
             AddLabel(pos, $"Scale: {sim.CartGrams:0.00} g (assisted)", "scale");
@@ -351,6 +373,7 @@ namespace Dispo.Presentation.Slice
             var row = Add(pos, "row");
             AddButton(row, "Cash", () => { });
             AddButton(row, "Card", () => { });
+            if (c.Medical) AddButton(row, sim.MedicalSale ? l.saleTypeMed : l.saleTypeAdult, _g.ToggleSaleType, "sale-type");   // UX_PS1 §5, T
             _confirm = AddButton(row, "Hold to confirm", () => { }, "primary");
             _confirm.SetEnabled(sim.Meter != MeterState.Red);   // UX_PS1 §3: red disables Confirm (the POS blocks it anyway, DEC-036 M1)
             _confirm.RegisterCallback<PointerDownEvent>(_ => _g.PosHold(true), TrickleDown.TrickleDown);
@@ -386,6 +409,7 @@ namespace Dispo.Presentation.Slice
             var panel = Add(_screen, "id-panel");
             var head = Add(panel, "id-head");
             AddLabel(head, string.Format(l.idPanelTitle, sim.StandDone + 1, sim.StandTotal), "h1");
+            if (sim.Covering) AddLabel(head, CompactCounterLine(), "id-counter");
             AddLabel(head, string.Format(l.idToday, sim.Today.ToString("ddd MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture)), "id-today");
             var body = Add(panel, "id-body");
             var card = Add(body, "id-card " + (id.Format == IdFormat.Vertical ? "id-v" : "id-h"));
@@ -424,19 +448,23 @@ namespace Dispo.Presentation.Slice
             var state = sim.Meter;
             var meter = Add(parent, "meter meter-" + state.ToString().ToLowerInvariant());
             var head = Add(meter, "meter-head");
-            AddLabel(head, l.meterFlower, "meter-label");
-            AddLabel(head, string.Format(l.meterValue, sim.CartGrams.ToString("0.#"), sim.Cfg.adultUseLimitGrams.ToString("0.#")), "meter-value");
+            // UX_PS1 §5: a medical sale meters the 14-day allotment left (the 28 g cap is not shown); adult-use meters Flower / 28 g.
+            AddLabel(head, sim.MedicalSale ? l.med14d : l.meterFlower, "meter-label");
+            AddLabel(head, string.Format(l.meterValue, sim.CartGrams.ToString("0.#"), sim.CartCap.ToString("0.##")), "meter-value");
             var track = Add(meter, "meter-track");
             Add(track, "meter-fill").style.width = Length.Percent((float)System.Math.Min(100, sim.MeterFraction * 100));
             Add(track, "meter-tick").style.left = Length.Percent((float)(sim.Cfg.meterAmberFraction * 100));
-            if (state == MeterState.Amber) AddLabel(meter, l.nearLimit, "meter-state st-warn");
+            if (sim.MedicalSale)
+                AddLabel(meter, string.Format(l.medAllotmentCaption, sim.Cfg.medicalLimitGrams14d.ToString("0.##"), sim.Serving.History14d.ToString("0.#")), "meter-caption");
+            if (state == MeterState.Amber && !sim.MedicalSale) AddLabel(meter, l.nearLimit, "meter-state st-warn");
+            string over = sim.MedicalSale ? l.overMedLimit : "✗ " + l.overLimit;
             if (state == MeterState.Red)
             {
-                AddLabel(meter, "✗ " + l.overLimit, "meter-state st-bad");
+                AddLabel(meter, over, "meter-state st-bad");
                 AddLabel(meter, l.trimHint, "meter-hint");
             }
-            // Entering red fires the existing overLimit toast once (UX_PS1 §3).
-            if (state == MeterState.Red && !_wasRed) Toast("⚠ " + l.overLimit, "", true);
+            // Entering red fires the over-limit toast once (UX_PS1 §3).
+            if (state == MeterState.Red && !_wasRed) Toast(sim.MedicalSale ? over : "⚠ " + l.overLimit, "", true);
             _wasRed = state == MeterState.Red;
         }
 
@@ -477,6 +505,12 @@ namespace Dispo.Presentation.Slice
             Row("Bad IDs caught", r.BadIdsCaught.ToString());
             Row("Valid IDs refused", r.ValidIdsRefused.ToString());
             Row("Over-limit trims", r.OverLimitTrims.ToString());
+            if (r.MedCustomers > 0)   // UX_PS1 §6: the medical rows hide when the shift had no MED customer
+            {
+                Row("Medical sales", r.MedSales.ToString());
+                Row("Medical tax collected", $"${r.MedTaxCollected:0.00}");
+            }
+            Row("Adult-use tax collected", $"${r.AdultUseTaxCollected:0.00}");
         }
 
         // ---------------- helpers ----------------

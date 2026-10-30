@@ -175,6 +175,22 @@ namespace Dispo.Slice.Tests
             Assert.AreEqual(0, r.Strikes.Count);
         }
 
+        /// <summary>REVIEW-W5S m2: seed 1 never gets a prompt, so force one; RunBot's workStand path and the lawful no-strike rule run.</summary>
+        [Test]
+        public void SimBot_WorksTheStand_Lawfully_NoStrike()
+        {
+            var d = Load();
+            d.Config.coverCheckInChance = 1;
+            var sim = SliceTests.RunBot(d, 0.5, acceptCover: true, workStand: true);
+            var r = sim.Report();
+            Assert.AreEqual(CoverState.Accepted, sim.Cover);
+            Assert.AreEqual(sim.Cfg.coverCheckInCount, r.IdsChecked, "every covered arrival was checked");
+            Assert.IsEmpty(r.Strikes, "a lawful bot never strikes");
+            Assert.AreEqual(0, r.ValidIdsRefused);
+            Assert.AreEqual(sim.Customers.Count(c => c.Id != null && !sim.IdValid(c)), r.BadIdsCaught);
+            Assert.AreEqual(sim.Cfg.customersPerShift, r.CustomersServed + r.Walkouts + r.NoSales + r.BadIdsCaught);
+        }
+
         [Test]
         public void AnIgnoredStand_DrainsPatience_ShiftStillEnds()
         {

@@ -23,7 +23,7 @@ namespace Dispo.Slice.PlayMode.Tests
     {
         const int W = 1920, H = 1080;
 
-        [UnityTest, Category("SliceCapture")]
+        [UnityTest, Category("SliceCapture"), Timeout(900000)]   // GAME-010 retune: a 16-customer shift runs past the 180 s default
         public IEnumerator Capture_EachScreen()
         {
             if (SystemInfo.graphicsDeviceType == GraphicsDeviceType.Null) Assert.Ignore("needs a GPU: run without -nographics");
@@ -74,6 +74,10 @@ namespace Dispo.Slice.PlayMode.Tests
             c1.OverLimit = true; c1.Budget = 0;
 
             g.Sim.Cfg.coverCheckInChance = 1;   // GAME-008: shoot the cover prompt and the ID panel
+            // GAME-009: the second-to-last customer is a MED patient with an out-of-state card and 49 g in the last 14 days.
+            var med = g.Sim.Customers[g.Sim.Customers.Count - 2];
+            med.Medical = true; med.OutOfStateCard = true; med.History14d = 49;
+            bool medShot = false;
 
             Time.timeScale = 10;
             var seen = new HashSet<SliceScreen>();
@@ -100,7 +104,7 @@ namespace Dispo.Slice.PlayMode.Tests
                     }
                     Time.timeScale = 10;
                 }
-                if (!saleShot && g.Sim.Sales.Count == 1 && g.Screen == SliceScreen.World)
+                if (!saleShot && g.Sim.Sales.Count > 0 && g.Screen == SliceScreen.World)   // the first cart may be 2 lines (GAME-006/010)
                 {
                     saleShot = true; Time.timeScale = 0;
                     yield return Shot("Sale_Toast");
@@ -153,6 +157,19 @@ namespace Dispo.Slice.PlayMode.Tests
                     g.SetTextScale(100);
                     Time.timeScale = 10;
                 }
+                if (!medShot && g.Screen == SliceScreen.Pos && g.Sim.Serving == med)
+                {
+                    medShot = true; Time.timeScale = 0;
+                    Assert.IsTrue(g.Sim.MedicalSale, "a MED patient rings as medical by default");
+                    foreach (var pct in new[] { 100, 125, 150 })
+                    {
+                        g.SetTextScale(pct);
+                        yield return Shot($"Pos_Medical_OutOfState_{pct}");
+                        CheckMedicalRegister(g.Document.rootVisualElement, g.Sim, pct);
+                    }
+                    g.SetTextScale(100);
+                    Time.timeScale = 10;
+                }
                 if (!cartShot && g.Screen == SliceScreen.Pos && g.Sim.Serving == c1)
                 {
                     cartShot = true; Time.timeScale = 0;
@@ -182,8 +199,10 @@ namespace Dispo.Slice.PlayMode.Tests
             Debug.Log($"[SliceCapture] OK {shots.Count} shots in {dir}: {string.Join(", ", shots)}");
             Assert.AreEqual(CustomerOutcome.Bought, c1.Outcome, "the bot trimmed the over-limit cart and sold it");
             Assert.AreEqual(1, g.FinalReport.OverLimitTrims);
+            Assert.AreEqual(CustomerOutcome.Bought, med.Outcome, "the bot switched the out-of-state card to adult-use and sold");
+            Assert.IsTrue(g.Sim.Sales.Where(s => s.CustomerIndex == med.Index).All(s => !s.Medical));
             Assert.IsTrue(new[] { "Dialogue", "Query", "Results", "Detail", "Pos", "Report", "Sale_Toast", "Jars_SoldOut_Low", "Jars_Closeup",
-                    "Pos_Cart_Red_100", "Pos_Cart_Red_125", "Pos_Cart_Red_150", "CoverPrompt_150", "IdCard_100", "IdCard_150", "IdCard_Vertical_150" }
+                    "Pos_Cart_Red_100", "Pos_Cart_Red_125", "Pos_Cart_Red_150", "Pos_Medical_OutOfState_150", "CoverPrompt_150", "IdCard_100", "IdCard_150", "IdCard_Vertical_150" }
                 .All(s => shots.Any(f => f.Contains(s))), string.Join(", ", shots));
         }
 
@@ -218,6 +237,24 @@ namespace Dispo.Slice.PlayMode.Tests
             Debug.Log($"[SliceCapture] register {pct} %: panel {pos}, confirm {confirm}");
         }
 
+        /// <summary>GAME-009 (UX_PS1 §5): MED badge + out-of-state badge, 14-day meter, medical tax line, sale-type switch, all in the safe area.</summary>
+        static void CheckMedicalRegister(VisualElement root, ShiftSim sim, int pct)
+        {
+            var l = sim.Data.Lines;
+            var safe = new Rect(96, 54, W - 192, H - 108);
+            bool Inside(Rect b) => b.xMin >= safe.xMin - 0.5f && b.yMin >= safe.yMin - 0.5f && b.xMax <= safe.xMax + 0.5f && b.yMax <= safe.yMax + 0.5f;
+            var labels = root.Query<Label>().ToList();
+            Label Find(string text) { var x = labels.FirstOrDefault(t => t.text == text); Assert.IsNotNull(x, $"{pct} %: '{text}' shown"); return x; }
+            Find(l.medVerified); Find(l.medOutOfState); Find(l.med14d);
+            Find(string.Format(l.medTaxLabel, sim.TaxRate));
+            Assert.IsFalse(labels.Any(t => t.text == "✓ " + l.idVerified), "the MED badge replaces the 21+ badge");
+            var pos = root.Q(className: "pos").worldBound;
+            Assert.IsTrue(Inside(pos), $"{pct} %: register {pos} in the safe area");
+            foreach (var b in root.Q(className: "pos").Query<Button>().ToList())
+                Assert.IsTrue(Inside(b.worldBound), $"{pct} %: '{b.text}' {b.worldBound} on screen");
+            Assert.IsNotNull(root.Query<Button>().ToList().SingleOrDefault(b => b.text == l.saleTypeMed), $"{pct} %: sale-type switch");
+        }
+
         /// <summary>
         /// W5G m2, UX_COUNTER_INTEL §10: the cover prompt keeps both buttons on screen; the ID panel stays in the safe area and DOB / EXP /
         /// TYPE / FORMAT are never cut (one line, inside their box; at 125/150 % the readout column repeats them full size).
@@ -243,6 +280,19 @@ namespace Dispo.Slice.PlayMode.Tests
                 .Concat(panel.Query<Label>(className: "id-value").ToList().Where(l => l.resolvedStyle.display == DisplayStyle.Flex && l.worldBound.width > 0).Select(l => l.worldBound));
             foreach (var t in root.Query(className: "toast").ToList())
                 Assert.IsFalse(keep.Any(k => k.Overlaps(t.worldBound)), $"{pct} %: toast {t.worldBound} covers the ID panel's content");
+            // REVIEW-W5N m2: at 125/150 % the panel covers the HUD, so the compact Counter line sits in its header, clear of title and date.
+            var strip = panel.Q<Label>(className: "id-counter");
+            if (pct > 100)
+            {
+                Assert.IsNotNull(strip, $"{pct} %: Counter line in the ID panel");
+                var sb = strip.worldBound;
+                Assert.Greater(sb.width, 0, $"{pct} %: Counter line visible");
+                Assert.Less(sb.height, 2 * strip.resolvedStyle.fontSize, $"{pct} %: Counter line one line");
+                foreach (var other in panel.Q(className: "id-head").Query<Label>().ToList().Where(x => x != strip))
+                    Assert.IsFalse(other.worldBound.Overlaps(sb), $"{pct} %: Counter line {sb} clear of '{other.text}'");
+                Assert.GreaterOrEqual(sb.width + 0.5f, strip.MeasureTextSize(strip.text, 0, VisualElement.MeasureMode.Undefined, 0, VisualElement.MeasureMode.Undefined).x,
+                    $"{pct} %: '{strip.text}' not cut");
+            }
             var readout = panel.Q(className: "id-readout");
             bool readoutOn = readout.resolvedStyle.display == DisplayStyle.Flex;
             Assert.AreEqual(pct > 100, readoutOn, $"{pct} %: readout column only at 125/150 %");
