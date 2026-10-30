@@ -115,7 +115,7 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | PROC-006b | P1 | Register kit generators + seeded per-station variation (DEC-104) | PROC-006 | Active |
 | PROC-007 | P1 | DEC-097 UV layout (lightmap ch1, label ch2) + re-export jars/packaged goods, with World's label-shader cut-over | PROC-005 | Ready |
 | PROC-008 | P2 | Cash-drawer tray (R3b.6) | — | Rejected (Hub ruling: DEC-051/086 win; cash equipment is never modelled) |
-| PROC-009 | P2 | Studio-built parked vehicles (DEC-111; R3b.7 rejected as built): CC0 source (DEC-023) or a rebuild per checklist R3b.7 | PROC-005 core (merged) | Ready (packet in `Tasks/Ready`; its Agent worker died at the Hub reset, no branch) |
+| PROC-009 | P2 | Studio-built parked vehicles (DEC-111; R3b.7 rejected as built): CC0 source (DEC-023) or a rebuild per checklist R3b.7 | PROC-005 core (merged) | Active (relaunched 2026-10-30) |
 | ASSET-005 | P1 | Studio-built customer wardrobe (DEC-111; R4.1 rejected as built): MPFB2 CC0 clothes, or procedural shells per R4.1, keeping the drop's garment list and colourways | ASSET-004 | Active (with ASSET-006, one session) |
 | ASSET-006 | P1 | Studio-built hair (DEC-111; R4.2 rejected as built): MPFB2 CC0 hair or alpha card clumps per R4.2, keeping the 9-style list | ASSET-004 | Active (in the ASSET-005 packet and session) |
 | ASSET-007 | P2 | Studio-built nitrile glove overlay (DEC-111; R4.7 rejected as built): hand vertex-group mask or a CC0 glove proxy | ASSET-004 | Active |
