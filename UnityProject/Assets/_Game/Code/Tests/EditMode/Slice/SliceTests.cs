@@ -388,5 +388,18 @@ namespace Dispo.Slice.Tests
             Assert.IsTrue(typeof(ShiftReport).GetFields().All(f => f.GetValue(r) != null), "no null report fields");
             CollectionAssert.IsNotEmpty(r.SoldOut, "DEC-027: the seed-1 bot shift shows at least one SOLD OUT");
         }
+
+        [Test]
+        public void JarFillStep_NearestStep_TiesUp_MinVisible()
+        {
+            var steps = new[] { 0, 10, 20, 40, 70, 100 };
+            Assert.AreEqual(0, JarFillStep.For(0, steps, 20), "0 g = SOLD OUT");
+            Assert.AreEqual(20, JarFillStep.For(0.01, steps, 20), "DEC-046: above 0 g shows the min visible step");
+            Assert.AreEqual(10, JarFillStep.For(0.01, steps, 10));
+            Assert.AreEqual(20, JarFillStep.For(0.15, steps, 10), "tie 10/20 goes up");
+            Assert.AreEqual(70, JarFillStep.For(0.55, steps, 20), "tie 40/70 goes up");
+            Assert.AreEqual(40, JarFillStep.For(0.5, steps, 20));
+            Assert.AreEqual(100, JarFillStep.For(451.5 / 454, steps, 20), "a 451.5 g jar reads full");
+        }
     }
 }
