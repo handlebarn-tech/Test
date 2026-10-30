@@ -18,7 +18,9 @@ Merged in Hub session 4: W4K GAME-005, W4Q DES-003, W4J PERF-001, W4P PROC-003, 
 | REVIEW-W5B: DOC-004 imports-path update (66f8602) | `local_c94488d7-c103-4ed2-8385-e0e9f967d8ac` | running | merge on GO |
 | **OPS-001**: 5 Unity editors vs cap 2 — triage, kill orphans, fix gate | `local_7eefd4c8-e6d0-4f6d-97c9-792efd094313` | running | read handoff; adopt gate fix via review |
 | **IMP-003**: rolling audit of ChatGPT Blender toolkit (first drop `blender_proc_vNext/`) | `local_13653ae5-1c1d-43bc-8eaf-e383573d7312` | running | after each audit: review → Nolan approval; message it when Nolan adds drops |
-| DOC session `local_b6a24c47…` idle (kept for DOC-002, batch D, next gap) | | | |
+| REF-010: ROOM_FIXTURES cabinet per DEC-068 (docs) | `local_b6a24c47-ab71-4d36-9df9-1eb188edc2b0` (kept for DOC-002 later) | running | docs review |
+| DES-004: PS2 shift-day design + UX-003/GAME-011/012 packets (doc) | `local_82d327a2-5b67-4cff-b481-5854a94f6f31` | running | docs review; ratify DECs |
+| AUDIO-001: audio plan + CC0 sourcing (no Unity) | `local_8bddd8f7-b99c-4c0e-80d7-d89dd3359dd4` | running | review |
 
 ## Next tasks to start (dependency order)
 0. DOC-002 (AUDIT batch D) in the next gap between waves; DOC-003 (batch E) low priority. Merged this session also: W4U (REF-009b), W4V (IMP-002), W4T (QA-002; DEC-067), W4X (DOC-001). Free reviewer: `local_c94488d7…`.
