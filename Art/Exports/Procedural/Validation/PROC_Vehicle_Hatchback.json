@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Vehicle_Hatchback",
+  "collision_boxes": 6,
+  "errors": [],
+  "export_sha256": "1c0b5f8605f412f5",
+  "generator": "parked_vehicles",
+  "lod_tris": {
+    "LOD0": 91064,
+    "LOD1": 29024,
+    "LOD2": 7344,
+    "LOD3": 1456
+  },
+  "params_sha256": "90b889a16392c238",
+  "passed": true,
+  "warnings": []
+}

@@ -190,8 +190,8 @@ def render_previews(asset, lods, groups=None):
     s.collection.objects.link(cam)
     s.camera, cam.data.type = cam, "ORTHO"
     cam.data.ortho_scale = max(h, x1 - x0, y1 - y0) * 1.15
-    front = ((x0 + x1) / 2, -2, h / 2), (math.pi / 2, 0, 0)
-    side = (2, (y0 + y1) / 2, h / 2), (math.pi / 2, 0, math.pi / 2)
+    front = ((x0 + x1) / 2, y0 - 2, h / 2), (math.pi / 2, 0, 0)  # outside the bounds: a fixed -2 m put it inside a 4.9 m car
+    side = (x1 + 2, (y0 + y1) / 2, h / 2), (math.pi / 2, 0, math.pi / 2)
     views = [(lods[0], "front", "", *front), (lods[0], "side", "", *side), (lods[-1], "front", "", *front)]
     if groups:
         views = [(lods[0], "front", g, *front) for g in groups] + [(lod, "front", groups[-1], *front) for lod in lods[1:]]

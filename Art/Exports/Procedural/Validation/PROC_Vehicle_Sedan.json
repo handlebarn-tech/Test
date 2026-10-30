@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Vehicle_Sedan",
+  "collision_boxes": 6,
+  "errors": [],
+  "export_sha256": "fc47ff79c70c5b17",
+  "generator": "parked_vehicles",
+  "lod_tris": {
+    "LOD0": 91790,
+    "LOD1": 29394,
+    "LOD2": 7252,
+    "LOD3": 1438
+  },
+  "params_sha256": "90b889a16392c238",
+  "passed": true,
+  "warnings": []
+}
