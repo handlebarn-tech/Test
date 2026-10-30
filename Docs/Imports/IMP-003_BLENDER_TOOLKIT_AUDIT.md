@@ -229,3 +229,50 @@ ROOM_FIXTURES sizes are `[w, d, h]` ft; RI = `Docs/REFERENCES_INDEX.md`. Anythin
 - **Accuracy:** most sizes are generic guesses where ROOM_FIXTURES/TI already had the answer. The worst: the lockers (1 unit, not 8), the office cabinets (black plain boxes), the file cabinets (under-desk), the scale stand (RI §2.2 spec), the pedestal vs wall-hung sink, the mirror (TI), the door leaf (3'-0" × 7'-0") and the arch (3'-0" × 7'-0").
 - **Reject:** CashDrawer (DEC-051). DrawerCart, SoffitTrim and CornerGuard have no store evidence (optional).
 - **Not covered:** POS counter, top-freezer/magnet fridges, break-room millwork, grab bars, deli prep cart.
+
+---
+
+## Drop 3 — `Fixture_Toolkit_Full_Package/` (files dated 2026-10-30 03:37)
+
+Shared-library work only: no generator, params or asset.
+
+| File | What | Verdict |
+|---|---|---|
+| `patches/01_…foundations.patch` | +316 lines to `proclib.py`: `ft`/`inch`/`feet_inches`, prism/square tube, sheet panel, countertop slab, panel frame, wire grid, adjustable foot, caster assembly, cabinet carcass, door panel, drawer box | **adapt** (T1–T5) |
+| `patches/02_…completion.patch` | +346 lines: hollow enclosure, bent-sheet lip, slotted panel, shelf clip, panel inset, shelf, U-pull, commercial leg/base, trim profile | **adapt** (T1–T5) |
+| `proclib_reference_after_both_patches.py` (867 lines) | the snapshot; **also changes `mesh_stats()`** (T2) | reference only |
+| `docs/*.md`, `tests/*.json` | coverage claim "27/27 Priority-1 capabilities", syntax-only checks | info |
+| `__pycache__` (1 `.pyc`) | — | **reject** |
+
+### How it was checked
+- **Patch chain:** both patches apply in order (patch 01 at offset −18) on drop 2's `proclib_reference_after_patch.py` (= ours + drop 1 + `add_beveled_box`). **Not on our current `proclib.py`.**
+- **Patches vs snapshot:** the result is **not** equal to the reference snapshot. The snapshot additionally rewrites `mesh_stats()` (T2), which neither patch contains.
+- **Diff:** apart from `mesh_stats`, the snapshot vs drop 2 is additions only.
+- **Smoke test** (my own driver on a sandbox copy of the snapshot, Blender 5.2.3 headless, sandbox deleted): all 20 new geometry helpers (plus the 3 unit functions) were called once, then `finish_object` + `mesh_stats`.
+  - All run, with no exceptions.
+  - Every size check passes: square tube/prism along Y and X keep their cross-section (no roll problem), carcass/drawer/enclosure/slotted/inset/shelf/legs/trim at the requested sizes, and the U-pull stands off the face by its `stand_off`.
+  - Unit checks: `ft(3)` = 0.9144, `feet_inches(2, 6)` = 0.762.
+
+### Fixes
+- **T1 apply route:**
+  - The patches assume drops 1 + 2 are already applied, and the snapshot carries an extra change. Integrate from the snapshot, minus or plus T2 by Hub decision, after the drop 1 R/P fixes. Don't apply the patches to `main`.
+  - Style: three function seams have no blank lines (after `add_vertical_cylinder`, `add_beveled_box`, `add_drawer_box`).
+  - The `proclib.py` comment from drop 1, "existing PROC helpers unchanged", becomes false once T2 lands.
+- **T2 undeclared `mesh_stats()` change:**
+  - Adds `empty mesh` → raise (good), `bounds_m_blender_xyz`, `material_slots`, and `geometry.non_manifold_edges` / `degenerate_faces`.
+  - Every manifest entry (all 24 existing assets) changes on the next rerun. FBX bytes are not affected, since stats don't touch the export.
+  - The non-manifold count is **noisy**: touching boxes merged by `remove_doubles` count as non-manifold (carcass 6, drawer 6, frame 4, slotted 4…), and our card meshes (jar `Label`, `ThcTag`) are open quads by design. Keep it informational and never gate on it.
+  - Adopt the empty-mesh raise. Take the rest only if the Hub wants it, and fold it into the same single re-baseline commit as drop 1 R2.
+- **T3 dead code:**
+  - None of the ~650 new lines is used by any generator (drops 1–3).
+  - Meanwhile the drop 2 families re-implement the same things: three private wire grids (`wire_shelving`, `register_station._wire_shelf`, cooler `_shelves`), five door/drawer/carcass builders, and handles.
+  - Adopt the helpers **together with** refactoring the integrated families onto them, with one implementation each: `add_wire_grid`, `add_door_panel`/`add_drawer_box`/`add_cabinet_carcass`, and `add_handle_pull`. `add_handle_pull` stands off the face, which fixes drop 2 S5.
+  - Helpers still unused after that refactor (slotted panel, bent lip, shelf clip, panel inset, trim profile, leg base, hollow enclosure) wait until a generator needs them. This matches our "nothing to register / no code for later" pipeline style.
+- **T4 helper gaps:**
+  - `add_wire_grid` has one `spacing` for both axes; drop 1 G1 needs separate X/Y pitches (`spacing_x`, `spacing_y`).
+  - The caster wheel's ring roll is arbitrary when the axle is along Y: the wheel's x extent is 0.0951 for a 0.1 diameter. That's harmless for floor contact, but don't let it define asset bounds (drop 2 B1 class).
+  - "hinge-ready part / hinged door / sliding drawer" map to plain geometry helpers. There is **no** hinge/slide metadata helper, so drop 2's per-family hinge dicts stay duplicated. A small `hinge_axis(...)` / `slide_axis(...)` helper returning the manifest dict would close that.
+- **T5 units:** params JSON stays in meters (PROC_PIPELINE: params are the only place dimensions live). `ft()`/`inch()` are for generator code converting ROOM_FIXTURES/TI values, not for literal store sizes in code.
+
+### Drop 3 summary
+**Adapt.** The helpers are correct in Blender 5.2.3 and generic (no store dimensions, brands or security detail). Take them through the snapshot, with T2 as a Hub decision, and only alongside a refactor that makes the drop 2 families use them. Then add separate wire pitches and a hinge/slide metadata helper.
