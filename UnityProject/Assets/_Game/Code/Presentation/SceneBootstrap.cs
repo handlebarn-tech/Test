@@ -20,6 +20,8 @@ namespace Dispo.Presentation
 
         private System.Collections.IEnumerator Start()
         {
+            // An unfocused player pauses while loading (runInBackground is off), which stalled a -perf run (REVIEW-W4J).
+            if (Perf.PerfCapture.Arg() != null) Application.runInBackground = true;
             foreach (var scene in AdditiveScenes)
             {
                 if (!SceneManager.GetSceneByName(scene).isLoaded)

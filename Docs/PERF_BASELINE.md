@@ -51,5 +51,27 @@ Counts and memory repeat exactly between runs; frame-time numbers vary ~25 % wit
 3. **HDRP memory floor.** ~0.8 GB VRAM and 1.6 GB reserved RAM before any real art (1080p Ultra render targets, HDRP resources).
    Art has ~4.2 GB of the 5 GB VRAM ceiling left; check that after ART-003/004 and PROC jars land.
 
+## Re-measure 2026-10-30 (REVIEW-W4J): lookdev build + re-run of the a245942 build
+`7ee9ae0` = main b52c60b (ART-003/004 lookdev, W4F) + PERF-001. Three `studio.ps1 perf` runs with 1, 2 and 2 other editors open.
+`a245942 (re-run)` = PERF-001's own player, re-run once with **0** other editors and once with **2**.
+
+| Metric | a245942 PERF-001 (2–3 editors) | a245942 re-run: 0 editors / 2 editors | 7ee9ae0 lookdev, 3 runs |
+|---|---|---|---|
+| Frame time avg | 7.3–9.4 ms | 6.19 / 6.16 ms | 5.8–6.2 ms |
+| Frame time p95 | 10.7–12.9 ms | 8.8 / 8.4 ms | 7.9–9.0 ms |
+| Frame time p99 | 23.5–33.3 ms | 18.3 / 18.0 ms | 16.8–17.8 ms |
+| 1% low FPS | 13.7–23.6 | **41.5** / 23.4 | 23.4 / 26.8 / **39.7** |
+| Max frame | 148–294 ms | 40 / 329 ms | 333 / 217 / 49 ms |
+| CPU / GPU frame avg | 7.3–9.3 / 5.6–5.9 ms | 6.2 / 4.9 · 6.1 / 4.5 ms | 5.8–6.2 / 4.4–4.8 ms |
+| Draw calls avg / max | 138 / 272 | 138 / — | **192 / 392–404** |
+| SetPass avg / max | 37 / 72 | 37 / — | 38 / 82 |
+| Triangles max | 20.3 k | — | 28–30 k |
+| Gfx memory max | 782 MB | 782 MB | 782 MB |
+| VRAM peak (nvidia-smi) | 802 MB | — | 813–815 MB |
+| Load | 5.2 s | 6.4 s / 49.8 s (stalled while unfocused) | 4.2–4.3 s |
+| Shift | 12/12, $265.20 | same | same (all 3) |
+
+Counts and memory repeat exactly across runs. Frame-time tails depend on what else is running on the machine; see REVIEW-W4J §3.
+
 ## Re-measure triggers
 After W4F (ART-003/004), GAME-005 (jar fill meshes), PROC-003, and any lighting/quality-setting change.
