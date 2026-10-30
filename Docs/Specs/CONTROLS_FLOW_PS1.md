@@ -1,7 +1,7 @@
 # CONTROLS_FLOW_PS1 — Playtest 1 controls, pause, doors and customer flow (DES-005)
 
 **Owner:** DES-005 (amended DES-005b) · **Consumers:** GAME-025 (§1–§3), GAME-026 (§4–§6), World (§7 Contract) · **Status:** draft for review · 2026-10-30
-**DES-005b amendment (DEC-103, Nolan's real-store answers):** call lines (§5.2), no second door, guard scans the back of the ID with a green light + sound (§4.2), the ID is shown again at the register (§4.4; corrects DEC-086 / DEC-036 M2 "the counter never re-checks"), check-in takes seconds and never backs up (backlog/helper logic dropped, §4.2), four doors propped open (§3.2, §7.1), GM floor-map register assignment (§5.0, DEC-079). GAPs closed in §8.
+**DES-005b amendment (DEC-103, DEC-109; Nolan's real-store answers):** call lines (§5.2), no second door, guard scans the back of the ID with a green light + sound (§4.2), the ID is shown again at the register (§4.4; corrects DEC-086 / DEC-036 M2 "the counter never re-checks"), check-in takes seconds and never backs up (backlog/helper logic dropped, §4.2), four doors propped open (§3.2, §7.1), GM floor-map register assignment (§5.0, DEC-079). GAPs closed in §8. ID checks split by what each check can see (§4.2, §4.4; lead ruling DEC-109). Anchor names from REF-011 `SCENE_ANCHORS.json` and doors from REF-012 `DOORS.json` (both pending merge).
 **Inputs:** `Docs/Design/PLAYTEST_2026-10-30.md` (Nolan, build slice-38b9e5c), DEC-103, DEC-096, DEC-086, DEC-079, DEC-076, DEC-048, DEC-036 M2, DEC-039; `Specs/UX_PS1.md` §4, §7; `Design/SPEC_COMP002.md` §3; `Design/SPEC_SHIFT_DAY.md` §5–§7; `Research/OFFICE_FINDINGS.md` O2; code at `UnityProject/Assets/_Game/Code/` (`Presentation/Graybox/GrayboxTestPlayer.cs`, `Editor/Graybox/GrayboxBuilder.cs`, `Presentation/Slice/SliceGame.cs`, `Simulation/Slice/ShiftSim.cs`).
 
 Every number marked **[GDD]** is a design starting value, tunable, not a store fact. Unknown store facts are **GAP-CF-nn** placeholders listed in §8. Nolan's playtest quotes are cited as **PT** (the playtest file).
@@ -105,7 +105,7 @@ Today (`ShiftSim.Tick`): an arrival spawns inside the entry, joins the queue, an
 | State | Where | Who drives it | Patience |
 |---|---|---|---|
 | `Arriving` | `Anchor_CustomerSpawn` (outside) → through the entry door (`Door_<Id>` of the entry row) → check-in wait point | walk | not draining (off-screen-equivalent; SPEC_SHIFT_DAY §6 "wait outside is off-screen") |
-| `AtCheckIn` | `Anchor_CheckIn_Wait` (only if the guard is mid-scan), then `Anchor_CheckIn` | **the guard** (§4.2) | **drains** (as today's stand rule; in practice a few seconds, DEC-103) |
+| `AtCheckIn` | `Anchor_CheckIn_Wait_<n>` (only if the guard is mid-scan), then `Anchor_CheckIn` | **the guard** (§4.2) | **drains** (as today's stand rule; in practice a few seconds, DEC-103) |
 | `Queued` | one line, `Anchor_Queue_<n>` (0 = front) | waits | **drains** |
 | `Called` | walks from the line to `Anchor_Register_<n>_Call` | the player's call (§5) | **frozen** — a called customer never walks out |
 | `Serving` | at the counter; starts with the register ID beat (§4.4) | the player (ID beat, then dialogue/terminal/POS as today) | active-service patience is GAME-019's (SPEC_SHIFT_DAY §6) |
@@ -116,20 +116,29 @@ Today (`ShiftSim.Tick`): an arrival spawns inside the entry, joins the queue, an
 ### 4.2 Entry check-in and the guard (DEC-103, DEC-048, DEC-086)
 - **Canon:** IDs are checked at an **entrance check-in ID stand**, directly left inside the entrance, by a security guard (DEC-048, DEC-086). Every customer passes through it. There is **no second (buzzed) door** between the stand and the sales floor (DEC-103 (3); DEC-086 already rejected an invented vestibule).
 - **The scan (DEC-103 (4)):** the guard **scans the back of the ID**; a **green light and a sound** mean the guest may join the line. Presentation: `NPC_Guard` holds the ID to a scanner prop; the scanner shows a green light for `scanLightSeconds` 0.6 s [GDD] and raises the `OnIdScanOk` event (AUDIO hook; GAME-026 ships no sound, so the light is the only required cue). Then the guest walks to the end of the line.
-- **Guard NPC** `NPC_Guard` (spawned by Gameplay at `Anchor_Guard_Post`, faces `Anchor_CheckIn`). One guest at a time, in arrival order. Each check takes `guardCheckSeconds` = **3 s** [GDD; DEC-103 (5): "a few seconds at most"]. The guard's checks have **no ID events and no strikes**: in PS1 the guard is always right.
-- **No backlog, no helpers (DEC-103 (5)):** check-in never backs up, so there is **no overflow queue, no cover prompt and no helper logic** at the stand. A guest who arrives while the guard is mid-scan waits at the single `Anchor_CheckIn_Wait` (further simultaneous arrivals stack there, as today's spawn overflow); with 3 s checks this is rare.
-- **GAME-008's stand:** it is **the same stand**: GAME-008's `Anchor_CheckInDesk` *is* `Anchor_CheckIn` (looked up by the new name with the old one as fallback). The player no longer works it: the cover prompt's premise ("the ID stand is backed up", UX_PS1 §4, SPEC_COMP002 §3) contradicts DEC-103, so GAME-008's ID events move to the register (§4.4).
+- **Guard NPC** `NPC_Guard` (spawned by Gameplay at `Anchor_Guard_Post`, faces `Anchor_CheckIn`). One guest at a time, in arrival order. Each check takes `guardCheckSeconds` = **3 s** [GDD; DEC-103 (5): "a few seconds at most"]. The guard's checks have **no player decision and no strikes**.
+- **Red light at the door (DEC-109):** the scanner reads the back of the ID, so it catches **expired and underage** IDs: an automatic **red light** (`OnIdScanFail` hook), the guard turns the guest away, and the guest leaves via the entry. No player action, no strike. Rare and ambient: `scanRejectChance` 0.02 per arrival [GDD]; drawn from GAME-008's expired / under-21 cases. Outcome `TurnedAwayAtDoor` (excluded from satisfaction and wait averages like `Refused`); report Compliance block counts it.
+- **No backlog, no helpers (DEC-103 (5)):** check-in never backs up, so there is **no overflow queue, no cover prompt and no helper logic** at the stand. A guest who arrives while the guard is mid-scan waits at `Anchor_CheckIn_Wait_<n>` (0 = next; REF-011 places 0..3 inside the entrance; more arrivals stack at the last one); with 3 s checks this is rare and needs no backlog logic.
+- **GAME-008's stand:** it is **the same stand**: GAME-008's `Anchor_CheckInDesk` *is* `Anchor_CheckIn` (looked up by the new name with the old one as fallback). The player no longer works it: the cover prompt's premise ("the ID stand is backed up", UX_PS1 §4, SPEC_COMP002 §3) contradicts DEC-103, so GAME-008's player ID decisions move to the register (§4.4) and its expired/underage cases become the door's red light (DEC-109).
 - **Wait penalty:** with no decline path, `declineCheckInDelaySec` and the `CheckInDelay` term are **retired**: remove `CheckInDelay` from the `WaitPenalty(...)` sums in `ShiftSim` (the field may stay for telemetry, always 0). Real check-in time is now inside `QueueWait`.
 
 ### 4.3 One line (DEC-096, DEC-103 (2), DEC-079)
 One shared line for the player's register, `Anchor_Queue_0..N`; guests wait **in line** after check-in (DEC-103 (2)). `queueSlots` (today 4) becomes the number of queue anchors World provides; overflow stacks at the last queue anchor. Where the line stands on the real floor is World's to place from evidence (REF-011 `SCENE_ANCHORS.json`); it is not a store question any more. Other registers' ambient customers (SPEC_SHIFT_DAY §5, PS2) are not in this line.
 
-### 4.4 The ID again at the register (DEC-103 (4))
-**The guest shows the ID again at the register.** This corrects DEC-086's and DEC-036 M2's "the counter never re-checks" (and SPEC_COMP002 §3's "the counter does not re-check"; its owner amends that text, see the DES-005b handoff).
+### 4.4 The ID again at the register (DEC-103 (4), DEC-109)
+**The guest shows the ID again at the register.** This corrects DEC-086's and DEC-036 M2's "the counter never re-checks" (and SPEC_COMP002 §3 / UX_PS1 §4, which now carry a DEC-103 note).
 - **Every guest:** on arrival at the call point (`Serving` starts) the guest hands over the ID: a **register ID beat** of `registerIdSeconds` 2 s [GDD], counted in service time. Most guests: the beat plays (ID held out, the player glances, HUD line `ID shown ✓`) with no decision, and it is what backs the existing POS line "21+ ID verified".
-- **ID events move here [GDD, pending lead ruling Q-L1 in the handoff]:** GAME-008's sim (`IdCard`, the 7 cases, Admit/Refuse, strikes, report counters) is kept, but the selection and the place change. At rush start, with `coverCheckInChance` (key kept to avoid churn; reads as "ID-event chance"), the next `coverCheckInCount` guests **called to the register** carry an `IdCard`; for them the register ID beat opens GAME-008's **ID panel at the counter** (`E`, §3.3) instead of the auto beat. **Admit** → service continues; **Refuse** → the guest leaves via the entry; outcomes and strikes exactly as CP§3. There is no prompt and no walk to the stand.
-- The `AtStand` state and the `Stand` list are no longer reached from the flow (GAME-026 may delete them or leave them unused; no save data depends on them).
-- Placeholder until the lead rules: build the above. If the lead keeps ID events at the stand instead, only this subsection and GAME-026 deliverable 2b change.
+- **Lead ruling (DEC-109): the register re-check covers what a scanner can't see.** These stay **player decisions** with GAME-008's ID panel at the counter (`E`, §3.3), Admit/Refuse and strikes (CP§3 outcomes):
+  | Register case | Valid? | Note |
+  |---|---|---|
+  | Photo mismatch / borrowed ID | no | new [GDD] case: the panel shows the card photo next to the guest's face portrait |
+  | Medical card name ≠ ID name | no (for the medical sale) | new [GDD] case; refuse = adult-use only if 21+, as CP§4 |
+  | Out-of-state medical card | adult-use only | existing GAME-009 decision (CP§4, A7), now framed as part of the register check |
+  | Damaged / unreadable ID | no | new [GDD] case: the card art is worn/cracked so a field can't be read |
+  | AZ vertical, turned 21 > 30 days ago | no | GAME-008 case kept here: a format rule the guard's age scan does not apply [GDD, flagged to the lead] |
+  | Valid IDs (all other GAME-008 valid cases) | yes | the "nothing wrong" answers that keep it a real decision |
+- **Selection [GDD]:** at rush start, with `coverCheckInChance` (key kept to avoid churn; reads as "ID-event chance"), the next `coverCheckInCount` guests **called to the register** carry an `IdCard` drawn from the register cases (weights [GDD], GAME-026 sets them in SliceConfig). GAME-009's out-of-state medical cards keep their own frequency. **Expired and under-21 cases are never drawn here** (the door caught them, §4.2).
+- **Admit** → service continues; **Refuse** → the guest leaves via the entry; strikes exactly as CP§3. No prompt, no walk to the stand. The `AtStand` state and the `Stand` list are no longer reached (GAME-026 may delete them or leave them unused; no save data depends on them).
 
 ## 5. Calling the next customer (GAME-026)
 **Nobody walks to a register unprompted.** `ShiftSim` no longer promotes `Queue[0]` on its own.
@@ -137,9 +146,9 @@ One shared line for the player's register, `Anchor_Queue_0..N`; guests wait **in
 ### 5.0 Which register is the player's (DEC-079, DEC-103 (7))
 The **GM assigns registers on a floor map** and budtenders follow it (DEC-079; DEC-103 (7)). Model [GDD]:
 - `RegisterAssignment` (sim data, set at shift start, read-only during the shift): `playerStation` = one station number from DEC-039's floor registers 2–12, plus the stations given to ambient staff (PS2, SPEC_SHIFT_DAY §5).
-- PS1 picks `playerStation` from SliceConfig `assignedStation` [GDD]; when it is absent, the seeded shift RNG picks among the stations whose `Anchor_Register_<n>_Call` / `_Operator` exist (fallback: the station holding `Interact_Terminal`, so today's slice still runs). PS2 replaces the pick with the GM's floor map for the day's open-register count (RES-002, GAP-DAY-03).
+- PS1 uses SliceConfig `assignedStation` = **08** [GDD placeholder, matching REF-011's player station]; the stations' anchors are `Anchor_Register_<NN>_Call` / `_Operator` with a **zero-padded** number (02..12). If station 08's anchors are missing, fall back to `Anchor_ServiceCustomer` / `Anchor_ServicePlayer` and log one warning. PS2 replaces the pick with the GM's floor map for the day's open-register count (RES-002, GAP-DAY-03).
 - Presentation: a shift-start toast `Floor map: you're on Register {n}` [GDD copy] and a marker on that station until the player first reaches it. Where the paper map hangs is not a store fact we hold; nothing is modelled for it.
-- Every "own register" rule below (call next, reach, `Interact_Terminal` / `Interact_Scale`) means **the assigned station**.
+- Every "own register" rule below (call next, reach) means **the assigned station**: reach is measured from its `_Operator` anchor; `Interact_Terminal` / `Interact_Scale` stay single objects at the player's station (World/ART-007 places them there).
 
 ### 5.1 Input
 - **Where:** the player is within `InteractReach` (3 m, existing) of the assigned station's terminal (§5.0), the counter is empty (`Serving == null` and nobody `Called`), and the line is non-empty.
@@ -174,16 +183,17 @@ After the entry lock no one new arrives; customers already inside (at check-in, 
 | `doorOpenSeconds` | 0.45 s | GAME-025 |
 | `doorAutoCloseDelay` | 1.5 s | GAME-025 |
 | `guardCheckSeconds` | **3 s** (DEC-103 (5): "a few seconds at most"; was 10 s) | GAME-026 (SliceConfig) |
-| `scanLightSeconds` | 0.6 s (green scanner light, §4.2) | GAME-026 |
+| `scanLightSeconds` | 0.6 s (green / red scanner light, §4.2) | GAME-026 |
+| `scanRejectChance` | 0.02 per arrival (red light, turned away, §4.2, DEC-109) | GAME-026 (SliceConfig) |
 | `registerIdSeconds` | 2 s (register ID beat, §4.4) | GAME-026 (SliceConfig) |
 | `declineCheckInDelaySec` | **retired** (no cover/decline path, DEC-103 (5)); key may stay, unused | GAME-026 |
-| `assignedStation` | optional; absent = seeded pick (§5.0) | GAME-026 (SliceConfig) |
+| `assignedStation` | 8 (station 08, REF-011 placeholder) (§5.0) | GAME-026 (SliceConfig) |
 | `callNextDelay` (assist only) | 2 s | GAME-026 |
 | `npcWalkSpeed` | existing 1.2 m/s | — |
 | `queueSlots` | = number of `Anchor_Queue_<n>` found (fallback 4) | GAME-026 |
 
 ## 7. Contract — scene anchors Gameplay needs from World
-**Status: needs; World commits names.** Door names and fields come from REF-012's `Docs/Reference/DOORS.json` (**REF-012, pending merge**: passed review, not yet on `main`); anchor names from REF-011's `Docs/Reference/SCENE_ANCHORS.json`. Gameplay finds every object by name at runtime and falls back to a `TEMP_` placeholder with a warning (today's `SliceGame.Anchor` pattern), so GAME-025/026 can start before World lands them.
+**Status: needs; World commits names.** Door names and fields come from REF-012's `Docs/Reference/DOORS.json` (**REF-012, pending merge**: passed review, not yet on `main`); anchor names from REF-011's `Docs/Reference/SCENE_ANCHORS.json` (**REF-011, pending merge**: passed review, not yet on `main`; 42 anchors, plus the old names as aliases). Most anchors are **Low confidence until ART-007 builds the objects**. Gameplay finds every object by name at runtime; a missing object falls back to its alias, then to the SCENE_ANCHORS.json position, then to a `TEMP_` placeholder, and logs **one warning listing what fell back; it never fails** (today's `SliceGame.Anchor` pattern), so GAME-025/026 can start before World lands them.
 
 ### 7.1 Doors (REF-012 → `Docs/Reference/DOORS.json`, pending merge)
 | Name | Need | Status |
@@ -211,22 +221,21 @@ No second (buzzed) door after the ID stand exists or is modelled (DEC-103 (3); R
 ### 7.2 Entry, check-in and line
 | Name | Need | Status |
 |---|---|---|
-| `Anchor_CustomerSpawn` | **outside** the entry door (parking side), so customers walk through `Door_Entry_L/_R` | exists; **position change needed** (today's fallback is inside the entry) |
-| `Anchor_CustomerExit` | outside the entry door | exists; position check needed |
-| `Anchor_Guard_Post` | where the guard stands, facing the check-in point | REF-011 `SCENE_ANCHORS.json` |
-| `Anchor_CheckIn` | where the customer stands to be scanned = the DEC-048 ID stand; replaces GAME-008's `Anchor_CheckInDesk` (old name kept as fallback) | REF-011 `SCENE_ANCHORS.json` |
-| `Anchor_CheckIn_Wait` | **one** waiting point beside the stand for a guest who arrives mid-scan (DEC-103 (5): no backlog). **Replaces** the earlier `Anchor_CheckIn_Wait_<n>` series | **changed need (DES-005b)** |
-| `Anchor_IdScanner` | optional: where the guard's scanner prop and green light sit (§4.2); fallback `Anchor_Guard_Post` + 0.4 m toward `Anchor_CheckIn` | **new, optional (DES-005b)** |
-| `Anchor_Queue_<n>` | n = 0 (front) .. N, the one line to the registers (DEC-096, DEC-103 (2)) | REF-011 `SCENE_ANCHORS.json`; `Anchor_QueueSlot_0..3` (exist) stay as aliases until GAME-026 merges |
+| `Anchor_CustomerSpawn` | **outside** the entry door (parking side), so customers walk through `Door_Entry_L/_R` | REF-011, pending merge |
+| `Anchor_CustomerExit` | outside the entry door | REF-011, pending merge |
+| `Anchor_Guard_Post` | where the guard stands, facing the check-in point; the scanner light sits here + 0.4 m toward `Anchor_CheckIn` [GDD] | REF-011, pending merge |
+| `Anchor_CheckIn` | where the customer stands to be scanned = the DEC-048 ID stand; alias `Anchor_CheckInDesk` (GAME-008) | REF-011, pending merge |
+| `Anchor_CheckIn_Wait_<n>` | n = 0..3, waiting points **inside the entrance** for a guest who arrives mid-scan (check-in never backs up, DEC-103 (5)) | REF-011, pending merge |
+| `Anchor_Queue_<n>` | n = 0 (front) .. N, the one line to the registers (DEC-096, DEC-103 (2)) | REF-011, pending merge (n = 0..11); aliases `Anchor_QueueSlot_0..3` |
 
 ### 7.3 Registers (stations 2–12, DEC-039)
 | Name | Need | Status |
 |---|---|---|
-| `Anchor_Register_<StationNo>_Call` | where a called customer stands at that station; the register ID beat plays here (§4.4) | REF-011 `SCENE_ANCHORS.json` |
-| `Anchor_Register_<StationNo>_Operator` | where the operator (player or ambient staff) stands | REF-011 `SCENE_ANCHORS.json` |
-| per-station terminal / scale | `Interact_Terminal_<StationNo>` / `Interact_Scale_<StationNo>` at every station the GM can assign (§5.0); today's single `Interact_Terminal` / `Interact_Scale` stay as the fallback station. The `_Call`/`_Operator` pair replaces `Anchor_ServiceCustomer` / `Anchor_ServicePlayer` (old names kept as fallback) | **changed need (DES-005b)**: World no longer names "the player's station"; the floor-map assignment picks it (DEC-079, DEC-103 (7)) |
+| `Anchor_Register_<NN>_Call` | where a called customer stands at that station, **zero-padded** `02`..`12`; the register ID beat plays here (§4.4) | REF-011, pending merge |
+| `Anchor_Register_<NN>_Operator` | where the operator (player or ambient staff) stands | REF-011, pending merge |
+| player's station | **08** [GDD placeholder] by GM floor-map assignment (§5.0; DEC-079/103 answer GAP-CF-06); aliases `Anchor_ServiceCustomer` / `Anchor_ServicePlayer` | REF-011, pending merge |
 
-Gameplay owns (not World): `NPC_Guard`, the scanner light, NPC customers, trigger volumes, door animation, `RegisterAssignment`.
+Gameplay owns (not World): `NPC_Guard`, the scanner green/red light, NPC customers, trigger volumes, door animation, `RegisterAssignment`.
 
 ## 8. Gaps and placeholders (registered in KNOWN_GAPS)
 | Gap | Unknown | State after DEC-103 | Working value |
@@ -236,6 +245,6 @@ Gameplay owns (not World): `NPC_Guard`, the scanner light, NPC customers, trigge
 | GAP-CF-03 | Which interior doors self-close / are propped open | **CLOSED**: propped by DEC-103 (6) (FOH, BOH, office, HUB connector); closers from TI A310 in REF-012 (pending merge). Rows with `selfClosing: unknown` are REF-012's own GAPs | `unknown` → self-closing placeholder |
 | GAP-CF-04 | Emergency exit alarm behaviour | **OPEN, not re-asked**: unanswered in DEC-103, so per DEC-105 the placeholder is the working answer (OFFICE_FINDINGS also leaves alarms out as security-sensitive) | not modelled |
 | GAP-CF-05 | Guard check-in time | **CLOSED by DEC-103 (5)**: a few seconds at most | `guardCheckSeconds` 3 s [GDD] |
-| GAP-CF-06 | Which register the player works | **CLOSED by DEC-079** (restated DEC-103 (7)): the GM assigns registers on a floor map | §5.0 `RegisterAssignment` |
+| GAP-CF-06 | Which register the player works | **CLOSED by DEC-079** (restated DEC-103 (7)): the GM assigns registers on a floor map | §5.0 `RegisterAssignment`, station 08 [GDD] |
 | GAP-CF-07 | A second (buzzed) door after the ID stand? | **CLOSED by DEC-103 (3)**: no | none modelled |
 | GAP-CF-08 | Who helps when check-in backs up | **CLOSED by DEC-103 (5)**: it never backs up; no helper logic | §4.2: no backlog, no cover prompt |
