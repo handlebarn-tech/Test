@@ -1379,6 +1379,1116 @@
    "sha256": "31abfd95a081532fcba40239cb9aa499c62394ae9b18e756ab49e8c4e1c5e4a7",
    "bytes": 2764,
    "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-2273be",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-2273be/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/tv-cctv-monitor-2273be0837bc453b982dfb19d82c9cc0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "16d63d0a2204ffa50c5beb58628e4592bfd90282d3609250bea4ffa9ddcc1cb3",
+   "bytes": 692,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-2273be",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-2273be/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/tv-cctv-monitor-2273be0837bc453b982dfb19d82c9cc0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "161c9fe6048ec68c2b6db2d68e00edac22a9b0db327ec18c60d8117868e2480d",
+   "bytes": 1069496,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-2273be",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-2273be/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/tv-cctv-monitor-2273be0837bc453b982dfb19d82c9cc0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "2895405c684d656e04d47e2b86fea5f3e99feb351ba8f6ffd97d48e9bbf489ba",
+   "bytes": 8088,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-2273be",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-2273be/textures/MI_TV_CTTV_Screen_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/tv-cctv-monitor-2273be0837bc453b982dfb19d82c9cc0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "2774f5ebbaafe985838f3b66535ef6362c6a42151c24bb38090d52ddaf20cee3",
+   "bytes": 6254769,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-2273be",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-2273be/textures/MI_TV_CTTV_Screen_metallicRoughness.png",
+   "source_url": "https://sketchfab.com/3d-models/tv-cctv-monitor-2273be0837bc453b982dfb19d82c9cc0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "32576abf78c780a0f67474532e316ab89326847c258c04edee31fe3de70c704e",
+   "bytes": 2144360,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-2273be",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-2273be/textures/MI_TV_CTTV_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/tv-cctv-monitor-2273be0837bc453b982dfb19d82c9cc0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "a1c8f3512210c123b2f939870850c638a3a4b1c86f604ebf5ff440b423d3faad",
+   "bytes": 3574968,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-2273be",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-2273be/textures/MI_TV_CTTV_metallicRoughness.png",
+   "source_url": "https://sketchfab.com/3d-models/tv-cctv-monitor-2273be0837bc453b982dfb19d82c9cc0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "96144641945185c3c582ca5b244d204392af36d5b7eebece53c66868a2cf4e51",
+   "bytes": 3582050,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-2273be",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-2273be/textures/MI_TV_CTTV_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/tv-cctv-monitor-2273be0837bc453b982dfb19d82c9cc0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "7c3dca8975f31b8fded5738fdc18785e66c26850bf5dd72509b72e4ddc4f4e2e",
+   "bytes": 2469439,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-344514",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-344514/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/cashier-machine-no-texture-344514043f9b486bb9e90bfa05c4642a",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "63e197fb531e0c0ecd0f3c5ab10cbd62f4bced4c2c027e95d7aaa1f7837a4e49",
+   "bytes": 736,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-344514",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-344514/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/cashier-machine-no-texture-344514043f9b486bb9e90bfa05c4642a",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "63811e993d1f98f86ba19dee2d34e98797c4e945bc48fbe2f330686d9234c9f8",
+   "bytes": 215864,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-344514",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-344514/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/cashier-machine-no-texture-344514043f9b486bb9e90bfa05c4642a",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "3256c996b90c647917881ed28193f17f00aa560eeb58e15b3a58f5c558ba40df",
+   "bytes": 16227,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-4324a9",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-4324a9/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/emergency-light-4324a9252b70446dbf37b80bfb43ee32",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "328a7d8c1a32e3bc6fc11c8bc581112b6136acf6aaff9c15e213a2c70549aa86",
+   "bytes": 684,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-4324a9",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-4324a9/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/emergency-light-4324a9252b70446dbf37b80bfb43ee32",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "f43f4ac1877aeccae3a44c88d9fc400c142679dd7579fef3f8f5e247b7e8297c",
+   "bytes": 700620,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-4324a9",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-4324a9/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/emergency-light-4324a9252b70446dbf37b80bfb43ee32",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "bb67ffb1c12d0145db1d1ded1c0896c251d54b21ba1d27d8c21b3a91b9aaf9a5",
+   "bytes": 31178,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-4324a9",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-4324a9/textures/emergency_light_glass_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/emergency-light-4324a9252b70446dbf37b80bfb43ee32",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "c24ba579bd7e443e4dd4bbdf3b943065431c6943a9e7ca6a97ab834be6974b7e",
+   "bytes": 11943954,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-4324a9",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-4324a9/textures/emergency_light_glass_emissive.jpeg",
+   "source_url": "https://sketchfab.com/3d-models/emergency-light-4324a9252b70446dbf37b80bfb43ee32",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "fdd0599f8b16f5aa7a3025b51efa3e9b58ab5e890ff2204fd5e292fa7cb140b1",
+   "bytes": 305828,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-4324a9",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-4324a9/textures/emergency_light_glass_metallicRoughness.png",
+   "source_url": "https://sketchfab.com/3d-models/emergency-light-4324a9252b70446dbf37b80bfb43ee32",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "8a10e922fcf71a566798c67ce67203443de7fc843070028daeecd1332c276191",
+   "bytes": 16832468,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-4324a9",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-4324a9/textures/emergency_light_glass_normal.jpeg",
+   "source_url": "https://sketchfab.com/3d-models/emergency-light-4324a9252b70446dbf37b80bfb43ee32",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "a61352a0c341fdf8c030499f0fb94c4d57be2d84701fb2ca97850bba4f8e52d6",
+   "bytes": 3559892,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-79370d",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-79370d/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/exit-sign-3d-model-free-79370d94bd6e4fc9a496de45b168f580",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "4d7f6e1bd906269d566f85d88cdca4334b2f3bb4446abd5ee1ad7d8ddf1621ce",
+   "bytes": 746,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-79370d",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-79370d/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/exit-sign-3d-model-free-79370d94bd6e4fc9a496de45b168f580",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "30a95e2d924073a122350b1419c4394b85c5bca64a7319185f2830813f1f87f3",
+   "bytes": 74152,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-79370d",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-79370d/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/exit-sign-3d-model-free-79370d94bd6e4fc9a496de45b168f580",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "646620a1892a1599177c59dbc315f8b9d4410ae756f59baffa30c5928c863805",
+   "bytes": 6178,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-79370d",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-79370d/textures/Flex_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/exit-sign-3d-model-free-79370d94bd6e4fc9a496de45b168f580",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "00dc7cc0109960398825c9184d2b85f4d40f252fc431382536989b6f55341fa8",
+   "bytes": 12374,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-8013c4",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-8013c4/.bin",
+   "source_url": "https://sketchfab.com/3d-models/bush-ivy-pack-lowpoly-8013c47de07d4f96aa5d8b37f05eb4f6",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "2d199d1276c89070ffceacd0a11b31e688bab00ff5ec171f903b0400937db76b",
+   "bytes": 166096,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-8013c4",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-8013c4/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/bush-ivy-pack-lowpoly-8013c47de07d4f96aa5d8b37f05eb4f6",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "b0818c50424133852398d6bd28d7910ce8b3d824d4112c4285b2d004bb658fbc",
+   "bytes": 698,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-8013c4",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-8013c4/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/bush-ivy-pack-lowpoly-8013c47de07d4f96aa5d8b37f05eb4f6",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "08448d78c0e6e096c8d05c414aa100277594d44660913530e3e6dc40e02655cb",
+   "bytes": 17701,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-8013c4",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-8013c4/textures/Fern1_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/bush-ivy-pack-lowpoly-8013c47de07d4f96aa5d8b37f05eb4f6",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "49955102ece9254261e7bec24cb130eb5804ba953fc6dfa38e78869f39c5b3ea",
+   "bytes": 1375855,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-8013c4",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-8013c4/textures/FernLong_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/bush-ivy-pack-lowpoly-8013c47de07d4f96aa5d8b37f05eb4f6",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "bfb34ea02d29ab3d678d4e879f7291ec75884eef5d7b67ba49939339b18f5812",
+   "bytes": 242625,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-8013c4",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-8013c4/textures/IvyLeaf_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/bush-ivy-pack-lowpoly-8013c47de07d4f96aa5d8b37f05eb4f6",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "c147736f12f1ca9f1babd424889606ccebadacefdf22b734789710528024273c",
+   "bytes": 310913,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-8013c4",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-8013c4/textures/IvyLeaf_metallicRoughness.png",
+   "source_url": "https://sketchfab.com/3d-models/bush-ivy-pack-lowpoly-8013c47de07d4f96aa5d8b37f05eb4f6",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "d07fcd73483f0995824e454601436add9cf04a4f975944a334e6626b4a6d0f28",
+   "bytes": 104023,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-8013c4",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-8013c4/textures/hosta1_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/bush-ivy-pack-lowpoly-8013c47de07d4f96aa5d8b37f05eb4f6",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "b2fbd5f2921b8ba2dbd7456cc0787fb31781d38fe6d6c68524aaac704c739b20",
+   "bytes": 345163,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-938a9b",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-938a9b/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/animated-display-cabinet-938a9ba5180142818dfb0f50fe41f95c",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "017c784515b19519ac4ed77987934ace57d08850f044e7fe334ad277b0c721db",
+   "bytes": 708,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-938a9b",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-938a9b/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/animated-display-cabinet-938a9ba5180142818dfb0f50fe41f95c",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "7e73cd3345bb43ba6c153c7f7c43a11b1c17c2acc8885fd1c047bd58ef738e86",
+   "bytes": 85944,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-938a9b",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-938a9b/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/animated-display-cabinet-938a9ba5180142818dfb0f50fe41f95c",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "c8c9d3d67e055813f1f1a80d34c68193f312bd513b7228c32600da8284c5ee98",
+   "bytes": 24402,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-938a9b",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-938a9b/textures/Wood_diffuse.jpeg",
+   "source_url": "https://sketchfab.com/3d-models/animated-display-cabinet-938a9ba5180142818dfb0f50fe41f95c",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "8fa8411f29a7e24e594d39f690ccdb374e5d5bde95c474a99080aac1aab8c4eb",
+   "bytes": 714699,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-938a9b",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-938a9b/textures/Wood_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/animated-display-cabinet-938a9ba5180142818dfb0f50fe41f95c",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "63a6f0c0a555015df32bced29f4cb3f45398aa93775034295a7752459cedee51",
+   "bytes": 1199040,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-938a9b",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-938a9b/textures/metal_diffuse.jpeg",
+   "source_url": "https://sketchfab.com/3d-models/animated-display-cabinet-938a9ba5180142818dfb0f50fe41f95c",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "9f8da5b76fe3268e8af0095d08aecc94cfcae0fbd34a53098aeca7833db91982",
+   "bytes": 261015,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-976c3f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-976c3f/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/fire-alarm-pull-station-5140mps-2-976c3f7c0a604ceb8a0605b700397449",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "186323c65c7362372f1d499b39b8887619e0cd9fdc04764bc9f94f64bf382b9a",
+   "bytes": 760,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-976c3f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-976c3f/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/fire-alarm-pull-station-5140mps-2-976c3f7c0a604ceb8a0605b700397449",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "6f3672ac582b6e4f9cda3226f6514ab74170c511da0946715867a542faca8c55",
+   "bytes": 439584,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-976c3f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-976c3f/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/fire-alarm-pull-station-5140mps-2-976c3f7c0a604ceb8a0605b700397449",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "d278451c1eac480cf0b3b892aa3a183c21a9efadd71ab672c5710c19208a1cdf",
+   "bytes": 15623,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-976c3f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-976c3f/textures/Material.004_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/fire-alarm-pull-station-5140mps-2-976c3f7c0a604ceb8a0605b700397449",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "e1d4df2c021807224b1b3d0cf61615b707b0285d8175b6434fbf5d45c37dbddf",
+   "bytes": 1648,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-976c3f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-976c3f/textures/Material.006_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/fire-alarm-pull-station-5140mps-2-976c3f7c0a604ceb8a0605b700397449",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "d955c832c9d8caee90c442755223ca6b30ec379e9c9f85a9dc8650c5573de1fc",
+   "bytes": 1254,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "b9345c2f493a2fbf0efef8ed9fb8ce1f8f87cc198684e630188e240f65662f09",
+   "bytes": 650,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "d13fd28612b360089a54a26c827c9931bdde5194ea60a7b9d717f071d85095d5",
+   "bytes": 4853664,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "6475c49d63ed3df2d4ad707885357df1666cf07fac3f8baafbd9fbe67471ab58",
+   "bytes": 28869,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Black_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "1dad8ad9268e415b9a0eadc95d81742256129cde574225874099a9f17c6f4f6e",
+   "bytes": 6990,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Black_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "7722d2e672652d0cfed1f009adcc7ef73bae63f1675c0435dd62d871e7af243c",
+   "bytes": 1051036,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Buttons_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "29dd284bc0b1eea36bdd753ae17487af3ba2004cf23607c8902e19097b971d87",
+   "bytes": 762519,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Buttons_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "7722d2e672652d0cfed1f009adcc7ef73bae63f1675c0435dd62d871e7af243c",
+   "bytes": 1051036,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Grey.001_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "39e1f8513529ffd3a536b3492282852b20afa1d469249152d689f26b8410586d",
+   "bytes": 5064613,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Grey.001_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "426cb10ce5797bdeebfa9b7f6188f01856ac2b48676e26f5b7279ab7daac60e2",
+   "bytes": 3471051,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Grey_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "f92f6474f7215f4af64f628027167b037f5ddc8481db68cdeefd6b6c6330e6e7",
+   "bytes": 2170705,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Grey_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "a1cb46ad1aa9030bb70e50eca7b3fef5a26f13ac88f07859402228894d92ab75",
+   "bytes": 3857206,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Material.002_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "7f15adb4c0d4061663276462e2ce66cc423f5547cff40600a460019a92b3d25c",
+   "bytes": 1043937,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Material.002_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "7722d2e672652d0cfed1f009adcc7ef73bae63f1675c0435dd62d871e7af243c",
+   "bytes": 1051036,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Material.004_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "62ec0f513a2bc72896694ea5335a0bc4779d89c61e425b093b98585fc91c9b0f",
+   "bytes": 4949842,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Material.004_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "f8b9d62e7f044456bc7fe8d5a910759b655aa594228c6e718729b126c0670d08",
+   "bytes": 6155107,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Screen2_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "92f981d95c1a8a2abb4b0a5393ff95a7db2ca8c8405aad19139f70e0a04a0d76",
+   "bytes": 933890,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Screen2_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "7722d2e672652d0cfed1f009adcc7ef73bae63f1675c0435dd62d871e7af243c",
+   "bytes": 1051036,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/Screen_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "f9f57e1fd5f36e4ae1a7c20c1362eccaa3f44e1d07d1da84fc8a04269bac64c0",
+   "bytes": 2300055,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/material_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "3c44153c3f310f4d2f2a63dbaf4e444724f142fde4ace5b8ce616d56721419b6",
+   "bytes": 6990,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a4216f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a4216f/textures/material_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/atm-a4216f71ffa74df9995b7feda1ae8ee7",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "7722d2e672652d0cfed1f009adcc7ef73bae63f1675c0435dd62d871e7af243c",
+   "bytes": 1051036,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a73f64",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a73f64/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/digital-scale-a73f649778b14b6bbf40083b0fc1f1c8",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "6cab55e2a55d44750304d647cc5d708a1d9bcd3f92b5b96ff2184018cc91a215",
+   "bytes": 680,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a73f64",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a73f64/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/digital-scale-a73f649778b14b6bbf40083b0fc1f1c8",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "4736d409e7735b71328aa0582f7ed2f1167e2beb5310b1ec4cc7a8b973c9350b",
+   "bytes": 301312,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a73f64",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a73f64/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/digital-scale-a73f649778b14b6bbf40083b0fc1f1c8",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "0e9cf3bb1e358876cdd585bff3aefdbf53517cb85ea47f74c5f40160545e3ae3",
+   "bytes": 7367,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a73f64",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a73f64/textures/M_Scale1_baseColor.jpeg",
+   "source_url": "https://sketchfab.com/3d-models/digital-scale-a73f649778b14b6bbf40083b0fc1f1c8",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "1972e142c6e3a7b4c3ef06b2a4e73a7df949b04c161a53301c44f9170a18f565",
+   "bytes": 700941,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-a73f64",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-a73f64/textures/M_Scale1_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/digital-scale-a73f649778b14b6bbf40083b0fc1f1c8",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "7709fdbb76e67156a3f56f6ece123766365f922eab98c1b3db77325bafe1d2ab",
+   "bytes": 248776,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-ab8d2a",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-ab8d2a/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/dome-camera-free-ab8d2a64d3894deba9af23203ba0368d",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "db24152d1d2125ab483713444300d23f72866ec8b3f02b7224e81aca8d19519e",
+   "bytes": 710,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-ab8d2a",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-ab8d2a/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/dome-camera-free-ab8d2a64d3894deba9af23203ba0368d",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "641f6e3543e2b6d73314039c2577a299a35f3280496134ebe74002d92d3ae5ee",
+   "bytes": 115000,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-ab8d2a",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-ab8d2a/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/dome-camera-free-ab8d2a64d3894deba9af23203ba0368d",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "5ef8229bb39d0dbbe5c07629a56787b97744b47897270cfe61669c3aa08972e1",
+   "bytes": 7264,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-ab8d2a",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-ab8d2a/textures/Electrics_Camera_baseColor.jpeg",
+   "source_url": "https://sketchfab.com/3d-models/dome-camera-free-ab8d2a64d3894deba9af23203ba0368d",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "05b3100c9538943fe158d21dd4b7b6d2ca92bec14e88060e05c24ab634126db6",
+   "bytes": 9259,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-bfeabe",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-bfeabe/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/weed-bud-bfeabeb5adff45b79d3b3b543bb673d0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "115ad7b6f918260729e10931cc40f78c483c3bc0a5fcba9e411ecbf4fa91a51e",
+   "bytes": 654,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-bfeabe",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-bfeabe/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/weed-bud-bfeabeb5adff45b79d3b3b543bb673d0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "5bb9ba12277518202bde2251e3354eadb4a81c3da9e05fbbb6b421d180ca86d1",
+   "bytes": 19764224,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-bfeabe",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-bfeabe/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/weed-bud-bfeabeb5adff45b79d3b3b543bb673d0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "8a0f955469b4e36ca543bdb00b8e78ddfbf8af0deacdfcd4330fe44492a54900",
+   "bytes": 12536,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-bfeabe",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-bfeabe/textures/Material_u1_v1_diffuse.jpeg",
+   "source_url": "https://sketchfab.com/3d-models/weed-bud-bfeabeb5adff45b79d3b3b543bb673d0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "0f6ced4c8ad533636e9340f8b28b6a66d5b95c4cb90b0f1bdffc58418c32fda8",
+   "bytes": 25419779,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-bfeabe",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-bfeabe/textures/Material_u1_v1_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/weed-bud-bfeabeb5adff45b79d3b3b543bb673d0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "b9cf457dfd2b8410d75133333be83935299a932f794786632d1d5af7b6fa36e7",
+   "bytes": 1666070,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-bfeabe",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-bfeabe/textures/Material_u1_v1_occlusion.png",
+   "source_url": "https://sketchfab.com/3d-models/weed-bud-bfeabeb5adff45b79d3b3b543bb673d0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "95a18f0912004c2da96c4bdda0de98d89b5a03213ebf85ccce4355ba3024ff57",
+   "bytes": 611938,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-bfeabe",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-bfeabe/textures/Material_u1_v1_specularGlossiness.png",
+   "source_url": "https://sketchfab.com/3d-models/weed-bud-bfeabeb5adff45b79d3b3b543bb673d0",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "769c7c4ed8ff5713a8038688a7e9ab1ef167fb48ec193c239484c087406f3baf",
+   "bytes": 93071138,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-caa8b3",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-caa8b3/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/smoke-detectors-free-low-poly-caa8b33766f94328a5fa9e6b8a684eca",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "9acf079468949e34deed3b493e5d8f6e8512e3c05f6f4ae5362c866dccb430af",
+   "bytes": 764,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-caa8b3",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-caa8b3/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/smoke-detectors-free-low-poly-caa8b33766f94328a5fa9e6b8a684eca",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "3514c372feb3a8aa0e9940bc01265e0af54f8611f31706695c98c1d71d67382d",
+   "bytes": 149160,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-caa8b3",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-caa8b3/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/smoke-detectors-free-low-poly-caa8b33766f94328a5fa9e6b8a684eca",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "decf20c782dee573537d984777d134b25601952b1a4e2213ca8851720609ca6c",
+   "bytes": 8381,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-caa8b3",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-caa8b3/textures/edrg5eh5353trhrthergh_baseColor.jpeg",
+   "source_url": "https://sketchfab.com/3d-models/smoke-detectors-free-low-poly-caa8b33766f94328a5fa9e6b8a684eca",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "7c933eeea72799972e790345ed6d1a1926f93e0ef13f1718ba8917be79551e1e",
+   "bytes": 1975998,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-caa8b3",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-caa8b3/textures/regerthg5454h546y56uh6trfgnbf_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/smoke-detectors-free-low-poly-caa8b33766f94328a5fa9e6b8a684eca",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "343737d8417815bde93d3dc77f7bc47b34a3f66dae8e9968b2363f6722fea0f7",
+   "bytes": 1066266,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "a0bd2ce59fc271d56ec05a58578f39d0820c7d1636bffaaa6b7ab00bd76645ec",
+   "bytes": 668,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "d4986cc584d91cddccc3030b7fbcd580d8d8710a81458cadb5112fd60db38344",
+   "bytes": 787392,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "8cdf268bb8347fb7912c66002a9d1227a1124448ad483483a20992a3f1e298dc",
+   "bytes": 59959,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/textures/Texture1Atlas_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "e4e3701450d691ddbcdd22bdccd864d367a7a6bab9578a585a20e07395ff5a45",
+   "bytes": 32984195,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/textures/Texture1Atlas_metallicRoughness.png",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "22c8d6c7e0160168fb5d4ba81e489c74bd981c9fe3051328e8915fa3ebbfe882",
+   "bytes": 23596432,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/textures/Texture1Atlas_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "f84f7f081f611d011b9a8c84c180ea7bbfd6d4f83f75f312d71cc22bce9ea48a",
+   "bytes": 6475652,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/textures/Texture2Atlas_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "c6ebb2c7a2e766c81adf90fd50efab3cc585c58c9371ff19cd146858ae806129",
+   "bytes": 27321015,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/textures/Texture2Atlas_metallicRoughness.png",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "005c67647b3d915d269ae156a2c0322b84cdaa5daf59c2889e95dd1c5aec0d0d",
+   "bytes": 20236505,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/textures/Texture2Atlas_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "f2bf6d9485d9d351846d791bf0d520a323e7019313a97189f768dfcc7c347a5c",
+   "bytes": 12601443,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/textures/Texture3Atlas_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "0aaf5d805430d29e3e3097206cc3c8abf7fc835f076c99228db8d707fdba9856",
+   "bytes": 21384088,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/textures/Texture3Atlas_metallicRoughness.png",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "6f9cf97432b7ecd94d5d6be96a22ad22aa5f150a39ef796951d946e72da5dd17",
+   "bytes": 23870895,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/textures/Texture3Atlas_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "4c1b1b082258421e7f1ebbc69a7d966f9669d6d206135d314ad2d5ee7446c47d",
+   "bytes": 15363918,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/textures/Texture4Atlas_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "ac0e734bfed6c17b71b98962a64ef6141ae65619c900e2b7b483946e0914427e",
+   "bytes": 31448487,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/textures/Texture4Atlas_metallicRoughness.png",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "b4073e063fc67a494ee7aa77b03adbafeed028c9d117ccdccabc995482627f05",
+   "bytes": 23909876,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-da8bc0",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-da8bc0/textures/Texture4Atlas_normal.png",
+   "source_url": "https://sketchfab.com/3d-models/free-jar-pack-da8bc020664f4a3e99bad40f8a756134",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "a245319d4d05e4c333085f9cfb51d592efd5785a9c77890ea4e8adaa4848c002",
+   "bytes": 6935769,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-dd3b0f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-dd3b0f/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/pos-terminal-digital-cash-register-dd3b0ff62c044d8ebe59c8cdab2c6fc9",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "3246cb00ea05a8d9c884f8d75a8973b76761b33e5c14d22eb401d50c1ef9b50e",
+   "bytes": 766,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-dd3b0f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-dd3b0f/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/pos-terminal-digital-cash-register-dd3b0ff62c044d8ebe59c8cdab2c6fc9",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "e14167a81c52ad79c4858344b14eb9029df20ff4ca3b6ff68e10fa766798f044",
+   "bytes": 3259036,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-dd3b0f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-dd3b0f/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/pos-terminal-digital-cash-register-dd3b0ff62c044d8ebe59c8cdab2c6fc9",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "c02eb6327e5207608f5abeef0d7a57e19dc271961dcc1a30431cd15e61bd4b88",
+   "bytes": 15900,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-dd3b0f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-dd3b0f/textures/Android_Panel_baseColor.jpeg",
+   "source_url": "https://sketchfab.com/3d-models/pos-terminal-digital-cash-register-dd3b0ff62c044d8ebe59c8cdab2c6fc9",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "2c330410650f7c1d6417b1eafc17f7b70c818fdf74b3feddd3985a746263ea28",
+   "bytes": 320335,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-dd3b0f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-dd3b0f/textures/Black_Pastics_baseColor.jpeg",
+   "source_url": "https://sketchfab.com/3d-models/pos-terminal-digital-cash-register-dd3b0ff62c044d8ebe59c8cdab2c6fc9",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "deb18950e8e0f7b76bb5ae1f7fe6cacf5f046d26949109b9f1711e202887458f",
+   "bytes": 9372157,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-dd3b0f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-dd3b0f/textures/Black_Pastics_specularf0.png",
+   "source_url": "https://sketchfab.com/3d-models/pos-terminal-digital-cash-register-dd3b0ff62c044d8ebe59c8cdab2c6fc9",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "21244a2fe1fb0adf2169821c1760df3824a17bb7ce669fd136e9072df21e2858",
+   "bytes": 714252,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-e9832f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-e9832f/license.txt",
+   "source_url": "https://sketchfab.com/3d-models/free-pothos-potted-plant-money-plant-e9832f38484f4f85b3f9081b51fa3799",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "32025d6ef161283862bb86d7cd5ea57b6a969bb4042496a771a6c9cc0f3097c7",
+   "bytes": 768,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-e9832f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-e9832f/scene.bin",
+   "source_url": "https://sketchfab.com/3d-models/free-pothos-potted-plant-money-plant-e9832f38484f4f85b3f9081b51fa3799",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "6fc0b5e2d96c6e1c7355ef9c4c1c75a4ea7e1f384d5ed58385fa33f153e0b555",
+   "bytes": 729496,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-e9832f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-e9832f/scene.gltf",
+   "source_url": "https://sketchfab.com/3d-models/free-pothos-potted-plant-money-plant-e9832f38484f4f85b3f9081b51fa3799",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "fcea2ced77f937778079c4ace81be15583f104d52a68a08d42453831aa4a0754",
+   "bytes": 8582,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-e9832f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-e9832f/textures/POTHOS_Mat_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/free-pothos-potted-plant-money-plant-e9832f38484f4f85b3f9081b51fa3799",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "4ccc1888e065dfe3dd9c2d861d7a6ce00b70a46022276604c99e31086d24b70d",
+   "bytes": 1098197,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-e9832f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-e9832f/textures/POTHOS_Mat_metallicRoughness.png",
+   "source_url": "https://sketchfab.com/3d-models/free-pothos-potted-plant-money-plant-e9832f38484f4f85b3f9081b51fa3799",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "846be3a4126282f0ddf574a9d1fd89c3010fc64660d7ce995ffb2ee8e78bae51",
+   "bytes": 183808,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-e9832f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-e9832f/textures/POTHOS_Mat_normal.jpeg",
+   "source_url": "https://sketchfab.com/3d-models/free-pothos-potted-plant-money-plant-e9832f38484f4f85b3f9081b51fa3799",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "f9ad6c854f012ca15614734c9a7ba23f12eb6537404e5961f354547ba3571ab6",
+   "bytes": 342432,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-e9832f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-e9832f/textures/WOODEN_LEGS_POT_baseColor.png",
+   "source_url": "https://sketchfab.com/3d-models/free-pothos-potted-plant-money-plant-e9832f38484f4f85b3f9081b51fa3799",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "bd45ec588c1ddc744b63dc149247a1abf6f04d74921fa7bdcb6010b0d5f3f917",
+   "bytes": 1115104,
+   "date": "2026-10-29"
+  },
+  {
+   "ledger_id": "SK-e9832f",
+   "path": "C:/Users/handl/Downloads/Dispo Game Assets Cache/sketchfab/SK-e9832f/textures/WOODEN_LEGS_POT_metallicRoughness.png",
+   "source_url": "https://sketchfab.com/3d-models/free-pothos-potted-plant-money-plant-e9832f38484f4f85b3f9081b51fa3799",
+   "license": "CC-BY-4.0",
+   "redistributable": false,
+   "sha256": "68051966c217dcfb8efc3b44a2ce26a4b8ad053a4c3c65065d25adb92d2a24de",
+   "bytes": 414413,
+   "date": "2026-10-29"
   }
  ],
  "cache_root": "C:/Users/handl/Downloads/Dispo Game Assets Cache"
