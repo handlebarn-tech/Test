@@ -122,7 +122,20 @@ function Complete([bool]$ok, [int]$exitCode, [string]$summary, [int]$scriptExit 
     exit $scriptExit
 }
 
+function Get-LfsPointers {
+    # DOC-006 (REVIEW-ART008 m1): a fresh worktree without `git lfs pull` has pointer files, so Unity imports empty FBX.
+    # `git lfs ls-files` marks a checked-out object '*' and a pointer '-'.
+    $ErrorActionPreference = 'Continue'
+    @(git -C $Root lfs ls-files 2>$null | ForEach-Object { if ($_ -match '^\w+ - (UnityProject/Assets/.*)$') { $Matches[1] } })
+}
+
+function Assert-NoLfsPointers {
+    $p = @(Get-LfsPointers)
+    if ($p.Count) { Complete $false -1 "blocked: $($p.Count) Git LFS pointer files under UnityProject/Assets (e.g. $($p[0])); run 'git lfs pull' first" 2 }
+}
+
 function Assert-UnityReady {
+    Assert-NoLfsPointers
     if (-not (Test-Path $Unity)) { Complete $false -1 "Unity executable not found: $Unity" }
     if (-not (Test-Path (Join-Path $Project 'ProjectSettings'))) { Complete $false -1 "Unity project not found: $Project" }
     if (Test-ProjectLocked) { Complete $false -1 'blocked: another Unity instance has the project open' 2 }
@@ -202,6 +215,9 @@ switch ($Command) {
         $lfsProbes = @($lfsExt | ForEach-Object { "UnityProject/Assets/_Game/Art/ThirdParty/x/a.$_" }) +
             'Art/Exports/x/a.fbx', 'UnityProject/Assets/_Game/Art/Procedural/x/a.fbx'
         $untracked = @($lfsProbes | Where-Object { (git -C $Root check-attr filter -- $_) -notmatch ': lfs$' })
+        $pointers = @(Get-LfsPointers)
+        $checks['lfsCheckedOut'] = $pointers.Count -eq 0
+        if ($pointers.Count) { Write-Line "$($pointers.Count) LFS pointer files under UnityProject/Assets (e.g. $($pointers[0])); run 'git lfs pull'" }
         $ErrorActionPreference = 'Stop'
         # Reported, not failed: the patterns land with ASSET-002; make this a bool once that is on main.
         $checks['lfsPatterns'] = $(if ($untracked.Count) { "missing $($untracked -join ',')" } else { "$($lfsProbes.Count)/$($lfsProbes.Count) tracked" })
