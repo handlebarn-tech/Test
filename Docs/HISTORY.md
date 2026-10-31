@@ -12,12 +12,13 @@ Append-only. Purpose: a future Hub or recovery pass can find any earlier version
 | 10-30 09:17 DEC-117/118/119 | Control plane consolidated (Fable): one rules file, §0 flat, dept files archived, rulings → DEC-118, roadmap | `b29aa29`, `9823517` | fix inconsistency after the lead experiment |
 | 10-30 12:08–13:01 DEC-120..133, DOC-005 | Dispatcher-only Hub: reads two files, planner + integrator sessions, spare pool, cards + PO relay | `8ed4129:Docs/HUB_RESUME.md`, `8ed4129:Docs/STUDIO_OS.md` §0, `154be82:Docs/HUB_RESUME.md`, `Docs/Handoffs/DOC-005.md` | cost pressure; Hub was doing intake inline |
 | 10-30 evening RECOVERY-001 DEC-138..142 | Hub = project manager again with `PROJECT_BRIEF.md`; planner/integrator/spares retired; background Agents on peer-triggered turns; reviewer fast-fail; model tiers + caps; truth-file guard | current files; forensic report `Docs/Audits/RECOVERY-001.md` | the Hub had lost its brain by rule; usage blow-out (see report §3) |
+| 10-30 evening DEC-143..151 | Nolan's approvals (model by work character, 4 + Hub, early handover), clean cutover (all pre-recovery sessions archived), no approvals/no polling, sessions-first with Agents as fallback under one cap, canonical project map in `PROJECT_BRIEF.md` | current files; `Docs/Audits/RECOVERY-001.md` §8–§10 | Nolan's review of the recovery |
+| 10-30 evening DEC-152 | Close-out: measured that child-completion turns allow session starts (workers report by ending their turn, never SendMessage); four units is a maximum; OPS-004/005 registered; **architecture frozen** | current files | Nolan: return to game development |
 
 ## Superseded decision chains (newest wins)
 - Structure: DEC-010 → DEC-085 → DEC-094 → DEC-112 → DEC-116/117 → DEC-128/132/133 → **DEC-138/139**.
-- Session starts on peer-triggered turns: DEC-128 (Agent fallback) → DEC-129 (push request) → DEC-130 (PO session relay) → DEC-133 (spare pool) → **DEC-139** (background Agent in a worktree).
+- Session starts on non-Nolan turns: DEC-128 (Agent fallback) → DEC-129 (push request) → DEC-130 (PO session relay) → DEC-133 (spare pool) → DEC-139 (background Agent in a worktree) → DEC-151 (sessions first, Agents only after a refusal, one cap) → **DEC-152** (child-completion turns allow starts; workers report by ending their turn).
 - Hub reading set: HUB_RESUME "Hub loop" (de9dc7e) → §0.6 (DEC-094) → §0.3 (DEC-117) → DOC-005 (two files) → **§0.3 (DEC-138)**.
 - Integration: Hub merges `review/*` (DEC-045/085) → leads merge-ready (DEC-094/099) → integrator sessions (DEC-132) → **Hub integrates (DEC-138)**.
 - Door hardware: DEC-110 W5/W6 → amended by DEC-115.
 - Gloves: DEC-126 → DEC-127. Jar density: earlier thinning → DEC-121.
-| 10-30 evening DEC-152 | Close-out: measured that child-completion turns allow session starts (workers report by ending their turn, never SendMessage); four units is a maximum; OPS-004/005 registered; **architecture frozen** | current files | Nolan: return to game development |
