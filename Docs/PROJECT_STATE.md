@@ -28,14 +28,13 @@ Reprioritised against the critical path (roadmap §3: GAME-026 → 017a; ART-013
 | Captured, superseded | `worktree-agent-a83016d0b10c940eb` @ 788046a (PROC-013 originals); `claude/clever-lamport-837e7f`; `review/game026*` (r1–r3 verdicts are on `main`; r4 empty) | preserved | retire when convenient (DEC-123) |
 All pre-recovery sessions were archived in the cutover (DEC-144). Nothing resumes from a conversation.
 
-## In flight (sessions actually working)
+## In flight (actually working). `start_session` was refused on this session-triggered turn, so all four run as background worktree Agents of the Hub (DEC-139/143 fallback); they report to the Hub, not to the sidebar. A fresh Hub that finds them gone checks the branches below for committed work.
 | Session | Task | Branch @ sha | State → next Hub action |
 |---|---|---|---|
-| Dispo · ART-013 layout overhaul (Fable, Unity slot 1) | ART-013 | `claude/art013` from 14b3eb3, merges `main` | working → fresh Unity reviewer on `ready for review` |
-| Dispo · GAME-026 sync + tests (Sonnet, Unity slot 2) | GAME-026 | `task/GAME-026` from 060f4af, merges `main` | working → fresh Unity reviewer (r4) on `ready for review`; a repeat of the stale-copy MAJOR is a Hub decision (DEC-142) |
-| Dispo · REVIEW PROC-013b (Sonnet) | PROC-013b review | `claude/intelligent-lumiere-b0fd09` (synced) | reviewing → integrate on PASS |
-| Dispo · REVIEW DOC-006 (Sonnet) | DOC-006 review | `claude/brave-boyd-7af7b5` (synced) | reviewing → integrate on PASS; register the DOC-006 row (DOC-005 "LFS guard" row renamed) |
-Session ids: `list_sessions {"linked": true}` (they nest under the Hub).
+| Agent ART-013 (Fable, Unity slot 1) | ART-013 | `art013-r2` cut from `claude/art013` @ 14b3eb3, merges `main` 29da42f | working → fresh Unity reviewer on `ready for review` |
+| Agent GAME-026 r4 (Sonnet, Unity slot 2) | GAME-026 | `task/GAME-026-r4` cut from `task/GAME-026` @ 060f4af, merges `main` 29da42f | working → fresh Unity reviewer (r4) on `ready for review`; a repeat of the stale-copy MAJOR is a Hub decision (DEC-142) |
+| Agent REVIEW PROC-013b (Sonnet) | PROC-013b review | `claude/intelligent-lumiere-b0fd09` @ 511e9a2 → `review/proc013b` | reviewing → integrate on PASS |
+| Agent REVIEW DOC-006 (Sonnet) | DOC-006 review | `claude/brave-boyd-7af7b5` @ 078990a → `review/doc006` | reviewing → integrate on PASS; register the DOC-006 row (DOC-005 "LFS guard" row renamed) |
 
 ## Queue (next packets, in order; obey the caps)
 1. On PROC-013b / DOC-006 PASS: integrate, archive, and start **PROC-007** (Unity slot once the GAME-026 sync worker is done) and **REF-015** (Sonnet filler).
