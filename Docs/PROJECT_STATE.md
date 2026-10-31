@@ -20,7 +20,7 @@ Hub-owned, the **only live state record** (DEC-117). A fresh Hub reads `PROJECT_
 | **PROC-009b** vehicle look follow-ups | `claude/jovial-sutherland-c52674` @ aefadfc (the 13 uncommitted files were committed by RECOVERY-001; unreviewed) | WIP: re-exported vehicle FBX, params, contact sheet, `Previews/PROC-009b/` | Fresh worker from the branch. |
 | **PROC-014** QA review renders + fault tests | `claude/sleepy-keller-7875af` @ d8cf4b3 (partial handoff on branch) | review mode + planted-fault tests pass; PROC_PIPELINE A1 section and review-sheet size fix left | Fresh worker from the branch. |
 | **PROC-018** HUB storage + refill station | `claude/adoring-nash-8593f0` @ 448e9b1 | hub_storage done; refill_station params only | Fresh worker from the branch. |
-| **PROC-015** architecture kit research | `claude/elegant-nash-3c26bb` @ 3e47f69 | research-only WIP handoff | Fresh worker from the branch. |
+| **PROC-015** architecture kit research | `claude/elegant-nash-3c26bb` @ 4dbfc2d | research-only WIP handoff | Fresh worker from the branch. |
 | **PROC-017** entry queue kit | `claude/hopeful-engelbart-ed1ea5` @ 7f4f7d6 (packet → Active + the untracked `entry_queue_kit.py`/`.json` committed by RECOVERY-001) | generator started, unreviewed | Fresh worker from the branch. |
 | **REF-015** exterior envelope | `claude/dazzling-jennings-baa5c9` @ 0afad5c (partial handoff on branch) | measurements done; rows/§10/n1–n3 not written | Fresh worker (Sonnet) from the branch. |
 | **UX-003** shift-day UX spec | `claude/determined-elgamal-c29f29` @ 0125c2e (partial handoff) | nothing written | Fresh worker (Sonnet); low priority (PS2). |
