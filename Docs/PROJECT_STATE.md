@@ -28,13 +28,13 @@ Reprioritised against the critical path (roadmap §3: GAME-026 → 017a; ART-013
 | Captured, superseded | `worktree-agent-a83016d0b10c940eb` @ 788046a (PROC-013 originals); `claude/clever-lamport-837e7f`; `review/game026*` (r1–r3 verdicts are on `main`; r4 empty) | preserved | retire when convenient (DEC-123) |
 All pre-recovery sessions were archived in the cutover (DEC-144). Nothing resumes from a conversation.
 
-## In flight (actually working). `start_session` was refused on this session-triggered turn, so all four run as background worktree Agents of the Hub (DEC-139/143 fallback); they report to the Hub, not to the sidebar. A fresh Hub that finds them gone checks the branches below for committed work.
+## In flight: NONE. Studio PAUSED until the weekly reset 2026-10-31 19:00 Phoenix (Nolan, DEC-150). The four agents below were stopped at ~18:20 after only merging `main` / cutting their review branches; worktrees `.claude/worktrees/agent-*` are clean. The Hub has ONE one-time self-resume scheduled at the reset (DEC-149); on resume start fresh workers/reviewers from these branches with the same briefs (session-triggered turn → background Agents).
 | Session | Task | Branch @ sha | State → next Hub action |
 |---|---|---|---|
-| Agent ART-013 (Fable, Unity slot 1) | ART-013 | `art013-r2` cut from `claude/art013` @ 14b3eb3, merges `main` 29da42f | working → fresh Unity reviewer on `ready for review` |
-| Agent GAME-026 r4 (Sonnet, Unity slot 2) | GAME-026 | `task/GAME-026-r4` cut from `task/GAME-026` @ 060f4af, merges `main` 29da42f | working → fresh Unity reviewer (r4) on `ready for review`; a repeat of the stale-copy MAJOR is a Hub decision (DEC-142) |
-| Agent REVIEW PROC-013b (Sonnet) | PROC-013b review | `claude/intelligent-lumiere-b0fd09` @ 511e9a2 → `review/proc013b` | reviewing → integrate on PASS |
-| Agent REVIEW DOC-006 (Sonnet) | DOC-006 review | `claude/brave-boyd-7af7b5` @ 078990a → `review/doc006` | reviewing → integrate on PASS; register the DOC-006 row (DOC-005 "LFS guard" row renamed) |
+| stopped (resume: Fable, Unity slot 1) | ART-013 | `art013-r2` @ 6373613 (= `claude/art013` 14b3eb3 + `main` merged; packet in Active with rulings) | restart a fresh worker from this branch → fresh Unity reviewer on `ready for review` |
+| stopped (resume: Sonnet, Unity slot 2) | GAME-026 | `task/GAME-026-r4` @ f65bf07 (= 060f4af + `main` merged clean; Data/Reference re-copy and tests NOT done) | working → fresh Unity reviewer (r4) on `ready for review`; a repeat of the stale-copy MAJOR is a Hub decision (DEC-142) |
+| stopped (resume: Sonnet) | PROC-013b review | `review/proc013b` @ 5784aed (worker branch merged; no verdict yet) | restart a fresh reviewer → integrate on PASS |
+| stopped (resume: Sonnet) | DOC-006 review | `review/doc006` @ 98ec160 (worker branch merged; no verdict yet) | restart a fresh reviewer → integrate on PASS; register the DOC-006 row (DOC-005 "LFS guard" row renamed) |
 
 ## Queue (next packets, in order; obey the caps)
 1. On PROC-013b / DOC-006 PASS: integrate, archive, and start **PROC-007** (Unity slot once the GAME-026 sync worker is done) and **REF-015** (Sonnet filler).
@@ -47,7 +47,7 @@ All pre-recovery sessions were archived in the cutover (DEC-144). Nothing resume
 At 18:00 a `unity.exe` (8 MB, likely idle) and Unity Hub were running; the Hub cannot run `studio.ps1 slots` (hub_guard). ART-013 and the GAME-026 sync worker hold the two slots; each checks `slots` before batchmode and reports if a stray editor blocks it.
 
 ## Open with Nolan (batched in the Hub's `FOR NOLAN` reply block, DEC-144)
-- **Usage pacing** (DEC-100): weekly all-models at 95 % with ~25 h to the reset and extra usage on; four sessions started. Nolan decides whether to pace; the Hub does not trim.
+- **Usage pacing:** decided, DEC-150 (pause until the 2026-10-31 19:00 Phoenix reset). Nothing open.
 - **DATA-004** (PS3 gate): needs Nolan's Dutchie/LeafLogix catalog export (GAP-PKG-01). Asked once (RES-001 O14); ask again only when PS2 is in sight.
 - **DATA-005:** waits for TFS v7.11.5 (GAP-210); external.
 - PROC-005 open sizes/finishes GAP-PROC-14..42 (`Handoffs/PROC-005.md` "Questions for Nolan", DEC-105 search done). Low priority; batch.
