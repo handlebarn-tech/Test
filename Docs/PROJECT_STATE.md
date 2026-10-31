@@ -6,7 +6,7 @@ Hub-owned, the **only live state record** (DEC-117). A fresh Hub reads `PROJECT_
 **Studio structure:** Nolan → Hub (project manager, integrates) → workers → fresh reviewers (DEC-138..144; `Docs/Audits/RECOVERY-001.md`). **Caps:** 4 concurrent worker/reviewer sessions plus the Hub, 2 Unity editors. Rulings this Hub recorded: DEC-145 (jar fill is visual), DEC-146 (POS_05 clearance 3.2 ft), DEC-147 (lot cap 15), DEC-148 (Hub sync merges; check 0 against a named sha).
 **Account:** Pro plan. 2026-10-30 18:00 Phoenix: weekly all-models 95 % (resets 2026-10-31 19:00 Phoenix), weekly Fable 28 %, 5-hour 27 %, extra usage on ($32 of $100). Usage is Nolan's call (DEC-100).
 
-## Recovery: work stranded by the 2026-10-30 usage limit (fresh worker from the branch; never resume a dead session)
+## Recovery: work stranded by the 2026-10-30 usage limit (fresh worker in a worktree cut from `main` that first `git merge`s the branch below; never resume a dead session, never cut a worktree from the old branch)
 Reprioritised against the critical path (roadmap §3: GAME-026 → 017a; ART-013 → BUILD-008 → QA-004). Integrated: **DOC-004** (merged). Started: see In flight. *queued* = waits for a free slot; *parked* = off the critical path, starts only when nothing above it can run.
 | Task | Branch @ sha (committed WIP) | State | Next Hub action |
 |---|---|---|---|

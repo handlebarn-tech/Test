@@ -1,6 +1,6 @@
 # GAME-026 — Customer flow: entry check-in guard, one line, the player calls next (playtest 1)
 
-**Dept:** Gameplay · **Role:** GAME · **Owner:** worker subagent (id + branch once launched) · **Reviewer:** pool (lead assigns) · **Touches:** none · **Interfaces:** `Docs/Specs/CONTROLS_FLOW_PS1.md` §7 (CF§7), `Docs/Reference/SCENE_ANCHORS.json` (REF-011), `Docs/Reference/DOORS.json` (REF-012) (header fields: REVIEW-W5U m2)
+**Role:** GAME (dept/pool wording retired by DEC-117/138; fresh worker + fresh reviewer) · **Owner:** worker subagent (id + branch once launched) · **Reviewer:** fresh, Hub-spawned (was: pool (lead assigns) · **Touches:** none · **Interfaces:** `Docs/Specs/CONTROLS_FLOW_PS1.md` §7 (CF§7), `Docs/Reference/SCENE_ANCHORS.json` (REF-011), `Docs/Reference/DOORS.json` (REF-012) (header fields: REVIEW-W5U m2)
 **Priority:** P0 · **Branch:** `task/GAME-026` worktree off `main` (after GAME-009 merges — same `ShiftSim.cs`/`SliceGame.cs`; after GAME-025 merges — the E-priority and pause code; World anchors optional, see Dependencies)
 
 ## Goal
@@ -40,4 +40,4 @@ Compile / EditMode / PlayMode green; QA-002 gate and DEC-013 gate green. **Slice
 GAME-009 merged; GAME-025 merged (E priority, pause). World anchors CF§7.2–7.3 (`Anchor_Guard_Post`, `Anchor_CheckIn`, `Anchor_CheckIn_Wait_<n>`, `Anchor_Queue_<n>`, `Anchor_Register_<NN>_Call/_Operator` (zero-padded 02–12), `Anchor_CustomerSpawn` moved outside): **not blocking** — fallbacks keep the slice playable; the final capture waits for them. Entry door use needs GAME-025's door runtime and World's `Door_Entry_L/_R` (REF-012). SPEC_COMP002 §3 and UX_PS1 §4 carry a DEC-103 note; their full rewrite is not this packet's.
 
 ## Handoff
-`Docs/Handoffs/GAME-026.md` (≤40 lines). Questions go to your department lead (DEC-033, DEC-094).
+`Docs/Handoffs/GAME-026.md` (≤40 lines). Questions: resolve per `Docs/STUDIO_OS.md` §0.6, then the Hub (DEC-033/138).

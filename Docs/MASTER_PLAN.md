@@ -529,6 +529,8 @@ The first BUILD workcell must discover the actual machine, software paths and pe
 
 # 17. Milestone roadmap
 
+> **Current plan (DEC-119):** `Docs/Design/ROADMAP_POST_SLICE.md` is the one live roadmap (milestones PS1 → M-B → PS1b → PS2 → PS3 → M-F → M-G → PS4, task IDs, dependencies, critical path) and wins over this section. M0–M10 below are the original production milestones, kept for context; the roadmap cites them as "M-n".
+
 ## M0 — Documentation baseline and reconstruction freeze
 Goal: turn the supplied project-history record into a precise reconstruction contract before implementing Unity systems.
 

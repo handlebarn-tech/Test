@@ -48,7 +48,7 @@ A packet is the worker's whole brief: goal, `Owns`, deliverable, validation, the
 ## 0.5 Session mechanics
 - On Nolan's own turns the Hub uses `start_session` (`context: "fresh"`, `use_worktree: true`, title `Dispo · <ID> <what>`; model by the character of the work: cheaper for bounded, deterministic work, strongest for ambiguous, architectural, cross-system, high-risk or judgment-heavy work, DEC-143). On turns another session or an event triggered, the app refuses `start_session`; the Hub then runs the same brief as a background `Agent` with `isolation: "worktree"` (DEC-139). No spare sessions, no proposal cards unless Nolan asks.
 - Standard briefs (whole text, fill the brackets):
-  - **Worker:** *"Read `Docs/Tasks/Ready/<ID>.md` and follow it; your first commit moves it to `Docs/Tasks/Active/`. Base: `<main @ sha | branch>`. Commit with `git -c user.name=Nolan_Bradford -c user.email=handlebarn@gmail.com commit`. Resolve uncertainty per `Docs/STUDIO_OS.md` §0.6; never contact Nolan. When done: write `Docs/Handoffs/<ID>.md` (§57), `git merge main` into your branch and fix conflicts, re-run the packet's validation, stop background monitors and processes, commit, then send the Hub ONE line: `<ID> ready for review: <branch> @ <sha>`."*
+  - **Worker:** *"Read `Docs/Tasks/Ready/<ID>.md` and follow it; your first commit moves it to `Docs/Tasks/Active/`. Your worktree is cut from current `main`; if you continue stranded work, first `git merge <branch> @ <sha>` (named here) and resolve conflicts. Commit with `git -c user.name=Nolan_Bradford -c user.email=handlebarn@gmail.com commit`. Resolve uncertainty per `Docs/STUDIO_OS.md` §0.6; never contact Nolan. When done: write `Docs/Handoffs/<ID>.md` (§57), `git merge main` into your branch and fix conflicts, re-run the packet's validation, stop background monitors and processes, commit, then send the Hub ONE line: `<ID> ready for review: <branch> @ <sha>`."*
   - **Fix round (same or fresh worker):** *"FAIL: fix per `Docs/Reviews/REVIEW-<ID>.md` on `<branch>`; merge `main` first; append the fix to the handoff; report `ready for review` again."*
   - **Reviewer:** *"Review `<branch>` @ `<sha>` against `Docs/Tasks/Active/<ID>.md`. First check: `git merge-base --is-ancestor main <branch>`; if false, write a one-line FAIL `rebase on main` and stop. Then read the packet, the diff, the Validation and Not-done sections of `Docs/Handoffs/<ID>.md`, and the acceptance sources the packet cites; run the packet's validation yourself. Write `Docs/Reviews/REVIEW-<ID>.md` (§0.7) on `review/<id>` cut from `main` with the worker branch merged `--no-ff`; one line to the Hub: `REVIEW-<ID>: PASS|PASS with minors|FAIL, <n> MAJOR, <n> minor`. Do not change the worker's branch or message the worker. Stop background monitors before reporting."*
 - Unity: max 2 editors (DEC-013), `studio.ps1 slots`; fresh worktrees copy `Tools/Studio/studio.config.example.json` → `studio.config.json` and run `git lfs pull` before any Unity validation (REVIEW-ART008 m1).
@@ -590,7 +590,7 @@ Does not:
 
 Every worker starts from a file:
 
-`Docs/Tasks/Active/<TASK_ID>.md`
+`Docs/Tasks/Ready/<TASK_ID>.md` (the worker's first commit moves it to `Docs/Tasks/Active/`; DEC-138)
 
 Template:
 
@@ -630,7 +630,7 @@ Every worker must write:
 ```markdown
 # <TASK_ID> handoff
 
-**Branch/commit:** <branch> @ <sha> · **Contains `main` @:** <sha after your final `git merge main`> · **Status:** done | partial | blocked
+**Branch/commit:** <branch> @ <sha> · **Contains `main` @:** <sha after your final `git merge main`> · **Status:** done | partial | blocked (done only when every packet Deliverable item has evidence under Validation)
 
 ## Delivered
 - <what changed, with paths>
