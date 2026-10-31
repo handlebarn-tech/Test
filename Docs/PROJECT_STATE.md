@@ -10,10 +10,10 @@ Hub-owned, the **only live state record** (DEC-117). A fresh Hub reads `PROJECT_
 Reprioritised against the critical path (roadmap §3: GAME-026 → 017a; ART-013 → BUILD-008 → QA-004). Integrated: **DOC-004** (merged). Started: see In flight. *queued* = waits for a free slot; *parked* = off the critical path, starts only when nothing above it can run.
 | Task | Branch @ sha (committed WIP) | State | Next Hub action |
 |---|---|---|---|
-| **GAME-026** customer flow (P0) | `task/GAME-026` @ 060f4af (behind `main`); `review/game026-r4` holds no verdict | r1–r3 FAIL; r2/r3 MAJOR = stale `Data/Reference` copies vs `main` | **Started:** fresh sync worker (merge `main`, re-copy DOORS/SCENE_ANCHORS, tests green, report ready) → then a fresh Unity reviewer. Packet names a lead/pool: the brief carries the correction. |
-| **ART-013** layout overhaul (P0) | `claude/art013` @ 14b3eb3; `Handoffs/Recovered/ART-013_partial.md` | converter rev9 south side done (113/114 clearance); Unity builder, doors, `--matrix`, stand/guard pair, captures, handoff not done | **Started:** fresh Unity worker; rulings DEC-145/146 in the packet. |
-| **PROC-013b** door follow-ups | `claude/intelligent-lumiere-b0fd09` (Hub sync-merged `main`, DEC-148) | ready for review | **Started:** fresh reviewer (Sonnet, Blender sheets only). |
-| **DOC-006** LFS pointer guard | `claude/brave-boyd-7af7b5` (Hub sync-merged `main`, DEC-148) | ready for review; BACKLOG row DOC-005 "LFS guard" → DOC-006 at integration | **Started:** fresh reviewer (Sonnet). |
+| **GAME-026** customer flow (P0) | `task/GAME-026` @ 060f4af (behind `main`); `review/game026-r4` holds no verdict | r1–r3 FAIL; r2/r3 MAJOR = stale `Data/Reference` copies vs `main` | **Started, then stopped at ~18:20 (DEC-150; resume shas in In flight):** fresh sync worker (merge `main`, re-copy DOORS/SCENE_ANCHORS, tests green, report ready) → then a fresh Unity reviewer. Packet names a lead/pool: the brief carries the correction. |
+| **ART-013** layout overhaul (P0) | `claude/art013` @ 14b3eb3; `Handoffs/Recovered/ART-013_partial.md` | converter rev9 south side done (113/114 clearance); Unity builder, doors, `--matrix`, stand/guard pair, captures, handoff not done | **Started, then stopped at ~18:20 (DEC-150; resume shas in In flight):** fresh Unity worker; rulings DEC-145/146 in the packet. |
+| **PROC-013b** door follow-ups | `claude/intelligent-lumiere-b0fd09` (Hub sync-merged `main`, DEC-148) | ready for review | **Started, then stopped at ~18:20 (DEC-150; resume shas in In flight):** fresh reviewer (Sonnet, Blender sheets only). |
+| **DOC-006** LFS pointer guard | `claude/brave-boyd-7af7b5` (Hub sync-merged `main`, DEC-148) | ready for review; BACKLOG row DOC-005 "LFS guard" → DOC-006 at integration | **Started, then stopped at ~18:20 (DEC-150; resume shas in In flight):** fresh reviewer (Sonnet). |
 | **PROC-007** UV layout (P1; ART-011 waits on it) | `claude/hopeful-mendeleev-39bba2` @ 1947e0e (packet → Active only) | not started | *queued*: next free slot; needs a Unity slot for the ProcArt tests (after the GAME-026 sync worker finishes). ART-011 follows in the same wave. |
 | **GAME-017a** first playable rec depth (P0) | `claude/adoring-bell-224eaa` @ db1b48b (packet → Active only) | not started; shares Slice files with GAME-026 | after GAME-026 merges. |
 | **ASSET-005/006** wardrobe + hair | `claude/sweet-shirley-002b17` @ b42a4ae | WIP, no handoff; `customer_gen.py` shared with ASSET-007 (merged) | *queued* after PROC-007 (Blender, no Unity). Packet names leads: the brief carries the correction. |
@@ -44,7 +44,7 @@ All pre-recovery sessions were archived in the cutover (DEC-144). Nothing resume
 5. **GAME-CHR-002** after ASSET-005/006; **NPC-001** after GAME-026; **GAME-028** (DEC-145 jar binding) after GAME-017a + ART-013. UX-003 and PS2 rows after PS1b.
 
 ## Unity slots (max 2, DEC-013)
-At 18:00 a `unity.exe` (8 MB, likely idle) and Unity Hub were running; the Hub cannot run `studio.ps1 slots` (hub_guard). ART-013 and the GAME-026 sync worker hold the two slots; each checks `slots` before batchmode and reports if a stray editor blocks it.
+None held: the studio is paused (DEC-150); the two slots are planned for ART-013 and the GAME-026 sync worker on resume. Run `studio.ps1 slots` before starting a Unity session.
 
 ## Open with Nolan (batched in the Hub's `FOR NOLAN` reply block, DEC-144)
 - **Usage pacing:** decided, DEC-150 (pause until the 2026-10-31 19:00 Phoenix reset). Nothing open.

@@ -3,7 +3,7 @@
 Studio structure (DEC-116/117/138): **Nolan → Studio Hub (project manager) → workers → fresh reviewers → Hub integrates `main`.** No leads, departments, standing reviewers, planner, integrator or spare sessions. The operating model is `Docs/STUDIO_OS.md` **§0 only** (below §0 is history). The stable project picture is `Docs/PROJECT_BRIEF.md`.
 
 ## Start here (by role)
-- **Studio Hub:** `Docs/PROJECT_BRIEF.md`, then `Docs/HUB_RESUME.md`, then `Docs/PROJECT_STATE.md`. Nothing else at start.
+- **Studio Hub:** `Docs/PROJECT_BRIEF.md`, then `Docs/HUB_RESUME.md` (and the start ritual it lists), then `Docs/PROJECT_STATE.md`.
 - **Worker / specialist:** your packet `Docs/Tasks/Ready|Active/<TASK_ID>.md`, then only the docs and sections it cites. Do not load `PROJECT_STATE.md`, `BACKLOG.md`, `Docs/Departments/` or the documentation tree.
 - **Reviewer:** the packet, the diff, the handoff's Validation and Not-done sections, the acceptance sources the packet cites (STUDIO_OS §0.5/§0.7). Nothing else.
 
