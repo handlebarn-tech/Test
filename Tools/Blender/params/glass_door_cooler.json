@@ -1,0 +1,277 @@
+{
+  "generator": "glass_door_cooler",
+  "asset_prefix": "PROC_",
+  "seed": 24001,
+  "own_sheet": true,
+  "pbr": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Cooler",
+  "gaps": [
+    "GAP-111",
+    "GAP-PROC-17",
+    "GAP-PROC-28"
+  ],
+  "_sources": {
+    "width_m/depth_m/height_m": "RF size_ft per variant fixture id (Cooler_GlassDoor_2Door 4.0x2.5x6.5, Fridge_TopFreezer 2.2x2.3x5.5, Fridge_Magnets 2.8x2.4x5.8)",
+    "contents": "DEC-050 (RF contents field)",
+    "cooler.doors": "RF Cooler_GlassDoor_2Door notes 'two glass doors'; RI \u00a72.3 row 230",
+    "cooler.shelves": "GAP-PROC-28 (5 shelf levels estimated from the FOH still through the left door, Low; not covered by GAP-PROC-17)",
+    "cooler.side_t_m/header_h_m/base_h_m/door_t_m/rail_w_m/mullion_w_m/wire_pitch_m/handle_*": "GAP-PROC-17 (frame/door/handle/shelf sizes)",
+    "cooler.leveller_h_m / fridge.leveller_h_m": "GAP-PROC-28 (leveller height, construction placeholder)",
+    "fridge.freezer_split/door_t_m/door_gap_m/kick_h_m/handle_*": "GAP-PROC-17",
+    "fridge layout (Fridge_TopFreezer)": "top freezer, white: RF Fridge_TopFreezer notes; FOH still (CCTV FOH Desk Racks 2026-10-29); pulls on the left / hinges right read from the FOH still (Low)",
+    "fridge layout (Fridge_Magnets)": "GAP-PROC-28: RF says only 'full-size fridge'; top-freezer layout and hinge side copied from the FOH fridge",
+    "fridge.magnet_count / magnet shapes": "GAP-PROC-28 (R3C5 shows the side densely covered in magnets/stickers; items not resolvable)",
+    "fridge.magnets_side": "RF Fridge_Magnets notes 'side covered in magnets/stickers'; wall2_R3C5 sees the side toward the camera; which model side: GAP-PROC-17",
+    "colors.Black_Frame": "RF Cooler_GlassDoor_2Door 'black-frame'; RI \u00a72.3 row 230; FOH still",
+    "colors.Interior_White": "FOH still: lit interior reads white (Low)",
+    "colors.LED_Emissive": "RF 'lit merchandiser' / RI \u00a72.3 'internally lit'",
+    "colors.Glass_Clear": "RF 'two glass doors'",
+    "colors.White_Enamel": "RF Fridge_TopFreezer 'white top-freezer apartment fridge'; FOH still",
+    "colors.Hardware_Grey / Wire_Grey / TagRail_Grey / Gasket_Grey / Handle_Grey / Liner_Grey / Grille_Grey / Coil_Grey / Appliance_Grey": "GAP-PROC-28 neutral mid-grey placeholders (not resolved in the FOH still / R3C5); Appliance_Grey = Fridge_Magnets body colour unknown",
+    "colors.Magnet_Grey_A/B/C / Magnet_Paper": "GAP-PROC-28 neutral greys (real items are multicoloured in R3C5 but unresolvable; no artwork)",
+    "finishes": "placeholders under the same GAP as the colour key; Black_Frame powder coat and Glass glass are class defaults"
+  },
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 16
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 12
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8
+    }
+  },
+  "wear": {
+    "edge_wear": 0.15,
+    "scuffs": 0.25,
+    "fingerprints": 0.35,
+    "sticker_residue": 0.1
+  },
+  "colors": {
+    "Black_Frame": [
+      0.03,
+      0.03,
+      0.035,
+      1.0
+    ],
+    "Hardware_Grey": [
+      0.4,
+      0.4,
+      0.404,
+      1.0
+    ],
+    "Interior_White": [
+      0.9,
+      0.9,
+      0.9,
+      1.0
+    ],
+    "LED_Emissive": [
+      0.95,
+      0.95,
+      0.9,
+      1.0
+    ],
+    "Wire_Grey": [
+      0.55,
+      0.55,
+      0.556,
+      1.0
+    ],
+    "TagRail_Grey": [
+      0.6,
+      0.6,
+      0.606,
+      1.0
+    ],
+    "Glass_Clear": [
+      0.82,
+      0.9,
+      0.94,
+      0.18
+    ],
+    "Gasket_Grey": [
+      0.3,
+      0.3,
+      0.303,
+      1.0
+    ],
+    "White_Enamel": [
+      0.9,
+      0.9,
+      0.88,
+      1.0
+    ],
+    "Appliance_Grey": [
+      0.6,
+      0.6,
+      0.606,
+      1.0
+    ],
+    "Handle_Grey": [
+      0.45,
+      0.45,
+      0.455,
+      1.0
+    ],
+    "Liner_Grey": [
+      0.7,
+      0.7,
+      0.707,
+      1.0
+    ],
+    "Grille_Grey": [
+      0.35,
+      0.35,
+      0.353,
+      1.0
+    ],
+    "Coil_Grey": [
+      0.3,
+      0.3,
+      0.303,
+      1.0
+    ],
+    "Magnet_Grey_A": [
+      0.2,
+      0.2,
+      0.202,
+      1.0
+    ],
+    "Magnet_Grey_B": [
+      0.38,
+      0.38,
+      0.384,
+      1.0
+    ],
+    "Magnet_Grey_C": [
+      0.5,
+      0.5,
+      0.505,
+      1.0
+    ],
+    "Magnet_Paper": [
+      0.85,
+      0.85,
+      0.858,
+      1.0
+    ]
+  },
+  "variants": [
+    {
+      "id": "Cooler_GlassDoor_2Door",
+      "kind": "glass_cooler",
+      "rf": "Cooler_GlassDoor_2Door",
+      "width_m": 1.2192,
+      "depth_m": 0.762,
+      "height_m": 1.9812,
+      "contents": "concentrates + perishable edibles (DEC-050); stock from inventory data, never modelled",
+      "tri_budget": {
+        "LOD0": 150000,
+        "LOD1": 75000,
+        "LOD2": 37500,
+        "LOD3": 15000
+      },
+      "tri_guide": {
+        "lod0_min": 30000
+      },
+      "cooler": {
+        "doors": 2,
+        "side_t_m": 0.05,
+        "header_h_m": 0.2,
+        "base_h_m": 0.15,
+        "door_t_m": 0.05,
+        "rail_w_m": 0.06,
+        "shelves": 5,
+        "wire_pitch_m": 0.0254,
+        "handle_standoff_m": 0.04,
+        "handle_r_m": 0.01,
+        "handle_len_m": 0.6,
+        "mullion_w_m": 0.04,
+        "leveller_h_m": 0.03
+      }
+    },
+    {
+      "id": "Fridge_TopFreezer",
+      "kind": "fridge",
+      "rf": "Fridge_TopFreezer",
+      "width_m": 0.67056,
+      "depth_m": 0.70104,
+      "height_m": 1.6764,
+      "contents": "drinks (DEC-050); stock from inventory data, never modelled",
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "fridge": {
+        "door_t_m": 0.05,
+        "door_gap_m": 0.008,
+        "freezer_split": 0.7,
+        "kick_h_m": 0.1,
+        "handle_standoff_m": 0.035,
+        "handle_r_m": 0.009,
+        "handle_len_m": 0.3,
+        "finish": "White_Enamel",
+        "leveller_h_m": 0.02
+      }
+    },
+    {
+      "id": "Fridge_Magnets",
+      "kind": "fridge",
+      "rf": "Fridge_Magnets",
+      "width_m": 0.85344,
+      "depth_m": 0.73152,
+      "height_m": 1.76784,
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "fridge": {
+        "door_t_m": 0.05,
+        "door_gap_m": 0.008,
+        "freezer_split": 0.7,
+        "kick_h_m": 0.1,
+        "handle_standoff_m": 0.035,
+        "handle_r_m": 0.009,
+        "handle_len_m": 0.3,
+        "magnet_count": 70,
+        "finish": "Appliance_Grey",
+        "magnets_side": "right",
+        "leveller_h_m": 0.02
+      }
+    }
+  ],
+  "finishes": {
+    "Gasket_Grey": "rubber",
+    "Liner_Grey": "plastic",
+    "Grille_Grey": "plastic",
+    "Magnet_Grey_A": "plastic",
+    "Magnet_Grey_B": "plastic",
+    "Magnet_Grey_C": "plastic",
+    "Wire_Grey": "powder_coat",
+    "TagRail_Grey": "plastic"
+  }
+}

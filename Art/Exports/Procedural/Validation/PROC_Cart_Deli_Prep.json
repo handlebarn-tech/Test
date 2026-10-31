@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Cart_Deli_Prep",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "108c246997fff5be",
+  "generator": "office_fixtures",
+  "lod_tris": {
+    "LOD0": 4880,
+    "LOD1": 2928,
+    "LOD2": 652,
+    "LOD3": 72
+  },
+  "params_sha256": "d06038e518e4961e",
+  "passed": true,
+  "warnings": [
+    "LOD0 4880 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Cooler_GlassDoor_2Door",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "e054fe81133800f6",
+  "generator": "glass_door_cooler",
+  "lod_tris": {
+    "LOD0": 15160,
+    "LOD1": 6892,
+    "LOD2": 900,
+    "LOD3": 24
+  },
+  "params_sha256": "ee3b33c7e8887182",
+  "passed": true,
+  "warnings": [
+    "LOD0 15160 tris below the DEC-084 guide minimum 30000 (too simple?)"
+  ]
+}

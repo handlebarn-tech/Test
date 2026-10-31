@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Register_Scanner_Barcode",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "1efb3d189df8a896",
+  "generator": "register_station",
+  "lod_tris": {
+    "LOD0": 536,
+    "LOD1": 344,
+    "LOD2": 156,
+    "LOD3": 36
+  },
+  "params_sha256": "4fd7a24258cfcf1b",
+  "passed": true,
+  "warnings": [
+    "LOD0 536 tris below the DEC-084 guide minimum 5000 (too simple?)"
+  ]
+}

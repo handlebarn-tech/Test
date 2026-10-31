@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_ToolChest_Black",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "ae4a8ebbb13a1dd7",
+  "generator": "restroom",
+  "lod_tris": {
+    "LOD0": 3172,
+    "LOD1": 1468,
+    "LOD2": 344,
+    "LOD3": 24
+  },
+  "params_sha256": "7ce35d46c0ce158d",
+  "passed": true,
+  "warnings": [
+    "LOD0 3172 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}

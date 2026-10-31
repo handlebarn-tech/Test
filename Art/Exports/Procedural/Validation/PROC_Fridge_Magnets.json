@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_Fridge_Magnets",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "5b13167a2adece39",
+  "generator": "glass_door_cooler",
+  "lod_tris": {
+    "LOD0": 7172,
+    "LOD1": 2848,
+    "LOD2": 420,
+    "LOD3": 36
+  },
+  "params_sha256": "ee3b33c7e8887182",
+  "passed": true,
+  "warnings": [
+    "LOD0 7172 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}

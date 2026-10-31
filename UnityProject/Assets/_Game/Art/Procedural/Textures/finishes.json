@@ -1,0 +1,369 @@
+{
+  "albedo_mean": 0.8,
+  "finishes": {
+    "brushed_metal": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/brushed_metal/T_Proc_brushed_metal_BaseColor.png",
+          "sha256": "7e33aeda1567bf08"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/brushed_metal/T_Proc_brushed_metal_Mask.png",
+          "sha256": "557de7b8add6c84e"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/brushed_metal/T_Proc_brushed_metal_Normal.png",
+          "sha256": "eb0c9cc28e024147"
+        }
+      },
+      "metallic": 1.0,
+      "smooth": 0.58,
+      "texel_px_per_m": 4096,
+      "tile_m": 0.5
+    },
+    "chrome": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/chrome/T_Proc_chrome_BaseColor.png",
+          "sha256": "cee2f4ebd769a25f"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/chrome/T_Proc_chrome_Mask.png",
+          "sha256": "928230be90b3ddeb"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/chrome/T_Proc_chrome_Normal.png",
+          "sha256": "acc0f0876086aa57"
+        }
+      },
+      "metallic": 1.0,
+      "smooth": 0.9,
+      "texel_px_per_m": 4096,
+      "tile_m": 0.5
+    },
+    "cork": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/cork/T_Proc_cork_BaseColor.png",
+          "sha256": "55dfb2a0eb22c5cd"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/cork/T_Proc_cork_Mask.png",
+          "sha256": "81d70b2a5babe822"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/cork/T_Proc_cork_Normal.png",
+          "sha256": "4a158120c1e8e46b"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.1,
+      "texel_px_per_m": 6827,
+      "tile_m": 0.3
+    },
+    "cotton": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/cotton/T_Proc_cotton_BaseColor.png",
+          "sha256": "65789e0a6320ecb0"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/cotton/T_Proc_cotton_Mask.png",
+          "sha256": "5f60ad31379d3718"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/cotton/T_Proc_cotton_Normal.png",
+          "sha256": "493cfdb5f81d2517"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.05,
+      "texel_px_per_m": 10240,
+      "tile_m": 0.2
+    },
+    "emissive": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/emissive/T_Proc_emissive_BaseColor.png",
+          "sha256": "60dffb7178791b86"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/emissive/T_Proc_emissive_Mask.png",
+          "sha256": "21dc25503ff4f15b"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/emissive/T_Proc_emissive_Normal.png",
+          "sha256": "ae52b893ea97f9d4"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.8,
+      "texel_px_per_m": 2048,
+      "tile_m": 1.0
+    },
+    "enamel": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/enamel/T_Proc_enamel_BaseColor.png",
+          "sha256": "d7a8ce566d32f993"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/enamel/T_Proc_enamel_Mask.png",
+          "sha256": "6b0ad8249d2c289b"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/enamel/T_Proc_enamel_Normal.png",
+          "sha256": "0b266883bea74665"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.72,
+      "texel_px_per_m": 4096,
+      "tile_m": 0.5
+    },
+    "fabric": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/fabric/T_Proc_fabric_BaseColor.png",
+          "sha256": "0ee61c806e7ad71e"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/fabric/T_Proc_fabric_Mask.png",
+          "sha256": "b2d8933d3626a108"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/fabric/T_Proc_fabric_Normal.png",
+          "sha256": "e82b131841ef8b31"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.08,
+      "texel_px_per_m": 20480,
+      "tile_m": 0.1
+    },
+    "glass": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/glass/T_Proc_glass_BaseColor.png",
+          "sha256": "d1a3c9c0fc5c6463"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/glass/T_Proc_glass_Mask.png",
+          "sha256": "84ec14694687c81b"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/glass/T_Proc_glass_Normal.png",
+          "sha256": "b390c6f9fc72497a"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.95,
+      "texel_px_per_m": 4096,
+      "tile_m": 0.5
+    },
+    "laminate": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/laminate/T_Proc_laminate_BaseColor.png",
+          "sha256": "14fc9d7bc3467048"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/laminate/T_Proc_laminate_Mask.png",
+          "sha256": "13a90d691b4c875b"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/laminate/T_Proc_laminate_Normal.png",
+          "sha256": "ab111a70c5073d1f"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.3,
+      "texel_px_per_m": 2048,
+      "tile_m": 1.0
+    },
+    "mirror": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/mirror/T_Proc_mirror_BaseColor.png",
+          "sha256": "dca0311a43bb525d"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/mirror/T_Proc_mirror_Mask.png",
+          "sha256": "1ed65787075fbc86"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/mirror/T_Proc_mirror_Normal.png",
+          "sha256": "20d45e4c45bf300a"
+        }
+      },
+      "metallic": 1.0,
+      "smooth": 0.97,
+      "texel_px_per_m": 4096,
+      "tile_m": 0.5
+    },
+    "paper": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/paper/T_Proc_paper_BaseColor.png",
+          "sha256": "60cfb4028416bfb3"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/paper/T_Proc_paper_Mask.png",
+          "sha256": "23f4cff093d4a29b"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/paper/T_Proc_paper_Normal.png",
+          "sha256": "b07a6f7e59f2e7ef"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.18,
+      "texel_px_per_m": 10240,
+      "tile_m": 0.2
+    },
+    "plastic": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/plastic/T_Proc_plastic_BaseColor.png",
+          "sha256": "e63f1132d7470e37"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/plastic/T_Proc_plastic_Mask.png",
+          "sha256": "3a3521536625baa7"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/plastic/T_Proc_plastic_Normal.png",
+          "sha256": "96d664af792e09d0"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.38,
+      "texel_px_per_m": 8192,
+      "tile_m": 0.25
+    },
+    "porcelain": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/porcelain/T_Proc_porcelain_BaseColor.png",
+          "sha256": "8478cbf133569a93"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/porcelain/T_Proc_porcelain_Mask.png",
+          "sha256": "2bf3468fc2954a08"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/porcelain/T_Proc_porcelain_Normal.png",
+          "sha256": "d959be5ed3524f49"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.88,
+      "texel_px_per_m": 2048,
+      "tile_m": 1.0
+    },
+    "powder_coat": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/powder_coat/T_Proc_powder_coat_BaseColor.png",
+          "sha256": "1ae4e4f46dbef1f7"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/powder_coat/T_Proc_powder_coat_Mask.png",
+          "sha256": "ac9536af582383e7"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/powder_coat/T_Proc_powder_coat_Normal.png",
+          "sha256": "2e897a042b245604"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.42,
+      "texel_px_per_m": 4096,
+      "tile_m": 0.5
+    },
+    "rubber": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/rubber/T_Proc_rubber_BaseColor.png",
+          "sha256": "3edfdfe6845a6d0a"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/rubber/T_Proc_rubber_Mask.png",
+          "sha256": "07495eba17c5efbd"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/rubber/T_Proc_rubber_Normal.png",
+          "sha256": "eacda82e342834b2"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.12,
+      "texel_px_per_m": 8192,
+      "tile_m": 0.25
+    },
+    "stone": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/stone/T_Proc_stone_BaseColor.png",
+          "sha256": "c626b7c2849ba39b"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/stone/T_Proc_stone_Mask.png",
+          "sha256": "c031a60349295ed2"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/stone/T_Proc_stone_Normal.png",
+          "sha256": "acc2379df5ee325d"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.7,
+      "texel_px_per_m": 2048,
+      "tile_m": 1.0
+    },
+    "wood": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/wood/T_Proc_wood_BaseColor.png",
+          "sha256": "69f620c040b9f23f"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/wood/T_Proc_wood_Mask.png",
+          "sha256": "fc87ed565bcaf8eb"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/wood/T_Proc_wood_Normal.png",
+          "sha256": "24b69b92bdb41d3a"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.48,
+      "texel_px_per_m": 2048,
+      "tile_m": 1.0
+    },
+    "wood_light": {
+      "maps": {
+        "BaseColor": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/wood_light/T_Proc_wood_light_BaseColor.png",
+          "sha256": "d41629dfa2529bb2"
+        },
+        "Mask": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/wood_light/T_Proc_wood_light_Mask.png",
+          "sha256": "aa61ad19d31bdf26"
+        },
+        "Normal": {
+          "path": "UnityProject/Assets/_Game/Art/Procedural/Textures/wood_light/T_Proc_wood_light_Normal.png",
+          "sha256": "0a34129d0500bae8"
+        }
+      },
+      "metallic": 0.0,
+      "smooth": 0.3,
+      "texel_px_per_m": 2048,
+      "tile_m": 1.0
+    }
+  },
+  "mask": "HDRP MaskMap: R metallic, G AO, B detail mask, A smoothness",
+  "normal": "OpenGL (+Y)",
+  "size_px": 2048,
+  "uv": "UVMap_Main, 1 UV unit = 1 m; tiling = 1 / tile_m"
+}

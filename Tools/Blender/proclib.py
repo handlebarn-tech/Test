@@ -39,10 +39,30 @@ def loft(bm, rings):
     bm.faces.new(vs[-1])
 
 
-def finish_object(bm, name, label_rect=None):
+def _wear_attr(bm):
+    """Point colour 'Wear' (PROC-005, Q0.4): R = convex edge sharpness (chips, rubbed edges), G = crease depth (grime).
+    From signed dihedral angles before triangulation; read by the preview material and the Unity material builder."""
+    lay = bm.verts.layers.float_color.new("Wear")
+    vex, cav = {}, {}
+    for e in bm.edges:
+        if len(e.link_faces) != 2:
+            continue
+        a = e.calc_face_angle_signed(0.0)
+        for v in e.verts:
+            if a > 0:
+                vex[v] = max(vex.get(v, 0.0), a)
+            else:
+                cav[v] = max(cav.get(v, 0.0), -a)
+    for v in bm.verts:
+        v[lay] = (min(1.0, vex.get(v, 0.0) / (math.pi / 2)), min(1.0, cav.get(v, 0.0) / (math.pi / 2)), 0.0, 1.0)
+
+
+def finish_object(bm, name, label_rect=None, wear_attr=False):
     """Triangulate, write UV maps, link the object. label_rect = (x0, x1, z0, z1) in
-    meters on the front (-Y) face; front faces map that rect to 0..1 in UVMap_Label."""
+    meters on the front (-Y) face; front faces map that rect to 0..1 in UVMap_Label. wear_attr adds the 'Wear' colour."""
     bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-6)
+    if wear_attr:
+        _wear_attr(bm)
     bmesh.ops.triangulate(bm, faces=bm.faces, quad_method="FIXED", ngon_method="EAR_CLIP")
     uv_main = bm.loops.layers.uv.new(UV_MAIN)
     uv_label = bm.loops.layers.uv.new(UV_LABEL)
@@ -141,8 +161,8 @@ def slide_axis(part, travel_m, direction=(0.0, -1.0, 0.0)):
 class Parts:
     """Collects one bmesh per part (one material slot each) and finishes them into objects."""
 
-    def __init__(self, colors=None):
-        self.colors, self._p = colors or {}, {}
+    def __init__(self, colors=None, wear_attr=False):
+        self.colors, self._p, self.wear_attr = colors or {}, {}, wear_attr
 
     def __call__(self, name, mat, rgba=None, label_rect=None):
         if name not in self._p:
@@ -155,7 +175,7 @@ class Parts:
             if not bm.verts:
                 bm.free()
                 continue
-            objs[name] = finish_object(bm, name, label_rect=rect)
+            objs[name] = finish_object(bm, name, label_rect=rect, wear_attr=self.wear_attr)
             objs[name].data.materials.append(material("M_Proc_" + mat, rgba))
         return objs
 
@@ -354,3 +374,9 @@ def wear(p):
         return {}
     w["seed"] = int(p["seed"])
     return {"wear": w}
+
+
+def add_screw_head(bm, center, axis, radius, segments=8, height=None):
+    """Pan/dome screw head proud of a face: axis points out of the face. Real fastener detail (PROC-005)."""
+    h = height if height is not None else radius * 0.45
+    add_lathe(bm, center, axis, [(0, 0.0), (radius, 0.0), (radius, h * 0.4), (radius * 0.75, h * 0.85), (0, h)], segments)

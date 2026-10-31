@@ -1,0 +1,539 @@
+{
+  "generator": "office_fixtures",
+  "asset_prefix": "PROC_",
+  "seed": 25001,
+  "own_sheet": true,
+  "pbr": true,
+  "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/Office",
+  "gaps": [
+    "GAP-127",
+    "GAP-135",
+    "GAP-136",
+    "GAP-PROC-18",
+    "GAP-PROC-31",
+    "GAP-PROC-32",
+    "GAP-PROC-33"
+  ],
+  "_sources": {
+    "_rule": "Every colour key, finish override and variant field is cited here or in the variant's _src map. RF = Docs/Reference/ROOM_FIXTURES.json fixture id; RI = Docs/REFERENCES_INDEX.md. GAP colours are mid-grey placeholders.",
+    "colors.Black_Laminate": "RF Desk_West_Arm notes 'black laminate desk arm' (colour + finish). Desk_Corner_Dual_Monitor: RF 'black corner piece' gives the colour only; laminate finish GAP-PROC-31 (same L desk, RI 7.1 'black L desk')",
+    "colors.Black_Edge": "edge band of the black laminate tops: colour follows RF Desk_West_Arm 'black laminate'; PVC band finish GAP-PROC-31",
+    "colors.Desk_Frame_Grey": "GAP-PROC-31: no RF row gives a desk frame/leg colour or type (Desk_West_Arm, Desk_Corner_Dual_Monitor, Desk_ExRegister1, Desk_Standing_East); mid-grey placeholder",
+    "colors.Standing_Top_Grey": "GAP-PROC-31: RF Desk_Standing_East notes give no top colour or finish; mid-grey placeholder",
+    "colors.Standing_Edge_Grey": "GAP-PROC-31: as Standing_Top_Grey (edge band)",
+    "colors.White_Laminate": "RF Desk_ExRegister1 notes 'white-top desk' (colour only). Laminate finish GAP-PROC-31",
+    "colors.Grey_Edge": "GAP-PROC-31: RF Desk_ExRegister1 gives only the white top; edge-band colour unknown, mid grey",
+    "colors.Stainless": "RF Worktable_Stainless 'stainless top on folding legs'; RF Cart_Deli_Prep 'stainless 2-shelf utility cart'; RI 2.4 deli prep cart (DEC-042b)",
+    "colors.Worktable_Leg_Grey": "light-grey folding legs read in tile wall2_R3C3 (in RF Worktable_Stainless source_tiles; Low). Finish GAP-PROC-31",
+    "colors.Cabinet_Black": "RF Cabinet_Tall_Black_A/B 'plain tall black cabinet' (colour); DEC-051 Q9 'secure storage'. Steel powder-coat finish GAP-PROC-31 (could be laminate)",
+    "colors.File_Black": "RF FileCabinets_UnderDesk 'several black file cabinets' (colour). Steel powder-coat finish GAP-PROC-31",
+    "colors.Hardware_Grey": "GAP-PROC-31: file-cabinet pull / label-holder / lock colour and finish unknown; mid grey",
+    "colors.Label_Grey": "GAP-PROC-31: label colours unknown (file-cabinet cards; the deli-cart rail label exists per RF Cart_Deli_Prep / RI 2.4 'FOR DELI USE ONLY'); mid grey, text not modelled",
+    "colors.Chair_Black": "RF Chair_Task_1 'black mesh task chair', Chair_Task_2 'second black task chair' (base, arms, casters). Plastic finish GAP-PROC-31",
+    "colors.Mesh_Black": "RF Chair_Task_1 'black mesh task chair' (colour + mesh back)",
+    "colors.Fabric_Black": "black chair (RF Chair_Task_1/2); seat upholstery finish GAP-PROC-31",
+    "colors.GasLift_Chrome": "GAP-PROC-31: gas-lift colour/finish not visible in any source; chrome finish rule, mid-grey base colour",
+    "colors.Black_Wire": "RF Cart_WireBasket 'black wire basket cart'",
+    "colors.Caster_Grey": "GAP-PROC-31: cart caster colour unknown (RF Cart_Deli_Prep, Cart_WireBasket); mid grey",
+    "colors.Plastic_Grey": "GAP-PROC-31: leveller, grommet, standing-desk controller/cap/motor-housing colours unknown; mid grey",
+    "finishes": "overrides of the proctex name rules (band = plastic, hardware = brushed_metal, chair plastics = plastic, casters = rubber): construction convention, GAP-PROC-31",
+    "width_m/depth_m/height_m": "each variant = its RF size_ft [w, d, h] x 0.3048 (variant _src.size)",
+    "tri_budget/tri_guide/lods/wear/seed/checks": "pipeline settings (DEC-084, DEC-114), not store facts"
+  },
+  "checks": {
+    "origin_bottom_centre": true,
+    "fail_on_degenerate": true,
+    "material_slots": true
+  },
+  "lods": {
+    "LOD0": {
+      "detail": 0,
+      "seg": 16
+    },
+    "LOD1": {
+      "detail": 1,
+      "seg": 12
+    },
+    "LOD2": {
+      "detail": 2,
+      "seg": 8
+    },
+    "LOD3": {
+      "detail": 3,
+      "seg": 8
+    }
+  },
+  "wear": {
+    "edge_wear": 0.2,
+    "scuffs": 0.3,
+    "fingerprints": 0.15
+  },
+  "colors": {
+    "Black_Laminate": [
+      0.03,
+      0.03,
+      0.032,
+      1.0
+    ],
+    "Black_Edge": [
+      0.02,
+      0.02,
+      0.02,
+      1.0
+    ],
+    "Desk_Frame_Grey": [
+      0.21,
+      0.21,
+      0.21,
+      1.0
+    ],
+    "Standing_Top_Grey": [
+      0.22,
+      0.22,
+      0.22,
+      1.0
+    ],
+    "Standing_Edge_Grey": [
+      0.19,
+      0.19,
+      0.19,
+      1.0
+    ],
+    "White_Laminate": [
+      0.9,
+      0.9,
+      0.88,
+      1.0
+    ],
+    "Grey_Edge": [
+      0.21,
+      0.21,
+      0.21,
+      1.0
+    ],
+    "Stainless": [
+      0.66,
+      0.67,
+      0.68,
+      1.0
+    ],
+    "Worktable_Leg_Grey": [
+      0.55,
+      0.56,
+      0.58,
+      1.0
+    ],
+    "Cabinet_Black": [
+      0.03,
+      0.03,
+      0.035,
+      1.0
+    ],
+    "File_Black": [
+      0.03,
+      0.03,
+      0.035,
+      1.0
+    ],
+    "Hardware_Grey": [
+      0.21,
+      0.21,
+      0.21,
+      1.0
+    ],
+    "Label_Grey": [
+      0.21,
+      0.21,
+      0.21,
+      1.0
+    ],
+    "Chair_Black": [
+      0.03,
+      0.03,
+      0.035,
+      1.0
+    ],
+    "Mesh_Black": [
+      0.05,
+      0.05,
+      0.055,
+      0.85
+    ],
+    "Fabric_Black": [
+      0.04,
+      0.04,
+      0.045,
+      1.0
+    ],
+    "GasLift_Chrome": [
+      0.21,
+      0.21,
+      0.21,
+      1.0
+    ],
+    "Black_Wire": [
+      0.03,
+      0.03,
+      0.035,
+      1.0
+    ],
+    "Caster_Grey": [
+      0.21,
+      0.21,
+      0.21,
+      1.0
+    ],
+    "Plastic_Grey": [
+      0.21,
+      0.21,
+      0.21,
+      1.0
+    ]
+  },
+  "variants": [
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Cabinet_Tall_Black",
+      "rf": "Cabinet_Tall_Black_A/B",
+      "kind": "tall_cabinet",
+      "width_m": 0.73152,
+      "depth_m": 0.6096,
+      "height_m": 1.524,
+      "_src": {
+        "size": "RF Cabinet_Tall_Black_A/B size_ft [2.4, 2.0, 5.0] (height Low)",
+        "cabinet.finish": "colors.Cabinet_Black",
+        "cabinet.kick_h_m/face_frame_m": "GAP-PROC-18",
+        "front": "single inset front panel, no handle/lock/hinge: DEC-051 Q9, RF 'no hardware detail'; door count GAP-PROC-32"
+      },
+      "cabinet": {
+        "finish": "Cabinet_Black",
+        "kick_h_m": 0.08,
+        "face_frame_m": 0.03
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "FileCabinets_UnderDesk",
+      "rf": "FileCabinets_UnderDesk",
+      "kind": "file_cabinets",
+      "width_m": 1.03632,
+      "depth_m": 0.54864,
+      "height_m": 0.73152,
+      "files": {
+        "count": 3,
+        "pull_standoff_m": 0.025,
+        "pull_r_m": 0.005,
+        "drawers_per_unit": 2,
+        "kick_h_m": 0.05,
+        "finish": "File_Black"
+      },
+      "_src": {
+        "size": "RF FileCabinets_UnderDesk size_ft [3.4, 1.8, 2.4]",
+        "files.count": "GAP-PROC-32 (RF 'several black file cabinets', count Low)",
+        "files.drawers_per_unit": "GAP-PROC-32",
+        "files.finish": "colors.File_Black",
+        "files.pull_standoff_m/pull_r_m/kick_h_m": "GAP-PROC-18 (pull and lock type GAP-PROC-32)"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Desk_Standing_East",
+      "rf": "Desk_Standing_East",
+      "kind": "standing_desk",
+      "width_m": 1.09728,
+      "depth_m": 0.6096,
+      "height_m": 1.0668,
+      "desk": {
+        "top_t_m": 0.025,
+        "leg_w_m": 0.03,
+        "top": "Standing_Top_Grey",
+        "edge": "Standing_Edge_Grey",
+        "frame": "Desk_Frame_Grey",
+        "grommets": true
+      },
+      "_src": {
+        "size": "RF Desk_Standing_East size_ft [3.6, 2.0, 3.5] (Low; GAP-127, GAP-136)",
+        "desk.top_t_m/leg_w_m": "GAP-PROC-18",
+        "desk.top/edge/frame": "GAP-PROC-31 (RF gives no colour or finish)",
+        "desk.grommets": "GAP-PROC-32",
+        "columns/controller": "3-stage electric columns + paddle: GAP-PROC-32 (RF says only 'standing desk', DEC-051 Q13)"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Desk_West_Arm",
+      "rf": "Desk_West_Arm",
+      "kind": "desk",
+      "width_m": 1.46304,
+      "depth_m": 0.762,
+      "height_m": 0.762,
+      "desk": {
+        "top_t_m": 0.025,
+        "leg_w_m": 0.03,
+        "top": "Black_Laminate",
+        "edge": "Black_Edge",
+        "frame": "Desk_Frame_Grey",
+        "grommets": true
+      },
+      "_src": {
+        "size": "RF Desk_West_Arm size_ft [4.8, 2.5, 2.5]",
+        "desk.top": "colors.Black_Laminate (RF Desk_West_Arm)",
+        "desk.edge": "colors.Black_Edge",
+        "desk.frame": "colors.Desk_Frame_Grey (GAP-PROC-31)",
+        "desk.top_t_m/leg_w_m": "GAP-PROC-18",
+        "desk.grommets": "GAP-PROC-32",
+        "frame type": "four-leg tube frame + modesty panel: GAP-PROC-32"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Desk_Corner_Dual_Monitor",
+      "rf": "Desk_Corner_Dual_Monitor",
+      "kind": "desk",
+      "width_m": 1.31064,
+      "depth_m": 0.762,
+      "height_m": 0.762,
+      "desk": {
+        "top_t_m": 0.025,
+        "leg_w_m": 0.03,
+        "top": "Black_Laminate",
+        "edge": "Black_Edge",
+        "frame": "Desk_Frame_Grey",
+        "grommets": true
+      },
+      "_note": "straight piece; the L forms when placed against Desk_West_Arm (RF)",
+      "_src": {
+        "size": "RF Desk_Corner_Dual_Monitor size_ft [4.3, 2.5, 2.5]",
+        "desk.top": "RF 'black corner piece' (colour); laminate GAP-PROC-31",
+        "desk.edge": "colors.Black_Edge",
+        "desk.frame": "colors.Desk_Frame_Grey (GAP-PROC-31)",
+        "desk.top_t_m/leg_w_m": "GAP-PROC-18",
+        "desk.grommets": "GAP-PROC-32",
+        "frame type": "GAP-PROC-32"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Desk_ExRegister1",
+      "rf": "Desk_ExRegister1",
+      "kind": "desk",
+      "width_m": 1.2192,
+      "depth_m": 0.6096,
+      "height_m": 0.762,
+      "desk": {
+        "top_t_m": 0.025,
+        "leg_w_m": 0.03,
+        "top": "White_Laminate",
+        "edge": "Grey_Edge",
+        "frame": "Desk_Frame_Grey",
+        "grommets": true
+      },
+      "_src": {
+        "size": "RF Desk_ExRegister1 size_ft [4.0, 2.0, 2.5]",
+        "desk.top": "RF Desk_ExRegister1 'white-top desk' (colour); laminate GAP-PROC-31",
+        "desk.edge": "colors.Grey_Edge (GAP-PROC-31)",
+        "desk.frame": "colors.Desk_Frame_Grey (GAP-PROC-31)",
+        "desk.top_t_m/leg_w_m": "GAP-PROC-18",
+        "desk.grommets": "GAP-PROC-32",
+        "frame type": "GAP-PROC-32"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Worktable_Stainless",
+      "rf": "Worktable_Stainless",
+      "kind": "worktable",
+      "width_m": 1.61544,
+      "depth_m": 0.762,
+      "height_m": 0.762,
+      "_src": {
+        "size": "RF Worktable_Stainless size_ft [5.3, 2.5, 2.5]",
+        "top": "RF 'stainless top'",
+        "table.legs": "RF 'folding legs'; colour colors.Worktable_Leg_Grey (wall2_R3C3)",
+        "table.top_t_m/leg_r_m/leg_inset_m": "GAP-PROC-18",
+        "undershelf": "none: RF folding legs + wall2_R3C3 open frame (GAP-PROC-33)"
+      },
+      "table": {
+        "top_t_m": 0.04,
+        "legs": "Worktable_Leg_Grey",
+        "leg_r_m": 0.0127,
+        "leg_inset_m": 0.12
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Chair_Task",
+      "rf": "Chair_Task_1/2",
+      "kind": "task_chair",
+      "width_m": 0.6096,
+      "depth_m": 0.6096,
+      "height_m": 0.97536,
+      "chair": {
+        "star_r_m": 0.25,
+        "seat_z_m": 0.48,
+        "seat_d_m": 0.48,
+        "seat_w_m": 0.5
+      },
+      "_src": {
+        "size": "RF Chair_Task_1/2 size_ft [2.0, 2.0, 3.2] (Low; GAP-135)",
+        "chair.*": "GAP-PROC-18 (chair parts)",
+        "parts": "5-star base, twin casters, gas lift, T arms, mesh back: GAP-PROC-32 (RF says only 'black mesh task chair')"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Cart_Deli_Prep",
+      "rf": "Cart_Deli_Prep",
+      "kind": "cart",
+      "width_m": 0.762,
+      "depth_m": 0.48768,
+      "height_m": 0.88392,
+      "cart": {
+        "finish": "Stainless",
+        "shelf": "tray",
+        "shelf_z_m": [
+          0.25,
+          0.84
+        ],
+        "caster_h_m": 0.1,
+        "handle": true,
+        "caster": "Caster_Grey",
+        "caster_fork": "Stainless",
+        "post_r_m": 0.0127,
+        "post_inset_m": 0.035
+      },
+      "_src": {
+        "size": "RF Cart_Deli_Prep size_ft [2.5, 1.6, 2.9]",
+        "cart.finish": "colors.Stainless",
+        "shelf count 2": "RF Cart_Deli_Prep '2-shelf'; RI 2.4 'flat top + lower shelf'",
+        "cart.shelf_z_m": "GAP-PROC-18 (RI 2.4 top about 34-36 in AFF, Low; 0.84 m kept under the 2.9 ft handle)",
+        "cart.handle": "RI 2.4 'tubular push handle'",
+        "cart.caster": "RI 2.4 'casters'; colour colors.Caster_Grey, type GAP-PROC-32",
+        "cart.caster_fork": "colors.Stainless (stainless cart, RF)",
+        "cart.caster_h_m/post_r_m/post_inset_m": "GAP-PROC-18",
+        "label": "RF / RI 2.4 'FOR DELI USE ONLY' on the rail; colour colors.Label_Grey"
+      }
+    },
+    {
+      "tri_budget": {
+        "LOD0": 80000,
+        "LOD1": 40000,
+        "LOD2": 20000,
+        "LOD3": 8000
+      },
+      "tri_guide": {
+        "lod0_min": 20000
+      },
+      "id": "Cart_WireBasket",
+      "rf": "Cart_WireBasket",
+      "kind": "cart",
+      "width_m": 0.4572,
+      "depth_m": 0.4572,
+      "height_m": 0.762,
+      "cart": {
+        "finish": "Black_Wire",
+        "shelf": "basket",
+        "shelf_z_m": [
+          0.2,
+          0.42,
+          0.637
+        ],
+        "caster_h_m": 0.1,
+        "wire_pitch_m": 0.03,
+        "caster": "Caster_Grey",
+        "caster_fork": "Black_Wire",
+        "post_r_m": 0.0095,
+        "post_inset_m": 0.035,
+        "basket_d_m": 0.11
+      },
+      "_src": {
+        "size": "RF Cart_WireBasket size_ft [1.5, 1.5, 2.5] (Low; GAP-135)",
+        "cart.finish": "colors.Black_Wire (RF)",
+        "basket count 3": "GAP-PROC-32",
+        "cart.shelf_z_m/basket_d_m/wire_pitch_m/caster_h_m/post_r_m/post_inset_m": "GAP-PROC-18",
+        "cart.caster": "colors.Caster_Grey; caster type GAP-PROC-32",
+        "cart.caster_fork": "colors.Black_Wire (black cart, RF)"
+      }
+    }
+  ],
+  "finishes": {
+    "Black_Edge": "plastic",
+    "Standing_Edge_Grey": "plastic",
+    "Grey_Edge": "plastic",
+    "Hardware_Grey": "brushed_metal",
+    "Chair_Black": "plastic",
+    "Caster_Grey": "rubber"
+  }
+}

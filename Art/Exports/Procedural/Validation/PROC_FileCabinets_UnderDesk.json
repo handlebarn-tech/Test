@@ -1,0 +1,18 @@
+{
+  "asset_id": "PROC_FileCabinets_UnderDesk",
+  "collision_boxes": 1,
+  "errors": [],
+  "export_sha256": "9410c2a354aa1f13",
+  "generator": "office_fixtures",
+  "lod_tris": {
+    "LOD0": 6376,
+    "LOD1": 3052,
+    "LOD2": 1180,
+    "LOD3": 24
+  },
+  "params_sha256": "d06038e518e4961e",
+  "passed": true,
+  "warnings": [
+    "LOD0 6376 tris below the DEC-084 guide minimum 20000 (too simple?)"
+  ]
+}
