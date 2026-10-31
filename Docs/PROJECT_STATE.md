@@ -2,7 +2,7 @@
 
 Hub-owned, the **only live state record** (DEC-117). A fresh Hub reads `PROJECT_BRIEF.md` → `HUB_RESUME.md` → this file, then reconciles the tables below with `list_sessions` (linked and unlinked), `git branch --no-merged main` and dirty worktrees (STUDIO_OS §0.9). Plan: `Design/ROADMAP_POST_SLICE.md`. Registry: `BACKLOG.md`. Workers and reviewers do not read this file.
 
-**Updated:** 2026-10-30 ~18:00 Phoenix by the first post-cutover Hub (Fable; session "Dispo Game recovery architecture" is the Hub). **Milestone:** PS1 done; Nolan has played `playtest2-741bb43` (findings `Design/PLAYTEST2_2026-10-30.md`). **Current milestone: M-B Believable store** (roadmap §2). Exit = BUILD-008 candidate **plus QA-004 PASS on every PT1 + PT2 requirement in the build before Nolan gets it** (DEC-120). PS1b starts when GAME-026 merges (GAME-017a).
+**Updated:** 2026-10-30 ~18:00 Phoenix by the first post-cutover Hub (Fable; the Hub is session "Dispo Game studio hub" `local_375fef70`; "Dispo Game recovery architecture" was the RECOVERY-001 session, now finished). **Milestone:** PS1 done; Nolan has played `playtest2-741bb43` (findings `Design/PLAYTEST2_2026-10-30.md`). **Current milestone: M-B Believable store** (roadmap §2). Exit = BUILD-008 candidate **plus QA-004 PASS on every PT1 + PT2 requirement in the build before Nolan gets it** (DEC-120). PS1b starts when GAME-026 merges (GAME-017a).
 **Studio structure:** Nolan → Hub (project manager, integrates) → workers → fresh reviewers (DEC-138..144; `Docs/Audits/RECOVERY-001.md`). **Caps:** 4 concurrent worker/reviewer sessions plus the Hub, 2 Unity editors. Rulings this Hub recorded: DEC-145 (jar fill is visual), DEC-146 (POS_05 clearance 3.2 ft), DEC-147 (lot cap 15), DEC-148 (Hub sync merges; check 0 against a named sha).
 **Account:** Pro plan. 2026-10-30 18:00 Phoenix: weekly all-models 95 % (resets 2026-10-31 19:00 Phoenix), weekly Fable 28 %, 5-hour 27 %, extra usage on ($32 of $100). Usage is Nolan's call (DEC-100).
 
@@ -57,7 +57,7 @@ At 18:00 a `unity.exe` (8 MB, likely idle) and Unity Hub were running; the Hub c
 ## Risks
 - Branches older than today's `main` carry stale copies of `ROOM_FIXTURES`/`DOORS`/`SCENE_ANCHORS`: every worker merges `main` before handoff (§0.5); reviewers fast-fail otherwise (DEC-142/148).
 - The weekly limit may kill sessions again before 2026-10-31 19:00; workers commit as they go, so the recovery table above is the resume point.
-- The `Dispo Game Builds|Imports|Imports Archive|Assets Cache` folders exist **only inside the repo root** (gitignored). Four worktrees sit under `Dispo Game/Dispo Game/`; 60 worktrees exist, max 3 Unity worktrees for disk (MACHINE_PROFILE). Retire positively-integrated ones gradually (DEC-123).
+- The `Dispo Game Builds|Imports|Imports Archive|Assets Cache` folders exist **only inside the repo root** (gitignored). The four worktrees that sat under `Dispo Game/Dispo Game/` were removed in the RECOVERY-001 audit (branches kept); 52 worktrees exist, max 3 Unity worktrees for disk (MACHINE_PROFILE). Retire positively-integrated ones gradually (DEC-123).
 - ChatGPT toolkit drops need a full audit before use (DEC-095).
 
 ## Builds
