@@ -7,12 +7,13 @@ This file exists to keep agents from loading unnecessary context.
 | Project goal / milestone / core architecture | `MASTER_PLAN.md` |
 | Port current Three.js/browser/budtender systems | `UNITY_MIGRATION_PLAN.md` |
 | Find/build/import any art asset | `ASSET_PRODUCTION_PLAN.md` |
-| Operating model: roles, sources of truth, read sets, packets, briefs, escalation, review, integration, Hub restart | `STUDIO_OS.md` **§0 only** (DEC-117); §56–57 templates, §63–65 gates; the rest is history |
+| **Stable project picture** (what we build, hard constraints, Nolan's standing directives, where truth lives, systems map, glossary) | `PROJECT_BRIEF.md` (Hub-owned; every Hub reads it first) |
+| Operating model: roles, sources of truth, read sets, packets, briefs, escalation, review, integration, Hub restart | `STUDIO_OS.md` **§0 only** (DEC-138); §56–57 templates, §63–65 gates; the rest is history |
 | Run Unity/Blender/tests/builds/screenshots | `TOOLCHAIN_EXECUTION.md` |
 | Design/implement customers, shifts, transactions and progression | `GAMEPLAY_SIMULATION_SPEC.md` |
 | Codex durable repo guidance | `AGENTS.md` |
 | Claude Code durable repo guidance | `CLAUDE.md` |
-| **Studio Hub start** (Hub only) | `HUB_RESUME.md` |
+| **Studio Hub start** (Hub only) | `PROJECT_BRIEF.md` → `HUB_RESUME.md` → `PROJECT_STATE.md` |
 | Live state: in flight, queue, priorities, Nolan items, builds | `PROJECT_STATE.md` (Hub only) |
 | Task registry (IDs, titles, dependencies) | `BACKLOG.md`; a task's state = its packet folder `Tasks/Ready|Active|Done` |
 | Ratified decisions (DEC-###), newest last | `DECISIONS.md`: read only the entries your packet cites, or the newest few |
@@ -28,7 +29,10 @@ This file exists to keep agents from loading unnecessary context.
 | Asset licenses, downloads, generator pipeline | `Assets/LICENSE_LEDGER.md`, `Assets/ASSET_CACHE_MANIFEST.json`, `Assets/Specs/` |
 | Build health, performance budgets, machine | `BUILD_STATUS.md`, `PERF_BASELINE.md`, `MACHINE_PROFILE.md` |
 | Worker handoffs and review verdicts | `Handoffs/<TASK_ID>.md`, `Reviews/` |
-| Documentation audits | `Audits/` |
+| Documentation audits; **why the studio is structured as it is** (forensics, recovery) | `Audits/`, `Audits/RECOVERY-001.md` |
+| How the structure changed and where old text lives (`git show`) | `HISTORY.md` |
+| Research behind the operating model | `Research/AGENT_OPERATIONS_RESEARCH_2026-10-30.md` |
+| Worker proposals for Hub-only files (DEC-141) | `Proposals/` |
 
 > **Router (AUDIT-001 C5, DEC-064):** this table is the one doc router; `MASTER_PLAN.md` §16 points here. Read a row's doc only when your packet needs it.
 

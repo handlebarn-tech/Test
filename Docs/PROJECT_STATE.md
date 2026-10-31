@@ -1,55 +1,64 @@
 # PROJECT STATE
 
-Hub-owned; the **only live state record** (DEC-117). A fresh Hub resumes from `Docs/HUB_RESUME.md` + this file + the newest DECs, then reconciles the table below with `list_sessions` and `git branch` (STUDIO_OS §0.9). Plan and milestones: `Docs/Design/ROADMAP_POST_SLICE.md`. Registry: `Docs/BACKLOG.md`. Workers and reviewers do not read this file.
+Hub-owned, the **only live state record** (DEC-117). A fresh Hub reads `PROJECT_BRIEF.md` → `HUB_RESUME.md` → this file, then reconciles the tables below with `list_sessions` (linked and unlinked), `git branch --no-merged main` and dirty worktrees (STUDIO_OS §0.9). Plan: `Design/ROADMAP_POST_SLICE.md`. Registry: `BACKLOG.md`. Workers and reviewers do not read this file.
 
-**Updated:** 2026-10-30 (INTEG PROC-005: fixture families merged, REVIEW-PROC005d PASS with minors; DEC-137 SWR facing W, RF `faces` fixed; PROC-005b follow-up; PROC-007 + ART-011 ready to dispatch. Before: INTEG ART-008). **Milestone:** PS1 done; Nolan has played `playtest2-741bb43` (findings `Docs/Design/PLAYTEST2_2026-10-30.md`). **Current milestone: M-B Believable store** (roadmap §2), including the PT2 overhaul (REF-016 → ART-013, PROC-013, GAME-027). Exit = BUILD-008 candidate **plus QA-004 PASS on every PT1 + PT2 requirement in the build before Nolan gets it** (DEC-120). PS1b starts as soon as GAME-026 merges (GAME-017a).
-**Hub session:** the fresh Hub is running; old Hub `local_c6267ff5` is retired and its four children are being detached so it can be archived. Workers below were started by the old Hub `local_c6267ff5`, so SendMessage by name fails: use `send_message` with the `local_…` id.
-**Hub clear plan (Nolan 2026-10-30): EXECUTED** (STATE-001). Keep old Hub `local_c6267ff5` unarchived until its children (GAME-026, PROC-005, ASSET-005) merge (archiving cascades). `local_5c45166e` ("Random BS", live Remote Control client) is for Nolan to archive from the sidebar.
-**Structure (DEC-128/132: dispatch-only Hub, all task work in sessions):** Nolan → Hub → workers → fresh per-review reviewers → integrator sessions merge (DEC-116/117/132). Nolan is cost-sensitive: no FYI messages, lean briefs (DEC-107).
+**Updated:** 2026-10-30 evening by RECOVERY-001 (Fable). **Milestone:** PS1 done; Nolan has played `playtest2-741bb43` (findings `Design/PLAYTEST2_2026-10-30.md`). **Current milestone: M-B Believable store** (roadmap §2). Exit = BUILD-008 candidate **plus QA-004 PASS on every PT1 + PT2 requirement in the build before Nolan gets it** (DEC-120). PS1b starts when GAME-026 merges (GAME-017a).
+**Studio structure:** Nolan → Hub (project manager, integrates) → workers → fresh reviewers (DEC-138..142; `Docs/Audits/RECOVERY-001.md`). The dispatcher-only Hub, planner/integrator sessions and the spare pool are retired. **Caps:** 4 concurrent worker/reviewer sessions, 2 Unity editors.
+**Account:** Pro plan; the weekly limit was hit on 2026-10-30 ~13:30 and resets 2026-10-31 ~19:00 Phoenix. Every session below that says "usage limit" died mid-task; its WIP is committed on the branch named.
 
-## In flight
+## Recovery: work stranded by the usage limit (start a FRESH worker from the branch; never resume the dead session)
+| Task | Branch @ sha (committed WIP) | State | Next Hub action |
+|---|---|---|---|
+| **GAME-026** customer flow | `task/GAME-026` @ 060f4af; review r4 on `review/game026-r4` @ 16be0c3 (reviewer `local_54f4aa0a`, verdict not received) | 4 review rounds; r2/r3 MAJOR = stale `Data/Reference` copies vs `main` | Read `Docs/Reviews/REVIEW-GAME026*.md` on `review/game026-r4` for the r4 verdict; if none, fresh reviewer. If FAIL on the same MAJOR again: Hub decision (DEC-138 §0.7). Packet still names a lead/pool: brief the correction. |
+| **ASSET-005/006** wardrobe + hair | `claude/sweet-shirley-002b17` @ b42a4ae (worker `local_1bb17d9a`, old Hub's child) | WIP, no handoff; `customer_gen.py` shared with ASSET-007 (merged) | Message the worker once: commit, handoff, report. If silent: fresh worker from the branch. Reviewer re-runs the C001 regression. |
+| **ART-013** layout overhaul (P0, critical path) | `claude/art013` @ 14b3eb3 (spare-6) | converter rev9 south side done; Unity builder, PROC doors, `--matrix`, ID-stand/guard pair, captures, handoff not done | Fresh Unity worker from the branch with `Tasks/Ready/ART-013.md`; needs a Unity slot and `git lfs pull`. |
+| **PROC-007** UV layout | `claude/hopeful-mendeleev-39bba2` @ 1947e0e (packet → Active only) | not started | Fresh worker; base `main` (PROC-005 merged). ART-011 follows in the same wave. |
+| **GAME-017a** first playable rec depth | `claude/adoring-bell-224eaa` @ db1b48b (packet → Active only) | not started; shares Slice files with GAME-026 | Start only after GAME-026 merges. |
+| **PROC-013b** door follow-ups | `claude/intelligent-lumiere-b0fd09` @ 44999a7 | **ready for review** (reported 13:28) | Fresh reviewer (Sonnet if no Unity needed). |
+| **DOC-006** LFS pointer guard in `studio.ps1` | `claude/brave-boyd-7af7b5` @ 8f39d2b | **ready for review**; BACKLOG row to add | Fresh reviewer; add the BACKLOG row at integration. |
+| **DOC-004** GSS §28 fast recommendation | worker `claude/infallible-bhaskara-f98714` @ 3e47f69; `review/doc004` **PASS with minors** | awaiting integration (spare-11 died) | Hub integrates (§0.8). |
+| **PROC-009b** vehicle look follow-ups | `claude/jovial-sutherland-c52674` @ bfad436 (packet only) **+ 13 uncommitted modified files in worktree `.claude/worktrees/jovial-sutherland-c52674`** | risk of lost work | Fresh worker in that worktree's branch: first `git add -A && commit` the WIP, then continue. Do not discard the worktree. |
+| **PROC-014** QA review renders + fault tests | `claude/sleepy-keller-7875af` @ d8cf4b3 (partial handoff on branch) | review mode + planted-fault tests pass; PROC_PIPELINE A1 section and review-sheet size fix left | Fresh worker from the branch. |
+| **PROC-018** HUB storage + refill station | `claude/adoring-nash-8593f0` @ 448e9b1 | hub_storage done; refill_station params only | Fresh worker from the branch. |
+| **PROC-015** architecture kit research | `claude/elegant-nash-3c26bb` @ 3e47f69 | research-only WIP handoff | Fresh worker from the branch. |
+| **PROC-017** | `claude/hopeful-engelbart-ed1ea5` @ 07039d0 (packet → Active only) | not started | Fresh worker. |
+| **REF-015** exterior envelope | `claude/dazzling-jennings-baa5c9` @ 0afad5c (partial handoff on branch) | measurements done; rows/§10/n1–n3 not written | Fresh worker (Sonnet) from the branch. |
+| **UX-003** shift-day UX spec | `claude/determined-elgamal-c29f29` @ 0125c2e (partial handoff) | nothing written | Fresh worker (Sonnet); low priority (PS2). |
+| Verified already on `main`, branches can be retired when convenient | `claude/audit-001-b559c2`, `claude/xenodochial-bell-85575c`, `claude/gifted-kapitsa-91bb28` (content identical to `main`); `worktree-agent-ad1cfeade6bad8b2d` (PROC-009 v1, superseded by the merged fix rounds) | — | none now (DEC-123) |
+| Dirty worktrees | `agent-a83016d0b10c940eb` (58 untracked PROC-013 originals, salvaged into the merged PROC-013 per its handoff); `zealous-newton-0a5d6b` (1 modified file, ART-008 merged) | — | leave; confirm then retire later |
+Idle sessions from the old model (spares 6/7/8/9/11/12/13, dead workers above, old reviewers) hold no uncommitted value except where the table says so; archive them after confirming the branch (FOR NOLAN item 4 in RECOVERY-001).
+
+## In flight (sessions actually working)
 | Session | Task | Branch @ sha | State → next Hub action |
 |---|---|---|---|
-| worker `local_9bc94fb7-d677-4076-81be-83317f26bbf8` (fix round) | **GAME-026** customer flow | `task/GAME-026`; r2 review FAIL → `review/game026-r2` @ 9e0b299 | Fixing M1 (stale DOORS/SCENE_ANCHORS build copies). #11(2) not build-proven, so GAME-027 stays. Seed-1 report changes need QA sign-off. When ready: fresh reviewer. |
-| `dispo-asset005` `local_1bb17d9a-7584-4a8b-af68-d01479714d05` (running) | **ASSET-005/006** wardrobe + hair (Blender) | `claude/sweet-shirley-002b17` @ 0f3fba5 | Generators running; no commit/handoff yet. At merge the reviewer re-runs the C001 regression (ASSET-007 also edits `customer_gen.py`); then add the staff-gloves line to CHARACTERS.md §9. |
+| none confirmed running after the usage limit | | | Reconcile with `list_sessions` on the first Hub turn after the reset. |
 
-Worktrees/branches are retired only when positively identified as integrated or obsolete (DEC-123); no broad cleanup.
-
-## Pending for the next Hub
-- On each reviewer PASS, start an **integrator session** (DEC-132); **only one integrator at a time**.
-- **Hub ruling needed (REVIEW-PROC009 r3 m5):** parked cars when more than 15 customers are inside (lot has 15 spaces; DEC-134), e.g. cap at 15. Record it as a DEC via a planner.
-- Fresh reviewer when the GAME-026 fix round reports ready.
-- Retire the salvaged PROC-013 worktree `.claude/worktrees/agent-a83016d0b10c940eb` (branch `worktree-agent-a83016d0b10c940eb`) and session `dispo-proc013` once `integrate/proc013` is on `main`: all its content is on that branch (PROC-013 handoff, DEC-123 positively identified).
-- Finish detaching old Hub `local_c6267ff5`'s four children, then archive it.
-- App limits: `start_session` is refused on peer-triggered turns (post a card + PO line instead); archiving needs Remote Control off and no background monitors.
+## Queue (next packets, in order; prerequisites in BACKLOG; obey the caps)
+1. Integrate **DOC-004**; review **PROC-013b** and **DOC-006**.
+2. **GAME-026** to a verdict (see Recovery), then **GAME-017a** → PS1b chain GAME-017 → 018 → 019 → 020.
+3. **ART-013** (Unity slot 1) and **PROC-007** → **ART-011** (Unity slot 2) in parallel; both are on the M-B critical path. ART-013 re-copies `DOORS/SCENE_ANCHORS` if GAME-026's copies land first.
+4. **PROC-009b**, **PROC-014**, **PROC-018**, **PROC-015**, **PROC-017**, **REF-015** as slots free (Blender/doc work; no Unity).
+5. **BUILD-008** candidate → **QA-004** PT1+PT2 validation → only on PASS does Nolan get playtest 3 (DEC-120).
+6. **GAME-CHR-002** after ASSET-005/006/007; **NPC-001** after GAME-026. **UX-003** and PS2 rows after PS1b.
+Everything else is Later in BACKLOG; the Hub writes a packet when dependencies are Done.
 
 ## Unity slots (max 2, DEC-013)
-ART-008 is merged (its reviewer's slot frees when archived); GAME-026 reviewer (idle) may still hold the other. PROC-005 reviewer (idle) may also have used Unity. Check `studio.ps1 slots` before starting a Unity session.
+Unknown after the limit; run `studio.ps1 slots` before starting a Unity session.
 
-## Queue (next packets, in order; prerequisites in BACKLOG)
-1. **GAME-017a** (Ready, waits for GAME-026 merge): first playable recommendation depth; the packet carries DEC-118 and the REVIEW-DES6/UX6 minors.
-2. **PROC-007** UV layout (**Ready to dispatch now**, PROC-005 merged; carries the PROC-005 texture `.meta` settings, REVIEW-PROC005d m4) + **ART-011** label cut-over to `uv3` (**Ready to dispatch**, `Tasks/Ready/ART-011.md`; builds on PROC-007's accepted commit; both integrated in one wave).
-3. **ART-013** layout overhaul (**Ready to dispatch now**, `Tasks/Ready/ART-013.md`; Unity; ART-008 merged; fresh worktree needs `git lfs pull`; route note REVIEW-ART008 m2; work list REFERENCES_INDEX §9.3; doors from `Art/Exports/Procedural/PROC_Door_*.fbx`) with a fresh Unity implementation reviewer in the assembled scene, independent of the REF-016 evidence review. If GAME-026's `Data/Reference` copies are on `main`, ART-013 re-copies them with any DOORS/SCENE_ANCHORS edit. **GAME-027** after GAME-026 (drop if GAME-026 proves the register ID check in a build).
-4. **BUILD-008** candidate → **QA-004** PT1+PT2 validation in the player → only on PASS does Nolan get playtest 3 (DEC-120). Do not hand Nolan a build before that.
-5. **GAME-CHR-002** Unity import of the customers (Later; after ASSET-005/006/007), then **NPC-001** bodies in the flow (after GAME-026).
-6. PS1b chain GAME-017 → 018 → 019 → 020 (Ready packets, each waits for the previous merge), then PS2 per the roadmap.
-Everything else registered in BACKLOG as Later with its dependencies; the Hub writes a packet only when those are Done.
-
-## Priorities (DEC-096, playtest 1)
-Controls (done) → store/layout accuracy → believable customer flow → recommendation depth → asset integration that unblocks these.
-
-## Blocked / open with Nolan
-Questions go to the PO session `local_0e722850-d68d-43e0-85af-b280cf2337c4` (DEC-125); blockers and "please type so I can start session X" requests by push notification (DEC-129).
-- **DATA-004** (PS3 gate): needs Nolan's Dutchie/LeafLogix catalog export (GAP-PKG-01). Asked before (RES-001 O14); ask once more only when PS2 is in sight, batched.
-- **DATA-005:** waits for TFS v7.11.5 to ship (GAP-210); external.
-- Playtest-2 feedback received 2026-10-30 and taken in (DEC-120, `PLAYTEST2_2026-10-30.md` mapping). Nolan's imports `Bender & Asset new plan.md` → IMP-004; the older import subfolders appear to be the IMP-003 rounds (IMP-004 confirms). Archive the imports after his approval (DEC-070). **Archived 2026-10-30 (Nolan OK):** `Bender & Asset new plan.md` → `C:/Users/handl/Downloads/Dispo Game Imports Archive/2026-10-30_Bender_Asset_new_plan/` (the archive folder was empty before this; the earlier archives PT1/DESIGN_V2 cite are not there, so leave them alone per DEC-123).
-- PROC-005 open sizes/finishes (registers, deli walls, cooler/janitor, office, break room, restroom): GAP-PROC-14..42, list in `Docs/Handoffs/PROC-005.md` "Questions for Nolan" (DEC-105 search done there). Low priority; batch to the PO session.
-- Never re-ask: W6 self-closing doors, emergency exit alarm, drum kit, staff-tee print side (answered: wearer's left, DEC-113) (DEC-105).
+## Open with Nolan (PO session `local_0e722850-d68d-43e0-85af-b280cf2337c4`, batched)
+- **RECOVERY-001 §7:** confirm or amend (1) background Agent subagents on peer-triggered turns, (2) model tiers + concurrency cap 4, (3) Hub at high effort and replaced at ~300k, (4) archiving the idle spares and dead workers.
+- **Hub ruling pending → DEC:** parked cars when more than 15 customers are inside (lot has 15 spaces; DEC-134; REVIEW-PROC009 r3 m5). Proposed: cap at 15, extra customers arrived on foot (DEC-110 W4 sidewalk arrivals).
+- **DATA-004** (PS3 gate): needs Nolan's Dutchie/LeafLogix catalog export (GAP-PKG-01). Asked once (RES-001 O14); ask again only when PS2 is in sight.
+- **DATA-005:** waits for TFS v7.11.5 (GAP-210); external.
+- PROC-005 open sizes/finishes GAP-PROC-14..42 (`Handoffs/PROC-005.md` "Questions for Nolan", DEC-105 search done). Low priority; batch.
+- **Never re-ask** (DEC-105): W6 self-closing doors, emergency exit alarm, drum kit, staff-tee print side (DEC-113), W1/W2 layout (measured, DEC-110), register numbering (DEC-079), cash tray (DEC-051/086).
 
 ## Risks
-- Unity editors: max 2 (DEC-013). `studio.ps1 slots`.
-- Older worker briefs (all sessions above except ART-008/ASSET-007) still name leads or pool reviewers; the resume line tells them to report to the Hub.
-- ChatGPT toolkit drops need full audit before use (DEC-095).
+- Branches older than today's `main` carry stale copies of `ROOM_FIXTURES`/`DOORS`/`SCENE_ANCHORS`: every worker merges `main` before handoff (§0.5); reviewers fast-fail otherwise.
+- Packets of GAME-026 and ASSET-005 still name leads/pools (not edited while their workers were alive); fresh briefs carry the correction.
+- The `Dispo Game Builds|Imports|Imports Archive|Assets Cache` folders exist **only inside the repo root** (no `Downloads/` siblings exist); they are now gitignored and stay where they are. Four worktrees also sit inside the repo under `Dispo Game/Dispo Game/`; retire them only when their sessions are archived (DEC-123).
+- Max 3 Unity worktrees for disk (MACHINE_PROFILE); 60 worktrees exist. Retire positively-integrated ones gradually.
+- ChatGPT toolkit drops need a full audit before use (DEC-095).
 
 ## Builds
-- Played: `slice-38b9e5c/` (playtest 1). **Playtest 2 = `Dispo Game Builds/playtest2-741bb43/DispoGame.exe`** (doors need `Dispo Game Builds/Docs/Reference/DOORS.json` until the GAME-026 TextAsset fix). Older playtest2-08758c1 has no doors.
+- Played: `<repo>/Dispo Game Builds/slice-38b9e5c/` (playtest 1), **`playtest2-741bb43/DispoGame.exe`** (playtest 2; doors need `Dispo Game Builds/Docs/Reference/DOORS.json` until the GAME-026 TextAsset fix). Next: BUILD-008 after ART-013 + GAME-026, gated by QA-004.
