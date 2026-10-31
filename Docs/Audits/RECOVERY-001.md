@@ -71,3 +71,6 @@ Hub on Opus (high effort); Unity/gameplay/Blender workers Opus; doc, REF, DATA, 
 2. §5.5 model tiers and the concurrency cap of 4.
 3. The Hub session itself: run it at high effort; replace it when `get_usage` passes ~300k.
 4. Archive the 7 idle spare sessions and the dead workers listed in PROJECT_STATE §Recovery once their branches are confirmed there (reversible: unarchive).
+
+## 8. Outcome (2026-10-30 evening)
+Nolan approved §7 items 1–4 with adjustments recorded as DEC-143 (model by the character of the work; 4 sessions plus the Hub; Hub at high effort with ~300k as an upper bound) and ordered a clean cutover, recorded as DEC-144: all sessions, branches and worktrees accounted for; uncommitted work committed on its branches (PROC-009b `aefadfc`, PROC-013 originals `788046a`, PROC-017 `7f4f7d6`, one PROC-005 json on `claude/clever-lamport-837e7f`); session-only context recovered to `Docs/Handoffs/Recovered/`; `PROJECT_STATE.md` made the sole resume point; every pre-recovery session (old Hub, PO session, side chat, spares, workers, reviewers) archived; a fresh Hub started from the repaired bootstrap. The PO communication session was archived with the rest; questions ride the Hub reply until Nolan designates a new channel.
