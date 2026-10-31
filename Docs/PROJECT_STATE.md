@@ -25,15 +25,8 @@ Integrated so far: **DOC-004**, **PROC-013b**, **DOC-006**. *queued* = waits for
 | Verified already on `main` | `claude/audit-001-b559c2`, `claude/xenodochial-bell-85575c`, `claude/gifted-kapitsa-91bb28`, `worktree-agent-ad1cfeade6bad8b2d`, `art013-r2`, `task/GAME-026-r4`, `review/proc013b`, `review/doc006`, `claude/intelligent-lumiere-b0fd09`, `claude/brave-boyd-7af7b5`, `claude/infallible-bhaskara-f98714`, `review/doc004` | — | retire when convenient (DEC-123) |
 | Captured, superseded | `worktree-agent-a83016d0b10c940eb` @ 788046a (PROC-013 originals); `claude/clever-lamport-837e7f`; `review/game026*` (r1–r3 verdicts are on `main`; r4 empty); the stopped agents' clean worktrees `.claude/worktrees/agent-*` | preserved | retire when convenient (DEC-123) |
 
-## In flight (5 of 6 units; sessions nested under the Hub; all Opus per DEC-155; each worktree branch is cut from the branch named)
-| Session | Task | Branch @ sha | State → next Hub action |
-|---|---|---|---|
-| `art013` (Opus, Unity slot 1) | ART-013 | cut from `claude/art013-r3-19355d` @ 87b89b3 | working → fresh Unity reviewer (Opus) on `ready for review` |
-| `rev-game026-r4` (Opus, Unity slot 2) | GAME-026 review r4 | cut from `main`; reviews `claude/game026-r4-fa0e50` @ a1225dd | reviewing → PASS: integrate, then GAME-017a; FAIL: fresh worker from the branch; stale-copy MAJOR again = Hub decision (DEC-142) |
-| `asset005` (Opus) | ASSET-005/006 | cut from `claude/asset005-r2-4273a0` @ 382e835 | working → fresh reviewer (re-runs the C001 regression) |
-| `ref015` (Opus) | REF-015 (+REF-016a) | cut from `claude/ref015-r2-e5330b` @ ffa2914 | working → fresh doc reviewer |
-| `imp005` (Opus) | IMP-005 intake audit of Nolan's drop | cut from `main` | working → fresh doc reviewer; the Hub maps the proposed rows onto BACKLOG |
-Session ids: `list_sessions {"linked": true}`. The five sessions that died at the limit on 2026-10-30 (`art013`, `rev-game026-r4`, `ref015`, `proc017`, `asset005`, all "failed") are archived once their WIP is confirmed on the branches above (done for ART-013 and PROC-017).
+## In flight: NONE. HOLD (Nolan, DEC-157): no sessions or Agents start until Nolan says resume (usage credits).
+The five sessions started at this update (`art013-2`, `rev-game026-r4-2`, `asset005-2`, `ref015-2`, `imp005`) were stopped minutes after launch; they hold nothing beyond their source branches (Recovery table). On resume, start fresh from those branches: ART-013 from `claude/art013-r3-19355d` @ 87b89b3 (Opus, Unity), GAME-026 r4 reviewer against `claude/game026-r4-fa0e50` @ a1225dd (Opus, Unity), ASSET-005 from `claude/asset005-r2-4273a0` @ 382e835, REF-015 from `claude/ref015-r2-e5330b` @ ffa2914, IMP-005 from `main` (packet `Tasks/Ready/IMP-005.md`), then PROC-017 from `claude/proc017-r2-c7e5be` @ 3605d42. The 2026-10-30 dead sessions `art013`, `rev-game026-r4`, `proc017`, `asset005` refused archiving ("live work"); `ref015` is archived. Nolan can archive them from the sidebar; their WIP is on the branches.
 
 ## Queue (next packets, in order; 6 is a hard maximum, not a target)
 1. Reviewers as deliverables land (ART-013 Unity reviewer; REF-015, ASSET-005, IMP-005 doc/visual reviewers), within the cap.
@@ -49,6 +42,7 @@ ART-013 and the GAME-026 reviewer hold both (PROC-007 and OPS-004 wait). A stale
 This Hub is at ~320k context (31 % of its 1M window) with no degradation noticed. Refresh plan: at the first point where no integration is half-done after this wave's reports land, persist state here and start a fresh Hub (`start_session`, fresh, `use_worktree: false`, bootstrap brief). Caution for the successor and Nolan: the new Hub shares the main checkout and nests under the old one; do not archive the old Hub while the new one runs in the same checkout until it is verified that archiving does not take the sharer with it.
 
 ## Open with Nolan (batched in the Hub's `FOR NOLAN` reply block, DEC-144)
+- **HOLD (DEC-157):** nothing starts until Nolan says resume.
 - **Usage reading:** `get_usage` still reports the weekly all-models window at 100 % until 18:59 Phoenix today while Nolan reports a reset; the Hub proceeded on his word (DEC-100). If sessions die again with "weekly limit", that reading was right and the reset is 18:59.
 - **Nolan's design drop** (`Nolan Import/`, 7 files) is in audit as IMP-005; nothing from it is adopted until the audit and review land (DEC-095). It was dropped outside `Dispo Game Imports/` (DEC-070); the worker archives it to the Imports Archive.
 - **DATA-004** (PS3 gate): needs Nolan's Dutchie/LeafLogix catalog export (GAP-PKG-01). Asked once (RES-001 O14); ask again only when PS2 is in sight.
