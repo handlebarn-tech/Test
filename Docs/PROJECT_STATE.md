@@ -36,7 +36,8 @@ All pre-recovery sessions were archived in the cutover (DEC-144). Nothing resume
 | stopped (resume: Sonnet) | PROC-013b review | `review/proc013b` @ 5784aed (worker branch merged; no verdict yet) | restart a fresh reviewer → integrate on PASS |
 | stopped (resume: Sonnet) | DOC-006 review | `review/doc006` @ 98ec160 (worker branch merged; no verdict yet) | restart a fresh reviewer → integrate on PASS; register the DOC-006 row (DOC-005 "LFS guard" row renamed) |
 
-## Queue (next packets, in order; obey the caps)
+## Queue (next packets, in order; obey the caps; four is a maximum, not a target, DEC-152)
+0. **OPS-005** (review the pause-time briefs) before the four stopped rows restart; **OPS-004** (Unity build gates on `main`) when a Unity slot is free.
 1. On PROC-013b / DOC-006 PASS: integrate, archive, and start **PROC-007** (Unity slot once the GAME-026 sync worker is done) and **REF-015** (Sonnet filler).
 2. On GAME-026 `ready`: fresh Unity reviewer; on PASS → integrate → **GAME-017a** (same Slice files) → PS1b chain GAME-017 → 018 → 019 → 020.
 3. **ART-011** right after PROC-007 (same wave). Then **ASSET-005/006**, **PROC-014**, **PROC-018**, **PROC-017** as Blender slots free.
@@ -47,6 +48,7 @@ All pre-recovery sessions were archived in the cutover (DEC-144). Nothing resume
 None held: the studio is paused (DEC-150); the two slots are planned for ART-013 and the GAME-026 sync worker on resume. Run `studio.ps1 slots` before starting a Unity session.
 
 ## Open with Nolan (batched in the Hub's `FOR NOLAN` reply block, DEC-144)
+- After the usage reset the Hub's self-resume fires as a cron turn, on which the app refuses `start_session` (DEC-152); **one message from Nolan in the Hub chat re-arms session starts** for the whole chain of worker completions. Until then the Hub may only use bounded background Agents.
 - **Usage pacing:** decided, DEC-150 (pause until the 2026-10-31 19:00 Phoenix reset). Nothing open.
 - **DATA-004** (PS3 gate): needs Nolan's Dutchie/LeafLogix catalog export (GAP-PKG-01). Asked once (RES-001 O14); ask again only when PS2 is in sight.
 - **DATA-005:** waits for TFS v7.11.5 (GAP-210); external.

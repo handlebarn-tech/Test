@@ -180,3 +180,5 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | LT-7 | P3 | Neighbourhood activity: traffic, pedestrians, deliveries, weather (LT §7) | ART-012, LT-1a | Later (M-F) |
 | LT-8 | — | Tone pillar adopted (`Design/TONE.md`, DEC-101) | — | Done (DES-005b) |
 | DOC-004 | P3 | Put "fast recommendation" back in GSS §28 (DEC-059 n1, REVIEW-W4Q); rides with the next GSS edit | — | Done |
+| OPS-004 | P1 | Unity build-gate verification on `main` after RECOVERY-001: `studio.ps1 doctor`, `unity-compile`, `unity-test-edit`, `unity-build` smoke; refresh `BUILD_STATUS.md` with the results (BUILD_STATUS is a 2026-10-29 snapshot) | — | Ready (DEC-152; Unity slot; no packet yet, Hub writes it) |
+| OPS-005 | P1 | Review the briefs and packet rulings the first post-cutover Hub wrote during the pause (ART-013 `## Hub rulings`, GAME-026 r4 scope, PROC-013b/DOC-006 review briefs) for scope, definition of done and DEC-142 sync discipline before those workers restart | — | Ready (DEC-152; doc-only; Hub or a Sonnet worker) |

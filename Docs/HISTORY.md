@@ -20,3 +20,4 @@ Append-only. Purpose: a future Hub or recovery pass can find any earlier version
 - Integration: Hub merges `review/*` (DEC-045/085) → leads merge-ready (DEC-094/099) → integrator sessions (DEC-132) → **Hub integrates (DEC-138)**.
 - Door hardware: DEC-110 W5/W6 → amended by DEC-115.
 - Gloves: DEC-126 → DEC-127. Jar density: earlier thinning → DEC-121.
+| 10-30 evening DEC-152 | Close-out: measured that child-completion turns allow session starts (workers report by ending their turn, never SendMessage); four units is a maximum; OPS-004/005 registered; **architecture frozen** | current files | Nolan: return to game development |
