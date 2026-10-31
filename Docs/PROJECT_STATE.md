@@ -2,64 +2,65 @@
 
 Hub-owned, the **only live state record** (DEC-117). A fresh Hub reads `PROJECT_BRIEF.md` → `HUB_RESUME.md` → this file, then reconciles the tables below with `list_sessions` (linked and unlinked), `git branch --no-merged main` and dirty worktrees (STUDIO_OS §0.9). Plan: `Design/ROADMAP_POST_SLICE.md`. Registry: `BACKLOG.md`. Workers and reviewers do not read this file.
 
-**Updated:** 2026-10-30 ~18:25 Phoenix by the first post-cutover Hub (Fable; the Hub is session "Dispo Game studio hub" `local_375fef70`; "Dispo Game recovery architecture" was the RECOVERY-001 session, now finished). **Milestone:** PS1 done; Nolan has played `playtest2-741bb43` (findings `Design/PLAYTEST2_2026-10-30.md`). **Current milestone: M-B Believable store** (roadmap §2). Exit = BUILD-008 candidate **plus QA-004 PASS on every still-relevant PT1 + PT2 requirement in the build before Nolan gets it** (DEC-120). PS1b starts when GAME-026 merges (GAME-017a).
-**Studio structure:** Nolan → Hub (project manager, integrates) → workers → fresh reviewers (DEC-138..144; `Docs/Audits/RECOVERY-001.md`). **Caps:** 4 concurrent worker/reviewer sessions plus the Hub, 2 Unity editors. Rulings this Hub recorded: DEC-145 (jar fill is visual), DEC-146 (POS_05 clearance 3.2 ft), DEC-147 (lot cap 15), DEC-148 (Hub sync merges; check 0 against a named sha).
-**Account:** Pro plan. 2026-10-30 18:00 Phoenix: weekly all-models 95 % (resets 2026-10-31 19:00 Phoenix), weekly Fable 28 %, 5-hour 27 %, extra usage on ($32 of $100). Usage is Nolan's call (DEC-100).
+**Updated:** 2026-10-31 early morning (Phoenix) by the Hub (Fable; session "Dispo Game studio hub" `local_375fef70`'s successor is this Hub: the post-cutover Hub session started 2026-10-30 17:50). **Milestone:** PS1 done; Nolan has played `playtest2-741bb43` (findings `Design/PLAYTEST2_2026-10-30.md`). **Current milestone: M-B Believable store** (roadmap §2). Exit = BUILD-008 candidate **plus QA-004 PASS on every PT1 + PT2 requirement in the build before Nolan gets it** (DEC-120). PS1b starts when GAME-026 merges (GAME-017a).
+**Studio structure:** Nolan → Hub (project manager, integrates) → workers → fresh reviewers (DEC-138..156; `Docs/Audits/RECOVERY-001.md`). **Caps:** 6 concurrent worker/reviewer sessions or Agents plus the Hub (hard maximum, not a target, DEC-154), 2 Unity editors. **Model routing (DEC-155):** Hub Fable; workers/reviewers Opus by default; Sonnet only for clearly simple bounded deterministic work; Fable outside the Hub only when Opus is specifically inadequate. Rulings on record: DEC-145 jar fill is visual, DEC-146 POS_05 clearance 3.2 ft, DEC-147 lot cap 15, DEC-148 Hub sync merges / check 0 against a named sha, DEC-150/153 pause and un-pause, DEC-154 cap 6, DEC-155 routing, DEC-156 Hub lifecycle.
+**Account:** Pro plan. At this update `get_usage` still shows weekly all-models 100 % (reset 2026-10-31 18:59 Phoenix), weekly Fable 38 %, 5-hour 0 %, extra usage on ($44 of $100). Nolan said usage has reset and to resume; usage is his call (DEC-100). The five sessions started 2026-10-30 18:40–19:00 all died at the weekly limit within ~20 minutes; the Hub committed their uncommitted work on their branches (ART-013 @ 87b89b3, PROC-017 @ 3605d42) and restarted fresh sessions from those branches.
 
-## Recovery: work stranded by the 2026-10-30 usage limit (fresh worker in a worktree cut from `main` that first `git merge`s the branch below; never resume a dead session, never cut a worktree from the old branch)
-Reprioritised against the critical path (roadmap §3: GAME-026 → 017a; ART-013 → BUILD-008 → QA-004). Integrated: **DOC-004** (merged). Started: see In flight. *queued* = waits for a free slot; *parked* = off the critical path, starts only when nothing above it can run.
+## Recovery: work stranded by the 2026-10-30 usage limit (fresh worker from the branch; never resume a dead session)
+Integrated so far: **DOC-004**, **PROC-013b**, **DOC-006**. *queued* = waits for a free unit; *parked* = off the critical path.
 | Task | Branch @ sha (committed WIP) | State | Next Hub action |
 |---|---|---|---|
-| **GAME-026** customer flow (P0) | `task/GAME-026` @ 060f4af (behind `main`); `review/game026-r4` holds no verdict | r1–r3 FAIL, each on the same MAJOR: stale `Data/Reference` copies vs `main` | **Started, then stopped at ~18:20 (DEC-150; resume shas in In flight):** fresh sync worker (merge `main`, re-copy DOORS/SCENE_ANCHORS, tests green, report ready) → then a fresh Unity reviewer. Packet names a lead/pool: the brief carries the correction. |
-| **ART-013** layout overhaul (P0) | `claude/art013` @ 14b3eb3; `Handoffs/Recovered/ART-013_partial.md` | converter rev9 south side done (113/114 clearance); Unity builder, doors, `--matrix`, stand/guard pair, captures, handoff not done | **Started, then stopped at ~18:20 (DEC-150; resume shas in In flight):** fresh Unity worker; rulings DEC-145/146 in the packet. |
-| **PROC-013b** door follow-ups | `claude/intelligent-lumiere-b0fd09` (Hub sync-merged `main`, DEC-148) | ready for review | **Started, then stopped at ~18:20 (DEC-150; resume shas in In flight):** fresh reviewer (Sonnet, Blender sheets only). |
-| **DOC-006** LFS pointer guard | `claude/brave-boyd-7af7b5` (Hub sync-merged `main`, DEC-148) | ready for review; BACKLOG row DOC-005 "LFS guard" → DOC-006 at integration | **Started, then stopped at ~18:20 (DEC-150; resume shas in In flight):** fresh reviewer (Sonnet). |
-| **PROC-007** UV layout (P1; ART-011 waits on it) | `claude/hopeful-mendeleev-39bba2` @ 1947e0e (packet → Active only) | not started | *queued*: next free slot; needs a Unity slot for the ProcArt tests (after the GAME-026 sync worker finishes). ART-011 follows in the same wave. |
+| **GAME-026** customer flow (P0) | worker `claude/game026-r4-fa0e50` @ a1225dd (round 4 reported ready: compile, EditMode 801/803, PlayMode 11/12); the dead r4 reviewer's merge branch `claude/review-game026-r4-ddc2f6` holds no verdict | awaiting review | **Started:** fresh Unity reviewer (see In flight). |
+| **ART-013** layout overhaul (P0) | `claude/art013-r3-19355d` @ 87b89b3 (= rev9 converter + door frames in the converter, `--matrix` 60 → 4 open rows, GAP-134 pair, DEC-146 applied 114/114, GrayboxBuilder places PROC doors, DEC-145 display jars, capture views, Graybox EditMode tests, plus the killed session's uncommitted edits to the three reference JSONs and §9.3) | deep WIP, no handoff, Unity validation state unknown | **Started:** fresh Unity worker (see In flight); it first inspects the WIP commit and runs the validation. |
+| **PROC-017** entry queue kit | `claude/proc017-r2-c7e5be` @ 3605d42 (generator + belt/stand/scanner/stanchion/bag exports and validation JSONs captured uncommitted) | WIP, no handoff | *queued*: next free unit (Opus, Blender). |
+| **PROC-007** UV layout (P1; ART-011 waits on it) | `claude/hopeful-mendeleev-39bba2` @ 1947e0e (packet → Active only) | not started | *queued*: needs a Unity slot (both held). ART-011 follows in the same wave. |
 | **GAME-017a** first playable rec depth (P0) | `claude/adoring-bell-224eaa` @ db1b48b (packet → Active only) | not started; shares Slice files with GAME-026 | after GAME-026 merges. |
-| **ASSET-005/006** wardrobe + hair | `claude/sweet-shirley-002b17` @ b42a4ae | WIP, no handoff; `customer_gen.py` shared with ASSET-007 (merged) | *queued* after PROC-007 (Blender, no Unity). Packet names leads: the brief carries the correction. |
-| **PROC-009b** vehicle look | `claude/jovial-sutherland-c52674` @ aefadfc | WIP, unreviewed | *parked* (P3). DEC-147 lot cap applies to the consumer, not this task. |
-| **PROC-014** QA renders + fault tests | `claude/sleepy-keller-7875af` @ d8cf4b3 | partial handoff on branch | *queued* (P1, Blender). |
+| **ASSET-005/006** wardrobe + hair | `claude/asset005-r2-4273a0` @ 382e835 (WIP + `main` incl. ASSET-007 merged) | WIP, no handoff | **Started** (see In flight). |
+| **REF-015** exterior envelope (+REF-016a) | `claude/ref015-r2-e5330b` @ ffa2914 (partial handoff + `main` merged) | rows/§10 not written | **Started** (see In flight). |
+| **PROC-014** QA renders + fault tests | `claude/sleepy-keller-7875af` @ d8cf4b3 | partial handoff | *queued* (P1, Blender). |
 | **PROC-018** HUB storage + refill | `claude/adoring-nash-8593f0` @ 448e9b1 | hub_storage done; refill params only | *queued* (P1, Blender). |
-| **PROC-017** entry queue kit | `claude/hopeful-engelbart-ed1ea5` @ 7f4f7d6 | generator started | *queued* (P1, Blender). |
+| **PROC-009b** vehicle look | `claude/jovial-sutherland-c52674` @ aefadfc | WIP, unreviewed | *parked* (P3). |
 | **PROC-015** architecture kit research | `claude/elegant-nash-3c26bb` @ 4dbfc2d | research WIP | *parked*. |
-| **REF-015** exterior envelope | `claude/dazzling-jennings-baa5c9` @ 0afad5c | measurements done; rows/§10 not written | *queued* (Sonnet, doc only, no Unity: the filler when a slot frees). |
 | **UX-003** shift-day UX spec | `claude/determined-elgamal-c29f29` @ 0125c2e | nothing written | *parked* (PS2). |
-| Verified already on `main` | `claude/audit-001-b559c2`, `claude/xenodochial-bell-85575c`, `claude/gifted-kapitsa-91bb28`, `worktree-agent-ad1cfeade6bad8b2d` (PROC-009 v1) | — | retire when convenient (DEC-123) |
-| Captured, superseded | `worktree-agent-a83016d0b10c940eb` @ 788046a (PROC-013 originals); `claude/clever-lamport-837e7f`; `review/game026*` (r1–r3 verdicts are on `main`; r4 empty) | preserved | retire when convenient (DEC-123) |
-All pre-recovery sessions were archived in the cutover (DEC-144). Nothing resumes from a conversation.
+| Verified already on `main` | `claude/audit-001-b559c2`, `claude/xenodochial-bell-85575c`, `claude/gifted-kapitsa-91bb28`, `worktree-agent-ad1cfeade6bad8b2d`, `art013-r2`, `task/GAME-026-r4`, `review/proc013b`, `review/doc006`, `claude/intelligent-lumiere-b0fd09`, `claude/brave-boyd-7af7b5`, `claude/infallible-bhaskara-f98714`, `review/doc004` | — | retire when convenient (DEC-123) |
+| Captured, superseded | `worktree-agent-a83016d0b10c940eb` @ 788046a (PROC-013 originals); `claude/clever-lamport-837e7f`; `review/game026*` (r1–r3 verdicts are on `main`; r4 empty); the stopped agents' clean worktrees `.claude/worktrees/agent-*` | preserved | retire when convenient (DEC-123) |
 
-## In flight (sessions actually working; started ~18:40 on Nolan's "Proceed new sessions", DEC-151; the DEC-150 pause and its self-resume are cancelled). Each session's worktree branch is cut from the branch named; the stopped agents' worktrees `.claude/worktrees/agent-*` are clean leftovers (retire when convenient, DEC-123).
+## In flight (5 of 6 units; sessions nested under the Hub; all Opus per DEC-155; each worktree branch is cut from the branch named)
 | Session | Task | Branch @ sha | State → next Hub action |
 |---|---|---|---|
-| `art013` local_62f68467 (Fable, Unity slot 1) | ART-013 | cut from `art013-r2` @ 6373613 (WIP + `main` merged; packet in Active with rulings) | working → fresh Unity reviewer on `ready for review` |
-| `game026-r4` local_0ea24110 (Sonnet, Unity slot 2) | GAME-026 | cut from `task/GAME-026-r4` @ f65bf07 (060f4af + `main` merged; re-copy and tests to do) | working → fresh Unity reviewer (r4) on `ready for review`; a repeat of the stale-copy MAJOR is a Hub decision (DEC-142) |
-| `rev-proc013b` local_d43b98f6 (Sonnet) | PROC-013b review | cut from `review/proc013b` @ 5784aed (worker branch merged) | reviewing → integrate on PASS |
-| `rev-doc006` local_12ca8f13 (Sonnet) | DOC-006 review | cut from `review/doc006` @ 98ec160 (worker branch merged) | reviewing → integrate on PASS; register the DOC-006 row (DOC-005 "LFS guard" row renamed) |
+| `art013` (Opus, Unity slot 1) | ART-013 | cut from `claude/art013-r3-19355d` @ 87b89b3 | working → fresh Unity reviewer (Opus) on `ready for review` |
+| `rev-game026-r4` (Opus, Unity slot 2) | GAME-026 review r4 | cut from `main`; reviews `claude/game026-r4-fa0e50` @ a1225dd | reviewing → PASS: integrate, then GAME-017a; FAIL: fresh worker from the branch; stale-copy MAJOR again = Hub decision (DEC-142) |
+| `asset005` (Opus) | ASSET-005/006 | cut from `claude/asset005-r2-4273a0` @ 382e835 | working → fresh reviewer (re-runs the C001 regression) |
+| `ref015` (Opus) | REF-015 (+REF-016a) | cut from `claude/ref015-r2-e5330b` @ ffa2914 | working → fresh doc reviewer |
+| `imp005` (Opus) | IMP-005 intake audit of Nolan's drop | cut from `main` | working → fresh doc reviewer; the Hub maps the proposed rows onto BACKLOG |
+Session ids: `list_sessions {"linked": true}`. The five sessions that died at the limit on 2026-10-30 (`art013`, `rev-game026-r4`, `ref015`, `proc017`, `asset005`, all "failed") are archived once their WIP is confirmed on the branches above (done for ART-013 and PROC-017).
 
-## Queue (next packets, in order; obey the caps; four is a maximum, not a target, DEC-152)
-0. **OPS-005** (review the pause-time briefs) before the four stopped rows restart; **OPS-004** (Unity build gates on `main`) when a Unity slot is free.
-1. On PROC-013b / DOC-006 PASS: integrate, archive, and start **PROC-007** (Unity slot once the GAME-026 sync worker is done) and **REF-015** (Sonnet filler).
-2. On GAME-026 `ready`: fresh Unity reviewer; on PASS → integrate → **GAME-017a** (same Slice files) → PS1b chain GAME-017 → 018 → 019 → 020.
-3. **ART-011** right after PROC-007 (same wave). Then **ASSET-005/006**, **PROC-014**, **PROC-018**, **PROC-017** as Blender slots free.
+## Queue (next packets, in order; 6 is a hard maximum, not a target)
+1. Reviewers as deliverables land (ART-013 Unity reviewer; REF-015, ASSET-005, IMP-005 doc/visual reviewers), within the cap.
+2. **PROC-017** at the next free unit; **PROC-007** when a Unity slot frees (then **ART-011** in the same wave); **PROC-018**, **PROC-014** as units free (Blender, no Unity); **OPS-004** (Unity build gates on `main`; needs a Unity slot) and **OPS-005** (brief review) when units are free.
+3. On GAME-026 PASS: integrate → **GAME-017a** (same Slice files) → PS1b chain GAME-017 → 018 → 019 → 020.
 4. **BUILD-008** candidate (packet when ART-013 + GAME-026 merge) → **QA-004** PT1+PT2 gate → only on PASS does Nolan get playtest 3 (DEC-120).
-5. **GAME-CHR-002** after ASSET-005/006; **NPC-001** after GAME-026; **GAME-028** (DEC-145 jar binding) after GAME-017a + ART-013. UX-003 and PS2 rows after PS1b.
+5. **GAME-CHR-002** after ASSET-005/006; **NPC-001** after GAME-026; **GAME-028** (DEC-145 jar binding) after GAME-017a + ART-013. PROC-009b, PROC-015, UX-003 parked.
 
 ## Unity slots (max 2, DEC-013)
-None held: the studio is paused (DEC-150); the two slots are planned for ART-013 and the GAME-026 sync worker on resume. Run `studio.ps1 slots` before starting a Unity session.
+ART-013 and the GAME-026 reviewer hold both (PROC-007 and OPS-004 wait). A stale `unity.exe` from before the cutover may still be running; workers check `slots` before batchmode and report a blocked slot rather than killing anything.
+
+## Hub lifecycle (DEC-156)
+This Hub is at ~320k context (31 % of its 1M window) with no degradation noticed. Refresh plan: at the first point where no integration is half-done after this wave's reports land, persist state here and start a fresh Hub (`start_session`, fresh, `use_worktree: false`, bootstrap brief). Caution for the successor and Nolan: the new Hub shares the main checkout and nests under the old one; do not archive the old Hub while the new one runs in the same checkout until it is verified that archiving does not take the sharer with it.
 
 ## Open with Nolan (batched in the Hub's `FOR NOLAN` reply block, DEC-144)
-- After the usage reset the Hub's self-resume fires as a cron turn, on which the app refuses `start_session` (DEC-152); **one message from Nolan in the Hub chat re-arms session starts** for the whole chain of worker completions. Until then the Hub may only use bounded background Agents.
-- **Usage pacing:** DEC-150 pause lifted by DEC-151 (proceed now). Nothing open.
+- **Usage reading:** `get_usage` still reports the weekly all-models window at 100 % until 18:59 Phoenix today while Nolan reports a reset; the Hub proceeded on his word (DEC-100). If sessions die again with "weekly limit", that reading was right and the reset is 18:59.
+- **Nolan's design drop** (`Nolan Import/`, 7 files) is in audit as IMP-005; nothing from it is adopted until the audit and review land (DEC-095). It was dropped outside `Dispo Game Imports/` (DEC-070); the worker archives it to the Imports Archive.
 - **DATA-004** (PS3 gate): needs Nolan's Dutchie/LeafLogix catalog export (GAP-PKG-01). Asked once (RES-001 O14); ask again only when PS2 is in sight.
 - **DATA-005:** waits for TFS v7.11.5 (GAP-210); external.
 - PROC-005 open sizes/finishes GAP-PROC-14..42 (`Handoffs/PROC-005.md` "Questions for Nolan", DEC-105 search done). Low priority; batch.
-- **Never re-ask** (DEC-105): W6 self-closing doors, emergency exit alarm, drum kit, staff-tee print side (DEC-113), W1/W2 layout (measured, DEC-110), register numbering (DEC-079), cash tray (DEC-051/086), jar count (DEC-145), POS_05 clearance (DEC-146), lot overflow (DEC-147).
+- **Never re-ask** (DEC-105): W6 self-closing doors, emergency exit alarm, drum kit, staff-tee print side (DEC-113), W1/W2 layout (measured, DEC-110), register numbering (DEC-079), cash tray (DEC-051/086), jar count (DEC-145), POS_05 clearance (DEC-146), lot overflow (DEC-147), pacing (DEC-150/153), cap (DEC-154), routing (DEC-155).
 
 ## Risks
-- Branches older than today's `main` carry stale copies of `ROOM_FIXTURES`/`DOORS`/`SCENE_ANCHORS`: every worker merges `main` before handoff (§0.5); reviewers fast-fail otherwise (DEC-142/148).
-- The weekly limit may kill sessions again before 2026-10-31 19:00; workers commit as they go, so the recovery table above is the resume point.
-- The `Dispo Game Builds|Imports|Imports Archive|Assets Cache` folders exist **only inside the repo root** (gitignored). The four worktrees that sat under `Dispo Game/Dispo Game/` were removed in the RECOVERY-001 audit (branches kept); 52 worktrees exist, max 3 Unity worktrees for disk (MACHINE_PROFILE). Retire positively-integrated ones gradually (DEC-123).
-- ChatGPT toolkit drops need a full audit before use (DEC-095).
+- Branches older than today's `main` carry stale copies of `ROOM_FIXTURES`/`DOORS`/`SCENE_ANCHORS`: every worker merges `main` before handoff (§0.5); reviewers fast-fail otherwise (DEC-142/148). ART-013 and REF-015 both edit ROOM_FIXTURES (different rows); the second to merge re-merges.
+- If the weekly limit is in fact still active, sessions die again before 18:59 Phoenix; workers commit as they go, so this table is the resume point.
+- The `Dispo Game Builds|Imports|Imports Archive|Assets Cache` folders exist **only inside the repo root** (gitignored). 52 worktrees exist, max 3 Unity worktrees for disk (MACHINE_PROFILE). Retire positively-integrated ones gradually (DEC-123).
+- ChatGPT/outside design drops need a full audit before use (DEC-095): IMP-005.
 
 ## Builds
 - Played: `<repo>/Dispo Game Builds/slice-38b9e5c/` (playtest 1), **`playtest2-741bb43/DispoGame.exe`** (playtest 2; doors need `Dispo Game Builds/Docs/Reference/DOORS.json` until the GAME-026 TextAsset fix). Next: BUILD-008 after ART-013 + GAME-026, gated by QA-004.
