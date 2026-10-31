@@ -1,0 +1,16 @@
+{
+  "asset_id": "PROC_Deli_JarWall_North",
+  "collision_boxes": 4,
+  "errors": [],
+  "export_sha256": "692811c96c7b9073",
+  "generator": "deli_counter_jar_wall",
+  "lod_tris": {
+    "LOD0": 64076,
+    "LOD1": 33396,
+    "LOD2": 636,
+    "LOD3": 84
+  },
+  "params_sha256": "0b6c6e4a0fda3daa",
+  "passed": true,
+  "warnings": []
+}

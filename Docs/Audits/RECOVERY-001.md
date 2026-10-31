@@ -1,0 +1,76 @@
+# RECOVERY-001: what happened to the studio, what was lost, and the repaired system
+
+**Author:** Fable, recovery architect (Nolan's assignment, 2026-10-30 evening). **Checkpoint:** git tag `pre-recovery-2026-10-30` = `main` @ `62d1050` before any change here. **Status:** executed; items marked FOR NOLAN need his confirmation or reversal.
+**Research base:** `Docs/Research/AGENT_OPERATIONS_RESEARCH_2026-10-30.md`. **Resulting system:** `CLAUDE.md`, `Docs/PROJECT_BRIEF.md`, `Docs/HUB_RESUME.md`, `Docs/STUDIO_OS.md` §0, `Docs/PROJECT_STATE.md`, `Docs/HISTORY.md`, DEC-138..142.
+
+---
+
+## 1. Evidence gathered
+- Git: 790 commits, all on 2026-10-29/30 (the whole project is two days old). Deletions: only generated contact sheets, FBX re-exports and one results txt. Renames: packet folder moves only. **No documentation file was deleted.** Knowledge changed hands through *rewrites* of five files (HUB_RESUME 9 rewrites, PROJECT_STATE ~60 edits, STUDIO_OS §0 3 rewrites, CLAUDE.md 10 edits, Departments archived) and through *rules that forbade reading* what was still there.
+- Transcripts (exported, parsed): the degraded Hub session (`local_35b16660`, created 09:38 Phoenix) had **5 turns typed by Nolan and 75 automated events** (child-session notices, cross-session messages, PO check-ins) in ~4 hours, 455 assistant messages, **100.6M cache-read tokens, 0.83M cache-write, 0.34M output**, peak context 360k. Every automated event re-ran the whole 300k+ Hub context. The PO session added a 5-minute polling loop (now cancelled). The account is a Pro plan at 93% of the weekly limit; ~15 worker/reviewer/spare sessions, all on Opus, were running when the limit hit and died mid-task.
+- Memory (`~/.claude/projects/...Dispo-Game/memory/`, auto-loaded into every session): 20 files, several contradicting the repo (`hub-plans-directly` overrides HUB_RESUME rule 4; `department-model` tells the Hub to use in-Hub Agents, which DEC-128 forbids).
+- Branches/worktrees: 274 branches, 60 worktrees; 30 branches with commits not on `main`, of which 13 hold live WIP from sessions killed by the usage limit; 2 worktrees with uncommitted modifications (`jovial-sutherland-c52674` 13 files = PROC-009b; `zealous-newton-0a5d6b` 1 file). Four worktrees were created *inside* the repo under `Dispo Game/Dispo Game/`. `Dispo Game Builds/` (893 MB), `Dispo Game Imports/`, `Dispo Game Imports Archive/` and `Dispo Game Assets Cache/` (6.6 GB) exist as untracked folders **inside the repo root and nowhere else**: the docs' `Downloads/Dispo Game Builds/` paths were one level off. They are now gitignored and the Hub docs name the real location.
+
+## 2. Timeline of the restructuring (Phoenix time, 2026-10-30)
+| When | Change | Effect |
+|---|---|---|
+| 29th 21:12 → 30th 04:19 | Flat model v1: Hub (PM) → workers, standing reviewer pool (DEC-010/045/085). HUB_RESUME grows to 8.1 KB with Nolan's standing directives, the Hub loop, key facts and session mechanics. | Worked at small scale. 60+ tasks merged. |
+| 07:08 DEC-094 | Departments: Hub → 3 leads → worker subagents. STUDIO_OS §0 written (departments version). Hub reads only PROJECT_STATE + lead messages. | Leads re-read ~200k per message; questions travelled two hops; invented DOORS values passed review; 3 sessions flagged the same rows. Nolan: "progressively dumber", "a disaster". |
+| 07:48 DEC-112 | Flatten; leads retired. | Dept files kept as reference (still present). |
+| 08:31 DEC-116 | "Restartable Hub"; HUB_RESUME rewritten **8.1 → 4.5 KB**. Dropped: Nolan's standing directives block, Hub loop, session notes, key facts (several now exist only in memory files). PROJECT_STATE rewritten **6.1 → 3.6 KB**: cross-department dependencies, open-question history and the priorities detail dropped. | First loss of Hub knowledge. |
+| 09:17 DEC-117/118 | Control plane consolidated (Fable): one rules file, STUDIO_OS §0 flat, Departments archived with banners, their rulings → DEC-118, queues → PROJECT_STATE. Roadmap DEC-119. | Correct consolidation; nothing lost that git does not hold. This is the baseline Nolan told the PO session to protect. |
+| 12:08–12:36 DEC-120..133, DOC-005 | Under cost pressure the Hub was cut to a **dispatcher**: "Reads: this file, PROJECT_STATE and one-line messages. No specs, handoffs, reviews, BACKLOG or roadmap, no greps." All judgment moved to planner and integrator sessions; a spare-session pool (DEC-133) was added to dodge the app's refusal to start sessions on peer-triggered turns. | **The Hub lost its brain by rule, not by file loss.** It could no longer answer "what is planned" (Nolan: "You know what's supposed to be planned by .md files, why are you not executing those"). Every 5-minute edit became a new 50k-token session. |
+| 13:00–13:30 | 13 spares + ~12 workers/reviewers on Opus in parallel; weekly usage limit reached; sessions die mid-task; the Hub answers 20 consecutive events with "You've hit your session limit". | Work stranded on 13 branches (recovered in `PROJECT_STATE.md` §Recovery). |
+
+## 3. Causal explanation (why the Hub got dumber and tokens exploded)
+1. **Rules forbade the Hub from knowing the project.** DEC-128/132 + DOC-005 limited its reads to two files and one-line messages. A fresh Hub therefore knew the in-flight table and nothing of the plan, the specs or the decisions. Restarts (DEC-116) then wiped the conversation that had silently carried that knowledge. Research: pre-load a *stable* digest and fetch the rest on demand; never make the orchestrator blind.
+2. **Judgment was moved into throwaway sessions.** Planners and integrators each paid ~50k tokens of fixed session overhead (system prompt, tool schemas, CLAUDE.md, memory) to do 5-minute edits, then returned one line. The Hub became a relay, which is the "telephone game" failure the research warns about.
+3. **The spare pool multiplied idle Opus sessions** (13 started in one hour) to work around an app limit; each spare re-read the repo at start and burned its own context.
+4. **Event storms.** Every child notice woke the Hub; with 20+ children it reacted ~100 times in four hours at 300k context each. Notices and PO polling, not Nolan, drove 94% of Hub turns.
+5. **Review loops from stale bases.** GAME-026 (4 rounds), PROC-005 (4), PROC-009 (3): the recurring MAJOR was "branch carries stale copies vs `main`" because parallel work on shared files (ROOM_FIXTURES, DOORS, Slice files) landed under the reviewer. Each round = a fresh Opus reviewer running Unity tests.
+6. **Everything on Opus at the same effort.** Doc reviews, packet moves and relays cost the same as gameplay code.
+7. **Four partially overlapping rule sources** (CLAUDE.md, HUB_RESUME, STUDIO_OS §0, memory files) plus 44 supersession-heavy DECs (DEC-094 → 112 → 116 → 117 → 128 → 129 → 130 → 133) with no live/superseded map. Each rewrite dropped a few facts.
+
+## 4. What was valuable, duplicated, stale, or lost
+| Item | Verdict | Where it is now |
+|---|---|---|
+| Nolan's standing directives (full autonomy, run as a studio, M365 read-only, imports folder, signed-in Sketchfab/Asset Store, TFS hub is a peer session, Remote Control limit) | **Valuable, dropped from HUB_RESUME at DEC-116**; survived in DECs and memory files | Restored to `Docs/PROJECT_BRIEF.md` §Standing directives |
+| Old Hub loop (read state → process handoffs → review → merge → packets → brief Nolan) | Valuable; replaced by dispatcher table | Restored, updated, in `HUB_RESUME.md` |
+| PROJECT_STATE cross-department dependencies, "Open questions" history | Partly valuable; history is in git | Dependencies live in the roadmap §3; the "never re-ask" list kept in PROJECT_STATE |
+| Department files' queues and rulings | Migrated (DEC-118, PROJECT_STATE); files archived in place | `Docs/Departments/*.md` unchanged, banners kept |
+| STUDIO_OS §1–§98 | Mixed: templates §56/57, gates §63–65, IDs §67, licences §73–76 live; the rest history | Unchanged; §0 says which sections are live |
+| Memory files | Contradictory; duplicated repo rules; Hub-centric text loaded into workers | Rewritten to short pointers; Nolan's quotes kept as feedback |
+| Dispatcher-only rules (DEC-128..133), spare pool, planner/integrator roles | **Stale: the cause of the degradation** | Superseded by DEC-138/139 (text preserved in DECISIONS, append-only) |
+| 13 WIP branches from killed sessions | At risk | Listed with next actions in `PROJECT_STATE.md` §Recovery; branches untouched (DEC-123) |
+| `claude/audit-001-b559c2`, `claude/xenodochial-bell-85575c`, `claude/gifted-kapitsa-91bb28` | Content verified identical on `main` | Safe to retire later; not deleted |
+
+## 5. Design changes (each with the eight questions Nolan asked for)
+### 5.1 The Hub is a project manager again, with a stable knowledge digest
+1. *Problem:* a fresh Hub knew nothing beyond the in-flight table. 2. *Evidence:* HUB_RESUME hard rule 4; Nolan's turn 4; 5 of 80 Hub turns were his. 3. *Why the old system failed:* it treated "lean Hub" as "blind Hub". 4. *Research:* always-loaded set = small rules + resume + state, plus a stable digest; fetch on demand one level deep. 5. *Fit:* this project's truth is already in registries; the Hub only needed permission and a map. 6. *Could be lost:* nothing (additive). 7. *Protection:* `PROJECT_BRIEF.md` is Hub-owned and guarded. 8. *Reversal:* `git show pre-recovery-2026-10-30:Docs/HUB_RESUME.md`.
+### 5.2 Planner, integrator and spare sessions retired; the Hub integrates and tracks itself
+1. *Problem:* 50k-token sessions for 5-minute edits; 13 idle spares. 2. *Evidence:* 6 planner + 5 integrator + 13 spare sessions on 2026-10-30; sessions list. 3. *Failure:* the DEC-132 split made the single writer of tracking files a chain of three. 4. *Research:* one integrator verifies the merged result; coordination files need one writer; add an agent only for parallelism, capacity or isolation. 5. *Fit:* tracking edits are small, the Hub has the judgment, `hub_guard` still blocks code/Unity/Blender in the main checkout. 6. *Loss risk:* Hub context grows faster. 7. *Protection:* the Hub reads handoffs' Validation/For-the-Hub sections only; replaces itself at ~300k (DEC-102). 8. *Reversal:* DEC-132 text stands in DECISIONS; re-enable by one line in HUB_RESUME.
+### 5.3 Peer-triggered turns use background Agent subagents in worktrees, not spares or cards (FOR NOLAN)
+1. *Problem:* the app refuses `start_session` on turns another session triggered; cards annoy Nolan; spares burn usage. 2. *Evidence:* DEC-129/130/133 history; memory `full-session-permission`. 3. *Failure:* DEC-128 banned in-Hub Agents because they die when the Hub is cleared and because the Hub was doing work inline. 4. *Research:* subagents return summaries only; their work is isolated. 5. *Fit:* a background Agent with `isolation: worktree` keeps its transcript out of the Hub and commits to a branch, so a Hub clear loses nothing committed. 6. *Loss risk:* an agent killed mid-task. 7. *Protection:* agents commit before reporting; the Hub is cleared only when none is running. 8. *Reversal:* set HUB_RESUME rule 2 back to "card + PO line".
+### 5.4 Reviewer fast-fail on stale base; worker merges `main` before handoff
+1. *Problem:* 11 review rounds on 3 tasks, most for stale copies. 2. *Evidence:* REVIEW-GAME026 r1–r3, REVIEW-PROC005b/c, REVIEW-REF016. 3. *Failure:* no rule said when to sync with `main`. 4. *Research:* contracts first, verify the merged result. 5. *Fit:* one line in the worker brief and one first check in the review. 6–8. Additive; nothing to lose.
+### 5.5 Model and concurrency tiers (FOR NOLAN)
+Hub on Opus (high effort); Unity/gameplay/Blender workers Opus; doc, REF, DATA, DOC workers and doc-only reviewers Sonnet; default cap 4 concurrent worker/reviewer sessions plus the 2-editor Unity limit. The cap is for review bandwidth, file-collision risk and Hub event load, not usage (DEC-100 unchanged); Nolan sets the number.
+### 5.6 Truth files guarded by hook
+`hub_guard.py` now also blocks, in worktrees, edits to `CLAUDE.md`, `AGENTS.md`, `Docs/HUB_RESUME.md`, `Docs/PROJECT_BRIEF.md`, `Docs/PROJECT_STATE.md`, `Docs/STUDIO_OS.md`, `Docs/DECISIONS.md`, `Docs/Design/ROADMAP_POST_SLICE.md`. Workers propose DEC/rule text in their handoff (`## For the Hub`) or under `Docs/Proposals/`; the Hub applies it. Reversal: revert the `HUB_ONLY` tuple.
+### 5.7 Recovery discoverability
+`Docs/HISTORY.md` records every structure change with the commit where the previous text can be read; the checkpoint tag protects this recovery itself.
+
+## 6. Not done / deliberately left
+- No branch, worktree or session was deleted or archived (DEC-123; sessions are the Hub's to manage). The in-repo Builds/Imports/Assets Cache folders are ignored via `.gitignore`, not moved (7.5 GB; sessions and docs reference them); the four nested worktrees stay until their sessions are archived.
+- Running/idle worker packets that still name leads (GAME-026, ASSET-005) were not edited; the fresh-worker briefs in PROJECT_STATE carry the correction.
+- Old contact-sheet PNGs deleted by PROC fix waves were superseded by their JPG replacements; not restored.
+- The "shared notes folder" handover notes two dead spares mentioned (ART-013, PROC-018) were not found in the repo or worktrees; their committed WIP branches are the recovery source.
+
+## 7. FOR NOLAN (confirm, amend or reverse)
+1. §5.3 background Agent subagents on peer-triggered turns (replaces cards + spares).
+2. §5.5 model tiers and the concurrency cap of 4.
+3. The Hub session itself: run it at high effort; replace it when `get_usage` passes ~300k.
+4. Archive the 7 idle spare sessions and the dead workers listed in PROJECT_STATE §Recovery once their branches are confirmed there (reversible: unarchive).
+
+## 8. Outcome (2026-10-30 evening)
+Nolan approved §7 items 1–4 with adjustments recorded as DEC-143 (model by the character of the work; 4 sessions plus the Hub; Hub at high effort with ~300k as an upper bound) and ordered a clean cutover, recorded as DEC-144: all sessions, branches and worktrees accounted for; uncommitted work committed on its branches (PROC-009b `aefadfc`, PROC-013 originals `788046a`, PROC-017 `7f4f7d6`, one PROC-005 json on `claude/clever-lamport-837e7f`); session-only context recovered to `Docs/Handoffs/Recovered/`; `PROJECT_STATE.md` made the sole resume point; every pre-recovery session (old Hub, PO session, side chat, spares, workers, reviewers) archived; a fresh Hub started from the repaired bootstrap. The PO communication session was archived with the rest; questions ride the Hub reply until Nolan designates a new channel.

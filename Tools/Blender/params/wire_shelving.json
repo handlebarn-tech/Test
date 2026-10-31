@@ -6,7 +6,8 @@
   "unity_dir": "UnityProject/Assets/_Game/Art/Procedural/Fixtures/WireShelving",
   "gaps": [
     "GAP-127",
-    "GAP-PROC-13"
+    "GAP-PROC-13",
+    "GAP-PROC-29"
   ],
   "checks": {
     "origin_bottom_centre": true,
@@ -134,7 +135,13 @@
         }
       ],
       "shelf_count": 3,
-      "bottom_shelf_z_m": 0.254
+      "bottom_shelf_z_m": 0.254,
+      "_src": {
+        "shelf_count": "DEC-088 (3 shelves incl. the top)",
+        "casters": "DEC-088 (4 small casters)",
+        "bottom_shelf_z_m": "GAP-PROC-29 (DEC-088 gives count/casters only; 10 in placeholder)",
+        "width/depth/height": "RF Rack_Rolling_1..4 6.0 x 2.0 x 6.0 ft (length Low, GAP-127)"
+      }
     },
     {
       "id": "Rack_East_Wall",
@@ -152,7 +159,12 @@
           "casters": false
         }
       ],
-      "shelf_count": 5
+      "shelf_count": 5,
+      "_src": {
+        "shelf_count": "GAP-PROC-29 (5 placeholder; BOH still shows several levels, not countable)",
+        "sections": "DEC-088 4-ft sections; 8.7 ft RF run split into 2 equal fixed sections (4.35 ft) pending the run-length pass (GAP-127)",
+        "width/depth/height": "RF Rack_East_Wall 8.7 x 2.0 x 6.0 ft"
+      }
     },
     {
       "id": "Rack_West_Run",
@@ -170,7 +182,12 @@
           "casters": false
         }
       ],
-      "shelf_count": 5
+      "shelf_count": 5,
+      "_src": {
+        "shelf_count": "RF Rack_West_Run notes '4-5 shelves' (5 used)",
+        "sections": "RF '2-bay run'; DEC-088 4-ft sections (8.0 ft = 2 x 4 ft, ends fixed)",
+        "width/depth/height": "RF Rack_West_Run 8.0 x 2.0 x 6.0 ft"
+      }
     },
     {
       "id": "Rack_South_Wall",
@@ -185,7 +202,12 @@
           "casters": false
         }
       ],
-      "shelf_count": 5
+      "shelf_count": 5,
+      "_src": {
+        "shelf_count": "GAP-PROC-29 (5 placeholder)",
+        "sections": "GAP-PROC-29: RF width 5.3 ft (shortened to clear the ex-register-1 desk) is not a multiple of DEC-088's 4-ft sections; kept as one fixed section because an unequal 4 + 1.3 ft split needs new generator code (FOR NOLAN via Hub)",
+        "width/depth/height": "RF Rack_South_Wall 5.3 x 1.8 x 6.0 ft"
+      }
     },
     {
       "id": "Rack_Chrome_Cartons",
@@ -200,7 +222,11 @@
           "casters": false
         }
       ],
-      "shelf_count": 5
+      "shelf_count": 5,
+      "_src": {
+        "shelf_count": "GAP-PROC-29 (5 placeholder)",
+        "width/depth/height": "RF Rack_Chrome_Cartons 2.5 x 1.2 x 6.0 ft (DEC-062; GAP-127)"
+      }
     },
     {
       "id": "Rack_Bags_Tools",
@@ -215,7 +241,11 @@
           "casters": false
         }
       ],
-      "shelf_count": 4
+      "shelf_count": 4,
+      "_src": {
+        "shelf_count": "GAP-PROC-29 (4 placeholder)",
+        "width/depth/height": "RF Rack_Bags_Tools 3.0 x 1.5 x 5.0 ft (convention placeholder, GAP-127)"
+      }
     },
     {
       "id": "Desk_WireRack_Computer",
@@ -236,7 +266,12 @@
         0.7366,
         1.2192,
         1.7983
-      ]
+      ],
+      "_src": {
+        "shelf_z_m": "GAP-PROC-29: 5 levels and all heights are placeholders; RF/RI \u00a72.3 give only 'monitor on an upper shelf, keyboard shelf at desk height, bins below'; keyboard level 0.7366 m = 29 in desk-height convention",
+        "finish": "RF 'black wire shelving unit'",
+        "width/depth/height": "RF Desk_WireRack_Computer 3.4 x 1.5 x 6.0 ft"
+      }
     },
     {
       "id": "Rack_CleaningSupplies_JC",
@@ -251,7 +286,12 @@
           "casters": false
         }
       ],
-      "shelf_count": 4
+      "shelf_count": 4,
+      "_src": {
+        "shelf_count": "GAP-PROC-29 (4 placeholder)",
+        "width/depth/height": "RF Rack_CleaningSupplies_JC 2.0 x 1.2 x 5.0 ft (DEC-062 'small rack of cleaning supplies'; size Low, GAP-127)"
+      }
     }
-  ]
+  ],
+  "_shelf_src": "Top-level shelf_count 5, bottom_shelf_z_m 0.1524 and top_shelf_drop_m are GAP-PROC-29 defaults (no source counts or heights shelves for these racks); per-variant _src keys override"
 }

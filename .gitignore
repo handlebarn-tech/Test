@@ -31,3 +31,11 @@ UnityProject/Assets/_LocalThirdParty.meta
 # Session worktrees (nested checkouts); .claude/settings.json is tracked (DEC-045 hub guard)
 .claude/worktrees/
 .claude/settings.local.json
+
+# Stray copies of the external Downloads folders created inside the repo by sessions with the wrong cwd (RECOVERY-001).
+# The real ones are C:/Users/handl/Downloads/Dispo Game Builds|Imports|Imports Archive|Assets Cache. Never commit these.
+/Dispo Game/
+/Dispo Game Assets Cache/
+/Dispo Game Builds/
+/Dispo Game Imports/
+/Dispo Game Imports Archive/

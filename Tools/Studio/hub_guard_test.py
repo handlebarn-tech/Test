@@ -29,6 +29,12 @@ CASES = [  # (name, payload or raw stdin, expected exit)
     ("hub doc edit allowed", {"cwd": HUB, "tool_name": "Write", "tool_input": {"file_path": HUB + r"\Docs\BACKLOG.md"}}, 0),
     ("worker code edit allowed", {"cwd": WORKER, "tool_name": "Edit", "tool_input": {"file_path": WORKER + r"\Tools\Studio\studio.ps1"}}, 0),
     ("worker cwd outside worktree allowed", {"cwd": r"C:\Temp", "tool_name": "Bash", "tool_input": {"command": "$UNITY -batchmode -quit"}, "_project": WORKER}, 0),
+    ("worker truth-file edit blocked", {"cwd": WORKER, "tool_name": "Edit", "tool_input": {"file_path": WORKER + r"\Docs\PROJECT_STATE.md"}}, 2),
+    ("worker decisions edit blocked", {"cwd": WORKER, "tool_name": "Write", "tool_input": {"file_path": "Docs/DECISIONS.md"}}, 2),
+    ("worker claude.md edit blocked", {"cwd": WORKER, "tool_name": "Edit", "tool_input": {"file_path": WORKER + r"\CLAUDE.md"}}, 2),
+    ("worker gaps edit allowed", {"cwd": WORKER, "tool_name": "Edit", "tool_input": {"file_path": WORKER + r"\Docs\KNOWN_GAPS.md"}}, 0),
+    ("worker handoff write allowed", {"cwd": WORKER, "tool_name": "Write", "tool_input": {"file_path": WORKER + r"\Docs\Handoffs\X.md"}}, 0),
+    ("hub truth-file edit allowed", {"cwd": HUB, "tool_name": "Edit", "tool_input": {"file_path": HUB + r"\Docs\PROJECT_STATE.md"}}, 0),
     ("bad payload allowed", "{not json", 0),
     ("non-object payload allowed", "[1, 2]", 0),
 ]

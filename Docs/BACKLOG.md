@@ -102,6 +102,7 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction  | DES-005, GAME-009 merge, World REF-012 `DOORS.json` | Done (08758c1) |
 | GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next  | DES-005, GAME-025, World REF-011 `SCENE_ANCHORS.json` | Active |
 | GAME-027 | P0 | PT2 #11: budtender ID verification at the register works in the playable build (did GAME-008's events ever reach the player?); defect fix + PlayMode proof | GAME-026 (same Slice files) | Later (drop if GAME-026 proves it in a build) |
+| GAME-028 | P2 | Jar slot to batch binding + display-only filler jars (DEC-145, GAP-JAR-1): the 77 sellable batches bind to stocked slots, the rest read as full shelves; walls never thin with inventory | GAME-017a, ART-013 | Later (PS1b) |
 | ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Done (W5A) |
 | IMP-002 | P1 | Integrate the approved DISPO_GAME_DESIGN_V2 pack (DEC-063) into `Docs/Design/DESIGN_V2/` | IMP-001 | Done (W4V, DEC-066) |
 | ASSET-003 | P1 | Customer characters + animations sourcing (CHARACTERS.md, DEC-084/087) | ASSET-001 | Done (W5P) |
@@ -111,11 +112,12 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | BRAND-001b | P1 | Fictional-brand collision pass (DEC-078) | BRAND-001 | Done |
 | BRAND-002 | P1 | Name search of all fictional names before any public build (DEC-078) | BRAND-001b | Later |
 | IMP-003 | P1 | Rolling ChatGPT toolkit audit (DEC-070/083/095): drops 1–5, rebuilt round 3, rounds 4–6 | — | Done (e0fc82c, DEC-111); a future drop gets a new IMP task |
-| PROC-005 | P1 | Integrate the approved toolkit + fix every checklist item (DEC-092) | IMP-003 | Active |
+| PROC-005 | P1 | Integrate the approved toolkit + fix every checklist item (DEC-092) | IMP-003 | Done (REVIEW-PROC005d r4 PASS with minors; SWR facing DEC-137; GAP-PROC-14..42; m1/m5 → PROC-005b, m4 → PROC-007) |
+| PROC-005b | P2 | PROC-005 follow-ups: R7 `components.scale_stand_slot` exports inside the South run; give SouthWestReturn a per-station dx override so the stand lands at the operator's **left** per RF POS_07 `stand_rect` (x 17.78–19.08, y 24.0–25.6; REVIEW-PROC005d m1), before ART-011/013 place stands from the manifest; also the still-owed HDRP material builder reading `finishes` and the `to_unity`/BoxCollider EditMode test (m5) | PROC-005 | Later (ART-013 reads POS_07 `stand_rect`, not the manifest slot, until this lands) |
 | PROC-006 | P1 | Register workstation kit: evidence spec (DEC-096) | — | Done (6af8906); generators = PROC-006b |
 | PROC-006b | P1 | Register kit generators + seeded per-station variation (DEC-104) | PROC-006 | Done (e1e8a68; REVIEW-PROC006b PASS, 7 minors → PROC-006c / PROC-010 / PROC-007) |
 | PROC-006c | P2 | Register kit review follow-ups (REVIEW-PROC006b m2–m6: contact sheet, hanging ISO spray, keyboard GAP tags, stale anchor strings, GAP ids for KNOWN_GAPS) | PROC-006b | Done (REVIEW-PROC006c PASS @ 53de5ff; m2 stations-sheet labels + m3 colour-true previews → PROC-010) |
-| PROC-007 | P1 | DEC-097 UV layout (lightmap ch1, label ch2) + re-export jars/packaged goods, with World's label-shader cut-over | PROC-005 | Ready (also: RegisterKit FBX `.meta`/first import, REVIEW-PROC006b m7) |
+| PROC-007 | P1 | DEC-097 UV layout (lightmap ch1, label ch2) + re-export jars/packaged goods, with World's label-shader cut-over | PROC-005 | Ready, dispatch now (PROC-005 merged; also: RegisterKit FBX `.meta`/first import, REVIEW-PROC006b m7; PROC-005 texture `.meta` import settings: `_Normal` as normal map, `_Mask` sRGB off, REVIEW-PROC005d m4) |
 | PROC-008 | P2 | Cash-drawer tray (R3b.6) | — | Rejected (Hub ruling: DEC-051/086 win; cash equipment is never modelled) |
 | PROC-009 | P2 | Studio-built parked vehicles (DEC-111; R3b.7 rejected as built): CC0 source (DEC-023) or a rebuild per checklist R3b.7 | PROC-005 core (merged) | Done (REVIEW-PROC009 r3 PASS with minors; count rule DEC-134, class rule DEC-135; minors → PROC-009b, textures/lightmap UV → PROC-016) |
 | PROC-009b | P3 | Parked-vehicle look follow-ups (REVIEW-PROC009 r3 m1–m4): carry the sedan dark headlamp housing to LOD2; make the wrapped lamp lens read at 3/4; hatchback mesh grille cells readable at LOD0 (not a solid black block); Hub to confirm the shared `run_generator.py` preview-camera change (r1 m4) | PROC-009 | Later |
@@ -129,7 +131,7 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | DOC-002 | P2 | AUDIT-001 batch D (risky: ART renumber, CLAUDE.md read list, REFERENCES_INDEX split, branch naming) | DOC-001; between waves only | Later |
 | DOC-003 | P3 | AUDIT-001 batch E (Medium/Low cleanup) | DOC-001 | Done (W4Z) |
 | BUILD-008 | P0 | Playtest build 3 (M-B exit): candidate build for QA-004; reaches Nolan only after QA-004 PASS (DEC-120) | GAME-026, ART-008, ART-013, PROC-013, PROC-006b (Done) | Later (packet when those merge) |
-| ART-011 | P1 | Lookdev label shader reads Unity `uv3` (DEC-097); lands in the same wave as PROC-007 | PROC-007 | Ready (packet `Tasks/Ready/ART-011.md`; waits: PROC-005 merge → PROC-007 accepted commit; integrated in one wave with PROC-007) |
+| ART-011 | P1 | Lookdev label shader reads Unity `uv3` (DEC-097); lands in the same wave as PROC-007 | PROC-007 | Ready to dispatch (packet `Tasks/Ready/ART-011.md`; PROC-005 merged; builds on PROC-007's accepted commit; integrated in one wave with PROC-007) |
 | GAME-CHR-002 | P1 | Import the 60 MPFB customers into Unity: prefabs, LODs, Humanoid retarget of the Rocketbox animation map (CHARACTERS.md §6–7) | ASSET-005, ASSET-006, ASSET-007 | Later (PS1b) |
 | NPC-001 | P1 | Customers walk the GAME-026 flow with bodies: NavMesh (AI Navigation), entry → guard → queue → counter → exit, idle/wait/talk animation states | GAME-026, GAME-CHR-002 | Later (PS1b) |
 | BUILD-008b | P0 | Playtest build 4 (PS1b exit) | GAME-020, NPC-001 | Later |
@@ -177,4 +179,4 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | LT-6b | P3 | Break room NPC use and breaks (LT §6) | NPC-002, PS4 | Later (PS4) |
 | LT-7 | P3 | Neighbourhood activity: traffic, pedestrians, deliveries, weather (LT §7) | ART-012, LT-1a | Later (M-F) |
 | LT-8 | — | Tone pillar adopted (`Design/TONE.md`, DEC-101) | — | Done (DES-005b) |
-| DOC-004 | P3 | Put "fast recommendation" back in GSS §28 (DEC-059 n1, REVIEW-W4Q); rides with the next GSS edit | — | Ready |
+| DOC-004 | P3 | Put "fast recommendation" back in GSS §28 (DEC-059 n1, REVIEW-W4Q); rides with the next GSS edit | — | Done |

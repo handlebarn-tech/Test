@@ -1,4 +1,4 @@
-"""PreToolUse guard for the main checkout (DEC-045).
+"""PreToolUse guard (DEC-045, DEC-141).
 
 The Studio Hub works in the repo root; workcells that build or code run in
 `.claude/worktrees/*`. In the main checkout this blocks execution work
@@ -28,6 +28,11 @@ DATA = [
     re.compile(r"\s-m\s+(\"[^\"]*\"|'[^']*')"),
 ]
 BLOCKED_DIRS = ("UnityProject", "Tools")
+# Hub-only truth files (DEC-141): editable in the main checkout, blocked in worktrees.
+HUB_ONLY = (
+    "CLAUDE.md", "AGENTS.md", "Docs/HUB_RESUME.md", "Docs/PROJECT_BRIEF.md", "Docs/PROJECT_STATE.md",
+    "Docs/STUDIO_OS.md", "Docs/DECISIONS.md", "Docs/Design/ROADMAP_POST_SLICE.md",
+)
 
 
 def in_worktree(path):
@@ -47,14 +52,21 @@ def is_code_path(path, root):
     return any(full.startswith(os.path.normcase(os.path.join(os.path.abspath(root), d)) + os.sep) for d in BLOCKED_DIRS)
 
 
+def is_hub_only(path):
+    norm = (path or "").replace("\\", "/")
+    return any(norm.endswith("/" + f) or norm == f for f in HUB_ONLY)
+
+
 def check(data):
     cwd = data.get("cwd") or ""
     project = os.environ.get("CLAUDE_PROJECT_DIR") or ""
-    if in_worktree(cwd) or in_worktree(project):  # a worker whose shell cwd left its worktree is still a worker (REVIEW-W4B)
-        return None
-    root = project or cwd
     tool = data.get("tool_name", "")
     inp = data.get("tool_input") or {}
+    if in_worktree(cwd) or in_worktree(project):  # a worker whose shell cwd left its worktree is still a worker (REVIEW-W4B)
+        if tool in ("Edit", "Write", "NotebookEdit") and is_hub_only(inp.get("file_path") or inp.get("notebook_path") or ""):
+            return "this file is Hub-only (DEC-141): propose the change in your handoff's '## For the Hub' or under Docs/Proposals/."
+        return None
+    root = project or cwd
     if tool in ("Bash", "PowerShell"):
         cmd = inp.get("command") or ""
         if not in_worktree(cmd) and is_exec(cmd):

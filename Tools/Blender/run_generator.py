@@ -11,6 +11,7 @@ import math
 import os
 import shutil
 import sys
+import time
 
 import bpy
 
@@ -24,6 +25,24 @@ SHEET = os.path.join(ROOT, "Docs", "Assets", "Specs", "PROC_contact_sheet.png")
 sys.path.insert(0, HERE)
 
 from proclib import UV_LABEL, UV_MAIN, mesh_stats  # noqa: E402
+import proctex  # noqa: E402
+
+
+class manifest_lock:
+    """Exclusive lock file around the manifest read-modify-write."""
+
+    def __enter__(self):
+        self.path = MANIFEST + ".lock"
+        for _ in range(1200):
+            try:
+                os.close(os.open(self.path, os.O_CREAT | os.O_EXCL))
+                return self
+            except FileExistsError:
+                time.sleep(0.1)
+        raise RuntimeError(f"manifest lock busy for 120 s: {self.path} (stale? delete it)")
+
+    def __exit__(self, *exc):
+        os.remove(self.path)
 
 
 def reset():
@@ -109,16 +128,23 @@ def generate_asset(gen_name, gen, p, asset, raw, params_path):
         "tri_budget": p["tri_budget"],
         "gaps": sorted(p["gaps"]),
     })
-    manifest = json.load(open(MANIFEST)) if os.path.exists(MANIFEST) else {
-        "units": "meters", "up": "+Y (Unity)", "label_faces": "+Z (Unity forward)", "assets": {}}
-    manifest["assets"][asset] = entry
-    with open(MANIFEST, "w", newline="\n") as f:
-        json.dump(manifest, f, indent=2, sort_keys=True)
-        f.write("\n")
+    if p.get("pbr"):
+        entry["finishes"] = proctex.finishes_entry(p)
+    with manifest_lock():  # families may be generated in parallel processes
+        manifest = json.load(open(MANIFEST)) if os.path.exists(MANIFEST) else {
+            "units": "meters", "up": "+Y (Unity)", "label_faces": "+Z (Unity forward)", "assets": {}}
+        manifest["assets"][asset] = entry
+        with open(MANIFEST, "w", newline="\n") as f:
+            json.dump(manifest, f, indent=2, sort_keys=True)
+            f.write("\n")
     write_validation(asset, gen_name, params_sha, entry, [], warnings)
     if hasattr(gen, "preview_context"):
         gen.preview_context(p)  # non-exported scenery for the renders (export and manifest are already written)
-    render_previews(asset, list(p["lods"]), entry.get("preview_groups"))
+    if p.get("pbr"):
+        proctex.apply_preview_materials(p)  # after export: the FBX keeps names only (M4)
+        render_previews_pbr(asset, list(p["lods"]))
+    else:
+        render_previews(asset, list(p["lods"]), entry.get("preview_groups"))
     print(f"[PROC] {asset}: " + ", ".join(f"{k}={v['tris']} tris" for k, v in entry["lods"].items()) + f" -> {fbx}")
 
 
@@ -204,6 +230,62 @@ def render_previews(asset, lods, groups=None):
         bpy.ops.render.render(write_still=True)
 
 
+PBR_VIEWS = ("LOD0_persp", "LOD0_front", "LOD0_detail", "LODn_persp")
+PBR_PX = 320
+
+
+def render_previews_pbr(asset, lods):
+    """PBR preview (PROC-005, DEC-084 visual read): Eevee, finish maps + Wear attribute, AgX. Tiles: LOD0 3/4
+    perspective, LOD0 front ortho, LOD0 close-up of the upper front-left corner at ~3x, last LOD 3/4."""
+    from mathutils import Vector
+    s = bpy.context.scene
+    s.render.engine = "BLENDER_EEVEE"
+    s.eevee.taa_render_samples = 32
+    s.render.resolution_x = s.render.resolution_y = PBR_PX
+    s.render.film_transparent = False
+    s.view_settings.view_transform = "AgX"
+    try:
+        s.view_settings.look = "AgX - Medium High Contrast"
+    except TypeError:  # look names differ between Blender versions
+        pass
+    world = bpy.data.worlds.new("W")
+    world.use_nodes = True
+    world.node_tree.nodes["Background"].inputs[0].default_value = (0.42, 0.42, 0.43, 1)
+    world.node_tree.nodes["Background"].inputs[1].default_value = 0.3
+    s.world = world
+    objs = [o for o in s.objects if o.type == "MESH"]
+    for name, energy, rot in (("Key", 2.6, (0.9, 0.0, -0.6)), ("Rim", 1.0, (1.2, 0.0, 2.6))):
+        sun = bpy.data.objects.new(name, bpy.data.lights.new(name, "SUN"))
+        sun.data.energy, sun.data.angle, sun.rotation_euler = energy, 0.2, rot
+        s.collection.objects.link(sun)
+    cam = bpy.data.objects.new("Cam", bpy.data.cameras.new("Cam"))
+    s.collection.objects.link(cam)
+    s.camera = cam
+    os.makedirs(RENDER_DIR, exist_ok=True)
+    for view in PBR_VIEWS:
+        lod = lods[0] if view.startswith("LOD0") else lods[-1]
+        vis = [o for o in objs if o.name.endswith("_" + lod)]
+        for o in objs:
+            o.hide_render = o not in vis and not o.name.startswith("Context_")
+        cos = [v.co for o in vis for v in o.data.vertices]
+        lo = Vector([min(v[i] for v in cos) for i in range(3)])
+        hi = Vector([max(v[i] for v in cos) for i in range(3)])
+        c, r = (lo + hi) / 2, max((hi - lo).length / 2, 0.02)
+        if view.endswith("front"):
+            cam.data.type, cam.data.ortho_scale = "ORTHO", max(hi.x - lo.x, hi.z - lo.z) * 1.1
+            cam.location, cam.rotation_euler = (c.x, lo.y - r - 1.0, c.z), (math.pi / 2, 0, 0)
+        else:
+            cam.data.type, cam.data.lens = "PERSP", 50
+            d = Vector((-0.55, -1.0, 0.42)).normalized()
+            if view.endswith("detail"):
+                c, r = Vector((lo.x + (hi.x - lo.x) * 0.2, lo.y, lo.z + (hi.z - lo.z) * 0.8)), r * 0.33
+            cam.location = c + d * (r / math.sin(math.radians(19.8)) * 1.05)
+            cam.rotation_euler = (-d).to_track_quat("-Z", "Y").to_euler()
+        cam.data.clip_start, cam.data.clip_end = 0.001, 100
+        s.render.filepath = os.path.join(RENDER_DIR, f"{asset}_pbr_{view}.png")
+        bpy.ops.render.render(write_still=True)
+
+
 def contact_sheet(gen=None):
     """Stack every asset's preview row (LOD0 front, LOD0 side, LODn front) into one committed PNG.
     With gen: only that generator's assets (row = asset; grouped assets show LOD0 per group then the other LODs; tiles at
@@ -219,18 +301,31 @@ def contact_sheet(gen=None):
         if gen and "preview_groups" in entry:
             g = entry["preview_groups"]
             names = [f"{x}_{lods[0]}_front" for x in g] + [f"{g[-1]}_{lod}_front" for lod in lods[1:]]
+        if gen and entry.get("finishes"):
+            names = [f"pbr_{v}" for v in PBR_VIEWS]
         tiles = []
         for name in names:
             img = bpy.data.images.load(os.path.join(RENDER_DIR, f"{asset}_{name}.png"))
             px = np.empty(img.size[0] * img.size[1] * 4, dtype=np.float32)
             img.pixels.foreach_get(px)
-            tiles.append(px.reshape(img.size[1], img.size[0], 4)[::2, ::2] if gen else px.reshape(img.size[1], img.size[0], 4))
+            full = px.reshape(img.size[1], img.size[0], 4)
+            tiles.append(full if not gen or name.startswith("pbr_") else full[::2, ::2])
         rows.append(np.concatenate(tiles, axis=1))
     sheet = np.concatenate(rows[::-1], axis=0)  # Blender images are bottom-up; first asset ends on top
     out = bpy.data.images.new("sheet", sheet.shape[1], sheet.shape[0])
     out.pixels.foreach_set(sheet.ravel())
-    out.filepath_raw, out.file_format = sheet_path, "PNG"
-    out.save()
+    if gen and any(e.get("finishes") for _, e in assets):  # PBR renders do not compress as PNG: JPEG keeps it under 1 MB
+        sheet_path = sheet_path[:-4] + ".jpg"
+        st = bpy.context.scene.render.image_settings
+        st.file_format = "JPEG"
+        for q in (90, 82, 74, 66, 58, 50):
+            st.quality = q
+            out.save_render(sheet_path)
+            if os.path.getsize(sheet_path) <= 1_000_000:
+                break
+    else:
+        out.filepath_raw, out.file_format = sheet_path, "PNG"
+        out.save()
     size = os.path.getsize(sheet_path)
     if size > 1_000_000:
         raise RuntimeError(f"contact sheet {size} bytes > 1 MB")
@@ -239,7 +334,10 @@ def contact_sheet(gen=None):
 
 if __name__ == "__main__":  # Tools/Blender/tests import this module
     argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
-    if argv[:1] == ["contact_sheet"]:
+    if argv[:1] == ["textures"]:
+        reset()
+        proctex.generate_all()
+    elif argv[:1] == ["contact_sheet"]:
         contact_sheet(*argv[1:2])
     elif len(argv) == 2:
         generate(argv[0], os.path.abspath(argv[1]))
