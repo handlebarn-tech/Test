@@ -161,3 +161,4 @@ These gaps are defined, with placeholders and owners, in the spec named; that sp
 - GAP-DOOR-7 | asset | exterior side of the exterior doors (pull trim on Ext_Delivery, threshold type) | none | exterior photo
 - GAP-DOOR-8 | asset | door decals: fire labels, "EMPLOYEES ONLY", office leaf print, SE round logo | Med (seen, not modelled) | signage pass
 - GAP-DOOR-9 | asset | wear amounts (edge chip, low scuff, hand grime) | none | PROC-010 materials pass
+- GAP-JAR-1 | store | which strains fill the deli-wall slots the slice does not sell (display-only jars, DEC-145) | none (labels from the catalog's non-slice strains or a blank kraft tag) | GAME-028; closes when the catalog covers the slots (DATA-004)

@@ -102,6 +102,7 @@ The task registry: IDs, titles, dependencies (DEC-117). Hub-owned. **A task's st
 | GAME-025 | P0 | Controls: camera/look feel, Esc pause menu, door interaction  | DES-005, GAME-009 merge, World REF-012 `DOORS.json` | Done (08758c1) |
 | GAME-026 | P0 | Customer flow: guard ID check-in at entry, one line, player calls next  | DES-005, GAME-025, World REF-011 `SCENE_ANCHORS.json` | Active |
 | GAME-027 | P0 | PT2 #11: budtender ID verification at the register works in the playable build (did GAME-008's events ever reach the player?); defect fix + PlayMode proof | GAME-026 (same Slice files) | Later (drop if GAME-026 proves it in a build) |
+| GAME-028 | P2 | Jar slot to batch binding + display-only filler jars (DEC-145, GAP-JAR-1): the 77 sellable batches bind to stocked slots, the rest read as full shelves; walls never thin with inventory | GAME-017a, ART-013 | Later (PS1b) |
 | ART-006 | P1 | Back rooms graybox + lookdev from ROOM_FIXTURES rev3 + HDRP bud materials | REF-009, PROC-003 | Done (W5A) |
 | IMP-002 | P1 | Integrate the approved DISPO_GAME_DESIGN_V2 pack (DEC-063) into `Docs/Design/DESIGN_V2/` | IMP-001 | Done (W4V, DEC-066) |
 | ASSET-003 | P1 | Customer characters + animations sourcing (CHARACTERS.md, DEC-084/087) | ASSET-001 | Done (W5P) |
